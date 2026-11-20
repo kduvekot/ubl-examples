@@ -106,8 +106,8 @@ How.</li>
 <li><code>ValidationDate</code> = <strong>2026-05-05</strong><br />
 Verified by the council's validation service before the document was
 issued, after the terms it binds were verified.</li>
-<li><code>ValidationTime</code> = <strong>12:40:00</strong><br />
-At that time.</li>
+<li><code>ValidationTime</code> = <strong>12:40:00-01:00</strong><br />
+At that time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>ValidatorID</code> = <strong>LTAC-VALIDATOR</strong><br />
 The trade accord council's validation service.</li>
 <li><code>CanonicalizationMethod</code> = <strong><a
@@ -574,8 +574,8 @@ Trade Accord Council's requirements.</li>
 Its UUID.</li>
 <li><code>IssueDate</code> = <strong>2026-01-02</strong><br />
 The council published version 2.0 at the start of the year.</li>
-<li><code>IssueTime</code> = <strong>12:00:00</strong><br />
-And time.</li>
+<li><code>IssueTime</code> = <strong>12:00:00-01:00</strong><br />
+And time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>DocumentTypeCode</code> = <strong>774</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
 The kind of document. The code is from the world's copy of UN/EDIFACT
@@ -615,8 +615,9 @@ SHA-256.</li>
 <strong>2027-05-05</strong><br />
 The link works as long as the reference is valid.</li>
 <li><code>Attachment/ExternalReference/ExpiryTime</code> =
-<strong>23:59:00</strong><br />
-Until the end of that day.</li>
+<strong>23:59:00-01:00</strong><br />
+Until the end of that day; in the issuer's local time, with its offset
+from UTC.</li>
 <li><code>Attachment/ExternalReference/MimeCode</code> =
 <strong>application/pdf</strong> (listID
 <code>IANA Media Types</code>)<br />
@@ -656,8 +657,8 @@ validation result list: VALID = Valid.</li>
 <strong>2026-05-05</strong><br />
 Checked.</li>
 <li><code>ResultOfVerification/ValidationTime</code> =
-<strong>12:05:00</strong><br />
-At that time.</li>
+<strong>12:05:00-01:00</strong><br />
+At that time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>ResultOfVerification/ValidateProcess</code> =
 <strong>Signature and hash check</strong><br />
 What was checked.</li>
@@ -749,17 +750,19 @@ No document may be lost.</li>
 = <strong>2</strong> (unitCode <code>HUR</code>)<br />
 Back in two hours on average.</li>
 <li><code>ServiceLevelAgreement/ServiceAvailabilityPeriod/StartTime</code>
-= <strong>07:00:00</strong><br />
-Support from seven.</li>
+= <strong>07:00:00-01:00</strong><br />
+Support from seven; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>ServiceLevelAgreement/ServiceAvailabilityPeriod/EndTime</code>
-= <strong>19:00:00</strong><br />
-Until seven.</li>
+= <strong>19:00:00-01:00</strong><br />
+Until seven; in the issuer's local time, with its offset from UTC.</li>
 <li><code>ServiceLevelAgreement/ServiceMaintenancePeriod/StartTime</code>
-= <strong>02:00:00</strong><br />
-Maintenance at night.</li>
+= <strong>02:00:00-01:00</strong><br />
+Maintenance at night; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>ServiceLevelAgreement/ServiceMaintenancePeriod/EndTime</code>
-= <strong>04:00:00</strong><br />
-Until four.</li>
+= <strong>04:00:00-01:00</strong><br />
+Until four; in the issuer's local time, with its offset from UTC.</li>
 </ul>
 <h3 id="digital-process">Digital Process</h3>
 <p>Inside <code>DigitalProcess</code>:</p>
@@ -1384,7 +1387,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SignatureReasonCode&quot;</span>&gt;APPROVAL&lt;/<span class="kw">cbc:ReasonCode</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Signed with the company&#39;s seal certificate.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ValidationDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:ValidationDate</span>&gt;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ValidationTime</span>&gt;12:40:00&lt;/<span class="kw">cbc:ValidationTime</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ValidationTime</span>&gt;12:40:00-01:00&lt;/<span class="kw">cbc:ValidationTime</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ValidatorID</span>&gt;LTAC-VALIDATOR&lt;/<span class="kw">cbc:ValidatorID</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CanonicalizationMethod</span>&gt;http://www.w3.org/2006/12/xml-c14n11&lt;/<span class="kw">cbc:CanonicalizationMethod</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SignatureMethod</span>&gt;http://www.w3.org/2001/04/xmldsig-more#rsa-sha256&lt;/<span class="kw">cbc:SignatureMethod</span>&gt;</span>
@@ -1587,7 +1590,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LTAC-AP-REQ-2.0&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;dc787c2a-3f1a-547c-a3f0-172d3721bfb5&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;12:00:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;774&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferencedDocumentInternalAddress</span>&gt;section-2&lt;/<span class="kw">cbc:ReferencedDocumentInternalAddress</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LanguageID</span>&gt;en&lt;/<span class="kw">cbc:LanguageID</span>&gt;</span>
@@ -1601,7 +1604,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DocumentHash</span>&gt;9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e&lt;/<span class="kw">cbc:DocumentHash</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:HashAlgorithmMethod</span>&gt;http://www.w3.org/2001/04/xmlenc#sha256&lt;/<span class="kw">cbc:HashAlgorithmMethod</span>&gt;</span>
 <span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpiryDate</span>&gt;2027-05-05&lt;/<span class="kw">cbc:ExpiryDate</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpiryTime</span>&gt;23:59:00&lt;/<span class="kw">cbc:ExpiryTime</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExpiryTime</span>&gt;23:59:00-01:00&lt;/<span class="kw">cbc:ExpiryTime</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MimeCode</span> <span class="ot">listID=</span><span class="st">&quot;IANA Media Types&quot;</span>&gt;application/pdf&lt;/<span class="kw">cbc:MimeCode</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:FormatCode</span> <span class="ot">listID=</span><span class="st">&quot;PRONOM&quot;</span>&gt;fmt/480&lt;/<span class="kw">cbc:FormatCode</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EncodingCode</span> <span class="ot">listID=</span><span class="st">&quot;RFC 2045 Content-Transfer-Encoding&quot;</span>&gt;binary&lt;/<span class="kw">cbc:EncodingCode</span>&gt;</span>
@@ -1617,7 +1620,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidatorID</span>&gt;LTAC-VALIDATOR&lt;/<span class="kw">cbc:ValidatorID</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidationResultCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ValidationResultCode&quot;</span>&gt;VALID&lt;/<span class="kw">cbc:ValidationResultCode</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidationDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:ValidationDate</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidationTime</span>&gt;12:05:00&lt;/<span class="kw">cbc:ValidationTime</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidationTime</span>&gt;12:05:00-01:00&lt;/<span class="kw">cbc:ValidationTime</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidateProcess</span>&gt;Signature and hash check&lt;/<span class="kw">cbc:ValidateProcess</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidateTool</span>&gt;Accord validator&lt;/<span class="kw">cbc:ValidateTool</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ValidateToolVersion</span>&gt;3.2&lt;/<span class="kw">cbc:ValidateToolVersion</span>&gt;</span>
@@ -1659,12 +1662,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumDataLossDurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;HUR&quot;</span>&gt;0&lt;/<span class="kw">cbc:MaximumDataLossDurationMeasure</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MeanTimeToRecoverDurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;HUR&quot;</span>&gt;2&lt;/<span class="kw">cbc:MeanTimeToRecoverDurationMeasure</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ServiceAvailabilityPeriod</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartTime</span>&gt;07:00:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndTime</span>&gt;19:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartTime</span>&gt;07:00:00-01:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndTime</span>&gt;19:00:00-01:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ServiceAvailabilityPeriod</span>&gt;</span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ServiceMaintenancePeriod</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartTime</span>&gt;02:00:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndTime</span>&gt;04:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartTime</span>&gt;02:00:00-01:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndTime</span>&gt;04:00:00-01:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ServiceMaintenancePeriod</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ServiceLevelAgreement</span>&gt;</span>
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DigitalAgreementTerms</span>&gt;</span>
@@ -1980,6 +1983,6 @@ flow</a> · <a href="example-sea-01-BusinessCard.html">Business Card
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

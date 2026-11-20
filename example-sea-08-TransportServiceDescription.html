@@ -437,8 +437,8 @@ Where the schedule is.</li>
 <li><code>NominationDate</code> = <strong>2026-05-12</strong><br />
 The deadline for booking a container on this sailing: two days before
 it, after the forwarder's booking of 11 May.</li>
-<li><code>NominationTime</code> = <strong>12:00:00</strong><br />
-At noon.</li>
+<li><code>NominationTime</code> = <strong>12:00:00-01:00</strong><br />
+At noon; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Name</code> = <strong>Weekly container liner service
 Lumeport–Selanu</strong><br />
 The name of the service: a scheduled liner service for containers.</li>
@@ -518,8 +518,9 @@ Country identification (ISO 3166) list: XL = Lisavu.</li>
 <strong>2026-05-14</strong><br />
 The next departure from Lumeport.</li>
 <li><code>TransportEvent/OccurrenceTime</code> =
-<strong>18:00:00</strong><br />
-The local time.</li>
+<strong>18:00:00-01:00</strong><br />
+The local time of Bayvarra, where it happens, with its offset from
+UTC.</li>
 <li><code>TransportEvent/TransportEventTypeCode</code> =
 <strong>DEPARTURE</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code>)<br />
@@ -732,7 +733,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportationServiceDescription</span>&gt;A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.&lt;/<span class="kw">cbc:TransportationServiceDescription</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportationServiceDetailsURI</span>&gt;https://www.tidewell.example/services/island&lt;/<span class="kw">cbc:TransportationServiceDetailsURI</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationDate</span>&gt;2026-05-12&lt;/<span class="kw">cbc:NominationDate</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:NominationTime</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationTime</span>&gt;12:00:00-01:00&lt;/<span class="kw">cbc:NominationTime</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Weekly container liner service Lumeport–Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SequenceNumeric</span>&gt;1&lt;/<span class="kw">cbc:SequenceNumeric</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TransportEquipment</span>&gt;</span>
@@ -781,7 +782,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TransportEvent</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;18:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;18:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportEventTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEventTypeCode&quot;</span>&gt;DEPARTURE&lt;/<span class="kw">cbc:TransportEventTypeCode</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
@@ -834,6 +835,6 @@ href="example-sea-09-ForwardingInstructions.html">Forwarding
 Instructions →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

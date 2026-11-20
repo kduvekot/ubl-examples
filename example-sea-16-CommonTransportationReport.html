@@ -637,8 +637,8 @@ The requested arrival.</li>
 The morning after the ship comes off the port: Selanu's pilots take
 ships in by daylight only.</li>
 <li><code>ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceTime</code>
-= <strong>06:00:00</strong><br />
-At first light, in island time.</li>
+= <strong>06:00:00+00:00</strong><br />
+At first light, in island time, with its offset from UTC.</li>
 <li><code>ShipmentStage/DestinationPortCall/RequestedArrivalEvent/TypeCode</code>
 = <strong>ARRIVAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code>)<br />
@@ -1134,14 +1134,16 @@ What the ship did.</li>
 = <strong>2026-05-13</strong><br />
 The day of the bunkering.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartTime</code>
-= <strong>05:40:00</strong><br />
-The barge made fast.</li>
+= <strong>05:40:00-01:00</strong><br />
+The barge made fast; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndDate</code>
 = <strong>2026-05-13</strong><br />
 The same morning.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndTime</code>
-= <strong>08:15:00</strong><br />
-The barge cast off.</li>
+= <strong>08:15:00-01:00</strong><br />
+The barge cast off; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/Name</code>
 = <strong>Lumeport anchorage</strong><br />
 Where the barge came alongside.</li>
@@ -1731,7 +1733,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RequestedArrivalEvent</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationID</span>&gt;ARR-XLSEL-0517&lt;/<span class="kw">cbc:IdentificationID</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:00:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEventTypeCode&quot;</span>&gt;ARRIVAL&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Pilot on board at the fairway buoy.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
@@ -1981,9 +1983,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AppliedSecurityMeasure</span>&gt;</span>
 <span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartTime</span>&gt;05:40:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartTime</span>&gt;05:40:00-01:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
 <span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndTime</span>&gt;08:15:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndTime</span>&gt;08:15:00-01:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Lumeport anchorage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -2165,6 +2167,6 @@ href="example-sea-17-TransportationStatus.html">Transportation Status
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

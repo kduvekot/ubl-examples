@@ -799,8 +799,9 @@ deprecated.</li>
 = <strong>2026-05-14</strong><br />
 The timetable departure from Lumeport.</li>
 <li><code>Shipment/ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime</code>
-= <strong>18:00:00</strong><br />
-The local time.</li>
+= <strong>18:00:00-01:00</strong><br />
+The local time of Bayvarra, where it happens, with its offset from
+UTC.</li>
 <li><code>Shipment/ShipmentStage/EstimatedDepartureTransportEvent/CompletionIndicator</code>
 = <strong>false</strong><br />
 Whether the event has taken place (true) or is still to come
@@ -1385,7 +1386,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CustomsAgentParty</span>&gt;</span>
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;18:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;18:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XBLMP&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1516,6 +1517,6 @@ flow</a> · <a href="example-sea-10-PackingList.html">Packing List
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

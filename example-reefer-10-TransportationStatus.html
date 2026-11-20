@@ -361,8 +361,9 @@ The sea leg, stage 2 as on the bill of lading.</li>
 = <strong>2026-04-26</strong><br />
 The reefer came off the ship, among the first boxes.</li>
 <li><code>MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime</code>
-= <strong>08:10:00</strong><br />
-The local time.</li>
+= <strong>08:10:00+00:00</strong><br />
+The local time of Lisavu, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator</code>
 = <strong>true</strong><br />
 Whether the event has taken place (true) or is still to come
@@ -383,8 +384,9 @@ Country identification (ISO 3166) list: XL = Lisavu.</li>
 The ship berthed at Selanu at first light: its pilot boarded at dawn; it
 had been off the port since the evening.</li>
 <li><code>MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime</code>
-= <strong>06:40:00</strong><br />
-The local time.</li>
+= <strong>06:40:00+00:00</strong><br />
+The local time of Lisavu, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID</code>
 = <strong>XLSEL</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -413,8 +415,9 @@ In words.</li>
 = <strong>2026-04-26</strong><br />
 Plugged in at the reefer rack, fifteen minutes after discharge.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime</code>
-= <strong>08:25:00</strong><br />
-The local time.</li>
+= <strong>08:25:00+00:00</strong><br />
+The local time of Lisavu, where it happens, with its offset from
+UTC.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/TransportEvent/TransportEventTypeCode</code>
 = <strong>STORAGE</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code>)<br />
@@ -610,7 +613,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-26&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:10:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:10:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;true&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSEL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -624,7 +627,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ActualArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-26&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:40:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSEL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Port of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -646,7 +649,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StorageLocation</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportEvent</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-26&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:25:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:25:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEventTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEventTypeCode&quot;</span>&gt;STORAGE&lt;/<span class="kw">cbc:TransportEventTypeCode</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CurrentStatus</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConditionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:StatusConditionCode&quot;</span>&gt;COMPLETED&lt;/<span class="kw">cbc:ConditionCode</span>&gt;</span>
@@ -705,6 +708,6 @@ documents of the flow</a> · <a
 href="example-reefer-11-ReceiptAdvice.html">Receipt Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

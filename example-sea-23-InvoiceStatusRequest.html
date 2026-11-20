@@ -65,8 +65,8 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>RequestDate</code> = <strong>2026-05-29</strong><br />
 Two weeks after the invoice, without news from the buyer.</li>
-<li><code>RequestTime</code> = <strong>10:00:00</strong><br />
-When asked.</li>
+<li><code>RequestTime</code> = <strong>10:00:00-01:00</strong><br />
+When asked; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Note</code> = <strong>Has the invoice been
 approved?</strong><br />
 The question.</li>
@@ -207,7 +207,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LMW-ISR-26-0048&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;6d87ab88-a921-5dfb-90cb-d87a8fcb59ec&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RequestDate</span>&gt;2026-05-29&lt;/<span class="kw">cbc:RequestDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RequestTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:RequestTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RequestTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:RequestTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Has the invoice been approved?&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-SIG-26-ISR&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -273,6 +273,6 @@ href="example-sea-24-InvoiceStatusResponse.html">Invoice Status Response
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

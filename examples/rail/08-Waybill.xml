@@ -210,7 +210,7 @@
         </cac:TransportMeans>
         <cac:PlannedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>06:45:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -223,7 +223,7 @@
         </cac:PlannedDepartureTransportEvent>
         <cac:PlannedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:30:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
             <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
@@ -231,14 +231,14 @@
         </cac:PlannedArrivalTransportEvent>
         <cac:PlannedWaypointTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
           </cac:Location>
         </cac:PlannedWaypointTransportEvent>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>06:50:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -251,7 +251,7 @@
         </cac:EstimatedDepartureTransportEvent>
         <cac:EstimatedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
             <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
@@ -365,7 +365,7 @@
           </cac:UnloadingLocation>
           <cac:PositioningTransportEvent>
             <cbc:OccurrenceDate>2026-04-10</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>08:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -378,7 +378,7 @@
           </cac:PositioningTransportEvent>
           <cac:DeliveryTransportEvent>
             <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>11:00:00-01:00</cbc:OccurrenceTime>
             <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
             <cac:Location>
               <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
@@ -387,7 +387,7 @@
           </cac:DeliveryTransportEvent>
           <cac:PickupTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -400,7 +400,7 @@
           </cac:PickupTransportEvent>
           <cac:HandlingTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>14:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
@@ -413,7 +413,7 @@
           </cac:HandlingTransportEvent>
           <cac:LoadingTransportEvent>
             <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>05:40:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>05:40:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -449,7 +449,7 @@
           </cac:Delivery>
           <cac:Pickup>
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
-            <cbc:ActualPickupTime>13:00:00</cbc:ActualPickupTime>
+            <cbc:ActualPickupTime>13:00:00-01:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -457,7 +457,7 @@
           </cac:Pickup>
           <cac:Despatch>
             <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
-            <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
+            <cbc:EstimatedDespatchTime>06:50:00-01:00</cbc:EstimatedDespatchTime>
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
@@ -552,7 +552,7 @@
           </cac:UnloadingLocation>
           <cac:PositioningTransportEvent>
             <cbc:OccurrenceDate>2026-04-10</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>10:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -565,7 +565,7 @@
           </cac:PositioningTransportEvent>
           <cac:DeliveryTransportEvent>
             <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>11:00:00-01:00</cbc:OccurrenceTime>
             <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
             <cac:Location>
               <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
@@ -574,7 +574,7 @@
           </cac:DeliveryTransportEvent>
           <cac:PickupTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>15:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -587,7 +587,7 @@
           </cac:PickupTransportEvent>
           <cac:HandlingTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>16:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
@@ -600,7 +600,7 @@
           </cac:HandlingTransportEvent>
           <cac:LoadingTransportEvent>
             <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>05:55:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>05:55:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -636,7 +636,7 @@
           </cac:Delivery>
           <cac:Pickup>
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
-            <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
+            <cbc:ActualPickupTime>15:00:00-01:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -644,7 +644,7 @@
           </cac:Pickup>
           <cac:Despatch>
             <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
-            <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
+            <cbc:EstimatedDespatchTime>06:50:00-01:00</cbc:EstimatedDespatchTime>
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>

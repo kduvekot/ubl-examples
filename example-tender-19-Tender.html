@@ -576,7 +576,39 @@ customers for its park furniture of 2025, a document outside the
 examples, in words: no list has an exact code for it (cited).</li>
 <li><code>TaxTotal/TaxAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
-No tax for a public body.</li>
+No tax: the department, a public body, buys exempt from the state sales
+tax.</li>
+<li><code>TaxTotal/TaxSubtotal/TaxableAmount</code> =
+<strong>119040.00</strong> (currencyID <code>XBL</code>)<br />
+Both lots, the whole tendered amount.</li>
+<li><code>TaxTotal/TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
+(currencyID <code>XBL</code>)<br />
+Nothing at a rate of 0 %.</li>
+<li><code>TaxTotal/TaxSubtotal/TaxCategory/ID</code> =
+<strong>E</strong> (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
+A sale to a public body is exempt from the state sales tax (category E).
+The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee
+category: E = Exempt from tax. An identifier that holds a code names the
+code's list in its schemeID.</li>
+<li><code>TaxTotal/TaxSubtotal/TaxCategory/Percent</code> =
+<strong>0</strong><br />
+No tax is charged in this category.</li>
+<li><code>TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReasonCode</code>
+= <strong>PUBLIC</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code>)<br />
+The exemption reason as a code of Bayvarra's national list, the list of
+the seller's country. The code is from Bayvarra's national sales tax
+exemption reason list: PUBLIC = Public body.</li>
+<li><code>TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReason</code> =
+<strong>Public body</strong><br />
+The name of code PUBLIC in Bayvarra's national sales tax exemption
+reason list.</li>
+<li><code>TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID</code> =
+<strong>STT</strong> (schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
+from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
+STT = State/provincial sales tax. An identifier that holds a code names
+the code's list in its schemeID.</li>
 <li><code>LegalMonetaryTotal/LineExtensionAmount</code> =
 <strong>119040.00</strong> (currencyID <code>XBL</code>)<br />
 Both lots.</li>
@@ -937,103 +969,116 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EvidenceDocumentReference</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderLine</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;A bench of its own make: steel frame, hardwood slats; spare slat sets available.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;115200.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;115200.00&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TotalTaxAmount</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OrderableUnit</span>&gt;Pallet of 2&lt;/<span class="kw">cbc:OrderableUnit</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContentUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ContentUnitQuantity</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OrderQuantityIncrementNumeric</span>&gt;2&lt;/<span class="kw">cbc:OrderQuantityIncrementNumeric</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumOrderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;10&lt;/<span class="kw">cbc:MinimumOrderQuantity</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumOrderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;60&lt;/<span class="kw">cbc:MaximumOrderQuantity</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WarrantyInformation</span>&gt;Six years on the frame and the slats.&lt;/<span class="kw">cbc:WarrantyInformation</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PackLevelCode&quot;</span>&gt;PALLET&lt;/<span class="kw">cbc:PackLevelCode</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BKM-DS-PARK&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DocumentType</span>&gt;Product data sheet&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Park bench Brackenmere PB-2&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LeadTimeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;14&lt;/<span class="kw">cbc:LeadTimeMeasure</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;480&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:WarrantyParty</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412466&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Brackenmere Furniture&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:WarrantyParty</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:WarrantyValidityPeriod</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;6&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:WarrantyValidityPeriod</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubTenderLine</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ground anchor set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubTenderLine</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CallForTendersLineReference</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CallForTendersLineReference</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CallForTendersDocumentReference</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/0182&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CallForTendersDocumentReference</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderLine</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderLine</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;3840.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Installation of a park bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;16&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderLine</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ACR-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-1&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionDescription</span>&gt;The lowest total of unit prices.&lt;/<span class="kw">cbc:AwardingCriterionDescription</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;480.00 lume a bench and 16.00 lume an installation.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ACR-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionDescription</span>&gt;Durability and warranty of the coating.&lt;/<span class="kw">cbc:AwardingCriterionDescription</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ACR-2.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2.1&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Oiled hardwood, painted steel.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ACR-2.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2.2&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Six years on the frame and the slats.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderedProject</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Tender</span>&gt;</span></code></pre></div>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;PUBLIC&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Public body&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderLine</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;A bench of its own make: steel frame, hardwood slats; spare slat sets available.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;115200.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;115200.00&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TotalTaxAmount</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OrderableUnit</span>&gt;Pallet of 2&lt;/<span class="kw">cbc:OrderableUnit</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContentUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ContentUnitQuantity</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OrderQuantityIncrementNumeric</span>&gt;2&lt;/<span class="kw">cbc:OrderQuantityIncrementNumeric</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumOrderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;10&lt;/<span class="kw">cbc:MinimumOrderQuantity</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumOrderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;60&lt;/<span class="kw">cbc:MaximumOrderQuantity</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:WarrantyInformation</span>&gt;Six years on the frame and the slats.&lt;/<span class="kw">cbc:WarrantyInformation</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PackLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PackLevelCode&quot;</span>&gt;PALLET&lt;/<span class="kw">cbc:PackLevelCode</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;BKM-DS-PARK&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DocumentType</span>&gt;Product data sheet&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Park bench Brackenmere PB-2&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LeadTimeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;14&lt;/<span class="kw">cbc:LeadTimeMeasure</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;480&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:WarrantyParty</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412466&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Brackenmere Furniture&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:WarrantyParty</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:WarrantyValidityPeriod</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;6&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:WarrantyValidityPeriod</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubTenderLine</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ground anchor set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubTenderLine</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CallForTendersLineReference</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CallForTendersLineReference</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CallForTendersDocumentReference</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/0182&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CallForTendersDocumentReference</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderLine</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderLine</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;240&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;3840.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Installation of a park bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;16&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Price</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OfferedItemLocationQuantity</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderLine</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ACR-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-1&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionDescription</span>&gt;The lowest total of unit prices.&lt;/<span class="kw">cbc:AwardingCriterionDescription</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;480.00 lume a bench and 16.00 lume an installation.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;119040.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ACR-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionDescription</span>&gt;Durability and warranty of the coating.&lt;/<span class="kw">cbc:AwardingCriterionDescription</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ACR-2.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2.1&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Oiled hardwood, painted steel.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ACR-2.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2.2&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Six years on the frame and the slats.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderedProject</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Tender</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-tender-18-TenderWithdrawal.html">← Tender
 Withdrawal</a> · <a href="examples.html#flow-tender">all documents of
@@ -1042,6 +1087,6 @@ href="example-tender-11-UnsubscribeFromProcedureResponse.html">Unsubscribe
 From Procedure Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

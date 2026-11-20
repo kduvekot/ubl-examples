@@ -74,8 +74,9 @@ The time the sender's system issued the document, in the sender's local
 time, with its offset from UTC.</li>
 <li><code>EffectiveDate</code> = <strong>2026-06-20</strong><br />
 From Saturday 20 June, the first day of winter in the south.</li>
-<li><code>EffectiveTime</code> = <strong>00:00:00</strong><br />
-From midnight: the one statement of when the deletion takes effect.</li>
+<li><code>EffectiveTime</code> = <strong>00:00:00-01:00</strong><br />
+From midnight: the one statement of when the deletion takes effect; in
+the issuer's local time, with its offset from UTC.</li>
 <li><code>Note</code> = <strong>Lumeway's winter catalogue 2026 takes
 over on 20 June.</strong><br />
 Why.</li>
@@ -95,12 +96,13 @@ The catalogue withdrawn.</li>
 The catalogue's UUID, as stated in the catalogue.</li>
 <li><code>IssueDate</code> = <strong>2026-04-20</strong><br />
 Its issue date.</li>
-<li><code>IssueTime</code> = <strong>09:00:00</strong><br />
-And time, as the catalogue states it.</li>
+<li><code>IssueTime</code> = <strong>09:00:00-01:00</strong><br />
+And time, as the catalogue states it; in the issuer's local time, with
+its offset from UTC.</li>
 <li><code>RevisionDate</code> = <strong>2026-05-21</strong><br />
 Revised by the specification update of the bench.</li>
-<li><code>RevisionTime</code> = <strong>08:30:00</strong><br />
-At that time.</li>
+<li><code>RevisionTime</code> = <strong>08:30:00-01:00</strong><br />
+At that time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Note</code> = <strong>Lumeway's catalogue for the Lumeport
 store, 2026.</strong><br />
 Which catalogue: one Lumeway issued for the store's reopened home and
@@ -503,7 +505,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-19&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:05:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:EffectiveDate</span>&gt;2026-06-20&lt;/<span class="kw">cbc:EffectiveDate</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:EffectiveTime</span>&gt;00:00:00&lt;/<span class="kw">cbc:EffectiveTime</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:EffectiveTime</span>&gt;00:00:00-01:00&lt;/<span class="kw">cbc:EffectiveTime</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Lumeway&#39;s winter catalogue 2026 takes over on 20 June.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1.2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;The catalogue for the Lumeport store is no longer valid from 20 June.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -511,9 +513,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-CAT-26-0005&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;f5163e36-0159-5b9f-b172-a86137e369e6&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;09:00:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisionDate</span>&gt;2026-05-21&lt;/<span class="kw">cbc:RevisionDate</span>&gt;</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisionTime</span>&gt;08:30:00&lt;/<span class="kw">cbc:RevisionTime</span>&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisionTime</span>&gt;08:30:00-01:00&lt;/<span class="kw">cbc:RevisionTime</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Lumeway&#39;s catalogue for the Lumeport store, 2026.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Benches and spare parts for resale.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:VersionID</span>&gt;1.2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
@@ -673,6 +675,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="examples.html#flow-retail">all documents of the flow</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

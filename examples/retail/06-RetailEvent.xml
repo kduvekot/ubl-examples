@@ -142,7 +142,7 @@
   <cac:EventComment>
     <cbc:Comment>Floor space for 12 benches at the entrance of the renovated department.</cbc:Comment>
     <cbc:IssueDate>2026-04-22</cbc:IssueDate>
-    <cbc:IssueTime>11:00:00</cbc:IssueTime>
+    <cbc:IssueTime>11:00:00-01:00</cbc:IssueTime>
   </cac:EventComment>
   <cac:PromotionalEvent>
     <cbc:PromotionalEventTypeCode listID="urn:ubl-examples:world:codelist:PromotionalEventTypeCode">OPENING</cbc:PromotionalEventTypeCode>

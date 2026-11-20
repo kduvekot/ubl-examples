@@ -203,7 +203,7 @@
       </cac:CustomsDeclaration>
       <cac:ActualPickupTransportEvent>
         <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>15:05:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Ferrano</cbc:Name>
@@ -244,9 +244,9 @@
         <cbc:TransitDirectionCode listID="urn:ubl-examples:world:codelist:TransitDirectionCode">EXPORT</cbc:TransitDirectionCode>
         <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
         <cbc:EstimatedDeliveryDate>2026-03-25</cbc:EstimatedDeliveryDate>
-        <cbc:EstimatedDeliveryTime>09:00:00</cbc:EstimatedDeliveryTime>
+        <cbc:EstimatedDeliveryTime>09:00:00-01:00</cbc:EstimatedDeliveryTime>
         <cbc:RequiredDeliveryDate>2026-03-25</cbc:RequiredDeliveryDate>
-        <cbc:RequiredDeliveryTime>10:00:00</cbc:RequiredDeliveryTime>
+        <cbc:RequiredDeliveryTime>10:00:00-01:00</cbc:RequiredDeliveryTime>
         <cac:TransitPeriod>
           <cbc:StartDate>2026-03-23</cbc:StartDate>
         </cac:TransitPeriod>
@@ -292,7 +292,7 @@
         </cac:UnloadingPortLocation>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>16:20:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano</cbc:Name>
@@ -2852,12 +2852,12 @@
     </cac:GoodsItem>
     <cac:Delivery>
       <cbc:LatestDeliveryDate>2026-03-25</cbc:LatestDeliveryDate>
-      <cbc:LatestDeliveryTime>10:00:00</cbc:LatestDeliveryTime>
+      <cbc:LatestDeliveryTime>10:00:00-01:00</cbc:LatestDeliveryTime>
       <cbc:TrackingID>TH-26-04471</cbc:TrackingID>
       <cac:EstimatedDeliveryPeriod>
         <cbc:StartDate>2026-03-25</cbc:StartDate>
-        <cbc:StartTime>09:00:00</cbc:StartTime>
-        <cbc:EndTime>10:00:00</cbc:EndTime>
+        <cbc:StartTime>09:00:00-01:00</cbc:StartTime>
+        <cbc:EndTime>10:00:00-01:00</cbc:EndTime>
       </cac:EstimatedDeliveryPeriod>
     </cac:Delivery>
     <cac:ReturnAddress>

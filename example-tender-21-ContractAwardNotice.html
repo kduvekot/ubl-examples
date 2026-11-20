@@ -562,8 +562,9 @@ The opening of the tenders.</li>
 <strong>2026-02-26</strong><br />
 Thursday 26 February, the day after the deadline.</li>
 <li><code>OpenTenderEvent/OccurrenceTime</code> =
-<strong>10:00:00</strong><br />
-In the morning.</li>
+<strong>10:00:00-01:00</strong><br />
+In the morning; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>OpenTenderEvent/TypeCode</code> = <strong>OPENING</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:TenderEventTypeCode</code>)<br />
@@ -871,8 +872,9 @@ What the winner pays for publishing the notice, below the maximum of 500
 lume.</li>
 <li><code>AwardDate</code> = <strong>2026-03-09</strong><br />
 The day the authority decided the award.</li>
-<li><code>AwardTime</code> = <strong>09:30:00</strong><br />
-The time of the decision, before the tenderers are told.</li>
+<li><code>AwardTime</code> = <strong>09:30:00-01:00</strong><br />
+The time of the decision, before the tenderers are told; in the issuer's
+local time, with its offset from UTC.</li>
 <li><code>ReceivedTenderQuantity</code> = <strong>2</strong> (unitCode
 <code>EA</code>)<br />
 Two tenders: the furniture maker's first tender was withdrawn and
@@ -1136,7 +1138,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OpenTenderEvent</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IdentificationID</span>&gt;OPEN-1&lt;/<span class="kw">cbc:IdentificationID</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-02-26&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TenderEventTypeCode&quot;</span>&gt;OPENING&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Electronic opening; tenderers may follow it online.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;true&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
@@ -1285,7 +1287,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdvertisementAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;320.00&lt;/<span class="kw">cbc:AdvertisementAmount</span>&gt;</span>
 <span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardDate</span>&gt;2026-03-09&lt;/<span class="kw">cbc:AwardDate</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardTime</span>&gt;09:30:00&lt;/<span class="kw">cbc:AwardTime</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardTime</span>&gt;09:30:00-01:00&lt;/<span class="kw">cbc:AwardTime</span>&gt;</span>
 <span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedTenderQuantity</span>&gt;</span>
 <span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LowerTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;117360.00&lt;/<span class="kw">cbc:LowerTenderAmount</span>&gt;</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:HigherTenderAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124080.00&lt;/<span class="kw">cbc:HigherTenderAmount</span>&gt;</span>
@@ -1343,6 +1345,6 @@ href="examples.html#flow-tender">all documents of the flow</a> · <a
 href="example-tender-26-Order.html">Order →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

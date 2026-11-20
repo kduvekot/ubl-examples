@@ -404,8 +404,9 @@ ADMITTED = Admitted.</li>
 The decision.</li>
 <li><code>ResolutionDate</code> = <strong>2026-03-02</strong><br />
 The day of the decision.</li>
-<li><code>ResolutionTime</code> = <strong>10:00:00</strong><br />
-The time of the decision.</li>
+<li><code>ResolutionTime</code> = <strong>10:00:00-01:00</strong><br />
+The time of the decision; in the issuer's local time, with its offset
+from UTC.</li>
 <li><code>ProcurementProjectLot/ID</code> = <strong>LOT-1</strong><br />
 Lot 1.</li>
 <li><code>AdmissionCode</code> = <strong>ADMITTED</strong> (listID
@@ -418,8 +419,8 @@ ADMITTED = Admitted.</li>
 The decision.</li>
 <li><code>ResolutionDate</code> = <strong>2026-03-02</strong><br />
 The day of the decision.</li>
-<li><code>ResolutionTime</code> = <strong>10:00:00</strong><br />
-The time.</li>
+<li><code>ResolutionTime</code> = <strong>10:00:00-01:00</strong><br />
+The time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>ProcurementProjectLot/ID</code> = <strong>LOT-2</strong><br />
 Lot 2.</li>
 </ul>
@@ -558,7 +559,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdmissionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:QualificationAdmissionCode&quot;</span>&gt;ADMITTED&lt;/<span class="kw">cbc:AdmissionCode</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Resolution</span>&gt;Admitted to the evaluation of lot 1.&lt;/<span class="kw">cbc:Resolution</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ResolutionDate</span>&gt;2026-03-02&lt;/<span class="kw">cbc:ResolutionDate</span>&gt;</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ResolutionTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:ResolutionTime</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ResolutionTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:ResolutionTime</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LOT-1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
@@ -567,7 +568,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdmissionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:QualificationAdmissionCode&quot;</span>&gt;ADMITTED&lt;/<span class="kw">cbc:AdmissionCode</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Resolution</span>&gt;Admitted to the evaluation of lot 2; the installers&#39; qualifications are sufficient.&lt;/<span class="kw">cbc:Resolution</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ResolutionDate</span>&gt;2026-03-02&lt;/<span class="kw">cbc:ResolutionDate</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ResolutionTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:ResolutionTime</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ResolutionTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:ResolutionTime</span>&gt;</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
@@ -592,6 +593,6 @@ href="example-tender-23-UnawardedNotification.html">Unawarded
 Notification →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

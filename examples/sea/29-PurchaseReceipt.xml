@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>10:25:00+00:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-06-13</cbc:TransactionDate>
-  <cbc:TransactionTime>10:25:00</cbc:TransactionTime>
+  <cbc:TransactionTime>10:25:00+00:00</cbc:TransactionTime>
   <cbc:Note languageID="qal">Loletali ninote nipive tofuta pehaka tavase vaputa.</cbc:Note>
   <cbc:Note languageID="en-XL">Collected by the farm with its own trailer.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -139,7 +139,7 @@
     <cbc:ID>VT-T1-26-0613-0012</cbc:ID>
     <cbc:PaidAmount currencyID="XLC">750.000</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-13</cbc:PaidDate>
-    <cbc:PaidTime>10:25:00</cbc:PaidTime>
+    <cbc:PaidTime>10:25:00+00:00</cbc:PaidTime>
     <cbc:MerchantID>CORALCARD-M-0001859</cbc:MerchantID>
     <cbc:AuthorizationID>C30417</cbc:AuthorizationID>
     <cbc:PaymentTerminalID>PT-T1</cbc:PaymentTerminalID>

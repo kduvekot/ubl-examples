@@ -9,9 +9,9 @@
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>16:05:00-01:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-05-22</cbc:TransactionDate>
-  <cbc:TransactionTime>16:05:00</cbc:TransactionTime>
+  <cbc:TransactionTime>16:05:00-01:00</cbc:TransactionTime>
   <cbc:PurchaseDate>2026-05-22</cbc:PurchaseDate>
-  <cbc:PurchaseTime>16:05:00</cbc:PurchaseTime>
+  <cbc:PurchaseTime>16:05:00-01:00</cbc:PurchaseTime>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -184,7 +184,7 @@
     <cbc:PaidCashAmount currencyID="XBL">70.00</cbc:PaidCashAmount>
     <cbc:CashChangeAmount currencyID="XBL">11.55</cbc:CashChangeAmount>
     <cbc:PaidDate>2026-05-22</cbc:PaidDate>
-    <cbc:PaidTime>16:05:00</cbc:PaidTime>
+    <cbc:PaidTime>16:05:00-01:00</cbc:PaidTime>
   </cac:Payment>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>

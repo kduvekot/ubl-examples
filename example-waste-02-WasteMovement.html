@@ -786,8 +786,9 @@ The family name.</li>
 <strong>2026-04-02</strong><br />
 The load arrived at the recovery plant.</li>
 <li><code>Delivery/ActualDeliveryTime</code> =
-<strong>10:05:00</strong><br />
-Trasvia's truck at the weighbridge.</li>
+<strong>10:05:00-01:00</strong><br />
+Trasvia's truck at the weighbridge; in the local time of Urvania, where
+it happens, with its offset from UTC.</li>
 <li><code>Delivery/DeliveryLocation/ID</code> = <strong>XUFER</strong>
 (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -803,9 +804,10 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <strong>2026-04-02</strong><br />
 Loaded at the factory the same morning.</li>
 <li><code>Delivery/Despatch/ActualDespatchTime</code> =
-<strong>09:35:00</strong><br />
+<strong>09:35:00-01:00</strong><br />
 The truck left the factory; the two sites are a few kilometres apart in
-Ferrano.</li>
+Ferrano; in the local time of Urvania, where it happens, with its offset
+from UTC.</li>
 <li><code>Delivery/Despatch/DespatchLocation/ID</code> =
 <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -1178,7 +1180,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
 <span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:ActualDeliveryDate</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryTime</span>&gt;10:05:00&lt;/<span class="kw">cbc:ActualDeliveryTime</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryTime</span>&gt;10:05:00-01:00&lt;/<span class="kw">cbc:ActualDeliveryTime</span>&gt;</span>
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Rinova Recovery plant, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1190,7 +1192,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DeliveryLocation</span>&gt;</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchTime</span>&gt;09:35:00&lt;/<span class="kw">cbc:ActualDespatchTime</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchTime</span>&gt;09:35:00-01:00&lt;/<span class="kw">cbc:ActualDespatchTime</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DespatchLocation</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries works, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1249,6 +1251,6 @@ Statement</a> · <a href="examples.html#flow-waste">all documents of the
 flow</a> · <a href="example-waste-03-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

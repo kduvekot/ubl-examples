@@ -407,8 +407,9 @@ coating.</strong><br />
 Why it won.</li>
 <li><code>AwardDate</code> = <strong>2026-03-09</strong><br />
 The day the contract was awarded to another tenderer.</li>
-<li><code>AwardTime</code> = <strong>09:30:00</strong><br />
-The time of the decision, before the tenderers are told.</li>
+<li><code>AwardTime</code> = <strong>09:30:00-01:00</strong><br />
+The time of the decision, before the tenderers are told; in the issuer's
+local time, with its offset from UTC.</li>
 <li><code>Contract/ID</code> = <strong>PWD/2026/PARKS</strong><br />
 The framework contract.</li>
 <li><code>Contract/ContractTypeCode</code> = <strong>FRAMEWORK</strong>
@@ -714,7 +715,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TenderResultCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TenderResultCode&quot;</span>&gt;AWARDED&lt;/<span class="kw">cbc:TenderResultCode</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardDate</span>&gt;2026-03-09&lt;/<span class="kw">cbc:AwardDate</span>&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardTime</span>&gt;09:30:00&lt;/<span class="kw">cbc:AwardTime</span>&gt;</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardTime</span>&gt;09:30:00-01:00&lt;/<span class="kw">cbc:AwardTime</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contract</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractTypeCode&quot;</span>&gt;FRAMEWORK&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
@@ -804,6 +805,6 @@ href="example-tender-22-AwardedNotification.html">Awarded Notification
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

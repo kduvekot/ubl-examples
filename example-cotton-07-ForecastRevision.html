@@ -406,8 +406,9 @@ The forecast line revised.</li>
 <strong>2026-02-02</strong><br />
 The issue date of the forecast revised.</li>
 <li><code>SourceForecastIssueTime</code> =
-<strong>09:00:00</strong><br />
-Its issue time.</li>
+<strong>09:00:00-01:00</strong><br />
+Its issue time; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>AdjustmentReasonCode</code> = <strong>DEMAND</strong> (listID
 <code>urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode</code>)<br />
 Higher demand. The code is from the Trade Accord's forecast adjustment
@@ -583,7 +584,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;More bales over the season.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RevisedForecastLineID</span>&gt;1&lt;/<span class="kw">cbc:RevisedForecastLineID</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceForecastIssueDate</span>&gt;2026-02-02&lt;/<span class="kw">cbc:SourceForecastIssueDate</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceForecastIssueTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:SourceForecastIssueTime</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceForecastIssueTime</span>&gt;09:00:00-01:00&lt;/<span class="kw">cbc:SourceForecastIssueTime</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdjustmentReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode&quot;</span>&gt;DEMAND&lt;/<span class="kw">cbc:AdjustmentReasonCode</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ForecastPeriod</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -609,6 +610,6 @@ Advice</a> · <a href="examples.html#flow-cotton">all documents of the
 flow</a> · <a href="example-cotton-08-Order.html">Order →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

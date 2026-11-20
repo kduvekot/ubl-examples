@@ -326,8 +326,9 @@ The sea leg, stage 2 as on the bill of lading.</li>
 = <strong>2026-05-17</strong><br />
 The container came off the ship.</li>
 <li><code>MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime</code>
-= <strong>11:20:00</strong><br />
-The local time.</li>
+= <strong>11:20:00+00:00</strong><br />
+The local time of Lisavu, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator</code>
 = <strong>true</strong><br />
 Whether the event has taken place (true) or is still to come
@@ -515,8 +516,9 @@ number in the Island companies register; as Port of Selanu gives it. UBL
 The ship berthed at Selanu: its pilot boarded at first light; it had
 been off the port, under way, since the evening.</li>
 <li><code>MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime</code>
-= <strong>06:30:00</strong><br />
-The local time.</li>
+= <strong>06:30:00+00:00</strong><br />
+The local time of Lisavu, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID</code>
 = <strong>XLSEL</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -545,8 +547,9 @@ The container.</li>
 The container held from 12:00 at the plant health check of its pallets:
 the hold is the container's, not the ship's.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime</code>
-= <strong>12:00:00</strong><br />
-The local time.</li>
+= <strong>12:00:00+00:00</strong><br />
+The local time of Lisavu, where it happens, with its offset from
+UTC.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Description</code>
 = <strong>Held for a check of the pallets: wooden pallets must carry the
 heat-treatment mark, and one mark is illegible, so customs inspects the
@@ -571,8 +574,9 @@ Country identification (ISO 3166) list: XL = Lisavu.</li>
 = <strong>2026-05-17</strong><br />
 Stacked in the import yard.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime</code>
-= <strong>11:40:00</strong><br />
-The local time.</li>
+= <strong>11:40:00+00:00</strong><br />
+The local time of Lisavu, where it happens, with its offset from
+UTC.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/TransportEvent/TransportEventTypeCode</code>
 = <strong>STORAGE</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code>)<br />
@@ -897,7 +901,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:20:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:20:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;true&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSEL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -965,7 +969,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TerminalOperatorParty</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ActualArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:30:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSEL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Port of Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -987,7 +991,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO6346&quot;</span>&gt;TWLU4120872&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:QuarantineTransportEvent</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;12:00:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Held for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark is illegible, so customs inspects the container tomorrow, 18 May.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
@@ -1002,7 +1006,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:QuarantineTransportEvent</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportEvent</span>&gt;</span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-05-17&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:40:00+00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEventTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEventTypeCode&quot;</span>&gt;STORAGE&lt;/<span class="kw">cbc:TransportEventTypeCode</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSEL&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1108,6 +1112,6 @@ href="example-sea-19-ImportCustomsDeclaration.html">Import Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

@@ -439,13 +439,15 @@ The framework contract for container slots, in the carrier's numbering,
 the same in every document (03#F14).</li>
 <li><code>IssueDate</code> = <strong>2026-01-05</strong><br />
 Signed at the start of the year: the time below has its date.</li>
-<li><code>IssueTime</code> = <strong>10:00:00</strong><br />
-Signed in the morning.</li>
+<li><code>IssueTime</code> = <strong>10:00:00-01:00</strong><br />
+Signed in the morning; in the local time of Urvania, where it happens,
+with its offset from UTC.</li>
 <li><code>NominationDate</code> = <strong>2026-04-08</strong><br />
 The deadline for booking this train's slots: the request of the day
 before met it.</li>
-<li><code>NominationTime</code> = <strong>09:00:00</strong><br />
-At that time.</li>
+<li><code>NominationTime</code> = <strong>09:00:00-01:00</strong><br />
+At that time; in the local time of Urvania, where it happens, with its
+offset from UTC.</li>
 <li><code>ContractTypeCode</code> = <strong>FRAMEWORK</strong> (listID
 <code>urn:ubl-examples:world:codelist:ContractTypeCode</code>)<br />
 A framework contract. The code is from the Trade Accord's contract type
@@ -479,8 +481,9 @@ Slots are booked from a week before the train</li>
 <strong>2026-04-08</strong><br />
 until the deadline above, so period and deadline agree.</li>
 <li><code>NominationPeriod/EndTime</code> =
-<strong>09:00:00</strong><br />
-The deadline's time.</li>
+<strong>09:00:00-01:00</strong><br />
+The deadline's time; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>ContractualDelivery/LatestDeliveryDate</code> =
 <strong>2026-04-16</strong><br />
 The contract's latest delivery for this call-off.</li>
@@ -625,8 +628,9 @@ Two full containers.</li>
 <strong>2026-04-13</strong><br />
 The carrier collects the packed boxes, in two runs.</li>
 <li><code>PlannedPickupTransportEvent/OccurrenceTime</code> =
-<strong>13:00:00</strong><br />
-The local time.</li>
+<strong>13:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>PlannedPickupTransportEvent/Location/ID</code> =
 <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -642,8 +646,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <strong>2026-04-15</strong><br />
 And places them at the siding.</li>
 <li><code>PlannedDeliveryTransportEvent/OccurrenceTime</code> =
-<strong>11:00:00</strong><br />
-The local time.</li>
+<strong>11:00:00-01:00</strong><br />
+The local time of Bayvarra, where it happens, with its offset from
+UTC.</li>
 <li><code>PlannedDeliveryTransportEvent/Location/ID</code> =
 <strong>9520610900015</strong> (schemeID <code>GS1 GLN</code>)<br />
 The Global Location Number of the place, rail siding of the distribution
@@ -837,8 +842,9 @@ The train number; the fleet of Ferrano Rail Cargo.</li>
 = <strong>2026-04-14</strong><br />
 The timetable departure from the hub.</li>
 <li><code>MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime</code>
-= <strong>06:45:00</strong><br />
-The local time.</li>
+= <strong>06:45:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -856,8 +862,9 @@ The timetable arrival at the siding in Marrowdale: the train reaches
 Marrowdale yard about 15:10 the day before, 173 km from the hub, and the
 next morning's shunting trip places the boxes on Lumeway's siding.</li>
 <li><code>MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime</code>
-= <strong>10:30:00</strong><br />
-The local time.</li>
+= <strong>10:30:00-01:00</strong><br />
+The local time of Bayvarra, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID</code>
 = <strong>9520610900015</strong> (schemeID <code>GS1 GLN</code>)<br />
 The Global Location Number of the place, rail siding of the distribution
@@ -873,8 +880,8 @@ stops there from about 08:00 for the crew change, the brake test and the
 customs' check of the seals, and leaves on its timetabled path into
 Bayvarra.</li>
 <li><code>MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceTime</code>
-= <strong>13:00:00</strong><br />
-The local time.</li>
+= <strong>13:00:00-01:00</strong><br />
+The issuer's local time, with its offset from UTC.</li>
 <li><code>MainCarriageShipmentStage/PlannedWaypointTransportEvent/Location/Name</code>
 = <strong>Rail border station Urvania–Bayvarra</strong><br />
 Where the train crosses the border.</li>
@@ -882,8 +889,9 @@ Where the train crosses the border.</li>
 = <strong>2026-04-14</strong><br />
 The departure as expected that morning.</li>
 <li><code>MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime</code>
-= <strong>06:50:00</strong><br />
-The local time.</li>
+= <strong>06:50:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -899,8 +907,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 = <strong>2026-04-15</strong><br />
 The arrival as expected.</li>
 <li><code>MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime</code>
-= <strong>10:40:00</strong><br />
-The local time.</li>
+= <strong>10:40:00-01:00</strong><br />
+The local time of Bayvarra, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/EstimatedArrivalTransportEvent/Location/ID</code>
 = <strong>9520610900015</strong> (schemeID <code>GS1 GLN</code>)<br />
 The Global Location Number of the place, rail siding of the distribution
@@ -967,8 +976,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 = <strong>2026-04-13</strong><br />
 The first run leaves the warehouse.</li>
 <li><code>PreCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime</code>
-= <strong>13:00:00</strong><br />
-The local time.</li>
+= <strong>13:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>PreCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -984,8 +994,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 = <strong>2026-04-13</strong><br />
 The second box at the hub: 46 km each way, two runs.</li>
 <li><code>PreCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime</code>
-= <strong>15:50:00</strong><br />
-The local time.</li>
+= <strong>15:50:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>PreCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -1144,9 +1155,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportContract</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-CON-2026-005&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-05&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:IssueTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:NominationDate</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:NominationTime</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:NominationTime</span>&gt;09:00:00-01:00&lt;/<span class="kw">cbc:NominationTime</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractTypeCode&quot;</span>&gt;FRAMEWORK&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractType</span>&gt;Framework contract for container slots&lt;/<span class="kw">cbc:ContractType</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Call-off 88 of the year.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -1160,7 +1171,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NominationPeriod</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-06&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-08&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;09:00:00-01:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NominationPeriod</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractualDelivery</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LatestDeliveryDate</span>&gt;2026-04-16&lt;/<span class="kw">cbc:LatestDeliveryDate</span>&gt;</span>
@@ -1235,7 +1246,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContainerizedIndicator</span>&gt;true&lt;/<span class="kw">cbc:ContainerizedIndicator</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedPickupTransportEvent</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1248,7 +1259,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedPickupTransportEvent</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedDeliveryTransportEvent</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1314,7 +1325,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:45:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:45:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1327,7 +1338,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:30:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1335,14 +1346,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedWaypointTransportEvent</span>&gt;</span>
 <span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Rail border station Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedWaypointTransportEvent</span>&gt;</span>
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;06:50:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1355,7 +1366,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:40:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lumeway rail siding, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1393,7 +1404,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
 <span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1406,7 +1417,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:50:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1428,6 +1439,6 @@ href="example-rail-06-TransitCustomsDeclaration.html">Transit Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

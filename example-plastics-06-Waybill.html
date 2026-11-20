@@ -647,8 +647,9 @@ The place named in the CPT terms.</li>
 = <strong>2026-04-20</strong><br />
 Loading finished: 120 bags in the hold.</li>
 <li><code>Consignment/MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime</code>
-= <strong>13:30:00</strong><br />
-The local time.</li>
+= <strong>13:30:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>Consignment/MainCarriageShipmentStage/LoadingTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -666,8 +667,9 @@ The barge leaves Urvania at the river border, 105 km below the quay:
 sailing from the afternoon of loading and through the next day from
 first light.</li>
 <li><code>Consignment/MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime</code>
-= <strong>13:45:00</strong><br />
-The local time.</li>
+= <strong>13:45:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>Consignment/MainCarriageShipmentStage/ExportationTransportEvent/Location/Name</code>
 = <strong>River border Urvania–Bayvarra</strong><br />
 Where the barge leaves Urvania.</li>
@@ -677,8 +679,9 @@ Planned unloading at the Lumeport quay, with the consignee's morning
 shift: the barge arrives about 16:15 the day before and moors at the
 quay overnight.</li>
 <li><code>Consignment/MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime</code>
-= <strong>08:00:00</strong><br />
-The local time.</li>
+= <strong>08:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>Consignment/MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator</code>
 = <strong>false</strong><br />
 Whether the event has taken place (true) or is still to come
@@ -690,8 +693,9 @@ The quay named in the CPT terms, where the bags are unloaded.</li>
 = <strong>2026-04-20</strong><br />
 The barge operator takes over the bags at the quay.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime</code>
-= <strong>09:00:00</strong><br />
-The local time.</li>
+= <strong>09:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -835,20 +839,23 @@ The last day of the delivery window the buyer's order asks for.</li>
 <strong>2026-04-20</strong><br />
 The bags are ready on the quay.</li>
 <li><code>GoodsItem/Pickup/EarliestPickupTime</code> =
-<strong>08:00:00</strong><br />
-From eight.</li>
+<strong>08:00:00-01:00</strong><br />
+From eight; in the local time of Urvania, where it happens, with its
+offset from UTC.</li>
 <li><code>GoodsItem/Pickup/LatestPickupDate</code> =
 <strong>2026-04-20</strong><br />
 They must go the same day.</li>
 <li><code>GoodsItem/Pickup/LatestPickupTime</code> =
-<strong>16:00:00</strong><br />
-Before the quay closes.</li>
+<strong>16:00:00-01:00</strong><br />
+Before the quay closes; in the local time of Urvania, where it happens,
+with its offset from UTC.</li>
 <li><code>GoodsItem/Despatch/ActualDespatchDate</code> =
 <strong>2026-04-20</strong><br />
 The barge cast off.</li>
 <li><code>GoodsItem/Despatch/ActualDespatchTime</code> =
-<strong>15:10:00</strong><br />
-In the afternoon.</li>
+<strong>15:10:00-01:00</strong><br />
+In the afternoon; in the local time of Urvania, where it happens, with
+its offset from UTC.</li>
 <li><code>GoodsItem/ContainingPackage/Quantity</code> =
 <strong>1</strong> (unitCode <code>TNE</code>)<br />
 What one bag holds: a tonne of granulate; the consignment counts the 120
@@ -1188,7 +1195,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LoadingTransportEvent</span>&gt;</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:30:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Quay of Rinova Recovery, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1201,14 +1208,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LoadingTransportEvent</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ExportationTransportEvent</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-21&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:45:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:45:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;River border Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ExportationTransportEvent</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
 <span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-23&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;River quay, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1216,7 +1223,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TakeoverTransportEvent</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;09:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Quay of Rinova Recovery, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1278,13 +1285,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Pickup</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EarliestPickupDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:EarliestPickupDate</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EarliestPickupTime</span>&gt;08:00:00&lt;/<span class="kw">cbc:EarliestPickupTime</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EarliestPickupTime</span>&gt;08:00:00-01:00&lt;/<span class="kw">cbc:EarliestPickupTime</span>&gt;</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LatestPickupDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:LatestPickupDate</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LatestPickupTime</span>&gt;16:00:00&lt;/<span class="kw">cbc:LatestPickupTime</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LatestPickupTime</span>&gt;16:00:00-01:00&lt;/<span class="kw">cbc:LatestPickupTime</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Pickup</span>&gt;</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchTime</span>&gt;15:10:00&lt;/<span class="kw">cbc:ActualDespatchTime</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchTime</span>&gt;15:10:00-01:00&lt;/<span class="kw">cbc:ActualDespatchTime</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainingPackage</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;1&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
@@ -1349,6 +1356,6 @@ documents of the flow</a> · <a
 href="example-plastics-08-DespatchAdvice.html">Despatch Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

@@ -552,8 +552,9 @@ The shipment received.</li>
 <strong>2026-03-25</strong><br />
 Unloaded at dock 4.</li>
 <li><code>Delivery/ActualDeliveryTime</code> =
-<strong>09:40:00</strong><br />
-Within the slot.</li>
+<strong>09:40:00-01:00</strong><br />
+Within the slot; in the issuer's local time, with its offset from
+UTC.</li>
 </ul>
 <h3 id="receipt-line">Receipt Line</h3>
 <p>Inside <code>ReceiptLine</code>:</p>
@@ -907,7 +908,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CAS-SH-26-1291&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryDate</span>&gt;2026-03-25&lt;/<span class="kw">cbc:ActualDeliveryDate</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryTime</span>&gt;09:40:00&lt;/<span class="kw">cbc:ActualDeliveryTime</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ActualDeliveryTime</span>&gt;09:40:00-01:00&lt;/<span class="kw">cbc:ActualDeliveryTime</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ReceiptLine</span>&gt;</span>
@@ -998,6 +999,6 @@ href="example-road-12-FulfilmentCancellation.html">Fulfilment
 Cancellation →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

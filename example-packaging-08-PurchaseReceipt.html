@@ -69,12 +69,13 @@ Printed at the till; in the issuer's local time, with its offset from
 UTC.</li>
 <li><code>TransactionDate</code> = <strong>2026-05-22</strong><br />
 The day of the sale.</li>
-<li><code>TransactionTime</code> = <strong>16:05:00</strong><br />
-The time of the sale.</li>
+<li><code>TransactionTime</code> = <strong>16:05:00-01:00</strong><br />
+The time of the sale; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>PurchaseDate</code> = <strong>2026-05-22</strong><br />
 The day the customer bought.</li>
-<li><code>PurchaseTime</code> = <strong>16:05:00</strong><br />
-And when.</li>
+<li><code>PurchaseTime</code> = <strong>16:05:00-01:00</strong><br />
+And when; in the issuer's local time, with its offset from UTC.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XBL</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
 The lume, the currency of the shop; it has two decimals. The code is
@@ -554,8 +555,9 @@ The notes the customer handed over.</li>
 The change given.</li>
 <li><code>PaidDate</code> = <strong>2026-05-22</strong><br />
 At the till.</li>
-<li><code>PaidTime</code> = <strong>16:05:00</strong><br />
-At the time of the sale.</li>
+<li><code>PaidTime</code> = <strong>16:05:00-01:00</strong><br />
+At the time of the sale; in the issuer's local time, with its offset
+from UTC.</li>
 </ul>
 <h3 id="payment-means">Payment Means</h3>
 <p>Inside <code>PaymentMeans</code>:</p>
@@ -708,9 +710,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-22&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;16:05:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransactionDate</span>&gt;2026-05-22&lt;/<span class="kw">cbc:TransactionDate</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransactionTime</span>&gt;16:05:00&lt;/<span class="kw">cbc:TransactionTime</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransactionTime</span>&gt;16:05:00-01:00&lt;/<span class="kw">cbc:TransactionTime</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PurchaseDate</span>&gt;2026-05-22&lt;/<span class="kw">cbc:PurchaseDate</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PurchaseTime</span>&gt;16:05:00&lt;/<span class="kw">cbc:PurchaseTime</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PurchaseTime</span>&gt;16:05:00-01:00&lt;/<span class="kw">cbc:PurchaseTime</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
@@ -883,7 +885,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidCashAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;70.00&lt;/<span class="kw">cbc:PaidCashAmount</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CashChangeAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;11.55&lt;/<span class="kw">cbc:CashChangeAmount</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidDate</span>&gt;2026-05-22&lt;/<span class="kw">cbc:PaidDate</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidTime</span>&gt;16:05:00&lt;/<span class="kw">cbc:PaidTime</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidTime</span>&gt;16:05:00-01:00&lt;/<span class="kw">cbc:PaidTime</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Payment</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;10&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
@@ -956,6 +958,6 @@ href="example-packaging-09-PurchaseReceipt.html">Purchase Receipt
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

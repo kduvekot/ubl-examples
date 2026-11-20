@@ -68,12 +68,13 @@ Printed at the till; in the issuer's local time, with its offset from
 UTC.</li>
 <li><code>TransactionDate</code> = <strong>2026-05-15</strong><br />
 The day of the sale.</li>
-<li><code>TransactionTime</code> = <strong>11:42:00</strong><br />
-The time of the sale.</li>
+<li><code>TransactionTime</code> = <strong>11:42:00-01:00</strong><br />
+The time of the sale; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>PurchaseDate</code> = <strong>2026-05-15</strong><br />
 The day the customer bought.</li>
-<li><code>PurchaseTime</code> = <strong>11:42:00</strong><br />
-And when.</li>
+<li><code>PurchaseTime</code> = <strong>11:42:00-01:00</strong><br />
+And when; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Note</code> = <strong>Home delivery booked for
 Saturday.</strong><br />
 Printed on the receipt.</li>
@@ -665,11 +666,13 @@ The country's name, for readers of the address.</li>
 Saturday, the day the note names: the store delivers Monday to
 Saturday.</li>
 <li><code>RequestedDeliveryPeriod/StartTime</code> =
-<strong>09:00:00</strong><br />
-Morning.</li>
+<strong>09:00:00-01:00</strong><br />
+Morning; in the local time of Bayvarra, where it happens, with its
+offset from UTC.</li>
 <li><code>RequestedDeliveryPeriod/EndTime</code> =
-<strong>12:00:00</strong><br />
-Until noon.</li>
+<strong>12:00:00-01:00</strong><br />
+Until noon; in the local time of Bayvarra, where it happens, with its
+offset from UTC.</li>
 <li><code>CarrierParty/PartyIdentification/ID</code> =
 <strong>20410411</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -690,8 +693,9 @@ The till's number for the payment, with the day of the sale.</li>
 Paid by card.</li>
 <li><code>PaidDate</code> = <strong>2026-05-15</strong><br />
 Paid at the till.</li>
-<li><code>PaidTime</code> = <strong>11:42:00</strong><br />
-At the time of the sale.</li>
+<li><code>PaidTime</code> = <strong>11:42:00-01:00</strong><br />
+At the time of the sale; in the issuer's local time, with its offset
+from UTC.</li>
 <li><code>MerchantID</code> = <strong>LUMECARD-M-0026118</strong><br />
 The store's merchant number with the card scheme.</li>
 <li><code>AuthorizationID</code> = <strong>A71520</strong><br />
@@ -991,9 +995,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-15&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:42:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransactionDate</span>&gt;2026-05-15&lt;/<span class="kw">cbc:TransactionDate</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransactionTime</span>&gt;11:42:00&lt;/<span class="kw">cbc:TransactionTime</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransactionTime</span>&gt;11:42:00-01:00&lt;/<span class="kw">cbc:TransactionTime</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PurchaseDate</span>&gt;2026-05-15&lt;/<span class="kw">cbc:PurchaseDate</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PurchaseTime</span>&gt;11:42:00&lt;/<span class="kw">cbc:PurchaseTime</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PurchaseTime</span>&gt;11:42:00-01:00&lt;/<span class="kw">cbc:PurchaseTime</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Home delivery booked for Saturday.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PurchaseReference</span>&gt;</span>
@@ -1205,8 +1209,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryAddress</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-05-16&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartTime</span>&gt;09:00:00-01:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;12:00:00-01:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1221,7 +1225,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BM-G2-26-0515-0047&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;744.54&lt;/<span class="kw">cbc:PaidAmount</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidDate</span>&gt;2026-05-15&lt;/<span class="kw">cbc:PaidDate</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidTime</span>&gt;11:42:00&lt;/<span class="kw">cbc:PaidTime</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidTime</span>&gt;11:42:00-01:00&lt;/<span class="kw">cbc:PaidTime</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:MerchantID</span>&gt;LUMECARD-M-0026118&lt;/<span class="kw">cbc:MerchantID</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AuthorizationID</span>&gt;A71520&lt;/<span class="kw">cbc:AuthorizationID</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransactionID</span>&gt;TX-26-0515-773104&lt;/<span class="kw">cbc:TransactionID</span>&gt;</span>
@@ -1350,6 +1354,6 @@ href="example-retail-03-CataloguePricingUpdate.html">Catalogue Pricing
 Update →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

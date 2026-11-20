@@ -478,8 +478,9 @@ are given; only its identifier and name are repeated.</li>
 <strong>2026-03-23</strong><br />
 The day the buyer's truck will collect.</li>
 <li><code>Despatch/RequestedDespatchTime</code> =
-<strong>14:00:00</strong><br />
-In the afternoon.</li>
+<strong>14:00:00-01:00</strong><br />
+In the afternoon; in the local time of Urvania, where it happens, with
+its offset from UTC.</li>
 <li><code>Despatch/Instructions</code> = <strong>Have the export
 declaration ready when the truck arrives.</strong><br />
 What the seller must do for the collection.</li>
@@ -796,11 +797,13 @@ The office's number.</li>
 <strong>2026-03-23</strong><br />
 The collection day.</li>
 <li><code>Despatch/RequestedDespatchPeriod/StartTime</code> =
-<strong>13:00:00</strong><br />
-From one.</li>
+<strong>13:00:00-01:00</strong><br />
+From one; in the local time of Urvania, where it happens, with its
+offset from UTC.</li>
 <li><code>Despatch/RequestedDespatchPeriod/EndTime</code> =
-<strong>17:00:00</strong><br />
-Until five.</li>
+<strong>17:00:00-01:00</strong><br />
+Until five; in the local time of Urvania, where it happens, with its
+offset from UTC.</li>
 <li><code>MinimumDeliveryUnit/BatchQuantity</code> = <strong>4</strong>
 (unitCode <code>EA</code>)<br />
 Benches come in pallets of four.</li>
@@ -1165,7 +1168,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DeliveryParty</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RequestedDespatchDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:RequestedDespatchDate</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RequestedDespatchTime</span>&gt;14:00:00&lt;/<span class="kw">cbc:RequestedDespatchTime</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RequestedDespatchTime</span>&gt;14:00:00-01:00&lt;/<span class="kw">cbc:RequestedDespatchTime</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Instructions</span>&gt;Have the export declaration ready when the truck arrives.&lt;/<span class="kw">cbc:Instructions</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DespatchAddress</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
@@ -1262,8 +1265,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RequestedDespatchPeriod</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndTime</span>&gt;17:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartTime</span>&gt;13:00:00-01:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndTime</span>&gt;17:00:00-01:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RequestedDespatchPeriod</span>&gt;</span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MinimumDeliveryUnit</span>&gt;</span>
@@ -1366,6 +1369,6 @@ href="example-road-03-TransportExecutionPlanRequest.html">Transport
 Execution Plan Request →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

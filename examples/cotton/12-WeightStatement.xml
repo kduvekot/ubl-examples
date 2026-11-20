@@ -125,7 +125,7 @@
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
         <cac:VerifiedGrossMass>
           <cbc:WeighingDate>2026-05-06</cbc:WeighingDate>
-          <cbc:WeighingTime>14:30:00</cbc:WeighingTime>
+          <cbc:WeighingTime>14:30:00+00:00</cbc:WeighingTime>
           <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
           <cbc:WeighingDeviceType>Bale scale at the press</cbc:WeighingDeviceType>
           <cbc:GrossMassMeasure unitCode="KGM">9940.29</cbc:GrossMassMeasure>

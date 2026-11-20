@@ -160,7 +160,7 @@
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
     <cac:RequestedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>14:00:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano</cbc:Name>
@@ -173,7 +173,7 @@
     </cac:RequestedPickupTransportEvent>
     <cac:RequestedDeliveryTransportEvent>
       <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
         <cbc:Name>Marrowdale</cbc:Name>

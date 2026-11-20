@@ -474,8 +474,9 @@ The pallets to collect: 24 of benches and one of frame cartons.</li>
 <strong>2026-03-23</strong><br />
 The day the goods are ready.</li>
 <li><code>RequestedPickupTransportEvent/OccurrenceTime</code> =
-<strong>14:00:00</strong><br />
-The local time.</li>
+<strong>14:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>RequestedPickupTransportEvent/Location/ID</code> =
 <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -491,8 +492,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <strong>2026-03-25</strong><br />
 By the end of the distributor's goods-in slot, 09:00 to 10:00.</li>
 <li><code>RequestedDeliveryTransportEvent/OccurrenceTime</code> =
-<strong>10:00:00</strong><br />
-The local time.</li>
+<strong>10:00:00-01:00</strong><br />
+The local time of Bayvarra, where it happens, with its offset from
+UTC.</li>
 <li><code>RequestedDeliveryTransportEvent/Location/ID</code> =
 <strong>XBMRW</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -814,7 +816,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;25&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedPickupTransportEvent</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;14:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;14:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -827,7 +829,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedPickupTransportEvent</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedDeliveryTransportEvent</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-03-25&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XBMRW&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -899,6 +901,6 @@ href="examples.html#flow-road">all documents of the flow</a> · <a
 href="example-road-02-OrderResponse.html">Order Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

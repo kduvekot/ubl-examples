@@ -73,9 +73,10 @@ cites or answers, in the sender's local time, with its offset from
 UTC.</li>
 <li><code>ResponseDate</code> = <strong>2026-03-26</strong><br />
 The day the invoice was matched against order and receipt.</li>
-<li><code>ResponseTime</code> = <strong>14:05:00</strong><br />
+<li><code>ResponseTime</code> = <strong>14:05:00-01:00</strong><br />
 In the afternoon run of the invoice matching, after the corrected
-receipt advice of 10:48.</li>
+receipt advice of 10:48; in the issuer's local time, with its offset
+from UTC.</li>
 <li><code>Note</code> = <strong>Accepted for payment; line 2 matched the
 substituted casting.</strong><br />
 The result.</li>
@@ -231,8 +232,8 @@ world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.</li>
 <strong>2026-03-26</strong><br />
 Effective at once.</li>
 <li><code>Response/EffectiveTime</code> =
-<strong>14:05:00</strong><br />
-When matched.</li>
+<strong>14:05:00-01:00</strong><br />
+When matched; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Response/Status/ConditionCode</code> =
 <strong>MATCHED</strong> (listID
 <code>urn:ubl-examples:world:codelist:StatusConditionCode</code>)<br />
@@ -276,7 +277,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-26&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:13:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ResponseDate</span>&gt;2026-03-26&lt;/<span class="kw">cbc:ResponseDate</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ResponseTime</span>&gt;14:05:00&lt;/<span class="kw">cbc:ResponseTime</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ResponseTime</span>&gt;14:05:00-01:00&lt;/<span class="kw">cbc:ResponseTime</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Accepted for payment; line 2 matched the substituted casting.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
@@ -342,7 +343,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Response</span>&gt;</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ResponseCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4343&quot;</span>&gt;AP&lt;/<span class="kw">cbc:ResponseCode</span>&gt;</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EffectiveDate</span>&gt;2026-03-26&lt;/<span class="kw">cbc:EffectiveDate</span>&gt;</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EffectiveTime</span>&gt;14:05:00&lt;/<span class="kw">cbc:EffectiveTime</span>&gt;</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EffectiveTime</span>&gt;14:05:00-01:00&lt;/<span class="kw">cbc:EffectiveTime</span>&gt;</span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Status</span>&gt;</span>
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ConditionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:StatusConditionCode&quot;</span>&gt;MATCHED&lt;/<span class="kw">cbc:ConditionCode</span>&gt;</span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Three-way match passed.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -370,6 +371,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-road-17-RemittanceAdvice.html">Remittance Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

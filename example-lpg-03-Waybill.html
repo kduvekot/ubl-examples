@@ -627,8 +627,8 @@ When it was weighed.</li>
 = <strong>2026-06-10</strong><br />
 The tanker leaves the plant once loaded and weighed.</li>
 <li><code>Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime</code>
-= <strong>07:00:00</strong><br />
-The local time.</li>
+= <strong>07:00:00-01:00</strong><br />
+The issuer's local time, with its offset from UTC.</li>
 <li><code>Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name</code>
 = <strong>Kelpstone Gas plant, Gullhaven, LPG loading bay</strong><br />
 The plant's loading bay.</li>
@@ -637,8 +637,8 @@ The plant's loading bay.</li>
 About 515 km at about 65 km/h, with the driver's break of 45
 minutes.</li>
 <li><code>Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime</code>
-= <strong>15:40:00</strong><br />
-The local time.</li>
+= <strong>15:40:00-01:00</strong><br />
+The issuer's local time, with its offset from UTC.</li>
 <li><code>Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name</code>
 = <strong>Coastal State Water Company, district heating plant, Reservoir
 Road, Lumeport</strong><br />
@@ -1101,14 +1101,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-06-10&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;07:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;07:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Kelpstone Gas plant, Gullhaven, LPG loading bay&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PlannedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PlannedArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-06-10&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:40:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Coastal State Water Company, district heating plant, Reservoir Road, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Location</span>&gt;</span>
@@ -1238,6 +1238,6 @@ href="examples.html#flow-lpg">all documents of the flow</a> · <a
 href="example-lpg-02-DespatchAdvice.html">Despatch Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

@@ -397,14 +397,15 @@ Or the morning after, by the guaranteed despatch.</li>
 <strong>2026-03-23</strong><br />
 The goods will be ready on the requested day.</li>
 <li><code>Despatch/EstimatedDespatchTime</code> =
-<strong>14:00:00</strong><br />
-At the requested time.</li>
+<strong>14:00:00-01:00</strong><br />
+At the requested time; in the issuer's local time, with its offset from
+UTC.</li>
 <li><code>Despatch/GuaranteedDespatchDate</code> =
 <strong>2026-03-24</strong><br />
 At the latest the next day.</li>
 <li><code>Despatch/GuaranteedDespatchTime</code> =
-<strong>12:00:00</strong><br />
-By noon.</li>
+<strong>12:00:00-01:00</strong><br />
+By noon; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Despatch/NotifyParty/PartyIdentification/ID</code> =
 <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -653,9 +654,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PromisedDeliveryPeriod</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedDespatchDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:EstimatedDespatchDate</span>&gt;</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedDespatchTime</span>&gt;14:00:00&lt;/<span class="kw">cbc:EstimatedDespatchTime</span>&gt;</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedDespatchTime</span>&gt;14:00:00-01:00&lt;/<span class="kw">cbc:EstimatedDespatchTime</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GuaranteedDespatchDate</span>&gt;2026-03-24&lt;/<span class="kw">cbc:GuaranteedDespatchDate</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GuaranteedDespatchTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:GuaranteedDespatchTime</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GuaranteedDespatchTime</span>&gt;12:00:00-01:00&lt;/<span class="kw">cbc:GuaranteedDespatchTime</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:NotifyParty</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -747,6 +748,6 @@ href="example-road-06-CertificateOfOrigin.html">Certificate of Origin
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

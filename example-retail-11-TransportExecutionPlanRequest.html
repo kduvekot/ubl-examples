@@ -418,12 +418,14 @@ The day the goods should be collected.</li>
 <ul>
 <li><code>StartDate</code> = <strong>2026-04-30</strong><br />
 The delivery slot at the store, which the store's goods-in gave.</li>
-<li><code>StartTime</code> = <strong>10:00:00</strong><br />
-From ten.</li>
+<li><code>StartTime</code> = <strong>10:00:00-01:00</strong><br />
+From ten; in the local time of Bayvarra, where it happens, with its
+offset from UTC.</li>
 <li><code>EndDate</code> = <strong>2026-04-30</strong><br />
 The same day.</li>
-<li><code>EndTime</code> = <strong>10:30:00</strong><br />
-To half past ten.</li>
+<li><code>EndTime</code> = <strong>10:30:00-01:00</strong><br />
+To half past ten; in the local time of Bayvarra, where it happens, with
+its offset from UTC.</li>
 </ul>
 <h3 id="from-location">From Location</h3>
 <p>Inside <code>FromLocation</code>:</p>
@@ -738,9 +740,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-30&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartTime</span>&gt;10:00:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:StartTime</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-30&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndTime</span>&gt;10:30:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndTime</span>&gt;10:30:00-01:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:FromLocation</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900022&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -811,6 +813,6 @@ href="example-retail-23-TransportExecutionPlan.html">Transport Execution
 Plan →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

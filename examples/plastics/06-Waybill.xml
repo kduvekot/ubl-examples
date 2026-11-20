@@ -214,7 +214,7 @@
         </cac:UnloadingPortLocation>
         <cac:LoadingTransportEvent>
           <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>13:30:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
@@ -227,14 +227,14 @@
         </cac:LoadingTransportEvent>
         <cac:ExportationTransportEvent>
           <cbc:OccurrenceDate>2026-04-21</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>13:45:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
           </cac:Location>
         </cac:ExportationTransportEvent>
         <cac:DischargeTransportEvent>
           <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>08:00:00-01:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:Name>River quay, Lumeport</cbc:Name>
@@ -242,7 +242,7 @@
         </cac:DischargeTransportEvent>
         <cac:TakeoverTransportEvent>
           <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>09:00:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
@@ -304,13 +304,13 @@
       </cac:Delivery>
       <cac:Pickup>
         <cbc:EarliestPickupDate>2026-04-20</cbc:EarliestPickupDate>
-        <cbc:EarliestPickupTime>08:00:00</cbc:EarliestPickupTime>
+        <cbc:EarliestPickupTime>08:00:00-01:00</cbc:EarliestPickupTime>
         <cbc:LatestPickupDate>2026-04-20</cbc:LatestPickupDate>
-        <cbc:LatestPickupTime>16:00:00</cbc:LatestPickupTime>
+        <cbc:LatestPickupTime>16:00:00-01:00</cbc:LatestPickupTime>
       </cac:Pickup>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-04-20</cbc:ActualDespatchDate>
-        <cbc:ActualDespatchTime>15:10:00</cbc:ActualDespatchTime>
+        <cbc:ActualDespatchTime>15:10:00-01:00</cbc:ActualDespatchTime>
       </cac:Despatch>
       <cac:ContainingPackage>
         <cbc:Quantity unitCode="TNE">1</cbc:Quantity>

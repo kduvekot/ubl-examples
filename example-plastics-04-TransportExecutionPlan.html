@@ -752,8 +752,9 @@ The place named in the CPT terms.</li>
 = <strong>2026-04-20</strong><br />
 Loading finished: 120 bags in the hold.</li>
 <li><code>MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime</code>
-= <strong>13:30:00</strong><br />
-The local time.</li>
+= <strong>13:30:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/LoadingTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -771,8 +772,9 @@ The barge leaves Urvania at the river border, 105 km below the quay:
 sailing from the afternoon of loading and through the next day from
 first light.</li>
 <li><code>MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime</code>
-= <strong>13:45:00</strong><br />
-The local time.</li>
+= <strong>13:45:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/ExportationTransportEvent/Location/Name</code>
 = <strong>River border Urvania–Bayvarra</strong><br />
 Where the barge leaves Urvania.</li>
@@ -782,8 +784,9 @@ Planned unloading at the Lumeport quay, with the consignee's morning
 shift: the barge arrives about 16:15 the day before and moors at the
 quay overnight.</li>
 <li><code>MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime</code>
-= <strong>08:00:00</strong><br />
-The local time.</li>
+= <strong>08:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator</code>
 = <strong>false</strong><br />
 Whether the event has taken place (true) or is still to come
@@ -795,8 +798,9 @@ The quay named in the CPT terms, where the bags are unloaded.</li>
 = <strong>2026-04-20</strong><br />
 The barge operator takes over the bags at the quay.</li>
 <li><code>MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime</code>
-= <strong>09:00:00</strong><br />
-The local time.</li>
+= <strong>09:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/TakeoverTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -1099,7 +1103,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
 <span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:LoadingTransportEvent</span>&gt;</span>
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:30:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Quay of Rinova Recovery, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1112,14 +1116,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LoadingTransportEvent</span>&gt;</span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ExportationTransportEvent</span>&gt;</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-21&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:45:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:45:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;River border Urvania–Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ExportationTransportEvent</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-23&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;08:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;River quay, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1127,7 +1131,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DischargeTransportEvent</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TakeoverTransportEvent</span>&gt;</span>
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-20&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;09:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;09:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Quay of Rinova Recovery, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1156,6 +1160,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 Customs Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

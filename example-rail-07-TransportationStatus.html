@@ -237,8 +237,9 @@ The train the boxes were loaded on.</li>
 If the morning train cannot leave, the boxes go on the evening
 train.</li>
 <li><code>MainCarriageShipmentStage/OptionalTakeoverTransportEvent/OccurrenceTime</code>
-= <strong>17:00:00</strong><br />
-The local time.</li>
+= <strong>17:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/OptionalTakeoverTransportEvent/CompletionIndicator</code>
 = <strong>false</strong><br />
 Whether the event has taken place (true) or is still to come
@@ -258,8 +259,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 = <strong>2026-04-15</strong><br />
 Planned placement at the siding.</li>
 <li><code>MainCarriageShipmentStage/DeliveryTransportEvent/OccurrenceTime</code>
-= <strong>11:00:00</strong><br />
-The local time.</li>
+= <strong>11:00:00-01:00</strong><br />
+The local time of Bayvarra, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/DeliveryTransportEvent/CompletionIndicator</code>
 = <strong>false</strong><br />
 Whether the event has taken place (true) or is still to come
@@ -410,8 +412,9 @@ gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 = <strong>2026-04-14</strong><br />
 Both boxes lifted onto the train, the second at 05:55.</li>
 <li><code>MainCarriageShipmentStage/TransportEvent/OccurrenceTime</code>
-= <strong>05:40:00</strong><br />
-The local time.</li>
+= <strong>05:40:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>MainCarriageShipmentStage/TransportEvent/TransportEventTypeCode</code>
 = <strong>LOADING</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code>)<br />
@@ -492,8 +495,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 The carrier's tractor collected the first box at the warehouse; the
 second followed at 15:00.</li>
 <li><code>PreCarriageShipmentStage/ActualPickupTransportEvent/OccurrenceTime</code>
-= <strong>13:00:00</strong><br />
-The local time.</li>
+= <strong>13:00:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>PreCarriageShipmentStage/ActualPickupTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -509,8 +513,9 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 = <strong>2026-04-13</strong><br />
 The second box came in at the hub's gate, the end of the haulage.</li>
 <li><code>PreCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime</code>
-= <strong>15:50:00</strong><br />
-The local time.</li>
+= <strong>15:50:00-01:00</strong><br />
+The local time of Urvania, where it happens, with its offset from
+UTC.</li>
 <li><code>PreCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID</code>
 = <strong>XUFER</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
@@ -687,7 +692,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportMeans</span>&gt;</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OptionalTakeoverTransportEvent</span>&gt;</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;17:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;17:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -701,7 +706,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OptionalTakeoverTransportEvent</span>&gt;</span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DeliveryTransportEvent</span>&gt;</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-15&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;11:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9520610900015&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -751,7 +756,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TerminalOperatorParty</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportEvent</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-14&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;05:40:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;05:40:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TransportEventTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEventTypeCode&quot;</span>&gt;LOADING&lt;/<span class="kw">cbc:TransportEventTypeCode</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;true&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
@@ -796,7 +801,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:UnloadingPortLocation</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ActualPickupTransportEvent</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;13:00:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics warehouse, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -809,7 +814,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ActualPickupTransportEvent</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ActualArrivalTransportEvent</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:50:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;15:50:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Intermodal Hub&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -887,6 +892,6 @@ documents of the flow</a> · <a
 href="example-rail-08-Waybill.html">Waybill →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

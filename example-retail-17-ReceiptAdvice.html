@@ -531,8 +531,9 @@ Why the quantity differs from the despatch. The code is from the Trade
 Accord's quantity discrepancy list: DAMAGED = Damaged.</li>
 <li><code>ReceivedDate</code> = <strong>2026-04-30</strong><br />
 Unloaded.</li>
-<li><code>ReceivedTime</code> = <strong>10:40:00</strong><br />
-Ten minutes after the end of the slot.</li>
+<li><code>ReceivedTime</code> = <strong>10:40:00-01:00</strong><br />
+Ten minutes after the end of the slot; in the issuer's local time, with
+its offset from UTC.</li>
 <li><code>TimingComplaintCode</code> = <strong>LATE</strong> (listID
 <code>urn:ubl-examples:world:codelist:TimingComplaintCode</code>)<br />
 The truck was late for its slot. The code is from the Trade Accord's
@@ -805,7 +806,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RejectActionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RejectActionCode&quot;</span>&gt;CREDIT&lt;/<span class="kw">cbc:RejectActionCode</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:QuantityDiscrepancyCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:QuantityDiscrepancyCode&quot;</span>&gt;DAMAGED&lt;/<span class="kw">cbc:QuantityDiscrepancyCode</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedDate</span>&gt;2026-04-30&lt;/<span class="kw">cbc:ReceivedDate</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedTime</span>&gt;10:40:00&lt;/<span class="kw">cbc:ReceivedTime</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedTime</span>&gt;10:40:00-01:00&lt;/<span class="kw">cbc:ReceivedTime</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TimingComplaintCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TimingComplaintCode&quot;</span>&gt;LATE&lt;/<span class="kw">cbc:TimingComplaintCode</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TimingComplaint</span>&gt;Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 to 10:30; unloading delayed the next truck.&lt;/<span class="kw">cbc:TimingComplaint</span>&gt;</span>
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
@@ -856,6 +857,6 @@ href="examples.html#flow-retail">all documents of the flow</a> · <a
 href="example-retail-18-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

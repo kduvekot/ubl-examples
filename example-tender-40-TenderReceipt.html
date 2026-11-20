@@ -79,9 +79,10 @@ until the opening.</strong><br />
 The receipt.</li>
 <li><code>RegisteredDate</code> = <strong>2026-02-20</strong><br />
 The day the tender was registered, before the deadline.</li>
-<li><code>RegisteredTime</code> = <strong>16:37:00</strong><br />
+<li><code>RegisteredTime</code> = <strong>16:37:00-01:00</strong><br />
 The time the platform registered the tender, the moment it was
-submitted, which proves it was on time.</li>
+submitted, which proves it was on time; in the issuer's local time, with
+its offset from UTC.</li>
 </ul>
 <h3 id="tender-document-reference">Tender Document Reference</h3>
 <p>Inside <code>TenderDocumentReference</code>:</p>
@@ -410,7 +411,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractName</span>&gt;Park benches for the parks renewal programme&lt;/<span class="kw">cbc:ContractName</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Received on time, encrypted, unopened until the opening.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegisteredDate</span>&gt;2026-02-20&lt;/<span class="kw">cbc:RegisteredDate</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegisteredTime</span>&gt;16:37:00&lt;/<span class="kw">cbc:RegisteredTime</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegisteredTime</span>&gt;16:37:00-01:00&lt;/<span class="kw">cbc:RegisteredTime</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderDocumentReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;26-0008&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderDocumentReference</span>&gt;</span>
@@ -526,6 +527,6 @@ href="example-tender-14-GuaranteeCertificate.html">Guarantee Certificate
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

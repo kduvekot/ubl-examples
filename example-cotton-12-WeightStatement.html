@@ -389,8 +389,9 @@ The empty container's own weight, as marked on its door.</li>
 The day the container was packed at the ginnery and its mass
 established.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime</code>
-= <strong>14:30:00</strong><br />
-When the doors were closed on the 27th bale.</li>
+= <strong>14:30:00+00:00</strong><br />
+When the doors were closed on the 27th bale; in the issuer's local time,
+with its offset from UTC.</li>
 <li><code>TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode</code>
 = <strong>SM2</strong> (listID <code>IMO SOLAS</code>)<br />
 SOLAS method 2: every bale weighed, the weights added to the container's
@@ -1218,7 +1219,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TareWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;3750&lt;/<span class="kw">cbc:TareWeightMeasure</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:VerifiedGrossMass</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WeighingDate</span>&gt;2026-05-06&lt;/<span class="kw">cbc:WeighingDate</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WeighingTime</span>&gt;14:30:00&lt;/<span class="kw">cbc:WeighingTime</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WeighingTime</span>&gt;14:30:00+00:00&lt;/<span class="kw">cbc:WeighingTime</span>&gt;</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WeighingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO SOLAS&quot;</span>&gt;SM2&lt;/<span class="kw">cbc:WeighingMethodCode</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WeighingDeviceType</span>&gt;Bale scale at the press&lt;/<span class="kw">cbc:WeighingDeviceType</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:GrossMassMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;9940.29&lt;/<span class="kw">cbc:GrossMassMeasure</span>&gt;</span>
@@ -1481,6 +1482,6 @@ documents of the flow</a> · <a
 href="example-cotton-13-BillOfLading.html">Bill of Lading →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>

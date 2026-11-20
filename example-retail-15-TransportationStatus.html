@@ -90,8 +90,9 @@ The consignment the report is about.</li>
 <ul>
 <li><code>OccurrenceDate</code> = <strong>2026-04-30</strong><br />
 The day the event took place.</li>
-<li><code>OccurrenceTime</code> = <strong>09:30:00</strong><br />
-When the truck's position was taken.</li>
+<li><code>OccurrenceTime</code> = <strong>09:30:00-01:00</strong><br />
+When the truck's position was taken; in the issuer's local time, with
+its offset from UTC.</li>
 <li><code>TransportEventTypeCode</code> = <strong>ENROUTE</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code>)<br />
@@ -395,9 +396,10 @@ Event</h3>
 <ul>
 <li><code>OccurrenceDate</code> = <strong>2026-04-30</strong><br />
 Today.</li>
-<li><code>OccurrenceTime</code> = <strong>10:15:00</strong><br />
+<li><code>OccurrenceTime</code> = <strong>10:15:00-01:00</strong><br />
 The expected arrival: the truck left Marrowdale at 09:00, and the road
-to the store takes about an hour and a quarter.</li>
+to the store takes about an hour and a quarter; in the local time of
+Bayvarra, where it happens, with its offset from UTC.</li>
 <li><code>Description</code> = <strong>Expected arrival at the
 store.</strong><br />
 In words.</li>
@@ -429,7 +431,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportEvent</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-30&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;09:30:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;09:30:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TransportEventTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportEventTypeCode&quot;</span>&gt;ENROUTE&lt;/<span class="kw">cbc:TransportEventTypeCode</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;On its way from the distribution centre; expected at the store at 10:15.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Location</span>&gt;</span>
@@ -529,7 +531,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportationStatusRequestDocumentReference</span>&gt;</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:UpdatedDeliveryTransportEvent</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-30&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:15:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OccurrenceTime</span>&gt;10:15:00-01:00&lt;/<span class="kw">cbc:OccurrenceTime</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Expected arrival at the store.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;GS1 GLN&quot;</span>&gt;9522610900019&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -544,6 +546,6 @@ href="examples.html#flow-retail">all documents of the flow</a> · <a
 href="example-retail-16-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/eed6c5dd57bd1363fcb3ed47e750e35608dedcf6"><code>eed6c5d</code></a> of 2026-11-20 20:12 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/2462b9bd44082d21c5359c16af9e1ef53c493ecf"><code>2462b9b</code></a> of 2026-11-20 20:18 UTC</p></div></footer>
 </body>
 </html>
