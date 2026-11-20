@@ -141,8 +141,8 @@ Inside `Shipment`:
   The shipment.
 - `Consignment/ID` = **26-0129**  
   The consignment.
-- `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight.
+- `Consignment/GrossWeightMeasure` = **358.75** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packages, with the 25 kg pallet of the battery crates.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment holds dangerous goods.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
@@ -545,7 +545,7 @@ Inside `Shipment`:
     <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
       <cbc:ID>26-0129</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">358.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>

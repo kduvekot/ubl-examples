@@ -52,7 +52,7 @@
         <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>dispatch@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -121,7 +121,7 @@
     <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">91.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -166,7 +166,7 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>3,000 doses, ten to a pack, for the island's winter influenza campaign, which starts in the last week of June.</cbc:Note>
+    <cbc:Note>3,000 doses, ten to a pack, for the island's winter influenza campaign, which starts on 22 June.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">300</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

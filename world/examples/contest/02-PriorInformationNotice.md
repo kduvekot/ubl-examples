@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "A design contest for the promenade bench (Bayvarra)" · [Prior Information Notice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PRIOR-INFORMATION-NOTICE-SCHEMA)*
 
-Version 2 of the prior information notice: the city council raised the prize fund, and the contest notice moves by two weeks.
+Version 2 of the prior information notice: the city council raised the prize fund, and the contest notice moves by about two weeks.
 
 [The XML file](02-PriorInformationNotice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

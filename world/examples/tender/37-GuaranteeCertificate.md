@@ -18,7 +18,7 @@ The furniture maker's bank certifies the government bonds immobilised in favour 
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **PWD/2026/PARKS**  
   The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
-- `ID` = **3900039355**  
+- `ID` = **3900039354**  
   The bank's number for the certificate.
 - `UUID` = **3e922210-3b62-5068-9bc7-523b9c932e1a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -26,8 +26,8 @@ The furniture maker's bank certifies the government bonds immobilised in favour 
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-19**  
   Thursday 19 February, the day after the bonds were deposited and immobilised, the day before Brackenmere's tender.
-- `IssueTime` = **17:19:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
+- `IssueTime` = **16:19:00-01:00**  
+  Issued in the afternoon, before the bank's desk closes; in the issuer's local time, with its offset from UTC.
 - `GuaranteeTypeCode` = **TENDER** (listID `urn:ubl-examples:world:codelist:GuaranteeTypeCode`)  
   A tender guarantee. The code is from the Trade Accord's financial guarantee type list: TENDER = Tender guarantee.
 - `Purpose` = **Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank.**  
@@ -233,11 +233,11 @@ Inside `BeneficiaryParty`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:guarantee-certificate:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
-  <cbc:ID>3900039355</cbc:ID>
+  <cbc:ID>3900039354</cbc:ID>
   <cbc:UUID>3e922210-3b62-5068-9bc7-523b9c932e1a</cbc:UUID>
   <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
-  <cbc:IssueTime>17:19:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:19:00-01:00</cbc:IssueTime>
   <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">TENDER</cbc:GuaranteeTypeCode>
   <cbc:Purpose>Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank.</cbc:Purpose>
   <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>

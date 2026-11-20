@@ -76,18 +76,7 @@ def ore(n, doc):
                                                                        "train a month."),
                                        "ValidityPeriod": {"StartDate": V("2026-01-01", "A yearly agreement, for 2026."),
                                                           "EndDate": V("2026-12-31", "To the end of the year.")}},
-                          "Delivery": {"Shipment": {
-                              "ID": V("1", "The shipment the order asks for: one reefer."),
-                              "GoodsItem": {"ID": V("1", "The fruit of the order."),
-                                            "Temperature": {
-                                                "AttributeID": V("TRANSPORT", "What the temperature is of: the air "
-                                                                              "in the cargo space during transport."),
-                                                "MeasureCode": V("CHILLED", "The wholesaler asks for the fruit to "
-                                                                            "travel chilled, a class, not a figure: "
-                                                                            "the cooperative and its forwarder set "
-                                                                            "the reefer to the fruit's own set "
-                                                                            "point."),
-                                                "Description": V("Chilled, not frozen", "In words.")}}},
+                          "Delivery": {
                               "RequestedDeliveryPeriod": {
                               "StartDate": V(f.date(8), "The loading window for March's train, from Tuesday 10 "
                                                         "March: the window the buyer then books the train in."),
@@ -1069,7 +1058,7 @@ def demurrage_note(f, n, doc, day, why):
     box = RAIL_BOXES[1]
     t = kit.terms_of(f, seller, day, "plan" if carrier else None)
     no = f.number("debit-carrier" if carrier else "debit-seller", seller, "DebitNote")
-    reason = (f"Container {box} was placed at Lumeway's siding on {day_text(f, RAIL_PLACED)} and released empty on "
+    reason = (f"Container {box} was placed at the siding of Lumeway on {day_text(f, RAIL_PLACED)} and released empty on "
               f"{day_text(f, last)}: free time {day_text(f, RAIL_PLACED + 1)} to "
               f"{day_text(f, RAIL_PLACED + RAIL_FREE_DAYS)}, "
               f"demurrage for {days} container days.")
@@ -1166,7 +1155,7 @@ def rail(n, doc):
     if doc["doc"] == "TransitCustomsDeclaration":
         return {"ID": V(f.number("transit", doc["from"], "TransitCustomsDeclaration"), "The transit declaration "
                                                                                        "number."),
-                "IssueDate": V(f.date(7), "Lodged at the office of departure the evening before the train leaves, "
+                "IssueDate": V(f.date(7), "Lodged at the office of departure the afternoon before the train leaves, "
                                           "once the sealed boxes are at the hub."),  # D37, rail/08#F5
                 "IssueTime": V("16:45:00", "After the second box came in at the hub, and before the consignment "
                                            "note, which cites it."),
@@ -1455,7 +1444,10 @@ def plastics(n, doc):
         return out
     if doc["doc"] == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, BARGE_LOAD, "Declared the day the barge is loaded.",
-                                     "The value of the granulate, in ferra.")
+                                     "The value of the granulate in ferra: Urvania values goods with freight and "
+                                     "insurance to its border, and the invoice has one price, which includes the "
+                                     "barge to the river quay, with no freight distinguished from it: the whole "
+                                     "price is the value.")
         out["IssueTime"] = V("12:40:00", "While the bags are loaded, so that customs releases them before the barge "
                                          "leaves.")  # timelines#F6
         return out
@@ -1481,7 +1473,9 @@ def plastics(n, doc):
     if doc["doc"] == "ImportCustomsDeclaration":
         out = kit.import_declaration(f, n, doc, BARGE_LOAD + 3, "Declared on the morning of the unloading.",
                                      "The customs value in lume: the invoice value in ferra at the world's reference "
-                                     "rate (1 ferra = 0.01 lume).")
+                                     "rate (1 ferra = 0.01 lume). Bayvarra values goods as they left the exporting "
+                                     "country, and the barge freight beyond the border is not distinguished from "
+                                     "the price, which includes it: the whole price is the value.")
         kit.deep_merge(out["Shipment"]["GoodsItem"][0], {
             "FreeOnBoardValueAmount": amount(Decimal("98046"), "XBL", "The value at the loading quay: the CPT price "
                                              "less the river freight of 179,400 ferra, in lume."),
@@ -2845,7 +2839,6 @@ def air_consignment(f, doc):
                                                                   "envelope of each frame.", unitCode="MTQ"),
             "DeclaredForCarriageValueAmount": amount(goods, "XBL", "Declared to the airline so its liability covers "
                                                                    "the value of the frames."),
-            "DeclaredStatisticsValueAmount": amount(goods, "XBL", "The value for the export statistics."),
             "SplitConsignmentIndicator": V("false", "All eight cartons on one flight."),
             "ConsignmentQuantity": qty(1, "EA", "One consignment."),
             "FreightForwarderParty": party("10-xb", short=True),
@@ -2893,10 +2886,11 @@ def air(n, doc):
         order["AnticipatedMonetaryTotal"] = {      # the amount of the change, as the definition says (air/01#F2)
             "LineExtensionAmount": amount(air_base, "XBL", "The change: the eight frames added; the sea order's "
                                                            "lines are unchanged."),
-            "PayableAmount": amount(air_base, "XBL", "What the change adds to the goods of the order: no tax on an "
-                                                     "export; the air freight comes on top, on the invoice, at cost.")}
-        order["TaxTotal"]["TaxSubtotal"][0]["TaxableAmount"] = amount(air_base, "XBL", "The change; no tax on an "
-                                                                                      "export.")
+            "PayableAmount": amount(air_base, "XBL", "What the change adds to the goods of the order: no tax, the "
+                                                     "goods crossing Bayvarra in transit; the air freight comes on top, on the invoice, at cost.")}
+        order["TaxTotal"]["TaxSubtotal"][0]["TaxableAmount"] = amount(air_base, "XBL", "The change; no tax, the "
+                                                                                      "goods crossing Bayvarra in "
+                                                                                      "transit.")
         order.setdefault("OrderReference", {})["SalesOrderID"] = V(
             SEA.number("sales-order", "6-xb", "SalesOrder"), "The distributor's number of the order the "
             "change applies to: in the order reference, since the change's own SalesOrderID would be the seller's "
@@ -2983,7 +2977,7 @@ def air(n, doc):
             Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]["amount"])), "XBL",
             "The value declared on the air waybill, as the distributor instructed.")
         kit.deep_merge(out["Shipment"]["Consignment"], {
-            "ChargeableWeightMeasure": qty(air_chargeable(f), "KGM", f"The gross weight of {kit.kg(w)} kg, rounded up "
+            "ChargeableWeightMeasure": qty(air_chargeable(f), "KGM", f"The gross weight of {kit.kg(air_gross(f))} kg, rounded up "
                                            "to the next half kilogram: it is higher than the volume weight, "
                                            f"{kit.kg(air_volume(f))} m³ at 167 kg per m³."),
             "GrossVolumeMeasure": V(kit.kg(air_volume(f)), "The stack of eight frame cartons of "
@@ -3053,7 +3047,7 @@ def air(n, doc):
                            {"AdditionalDocumentReference": {"ID": V(f.numbers["waybill"], "The air waybill.")}},
                            [{"item": "air-freight", "qty": air_chargeable(f), "invoice_why": "The chargeable weight "
                                                                              "of the air waybill: the gross weight "
-                                                                             "of the frame cartons, rounded up to the "
+                                                                             "of the frame cartons and their skid, rounded up to the "
                                                                              "next half kilogram."}],  # D39
                            key="forwarder-invoice",
                            extra={"Delivery": {"ActualDeliveryDate": V(f.date(3), "The day the frames were flown "
@@ -3857,7 +3851,7 @@ def waste(n, doc):
                                                                      unitCode="KGM"),
                                                         "Description": V("Empty, at 10:46", "When it was weighed.")}]}}}}
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 14, "Issued on the next working day after the load.",  # D27
+        return kit.invoice(f, n, doc, 14, "Issued on Monday 6 April, after the load of Thursday 2 April.",  # D27
                            {"AdditionalDocumentReference": [
                                {**ref(f, "movement", "The movement report of the load billed."),
                                 "IssueDate": V(f.date(WASTE_LOAD_DAY), "Its date.")},
@@ -3906,20 +3900,25 @@ HOUSEHOLD = {"water": 170, "heat": Decimal("6.6"),            # the actual year,
 HEAT_CORRECTION = HOUSEHOLD["cooling"]["per_degree"] * (HOUSEHOLD["cooling"]["normal"] - HOUSEHOLD["cooling"]["actual"])
 
 
-def year_cost(water, heat):
-    """The cost of a year's water, levy and heat at the tariffs (world/items.json), without tax: the basis of the
-    payments on account."""
+# the state's sales tax on the heat, which the settlement bill charges: the new payments on account include it
+# (owner, O269; read-through utilities); last year's 84 lume were set without it
+HEAT_TAX = Decimal(str(kit.tax_rule("34-xb", "c-xb", "district-heat")[1])) / 100
+
+
+def year_cost(water, heat, heat_tax=Decimal(0)):
+    """The cost of a year's water, levy and heat at the tariffs (world/items.json), with the sales tax on the heat
+    where heat_tax is given: the basis of the payments on account."""
     p = {i: Decimal(str(ITEM[i]["price"]["amount"])) for i in ("water", "sewage-levy", "district-heat")}
-    return money(water * (p["water"] + p["sewage-levy"]) + heat * p["district-heat"], "XBL")
+    return money(water * (p["water"] + p["sewage-levy"]) + heat * p["district-heat"] * (1 + heat_tax), "XBL")
 
 
-def monthly(water, heat):
+def monthly(water, heat, heat_tax=Decimal(0)):
     """The monthly payment on account: a twelfth of the year's estimate, rounded up to a whole lume."""
-    return (year_cost(water, heat) / 12).to_integral_value(rounding="ROUND_CEILING")
+    return (year_cost(water, heat, heat_tax) / 12).to_integral_value(rounding="ROUND_CEILING")
 
 
 ON_ACCOUNT = monthly(HOUSEHOLD["estimate"]["water"], HOUSEHOLD["estimate"]["heat"])         # 84 a month
-NEW_ON_ACCOUNT = monthly(HOUSEHOLD["water"], HOUSEHOLD["heat"])                             # 91 from April
+NEW_ON_ACCOUNT = monthly(HOUSEHOLD["water"], HOUSEHOLD["heat"], HEAT_TAX)                   # 94 from April
 PAID_ON_ACCOUNT = 12 * ON_ACCOUNT
 
 
@@ -3960,14 +3959,15 @@ def year_period(why):
                                                                          "reading.")}
 
 
-def on_account(q, unit, iids, what):
-    share = money(q * sum(Decimal(str(ITEM[i]["price"]["amount"])) for i in iids) / 12, "XBL")
+def on_account(q, unit, iids, what, tax=Decimal(0)):
+    share = money(q * sum(Decimal(str(ITEM[i]["price"]["amount"])) for i in iids) * (1 + tax) / 12, "XBL")
     return {"EstimatedConsumedQuantity": qty(q, unit, f"The estimate of {what} for April 2026 to March 2027: this "
                                                       "year's use."),
             "Note": V(f"The payments on account planned for {what} in the next account year.", "What the schedule "
                                                                                                 "is."),
-            "PaymentTerms": {"Amount": amount(share, "XBL", f"A twelfth of the estimate's cost of {what}, part of the "
-                                                            "monthly direct debit."),
+            "PaymentTerms": {"Amount": amount(share, "XBL", f"A twelfth of the estimate's cost of {what}"
+                                                            + (f" with the {tax * 100:g} % sales tax" if tax else "")
+                                                            + ", part of the monthly direct debit."),
                              "ValidityPeriod": {"StartDate": V("2026-04-01", "From April."),
                                                 "EndDate": V("2027-03-31", "To the next annual reading.")}}}
 
@@ -4127,7 +4127,7 @@ def annual_statement(f, doc, key, out):
                                  "TotalDeliveredQuantity": qty(h, "MWH", "Delivered in the account year."),
                                  "MeterReading": annual_reading("CSW-H-71844", "MWH", "41.2", f"{Decimal('41.2') + h}",
                                                                 "The difference of the readings.")}},
-            "OnAccountPayment": on_account(h, "MWH", ("district-heat",), "district heat"),
+            "OnAccountPayment": on_account(h, "MWH", ("district-heat",), "district heat", HEAT_TAX),
             # one supplier: consumption only, so no consumption lines (O107); the heat and its correction are the
             # invoice's lines 3 and 4
             "Consumption": {
@@ -4168,7 +4168,7 @@ def annual_statement(f, doc, key, out):
                                                    "subscription: UBL gives an on-account payment one quantity"
                                                    "."),  # O107
         "Note": V(f"The one monthly direct debit for water, levy and heat from April 2026: {NEW_ON_ACCOUNT} lume, a "
-                  "twelfth of the year's estimate rounded up to a whole lume; it was "
+                  "twelfth of the year's estimate with the sales tax on the heat, rounded up to a whole lume; it was "
                   f"{ON_ACCOUNT} lume.", "What the household pays from now on."),
         "PaymentTerms": {"Note": V("Collected by direct debit on the first working day of each month.",
                                    "How it is paid."),
@@ -4335,9 +4335,8 @@ def energy_tax(f, out, key):
     lmt["TaxInclusiveAmount"] = amount(lines + excise + vat_amt, "XUF", "With the energy tax and the value added tax.")
     lmt["PayableAmount"] = amount(lines + excise + vat_amt, "XUF", "What the manufacturer pays.")
     f.numbers[f"invoice-{key}-amount"] = lines + excise + vat_amt
-    out["PaymentTerms"]["SettlementDiscountAmount"] = amount((lines + excise + vat_amt) * Decimal("0.02"), "XUF",
-                                                             "The 2 % discount on the amount payable, if paid in "
-                                                             "time.")
+    # no settlement discount: a utility bill is under the Accord's TA-UTIL terms, which offer none (read-through
+    # utilities 1)
     return out
 
 
@@ -4504,7 +4503,11 @@ def utility_statement(f, n, doc, key, invoice_no):
                                             "credited.", "Why the previous reading is not the one on "
                                                          "February's statement.")
     assert (last_q - prev_q) * constant == consumed, (key, subscriber)
-    tariff = Decimal(str(ITEM[d["item"]]["price"]["amount"]))
+    # the history and the average stand in the first supplier's block: at that supplier's own tariff (the energy
+    # without the grid's network charges, read-through utilities 6)
+    own = SUPPLIERS[sup][0][1].get(d["item"], d["item"]) if sup in SUPPLIERS else d["item"]
+    tariff = Decimal(str(ITEM[own]["price"]["amount"]))
+    tariff_why = "the supplier's own tariff" if own != d["item"] else "the tariff of the bill"
     months = [q_ for *_, q_ in pt["history"]] + [consumed]
     report = {"ID": V(f"{pt['id']}-2603", "The consumption report of the point for March."),
               "ConsumptionType": V("Monthly consumption", "What is reported."),
@@ -4524,8 +4527,8 @@ def utility_statement(f, n, doc, key, invoice_no):
                              "EndDate": V(pt["history"][-1][1], "Its last day.")}},
               "ConsumptionHistory": [{"MeterNumber": V(pt["meter"][0], "The meter."),
                                       "Quantity": qty(q_, unit, "The month's consumption."),
-                                      "Amount": amount(Decimal(q_) * tariff, cur, "What it cost at the tariff of the "
-                                                                                 "bill, without tax."),
+                                      "Amount": amount(Decimal(q_) * tariff, cur, f"What it cost at {tariff_why}, "
+                                                                                 "without tax."),
                                       "ConsumptionLevelCode": V("NORMAL", "Within the usual range."),
                                       "ConsumptionLevel": V("Normal", "In words."),
                                       **({"Description": V(f"Corrected from the estimate of {corr['billed']:,} kWh.",
@@ -4549,7 +4552,7 @@ def utility_statement(f, n, doc, key, invoice_no):
     avg_q = sum(Decimal(q_) for q_ in months) / len(months)
     supply = {"ConsumptionReport": report,
               "ConsumptionAverage": {"AverageAmount": amount(money(avg_q * tariff, cur), cur, "The average amount of "
-                                                             "the last three months at the tariff of the bill, without "
+                                                             f"the last three months at {tariff_why}, without "
                                                              "tax."),  # utilities/01#F3
                                      "Description": V(f"The average over the last three months is {round(avg_q):,} "
                                                       f"{'kWh' if unit == 'KWH' else 'm³'}.", "For comparison.")}}
@@ -4789,7 +4792,7 @@ def telecom_consumption(f, sup, key, customer):
                "Price": {"PriceAmount": price(per_min, cur, "The tariff per minute for calls abroad."),
                          "BaseQuantity": qty(1, "MIN", "Per minute.")},
                "Country": {"IdentificationCode": V("XB", "The country called.")},
-               "AllowanceCharge": included(gross, "Calls to the trade accord countries are included in the "
+               "AllowanceCharge": included(gross, "Calls to the Trade Accord countries are included in the "
                                                   "subscription", f"The whole charge of the call: {setup} set-up and "
                                                                   f"{minutes} minutes at {per_min}."),
                "CallDuty": {"Amount": amount(setup, cur, "The set-up charge of the call."),
@@ -4902,8 +4905,8 @@ def utilities(n, doc):
         bill_number(f, key, doc["from"])
         annual = key == "34-xb:c-xb"
         out = kit.invoice(f, n, doc, 1, "The settlement bill of the household's account year, issued with the annual "
-                                        "statement." if annual else "The monthly bill, issued on the first day of the "
-                                                                    "next month.", {},
+                                        "statement." if annual else "The monthly bill, issued on the second working "
+                                                                    "day of the next month.", {},
                           BILLS[key], key=f"invoice-{key}", extra=ACCOUNT_YEAR if annual else MARCH, terms="utility")
         purpose = {"33-xu": ("ELEC", "an electricity bill"), "35-xl": ("PHON", "a telephone bill")}.get(
             key, ("WTER", "a water bill"))
@@ -5689,7 +5692,7 @@ def packaging(n, doc):
                            [{"item": "garment-bag", "qty": 20000, "invoice_why": "The bags delivered."}],
                            key="invoice-bags")
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 10, "The store orders shirts for spring.",
+        return kit.order(f, n, doc, 10, "The store orders shirts for its winter range.",
                          "Delivered duty paid at the store: the mill delivers and bears every cost.",
                          "Brightmarket Stores, goods-in, Lumeport", deal=SHIRTS, key="order-shirts")
     if doc["doc"] == "DespatchAdvice":
@@ -5704,14 +5707,14 @@ def packaging(n, doc):
         out["Shipment"]["Consignment"].update({
             # the carrier's consignment note, on which the note asks the store to record damage (packaging/06#F3)
             "CarrierAssignedID": V(f.number(f"carrier-ref-{carrier}", carrier, "Carriage"), "The carrier's number for "
-                                   f"the consignment: its consignment note, {kind_name[0].lower()}{kind_name[1:]}, "
+                                   f"the consignment: its {kind_name[0].lower()}{kind_name[1:]}, "
                                    "which travels with the truck."),
             # what goods-in counts at the door (packaging/06#F8)
             "TotalPackagesQuantity": qty(cartons, "EA", f"{cartons} cartons of {carton['per_carton']} shirts. "
                                                         + carton["why"])})
         return out
     if doc["doc"] == "Invoice":
-        return kit.invoice(f, n, doc, 15, "Issued on delivery.",
+        return kit.invoice(f, n, doc, 15, "Issued on despatch, the day the shirts left.",
                            {"OrderReference": ref(f, "order-shirts", "The store's order.")},
                            [{"item": "shirt", "qty": 600, "invoice_why": "The shirts delivered."}], key="invoice-shirts")
     if doc["doc"] == "PurchaseReceipt":
@@ -7186,7 +7189,7 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     # no previous job: a first application (road/06#F17, 07#F18); no embassy and no insurance endorsement: the chamber
     # is the only endorser and a certificate between Accord members needs no legalisation (road/07#F10, 06#F3, D35)
-    x = {"Note": V("Preferential origin under the trade accord.", "What the certificate is for."),
+    x = {"Note": V("Preferential origin under the Trade Accord.", "What the certificate is for."),
          "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-CO-{n:02d}"),
          "CertificateOfOriginApplication": {
              "Remarks": V("Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, "
@@ -7378,7 +7381,7 @@ def full_signature(pid, no, f, day, why):
             "ValidationDate": V(f.date(day), "Verified by the council's validation service before the document "
                                              "was issued, after the terms it binds were verified."),  # sea/03#F1
             "ValidationTime": V("12:40:00", "At that time."),
-            "ValidatorID": V("LTAC-VALIDATOR", "The trade accord council's validation service."),
+            "ValidatorID": V("LTAC-VALIDATOR", "The Trade Accord council's validation service."),
             "CanonicalizationMethod": V("http://www.w3.org/2006/12/xml-c14n11", "Canonical XML 1.1."),
             "SignatureMethod": V("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256", "RSA with SHA-256."),
             "SignatoryParty": party(pid, short=True),
@@ -7396,7 +7399,7 @@ def full_reference(f, rid, why, day):
             "IssueTime": V("12:00:00", "And time."),
             "DocumentTypeCode": V("774", "The kind of document."),
             "DocumentDescription": V("The Trade Accord Council's requirements for the certification of access "
-                                     "points on the trade accord's network.", "What it is."),
+                                     "points on the Trade Accord's network.", "What it is."),
             "ReferencedDocumentInternalAddress": V("section-2", "The section of the referenced document meant: the "
                                                    "requirements for a participant's own access point."),
             "LanguageID": V("en", "In English."),
@@ -7449,7 +7452,7 @@ def digital_service(pid, doc_type, sending):
                                         "SchemaURI": V(f"https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/"
                                                        f"UBL-{doc_type}-2.5.xsd", "The schema."),
                                         "DocumentTypeCode": V(doc_type, "The document type, as a code.")},
-            "DigitalDeliveryChannel": {"NetworkID": V("ACCORD-NET", "The trade accord's document network."),
+            "DigitalDeliveryChannel": {"NetworkID": V("ACCORD-NET", "The Trade Accord's document network."),
                                        "ParticipantID": V(PARTY[pid]["identity"].get("endpoint", pid), "The party's "
                                                                                                         "address on "
                                                                                                         "it."),
@@ -8411,6 +8414,7 @@ MAST = kit.Flow("mast", "2026-06-01", [
     {"item": "smoke-detector", "ordered": 1, "why": "One pack of ten for the equipment room."},
     {"item": "coating-stripper", "ordered": 5, "why": "Five litres for the circuit boards, in 1-litre tins."}])
 MAST_CRATES = 12          # one battery module to a crate (D36)
+MAST_PALLET_KG = Decimal("25")   # the wooden pallet SE-PL-1 the crates are strapped to: in the gross weights (O269)
 
 
 def dg_contact(why):
@@ -8553,8 +8557,8 @@ def mast_consignment(f, full):
                                            f"Twelve modules in their crates, {crate_gross} kg each: within the 35 kg "
                                            "a package of packing instruction 965 section IA may weigh on a cargo "
                                            "aircraft, so no approval is needed.")  # D36
-    bat_loaded["NetVolumeMeasure"] = V("0.24", "The modules' volume: the same cells as the six larger packs first "
-                                               "planned.", unitCode="MTQ")
+    bat_loaded["NetVolumeMeasure"] = V("0.24", "The modules' own volume, without their crates: twelve modules of "
+                                               "0.02 m³.", unitCode="MTQ")   # mast/03: the D36 redesign
     bat_loaded["Package"] = {"Quantity": qty(1, "EA", "One battery module to a crate; the twelve crates are counted "
                                                       "above and listed with their own numbers in the handling unit"
                                                       "."),  # mast/02#F1
@@ -8597,7 +8601,7 @@ def mast_consignment(f, full):
 
 def mast(n, doc):
     f, d = MAST, doc["doc"]
-    w = kit.gross_weight(f, "ordered")
+    w = kit.gross_weight(f, "ordered") + MAST_PALLET_KG     # the goods packed, and the battery pallet
     if d == "Order":
         out = kit.order(f, n, doc, 0, "The telecom company orders before the storm season.",
                         "Carriage paid to the telecom company's mast site: the seller arranges the dangerous goods "
@@ -8608,27 +8612,33 @@ def mast(n, doc):
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
                 "IssueDate": V(f.date(2), "With the shipper's declaration of dangerous goods."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight."),
+                             "GrossWeightMeasure": qty(w, "KGM", f"The goods in their packages, with the "
+                                                                 f"{MAST_PALLET_KG} kg pallet of the battery crates."),
                              "GoodsItem": [{"ID": V(str(i), "A goods item."),
                                             "Description": V(ITEM[x["item"]]["name"], "The goods."),
                                             "Item": item(x["item"])} for i, x in enumerate(f.deal, 1)],
                              "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
                                                      "The consignment."), **mast_consignment(f, False)}}}
     if d == "Waybill":
-        out = kit.waybill(f, n, doc, 3, "The air waybill, cargo aircraft only.", w, "The gross weight.")
+        out = kit.waybill(f, n, doc, 3, "The air waybill, cargo aircraft only.", w, "The goods in their packages, "
+                          f"with the {MAST_PALLET_KG} kg pallet of the battery crates.")
         out["IssueTime"] = V("12:15:00", "When the airline accepted the cargo at Lumeport, 11:15 there, before the "
                                          "afternoon flight.")
         kit.deep_merge(out["Shipment"]["Consignment"], mast_consignment(f, True))
         return out
     if d == "DespatchAdvice":
-        out = kit.despatch_advice(f, n, doc, 3, "Sent when the goods leave for the airport.", "The gross weight.")
+        out = kit.despatch_advice(f, n, doc, 3, "Sent when the goods leave for the airport.", "The goods in their "
+                                  f"packages, with the {MAST_PALLET_KG} kg pallet of the battery crates.")
+        out["Shipment"]["GrossWeightMeasure"] = qty(w, "KGM", out["Shipment"]["GrossWeightMeasure"].why)
         out["IssueTime"] = V("09:40:00", "When the forwarder's truck left Saltmere's works for the airport, about an "
                                          "hour away.")
         return out
     if d == "Invoice":
         return kit.invoice(f, n, doc, 3, "Issued on despatch.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The telecom company's order.")},
-                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}})
+                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}},
+                           extra={"Note": V("Carriage paid to the mast site: the prices include the carriage by air "
+                                            "and road.", "Why the invoice has no separate freight line.")})  # mast M4
     raise SystemExit(f"mast scenario: no document {n} {doc['doc']}")
 
 
@@ -8644,7 +8654,7 @@ FLOWS["mast"] = MAST
 # island leg is the morning flight KXL207 of Monday 15 June on the island airline's freighter.
 MEDICINES = kit.Flow("medicines", "2026-04-20", [
     {"item": "flu-vaccine-b", "ordered": 300, "why": "3,000 doses, ten to a pack, for the island's winter "
-                                                    "influenza campaign, which starts in the last week of June."},
+                                                    "influenza campaign, which starts on 22 June."},
     {"item": "insulin-vial-b", "ordered": 240, "why": "The hospital pharmacy's insulin for the next two months, "
                                                      "for its wards and its outpatients."},
     {"item": "varicella-vaccine-b", "ordered": 40, "why": "Forty doses for the children's vaccination programme "
@@ -8689,6 +8699,7 @@ def med_activity(hours):
 MED_LOG = [(f"{5 + k // 4:02d}:{(k % 4) * 15:02d}", Decimal(str(round(5 + 0.6 * __import__("math").sin(k / 3.2)
                                                                        + (0.4 if 8 <= k <= 10 else 0), 1))))
            for k in range(25)]
+MED_ACCEPT_C = dict(MED_LOG)["06:30"]   # the logger's reading at acceptance, 05:30 in Lumeport (read-through 1)
 
 
 def med_log_csv():
@@ -8976,9 +8987,8 @@ def medicines(n, doc):
             "SourceCurrencyCode": V("INR", "The invoice's currency."),
             "TargetCurrencyCode": V("EUR", "The payment currency."),
             "CalculationRate": V(f"{rate_in:f}", "The ECB's euro reference rate of the invoice date, Thursday 7 May: "
-                                                f"{rate_in:f} rupees for a euro. In the world's calendar the ECB's "
-                                                "rates are the real ones of 260 weeks before"  # tools/fx_fixing.py
-                                                ", the same that underlie the Lumeport Exchange's fixing."),  # O231
+                                                f"{rate_in:f} rupees for a euro, the rate that also underlies the "
+                                                "Lumeport Exchange's fixing."),  # O231: tools/fx_fixing.py
             "MathematicOperatorCode": V("Divide", "The rupee amount divided by the rate gives the euro amount, as the "
                                                   "ECB quotes rupees per euro."),
             "Date": V(f.date(MED_DAY["in-invoice"]), "The day of the rate.")}
@@ -9086,7 +9096,12 @@ def medicines(n, doc):
                                              "TransportHandlingUnit": med_units(f, False)}}}
     if d == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, MED_DAY["flight"], "Sent when the last of the goods, the generator, "
-                                  "left the warehouse for the airport.", "The goods with their packaging.")
+                                  "left the warehouse for the airport.", "The goods with their packaging, with the "
+                                  "dry ice and the frozen vaccine's box, as on the air waybill.")
+        # the same consignment as the forwarding instructions and the air waybill (read-through medicines 6)
+        out["Shipment"]["GrossWeightMeasure"] = qty(kit.gross_weight(f, "ordered") + MED_DRY_ICE_KG
+                                                    + MED_BOX["tare_kg"], "KGM",
+                                                    out["Shipment"]["GrossWeightMeasure"].why)
         out["IssueTime"] = V("05:10:00", "When the wholesaler's van left with the generator.")
         for ln, dd in zip(out["DespatchLine"], f.deal):
             ln["Item"] = item(dd["item"], buyer=doc["to"],
@@ -9095,7 +9110,7 @@ def medicines(n, doc):
         return out
     if d == "TransportationStatus" and doc["from"] == "17-xb":
         out = kit.transportation_status(f, n, doc, MED_DAY["flight"], "Reported when the last package was accepted.",
-                                        "Consignment accepted for KXL207: the active container at 4.8 °C, the "
+                                        f"Consignment accepted for KXL207: the active container at {MED_ACCEPT_C} °C, the "
                                         "dry-ice box and the Type A package checked.",
                                         "Lumeport airport, cargo terminal",
                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}},
@@ -9105,12 +9120,12 @@ def medicines(n, doc):
         ev["OccurrenceTime"] = V("05:30:00-01:00", "The generator, the last package, was accepted at 05:30; the "
                                                    "container and the box had come at 04:40.")
         ev["CurrentStatus"] = {"ConditionCode": V("COMPLETED", "The acceptance has taken place."),
-                               "Description": V("Active container closed and running, at 4.8 °C against its set "
+                               "Description": V(f"Active container closed and running, at {MED_ACCEPT_C} °C against its set "
                                                 "point of 5 °C; the generator's dose rate checked against its "
                                                 "label.", "What the terminal checked at acceptance."),
                                "Condition": {"AttributeID": V("TRANSPORT", "The temperature in the container's "
                                                                            "cargo space."),
-                                             "Measure": V("4.8", "As read from the container's display at "
+                                             "Measure": V(str(MED_ACCEPT_C), "As read from the container's display at "
                                                                  "acceptance.", unitCode="CEL")}}
         return out
     if d == "Waybill":
@@ -9206,7 +9221,7 @@ def medicines(n, doc):
                                 "AgentParty": party("3-xl", short=True)}}
         return out
     if d == "Invoice":
-        return kit.invoice(f, n, doc, MED_DAY["flight"], "Issued on despatch.",
+        return kit.invoice(f, n, doc, MED_DAY["flight"], "Issued on the day of despatch.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The hospital's order.")}},
                            extra={"DeliveryTerms": {"ID": V("CPT", "Incoterms 2020: carriage paid to Selanu airport, "
                                                                    "as ordered; the customs of both countries need "
@@ -9282,13 +9297,18 @@ def procurement_project(f, lot=None):
                                          "requirement.")}} if lot is None else {}),
            "RequestedTenderTotal": {
                "EstimatedOverallContractAmount": amount(est, "XBL", "The estimated value."),
-               "EstimatedOverallFrameworkContractsAmount": amount(est, "XBL", "The framework's estimate."),
+               "EstimatedOverallFrameworkContractsAmount": amount(
+                   est * Decimal("1.5"), "XBL", "The framework's estimate with the renewal year: 360 "
+                   + ("benches" if goods else "installations") + " at the estimate."),  # D28 point 2: FRAMEWORK_ESTIMATE for the whole (read-through tender 3)
                "TotalAmount": amount(est, "XBL", "The budget: the estimate."),
                "TaxIncludedIndicator": V("false", "Without tax: a public body pays no sales tax."),
                "MinimumAmount": amount(est * Decimal("0.5"), "XBL", "At least half will be called off."),
-               "MaximumAmount": amount(est * Decimal("1.2"), "XBL", "At most 20 % more."),
+               "MaximumAmount": amount(est * Decimal("1.7"), "XBL", "At most: the quantity option up to 288 "
+                                        "and the renewal year, 408 " + ("benches" if goods else "installations")
+                                        + " at the estimate."),  # FRAMEWORK_MAXIMUM
                "MonetaryScope": V("Two years of releases, without tax: a two-year commitment of the 2026 budget, "
-                                  "estimated at 500 lume a bench and 20 lume an installation.", "What the amount "
+                                  "estimated at 500 lume a bench and 20 lume an installation; the framework's "
+                                  "estimate and the maximum include the renewal year.", "What the amount "
                                   "covers, and that the department made the estimate before the tenders"  # D28 point 2
                                   "."),  # tender/01#F27, F29
                "AverageSubsequentContractAmount": amount(est / 6, "XBL", "Six releases on average."),
@@ -9307,8 +9327,8 @@ def procurement_project(f, lot=None):
            "RealizedLocation": {"Name": V("Harbour park and town parks, Lumeport", "Where the benches go."),
                                 "Address": {"CityName": V("Lumeport", "The city."),
                                             "Country": {"IdentificationCode": V("XB", "Bayvarra.")}}},
-           "PlannedPeriod": {"StartDate": V(f.date(70), "From the first release."),
-                             "EndDate": V(f.date(800), "For two years.")},
+           "PlannedPeriod": {"StartDate": V(f.date(67), "From the contract's signature, planned for 20 March."),
+                             "EndDate": V(f.date(797), "For two years, to the end of the contract.")},
            "ContractExtension": {"OptionsDescription": V({"LOT-1": "One extension of a year with 120 more benches.",
                                                           "LOT-2": "One extension of a year with the installation of "
                                                                    "120 more benches."}.get(
@@ -9316,7 +9336,7 @@ def procurement_project(f, lot=None):
                                                                    "their installation."), "The option."),
                                  "MaximumNumberNumeric": V("1", "At most one."),
                                  "RenewalsIndicator": V("true", "The contract may be renewed."),
-                                 "OptionValidityPeriod": {"EndDate": V(f.date(800), "Decided before it ends.")},
+                                 "OptionValidityPeriod": {"EndDate": V(f.date(797), "Decided before it ends.")},
                                  "Renewal": {"Amount": amount(est / 2, "XBL", "The value of a renewal."),
                                              "Period": {"DurationMeasure": V("12", "Twelve months.",
                                                                              unitCode="MON")}}}}
@@ -9336,8 +9356,9 @@ def procurement_project(f, lot=None):
                                                                        "allows per bench, 600 lume."),
             "EstimatedAmount": amount(EST_BENCHES, "XBL", "The estimate: 240 benches at 500 lume."),
             "DocumentReference": {"ID": V("PWD-SPEC-BENCH-26", "The technical specification.")},
-            "DeliveryPeriod": {"StartDate": V(f.date(80), "Releases from."), "EndDate": V(f.date(800), "To.")},
-            "RequiredItemLocationQuantity": {"LeadTimeMeasure": V("10", "Ten days per release.", unitCode="DAY")},
+            "DeliveryPeriod": {"StartDate": V(f.date(80), "Releases from."), "EndDate": V(f.date(797), "To.")},
+            "RequiredItemLocationQuantity": {"LeadTimeMeasure": V("14", "At most fourteen days per release.",
+                                                                  unitCode="DAY")},   # owner, 2026-11-20
             "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
             "Item": {"Name": V("Park bench, 1800 mm", "The item asked for.")},
             "SubRequestForTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One "
@@ -9401,7 +9422,7 @@ def tendering_process(f, held=False):
                                              "."),  # tender/02#F36; D28 points 2 and 5
             "ContractingSystemCode": V("FRAMEWORK", "A framework agreement."),
             "SubmissionMethodCode": V("ELECTRONIC", "Tenders are submitted electronically."),
-            "GovernmentAgreementConstraintIndicator": V("true", "Covered by the trade accord's procurement chapter."),
+            "GovernmentAgreementConstraintIndicator": V("true", "Covered by the Trade Accord's procurement chapter."),
             "AccessToolsURI": V("https://tenders.lumeport.example/PWD-2026-PARKS", "Where the documents are."),
             "DocumentAvailabilityPeriod": {"StartDate": V(f.date(15), "From the call for tenders, the day after "
                                                                       "the notice."),  # D28 point 1
@@ -9438,7 +9459,9 @@ def tendering_process(f, held=False):
                                    "MaximumValueAmount": amount(FRAMEWORK_MAXIMUM, "XBL", "The ceiling the terms "
                                                                 "allow: the quantity option up to 288 benches and the "
                                                                 "renewal year, 408 at 520 lume."),
-                                   "DurationPeriod": {"DurationMeasure": V("24", "Two years.", unitCode="MON")},
+                                   "DurationPeriod": {"DurationMeasure": V("24", "Two years; the renewal year, "
+                                                                                    "which the estimate includes, "
+                                                                                    "is an option.", unitCode="MON")},
                                    "SubsequentProcessTenderRequirement": {"Name": V("Release order", "Each release "
                                                                                                      "is a call-off "
                                                                                                      "order."),
@@ -9602,17 +9625,22 @@ def tendering_terms(f, call=False):
                                                                              "price.")},
                     {"ID": V("AC-2", "Quality."), "AwardingCriterionTypeCode": V("QUALITY", "Its kind."),
                      "Name": V("Quality", "Name."),
-                     "Description": V("The durability of the coating or finish (20 points) and the years of "
-                                      "warranty offered on it (20 points).", "What quality scores, its two halves"
-                                                                             "."),  # tender/01#F25
+                     "Description": V("The durability of the coating or finish (15 points), the years of warranty "
+                                      "offered on it (15 points) and the lead time per release (10 points): a "
+                                      "release delivered in fewer than 14 days scores higher.",
+                                      "What quality scores, its three parts."),  # tender/01#F25; owner 2026-11-20
                      "WeightNumeric": V("40", "Weight."),
                      "SubordinateAwardingCriterion": [
                          {"ID": V("AC-2.1", "Durability."), "Name": V("Durability of the coating", "Name."),
-                          "WeightNumeric": V("20", "Half of quality.")},
+                          "WeightNumeric": V("15", "Part of quality.")},
                          {"ID": V("AC-2.2", "Warranty."), "Name": V("Years of warranty on the coating", "Name."),
-                          "WeightNumeric": V("20", "The other half."),
+                          "WeightNumeric": V("15", "Part of quality."),
                           "MinimumQuantity": qty(5, "ANN", "A warranty of at least five years is required."),
-                          "MaximumQuantity": qty(10, "ANN", "Years above ten earn no more points.")}]}],
+                          "MaximumQuantity": qty(10, "ANN", "Years above ten earn no more points.")},
+                         {"ID": V("AC-2.3", "Lead time."), "Name": V("Lead time per release", "Name."),
+                          "WeightNumeric": V("10", "The rest of quality."),
+                          "MaximumQuantity": qty(14, "DAY", "A release takes at most fourteen days; the fewer days, "
+                                                            "the more points.")}]}],
                 "TechnicalCommitteePerson": kit.person("Mara", "Delling", "The head of parks on the committee.",
                                                        job="Head of parks"),
 },
@@ -9660,6 +9688,8 @@ PENALTY_CLAUSE = {"ID": V("PEN-1", "Late completion."),
                                                       ".")}  # tender/01#F20
 FRAMEWORK_ESTIMATE = Decimal("187200")    # 360 benches with the renewal year at 500 + 20 (D28 point 2)
 FRAMEWORK_MAXIMUM = Decimal("212160")     # 408 benches: the quantity option up to 288 and the renewal (D28 point 2)
+assert (EST_BENCHES + EST_INSTALL) * Decimal("1.5") == FRAMEWORK_ESTIMATE      # the notices' framework estimate
+assert (EST_BENCHES + EST_INSTALL) * Decimal("1.7") == FRAMEWORK_MAXIMUM       # and maximum (read-through tender 3)
 TENDER_GUARANTEE_AMOUNT = Decimal("2500.00")
 PERFORMANCE_RATE = Decimal("5")
 
@@ -9922,7 +9952,8 @@ def _(f, n, doc, out):
                      "Amount": amount(b + i, "XBL", "The tendered total of the unit prices for both lots.")},
                     {"ID": V("ACR-2", "The response to the quality criterion."),
                      "AwardingCriterionID": V("AC-2", "Quality."),
-                     "AwardingCriterionDescription": V("Durability and warranty of the coating.", "The criterion."),
+                     "AwardingCriterionDescription": V("Durability and warranty of the coating, and the lead time "
+                                                       "per release.", "The criterion."),
                      "SubordinateAwardingCriterionResponse": [
                          {"ID": V("ACR-2.1", "Durability."), "AwardingCriterionID": V("AC-2.1", "Its criterion."),
                           "Description": V("Hot-dip galvanised and powder coated." if winner else
@@ -9930,7 +9961,12 @@ def _(f, n, doc, out):
                          {"ID": V("ACR-2.2", "Warranty."), "AwardingCriterionID": V("AC-2.2", "Its criterion."),
                           "Description": V("Ten years on the coating." if winner else "Six years on the frame and "
                                            "the slats.", "The offer."),
-                          "Quantity": qty(10 if winner else 6, "ANN", "The years of warranty offered.")}]}]}}
+                          "Quantity": qty(10 if winner else 6, "ANN", "The years of warranty offered.")},
+                         {"ID": V("ACR-2.3", "Lead time."), "AwardingCriterionID": V("AC-2.3", "Its criterion."),
+                          "Description": V(f"{TENDERED_BENCH['5-xu' if winner else '37-xb']['lead']} days per "
+                                           "release.", "The offer, as the tender line gives it."),
+                          "Quantity": qty(TENDERED_BENCH["5-xu" if winner else "37-xb"]["lead"], "DAY",
+                                          "The days from an order to its delivery.")}]}]}}
 
 
 @enrich("tender", "QualificationApplicationRequest")
@@ -10602,7 +10638,8 @@ def _(f, n, doc, out):
 @enrich("tender", "UnawardedNotification")
 def _(f, n, doc, out):
     return {"ContractName": contract_name(), "Note": V("Your tender ranked second. It was lower in price, but the "
-                                                       "warranty offered scored lower on quality.", "Why it lost."),
+                                                       "warranty and the lead time offered scored lower on "
+                                                       "quality.", "Why it lost."),
             "Signature": seal(PWD, "PWD-SIG-UNAWD"),
             "MinutesDocumentReference": {"ID": V("PWD-MIN-AWARD-26", "The minutes of the evaluation.")},
             "AdditionalDocumentReference": {"ID": V("PWD-EVAL-SCORES-BF", "The furniture maker's scores.")},
@@ -11051,7 +11088,9 @@ def _(f, n, doc, out):
             "TransportServiceDescriptionDocumentReference": {"ID": V("FRC-TSD-26", "The rail carrier's published "
                                                                                    "service description (not "
                                                                                    "shown).")},
-            "AdditionalDocumentReference": {"ID": V("SM-ASSAY-26-11", "The assay of the ore lot.")},
+            "AdditionalDocumentReference": {"ID": V("SM-ASSAY-26-11", "The assay of the previous train, the latest "
+                                                                      "analysis of the ore the carrier plans the "
+                                                                      "wagons for.")},   # read-through ore 5
             "Signature": seal(doc["from"], f"{kit.initials(doc['from'])}-SIG-TEPR"),
             "AtLocation": {"Name": V("Fucinalta mine siding", "Where the wagons are loaded.")},
             "AdditionalTransportationService": {"TransportServiceCode": V("WEIGH", "The wagons are weighed at "
@@ -11125,7 +11164,7 @@ def _(f, n, doc, out):
                                                    "For the trade itself.")}})
     for ds in find_dicts(out, "SendingDigitalService"):
         for s in lines_of(ds, "SendingDigitalService"):
-            s["CertificationDocumentReference"] = {"ID": V("LTAC-CERT-26-017", "The trade accord council's "
+            s["CertificationDocumentReference"] = {"ID": V("LTAC-CERT-26-017", "The Trade Accord council's "
                                                                                "certificate that the distributor's "
                                                                                "system passed the conformance "
                                                                                "test.")}
@@ -11570,7 +11609,15 @@ def tender_calloff(n, doc):
                       "MaximumOrderQuantity": qty(96, "EA", "The largest release, as tendered.")})
         bench["RequiredItemLocationQuantity"].update({
             "LeadTimeMeasure": V("7", "Seven days from the order to the delivery, as tendered.", unitCode="DAY"),
-            "MinimumQuantity": qty(20, "EA", "The smallest release, as tendered.")})
+            "MinimumQuantity": qty(20, "EA", "The smallest release, as tendered."),
+            # the special colour the order change asks for is quoted here (D28 point 8; read-through tender 4)
+            "AllowanceCharge": {"ChargeIndicator": V("true", "A charge on the price."),
+                                "AllowanceChargeReasonCode": V("CAT", "The reason for the charge as a code: for a "
+                                                                      "charge UN/EDIFACT 7161 (special services)."),
+                                "AllowanceChargeReason": V("Special colour", "A bench coated in a colour other than "
+                                                                             "Ferro grey, to the buyer's RAL code."),
+                                "Amount": amount(COLOUR_RATE, cur, "5 lume a bench, on every bench of a release "
+                                                                   "in the special colour.")}})
         inst["RequiredItemLocationQuantity"].pop("LeadTimeMeasure", None)   # the installation follows the delivery
         warranty = "Five years on the frame against corrosion; ten years on the coating, as tendered and awarded."
         bench["Item"]["WarrantyInformation"] = build_examples.item_texts(
@@ -11966,7 +12013,7 @@ SCENARIOS["tender"] = _with_enrichment("tender", tender_calloff)
 # --- Coverage completion, batch F: self-billing on the island ---------------------------------------------------
 # The gin withholds the island's presumptive tax on farm produce (1 % up to 2,000 coral of a delivery, 2 % above)
 # and the farm collects the cotton fund's levy of 1 % from the gin (world/countries.json). Seed cotton is priced from
-# the trade accord's lint reference price in lume; the farm is paid in coral. A purchase between two Lisavan
+# the Trade Accord's lint reference price in lume; the farm is paid in coral. A purchase between two Lisavan
 # businesses needs no tax representative: the ginnery withholds the presumptive tax itself (D33 point 3).
 XL_TAX = WORLD["countries"]["XL"]["tax"]["withholding"]
 XL_COTTON = WORLD["countries"]["XL"]["cotton"]
@@ -12015,7 +12062,7 @@ def cotton_currencies(f, day):
                                                                                              "conversion."),
                             "MathematicOperatorCode": V("Multiply", "Coral times the rate."),
                             "Date": V(f.date(day), "Of the document's date.")}
-    return {"PricingCurrencyCode": V("XBL", "Seed cotton is priced from the trade accord's lint reference price, "
+    return {"PricingCurrencyCode": V("XBL", "Seed cotton is priced from the Trade Accord's lint reference price, "
                                             "published in lume."),
             "PricingExchangeRate": {"SourceCurrencyCode": V("XBL", "The reference price's currency."),
                                     "TargetCurrencyCode": V("XLC", "The document's."),
@@ -12581,8 +12628,8 @@ def energy(n, doc):
         g = FACTORY_GAS
         vn = (g["m3"] * g["factor"]).quantize(Decimal(1))
         return {"ID": V(f.number("metering", doc["from"], "UtilityStatement"), "The grid operator's metering report."),
-                "IssueDate": V(f.date(1), "Sent with the month's network invoice, the morning after the meters "
-                                          "were read."),
+                "IssueDate": V(f.date(1), "Sent with the month's network invoice on Thursday 2 April, once "
+                                          "the readings of 31 March are checked."),
                 "IssueTime": V("08:20:00", "Issued in the same billing run as the network invoice it supplements, "
                                            "each citing the other, and before the retail company bills the gas by "
                                            "it."),  # energy/01#F5, timelines#F8
@@ -12648,7 +12695,8 @@ def energy(n, doc):
                                                                                      "energy.")}},
                         "LegalMonetaryTotal": network_gas_total(doc)}}}
     if d == "Invoice" and doc["from"] == "44-xu":
-        out = kit.invoice(f, n, doc, 1, "The month's network charges, billed the morning after the meters were read, "
+        out = kit.invoice(f, n, doc, 1, "The month's network charges, billed on Thursday 2 April, once the readings of "
+                                        "31 March are checked, "
                                         "with the metering statement that supplements the invoice.", {},
                            [{"item": "network-electricity", "qty": 412800, "invoice_why": "The factory's electricity "
                                                                                           "connection, March."},
@@ -12822,7 +12870,7 @@ def energy(n, doc):
                 "DocumentCurrencyCode": kit.currency_line("XUF", "the currency of the invoice paid"),
                 "TotalDebitAmount": amount(inv + sur, "XUF", "The invoice and the surcharge."),
                 "TotalCreditAmount": amount(0, "XUF", "No credits."),
-                "TotalPaymentAmount": amount(inv + sur, "XUF", "Transferred in ferra over the trade accord's link."),
+                "TotalPaymentAmount": amount(inv + sur, "XUF", "Transferred in ferra over the Trade Accord's link."),
                 "LineCountNumeric": V("2", "The invoice and the surcharge."),
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
                                  "PaymentID": V(kit.rf_reference(f.numbers["gas-invoice"]), "The invoice's creditor "
@@ -13971,14 +14019,26 @@ def rf_order_response(f, n, doc):
 def reefer(n, doc):
     f, d = REEFER, doc["doc"]
     if d == "Order":
-        return kit.order(f, n, doc, RF_DAY["order"], "Ordered in the second week of the apple season, when the "
-                         "cooperative's price list for the island came out.",
+        return kit.order(f, n, doc, RF_DAY["order"], "Ordered when the cooperative's price list for the island "
+                         "came out, with the Granny Smith harvest under way.",
                          "Carriage and insurance paid to the port of Selanu (Incoterms 2020 CIP): the cooperative "
                          "books the reefer, pays its carriage and insures the fruit; the risk passes to the buyer "
                          "when the reefer is handed to the carrier at Lumeport.", "Port of Selanu",
                          {"Note": V("One 40-foot reefer, apples and pears, on the sailing of 23 April.",
                                     "What the buyer wants, in a line."),
-                          "Delivery": {"RequestedDeliveryPeriod": {
+                          "Delivery": {"Shipment": {
+                              "ID": V("1", "The shipment the order asks for: one reefer."),
+                              "GoodsItem": {"ID": V("1", "The fruit of the order."),
+                                            "Temperature": {
+                                                "AttributeID": V("TRANSPORT", "What the temperature is of: the air "
+                                                                              "in the cargo space during transport."),
+                                                "MeasureCode": V("CHILLED", "The wholesaler asks for the fruit to "
+                                                                            "travel chilled, a class, not a figure: "
+                                                                            "the cooperative and its forwarder set "
+                                                                            "the reefer to the fruit's own set "
+                                                                            "point."),
+                                                "Description": V("Chilled, not frozen", "In words.")}}},
+                              "RequestedDeliveryPeriod": {
                               "StartDate": V(f.date(RF_DAY["berth"]), "On Tidewell's sailing of Thursday 23 April, "
                                                                        "which is at Selanu on the Sunday."),
                               "EndDate": V(f.date(RF_DAY["berth"]), "The same day: the shops restock on the "
@@ -14149,6 +14209,8 @@ def reefer(n, doc):
         out["ValidityPeriod"] = {"StartDate": V(f.date(RF_DAY["import"]), "Lodged before the goods arrive."),
                                  "EndDate": V(f.date(RF_DAY["import"] + 30), "A declaration lodged before arrival "
                                               "lapses if the goods are not presented to customs within 30 days.")}
+        out["IssueTime"] = V("11:32:00", "In the wholesaler's working hours, while the reefer is at "
+                                         "sea.")   # read-through reefer 4: Hafefo works 05:00-14:00
         return out
     if d == "TransportationStatus":
         out = kit.transportation_status(
@@ -14195,6 +14257,7 @@ def reefer(n, doc):
     if d == "ReceiptAdvice":
         out = kit.receipt_advice(f, n, doc, RF_DAY["receipt"], "The wholesaler confirms what it unloaded on the "
                                  "Monday morning.")
+        out["IssueTime"] = V("09:27:00", "On the Monday morning, once the fruit is counted.")  # read-through reefer 4
         out["Note"] = V("Unloaded at our cold store and counted, the mix of your order response: five pallets of "
                         "Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed "
                         "between 0.2 and 0.9 °C from loading to unloading.", "How the fruit was received: the "
@@ -14817,3 +14880,44 @@ def _(f, n, doc, out):
                                            "duty or import VAT until they are released."),
             "NatureOfTransactionCode": V("PROCESSING", "The goods come for processing under contract; they are "
                                                        "not bought.")}
+
+
+# The air frames cross Bayvarra in the Accord's common transit, from Valdara at Ferrano to Selanu airport: neither
+# imported into Bayvarra nor exported from it. The distributor's sale keeps the sales-tax code EXP by its definition
+# (goods sent to a buyer outside Bayvarra) but is not called an export (D39 point 2; owner, 2026-11-20, read-through
+# air A4). Real exports from Bayvarra keep the generic reason of kit.tax_rule.
+
+
+def air_transit_tax(node):
+    if isinstance(node, list):
+        for x in node:
+            air_transit_tax(x)
+    elif isinstance(node, dict):
+        code = node.get("TaxExemptionReasonCode")
+        if getattr(code, "value", None) == "EXP" and getattr(node.get("ID"), "value", None) == "G":
+            node["ID"] = V("G", "Goods sent to a buyer outside Bayvarra, which cross Bayvarra in transit and never "
+                                "enter its free circulation: the state sales tax is not charged (category G).",
+                           **node["ID"].attrs)
+            # the TaxExemptionReason text is the code's name in Bayvarra's list (the build sets it from the code),
+            # "Export outside Bayvarra": a different name or code for this case waits for the owner
+        for v in node.values():
+            air_transit_tax(v)
+
+
+for _doc_type in ("OrderChange", "OrderResponse", "Invoice"):
+    enrich("air", _doc_type)(lambda f, n, doc, out: air_transit_tax(out))
+
+
+# Issued within the issuer's desk hours (weekdays 08:00-17:00), not at the build's default time (read-through
+# tender 10): the contract is signed on Friday afternoon, the bank's certificate goes out before it closes.
+TENDER_TIMES = {24: ("15:24:00", "Signed on Friday afternoon, in the department's office hours."),
+                37: ("16:19:00", "Issued in the afternoon, before the bank's desk closes.")}
+
+
+@enrich("tender", "TenderContract")
+@enrich("tender", "GuaranteeCertificate")
+def _(f, n, doc, out):
+    if n in TENDER_TIMES and "IssueTime" not in out:
+        t, why = TENDER_TIMES[n]
+        return {"IssueTime": V(t, why)}
+    return {}

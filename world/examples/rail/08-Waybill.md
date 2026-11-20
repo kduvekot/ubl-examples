@@ -750,9 +750,9 @@ Inside `DocumentDistribution`:
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
 - `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
   The consignor's original, handed over when the carrier took over the goods, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
-- `Party/PartyIdentification/ID` = **XU-R-104411** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Castrano Logistics**  
+- `Party/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The original for the consignee.
@@ -764,9 +764,9 @@ Inside `DocumentDistribution`:
   The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In Urvanian, the sender's language.
 - `DistributionType` = **Original, with the goods: the consignee's original** (languageID `en-XU`)  
   The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery. In English.
-- `Party/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Ferrano Intermodal Hub**  
+- `Party/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
@@ -1490,10 +1490,10 @@ Inside `Signature`:
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Castrano Logistics</cbc:Name>
+        <cbc:Name>Valdara Industries</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>
@@ -1505,10 +1505,10 @@ Inside `Signature`:
     <cbc:DistributionType languageID="en-XU">Original, with the goods: the consignee's original</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-105096</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

@@ -891,6 +891,7 @@
      "what": "the department's first call-off under the contract",
      "starter": "2-xb",
      "parties": [
+      "10-xb",
       "2-xb",
       "5-xu",
       "8-xu"
@@ -1886,7 +1887,7 @@
      ]
     },
     {
-     "what": "the store's sale of a shirt at the till",
+     "what": "the store's sale of two shirts at the till",
      "starter": "26-xb",
      "parties": [
       "26-xb",
@@ -1995,7 +1996,7 @@
    ],
    "collaborations": [
     {
-     "what": "Selanu Telecom's order of a mast from Saltmere Engineering",
+     "what": "Selanu Telecom's order of back-up batteries, smoke detectors and coating stripper for its mast from Saltmere Engineering",
      "starter": "35-xl",
      "parties": [
       "27-xb",
@@ -2056,7 +2057,7 @@
    ],
    "collaborations": [
     {
-     "what": "Ferrano Grid's network bill for April to Ferrano Energy",
+     "what": "Ferrano Grid's network bill for March to Ferrano Energy",
      "starter": "44-xu",
      "parties": [
       "33-xu",
@@ -2068,7 +2069,7 @@
      ]
     },
     {
-     "what": "Kelpstone's gas bill for April to Montebrio Power",
+     "what": "Kelpstone's gas bill for March to Montebrio Power",
      "starter": "42-xb",
      "parties": [
       "42-xb",
@@ -2186,7 +2187,7 @@
       "name": "Port of Selanu",
       "locode": "XLSEL"
      },
-     "transit_days": 5
+     "transit_days": 2
     },
     {
      "mode": "road",
@@ -2203,6 +2204,7 @@
      }
     }
    ],
+   "door_to_door_days": 5,
    "collaborations": [
     {
      "what": "Hafefo's order of fruit from Harrowmead Fruit Growers",
@@ -2290,7 +2292,10 @@
       "reefer/10"
      ]
     }
-   ]
+   ],
+   "_refs": {
+    "door_to_door_days": "read-through 2026-11-20 reefer 1: the sea leg is about 48 hours; the despatch advice's estimate is door to door"
+   }
   },
   {
    "id": "lpg",
@@ -3943,7 +3948,7 @@
    "doc": "ExpressionOfInterestRequest",
    "from": "36-xb",
    "to": "2-xb",
-   "why": "The sawmill registers its interest, to receive the documents of the procedure.",
+   "why": "The sawmill registers its interest, to receive the documents of the procedure: it considers a tender for lot 1 with a bench maker.",
    "parties": {
     "ContractingParty": "2-xb",
     "EconomicOperatorParty": "36-xb"
@@ -4009,7 +4014,7 @@
    "doc": "UnsubscribeFromProcedureRequest",
    "from": "36-xb",
    "to": "2-xb",
-   "why": "The sawmill decides not to tender: a bench with cast-iron frames is not its trade. It unsubscribes.",
+   "why": "The sawmill decides not to tender: no bench maker joined it, and a bench with cast-iron frames is not a sawmill's trade on its own. It unsubscribes.",
    "parties": {
     "ContractingParty": "2-xb",
     "EconomicOperatorParty": "36-xb"
@@ -4562,7 +4567,7 @@
    "doc": "Invoice",
    "from": "35-xl",
    "to": "1-xl",
-   "why": "The telecom bill. The island has no sales tax or VAT, and the invoice says that no tax applies rather than leaving it out.",
+   "why": "The telecom bill. The island has no sales tax or VAT, so no tax is due and the bill has no tax section.",
    "parties": {
     "AccountingSupplierParty": "35-xl",
     "AccountingCustomerParty": "1-xl",
@@ -4604,7 +4609,7 @@
    "doc": "OrderResponse",
    "from": "7-xu",
    "to": "41-xb",
-   "why": "The waste processor confirms the lot and the loading date.",
+   "why": "The waste processor accepts the order as placed.",
    "parties": {
     "SellerSupplierParty": "7-xu",
     "BuyerCustomerParty": "41-xb"
@@ -5627,7 +5632,7 @@
    "doc": "PurchaseReceipt",
    "from": "26-xb",
    "to": "c-xb",
-   "why": "The consumer buys a shirt; the receipt shows the state sales tax, the only point where Bayvarra's tax is charged.",
+   "why": "The consumer buys two shirts, a pair at the offer price; the receipt shows the state sales tax, the only point where Bayvarra's tax is charged.",
    "parties": {
     "AccountingSupplierParty": "26-xb",
     "AccountingCustomerParty": "c-xb"
@@ -5833,7 +5838,8 @@
     "AccountingCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "2-xb",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb",
+    "TaxRepresentativeParty": "10-xb"
    },
    "_refs": {
     "why": "D28 point 9, D17"
@@ -5866,7 +5872,7 @@
    "doc": "PriorInformationNotice",
    "from": "2-xb",
    "to": "21-xb",
-   "why": "Version 2 of the prior information notice: the city council raised the prize fund, and the contest notice moves by two weeks.",
+   "why": "Version 2 of the prior information notice: the city council raised the prize fund, and the contest notice moves by about two weeks.",
    "parties": {
     "ContractingParty": "2-xb",
     "ReceiverParty": "21-xb"
@@ -6089,7 +6095,6 @@
    "parties": {
     "SenderParty": "44-xu",
     "ReceiverParty": "33-xu",
-    "CustomerParty": "33-xu",
     "SubscriberParty": "5-xu"
    }
   },
@@ -6840,7 +6845,7 @@
    "type": "Pressing record"
   },
   "SM-ASSAY-26-11": {
-   "what": "Serravona Mining's assay of the ore lot",
+   "what": "Serravona Mining's assay certificate of the sample taken when February's ore train was loaded, the latest analysis of the ore before March's train",
    "type_code": "1"
   },
   "SM-ASSAY-26-12": {

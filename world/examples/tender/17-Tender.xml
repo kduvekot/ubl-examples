@@ -23,7 +23,7 @@
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>3900039355</cbc:ID>
+    <cbc:ID>3900039354</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -294,7 +294,7 @@
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-2</cbc:ID>
       <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating, and the lead time per release.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
         <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
@@ -305,6 +305,12 @@
         <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
         <cbc:Description>Six years on the frame and the slats.</cbc:Description>
         <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.3</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.3</cbc:AwardingCriterionID>
+        <cbc:Description>14 days per release.</cbc:Description>
+        <cbc:Quantity unitCode="DAY">14</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

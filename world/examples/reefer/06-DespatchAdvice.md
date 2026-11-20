@@ -197,7 +197,7 @@ Inside `Shipment`:
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; as Tidewell Ocean Lines gives it.
 - `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-27**  
-  Expected after the usual transit by sea.
+  Expected after the usual transit door to door, 5 days with the sea leg and the carriage to and from it.
 - `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-27**  
   The same day.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-04-22**  

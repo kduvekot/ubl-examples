@@ -169,8 +169,8 @@
     <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">750.000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description languageID="qal">Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
-      <cbc:Description languageID="en-XL">The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
+      <cbc:Description languageID="qal">Serra hiapi vusase lesama keniti mutaki Velumi Trading, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
+      <cbc:Description languageID="en-XL">The Serra park bench from the stock of Velumi Trading, imported from Bayvarra, for island customers.</cbc:Description>
       <cbc:Name languageID="qal">Hiapi vusase Serra 180</cbc:Name>
       <cbc:Name languageID="en-XL">Park bench Serra 180</cbc:Name>
       <cbc:BrandName>Valdara</cbc:BrandName>

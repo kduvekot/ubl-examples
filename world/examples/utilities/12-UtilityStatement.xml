@@ -186,7 +186,7 @@
             <cac:AllowanceCharge>
               <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
               <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-              <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
+              <cbc:AllowanceChargeReason>Calls to the Trade Accord countries are included in the subscription</cbc:AllowanceChargeReason>
               <cbc:Amount currencyID="XLC">2.450</cbc:Amount>
             </cac:AllowanceCharge>
             <cac:CallDuty>

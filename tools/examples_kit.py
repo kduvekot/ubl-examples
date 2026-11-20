@@ -84,7 +84,8 @@ def code(pid):
 REGISTRY = {}           # first pass: (flow, key) -> {"sender", "kind", "provisional"}
 NUMBER_TABLE = None     # second pass: (flow, key) -> the issuer's number
 NUMBER_INFO = {}        # second pass: number -> (issuer whose series it is in, series, kind, flow, key)
-STATUTORY_KINDS = ("Invoice", "CreditNote")   # numbered within the year by Urvania's rules for value added tax
+STATUTORY_KINDS = ("Invoice", "CreditNote", "DebitNote")   # numbered within the year by Urvania's VAT rules
+STATUTORY_VOLUME = ("Invoice", "CreditNote")   # the series' yearly volume: a debit note is rare (owner, O269)
 RUNNING = ("range", "awb", "bl")              # styles that run on from year to year; the others restart each year
 
 
@@ -111,7 +112,7 @@ def yearly_volume(owner, kind, fmt):
     rules, n = WORLD["numbering"], PARTY[owner]["numbering"]
     if fmt == "file" and kind not in n.get("kinds", {}):
         return n["volume"]                  # the files a public body registers in a year
-    kinds = STATUTORY_KINDS if fmt == "statutory" else (kind,)
+    kinds = STATUTORY_VOLUME if fmt == "statutory" else (kind,)
     return sum(n.get("volumes", {}).get(k, n["volume"] * rules["factors"].get(k, rules["default_factor"]))
                for k in kinds)
 
@@ -523,7 +524,7 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
            "PaymentChannelCode": V(clearing_channel(border, seller, acc_country), "How the payment system clears and settles the "
                                    "transfer, as an ISO 20022 clearing channel."),  # world/countries.json
            "PaymentRailID": V(system, "The payment system the transfer runs over: "
-                              + ("the trade accord's link between the countries." if border else
+                              + ("the Trade Accord's link between the countries." if border else
                                  "the domestic clearing.")),
            "PaymentID": V(rf_reference(number), "The structured creditor reference of ISO 11649 to quote with the "
                                                 "payment, made from the invoice number with its check digits."),
@@ -883,14 +884,18 @@ TRANSIT_DAYS = {"air": 0, "road": 1, "rail": 2, "river": 2, "sea": 3}   # door t
 def despatch_delivery(flow, day):
     """When the goods leave and when they are expected (worklist C27): despatched on the day of the advice, expected
     after the usual transit of the flow's main mode."""
-    legs = next(x for x in WORLD["flows"] if x["id"] == flow.id).get("legs", [])
+    fl = next(x for x in WORLD["flows"] if x["id"] == flow.id)
+    legs = fl.get("legs", [])
     leg = next((x for x in legs if x["mode"] != "road"), legs[0] if legs else {"mode": "road"})
     mode = leg["mode"]
     flow.numbers["despatch-day"] = day
-    flow.numbers["delivery-day"] = day + leg.get("transit_days", TRANSIT_DAYS[mode])
+    door = fl.get("door_to_door_days")          # a flow whose main leg is a short part of the way (reefer)
+    flow.numbers["delivery-day"] = day + (door if door is not None else leg.get("transit_days", TRANSIT_DAYS[mode]))
     arrive = flow.date(flow.numbers["delivery-day"])        # a leg may state its own transit
+    expected = (f"Expected after the usual transit door to door, {door} days with the {mode} leg and the carriage "
+                "to and from it." if door is not None else f"Expected after the usual transit by {mode}.")
     return {"Despatch": {"ActualDespatchDate": V(flow.date(day), "The goods left on the day of this advice.")},
-            "EstimatedDeliveryPeriod": {"StartDate": V(arrive, f"Expected after the usual transit by {mode}."),
+            "EstimatedDeliveryPeriod": {"StartDate": V(arrive, expected),
                                         "EndDate": V(arrive, "The same day.")}}
 
 
@@ -1001,8 +1006,12 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
         V("380", "A commercial invoice, as UN/EDIFACT 1001 codes it."),
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency" if cur == currency_of(seller)
                                               else "the buyer's currency, agreed in the contract"),
-        **cost_centre(buyer, iid=rows[0][0]["item"], why="The buyer's cost centre, quoted in its order, so the invoice is booked without "
-                            "asking."),
+        # quoted in the buyer's order where there is one, else in the contract or booking the bill answers
+        # (read-through waste W3: waste/03, plastics/07, air/10)
+        **cost_centre(buyer, iid=rows[0][0]["item"], why="The buyer's cost centre, quoted in its " + (
+            "order" if any(d["flow"] == flow.id and d["doc"] in ("Order", "OrderChange") and d["from"] == buyer
+                           for d in WORLD["documents"]) else "contract or booking") + ", so the invoice is booked "
+            "without asking."),
         "LineCountNumeric": V(str(len(rows)), "The number of invoice lines, as a check on the transfer."),
         "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][-1], "The language of the "
                                  "texts that carry no language identifier: English, the working language between "
@@ -1068,15 +1077,22 @@ def invoice_delivery(flow, out, buyer, day):
     legs = next(x for x in WORLD["flows"] if x["id"] == flow.id).get("legs", [])
     leg = next((x for x in legs if x["to"] == buyer), None)
     delivery = {}
-    if leg:
+    # under free carrier or ex works the goods are delivered at the seller's end, where the buyer's carrier takes
+    # them over (read-through ore 6, packaging K3)
+    terms = next((d.get("values", {}).get("DeliveryTerms/ID") for d in WORLD["documents"]
+                  if d["flow"] == flow.id and d["doc"] == "Order" and d["from"] == buyer), None)
+    if leg and terms in ("FCA", "EXW"):
+        delivery["DeliveryLocation"] = leg_location(leg, "from", "Where the goods billed are delivered: under "
+                                                    f"the terms {terms}, where the buyer's carrier takes them over.")
+    elif leg:
         delivery["DeliveryLocation"] = leg_location(leg, "to", "Where the goods billed are delivered.")
     arrived = flow.numbers.get("delivery-day") if same else None
     if arrived is not None and arrived <= day:
         delivery = {"ActualDeliveryDate": V(flow.date(arrived), "The day the goods billed were delivered."),
                     **delivery}
     elif same and flow.numbers.get("despatch-day") is not None:
-        delivery["Despatch"] = {"ActualDespatchDate": V(flow.date(flow.numbers["despatch-day"]), "The invoice is "
-                                                        "issued on despatch: the day the goods left.")}
+        delivery["Despatch"] = {"ActualDespatchDate": V(flow.date(flow.numbers["despatch-day"]), "The day the "
+                                                        "goods billed left, before they are delivered.")}
     if delivery:
         out["Delivery"] = delivery
 
@@ -1245,7 +1261,7 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight, same_day=
     leg, places = leg_places(flow, doc["to"])
     mode = leg["mode"]
     end = (V(flow.date(start_day), "Delivered the day it is collected: a short run.") if same_day else
-           V(flow.date(start_day + 3), "Delivered within three days."))
+           V(flow.date(start_day + 3), "The end of the service window, three days after its start: the goods are delivered by then."))
     return {"ID": V(flow.number("tep-request", doc["from"], "TransportExecutionPlanRequest"),
                     "The transport user's request number."),
             "VersionID": V("1", "The first version of the request."),
@@ -1297,7 +1313,7 @@ def tep(flow, n, doc, day, why, start_day, weight):
             "MainTransportationService": main_service(flow, doc["from"]),
             "AdditionalTransportationService": {"TransportServiceCode": V("NOTIFY", "Pre-arrival notice."),
                                                 "Name": V("Notice two hours before arrival", "In words.")},
-            "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
+            "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "The end of the service window, three days after its start: the goods are delivered by then.")},
             **places,
             "TransportExecutionTerms": tep_terms(flow, doc["to"], doc["from"], 3),
             "TransportExecutionPlanRequestDocumentReference": {"ID": V(flow.numbers["tep-request"],
@@ -1348,6 +1364,10 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
     carrier = doc["from"]
     leg = flow_leg(flow, carrier)
     kind, kind_name = waybill_kind(flow, carrier)
+    rule = "the law" if kind in {k for k, _ in DOMESTIC_KIND.values()} else "the convention"  # ore/05, lpg/03
+    ps = doc.get("parties", {})        # the originals go to the consignor and the consignee the note names
+    consignor = ps.get("ConsignorParty", leg["from"])                          # (medicines/11, rail/08)
+    consignee = ps.get("Shipment/Consignment/ConsigneeParty", leg["to"])
     number = flow.number("waybill", doc["from"], "Waybill")
     flow.numbers[f"waybill-day-{carrier}"] = day          # a freight term may count from it (PLAN_PAYMENT)
     flow.numbers["carrier-ref"] = flow.number(f"carrier-ref-{carrier}", carrier, "Carriage")  # quoted later
@@ -1361,10 +1381,11 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
                                                           "under.")} if shipping_order(flow) else {}),
            "Description": V(leg["why"], "The carriage in words."),
            "Note": V("Three originals: the consignor's, handed over when the carrier took over the goods; the "
-                     "consignee's, with the goods; the carrier's, kept by the carrier.", "The originals the convention "
+                     "consignee's, with the goods; the carrier's, kept by the carrier.", f"The originals {rule} "
                      "prescribes, as the distribution below lists them; the carrier's own is not distributed"
                      "."),  # C33
-           "WaybillTypeCode": V(kind, "The convention the document follows."),
+           "WaybillTypeCode": V(kind, "The law the document follows." if rule == "the law" else
+                                "The convention the document follows."),
            "ConsolidatedIndicator": V("false", "One consignment, not a consolidation."),
            "OtherInstruction": V("Deliver against signature of the consignee.", "What the carrier must do at "
                                                                                "delivery."),
@@ -1373,15 +1394,15 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
                {"ID": V("1", "The original for the consignor."),
                 "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
                 "DistributionTypeCode": V("ORIGINALHANDED", "The consignor's original, handed over when the carrier "
-                                                            "took over the goods, as the convention prescribes."),
-                "Party": party_short(leg["from"])},
+                                                            f"took over the goods, as {rule} prescribes."),
+                "Party": party_short(consignor)},
                {"ID": V("2", "The original for the consignee."),
                 "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
                 "DistributionTypeCode": V("ORIGINALWITHGOODS", "One of the three originals travels with the goods to "
-                                                               "the consignee, as the convention prescribes."),
+                                                               f"the consignee, as {rule} prescribes."),
                 "DistributionType": Detail("the consignee's original", "the original the consignee signs on "
                                                                          "delivery."),
-                "Party": party_short(leg["to"])},
+                "Party": party_short(consignee)},
                {"ID": V("3", "The electronic copy."),
                 "DocumentTypeCode": V("Waybill", "The document distributed: this waybill."),
                 "DistributionTypeCode": V("ELECTRONICCOPY", "The receiver of this message gets a copy, for its "
@@ -1711,7 +1732,7 @@ def line_features(rows, lines, cur, gross):
         la = d.get("line_allowance")
         if la:
             line["LineExtensionAmount"] = amount(amt, cur, f"{q} × the price = {gross[k]}, less the {la['percent']} % "
-                                                           f"{la['reason'].lower()}.")
+                                                           f"{la['reason'][0].lower() + la['reason'][1:]}.")
             line["AllowanceCharge"] = {"ChargeIndicator": V("false", "An allowance on the line."),
                                        "AllowanceChargeReasonCode": V(la["code"], la["code_why"],
                                                                       listID="UN/EDIFACT EDED 5189"),

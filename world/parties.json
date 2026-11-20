@@ -99,7 +99,7 @@
      },
      {
       "title": "Operations",
-      "text": "The mine is entered by an adit in the hillside at about 720 m, 29 km from the mining village of Serravona. A small crushing and screening plant and a spoil heap stand beside it; the hillside around it stays green. The ore line is laid up to the portal, where the wagons are loaded and weighed at the mine's own siding, and runs about 166 km down to the works of [[Valdara Industries]] in [[Ferrano]]."
+      "text": "The mine is entered by an adit in the hillside at about 720 m, 29 km from the mining village of Serravona. A small crushing and screening plant and a spoil heap stand beside it; the hillside around it stays green. The ore line is laid up to the portal, where the wagons are loaded and weighed at the mine's own siding, and runs down to the works of [[Valdara Industries]] in [[Ferrano]]: a train runs about 159 km from the mine siding to the works siding."
      },
      {
       "title": "Trade",
@@ -689,7 +689,7 @@
      },
      {
       "title": "Operations",
-      "text": "Its ore trains carry the ore of [[Serravona Mining]] about 166 km down the ore line from the mine siding to the works of [[Valdara Industries]] in [[Ferrano]], priced per tonne. Its container trains run from the [[Ferrano Intermodal Hub]] across the border to the rail siding of [[Lumeway Distribution]] in [[Marrowdale]], under the Accord's uniform rules for international carriage by rail. For these it sells container slots under a framework contract with Valdara, payable 30 days net, and its own tractor brings the packed containers from the warehouse to the hub. A container gets five free days at the consignee's siding; after that the company charges demurrage per container day."
+      "text": "Its ore trains carry the ore of [[Serravona Mining]] about 159 km down the ore line from the mine siding to the works of [[Valdara Industries]] in [[Ferrano]], priced per tonne. Its container trains run from the [[Ferrano Intermodal Hub]] across the border to the rail siding of [[Lumeway Distribution]] in [[Marrowdale]], under the Accord's uniform rules for international carriage by rail. For these it sells container slots under a framework contract with Valdara, payable 30 days net, and its own tractor brings the packed containers from the warehouse to the hub. A container gets five free days at the consignee's siding; after that the company charges demurrage per container day."
      },
      {
       "title": "Fleet",
@@ -1017,7 +1017,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The hub was built as a border terminal for the traffic of the [[Lumeport Trade Accord]], which entered into force in 1996, one of the companies set up in the Accord's first years to serve the new cross-border trade."
+      "text": "The hub was built at Ferrano, 63 km from the border, as a terminal for the traffic of the [[Lumeport Trade Accord]], which entered into force in 1996, one of the companies set up in the Accord's first years to serve the new cross-border trade."
      },
      {
       "title": "Operations",
@@ -2537,7 +2537,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "Books the transport, consolidates shipments and prepares the export documents; arranges cargo insurance; runs its own trucks within Bayvarra, to the port, the airport and the store.",
+   "what": "Books the transport, consolidates shipments and prepares the export documents; arranges cargo insurance; runs its own trucks within Bayvarra, to the port, the airport and the store; acts as tax representative in Bayvarra for foreign suppliers, accounting for the tax withheld on their services.",
    "how": "A freight forwarder organises transport for others. It uses UBL forwarding instructions, packing lists and manifests to combine shipments, book carriers and arrange insurance, keeping one consignment reference across all of them.",
    "identity": {
     "name": "Bayforth Forwarding",
@@ -5722,7 +5722,7 @@
      "email": "hospitals@quillmoor.example",
      "telephone": "+999 2 38 6047 1582",
      "department": "Sales",
-     "hours": "Weekdays 07:00–19:00",
+     "hours": "Every day, around the clock",
      "job_title": "Customer service officer"
     },
     "tax_id": "CO-1239476",

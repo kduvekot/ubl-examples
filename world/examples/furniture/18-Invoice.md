@@ -35,7 +35,7 @@ The store took the returned pieces back to the maker's workshop with its own van
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **1100**  
-  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+  The buyer's cost centre, quoted in its contract or booking, so the invoice is booked without asking.
 - `AccountingCost` = **Timber and materials**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  

@@ -23,7 +23,7 @@ Clothing for resale: exempt from sales tax, which the store charges its customer
 - `UUID` = **69ae2c54-0b5e-552e-8c9e-299ef0cc1f8e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-12**  
-  Issued on delivery.
+  Issued on despatch, the day the shirts left.
 - `IssueTime` = **14:49:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-06-11**  
@@ -248,7 +248,7 @@ Inside `Delivery`:
 - `DeliveryLocation/Name` = **Goods-in of the Lumeport store**  
   Where the goods billed are delivered.
 - `Despatch/ActualDespatchDate` = **2026-05-12**  
-  The invoice is issued on despatch: the day the goods left.
+  The day the goods billed left, before they are delivered.
 
 ### Payment Means
 

@@ -18,7 +18,7 @@ After the standstill period the authority and the manufacturer conclude the cont
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **PWD/2026/PARKS**  
   The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
-- `ID` = **PWD/2026/0541**  
+- `ID` = **PWD/2026/0540**  
   The sender's number for this document.
 - `UUID` = **14fc43bd-7919-515f-82c7-a02bb3605891**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -26,8 +26,8 @@ After the standstill period the authority and the manufacturer conclude the cont
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-20**  
   Concluded on Friday 20 March, the day after the standstill period ended.
-- `IssueTime` = **17:24:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
+- `IssueTime` = **15:24:00-01:00**  
+  Signed on Friday afternoon, in the department's office hours; in the issuer's local time, with its offset from UTC.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The name of the contract the procedure is for.
 - `Note` = **The framework contract, signed by both parties.**  
@@ -399,11 +399,11 @@ Inside `TenderResult`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender-contract:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
-  <cbc:ID>PWD/2026/0541</cbc:ID>
+  <cbc:ID>PWD/2026/0540</cbc:ID>
   <cbc:UUID>14fc43bd-7919-515f-82c7-a02bb3605891</cbc:UUID>
   <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
-  <cbc:IssueTime>17:24:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:24:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The framework contract, signed by both parties.</cbc:Note>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>

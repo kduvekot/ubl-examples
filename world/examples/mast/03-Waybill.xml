@@ -160,7 +160,7 @@
     <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
       <cbc:ID>26-0129</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">358.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -514,10 +514,10 @@
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+        <cbc:Name>Saltmere Engineering</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>
@@ -528,10 +528,10 @@
     <cbc:DistributionType>Original, with the goods: the consignee's original</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Selanu Airport Cargo</cbc:Name>
+        <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

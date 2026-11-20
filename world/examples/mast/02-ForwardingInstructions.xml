@@ -90,7 +90,7 @@
     <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
       <cbc:ID>26-0129</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">358.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>

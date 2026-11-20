@@ -33,7 +33,7 @@ The forwarder invoices what it arranged for the distributor: its truck to the po
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **4600**  
-  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+  The buyer's cost centre, quoted in its contract or booking, so the invoice is booked without asking.
 - `AccountingCost` = **Freight and forwarding**  
   The cost centre in words.
 - `LineCountNumeric` = **4**  

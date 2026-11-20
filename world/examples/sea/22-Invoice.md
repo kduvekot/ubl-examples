@@ -271,7 +271,7 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
   A payment that is not urgent goes in the Trade Accord link's batch run, a mass payment net system, as ISO 20022 clearing channel MPNS. The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
 - `PaymentPlatformID` = **HF-COLLECT**  
   The factor's collection platform the payment is matched on.
 - `InstructionNote` = **Quote RF21LMWINV261025**  

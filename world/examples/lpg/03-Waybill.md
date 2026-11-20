@@ -37,9 +37,9 @@ The haulier's consignment note under Bayvarra's road carriage law, with the dang
 - `Description` = **The tanker carries the propane from the gas plant to the water company's peak boilers in Lumeport.**  
   The carriage in words.
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.**  
-  The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed.
+  The originals the law prescribes, as the distribution below lists them; the carrier's own is not distributed.
 - `WaybillTypeCode` = **NATROAD** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
-  The convention the document follows. The code is from the Trade Accord's waybill type list: NATROAD = Domestic road consignment note.
+  The law the document follows. The code is from the Trade Accord's waybill type list: NATROAD = Domestic road consignment note.
 - `ConsolidatedIndicator` = **false**  
   One consignment, not a consolidation.
 - `OtherInstruction` = **Pump into the propane storage at the boiler house; the water company's operator reads the storage level before and after and signs the note.**  
@@ -163,15 +163,15 @@ Inside `ReceiverParty`:
   The minutes of the longitude.
 - `PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `Contact/Name` = **Pipeline control**  
-  The party's pipeline control desk: the desk for its role in this document (it carries or handles the goods); as Kelpstone Gas gives it.
-- `Contact/JobTitle` = **Pipeline controller**  
+- `Contact/Name` = **Dispatch office**  
+  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); as Kelpstone Gas gives it.
+- `Contact/JobTitle` = **Dispatch coordinator**  
   The job of the person who answers at the desk; as Kelpstone Gas gives it.
-- `Contact/Department` = **Operations**  
+- `Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Kelpstone Gas gives it.
 - `Contact/Telephone` = **+999 2 38522 68330**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Kelpstone Gas gives it.
-- `Contact/ElectronicMail` = **pipeline@kelpstone.example**  
+- `Contact/ElectronicMail` = **dispatch@kelpstone.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Kelpstone Gas gives it.
 - `Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Kelpstone Gas gives it.
@@ -397,12 +397,22 @@ Inside `Shipment`:
 
 Inside `DocumentDistribution`:
 
+- `ID` = **1**  
+  The original for the consignor.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The consignor's original, handed over when the carrier took over the goods, as the law prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
+- `Party/PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Kelpstone Gas**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The original for the consignee.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
 - `DistributionTypeCode` = **ORIGINALWITHGOODS** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
+  One of the three originals travels with the goods to the consignee, as the law prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
 - `DistributionType` = **Original, with the goods: the consignee's original**  
   The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery.
 - `Party/PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -531,11 +541,11 @@ Inside `Signature`:
       </cac:LocationCoordinate>
     </cac:PhysicalLocation>
     <cac:Contact>
-      <cbc:Name>Pipeline control</cbc:Name>
-      <cbc:JobTitle>Pipeline controller</cbc:JobTitle>
-      <cbc:Department>Operations</cbc:Department>
+      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+      <cbc:Department>Warehouse</cbc:Department>
       <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
-      <cbc:ElectronicMail>pipeline@kelpstone.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>dispatch@kelpstone.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -728,6 +738,19 @@ Inside `Signature`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Kelpstone Gas</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
   <cac:DocumentDistribution>
     <cbc:ID>2</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>

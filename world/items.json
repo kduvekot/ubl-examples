@@ -1801,7 +1801,7 @@
    },
    "sellers_id": "VT-PB-180",
    "resale_of": "bench-serra-b",
-   "description": "The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.",
+   "description": "The Serra park bench from the stock of Velumi Trading, imported from Bayvarra, for island customers.",
    "_refs": {
     "price.why": "D30 point 2, O48"
    }
@@ -1907,7 +1907,7 @@
    "price": {
     "amount": 0.33,
     "currency": "XLC",
-    "why": "The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram."
+    "why": "The season agreement's price of seed cotton, from the Trade Accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram."
    },
    "sellers_id": "LCF-SC",
    "hs": "520100",
@@ -3342,7 +3342,7 @@
     "why": "Eight frames cast to Velumi's urgent order of 11 May, galvanised and packed on 13 May.",
     "melt": "M-26-0094",
     "poured": "14:15:00",
-    "poured_why": "An extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next."
+    "poured_why": "Poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next."
    }
   ],
   "ledgers": {

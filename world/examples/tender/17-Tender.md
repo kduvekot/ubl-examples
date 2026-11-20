@@ -57,7 +57,7 @@ Inside `DocumentReference`:
   The datasheet.
 - `DocumentType` = **Product data sheet**  
   The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (cited).
-- `ID` = **3900039355**  
+- `ID` = **3900039354**  
   The certificate of the tender guarantee that covers this tender.
 - `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document. The code is from the Trade Accord's UBL document type list: GuaranteeCertificate = Guarantee Certificate.
@@ -374,7 +374,7 @@ Inside `TenderedProject`:
   The response to the quality criterion.
 - `AwardingCriterionResponse/AwardingCriterionID` = **AC-2**  
   Quality.
-- `AwardingCriterionResponse/AwardingCriterionDescription` = **Durability and warranty of the coating.**  
+- `AwardingCriterionResponse/AwardingCriterionDescription` = **Durability and warranty of the coating, and the lead time per release.**  
   The criterion.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-2.1**  
   Durability.
@@ -390,6 +390,14 @@ Inside `TenderedProject`:
   The offer.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Quantity` = **6** (unitCode `ANN`)  
   The years of warranty offered.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-2.3**  
+  Lead time.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/AwardingCriterionID` = **AC-2.3**  
+  Its criterion.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description` = **14 days per release.**  
+  The offer, as the tender line gives it.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Quantity` = **14** (unitCode `DAY`)  
+  The days from an order to its delivery.
 
 ## The document
 
@@ -419,7 +427,7 @@ Inside `TenderedProject`:
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>3900039355</cbc:ID>
+    <cbc:ID>3900039354</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -690,7 +698,7 @@ Inside `TenderedProject`:
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-2</cbc:ID>
       <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating, and the lead time per release.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
         <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
@@ -701,6 +709,12 @@ Inside `TenderedProject`:
         <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
         <cbc:Description>Six years on the frame and the slats.</cbc:Description>
         <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.3</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.3</cbc:AwardingCriterionID>
+        <cbc:Description>14 days per release.</cbc:Description>
+        <cbc:Quantity unitCode="DAY">14</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

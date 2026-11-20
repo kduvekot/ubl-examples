@@ -17,13 +17,13 @@ The grid operator charges the retail company for the use of the networks at the 
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
   The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **FGR-TX-26-0151**  
-  The collaboration this document belongs to: Ferrano Grid's network bill for April to Ferrano Energy. Ferrano Grid started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Ferrano Grid's network bill for March to Ferrano Energy. Ferrano Grid started it and gave it this identifier, which every document of it repeats.
 - `ID` = **2026/0157**  
   The seller's invoice number.
 - `UUID` = **af7f93bd-4f82-5130-82e5-5b40a1c4cefa**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
-  The month's network charges, billed the morning after the meters were read, with the metering statement that supplements the invoice.
+  The month's network charges, billed on Thursday 2 April, once the readings of 31 March are checked, with the metering statement that supplements the invoice.
 - `IssueTime` = **08:20:00-01:00**  
   The grid operator's billing run, first thing in the morning; in the issuer's local time, with its offset from UTC.
 - `DueDate` = **2026-05-04**  

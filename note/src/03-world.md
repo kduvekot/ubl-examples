@@ -1609,7 +1609,7 @@ class 2.1, in a tank semi-trailer that weighs about 17 t with its tractor, so
 about 37 t and within the 40 t. The tank shows the class 2.1 placard and,
 front and back, the orange plates with the hazard identification number 23
 (gas, flammable) over the UN number 1965; the consignment note gives the
-tunnel restriction code B/D, which forbids a tank of it every road tunnel
+tunnel restriction code B/D, which forbids a tank of it every road tunnel of category B to E
 (the road from Gullhaven to Lumeport has none), and the crew carries the
 Accord's emergency card for class 2. The tanker is weighed empty and full on
 the plant's weighbridge, which gives the tonnes billed, drives the day to

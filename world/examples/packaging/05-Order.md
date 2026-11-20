@@ -23,7 +23,7 @@ Clothing for the store. Delivery terms DDP store: the mill delivers.
 - `UUID` = **a4385e8d-1e16-5254-8f54-b84b7f686cd2**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-07**  
-  The store orders shirts for spring.
+  The store orders shirts for its winter range.
 - `IssueTime` = **09:33:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  

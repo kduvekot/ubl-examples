@@ -238,7 +238,7 @@ Inside `SellerSupplierParty`:
 - `Party/Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Party/Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
-  The sales desk's mobile number, also under the reserved +999.
+  The desk's mobile number, also under the reserved +999.
 
 ### Shipment
 

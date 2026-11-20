@@ -232,8 +232,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Recycled PE granulate**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **98046.00** (currencyID `XBL`)  
-  Bayvarra values the goods as they left the exporting country: the goods at 99,840.00 XBL, with less the river freight after loading, which the seller distinguished from the price (179,400 ferra) (-1,794.00 XBL), shared over the goods items by their value.
+- `GoodsItem/DeclaredCustomsValueAmount` = **99840.00** (currencyID `XBL`)  
+  The customs value in lume: the invoice value in ferra at the world's reference rate (1 ferra = 0.01 lume). Bayvarra values goods as they left the exporting country, and the barge freight beyond the border is not distinguished from the price, which includes it: the whole price is the value.
 - `GoodsItem/DeclaredStatisticsValueAmount` = **99840.00** (currencyID `XBL`)  
   The value for the trade statistics: the invoice value at the border.
 - `GoodsItem/FreeOnBoardValueAmount` = **98046.00** (currencyID `XBL`)  
@@ -526,7 +526,7 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Recycled PE granulate</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">98046.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">99840.00</cbc:DeclaredCustomsValueAmount>
       <cbc:DeclaredStatisticsValueAmount currencyID="XBL">99840.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">98046.00</cbc:FreeOnBoardValueAmount>
       <cbc:InsuranceValueAmount currencyID="XBL">0.00</cbc:InsuranceValueAmount>

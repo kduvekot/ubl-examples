@@ -83,7 +83,7 @@ Inside `ConsignorParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Quillmoor Pharma Distribution gives it.
 - `Contact/ElectronicMail` = **dispatch@quillmoor.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Quillmoor Pharma Distribution gives it.
-- `Contact/Note` = **Weekdays 07:00–19:00**  
+- `Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -543,7 +543,7 @@ Inside `Signature`:
       <cbc:Department>Warehouse</cbc:Department>
       <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@quillmoor.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

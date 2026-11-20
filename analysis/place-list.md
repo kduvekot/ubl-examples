@@ -158,7 +158,7 @@ Every road, railway and pipeline of the map except the villages' minor roads and
 | Route | Mode | What it is | From → to | Length | Straight | Factor | Earlier (old list; D19/D44) |
 |---|---|---|---|---|---|---|---|
 | `ore` | rail | Ore by rail (domestic XU) | Serravona Mining → Valdara Industries | **165.7 km** | 148.6 km | 1.12 | 154; about 154 |
-| `rail-x` | rail | Containers from Ferrano past the border hub to the distributor's siding | Ferrano (12.6 km SE) → Lumeway Distribution | **179.8 km** | 155.0 km | 1.16 | - |
+| `rail-x` | rail | Containers from the Ferrano hub across the border to the distributor's siding | Ferrano (12.6 km SE) → Lumeway Distribution | **179.8 km** | 155.0 km | 1.16 | - |
 | `factory-siding` | rail | The factory's second siding, for outgoing loads | Pomarella (10.5 km S) → Ferrano Intermodal Hub | **15.4 km** | 14.4 km | 1.07 | - |
 | `road` | main road | Finished goods by road, across the border (XU → XB) | Ferrano → Marrowdale | **192.0 km** | 161.6 km | 1.19 | 182; 182 (documents 186) |
 | `road-b` | main road | Distributor to retailer (domestic XB) | Marrowdale → Lumeport (3.5 km W) | **77.5 km** | 69.3 km | 1.12 | - |

@@ -461,7 +461,7 @@ Inside `TenderedProject`:
   The response to the quality criterion.
 - `AwardingCriterionResponse/AwardingCriterionID` = **AC-2**  
   Quality.
-- `AwardingCriterionResponse/AwardingCriterionDescription` = **Durability and warranty of the coating.**  
+- `AwardingCriterionResponse/AwardingCriterionDescription` = **Durability and warranty of the coating, and the lead time per release.**  
   The criterion.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-2.1**  
   Durability.
@@ -477,6 +477,14 @@ Inside `TenderedProject`:
   The offer.
 - `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Quantity` = **10** (unitCode `ANN`)  
   The years of warranty offered.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID` = **ACR-2.3**  
+  Lead time.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/AwardingCriterionID` = **AC-2.3**  
+  Its criterion.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description` = **7 days per release.**  
+  The offer, as the tender line gives it.
+- `AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Quantity` = **7** (unitCode `DAY`)  
+  The days from an order to its delivery.
 
 ## The document
 
@@ -846,7 +854,7 @@ Inside `TenderedProject`:
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-2</cbc:ID>
       <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating, and the lead time per release.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
         <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
@@ -857,6 +865,12 @@ Inside `TenderedProject`:
         <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
         <cbc:Description>Ten years on the coating.</cbc:Description>
         <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.3</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.3</cbc:AwardingCriterionID>
+        <cbc:Description>7 days per release.</cbc:Description>
+        <cbc:Quantity unitCode="DAY">7</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

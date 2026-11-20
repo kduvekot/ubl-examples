@@ -178,8 +178,13 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="GS1 GLN">9520610900039</cbc:ID>
-      <cbc:Name>Lumeway distribution centre, goods-in, Marrowdale</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+      <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:DeliveryLocation>
     <cac:DeliveryParty>
       <cac:PartyIdentification>

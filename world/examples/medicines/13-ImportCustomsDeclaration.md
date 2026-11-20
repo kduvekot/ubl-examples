@@ -26,9 +26,9 @@ The customs broker, as the hospital's direct representative, declares the import
   The customs broker declares the import at Selanu airport once the goods are unloaded.
 - `IssueTime` = **11:40:00+00:00**  
   After the terminal reported the arrival; in the issuer's local time, with its offset from UTC.
-- `Note` = **Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata Lisavu's selune. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.** (languageID `qal`)  
+- `Note` = **Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata selune mutaki Lisavu. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.** (languageID `qal`)  
   The note in Lisavan, the sender's language: What is due at import, by the importing country's rule: goods from outside the Accord claim no preference and pay the country's own tariff, which charges no duty on them.
-- `Note` = **No duty: goods made in India and the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Lisavu's tariff. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.** (languageID `en-XL`)  
+- `Note` = **No duty: goods made in India and the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule: goods from outside the Accord claim no preference and pay the country's own tariff, which charges no duty on them.
 
 ### Importer Party
@@ -445,8 +445,8 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>8f2e6a5d-e54e-599b-97f3-65f0e0767e2a</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
-  <cbc:Note languageID="qal">Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata Lisavu's selune. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods made in India and the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Lisavu's tariff. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata selune mutaki Lisavu. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods made in India and the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>

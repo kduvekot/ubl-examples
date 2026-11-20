@@ -288,7 +288,7 @@ Inside `SubscriberConsumption`:
   An allowance.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
   The reason for the allowance as a code of UN/EDIFACT 5189. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Calls to the trade accord countries are included in the subscription**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Calls to the Trade Accord countries are included in the subscription**  
   Why the service costs nothing.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.450** (currencyID `XLC`)  
   The whole charge of the call: 0.050 set-up and 12 minutes at 0.200.
@@ -704,7 +704,7 @@ Inside `SubscriberConsumption`:
             <cac:AllowanceCharge>
               <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
               <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-              <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
+              <cbc:AllowanceChargeReason>Calls to the Trade Accord countries are included in the subscription</cbc:AllowanceChargeReason>
               <cbc:Amount currencyID="XLC">2.450</cbc:Amount>
             </cac:AllowanceCharge>
             <cac:CallDuty>

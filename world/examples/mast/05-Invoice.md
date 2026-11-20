@@ -17,7 +17,7 @@ Goods and carriage to the site; an export, so no sales tax.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **STL-TX-26-124393**  
-  The collaboration this document belongs to: Selanu Telecom's order of a mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Selanu Telecom's order of back-up batteries, smoke detectors and coating stripper for its mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0132**  
   The seller's invoice number.
 - `UUID` = **40aff29f-0459-5985-901d-8a4a505d1f5d**  
@@ -30,8 +30,8 @@ Goods and carriage to the site; an export, so no sales tax.
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Saturday 4 July, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 6 July.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `Note` = **The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).**  
-  The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference.
+- `Note` = **Carriage paid to the mast site: the prices include the carriage by air and road. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).**  
+  Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **3**  
@@ -218,7 +218,7 @@ Inside `Delivery`:
 - `DeliveryLocation/Name` = **Selanu Telecom's mast site on Mast Hill**  
   Where the goods billed are delivered.
 - `Despatch/ActualDespatchDate` = **2026-06-04**  
-  The invoice is issued on despatch: the day the goods left.
+  The day the goods billed left, before they are delivered.
 
 ### Payment Means
 
@@ -235,7 +235,7 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
 - `InstructionNote` = **Quote RF16260132**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF16260132** (schemeID `ISO 11649`)  
@@ -456,7 +456,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>17:34:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-07-06</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>
+  <cbc:Note>Carriage paid to the mast site: the prices include the carriage by air and road. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>

@@ -277,7 +277,7 @@
             <cac:ConsumptionHistory>
               <cbc:MeterNumber>FGR-E-20523</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">17900</cbc:Quantity>
-              <cbc:Amount currencyID="XUF">488670</cbc:Amount>
+              <cbc:Amount currencyID="XUF">377690</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
               <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
               <cac:Period>
@@ -288,7 +288,7 @@
             <cac:ConsumptionHistory>
               <cbc:MeterNumber>FGR-E-20523</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">16450</cbc:Quantity>
-              <cbc:Amount currencyID="XUF">449085</cbc:Amount>
+              <cbc:Amount currencyID="XUF">347095</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
               <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
               <cbc:Description>Corrected from the estimate of 17,200 kWh.</cbc:Description>
@@ -307,7 +307,7 @@
             </cac:TaxScheme>
           </cac:EnergyTaxReport>
           <cac:ConsumptionAverage>
-            <cbc:AverageAmount currencyID="XUF">488670</cbc:AverageAmount>
+            <cbc:AverageAmount currencyID="XUF">377690</cbc:AverageAmount>
             <cbc:Description>The average over the last three months is 17,900 kWh.</cbc:Description>
           </cac:ConsumptionAverage>
           <cac:EnergyWaterConsumptionCorrection>

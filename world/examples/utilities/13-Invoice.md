@@ -2,7 +2,7 @@
 
 *Example 13 of the flow "Electricity, water and telecom (one utility in each country)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The telecom bill. The island has no sales tax or VAT, and the invoice says that no tax applies rather than leaving it out.
+The telecom bill. The island has no sales tax or VAT, so no tax is due and the bill has no tax section.
 
 [The XML file](13-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,7 +23,7 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
 - `UUID` = **0228817f-8a56-5781-a34c-99eedb2ee7ee**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
-  The monthly bill, issued on the first day of the next month.
+  The monthly bill, issued on the second working day of the next month.
 - `IssueTime` = **11:19:00+00:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-04-23**  
@@ -33,7 +33,7 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the seller's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **700**  
-  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+  The buyer's cost centre, quoted in its contract or booking, so the invoice is booked without asking.
 - `AccountingCost` = **Telephone and data**  
   The cost centre in words.
 - `LineCountNumeric` = **3**  

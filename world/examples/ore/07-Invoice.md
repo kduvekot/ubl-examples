@@ -271,10 +271,10 @@ Inside `Delivery`:
 
 - `ActualDeliveryDate` = **2026-03-10**  
   The day the goods billed were delivered.
-- `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+- `DeliveryLocation/ID` = **XUFNT** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
-- `DeliveryLocation/Name` = **Valdara Industries works, Ferrano**  
-  Where the goods billed are delivered.
+- `DeliveryLocation/Name` = **Fucinalta mine siding**  
+  Where the goods billed are delivered: under the terms FCA, where the buyer's carrier takes them over.
 - `DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
@@ -415,7 +415,7 @@ Inside `InvoiceLine`:
 - `InvoicedQuantity` = **1788.4** (unitCode `TNE`)  
   The weighed quantity from the despatch advice, not the ordered quantity.
 - `LineExtensionAmount` = **14198286** (currencyID `XUF`)  
-  1788.4 × the price = 14414504, less the 1.5 % moisture deduction under the moisture clause of supply agreement sm-vi-sa-2026: 7.5 % moisture measured at loading, above the 6 % agreed.
+  1788.4 × the price = 14414504, less the 1.5 % moisture deduction under the moisture clause of supply agreement SM-VI-SA-2026: 7.5 % moisture measured at loading, above the 6 % agreed.
 - `TaxInclusiveLineExtensionAmount` = **17037943** (currencyID `XUF`)  
   The line with its tax.
 - `OrderLineReference/LineID` = **1**  
@@ -668,8 +668,8 @@ Inside `InvoiceLine`:
   <cac:Delivery>
     <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-      <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+      <cbc:Name>Fucinalta mine siding</cbc:Name>
       <cac:Address>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

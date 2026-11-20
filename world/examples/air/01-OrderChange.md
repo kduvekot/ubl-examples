@@ -257,11 +257,11 @@ Inside `TaxTotal`:
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **512.00** (currencyID `XBL`)  
-  The change; no tax on an export.
+  The change; no tax, the goods crossing Bayvarra in transit.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+  Goods sent to a buyer outside Bayvarra, which cross Bayvarra in transit and never enter its free circulation: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
@@ -278,7 +278,7 @@ Inside `AnticipatedMonetaryTotal`:
 - `LineExtensionAmount` = **512.00** (currencyID `XBL`)  
   The change: the eight frames added; the sea order's lines are unchanged.
 - `PayableAmount` = **512.00** (currencyID `XBL`)  
-  What the change adds to the goods of the order: no tax on an export; the air freight comes on top, on the invoice, at cost.
+  What the change adds to the goods of the order: no tax, the goods crossing Bayvarra in transit; the air freight comes on top, on the invoice, at cost.
 
 ### Order Line
 

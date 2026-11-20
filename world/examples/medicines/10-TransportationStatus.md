@@ -28,7 +28,7 @@ The cargo terminal reports the consignment accepted for KXL207, with the active 
   Ten minutes after the generator was accepted; in the issuer's local time, with its offset from UTC.
 - `Name` = **Transportation status**  
   The kind of report.
-- `Description` = **Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.**  
+- `Description` = **Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.**  
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
@@ -178,15 +178,15 @@ Inside `TransportEvent`:
   The generator, the last package, was accepted at 05:30; the container and the box had come at 04:40.
 - `TransportEventTypeCode` = **ACCEPTANCE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ACCEPTANCE = Accepted.
-- `Description` = **Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.**  
+- `Description` = **Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.**  
   What happened, in words.
 - `CurrentStatus/ConditionCode` = **COMPLETED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
   The acceptance has taken place. The code is from the Trade Accord's status condition list: COMPLETED = Completed.
-- `CurrentStatus/Description` = **Active container closed and running, at 4.8 °C against its set point of 5 °C; the generator's dose rate checked against its label.**  
+- `CurrentStatus/Description` = **Active container closed and running, at 5.6 °C against its set point of 5 °C; the generator's dose rate checked against its label.**  
   What the terminal checked at acceptance.
 - `CurrentStatus/Condition/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   The temperature in the container's cargo space. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
-- `CurrentStatus/Condition/Measure` = **4.8** (unitCode `CEL`)  
+- `CurrentStatus/Condition/Measure` = **5.6** (unitCode `CEL`)  
   As read from the container's display at acceptance.
 - `Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
@@ -254,7 +254,7 @@ Inside `StatusPeriod`:
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>05:40:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
-  <cbc:Description>Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.</cbc:Description>
+  <cbc:Description>Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>QLM-FI-26-2388</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
@@ -365,13 +365,13 @@ Inside `StatusPeriod`:
     <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
     <cbc:OccurrenceTime>05:30:00-01:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
-    <cbc:Description>Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.</cbc:Description>
+    <cbc:Description>Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.</cbc:Description>
     <cac:CurrentStatus>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
-      <cbc:Description>Active container closed and running, at 4.8 °C against its set point of 5 °C; the generator's dose rate checked against its label.</cbc:Description>
+      <cbc:Description>Active container closed and running, at 5.6 °C against its set point of 5 °C; the generator's dose rate checked against its label.</cbc:Description>
       <cac:Condition>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">4.8</cbc:Measure>
+        <cbc:Measure unitCode="CEL">5.6</cbc:Measure>
       </cac:Condition>
     </cac:CurrentStatus>
     <cac:Location>
