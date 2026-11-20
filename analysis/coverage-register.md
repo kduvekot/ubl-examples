@@ -196,19 +196,19 @@ Coverage 5150 → 5129 (commit d2506729), 21 elements.
 |---|---|---|---|---|---|
 | `CommonTransportationReport/DocumentStatusCode` | 0..1 | sea/16-CommonTransportationReport | | | open |
 | `CreditNote/ContractDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote, sea/26-CreditNote | | | open |
-| `Delivery/ReleaseID` | 0..1 | tender/26-Order | | | open |
+| `Delivery/ReleaseID` | 0..1 | tender/26-Order | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `DeliveryNote/DocumentStatusCode` | 0..1 | cotton/03-DeliveryNote | | | open |
-| `Despatch/ReleaseID` | 0..1 | road/04-DespatchAdvice | | | open |
+| `Despatch/ReleaseID` | 0..1 | road/04-DespatchAdvice | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `DespatchAdvice/DocumentStatusCode` | 0..1 | air/06-DespatchAdvice, air/08-DespatchAdvice, mast/04-DespatchAdvice … | | | open |
 | `DespatchLine/LineStatusCode` | 0..1 | air/06-DespatchAdvice, air/08-DespatchAdvice, mast/04-DespatchAdvice … | | | open |
 | `ForwardingInstructions/DocumentStatusCode` | 0..1 | air/03-ForwardingInstructions, cotton/09-ForwardingInstructions, sea/09-ForwardingInstructions … | | | open |
 | `FulfilmentCancellation/Contract` | 0..n | air/07-FulfilmentCancellation | | | open |
 | `InvoiceLine/BillingReference` | 0..n | furniture/17-Invoice | | | open |
 | `LineReference/LineStatusCode` | 0..1 | cotton/04-SelfBilledInvoice, road/02-OrderResponse | | | open |
-| `Order/SalesOrderID` | 0..1 | tender/26-Order | | | open |
-| `OrderChange/SalesOrderID` | 0..1 | air/01-OrderChange | | | open |
-| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | the fulfilment cancellation's reference to the order change quotes the buyer's own reference of it, "Harbour parks Selanu": the frames are spares for the port's harbour benches (O199 a') | air | candidate |
-| `OrderResponse/Contract` | 0..n | sea/06-OrderResponse | | | open |
+| `Order/SalesOrderID` | 0..1 | tender/26-Order | thermal modification as contract processing, O150, if adopted | O150 | candidate |
+| `OrderChange/SalesOrderID` | 0..1 | air/01-OrderChange | thermal modification as contract processing, O150, if adopted | O150 | candidate |
+| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | the fulfilment cancellation's reference to the order change quotes the buyer's own reference of it, "Harbour parks Selanu": the frames are spares for the port's harbour benches (O199 a'); thermal modification as contract processing, O150, if adopted | air, O150 | candidate |
+| `OrderResponse/Contract` | 0..n | sea/06-OrderResponse | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `SelfBilledCreditNote/DespatchDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
 | `SelfBilledCreditNote/ReceiptDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
 | `SelfBilledInvoice/DespatchDocumentReference` | 0..n | cotton/04-SelfBilledInvoice | | | open |
@@ -367,9 +367,9 @@ Coverage 5058 → 5049 (commit 0edd7d78), 9 elements.
 |---|---|---|---|---|---|
 | `Consignment/OfficeOfEntryLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `ImportCustomsDeclaration/CustomsExitOfficeLocation` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
-| `ImportCustomsDeclaration/ValidityPeriod` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
-| `Shipment/DeclaredCustomsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | | | open |
-| `Shipment/DeclaredStatisticsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | | | open |
+| `ImportCustomsDeclaration/ValidityPeriod` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | thermal modification as contract processing, O150, if adopted | O150 | candidate |
+| `Shipment/DeclaredCustomsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
+| `Shipment/DeclaredStatisticsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `TransitCustomsDeclaration/ImportCustomsExitOfficeLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `TransitCustomsDeclaration/PreviousCustomsDeclaration` | 0..n | rail/06-TransitCustomsDeclaration | | | open |
 | `TransitCustomsDeclaration/TransitCustomsExitOfficeLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
@@ -488,8 +488,8 @@ Coverage 4982 → 4971 (commit 11566a00), 11 elements.
 | `EndOfLifeTreatment/ProcessingTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
 | `EndOfLifeTreatment/TreatmentLocation` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
 | `EndOfLifeTreatment/TreatmentPathwayCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
-| `Item/LifecycleStageCode` | 0..1 | waste/03-Invoice | | | open |
-| `Item/LifecycleStageDescription` | 0..n | waste/03-Invoice | | | open |
+| `Item/LifecycleStageCode` | 0..1 | waste/03-Invoice | thermal modification as contract processing, O150, if adopted | O150 | candidate |
+| `Item/LifecycleStageDescription` | 0..n | waste/03-Invoice | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 
 ### C62: the Elderwick Marrow bench, chair and care kit as items of their own under Brightmarket's GTINs; the set a shop offer; indoor dining furniture (D32)
 
