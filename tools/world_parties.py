@@ -197,7 +197,7 @@ def state_code(world, p):
 def check(world):
     problems = []
     parties = {p["id"]: p for p in world["parties"]}
-    seen_names, seen_endpoints = {}, {}
+    seen_names, seen_endpoints, seen_tax = {}, {}, {}
     for p in world["parties"]:
         where = f"party {p['id']}"
         idn = p.get("identity")
@@ -216,6 +216,16 @@ def check(world):
         if idn.get("tax_id") and not tax_id_valid(p["c"], idn["tax_id"], state):
             problems.append(f"{where}: tax number {idn['tax_id']} is not valid for {p['c']}"
                             + (f" (the permit of {state_of(world, p)} starts with {state})" if state_of(world, p) else ""))
+        for cc, tid in sorted(idn.get("tax_abroad", {}).items()):
+            # a registration for the tax of another country of the world, where the party makes taxable sales
+            # itself (O259): the number in that country's format, never one of its own country
+            if cc == p["c"] or cc not in world["countries"] or not tax_id_valid(cc, tid):
+                problems.append(f"{where}: tax number {tid} abroad is not a valid number of {cc}")
+        for tid in [idn.get("tax_id")] + list(idn.get("tax_abroad", {}).values()):
+            if tid and tid in seen_tax:
+                problems.append(f"{where}: tax number {tid} is also {seen_tax[tid]}'s")
+            elif tid:
+                seen_tax[tid] = p["id"]
         a = idn.get("address", {})
         town = nearest_town(world, p)
         if not city_fits(world, p, a.get("CityName")):
@@ -398,6 +408,7 @@ def party_identifiers(world, p):
     # country's register of public bodies (O142, O158): a stated reuse of the register number
     out.append(("register", "customs_id", idn.get("customs_id")))
     out.append(("tax", "tax_id", idn.get("tax_id")))
+    out += [("tax", f"tax_id {cc}", v) for cc, v in sorted(idn.get("tax_abroad", {}).items())]
     out.append(("isin", "listing", idn.get("legal", {}).get("listing", {}).get("id")))
     conv = idn.get("identification") or {}
     out.append(("codana", "codana_cin", conv.get("codana_cin")))
@@ -576,6 +587,11 @@ def identifier_problems(world, p):
             out.append(f"{where}: {p['c']} has no {kind} scheme for {value} (world/countries.json, identifiers)")
             continue
         why = world_ids.problem(ids[kind], value)
+        if why:
+            out.append(f"{where}: {why}")
+    for cc, value in sorted(idn.get("tax_abroad", {}).items()):     # by the scheme of the country it is of (O259)
+        spec = world["countries"].get(cc, {}).get("identifiers", {}).get("tax")
+        why = world_ids.problem(spec, value) if spec else f"{cc} has no tax scheme for {value}"
         if why:
             out.append(f"{where}: {why}")
     return out

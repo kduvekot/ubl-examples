@@ -10,9 +10,9 @@
   <cbc:IssueTime>14:22:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">46320.00</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">55584.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">46320.00</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">55584.00</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>1500002170</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF13MDSINV260232</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -184,7 +184,7 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">46320.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">55584.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF13MDSINV260232</cbc:InvoicingPartyReference>

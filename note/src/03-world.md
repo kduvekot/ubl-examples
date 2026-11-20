@@ -1225,8 +1225,10 @@ Marrowdale.
 
 Urvania also has inward processing, for goods of a foreign owner that are
 worked in Urvania. Since the Accord charges no duty on its own goods, what it
-saves is Urvania's import VAT: a foreign company without an Urvanian VAT
-number could not deduct it. The authorisation is held by a company
+saves is Urvania's import VAT on goods that are only worked there: a
+foreign company without an Urvanian VAT number could not deduct it, and one
+with a number would pay it months before it deducts it. The authorisation is
+held by a company
 established in Urvania, the processor; it names the customs offices that may
 accept the processor's entries and the period within which the goods must
 be discharged. Goods entered under the procedure are worked without duty or
@@ -1791,14 +1793,19 @@ sawmill and when the second charge is ready, and keeps the bundles until the
 sawmill calls them off. The sawmill names the plant in its quotation to
 Valdara, because Valdara's approval of a supplier of a type-tested part
 covers whoever does such a process on it. When Valdara orders its February
-delivery, the sawmill fills it from that stock: it sells the slats to Valdara
-while they are still under the procedure, so that nothing crosses a border
-with the sale and Bayvarra's sales tax treats it as a sale for manufacture,
-exempt, and its invoice states no origin. It books Trasvia from the plant to the
-factory and calls the job off with a pick-up release, against which the plant
-loads the truck and sends Valdara the despatch advice for the sawmill. Valdara
-releases the slats into free circulation that morning, with the duty and the
-import VAT assessed on the blanks as they were entered. The plant invoices
+delivery, the sawmill fills it from that stock. The slats remain the
+sawmill's until it delivers them: on the morning of the delivery it releases
+them into free circulation as their importer, with the duty and the import VAT
+assessed on the blanks as they were entered, and deducts that VAT in its
+Urvanian return, for it is registered for Urvania's VAT itself, without a
+representative. It then sells the slats to Valdara from its stock in Urvania,
+a domestic sale in Urvania: nothing crosses a border with the sale, so
+Bayvarra's sales tax does not apply and the invoice states no origin. The
+invoice charges Urvania's VAT at 20 %, which Valdara deducts; it is in lume
+and states the VAT in ferra as well, at the parity of 100 ferra to the lume.
+It books Trasvia from the plant to the factory and calls the job off with a
+pick-up release, against which the plant loads the truck and sends Valdara
+the despatch advice for the sawmill. The plant invoices
 the processing and the storage in ferra, a service to a customer established
 abroad and so outside Urvania's VAT, and the sawmill pays within the
 discount period from its lume account; its bank changes the money.

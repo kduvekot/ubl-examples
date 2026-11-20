@@ -206,6 +206,10 @@ def identity(p):
     if idn.get("tax_id"):
         scheme = c["tax"]["schemes"][0]
         rows.append(("Tax number", f"`{idn['tax_id']}` ({scheme['name']}, `{scheme['id']}`)"))
+    for cc, tid in sorted(idn.get("tax_abroad", {}).items()):    # registered for the tax of another country
+        abroad = world["countries"][cc]
+        sch = abroad["tax"]["schemes"][0]
+        rows.append((f"Tax number in {abroad['name']}", f"`{tid}` ({sch['name']}, `{sch['id']}`)"))
     rows.append(("Address", "<br>".join(address_lines(p))))
     if idn.get("endpoint"):
         rows.append(("Electronic address", f"`{idn['endpoint']}`"))

@@ -3665,6 +3665,9 @@
      "job_title": "Sales coordinator"
     },
     "tax_id": "UL-1236987",
+    "tax_abroad": {
+     "XU": "XU007443146"
+    },
     "address": {
      "StreetName": "Timber Lane",
      "BuildingNumber": "7",
