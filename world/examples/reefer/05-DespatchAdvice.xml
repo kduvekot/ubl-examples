@@ -138,8 +138,8 @@
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
-        <cbc:StartDate>2026-04-25</cbc:StartDate>
-        <cbc:EndDate>2026-04-25</cbc:EndDate>
+        <cbc:StartDate>2026-04-27</cbc:StartDate>
+        <cbc:EndDate>2026-04-27</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-04-22</cbc:ActualDespatchDate>

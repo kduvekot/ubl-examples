@@ -13371,7 +13371,7 @@ def reefer(n, doc):
         for d_, line in zip(f.deal, out["ReceiptLine"]):
             line["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment the fruit came in."),
                                 "GoodsItem": {"ID": V("1", "The fruit of this line."),
-                                              "Temperature": rf_cel("1.0" if d_["item"] != "pears-packham" else "0.8",
+                                              "Temperature": rf_cel({"apples-gala": "0.8", "apples-granny": "0.7", "pears-packham": "0.6"}[d_["item"]],
                                                                     "The pulp temperature measured in a sample of "
                                                                     "the cartons at unloading: within the range.",
                                                                     attribute="PRODUCT")}}

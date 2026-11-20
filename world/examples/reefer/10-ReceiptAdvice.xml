@@ -137,7 +137,7 @@
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">1.0</cbc:Measure>
+          <cbc:Measure unitCode="CEL">0.8</cbc:Measure>
         </cac:Temperature>
       </cac:GoodsItem>
     </cac:Shipment>
@@ -173,7 +173,7 @@
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">1.0</cbc:Measure>
+          <cbc:Measure unitCode="CEL">0.7</cbc:Measure>
         </cac:Temperature>
       </cac:GoodsItem>
     </cac:Shipment>
@@ -209,7 +209,7 @@
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">0.8</cbc:Measure>
+          <cbc:Measure unitCode="CEL">0.6</cbc:Measure>
         </cac:Temperature>
       </cac:GoodsItem>
     </cac:Shipment>

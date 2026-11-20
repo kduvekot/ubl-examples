@@ -193,7 +193,7 @@ Inside `ReceiptLine`:
   The fruit of this line.
 - `Shipment/GoodsItem/Temperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   What the temperature is of: the fruit itself, its pulp. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Shipment/GoodsItem/Temperature/Measure` = **1.0** (unitCode `CEL`)  
+- `Shipment/GoodsItem/Temperature/Measure` = **0.8** (unitCode `CEL`)  
   The pulp temperature measured in a sample of the cartons at unloading: within the range.
 - `ID` = **2**  
   The line number.
@@ -225,7 +225,7 @@ Inside `ReceiptLine`:
   The fruit of this line.
 - `Shipment/GoodsItem/Temperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   What the temperature is of: the fruit itself, its pulp. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Shipment/GoodsItem/Temperature/Measure` = **1.0** (unitCode `CEL`)  
+- `Shipment/GoodsItem/Temperature/Measure` = **0.7** (unitCode `CEL`)  
   The pulp temperature measured in a sample of the cartons at unloading: within the range.
 - `ID` = **3**  
   The line number.
@@ -257,7 +257,7 @@ Inside `ReceiptLine`:
   The fruit of this line.
 - `Shipment/GoodsItem/Temperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   What the temperature is of: the fruit itself, its pulp. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Shipment/GoodsItem/Temperature/Measure` = **0.8** (unitCode `CEL`)  
+- `Shipment/GoodsItem/Temperature/Measure` = **0.6** (unitCode `CEL`)  
   The pulp temperature measured in a sample of the cartons at unloading: within the range.
 
 ## The document
@@ -402,7 +402,7 @@ Inside `ReceiptLine`:
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">1.0</cbc:Measure>
+          <cbc:Measure unitCode="CEL">0.8</cbc:Measure>
         </cac:Temperature>
       </cac:GoodsItem>
     </cac:Shipment>
@@ -438,7 +438,7 @@ Inside `ReceiptLine`:
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">1.0</cbc:Measure>
+          <cbc:Measure unitCode="CEL">0.7</cbc:Measure>
         </cac:Temperature>
       </cac:GoodsItem>
     </cac:Shipment>
@@ -474,7 +474,7 @@ Inside `ReceiptLine`:
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
-          <cbc:Measure unitCode="CEL">0.8</cbc:Measure>
+          <cbc:Measure unitCode="CEL">0.6</cbc:Measure>
         </cac:Temperature>
       </cac:GoodsItem>
     </cac:Shipment>

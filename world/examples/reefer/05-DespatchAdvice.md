@@ -196,9 +196,9 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Tidewell Ocean Lines (world/parties.json).
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; identity of Tidewell Ocean Lines (world/parties.json).
-- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-25**  
+- `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-04-27**  
   Expected after the usual transit by sea.
-- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-25**  
+- `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-04-27**  
   The same day.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-04-22**  
   The goods left on the day of this advice.
@@ -675,8 +675,8 @@ Inside `DespatchLine`:
     </cac:Consignment>
     <cac:Delivery>
       <cac:EstimatedDeliveryPeriod>
-        <cbc:StartDate>2026-04-25</cbc:StartDate>
-        <cbc:EndDate>2026-04-25</cbc:EndDate>
+        <cbc:StartDate>2026-04-27</cbc:StartDate>
+        <cbc:EndDate>2026-04-27</cbc:EndDate>
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-04-22</cbc:ActualDespatchDate>
