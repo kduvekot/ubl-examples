@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>LACT-TS-26-0336</cbc:ID>
+  <cbc:UUID>b15e6e57-fc2c-546a-b800-f2775509c7ab</cbc:UUID>
+  <cbc:IssueDate>2026-06-15</cbc:IssueDate>
+  <cbc:IssueTime>05:40:00-01:00</cbc:IssueTime>
+  <cbc:Name>Transportation status</cbc:Name>
+  <cbc:Description>Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.</cbc:Description>
+  <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
+  <cbc:ShippingOrderID>QPD-FI-26-0329</cbc:ShippingOrderID>
+  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
+  <cac:Consignment>
+    <cbc:ID>QPD-CS-26-0330</cbc:ID>
+    <cac:CarrierParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Kelaro Air Cargo</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">58930746</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Lupela Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Airfield Road</cbc:StreetName>
+        <cbc:BuildingNumber>46</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Kefalasa</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Lintwell</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Cargo operations</cbc:Name>
+        <cbc:JobTitle>Load controller</cbc:JobTitle>
+        <cbc:Department>Operations</cbc:Department>
+        <cbc:Telephone>+999 3 721 1044</cbc:Telephone>
+        <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41311</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:CarrierParty>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cac:TerminalOperatorParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+        </cac:PartyName>
+        <cac:Language>
+          <cbc:ID schemeID="ISO 639">en</cbc:ID>
+          <cbc:Name>English</cbc:Name>
+          <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+        </cac:Language>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-060495</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+          <cbc:StreetName>Airport Road</cbc:StreetName>
+          <cbc:BuildingNumber>25</cbc:BuildingNumber>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:PostalZone>38528</cbc:PostalZone>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            <cbc:Name>Bayvarra</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:PhysicalLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+          <cbc:Description>Lumeport airport</cbc:Description>
+          <cbc:InformationURI>https://www.lumeport-cargo.example</cbc:InformationURI>
+          <cac:LocationCoordinate>
+            <cbc:CoordinateSystemCode listID="EPSG">4326</cbc:CoordinateSystemCode>
+            <cbc:LatitudeDegreesMeasure unitCode="DD">30</cbc:LatitudeDegreesMeasure>
+            <cbc:LatitudeMinutesMeasure unitCode="D61">52.97</cbc:LatitudeMinutesMeasure>
+            <cbc:LatitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode">South</cbc:LatitudeDirectionCode>
+            <cbc:LongitudeDegreesMeasure unitCode="DD">13</cbc:LongitudeDegreesMeasure>
+            <cbc:LongitudeMinutesMeasure unitCode="D61">23.07</cbc:LongitudeMinutesMeasure>
+            <cbc:LongitudeDirectionCode listID="urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode">West</cbc:LongitudeDirectionCode>
+            <cbc:AltitudeMeasure unitCode="MTR">100</cbc:AltitudeMeasure>
+          </cac:LocationCoordinate>
+        </cac:PhysicalLocation>
+        <cac:Contact>
+          <cbc:Name>Cargo acceptance</cbc:Name>
+          <cbc:JobTitle>Cargo acceptance agent</cbc:JobTitle>
+          <cbc:Department>Cargo handling</cbc:Department>
+          <cbc:Telephone>+999 2 38 3457 2767</cbc:Telephone>
+          <cbc:ElectronicMail>cargo@lumeport-cargo.example</cbc:ElectronicMail>
+          <cbc:Note>Every day, around the clock</cbc:Note>
+        </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412055</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
+      </cac:TerminalOperatorParty>
+    </cac:MainCarriageShipmentStage>
+  </cac:Consignment>
+  <cac:TransportEvent>
+    <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
+    <cbc:OccurrenceTime>05:30:00-01:00</cbc:OccurrenceTime>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
+    <cbc:Description>Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.</cbc:Description>
+    <cac:CurrentStatus>
+      <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
+      <cbc:Description>Active container closed and running, at 4.8 °C against its set point of 5 °C; the generator's dose rate checked against its label.</cbc:Description>
+      <cac:Condition>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">4.8</cbc:Measure>
+      </cac:Condition>
+    </cac:CurrentStatus>
+    <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+      <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
+    </cac:Location>
+  </cac:TransportEvent>
+  <cac:Signature>
+    <cbc:ID>LACT-SIG-TS-10</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Kelaro Air Cargo</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:StatusLocation>
+    <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+    <cbc:Name>Lumeport airport, cargo terminal</cbc:Name>
+  </cac:StatusLocation>
+  <cac:StatusPeriod>
+    <cbc:StartDate>2026-06-15</cbc:StartDate>
+    <cbc:EndDate>2026-06-15</cbc:EndDate>
+  </cac:StatusPeriod>
+</TransportationStatus>

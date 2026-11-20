@@ -8507,6 +8507,598 @@ SCENARIOS["mast"] = _with_enrichment("mast", mast)
 FLOWS["mast"] = MAST
 
 
+# ---------------------------------------------------------------- the medicines flow (cold chain and radioactive material by air)
+# D47 with O124, O138, O201 to O203, O211 and O229: Selanu General Hospital (50-xl) buys vaccines, insulin, a frozen
+# vaccine and its weekly technetium generator from Quillmoor Pharma Distribution (49-xb) in Lumeport, carriage paid
+# to Selanu airport; Quillmoor buys them from two fictional makers outside the world, Nilavar Biologics in India
+# (58-in, rupees) and Haarvliet Isotopes in the Netherlands (51-nl, euro), and imports them into Bayvarra. The
+# island leg is the morning flight KXL207 of Monday 15 June on the island airline's freighter.
+MEDICINES = kit.Flow("medicines", "2026-04-20", [
+    {"item": "flu-vaccine-b", "ordered": 300, "why": "3,000 doses, ten to a pack, for the island's winter "
+                                                    "influenza campaign, which starts in the last week of June."},
+    {"item": "insulin-vial-b", "ordered": 240, "why": "The hospital pharmacy's insulin for the next two months, "
+                                                     "for its wards and its outpatients."},
+    {"item": "varicella-vaccine-b", "ordered": 40, "why": "Forty doses for the children's vaccination programme "
+                                                         "of July."},
+    {"item": "tc-generator-b", "ordered": 1, "why": "Next week's generator for the nuclear medicine unit: the one "
+                                                   "in use is spent by Sunday."}])
+MED_IN_DEAL = [     # the season's vaccines and insulin Quillmoor buys in India for all its customers (O229)
+    {"item": "flu-vaccine", "ordered": 600, "why": "6,000 doses for the southern winter: the island hospital's "
+                                                   "3,000 and the pharmacies of Bayvarra."},
+    {"item": "insulin-vial", "ordered": 960, "why": "Four months of insulin for the wholesaler's customers."},
+    {"item": "varicella-vaccine", "ordered": 120, "why": "The season's varicella vaccine for three hospitals."}]
+MED_NL_DEAL = [{"item": "tc-generator", "ordered": 1, "why": "The generator for Selanu General Hospital for the "
+                                                             "week from Monday 15 June."}]
+MED_DAY = {"in-order": 0, "in-invoice": 17, "in-import": 21, "order": 51, "nl-order": 51, "fi": 52,
+           "nl-invoice": 54, "nl-import": 55, "flight": 56}
+MED_FLIGHT = ("KXL207", "07:00")      # the morning flight Lumeport - Selanu (D39's timetable)
+MED_RKN = f"RKN20871{PARTY['12-xl']['identity']['airline_designator']}"
+MED_DGD = "QPD-DGD-26-0615"           # the shipper's declaration of the generator, a document of its own (O202 5)
+MED_LOTS = {    # the makers' lots, as their certificates of release give them (O229)
+    "flu-vaccine": ("NB-FLU26S-0412", "2027-02-28", "The southern hemisphere formula of 2026 is used up by the next "
+                                                    "winter: the lot expires at the end of February 2027."),
+    "insulin-vial": ("NB-INS-2603-118", "2028-02-29", "Unopened at 2 to 8 °C, human insulin keeps for two years: the "
+                                                      "lot of March 2026 expires at the end of February 2028."),
+    "varicella-vaccine": ("NB-VZV-2602-031", "2027-08-31", "A frozen live vaccine keeps 18 months at -15 °C or "
+                                                           "colder: the lot of February 2026 expires at the end of "
+                                                           "August 2027.")}
+MED_SERIAL = "HI-TCG20-26-0137"       # the generator's serial number, from its maker
+MED_REFERENCE = ("2026-06-21", "12:00:00+00:00")   # the reference time of the 20 GBq: Sunday six days after delivery
+MED_DRY_ICE_KG = Decimal("6.0")
+MED_BOX = {"tare_kg": Decimal("3.5"), "mm": [400, 300, 320]}   # the insulated box of the frozen vaccine
+MED_HALF_LIFE_H = Decimal("65.94")
+
+
+def med_activity(hours):
+    """The generator's Mo-99 activity in GBq `hours` after its reference time (negative: before it)."""
+    import math
+    return Decimal(20) * Decimal(str(math.pow(2, -float(hours) / float(MED_HALF_LIFE_H))))
+
+
+# the active container's logger: one reading every 15 minutes from the container's closing at the wholesaler, 04:00
+# in Lumeport (05:00 UTC), until it is opened at the island's cargo terminal at 11:00 (UTC): the set point is 5 °C
+MED_LOG = [(f"{5 + k // 4:02d}:{(k % 4) * 15:02d}", Decimal(str(round(5 + 0.6 * __import__("math").sin(k / 3.2)
+                                                                       + (0.4 if 8 <= k <= 10 else 0), 1))))
+           for k in range(25)]
+
+
+def med_log_csv():
+    return "time_utc,temperature_c\n" + "\n".join(f"2026-06-15T{t}:00Z,{v}" for t, v in MED_LOG) + "\n"
+
+
+def med_contact(why):
+    """Quillmoor's 24-hour line, the contact for its dangerous goods in transit."""
+    desk = PARTY["49-xb"]["identity"]["desks"]["emergency"]
+    return {**party("49-xb", short=True),
+            "Contact": {"Name": V(desk["name"], why),
+                        "Telephone": V(desk["telephone"], "The line answers around the clock while the goods are on "
+                                                          "the way; under the reserved +999."),
+                        "Note": V(desk["hours"], "When it answers.")}}
+
+
+def med_temp(attr, value, why, code=None):
+    out = {"AttributeID": V(attr, why), "Measure": V(value, "In degrees Celsius.", unitCode="CEL")}
+    if code:
+        out["MeasureCode"] = V(code, "Which value of the range it is: the one to keep.")
+    return out
+
+
+def med_cold(it, why):
+    """The range a cold-chain item must be kept in, from the maker's storage conditions (world/items.json)."""
+    s = kit.maker(it)["storage"]
+    return {"MinimumTemperature": med_temp("PRODUCT", s["min"], why),
+            "MaximumTemperature": med_temp("PRODUCT", s["max"], why)}
+
+
+def med_generator_item(f, transit=True):
+    """The generator's dangerous goods data as the shipper declares them (O202): UN 2915 in a Type A package,
+    its category and surface dose rate as text (choice 6), its activity at acceptance and its transport index."""
+    g = build_examples.hazardous_item(ITEM["tc-generator"])
+    g["ID"] = V("QPD-RAD-0020-DG", "The wholesaler's dangerous goods record of the generator.")
+    g["GrossWeightMeasure"] = qty(ITEM["tc-generator"]["gross_kg"], "KGM", "The Type A package with the "
+                                                                          "generator.")
+    g["Quantity"] = qty(1, "EA", "One package.")
+    g["ContactParty"] = med_contact("Whom to call in an incident with the generator: the wholesaler's radiation "
+                                    "protection officer.")
+    if transit:
+        g["HazardousGoodsTransit"] = {"HazardousRegulationCode": V("ICA", "Air: the IATA Dangerous Goods "
+                                                                          "Regulations."),
+                                      "TransportAuthorizationCode": V("PCA", "A Type A package with a transport "
+                                                                             "index of 1.5 may fly on passenger "
+                                                                             "aircraft too; it flies on the "
+                                                                             "freighter because that is the "
+                                                                             "island's cargo flight.")}
+    return g
+
+
+def med_dry_ice(f):
+    """The dry ice of the frozen vaccine's box: on the air waybill only, no shipper's declaration (O202 choice 5,
+    resting on secondary sources: O211)."""
+    return {"ID": V("QPD-DRYICE-0615", "The wholesaler's entry for the dry ice in the box."),
+            "UNDGCode": V("1845", "UN 1845, carbon dioxide, solid (dry ice)."),
+            "ProperShippingName": V("Carbon dioxide, solid", "The proper shipping name; IATA also allows \"Dry "
+                                                             "ice\"."),
+            "HazardClassID": V("9", "Class 9."),
+            "HazardousCategoryCode": V("9", "The hazard class as a code of the UN Model Regulations' classes."),
+            "MedicalFirstAidGuideCode": V("120", "The guide of the Emergency Response Guidebook (ERG 2024) for UN "
+                                                 "1845: inert gases, including refrigerated liquids."),
+            "PlacardNotation": V("9", "The class 9 label on the box."),
+            "MarkingID": V("UN1845", "The UN number marked on the box, with the net weight of the dry ice."),
+            "NetWeightMeasure": qty(MED_DRY_ICE_KG, "KGM", "The dry ice in the box: what the air waybill must state, "
+                                                          "with the number of packages."),
+            "Quantity": qty(1, "EA", "One box."),
+            "HazardousGoodsTransit": {"PackingCriteriaCode": V("PI954", "IATA packing instruction 954: dry ice, in "
+                                                                       "a package that lets the gas escape."),
+                                      "HazardousRegulationCode": V("ICA", "Air: the IATA Dangerous Goods "
+                                                                          "Regulations.")}}
+
+
+def med_units(f, full):
+    """The three handling units of the island leg: the active container (the vaccines and the insulin), the
+    frozen vaccine's insulated box on dry ice and the generator's Type A package. The wholesaler's instructions say
+    what the goods need (full=False); the airline's waybill names the container, its settings and the positions on
+    board (full=True)."""
+    flu, ins = ITEM["flu-vaccine-b"], ITEM["insulin-vial-b"]
+    cartons = [
+        {"ID": V(f"QPD-CT-{k}", f"Shipper carton {k}: the wholesaler numbers its cartons for tracing, its own "
+                                "number, without a scheme."),
+         "Quantity": qty(n, "EA", what), "PackagingTypeCode": V("CT", "UN/ECE Recommendation 21 code CT: carton.")}
+        for k, n, what in [(k, 30, "Thirty packs of the influenza vaccine.") for k in range(1, 11)]
+        + [(k, 60, "Sixty vials of insulin.") for k in range(11, 15)]]
+    rkn = {"ID": V(MED_RKN, "The airline's active temperature-controlled container, numbered as unit load devices "
+                            "are: its type RKN, its serial number and the airline's designator (world/parties.json).")
+           if full else V("QPD-TC-1", "The cold-chain consignment as one handling unit, the wholesaler's own number: "
+                                      "the forwarder books the airline's active container for it."),
+           **({} if full else {"TransportHandlingUnitTypeCode": V("CT", "UN/ECE Recommendation 21 code CT: the "
+                                                                        "cartons, which the airline loads into its "
+                                                                        "container.")}),
+           "HandlingInstructions": V("Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo "
+                                     "terminal.", "What the cold chain needs."),
+           "MinimumTemperature": med_temp("PRODUCT", "2", "The vaccines and the insulin must not fall below 2 °C: "
+                                                          "they lose their potency when they freeze."),
+           "MaximumTemperature": med_temp("PRODUCT", "8", "Nor rise above 8 °C."),
+           "Package": cartons}
+    box = {"ID": V("QPD-BX-1", "The insulated box of the frozen vaccine, the wholesaler's own number."),
+           "TransportHandlingUnitTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box."),
+           "HandlingInstructions": V(f"Frozen vaccine on {kit.kg(MED_DRY_ICE_KG)} kg of dry ice: keep the box "
+                                     "upright and its vent clear; do not put it in the active container.",
+                                     "How the box is handled: dry ice gives off carbon dioxide, and at -78 °C it "
+                                     "would freeze the goods at 2 to 8 °C."),
+           "HazardousRiskIndicator": V("true", "The dry ice is dangerous goods of class 9."),
+           "MinimumTemperature": med_temp("PRODUCT", "-50", "The live vaccine is kept frozen, at -50 °C or warmer."),
+           "MaximumTemperature": med_temp("PRODUCT", "-15", "And at -15 °C or colder."),
+           "Package": {"ID": V("QPD-BX-1", "The box itself."),
+                       "Quantity": qty(40, "EA", "Forty vials of the varicella vaccine."),
+                       "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box.")}}
+    gen = {"ID": V("QPD-RA-1", "The generator's Type A package, the wholesaler's own number."),
+           "TransportHandlingUnitTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box, the outer package."),
+           "HandlingInstructions": V("Radioactive, Category III-YELLOW, transport index 1.5: stow in the aft hold, "
+                                     "away from the crew and from the frozen vaccine's box.",
+                                     "How the package is stowed: away from persons, by the distance its transport "
+                                     "index asks."),
+           "HazardousRiskIndicator": V("true", "Radioactive material of class 7."),
+           "Package": {"ID": V("QPD-RA-1", "The package itself."),
+                       "Quantity": qty(1, "EA", "One generator."),
+                       "PackagingTypeCode": V("BX", "UN/ECE Recommendation 21 code BX: box."),
+                       "MeasurementDimension": [
+                           {"AttributeID": V(a, "Of the outer package."),
+                            "Measure": V(v, "In millimetres.", unitCode="MMT")}
+                           for a, v, *_ in kit.maker("tc-generator-b")["dimensions"]]}}
+    if not full:
+        gen["HazardousGoodsTransit"] = {"HazardousRegulationCode": V("ICA", "Air: the IATA Dangerous Goods "
+                                                                            "Regulations.")}
+        return [rkn, box, gen]
+    rkn["TransportEquipment"] = {
+        "ID": V(MED_RKN, "The container."),
+        "TransportEquipmentTypeCode": V("UL", "UN/EDIFACT 8053 code UL: unit load device.",
+                                        listID="UN/EDIFACT EDED 8053"),
+        "RefrigerationOnIndicator": V("true", "The container's cooling and heating are switched on: it keeps its "
+                                              "set point by itself, on its batteries, from the wholesaler's cold room "
+                                              "to the island."),
+        "Description": V("Active temperature-controlled LD3 container (RKN), set to 5 °C", "What kind of container: "
+                         "one that cools and heats, so it holds 2 to 8 °C whatever the hold's temperature."),
+        "MinimumTemperature": med_temp("TRANSPORT", "2", "The lowest temperature the container lets its cargo space "
+                                                         "fall to: its alarm limit."),
+        "MaximumTemperature": med_temp("TRANSPORT", "8", "The highest: its other alarm limit."),
+        "StowagePositionID": V("MD-4", "Main deck, LD3 position 4 (world/documents.json, the flow's air leg)."),
+        "TraceID": V("RKN-LOG-20871", "The container's data logger, which records the temperature every 15 minutes "
+                                      "on the way.")}
+    gen["HazardousGoodsTransit"] = {"HazardousRegulationCode": V("ICA", "Air: the IATA Dangerous Goods "
+                                                                        "Regulations.")}
+    return [rkn, box, gen]
+
+
+def med_flight(f, why):
+    flight, dep = MED_FLIGHT
+    day = MED_DAY["flight"]
+    arrives = wmap.hm(wmap.after(wmap.at(f.date(day), dep), FLIGHT_BLOCK_EAST + 1))
+    return {"ID": V("1", "The flight."),
+            "TransportModeCode": V("4", "Air transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                "Transport"),
+            "HazardousRiskIndicator": V("true", "Dangerous goods on the flight: the generator and the dry ice."),
+            "TransportMeans": kit.means("12-xl", "KXL", flight, why),
+            "LoadingPortLocation": kit.place("XBLMA", "The airport of departure."),
+            "UnloadingPortLocation": kit.place("XLSLA", "The airport of destination."),
+            "PlannedDepartureTransportEvent": kit.event(f, day, dep + ":00-01:00", "The flight's timetabled "
+                                                        "departure, in Lumeport's time, with its offset (D27).",
+                                                        location=kit.place("XBLMA", "The airport of departure.")),
+            "PlannedArrivalTransportEvent": kit.event(f, day, arrives + "+00:00", "The timetabled arrival, in island "
+                                                      "time, an hour ahead of Lumeport's: a block time of 2 h 45 "
+                                                      "eastbound (D19, D36, O123).",
+                                                      location=kit.place("XLSLA", "The airport of destination."))}
+
+
+def med_goods(f, transport=True):
+    """The goods items of the island leg, with the temperatures each needs (D47)."""
+    out = []
+    for i, d in enumerate(f.deal, 1):
+        it, mk = ITEM[d["item"]], kit.maker(d["item"])
+        g = {"ID": V(str(i), "The goods item number."),
+             "Description": V(it["name"], "What is carried, in words."),
+             "GrossWeightMeasure": qty(Decimal(str(d["ordered"])) * Decimal(str(mk["gross_kg"])), "KGM",
+                                       "The goods of this item with their packaging."),
+             "Quantity": qty(d["ordered"], it["unit"], "How much is carried.")}
+        if mk.get("storage", {}).get("set"):
+            g["Temperature"] = med_temp("TRANSPORT", mk["storage"]["set"], "The temperature to carry the goods "
+                                        "at: the middle of their range, which the active container is set to.",
+                                        code="TARGET")
+        if mk.get("storage"):
+            g.update(med_cold(d["item"], "The range the maker's storage conditions give: "
+                                         + ("2 to 8 °C, never frozen." if mk["storage"]["min"] == "2" else
+                                            "frozen, -50 to -15 °C.")))
+        g["Item"] = {"Name": V(it["name"], "The goods, named.")}
+        if mk.get("hazard"):
+            g["HazardousRiskIndicator"] = V("true", "Radioactive material.")
+            g["Item"]["HazardousItem"] = med_generator_item(f)
+        out.append(g)
+    return out
+
+
+def med_in_lot(iid):
+    lot, exp, why = MED_LOTS[kit.maker(iid)["id"]]
+    return {"LotIdentification": {"LotNumberID": V(lot, "The maker's lot, as its certificate of release names it; a "
+                                                         "recall names the lot."),
+                                  "ExpiryDate": V(exp, why)}}
+
+
+def med_generator_instance():
+    ref_day, ref_time = MED_REFERENCE
+    return {"SerialID": V(MED_SERIAL, "The generator's serial number, from its maker: each generator is traced from "
+                                      "its filling to its return."),
+            "AdditionalItemProperty": [
+                {"Name": V("Nominal activity", "The generator's size: its Mo-99 at the reference time, the figure the "
+                                               "item is sold by (O202 choice 2)."),
+                 "ValueQuantity": V("20", "20 GBq.", unitCode="GBQ")},
+                {"Name": V("Reference time", "When the generator holds its nominal activity: European generators are "
+                                             "pre-calibrated to a time some days after delivery, so that the hospital "
+                                             "has its nominal activity at the end of its week."),
+                 "Value": V(f"{ref_day}T{ref_time}", "Sunday 21 June at 12:00 UTC, six days after delivery (O202 "
+                                                     "choice 2).")}]}
+
+
+def med_maker_invoice(f, n, doc, day, why_date, deal, number_key, terms_text, terms_why, due, refs, extra=None):
+    """A maker's invoice to Quillmoor (O229): in the maker's currency, carriage paid to Lumeport airport, an export
+    zero-rated in the maker's country. Its payment is by credit transfer to the account of the supply agreement:
+    no account number is given, as a real-looking one could be someone's."""
+    seller, buyer = doc["from"], doc["to"]
+    cur = kit.currency_of(seller)
+    rows = kit.lines(f, seller, buyer, cur, deal=deal)
+    base = sum(r[2] for r in rows)
+    tax, total = kit.tax_total(rows, cur)
+    out = {"ID": V(f.number(number_key, seller, "Invoice"), "The maker's invoice number."),
+           "IssueDate": V(f.date(day), why_date),
+           "DueDate": V(f.date(due), terms_why),
+           "InvoiceTypeCode": V("380", "A commercial invoice, as UN/EDIFACT 1001 codes it."),
+           "DocumentCurrencyCode": kit.currency_line(cur, "the maker's currency"),
+           "LineCountNumeric": V(str(len(rows)), "The number of invoice lines."),
+           "DefaultLanguageCode": V("en", "English, the language of the maker's export invoices."),
+           **refs,
+           "PaymentTerms": {"Note": V(terms_text, terms_why), "PaymentDueDate": V(f.date(due), "The day the amount "
+                                                                                  "is due.")},
+           "TaxTotal": total,
+           "LegalMonetaryTotal": kit.monetary_total(base, tax, cur),
+           "DeliveryTerms": {"ID": V("CPT", "Incoterms 2020: carriage paid to Lumeport airport; the buyer clears the "
+                                            "import.", schemeID="INCOTERMS"),
+                             "DeliveryLocation": kit.place("XBLMA", "The named place: Lumeport airport.")},
+           "InvoiceLine": [{
+               "ID": V(str(i), "The line number."),
+               "InvoicedQuantity": qty(q, ITEM[d["item"]]["unit"], "The quantity shipped."),
+               "LineExtensionAmount": amount(amt, cur, f"{q} × {kit.deal_price(d, cur, buyer)}, rounded to the "
+                                                       "minor unit of the currency."),
+               "OrderLineReference": {"LineID": V(str(i), "The line of the wholesaler's order.")},
+               "Item": item(d["item"], kit.tax_category(rule, kit.supply_kind(d["item"]))),
+               "Price": kit.deal_price_block(d, cur, buyer)} for i, (d, q, amt, rule) in enumerate(rows, 1)]}
+    f.numbers[f"{number_key}-amount"] = base + tax
+    return kit.merge_extra(out, extra)
+
+
+def medicines(n, doc):
+    f, d = MEDICINES, doc["doc"]
+    nl = "51-nl" in (doc["from"], doc["to"]) or doc["parties"].get("ConsignorParty") == "51-nl"
+    india = "58-in" in (doc["from"], doc["to"]) or doc["parties"].get("ConsignorParty") == "58-in"
+    if d == "Order" and india:
+        out = kit.order(f, n, doc, MED_DAY["in-order"], "The wholesaler orders the season's vaccines in April, "
+                        "for the southern winter.", "Carriage paid to Lumeport airport: the maker books the "
+                        "scheduled air cargo from Hyderabad; the wholesaler clears the import.",
+                        "Lumeport airport, cargo terminal", deal=MED_IN_DEAL, key="order-in")
+        out["IssueTime"] = V("10:20:00", "During the wholesaler's office hours.")
+        out["Note"] = V("Please ship by scheduled air cargo at 2 to 8 °C, the varicella vaccine frozen, to arrive at "
+                        "Lumeport by Monday 11 May; we pay in euro.", "What the wholesaler asks.")
+        return out
+    if d == "Invoice" and india:
+        import fx_fixing
+        day_in = f.date(MED_DAY["in-invoice"])
+        r = fx_fixing.rate("EUR", day_in) / fx_fixing.rate("INR", day_in)     # rupees per euro: the ECB's rate
+        rate_in = (Decimal(r.numerator) / Decimal(r.denominator)).normalize()
+        out = med_maker_invoice(
+            f, n, doc, MED_DAY["in-invoice"], "Issued when the goods left for Hyderabad airport.", MED_IN_DEAL,
+            "invoice-in", "30 days net; payment in euro at the ECB's euro reference rate of the invoice date.",
+            "The maker's terms for export customers, as the order accepted them: 30 days from the invoice.",
+            MED_DAY["in-invoice"] + 32,      # Thursday 7 May + 30 days = Saturday 6 June: Monday 8 June
+            {"OrderReference": {"ID": V(f.numbers["order-in"], "The wholesaler's order.")}})
+        out["DueDate"] = V(f.date(MED_DAY["in-invoice"] + 32), "30 days from Thursday 7 May end on Saturday 6 June, "
+                           "no business day in India for a bank transfer abroad, so the payment is due on Monday 8 "
+                           "June.")
+        out["PaymentTerms"]["PaymentDueDate"] = V(out["DueDate"].value, "As the due date above.")
+        out["PaymentCurrencyCode"] = V("EUR", "Payment is asked in euro, the currency the wholesaler pays its "
+                                              "suppliers abroad in, at the day's rate (O229; a trade outside the "
+                                              "Accord, coverage register O51).")
+        out["PaymentExchangeRate"] = {
+            "SourceCurrencyCode": V("INR", "The invoice's currency."),
+            "TargetCurrencyCode": V("EUR", "The payment currency."),
+            "CalculationRate": V(f"{rate_in:f}", "The ECB's euro reference rate of the invoice date, Thursday 7 May: "
+                                                f"{rate_in:f} rupees for a euro. In the world's calendar the ECB's "
+                                                "rates are the real ones of 260 weeks before (tools/fx_fixing.py, "
+                                                "O231), the same that underlie the Lumeport Exchange's fixing."),
+            "MathematicOperatorCode": V("Divide", "The rupee amount divided by the rate gives the euro amount, as the "
+                                                  "ECB quotes rupees per euro."),
+            "Date": V(f.date(MED_DAY["in-invoice"]), "The day of the rate.")}
+        total = f.numbers["invoice-in-amount"]
+        out["Note"] = V(f"Payable in euro: {total:,} rupees at {rate_in:f} rupees per euro, "
+                        f"{money(total / rate_in, 'EUR'):,} euro.", "The amount to pay in the payment currency.")
+        out["Delivery"] = {"Despatch": {"ActualDespatchDate": V(f.date(MED_DAY["in-invoice"]), "The goods left the "
+                                                                "maker's cold store for the airport.")},
+                           "DeliveryLocation": kit.place("XBLMA", "Where they are delivered: Lumeport airport.")}
+        return out
+    if d == "Order" and nl:
+        out = kit.order(f, n, doc, MED_DAY["nl-order"], "The wholesaler calls off the generator for the week of 15 "
+                        "June on the day the hospital orders it.", "Carriage paid to Lumeport airport: the maker "
+                        "books the scheduled air cargo from Amsterdam; the wholesaler clears the import.",
+                        "Lumeport airport, cargo terminal", deal=MED_NL_DEAL, key="order-nl")
+        out["IssueTime"] = V("14:10:00", "In the afternoon, after the hospital's order.")
+        out["OrderTypeCode"] = V("226", "UN/EDIFACT 1001 code 226: a call-off order, under the standing order "
+                                        "for one generator a week.")
+        out["Note"] = V("Week 25: one 20 GBq generator, reference Sunday 21 June 12:00 UTC, to arrive at Lumeport "
+                        "on Sunday 14 June.", "What is called off.")
+        return out
+    if d == "Invoice" and nl:
+        out = med_maker_invoice(
+            f, n, doc, MED_DAY["nl-invoice"], "Issued when the generator left the maker for Amsterdam airport, on "
+            "the Saturday: isotopes are made and shipped every day.", MED_NL_DEAL, "invoice-nl",
+            "14 days net.", "The maker's terms for wholesalers: 14 days from the invoice.",
+            MED_DAY["nl-invoice"] + 16,     # Saturday 13 June + 14 days = Saturday 27 June: Monday 29 June
+            {"OrderReference": {"ID": V(f.numbers["order-nl"], "The wholesaler's call-off.")}})
+        out["IssueTime"] = V("11:30:00", "In the morning, when the generator left.")
+        out["DueDate"] = V(f.date(MED_DAY["nl-invoice"] + 16), "14 days from Saturday 13 June end on Saturday 27 "
+                           "June, no business day for a bank transfer, so the payment is due on Monday 29 June.")
+        out["PaymentTerms"]["PaymentDueDate"] = V(out["DueDate"].value, "As the due date above.")
+        out["Delivery"] = {"Despatch": {"ActualDespatchDate": V(f.date(MED_DAY["nl-invoice"]), "The generator left "
+                                                                "the maker for Amsterdam airport.")},
+                           "DeliveryLocation": kit.place("XBLMA", "Where it is delivered: Lumeport airport.")}
+        line = out["InvoiceLine"][0]
+        line["Item"]["ItemInstance"] = med_generator_instance()
+        return out
+    if d == "ImportCustomsDeclaration" and doc["to"] == "19-xb":
+        deal = MED_IN_DEAL if india else MED_NL_DEAL
+        day = MED_DAY["in-import" if india else "nl-import"]
+        kit.RATE_DATE = f.date(day)
+        out = kit.import_declaration(f, n, doc, day, "The wholesaler declares the goods for import at Lumeport "
+                                     "airport " + ("on the Monday morning after they arrived." if india else
+                                                   "on the Sunday evening the generator arrived."),
+                                     "The customs value in lume: Bayvarra values goods as they left the exporting "
+                                     "country (D16); the maker's price is carriage paid to Lumeport and shows no "
+                                     "freight apart, so the price paid is the value, converted at the Lumeport "
+                                     "Exchange's fixing of the day the declaration is lodged (O231).",
+                                     {"ID": V(f.numbers["invoice-in" if india else "invoice-nl"],
+                                              "The maker's commercial invoice the customs value rests on.")},
+                                     deal=deal)
+        out["IssueTime"] = V("08:30:00" if india else "21:40:00", "When the wholesaler lodged the declaration: "
+                             + ("first thing on Monday." if india else "the generator landed at 20:15 on the "
+                                "scheduled flight from Amsterdam; the airport's customs office works around the "
+                                "clock."))
+        maker = "58-in" if india else "51-nl"
+        tag = "in" if india else "nl"
+        out["ID"] = V(f.number(f"import-{tag}", doc["from"], "ImportCustomsDeclaration"), "The importer's "
+                                                                                          "declaration number.")
+        out["Shipment"]["ID"] = V(f.number(f"shipment-{tag}", maker, "Shipment"), "The maker's shipment, as its "
+                                                                                 "invoice numbers it.")
+        out["Shipment"]["Consignment"] = {"ID": V(f.number(f"consignment-{tag}", maker, "Consignment"),
+                                                  "The consignment declared, as the maker booked it.")}
+        kit.RATE_DATE = None
+        return out
+    if d == "Order":
+        out = kit.order(f, n, doc, MED_DAY["order"], "The hospital pharmacy orders on Wednesday for the next "
+                        "Monday's flight.", "Carriage paid to Selanu airport: the wholesaler arranges the air "
+                        "transport; the hospital clears the import and fetches the goods.",
+                        "Selanu airport, cargo terminal")
+        out["IssueTime"] = V("10:15:00", "During the pharmacy's office hours.")
+        out["Note"] = V("For the morning flight of Monday 15 June, please: the influenza vaccine is for the "
+                        "campaign that starts on 22 June.", "When the hospital needs the goods.")
+        out["DeliveryTerms"]["DeliveryLocation"] = kit.place("XLSLA", "The named place: Selanu airport.")
+        return out
+    if d == "ForwardingInstructions":
+        w = kit.gross_weight(f, "ordered") + MED_DRY_ICE_KG + MED_BOX["tare_kg"]
+        return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
+                "IssueDate": V(f.date(MED_DAY["fi"]), "The wholesaler books the Monday flight on Thursday."),
+                "IssueTime": V("09:20:00", "In the morning."),
+                "Name": V("Forwarding instructions", "What they are."),
+                "Note": V("Please book KXL207 of Monday 15 June with the airline's active container at 5 °C; collect "
+                          "the container and the dry-ice box at our cold rooms at 04:15. Our van brings the "
+                          "generator to the cargo terminal by 05:30 with its shipper's declaration.",
+                          "What the wholesaler asks: the forwarder books the whole consignment, and the wholesaler "
+                          "brings the radioactive package itself (O202 choice 4)."),
+                "DocumentReference": [
+                    {"ID": V(f.numbers["order"], "The hospital's order the goods are for.")},
+                    {"ID": V(MED_DGD, "The shipper's declaration for dangerous goods of the generator, a "
+                                      "declaration of its own: radioactive material may not share one with other "
+                                      "dangerous goods, and the dry ice needs none, only its entry on the air "
+                                      "waybill (O202 choice 5; resting on secondary sources, O211). It goes with "
+                                      "the package, signed when the generator's activity is measured on Monday.")}],
+                "Signature": seal(doc["from"], "QPD-SIG-FI-26"),
+                "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment."),
+                             "GrossWeightMeasure": qty(w, "KGM", "The goods in their packages, with the dry ice and "
+                                                                 "its box."),
+                             "GoodsItem": med_goods(f),
+                             "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
+                                                     "The consignment."),
+                                             "HazardousRiskIndicator": V("true", "The consignment holds dangerous "
+                                                                                 "goods."),
+                                             "HazardousItemNotificationParty": party("49-xb", short=True),
+                                             "TransportHandlingUnit": med_units(f, False)}}}
+    if d == "DespatchAdvice":
+        out = kit.despatch_advice(f, n, doc, MED_DAY["flight"], "Sent when the last of the goods, the generator, "
+                                  "left the warehouse for the airport.", "The goods with their packaging.")
+        out["IssueTime"] = V("05:10:00", "When the wholesaler's van left with the generator.")
+        for ln, dd in zip(out["DespatchLine"], f.deal):
+            ln["Item"] = item(dd["item"], buyer=doc["to"],
+                              instance=med_generator_instance() if dd["item"] == "tc-generator-b"
+                              else med_in_lot(dd["item"]))
+        return out
+    if d == "TransportationStatus" and doc["from"] == "17-xb":
+        out = kit.transportation_status(f, n, doc, MED_DAY["flight"], "Reported when the last package was accepted.",
+                                        "Consignment accepted for KXL207: the active container at 4.8 °C, the "
+                                        "dry-ice box and the Type A package checked.",
+                                        "Lumeport airport, cargo terminal",
+                                        {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}},
+                                        event_type="ACCEPTANCE")
+        out["IssueTime"] = V("05:40:00", "Ten minutes after the generator was accepted.")
+        ev = out["TransportEvent"]
+        ev["OccurrenceTime"] = V("05:30:00-01:00", "The generator, the last package, was accepted at 05:30; the "
+                                                   "container and the box had come at 04:40.")
+        ev["CurrentStatus"] = {"ConditionCode": V("COMPLETED", "The acceptance has taken place."),
+                               "Description": V("Active container closed and running, at 4.8 °C against its set "
+                                                "point of 5 °C; the generator's dose rate checked against its "
+                                                "label.", "What the terminal checked at acceptance."),
+                               "Condition": {"AttributeID": V("TRANSPORT", "The temperature in the container's "
+                                                                           "cargo space."),
+                                             "Measure": V("4.8", "As read from the container's display at "
+                                                                 "acceptance.", unitCode="CEL")}}
+        return out
+    if d == "Waybill":
+        w = kit.gross_weight(f, "ordered") + MED_DRY_ICE_KG + MED_BOX["tare_kg"]
+        out = kit.waybill(f, n, doc, MED_DAY["flight"], "The air waybill, issued when the airline accepted the "
+                          "cargo for KXL207.", w, "The goods in their packages, the dry ice and its box; the "
+                                                  "airline's container is not part of the shipment.")
+        out["IssueTime"] = V("06:45:00", "At 05:45 in Lumeport, when the cargo had been accepted, before the 07:00 "
+                                         "flight.")
+        out["DocumentReference"] = {"ID": V(MED_DGD, "The shipper's declaration of the generator, which the airline "
+                                                     "keeps with the air waybill (O202 choice 5).")}
+        units = med_units(f, True)
+        kit.deep_merge(out["Shipment"]["Consignment"], {
+            "HazardousRiskIndicator": V("true", "The consignment holds dangerous goods."),
+            "HazardousItemNotificationParty": party("49-xb", short=True),
+            "SpecialServiceInstructions": V("Cold chain: deliver the active container to the island's cold room on "
+                                            "arrival; radioactive package to the strong room.", "What the "
+                                                                                                "consignment needs "
+                                                                                                "on arrival."),
+            "TransportHandlingUnit": units,
+            "MainCarriageShipmentStage": med_flight(f, "The morning flight of Monday 15 June, on the airline's "
+                                                       "freighter.")})
+        sh = out["Shipment"]
+        sh["GoodsItem"] = med_goods(f)
+        hz = sh["GoodsItem"][3]["Item"]["HazardousItem"]
+        hz["PositionOnBoardStowage"] = {"LocationID": V("AFT-BULK", "The aft bulk hold, the furthest from the "
+                                                                    "crew: a Yellow package is kept from persons "
+                                                                    "by the distance its transport index asks.")}
+        ice = med_dry_ice(f)
+        ice["PositionOnBoardStowage"] = {"LocationID": V("AFT-BULK", "The aft bulk hold, at the other side from the "
+                                                                     "generator.")}
+        sh["GoodsItem"].append({"ID": V("5", "The dry ice, a goods item of its own on the air waybill."),
+                                "Description": V("Dry ice, refrigerant of the frozen vaccine (goods item 3)",
+                                                 "What it is: the refrigerant in the box, not goods sold."),
+                                "HazardousRiskIndicator": V("true", "Dangerous goods of class 9."),
+                                "NetWeightMeasure": qty(MED_DRY_ICE_KG, "KGM", "The dry ice in the box."),
+                                "Item": {"Name": V("Carbon dioxide, solid (dry ice)", "The refrigerant."),
+                                         "HazardousItem": ice}})
+        return out
+    if d == "TransportationStatus":
+        lo = min(v for _, v in MED_LOG)
+        hi = max(v for _, v in MED_LOG)
+        last = MED_LOG[-1][1]
+        out = kit.transportation_status(f, n, doc, MED_DAY["flight"], "Reported when the container had been opened "
+                                        "and its logger read.",
+                                        "Consignment arrived on KXL207; the cold chain held at 2 to 8 °C.",
+                                        "Selanu airport, cargo terminal",
+                                        {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}},
+                                        event_type="ARRIVAL")
+        out["IssueTime"] = V("11:05:00", "After unloading and reading the logger.")
+        ev = out["TransportEvent"]
+        ev["OccurrenceTime"] = V("10:45:00+00:00", "KXL207 landed on time, at 10:45 island time.")
+        ev["CurrentStatus"] = {
+            "ConditionCode": V("COMPLETED", "The arrival has taken place."),
+            "Description": V("Temperature log of the active container from its closing at the wholesaler to its "
+                             "opening at the cargo terminal.", "What the status reports."),
+            "IndicationIndicator": V("true", "The temperature stayed within 2 to 8 °C for the whole carriage: what "
+                                             "the hospital pharmacy needs to accept the vaccines and the insulin."),
+            "Condition": {"AttributeID": V("TRANSPORT", "The temperature in the container's cargo space."),
+                          "Measure": V(str(last), "When the container was opened, at 11:00.", unitCode="CEL"),
+                          "Description": V("Readings every 15 minutes from 05:00 to 11:00 UTC.", "What the minimum "
+                                                                                                  "and maximum are "
+                                                                                                  "of."),
+                          "MinimumMeasure": V(str(lo), "The lowest reading on the way.", unitCode="CEL"),
+                          "MaximumMeasure": V(str(hi), "The highest, while the container waited on the apron "
+                                                       "before loading.", unitCode="CEL")},
+            "DocumentationAttachment": {
+                "EmbeddedDocument": V(med_log_csv(), "The logger's readings as they were read out, a comma-separated "
+                                                     "text: the time in UTC and the temperature in °C; attached so "
+                                                     "that the hospital pharmacy keeps them with its stock records."),
+                "FileName": V(f"{MED_RKN}-2026-06-15.csv", "The name of the logger's file.")}}
+        return out
+    if d == "ImportCustomsDeclaration":
+        out = kit.import_declaration(f, n, doc, MED_DAY["flight"], "The customs broker declares the import at Selanu "
+                                     "airport once the goods are unloaded.",
+                                     "The customs value in coral: Lisavu values the goods landed (D16), the "
+                                     "wholesaler's price carriage paid to Selanu airport, at the world's reference "
+                                     "rate (1 lume = 0.4 coral).",
+                                     {"ID": V(f.numbers["waybill"], "The air waybill of the goods.")})
+        out["IssueTime"] = V("11:40:00", "After the terminal reported the arrival.")
+        out["ID"] = V(f.number("import-xl", doc["from"], "ImportCustomsDeclaration"), "The customs broker's number "
+                                                                                     "of the declaration.")
+        out["ImporterParty"] = {
+            "AgentParty": party("3-xl", short=True),
+            "PowerOfAttorney": {"ID": V("POA-TT-2026-031", "The number of the power of attorney the hospital gave its "
+                                                           "customs broker."),
+                                "IssueDate": V("2026-01-06", "Given at the start of the year, for all of the year's "
+                                                             "imports."),
+                                "Description": V("Lodging import declarations as direct representative, in the name "
+                                                 "and on behalf of Selanu General Hospital, and claiming its "
+                                                 "exemptions.", "What the broker may do: it declares in the "
+                                                                "hospital's name, which stays the importer (O203)."),
+                                "AgentParty": party("3-xl", short=True)}}
+        return out
+    if d == "Invoice":
+        return kit.invoice(f, n, doc, MED_DAY["flight"], "Issued on despatch.",
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The hospital's order.")}},
+                           extra={"DeliveryTerms": {"ID": V("CPT", "Incoterms 2020: carriage paid to Selanu airport, "
+                                                                   "as ordered; the customs of both countries need "
+                                                                   "the terms on the invoice.", schemeID="INCOTERMS"),
+                                                    "DeliveryLocation": kit.place("XLSLA", "The named place: Selanu "
+                                                                                           "airport.")}})
+    raise SystemExit(f"medicines scenario: no document {n} {doc['doc']}")
+
+
+FLOWS["medicines"] = MEDICINES
+REQUESTED_DELIVERY.update({
+    ("medicines", 1): (21, 21, "The vaccines and the insulin are wanted at Lumeport airport on Monday 11 May, six weeks "
+                              "before the island's influenza campaign."),
+    ("medicines", 4): (56, 56, "The goods are wanted at Selanu airport on Monday 15 June, by the morning flight."),
+    ("medicines", 5): (55, 55, "The generator is wanted at Lumeport airport on Sunday 14 June, for the hospital's "
+                              "Monday flight.")})
+for _fid in ("medicines",):
+    enrich(_fid, "TransportationStatus")(status_extras)
+SCENARIOS["medicines"] = _with_enrichment("medicines", medicines)
+
+
 # ---------------------------------------------------------------- foreign-currency debit and credit notes
 def sea_with_debit(n, doc):
     """The sea flow has no debit note: the buyer's debit note sea/28 is removed, the customs inspection and the

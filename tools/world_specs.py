@@ -60,7 +60,7 @@ def transaction(doc):
 
 def national(doc, world):
     """The national specification that applies to the document, or None."""
-    party = {p["id"]: p for p in world["parties"]}
+    party = {p["id"]: p for p in world["parties"] + world.get("abroad", [])}
     roles = _parties(doc)
     # A public buyer's rules come first: an invoice to a public body claims that country's rules for public buyers,
     # whatever the seller's country; the tax in the document is still the seller's own.

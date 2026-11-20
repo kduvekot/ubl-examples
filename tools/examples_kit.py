@@ -82,6 +82,9 @@ def tax_rule(seller, buyer, iid):
     Category codes are UN/EDIFACT 5305: S standard rate, E exempt, G free export item (tax not
     charged), O not subject to tax (outside the scope)."""
     s, b, it = PARTY[seller], PARTY[buyer], ITEM[iid]
+    if s["c"] not in WORLD["countries"]:     # a maker outside the world exports to the world (O229)
+        a = country_of(seller)["tax"]
+        return ("G", 0, {"id": a["id"], "name": a["name"]}, a["export"], a["reason"])
     c = WORLD["countries"][s["c"]]
     scheme = c["tax"]["schemes"][0]
     if it.get("levy"):      # the reason a supply is outside the tax, in the exemption reason (D31 point 3, O107)
@@ -423,12 +426,19 @@ def monetary_total(base, tax, currency, charges=Decimal(0)):
     return out
 
 
+def country_of(pid):
+    """A party's country: a country of the world, or a real one outside it (O229, countries.json abroad_countries)."""
+    c = PARTY[pid]["c"]
+    return WORLD["countries"].get(c) or WORLD["abroad_countries"][c]
+
+
 def currency_of(pid):
-    return WORLD["countries"][PARTY[pid]["c"]]["currency"]["code"]
+    return country_of(pid)["currency"]["code"]
 
 
 def currency_line(currency, who):
-    cur = next(c for c in WORLD["countries"].values() if c["currency"]["code"] == currency)
+    cur = next(c for c in list(WORLD["countries"].values()) + [v for k, v in WORLD.get("abroad_countries", {}).items()
+                                                                if k != "note"] if c["currency"]["code"] == currency)
     decimals = {0: "no minor unit", 2: "two decimals", 3: "three decimals"}[cur["currency"]["minor_units"]]
     return V(currency, f"The {cur['currency']['name'].lower()}, {who}; it has {decimals}.")
 
@@ -1206,15 +1216,17 @@ def deep_merge(out, extra):
 
 
 # ---------------------------------------------------------------- customs
+RATE_DATE = None     # the day whose fixing converts a currency outside the Accord (O231): set by the scenario
+
+
 def rate(a, b):
-    """The world's reference exchange rate: units of b for one unit of a (world/countries.json)."""
-    if a == b:
-        return Decimal(1)
-    r = WORLD["exchange_rates"]
-    return Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
+    """The world's exchange rate: units of b for one unit of a, at the Accord's fixed parities (world/countries.json),
+    or against a currency outside the Accord at the Lumeport Exchange's fixing of RATE_DATE (O231)."""
+    import world_data
+    return world_data.exchange_rate(WORLD["exchange_rates"], a, b, RATE_DATE)
 
 
-HS_SECTION = {"26": "V", "27": "V", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
+HS_SECTION = {"26": "V", "27": "V", "28": "VI", "30": "VI", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
 
 
 ADJECTIVE = {"XU": "Urvanian", "XB": "Bayvarran", "XL": "Lisavan"}

@@ -4525,6 +4525,208 @@
      }
     }
    ]
+  },
+  {
+   "id": "49-xb",
+   "n": "49",
+   "name": "Pharmaceutical Wholesaler",
+   "cat": "commerce",
+   "c": "XB",
+   "at": [
+    136,
+    121
+   ],
+   "h": 2,
+   "kind": "warehouse",
+   "what": "A pharmaceutical wholesaler founded in 1991 beside Lumeport airport, so that medicines that come in by air and go on by air never wait far from the runway. It buys medicines, vaccines and radiopharmaceuticals from makers abroad, keeps them in its cold rooms at 2 to 8 °C and in a freezer room, and supplies pharmacies and hospitals in the three countries of the Accord. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in Urvania and Lisavu, and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave by the night and early flights; its own van, with a driver trained for class 7, takes radioactive packages to the airport (D47, O202).",
+   "how": "A wholesaler sells many lines to many customers and must show, for medicines, the lot and its expiry date on every delivery. UBL's despatch advice carries the lot of each line and its expiry, and the transport documents the temperatures the goods need, so the hospital can check the cold chain and the lots when it receives them.",
+   "identity": {
+    "name": "Quillmoor Pharma Distribution",
+    "kind": "company",
+    "registry_id": "20413425",
+    "endpoint": "XB:20413425",
+    "contact": {
+     "name": "Hospital orders",
+     "email": "hospitals@quillmoor.example",
+     "telephone": "+999 2 38 6047 1582",
+     "department": "Sales",
+     "hours": "Weekdays 07:00–19:00",
+     "job_title": "Customer service officer"
+    },
+    "tax_id": "CO-1239476",
+    "address": {
+     "StreetName": "Airport Road",
+     "BuildingNumber": "40",
+     "CityName": "Lumeport",
+     "CountrySubentity": "Coastal State",
+     "PostalZone": "38528",
+     "CountrySubentityCode": "XB-CO",
+     "ID": "LUM-ADR-718264"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB31BLUM38020504913407",
+     "branch": "380205"
+    },
+    "industry": "4649",
+    "website": "https://www.quillmoor.example",
+    "language": "en",
+    "legal": {
+     "form": "LTD",
+     "founded": "1991-03-12",
+     "headcount": 64,
+     "turnover": {
+      "amount": "33500000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
+     "business": "distributor"
+    },
+    "customs_id": "XB-TR-413425",
+    "identification": {
+     "convention": "GS1",
+     "company_prefix": "9524910",
+     "gln": "9524910900003",
+     "locations": {
+      "cold-room": {
+       "gln": "9524910900010",
+       "name": "Cold rooms of the Airport Road warehouse, 2 to 8 °C"
+      }
+     }
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs specialist",
+      "department": "Logistics",
+      "email": "customs@quillmoor.example"
+     },
+     "goods_in": {
+      "name": "Goods-in",
+      "job_title": "Goods-in pharmacist",
+      "department": "Quality",
+      "email": "goodsin@quillmoor.example"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@quillmoor.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@quillmoor.example"
+     },
+     "despatch": {
+      "name": "Dispatch office",
+      "job_title": "Dispatch coordinator",
+      "department": "Warehouse",
+      "email": "dispatch@quillmoor.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@quillmoor.example"
+     },
+     "sales": {
+      "name": "Hospital orders",
+      "job_title": "Customer service officer",
+      "department": "Sales",
+      "email": "hospitals@quillmoor.example"
+     },
+     "emergency": {
+      "name": "Dangerous goods emergency line",
+      "job_title": "Radiation protection officer",
+      "department": "Quality and safety",
+      "email": "emergency@quillmoor.example",
+      "telephone": "+999 2 38 6047 1590",
+      "hours": "Every day, around the clock"
+     }
+    },
+    "week": "always"
+   },
+   "fleet": [
+    {
+     "id": "Q-7",
+     "kind": "road",
+     "name": "Van for radioactive packages",
+     "plate": "BV LP 4917",
+     "type": "341",
+     "description": "A closed van with a locked, lined cargo compartment, placarded for class 7 when it carries a package with a Yellow label, driven by a driver trained for radioactive material."
+    }
+   ]
+  },
+  {
+   "id": "50-xl",
+   "n": "50",
+   "name": "Hospital (XL)",
+   "cat": "government",
+   "c": "XL",
+   "at": [
+    237,
+    114
+   ],
+   "h": 3,
+   "kind": "office",
+   "what": "The island's general hospital in Selanu, a public body of Lisavu's health service: wards, an operating theatre, the island's vaccination service and a small nuclear medicine unit, which makes its technetium-99m every morning from a generator replaced once a week. Its pharmacy orders medicines, vaccines and the generator from a wholesaler in Lumeport; they come by air, and the pharmacy's van fetches them from the airport (D47).",
+   "how": "A hospital pharmacy buys by order and checks every delivery against the despatch advice: the lots, their expiry dates and the temperatures on the way. UBL lets it receive those facts with the goods and keep them with its stock.",
+   "identity": {
+    "name": "Selanu General Hospital",
+    "kind": "public",
+    "registry_id": "GOV-317",
+    "endpoint": "XL:GOV-317",
+    "contact": {
+     "name": "Hospital pharmacy",
+     "email": "pharmacy@selanu-hospital.example",
+     "telephone": "+999 3 726 8840",
+     "department": "Pharmacy",
+     "hours": "Weekdays 07:30–17:00",
+     "job_title": "Pharmacist"
+    },
+    "address": {
+     "StreetName": "Reef Street",
+     "BuildingNumber": "81",
+     "CityName": "Selanu",
+     "ID": "52968014"
+    },
+    "industry": "8610",
+    "website": "https://www.selanu-hospital.example",
+    "language": "en",
+    "desks": {
+     "goods_in": {
+      "name": "Pharmacy goods-in",
+      "job_title": "Pharmacy technician",
+      "department": "Pharmacy",
+      "email": "pharmacy-goodsin@selanu-hospital.example"
+     },
+     "payables": {
+      "name": "Finance office",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "finance@selanu-hospital.example"
+     },
+     "purchasing": {
+      "name": "Hospital pharmacy",
+      "job_title": "Pharmacist",
+      "department": "Pharmacy",
+      "email": "pharmacy@selanu-hospital.example"
+     }
+    },
+    "week": "office"
+   },
+   "fleet": [
+    {
+     "id": "H-2",
+     "kind": "road",
+     "name": "Pharmacy van with a cooled compartment",
+     "plate": "LV SL 517",
+     "type": "341",
+     "description": "The hospital pharmacy's van: a compartment kept at 2 to 8 °C, a freezer box and a locked, lined box for radioactive packages; its drivers are trained for class 7."
+    }
+   ]
   }
  ],
  "referenced": [
@@ -4602,5 +4804,70 @@
    }
   },
   "awaiting_owner": {}
- }
+ },
+ "abroad": [
+  {
+   "id": "51-nl",
+   "n": "51",
+   "name": "Isotope Maker (NL)",
+   "cat": "commerce",
+   "c": "NL",
+   "kind": "factory",
+   "what": "A fictional maker of radiopharmaceuticals in the Netherlands, outside the world: it fills molybdenum-99 from the research reactors of Europe into technetium-99m generators and sends them, pre-calibrated to a reference time six days after delivery, to hospitals and wholesalers around the world by scheduled air cargo from Amsterdam. Quillmoor Pharma Distribution buys one generator a week for Selanu General Hospital under a standing order (D47, O202 choice 3, O229). Not a party of the world: it has no place on the map; its name was checked against real companies.",
+   "how": "A maker abroad sells in its own currency, the euro, and its invoice says how the goods left its country; the buyer converts the amount into lume for its books.",
+   "identity": {
+    "name": "Haarvliet Isotopes",
+    "kind": "company",
+    "legal_name": "Haarvliet Isotopes B.V.",
+    "contact": {
+     "name": "Order desk",
+     "email": "orders@haarvliet-isotopes.example",
+     "department": "Customer service",
+     "hours": "Every day, around the clock",
+     "job_title": "Order coordinator"
+    },
+    "address": {
+     "StreetName": "Isotopenweg",
+     "BuildingNumber": "14",
+     "CityName": "Alkmaar",
+     "PostalZone": "1812 RN"
+    },
+    "ids_note": "It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's (O229); the documents identify it by its name and address, as a supplier outside the world.",
+    "language": "en",
+    "week": "always"
+   }
+  },
+  {
+   "id": "58-in",
+   "n": "58",
+   "name": "Vaccine Maker (IN)",
+   "cat": "commerce",
+   "c": "IN",
+   "kind": "factory",
+   "what": "A fictional maker of vaccines and insulin in Hyderabad, India, outside the world: it makes seasonal influenza vaccines for both hemispheres, a live varicella vaccine and human insulin, and exports them by scheduled air cargo from Hyderabad. Quillmoor Pharma Distribution buys its vaccines and insulin for the southern winter from it (D47, O229). Not a party of the world: it has no place on the map; its name was checked against real companies.",
+   "how": "A maker abroad sells in its own currency, the Indian rupee, and its invoice says how the goods left its country; the buyer converts the amount into lume for its books.",
+   "identity": {
+    "name": "Nilavar Biologics",
+    "kind": "company",
+    "legal_name": "Nilavar Biologics Private Limited",
+    "contact": {
+     "name": "Export sales",
+     "email": "exports@nilavar-bio.example",
+     "department": "International sales",
+     "hours": "Monday to Saturday 09:30–18:00",
+     "job_title": "Export manager"
+    },
+    "address": {
+     "StreetName": "Biotech Park Road",
+     "BuildingNumber": "27",
+     "CityName": "Hyderabad",
+     "PostalZone": "500078",
+     "CountrySubentity": "Telangana"
+    },
+    "ids_note": "It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's (O229); the documents identify it by its name and address, as a supplier outside the world.",
+    "language": "en",
+    "week": "office"
+   }
+  }
+ ]
 }

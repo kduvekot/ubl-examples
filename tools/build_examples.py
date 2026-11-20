@@ -50,9 +50,22 @@ DEPRECATED = "(Deprecated)"
 WORLD = world_data.load()
 MODEL = world_docs.load_model()
 REFERENCED = {p["id"] for p in WORLD.get("referenced", [])}      # parties only referred to: identifier and name
-PARTY = {p["id"]: p for p in WORLD["parties"] + WORLD.get("referenced", [])}
+ABROAD = {p["id"] for p in WORLD.get("abroad", [])}      # parties outside the world, in real countries (O229)
+ABROAD_COUNTRY = {k: {"languages": ["en"], "legal_forms": {}, **v}
+                  for k, v in WORLD.get("abroad_countries", {}).items() if k != "note"}
+
+
+class _Countries(dict):
+    """The world's countries; a real country outside the world (O229) is found by its code, for what a document
+    of a party there needs, but is not one of the world's countries when they are listed."""
+    def __missing__(self, key):
+        return ABROAD_COUNTRY[key]
+
+
+WORLD["countries"] = _Countries(WORLD["countries"])
+PARTY = {p["id"]: p for p in WORLD["parties"] + WORLD.get("referenced", []) + WORLD.get("abroad", [])}
 ITEM = {i["id"]: i for i in WORLD["items"]}
-CUR = {c["currency"]["code"]: c["currency"] for c in WORLD["countries"].values()}
+CUR = {c["currency"]["code"]: c["currency"] for c in list(WORLD["countries"].values()) + list(ABROAD_COUNTRY.values())}
 
 
 # ---------------------------------------------------------------- values with reasons
@@ -191,6 +204,8 @@ def party(pid, short=False, desk=None, lang=None):
     desk, its main contact."""
     if short:
         return party_again(pid, None)
+    if pid in ABROAD:
+        return abroad_party(pid, desk)
     p = PARTY[pid]
     idn, c = p["identity"], WORLD["countries"][p["c"]]
     src = f"identity of {idn['name']} (world/parties.json)"
@@ -386,6 +401,48 @@ def party(pid, short=False, desk=None, lang=None):
     return out
 
 
+def abroad_party(pid, desk=None):
+    """A party outside the world, in a real country (O229): its name, its postal address, its registered name and
+    its desk, and no identifier, since a number in the shape of a real register's could be someone's."""
+    p = PARTY[pid]
+    idn = p["identity"]
+    src = f"identity of {idn['name']}, a maker outside the world (world/parties.json, abroad; O229)"
+    ct = idn["contact"]
+    out = {"_pid": pid,
+           "PartyName": {"Name": V(idn["name"], f"The trading name; {src}. {idn['ids_note']}")},
+           "PostalAddress": abroad_address(pid),
+           "PartyLegalEntity": {"RegistrationName": V(idn["legal_name"], "The company's registered name, with the "
+                                                                         f"legal form of its country; {src}.")},
+           "Contact": {"Name": V(ct["name"], f"The party's desk that handles this document; {src}."),
+                       "JobTitle": V(ct["job_title"], f"The job of the person who answers at the desk; {src}."),
+                       "Department": V(ct["department"], f"The department the desk belongs to; {src}."),
+                       "ElectronicMail": V(ct["email"], "E-mail under the reserved .example domain (RFC 2606), so it "
+                                                        f"cannot reach anyone; no telephone number is given, as one "
+                                                        f"in the real country's plan could reach someone; {src}."),
+                       "Note": V(ct["hours"], f"When the desk can be reached; {src}.")}}
+    out["_keys"] = set(out)
+    return out
+
+
+def abroad_address(pid):
+    """The postal address of a party outside the world: fictional, in a real town, in the country's own order."""
+    p = PARTY[pid]
+    a, c = p["identity"]["address"], ABROAD_COUNTRY[p["c"]]
+    src = f"identity of {p['identity']['name']} (world/parties.json, abroad): a fictional address in a real town"
+    out = {"AddressTypeCode": V("BUSINESS", "The kind of address.")}
+    for k, why in (("StreetName", "Street of the postal address."), ("BuildingNumber", "Building number."),
+                   ("CityName", "The town."), ("PostalZone", f"Postal code in the format of {c['name']}."),
+                   ("CountrySubentity", f"The state of {c['name']}, part of an address there.")):
+        if a.get(k):
+            out[k] = V(a[k], f"{why} {src}.")
+    out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, the legal time there in "
+                                             "June.")
+    out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}, a real country outside the world (O229).",
+                                              listID="ISO 3166"),
+                      "Name": V(c["name"], "The country's name, for readers of the address.")}
+    return out
+
+
 def legal_name(pid):
     idn = PARTY[pid]["identity"]
     form = idn.get("legal", {}).get("form")
@@ -505,6 +562,8 @@ def check_addresses(root, where):
             continue
         name = f"{where}: {etree.QName(e).localname} of {etree.QName(e.getparent()).localname}"
         country = kids["Country"][0].find("{*}IdentificationCode").text
+        if country in ABROAD_COUNTRY:          # an address abroad has no format of the world (O229)
+            continue
         if "AddressFormatCode" not in kids:
             raise SystemExit(f"{name} has no AddressFormatCode")
         if kids["AddressFormatCode"][0].text != country:
@@ -601,6 +660,8 @@ def address(pid, register=False):
     """A party's address. register: the address's number in its address register goes with it, as it does on a
     party's postal address and a delivery address (decision ID-Q8), not where the address only says where something
     is."""
+    if pid in ABROAD:
+        return abroad_address(pid)
     p = PARTY[pid]
     idn, c = p["identity"], WORLD["countries"][p["c"]]
     src = f"identity of {idn['name']} (world/parties.json)"
@@ -1007,7 +1068,27 @@ def hazardous_item(it):
                                         "Measure": V(hz["flash"], "The flashpoint.", unitCode="CEL")}
         if "sea" in modes:
             out["MaritimePollutantCode"] = V("N", "Not a marine pollutant.")
-    if hz.get("radioactive"):
+    if hz.get("radioactive") and hz["radioactive"].get("activity_gbq"):     # a Type A package (D47, O202)
+        r = hz["radioactive"]
+        bq = Decimal(r["activity_gbq"]) * Decimal(10) ** 9
+        mant = (bq / Decimal(10) ** (len(str(int(bq))) - 1)).normalize()
+        out["RadioactiveMaterial"] = {
+            "Name": V(f"{r['nuclide']} (with its daughter Tc-99m), maximum activity during transport "
+                      f"{r['activity_gbq']} GBq ({mant} × 10^{len(str(int(bq))) - 1} Bq)",
+                      "The radionuclide and the maximum activity during transport, which the transport document must "
+                      "state in becquerels (IAEA SSR-6 para 546): UBL has no element for the activity of contents "
+                      "that are not fissile, so the name carries it, a finding for the TC (O202 choice 6). The "
+                      "activity is the generator's at acceptance at the Lumeport cargo terminal, the highest it has "
+                      "on the way, as Mo-99 decays (O202 choice 4); the A2 value of Mo-99 allows up to 600 GBq in a "
+                      "Type A package."),
+            "SpecialFormDescription": V(r["form"], "The physical and chemical form: not special form, so the A2 "
+                                                   "value applies."),
+            "TransportIndexNumeric": V(r["ti"], "The transport index of the package: the highest dose rate at 1 m "
+                                                "in mSv/h times 100, rounded up to the first decimal (IAEA SSR-6 "
+                                                "para 523); above 1, so the package carries the Category III-YELLOW "
+                                                "label (para 529, the higher category winning over the surface "
+                                                "rate; O202 choice 1).")}
+    elif hz.get("radioactive"):
         r = hz["radioactive"]
         total = r["kbq_each"] * r["count"]
         out["RadioactiveMaterial"] = {
@@ -2203,10 +2284,8 @@ def item_profiles(content, doc):
 
 # ---------------------------------------------------------------- customs value on each country's basis (C52, D16)
 def world_rate(a, b):
-    if a == b:
-        return Decimal(1)
-    r = WORLD["exchange_rates"]
-    return Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
+    import examples_kit
+    return world_data.exchange_rate(WORLD["exchange_rates"], a, b, examples_kit.RATE_DATE)
 
 
 VALUATION = {   # flow -> what the declarations add to or take from the goods lines, by D16 and WTO Articles 1 and 8
@@ -2289,6 +2368,58 @@ def kit_maker(iid):
     return it
 
 
+def duty_free(country, hs):
+    """Whether the country's tariff charges no duty on the HS subheading whatever the goods' origin (countries.json
+    tax.duty_free: medicines and radioactive isotopes for medicine, O229)."""
+    dfree = country["tax"].get("duty_free", {})
+    return hs[:2] in dfree.get("chapters", []) or hs in dfree.get("subheadings", [])
+
+
+def import_from_abroad(content, doc, c, country, goods):
+    """An import of goods made outside the Accord (O229): no preference to claim; the duty is the importing
+    country's own tariff, which charges none on medicines and medical isotopes; Lisavu's import consumption tax is
+    exempt for medicines and vaccines supplied to a public hospital (O201), Bayvarra charges nothing at import."""
+    importer = PARTY[doc["parties"]["ImporterParty"]]
+    hospital = importer["cat"] == "government" and importer["identity"].get("industry") == "8610"
+    total, cur = Decimal(0), None
+    for g in goods:
+        mk = kit_maker(ITEM_BY_NAME[g["Description"].value])
+        if not duty_free(country, mk["hs"]):
+            raise SystemExit(f"{doc['flow']}: goods from outside the Accord with a duty the world has no rate for "
+                             f"(HS {mk['hs']}, O229)")
+        value = g["DeclaredCustomsValueAmount"]
+        total += Decimal(value.value)
+        cur = value.attrs["currencyID"]
+        if c == "XL":
+            if not hospital:
+                raise SystemExit(f"{doc['flow']}: medicines imported into Lisavu for a party that is no public "
+                                 "hospital: the import consumption tax applies (O201)")
+            code = country["tax"]["exemption_codes"]["Medicines and vaccines for a public hospital"]
+            g["Item"]["ClassifiedTaxCategory"] = {
+                "ID": V("E", "Exempt from the island's import consumption tax."),
+                "Percent": V("0", "No tax is charged in this category."),
+                "TaxExemptionReasonCode": V(code, "The exemption as a code of Lisavu's national list: medicines and "
+                                                  "vaccines supplied to a public hospital (O201).",
+                                            listID=codelists.NATIONAL.format("XL", "TaxExemptionReason")),
+                "TaxExemptionReason": V("Medicines and vaccines for a public hospital", "Why no tax is charged, "
+                                        "stated rather than left out (UBL rule IND6)."),
+                "TaxScheme": {"ID": V("IMP", "The island's import consumption tax, as the world codes it."),
+                              "TaxTypeCode": V("CONSUMPTION", "A tax on consumption, charged at import.")}}
+    origins = sorted({kit_maker(ITEM_BY_NAME[g["Description"].value])["origin"] for g in goods})
+    names = " and ".join(ABROAD_COUNTRY[o].get("in_text", ABROAD_COUNTRY[o]["name"]) for o in origins)
+    if c == "XL":
+        text = (f"No duty: goods made in {names}, outside the Accord, but medicines and radioactive isotopes for "
+                "medicine are free of duty in Lisavu's tariff. Import consumption tax: exempt, medicines and vaccines "
+                "supplied to a public hospital.")
+    else:
+        text = (f"No duty: goods made in {names}, outside the Accord, but medicines and radioactive isotopes for "
+                "medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is "
+                "charged once, at the final retail sale.")
+    content["Note"] = V(text, "What is due at import, by the importing country's rule (D18, O229): goods from outside "
+                              "the Accord claim no preference and pay the country's own tariff, which charges no "
+                              "duty on them.")
+
+
 def import_preference(content, doc):
     """An import declaration claims the Trade Accord's preference for goods of Accord origin, names the criterion
     and refers to its proof of origin, and states what is due at import by its country's rule (D18): in Urvania
@@ -2302,6 +2433,8 @@ def import_preference(content, doc):
     goods = content["Shipment"]["GoodsItem"]
     goods = goods if isinstance(goods, list) else [goods]
     total, cur = Decimal(0), None
+    if all(kit_maker(ITEM_BY_NAME[g["Description"].value]).get("made_abroad") for g in goods):
+        return import_from_abroad(content, doc, c, country, goods)
     for g in goods:
         iid = ITEM_BY_NAME[g["Description"].value]
         mk = kit_maker(iid)
@@ -3256,7 +3389,7 @@ def working_day(pid, day):
         return False
     if len(week["days"]) == 7:
         return True
-    hol = WORLD["countries"][p["c"]].get("holidays", {})
+    hol = WORLD["countries"].get(p["c"], {}).get("holidays", {})
     addr = p["identity"]["address"]
     days = dict(hol.get(str(d.year), {}))
     days.update(hol.get("states", {}).get(addr.get("CountrySubentity"), {}))
@@ -3269,7 +3402,7 @@ def business_day(country, day):
     holiday of the country (world/countries.json holidays). A payment falls due on one (O180)."""
     import datetime as _dt
     d = _dt.date.fromisoformat(day)
-    return d.weekday() < 5 and day not in WORLD["countries"][country].get("holidays", {}).get(str(d.year), {})
+    return d.weekday() < 5 and day not in WORLD["countries"].get(country, {}).get("holidays", {}).get(str(d.year), {})
 
 
 def payee_of(root, doc):
@@ -3730,7 +3863,7 @@ def main(flow_id, check=False):
 
 
 FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton", "tender", "contest", "carnet",
-                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy", "lpg"]
+                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy", "lpg", "medicines"]
 
 
 if __name__ == "__main__":
