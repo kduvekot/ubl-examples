@@ -272,25 +272,37 @@ function box(g, x, y, w, d, h, top, side) { // isometric block standing on (x, y
 //  0 far: the overview, the whole world drawn once at OV_S of its size: the ground and its land use, the rivers and
 //    the coast, the towns (with their streets), the main roads, the railways and the buildings of the parties; no
 //    minor roads, no villages or farmsteads, no trees, rocks, hedges or windows;
-//  1 middle (view.s from MID_S): chunks of CHUNK x CHUNK world pixels drawn at CHUNK_S[1] of their size, with the
+//  1 middle (view.s from MID_S): chunks of the world (see below), with the
 //    minor and access roads thin and faint, and the villages and farmsteads as small clusters of houses;
-//  2 close (view.s from DETAIL_S): the chunks at full size, with everything (trees, hedges, rocks, windows).
-// A chunk is drawn when it first comes into view (a few per frame) and kept, up to CHUNK_KEEP of them; the level
-// below stands in for it until it is drawn. A level fades in over the one below it over FADE of the scale, so that
-// the minor roads and the trees do not pop up.
-const OV_S = .35, MID_S = .4, DETAIL_S = .62, FADE = 1.25, CHUNK = 1024, CHUNK_S = [0, .5, 1], CHUNK_KEEP = 60;
-let overview = null; const chunks = new Map();
-function drawWorld() { overview = null; chunks.clear(); OX = RH() * TW / 2 + 40; }   // after a rotation or the grid toggle
+//  2 close (view.s from DETAIL_S): the chunks with everything (trees, hedges, rocks, windows).
+// The chunks of a level are painted at a resolution (pixels per world pixel) that follows the zoom and the screen's
+// pixel density (view.s * dpr), in steps (RES), so that zoomed in the map stays sharp instead of showing enlarged
+// pixels: the close level at 1, 2, 3 or 4 times its size, the middle level at a half or (on a dense screen) at full
+// size. A chunk is CHUNK pixels square whatever its resolution, so it covers CHUNK / resolution world pixels: the
+// number of chunks in view, and the time to draw them, stay about the same at every zoom.
+// A chunk is drawn when it first comes into view (a few per frame) and kept, up to CHUNK_KEEP chunks' worth of
+// pixels; until it is drawn, a chunk of the same level at another resolution stands in for it if one is kept, else
+// the level below. A level fades in over the one below it over FADE of the scale, so that the minor roads and the
+// trees do not pop up.
+const OV_S = .35, MID_S = .4, DETAIL_S = .62, FADE = 1.25, CHUNK = 1024, CHUNK_KEEP = 60;
+const RES = [null, [[.5, 0], [1, .8]], [[1, 0], [2, 1.25], [3, 2.5], [4, 3.75]]];   // [resolution, from view.s * dpr]
+const resFor = (level, sd) => RES[level].filter(([, from]) => sd >= from).pop()[0];
+let overview = null; const chunks = new Map(); let chunkPx = 0;
+function drawWorld() { overview = null; chunks.clear(); chunkPx = 0; OX = RH() * TW / 2 + 40; }   // after a rotation or the grid toggle
 function ensureOverview() { if (overview) return overview;
   overview = document.createElement("canvas"); overview.width = Math.ceil(WORLD_W * OV_S); overview.height = Math.ceil(WORLD_H * OV_S);
   const g = overview.getContext("2d"); g.setTransform(OV_S, 0, 0, OV_S, 0, 0);
   paintWorld(g, { x0: 0, y0: 0, x1: WORLD_W, y1: WORLD_H }, 0); return overview; }
-function chunk(cx, cy, level) { const key = level + ":" + cx + "," + cy; let c = chunks.get(key);
+const chunkWorld = k => CHUNK / Math.max(1, k);                   // the world pixels a chunk covers at resolution k
+const chunkKey = (cx, cy, level, k) => level + "@" + k + ":" + cx + "," + cy;
+function chunk(cx, cy, level, k) { const key = chunkKey(cx, cy, level, k); let c = chunks.get(key);
   if (c) { chunks.delete(key); chunks.set(key, c); return c; }                     // most recently used last
-  const k = CHUNK_S[level]; c = document.createElement("canvas"); c.width = c.height = CHUNK * k; const g = c.getContext("2d");
-  g.setTransform(k, 0, 0, k, -cx * CHUNK * k, -cy * CHUNK * k);
-  paintWorld(g, { x0: cx * CHUNK, y0: cy * CHUNK, x1: (cx + 1) * CHUNK, y1: (cy + 1) * CHUNK }, level);
-  chunks.set(key, c); if (chunks.size > CHUNK_KEEP) chunks.delete(chunks.keys().next().value); return c; }
+  const C = chunkWorld(k); c = document.createElement("canvas"); c.width = c.height = Math.round(C * k); const g = c.getContext("2d");
+  g.setTransform(k, 0, 0, k, -cx * C * k, -cy * C * k);
+  paintWorld(g, { x0: cx * C, y0: cy * C, x1: (cx + 1) * C, y1: (cy + 1) * C }, level);
+  chunks.set(key, c); chunkPx += c.width * c.height;
+  while (chunkPx > CHUNK_KEEP * CHUNK * CHUNK && chunks.size > 1) { const [k0, c0] = chunks.entries().next().value; chunks.delete(k0); chunkPx -= c0.width * c0.height; }
+  return c; }
 // a town's square (not a village's): its streets belong to the town and show at every level
 const townSquare = t => t.urban && !t.village;
 // the road directions of a square drawn at a level: all of them from the middle level on, in the overview only the
@@ -1626,17 +1638,29 @@ function paintView(r) {
   ctx.drawImage(ensureOverview(), view.x, view.y, WORLD_W * s, WORLD_H * s);
   const fade = from => Math.max(0, Math.min(1, (s / from - 1) / (FADE - 1))), a1 = fade(MID_S), a2 = fade(DETAIL_S);
   if (!a1) return false;
-  const cx0 = Math.max(0, Math.floor(-view.x / s / CHUNK)), cy0 = Math.max(0, Math.floor(-view.y / s / CHUNK));
-  const cx1 = Math.min(Math.ceil(WORLD_W / CHUNK) - 1, Math.floor((r.width - view.x) / s / CHUNK)), cy1 = Math.min(Math.ceil(WORLD_H / CHUNK) - 1, Math.floor((r.height - view.y) / s / CHUNK));
   const t0 = performance.now(); let pending = false;
-  const layer = (level, alpha) => { ctx.globalAlpha = alpha; ctx.imageSmoothingEnabled = s < CHUNK_S[level];
+  // the chunks of a level at resolution k in view; only those kept (keptOnly, a stand-in) or also new ones, a few
+  // per frame; returns whether all of them were drawn
+  const layer = (level, alpha, k, keptOnly) => { const C = chunkWorld(k); let all = true;
+    const cx0 = Math.max(0, Math.floor(-view.x / s / C)), cy0 = Math.max(0, Math.floor(-view.y / s / C));
+    const cx1 = Math.min(Math.ceil(WORLD_W / C) - 1, Math.floor((r.width - view.x) / s / C)), cy1 = Math.min(Math.ceil(WORLD_H / C) - 1, Math.floor((r.height - view.y) / s / C));
+    ctx.globalAlpha = alpha;
     for (let cy = cy0; cy <= cy1; cy++) for (let cx = cx0; cx <= cx1; cx++) {
-      if (!chunks.has(level + ":" + cx + "," + cy) && performance.now() - t0 > 30) { pending = true; continue; }
-      const x0 = Math.round(view.x + cx * CHUNK * s), y0 = Math.round(view.y + cy * CHUNK * s);
-      ctx.drawImage(chunk(cx, cy, level), x0, y0, Math.round(view.x + (cx + 1) * CHUNK * s) - x0, Math.round(view.y + (cy + 1) * CHUNK * s) - y0); }
-    ctx.globalAlpha = 1; };
-  if (a2 < 1) layer(1, a1);                             // the middle level, unless the close one covers it
-  if (a2) layer(2, a2);
+      if (!chunks.has(chunkKey(cx, cy, level, k)) && (keptOnly || performance.now() - t0 > 30)) { all = false; continue; }
+      const x0 = Math.round(view.x + cx * C * s), y0 = Math.round(view.y + cy * C * s);
+      ctx.drawImage(chunk(cx, cy, level, k), x0, y0, Math.round(view.x + (cx + 1) * C * s) - x0, Math.round(view.y + (cy + 1) * C * s) - y0); }
+    ctx.globalAlpha = 1; return all; };
+  // a level at the resolution for this zoom; while some of its chunks are still to be drawn, the chunks kept at its
+  // other resolutions stand in under them (the sharpest first on top)
+  const level = (lv, alpha) => { const k = resFor(lv, s * dpr), C = chunkWorld(k);
+    const cx0 = Math.max(0, Math.floor(-view.x / s / C)), cy0 = Math.max(0, Math.floor(-view.y / s / C));
+    const cx1 = Math.min(Math.ceil(WORLD_W / C) - 1, Math.floor((r.width - view.x) / s / C)), cy1 = Math.min(Math.ceil(WORLD_H / C) - 1, Math.floor((r.height - view.y) / s / C));
+    let ready = true; for (let cy = cy0; cy <= cy1 && ready; cy++) for (let cx = cx0; cx <= cx1; cx++) if (!chunks.has(chunkKey(cx, cy, lv, k))) { ready = false; break; }
+    if (!ready) for (const [k2] of RES[lv]) if (k2 !== k) layer(lv, alpha, k2, true);
+    if (!layer(lv, alpha, k, false)) pending = true; };
+  ctx.imageSmoothingEnabled = true;
+  if (a2 < 1) level(1, a1);                             // the middle level, unless the close one covers it
+  if (a2) level(2, a2);
   return pending; }
 const redraw = () => { if (reduced) frame(0); };
 
