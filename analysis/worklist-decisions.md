@@ -959,7 +959,7 @@ Turnover in million lume for all three countries (1 lume = 100 ferra = 0.4 coral
 
 How the dates fall into the history: the old trades before 1962 (barges, insurance, the ginnery, the water company); the companies the Lumeport Agreement of 1974 called for (the port company, the customs broker, the forwarder, the textile mill); the Accord's wave of 1996 to 1999 (the haulier, the factoring company, the border terminal, Valdara's logistics arm, the numbering agency, island warehousing).
 
-The parties that already had their own data keep it: Bank of Lumeport 1903, Crevalto Bank 1921, Ferrano Energy 1949, Serravona Mining 1958, Valdara Industries 1962, Bank of Selanu 1965, Tidewell Ocean Lines 1974, Montebrio Power 1974, Brightmarket Stores 1979, Lumeway Distribution 1988, Ferrano Grid 2007, Lisavu Cotton Farm 2009, Kelpstone Gas 2011.
+The parties that already had their own data keep it: Bank of Lumeport 1903, Crevalto Bank 1921, Ferrano Energy 1949, Serravona Mining 1958, Valdara Industries 1962, Bank of Selanu 1878 (OW003, owner 2026-11-20; was 1965), Tidewell Ocean Lines 1974, Montebrio Power 1974, Brightmarket Stores 1979, Lumeway Distribution 1988, Ferrano Grid 2007, Lisavu Cotton Farm 2009, Kelpstone Gas 2011.
 
 **Lisavu's farm register.** A grower's registration is renewed each season, so a farm's register entry carries an expiry date.
 
