@@ -857,6 +857,58 @@
      }
     }
    ]
+  },
+  {
+   "id": "reefer",
+   "title": "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)",
+   "text": "In the southern autumn the island's fresh-produce wholesaler buys a 40-foot reefer of apples and pears from the fruit growers' cooperative at Harrowmead, carriage and insurance paid to the Port of Selanu (CIP): the cooperative books the reefer through its forwarder, which brings it pre-cooled to the packhouse and trucks it back to Lumeport on a generator; the plant health service of Bayvarra's Department of Agriculture certifies the fruit free of the pests the island names. The reefer sails at 0.5 °C and 90 % humidity, its fresh-air vent set for fruit that breathes, on Tidewell's weekly service; at Selanu it waits on the port's power until the wholesaler's carrier takes it to the cold store, where it is unloaded and its temperature log read. Food pays the island's import consumption tax like every import: the island taxes imported food to encourage its own farms.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "55-xb",
+     "to": "16-xb",
+     "carrier": "10-xb",
+     "why": "Pre-carriage: the forwarder's reefer truck brings the packed reefer from the packhouse to the port, its refrigeration running on the truck's generator set.",
+     "from_place": {
+      "name": "Harrowmead Fruit Growers, packhouse loading dock",
+      "gln": "55-xb:packhouse"
+     },
+     "to_place": {
+      "name": "Port of Lumeport, container quay",
+      "locode": "XBLMP"
+     }
+    },
+    {
+     "mode": "sea",
+     "from": "16-xb",
+     "to": "16-xl",
+     "carrier": "11-xb",
+     "why": "The weekly feeder to the island, the reefer on one of its power points.",
+     "from_place": {
+      "name": "Port of Lumeport, container quay",
+      "locode": "XBLMP"
+     },
+     "to_place": {
+      "name": "Port of Selanu",
+      "locode": "XLSEL"
+     },
+     "transit_days": 3
+    },
+    {
+     "mode": "road",
+     "from": "16-xl",
+     "to": "56-xl",
+     "carrier": "9-xl",
+     "why": "On-carriage: the 3PL's container truck takes the reefer to the wholesaler's cold store, a drive of a few kilometres, short enough for the closed reefer to go unplugged.",
+     "from_place": {
+      "name": "Port of Selanu",
+      "locode": "XLSEL"
+     },
+     "to_place": {
+      "name": "Hafefo Fresh Produce, cold store, Selanu"
+     }
+    }
+   ]
   }
  ],
  "documents": [
@@ -4275,6 +4327,135 @@
     "ConsigneeParty": "33-xu",
     "CustomsParty": "19-xu"
    }
+  },
+  {
+   "flow": "reefer",
+   "doc": "Order",
+   "from": "56-xl",
+   "to": "55-xb",
+   "why": "The wholesaler orders one reefer of apples and pears for the island's shops, hotels and hospital kitchen in the autumn season, carriage and insurance paid to the Port of Selanu: the cooperative books and insures the reefer.",
+   "parties": {
+    "BuyerCustomerParty": "56-xl",
+    "SellerSupplierParty": "55-xb",
+    "Delivery/DeliveryParty": "56-xl"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CIP"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "ForwardingInstructions",
+   "from": "55-xb",
+   "to": "10-xb",
+   "why": "The cooperative instructs its forwarder: book a reefer on the sailing, with its settings for the fruit, bring it pre-cooled to the packhouse and back to the port, declare the export and insure the cargo (CIP obliges the seller to insure).",
+   "parties": {
+    "ConsignorParty": "55-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "56-xl"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "GoodsCertificate",
+   "from": "57-xb",
+   "to": "55-xb",
+   "why": "Bayvarra's plant protection organisation under the IPPC, the Plant Health Service of the federal Department of Agriculture, inspects the fruit at the packhouse and certifies it free of the pests the island names, at the cooperative's application.",
+   "parties": {
+    "IssuerParty": "57-xb",
+    "ApplicantParty": "55-xb",
+    "ExporterParty": "55-xb",
+    "ImporterParty": "56-xl"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "ExportCustomsDeclaration",
+   "from": "10-xb",
+   "to": "19-xb",
+   "why": "The forwarder, as customs agent, declares the export for the cooperative at the seaport.",
+   "parties": {
+    "ExporterParty": "55-xb",
+    "CustomsDeclaration/CustomsParty": "19-xb",
+    "CustomsDeclaration/ConsigneeParty": "56-xl",
+    "CustomsDeclaration/Shipment/ShipmentStage/CustomsAgentParty": "10-xb"
+   },
+   "sends_for": "ExporterParty"
+  },
+  {
+   "flow": "reefer",
+   "doc": "DespatchAdvice",
+   "from": "55-xb",
+   "to": "56-xl",
+   "why": "The cooperative tells the wholesaler what is in the reefer: the pallets, their varieties, grower lots and packing dates.",
+   "parties": {
+    "DespatchSupplierParty": "55-xb",
+    "DeliveryCustomerParty": "56-xl",
+    "Shipment/Consignment/CarrierParty": "11-xb"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "BillOfLading",
+   "from": "11-xb",
+   "to": "10-xb",
+   "why": "The bill of lading of the reefer, issued to the forwarder that booked it, with the reefer's settings as the carrier is to keep them.",
+   "parties": {
+    "CarrierParty": "11-xb",
+    "FreightForwarderParty": "10-xb",
+    "ConsignorParty": "55-xb",
+    "Shipment/Consignment/ConsigneeParty": "56-xl"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "Invoice",
+   "from": "55-xb",
+   "to": "56-xl",
+   "why": "The fruit at its CIP prices, which hold the reefer's carriage and the insurance, invoiced on shipment.",
+   "parties": {
+    "AccountingSupplierParty": "55-xb",
+    "AccountingCustomerParty": "56-xl",
+    "SellerSupplierParty": "55-xb",
+    "BuyerCustomerParty": "56-xl"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "ImportCustomsDeclaration",
+   "from": "56-xl",
+   "to": "19-xl",
+   "why": "The wholesaler lodges its import declaration before the ship arrives, so that the fruit is released when the reefer is discharged; the import consumption tax applies to food as to every import.",
+   "parties": {
+    "ImporterParty": "56-xl",
+    "ConsignorParty": "55-xb",
+    "ConsigneeParty": "56-xl",
+    "CustomsParty": "19-xl"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "TransportationStatus",
+   "from": "11-xb",
+   "to": "56-xl",
+   "why": "The carrier reports the reefer discharged at Selanu and on the port's power, with the temperatures its monitoring recorded at sea.",
+   "parties": {
+    "SenderParty": "11-xb",
+    "ReceiverParty": "56-xl",
+    "Consignment/CarrierParty": "11-xb",
+    "Consignment/ConsigneeParty": "56-xl"
+   }
+  },
+  {
+   "flow": "reefer",
+   "doc": "ReceiptAdvice",
+   "from": "56-xl",
+   "to": "55-xb",
+   "why": "The wholesaler confirms what it unloaded at its cold store, with the temperatures read from the reefer's log and measured in the fruit.",
+   "parties": {
+    "DeliveryCustomerParty": "56-xl",
+    "DespatchSupplierParty": "55-xb"
+   }
   }
  ],
  "cited": {
@@ -4488,6 +4669,10 @@
   },
   "VGM-26-0510": {
    "what": "the shipper's verified gross mass of the container",
+   "type_code": "749"
+  },
+  "VGM-26-0422": {
+   "what": "the cooperative's verified gross mass of the reefer",
    "type_code": "749"
   },
   "VI-BANK-26-04": {

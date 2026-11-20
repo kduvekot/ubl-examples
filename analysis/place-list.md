@@ -140,6 +140,9 @@ Every party on the map with its place (the town of its address), the district of
 | Environment Agency of Urvania (46-xu) | Via delle Acque, Ferrano | Ferrano | Borgo Nord (suburb, 6.5 km) | 11.1 km W | edge | 74/115 | 30.6622 S 15.6353 W (30° 39.73′ S, 15° 38.12′ W) | 205 m (3D map 151 m) |
 | Rail Infrastructure Agency of Urvania (47-xu) | Via della Stazione, Ferrano | Ferrano | Borgo Nord (suburb, 6.8 km) | 10.5 km N | edge | 77/113 | 30.5991 S 15.5264 W (30° 35.95′ S, 15° 31.59′ W) | 265 m |
 | Fernhollow Studio (48-xb) | Ropewalk Lane, Lumeport | Lumeport | Northshore (suburb, 8.2 km) | 11.1 km E | outside | 141/125 | 30.9775 S 13.2029 W (30° 58.65′ S, 13° 12.17′ W) | 20 m |
+| Harrowmead Fruit Growers (55-xb) | Orchard Road, Harrowmead | Harrowmead | - | 4.9 km NE | - | 97/104 | 30.3153 S 14.8003 W (30° 18.92′ S, 14° 48.02′ W) | 366 m |
+| Hafefo Fresh Produce (56-xl) | Wharf Road, Selanu | Selanu | Port Wrenfield (port, 13.3 km) | 14.4 km N | outside | 238/108 | 32.8739 S 2.1626 W (32° 52.43′ S, 2° 09.76′ W) | 81 m (3D map 58 m) |
+| Federal Department of Agriculture of Bayvarra (57-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Northshore (suburb, 14.5 km) | 14.4 km E | outside | 142/127 | 31.0405 S 13.1666 W (31° 02.43′ S, 13° 10.00′ W) | 10 m |
 
 ## 3. Distances along the routes
 
@@ -222,6 +225,8 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | mast | road | Selanu Airport Cargo (17-xl) → Selanu Telecom (35-xl) | **32.9 km** | 32.9 km | `road-c` | 22.4 km | 1.47 | 0 h 28 – 0 h 33 | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Montebrio Power (43-xu) | **206.6 km** | - | `gas` | 164.5 km | 1.26 | - | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Ferrano Grid (44-xu) | **281.8 km** | - | `gas`, `gas-grid` | 255.9 km | 1.10 | - | - |
+| reefer | road | Harrowmead Fruit Growers (55-xb) → Port of Lumeport (16-xb) | **261.1 km** | 261.1 km | `road`, `road-b`, `road-wool`, `road-port` | 162.1 km | 1.61 | 3 h 44 – 4 h 21 | - |
+| reefer | road | Port of Selanu (16-xl) → Hafefo Fresh Produce (56-xl) | **7.0 km** | 7.0 km | town streets, minor roads | 7.0 km | 1.00 | 0 h 06 – 0 h 07 | - |
 
 **Legs inside one town or its surroundings** (the diagram's party squares make them longer than on the ground; O82, O92):
 
@@ -232,6 +237,7 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 - cotton: Port of Lumeport (16-xb) → Lumeport Textile Mill (40-xb), both in Lumeport: 35.8 km on the map.
 - packaging: Rivermouth Packaging (41-xb) → Lumeport Textile Mill (40-xb), both in Lumeport: 28.0 km on the map.
 - packaging: Lumeport Textile Mill (40-xb) → Brightmarket Stores (26-xb), both in Lumeport: 14.0 km on the map.
+- reefer: Port of Selanu (16-xl) → Hafefo Fresh Produce (56-xl), both in Selanu: 7.0 km on the map.
 
 ## 4. The long distances: Lumeport – Selanu
 
@@ -290,6 +296,8 @@ Found by the generator (each from the data above):
 - Montebrio Power (43-xu) lies outside Serravona's built-up area (17.8 km from the centre; the town is about 1 km across).
 - Ferrano Grid (44-xu) lies outside Ferrano's built-up area (22.4 km from the centre; the town is about 15 km across).
 - Fernhollow Studio (48-xb) lies outside Lumeport's built-up area (11.1 km from the centre; the town is about 12 km across).
+- Hafefo Fresh Produce (56-xl) lies outside Selanu's built-up area (14.4 km from the centre; the town is about 4 km across).
+- Federal Department of Agriculture of Bayvarra (57-xb) lies outside Lumeport's built-up area (14.4 km from the centre; the town is about 12 km across).
 - Customs Administration of Urvania (19-xu) stands 3.5 km from where the road `road` crosses the border (97/120).
 - Customs and Border Service of Bayvarra (19-xb) stands 0.0 km from where the road `road` crosses the border (97/120).
 - Gullhaven (Kelpstone Gas) is reached by road only from Larkmouth (`road-north`): Ferrano – Gullhaven is 714 km by road against 270 km in a straight line. The lpg flow (D48, a road tanker from the gas plant) needs this settled.

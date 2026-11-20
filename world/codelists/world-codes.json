@@ -5564,7 +5564,8 @@
     "FRAGILE",
     "KEEPDRY",
     "DECK",
-    "UNDERDECK"
+    "UNDERDECK",
+    "POWER"
    ]
   },
   "ShippingPriority": {
@@ -8435,7 +8436,8 @@
    "codes": [
     "CORP",
     "LTD",
-    "LLP"
+    "LLP",
+    "COOP"
    ]
   },
   "XL:CompanyLegalForm": {
@@ -8467,6 +8469,8 @@
    "name": "UN Central Product Classification, Version 2.1",
    "location": "world/codelists/gc/CPC21Code.gc",
    "codes": [
+    "01341",
+    "01342",
     "01921",
     "12020",
     "14100",
@@ -8497,6 +8501,8 @@
    "name": "Harmonized Commodity Description and Coding System, 2022 edition (subheadings)",
    "location": "world/codelists/gc/WCOHS2022Code.gc",
    "codes": [
+    "080810",
+    "080830",
     "260111",
     "271121",
     "321000",

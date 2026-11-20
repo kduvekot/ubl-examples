@@ -146,7 +146,6 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `ShipmentStage/DetentionTransportEvent` | 0..n | sea/17-TransportationStatus |  |  | open |
 | `TransportEquipment/AttachedTransportEquipment` | 0..n | sea/14-BillOfLading |  |  | open |
 | `TransportEquipment/Package` | 0..n | sea/14-BillOfLading |  |  | open |
-| `TransportEquipment/ServiceAllowanceCharge` | 0..n | sea/17-TransportationStatus |  |  | open |
 | `WHOAffectedAreaVisit/VisitDate` | 1 | sea/16-CommonTransportationReport |  |  | open |
 | `WHOAffectedAreaVisit/WHOAffectedAreaPortLocation` | 1 | sea/16-CommonTransportationReport |  |  | open |
 
@@ -367,7 +366,6 @@ Coverage 5058 → 5049 (commit 0edd7d78), 9 elements.
 |---|---|---|---|---|---|
 | `Consignment/OfficeOfEntryLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `ImportCustomsDeclaration/CustomsExitOfficeLocation` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
-| `ImportCustomsDeclaration/ValidityPeriod` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `Shipment/DeclaredCustomsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `Shipment/DeclaredStatisticsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `TransitCustomsDeclaration/ImportCustomsExitOfficeLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
@@ -680,22 +678,13 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `GoodsItem/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions | the vaccines' 8 °C in the medicines flow's forwarding instructions or waybill (D47, O124) | medicines | agreed |
-| `GoodsItem/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions | the vaccines' 2 °C (D47, O124) | medicines | agreed |
-| `GoodsItem/Temperature` | 0..n | mast/02-ForwardingInstructions | the vaccines' set point in transport (D47, O124) | medicines | agreed |
 | `HazardousGoodsTransit/InhalationToxicityZoneCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a gas or liquid toxic by inhalation; the world has none | | open |
 | `HazardousGoodsTransit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `HazardousGoodsTransit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `HazardousGoodsTransit/TransportEmergencyCardCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the Trade Accord's emergency card for class 2 on the propane road tanker (D48) | lpg | candidate |
 | `HazardousItem/AdditionalTemperature` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
-| `TransportEquipment/AirFlowPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's fresh-air exchange (O137, O205) | reefer | candidate |
 | `TransportEquipment/AnimalFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `TransportEquipment/HazardousGoodsTransit` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
-| `TransportEquipment/HumanFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer, approved for food (O137, O205) | reefer | candidate |
-| `TransportEquipment/HumidityPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's humidity setting (O137, O205) | reefer | candidate |
-| `TransportEquipment/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container of the vaccines, 8 °C (D47, O124) | medicines | agreed |
-| `TransportEquipment/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container, 2 °C (D47, O124) | medicines | agreed |
-| `TransportEquipment/RefrigerationOnIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container switched on (D47, O124) | medicines | agreed |
 | `TransportHandlingUnit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 8 °C (D47, O124) | medicines | agreed |
 | `TransportHandlingUnit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 2 °C (D47, O124) | medicines | agreed |
 
@@ -730,7 +719,6 @@ Stage 6, building group G3 (C81, C90).
 | `TransportEquipment/LegalStatusIndicator` | 0..1 | rail/08-Waybill | | | open |
 | `TransportEquipment/OperatingParty` | 0..1 | rail/08-Waybill | | | open |
 | `TransportEquipment/ShipmentDocumentReference` | 0..n | rail/08-Waybill | | | open |
-| `TransportEquipment/StorageLocation` | 0..1 | rail/08-Waybill | | | open |
 
 ### G7: furniture, retail, packaging (2026-11-19)
 
@@ -790,9 +778,6 @@ Stage 6, building group G5 (C100, C101, C102; D35).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Condition/MaximumMeasure` | 0..1 | road/09-TransportationStatus | the highest temperature the temperature-controlled unit of the medicines flow logged during the flight, in the carrier's status on arrival (2–8 °C, D47) | medicines | candidate |
-| `Condition/Measure` | 0..1 | road/09-TransportationStatus | the temperature in the medicines' temperature-controlled unit at arrival (D47) | medicines | candidate |
-| `Condition/MinimumMeasure` | 0..1 | road/09-TransportationStatus | the lowest temperature the unit logged during the flight (D47) | medicines | candidate |
 | `Delivery/MaximumDeliveryUnit` | 0..1 | road/01-Order | | | open |
 | `DocumentResponse/IssuerParty` | 0..1 | road/16-ApplicationResponse | | | open |
 | `DocumentResponse/RecipientParty` | 0..1 | road/16-ApplicationResponse | | | open |
@@ -1108,3 +1093,18 @@ Elements that were in this register and are covered again, with the example that
 | `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
 | `CircularityProfile/RecycledContentPercent` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
 | `Item/EnvironmentalCertificate` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
+| `TransportEquipment/ServiceAllowanceCharge` | reefer/06-BillOfLading | the carrier's charge for reefer power and monitoring at Selanu after discharge, a day, collect from the consignee (O137) | 2026-11-20 |
+| `ImportCustomsDeclaration/ValidityPeriod` | reefer/08-ImportCustomsDeclaration | the wholesaler's import declaration lodged before the reefer arrives, so that the fruit is released on discharge; it lapses if the goods are not presented within 30 days (O137; also O150's candidate) | 2026-11-20 |
+| `GoodsItem/MaximumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the warmest, 1 °C (O137) | 2026-11-20 |
+| `GoodsItem/MinimumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the coldest the fruit may be carried at, 0 °C (O137) | 2026-11-20 |
+| `GoodsItem/Temperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading, reefer/10-ReceiptAdvice | the set point 0.5 °C the fruit is carried at, and the pulp temperature the wholesaler measures at unloading (O137) | 2026-11-20 |
+| `TransportEquipment/AirFlowPercent` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the reefer's fresh-air vent, open 15 %: apples and pears breathe, and fresh air carries off their carbon dioxide and ethylene (O137, O205) | 2026-11-20 |
+| `TransportEquipment/HumanFoodApprovedIndicator` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the reefer approved for food, for unpacked fruit in open trays (O137) | 2026-11-20 |
+| `TransportEquipment/HumidityPercent` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the reefer set to hold about 90 % relative humidity, so that the fruit does not shrivel (O137) | 2026-11-20 |
+| `TransportEquipment/MaximumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the highest, 1 °C: warmer, the fruit ripens on the way (O137; D47 may add its own) | 2026-11-20 |
+| `TransportEquipment/MinimumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the lowest air temperature the reefer may reach, 0 °C: colder, the fruit begins to freeze (O137; the medicines flow's case, D47, may add its own) | 2026-11-20 |
+| `TransportEquipment/RefrigerationOnIndicator` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading, reefer/09-TransportationStatus | the reefer's refrigeration running from pre-cooling to the cold store, and again on the port's power at Selanu (O137; D47 may add its own) | 2026-11-20 |
+| `TransportEquipment/StorageLocation` | reefer/09-TransportationStatus | the power point in the Port of Selanu's reefer rack where the reefer stands from discharge until it is collected (O137) | 2026-11-20 |
+| `Condition/MaximumMeasure` | reefer/09-TransportationStatus | the highest, while the reefer was off power between the quay and the ship (O137) | 2026-11-20 |
+| `Condition/Measure` | reefer/09-TransportationStatus | the average supply-air temperature of the reefer over the voyage, from the carrier's reefer monitoring, in its status on discharge (O137) | 2026-11-20 |
+| `Condition/MinimumMeasure` | reefer/09-TransportationStatus | the lowest supply-air reading of the voyage (O137) | 2026-11-20 |

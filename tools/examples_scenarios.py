@@ -6964,7 +6964,7 @@ CUSTOMS_POSTS = {"XU": "Customs post at the land border, Urvanian side", "XB": "
 
 
 def exit_office(f, country):
-    if f.id in ("sea", "cotton"):
+    if f.id in ("sea", "cotton", "reefer"):
         name = "Customs office, port of Lumeport" if country == "XB" else "Customs office, port of Selanu"
     elif f.id == "plastics":
         name = "Customs post at the river border"
@@ -12976,3 +12976,495 @@ def cotton_complete(n, doc):
 
 
 SCENARIOS["cotton"] = _with_enrichment("cotton", cotton_complete)
+
+
+# ================================================================ the reefer flow (O137, O205): fresh fruit by sea
+# In the southern autumn the island's fresh-produce wholesaler, Hafefo Fresh Produce (56-xl), buys one 40-foot reefer
+# of apples and pears from the Harrowmead Fruit Growers (55-xb), a growers' cooperative,, carriage and insurance paid to the
+# Port of Selanu (CIP, Incoterms 2020): the cooperative books the reefer through Bayforth, which brings it pre-cooled
+# to the packhouse and back to Lumeport on a clip-on generator, declares the export and insures the fruit; the
+# Plant Health Service of Bayvarra's Department of Agriculture (57-xb) certifies it free of the pests the island
+# names (as Lisavu's Department of Agriculture does for the cotton, O170). Tidewell's Thursday sailing carries it at
+# 0.5 °C; at Selanu it waits on the port's power until Nalevi takes it to the wholesaler's cold store, where it is
+# unloaded and its temperature log read. Food pays the island's import consumption tax like any import (owner).
+REEFER = kit.Flow("reefer", "2026-04-08", [
+    {"item": "apples-gala", "ordered": 672, "why": "Twelve pallets of 56 cartons: Gala, the island's everyday apple, "
+                                                   "from the cooperative's cold store."},
+    {"item": "apples-granny", "ordered": 224, "why": "Four pallets of 56 cartons: Granny Smith, picked this month, "
+                                                     "for the shops and for the hotels' and the hospital's kitchens."},
+    {"item": "pears-packham", "ordered": 224, "why": "Four pallets of 56 cartons: Packham's Triumph pears, from the "
+                                                     "cooperative's cold store."}],
+    buyer="56-xl")
+RF_DAY = {"order": 0, "instructions": 6, "phyto": 13, "export": 13, "load": 14, "sail": 15, "import": 16,
+          "berth": 18, "receipt": 19}
+RF_CONTAINER = kit.container_number("TWL", 531604)    # Tidewell's own reefer (ISO 6346, with check digit)
+RF_TARE = 4800                                         # a 40-foot high-cube reefer's own weight, on its door
+RF_BOOKING = "TWL-BK-26-55194"
+RF_SEAL = "TWL-S-0884517"
+RF_VOYAGE = "TH-26-17E"                                # Tidewell Harbour's eastbound voyage of week 17
+RF_SAILS, RF_SAILED = "18:00", "18:05"                 # the timetable's departure from Lumeport and the actual one
+RF_OFF_SELANU = wmap.after(wmap.at(REEFER.date(RF_DAY["sail"]), RF_SAILS), SEA_HOURS + 1)   # island time
+if RF_OFF_SELANU.date().isoformat() != REEFER.date(RF_DAY["berth"] - 1) or RF_OFF_SELANU.hour < 18:
+    raise SystemExit("reefer: the passage no longer brings the ship off Selanu on the evening before it berths")
+RF_SEA_FREIGHT = (Decimal("4400.00"), Decimal("400.00"))   # Tidewell's reefer rate and its bunker surcharge
+RF_PRE_CARRIAGE = Decimal("1100.00")                   # Bayforth's reefer truck, port - packhouse - port
+RF_ROAD_KM = wmap.leg_km("reefer", "55-xb", "16-xb")
+RF_POWER = Decimal("45.00")                            # the port of Selanu's reefer power and monitoring, a day
+STORE = ITEM["apples-gala"]["storage"]                 # the fruit's keeping: 0 to 1 °C, set point 0.5, 90 %
+RF_VENT = "15"                                         # the fresh-air vent, per cent of its full opening
+
+
+def rf_goods():
+    """The fruit at its CIP prices, in lume."""
+    return sum(Decimal(str(d["ordered"])) * kit.unit_price(d["item"], "XBL", REEFER.buyer) for d in REEFER.deal)
+
+
+RF_INSURANCE, RF_INSURED = world_items.insurance_premium(ITEM["cargo-insurance"]["price"], rf_goods())
+RF_GROSS = kit.gross_weight(REEFER, "ordered")
+RF_VGM = RF_GROSS + RF_TARE
+
+
+def rf_cel(value, why, attribute="TRANSPORT", description=None):
+    out = {"AttributeID": V(attribute, "What the temperature is of: " + {
+               "TRANSPORT": "the air in the reefer's cargo space.", "PRODUCT": "the fruit itself, its pulp.",
+               "STORAGE": "the fruit as it is to be kept."}[attribute]),
+           "Measure": V(value, why, unitCode="CEL")}
+    if description:
+        out["Description"] = V(description, "In words.")
+    return out
+
+
+def rf_reefer(detail, view):
+    """The reefer container (cac:TransportEquipment) as the forwarding instructions ask for it (view "booking")
+    and as the bill of lading carries it ("bl"): its settings for pome fruit."""
+    out = {"ID": V(RF_CONTAINER, "The container's number: the ocean carrier's owner code, U for a freight "
+                                 "container, six digits and the ISO 6346 check digit.", schemeID="ISO6346")}
+    if view == "booking":
+        out = {}
+    out.update({
+        "TransportEquipmentTypeCode": V("CN", "UN/EDIFACT 8053 code CN: container.", listID="UN/EDIFACT EDED 8053"),
+        "SizeTypeCode": V("45R1", "ISO 6346 size and type: 40 feet, 9 ft 6 in high (high cube), a refrigerated "
+                                  "container with its own refrigerating machinery."),
+        "RefrigerationOnIndicator": V("true", "The refrigeration runs, from the pre-cooling before loading to the "
+                                              "unloading at the cold store: fresh fruit must not warm up."),
+        "AirFlowPercent": V(RF_VENT, "The fresh-air vent's setting: open to 15 % of its full opening, about 25 m³ of "
+                                     "outside air an hour on Tidewell's units. Apples and pears breathe; fresh air "
+                                     "carries off the carbon dioxide and the ethylene that would ripen them (general "
+                                     "reefer practice for pome fruit, stated from memory)."),
+        "HumidityPercent": V(STORE["humidity_percent"], "The relative humidity the reefer is set to hold: about 90 %, "
+                                                         "so that the fruit does not dry out and shrivel."),
+        "HumanFoodApprovedIndicator": V("true", "The reefer is approved for food: its interior is of food-grade "
+                                                "materials and cleaned to carry food, which unpacked fruit in open "
+                                                "trays needs."),
+        "RefrigeratedIndicator": V("true", "A refrigerated container."),
+        "MinimumTemperature": rf_cel(STORE["temperature_c"][0], "The lowest air temperature the reefer may reach: "
+                                     "colder, the fruit begins to freeze."),
+        "MaximumTemperature": rf_cel(STORE["temperature_c"][1], "The highest: warmer, it ripens on the way."),
+    })
+    if detail:
+        out.update({
+            "GrossWeightMeasure": qty(RF_VGM, "KGM", f"The verified gross mass: the fruit on its pallets, "
+                                      f"{kit.kg(RF_GROSS)} kg, and the reefer's own {RF_TARE:,} kg."),
+            "TareWeightMeasure": qty(RF_TARE, "KGM", "The empty reefer's own weight, as marked on its door: "
+                                                     "heavier than a dry box by its machinery and insulation."),
+            "TransportEquipmentSeal": {"ID": V(RF_SEAL, "The carrier's seal, put on when the reefer was loaded."),
+                                       "SealIssuerTypeCode": V("CARRIER", "Issued by the ocean carrier."),
+                                       "SealingPartyType": V("Shipper", "Put on by the shipper at the packhouse.")},
+            "FullnessIndicationCode": V("FCL", "A full container load.")})
+    return out
+
+
+def rf_units(f):
+    """The 20 pallets of the reefer, each with its SSCC, its variety and its grower's lot (the cooperative's
+    packing record; D11: the lot is stated where the goods leave)."""
+    out = []
+    k = 0
+    for d in f.deal:
+        it = ITEM[d["item"]]
+        for p in range(int(d["ordered"]) // it["pallet"]["per"]):
+            k += 1
+            uid = kit.unit_id("55-xb", f, k)
+            out.append({"ID": uid,
+                        "TransportHandlingUnitTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet."),
+                        "TotalPackageQuantity": qty(it["pallet"]["per"], "EA", f"{it['pallet']['per']} cartons, "
+                                                    "eight a layer, seven layers."),
+                        "ShippingMarks": V(f"HAFEFO SELANU / {k:03d} of 020", "The consignee's mark and the pallet's "
+                                                                             "place in the count."),
+                        "TraceID": V(uid.value, "The pallet's barcode, scanned at loading and at the cold store.")})
+    return out
+
+
+def rf_lots(f, d):
+    """The grower lots of a line: one per pallet, numbered by the packhouse's run, with the grower's number."""
+    it = ITEM[d["item"]]
+    n = int(d["ordered"]) // it["pallet"]["per"]
+    first = {"apples-gala": 401, "apples-granny": 431, "pears-packham": 451}[d["item"]]
+    packed = {"apples-gala": RF_DAY["load"] - 2, "apples-granny": RF_DAY["load"] - 1,
+              "pears-packham": RF_DAY["load"] - 2}[d["item"]]
+    growers = {"apples-gala": ["G-017", "G-023", "G-041"], "apples-granny": ["G-008", "G-031"],
+               "pears-packham": ["G-012"]}[d["item"]]
+    lots = []
+    per = -(-n // len(growers))
+    for g_i, grower in enumerate(growers):
+        cartons = min(per, n - g_i * per) * it["pallet"]["per"]
+        lots.append({"LotIdentification": {"LotNumberID": V(f"{it['lot_prefix']}{first + g_i:04d}",
+                                                            "The packhouse's lot: one grower's fruit of one variety "
+                                                            "and size, packed in one run.")},
+                     "ManufactureDate": V(f.date(packed), "Packed on that day, from the cold store or the orchard "
+                                                          "straight into cartons."),
+                     "AdditionalItemProperty": [
+                         {"Name": V("Grower", "The member whose orchard the lot comes from: the number on the "
+                                              "carton label, for tracing a lot back to its orchard."),
+                          "Value": V(grower, "The member number in the cooperative's register.")},
+                         {"Name": V("Cartons", "How many cartons of the line are of this lot."),
+                          "Value": V(str(cartons), "Counted at packing.")}]})
+    return lots
+
+
+def rf_goods_item(f, with_set_point=True):
+    """The fruit as one goods item for the carrier, with the temperature it is carried at."""
+    out = {"ID": V("1", "The fruit in the reefer, as one item for the carrier."),
+           "Description": V("Fresh apples and pears in cartons, on 20 pallets", "In words."),
+           "GrossWeightMeasure": qty(RF_GROSS, "KGM", "The fruit in its cartons and the pallets."),
+           "ContainedGoodsItem": [
+               {"ID": V("1.1", "The apples, Gala and Granny Smith."),
+                "Description": V("Fresh apples", "In words."),
+                "Item": {"Name": V("Fresh apples", "The goods."),
+                         "CommodityClassification": {"CommodityCode": V("080810", "The Harmonized System subheading "
+                                                                                  "of fresh apples, which carriers "
+                                                                                  "use to describe the cargo.")}}},
+               {"ID": V("1.2", "The pears."),
+                "Description": V("Fresh pears", "In words."),
+                "Item": {"Name": V("Fresh pears", "The goods."),
+                         "CommodityClassification": {"CommodityCode": V("080830", "The Harmonized System subheading "
+                                                                                  "of fresh pears.")}}}]}
+    if with_set_point:
+        out["Temperature"] = rf_cel(STORE["set_point_c"], "The set point the reefer is to hold: 0.5 °C, the middle "
+                                    "of the fruit's range.", description="Set point")
+        out["MinimumTemperature"] = rf_cel(STORE["temperature_c"][0], "The coldest the fruit may be carried at.")
+        out["MaximumTemperature"] = rf_cel(STORE["temperature_c"][1], "The warmest.")
+    return out
+
+
+def reefer(n, doc):
+    f, d = REEFER, doc["doc"]
+    if d == "Order":
+        return kit.order(f, n, doc, RF_DAY["order"], "Ordered in the second week of the apple season, when the "
+                         "cooperative's price list for the island came out.",
+                         "Carriage and insurance paid to the port of Selanu (Incoterms 2020 CIP): the cooperative "
+                         "books the reefer, pays its carriage and insures the fruit; the risk passes to the buyer "
+                         "when the reefer is handed to the carrier at Lumeport.", "Port of Selanu",
+                         {"Note": V("One 40-foot reefer, apples and pears, on the sailing of 23 April.",
+                                    "What the buyer wants, in a line."),
+                          "Delivery": {"RequestedDeliveryPeriod": {
+                              "StartDate": V(f.date(RF_DAY["berth"]), "On Tidewell's sailing of Thursday 23 April, "
+                                                                       "which is at Selanu on the Sunday."),
+                              "EndDate": V(f.date(RF_DAY["berth"]), "The same day: the shops restock on the "
+                                                                     "Monday.")}}})
+    if d == "ForwardingInstructions":
+        return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The cooperative's "
+                                                                                       "instruction number."),
+                "IssueDate": V(f.date(RF_DAY["instructions"]), "The cooperative books the reefer on Tuesday 14 "
+                                                               "April, after Upland State Day on the Monday, nine "
+                                                               "days before the sailing."),
+                "Shipment": {
+                    "ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
+                    "GrossWeightMeasure": qty(RF_GROSS, "KGM", "The gross weight of the fruit on its pallets."),
+                    "Consignment": {
+                        "ID": V(f.number("consignment", doc["from"], "Consignment"), "The cooperative's consignment "
+                                                                                     "number."),
+                        "ForwarderServiceInstructions": V(
+                            "Book a 40-foot reefer on Tidewell's sailing of 23 April to Selanu; have it pre-trip "
+                            "inspected and pre-cooled; bring it to our packhouse on 22 April and back to the port on "
+                            "a generator set; declare the export and insure the fruit.", "What the forwarder is to "
+                                                                                          "do."),
+                        "ConsolidatableIndicator": V("false", "A full reefer: not to be grouped with other cargo."),
+                        "ExporterParty": party("55-xb", short=True),
+                        "ImporterParty": party("56-xl", short=True),
+                        "InsuranceParty": party("55-xb", short=True),
+                        "OriginalDespatchTransportationService": {
+                            "TransportServiceCode": V("MERCHHAUL", "The forwarder, not the shipping line, brings "
+                                                                   "the reefer to the port."),
+                            "Name": V("Reefer truck from Harrowmead to the port of Lumeport", "In words.")}},
+                    "GoodsItem": rf_goods_item(f),
+                    "TransportHandlingUnit": {"TransportEquipment": rf_reefer(False, "booking")},
+                    "InsurancePolicy": {
+                        "InsuredValueAmount": amount(RF_INSURED, "XBL", "CIP requires insurance of at least 110 % of "
+                                                     "the value: the fruit at its CIP prices plus 10 %."),
+                        "InsuranceTypeDescription": V("Cargo insurance on Institute Cargo Clauses (A), all risks, "
+                                                      "including loss from a breakdown of the refrigeration",
+                                                      "The cover Incoterms 2020 CIP asks of the seller, and the "
+                                                      "risk that matters for fruit.")}}}
+    if d == "GoodsCertificate":
+        return {"ID": V(f.number("goods-certificate", doc["from"], "GoodsCertificate"),
+                        "The Plant Health Service's certificate number."),
+                "IssueDate": V(f.date(RF_DAY["phyto"]), "Issued after the inspection at the packhouse on Tuesday 21 "
+                                                        "April, the day before loading, at the cooperative's "
+                                                        "application."),
+                "TypeCode": V("PHYTO", "A phytosanitary certificate for export."),
+                "Description": V("The fruit has been inspected and is considered free of the quarantine pests the "
+                                 "island names.", "What it certifies, in the words of the IPPC's model "
+                                                  "certificate."),
+                "Note": V("Inspected at the packhouse in Harrowmead before loading.", "Where."),
+                "VersionID": V("1", "The first version."),
+                "ValidityPeriod": {"StartDate": V(f.date(RF_DAY["phyto"]), "From the inspection."),
+                                   "EndDate": V(f.date(RF_DAY["phyto"] + 14), "For two weeks: the fruit must ship by "
+                                                                              "then.")},
+                "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V("XL", "For import into the "
+                                                                                         "island.")}},
+                "WarehouseParty": party("55-xb", short=True),
+                "ConsignorParty": party("55-xb", short=True),
+                "ConsigneeParty": party("56-xl", short=True),
+                "Attestation": {
+                    "ID": V("FDA-ATT-26-0218", "The inspector's attestation."),
+                    "Name": V("Freedom from quarantine pests", "What is attested."),
+                    "Description": V("Sampled at the packhouse and found free of codling moth and fire blight.",
+                                     "In words: the two pests of apples and pears that the island, which has neither, "
+                                     "keeps out (as Western Australia keeps out codling moth, a real parallel)."),
+                    "Note": V("Two per cent of the cartons sampled: 23 of 1,120.", "The sample."),
+                    "AcceptanceIndicator": V("true", "Accepted."),
+                    "IssuerParty": party("57-xb", short=True),
+                    "AttestationLine": {
+                        "ID": V("1", "The pests checked."), "TypeCode": V("PEST", "A pest check."),
+                        "Description": V("Codling moth (Cydia pomonella): none found.", "The finding."),
+                        "CriterionItem": {"ID": V("XL-PH-12", "The island's import rule for pome fruit."),
+                                          "CriterionDescription": V("No live larvae and no entry holes in a sample "
+                                                                    "of 2 % of the cartons.", "The criterion."),
+                                          "DeclaredPropertyItem": {"Name": V("Apples and pears, fresh", "The goods "
+                                                                                                       "it is "
+                                                                                                       "about.")}},
+                        "SubAttestationLine": {"ID": V("1.1", "The second pest."),
+                                               "Description": V("Fire blight (Erwinia amylovora): no symptoms in "
+                                                                "the orchards of origin this season.",
+                                                                "The finding.")}}},
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment certified."),
+                             "GoodsItem": kit.goods_items(f, "XBL", "The value of the fruit, in lume.")},
+                "AdditionalDocumentReference": {"ID": V(f.numbers["order"], "The wholesaler's order.")},
+                "Signature": seal(doc["from"], "FDA-SIG-26-PH")}
+    if d == "ExportCustomsDeclaration":
+        out = kit.export_declaration(f, n, doc, RF_DAY["export"], "The forwarder, as customs agent, declares the "
+                                     "export the afternoon before loading, once the certificate is issued.",
+                                     "The value of the fruit at export, in lume.")
+        kit.deep_merge(out["CustomsDeclaration"]["Shipment"], {
+            "Consignment": {"OfficeOfExportLocation": {"Name": V("Customs office, port of Lumeport", "Where the "
+                                                                 "export is declared.")},
+                            "OfficeOfExitLocation": {"Name": V("Customs office, port of Lumeport", "Where the fruit "
+                                                               "leaves Bayvarra: the same port.")}},
+            "ShipmentStage": {"ID": V("2", "The sea leg on which the fruit leaves Bayvarra, stage 2 as on the bill "
+                                           "of lading."),
+                              "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
+                                                                                        "Codes for Modes of "
+                                                                                        "Transport"),
+                              "TransportMeans": kit.means("11-xb", "TH", RF_VOYAGE, "The voyage the reefer is "
+                                                          "booked on.", "EB"),
+                              "EstimatedDepartureTransportEvent": kit.event(f, RF_DAY["sail"], RF_SAILS + ":00", "The "
+                                                                            "timetable departure from Lumeport.",
+                                                                            done=False, location=SEA_LUMEPORT)}})
+        out["CustomsDeclaration"]["AdditionalDocumentReference"] = [{
+            "ID": V(f.numbers["goods-certificate"], "The phytosanitary certificate of the fruit, presented with "
+                                                    "the export of plant products.")}]
+        return out
+    if d == "DespatchAdvice":
+        out = kit.despatch_advice(f, n, doc, RF_DAY["load"], "Sent when the reefer leaves the packhouse for the "
+                                                             "port.", "The gross weight of the fruit on its "
+                                                                      "pallets.")
+        for d_, line in zip(f.deal, out["DespatchLine"]):
+            line["Item"]["ItemInstance"] = rf_lots(f, d_)
+        out["Shipment"]["TransportHandlingUnit"] = {"TransportEquipment": {
+            "ID": V(RF_CONTAINER, "The reefer the fruit is loaded in.", schemeID="ISO6346"),
+            "TransportEquipmentSeal": {"ID": V(RF_SEAL, "The carrier's seal, put on at the packhouse.")},
+            "PackagedTransportHandlingUnit": rf_units(f)}}
+        return out
+    if d == "BillOfLading":
+        return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
+                "IssueDate": V(f.date(RF_DAY["sail"]), "Issued when the reefer is shipped on board."),
+                "CarrierAssignedID": V(RF_BOOKING, "The booking the bill of lading is issued under."),
+                "ToOrderIndicator": V("false", "Made out to the named consignee, not to order: under open account "
+                                               "the wholesaler takes delivery as consignee."),
+                "OtherInstruction": V("Express release: no original issued; the reefer is released at Selanu to "
+                                      "the consignee named.", "Why there are no originals: the fruit is at Selanu "
+                                                               "in two days, before papers could follow it."),
+                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
+                             "GrossWeightMeasure": qty(RF_GROSS, "KGM", "The gross weight of the cargo."),
+                             "TotalGoodsItemQuantity": qty(1, "EA", "The fruit, as one goods item."),
+                             "TotalTransportHandlingUnitQuantity": qty(20, "EA", "The pallets in the reefer."),
+                             "ConsignmentQuantity": qty(1, "EA", "One consignment."),
+                             "Consignment": rf_consignment(f),
+                             "GoodsItem": rf_goods_item(f)}}
+    if d == "Invoice":
+        return kit.invoice(f, n, doc, RF_DAY["sail"], "Issued on shipment, when the reefer is on board.",
+                           {"OrderReference": {"ID": V(f.numbers["order"], "The wholesaler's order.")},
+                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}})
+    if d == "ImportCustomsDeclaration":
+        out = kit.import_declaration(f, n, doc, RF_DAY["import"], "Lodged on Friday 24 April, while the reefer is at "
+                                     "sea, so that the fruit can be released when it is discharged.",
+                                     "The customs value in coral: the fruit's landed value in lume, its CIP price, "
+                                     "at the world's reference rate (1 lume = 0.4 coral).",
+                                     [{"ID": V(f.numbers["bl"], "The bill of lading of the reefer.")},
+                                      {"ID": V(f.numbers["goods-certificate"], "The phytosanitary certificate made "
+                                                                               "out for the island, on which the "
+                                                                               "release of the fruit under its plant "
+                                                                               "health rules depends.")}])
+        out["ValidityPeriod"] = {"StartDate": V(f.date(RF_DAY["import"]), "Lodged before the goods arrive."),
+                                 "EndDate": V(f.date(RF_DAY["import"] + 30), "A declaration lodged before arrival "
+                                              "lapses if the goods are not presented to customs within 30 days.")}
+        return out
+    if d == "TransportationStatus":
+        return kit.transportation_status(
+            f, n, doc, RF_DAY["berth"], "Reported when the reefer is discharged and plugged in.",
+            f"Reefer {RF_CONTAINER} discharged and on the port's power; released by customs.", "Port of Selanu",
+            {"Consignment": {
+                "MainCarriageShipmentStage": {
+                    "ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
+                    "ActualArrivalTransportEvent": kit.event(f, RF_DAY["berth"], "06:40:00", "The ship berthed at "
+                                                             "Selanu at first light: its pilot boarded at dawn; it had "
+                                                             "been off the port since the evening.",
+                                                             location=SEA_SELANU),
+                    "DischargeTransportEvent": kit.event(f, RF_DAY["berth"], "08:10:00", "The reefer came off the "
+                                                         "ship, among the first boxes.", done=True,
+                                                         location=SEA_SELANU)},
+                "TransportHandlingUnit": {"TransportEquipment": {
+                    "ID": V(RF_CONTAINER, "The reefer.", schemeID="ISO6346"),
+                    "RefrigerationOnIndicator": V("true", "Its refrigeration running again on the port's power."),
+                    "StorageLocation": {"ID": V("XLSEL-RR-07", "The power point in the port's reefer rack where the "
+                                                               "reefer stands until it is collected."),
+                                        "Name": V("Reefer rack, power point 7", "In words.")},
+                    "TransportEvent": kit.event(
+                        f, RF_DAY["berth"], "08:25:00", "Plugged in at the reefer rack, fifteen minutes after "
+                        "discharge.", location=SEA_SELANU, type_code="STORAGE",
+                        CurrentStatus={"ConditionCode": V("COMPLETED", "The voyage is over."),
+                                       "Description": V("The reefer's own log, read by the carrier's monitoring at "
+                                                        "sea, over the voyage from loading at Lumeport to "
+                                                        "discharge.", "What the readings cover."),
+                                       "Condition": {"AttributeID": V("TRANSPORT", "The air the reefer blows into "
+                                                                                   "its cargo space."),
+                                                     "Measure": V("0.5", "The average over the voyage: the set "
+                                                                         "point.", unitCode="CEL"),
+                                                     "Description": V("Supply air, every hour of the voyage.",
+                                                                      "The readings."),
+                                                     "MinimumMeasure": V("0.2", "The lowest reading.",
+                                                                         unitCode="CEL"),
+                                                     "MaximumMeasure": V("0.9", "The highest, while the reefer was "
+                                                                                "off power between the quay and the "
+                                                                                "ship.", unitCode="CEL")}})}}}},
+            event_type="DISCHARGE")
+    if d == "ReceiptAdvice":
+        out = kit.receipt_advice(f, n, doc, RF_DAY["receipt"], "The wholesaler confirms what it unloaded on the "
+                                 "Monday morning.")
+        out["Note"] = V("Unloaded at our cold store and counted; the reefer's log read at the door: the supply air "
+                        "stayed between 0.2 and 0.9 °C from loading to unloading.", "How the fruit was received, "
+                        "and the cold chain as the log shows it.")
+        for d_, line in zip(f.deal, out["ReceiptLine"]):
+            line["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment the fruit came in."),
+                                "GoodsItem": {"ID": V("1", "The fruit of this line."),
+                                              "Temperature": rf_cel("1.0" if d_["item"] != "pears-packham" else "0.8",
+                                                                    "The pulp temperature measured in a sample of "
+                                                                    "the cartons at unloading: within the range.",
+                                                                    attribute="PRODUCT")}}
+        return out
+    raise SystemExit(f"reefer scenario: no document {n} {d}")
+
+
+def rf_consignment(f):
+    """The consignment on the bill of lading: who is who, the freight and the three stages."""
+    freight, bunker = RF_SEA_FREIGHT
+    return {
+        "ID": V(f.numbers["consignment"], "The cooperative's consignment."),
+        "CarrierAssignedID": V(RF_BOOKING, "The carrier's booking number."),
+        "FreightForwarderAssignedID": V("BF-SH-26-0391", "The forwarder's own file number for the consignment."),
+        "TariffCode": V("TWL-T-0812", "The item of the carrier's own freight tariff for this cargo: fresh fruit, "
+                                     "chilled. A code the carrier defines, so it has no code list."),
+        "TariffDescription": V("Fresh fruit, chilled, in a reefer", "The carrier's commodity tariff, in words."),
+        "HandlingCode": V("POWER", "The carrier stows the reefer at a power point and keeps it running."),
+        "HandlingInstructions": V("Keep plugged in; check the reefer every watch.", "The handling, in words."),
+        "Information": V("Shipped on board in apparent good order and condition, refrigeration running at the "
+                         "set point.", "The carrier's clause."),
+        "OriginalDespatchParty": party("55-xb", short=True),
+        "FinalDeliveryParty": party("56-xl", short=True),
+        "OriginalDepartureCountry": {"IdentificationCode": V("XB", "From Bayvarra.")},
+        "FinalDestinationCountry": {"IdentificationCode": V("XL", "To the island.")},
+        "DeliveryTerms": {"ID": V("CIP", "Incoterms 2020: carriage and insurance paid to the port of Selanu.",
+                                  schemeID="INCOTERMS"),
+                          "LossRisk": V("Risk passes when the reefer is handed to the carrier at Lumeport.",
+                                        "In words."),
+                          "DeliveryLocation": kit.place("XLSEL", "The named place of destination.")},
+        "PrepaidPaymentTerms": {"Note": V("Ocean freight and bunker surcharge prepaid by the shipper.", "CIP: the "
+                                                                                                       "seller pays.")},
+        "CollectPaymentTerms": {"Note": V("Reefer power and monitoring at Selanu after discharge collect from the "
+                                          "consignee.", "The buyer pays what follows the carriage.")},
+        "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The basic ocean freight."),
+                                   "AllowanceChargeReasonCode": V("FC", "UN/EDIFACT 7161 code FC: freight."),
+                                   "AllowanceChargeReason": V("Ocean freight, 40-foot reefer", "In words."),
+                                   "Amount": amount(freight, "XBL", "The carrier's reefer rate: above the dry "
+                                                                    "box's, for the power and the machinery.")},
+        "ExtraAllowanceCharge": {"ChargeIndicator": V("true", "A surcharge."),
+                                 "AllowanceChargeReasonCode": V("FC", "The bunker surcharge is part of the freight: "
+                                                                      "UN/EDIFACT 7161 has no code of its own for "
+                                                                      "it, so it carries the freight code."),
+                                 "AllowanceChargeReason": V("Bunker surcharge", "For the fuel price."),
+                                 "Amount": amount(bunker, "XBL", "The surcharge of the carrier's tariff.")},
+        "PreCarriageShipmentStage": {
+            "ID": V("1", "By reefer truck from Harrowmead to the port."),
+            "TransportModeCode": V("3", "Road transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                 "Transport"),
+            "PreCarriageIndicator": V("true", "Before the main carriage."),
+            "CarrierParty": party("10-xb", short=True),
+            "TransportMeans": kit.means("10-xb", "B-08"),
+            "DropoffTransportEvent": kit.event(f, RF_DAY["load"], "17:40:00", f"The reefer was dropped at the "
+                                               f"container quay and plugged in, after {wmap.whole(RF_ROAD_KM)} km "
+                                               "from the packhouse on the truck's generator set.",
+                                               location=SEA_LUMEPORT)},
+        "MainCarriageShipmentStage": {
+            "ID": V("2", "By sea from Lumeport to Selanu."),
+            "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                      "Transport"),
+            "TransportMeans": {**kit.means("11-xb", "TH", RF_VOYAGE, "The voyage number.", "EB"),
+                               "TradeServiceCode": V("TWL-ISL", "The carrier's code for its island service.")},
+            "LoadingPortLocation": kit.place("XBLMP", "The port of loading."),
+            "UnloadingPortLocation": kit.place("XLSEL", "The port of discharge."),
+            "AcceptanceTransportEvent": kit.event(f, RF_DAY["load"], "17:40:00", "The terminal accepted the reefer.",
+                                                  location=SEA_LUMEPORT)},
+        "OnCarriageShipmentStage": {
+            "ID": V("3", "By truck from the port of Selanu to the wholesaler's cold store."),
+            "TransportModeCode": V("3", "Road transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                 "Transport"),
+            "OnCarriageIndicator": V("true", "After the main carriage."),
+            "CarrierParty": party("9-xl", short=True),
+            "ReceiptTransportEvent": kit.event(f, RF_DAY["receipt"], None, "Planned delivery at the cold store on "
+                                               "the Monday morning, the day after discharge.", done=False,
+                                               location={"Name": V("Hafefo Fresh Produce, cold store, Selanu",
+                                                                   "The wholesaler's cold store by the port.")})},
+        "TransportHandlingUnit": {"TransportEquipment": {
+            **rf_reefer(True, "bl"),
+            "ServiceAllowanceCharge": {"ChargeIndicator": V("true", "A service to the reefer, charged."),
+                                       "AllowanceChargeReasonCode": V("ABK", "UN/EDIFACT 7161 code ABK: "
+                                                                             "miscellaneous."),
+                                       "AllowanceChargeReason": V("Reefer power and monitoring at Selanu after "
+                                                                  "discharge, a day", "The carrier's tariff for the "
+                                                                                      "days the reefer stands on "
+                                                                                      "the port's power until the "
+                                                                                      "consignee collects it, collect "
+                                                                                      "from the consignee."),
+                                       "Amount": amount(RF_POWER, "XBL", "A day's power and monitoring, at the "
+                                                                         "carrier's tariff.")},
+            "PackagedTransportHandlingUnit": rf_units(f),
+            "VerifiedGrossMass": {
+                "ID": V("VGM-26-0422", "The shipper's weight declaration."),
+                "WeighingDate": V(f.date(RF_DAY["load"]), "Weighed when packed."),
+                "WeighingTime": V("11:30:00", "After the doors were closed."),
+                "WeighingMethodCode": V("SM2", "SOLAS method 2: the cargo and packing weighed and added to the "
+                                               "tare.", listID="IMO SOLAS"),
+                "WeighingDeviceID": V("HFC-SCALE-02", "The packhouse's pallet scale."),
+                "WeighingDeviceType": V("Pallet scale", "Its kind."),
+                "GrossMassMeasure": qty(RF_VGM, "KGM", "The verified gross mass."),
+                "WeighingParty": party("55-xb", short=True),
+                "ShipperParty": party("55-xb", short=True),
+                "ResponsibleParty": party("55-xb", short=True),
+                "DocumentReference": {"ID": V("VGM-26-0422", "The signed weight declaration sent to the "
+                                                             "carrier.")}}}}}
+
+
+SCENARIOS["reefer"] = _with_enrichment("reefer", reefer)
+FLOWS["reefer"] = REEFER
+enrich("reefer", "ExportCustomsDeclaration")(export_extras)
+enrich("reefer", "ImportCustomsDeclaration")(import_extras)

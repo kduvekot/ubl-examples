@@ -2217,6 +2217,11 @@ VALUATION = {   # flow -> what the declarations add to or take from the goods li
     "sea": [("XB", lambda: -(__import__("examples_scenarios").SEA_FREIGHT
                              + __import__("examples_scenarios").INSURANCE), "XBL",
              "less the sea freight and the cargo insurance to the island, which the CIF price holds")],
+    # the CIP price holds the reefer's carriage and the insurance to Selanu (O137): the island's landed value as it
+    # stands; Bayvarra's value at export leaves out the sea freight and the insurance beyond its border
+    "reefer": [("XB", lambda: -(sum(__import__("examples_scenarios").RF_SEA_FREIGHT)
+                                + __import__("examples_scenarios").RF_INSURANCE), "XBL",
+                "less the sea freight and the cargo insurance to the island, which the CIP price holds")],
 }
 
 
@@ -3723,7 +3728,7 @@ def main(flow_id, check=False):
 
 
 FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton", "tender", "contest", "carnet",
-                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy"]
+                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy", "reefer"]
 
 
 if __name__ == "__main__":

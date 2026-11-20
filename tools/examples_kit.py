@@ -1208,7 +1208,7 @@ def rate(a, b):
     return Decimal(str(r[f"{a}/{b}"])) if f"{a}/{b}" in r else 1 / Decimal(str(r[f"{b}/{a}"]))
 
 
-HS_SECTION = {"26": "V", "27": "V", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
+HS_SECTION = {"08": "II", "26": "V", "27": "V", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}
 
 
 ADJECTIVE = {"XU": "Urvanian", "XB": "Bayvarran", "XL": "Lisavan"}
@@ -1851,7 +1851,7 @@ def event(flow, day, time, why, location=None, type_code=None, ident=None, descr
 # the flows whose goods travel on pallets (D20, O61): the bench in three parcels, four benches to a pallet, and the
 # spare frames in their cartons on a pallet of their own; the carnet's two samples and the air flow's eight frames
 # travel as loose parcels (the air frames on a skid, D39)
-PALLET_FLOWS = {"road", "rail", "sea", "retail", "tender", "wood"}
+PALLET_FLOWS = {"road", "rail", "sea", "retail", "tender", "wood", "reefer"}
 
 
 def pallets(flow, deal):

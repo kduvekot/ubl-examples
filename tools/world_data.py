@@ -147,4 +147,5 @@ COMMON_NAME_WORDS = set("""Accord Administration Agency Air Airport Bank Barges 
 Commerce Company Cotton Council Customs Department Distribution Energy Engineering Factoring Farm Forwarding Furniture
 Gas Ginnery Grid Haulage Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime
 Mill Mining Ocean Packaging Port Power Procurement Public Rail Recovery Review Sawmill Service State Stores Telecom
-Terminal Textile Trade Trading Warehousing Water Works Coral Lume Ferra English""".split())   # ordinary words in names
+Terminal Textile Trade Trading Warehousing Water Works Coral Lume Ferra English Fresh Produce Fruit Growers Growers'
+Cooperative Federal Agriculture""".split())   # ordinary words in names
