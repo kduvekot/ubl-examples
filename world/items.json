@@ -2262,7 +2262,7 @@
    "kind": "goods",
    "unit": "EA",
    "price": {
-    "amount": 5000.0,
+    "amount": 4100.0,
     "currency": "INR"
    },
    "sellers_id": "NB-FLU-S26-10",
@@ -2290,7 +2290,7 @@
    "kind": "goods",
    "unit": "EA",
    "price": {
-    "amount": 1600.0,
+    "amount": 1300.0,
     "currency": "INR"
    },
    "sellers_id": "NB-INS-R100-10",
@@ -2318,7 +2318,7 @@
    "kind": "goods",
    "unit": "EA",
    "price": {
-    "amount": 3500.0,
+    "amount": 2850.0,
     "currency": "INR"
    },
    "sellers_id": "NB-VZV-1",
@@ -2750,7 +2750,9 @@
      ]
     ],
     "what": "The influenza vaccine for the island's winter campaign, carriage paid to Selanu airport (medicines/14)",
-    "terms": "CPT"
+    "terms": "CPT",
+    "paid_on": "2026-05-07",
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
    },
    {
     "id": "quillmoor-insulin-hospital",
@@ -2763,7 +2765,9 @@
      ]
     ],
     "what": "The insulin for the hospital, carriage paid to Selanu airport (medicines/14)",
-    "terms": "CPT"
+    "terms": "CPT",
+    "paid_on": "2026-05-07",
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
    },
    {
     "id": "quillmoor-varicella-hospital",
@@ -2776,7 +2780,9 @@
      ]
     ],
     "what": "The frozen varicella vaccine for the hospital, carriage paid to Selanu airport (medicines/14)",
-    "terms": "CPT"
+    "terms": "CPT",
+    "paid_on": "2026-05-07",
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
    },
    {
     "id": "quillmoor-generator-hospital",
@@ -2789,7 +2795,9 @@
      ]
     ],
     "what": "The week's technetium generator for the hospital, carriage paid to Selanu airport (medicines/14)",
-    "terms": "CPT"
+    "terms": "CPT",
+    "paid_on": "2026-06-13",
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
    }
   ],
   "awaiting_owner": {}

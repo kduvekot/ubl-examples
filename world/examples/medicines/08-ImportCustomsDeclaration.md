@@ -205,8 +205,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Technetium-99m generator, 20 GBq**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **1200.00** (currencyID `XBL`)  
-  The customs value in lume: Bayvarra values goods as they left the exporting country (D16), the maker's price at the lume's rate to the euro (O229).
+- `GoodsItem/DeclaredCustomsValueAmount` = **1187.00** (currencyID `XBL`)  
+  The customs value in lume: Bayvarra values goods as they left the exporting country (D16); the maker's price is carriage paid to Lumeport and shows no freight apart, so the price paid is the value, converted at the Lumeport Exchange's fixing of the day the declaration is lodged (O231).
 - `GoodsItem/GrossWeightMeasure` = **18** (unitCode `KGM`)  
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **1** (unitCode `EA`)  
@@ -419,7 +419,7 @@ Inside `AdditionalDocumentReference`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Technetium-99m generator, 20 GBq</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">1200.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">1187.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cac:Item>

@@ -153,7 +153,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `INR`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **4956000.00** (currencyID `INR`)  
+- `TaxSubtotal/TaxableAmount` = **4050000.00** (currencyID `INR`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `INR`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -170,9 +170,9 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **4956000.00** (currencyID `INR`)  
+- `LineExtensionAmount` = **4050000.00** (currencyID `INR`)  
   The sum of the line amounts.
-- `PayableAmount` = **4956000.00** (currencyID `INR`)  
+- `PayableAmount` = **4050000.00** (currencyID `INR`)  
   What the buyer expects to pay, tax included.
 
 ### Order Line
@@ -183,9 +183,9 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **600** (unitCode `EA`)  
   6,000 doses for the southern winter: the island hospital's 3,000 and the pharmacies of Bayvarra.
-- `LineItem/LineExtensionAmount` = **3000000.00** (currencyID `INR`)  
+- `LineItem/LineExtensionAmount` = **2460000.00** (currencyID `INR`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **5000** (currencyID `INR`)  
+- `LineItem/Price/PriceAmount` = **4100** (currencyID `INR`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -201,9 +201,9 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **960** (unitCode `EA`)  
   Four months of insulin for the wholesaler's customers.
-- `LineItem/LineExtensionAmount` = **1536000.00** (currencyID `INR`)  
+- `LineItem/LineExtensionAmount` = **1248000.00** (currencyID `INR`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **1600** (currencyID `INR`)  
+- `LineItem/Price/PriceAmount` = **1300** (currencyID `INR`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -219,9 +219,9 @@ Inside `OrderLine`:
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **120** (unitCode `EA`)  
   The season's varicella vaccine for three hospitals.
-- `LineItem/LineExtensionAmount` = **420000.00** (currencyID `INR`)  
+- `LineItem/LineExtensionAmount` = **342000.00** (currencyID `INR`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **3500** (currencyID `INR`)  
+- `LineItem/Price/PriceAmount` = **2850** (currencyID `INR`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -340,7 +340,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="INR">4956000.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="INR">4050000.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -353,16 +353,16 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="INR">4956000.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="INR">4956000.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="INR">4050000.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="INR">4050000.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">600</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="INR">3000000.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="INR">2460000.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="INR">5000</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="INR">4100</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
@@ -381,9 +381,9 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Quantity unitCode="EA">960</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="INR">1536000.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="INR">1248000.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="INR">1600</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="INR">1300</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
@@ -402,9 +402,9 @@ Inside `OrderLine`:
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Quantity unitCode="EA">120</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="INR">420000.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="INR">342000.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="INR">3500</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="INR">2850</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

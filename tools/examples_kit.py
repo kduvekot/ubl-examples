@@ -1210,10 +1210,14 @@ def deep_merge(out, extra):
 
 
 # ---------------------------------------------------------------- customs
+RATE_DATE = None     # the day whose fixing converts a currency outside the Accord (O231): set by the scenario
+
+
 def rate(a, b):
-    """The world's reference exchange rate: units of b for one unit of a (world/countries.json)."""
+    """The world's exchange rate: units of b for one unit of a, at the Accord's fixed parities (world/countries.json),
+    or against a currency outside the Accord at the Lumeport Exchange's fixing of RATE_DATE (O231)."""
     import world_data
-    return world_data.exchange_rate(WORLD["exchange_rates"], a, b)
+    return world_data.exchange_rate(WORLD["exchange_rates"], a, b, RATE_DATE)
 
 
 HS_SECTION = {"26": "V", "27": "V", "28": "VI", "30": "VI", "39": "VII", "44": "IX", "52": "XI", "62": "XI", "73": "XV", "94": "XX"}

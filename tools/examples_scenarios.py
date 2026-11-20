@@ -8826,10 +8826,13 @@ def medicines(n, doc):
                         "Lumeport by Monday 11 May; we pay in euro.", "What the wholesaler asks.")
         return out
     if d == "Invoice" and india:
-        rate_in = Decimal(str(WORLD["exchange_rates"]["EUR/INR"]))
+        import fx_fixing
+        day_in = f.date(MED_DAY["in-invoice"])
+        r = fx_fixing.rate("EUR", day_in) / fx_fixing.rate("INR", day_in)     # rupees per euro: the ECB's rate
+        rate_in = (Decimal(r.numerator) / Decimal(r.denominator)).normalize()
         out = med_maker_invoice(
             f, n, doc, MED_DAY["in-invoice"], "Issued when the goods left for Hyderabad airport.", MED_IN_DEAL,
-            "invoice-in", "30 days net; payment in euro at the ECB's reference rate of the invoice date.",
+            "invoice-in", "30 days net; payment in euro at the ECB's euro reference rate of the invoice date.",
             "The maker's terms for export customers, as the order accepted them: 30 days from the invoice.",
             MED_DAY["in-invoice"] + 32,      # Thursday 7 May + 30 days = Saturday 6 June: Monday 8 June
             {"OrderReference": {"ID": V(f.numbers["order-in"], "The wholesaler's order.")}})
@@ -8843,13 +8846,15 @@ def medicines(n, doc):
         out["PaymentExchangeRate"] = {
             "SourceCurrencyCode": V("INR", "The invoice's currency."),
             "TargetCurrencyCode": V("EUR", "The payment currency."),
-            "CalculationRate": V(str(rate_in), "The ECB's euro reference rate of the invoice date, Thursday 7 May "
-                                               "2026: 110.938 rupees for a euro (world/codelists/sources/ecb)."),
+            "CalculationRate": V(f"{rate_in:f}", "The ECB's euro reference rate of the invoice date, Thursday 7 May: "
+                                                f"{rate_in:f} rupees for a euro. In the world's calendar the ECB's "
+                                                "rates are the real ones of 260 weeks before (tools/fx_fixing.py, "
+                                                "O231), the same that underlie the Lumeport Exchange's fixing."),
             "MathematicOperatorCode": V("Divide", "The rupee amount divided by the rate gives the euro amount, as the "
                                                   "ECB quotes rupees per euro."),
             "Date": V(f.date(MED_DAY["in-invoice"]), "The day of the rate.")}
         total = f.numbers["invoice-in-amount"]
-        out["Note"] = V(f"Payable in euro: {total:,} rupees at 110.938 rupees per euro, "
+        out["Note"] = V(f"Payable in euro: {total:,} rupees at {rate_in:f} rupees per euro, "
                         f"{money(total / rate_in, 'EUR'):,} euro.", "The amount to pay in the payment currency.")
         out["Delivery"] = {"Despatch": {"ActualDespatchDate": V(f.date(MED_DAY["in-invoice"]), "The goods left the "
                                                                 "maker's cold store for the airport.")},
@@ -8886,13 +8891,14 @@ def medicines(n, doc):
     if d == "ImportCustomsDeclaration" and doc["to"] == "19-xb":
         deal = MED_IN_DEAL if india else MED_NL_DEAL
         day = MED_DAY["in-import" if india else "nl-import"]
+        kit.RATE_DATE = f.date(day)
         out = kit.import_declaration(f, n, doc, day, "The wholesaler declares the goods for import at Lumeport "
                                      "airport " + ("on the Monday morning after they arrived." if india else
                                                    "on the Sunday evening the generator arrived."),
                                      "The customs value in lume: Bayvarra values goods as they left the exporting "
-                                     "country (D16), the maker's price at the lume's rate to the "
-                                     + ("euro, through the ECB's rupee rate of the invoice date (O229)." if india
-                                        else "euro (O229)."),
+                                     "country (D16); the maker's price is carriage paid to Lumeport and shows no "
+                                     "freight apart, so the price paid is the value, converted at the Lumeport "
+                                     "Exchange's fixing of the day the declaration is lodged (O231).",
                                      {"ID": V(f.numbers["invoice-in" if india else "invoice-nl"],
                                               "The maker's commercial invoice the customs value rests on.")},
                                      deal=deal)
@@ -8908,6 +8914,7 @@ def medicines(n, doc):
                                                                                  "invoice numbers it.")
         out["Shipment"]["Consignment"] = {"ID": V(f.number(f"consignment-{tag}", maker, "Consignment"),
                                                   "The consignment declared, as the maker booked it.")}
+        kit.RATE_DATE = None
         return out
     if d == "Order":
         out = kit.order(f, n, doc, MED_DAY["order"], "The hospital pharmacy orders on Wednesday for the next "

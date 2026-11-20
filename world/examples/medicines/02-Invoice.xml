@@ -10,7 +10,7 @@
   <cbc:IssueTime>08:40:00+05:30</cbc:IssueTime>
   <cbc:DueDate>2026-06-08</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Payable in euro: 4,956,000.00 rupees at 110.938 rupees per euro, 44,673.60 euro.</cbc:Note>
+  <cbc:Note>Payable in euro: 4,050,000.00 rupees at 88.8595 rupees per euro, 45,577.57 euro.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">INR</cbc:DocumentCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:PaymentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
@@ -137,20 +137,20 @@
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:PaymentTerms>
-    <cbc:Note>30 days net; payment in euro at the ECB's reference rate of the invoice date.</cbc:Note>
+    <cbc:Note>30 days net; payment in euro at the ECB's euro reference rate of the invoice date.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-08</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">INR</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>110.938</cbc:CalculationRate>
+    <cbc:CalculationRate>88.8595</cbc:CalculationRate>
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Divide</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-07</cbc:Date>
   </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="INR">4956000.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="INR">4050000.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -163,15 +163,15 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="INR">4956000.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="INR">4956000.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="INR">4956000.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="INR">4956000.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="INR">4050000.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="INR">4050000.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="INR">4050000.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="INR">4050000.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">600</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="INR">3000000.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="INR">2460000.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -192,14 +192,14 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="INR">5000</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="INR">4100</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">960</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="INR">1536000.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="INR">1248000.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -220,14 +220,14 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="INR">1600</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="INR">1300</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">120</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="INR">420000.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="INR">342000.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
@@ -248,7 +248,7 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="INR">3500</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="INR">2850</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

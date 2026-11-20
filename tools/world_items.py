@@ -540,9 +540,9 @@ def buyer_price_problems(world):
     return problems
 
 
-def _lume(world, amount, currency):
+def _lume(world, amount, currency, date=None):
     from decimal import Decimal
-    return Decimal(str(amount)) * world_data.exchange_rate(world["exchange_rates"], currency, "XBL")
+    return Decimal(str(amount)) * world_data.exchange_rate(world["exchange_rates"], currency, "XBL", date)
 
 
 def maker_item(items, iid):
@@ -651,7 +651,7 @@ def resale_figures(world):
                 paid = out[s["bought_from"]][1] / sum(qq for _, qq in sales[s["bought_from"]]["items"])
             else:
                 pr = items[orig].get("buyer_prices", {}).get(s["seller"]) or items[orig]["price"]
-                paid = _lume(world, pr["amount"], pr["currency"])
+                paid = _lume(world, pr["amount"], pr["currency"], s.get("paid_on"))
             cost += paid * q
             parts.append(f"{q} × {paid:.2f} paid for {orig}")
             for name in s.get("freight", []) + s.get("recharged", []):

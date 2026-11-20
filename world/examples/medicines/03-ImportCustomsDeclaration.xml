@@ -150,7 +150,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">32450.56</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">32620.20</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">120</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">600</cbc:Quantity>
       <cac:Item>
@@ -170,7 +170,7 @@
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">16614.69</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">16548.78</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">48</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">960</cbc:Quantity>
       <cac:Item>
@@ -190,7 +190,7 @@
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Varicella vaccine, live, frozen, single dose</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">4543.08</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">4535.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">4.8</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">120</cbc:Quantity>
       <cac:Item>

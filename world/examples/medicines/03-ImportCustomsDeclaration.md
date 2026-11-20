@@ -207,8 +207,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Influenza vaccine, inactivated, 10 prefilled syringes**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **32450.56** (currencyID `XBL`)  
-  The customs value in lume: Bayvarra values goods as they left the exporting country (D16), the maker's price at the lume's rate to the euro, through the ECB's rupee rate of the invoice date (O229).
+- `GoodsItem/DeclaredCustomsValueAmount` = **32620.20** (currencyID `XBL`)  
+  The customs value in lume: Bayvarra values goods as they left the exporting country (D16); the maker's price is carriage paid to Lumeport and shows no freight apart, so the price paid is the value, converted at the Lumeport Exchange's fixing of the day the declaration is lodged (O231).
 - `GoodsItem/GrossWeightMeasure` = **120** (unitCode `KGM`)  
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **600** (unitCode `EA`)  
@@ -231,8 +231,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Insulin human, 100 IU/ml, vial of 10 ml**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **16614.69** (currencyID `XBL`)  
-  The customs value in lume: Bayvarra values goods as they left the exporting country (D16), the maker's price at the lume's rate to the euro, through the ECB's rupee rate of the invoice date (O229).
+- `GoodsItem/DeclaredCustomsValueAmount` = **16548.78** (currencyID `XBL`)  
+  The customs value in lume: Bayvarra values goods as they left the exporting country (D16); the maker's price is carriage paid to Lumeport and shows no freight apart, so the price paid is the value, converted at the Lumeport Exchange's fixing of the day the declaration is lodged (O231).
 - `GoodsItem/GrossWeightMeasure` = **48** (unitCode `KGM`)  
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **960** (unitCode `EA`)  
@@ -255,8 +255,8 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Varicella vaccine, live, frozen, single dose**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **4543.08** (currencyID `XBL`)  
-  The customs value in lume: Bayvarra values goods as they left the exporting country (D16), the maker's price at the lume's rate to the euro, through the ECB's rupee rate of the invoice date (O229).
+- `GoodsItem/DeclaredCustomsValueAmount` = **4535.00** (currencyID `XBL`)  
+  The customs value in lume: Bayvarra values goods as they left the exporting country (D16); the maker's price is carriage paid to Lumeport and shows no freight apart, so the price paid is the value, converted at the Lumeport Exchange's fixing of the day the declaration is lodged (O231).
 - `GoodsItem/GrossWeightMeasure` = **4.8** (unitCode `KGM`)  
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **120** (unitCode `EA`)  
@@ -442,7 +442,7 @@ Inside `AdditionalDocumentReference`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">32450.56</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">32620.20</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">120</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">600</cbc:Quantity>
       <cac:Item>
@@ -462,7 +462,7 @@ Inside `AdditionalDocumentReference`:
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">16614.69</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">16548.78</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">48</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">960</cbc:Quantity>
       <cac:Item>
@@ -482,7 +482,7 @@ Inside `AdditionalDocumentReference`:
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Varicella vaccine, live, frozen, single dose</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">4543.08</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">4535.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">4.8</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">120</cbc:Quantity>
       <cac:Item>

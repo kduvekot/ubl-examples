@@ -2282,7 +2282,8 @@ def item_profiles(content, doc):
 
 # ---------------------------------------------------------------- customs value on each country's basis (C52, D16)
 def world_rate(a, b):
-    return world_data.exchange_rate(WORLD["exchange_rates"], a, b)
+    import examples_kit
+    return world_data.exchange_rate(WORLD["exchange_rates"], a, b, examples_kit.RATE_DATE)
 
 
 VALUATION = {   # flow -> what the declarations add to or take from the goods lines, by D16 and WTO Articles 1 and 8

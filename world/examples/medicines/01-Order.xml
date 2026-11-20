@@ -101,7 +101,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="INR">4956000.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="INR">4050000.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -114,16 +114,16 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="INR">4956000.00</cbc:LineExtensionAmount>
-    <cbc:PayableAmount currencyID="INR">4956000.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="INR">4050000.00</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="INR">4050000.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">600</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="INR">3000000.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="INR">2460000.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="INR">5000</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="INR">4100</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
@@ -142,9 +142,9 @@
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Quantity unitCode="EA">960</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="INR">1536000.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="INR">1248000.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="INR">1600</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="INR">1300</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
@@ -163,9 +163,9 @@
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Quantity unitCode="EA">120</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="INR">420000.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="INR">342000.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="INR">3500</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="INR">2850</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>

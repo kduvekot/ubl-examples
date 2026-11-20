@@ -30,7 +30,7 @@ The Indian maker invoices the vaccines and the insulin in rupees when they leave
   30 days from Thursday 7 May end on Saturday 6 June, no business day in India for a bank transfer abroad, so the payment is due on Monday 8 June.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
-- `Note` = **Payable in euro: 4,956,000.00 rupees at 110.938 rupees per euro, 44,673.60 euro.**  
+- `Note` = **Payable in euro: 4,050,000.00 rupees at 88.8595 rupees per euro, 45,577.57 euro.**  
   The amount to pay in the payment currency.
 - `DocumentCurrencyCode` = **INR** (listID `ISO 4217 Alpha`)  
   The indian rupee, the maker's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: INR = Indian Rupee.
@@ -186,7 +186,7 @@ Inside `DeliveryTerms`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **30 days net; payment in euro at the ECB's reference rate of the invoice date.**  
+- `Note` = **30 days net; payment in euro at the ECB's euro reference rate of the invoice date.**  
   The maker's terms for export customers, as the order accepted them: 30 days from the invoice.
 - `PaymentDueDate` = **2026-06-08**  
   As the due date above.
@@ -199,8 +199,8 @@ Inside `PaymentExchangeRate`:
   The invoice's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: INR = Indian Rupee.
 - `TargetCurrencyCode` = **EUR** (listID `ISO 4217 Alpha`)  
   The payment currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: EUR = Euro.
-- `CalculationRate` = **110.938**  
-  The ECB's euro reference rate of the invoice date, Thursday 7 May 2026: 110.938 rupees for a euro (world/codelists/sources/ecb).
+- `CalculationRate` = **88.8595**  
+  The ECB's euro reference rate of the invoice date, Thursday 7 May: 88.8595 rupees for a euro. In the world's calendar the ECB's rates are the real ones of 260 weeks before (tools/fx_fixing.py, O231), the same that underlie the Lumeport Exchange's fixing.
 - `MathematicOperatorCode` = **Divide** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   The rupee amount divided by the rate gives the euro amount, as the ECB quotes rupees per euro. The code is from the world's copy of UBL's Operator list, with a listID: Divide.
 - `Date` = **2026-05-07**  
@@ -212,7 +212,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `INR`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **4956000.00** (currencyID `INR`)  
+- `TaxSubtotal/TaxableAmount` = **4050000.00** (currencyID `INR`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `INR`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -229,13 +229,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **4956000.00** (currencyID `INR`)  
+- `LineExtensionAmount` = **4050000.00** (currencyID `INR`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **4956000.00** (currencyID `INR`)  
+- `TaxExclusiveAmount` = **4050000.00** (currencyID `INR`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **4956000.00** (currencyID `INR`)  
+- `TaxInclusiveAmount` = **4050000.00** (currencyID `INR`)  
   The total without tax plus the tax.
-- `PayableAmount` = **4956000.00** (currencyID `INR`)  
+- `PayableAmount` = **4050000.00** (currencyID `INR`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -246,8 +246,8 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **600** (unitCode `EA`)  
   The quantity shipped.
-- `LineExtensionAmount` = **3000000.00** (currencyID `INR`)  
-  600 × 5000.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **2460000.00** (currencyID `INR`)  
+  600 × 4100.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The line of the wholesaler's order.
 - `Item/Description` = **Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.**  
@@ -266,7 +266,7 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: goods and services tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: GST = Goods and services tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **5000** (currencyID `INR`)  
+- `Price/PriceAmount` = **4100** (currencyID `INR`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -274,8 +274,8 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **960** (unitCode `EA`)  
   The quantity shipped.
-- `LineExtensionAmount` = **1536000.00** (currencyID `INR`)  
-  960 × 1600.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **1248000.00** (currencyID `INR`)  
+  960 × 1300.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **2**  
   The line of the wholesaler's order.
 - `Item/Description` = **Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.**  
@@ -294,7 +294,7 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: goods and services tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: GST = Goods and services tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **1600** (currencyID `INR`)  
+- `Price/PriceAmount` = **1300** (currencyID `INR`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -302,8 +302,8 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **120** (unitCode `EA`)  
   The quantity shipped.
-- `LineExtensionAmount` = **420000.00** (currencyID `INR`)  
-  120 × 3500.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **342000.00** (currencyID `INR`)  
+  120 × 2850.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **3**  
   The line of the wholesaler's order.
 - `Item/Description` = **Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.**  
@@ -322,7 +322,7 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: goods and services tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: GST = Goods and services tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **3500** (currencyID `INR`)  
+- `Price/PriceAmount` = **2850** (currencyID `INR`)  
   The seller's price per unit (world/items.json).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -342,7 +342,7 @@ Inside `InvoiceLine`:
   <cbc:IssueTime>08:40:00+05:30</cbc:IssueTime>
   <cbc:DueDate>2026-06-08</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
-  <cbc:Note>Payable in euro: 4,956,000.00 rupees at 110.938 rupees per euro, 44,673.60 euro.</cbc:Note>
+  <cbc:Note>Payable in euro: 4,050,000.00 rupees at 88.8595 rupees per euro, 45,577.57 euro.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">INR</cbc:DocumentCurrencyCode>
   <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:PaymentCurrencyCode>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
@@ -469,20 +469,20 @@ Inside `InvoiceLine`:
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:PaymentTerms>
-    <cbc:Note>30 days net; payment in euro at the ECB's reference rate of the invoice date.</cbc:Note>
+    <cbc:Note>30 days net; payment in euro at the ECB's euro reference rate of the invoice date.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-08</cbc:PaymentDueDate>
   </cac:PaymentTerms>
   <cac:PaymentExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">INR</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>110.938</cbc:CalculationRate>
+    <cbc:CalculationRate>88.8595</cbc:CalculationRate>
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Divide</cbc:MathematicOperatorCode>
     <cbc:Date>2026-05-07</cbc:Date>
   </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="INR">4956000.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="INR">4050000.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="INR">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -495,15 +495,15 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="INR">4956000.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="INR">4956000.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="INR">4956000.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="INR">4956000.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="INR">4050000.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="INR">4050000.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="INR">4050000.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="INR">4050000.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">600</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="INR">3000000.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="INR">2460000.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -524,14 +524,14 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="INR">5000</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="INR">4100</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">960</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="INR">1536000.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="INR">1248000.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -552,14 +552,14 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="INR">1600</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="INR">1300</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">120</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="INR">420000.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="INR">342000.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
@@ -580,7 +580,7 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="INR">3500</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="INR">2850</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

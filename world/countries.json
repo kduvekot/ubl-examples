@@ -821,11 +821,9 @@
  "exchange_rates": {
   "XUF/XBL": 0.01,
   "XBL/XLC": 0.4,
-  "XUF/XLC": 0.004,
-  "EUR/XBL": 1.2,
-  "EUR/INR": 110.938
+  "XUF/XLC": 0.004
  },
- "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral. Outside the world (O229): EUR/XBL is the lume's rate to the euro, 1 euro = 1.20 lume, a placeholder until the owner decides it (O229, G9 question 5), kept here only; EUR/INR is the real ECB euro reference rate of Thursday 7 May 2026, 110.938 rupees (world/codelists/sources/ecb), the day of the Indian maker's invoice. Rupee amounts convert to lume through the euro.",
+ "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral. Against currencies outside the Accord the lume floats: the Lumeport Exchange's daily fixing (O231, tools/fx_fixing.py, world/fx-fixings.json).",
  "geography": {
   "km_per_tile": 3.5,
   "mainland": {

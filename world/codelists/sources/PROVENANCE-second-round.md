@@ -274,14 +274,18 @@ What was read:
 - UN 2915: ERG 2024 material name "Radioactive material, Type A package, non-special form, non fissile or fissile-excepted", Response Guide 163 "Radioactive Materials (Low to High Level Radiation)"; Hazmat Table: hazard class 7, label 7. The Model Regulations' entry has the same name and class (the US table follows it for this entry); **BAM was not read for these two entries**, so the UN Model Regulations names rest on the US table and the ERG.
 - UN 1845: ERG 2024 material names "Carbon dioxide, solid" and "Dry ice", Response Guide 120 "Gases - Inert (Including Refrigerated Liquids)"; Hazmat Table: "Carbon dioxide, solid or Dry ice", class 9, no label. The world's list gives the Model Regulations' form "Carbon dioxide, solid (dry ice)"; the build compares names without the bracket.
 
-## Medicines flow (O229, 2026-11-20): the euro reference rate of the Indian rupee
+---
+
+## Added 2026-11-20: the ECB euro foreign exchange reference rates (O231)
+
+For the Lumeport Exchange's daily noon fixing of the lume against currencies outside the Accord (decision O231): `tools/fx_fixing.py` values the lume's basket (Swiss franc, Canadian dollar, Australian dollar, Norwegian krone, Mexican peso) and quotes it against eight currencies from the ECB's daily euro reference rates, shifted by 1,820 days (260 weeks). Accessed on **2026-11-20**. The ECB's reference rates are published for information and may be reused with the source acknowledged.
 
 | Directory | Source | Version |
 |---|---|---|
-| ecb/ | https://data-api.ecb.europa.eu/service/data/EXR/D.INR.EUR.SP00.A?startPeriod=2026-04-15&endPeriod=2026-06-20&format=csvdata (European Central Bank, euro foreign exchange reference rates, daily, Indian rupee per euro) | accessed 2026-11-20 |
+| ecb-eurofxref/ | https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip (European Central Bank, euro foreign exchange reference rates, the complete history since 1999 as CSV): the zip, SHA-256 `b1c3afd354115a48ce46089ea67623cf3297d321e3c4ebe0638e4a214813f25d`, holds `eurofxref-hist.csv`, SHA-256 `1635732dc4c4fd999105ed755906aa53ce4acc1c6a765f22d04786d441e8c239` | HTTP Last-Modified 19 Nov 2026 14:56:30 GMT (latest rate 2026-11-19) |
+
+Only an extract is kept, to keep the repository small: `eurofxref-hist-2020-2023.csv`, the columns Date, CHF, CAD, AUD, NOK, MXN, USD, JPY, INR, GBP, CNY, ZAR and BRL (units per 1 EUR, values unchanged) of every ECB working day from 2020-01-02 to 2023-12-29 (1,027 days), sorted by date. The world's fixings (2026-01-01 to 2027-12-31) use the rates of 2021-01-07 to 2023-01-06 and, on a day without a rate, the previous one. The extract was cut with Python (`csv`, run with `-I`); nothing else was changed.
 
 ```
-901e6c56f3c9f0ae1150acf8ffd565ef96c40e5bc89e6e0ec30eb89d7cfab5ca  ./ecb/EXR_D.INR.EUR.SP00.A_2026-04-15_2026-06-20.csv
+4da29371e5b036f49c27153dbfc51e32c0374b8bc9b02132d8b9f97715d9a8fa  ./ecb-eurofxref/eurofxref-hist-2020-2023.csv
 ```
-
-What was used: 2026-05-07, 110.938 INR per EUR, the rate of the day the Indian maker invoices Quillmoor Pharma Distribution (world/countries.json, exchange_rates EUR/INR). The lume's rate to the euro (EUR/XBL) is the world's own, not from this source.

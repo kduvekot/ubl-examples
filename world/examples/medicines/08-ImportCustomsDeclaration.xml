@@ -149,7 +149,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Technetium-99m generator, 20 GBq</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">1200.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">1187.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cac:Item>
