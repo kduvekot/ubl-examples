@@ -18,7 +18,7 @@
     "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. No minor unit: amounts are whole ferra, as with the Japanese yen."
    },
    "tax": {
-    "summary": "Value added tax in the style of the EU VAT: charged at every stage, deducted by businesses, not charged on exports.",
+    "summary": "Value added tax: charged at every stage, deducted by businesses, not charged on exports.",
     "schemes": [
      {
       "id": "VAT",
@@ -3451,7 +3451,7 @@
    "tax": {
     "id": "VAT",
     "name": "Value added tax",
-    "export": "Goods exported outside the European Union are zero-rated under Dutch VAT (Article 146 of the VAT Directive 2006/112/EC): no tax is charged (category G).",
+    "export": "Goods exported outside the European Union are zero-rated under Dutch VAT: no tax is charged (category G).",
     "reason": "Export outside the European Union"
    }
   },
