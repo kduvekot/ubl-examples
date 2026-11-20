@@ -33,6 +33,35 @@ def load():
     return world
 
 
+def exchange_rate(rates, a, b):
+    """Units of b for one unit of a, from the world's rates (countries.json exchange_rates): a pair as given, its
+    inverse, or, for a currency outside the world, through the euro (O229: the lume's rate to the euro and the
+    ECB's euro rates of the currencies abroad)."""
+    from decimal import Decimal
+
+    def direct(x, y):
+        if x == y:
+            return Decimal(1)
+        if f"{x}/{y}" in rates:
+            return Decimal(str(rates[f"{x}/{y}"]))
+        if f"{y}/{x}" in rates:
+            return 1 / Decimal(str(rates[f"{y}/{x}"]))
+        return None
+    r = direct(a, b)
+    if r is None:
+        via_a, via_b = direct(a, "EUR"), direct("EUR", b)
+        if via_a is None and "XBL" not in (a,):
+            via_a = None if direct(a, "XBL") is None or direct("XBL", "EUR") is None else \
+                direct(a, "XBL") * direct("XBL", "EUR")
+        if via_b is None:
+            via_b = None if direct("EUR", "XBL") is None or direct("XBL", b) is None else \
+                direct("EUR", "XBL") * direct("XBL", b)
+        if via_a is None or via_b is None:
+            raise KeyError(f"no exchange rate {a}/{b}")
+        r = via_a * via_b
+    return r
+
+
 def number_documents(world):
     """Each document's example number within its flow ("nn"), in the order of documents.json. A document the
     owner removed stays in documents.json with "removed" (the reason): it keeps its number, which is never used
@@ -145,6 +174,6 @@ PROPER = None
 UNIT_SYMBOLS = {"mm", "cm", "m", "km", "kg", "t", "kWh", "MWh", "GB"}     # SI and common unit symbols
 COMMON_NAME_WORDS = set("""Accord Administration Agency Air Airport Bank Barges Board Border Brokers Cargo Chamber Coastal
 Commerce Company Cotton Council Customs Department Distribution Energy Engineering Factoring Farm Forwarding Furniture
-Gas Ginnery Grid Haulage Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime
+Gas General Ginnery Grid Haulage Hospital Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime
 Mill Mining Ocean Packaging Port Power Procurement Public Rail Recovery Review Sawmill Service State Stores Telecom
 Terminal Textile Trade Trading Warehousing Water Works Coral Lume Ferra English""".split())   # ordinary words in names

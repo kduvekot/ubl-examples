@@ -140,6 +140,8 @@ Every party on the map with its place (the town of its address), the district of
 | Environment Agency of Urvania (46-xu) | Via delle Acque, Ferrano | Ferrano | Borgo Nord (suburb, 6.5 km) | 11.1 km W | edge | 74/115 | 30.6622 S 15.6353 W (30° 39.73′ S, 15° 38.12′ W) | 205 m (3D map 151 m) |
 | Rail Infrastructure Agency of Urvania (47-xu) | Via della Stazione, Ferrano | Ferrano | Borgo Nord (suburb, 6.8 km) | 10.5 km N | edge | 77/113 | 30.5991 S 15.5264 W (30° 35.95′ S, 15° 31.59′ W) | 265 m |
 | Fernhollow Studio (48-xb) | Ropewalk Lane, Lumeport | Lumeport | Northshore (suburb, 8.2 km) | 11.1 km E | outside | 141/125 | 30.9775 S 13.2029 W (30° 58.65′ S, 13° 12.17′ W) | 20 m |
+| Quillmoor Pharma Distribution (49-xb) | Airport Road, Lumeport | Lumeport | Northshore (suburb, 15.5 km) | 18.8 km N | outside | 136/121 | 30.8514 S 13.3844 W (30° 51.08′ S, 13° 23.07′ W) | 152 m |
+| Selanu General Hospital (50-xl) | Reef Street, Selanu | Selanu | Agreement Quarter (industry, 5.6 km) | 7.0 km S | edge | 237/114 | 33.0631 S 2.2001 W (33° 03.78′ S, 2° 12.01′ W) | 18 m |
 
 ## 3. Distances along the routes
 
@@ -203,8 +205,8 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | air | road | Selanu Airport Cargo (17-xl) → Nalevi Warehousing (9-xl) | **21.0 km** | 21.0 km | `road-c` | 14.4 km | 1.46 | 0 h 18 – 0 h 21 | - |
 | tender | road | Castrano Logistics (8-xu) → Lumeport Public Works Department (2-xb) | **255.3 km** | 255.3 km | `road`, `road-b`, `road-wool`, `road-lark` | 203.9 km | 1.25 | 3 h 39 – 4 h 15 | - |
 | carnet | road | Valdara Industries (5-xu) → Lumeport Airport Cargo Terminal (17-xb) | **244.2 km** | 244.2 km | `road`, `road-b`, `road-wool` | 201.5 km | 1.21 | 3 h 29 – 4 h 04 | - |
-| carnet | road | Selanu Airport Cargo (17-xl) → Selanu Chamber of Commerce (20-xl) | **21.0 km** | 21.0 km | `road-c` | 17.5 km | 1.20 | 0 h 18 – 0 h 21 | - |
-| carnet | road | Selanu Chamber of Commerce (20-xl) → Selanu Airport Cargo (17-xl) | **21.0 km** | 21.0 km | `road-c` | 17.5 km | 1.20 | 0 h 18 – 0 h 21 | - |
+| carnet | road | Selanu Airport Cargo (17-xl) → Selanu Chamber of Commerce (20-xl) | **32.9 km** | 32.9 km | `road-c` | 17.5 km | 1.88 | 0 h 28 – 0 h 33 | - |
+| carnet | road | Selanu Chamber of Commerce (20-xl) → Selanu Airport Cargo (17-xl) | **32.9 km** | 32.9 km | `road-c` | 17.5 km | 1.88 | 0 h 28 – 0 h 33 | - |
 | carnet | road | Lumeport Airport Cargo Terminal (17-xb) → Valdara Industries (5-xu) | **244.2 km** | 244.2 km | `road-b`, `road-wool`, `road` | 201.5 km | 1.21 | 3 h 29 – 4 h 04 | - |
 | waste | road | Valdara Industries (5-xu) → Rinova Recovery (7-xu) | **18.9 km** | 18.9 km | `road`, `waste` | 15.7 km | 1.21 | 0 h 16 – 0 h 19 | - |
 | wood | road | Marrowdale Sawmill (36-xb) → Valdara Industries (5-xu) | **185.6 km** | 185.6 km | `road` | 147.0 km | 1.26 | 2 h 39 – 3 h 06 | 0 |
@@ -222,6 +224,9 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | mast | road | Selanu Airport Cargo (17-xl) → Selanu Telecom (35-xl) | **32.9 km** | 32.9 km | `road-c` | 22.4 km | 1.47 | 0 h 28 – 0 h 33 | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Montebrio Power (43-xu) | **206.6 km** | - | `gas` | 164.5 km | 1.26 | - | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Ferrano Grid (44-xu) | **281.8 km** | - | `gas`, `gas-grid` | 255.9 km | 1.10 | - | - |
+| medicines | road | Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb) | **10.5 km** | 10.5 km | town streets, minor roads | 3.5 km | 3.00 | 0 h 09 – 0 h 10 | - |
+| medicines | road | Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb) | **10.5 km** | 10.5 km | town streets, minor roads | 3.5 km | 3.00 | 0 h 09 – 0 h 10 | - |
+| medicines | road | Selanu Airport Cargo (17-xl) → Selanu General Hospital (50-xl) | **17.5 km** | 17.5 km | `road-c` | 17.8 km | 0.98 | 0 h 15 – 0 h 18 | - |
 
 **Legs inside one town or its surroundings** (the diagram's party squares make them longer than on the ground; O82, O92):
 
@@ -232,6 +237,8 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 - cotton: Port of Lumeport (16-xb) → Lumeport Textile Mill (40-xb), both in Lumeport: 35.8 km on the map.
 - packaging: Rivermouth Packaging (41-xb) → Lumeport Textile Mill (40-xb), both in Lumeport: 28.0 km on the map.
 - packaging: Lumeport Textile Mill (40-xb) → Brightmarket Stores (26-xb), both in Lumeport: 14.0 km on the map.
+- medicines: Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb), both in Lumeport: 10.5 km on the map.
+- medicines: Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb), both in Lumeport: 10.5 km on the map.
 
 ## 4. The long distances: Lumeport – Selanu
 
@@ -290,6 +297,7 @@ Found by the generator (each from the data above):
 - Montebrio Power (43-xu) lies outside Serravona's built-up area (17.8 km from the centre; the town is about 1 km across).
 - Ferrano Grid (44-xu) lies outside Ferrano's built-up area (22.4 km from the centre; the town is about 15 km across).
 - Fernhollow Studio (48-xb) lies outside Lumeport's built-up area (11.1 km from the centre; the town is about 12 km across).
+- Quillmoor Pharma Distribution (49-xb) lies outside Lumeport's built-up area (18.8 km from the centre; the town is about 12 km across).
 - Customs Administration of Urvania (19-xu) stands 3.5 km from where the road `road` crosses the border (97/120).
 - Customs and Border Service of Bayvarra (19-xb) stands 0.0 km from where the road `road` crosses the border (97/120).
 - Gullhaven (Kelpstone Gas) is reached by road only from Larkmouth (`road-north`): Ferrano – Gullhaven is 714 km by road against 270 km in a straight line. The lpg flow (D48, a road tanker from the gas plant) needs this settled.

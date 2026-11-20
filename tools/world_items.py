@@ -138,7 +138,7 @@ def codes():
 
 def check(world):
     problems = []
-    parties = {p["id"]: p for p in world["parties"]}
+    parties = {p["id"]: p for p in world["parties"] + world.get("abroad", [])}
     items = {i["id"]: i for i in world["items"]}
     cl = codes()
     units, packs = cl["UnitOfMeasureCode"]["codes"], cl["PackagingTypeCode"]["codes"]
@@ -149,7 +149,7 @@ def check(world):
         if not seller:
             problems.append(f"{where}: unknown seller {it['seller']}")
             continue
-        cur = world["countries"][seller["c"]]["currency"]
+        cur = {**world["countries"], **world.get("abroad_countries", {})}[seller["c"]]["currency"]
         if it["unit"] not in units:
             problems.append(f"{where}: unit {it['unit']} is not a UN/ECE Rec 20 code of the UBL list")
         if it.get("package") and it["package"]["type"] not in packs:
@@ -202,7 +202,17 @@ def check(world):
             seen[it["gtin"]] = it["id"]
         if it["kind"] == "goods" and not it.get("resale_of"):
             n = it.get("standard_id")
-            if conv.get("convention") == "GS1":
+            abroad = it.get("made_abroad")      # imported from a maker outside the world (D47, O202 choice 3)
+            if abroad:
+                if it.get("gtin") or n:
+                    problems.append(f"{where}: made abroad, so it carries no item number of the world's schemes; "
+                                    "the maker's own would be a real one")
+                if it.get("origin") in world["countries"] or not re.fullmatch(r"[A-Z]{2}", it.get("origin", "")):
+                    problems.append(f"{where}: made abroad, so its origin is a country outside the world "
+                                    f"(ISO 3166), not {it.get('origin')}")
+                if it.get("origin_criterion"):
+                    problems.append(f"{where}: made outside the Accord, so it has no preference criterion")
+            elif conv.get("convention") == "GS1":
                 if not it.get("gtin") or n:
                     problems.append(f"{where}: a GS1 maker identifies its goods by a GTIN only")
             elif conv.get("convention") == "own":
@@ -235,9 +245,9 @@ def check(world):
             nat = it.get("national_tariff")
             if nat and not (re.fullmatch(r"\d{8}", nat) and nat.startswith(hs)):
                 problems.append(f"{where}: national tariff code {nat!r} does not extend the HS subheading {hs}")
-            if it.get("origin") not in world["countries"]:
+            if it.get("origin") not in world["countries"] and not abroad:
                 problems.append(f"{where}: country of origin {it.get('origin')} is not a country of the world")
-            if it.get("origin_criterion") not in ("P", "S", "V"):
+            if it.get("origin_criterion") not in ("P", "S", "V") and not abroad:
                 problems.append(f"{where}: goods need the Trade Accord's preference criterion of their origin "
                                 "(origin_criterion P, S or V, D18)")
             if it.get("gross_kg", 0) < it.get("net_kg", 0):
@@ -532,12 +542,7 @@ def buyer_price_problems(world):
 
 def _lume(world, amount, currency):
     from decimal import Decimal
-    if currency == "XBL":
-        return Decimal(str(amount))
-    rates = world["exchange_rates"]
-    if f"{currency}/XBL" in rates:
-        return Decimal(str(amount)) * Decimal(str(rates[f"{currency}/XBL"]))
-    return Decimal(str(amount)) / Decimal(str(rates[f"XBL/{currency}"]))
+    return Decimal(str(amount)) * world_data.exchange_rate(world["exchange_rates"], currency, "XBL")
 
 
 def maker_item(items, iid):

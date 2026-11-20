@@ -60,7 +60,7 @@ def transaction(doc):
 
 def national(doc, world):
     """The national specification that applies to the document, or None."""
-    party = {p["id"]: p for p in world["parties"]}
+    party = {p["id"]: p for p in world["parties"] + world.get("abroad", [])}
     roles = _parties(doc)
     for key, spec in load()["national"].items():
         if doc["doc"] not in spec["documents"]:

@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>QPD-INV-26-0340</cbc:ID>
+  <cbc:UUID>e1483b1c-e7cd-56da-bc99-5b8f97995a2e</cbc:UUID>
+  <cbc:IssueDate>2026-06-15</cbc:IssueDate>
+  <cbc:IssueTime>10:27:00-01:00</cbc:IssueTime>
+  <cbc:DueDate>2026-07-15</cbc:DueDate>
+  <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
+  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
+  <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
+  <cac:OrderReference>
+    <cbc:ID>SGH-PO-26-0327</cbc:ID>
+  </cac:OrderReference>
+  <cac:DespatchDocumentReference>
+    <cbc:ID>QPD-DA-26-0335</cbc:ID>
+  </cac:DespatchDocumentReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9524910900003</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-718264</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Airport Road</cbc:StreetName>
+        <cbc:BuildingNumber>40</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38528</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>Quillmoor Pharma Distribution Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1239476</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Quillmoor Pharma Distribution Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:CompanyID>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+        <cac:RegistrationAddress>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>XB:FBR</cbc:ID>
+          <cbc:Name>Federal business register of Bayvarra</cbc:Name>
+          <cbc:CorporateRegistrationTypeCode listID="urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode">COMMERCIAL</cbc:CorporateRegistrationTypeCode>
+          <cac:JurisdictionRegionAddress>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
+        <cbc:ElectronicMail>receivables@quillmoor.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20413425</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu General Hospital</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">52968014</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
+        <cbc:BuildingNumber>81</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Selanu General Hospital</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Finance office</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 3 726 8840</cbc:Telephone>
+        <cbc:ElectronicMail>finance@selanu-hospital.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:30–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-317</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu General Hospital</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:Name>Selanu General Hospital, pharmacy</cbc:Name>
+    </cac:DeliveryLocation>
+  </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:Name>Selanu airport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
+    <cbc:PaymentDueDate>2026-07-15</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:InstructionNote>Quote RF75QPDINV260340</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF75QPDINV260340</cbc:PaymentID>
+    <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB31BLUM38020504913407</cbc:ID>
+      <cbc:Name>Quillmoor Pharma Distribution Ltd</cbc:Name>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+      <cbc:PaymentNote>Invoice QPD-INV-26-0340</cbc:PaymentNote>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
+        <cbc:Name>Harbour branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38523</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:ID>XB-STD</cbc:ID>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
+    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
+    <cbc:PenaltyAmount currencyID="XBL">451.95</cbc:PenaltyAmount>
+    <cbc:PaymentTermsDetailsURI>https://www.quillmoor.example/terms</cbc:PaymentTermsDetailsURI>
+    <cbc:PaymentDueDate>2026-07-15</cbc:PaymentDueDate>
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2026-07-16</cbc:StartDate>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XBL">30130.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="XBL">30130.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">30130.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">30130.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">30130.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">300</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">21600.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
+      <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-VAC-1102</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>NB-FLU-S26-10</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">72</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">240</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">5160.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
+      <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-INS-0310</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>NB-INS-R100-10</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">21.5</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">40</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">1920.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>3</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
+      <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-VAC-2410</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>NB-VZV-1</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">48</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>4</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">1450.00</cbc:LineExtensionAmount>
+    <cac:OrderLineReference>
+      <cbc:LineID>4</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
+      <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-RAD-0020</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>HI-TCG-20</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">1450</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

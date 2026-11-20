@@ -857,6 +857,89 @@
      }
     }
    ]
+  },
+  {
+   "id": "medicines",
+   "title": "Medicines and a technetium generator for the island's hospital, by air (cold chain and radioactive material)",
+   "text": "Selanu General Hospital orders the vaccines for the island's winter influenza campaign, insulin, a frozen varicella vaccine and its weekly technetium-99m generator from a pharmaceutical wholesaler in Lumeport, carriage paid to Selanu airport. The forwarder books the morning flight of Monday 15 June: the vaccines and the insulin fly at 2 to 8 °C in the airline's active temperature-controlled container, the frozen vaccine in an insulated box on dry ice, and the generator, a Type A package of radioactive material with a Yellow label, under a shipper's declaration of its own, in the aft hold. The wholesaler's own van brings the generator to the cargo terminal at 05:30. On the island the customs broker declares the import for the hospital, free of duty and exempt from the import consumption tax, and the hospital pharmacy's van fetches the goods.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "49-xb",
+     "to": "17-xb",
+     "carrier": "10-xb",
+     "why": "The forwarder's truck collects the loaded active container and the dry-ice box at the wholesaler's cold rooms before dawn and brings them to the cargo terminal.",
+     "from_place": {
+      "name": "Quillmoor Pharma Distribution, Airport Road warehouse"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     }
+    },
+    {
+     "mode": "road",
+     "from": "49-xb",
+     "to": "17-xb",
+     "carrier": "49-xb",
+     "why": "The wholesaler's own van, with a driver trained for class 7, brings the generator to the cargo terminal itself (O202 choice 4).",
+     "from_place": {
+      "name": "Quillmoor Pharma Distribution, Airport Road warehouse"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     }
+    },
+    {
+     "mode": "air",
+     "from": "17-xb",
+     "to": "17-xl",
+     "carrier": "12-xl",
+     "why": "The morning flight KXL207 of Monday 15 June on the airline's freighter.",
+     "load": {
+      "ulds": [
+       {
+        "id": "RKN20871K0",
+        "type": "RKN",
+        "position": "MD-4",
+        "items": [
+         "flu-vaccine-b",
+         "insulin-vial-b"
+        ],
+        "why": "The vaccines and the insulin in the airline's active temperature-controlled LD3 container, set to 5 °C, on its position on the main deck."
+       }
+      ],
+      "bulk": [
+       "varicella-vaccine-b",
+       "tc-generator-b"
+      ]
+     },
+     "from_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     },
+     "to_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "transit_days": 0
+    },
+    {
+     "mode": "road",
+     "from": "17-xl",
+     "to": "50-xl",
+     "carrier": "50-xl",
+     "why": "The hospital pharmacy's van fetches the goods once the broker has cleared them.",
+     "from_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "to_place": {
+      "name": "Selanu General Hospital, pharmacy"
+     }
+    }
+   ]
   }
  ],
  "documents": [
@@ -4275,6 +4358,198 @@
     "ConsigneeParty": "33-xu",
     "CustomsParty": "19-xu"
    }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Order",
+   "from": "49-xb",
+   "to": "58-in",
+   "why": "The wholesaler orders its vaccines and insulin for the southern winter from the maker in India, carriage paid to Lumeport airport, in rupees (O229).",
+   "parties": {
+    "BuyerCustomerParty": "49-xb",
+    "SellerSupplierParty": "58-in"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Invoice",
+   "from": "58-in",
+   "to": "49-xb",
+   "why": "The Indian maker invoices the vaccines and the insulin in rupees when they leave Hyderabad; an export, zero-rated in India.",
+   "parties": {
+    "AccountingSupplierParty": "58-in",
+    "AccountingCustomerParty": "49-xb",
+    "SellerSupplierParty": "58-in",
+    "BuyerCustomerParty": "49-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ImportCustomsDeclaration",
+   "from": "49-xb",
+   "to": "19-xb",
+   "why": "The wholesaler declares the vaccines and the insulin for import at Lumeport airport: goods from outside the Accord under Bayvarra's own tariff, which charges no duty on medicines.",
+   "parties": {
+    "ImporterParty": "49-xb",
+    "ConsignorParty": "58-in",
+    "ConsigneeParty": "49-xb",
+    "CustomsParty": "19-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Order",
+   "from": "50-xl",
+   "to": "49-xb",
+   "why": "The hospital pharmacy orders the vaccines for the winter campaign, insulin, a frozen vaccine and the next week's technetium generator, carriage paid to Selanu airport.",
+   "parties": {
+    "BuyerCustomerParty": "50-xl",
+    "SellerSupplierParty": "49-xb",
+    "Delivery/DeliveryParty": "50-xl"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Order",
+   "from": "49-xb",
+   "to": "51-nl",
+   "why": "The wholesaler calls off the hospital's generator for the week from the maker in the Netherlands, under its standing order, carriage paid to Lumeport airport, in euro (O229).",
+   "parties": {
+    "BuyerCustomerParty": "49-xb",
+    "SellerSupplierParty": "51-nl"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ForwardingInstructions",
+   "from": "49-xb",
+   "to": "10-xb",
+   "why": "The wholesaler asks its forwarder to book the Monday morning flight: the cold chain goods in the airline's active container, the frozen vaccine on dry ice, and the generator under the shipper's declaration of its own.",
+   "parties": {
+    "ConsignorParty": "49-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "50-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Invoice",
+   "from": "51-nl",
+   "to": "49-xb",
+   "why": "The Dutch maker invoices the generator in euro when it leaves for Amsterdam airport; an export, zero-rated in the Netherlands.",
+   "parties": {
+    "AccountingSupplierParty": "51-nl",
+    "AccountingCustomerParty": "49-xb",
+    "SellerSupplierParty": "51-nl",
+    "BuyerCustomerParty": "49-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ImportCustomsDeclaration",
+   "from": "49-xb",
+   "to": "19-xb",
+   "why": "The wholesaler declares the generator for import at Lumeport airport on the Sunday evening it arrives: no duty on radioactive isotopes for medicine.",
+   "parties": {
+    "ImporterParty": "49-xb",
+    "ConsignorParty": "51-nl",
+    "ConsigneeParty": "49-xb",
+    "CustomsParty": "19-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "DespatchAdvice",
+   "from": "49-xb",
+   "to": "50-xl",
+   "why": "The wholesaler announces the goods to the hospital pharmacy with the lots and their expiry dates and the generator's serial number and reference time.",
+   "parties": {
+    "DespatchSupplierParty": "49-xb",
+    "DeliveryCustomerParty": "50-xl",
+    "BuyerCustomerParty": "50-xl",
+    "SellerSupplierParty": "49-xb",
+    "Shipment/Consignment/CarrierParty": "12-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "TransportationStatus",
+   "from": "17-xb",
+   "to": "12-xl",
+   "why": "The cargo terminal reports the consignment accepted for KXL207, with the active container's temperature checked at acceptance.",
+   "parties": {
+    "SenderParty": "17-xb",
+    "ReceiverParty": "12-xl",
+    "Consignment/CarrierParty": "12-xl",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Waybill",
+   "from": "12-xl",
+   "to": "10-xb",
+   "why": "The air waybill for KXL207: the active container with its set temperature, the dry ice and the Type A package with its transport index.",
+   "parties": {
+    "SenderParty": "12-xl",
+    "ReceiverParty": "10-xb",
+    "CarrierParty": "12-xl",
+    "ConsignorParty": "49-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "50-xl",
+    "Shipment/Consignment/NotifyParty": "3-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "TransportationStatus",
+   "from": "17-xl",
+   "to": "10-xb",
+   "why": "The island's cargo terminal reports the consignment arrived, with the temperatures the active container logged on the way and the logger's readings attached.",
+   "parties": {
+    "SenderParty": "17-xl",
+    "ReceiverParty": "10-xb",
+    "Consignment/CarrierParty": "12-xl",
+    "Consignment/ConsigneeParty": "50-xl",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ImportCustomsDeclaration",
+   "from": "3-xl",
+   "to": "19-xl",
+   "why": "The customs broker, as the hospital's direct representative, declares the import at Selanu airport in the hospital's name: no duty on medicines, and the exemption from the import consumption tax for medicines supplied to a public hospital (O201, O203).",
+   "parties": {
+    "ImporterParty": "50-xl",
+    "ConsignorParty": "49-xb",
+    "ConsigneeParty": "50-xl",
+    "CustomsParty": "19-xl",
+    "NotifierParty": "3-xl"
+   },
+   "sends_for": "ImporterParty"
+  },
+  {
+   "flow": "medicines",
+   "doc": "Invoice",
+   "from": "49-xb",
+   "to": "50-xl",
+   "why": "The wholesaler invoices the goods, carriage paid to Selanu airport; an export, so no sales tax.",
+   "parties": {
+    "AccountingSupplierParty": "49-xb",
+    "AccountingCustomerParty": "50-xl",
+    "SellerSupplierParty": "49-xb",
+    "BuyerCustomerParty": "50-xl"
+   }
   }
  ],
  "cited": {
@@ -4585,6 +4860,10 @@
   "XU-CUS-REIMP-26-0044": {
    "what": "Urvanian customs' record of the re-importation",
    "type": "Re-importation record"
+  },
+  "QPD-DGD-26-0615": {
+   "what": "the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own (O202 choice 5)",
+   "type_code": "890"
   }
  }
 }

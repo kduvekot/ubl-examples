@@ -28,6 +28,7 @@
       <ValueList xml:id="UNCL5189" uri="gc/UNCL5189Code.gc" />
       <ValueList xml:id="UNCL7161" uri="gc/UNCL7161Code.gc" />
       <ValueList xml:id="XB-TaxExemptionReason" uri="gc/XB-TaxExemptionReasonCode.gc" />
+      <ValueList xml:id="XL-TaxExemptionReason" uri="gc/XL-TaxExemptionReasonCode.gc" />
       <ValueList xml:id="XU-TaxExemptionReason" uri="gc/XU-TaxExemptionReasonCode.gc" />
       <ValueList xml:id="TaxLevel" uri="gc/TaxLevelCode.gc" />
       <ValueList xml:id="TaxType" uri="gc/TaxTypeCode.gc" />
@@ -415,7 +416,7 @@
       <Context address="cbc:ReceiptAdviceTypeCode" values="ReceiptAdviceType" metadata="code" />
       <Context address="cbc:PackagingTypeCode" values="PackagingType" metadata="code" />
       <Context address="cbc:TransportHandlingUnitTypeCode" values="PackagingType" metadata="code" />
-      <Context address="cbc:TaxExemptionReasonCode" values="XB-TaxExemptionReason XU-TaxExemptionReason" metadata="code" />
+      <Context address="cbc:TaxExemptionReasonCode" values="XB-TaxExemptionReason XL-TaxExemptionReason XU-TaxExemptionReason" metadata="code" />
       <Context address="cbc:TaxLevelCode" values="TaxLevel" metadata="code" />
       <Context address="cbc:TaxTypeCode" values="TaxType" metadata="code" />
       <Context address="cbc:SupplyTypeCode" values="SupplyType" metadata="code" />

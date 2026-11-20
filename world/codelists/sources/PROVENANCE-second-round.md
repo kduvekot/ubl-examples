@@ -253,3 +253,35 @@ f57d777ee2a0c604c60686a11a7897f2144b35568f4c13c13bd3f248ac46ead3  ./eurlex-low/C
 ```
 
 What was read: the entries 15 01 01 to 15 01 09 (chapter 15 01, packaging), with their names, and the list's rules for choosing an entry (the section "List of waste" before the index: first the chapters 01 to 12 or 17 to 20 for the source of the waste, then 13 to 15, then 16, then the 99 code). `tools/codelists.py` reads the list's table from the file (format `eurlex-low`) and stops the build when an entry of `XU:Waste` differs from it. The waste flow's code 150102 "plastic packaging" was chosen by those rules: Valdara's polyethylene film is the stretch film of the deliveries it receives and of its own pallets; the chapters of its activity (08 coatings, 11 coating of metals, 12 shaping of metals and plastics) have no entry for packaging film (12 01 05 "plastics shavings and turnings" is waste of machining plastics), so the rules send it to chapter 15.
+
+## Medicines flow (D47, 2026-11-20): UN 2915, UN 1845, ERG guides 163 and 120
+
+Accessed on **2026-11-20** for the new flow "medicines" (D47, O202): the technetium generator (UN 2915) and the dry ice of the frozen vaccine's box (UN 1845).
+
+| Directory | Source | Version |
+|---|---|---|
+| erg2024/ | https://cameochemicals.noaa.gov/erg_guides/en/Guide_163.pdf and Guide_120.pdf (NOAA CAMEO Chemicals, US government work, as the other guides above) | ERG 2024 (each PDF footer: "ERG 2024") |
+| (noaa unna, not copied) | https://cameochemicals.noaa.gov/unna/2915 and …/unna/1845 (NOAA CAMEO Chemicals): the ERG 2024 material names and guide, and the Hazmat Table (49 CFR 172.101) entry with proper shipping name and class | ERG 2024; CAMEO Chemicals version 3.1.0 rev 1 |
+
+```
+2e69b41aaaf36dea43bb7ac2530e65302a41a7714abec6105218985a23202e61  ./erg2024/Guide_163.pdf
+1996d4feffc0bd2afce8afb67f47051a82fa9ef153a3f7f692ff4e6dd442dec5  ./erg2024/Guide_120.pdf
+0f65bace22ab77c943a33602ea9bc5ca6e378f5a9d8fe457133dc63bdb0b1247  unna/2915 (HTML page as read)
+3a18937901ba1a3bb92072f58fa270b7015e5ad789f5fde51ccf9444960243ea  unna/1845 (HTML page as read)
+```
+
+What was read:
+- UN 2915: ERG 2024 material name "Radioactive material, Type A package, non-special form, non fissile or fissile-excepted", Response Guide 163 "Radioactive Materials (Low to High Level Radiation)"; Hazmat Table: hazard class 7, label 7. The Model Regulations' entry has the same name and class (the US table follows it for this entry); **BAM was not read for these two entries**, so the UN Model Regulations names rest on the US table and the ERG.
+- UN 1845: ERG 2024 material names "Carbon dioxide, solid" and "Dry ice", Response Guide 120 "Gases - Inert (Including Refrigerated Liquids)"; Hazmat Table: "Carbon dioxide, solid or Dry ice", class 9, no label. The world's list gives the Model Regulations' form "Carbon dioxide, solid (dry ice)"; the build compares names without the bracket.
+
+## Medicines flow (O229, 2026-11-20): the euro reference rate of the Indian rupee
+
+| Directory | Source | Version |
+|---|---|---|
+| ecb/ | https://data-api.ecb.europa.eu/service/data/EXR/D.INR.EUR.SP00.A?startPeriod=2026-04-15&endPeriod=2026-06-20&format=csvdata (European Central Bank, euro foreign exchange reference rates, daily, Indian rupee per euro) | accessed 2026-11-20 |
+
+```
+901e6c56f3c9f0ae1150acf8ffd565ef96c40e5bc89e6e0ec30eb89d7cfab5ca  ./ecb/EXR_D.INR.EUR.SP00.A_2026-04-15_2026-06-20.csv
+```
+
+What was used: 2026-05-07, 110.938 INR per EUR, the rate of the day the Indian maker invoices Quillmoor Pharma Distribution (world/countries.json, exchange_rates EUR/INR). The lume's rate to the euro (EUR/XBL) is the world's own, not from this source.

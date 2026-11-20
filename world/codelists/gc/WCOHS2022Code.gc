@@ -50,6 +50,30 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>284443</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Radioactive elements, isotopes and compounds; other alloys, dispersions (including cermets), ceramic products and mixtures containing these elements, isotopes or compounds</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>300241</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Vaccines, toxins, cultures of micro-organisms (excluding yeasts) and similar products; for human medicine</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>300431</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Medicaments; containing insulin, for therapeutic or prophylactic uses, packaged for retail sale</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>321000</SimpleValue>
          </Value>
          <Value ColumnRef="name">

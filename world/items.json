@@ -2254,6 +2254,202 @@
    "description": "Natural gas supply, per kilowatt hour: the metered volume converted with the grid operator's correction for pressure and calorific value; network charges included.",
    "supply": "goods",
    "purchase": "energy"
+  },
+  {
+   "id": "flu-vaccine",
+   "seller": "58-in",
+   "name": "Influenza vaccine, inactivated, 10 prefilled syringes",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 5000.0,
+    "currency": "INR"
+   },
+   "sellers_id": "NB-FLU-S26-10",
+   "hs": "300241",
+   "cpc": "35270",
+   "origin": "IN",
+   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "description": "Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.",
+   "net_kg": 0.12,
+   "gross_kg": 0.2,
+   "package": {
+    "type": "CT",
+    "per_package": 30
+   },
+   "storage": {
+    "min": "2",
+    "max": "8",
+    "set": "5"
+   }
+  },
+  {
+   "id": "insulin-vial",
+   "seller": "58-in",
+   "name": "Insulin human, 100 IU/ml, vial of 10 ml",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 1600.0,
+    "currency": "INR"
+   },
+   "sellers_id": "NB-INS-R100-10",
+   "hs": "300431",
+   "cpc": "35260",
+   "origin": "IN",
+   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "description": "Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.",
+   "net_kg": 0.03,
+   "gross_kg": 0.05,
+   "package": {
+    "type": "CT",
+    "per_package": 60
+   },
+   "storage": {
+    "min": "2",
+    "max": "8",
+    "set": "5"
+   }
+  },
+  {
+   "id": "varicella-vaccine",
+   "seller": "58-in",
+   "name": "Varicella vaccine, live, frozen, single dose",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 3500.0,
+    "currency": "INR"
+   },
+   "sellers_id": "NB-VZV-1",
+   "hs": "300241",
+   "cpc": "35270",
+   "origin": "IN",
+   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "description": "Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.",
+   "net_kg": 0.02,
+   "gross_kg": 0.04,
+   "package": {
+    "type": "BX",
+    "per_package": 40
+   },
+   "storage": {
+    "min": "-50",
+    "max": "-15"
+   }
+  },
+  {
+   "id": "tc-generator",
+   "seller": "51-nl",
+   "name": "Technetium-99m generator, 20 GBq",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 1000.0,
+    "currency": "EUR"
+   },
+   "sellers_id": "HI-TCG-20",
+   "hs": "284443",
+   "cpc": "33690",
+   "origin": "NL",
+   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.",
+   "net_kg": 15.5,
+   "gross_kg": 18,
+   "package": {
+    "type": "BX",
+    "per_package": 1
+   },
+   "dimensions": [
+    [
+     "LENGTH",
+     "400",
+     "MMT",
+     "The outer package, a Type A package"
+    ],
+    [
+     "DEPTH",
+     "300",
+     "MMT",
+     "The outer package"
+    ],
+    [
+     "HEIGHT",
+     "300",
+     "MMT",
+     "The outer package"
+    ]
+   ],
+   "hazard": {
+    "un": "UN2915",
+    "class": "7",
+    "name": "Radioactive material, Type A package, non-special form, non fissile or fissile-excepted",
+    "label": "7",
+    "erg": "163",
+    "note": "Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h",
+    "radioactive": {
+     "nuclide": "Mo-99",
+     "activity_gbq": "97",
+     "form": "Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.",
+     "ti": "1.5"
+    }
+   }
+  },
+  {
+   "id": "flu-vaccine-b",
+   "seller": "49-xb",
+   "name": "Influenza vaccine, inactivated, 10 prefilled syringes",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 72.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "QPD-VAC-1102",
+   "resale_of": "flu-vaccine",
+   "description": "Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze."
+  },
+  {
+   "id": "insulin-vial-b",
+   "seller": "49-xb",
+   "name": "Insulin human, 100 IU/ml, vial of 10 ml",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 21.5,
+    "currency": "XBL"
+   },
+   "sellers_id": "QPD-INS-0310",
+   "resale_of": "insulin-vial",
+   "description": "Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze."
+  },
+  {
+   "id": "varicella-vaccine-b",
+   "seller": "49-xb",
+   "name": "Varicella vaccine, live, frozen, single dose",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 48.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "QPD-VAC-2410",
+   "resale_of": "varicella-vaccine",
+   "description": "Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used."
+  },
+  {
+   "id": "tc-generator-b",
+   "seller": "49-xb",
+   "name": "Technetium-99m generator, 20 GBq",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 1450.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "QPD-RAD-0020",
+   "resale_of": "tc-generator",
+   "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week."
   }
  ],
  "resales": {
@@ -2542,6 +2738,58 @@
     "import_tax": "IMP",
     "what": "The bench in Velumi's shop on the island (sea/29)",
     "bought_from": "lumeway-bench-island"
+   },
+   {
+    "id": "quillmoor-flu-hospital",
+    "seller": "49-xb",
+    "buyer": "50-xl",
+    "items": [
+     [
+      "flu-vaccine-b",
+      1
+     ]
+    ],
+    "what": "The influenza vaccine for the island's winter campaign, carriage paid to Selanu airport (medicines/14)",
+    "terms": "CPT"
+   },
+   {
+    "id": "quillmoor-insulin-hospital",
+    "seller": "49-xb",
+    "buyer": "50-xl",
+    "items": [
+     [
+      "insulin-vial-b",
+      1
+     ]
+    ],
+    "what": "The insulin for the hospital, carriage paid to Selanu airport (medicines/14)",
+    "terms": "CPT"
+   },
+   {
+    "id": "quillmoor-varicella-hospital",
+    "seller": "49-xb",
+    "buyer": "50-xl",
+    "items": [
+     [
+      "varicella-vaccine-b",
+      1
+     ]
+    ],
+    "what": "The frozen varicella vaccine for the hospital, carriage paid to Selanu airport (medicines/14)",
+    "terms": "CPT"
+   },
+   {
+    "id": "quillmoor-generator-hospital",
+    "seller": "49-xb",
+    "buyer": "50-xl",
+    "items": [
+     [
+      "tc-generator-b",
+      1
+     ]
+    ],
+    "what": "The week's technetium generator for the hospital, carriage paid to Selanu airport (medicines/14)",
+    "terms": "CPT"
    }
   ],
   "awaiting_owner": {}

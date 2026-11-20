@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>TCB-IM-26-0339</cbc:ID>
+  <cbc:UUID>8f2e6a5d-e54e-599b-97f3-65f0e0767e2a</cbc:UUID>
+  <cbc:IssueDate>2026-06-15</cbc:IssueDate>
+  <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
+  <cbc:Note languageID="qal">Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata Lisavu's selune. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods made in India and the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Lisavu's tariff. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.</cbc:Note>
+  <cac:ImporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu General Hospital</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">52968014</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
+      <cbc:BuildingNumber>81</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:AgentParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+      </cac:PartyName>
+    </cac:AgentParty>
+    <cac:PowerOfAttorney>
+      <cbc:ID>POA-TT-2026-031</cbc:ID>
+      <cbc:IssueDate>2026-01-06</cbc:IssueDate>
+      <cbc:Description>Lodging import declarations as direct representative, in the name and on behalf of Selanu General Hospital, and claiming its exemptions.</cbc:Description>
+      <cac:AgentParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+        </cac:PartyName>
+      </cac:AgentParty>
+    </cac:PowerOfAttorney>
+  </cac:ImporterParty>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9524910900003</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-413425</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-718264</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Airport Road</cbc:StreetName>
+      <cbc:BuildingNumber>40</cbc:BuildingNumber>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38528</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:ConsignorParty>
+  <cac:ConsigneeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Selanu General Hospital</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsigneeParty>
+  <cac:CustomsParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Island Customs Service</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">65334843</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+      <cbc:BuildingNumber>53</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Island Customs Service</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-118</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Import office</cbc:Name>
+      <cbc:JobTitle>Customs officer</cbc:JobTitle>
+      <cbc:Department>Customs</cbc:Department>
+      <cbc:Telephone>+999 3 728 6449</cbc:Telephone>
+      <cbc:ElectronicMail>import@customs-xl.example</cbc:ElectronicMail>
+      <cbc:Note>Every day, around the clock</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-118</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:CustomsParty>
+  <cac:NotifierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tevaro Customs Brokers</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">24307810</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+      <cbc:BuildingNumber>60</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Tevaro Customs Brokers Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Declarations</cbc:Name>
+      <cbc:JobTitle>Customs declarant</cbc:JobTitle>
+      <cbc:Department>Customs</cbc:Department>
+      <cbc:Telephone>+999 3 725 3563</cbc:Telephone>
+      <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41585</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:NotifierParty>
+  <cac:Shipment>
+    <cbc:ID>QPD-SH-26-0323</cbc:ID>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">8640.000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">60</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">300</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
+        <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">IN</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">VI</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">300241</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35270</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XL:codelist:TaxExemptionReasonCode">MEDHOSP</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason languageID="qal">Lifanaha tofami hatoki kifupa paveli pateta</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason languageID="en-XL">Medicines and vaccines for a public hospital</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">2064.000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">12</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
+        <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">IN</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">VI</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">300431</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35260</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XL:codelist:TaxExemptionReasonCode">MEDHOSP</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason languageID="qal">Lifanaha tofami hatoki kifupa paveli pateta</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason languageID="en-XL">Medicines and vaccines for a public hospital</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Description>Varicella vaccine, live, frozen, single dose</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">768.000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">1.6</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
+        <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">IN</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">VI</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">300241</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35270</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XL:codelist:TaxExemptionReasonCode">MEDHOSP</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason languageID="qal">Lifanaha tofami hatoki kifupa paveli pateta</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason languageID="en-XL">Medicines and vaccines for a public hospital</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>4</cbc:ID>
+      <cbc:Description>Technetium-99m generator, 20 GBq</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">580.000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+        <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">NL</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">VI</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">284443</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">33690</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:HazardousItem>
+          <cbc:ID>HI-TCG-20-DG</cbc:ID>
+          <cbc:PlacardNotation>7</cbc:PlacardNotation>
+          <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
+          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
+          <cbc:UNPackingGroup languageID="qal">Lelaha palavo molasu maloli</cbc:UNPackingGroup>
+          <cbc:UNPackingGroup languageID="en-XL">No packing group assigned</cbc:UNPackingGroup>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">163</cbc:MedicalFirstAidGuideCode>
+          <cbc:ProperShippingName>Radioactive material, Type A package, non-special form, non fissile or fissile-excepted</cbc:ProperShippingName>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
+          <cbc:MarkingID>UN2915</cbc:MarkingID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
+          <cac:RadioactiveMaterial>
+            <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)</cbc:Name>
+            <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
+            <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
+          </cac:RadioactiveMaterial>
+        </cac:HazardousItem>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XL:codelist:TaxExemptionReasonCode">MEDHOSP</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason languageID="qal">Lifanaha tofami hatoki kifupa paveli pateta</cbc:TaxExemptionReason>
+          <cbc:TaxExemptionReason languageID="en-XL">Medicines and vaccines for a public hospital</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">IMP</cbc:ID>
+            <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">CONSUMPTION</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+    </cac:ShipmentStage>
+  </cac:Shipment>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>KXL-WB-26-0337</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>QPD-INV-26-0340</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+</ImportCustomsDeclaration>

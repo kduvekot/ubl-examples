@@ -330,6 +330,15 @@
      "Collected for a public body, outside the scope of the state sales tax": "LEVY"
     },
     "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (world/codelists/lists.json, XB:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
+    "duty_free": {
+     "chapters": [
+      "30"
+     ],
+     "subheadings": [
+      "284443"
+     ],
+     "note": "Bayvarra's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin, as most countries apply under the WTO's zero-for-zero agreement on pharmaceutical products (O229)."
+    },
     "withholding": {
      "percent": "10",
      "on": "services by businesses not established in Bayvarra, paid by a public body",
@@ -597,6 +606,19 @@
       "levied_on": "import, customs value plus duty"
      }
     ],
+    "exemption_codes": {
+     "Medicines and vaccines for a public hospital": "MEDHOSP"
+    },
+    "exemption_codes_note": "The exemption reasons of the import consumption tax as codes of Lisavu's national list (world/codelists/lists.json, XL:TaxExemptionReason): medicines and vaccines supplied to a public hospital (O201).",
+    "duty_free": {
+     "chapters": [
+      "30"
+     ],
+     "subheadings": [
+      "284443"
+     ],
+     "note": "Lisavu's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin: an island that cannot make them keeps them cheap, as most countries do for medicines, many under the WTO's zero-for-zero agreement on pharmaceutical products (D47)."
+    },
     "withholding": {
      "on": "the price of farm produce bought from farmers, by the buyer",
      "tiers": [
@@ -799,9 +821,11 @@
  "exchange_rates": {
   "XUF/XBL": 0.01,
   "XBL/XLC": 0.4,
-  "XUF/XLC": 0.004
+  "XUF/XLC": 0.004,
+  "EUR/XBL": 1.2,
+  "EUR/INR": 110.938
  },
- "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral.",
+ "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral. Outside the world (O229): EUR/XBL is the lume's rate to the euro, 1 euro = 1.20 lume, a placeholder until the owner decides it (O229, G9 question 5), kept here only; EUR/INR is the real ECB euro reference rate of Thursday 7 May 2026, 110.938 rupees (world/codelists/sources/ecb), the day of the Indian maker's invoice. Rupee amounts convert to lume through the euro.",
  "geography": {
   "km_per_tile": 3.5,
   "mainland": {
@@ -3145,7 +3169,17 @@
     "abroad": "pelahi",
     "partner's": "vapiseva",
     "rule": "vamufe",
-    "used": "vimihi"
+    "used": "vimihi",
+    "hospital": "pateta",
+    "medicines": "lifanaha",
+    "vaccines": "hatoki",
+    "are": "piseki",
+    "but": "sekila",
+    "exempt": "talapa",
+    "isotopes": "nualo",
+    "made": "nalana",
+    "medicine": "sahona",
+    "radioactive": "hakasute"
    }
   },
   "en": {
@@ -3316,6 +3350,42 @@
    ],
    "name": "every day",
    "note": "Ports, carriers, terminals, border customs and the operations of utilities; they work through the public holidays (D27)."
+  }
+ },
+ "abroad_countries": {
+  "note": "Real countries outside the world that the world trades with (O229, partly answering O51): only what the documents need. They are not countries of the world: no map, no registers, no tax of the world.",
+  "NL": {
+   "name": "Netherlands",
+   "in_text": "the Netherlands",
+   "currency": {
+    "code": "EUR",
+    "name": "Euro",
+    "minor_units": 2
+   },
+   "timezone": "+02:00",
+   "legal_time": "Central European Summer Time",
+   "tax": {
+    "id": "VAT",
+    "name": "Value added tax",
+    "export": "Goods exported outside the European Union are zero-rated under Dutch VAT (Article 146 of the VAT Directive 2006/112/EC): no tax is charged (category G).",
+    "reason": "Export outside the European Union"
+   }
+  },
+  "IN": {
+   "name": "India",
+   "currency": {
+    "code": "INR",
+    "name": "Indian rupee",
+    "minor_units": 2
+   },
+   "timezone": "+05:30",
+   "legal_time": "Indian Standard Time",
+   "tax": {
+    "id": "GST",
+    "name": "Goods and services tax",
+    "export": "An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G).",
+    "reason": "Zero-rated export supply"
+   }
   }
  }
 }
