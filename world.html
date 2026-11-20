@@ -500,9 +500,9 @@ function paintWorld(g, box, level) { const detail = level === 2;
     if (t.building && QUARTER_AT.has(i + "," + j)) quarter3(g, QUARTER_AT.get(i + "," + j), "rgba(40,70,110,.9)");
     else if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
       if (fr[0] === ri && fr[1] === rj) { const ring = t.urban && IN_TOWN.has(t.building.kind) && !(t.building.size && t.building.size[0] * t.building.size[1] > 1) ? ringBlocks(i, j, t) : null;
-        if (ring) for (const [bx, by, n, m] of ring) if (by <= y) cityBlock(g, bx, by, Math.min(3, t.density), n, m, detail);
+        if (ring) for (const [bx, by, n, m, fc] of ring) if (by <= y) townBlock(g, bx, by, Math.min(3, t.density), n, m, detail, fc);
         drawBuilding(g, x, y, t.building);
-        if (ring) for (const [bx, by, n, m] of ring) if (by > y) cityBlock(g, bx, by, Math.min(2, t.density), n, m, detail); } }
+        if (ring) for (const [bx, by, n, m, fc] of ring) if (by > y) townBlock(g, bx, by, Math.min(2, t.density), n, m, detail, fc); } }
   }
   // offshore platforms: legs in the sea, a deck with the process modules, a flare with its flame
   for (const pf of WORLD.platforms || []) { const [x, y] = tileWorld(...pf.at), col = css(CAT[(byId[pf.party] || {}).cat]) || "#888"; if (!vis(x, y, 2 * TW)) continue;
@@ -662,7 +662,7 @@ function plantation(g, i, j, t) { const out = [];
 // The built-up areas of the towns and villages (model "um"): each square is cut into SUB x SUB blocks of 875 m;
 // the blocks inside the area are paved (the streets show between the buildings), and every block off the roads
 // and rails holds buildings by the square's density (model "ul"): 1 houses, 2 terraces, 3 blocks of flats, 4
-// towers among the flats (the centre of a capital); now and then a block is a park.
+// blocks round a courtyard and towers (the centre of a capital); now and then a block is a park (townBlock).
 const SUB = 4, PAVE = "#d3cbbd", PARK = "#79a85a";
 const subBit = (t, a, b) => t.urban >> (a * SUB + b) & 1;
 function urbanGround(g, i, j, t) {
@@ -670,6 +670,19 @@ function urbanGround(g, i, j, t) {
   for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) {
     const u0 = a / SUB - .5, v0 = b / SUB - .5, u1 = u0 + 1 / SUB, v1 = v0 + 1 / SUB;
     poly(g, [tp(i, j, u0, v0), tp(i, j, u1, v0), tp(i, j, u1, v1), tp(i, j, u0, v1)], PAVE); } }
+// The buildings of a town block are drawn in the block's own frame (owner, 2026-11-20, MO012), like the houses and
+// the parties' buildings: their fronts face the block's street, so the map's rotation shows them from each side.
+// The street of a block: the nearest of its square's roads, or, on a square without a road, the way its houses
+// face (model "hs", towards the next square on the way to a road); main: whether that road is a main road.
+function plotFace(t, u, v) {
+  const rd = t.links && t.links.road;
+  if (rd && rd.size) { let best = null, bd = 9, bm = false;
+    for (const d of rd) { const [di, dj] = d.split(",").map(Number), bx = di / 2, by = dj / 2, l2 = bx * bx + by * by;
+      const s = Math.max(0, Math.min(1, (u * bx + v * by) / l2)), px = s * bx - u, py = s * by - v, dd = Math.hypot(px, py);
+      if (dd < bd) { bd = dd; best = [px, py]; bm = !!t.main?.has(d); } }
+    const f = Math.abs(best[0]) >= Math.abs(best[1]) ? [Math.sign(best[0]) || 1, 0] : [0, Math.sign(best[1]) || 1];
+    return { f, main: bm && bd < .3 }; }
+  return { f: (t.house && DIRS[t.house[1]]) || [0, 1], main: false }; }
 function townBlocks(g, i, j, t, detail) {
   const rd = t.links && t.links.road, rl = t.links && t.links.rail, out = [];
   const onWay = set => (u, v) => set && set.size && ((Math.abs(u) < .2 && Math.abs(v) < .2) ||
@@ -680,14 +693,13 @@ function townBlocks(g, i, j, t, detail) {
     const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; if (onRoad(u, v) || onRail(u, v) || (t.bridge)) continue;
     const [x, y] = tp(i, j, u, v); out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a), u, v]); }
   out.sort((p, q) => p[1] - q[1] || p[0] - q[0]);
-  const f = t.house && DIRS[t.house[1]], ax = f ? (f[0] ? 1 : 0) : undefined;            // ridges along the square's street
-  for (const [x, y, n, m, u, v] of out) cityBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail, ax ?? (n > .5 ? 1 : 0)); }
+  for (const [x, y, n, m, u, v] of out) townBlock(g, x, y - foundation(g, i, j, u, v, .1), t.density, n, m, detail, plotFace(t, u, v)); }
 // a village at the middle level: a small cluster of red roofs, one house to each built-up sub-square, that reads
 // as a dot when zoomed out
 function villageCluster(g, i, j, t) { const out = [];
   for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) { const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5; out.push([...tp(i, j, u, v), u, v]); }
   out.sort((p, q) => p[1] - q[1]);
-  for (const [x, y, u, v] of out) cityBox(g, x, y - foundation(g, i, j, u, v, .11), .2, .18, 5, "#ece4d6", "#b5533c"); }
+  for (const [x, y, u, v] of out) townBox(g, x, y - foundation(g, i, j, u, v, .11), plotFace(t, u, v).f, .2, .18, 5, "#ece4d6", "#b5533c"); }
 // a house on sloping ground is dug into the slope (owner, 2026-11-19, MO004): it stands on ground cut down to the
 // lowest point under it (natural ground, not fill, as builders do), with the cut face of earth and stone behind it on
 // the uphill side; the village square keeps the land's own shape. r: half its size in squares. Returns how many
@@ -709,39 +721,76 @@ const IN_TOWN = new Set(["office", "bank", "shop", "townhall", "house"]);
 function ringBlocks(i, j, t) { const out = [];
   for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) { if (!subBit(t, a, b) || ((a === 1 || a === 2) && (b === 1 || b === 2))) continue;
     const u = (a + .5) / SUB - .5, v = (b + .5) / SUB - .5, [x, y] = tp(i, j, u * 1.1, v * 1.1);
-    out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a)]); }
+    out.push([x, y, hash(i * SUB + a, j * SUB + b), hash(j * SUB + b + 7, i * SUB + a), plotFace(t, u, v)]); }
   return out.sort((p, q) => p[1] - q[1] || p[0] - q[0]); }
-// a small building of a town block: no outlines (at 6 to 8 pixels they would turn it dark), a sunlit left face,
-// a shaded right face, a flat or a gabled roof
-function cityBox(g, x, y, w, d, h, wall, roof, gable, ax) { const G = geo(x, y, w, d, h), { L, F, Rr, B } = G;
-  poly(g, [L, F, [F[0], F[1] - h], [L[0], L[1] - h]], shade(wall, -.04));
-  poly(g, [F, Rr, [Rr[0], Rr[1] - h], [F[0], F[1] - h]], shade(wall, -.26));
-  const tl = [L[0], L[1] - h], tf = [F[0], F[1] - h], tr = [Rr[0], Rr[1] - h], tb = [B[0], B[1] - h];
-  if (!gable) { poly(g, [tb, tr, tf, tl], roof); return G; }
-  const mid = (p, q) => [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2 - gable];
-  if (((ax || 0) ^ (rot & 1)) === 0) { const a = mid(tl, tb), c = mid(tf, tr);         // the ridge from the left to the front-right
-    poly(g, [tb, tr, c, a], shade(roof, .12)); poly(g, [tl, tf, c, a], roof); poly(g, [tf, tr, c], shade(wall, -.3)); return G; }
-  const a = mid(tl, tf), c = mid(tb, tr);                                                // the ridge from the front-left to the back
-  poly(g, [tl, tb, c, a], shade(roof, .12)); poly(g, [tl, tf, a], shade(wall, -.1)); poly(g, [tf, tr, c, a], shade(roof, -.1)); return G; }
-function cityBlock(g, x, y, level, n, m, detail, ax = n > .5 ? 1 : 0) {
-  const pick = Math.floor(n * 3);
+// a building of a town block in its own frame: w along its street, d from it, h high (pixels); a gable roof (rise in
+// pixels) with its ridge along the street, or across it (across), or a flat roof; no outlines (at a few pixels they
+// would turn it dark). Returns its frame, with the faces drawn (F.faces).
+function townBox(g, x, y, f, w, d, h, wall, roof, gable, across) {
+  const F = across ? houseFrame(x, y, [-f[1], f[0]], d, w) : houseFrame(x, y, f, w, d);
+  F.faces = box3(g, F, 0, 0, 1, 1, 0, h, wall, gable ? null : roof);
+  if (gable) gable3(g, F, 0, 0, 1, 1, h, gable, roof, wall);
+  return F; }
+const GLASS = "rgba(60,80,110,.8)", DOOR = "#5a4030";
+// the front face of a building (its face towards the street), when it is turned to the viewer
+const frontFaces = F => F.faces.filter(q => q.k === 0);
+// windows on the faces of a block of storeys (rows of them, each about 3.5 pixels high), a door or an entrance in
+// the front, and on a main road a shop front along the ground floor
+function storeys(g, F, h, w, shopFront) { const rows = Math.max(1, Math.round((h - 2) / 3.5)), z0 = shopFront ? 3 : 1;
+  if (shopFront) for (const q of frontFaces(F)) onFace(g, F, q.a, q.b, .06, .94, .4, 2.6, "rgba(70,95,120,.9)");
+  windowsOn(g, F, F.faces, 1 / .06, z0 + .6, h - .6, GLASS, Math.max(1, rows - (shopFront ? 1 : 0)));
+  if (!shopFront) for (const q of frontFaces(F)) onFace(g, F, q.a, q.b, .44, .56, 0, 2.2, DOOR); }
+// a town block (875 m square: one sub-square) by the square's density: 1 detached houses in their gardens, 2 terraced
+// rows back to back, 3 blocks of flats, 4 (a capital's centre) blocks round a courtyard and towers; now and then a
+// park. Drawn in the block's frame P (u along its street, v from the street, both 0 to 1): the parts are drawn back
+// to front. detail (the close level): doors, windows and shop fronts, and the full set of buildings; otherwise a
+// simpler form of the same.
+const HOUSE_WALL = ["#efe7d8", "#e6dccb", "#f1ebe0"], HOUSE_ROOF = ["#c9745c", "#bd8a72", "#9a90ae"];
+const ROW_WALL = ["#e9dfcd", "#e0d3bc", "#efe6d6", "#e4d6c4"], ROW_ROOF = ["#c7826b", "#b98f7a", "#a7a09a", "#b0705c"];
+const FLAT_WALL = ["#e4ddd0", "#d7dadc", "#e8dcc8"], TOWER_WALL = ["#a9bccd", "#9fb2c2", "#c3ccd4"];
+function townBlock(g, x, y, level, n, m, detail, face) { const { f, main } = face, pick = Math.floor(n * 3);
+  const P = houseFrame(x, y, f, 1 / SUB, 1 / SUB), back = [-f[0], -f[1]], parts = [];
+  const at = (u, v, draw) => parts.push({ u, v, draw });
   if (n > .93 && level < 4) {                           // a park
     g.fillStyle = PARK; g.beginPath(); g.moveTo(x, y - TH / 10); g.lineTo(x + TW / 10, y); g.lineTo(x, y + TH / 10); g.lineTo(x - TW / 10, y); g.fill();
     if (detail) { tree(g, x - 2, y, m * .5); tree(g, x + 2, y + 1, .2 + m * .3); } return; }
-  if (level === 1) {                                     // detached houses in their gardens: a few to a block (a village's
+  if (level === 1) {                                     // detached houses in their gardens: two on the street, one
     g.fillStyle = "#8fb46a"; g.beginPath(); g.moveTo(x, y - TH / 9); g.lineTo(x + TW / 9, y); g.lineTo(x, y + TH / 9); g.lineTo(x - TW / 9, y); g.fill();
-    const spots = detail ? [[-2.2, -.6], [2.2, -.4], [(m - .5) * 2, 1.4]] : [[(m - .5) * 2, 0]];   // houses round its street)
-    spots.forEach(([dx, dy], k) => { const q = (pick + k) % 3;
-      cityBox(g, x + dx, y + dy, detail ? .08 : .12, detail ? .075 : .11, 3 + m * 1.5, ["#efe7d8", "#e6dccb", "#f1ebe0"][q], ["#c9745c", "#bd8a72", "#9a90ae"][q], detail ? 1.5 : 0, ax ^ (hash(m * 97, k) > .7 ? 1 : 0)); });
+    if (!detail) { const [hx, hy] = P(.3 + m * .4, .5);  // behind; now and then a pair of semi-detached houses
+      townBox(g, hx, hy, f, .12, .11, 3 + m * 1.5, HOUSE_WALL[pick], HOUSE_ROOF[pick]); return; }
+    const pair = hash(m * 131, n * 71) > .7;
+    const spots = pair ? [[.5, .3, .17, 0], [.3 + m * .4, .76, .1, 2]] : [[.25, .3, .1, 0], [.75, .3, .1, 1], [.3 + m * .4, .76, .1, 2]];
+    for (const [u, v, w, k] of spots) at(u, v, () => { const q = (pick + k) % 3, [hx, hy] = P(u, v), hh = 2.6 + m;
+      const F = townBox(g, hx, hy, k === 2 ? back : f, w, .085, hh, HOUSE_WALL[q], HOUSE_ROOF[q], 1.6, !pair && hash(m * 97, k) > .8);
+      if (F.faces) for (const fq of frontFaces(F)) { for (const [s0, s1] of w > .12 ? [[.2, .3], [.7, .8]] : [[.42, .58]]) onFace(g, F, fq.a, fq.b, s0, s1, 0, 1.8, DOOR); } });
+    inOrder(P, parts); return; }
+  if (level === 2) {                                     // terraced rows along the street and along the back street
+    const rows = detail ? [[f, .27], [back, .73]] : [[f, .4]], nh = detail ? 4 : 1;
+    for (const [rf, v] of rows) for (let k = 0; k < nh; k++) { const u = (k + .5) / nh, hh = 3.5 + m * 1.5 + (detail ? hash(k * 13, n * 97) * 1.2 : .6);
+      at(rf === f ? u : 1 - u, v, () => { const q = (pick + k + (rf === f ? 0 : 2)) % 4, [hx, hy] = P(rf === f ? u : 1 - u, v);
+        const F = townBox(g, hx, hy, rf, .2 / nh, .09, hh, ROW_WALL[q], ROW_ROOF[q], 1.4);
+        if (detail) for (const fq of frontFaces(F)) { onFace(g, F, fq.a, fq.b, .3, .5, 0, 1.8, DOOR); onFace(g, F, fq.a, fq.b, .6, .85, 2.6, 3.8, GLASS); } }); }
+    inOrder(P, parts); return; }
+  const tower = level === 4 && n < .55;
+  if (tower) {                                           // a tower among the flats in a capital's centre, on a low base
+    const h = 20 + m * 20 + (n < .12 ? 10 : 0), w = .15 + m * .04;
+    const F = townBox(g, x, y, f, w, w, h, TOWER_WALL[pick], "#6d7a86");
+    if (detail) { const rows = Math.max(2, Math.round(h / 4));
+      for (const q of F.faces) windowsOn(g, F, [q], 2 / w, h * .06, h * .94, q.lit ? "rgba(235,245,252,.55)" : "rgba(210,225,238,.4)", rows);
+      for (const q of frontFaces(F)) onFace(g, F, q.a, q.b, .4, .6, 0, 2.4, "rgba(50,60,70,.9)"); }
     return; }
-  if (level === 2)                                       // terraces: a row of houses
-    { cityBox(g, x, y, .18, .14, 6 + m * 3, ["#e9dfcd", "#e0d3bc", "#efe6d6"][pick], ["#c7826b", "#b98f7a", "#a7a09a"][pick], detail ? 1.5 : 0, ax); return; }
-  const tower = level === 4 && n < .55;                  // towers among the flats in a capital's centre
-  const h = tower ? 20 + m * 20 + (n < .12 ? 10 : 0) : level === 4 ? 14 + m * 8 : 9 + m * 7;
-  const w = tower ? .15 + m * .04 : .18;
-  const G = cityBox(g, x, y, w, w, h, tower ? ["#a9bccd", "#9fb2c2", "#c3ccd4"][pick] : ["#e4ddd0", "#d7dadc", "#e8dcc8"][pick], tower ? "#6d7a86" : "#9a948d");
-  if (detail && tower) { const rows = Math.max(2, Math.round(h / 4)); windows(g, G, "L", 2, rows, "rgba(235,245,252,.55)", { top: .94, bottom: .06 });
-    windows(g, G, "R", 2, rows, "rgba(210,225,238,.4)", { top: .94, bottom: .06 }); } }
+  if (level === 3) {                                     // blocks of flats: a long block on the street, a second
+    const h = 9 + m * 5, wall = FLAT_WALL[pick];          // behind it across the yard
+    at(.5, .3, () => { const [hx, hy] = P(.5, .3), F = townBox(g, hx, hy, f, .2, .09, h, wall, "#9a948d"); if (detail) storeys(g, F, h, .2, main); });
+    if (detail) at(.5, .76, () => { const [hx, hy] = P(.5, .76), hb = 7 + m * 4, F = townBox(g, hx, hy, back, .16, .08, hb, FLAT_WALL[(pick + 1) % 3], "#9a948d"); storeys(g, F, hb, .16, false); });
+    inOrder(P, parts); return; }
+  // a capital's centre: a block round a courtyard (wings on the street, at the back and along one side), taller
+  const h = 14 + m * 8, wall = FLAT_WALL[pick], roof = "#9a948d", side = m > .5 ? .86 : .14;
+  at(.5, .2, () => { const [hx, hy] = P(.5, .2), F = townBox(g, hx, hy, f, .22, .07, h, wall, roof); if (detail) storeys(g, F, h, .22, main); });
+  at(.5, .82, () => { const [hx, hy] = P(.5, .82), F = townBox(g, hx, hy, back, .22, .06, h - 3, wall, roof); if (detail) storeys(g, F, h - 3, .22, false); });
+  at(side, .5, () => { const [hx, hy] = P(side, .5), sf = side > .5 ? [f[1], -f[0]] : [-f[1], f[0]];
+    const F = townBox(g, hx, hy, sf, .1, .05, h - 2, wall, roof); if (detail) windowsOn(g, F, F.faces, 1 / .06, 1.6, h - 2.6, GLASS, Math.max(1, Math.round((h - 4) / 3.5))); });
+  inOrder(P, parts); }
 // houses by level: 1 detached house, 2 two-storey house, 3 apartment block. Drawn in their own frame (owner, 2026-11-19,
 // MO006): the front with the door faces the street (f, a direction on the map), the ridge runs along the street.
 const scr = d => { const [a, b] = R(d[0], d[1]), [o0, o1] = R(0, 0); return [((a - o0) - (b - o1)) * TW / 2, ((a - o0) + (b - o1)) * TH / 2]; };
