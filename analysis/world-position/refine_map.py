@@ -485,8 +485,7 @@ def overlay_flat(img, px):
                     d.line([a2, b2], fill=(255, 255, 255), width=max(1, U // 18))
         elif r["mode"] == "pipeline":
             xy = [P(p) for p in chaikin([tuple(p) for p in (r.get("path") or r["pts"])], 3)]
-            for a2, b2 in zip(xy[::2], xy[1::2]):
-                d.line([a2, b2], fill=(190, 170, 205), width=max(1, U // 16))
+            d.line(xy, fill=(176, 120, 60), width=max(1, U // 14), joint="curve")    # a pipeline: solid brown
         elif r["mode"] in ("sea", "air"):
             xy = [P(p) for p in chaikin([tuple(p) for p in (r.get("path") or r["pts"])], 3)]
             for a2, b2 in zip(xy[::2], xy[1::2]):
@@ -624,16 +623,20 @@ def labels_flat(img, px):
             b = T[i][j].get("b")
             if b in POI:
                 where.setdefault(b, []).append((i, j))
-    PLACE = {"16-xb": (.5, .7, "lm"), "17-xb": (-.5, -.1, "rm"), "16-xl": (.5, 3.4, "rm"), "17-xl": (-.5, -1.2, "rm")}
+    poi_at = {}
     for b, sq in where.items():
         q = (sum(a for a, _ in sq) / len(sq), sum(c for _, c in sq) / len(sq))
-        col = (66, 133, 244) if b.startswith("16") else (120, 120, 140)
-        dot(q, col, .3)
-        dx, dy, anchor = PLACE[b]
-        txt(q, POI[b], F(False, U * .58), (40, 90, 170) if b.startswith("16") else PAL["label_soft"], dx=U * dx, dy=U * dy, anchor=anchor)
+        poi_at[b] = q
+        dot(q, (66, 133, 244) if b.startswith("16") else (120, 120, 140), .3)
         x, y = P(q)
-        placed.append(d.textbbox((x + U * dx, y + U * dy), POI[b], font=F(False, U * .58), anchor=anchor))
         placed.append((x - U * .3, y - U * .3, x + U * .3, y + U * .3))
+    # the offshore platforms (map "platforms"): a small square, named
+    for pf in WORLD.get("platforms", []):
+        x, y = P(pf["at"])
+        d.rectangle([x - U * .16, y - U * .16, x + U * .16, y + U * .16], fill=(176, 120, 60), outline=(255, 255, 255), width=max(1, U // 14))
+        placed.append((x - U * .2, y - U * .2, x + U * .2, y + U * .2))
+        poi_at["platform:" + str(pf["at"])] = tuple(pf["at"])
+        POI["platform:" + str(pf["at"])] = "Gas platform"
     # mines: the map sign for a mine (hammer and pick) at the mine's square, the adit (Serravona Mining, 4-xu)
     for p in PARTIES:
         if p.get("kind") == "mine":
@@ -644,7 +647,7 @@ def labels_flat(img, px):
     # towns: the built-up area is the symbol; the name stands beside it, on the side where it covers the least
     # built-up land, other names and roads. Villages (about 1 km, under half a millimetre) get a dot.
     occupied = BUILT_MASK[0]
-    busy_cols = [PAL[k] for k in ("road_main", "road_main_edge", "road", "road_edge", "rail", "urban", "urban_edge")] + [(190, 170, 205)]
+    busy_cols = [PAL[k] for k in ("road_main", "road_main_edge", "road", "road_edge", "rail", "urban", "urban_edge")] + [(176, 120, 60)]
     def free_score(box):
         x0, y0, x1, y1 = (int(v) for v in box)
         if x0 < 0 or y0 < 0 or x1 >= img.size[0] or y1 >= img.size[1]:
@@ -654,6 +657,24 @@ def labels_flat(img, px):
         busy = sum(1 for c in pix if any(abs(c[0] - k[0]) + abs(c[1] - k[1]) + abs(c[2] - k[2]) < 24 for k in busy_cols)) / max(1, len(pix))
         clash = sum(1 for b in placed if box[0] < b[2] and box[2] > b[0] and box[1] < b[3] and box[3] > b[1])
         return built * 10 + busy * 4 + clash * 100
+    def beside(q, text, font, fill):
+        """A name beside its symbol at q, on the side where it covers the least; never far from it."""
+        x, y = P(q)
+        tw_, th_ = d.textbbox((0, 0), text, font=font)[2:]
+        g = U * .42
+        cands = [("lm", (x + g, y)), ("rm", (x - g, y)), ("ms", (x, y - g)), ("ma", (x, y + g)),
+                 ("lb", (x + g * .7, y - g * .5)), ("lt", (x + g * .7, y + g * .5)),
+                 ("rb", (x - g * .7, y - g * .5)), ("rt", (x - g * .7, y + g * .5))]
+        def bb(anchor, xy):
+            bx = xy[0] if anchor[0] == "l" else xy[0] - tw_ if anchor[0] == "r" else xy[0] - tw_ / 2
+            by = xy[1] - th_ / 2 if anchor[1] == "m" else xy[1] - th_ if anchor[1] in "sb" else xy[1]
+            return (bx, by, bx + tw_, by + th_)
+        anchor, xy = min(cands, key=lambda c: free_score(bb(*c)))
+        placed.append(bb(anchor, xy))
+        d.text(xy, text, font=font, fill=fill, anchor=anchor, stroke_width=max(2, U // 10), stroke_fill=(255, 255, 255, 230))
+    for b, q in poi_at.items():
+        beside(q, POI[b], F(False, U * .58), (40, 90, 170) if b.startswith("16") else
+               (120, 80, 40) if b.startswith("platform") else PAL["label_soft"])
     S = wm.SUB
     for t in WORLD["towns"]:
         ci, cj = t["c"]
@@ -681,7 +702,7 @@ def labels_flat(img, px):
         d.text(xy, t["name"], font=font, fill=PAL["label"], anchor=anchor, stroke_width=max(2, U // 10), stroke_fill=(255, 255, 255, 230))
     for l in WORLD["localities"]:
         dot(l["c"], (120, 120, 120), .14)
-        txt(l["c"], l["name"], F(False, U * .62), PAL["label"], dx=U * .3, dy=-U * .4)
+        beside(l["c"], l["name"], F(False, U * .62), PAL["label"])
     # the villages (map "villages", O152): a dot by their size; the named ones with their name (in Urvania the
     # English (Italian) name, on Lisavu the Lisavan one, or the English one where settlers named the place), placed
     # where it covers the least
@@ -785,6 +806,35 @@ def sheet(out_path, levels=5):
         d.text((x0 + k * L / 4, y0 + 1.2 * MM), t, font=F(False, 2.6), fill=ink, anchor="ma" if k < 4 else "la")
     d.text((x0 + L + 8 * MM, y0 - .6 * MM), "Scale 1 : 2,500,000", font=F(True, 3.2), fill=ink, anchor="lm")
     d.text((xi, bottom + 4 * MM), "Same scale. Lisavu lies about 1,100 km\neast of Lumeport.", font=F(False, 2.6), fill=ink, anchor="la")
+    # the legend: what each line and sign means, in two rows under the mainland panel
+    lx0, ly0, cw = m + L + 62 * MM, bottom + 4.5 * MM, 31 * MM
+    def key(k, label, draw):
+        cx, cy = lx0 + (k % 6) * cw, ly0 + (k // 6) * 5.5 * MM
+        draw(cx, cy)
+        d.text((cx + 8 * MM, cy), label, font=F(False, 2.5), fill=ink, anchor="lm")
+    def line(col, w, dash=None, edge=None):
+        def f(cx, cy):
+            if edge: d.line([(cx, cy), (cx + 6 * MM, cy)], fill=edge, width=round((w + .3) * MM))
+            if dash:
+                for a in range(0, 6, 2): d.line([(cx + a * MM, cy), (cx + (a + 1) * MM, cy)], fill=col, width=round(w * MM))
+            else: d.line([(cx, cy), (cx + 6 * MM, cy)], fill=col, width=round(w * MM))
+        return f
+    def dots(col):
+        return lambda cx, cy: [d.ellipse([cx + a * MM - .3 * MM, cy - .3 * MM, cx + a * MM + .3 * MM, cy + .3 * MM], fill=col) for a in (0, 1.5, 3, 4.5, 6)]
+    def disc(col, r=.9):
+        return lambda cx, cy: d.ellipse([cx + 3 * MM - r * MM, cy - r * MM, cx + 3 * MM + r * MM, cy + r * MM], fill=col, outline=paper)
+    def square(col):
+        return lambda cx, cy: d.rectangle([cx + 2.4 * MM, cy - .6 * MM, cx + 3.6 * MM, cy + .6 * MM], fill=col)
+    def patch(col):
+        return lambda cx, cy: d.rectangle([cx + .5 * MM, cy - 1.2 * MM, cx + 5.5 * MM, cy + 1.2 * MM], fill=col)
+    keys = [("Main road", line(PAL["road_main"], .7, edge=PAL["road_main_edge"])), ("Road", line(PAL["road"], .5, edge=PAL["road_edge"])),
+            ("Railway", line(PAL["rail"], .5)), ("Pipeline", line((176, 120, 60), .35)),
+            ("Land border", dots(PAL["border"])), ("Sea route", line((120, 160, 200), .35, dash=True)),
+            ("Air route", line((170, 170, 170), .35, dash=True)), ("Town", patch(PAL["urban"])),
+            ("Village", disc(PAL["village"], .45)), ("Port", disc((66, 133, 244))), ("Airport", disc((120, 120, 140))),
+            ("Gas platform", square((176, 120, 60)))]
+    for k, (label, draw) in enumerate(keys):
+        key(k, label, draw)
     d.rectangle([m - 3 * MM, m - 3 * MM, Wp - m + 3 * MM, Hp - m + 3 * MM], outline=ink, width=round(.25 * MM))
     out.save(out_path, dpi=(DPI, DPI))
     print(out_path, out.size, "px per square", round(px_true, 3))

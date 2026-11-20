@@ -76,7 +76,7 @@ irrelevant · structure · process.
 | SR-02 | Site structure: missing landing cards, nav labels, specifications and code lists unreachable | medium | A-02, A-04, A-06, A-07, A-08, D-09, E-03 | Q-A-02 | solved |
 | SR-03 | Pages outside the site frame | low | A-10, B-18 | | partly solved |
 | SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | partly solved |
-| SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | partly solved |
+| SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | solved |
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | solved |
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | solved |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
@@ -169,7 +169,11 @@ irrelevant · structure · process.
 
 ### SR-05 · Map sheet
 - **Status:** partly solved 2026-11-20 (with SR-02): pictures in text pages are never wider than the page (A-09).
-  Open: the labels and the legend of the sheet (C-11).
+  C-11 **solved 2026-11-20**: the names of the ports, the airports and the localities stand beside their symbol, on
+  the side where they cover the least, and no longer overprint other names; the pipelines are a solid brown line, the
+  land border stays dotted; the gas platform is marked and named; a legend under the mainland panel explains the
+  roads, railway, pipeline, border, sea and air routes, towns, villages, ports, airports and the platform
+  (`analysis/world-position/refine_map.py`).
 - **What:** the 4,961 px PNG (6.8 MB) is shown at natural size, so the page scrolls sideways at every width
   (no image rule in `site/site.css`); "Port of Selanu" stands about 45 km from its symbol, "Selanu Airport"
   reads as a village, "Euridice Crossing" overprints "Tallowford"; no legend, so border and pipelines look
