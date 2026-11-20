@@ -23,23 +23,237 @@ UBL 2.5 defines as follows: “A document used to indicate detailed
 acceptance or rejection of an Order or to make a counter-offer.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: OrderResponse.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Distributor</td>
+<td>Commercial Buyer</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Fruit Packers' Cooperative</td>
+<td>Fresh Produce Wholesaler</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Manufacturer</td>
+<td>Contracting Authority</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Manufacturer</td>
+<td>Distributor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Waste Processor</td>
+<td>Packaging Maker</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISO 20022 ChargeBearerType1Code</code></td>
+<td><code>ChargeBearerCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 20022 ClearingChannel2Code</code></td>
+<td><code>PaymentChannelCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 20022 ExternalCashAccountType1Code</code></td>
+<td><code>AccountTypeCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 4217 Alpha</code></td>
+<td><code>CurrencyCode</code>, <code>DocumentCurrencyCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 3155</code></td>
+<td><code>ChannelCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 4343</code></td>
+<td><code>OrderResponseCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 4461</code></td>
+<td><code>PaymentMeansCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 7161</code></td>
+<td><code>AllowanceChargeReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode</code></td>
+<td><code>LineStatusCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:SubstitutionStatusCode</code></td>
+<td><code>SubstitutionStatusCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code></td>
+<td><code>TaxExemptionReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AccountFormatCode</code></td>
+<td><code>AccountFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>INCOTERMS</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 11649</code></td>
+<td><code>PaymentID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5153</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5305</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/LOCODE</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:bank-branch</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:account</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:bank-identifier</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-air-02-OrderResponse.html">air
-02-OrderResponse</a></li>
-<li><a href="example-plastics-02-OrderResponse.html">plastics
-02-OrderResponse</a></li>
-<li><a href="example-reefer-02-OrderResponse.html">reefer
-02-OrderResponse</a></li>
-<li><a href="example-road-02-OrderResponse.html">road
-02-OrderResponse</a></li>
-<li><a href="example-sea-06-OrderResponse.html">sea
-06-OrderResponse</a></li>
-<li><a href="example-tender-28-OrderResponse.html">tender
-28-OrderResponse</a></li>
+<li><a href="example-air-02-OrderResponse.html">Order Response, Lumeway
+Distribution to Velumi Trading</a></li>
+<li><a href="example-plastics-02-OrderResponse.html">Order Response,
+Rinova Recovery to Rivermouth Packaging</a></li>
+<li><a href="example-reefer-02-OrderResponse.html">Order Response,
+Harrowmead Fruit Growers to Hafefo Fresh Produce</a></li>
+<li><a href="example-road-02-OrderResponse.html">Order Response, Valdara
+Industries to Lumeway Distribution</a></li>
+<li><a href="example-sea-06-OrderResponse.html">Order Response, Lumeway
+Distribution to Velumi Trading</a></li>
+<li><a href="example-tender-28-OrderResponse.html">Order Response,
+Valdara Industries to Lumeport Public Works Department</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

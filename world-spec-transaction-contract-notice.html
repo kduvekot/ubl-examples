@@ -23,17 +23,262 @@ UBL 2.5 defines as follows: “A document used by a Contracting party to
 announce a project to buy goods, services, or works.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: ContractNotice.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contracting Authority</td>
+<td>Government Information Service</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>NoticeLanguageCode</code></td>
+</tr>
+<tr>
+<td><code>UN CPC Ver.2.1</code></td>
+<td><code>ItemClassificationCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code></td>
+<td><code>CompanyLegalFormCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code></td>
+<td><code>TaxExemptionReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AuthorityActivityCode</code></td>
+<td><code>ActivityTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AwardCriterionTypeCode</code></td>
+<td><code>AwardingCriterionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AwardingMethodCode</code></td>
+<td><code>AwardingMethodTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CalculationExpressionCode</code></td>
+<td><code>CalculationExpressionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CancellationReasonCode</code></td>
+<td><code>PreviousCancellationReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ContractNatureCode</code></td>
+<td><code>ProcurementTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ContractingPartyTypeCode</code></td>
+<td><code>PartyTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ContractingSystemCode</code></td>
+<td><code>ContractingSystemCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ContractingSystemTypeCode</code></td>
+<td><code>ContractingSystemTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CurriculaCode</code></td>
+<td><code>RequiredCurriculaCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EconomicOperatorRoleCode</code></td>
+<td><code>RoleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode</code></td>
+<td><code>EvaluationCriterionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ExecutionRequirementCode</code></td>
+<td><code>ExecutionRequirementCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ExpenseTypeCode</code></td>
+<td><code>ExpenseCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ExpressionCode</code></td>
+<td><code>ExpressionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:GuaranteeTypeCode</code></td>
+<td><code>GuaranteeTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LotSubmissionCode</code></td>
+<td><code>PartPresentationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:MultipleTendersCode</code></td>
+<td><code>MultipleTendersCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:NoticeTypeCode</code></td>
+<td><code>NoticeTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PaymentFrequencyCode</code></td>
+<td><code>PaymentFrequencyCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PriceEvaluationCode</code></td>
+<td><code>PriceEvaluationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PrizeRankCode</code></td>
+<td><code>RankCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ProcessReasonCode</code></td>
+<td><code>ProcessReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ProcurementProcedureCode</code></td>
+<td><code>ProcedureCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ProcurementSubTypeCode</code></td>
+<td><code>ProcurementSubTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:RepresentationTypeCode</code></td>
+<td><code>RepresentationTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:StatusConditionCode</code></td>
+<td><code>ConditionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:SubcontractingConditionsCode</code></td>
+<td><code>SubcontractingConditionsCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:SubmissionMethodCode</code></td>
+<td><code>SubmissionMethodCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TenderEnvelopeCode</code></td>
+<td><code>TenderEnvelopeTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TenderEventTypeCode</code></td>
+<td><code>TypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TendererRequirementTypeCode</code></td>
+<td><code>TendererRequirementTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:VariantConstraintCode</code></td>
+<td><code>VariantConstraintCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:WeightingAlgorithmCode</code></td>
+<td><code>WeightingAlgorithmCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5153</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5305</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:public-body-register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-contest-03-ContractNotice.html">contest
-03-ContractNotice</a></li>
-<li><a href="example-contest-08-ContractNotice.html">contest
-08-ContractNotice</a></li>
-<li><a href="example-tender-02-ContractNotice.html">tender
-02-ContractNotice</a></li>
+<li><a href="example-contest-03-ContractNotice.html">Contract Notice,
+Lumeport Public Works Department to Bayvarra Information
+Service</a></li>
+<li><a href="example-contest-08-ContractNotice.html">Contract Notice,
+Lumeport Public Works Department to Bayvarra Information
+Service</a></li>
+<li><a href="example-tender-02-ContractNotice.html">Contract Notice,
+Lumeport Public Works Department to Bayvarra Information
+Service</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

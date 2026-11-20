@@ -23,27 +23,290 @@ Declaration, which UBL 2.5 defines as follows: “A customs declaration
 document for exporting goods”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: ExportCustomsDeclaration.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cotton Ginnery</td>
+<td>Customs (XL)</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Freight Forwarder</td>
+<td>Customs (XB)</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Gas Producer</td>
+<td>Customs (XB)</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Manufacturer</td>
+<td>Customs (XU)</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Sawmill</td>
+<td>Customs (XB)</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Waste Processor</td>
+<td>Customs (XU)</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPSG</code></td>
+<td><code>CoordinateSystemCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>UN CPC Ver.2.1</code></td>
+<td><code>ItemClassificationCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1225</code></td>
+<td><code>FunctionCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 7075</code></td>
+<td><code>PackageLevelCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 19 - Codes for Modes of Transport</code></td>
+<td><code>TransportModeCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code></td>
+<td><code>PackagingTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 28</code></td>
+<td><code>TransportMeansTypeCode</code></td>
+</tr>
+<tr>
+<td><code>WCO HS 2022</code></td>
+<td><code>CommodityCode</code></td>
+</tr>
+<tr>
+<td><code>WCO HS 2022 Sections</code></td>
+<td><code>NatureCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code></td>
+<td><code>LatitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code></td>
+<td><code>LongitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:codelist:CustomsTariffCode</code></td>
+<td><code>CommodityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CargoTypeCode</code></td>
+<td><code>CargoTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</code></td>
+<td><code>FunctionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ExportReasonCode</code></td>
+<td><code>ExportReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ExportTypeCode</code></td>
+<td><code>ExportTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ShipConfigurationCode</code></td>
+<td><code>ShipConfigurationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TravelDirectionCode</code></td>
+<td><code>DirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>RegistrationNationalityID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/LOCODE</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:NT:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:public-body-register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:public-body-register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:public-body-register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:grid</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:vessel</code></td>
+<td><code>VesselID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-cotton-11-ExportCustomsDeclaration.html">cotton
-11-ExportCustomsDeclaration</a></li>
-<li><a href="example-energy-04-ExportCustomsDeclaration.html">energy
-04-ExportCustomsDeclaration</a></li>
-<li><a href="example-plastics-05-ExportCustomsDeclaration.html">plastics
-05-ExportCustomsDeclaration</a></li>
-<li><a href="example-reefer-05-ExportCustomsDeclaration.html">reefer
-05-ExportCustomsDeclaration</a></li>
-<li><a href="example-road-05-ExportCustomsDeclaration.html">road
-05-ExportCustomsDeclaration</a></li>
-<li><a href="example-sea-11-ExportCustomsDeclaration.html">sea
-11-ExportCustomsDeclaration</a></li>
-<li><a href="example-tender-30-ExportCustomsDeclaration.html">tender
-30-ExportCustomsDeclaration</a></li>
-<li><a href="example-wood-05-ExportCustomsDeclaration.html">wood
-05-ExportCustomsDeclaration</a></li>
+<li><a href="example-cotton-11-ExportCustomsDeclaration.html">Export
+Customs Declaration, Selanu Cotton Ginnery to Island Customs
+Service</a></li>
+<li><a href="example-energy-04-ExportCustomsDeclaration.html">Export
+Customs Declaration, Kelpstone Gas to Customs and Border Service of
+Bayvarra</a></li>
+<li><a href="example-plastics-05-ExportCustomsDeclaration.html">Export
+Customs Declaration, Rinova Recovery to Customs Administration of
+Urvania</a></li>
+<li><a href="example-reefer-05-ExportCustomsDeclaration.html">Export
+Customs Declaration, Bayforth Forwarding to Customs and Border Service
+of Bayvarra</a></li>
+<li><a href="example-road-05-ExportCustomsDeclaration.html">Export
+Customs Declaration, Valdara Industries to Customs Administration of
+Urvania</a></li>
+<li><a href="example-sea-11-ExportCustomsDeclaration.html">Export
+Customs Declaration, Bayforth Forwarding to Customs and Border Service
+of Bayvarra</a></li>
+<li><a href="example-tender-30-ExportCustomsDeclaration.html">Export
+Customs Declaration, Valdara Industries to Customs Administration of
+Urvania</a></li>
+<li><a href="example-wood-05-ExportCustomsDeclaration.html">Export
+Customs Declaration, Marrowdale Sawmill to Customs and Border Service of
+Bayvarra</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

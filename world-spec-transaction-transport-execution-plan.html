@@ -24,19 +24,195 @@ negotiation of a transport service between a transport user and a
 transport service provider.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: TransportExecutionPlan.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Freight Forwarder</td>
+<td>Distributor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Inland Waterway Carrier</td>
+<td>Waste Processor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Rail Carrier</td>
+<td>Manufacturer</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 19 - Codes for Modes of Transport</code></td>
+<td><code>TransportModeCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 28</code></td>
+<td><code>TransportMeansTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode</code></td>
+<td><code>DocumentStatusCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ContractModificationReasonCode</code></td>
+<td><code>ModificationReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ContractTypeCode</code></td>
+<td><code>ContractTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DocumentStatusReasonCode</code></td>
+<td><code>DocumentStatusReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EmissionTypeCode</code></td>
+<td><code>EnvironmentalEmissionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ShipConfigurationCode</code></td>
+<td><code>ShipConfigurationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TariffClassCode</code></td>
+<td><code>TariffClassCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportNotificationTypeCode</code></td>
+<td><code>NotificationTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportServiceCode</code></td>
+<td><code>TransportServiceCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TravelDirectionCode</code></td>
+<td><code>DirectionCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>INCOTERMS</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>RegistrationNationalityID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/LOCODE</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:vehicle-register</code></td>
+<td><code>LicensePlateID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:vessel</code></td>
+<td><code>VesselID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-ore-03-TransportExecutionPlan.html">ore
-03-TransportExecutionPlan</a></li>
-<li><a href="example-plastics-04-TransportExecutionPlan.html">plastics
-04-TransportExecutionPlan</a></li>
-<li><a href="example-rail-03-TransportExecutionPlan.html">rail
-03-TransportExecutionPlan</a></li>
-<li><a href="example-retail-23-TransportExecutionPlan.html">retail
-23-TransportExecutionPlan</a></li>
+<li><a href="example-ore-03-TransportExecutionPlan.html">Transport
+Execution Plan, Ferrano Rail Cargo to Valdara Industries</a></li>
+<li><a href="example-plastics-04-TransportExecutionPlan.html">Transport
+Execution Plan, Fiumella Barges to Rinova Recovery</a></li>
+<li><a href="example-rail-03-TransportExecutionPlan.html">Transport
+Execution Plan, Ferrano Rail Cargo to Valdara Industries</a></li>
+<li><a href="example-retail-23-TransportExecutionPlan.html">Transport
+Execution Plan, Bayforth Forwarding to Lumeway Distribution</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

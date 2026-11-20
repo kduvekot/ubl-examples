@@ -24,12 +24,151 @@ billing, and payment. This document is a statement of account, not a
 summary invoice.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: Statement.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Factor</td>
+<td>Commercial Buyer</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISO 20022 ChargeBearerType1Code</code></td>
+<td><code>ChargeBearerCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 20022 ClearingChannel2Code</code></td>
+<td><code>PaymentChannelCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 20022 ExternalCashAccountType1Code</code></td>
+<td><code>AccountTypeCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 20022 ExternalPurpose1Code</code></td>
+<td><code>PaymentPurposeCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 4217 Alpha</code></td>
+<td><code>CurrencyCode</code>, <code>DocumentCurrencyCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 4461</code></td>
+<td><code>PaymentMeansCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AccountFormatCode</code></td>
+<td><code>AccountFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:StatementTypeCode</code></td>
+<td><code>StatementTypeCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 11649</code></td>
+<td><code>PaymentID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:bank-branch</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:account</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:bank-identifier</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-sea-25-Statement.html">sea 25-Statement</a></li>
+<li><a href="example-sea-25-Statement.html">Statement, Harbourline
+Factoring to Velumi Trading</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

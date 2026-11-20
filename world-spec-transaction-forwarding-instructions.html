@@ -35,25 +35,255 @@ of transport including multi-modal; and (4) from any origin to any
 destination.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: ForwardingInstructions.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Consortium Partner</td>
+<td>Freight Forwarder</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Distributor</td>
+<td>Freight Forwarder</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Freight Forwarder</td>
+<td>Ocean Carrier</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Fruit Packers' Cooperative</td>
+<td>Freight Forwarder</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Pharmaceutical Wholesaler</td>
+<td>Freight Forwarder</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Textile Mill</td>
+<td>Freight Forwarder</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ERG 2024</code></td>
+<td><code>MedicalFirstAidGuideCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 6346</code></td>
+<td><code>SizeTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN CPC Ver.2.1</code></td>
+<td><code>ItemClassificationCode</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations Dangerous Goods List</code></td>
+<td><code>UNDGCode</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations hazard class</code></td>
+<td><code>HazardousCategoryCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 8053</code></td>
+<td><code>TransportEquipmentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 8273</code></td>
+<td><code>HazardousRegulationCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code></td>
+<td><code>PackagingTypeCode</code>,
+<code>TransportHandlingUnitTypeCode</code></td>
+</tr>
+<tr>
+<td><code>WCO HS 2022</code></td>
+<td><code>CommodityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DistributionTypeCode</code></td>
+<td><code>DistributionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PackingInstructionCode</code></td>
+<td><code>PackingCriteriaCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:StatusConditionCode</code></td>
+<td><code>ConditionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportAuthorizationCode</code></td>
+<td><code>TransportAuthorizationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code></td>
+<td><code>EmergencyProceduresCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code></td>
+<td><code>TransportEventTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportServiceCode</code></td>
+<td><code>TransportServiceCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UNPackingGroupCode</code></td>
+<td><code>UNPackingGroupCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>GS1 SSCC</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations hazard class</code></td>
+<td><code>HazardClassID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/LOCODE</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-air-03-ForwardingInstructions.html">air
-03-ForwardingInstructions</a></li>
-<li><a href="example-cotton-09-ForwardingInstructions.html">cotton
-09-ForwardingInstructions</a></li>
-<li><a href="example-mast-02-ForwardingInstructions.html">mast
-02-ForwardingInstructions</a></li>
-<li><a href="example-medicines-06-ForwardingInstructions.html">medicines
-06-ForwardingInstructions</a></li>
-<li><a href="example-reefer-03-ForwardingInstructions.html">reefer
-03-ForwardingInstructions</a></li>
-<li><a href="example-sea-09-ForwardingInstructions.html">sea
-09-ForwardingInstructions</a></li>
-<li><a href="example-sea-12-ForwardingInstructions.html">sea
-12-ForwardingInstructions</a></li>
+<li><a href="example-air-03-ForwardingInstructions.html">Forwarding
+Instructions, Lumeway Distribution to Bayforth Forwarding</a></li>
+<li><a href="example-cotton-09-ForwardingInstructions.html">Forwarding
+Instructions, Lumeport Textile Mill to Bayforth Forwarding</a></li>
+<li><a href="example-mast-02-ForwardingInstructions.html">Forwarding
+Instructions, Saltmere Engineering to Bayforth Forwarding</a></li>
+<li><a
+href="example-medicines-06-ForwardingInstructions.html">Forwarding
+Instructions, Quillmoor Pharma Distribution to Bayforth
+Forwarding</a></li>
+<li><a href="example-reefer-03-ForwardingInstructions.html">Forwarding
+Instructions, Harrowmead Fruit Growers to Bayforth Forwarding</a></li>
+<li><a href="example-sea-09-ForwardingInstructions.html">Forwarding
+Instructions, Lumeway Distribution to Bayforth Forwarding</a></li>
+<li><a href="example-sea-12-ForwardingInstructions.html">Forwarding
+Instructions, Bayforth Forwarding to Tidewell Ocean Lines</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

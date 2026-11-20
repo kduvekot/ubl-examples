@@ -27,22 +27,418 @@ details of the transportation, charges, and terms and conditions under
 which the transportation service is provided.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: Waybill.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air Carrier</td>
+<td>Freight Forwarder</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Freight Forwarder</td>
+<td>Distributor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Inland Waterway Carrier</td>
+<td>Waste Processor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Rail Carrier</td>
+<td>Manufacturer</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Road Carrier</td>
+<td>Distributor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Tank Haulier</td>
+<td>Gas Producer</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPSG</code></td>
+<td><code>CoordinateSystemCode</code></td>
+</tr>
+<tr>
+<td><code>ERG 2024</code></td>
+<td><code>MedicalFirstAidGuideCode</code></td>
+</tr>
+<tr>
+<td><code>IATA SSIM Aircraft Types</code></td>
+<td><code>TransportMeansTypeCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 6346</code></td>
+<td><code>SizeTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations Dangerous Goods List</code></td>
+<td><code>UNDGCode</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations hazard class</code></td>
+<td><code>HazardousCategoryCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 7075</code></td>
+<td><code>PackageLevelCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 7161</code></td>
+<td><code>AllowanceChargeReasonCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 8053</code></td>
+<td><code>TransportEquipmentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 8169</code></td>
+<td><code>FullnessIndicationCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 8273</code></td>
+<td><code>HazardousRegulationCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 8339</code></td>
+<td><code>PackagingDangerLevelCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE ADR tunnel restriction code</code></td>
+<td><code>TunnelRestrictionCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 19 - Codes for Modes of Transport</code></td>
+<td><code>TransportModeCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code></td>
+<td><code>PackagingTypeCode</code>,
+<code>TransportHandlingUnitTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 28</code></td>
+<td><code>TransportMeansTypeCode</code></td>
+</tr>
+<tr>
+<td><code>WCO HS 2022</code></td>
+<td><code>CommodityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code></td>
+<td><code>LatitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code></td>
+<td><code>LongitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DistributionTypeCode</code></td>
+<td><code>DistributionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EmissionCalculationMethodCode</code></td>
+<td><code>CalculationMethodCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EmissionTypeCode</code></td>
+<td><code>EnvironmentalEmissionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EnergySourceCode</code></td>
+<td><code>EnergySourceTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EquipmentDispositionCode</code></td>
+<td><code>DispositionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode</code></td>
+<td><code>OwnerTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EquipmentProviderTypeCode</code></td>
+<td><code>ProviderTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:HandlingInstructionCode</code></td>
+<td><code>HandlingCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:HazardousGoodsTypeCode</code></td>
+<td><code>HazardousTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LoadTypeCode</code></td>
+<td><code>FullnessIndicationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PackingInstructionCode</code></td>
+<td><code>PackingCriteriaCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:RecordStatusCode</code></td>
+<td><code>StatusCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:RiskResponsiblePartyCode</code></td>
+<td><code>LossRiskResponsibilityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:SealIssuerTypeCode</code></td>
+<td><code>SealIssuerTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:SealStatusCode</code></td>
+<td><code>SealStatusCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ShipConfigurationCode</code></td>
+<td><code>ShipConfigurationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ShippingPriorityCode</code></td>
+<td><code>ShippingPriorityLevelCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TrackingDeviceCode</code></td>
+<td><code>TrackingDeviceCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransitDirectionCode</code></td>
+<td><code>TransitDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportAuthorizationCode</code></td>
+<td><code>TransportAuthorizationCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code></td>
+<td><code>TransportEmergencyCardCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TravelDirectionCode</code></td>
+<td><code>DirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UNPackingGroupCode</code></td>
+<td><code>UNPackingGroupCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:WaybillTypeCode</code></td>
+<td><code>WaybillTypeCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>INCOTERMS</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 15459</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>RegistrationNationalityID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO6346</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations hazard class</code></td>
+<td><code>HazardClassID</code></td>
+</tr>
+<tr>
+<td><code>UN/LOCODE</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:NT:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:vehicle-register</code></td>
+<td><code>LicensePlateID</code>, <code>TrailerLicensePlateID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:aircraft-register</code></td>
+<td><code>AircraftID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:customs-trader</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:rail-vehicle-register</code></td>
+<td><code>RailCarID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:vehicle-register</code></td>
+<td><code>ID</code>, <code>LicensePlateID</code>,
+<code>TrailerLicensePlateID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:OtherAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:vessel</code></td>
+<td><code>VesselID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-air-04-Waybill.html">air 04-Waybill</a></li>
-<li><a href="example-lpg-03-Waybill.html">lpg 03-Waybill</a></li>
-<li><a href="example-mast-03-Waybill.html">mast 03-Waybill</a></li>
-<li><a href="example-medicines-11-Waybill.html">medicines
-11-Waybill</a></li>
-<li><a href="example-ore-05-Waybill.html">ore 05-Waybill</a></li>
-<li><a href="example-plastics-06-Waybill.html">plastics
-06-Waybill</a></li>
-<li><a href="example-rail-08-Waybill.html">rail 08-Waybill</a></li>
-<li><a href="example-retail-13-Waybill.html">retail 13-Waybill</a></li>
-<li><a href="example-road-08-Waybill.html">road 08-Waybill</a></li>
+<li><a href="example-air-04-Waybill.html">Waybill, Kelaro Air Cargo to
+Bayforth Forwarding</a></li>
+<li><a href="example-lpg-03-Waybill.html">Waybill, Gullhaven Tank
+Haulage to Kelpstone Gas</a></li>
+<li><a href="example-mast-03-Waybill.html">Waybill, Kelaro Air Cargo to
+Bayforth Forwarding</a></li>
+<li><a href="example-medicines-11-Waybill.html">Waybill, Kelaro Air
+Cargo to Bayforth Forwarding</a></li>
+<li><a href="example-ore-05-Waybill.html">Waybill, Ferrano Rail Cargo to
+Valdara Industries</a></li>
+<li><a href="example-plastics-06-Waybill.html">Waybill, Fiumella Barges
+to Rinova Recovery</a></li>
+<li><a href="example-rail-08-Waybill.html">Waybill, Ferrano Rail Cargo
+to Valdara Industries</a></li>
+<li><a href="example-retail-13-Waybill.html">Waybill, Bayforth
+Forwarding to Lumeway Distribution</a></li>
+<li><a href="example-road-08-Waybill.html">Waybill, Trasvia Haulage to
+Lumeway Distribution</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

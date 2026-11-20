@@ -21,43 +21,415 @@ href="world-specifications.html">all specifications</a></em></p>
 defines as follows: “A document used to order goods and services.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: Order.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commercial Buyer</td>
+<td>Distributor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Consumer</td>
+<td>Retailer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Contracting Authority</td>
+<td>Furniture Maker</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Contracting Authority</td>
+<td>Manufacturer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Distributor</td>
+<td>Manufacturer</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Fresh Produce Wholesaler</td>
+<td>Fruit Packers' Cooperative</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Furniture Maker</td>
+<td>Sawmill</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Hospital (XL)</td>
+<td>Pharmaceutical Wholesaler</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Manufacturer</td>
+<td>Packaging Maker</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Manufacturer</td>
+<td>Raw Material Supplier</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Manufacturer</td>
+<td>Sawmill</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Packaging Maker</td>
+<td>Waste Processor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Pharmaceutical Wholesaler</td>
+<td>a party outside the world</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Retailer</td>
+<td>Distributor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Retailer</td>
+<td>Furniture Maker</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Retailer</td>
+<td>Textile Mill</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Telecom Utility</td>
+<td>Consortium Partner</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Textile Mill</td>
+<td>Cotton Ginnery</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Textile Mill</td>
+<td>Packaging Maker</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Water Utility</td>
+<td>Gas Producer</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPSG</code></td>
+<td><code>CoordinateSystemCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 4217 Alpha</code></td>
+<td><code>DocumentCurrencyCode</code>, <code>SourceCurrencyCode</code>,
+<code>TargetCurrencyCode</code>, <code>TaxCurrencyCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td><code>OrderTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 3155</code></td>
+<td><code>ChannelCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 4461</code></td>
+<td><code>PaymentMeansCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5189</code></td>
+<td><code>AllowanceChargeReasonCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 7075</code></td>
+<td><code>PackageLevelCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 7161</code></td>
+<td><code>AllowanceChargeReasonCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code></td>
+<td><code>PackagingTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code></td>
+<td><code>LatitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code></td>
+<td><code>LongitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:OperatorCode</code></td>
+<td><code>MathematicOperatorCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code></td>
+<td><code>TaxExemptionReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode</code></td>
+<td><code>TaxExemptionReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CardAccountRoleCode</code></td>
+<td><code>RoleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CardTypeCode</code></td>
+<td><code>CardTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ColourCode</code></td>
+<td><code>DescriptionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ConditionsActionCode</code></td>
+<td><code>ActionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ContractTypeCode</code></td>
+<td><code>ContractTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:InspectionMethodCode</code></td>
+<td><code>InspectionMethodCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ItemPartPositionCode</code></td>
+<td><code>PositionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ShippingPriorityCode</code></td>
+<td><code>ShippingPriorityLevelCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TemperatureClassCode</code></td>
+<td><code>MeasureCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:WoodCode</code></td>
+<td><code>DescriptionCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>GS1 GTIN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>INCOTERMS</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 15459-6</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5153</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5305</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/LOCODE</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:NT:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:bank-identifier</code></td>
+<td><code>IssuerID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CardSchemeCode</code></td>
+<td><code>NetworkID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:OtherAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-cotton-08-Order.html">cotton 08-Order</a></li>
-<li><a href="example-furniture-08-Order.html">furniture
-08-Order</a></li>
-<li><a href="example-furniture-10-Order.html">furniture
-10-Order</a></li>
-<li><a href="example-furniture-15-Order.html">furniture
-15-Order</a></li>
-<li><a href="example-lpg-01-Order.html">lpg 01-Order</a></li>
-<li><a href="example-mast-01-Order.html">mast 01-Order</a></li>
-<li><a href="example-medicines-01-Order.html">medicines
-01-Order</a></li>
-<li><a href="example-medicines-04-Order.html">medicines
-04-Order</a></li>
-<li><a href="example-medicines-05-Order.html">medicines
-05-Order</a></li>
-<li><a href="example-ore-01-Order.html">ore 01-Order</a></li>
-<li><a href="example-packaging-01-Order.html">packaging
-01-Order</a></li>
-<li><a href="example-packaging-03-Order.html">packaging
-03-Order</a></li>
-<li><a href="example-packaging-05-Order.html">packaging
-05-Order</a></li>
-<li><a href="example-plastics-01-Order.html">plastics 01-Order</a></li>
-<li><a href="example-rail-01-Order.html">rail 01-Order</a></li>
-<li><a href="example-reefer-01-Order.html">reefer 01-Order</a></li>
-<li><a href="example-retail-08-Order.html">retail 08-Order</a></li>
-<li><a href="example-retail-22-Order.html">retail 22-Order</a></li>
-<li><a href="example-road-01-Order.html">road 01-Order</a></li>
-<li><a href="example-sea-05-Order.html">sea 05-Order</a></li>
-<li><a href="example-tender-26-Order.html">tender 26-Order</a></li>
-<li><a href="example-wood-03-Order.html">wood 03-Order</a></li>
-<li><a href="example-wood-10-Order.html">wood 10-Order</a></li>
+<li><a href="example-cotton-08-Order.html">Order, Lumeport Textile Mill
+to Selanu Cotton Ginnery</a></li>
+<li><a href="example-furniture-08-Order.html">Order, Brightmarket Stores
+to Brackenmere Furniture</a></li>
+<li><a href="example-furniture-10-Order.html">Order, Brightmarket Stores
+to Brackenmere Furniture</a></li>
+<li><a href="example-furniture-15-Order.html">Order, Lumeport Public
+Works Department to Brackenmere Furniture</a></li>
+<li><a href="example-lpg-01-Order.html">Order, Coastal State Water
+Company to Kelpstone Gas</a></li>
+<li><a href="example-mast-01-Order.html">Order, Selanu Telecom to
+Saltmere Engineering</a></li>
+<li><a href="example-medicines-01-Order.html">Order, Quillmoor Pharma
+Distribution to 58-in</a></li>
+<li><a href="example-medicines-04-Order.html">Order, Selanu General
+Hospital to Quillmoor Pharma Distribution</a></li>
+<li><a href="example-medicines-05-Order.html">Order, Quillmoor Pharma
+Distribution to 51-nl</a></li>
+<li><a href="example-ore-01-Order.html">Order, Valdara Industries to
+Serravona Mining</a></li>
+<li><a href="example-packaging-01-Order.html">Order, Valdara Industries
+to Rivermouth Packaging</a></li>
+<li><a href="example-packaging-03-Order.html">Order, Lumeport Textile
+Mill to Rivermouth Packaging</a></li>
+<li><a href="example-packaging-05-Order.html">Order, Brightmarket Stores
+to Lumeport Textile Mill</a></li>
+<li><a href="example-plastics-01-Order.html">Order, Rivermouth Packaging
+to Rinova Recovery</a></li>
+<li><a href="example-rail-01-Order.html">Order, Lumeway Distribution to
+Valdara Industries</a></li>
+<li><a href="example-reefer-01-Order.html">Order, Hafefo Fresh Produce
+to Harrowmead Fruit Growers</a></li>
+<li><a href="example-retail-08-Order.html">Order, Brightmarket Stores to
+Lumeway Distribution</a></li>
+<li><a href="example-retail-22-Order.html">Order, Robin Ashdale to
+Brightmarket Stores</a></li>
+<li><a href="example-road-01-Order.html">Order, Lumeway Distribution to
+Valdara Industries</a></li>
+<li><a href="example-sea-05-Order.html">Order, Velumi Trading to Lumeway
+Distribution</a></li>
+<li><a href="example-tender-26-Order.html">Order, Lumeport Public Works
+Department to Valdara Industries</a></li>
+<li><a href="example-wood-03-Order.html">Order, Valdara Industries to
+Marrowdale Sawmill</a></li>
+<li><a href="example-wood-10-Order.html">Order, Brackenmere Furniture to
+Marrowdale Sawmill</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

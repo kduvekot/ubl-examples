@@ -23,25 +23,316 @@ specifications, and withdraws it.</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: Catalogue, CataloguePricingUpdate,
 CatalogueItemSpecificationUpdate, CatalogueDeletion.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Distributor</td>
+<td>Commercial Buyer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Distributor</td>
+<td>Retailer</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Manufacturer</td>
+<td>Contracting Authority</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Waste Processor</td>
+<td>Packaging Maker</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISIC Rev.4</code></td>
+<td><code>IndustryClassificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>UN CPC Ver.2.1</code></td>
+<td><code>ItemClassificationCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 3155</code></td>
+<td><code>ChannelCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5189</code></td>
+<td><code>AllowanceChargeReasonCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code></td>
+<td><code>PackagingTypeCode</code></td>
+</tr>
+<tr>
+<td><code>WCO HS 2022</code></td>
+<td><code>CommodityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code></td>
+<td><code>CompanyLegalFormCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code></td>
+<td><code>TaxExemptionReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode</code></td>
+<td><code>CompanyLegalFormCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:codelist:CustomsTariffCode</code></td>
+<td><code>CommodityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode</code></td>
+<td><code>TaxExemptionReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CatalogueActionCode</code></td>
+<td><code>ActionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CatalogueLineActionCode</code></td>
+<td><code>ActionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CertificateTypeCode</code></td>
+<td><code>CertificateTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CircularityTypeCode</code></td>
+<td><code>CircularityTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ColourCode</code></td>
+<td><code>DescriptionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code></td>
+<td><code>CorporateRegistrationTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EmissionCalculationMethodCode</code></td>
+<td><code>CalculationMethodCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:EmissionTypeCode</code></td>
+<td><code>EnvironmentalEmissionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode</code></td>
+<td><code>LifeCycleStatusCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ItemPartPositionCode</code></td>
+<td><code>PositionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ItemPropertyNameCode</code></td>
+<td><code>NameCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ItemTypeCode</code></td>
+<td><code>ItemTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LifecycleStageCode</code></td>
+<td><code>LifecycleStageCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:MaintenanceFrequencyCode</code></td>
+<td><code>MaintenanceFrequencyCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:MaterialResourceCode</code></td>
+<td><code>ResourceTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PackLevelCode</code></td>
+<td><code>PackLevelCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PriceTypeCode</code></td>
+<td><code>PriceTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PropertyImportanceCode</code></td>
+<td><code>ImportanceCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:RecordStatusCode</code></td>
+<td><code>StatusCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ScoringSystemCode</code></td>
+<td><code>ScoringSystemCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:WasteTypeCode</code></td>
+<td><code>WasteTypeCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>GS1 GTIN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 15459-6</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5153</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5305</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:property</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>CompanyID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:OtherAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-plastics-12-Catalogue.html">plastics
-12-Catalogue</a></li>
-<li><a href="example-retail-02-Catalogue.html">retail
-02-Catalogue</a></li>
-<li><a href="example-retail-03-CataloguePricingUpdate.html">retail
-03-CataloguePricingUpdate</a></li>
+<li><a href="example-plastics-12-Catalogue.html">Catalogue, Rinova
+Recovery to Rivermouth Packaging</a></li>
+<li><a href="example-retail-02-Catalogue.html">Catalogue, Lumeway
+Distribution to Brightmarket Stores</a></li>
+<li><a href="example-retail-03-CataloguePricingUpdate.html">Catalogue
+Pricing Update, Lumeway Distribution to Brightmarket Stores</a></li>
 <li><a
-href="example-retail-04-CatalogueItemSpecificationUpdate.html">retail
-04-CatalogueItemSpecificationUpdate</a></li>
-<li><a href="example-retail-20-CatalogueDeletion.html">retail
-20-CatalogueDeletion</a></li>
-<li><a href="example-sea-02-Catalogue.html">sea 02-Catalogue</a></li>
-<li><a href="example-tender-25-Catalogue.html">tender
-25-Catalogue</a></li>
+href="example-retail-04-CatalogueItemSpecificationUpdate.html">Catalogue
+Item Specification Update, Lumeway Distribution to Brightmarket
+Stores</a></li>
+<li><a href="example-retail-20-CatalogueDeletion.html">Catalogue
+Deletion, Lumeway Distribution to Brightmarket Stores</a></li>
+<li><a href="example-sea-02-Catalogue.html">Catalogue, Lumeway
+Distribution to Velumi Trading</a></li>
+<li><a href="example-tender-25-Catalogue.html">Catalogue, Valdara
+Industries to Lumeport Public Works Department</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

@@ -25,23 +25,259 @@ utility suppliers to private and public customers, including
 electricity, gas, water, and telephone services.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: UtilityStatement.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy Retailer</td>
+<td>Manufacturer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Energy Retailer</td>
+<td>Seller's Warehouse (3PL)</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Grid Operator</td>
+<td>Energy Retailer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Telecom Utility</td>
+<td>Commercial Buyer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Water Utility</td>
+<td>Consumer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Water Utility</td>
+<td>Retailer</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 4217 Alpha</code></td>
+<td><code>DocumentCurrencyCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5189</code></td>
+<td><code>AllowanceChargeReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code></td>
+<td><code>TaxExemptionReasonCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ChargeTypeCode</code></td>
+<td><code>CurrentChargeTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ConsumersEnergyLevelCode</code></td>
+<td><code>ConsumersEnergyLevelCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode</code></td>
+<td><code>CorrectionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code></td>
+<td><code>ConsumptionLevelCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ConsumptionTypeCode</code></td>
+<td><code>ConsumptionTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DocumentTypeCode</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:HeatingTypeCode</code></td>
+<td><code>HeatingTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ItemPropertyNameCode</code></td>
+<td><code>NameCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:MeterConstantTypeCode</code></td>
+<td><code>MeterConstantCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:MeterReadingMethodCode</code></td>
+<td><code>LatestMeterReadingMethodCode</code>,
+<code>PreviousMeterReadingMethodCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:MeterReadingTypeCode</code></td>
+<td><code>MeterReadingTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:PrivacyCode</code></td>
+<td><code>PrivacyCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ResidenceTypeCode</code></td>
+<td><code>ResidenceTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:SpecificationTypeCode</code></td>
+<td><code>SpecificationTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:SubscriberTypeCode</code></td>
+<td><code>SubscriberTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TelecomCallTypeCode</code></td>
+<td><code>TelecommunicationsServiceCallCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TelecomDutyCode</code></td>
+<td><code>DutyCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TelecomServiceCategoryCode</code></td>
+<td><code>TelecommunicationsServiceCategoryCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TelecomSupplyTypeCode</code></td>
+<td><code>TelecommunicationsSupplyTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UtilityTypeCode</code></td>
+<td><code>UtilityStatementTypeCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5153</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 5305</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-energy-01-UtilityStatement.html">energy
-01-UtilityStatement</a></li>
-<li><a href="example-utilities-01-UtilityStatement.html">utilities
-01-UtilityStatement</a></li>
-<li><a href="example-utilities-03-UtilityStatement.html">utilities
-03-UtilityStatement</a></li>
-<li><a href="example-utilities-05-UtilityStatement.html">utilities
-05-UtilityStatement</a></li>
-<li><a href="example-utilities-08-UtilityStatement.html">utilities
-08-UtilityStatement</a></li>
-<li><a href="example-utilities-12-UtilityStatement.html">utilities
-12-UtilityStatement</a></li>
+<li><a href="example-energy-01-UtilityStatement.html">Utility Statement,
+Ferrano Grid to Ferrano Energy</a></li>
+<li><a href="example-utilities-01-UtilityStatement.html">Utility
+Statement, Ferrano Energy to Valdara Industries</a></li>
+<li><a href="example-utilities-03-UtilityStatement.html">Utility
+Statement, Ferrano Energy to Castrano Logistics</a></li>
+<li><a href="example-utilities-05-UtilityStatement.html">Utility
+Statement, Coastal State Water Company to Brightmarket Stores</a></li>
+<li><a href="example-utilities-08-UtilityStatement.html">Utility
+Statement, Coastal State Water Company to Robin Ashdale</a></li>
+<li><a href="example-utilities-12-UtilityStatement.html">Utility
+Statement, Selanu Telecom to Velumi Trading</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>

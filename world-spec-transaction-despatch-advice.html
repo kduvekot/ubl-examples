@@ -23,41 +23,352 @@ UBL 2.5 defines as follows: “A document used to describe the despatch or
 delivery of goods and services.”</p>
 <p>Owner: Lumeport Trade Accord Council. Version 1.0.</p>
 <p>Document types: DespatchAdvice.</p>
-<p>Examples that claim it:</p>
+<h2 id="who-sends-it-to-whom">Who sends it to whom</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th style="text-align: right;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Consortium Partner</td>
+<td>Telecom Utility</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Distributor</td>
+<td>Buyer's Warehouse (3PL)</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Distributor</td>
+<td>Retailer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Fruit Packers' Cooperative</td>
+<td>Fresh Produce Wholesaler</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Furniture Maker</td>
+<td>Retailer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Gas Producer</td>
+<td>Water Utility</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Pharmaceutical Wholesaler</td>
+<td>Hospital (XL)</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Raw Material Supplier</td>
+<td>Manufacturer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Sawmill</td>
+<td>Manufacturer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Seller's Warehouse (3PL)</td>
+<td>Contracting Authority</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Seller's Warehouse (3PL)</td>
+<td>Distributor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Textile Mill</td>
+<td>Retailer</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Waste Processor</td>
+<td>Packaging Maker</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-lists-its-documents-use">Code lists its documents use</h2>
+<p>Each list is published on <a href="world-codelists.html">the code
+lists page</a>.</p>
+<table>
+<thead>
+<tr>
+<th>List (listID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPSG</code></td>
+<td><code>CoordinateSystemCode</code></td>
+</tr>
+<tr>
+<td><code>ERG 2024</code></td>
+<td><code>MedicalFirstAidGuideCode</code></td>
+</tr>
+<tr>
+<td><code>IATA SSIM Aircraft Types</code></td>
+<td><code>TransportMeansTypeCode</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>IdentificationCode</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations Dangerous Goods List</code></td>
+<td><code>UNDGCode</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations hazard class</code></td>
+<td><code>HazardousCategoryCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td><code>OrderTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 3155</code></td>
+<td><code>ChannelCode</code></td>
+</tr>
+<tr>
+<td><code>UN/EDIFACT EDED 7075</code></td>
+<td><code>PackageLevelCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 19 - Codes for Modes of Transport</code></td>
+<td><code>TransportModeCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code></td>
+<td><code>PackagingTypeCode</code>,
+<code>TransportHandlingUnitTypeCode</code></td>
+</tr>
+<tr>
+<td><code>UNECE Recommendation 28</code></td>
+<td><code>TransportMeansTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code></td>
+<td><code>LatitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code></td>
+<td><code>LongitudeDirectionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td><code>CountrySubentityCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td><code>AddressFormatCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td><code>AddressTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ColourCode</code></td>
+<td><code>DescriptionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DespatchAdviceTypeCode</code></td>
+<td><code>DespatchAdviceTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:HandlingInstructionCode</code></td>
+<td><code>HandlingCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:ItemPartPositionCode</code></td>
+<td><code>PositionCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td><code>LocaleCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code></td>
+<td><code>DocumentTypeCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:UNPackingGroupCode</code></td>
+<td><code>UNPackingGroupCode</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:WoodCode</code></td>
+<td><code>DescriptionCode</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-schemes-its-documents-use">Identifier schemes its
+documents use</h2>
+<table>
+<thead>
+<tr>
+<th>Scheme (schemeID)</th>
+<th>In the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GS1 GLN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>GS1 GRAI</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>GS1 GTIN</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>GS1 SSCC</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 15459-6</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 3166</code></td>
+<td><code>RegistrationNationalityID</code></td>
+</tr>
+<tr>
+<td><code>ISO 639</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO 6523</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>ISO6346</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN Model Regulations hazard class</code></td>
+<td><code>HazardClassID</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>UN/LOCODE</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:NT:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:UL:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:lumeport:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XB:vehicle-register</code></td>
+<td><code>LicensePlateID</code>, <code>TrailerLicensePlateID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:aircraft-register</code></td>
+<td><code>AircraftID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:delivery-point</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:public-body-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XL:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:address-register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:XU:register</code></td>
+<td><code>ID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:OtherAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code></td>
+<td><code>AttributeID</code></td>
+</tr>
+<tr>
+<td><code>urn:ubl-examples:world:endpoint</code></td>
+<td><code>ElectronicAddressID</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples-that-claim-it">Examples that claim it</h2>
 <ul>
-<li><a href="example-air-06-DespatchAdvice.html">air
-06-DespatchAdvice</a></li>
-<li><a href="example-air-08-DespatchAdvice.html">air
-08-DespatchAdvice</a></li>
-<li><a href="example-furniture-19-DespatchAdvice.html">furniture
-19-DespatchAdvice</a></li>
-<li><a href="example-lpg-02-DespatchAdvice.html">lpg
-02-DespatchAdvice</a></li>
-<li><a href="example-mast-04-DespatchAdvice.html">mast
-04-DespatchAdvice</a></li>
-<li><a href="example-medicines-09-DespatchAdvice.html">medicines
-09-DespatchAdvice</a></li>
-<li><a href="example-ore-04-DespatchAdvice.html">ore
-04-DespatchAdvice</a></li>
-<li><a href="example-packaging-06-DespatchAdvice.html">packaging
-06-DespatchAdvice</a></li>
-<li><a href="example-plastics-08-DespatchAdvice.html">plastics
-08-DespatchAdvice</a></li>
-<li><a href="example-reefer-06-DespatchAdvice.html">reefer
-06-DespatchAdvice</a></li>
-<li><a href="example-retail-12-DespatchAdvice.html">retail
-12-DespatchAdvice</a></li>
-<li><a href="example-road-04-DespatchAdvice.html">road
-04-DespatchAdvice</a></li>
-<li><a href="example-sea-20-DespatchAdvice.html">sea
-20-DespatchAdvice</a></li>
-<li><a href="example-tender-29-DespatchAdvice.html">tender
-29-DespatchAdvice</a></li>
-<li><a href="example-wood-06-DespatchAdvice.html">wood
-06-DespatchAdvice</a></li>
+<li><a href="example-air-06-DespatchAdvice.html">Despatch Advice,
+Lumeway Distribution to Nalevi Warehousing</a></li>
+<li><a href="example-air-08-DespatchAdvice.html">Despatch Advice,
+Lumeway Distribution to Nalevi Warehousing</a></li>
+<li><a href="example-furniture-19-DespatchAdvice.html">Despatch Advice,
+Brackenmere Furniture to Brightmarket Stores</a></li>
+<li><a href="example-lpg-02-DespatchAdvice.html">Despatch Advice,
+Kelpstone Gas to Coastal State Water Company</a></li>
+<li><a href="example-mast-04-DespatchAdvice.html">Despatch Advice,
+Saltmere Engineering to Selanu Telecom</a></li>
+<li><a href="example-medicines-09-DespatchAdvice.html">Despatch Advice,
+Quillmoor Pharma Distribution to Selanu General Hospital</a></li>
+<li><a href="example-ore-04-DespatchAdvice.html">Despatch Advice,
+Serravona Mining to Valdara Industries</a></li>
+<li><a href="example-packaging-06-DespatchAdvice.html">Despatch Advice,
+Lumeport Textile Mill to Brightmarket Stores</a></li>
+<li><a href="example-plastics-08-DespatchAdvice.html">Despatch Advice,
+Rinova Recovery to Rivermouth Packaging</a></li>
+<li><a href="example-reefer-06-DespatchAdvice.html">Despatch Advice,
+Harrowmead Fruit Growers to Hafefo Fresh Produce</a></li>
+<li><a href="example-retail-12-DespatchAdvice.html">Despatch Advice,
+Lumeway Distribution to Brightmarket Stores</a></li>
+<li><a href="example-road-04-DespatchAdvice.html">Despatch Advice,
+Castrano Logistics to Lumeway Distribution</a></li>
+<li><a href="example-sea-20-DespatchAdvice.html">Despatch Advice,
+Lumeway Distribution to Nalevi Warehousing</a></li>
+<li><a href="example-tender-29-DespatchAdvice.html">Despatch Advice,
+Castrano Logistics to Lumeport Public Works Department</a></li>
+<li><a href="example-wood-06-DespatchAdvice.html">Despatch Advice,
+Marrowdale Sawmill to Valdara Industries</a></li>
 </ul>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0767d97d85be1c59834f4dabbbfb7524e75180ad"><code>0767d97</code></a> of 2026-11-20 11:20 UTC</p></div></footer>
 </body>
 </html>
