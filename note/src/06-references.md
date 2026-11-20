@@ -4,8 +4,6 @@
   <https://docs.oasis-open.org/ubl/os-UBL-2.5/>.
 - **OASIS TC Process:**
   <https://www.oasis-open.org/policies-guidelines/tc-process/>.
-- **Global Test Data:** safe example identifiers per country,
-  <https://sipico.github.io/global-test-data/>.
 - **ISO 3166-1:** *Codes for the representation of names of countries and
   their subdivisions — Part 1: Country code*, including the user-assigned
   codes AA, QM–QZ, XA–XZ and ZZ, <https://www.iso.org/iso-3166-country-codes.html>.

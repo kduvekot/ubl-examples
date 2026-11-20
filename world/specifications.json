@@ -552,7 +552,7 @@
    "when": {
     "seller_country": "XU"
    },
-   "purpose": "Urvania's rules for the invoices of its value added tax, modelled on the EU VAT directive: the seller's VAT number, the tax category and rate per line, and the bilingual notes of an Urvanian sender. An invoice to a public body of Bayvarra claims that country's rules for public buyers instead; its tax is still Urvania's."
+   "purpose": "Urvania's rules for the invoices of its value added tax: the seller's VAT number, the tax category and rate per line, and the bilingual notes of an Urvanian sender. An invoice to a public body of Bayvarra claims that country's rules for public buyers instead; its tax is still Urvania's."
   }
  },
  "communities": {
@@ -637,7 +637,7 @@
     "TenderContract"
    ],
    "when": "with_member",
-   "purpose": "The contracting authorities of Bayvarra and the economic operators that take part in their procedures exchange the documents of a procurement procedure under the Accord's procurement rules, which are modelled on the EU's: the procedure's folder number, lots, criteria and the code lists modelled on eForms and the ESPD."
+   "purpose": "The contracting authorities of Bayvarra and the economic operators that take part in their procedures exchange the documents of a procurement procedure under the Accord's procurement rules: the procedure's folder number, lots, award criteria and the Accord's procurement code lists."
   }
  },
  "profiles": {

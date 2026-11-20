@@ -91,7 +91,7 @@ irrelevant · structure · process.
 | SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | partly solved |
 | SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
 | SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | solved |
-| SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | open |
+| SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | partly solved |
 | SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | open |
 | SR-22 | Method note: statements that contradict the world or a decision | medium | B-07, B-08, B-12 | | open |
 | SR-23 | Method note: order, weight, unpublished paths and references | medium | B-15, B-16, B-17 | Q-B-01, Q-B-02 | open |
@@ -365,7 +365,14 @@ irrelevant · structure · process.
 - **Parts:** D-06.
 
 ### SR-20 · Specification pages define nothing
-- **Status:** open
+- **Status:** decided 2026-11-20 (owner, Q-D-01: A) and **partly solved**: every transaction page shows, generated from
+  its examples at every build, who sends it to whom, the code lists and the identifier schemes its documents use, and
+  its examples by name. **The world is separate and independent (owner): the world's pages point to no real
+  specification** (no Peppol, CEN, EN 16931, XRechnung, eForms, ESPD, EU). Removed from the Rules index and from the
+  Urvanian invoice and procurement community texts; D-08's proposed paragraph on the relation to real specifications
+  is dropped. Still to clean, with SR-07: about 13 example pages whose reasons name EN 16931 or the EU
+  (`tools/examples_scenarios.py`, `tools/examples_kit.py`, `world/documents.json`, `world/countries.json`,
+  `world/items.json`). Open: D-10 (stored title case, community pages without owner).
 - **What:** 54 of 70 transaction pages only repeat the UBL definition; no page states roles, rules, code lists or
   identifier schemes; the relation to EN 16931 and Peppol is unexplained and the URN prefix not marked invented;
   the self-billing page does not mention the Invoice + 389 deviation; stored title case ("Bill Of Lading"),
@@ -420,7 +427,7 @@ Each question is given in full, with options and the reviewer's recommendation, 
 |---|---|---|---|---|
 | Q-A-01 | Headline figures and coverage page about the world examples, OASIS as a labelled baseline? | A: world first | SR-01 | **decided 2026-11-20 (owner): A, without the OASIS baseline** (see SR-01) |
 | Q-A-02 | Specifications and code lists as sections, with a code-list index? | B: one "Reference" nav item; Releases + History merged into "OASIS samples" | SR-02 | **decided 2026-11-20 (owner): the world front and centre**; nav World · Trade · Parties · Rules · About; the OASIS pages under About |
-| Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | open |
+| Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | **decided and solved 2026-11-20 (owner): A, removed**; may come back later |
 | Q-B-02 | Backstory in the method note? | A now (method first, backstory in an annex), B later (to the encyclopaedia) | SR-23 | open |
 | Q-B-03 | Describe the review process in the note? | A: a chapter "Reviewing and maintaining the examples" | SR-21 | open |
 | Q-B-04 | Decided but unbuilt flows in the note? | B: one sentence naming them | SR-12 | **settled 2026-11-20:** the flows are built; the note tells them as built |
@@ -429,7 +436,7 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-C-03 | How much master data on a party page? | A: the O88 "about itself" record, no personal data of persons | SR-15 | **decided 2026-11-20 (owner): A, with the fleet** |
 | Q-C-04 | Where do D/O references live? | A: a separate, unprinted key; flow by flow with O112 | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** out of published text, into comments or an unprinted key |
 | Q-C-05 | Is Urvania still inland? | A: a coast without a deep-water port | SR-17 | **decided 2026-11-20 (owner): A** |
-| Q-D-01 | Do transaction specifications state rules? | A: generated sections from the examples, hand rules only where a decision makes one | SR-20 | open |
+| Q-D-01 | Do transaction specifications state rules? | A: generated sections from the examples, hand rules only where a decision makes one | SR-20 | **decided 2026-11-20 (owner): A, generated**; no reference to real specifications |
 | Q-D-02 | Which national levels does a cross-border public invoice claim? | A: chain both, `XU:invoice` then `XB:public-billing` | SR-18 | **decided 2026-11-20 (owner): B**, the public buyer's rules only, their text cut back; `#compliant#` chains restrictions, not two countries' parallel rules |
 | Q-D-03 | New version of a specification when a decision changes it? | A: keep 1.0 until a first release | SR-09 | **decided 2026-11-20 (owner): A**; in-world there is no change history |
 | Q-D-04 | National specifications for the new flows? | decide with O138; B unless a real rule exists | SR-20 | open |
