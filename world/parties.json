@@ -836,7 +836,7 @@
   {
    "id": "23-xu",
    "n": "23",
-   "name": "Seller's Bank",
+   "name": "Bank (XU)",
    "cat": "finance",
    "c": "XU",
    "at": [
@@ -845,7 +845,7 @@
    ],
    "h": 3,
    "kind": "bank",
-   "what": "Holds the manufacturer's account and receives the payments from abroad.",
+   "what": "A bank in Ferrano: holds the accounts of the mine, the manufacturer, the carriers and the energy companies of Urvania, and receives their payments from home and abroad.",
    "how": "The seller's bank receives payments from many countries. Because UBL invoices carry the payee account and a payment reference, and remittance advices repeat that reference, incoming payments can be matched to the right invoices automatically.",
    "identity": {
     "name": "Crevalto Bank",
@@ -982,8 +982,8 @@
    ],
    "h": 1,
    "kind": "customs",
-   "what": "Export customs at the land border crossing.",
-   "how": "Export customs needs to know what leaves the country, for whom and how. UBL customs declarations reuse the parties, goods and transport details already present in the commercial and transport documents, so the declarant does not have to collect them again.",
+   "what": "Urvania's customs, at the land border crossing: clears the country's exports and imports, the gas that arrives by pipeline among them, and receives the declarations of goods in transit.",
+   "how": "Customs needs to know what crosses the border, for whom and how. UBL customs declarations reuse the parties, goods and transport details already present in the commercial and transport documents, so the declarant does not have to collect them again.",
    "on": "road",
    "identity": {
     "name": "Customs Administration of Urvania",
@@ -1046,8 +1046,8 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "Issues item and property identifiers used across the world (a fictional numbering organisation).",
-   "how": "Everyone in the world refers to the same products and properties. An identifier issuing agency gives those items and properties stable identifiers, which UBL documents carry in their identification elements, so a catalogue line, an order line and an invoice line point to exactly the same thing.",
+   "what": "Urvania's identification agency: it gives each company that numbers its products and packages under ISO/IEC 15459 a company number, under the agency's issuing agency code; the company then numbers its own items and packages under that number.",
+   "how": "One issuing agency code and one company number make an item or package number unique, so a catalogue line, an order line and an invoice line point to the same thing, whoever reads them.",
    "identity": {
     "name": "Codana Identification Agency",
     "kind": "public",
@@ -1087,8 +1087,8 @@
    ],
    "h": 1,
    "kind": "customs",
-   "what": "Import customs at the land border crossing and at the seaport.",
-   "how": "Import customs checks goods arriving over the land border and through the seaport. UBL import and transit declarations carry the same consignment and goods data as the export declaration on the other side, which makes it possible to compare them.",
+   "what": "Bayvarra's customs and border service, at the land border crossing, the seaport and the airport of Lumeport: clears imports and exports.",
+   "how": "Customs checks goods arriving and leaving over the land border, through the seaport and through the airport. UBL import, export and transit declarations carry the same consignment and goods data as the declaration on the other side of the border, which makes it possible to compare them.",
    "on": "road",
    "identity": {
     "name": "Customs and Border Service of Bayvarra",
@@ -1143,7 +1143,7 @@
    ],
    "h": 3,
    "kind": "warehouse",
-   "what": "Buys finished goods from #5, stocks them in its distribution centre, publishes the catalogue and sells to #26 and overseas to #1.",
+   "what": "Buys finished goods from Valdara Industries, stocks them in its distribution centre in Marrowdale, publishes the catalogue and sells to Brightmarket Stores at home and to Velumi Trading on the island.",
    "how": "The distributor publishes the catalogue its customers order from, buys from manufacturers and sells at home and overseas. UBL links all of it: catalogue items appear unchanged in orders, orders are referenced by despatch advices and invoices, and receipt advices confirm what actually arrived.",
    "size": [
     2,
@@ -1449,7 +1449,7 @@
    ],
    "h": 1,
    "kind": "house",
-   "what": "A private person buying in the shop; receives a purchase receipt.",
+   "what": "A private person in Lumeport: buys in the department store and from its web shop, gets purchase receipts, and gets the water company's statements and bills.",
    "how": "A consumer rarely deals with UBL directly, but a structured purchase receipt means the receipt can be stored, searched or used for a warranty claim without a paper slip.",
    "identity": {
     "name": "Robin Ashdale",
@@ -1877,7 +1877,7 @@
   {
    "id": "25-xb",
    "n": "25",
-   "name": "Bank / Guarantor",
+   "name": "Bank (XB)",
    "cat": "finance",
    "c": "XB",
    "at": [
@@ -2139,7 +2139,7 @@
    ],
    "h": 2,
    "kind": "port",
-   "what": "Port of loading: berths, container yard and vessel traffic.",
+   "what": "Lumeport's seaport: berths, the container yard and vessel traffic for the ships to the island and beyond.",
    "how": "The seaport loads the ship. UBL transport reports and status messages tell the port which containers are coming, and tell carriers and authorities what was loaded, on which vessel and when.",
    "size": [
     2,
@@ -2372,7 +2372,7 @@
    ],
    "h": 2,
    "kind": "port",
-   "what": "Port of discharge on the island.",
+   "what": "The island's seaport at Selanu: berths, the container yard and vessel traffic.",
    "how": "The island's seaport discharges the ship. It receives the same UBL transport report the loading port sent, so it can plan berths and inform customs before the vessel arrives.",
    "size": [
     1,
@@ -2597,8 +2597,8 @@
    ],
    "h": 1,
    "kind": "customs",
-   "what": "Import customs on the island.",
-   "how": "Import customs on the island receives a declaration that reuses the data of the export side and the transport documents, which speeds up clearance at the port.",
+   "what": "The island's customs, at the port and the airport of Selanu: clears imports and the island's exports, its cotton among them, and receives the ship's manifest before the ship arrives.",
+   "how": "Customs on the island receives declarations that reuse the data of the other side and of the transport documents, which speeds up clearance at the port and the airport.",
    "on": "road",
    "identity": {
     "name": "Island Customs Service",
@@ -2880,7 +2880,7 @@
   {
    "id": "22-xl",
    "n": "22",
-   "name": "Buyer's Bank",
+   "name": "Bank (XL)",
    "cat": "finance",
    "c": "XL",
    "at": [
@@ -2889,7 +2889,7 @@
    ],
    "h": 3,
    "kind": "bank",
-   "what": "Holds the buyer's account and sends the payment abroad.",
+   "what": "The island's bank in Selanu: holds the accounts of the island's buyers, producers, carriers and brokers, and makes and receives their payments.",
    "how": "The buyer's bank sends the payment abroad. The payment reference and payee account come straight from the UBL invoice, so the payment arrives with the information the seller's bank needs to match it.",
    "identity": {
     "name": "Bank of Selanu",
@@ -3181,7 +3181,7 @@
    ],
    "h": 2,
    "kind": "waterworks",
-   "what": "Supplies drinking water in Coastal State, to shops and households, and runs Lumeport's district heating, whose peak boilers burn propane bought from Kelpstone Gas in winter (D31, D48).",
+   "what": "Supplies drinking water in Coastal State, to shops and households, and runs Lumeport's district heating, whose peak boilers burn propane bought from Kelpstone Gas in winter.",
    "how": "Water is billed on metered consumption. With UBL the Utility Statement carries the meter readings and the Invoice the amount; the tax exemption for water is stated explicitly, and a Reminder follows the same structure when a household pays late.",
    "identity": {
     "name": "Coastal State Water Company",

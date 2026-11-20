@@ -85,7 +85,7 @@ irrelevant · structure · process.
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | solved |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | decided |
 | SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | solved |
-| SR-14 | Party descriptions wrong or told from the bench chain only | medium | C-01, C-08, C-09 | | open |
+| SR-14 | Party descriptions wrong or told from the bench chain only | medium | C-01, C-08, C-09 | | solved |
 | SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | solved |
 | SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | solved |
 | SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | partly solved |
@@ -294,7 +294,12 @@ irrelevant · structure · process.
 - **Parts:** F-01 (high), F-02, F-03, F-04, F-05, F-07, E-11.
 
 ### SR-14 · Party descriptions wrong or told from the bench chain only
-- **Status:** open
+- **Status:** **solved 2026-11-20**: the three customs services clear exports and imports (Urvania also transit, the
+  island also the ship's manifest); Codana gives company numbers under its issuing agency code and each company numbers
+  its own items (D5); Lumeway's text names its partners instead of role numbers; the consumer buys in the store and
+  its web shop and gets the water company's bills; the banks are told by the accounts they hold and are named Bank
+  (XU), Bank (XB), Bank (XL) instead of "Seller's Bank" and "Buyer's Bank"; the ports beyond one chain. A party page
+  with no documents no longer prints empty sections or "listed per flow below".
 - **What:** the three customs services described as export-only or import-only, against their own documents;
   Codana "issues item identifiers" (against D5) with empty sections and "listed per flow below" at zero counts;
   Lumeway's text uses "#5/#26/#1"; the water company without district heating; the consumer without the web

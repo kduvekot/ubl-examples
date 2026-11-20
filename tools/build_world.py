@@ -306,11 +306,13 @@ for p in world["parties"]:
             f"<span class=\"kind kind-{p['cat']}\">{CATEGORY[p['cat']]}</span>*")
     lines += [meta, "", p["what"], ""] + identity(p) + fleet(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
-    lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
-              f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]
-    lines += by_flow(v, p["id"])
-    lines += ["## UBL party elements", "", "The party elements in which this party appears:", "",
-              " ".join(f"`{e}`" for e in v["elements"]), ""]
+    if n("sends") or n("receives") or n("mentioned"):
+        lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
+                  f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]
+        lines += by_flow(v, p["id"])
+    if v["elements"]:
+        lines += ["## UBL party elements", "", "The party elements in which this party appears:", "",
+                  " ".join(f"`{e}`" for e in v["elements"]), ""]
     if v["partners"]:
         lines += ["## Trading partners in the world", "",
                   "The parties it exchanges documents with:", ""]
