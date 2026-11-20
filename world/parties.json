@@ -926,11 +926,11 @@
    },
    "wiki": {
     "short": "Urvanian river barge operator at Ferrano",
-    "lead": "**Fiumella Barges** carries bulk cargo by barge on the main river, from [[Ferrano]] in [[Urvania]] down to the coast of [[Bayvarra]]. It has worked the river since {founded_year} and employs about {employees} people.",
+    "lead": "**Fiumella Barges** carries bulk cargo by barge on the [[Runmek]], from [[Ferrano]] in [[Urvania]] down to the coast of [[Bayvarra]]. It has worked the river since {founded_year} and employs about {employees} people.",
     "sections": [
      {
       "title": "History",
-      "text": "Fiumella belongs to the old trades of Urvania that are older than its independence: Urvania has always sent bulk goods down the river to the sea."
+      "text": "Ligurian boatmen from Marina Ligure, on Urvania's south coast, founded Fiumella in 1953, under the British administration, and brought motor barges to the river, which until then had carried its bulk goods to the sea under sail and oar. Its name is Italian for little river."
      },
      {
       "title": "Operations",
@@ -1117,6 +1117,10 @@
     "short": "Bank in Ferrano, Urvania",
     "lead": "**Crevalto Bank** is a bank in [[Ferrano]], [[Urvania]], founded in {founded_year}, before the country's independence. It is listed on the Ferrano Stock Exchange and employs about {employees} people.",
     "sections": [
+     {
+      "title": "History",
+      "text": "The bank was founded in 1921, under Italian rule, as the savings and credit bank of the Province of Ferrano, in the Italian manner of a provincial savings bank, to take the savings of the valley's farmers and craftsmen and lend to them. In 1993, as Urvania opened its economy, it became a public limited company and was listed on the Ferrano Stock Exchange."
+     },
      {
       "title": "Operations",
       "text": "Crevalto Bank holds the accounts of most of Urvania's trading companies around Ferrano: [[Serravona Mining]], [[Valdara Industries]], [[Castrano Logistics]], [[Rinova Recovery]], the carriers [[Ferrano Rail Cargo]], [[Trasvia Haulage]] and [[Fiumella Barges]], the energy companies [[Ferrano Energy]], [[Montebrio Power]] and [[Ferrano Grid]], and [[Tostara Wood Modification]]. It receives their payments from home and abroad. When Valdara tendered for park benches in [[Lumeport]], Crevalto gave the counter-guarantee on which [[Bank of Lumeport]] issued Valdara's tender guarantee."
@@ -2450,7 +2454,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The bank was founded in 1903, four years after the two colonies had joined as the federation of Bayvarra, a dominion under the British Crown: the country's settler economy is older than Urvania's state."
+      "text": "The wool and wheat merchants of Lumeport and [[Larkmouth]] founded the bank in 1903, four years after the two colonies had joined as the federation of Bayvarra, a dominion under the British Crown, to keep the new country's savings and trade credit at home. It is a private commercial bank, owned by its shareholders."
      },
      {
       "title": "Operations",
@@ -2524,7 +2528,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Wavesure is one of the old trades of Bayvarra's port city, founded as a marine insurer decades before the Lumeport Agreement of 1974 and the [[Lumeport Trade Accord]] brought regular shipping to [[Lisavu]]."
+      "text": "Wavesure began in 1927 as a mutual club of Lumeport's shipowners and meat and wool exporters, after the frozen meat trade from [[Larkmouth]] had made the cargoes going overseas valuable. It became a company in 1972. Besides cargo it insures exporters against invoices that go unpaid, and it owns [[Harbourline Factoring]] together with the [[Bank of Lumeport]]."
      },
      {
       "title": "Operations",
@@ -4117,7 +4121,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The company is one of Bayvarra's old public services, founded in 1954. Under the [[Lumeport Trade Accord]] the supply of water to end customers stays a national matter: each country keeps its own utilities, and none supplies customers in another."
+      "text": "Coastal State set up the company in 1954, after the dry summer of 1953, when Lumeport's wells ran low, and dammed a reservoir in the hills west of the city; it owns the company still. Under the [[Lumeport Trade Accord]] the supply of water to end customers stays a national matter: each country keeps its own utilities, and none supplies customers in another."
      },
      {
       "title": "Operations",
@@ -5006,7 +5010,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The ginnery was founded in 1936, when cotton was already the island's old export, grown on the estates that English settlers laid out on the plain in the 1860s. It took over the ginning from the estates' own gins and buys from the estates and the island's small farms alike. Since the Lumeport Agreement of 1974 the island's cotton enters [[Bayvarra]] free of duty."
+      "text": "The estates and the [[Bank of Selanu]] built the ginnery together in 1936, when cotton was already the island's old export, grown on the estates that English settlers laid out on the plain in the 1860s, to gin all the island's cotton in one plant at Bollworth, where the bales were landed for the ships. It carries the capital's name because the island's lint sells abroad as Selanu cotton. It took over the ginning from the estates' own gins and buys from the estates and the island's small farms alike. Since the Lumeport Agreement of 1974 the island's cotton enters [[Bayvarra]] free of duty."
      },
      {
       "title": "Operations",
@@ -6062,6 +6066,10 @@
     "short": "Fruit growers' cooperative at Harrowmead, Bayvarra",
     "lead": "**Harrowmead Fruit Growers** is a cooperative owned by the fruit growers of the slopes above Harrowmead, in the wetter west of Upland State, [[Bayvarra]]. Founded in {founded_year}, it grades, packs and cold-stores its members' apples and pears and sells them at home and overseas. It employs about {employees} people.",
     "sections": [
+     {
+      "title": "History",
+      "text": "The growers founded the cooperative in 1958, after a year of glut in which apples sold below what they cost to grow, to grade, store and sell their fruit together."
+     },
      {
       "title": "Facilities",
       "text": "Its packhouse and cold store stand on Orchard Road at the edge of Harrowmead, a market town of the western wheat land founded by British settlers in the 1850s; the orchards lie on the slopes above the town."

@@ -29,8 +29,8 @@ decided with the owner one at a time, like the gaps here.
 
 ### Bank of Lumeport (25-xb)
 
-- Who founded the bank in 1903 and why; its history through the colonial years and independence.
-- Whether it issues bank notes or is a private commercial bank only; who owns it.
+- ~~Who founded the bank in 1903 and why; its history through the colonial years and independence.~~ Filled 2026-11-20 (OW011).
+- Whether it issues bank notes (who issues Bayvarra's notes is not set); ~~who owns it~~ Filled 2026-11-20 (OW011): a private commercial bank owned by its shareholders.
 - ~~How Bayvarra became independent (not set), which the bank's history would need.~~ Filled 2026-11-20 (OW004).
 
 ### Bank of Selanu (22-xl)
@@ -70,7 +70,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Coastal State Water Company (34-xb)
 
-- who owns it: the Coastal State, the federal state or the city
+- ~~who owns it: the Coastal State, the federal state or the city~~ Filled 2026-11-20 (OW011).
 - where its water comes from (reservoir, river, wells) and how many customers it has
 - when the district heating network was built
 
@@ -82,9 +82,9 @@ decided with the owner one at a time, like the gaps here.
 
 ### Crevalto Bank (23-xu)
 
-- Who founded the bank in 1921 and under which rule Urvania then stood (Italian or British)
+- ~~Who founded the bank in 1921 and under which rule Urvania then stood (Italian or British)~~ Filled 2026-11-20 (OW011).
 - The bank's history through independence in 1962 and the opening of the economy in the 1990s
-- When it was listed on the Ferrano Stock Exchange
+- ~~When it was listed on the Ferrano Stock Exchange~~ Filled 2026-11-20 (OW011).
 - Its place among Urvania's banks (the largest, one of several)
 
 ### Customs Administration of Urvania (19-xu)
@@ -150,7 +150,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Fiumella Barges (15-xu)
 
-- Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.
+- ~~Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.~~ Filled 2026-11-20 (OW011).
 - How many barges it runs besides Fiumella IV, and what other bulk it carries.
 - ~~The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.~~ Settled 2026-11-20 (O264): a rugged coast without a deep-water port.
 
@@ -175,7 +175,7 @@ decided with the owner one at a time, like the gaps here.
 ### Harrowmead Fruit Growers (55-xb)
 
 - how many growers are members, and the area of the orchards
-- why the cooperative was founded in 1958
+- ~~why the cooperative was founded in 1958~~ Filled 2026-11-20 (OW011).
 - its markets at home besides the island
 
 ### Island Customs Service (19-xl)
@@ -302,7 +302,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Selanu Cotton Ginnery (39-xl)
 
-- who founded the ginnery and why it is named after Selanu while it stands at Bollworth
+- ~~who founded the ginnery and why it is named after Selanu while it stands at Bollworth~~ Filled 2026-11-20 (OW011).
 - how many farms deliver to it, and whether it sells to buyers other than the textile mill
 
 ### Selanu General Hospital (50-xl)
@@ -351,5 +351,5 @@ decided with the owner one at a time, like the gaps here.
 
 ### Wavesure Cargo Insurance (29-xb)
 
-- who founded Wavesure in 1927 and why then
+- ~~who founded Wavesure in 1927 and why then~~ Filled 2026-11-20 (OW011).
 - whether it insures other risks besides cargo, and which other shippers it covers
