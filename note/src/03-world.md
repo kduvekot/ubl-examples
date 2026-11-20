@@ -1,10 +1,8 @@
 # The UBL example world
 
-This section describes the world as decided on 18 November 2026. The
-examples are being brought into line with it, and until that work is done
-some of them still differ from what is written here; where they do,
-`analysis/worklist.md` and `analysis/worklist-decisions.md` say what is to be
-done.
+This section describes the world as decided by 20 November 2026. The
+examples follow it; the remaining build checks and the signatures are still
+to come.
 
 All examples take place in one fictional world. It is built in layers.
 Each layer adds one kind of data, is kept in its own file, and is checked
@@ -484,8 +482,10 @@ register and does not translate it, so one address reads the same in every
 document of the world. Free text written for a document, such as a note or a
 description, carries the issuer's variety. One document can therefore hold
 two Englishes side by side: the buyer's note in Bayvarran English and the
-seller's address in Urvanian English. Whether and by whom an item's name and
-description are localised for the market it is sold in is not yet settled.
+seller's address in Urvanian English. A document carries an item's name and
+description in English and, where the item master holds that text, in the
+issuer's or the receiver's own language: Urvanian and English for Urvanian
+makers, Lisavan and English for the island's, English for Bayvarran ones.
 
 Port Wrenfield is still the official English name of the island's capital
 and stands in every address, the Lisavan name first, but it is fading from

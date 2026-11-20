@@ -24,7 +24,7 @@
 
 ## Where the reviews, the worklist and the open decisions are
 
-The examples were reviewed in November 2026 and the findings are being worked through. Nothing in the examples has been changed for them yet.
+The examples were reviewed in November 2026 and the findings have been worked through in stages 1 to 6: every cause has a "Fixed" line except C49 (signatures, stage 8); the build checks of stage 7 are next.
 
 - **Reviews of each example:** `world/examples/<flow>/NN-DocType.llm-review.<run-id>.merged.md` (250 files, made with the skill `.claude/skills/ubl-example-review`; the part files next to them are the merge's input). Status and the merges' decisions on recurring problems: `analysis/review-merge-decisions.md`.
 - **Review across flows:** `analysis/consistency-review.20261114T2143Z-consistency.md` (index) and one file per topic beside it.
