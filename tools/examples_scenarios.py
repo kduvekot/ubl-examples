@@ -6428,11 +6428,9 @@ def _(f, n, doc, out):
             "Signature": {"ID": V("BM-SIG-26-0422", "The store's seal."),
                           "SignatoryParty": party("26-xb", short=True)},
             "ForecastLine": {"Note": V("Week-by-week figures follow in the store's portal.", "Where the detail is."),
-                             "FrozenDocumentIndicator": V("true", "The figure may still change: by its UBL "
-                                                                  "definition the indicator is true when the "
-                                                                  "document can be changed, which its name "
-                                                                  "contradicts; recorded for the TC"
-                                                                  "."),  # retail/05#F10, D34
+                             "FrozenDocumentIndicator": V("true", "The figure may still change: the indicator "
+                                                                  "is true when the document can be changed."),
+                             # retail/05#F10, D34: the name contradicts the definition (analysis/ubl-findings.md)
                              "ForecastPeriod": {"StartDate": V(f.date(14), "The six weeks."),
                                                 "EndDate": V(f.date(56), "Their end.")}}}
 
