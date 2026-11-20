@@ -454,8 +454,8 @@
      "mode": "road",
      "from": "36-xb",
      "to": "37-xb",
-     "carrier": "36-xb",
-     "why": "Timber to the furniture maker, on the sawmill's own truck.",
+     "carrier": "37-xb",
+     "why": "The furniture maker collects the timber at the sawmill's yard with its own van.",
      "from_place": {
       "name": "Marrowdale Sawmill yard, Marrowdale"
      },
