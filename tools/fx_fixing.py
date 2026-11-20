@@ -22,7 +22,7 @@ V(d) = sum over C of a(C) / r(C, d) euro, so the fixing is lume per 1 EUR = 1 / 
 = 1 / (r(X, d) * V(d)). The basket amounts are a(C) = w(C) * r(C, base) / 1.20. The tool computes with exact
 fractions and rounds only what it publishes, to 6 significant digits.
 
-Published for every world working day (Monday to Friday) from 2026-01-01 to 2027-12-31: lume per 1 unit of EUR,
+Published for every day the Lumeport Exchange is open (Monday to Friday, not on the holidays of Bayvarra, Coastal State and Lumeport, O233) from 2026-01-01 to 2027-12-31: lume per 1 unit of EUR,
 USD, JPY, INR, GBP, CNY, ZAR and BRL, the inverse (units per 1 lume), and the ECB date used. The output,
 world/fx-fixings.json, is generated; do not edit it by hand.
 
@@ -106,12 +106,34 @@ def _date(world_date):
     return world_date if isinstance(world_date, datetime.date) else datetime.date.fromisoformat(world_date)
 
 
+def _exchange_open(d):
+    """Whether the Lumeport Exchange fixes on a date (O233): Monday to Friday and no public holiday of Bayvarra,
+    of Coastal State or of Lumeport (world/countries.json holidays, as tools/build_examples.working_day)."""
+    if d.weekday() >= 5:
+        return False
+    hol = _countries()["XB"].get("holidays", {})
+    days = dict(hol.get(str(d.year), {}))
+    days.update(hol.get("states", {}).get("Coastal State", {}))
+    days.update(hol.get("towns", {}).get("Lumeport", {}))
+    return d.isoformat() not in days
+
+
+_COUNTRIES = None
+
+
+def _countries():
+    global _COUNTRIES
+    if _COUNTRIES is None:
+        _COUNTRIES = json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8"))["countries"]
+    return _COUNTRIES
+
+
 def _fixing_day(world_date):
-    """The fixing that applies on a date: that day's, or on a weekend the Friday's."""
+    """The fixing that applies on a date: that day's, or on a weekend or holiday the previous fixing (O233)."""
     d = _date(world_date)
     if not FIRST <= d <= LAST:
         raise ValueError(f"no fixing published for {d}: the table runs from {FIRST} to {LAST}")
-    while d.weekday() >= 5:
+    while not _exchange_open(d) and d >= FIRST:
         d -= datetime.timedelta(days=1)
     if d < FIRST:
         raise ValueError(f"no fixing on or before {_date(world_date)}")
@@ -174,7 +196,7 @@ def build():
     rows = []
     d = FIRST
     while d <= LAST:
-        if d.weekday() < 5:
+        if _exchange_open(d):
             s = source_date(d)
             per = {c: _lume_per_unit(c, s) for c in QUOTED}
             rows.append({"date": d.isoformat(), "source_date": s.isoformat(),
@@ -192,7 +214,7 @@ def build():
                   "weekday) earlier, or of the most recent earlier day with a rate. With r(X) the ECB rate (units "
                   "of X per 1 EUR), one lume is worth V = sum a(C) / r(C) euro; lume per 1 EUR = 1 / V and lume "
                   "per 1 unit of X = 1 / (r(X) V). Computed exactly, published to 6 significant digits. Published "
-                  "for every working day (Monday to Friday); on a weekend the Friday's fixing applies.",
+                  "for every day the Lumeport Exchange is open (Monday to Friday, not on the holidays of Bayvarra, Coastal State and Lumeport); on other days the previous fixing applies (O233).",
         "source": {"file": "world/codelists/sources/ecb-eurofxref/eurofxref-hist-2020-2023.csv",
                    "publisher": "European Central Bank, euro foreign exchange reference rates",
                    "provenance": "world/codelists/sources/PROVENANCE-second-round.md"},
