@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: temperature class. The class of temperature goods are to be kept or carried at, where a document asks for the class and gives no figure: the carrier or the warehouse sets the figure the goods need within the class. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: temperature class. The class of temperature goods are to be kept or carried at, where a document asks for the class and gives no figure: the carrier or the warehouse sets the figure the goods need within the class. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>TemperatureClassCode</ShortName>

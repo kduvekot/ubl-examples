@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: conditions action. What a party does with conditions of sale or payment. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: conditions action. What a party does with conditions of sale or payment. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ConditionsActionCode</ShortName>

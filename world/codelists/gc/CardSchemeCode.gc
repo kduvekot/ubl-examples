@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: payment card scheme. The card schemes of the Lumeport Trade Accord: the network a payment card runs on. A card may carry two schemes (co-badged). Names checked against the real card networks on 2026-11-11. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: payment card scheme. The card schemes of the Lumeport Trade Accord: the network a payment card runs on. A card may carry two schemes (co-badged). Names checked against the real card networks on 2026-11-11. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>CardSchemeCode</ShortName>

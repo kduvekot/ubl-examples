@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of ISO 639 Language: the codes the world uses, and others of the same list. Built from world/codelists/sources/iso639-2/ISO-639-2_utf-8.txt (ISO 639-2 table of the Registration Authority, Last-Modified 29 Sep 2025). Added for the world: qau, qal. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of ISO 639 Language, version as published 2026-11-11: the codes the world uses, and others of the same list, as its agency publishes them. Added for the world: qau, qal. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>LanguageCode</ShortName>

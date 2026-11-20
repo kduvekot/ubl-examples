@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of UN/EDIFACT 5305 Duty or tax or fee category: the codes the world uses, and others of the same list. Built from world/codelists/sources/uncefact/taxcategorycodelist.json (D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of UN/EDIFACT 5305 Duty or tax or fee category, version D22A: the codes the world uses, and others of the same list, as its agency publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>UNCL5305Code</ShortName>

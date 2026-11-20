@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of PRONOM file format registry (PUIDs): the codes the world uses, and others of the same list. Built from world/codelists/sources/pronom/fmt-479.xml, pronom/fmt-480.xml, pronom/fmt-481.xml (PRONOM records fmt/479, fmt/480, fmt/481, as published 2026-11-11). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of PRONOM file format registry (PUIDs), version as published 2026-11-11: the codes the world uses, and others of the same list, as its agency publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>PRONOMCode</ShortName>

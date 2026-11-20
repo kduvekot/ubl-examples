@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: customs tariff. Urvania's national customs tariff: the HS subheading with two national digits. The Trade Accord is a free trade area, so each country keeps its own tariff. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: customs tariff. Urvania's national customs tariff: the HS subheading with two national digits. The Trade Accord is a free trade area, so each country keeps its own tariff. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>CustomsTariffCode</ShortName>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: packing group. The packing group of dangerous goods, following the UN Model Regulations (2.0.1.3), with a code for goods to which no packing group is assigned. The build checks that it agrees with the UN/EDIFACT 8339 packaging danger level: I with 1, II with 2, III with 3, NA with 4. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: packing group. The packing group of dangerous goods, following the UN Model Regulations (2.0.1.3), with a code for goods to which no packing group is assigned. The build checks that it agrees with the UN/EDIFACT 8339 packaging danger level: I with 1, II with 2, III with 3, NA with 4. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>UNPackingGroupCode</ShortName>

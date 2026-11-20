@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of ITU-R M.1371 AIS navigational status: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Recommendation ITU-R M.1371-6 (02/2026), Annex 7, A7-3.1 Messages 1, 2, 3: position reports, Table 46, navigational status); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of ITU-R M.1371 AIS navigational status: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Recommendation ITU-R M.1371-6 (02/2026), Annex 7, A7-3.1 Messages 1, 2, 3: position reports, Table 46, navigational status); the codes and names are as the standard publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ITUAISNavStatusCode</ShortName>
