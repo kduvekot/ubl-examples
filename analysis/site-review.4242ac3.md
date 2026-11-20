@@ -95,7 +95,7 @@ irrelevant · structure · process.
 | SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | deferred |
 | SR-22 | Method note: statements that contradict the world or a decision | medium | B-07, B-08, B-12 | | deferred |
 | SR-23 | Method note: order, weight, unpublished paths and references | medium | B-15, B-16, B-17 | Q-B-01, Q-B-02 | deferred (Q-B-01 solved) |
-| SR-24 | Reason texts: repeated boilerplate and concatenation artifacts | medium | E-05, E-06, F-10 | | open |
+| SR-24 | Reason texts: repeated boilerplate and concatenation artifacts | medium | E-05, E-06, F-10 | | partly solved |
 
 ### SR-01 · Headline figures and coverage page describe only the OASIS samples
 - **Status:** decided 2026-11-20 (owner, Q-A-01): **A, the world examples only.** The site no longer points
@@ -434,7 +434,9 @@ irrelevant · structure · process.
 - **Parts:** B-15, B-16, B-17.
 
 ### SR-24 · Reason texts: boilerplate and artifacts
-- **Status:** open
+- **Status:** partly solved 2026-11-20: the IssueTime reason says the local time once; no sentence starts in lower case
+  after a full stop (the source of a value is "As Valdara Industries gives it."); no internal route key in a reason;
+  "City of Ferrano", not "City of ferrano". Open: E-05, the weight of repeated party and country reasons on every page.
 - **What:** 55 % of 42,344 value rows repeat a reason that occurs 20 times or more, a third are party or country
   master data, so the document's own reasons are buried (partly the state before O86); on 199 pages the
   IssueTime reason says "in the sender's local time; in the issuer's local time"; 4,560 rows start lower case

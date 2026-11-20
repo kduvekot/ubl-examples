@@ -70,7 +70,7 @@
         <cac:RecipientCustomerParty>
           <cac:Party>
             <cac:PartyName>
-              <cbc:Name>City of ferrano</cbc:Name>
+              <cbc:Name>City of Ferrano</cbc:Name>
             </cac:PartyName>
           </cac:Party>
         </cac:RecipientCustomerParty>
@@ -88,7 +88,7 @@
         <cac:RecipientCustomerParty>
           <cac:Party>
             <cac:PartyName>
-              <cbc:Name>Town of conciaro</cbc:Name>
+              <cbc:Name>Town of Conciaro</cbc:Name>
             </cac:PartyName>
           </cac:Party>
         </cac:RecipientCustomerParty>
@@ -106,7 +106,7 @@
         <cac:RecipientCustomerParty>
           <cac:Party>
             <cac:PartyName>
-              <cbc:Name>Town of valico euridice</cbc:Name>
+              <cbc:Name>Town of Valico Euridice</cbc:Name>
             </cac:PartyName>
           </cac:Party>
         </cac:RecipientCustomerParty>

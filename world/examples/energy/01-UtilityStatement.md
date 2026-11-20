@@ -69,15 +69,15 @@ Inside `SenderParty`:
 - `PostalAddress/StreetName` = **Via della Rete** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Grid gives it.
 - `PostalAddress/BuildingNumber` = **3**  
-  Building number of the postal address. as Ferrano Grid gives it.
+  Building number of the postal address. As Ferrano Grid gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Grid gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Grid gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Grid gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Grid gives it.
 - `PostalAddress/PostalZone` = **4140**  
-  Postal code in Urvania's format (4 digits). as Ferrano Grid gives it.
+  Postal code in Urvania's format (4 digits). As Ferrano Grid gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Grid gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Ferrano Grid gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -91,7 +91,7 @@ Inside `SenderParty`:
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; as Ferrano Grid gives it.
 - `Contact/Telephone` = **+999 1 041 938 7117**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Grid gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Grid gives it.
 - `Contact/ElectronicMail` = **billing@ferranogrid.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Grid gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -120,15 +120,15 @@ Inside `ReceiverParty`:
 - `PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Energy gives it.
 - `PostalAddress/BuildingNumber` = **9**  
-  Building number of the postal address. as Ferrano Energy gives it.
+  Building number of the postal address. As Ferrano Energy gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Energy gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Energy gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Energy gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Energy gives it.
 - `PostalAddress/PostalZone` = **4150**  
-  Postal code in Urvania's format (4 digits). as Ferrano Energy gives it.
+  Postal code in Urvania's format (4 digits). As Ferrano Energy gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Energy gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Ferrano Energy gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -142,7 +142,7 @@ Inside `ReceiverParty`:
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; as Ferrano Energy gives it.
 - `Contact/Telephone` = **+999 1 041 474 7922**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Energy gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Energy gives it.
 - `Contact/ElectronicMail` = **payables@ferranoenergy.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Energy gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -196,15 +196,15 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Address/StreetName` = **Via delle Officine** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Valdara Industries gives it.
 - `UtilityConsumptionPoint/Address/BuildingNumber` = **17**  
-  Building number of the postal address. as Valdara Industries gives it.
+  Building number of the postal address. As Valdara Industries gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `UtilityConsumptionPoint/Address/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). as Valdara Industries gives it.
+  Postal code in Urvania's format (4 digits). As Valdara Industries gives it.
 - `UtilityConsumptionPoint/Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Valdara Industries gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Valdara Industries gives it.
 - `UtilityConsumptionPoint/Address/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `UtilityConsumptionPoint/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  

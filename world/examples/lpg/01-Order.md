@@ -25,7 +25,7 @@ The water company orders a tanker load of propane for the peak boilers of its di
 - `IssueDate` = **2026-06-08**  
   Ordered when the storage reading of Monday morning showed a third left.
 - `IssueTime` = **09:47:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -54,17 +54,17 @@ Inside `BuyerCustomerParty`:
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Reservoir Road**  
-  Street of the postal address. as Coastal State Water Company gives it.
+  Street of the postal address. As Coastal State Water Company gives it.
 - `Party/PostalAddress/BuildingNumber` = **51**  
-  Building number of the postal address. as Coastal State Water Company gives it.
+  Building number of the postal address. As Coastal State Water Company gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Coastal State Water Company gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Coastal State Water Company gives it.
 - `Party/PostalAddress/PostalZone` = **38500**  
-  Postal code in Bayvarra's format (5 digits). as Coastal State Water Company gives it.
+  Postal code in Bayvarra's format (5 digits). As Coastal State Water Company gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Coastal State Water Company gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Coastal State Water Company gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -78,7 +78,7 @@ Inside `BuyerCustomerParty`:
 - `Party/Contact/Department` = **Customer service**  
   The department the desk belongs to; as Coastal State Water Company gives it.
 - `Party/Contact/Telephone` = **+999 2 38 9310 7518**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Coastal State Water Company gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Coastal State Water Company gives it.
 - `Party/Contact/ElectronicMail` = **customer@coastalwater.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Coastal State Water Company gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
@@ -105,17 +105,17 @@ Inside `SellerSupplierParty`:
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Shoreline Road**  
-  Street of the postal address. as Kelpstone Gas gives it.
+  Street of the postal address. As Kelpstone Gas gives it.
 - `Party/PostalAddress/BuildingNumber` = **2**  
-  Building number of the postal address. as Kelpstone Gas gives it.
+  Building number of the postal address. As Kelpstone Gas gives it.
 - `Party/PostalAddress/CityName` = **Gullhaven**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Kelpstone Gas gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Kelpstone Gas gives it.
 - `Party/PostalAddress/PostalZone` = **90540**  
-  Postal code in Bayvarra's format (5 digits). as Kelpstone Gas gives it.
+  Postal code in Bayvarra's format (5 digits). As Kelpstone Gas gives it.
 - `Party/PostalAddress/CountrySubentity` = **Northern Territory**  
   The name of code XB-NT in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-NT** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Kelpstone Gas gives it. The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
+  The state or territory as a code of Bayvarra's address scheme. As Kelpstone Gas gives it. The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -123,7 +123,7 @@ Inside `SellerSupplierParty`:
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.**  
-  Where the party actually operates, apart from its postal address. The distance is the length of the map's route gas-field, rounded to 10 km.
+  Where the party actually operates, apart from its postal address. The distance is measured along the route on the map, rounded to 10 km.
 - `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
@@ -145,7 +145,7 @@ Inside `SellerSupplierParty`:
 - `Party/Contact/Department` = **Commercial**  
   The department the desk belongs to; as Kelpstone Gas gives it.
 - `Party/Contact/Telephone` = **+999 2 38522 68330**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Kelpstone Gas gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Kelpstone Gas gives it.
 - `Party/Contact/ElectronicMail` = **gas@kelpstone.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Kelpstone Gas gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  

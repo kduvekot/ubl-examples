@@ -27,7 +27,7 @@ The negotiable bill of lading, issued to the forwarder that gave the instruction
 - `IssueDate` = **2026-05-14**  
   Issued when the goods are shipped on board.
 - `IssueTime` = **10:54:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Name` = **Bill of lading**  
   What it is.
 - `Description` = **Shipped on board.**  
@@ -62,21 +62,21 @@ Inside `ConsignorParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Distribution Drive**  
-  Street of the postal address. as Lumeway Distribution gives it.
+  Street of the postal address. As Lumeway Distribution gives it.
 - `PostalAddress/BlockName` = **Marrowdale Business Park**  
-  The business park the distribution centre stands in. as Lumeway Distribution gives it.
+  The business park the distribution centre stands in. As Lumeway Distribution gives it.
 - `PostalAddress/BuildingNumber` = **43**  
-  Building number of the postal address. as Lumeway Distribution gives it.
+  Building number of the postal address. As Lumeway Distribution gives it.
 - `PostalAddress/PlotIdentification` = **Plot 14**  
-  The plot of the distribution centre in the business park. as Lumeway Distribution gives it.
+  The plot of the distribution centre in the business park. As Lumeway Distribution gives it.
 - `PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeway Distribution gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Lumeway Distribution gives it.
 - `PostalAddress/PostalZone` = **71214**  
-  Postal code in Bayvarra's format (5 digits). as Lumeway Distribution gives it.
+  Postal code in Bayvarra's format (5 digits). As Lumeway Distribution gives it.
 - `PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. As Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -90,7 +90,7 @@ Inside `ConsignorParty`:
 - `Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Lumeway Distribution gives it.
 - `Contact/Telephone` = **+999 2 7121 955 964**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeway Distribution gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeway Distribution gives it.
 - `Contact/ElectronicMail` = **dispatch@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeway Distribution gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -117,19 +117,19 @@ Inside `CarrierParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Harbour Road**  
-  Street of the postal address. as Tidewell Ocean Lines gives it.
+  Street of the postal address. As Tidewell Ocean Lines gives it.
 - `PostalAddress/BuildingNumber` = **18**  
-  Building number of the postal address. as Tidewell Ocean Lines gives it.
+  Building number of the postal address. As Tidewell Ocean Lines gives it.
 - `PostalAddress/CitySubdivisionName` = **Dockside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Tidewell Ocean Lines gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Tidewell Ocean Lines gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Tidewell Ocean Lines gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Tidewell Ocean Lines gives it.
 - `PostalAddress/PostalZone` = **38527**  
-  Postal code in Bayvarra's format (5 digits). as Tidewell Ocean Lines gives it.
+  Postal code in Bayvarra's format (5 digits). As Tidewell Ocean Lines gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Tidewell Ocean Lines gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Tidewell Ocean Lines gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -143,7 +143,7 @@ Inside `CarrierParty`:
 - `Contact/Department` = **Bookings**  
   The department the desk belongs to; as Tidewell Ocean Lines gives it.
 - `Contact/Telephone` = **+999 2 38 2058 7929**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Tidewell Ocean Lines gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Tidewell Ocean Lines gives it.
 - `Contact/ElectronicMail` = **bookings@tidewell.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Tidewell Ocean Lines gives it.
 - `Contact/Note` = **Every day 06:00–22:00**  
@@ -174,19 +174,19 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Dockside Way**  
-  Street of the postal address. as Bayforth Forwarding gives it.
+  Street of the postal address. As Bayforth Forwarding gives it.
 - `PostalAddress/BuildingNumber` = **4**  
-  Building number of the postal address. as Bayforth Forwarding gives it.
+  Building number of the postal address. As Bayforth Forwarding gives it.
 - `PostalAddress/CitySubdivisionName` = **Dockside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Bayforth Forwarding gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Bayforth Forwarding gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Bayforth Forwarding gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Bayforth Forwarding gives it.
 - `PostalAddress/PostalZone` = **38525**  
-  Postal code in Bayvarra's format (5 digits). as Bayforth Forwarding gives it.
+  Postal code in Bayvarra's format (5 digits). As Bayforth Forwarding gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Bayforth Forwarding gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Bayforth Forwarding gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -200,7 +200,7 @@ Inside `FreightForwarderParty`:
 - `Contact/Department` = **Export**  
   The department the desk belongs to; as Bayforth Forwarding gives it.
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Bayforth Forwarding gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Bayforth Forwarding gives it.
 - `Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Bayforth Forwarding gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -271,11 +271,11 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `Consignment/ConsigneeParty/PostalAddress/BuildingNumber` = **16**  
-  Building number of the postal address. as Velumi Trading gives it.
+  Building number of the postal address. As Velumi Trading gives it.
 - `Consignment/ConsigneeParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `Consignment/ConsigneeParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -289,7 +289,7 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Velumi Trading gives it.
 - `Consignment/ConsigneeParty/Contact/Telephone` = **+999 3 729 5794**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Velumi Trading gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `Consignment/ConsigneeParty/Contact/ElectronicMail` = **goodsin@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
 - `Consignment/ConsigneeParty/Contact/Note` = **Monday to Saturday 09:00–18:00**  
@@ -309,11 +309,11 @@ Inside `Shipment`:
 - `Consignment/NotifyParty/PostalAddress/StreetName` = **Lagoon Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Nalevi Warehousing gives it.
 - `Consignment/NotifyParty/PostalAddress/BuildingNumber` = **9**  
-  Building number of the postal address. as Nalevi Warehousing gives it.
+  Building number of the postal address. As Nalevi Warehousing gives it.
 - `Consignment/NotifyParty/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Nalevi Warehousing gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Nalevi Warehousing gives it.
 - `Consignment/NotifyParty/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Nalevi Warehousing gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Nalevi Warehousing gives it.
 - `Consignment/NotifyParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Consignment/NotifyParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -327,7 +327,7 @@ Inside `Shipment`:
 - `Consignment/NotifyParty/Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Nalevi Warehousing gives it.
 - `Consignment/NotifyParty/Contact/Telephone` = **+999 3 722 1882**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Nalevi Warehousing gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Nalevi Warehousing gives it.
 - `Consignment/NotifyParty/Contact/ElectronicMail` = **goods@nalevi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Nalevi Warehousing gives it.
 - `Consignment/NotifyParty/Contact/Note` = **Monday to Saturday 07:00–18:00**  
@@ -979,19 +979,19 @@ Inside `Shipment`:
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/StreetName` = **Beacon Avenue**  
-  Street of the postal address. as Wavesure Cargo Insurance gives it.
+  Street of the postal address. As Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/BuildingNumber` = **55**  
-  Building number of the postal address. as Wavesure Cargo Insurance gives it.
+  Building number of the postal address. As Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CitySubdivisionName` = **Dockside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Wavesure Cargo Insurance gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Wavesure Cargo Insurance gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/PostalZone` = **38524**  
-  Postal code in Bayvarra's format (5 digits). as Wavesure Cargo Insurance gives it.
+  Postal code in Bayvarra's format (5 digits). As Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Wavesure Cargo Insurance gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Wavesure Cargo Insurance gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Consignment/InsurancePolicy/InsurerParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -1005,7 +1005,7 @@ Inside `Shipment`:
 - `Consignment/InsurancePolicy/InsurerParty/Contact/Department` = **Claims**  
   The department the desk belongs to; as Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/Contact/Telephone` = **+999 2 38 2115 9838**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Wavesure Cargo Insurance gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/Contact/ElectronicMail` = **cargo@wavesure.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Wavesure Cargo Insurance gives it.
 - `Consignment/InsurancePolicy/InsurerParty/Contact/Note` = **Weekdays 08:00–17:00**  

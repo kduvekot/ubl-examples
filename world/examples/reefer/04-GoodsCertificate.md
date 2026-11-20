@@ -70,17 +70,17 @@ Inside `ExporterParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Orchard Road**  
-  Street of the postal address. as Harrowmead Fruit Growers gives it.
+  Street of the postal address. As Harrowmead Fruit Growers gives it.
 - `PostalAddress/BuildingNumber` = **3**  
-  Building number of the postal address. as Harrowmead Fruit Growers gives it.
+  Building number of the postal address. As Harrowmead Fruit Growers gives it.
 - `PostalAddress/CityName` = **Harrowmead**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Harrowmead Fruit Growers gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Harrowmead Fruit Growers gives it.
 - `PostalAddress/PostalZone` = **71640**  
-  Postal code in Bayvarra's format (5 digits). as Harrowmead Fruit Growers gives it.
+  Postal code in Bayvarra's format (5 digits). As Harrowmead Fruit Growers gives it.
 - `PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Harrowmead Fruit Growers gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. As Harrowmead Fruit Growers gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -98,7 +98,7 @@ Inside `ExporterParty`:
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; as Harrowmead Fruit Growers gives it.
 - `Contact/Telephone` = **+999 2 7164 281 590**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Harrowmead Fruit Growers gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Harrowmead Fruit Growers gives it.
 - `Contact/ElectronicMail` = **sales@harrowmeadfruit.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Harrowmead Fruit Growers gives it.
 - `Contact/Note` = **Weekdays 07:00–16:00**  
@@ -129,11 +129,11 @@ Inside `ImporterParty`:
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Hafefo Fresh Produce gives it.
 - `PostalAddress/BuildingNumber` = **58**  
-  Building number of the postal address. as Hafefo Fresh Produce gives it.
+  Building number of the postal address. As Hafefo Fresh Produce gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Hafefo Fresh Produce gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Hafefo Fresh Produce gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Hafefo Fresh Produce gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Hafefo Fresh Produce gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -183,19 +183,19 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Dockside Way**  
-  Street of the postal address. as Bayforth Forwarding gives it.
+  Street of the postal address. As Bayforth Forwarding gives it.
 - `PostalAddress/BuildingNumber` = **4**  
-  Building number of the postal address. as Bayforth Forwarding gives it.
+  Building number of the postal address. As Bayforth Forwarding gives it.
 - `PostalAddress/CitySubdivisionName` = **Dockside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Bayforth Forwarding gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Bayforth Forwarding gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Bayforth Forwarding gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Bayforth Forwarding gives it.
 - `PostalAddress/PostalZone` = **38525**  
-  Postal code in Bayvarra's format (5 digits). as Bayforth Forwarding gives it.
+  Postal code in Bayvarra's format (5 digits). As Bayforth Forwarding gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Bayforth Forwarding gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Bayforth Forwarding gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -224,19 +224,19 @@ Inside `IssuerParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Civic Square**  
-  Street of the postal address. as Federal Department of Agriculture of Bayvarra gives it.
+  Street of the postal address. As Federal Department of Agriculture of Bayvarra gives it.
 - `PostalAddress/BuildingNumber` = **9**  
-  Building number of the postal address. as Federal Department of Agriculture of Bayvarra gives it.
+  Building number of the postal address. As Federal Department of Agriculture of Bayvarra gives it.
 - `PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Federal Department of Agriculture of Bayvarra gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Federal Department of Agriculture of Bayvarra gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Federal Department of Agriculture of Bayvarra gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Federal Department of Agriculture of Bayvarra gives it.
 - `PostalAddress/PostalZone` = **38521**  
-  Postal code in Bayvarra's format (5 digits). as Federal Department of Agriculture of Bayvarra gives it.
+  Postal code in Bayvarra's format (5 digits). As Federal Department of Agriculture of Bayvarra gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Federal Department of Agriculture of Bayvarra gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Federal Department of Agriculture of Bayvarra gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -254,7 +254,7 @@ Inside `IssuerParty`:
 - `Contact/Department` = **Plant Health Service**  
   The department the desk belongs to; as Federal Department of Agriculture of Bayvarra gives it.
 - `Contact/Telephone` = **+999 2 38 6719 2485**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Federal Department of Agriculture of Bayvarra gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Federal Department of Agriculture of Bayvarra gives it.
 - `Contact/ElectronicMail` = **export.certification@agriculture-xb.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Federal Department of Agriculture of Bayvarra gives it.
 - `Contact/Note` = **Weekdays 07:30–16:00**  

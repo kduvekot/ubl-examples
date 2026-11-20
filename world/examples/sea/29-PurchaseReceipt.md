@@ -60,11 +60,11 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `Party/PostalAddress/BuildingNumber` = **16**  
-  Building number of the postal address. as Velumi Trading gives it.
+  Building number of the postal address. As Velumi Trading gives it.
 - `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -102,7 +102,7 @@ Inside `AccountingSupplierParty`:
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Velumi Trading gives it.
 - `Party/Contact/Telephone` = **+999 3 729 5794**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Velumi Trading gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `Party/Contact/ElectronicMail` = **receivables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
 - `Party/Contact/Note` = **Monday to Saturday 09:00–18:00**  
@@ -131,13 +131,13 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
-  How to find the farm, which has no house number on a street. as Lisavu Cotton Farm gives it.
+  How to find the farm, which has no house number on a street. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/CityName` = **Kefalasa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Lisavu Cotton Farm gives it.
+  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/CityName` = **Lintwell** (languageID `en-XL`)  
-  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Lisavu Cotton Farm gives it.
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/District` = **North coast**  
-  The district of the island, used to find a farm off the main roads. as Lisavu Cotton Farm gives it.
+  The district of the island, used to find a farm off the main roads. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -169,7 +169,7 @@ Inside `AccountingCustomerParty`:
 - `Party/Contact/Department` = **Management**  
   The department the desk belongs to; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Telephone` = **+999 3 724 6676**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Lisavu Cotton Farm gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Lisavu Cotton Farm gives it.
 - `Party/Contact/ElectronicMail` = **farm@lisavufarm.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  

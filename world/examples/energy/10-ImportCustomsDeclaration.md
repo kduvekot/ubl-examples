@@ -25,7 +25,7 @@ The retail company declares its own consignment of March's gas, 2,400 MWh fed in
 - `IssueDate` = **2026-04-02**  
   The monthly declaration of the gas received in March.
 - `IssueTime` = **16:45:00-01:00**  
-  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time, with its offset from UTC.
 - `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 8,640,000 tezhul, 1,728,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
   The note in Urvanian, the sender's language: What is due at import, by the importing country's rule.
 - `Note` = **No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 8,640,000 ferra, 1,728,000 ferra, paid at the border; the importer deducts it again in its return.** (languageID `en-XU`)  
@@ -56,15 +56,15 @@ Inside `ImporterParty`:
 - `PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Energy gives it.
 - `PostalAddress/BuildingNumber` = **9**  
-  Building number of the postal address. as Ferrano Energy gives it.
+  Building number of the postal address. As Ferrano Energy gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Energy gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Energy gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Energy gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Energy gives it.
 - `PostalAddress/PostalZone` = **4150**  
-  Postal code in Urvania's format (4 digits). as Ferrano Energy gives it.
+  Postal code in Urvania's format (4 digits). As Ferrano Energy gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Energy gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Ferrano Energy gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -94,7 +94,7 @@ Inside `ImporterParty`:
 - `Contact/Department` = **Gas trading**  
   The department the desk belongs to; as Ferrano Energy gives it.
 - `Contact/Telephone` = **+999 1 041 474 7922**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Energy gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Energy gives it.
 - `Contact/ElectronicMail` = **customs@ferranoenergy.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Energy gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -123,17 +123,17 @@ Inside `ConsignorParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Shoreline Road**  
-  Street of the postal address. as Kelpstone Gas gives it.
+  Street of the postal address. As Kelpstone Gas gives it.
 - `PostalAddress/BuildingNumber` = **2**  
-  Building number of the postal address. as Kelpstone Gas gives it.
+  Building number of the postal address. As Kelpstone Gas gives it.
 - `PostalAddress/CityName` = **Gullhaven**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Kelpstone Gas gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Kelpstone Gas gives it.
 - `PostalAddress/PostalZone` = **90540**  
-  Postal code in Bayvarra's format (5 digits). as Kelpstone Gas gives it.
+  Postal code in Bayvarra's format (5 digits). As Kelpstone Gas gives it.
 - `PostalAddress/CountrySubentity` = **Northern Territory**  
   The name of code XB-NT in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-NT** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Kelpstone Gas gives it. The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
+  The state or territory as a code of Bayvarra's address scheme. As Kelpstone Gas gives it. The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -165,21 +165,21 @@ Inside `CustomsParty`:
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `PostalAddress/Postbox` = **PB 18**  
-  The customs office receives its post in a post box. as Customs Administration of Urvania gives it.
+  The customs office receives its post in a post box. As Customs Administration of Urvania gives it.
 - `PostalAddress/StreetName` = **Zalsul Han Trurdrek** (languageID `qau`)  
   The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Customs Administration of Urvania gives it.
 - `PostalAddress/StreetName` = **Strada del Confine** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Customs Administration of Urvania gives it.
 - `PostalAddress/BuildingNumber` = **22**  
-  Building number of the postal address. as Customs Administration of Urvania gives it.
+  Building number of the postal address. As Customs Administration of Urvania gives it.
 - `PostalAddress/CityName` = **Menbaz** (languageID `qau`)  
-  The place's Urvanian name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Customs Administration of Urvania gives it.
+  The place's Urvanian name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. As Customs Administration of Urvania gives it.
 - `PostalAddress/CityName` = **Valico Euridice** (languageID `en-XU`)  
-  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. as Customs Administration of Urvania gives it.
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. As Customs Administration of Urvania gives it.
 - `PostalAddress/PostalZone` = **4530**  
-  Postal code in Urvania's format (4 digits). as Customs Administration of Urvania gives it.
+  Postal code in Urvania's format (4 digits). As Customs Administration of Urvania gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Customs Administration of Urvania gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Customs Administration of Urvania gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -197,7 +197,7 @@ Inside `CustomsParty`:
 - `Contact/Department` = **Customs**  
   The department the desk belongs to; as Customs Administration of Urvania gives it.
 - `Contact/Telephone` = **+999 1 041 850 3855**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Customs Administration of Urvania gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Customs Administration of Urvania gives it.
 - `Contact/ElectronicMail` = **import@customs-xu.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Customs Administration of Urvania gives it.
 - `Contact/Note` = **Every day, around the clock**  

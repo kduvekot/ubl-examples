@@ -10075,7 +10075,7 @@ def valdara_task(customer, what, start, end, total, ev):
             "Description": V(f"{what}, for {customer}.", "A similar supply, one of the three the call asks for."),
             "SuppliedEvidence": {"ID": V(ev, "The customer's reference letter.")},
             "Period": {"StartDate": V(start, "From."), "EndDate": V(end, "To.")},
-            "RecipientCustomerParty": {"Party": {"PartyName": {"Name": V(customer[4:].capitalize() if
+            "RecipientCustomerParty": {"Party": {"PartyName": {"Name": V(customer[4:5].upper() + customer[5:] if
                                                                          customer.startswith("the ") else customer,
                                                                          "The customer.")}}}}
     if years > 1:

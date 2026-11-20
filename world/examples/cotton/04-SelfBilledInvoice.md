@@ -25,7 +25,7 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
 - `IssueDate` = **2026-04-09**  
   The day after the last trailer: the ginnery bills itself for the weighed delivery, as the self-billing agreement provides.
 - `IssueTime` = **15:50:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-05-25**  
   The supplier's usual term, which the customer applies to itself. The count ends on Sunday 24 May, no business day in Lisavu, the payee's country, so the payment is due on the next one, Monday 25 May.
 - `InvoiceTypeCode` = **389** (listID `UN/EDIFACT EDED 1001`)  
@@ -147,11 +147,11 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/BuildingNumber` = **42**  
-  Building number of the postal address. as Selanu Cotton Ginnery gives it.
+  Building number of the postal address. As Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/CityName` = **Pakesa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Cotton Ginnery gives it.
+  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. As Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/CityName` = **Bollworth** (languageID `en-XL`)  
-  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Cotton Ginnery gives it.
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -189,7 +189,7 @@ Inside `AccountingCustomerParty`:
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Selanu Cotton Ginnery gives it.
 - `Party/Contact/Telephone` = **+999 3 721 0486**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Selanu Cotton Ginnery gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Cotton Ginnery gives it.
 - `Party/Contact/ElectronicMail` = **payables@selanuginnery.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Cotton Ginnery gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -222,13 +222,13 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
-  How to find the farm, which has no house number on a street. as Lisavu Cotton Farm gives it.
+  How to find the farm, which has no house number on a street. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/CityName` = **Kefalasa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Lisavu Cotton Farm gives it.
+  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/CityName` = **Lintwell** (languageID `en-XL`)  
-  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Lisavu Cotton Farm gives it.
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/District` = **North coast**  
-  The district of the island, used to find a farm off the main roads. as Lisavu Cotton Farm gives it.
+  The district of the island, used to find a farm off the main roads. As Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -300,7 +300,7 @@ Inside `AccountingSupplierParty`:
 - `Party/Contact/Department` = **Management**  
   The department the desk belongs to; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Telephone` = **+999 3 724 6676**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Lisavu Cotton Farm gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Lisavu Cotton Farm gives it.
 - `Party/Contact/ElectronicMail` = **farm@lisavufarm.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -400,11 +400,11 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **23**  
-  Building number of the postal address. as Bank of Selanu gives it.
+  Building number of the postal address. As Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Selanu gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Selanu gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Lisavu**  
