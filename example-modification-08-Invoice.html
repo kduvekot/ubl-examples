@@ -873,20 +873,24 @@ The price is per one unit.</li>
 The line number.</li>
 <li><code>InvoicedQuantity</code> = <strong>4</strong> (unitCode
 <code>WEE</code>)<br />
-The weeks begun from the week the second charge was finished, 2
-February, to the call-off on 26 February.</li>
+The weeks begun from the week the second charge was ready in store
+(Wednesday 4 February, in the week of Monday 2 February) to the week the
+bundles left the plant (Thursday 26 February): four weeks.</li>
 <li><code>LineExtensionAmount</code> = <strong>23040</strong>
 (currencyID <code>XUF</code>)<br />
 4 × 5760, rounded to the minor unit of the currency.</li>
 <li><code>Item/Description</code> = <strong>Murkrir skul drek vikkaz
 hendrul valnir trek sir sakdir zaman skul 24 stuzzhek tilkrek zahek
 kildrek datrir silgir nek, ginek tul trukrek mir drek tul drek deznek
-zhaznir vatir dir hendrul.</strong> (languageID <code>qau</code>)<br />
+zhaznir vatir dir skuznir trek ruvaz, skanzan, zhukmul stan zhukan, krir
+drek tul drek valnir krukek.</strong> (languageID
+<code>qau</code>)<br />
 The seller's description in Urvanian, the seller's language.</li>
 <li><code>Item/Description</code> = <strong>Storage of the customer's
 finished goods in a covered bay of 24 pallet places until they are
-called off, per week begun from the week the job's last charge is
-finished.</strong> (languageID <code>en-XU</code>)<br />
+called off, per week begun from the week the job's last charge is ready
+in store, planed, sealed and bundled, to the week the goods
+leave.</strong> (languageID <code>en-XU</code>)<br />
 The seller's description in English, the working language between the
 countries.</li>
 <li><code>Item/Name</code> = <strong>Murkrir skul sir hendrul gakek,
@@ -1244,8 +1248,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;WEE&quot;</span>&gt;4&lt;/<span class="kw">cbc:InvoicedQuantity</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;23040&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Murkrir skul drek vikkaz hendrul valnir trek sir sakdir zaman skul 24 stuzzhek tilkrek zahek kildrek datrir silgir nek, ginek tul trukrek mir drek tul drek deznek zhaznir vatir dir hendrul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Storage of the customer&#39;s finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job&#39;s last charge is finished.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Murkrir skul drek vikkaz hendrul valnir trek sir sakdir zaman skul 24 stuzzhek tilkrek zahek kildrek datrir silgir nek, ginek tul trukrek mir drek tul drek deznek zhaznir vatir dir skuznir trek ruvaz, skanzan, zhukmul stan zhukan, krir drek tul drek valnir krukek.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Storage of the customer&#39;s finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job&#39;s last charge is ready in store, planed, sealed and bundled, to the week the goods leave.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Murkrir skul sir hendrul gakek, zaman skul 24 nilnul&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Storage of a finished job, bay of 24 pallets&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -1275,6 +1279,6 @@ href="example-modification-09-RemittanceAdvice.html">Remittance Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c3f1c4fce82ce87a565cfd06813766bf9ac808fd"><code>c3f1c4f</code></a> of 2026-11-20 15:52 UTC</p></div></footer>
 </body>
 </html>

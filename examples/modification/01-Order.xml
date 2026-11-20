@@ -10,7 +10,7 @@
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
   <cbc:IssueTime>09:20:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Job for Valdara's park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.</cbc:Note>
+  <cbc:Note>Job for our season stock of park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:Contract>
@@ -130,7 +130,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>96 bundles of 50 slats, Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.</cbc:Note>
+      <cbc:Note>96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">1272000</cbc:LineExtensionAmount>
       <cac:Price>

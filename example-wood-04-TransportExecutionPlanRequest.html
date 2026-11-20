@@ -64,7 +64,8 @@ The first version of the request.</li>
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-02-23</strong><br />
-Under DAP the sawmill books the truck across the border.</li>
+Under DAP the sawmill books the truck from the modification plant, where
+its slats are stored, to the factory.</li>
 <li><code>IssueTime</code> = <strong>16:19:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time, with its offset from UTC.</li>
@@ -396,8 +397,8 @@ The day the goods should be collected.</li>
 <h3 id="service-end-time-period">Service End Time Period</h3>
 <p>Inside <code>ServiceEndTimePeriod</code>:</p>
 <ul>
-<li><code>EndDate</code> = <strong>2026-03-01</strong><br />
-Delivered within three days.</li>
+<li><code>EndDate</code> = <strong>2026-02-26</strong><br />
+Delivered the day it is collected: a short run.</li>
 </ul>
 <h3 id="from-location">From Location</h3>
 <p>Inside <code>FromLocation</code>:</p>
@@ -819,7 +820,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:StartDate</span>&gt;2026-02-26&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceStartTimePeriod</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-02-26&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:FromLocation</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Tostara Wood Modification yard, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -924,6 +925,6 @@ href="example-wood-07-ImportCustomsDeclaration.html">Import Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c3f1c4fce82ce87a565cfd06813766bf9ac808fd"><code>c3f1c4f</code></a> of 2026-11-20 15:52 UTC</p></div></footer>
 </body>
 </html>

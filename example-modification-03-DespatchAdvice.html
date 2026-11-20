@@ -17,7 +17,7 @@ Modification · The UBL World</title>
 <h1
 id="despatch-advice-marrowdale-sawmill-to-tostara-wood-modification">Despatch
 Advice: Marrowdale Sawmill to Tostara Wood Modification</h1>
-<p><em>Document 2 of 9 in the flow <a
+<p><em>Document 3 of 9 in the flow <a
 href="examples.html#flow-modification">Modification: bench slats
 modified under contract (Bayvarra → Urvania)</a> · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA">Despatch
@@ -27,9 +27,10 @@ href="world-59-xu.html">Tostara Wood Modification</a>, under the Trade
 Accord's transaction <a
 href="world-spec-transaction-despatch-advice.html">Despatch
 advice</a>.</p>
-<p><a href="example-modification-01-Order.html">← Order</a> · <a
-href="examples.html#flow-modification">all documents of the flow</a> ·
-<a href="example-modification-04-ExportCustomsDeclaration.html">Export
+<p><a href="example-modification-02-OrderResponse.html">← Order
+Response</a> · <a href="examples.html#flow-modification">all documents
+of the flow</a> · <a
+href="example-modification-04-ExportCustomsDeclaration.html">Export
 Customs Declaration →</a></p>
 <p>The sawmill announces the first load of blanks on its own truck, with
 the lot, so the plant can check them in and keep them apart as the
@@ -67,9 +68,10 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-01-13</strong><br />
 The day the first load leaves the sawmill.</li>
-<li><code>IssueTime</code> = <strong>06:45:00-01:00</strong><br />
-When the truck is loaded, before it leaves for the border; in the
-issuer's local time, with its offset from UTC.</li>
+<li><code>IssueTime</code> = <strong>08:10:00-01:00</strong><br />
+Sent by the dispatch office when it opens at 08:00, the truck loaded and
+waiting to leave for the border; in the issuer's local time, with its
+offset from UTC.</li>
 <li><code>DespatchAdviceTypeCode</code> = <strong>DELIVERY</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:DespatchAdviceTypeCode</code>)<br />
@@ -414,7 +416,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;MDS-DA-26-0051&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;c628c022-ea94-5fd7-82ae-452c5dbc3366&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;06:45:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:10:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DespatchAdviceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DespatchAdviceTypeCode&quot;</span>&gt;DELIVERY&lt;/<span class="kw">cbc:DespatchAdviceTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please check the blanks on arrival and keep them apart as our goods; report any damage to our dispatch office.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
@@ -543,12 +545,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 <hr />
-<p><a href="example-modification-01-Order.html">← Order</a> · <a
-href="examples.html#flow-modification">all documents of the flow</a> ·
-<a href="example-modification-04-ExportCustomsDeclaration.html">Export
+<p><a href="example-modification-02-OrderResponse.html">← Order
+Response</a> · <a href="examples.html#flow-modification">all documents
+of the flow</a> · <a
+href="example-modification-04-ExportCustomsDeclaration.html">Export
 Customs Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c3f1c4fce82ce87a565cfd06813766bf9ac808fd"><code>c3f1c4f</code></a> of 2026-11-20 15:52 UTC</p></div></footer>
 </body>
 </html>

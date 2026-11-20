@@ -18,7 +18,7 @@ Border Service of Bayvarra · The UBL World</title>
 id="export-customs-declaration-marrowdale-sawmill-to-customs-and-border-service-of-bayvarra">Export
 Customs Declaration: Marrowdale Sawmill to Customs and Border Service of
 Bayvarra</h1>
-<p><em>Document 3 of 9 in the flow <a
+<p><em>Document 4 of 9 in the flow <a
 href="examples.html#flow-modification">Modification: bench slats
 modified under contract (Bayvarra → Urvania)</a> · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA">Export
@@ -31,8 +31,8 @@ customs declaration</a>.</p>
 <p><a href="example-modification-03-DespatchAdvice.html">← Despatch
 Advice</a> · <a href="examples.html#flow-modification">all documents of
 the flow</a> · <a
-href="example-modification-02-OrderResponse.html">Order Response
-→</a></p>
+href="example-modification-05-ImportCustomsDeclaration.html">Import
+Customs Declaration →</a></p>
 <p>The blanks leave Bayvarra for processing abroad and do not come back;
 the sawmill declares the export at the land border.</p>
 <p><a href="examples/modification/04-ExportCustomsDeclaration.xml">The
@@ -64,13 +64,15 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-01-13</strong><br />
 Declared the morning the first load leaves for the border.</li>
-<li><code>IssueTime</code> = <strong>07:00:00-01:00</strong><br />
-While the loaded truck waits at the sawmill for customs to release the
-export; in the issuer's local time, with its offset from UTC.</li>
+<li><code>IssueTime</code> = <strong>08:20:00-01:00</strong><br />
+Lodged by the customs desk soon after it opens, while the loaded truck
+waits at the sawmill for customs to release the export; in the issuer's
+local time, with its offset from UTC.</li>
 <li><code>ExportTypeCode</code> = <strong>PERMANENT</strong> (listID
 <code>urn:ubl-examples:world:codelist:ExportTypeCode</code>)<br />
-A permanent export: the goods are sold abroad. The code is from the
-Trade Accord's export type list: PERMANENT = Permanent export.</li>
+A permanent export: the blanks do not come back to Bayvarra, for the
+slats made from them are sold in Urvania. The code is from the Trade
+Accord's export type list: PERMANENT = Permanent export.</li>
 <li><code>ExportReasonCode</code> = <strong>PROCESSING</strong> (listID
 <code>urn:ubl-examples:world:codelist:ExportReasonCode</code>)<br />
 The blanks go abroad to be processed under contract for their owner, and
@@ -608,7 +610,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;MDS-EX-26-0011&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;4d67eaa6-485a-5476-8073-40cb5dfb6b74&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;07:00:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:20:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ExportTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ExportTypeCode&quot;</span>&gt;PERMANENT&lt;/<span class="kw">cbc:ExportTypeCode</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ExportReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ExportReasonCode&quot;</span>&gt;PROCESSING&lt;/<span class="kw">cbc:ExportReasonCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Declared electronically before the goods leave.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -816,10 +818,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <p><a href="example-modification-03-DespatchAdvice.html">← Despatch
 Advice</a> · <a href="examples.html#flow-modification">all documents of
 the flow</a> · <a
-href="example-modification-02-OrderResponse.html">Order Response
-→</a></p>
+href="example-modification-05-ImportCustomsDeclaration.html">Import
+Customs Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c3f1c4fce82ce87a565cfd06813766bf9ac808fd"><code>c3f1c4f</code></a> of 2026-11-20 15:52 UTC</p></div></footer>
 </body>
 </html>

@@ -26,9 +26,8 @@ href="world-59-xu.html">Tostara Wood Modification</a>, under the Trade
 Accord's transaction <a
 href="world-spec-transaction-order.html">Order</a>.</p>
 <p><a href="examples.html#flow-modification">all documents of the
-flow</a> · <a
-href="example-modification-03-DespatchAdvice.html">Despatch Advice
-→</a></p>
+flow</a> · <a href="example-modification-02-OrderResponse.html">Order
+Response →</a></p>
 <p>The sawmill orders the processing of one job under the season
 agreement: 96 bundles of modified, planed and end-sealed slats from its
 own blanks, which it supplies free of charge.</p>
@@ -76,8 +75,8 @@ UTC.</li>
 <code>UN/EDIFACT EDED 1001</code>)<br />
 UN/EDIFACT 1001 code 220: order. The code is from the world's copy of
 UN/EDIFACT 1001 Document name: 220 = Order.</li>
-<li><code>Note</code> = <strong>Job for Valdara's park-bench slats:
-modify, plane, seal the end grain and bundle our blanks; hold the
+<li><code>Note</code> = <strong>Job for our season stock of park-bench
+slats: modify, plane, seal the end grain and bundle our blanks; hold the
 bundles in your store until we call them off. The blanks come on our
 truck on 13 and 20 January, 2,400 each time.</strong><br />
 What is ordered, in a few words, and how the material comes.</li>
@@ -358,7 +357,8 @@ Modification</a> is named in.</p>
 <ul>
 <li><code>LatestDeliveryDate</code> = <strong>2026-02-06</strong><br />
 The bundles are to be ready in the plant's store by Friday 6 February,
-in time for the delivery to Valdara from 26 February.</li>
+the end of the slot the order fills, so that the sawmill has the slats
+in stock for the orders of the coming quarter.</li>
 </ul>
 <h3 id="delivery-terms">Delivery Terms</h3>
 <p>Inside <code>DeliveryTerms</code>:</p>
@@ -427,9 +427,10 @@ What the sawmill expects to pay for the processing.</li>
 <ul>
 <li><code>LineItem/ID</code> = <strong>1</strong><br />
 The line number.</li>
-<li><code>LineItem/Note</code> = <strong>96 bundles of 50 slats,
-Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.</strong><br />
-The output the job is to give.</li>
+<li><code>LineItem/Note</code> = <strong>96 bundles of 50 slats, our
+park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.</strong><br />
+The output the job is to give: the sawmill's own slat, by its
+number.</li>
 <li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
 The bundles to be made: the 4,800 blanks give 4,800 slats.</li>
@@ -505,7 +506,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-12&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:20:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OrderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;220&lt;/<span class="kw">cbc:OrderTypeCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Job for Valdara&#39;s park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Job for our season stock of park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Contract</span>&gt;</span>
@@ -625,7 +626,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;96 bundles of 50 slats, Valdara&#39;s slat MDS-SL-1800 to drawing VI-DS-SL1800.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;1272000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
@@ -658,11 +659,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="examples.html#flow-modification">all documents of the
-flow</a> · <a
-href="example-modification-03-DespatchAdvice.html">Despatch Advice
-→</a></p>
+flow</a> · <a href="example-modification-02-OrderResponse.html">Order
+Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c3f1c4fce82ce87a565cfd06813766bf9ac808fd"><code>c3f1c4f</code></a> of 2026-11-20 15:52 UTC</p></div></footer>
 </body>
 </html>
