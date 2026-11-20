@@ -15,10 +15,8 @@ At Bayvarra customs' inland office in Marrowdale, the office of destination of t
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-IM-26-0340**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **LMW-IM-26-0161**  
   The importer's declaration number.
 - `UUID` = **0ec09a23-6905-502a-9229-510e1e194d59**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -230,7 +228,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0332**  
+- `ID` = **7400043689**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **48** (unitCode `EA`)  
   The pallets the goods travel on.
@@ -357,7 +355,7 @@ Inside `Shipment`:
 
 Inside `PreviousCustomsDeclaration`:
 
-- `ID` = **VI-TD-26-0331**  
+- `ID` = **7800004369**  
   The Accord's common transit declaration under which the goods came to the office of destination: the procedure this import ends.
 - `FunctionCode` = **TRANSIT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: TRANSIT = Transit declaration.
@@ -366,10 +364,10 @@ Inside `PreviousCustomsDeclaration`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **VI-INV-26-0337**  
+- `ID` = **2026/1770**  
   The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VI-INV-26-0337 is the example rail/11, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: 2026/1770 is the example rail/11, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -390,8 +388,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-IM-26-0340</cbc:ID>
+  <cbc:ID>LMW-IM-26-0161</cbc:ID>
   <cbc:UUID>0ec09a23-6905-502a-9229-510e1e194d59</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
@@ -553,7 +550,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0332</cbc:ID>
+    <cbc:ID>7400043689</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">48</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -658,11 +655,11 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-TD-26-0331</cbc:ID>
+    <cbc:ID>7800004369</cbc:ID>
     <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">TRANSIT</cbc:FunctionCode>
   </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-INV-26-0337</cbc:ID>
+    <cbc:ID>2026/1770</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

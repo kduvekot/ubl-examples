@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-TR-26-0628</cbc:ID>
+  <cbc:ID>MDS-TR-26-0133</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
@@ -117,7 +116,7 @@
     </cac:PartyName>
   </cac:BillToParty>
   <cac:TransportContract>
-    <cbc:ID>MS-TH-FW-2026</cbc:ID>
+    <cbc:ID>MDS-TH-FW-2026</cbc:ID>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseDeadlinePeriod>
     <cbc:EndDate>2026-02-24</cbc:EndDate>
@@ -145,7 +144,7 @@
     </cac:Address>
   </cac:ToLocation>
   <cac:Consignment>
-    <cbc:ID>MS-CS-26-0629</cbc:ID>
+    <cbc:ID>MDS-CS-26-0221</cbc:ID>
     <cbc:SummaryDescription>96 × Bench slat 1800, bundle of 50</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>

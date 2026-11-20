@@ -15,10 +15,10 @@ The power station pays the invoice and the surcharge, in ferra.
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ENERGY-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MP-RM-26-0161**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900034209**  
+  The collaboration this document belongs to: Kelpstone's gas bill for April to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2000001887**  
   The power station's number.
 - `UUID` = **a612b1d2-c2c5-5799-a3c2-b98476b55f88**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -155,7 +155,7 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `PaymentID` = **RF14KGINV260158** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF759000034209** (schemeID `ISO 11649`)  
   The invoice's creditor reference. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XU720351041700000005021992** (schemeID `urn:ubl-examples:world:account`)  
   The power station's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -254,13 +254,13 @@ Inside `RemittanceAdviceLine`:
   The invoice.
 - `DebitLineAmount` = **132480000** (currencyID `XUF`)  
   Its amount.
-- `BillingReference/InvoiceDocumentReference/ID` = **KG-INV-26-0158**  
+- `BillingReference/InvoiceDocumentReference/ID` = **9000034209**  
   The invoice.
 - `ID` = **2**  
   The surcharge.
 - `DebitLineAmount` = **1987200** (currencyID `XUF`)  
   The surcharge of the reminder.
-- `BillingReference/ReminderDocumentReference/ID` = **KG-DOC-26-0160**  
+- `BillingReference/ReminderDocumentReference/ID` = **9300003463**  
   The reminder.
 
 ## The document
@@ -271,8 +271,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MP-RM-26-0161</cbc:ID>
+  <cbc:ProfileExecutionID>9900034209</cbc:ProfileExecutionID>
+  <cbc:ID>2000001887</cbc:ID>
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-08</cbc:IssueDate>
   <cbc:IssueTime>16:36:00-01:00</cbc:IssueTime>
@@ -372,7 +372,7 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:PaymentID schemeID="ISO 11649">RF14KGINV260158</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF759000034209</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU720351041700000005021992</cbc:ID>
       <cbc:Name>Montebrio Power SUA</cbc:Name>
@@ -455,7 +455,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XUF">132480000</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>KG-INV-26-0158</cbc:ID>
+        <cbc:ID>9000034209</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
@@ -464,7 +464,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XUF">1987200</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:ReminderDocumentReference>
-        <cbc:ID>KG-DOC-26-0160</cbc:ID>
+        <cbc:ID>9300003463</cbc:ID>
       </cac:ReminderDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

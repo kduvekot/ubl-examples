@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-INV-26-0235</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0893</cbc:ProfileExecutionID>
+  <cbc:ID>BYF-INV-26-2292</cbc:ID>
   <cbc:UUID>bd9692ab-c902-5cad-bc2f-37c7464afe3c</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
@@ -16,10 +16,10 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LD-TR-26-0227</cbc:ID>
+    <cbc:ID>LMW-TR-26-0536</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-WB-26-0231</cbc:ID>
+    <cbc:ID>BYF-WB-26-2276</cbc:ID>
     <cbc:DocumentType>Consignment note</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -188,7 +188,7 @@
   <cac:Delivery>
     <cac:Shipment>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0228</cbc:ID>
+        <cbc:ID>LMW-CS-26-0893</cbc:ID>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -207,15 +207,15 @@
     <cbc:PaymentDueDate>2026-06-01</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF39BFINV260235</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF39BFINV260235</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF67BYFINV262292</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF67BYFINV262292</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB40BLUM38020502618225</cbc:ID>
       <cbc:Name>Bayforth Forwarding Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BF-INV-26-0235</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BYF-INV-26-2292</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -290,7 +290,7 @@
       <cbc:Description>Truck load within Bayvarra, price per kilometre driven loaded.</cbc:Description>
       <cbc:Name>Road transport in Bayvarra</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-ROAD</cbc:ID>
+        <cbc:ID>BYF-ROAD</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

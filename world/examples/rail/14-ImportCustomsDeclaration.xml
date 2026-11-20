@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-IM-26-0340</cbc:ID>
+  <cbc:ID>LMW-IM-26-0161</cbc:ID>
   <cbc:UUID>0ec09a23-6905-502a-9229-510e1e194d59</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
@@ -166,7 +165,7 @@
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0332</cbc:ID>
+    <cbc:ID>7400043689</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">48</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -271,11 +270,11 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:PreviousCustomsDeclaration>
-    <cbc:ID>VI-TD-26-0331</cbc:ID>
+    <cbc:ID>7800004369</cbc:ID>
     <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">TRANSIT</cbc:FunctionCode>
   </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-INV-26-0337</cbc:ID>
+    <cbc:ID>2026/1770</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

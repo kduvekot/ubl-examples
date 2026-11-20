@@ -15,10 +15,10 @@ The re-exportation limit of 30 June has passed and the island's customs have no 
 - `CustomizationID` = **urn:ubl-examples:world:trns:proof-of-reexportation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Proof of re-exportation". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:temporary-admission:1.0**  
-  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CARNET-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCC-DOC-26-0726**  
+  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **FCC/2026/3170**  
+  The collaboration this document belongs to: the carnet the Ferrano Chamber of Commerce issues and its proof of re-exportation. Ferrano Chamber of Commerce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **SCC/ATA/2026/0084**  
   The sender's number for this document.
 - `UUID` = **3377b749-219b-5bbb-a9d2-7d1101bcbe28**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -30,7 +30,7 @@ The re-exportation limit of 30 June has passed and the island's customs have no 
   Why the chamber asks: a missing voucher, not a missing stamp.
 - `VersionID` = **1**  
   The first request.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the samples travelled under.
 - `GoodsItemPassportCounterfoilID` = **IMP-1**  
   The importation counterfoil not discharged.
@@ -182,7 +182,7 @@ Inside `ImportingCustomsParty`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **XL-CUS-ATA-26-0071**  
+- `ID` = **XL-CUS/2026/11199**  
   The customs' notice to the chamber.
 - `DocumentType` = **Customs notice**  
   The kind of document referred to, the island customs' notice to the chamber, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -206,14 +206,14 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:proof-of-reexportation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:temporary-admission:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCC-DOC-26-0726</cbc:ID>
+  <cbc:ProfileExecutionID>FCC/2026/3170</cbc:ProfileExecutionID>
+  <cbc:ID>SCC/ATA/2026/0084</cbc:ID>
   <cbc:UUID>3377b749-219b-5bbb-a9d2-7d1101bcbe28</cbc:UUID>
   <cbc:IssueDate>2026-07-24</cbc:IssueDate>
   <cbc:IssueTime>08:50:00+00:00</cbc:IssueTime>
   <cbc:Note>The re-exportation limit of 30 June set on the importation counterfoil has passed, and the Island Customs Service has no discharged re-exportation voucher on file for the samples.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+  <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
   <cbc:GoodsItemPassportCounterfoilID>IMP-1</cbc:GoodsItemPassportCounterfoilID>
   <cac:ImportingGuarantorParty>
     <cac:PartyIdentification>
@@ -324,7 +324,7 @@ Inside `Signature`:
     </cac:PostalAddress>
   </cac:ImportingCustomsParty>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>
+    <cbc:ID>XL-CUS/2026/11199</cbc:ID>
     <cbc:DocumentType>Customs notice</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

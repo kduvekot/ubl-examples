@@ -15,10 +15,10 @@ The reopening of the home and garden department on 11 May, with two weeks at 10 
 - `CustomizationID` = **urn:ubl-examples:world:trns:retail-event:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Retail event"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:collaboration:1.0**  
-  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-RE-26-0222**  
+  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339162**  
+  The collaboration this document belongs to: the store's forecast, promotion and stock report for Lumeway. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **6500016959**  
   The store's event number.
 - `UUID` = **31926ddb-5dfd-59d6-bb1b-86b3926753e7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,7 +32,7 @@ The reopening of the home and garden department on 11 May, with two weeks at 10 
   The name of the event: the department reopens after its renovation.
 - `RetailEventStatusCode` = **CONFIRMED** (listID `urn:ubl-examples:world:codelist:RetailEventStatusCode`)  
   The reopening and its promotion are decided, not only planned. The code is from the Trade Accord's retail event status list: CONFIRMED = Confirmed.
-- `SellerEventID` = **LD-PROMO-26-03**  
+- `SellerEventID` = **LMW-PROMO-26-03**  
   The distributor's number for the promotion.
 - `BuyerEventID` = **BM-REOPEN-HG-26**  
   The store's number for the reopening.
@@ -236,7 +236,7 @@ Inside `PromotionalEvent`:
   Its end.
 - `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/SupplyItem/Name` = **Park bench Serra 180**  
   The item promoted.
-- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LD-10442**  
+- `PromotionalSpecification/PromotionalEventLineItem/EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LMW-10442**  
   The distributor's number.
 - `PromotionalSpecification/EventTactic/Comment` = **Benches on a floor stand at the entrance, with a price board.**  
   What the store does.
@@ -265,7 +265,7 @@ Inside `MiscellaneousEvent`:
   The line.
 - `EventLineItem/SupplyItem/Name` = **Park bench Serra 180**  
   The item promoted.
-- `EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LD-10442**  
+- `EventLineItem/SupplyItem/SellersItemIdentification/ID` = **LMW-10442**  
   The distributor's number.
 
 ## The document
@@ -276,15 +276,15 @@ Inside `MiscellaneousEvent`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:retail-event:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-RE-26-0222</cbc:ID>
+  <cbc:ProfileExecutionID>9900339162</cbc:ProfileExecutionID>
+  <cbc:ID>6500016959</cbc:ID>
   <cbc:UUID>31926ddb-5dfd-59d6-bb1b-86b3926753e7</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>11:13:00-01:00</cbc:IssueTime>
   <cbc:Note>Agreed with the distributor's sales team.</cbc:Note>
   <cbc:RetailEventName>Reopening of the home and garden department</cbc:RetailEventName>
   <cbc:RetailEventStatusCode listID="urn:ubl-examples:world:codelist:RetailEventStatusCode">CONFIRMED</cbc:RetailEventStatusCode>
-  <cbc:SellerEventID>LD-PROMO-26-03</cbc:SellerEventID>
+  <cbc:SellerEventID>LMW-PROMO-26-03</cbc:SellerEventID>
   <cbc:BuyerEventID>BM-REOPEN-HG-26</cbc:BuyerEventID>
   <cbc:Description>After its renovation the home and garden department of the Lumeport store reopens on Monday 11 May: ten per cent off the department's range for two weeks, the Elderwick Marrow line excepted.</cbc:Description>
   <cac:Period>
@@ -442,7 +442,7 @@ Inside `MiscellaneousEvent`:
           <cac:SupplyItem>
             <cbc:Name>Park bench Serra 180</cbc:Name>
             <cac:SellersItemIdentification>
-              <cbc:ID>LD-10442</cbc:ID>
+              <cbc:ID>LMW-10442</cbc:ID>
             </cac:SellersItemIdentification>
           </cac:SupplyItem>
         </cac:EventLineItem>
@@ -470,7 +470,7 @@ Inside `MiscellaneousEvent`:
       <cac:SupplyItem>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:SupplyItem>
     </cac:EventLineItem>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-INV-26-0223</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>2026/1529</cbc:ID>
   <cbc:UUID>24e1d166-df64-5739-a3d9-ff76dde6a054</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
   <cbc:IssueTime>09:28:00-01:00</cbc:IssueTime>
@@ -18,10 +18,10 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
+    <cbc:ID>PWD/2026/0567</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>CL-DA-26-0217</cbc:ID>
+    <cbc:ID>CAS-DA-26-1459</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
@@ -203,15 +203,15 @@
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF91VIINV260223</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF91VIINV260223</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF9720261529</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF9720261529</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB13BLUM38010005341179</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice VI-INV-26-0223</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/1529</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
         <cbc:Name>Main branch, Exchange Street</cbc:Name>

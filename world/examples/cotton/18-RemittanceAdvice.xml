@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-RM-26-0212</cbc:ID>
+  <cbc:ProfileExecutionID>9900013293</cbc:ProfileExecutionID>
+  <cbc:ID>2000005423</cbc:ID>
   <cbc:UUID>4dead5a1-d2ba-5e05-a95b-17805f866743</cbc:UUID>
   <cbc:IssueDate>2026-06-22</cbc:IssueDate>
   <cbc:IssueTime>15:45:00-01:00</cbc:IssueTime>
@@ -13,8 +13,8 @@
   <cbc:TotalDebitAmount currencyID="XLC">6055.452</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XLC">6055.452</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>LTM-PAY-26-0191</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF46SCGINV260210</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>1500000678</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF28SCGINV260243</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -102,8 +102,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>LTM-PAY-26-0191</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF46SCGINV260210</cbc:PaymentID>
+    <cbc:InstructionID>1500000678</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF28SCGINV260243</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB35BLUM38020504608076</cbc:ID>
       <cbc:Name>Lumeport Textile Mill Ltd</cbc:Name>
@@ -184,10 +184,10 @@
     <cbc:DebitLineAmount currencyID="XLC">6055.452</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF46SCGINV260210</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF28SCGINV260243</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>SCG-INV-26-0210</cbc:ID>
+        <cbc:ID>SCG-INV-26-0243</cbc:ID>
         <cbc:IssueDate>2026-05-07</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

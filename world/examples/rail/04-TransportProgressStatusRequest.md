@@ -15,10 +15,10 @@ The rail carrier asks Urvania's rail infrastructure manager, the transportation 
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-progress-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport progress status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FRC-DOC-26-0329**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900092547**  
+  The collaboration this document belongs to: the carrier's request to the rail infrastructure agency for the train's progress. Ferrano Rail Cargo started it and gave it this identifier, which every document of it repeats.
+- `ID` = **8200004628**  
   The sender's number for this document.
 - `UUID` = **7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -174,8 +174,8 @@ Inside `StatusLocation`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-progress-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-DOC-26-0329</cbc:ID>
+  <cbc:ProfileExecutionID>9900092547</cbc:ProfileExecutionID>
+  <cbc:ID>8200004628</cbc:ID>
   <cbc:UUID>7c8f28e6-bfc0-552a-81ee-9a72d2daa5f8</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:30:00-01:00</cbc:IssueTime>

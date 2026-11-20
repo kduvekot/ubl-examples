@@ -15,14 +15,14 @@ The furniture maker's bank certifies the government bonds immobilised in favour 
 - `CustomizationID` = **urn:ubl-examples:world:trns:guarantee-certificate:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Guarantee certificate"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BL-DOC-26-0200**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **3900039355**  
   The bank's number for the certificate.
 - `UUID` = **3e922210-3b62-5068-9bc7-523b9c932e1a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-19**  
   Thursday 19 February, the day after the bonds were deposited and immobilised, the day before Brackenmere's tender.
@@ -61,7 +61,7 @@ Inside `ApplicableRegulation`:
 
 Inside `ImmobilizedSecurity`:
 
-- `ImmobilizationCertificateID` = **BLUM-IMM-26-0044**  
+- `ImmobilizationCertificateID` = **1600002271**  
   The bank's certificate of the immobilised bonds.
 - `SecurityID` = **XB0000260313** (schemeID `ISO 6166`)  
   Bayvarran federal bonds, the securities of a third issuer. The schemeID names the scheme it is from: the ISO 6166 International Securities Identification Number (the issuer's country code, nine letters or digits, a check digit (Luhn)).
@@ -232,10 +232,10 @@ Inside `BeneficiaryParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:guarantee-certificate:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BL-DOC-26-0200</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>3900039355</cbc:ID>
   <cbc:UUID>3e922210-3b62-5068-9bc7-523b9c932e1a</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>17:19:00-01:00</cbc:IssueTime>
   <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">TENDER</cbc:GuaranteeTypeCode>
@@ -252,7 +252,7 @@ Inside `BeneficiaryParty`:
     <cbc:LegalReference>XB-PPA-2019 art. 61</cbc:LegalReference>
   </cac:ApplicableRegulation>
   <cac:ImmobilizedSecurity>
-    <cbc:ImmobilizationCertificateID>BLUM-IMM-26-0044</cbc:ImmobilizationCertificateID>
+    <cbc:ImmobilizationCertificateID>1600002271</cbc:ImmobilizationCertificateID>
     <cbc:SecurityID schemeID="ISO 6166">XB0000260313</cbc:SecurityID>
     <cbc:IssueDate>2023-09-15</cbc:IssueDate>
     <cbc:FaceValueAmount currencyID="XBL">2632.50</cbc:FaceValueAmount>

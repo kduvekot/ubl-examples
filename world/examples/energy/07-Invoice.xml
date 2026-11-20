@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-INV-26-0159</cbc:ID>
+  <cbc:ID>9000034210</cbc:ID>
   <cbc:UUID>1e7ea11c-b11c-5f5d-b9a6-1cc6a2557832</cbc:UUID>
   <cbc:IssueDate>2026-04-03</cbc:IssueDate>
   <cbc:IssueTime>15:31:00-01:00</cbc:IssueTime>
@@ -185,8 +184,8 @@
     <cbc:PaymentDueDate>2026-05-05</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF84KGINV260159</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF84KGINV260159</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF489000034210</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF489000034210</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB45BLUM38522004817534</cbc:ID>
@@ -194,7 +193,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice KG-INV-26-0159</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 9000034210</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">385220</cbc:ID>
         <cbc:Name>Gullhaven branch</cbc:Name>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-RM-26-0168</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-RM-26-0282</cbc:ID>
   <cbc:UUID>079daaa2-67ec-5103-9652-83ba2c17dabd</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>15:05:00-01:00</cbc:IssueTime>
@@ -13,8 +13,8 @@
   <cbc:TotalDebitAmount currencyID="XUF">3887400</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">77748</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">3809652</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>LMW-PAY-26-0036</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF3920261409</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -108,8 +108,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>LD-PAY-26-0149</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF78VIINV260166</cbc:PaymentID>
+    <cbc:InstructionID>LMW-PAY-26-0036</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF3920261409</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB19BLUM38712001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
@@ -194,10 +194,10 @@
     <cbc:CreditLineAmount currencyID="XUF">77748</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF3920261409</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0166</cbc:ID>
+        <cbc:ID>2026/1409</cbc:ID>
         <cbc:IssueDate>2026-03-24</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

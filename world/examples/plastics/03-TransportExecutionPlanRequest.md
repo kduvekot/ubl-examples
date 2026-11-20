@@ -15,10 +15,10 @@ Under CPT the waste processor is the transport user; it asks the barge operator 
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-execution-plan-request:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan request". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RR-TR-26-0884**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0425**  
+  The collaboration this document belongs to: the barge carriage Rinova books with Fiumella Barges. Rinova Recovery started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0255**  
   The transport user's request number.
 - `VersionID` = **1**  
   The first version of the request.
@@ -231,7 +231,7 @@ Inside `ToLocation`:
 
 Inside `Consignment`:
 
-- `ID` = **RR-CS-26-0885**  
+- `ID` = **26-0426**  
   The seller's consignment number.
 - `SummaryDescription` = **120 t of Recycled PE granulate**  
   What is to be carried, in a few words.
@@ -306,8 +306,8 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-TR-26-0884</cbc:ID>
+  <cbc:ProfileExecutionID>26-0425</cbc:ProfileExecutionID>
+  <cbc:ID>26-0255</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>256f8176-ee49-5cca-9761-ba9a8673cb84</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
@@ -452,7 +452,7 @@ Inside `Consignment`:
     <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
   </cac:ToLocation>
   <cac:Consignment>
-    <cbc:ID>RR-CS-26-0885</cbc:ID>
+    <cbc:ID>26-0426</cbc:ID>
     <cbc:SummaryDescription>120 t of Recycled PE granulate</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cbc:AnimalFoodIndicator>false</cbc:AnimalFoodIndicator>

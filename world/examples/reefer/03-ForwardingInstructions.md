@@ -15,10 +15,8 @@ The cooperative instructs its forwarder: book a reefer on the sailing, with its 
 - `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFG-FI-26-0555**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **HRW-FI-26-0438**  
   The cooperative's instruction number.
 - `UUID` = **65afde09-59f1-5b61-bf17-600334916da7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -141,11 +139,11 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0556**  
+- `ID` = **HRW-SH-26-0730**  
   The shipment to be booked.
 - `InsuranceValueAmount` = **31754.80** (currencyID `XBL`)  
   The value the forwarder is to insure the shipment for: 110 % of the fruit's CIP value, the least cover Incoterms 2020 CIP asks of the seller.
-- `Consignment/ID` = **HFG-CS-26-0557**  
+- `Consignment/ID` = **HRW-CS-26-0730**  
   The cooperative's consignment number.
 - `Consignment/GrossWeightMeasure` = **21728** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the fruit on its pallets.
@@ -278,8 +276,7 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-FI-26-0555</cbc:ID>
+  <cbc:ID>HRW-FI-26-0438</cbc:ID>
   <cbc:UUID>65afde09-59f1-5b61-bf17-600334916da7</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
   <cbc:IssueTime>10:40:00-01:00</cbc:IssueTime>
@@ -368,10 +365,10 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cbc:InsuranceValueAmount currencyID="XBL">31754.80</cbc:InsuranceValueAmount>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0557</cbc:ID>
+      <cbc:ID>HRW-CS-26-0730</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cbc:ForwarderServiceInstructions>Book a 40-foot reefer on Tidewell's sailing of 23 April to Selanu; have it pre-trip inspected and pre-cooled; bring it to our packhouse on 22 April and back to the port on a generator set; declare the export and insure the fruit.</cbc:ForwarderServiceInstructions>
       <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>

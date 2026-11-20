@@ -15,10 +15,10 @@ The engineering firm announces the goods to the telecom company.
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MAST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SE-DA-26-0718**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **STL-TX-26-124393**  
+  The collaboration this document belongs to: Selanu Telecom's order of a mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0131**  
   The despatching party's number.
 - `UUID` = **7619027f-bad8-5009-935f-978a56d56a14**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ The engineering firm announces the goods to the telecom company.
 
 Inside `OrderReference`:
 
-- `ID` = **ST-PO-26-0713**  
+- `ID` = **STL-PO-26-0374**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -164,9 +164,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SE-SH-26-0715**  
+- `ID` = **26-0130**  
   The despatching party's shipment number.
-- `Consignment/ID` = **SE-CS-26-0716**  
+- `Consignment/ID` = **26-0129**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight.
@@ -350,8 +350,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SE-DA-26-0718</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-124393</cbc:ProfileExecutionID>
+  <cbc:ID>26-0131</cbc:ID>
   <cbc:UUID>7619027f-bad8-5009-935f-978a56d56a14</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>09:40:00-01:00</cbc:IssueTime>
@@ -359,7 +359,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>ST-PO-26-0713</cbc:ID>
+    <cbc:ID>STL-PO-26-0374</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -462,9 +462,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>SE-SH-26-0715</cbc:ID>
+    <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:ID>26-0129</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>

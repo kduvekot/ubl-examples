@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FE-INV-26-0313</cbc:ID>
+  <cbc:ProfileExecutionID>9909901005</cbc:ProfileExecutionID>
+  <cbc:ID>2026/313046</cbc:ID>
   <cbc:UUID>47af4407-c4e0-59f4-b15c-7ba55c57e130</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>13:20:00-01:00</cbc:IssueTime>
@@ -24,7 +24,7 @@
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>FE-INV-26-0211</cbc:ID>
+      <cbc:ID>2026/313045</cbc:ID>
       <cbc:IssueDate>2026-03-01</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
     <cac:BillingReferenceLine>
@@ -191,15 +191,15 @@
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF58FEINV260313</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF58FEINV260313</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF192026313046</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF192026313046</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU080351041600000004084431</cbc:ID>
       <cbc:Name>Ferrano Energy SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice FE-INV-26-0313</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/313046</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>
@@ -350,7 +350,7 @@
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-E-20388</cbc:ID>
+      <cbc:ID>FGR-E-20388</cbc:ID>
       <cbc:Description>Factory, main connection</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -389,7 +389,7 @@
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-E-20523</cbc:ID>
+      <cbc:ID>FGR-E-20523</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
     </cac:PurchaseReference>
     <cac:Delivery>
@@ -441,7 +441,7 @@
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-G-20417</cbc:ID>
+      <cbc:ID>FGR-G-20417</cbc:ID>
       <cbc:Description>Factory, gas of the coating line</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -480,7 +480,7 @@
       <cbc:Description>February 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-E-20523</cbc:ID>
+      <cbc:ID>FGR-E-20523</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
     </cac:PurchaseReference>
     <cac:Delivery>

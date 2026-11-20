@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-CN-26-0322</cbc:ID>
+  <cbc:ProfileExecutionID>9924052627</cbc:ProfileExecutionID>
+  <cbc:ID>9100373645</cbc:ID>
   <cbc:UUID>b275185e-048c-56dd-9144-cf9ea28b4f48</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:03:00-01:00</cbc:IssueTime>
@@ -19,7 +19,7 @@
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+      <cbc:ID>CSW-C-311790-2603</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
@@ -132,7 +132,7 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:PaymentTerms>
-    <cbc:Note>Set off against the balance of the settlement bill CSWC-INV-26-0319, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.</cbc:Note>
+    <cbc:Note>Set off against the balance of the settlement bill CSW-C-311790-2603, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -175,7 +175,7 @@
     <cbc:LineExtensionAmount currencyID="XBL">0.84</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+        <cbc:ID>CSW-C-311790-2603</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>2</cbc:ID>
@@ -215,7 +215,7 @@
     <cbc:LineExtensionAmount currencyID="XBL">4.70</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+        <cbc:ID>CSW-C-311790-2603</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>

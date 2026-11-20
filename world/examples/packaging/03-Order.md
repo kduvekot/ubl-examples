@@ -15,10 +15,10 @@ Garment bags for the clothing. Delivery terms DAP mill.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PACKAGING-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LTM-PO-26-0523**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900013319**  
+  The collaboration this document belongs to: the textile mill's order of packaging from Rivermouth. Lumeport Textile Mill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **4500013319**  
   The buyer's order number.
 - `UUID` = **180e0758-2040-5584-b52e-eddf276d1157**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -230,8 +230,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-PO-26-0523</cbc:ID>
+  <cbc:ProfileExecutionID>9900013319</cbc:ProfileExecutionID>
+  <cbc:ID>4500013319</cbc:ID>
   <cbc:UUID>180e0758-2040-5584-b52e-eddf276d1157</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>08:56:00-01:00</cbc:IssueTime>

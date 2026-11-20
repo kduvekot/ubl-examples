@@ -15,10 +15,10 @@ The wholesaler confirms what it unloaded at its cold store, with the temperature
 - `CustomizationID` = **urn:ubl-examples:world:trns:receipt-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Receipt advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFP-RA-26-0566**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0214**  
+  The collaboration this document belongs to: Hafefo's order of fruit from Harrowmead Fruit Growers. Hafefo Fresh Produce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0256**  
   The receiving party's number.
 - `UUID` = **9f7f7391-8c4f-53d4-8fbc-38ab9c087873**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,14 +39,14 @@ The wholesaler confirms what it unloaded at its cold store, with the temperature
 
 Inside `OrderReference`:
 
-- `ID` = **HFP-PO-26-0553**  
+- `ID` = **26-0215**  
   The order the goods were delivered for.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **HFG-DA-26-0561**  
+- `ID` = **HRW-DA-26-0764**  
   The despatch advice this receipt answers.
 
 ### Delivery Customer Party
@@ -175,19 +175,19 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0561**  
+- `DespatchLineReference/DocumentReference/ID` = **HRW-DA-26-0764**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-DA-26-0561 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: HRW-DA-26-0764 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.**  
   The seller's description.
 - `Item/Name` = **Apples Gala, carton 18 kg, count 100**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-GAL100**  
+- `Item/SellersItemIdentification/ID` = **HRW-GAL100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430001014** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
-- `Shipment/ID` = **HFG-SH-26-0556**  
+- `Shipment/ID` = **HRW-SH-26-0730**  
   The shipment the fruit came in.
 - `Shipment/GoodsItem/ID` = **1**  
   The fruit of this line.
@@ -207,19 +207,19 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **2**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0561**  
+- `DespatchLineReference/DocumentReference/ID` = **HRW-DA-26-0764**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-DA-26-0561 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: HRW-DA-26-0764 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.**  
   The seller's description.
 - `Item/Name` = **Apples Granny Smith, carton 18 kg, count 100**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-GSM100**  
+- `Item/SellersItemIdentification/ID` = **HRW-GSM100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430001021** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
-- `Shipment/ID` = **HFG-SH-26-0556**  
+- `Shipment/ID` = **HRW-SH-26-0730**  
   The shipment the fruit came in.
 - `Shipment/GoodsItem/ID` = **1**  
   The fruit of this line.
@@ -239,19 +239,19 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **3**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0561**  
+- `DespatchLineReference/DocumentReference/ID` = **HRW-DA-26-0764**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-DA-26-0561 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: HRW-DA-26-0764 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.**  
   The seller's description.
 - `Item/Name` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-PKT080**  
+- `Item/SellersItemIdentification/ID` = **HRW-PKT080**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430002011** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
-- `Shipment/ID` = **HFG-SH-26-0556**  
+- `Shipment/ID` = **HRW-SH-26-0730**  
   The shipment the fruit came in.
 - `Shipment/GoodsItem/ID` = **1**  
   The fruit of this line.
@@ -268,8 +268,8 @@ Inside `ReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-RA-26-0566</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>26-0256</cbc:ID>
   <cbc:UUID>9f7f7391-8c4f-53d4-8fbc-38ab9c087873</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cbc:IssueTime>14:27:00+00:00</cbc:IssueTime>
@@ -278,10 +278,10 @@ Inside `ReceiptLine`:
   <cbc:Note>Unloaded at our cold store and counted, the mix of your order response: five pallets of Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0561</cbc:ID>
+    <cbc:ID>HRW-DA-26-0764</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
@@ -382,7 +382,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0561</cbc:ID>
+        <cbc:ID>HRW-DA-26-0764</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -390,14 +390,14 @@ Inside `ReceiptLine`:
       <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GAL100</cbc:ID>
+        <cbc:ID>HRW-GAL100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001014</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0556</cbc:ID>
+      <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -418,7 +418,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0561</cbc:ID>
+        <cbc:ID>HRW-DA-26-0764</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -426,14 +426,14 @@ Inside `ReceiptLine`:
       <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
       <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GSM100</cbc:ID>
+        <cbc:ID>HRW-GSM100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001021</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0556</cbc:ID>
+      <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -454,7 +454,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>3</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0561</cbc:ID>
+        <cbc:ID>HRW-DA-26-0764</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -462,14 +462,14 @@ Inside `ReceiptLine`:
       <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-PKT080</cbc:ID>
+        <cbc:ID>HRW-PKT080</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430002011</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0556</cbc:ID>
+      <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>

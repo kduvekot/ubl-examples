@@ -15,10 +15,8 @@ The wholesaler declares the generator for import at Lumeport airport on the Sund
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **QPD-IM-26-0332**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **QLM-IM-26-0814**  
   The importer's declaration number.
 - `UUID` = **dec43f2a-2397-55dd-a970-1f967ceff30c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -195,9 +193,9 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HI-SH-26-0333**  
+- `ID` = **HVI-SH-26-1356**  
   The maker's shipment, as its invoice numbers it.
-- `Consignment/ID` = **HI-CS-26-0334**  
+- `Consignment/ID` = **HVI-CS-26-1356**  
   The consignment declared, as the maker booked it.
 - `Consignment/GrossWeightMeasure` = **18** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving.
@@ -225,7 +223,7 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Haarvliet Isotopes describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 284443 = Radioactive elements, isotopes and compounds; other alloys, dispersions (including cermets), ceramic products and mixtures containing these elements, isotopes or compounds.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **33690** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Haarvliet Isotopes describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 33690 = Other radioactive elements and isotopes and compounds; alloys, dispersions, ceramic products and mixtures containing these elements, isotopes or compounds; radioactive residues.
-- `GoodsItem/Item/HazardousItem/ID` = **HI-TCG-20-DG**  
+- `GoodsItem/Item/HazardousItem/ID` = **HVI-TCG-20-DG**  
   The seller's dangerous goods record of the item.
 - `GoodsItem/Item/HazardousItem/PlacardNotation` = **7**  
   The class shown on the hazard label of the packages.
@@ -260,10 +258,10 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **HI-INV-26-0331**  
+- `ID` = **HVI-INV-26-1344**  
   The maker's commercial invoice the customs value rests on.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HI-INV-26-0331 is the example medicines/07, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: HVI-INV-26-1344 is the example medicines/07, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -273,8 +271,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-IM-26-0332</cbc:ID>
+  <cbc:ID>QLM-IM-26-0814</cbc:ID>
   <cbc:UUID>dec43f2a-2397-55dd-a970-1f967ceff30c</cbc:UUID>
   <cbc:IssueDate>2026-06-14</cbc:IssueDate>
   <cbc:IssueTime>21:40:00-01:00</cbc:IssueTime>
@@ -411,9 +408,9 @@ Inside `AdditionalDocumentReference`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>HI-SH-26-0333</cbc:ID>
+    <cbc:ID>HVI-SH-26-1356</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HI-CS-26-0334</cbc:ID>
+      <cbc:ID>HVI-CS-26-1356</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -435,7 +432,7 @@ Inside `AdditionalDocumentReference`:
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">33690</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
-          <cbc:ID>HI-TCG-20-DG</cbc:ID>
+          <cbc:ID>HVI-TCG-20-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
           <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
@@ -459,7 +456,7 @@ Inside `AdditionalDocumentReference`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HI-INV-26-0331</cbc:ID>
+    <cbc:ID>HVI-INV-26-1344</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

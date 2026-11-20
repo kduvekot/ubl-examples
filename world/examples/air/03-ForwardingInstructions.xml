@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-FI-26-0322</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-1010</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-FI-26-0606</cbc:ID>
   <cbc:UUID>8a0ceec7-aa03-5c38-8c5d-9f93d07709aa</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>13:44:00-01:00</cbc:IssueTime>
@@ -99,9 +99,9 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0323</cbc:ID>
+    <cbc:ID>LMW-SH-26-1010</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:ID>LMW-CS-26-1010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
       <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
@@ -171,10 +171,10 @@
         <cbc:ID schemeID="GS1 SSCC">095206100003729347</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SI</cbc:TransportHandlingUnitTypeCode>
         <cac:ReferencedShipment>
-          <cbc:ID>LD-SH-26-0323</cbc:ID>
+          <cbc:ID>LMW-SH-26-1010</cbc:ID>
         </cac:ReferencedShipment>
         <cac:Package>
-          <cbc:ID>LD-AIR-BOX</cbc:ID>
+          <cbc:ID>LMW-AIR-BOX</cbc:ID>
           <cbc:Quantity unitCode="EA">8</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
           <cac:GoodsItem>
@@ -203,7 +203,7 @@
             </cac:RequestedDeliveryPeriod>
           </cac:Delivery>
           <cac:Pickup>
-            <cbc:ID>BF-PU-26-0611</cbc:ID>
+            <cbc:ID>BYF-PU-26-0611</cbc:ID>
             <cbc:EarliestPickupDate>2026-05-13</cbc:EarliestPickupDate>
             <cac:PickupParty>
               <cac:PartyIdentification>
@@ -238,7 +238,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:ID>26-0065</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

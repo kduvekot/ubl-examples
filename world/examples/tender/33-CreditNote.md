@@ -15,10 +15,10 @@ One bench was damaged during installation and rejected on acceptance; the manufa
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the national specification "Billing rules for public bodies of Bayvarra". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-CN-26-0225**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/0566**  
+  The collaboration this document belongs to: the department's first call-off under the contract. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2026/1769**  
   The seller's credit note number.
 - `UUID` = **836baac3-c754-5749-8c68-5c404d80fae0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -47,14 +47,14 @@ One bench was damaged during installation and rejected on acceptance; the manufa
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **VI-INV-26-0223**  
+- `InvoiceDocumentReference/ID` = **2026/1529**  
   The invoice credited.
 
 ### Receipt Document Reference
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **LPWD-RA-26-0224**  
+- `ID` = **PWD/2026/0702**  
   The acceptance that rejected the bench.
 
 ### Accounting Supplier Party
@@ -322,7 +322,7 @@ Inside `CreditNoteLine`:
   The bench rejected on acceptance: damaged during installation.
 - `LineExtensionAmount` = **499.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `DocumentReference/ID` = **PWD-DMG-26-0081**  
+- `DocumentReference/ID` = **PWD/2026/0709**  
   The department's damage report.
 - `DocumentReference/IssueDate` = **2026-04-02**  
   The day of the damage.
@@ -381,8 +381,8 @@ Inside `CreditNoteLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CN-26-0225</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>2026/1769</cbc:ID>
   <cbc:UUID>836baac3-c754-5749-8c68-5c404d80fae0</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
@@ -396,11 +396,11 @@ Inside `CreditNoteLine`:
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>VI-INV-26-0223</cbc:ID>
+      <cbc:ID>2026/1529</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>LPWD-RA-26-0224</cbc:ID>
+    <cbc:ID>PWD/2026/0702</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -603,7 +603,7 @@ Inside `CreditNoteLine`:
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">499.00</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>PWD-DMG-26-0081</cbc:ID>
+      <cbc:ID>PWD/2026/0709</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       <cbc:DocumentType>Damage report</cbc:DocumentType>
     </cac:DocumentReference>

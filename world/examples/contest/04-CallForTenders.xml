@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:call-for-tenders:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0635</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0540</cbc:ID>
   <cbc:UUID>d94848cd-0c23-5c8c-b1c5-a395fecf418d</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>16:56:00-01:00</cbc:IssueTime>
   <cbc:Note>The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained.</cbc:Note>
@@ -16,7 +16,7 @@
     <cbc:DocumentType>Design brief</cbc:DocumentType>
     <cac:Attachment>
       <cac:ExternalReference>
-        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/brief</cbc:URI>
+        <cbc:URI>https://tenders.lumeport.example/PWD/2026/PROM-DC/brief</cbc:URI>
       </cac:ExternalReference>
     </cac:Attachment>
   </cac:TechnicalDocumentReference>
@@ -26,7 +26,7 @@
     <cbc:VersionID>A</cbc:VersionID>
     <cac:Attachment>
       <cac:ExternalReference>
-        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-a</cbc:URI>
+        <cbc:URI>https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-a</cbc:URI>
       </cac:ExternalReference>
     </cac:Attachment>
   </cac:ProvidedDocumentReference>
@@ -228,10 +228,10 @@
       <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+      <cbc:ID>PWD/2026/0223</cbc:ID>
     </cac:NoticeDocumentReference>
     <cac:NoticeDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+      <cbc:ID>PWD/2026/0530</cbc:ID>
       <cbc:VersionID>1</cbc:VersionID>
     </cac:NoticeDocumentReference>
     <cac:ProcessJustification>

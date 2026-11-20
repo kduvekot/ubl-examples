@@ -3,9 +3,9 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-WB-26-0310</cbc:ID>
-  <cbc:CarrierAssignedID>FRC-NATRAIL-26-0304</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>9900043010</cbc:ProfileExecutionID>
+  <cbc:ID>7200091692</cbc:ID>
+  <cbc:CarrierAssignedID>8900004585</cbc:CarrierAssignedID>
   <cbc:UUID>04bf0219-eb96-5f58-b434-f608b27f5387</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -157,9 +157,9 @@
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>SM-SH-26-0309</cbc:ID>
+    <cbc:ID>7400004875</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0306</cbc:ID>
+      <cbc:ID>7300043010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -197,7 +197,7 @@
     </cac:Delivery>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FRC-TEP-26-0307</cbc:ID>
+    <cbc:ID>9500054926</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -214,7 +214,7 @@
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>FRC-SIG-FRC-WB-26-0310</cbc:ID>
+    <cbc:ID>FRC-SIG-7200091692</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>

@@ -15,10 +15,10 @@ The ginnery pays the farm the net amount.
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCG-RM-26-0196**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **SCG-TX-26-0024**  
+  The collaboration this document belongs to: the ginnery's purchase of the farm's seed cotton. Selanu Cotton Ginnery started it and gave it this identifier, which every document of it repeats.
+- `ID` = **SCG-RM-26-0082**  
   The ginnery's remittance number.
 - `UUID` = **f198db4b-7402-5c2b-b4c8-d6f8869c6440**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -153,7 +153,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentDueDate` = **2026-04-17**  
   The day the transfer is executed: today, with this advice.
-- `PaymentID` = **RF77SCGSBI260194** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF88SCGSBI260190** (schemeID `ISO 11649`)  
   The payment reference the self-billed invoice asked to be quoted, so the farm can match the transfer.
 - `PayerFinancialAccount/ID` = **XL31BSEL0020004922263** (schemeID `urn:ubl-examples:world:account`)  
   The ginnery's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -248,13 +248,13 @@ Inside `RemittanceAdviceLine`:
   The self-billed invoice.
 - `DebitLineAmount` = **4595.600** (currencyID `XLC`)  
   The amount still due on the self-billed invoice, after the season advance.
-- `BillingReference/SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0194**  
+- `BillingReference/SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0190**  
   The self-billed invoice paid.
 - `ID` = **2**  
   The self-billed credit note.
 - `CreditLineAmount` = **37.075** (currencyID `XLC`)  
   The amount credited, deducted from the payment.
-- `BillingReference/SelfBilledCreditNoteDocumentReference/ID` = **SCG-SBC-26-0195**  
+- `BillingReference/SelfBilledCreditNoteDocumentReference/ID` = **SCG-SBC-26-0009**  
   The self-billed credit note set off.
 
 ## The document
@@ -265,8 +265,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-RM-26-0196</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-RM-26-0082</cbc:ID>
   <cbc:UUID>f198db4b-7402-5c2b-b4c8-d6f8869c6440</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
   <cbc:IssueTime>13:06:00+00:00</cbc:IssueTime>
@@ -363,7 +363,7 @@ Inside `RemittanceAdviceLine`:
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentDueDate>2026-04-17</cbc:PaymentDueDate>
-    <cbc:PaymentID schemeID="ISO 11649">RF77SCGSBI260194</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF88SCGSBI260190</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL31BSEL0020004922263</cbc:ID>
       <cbc:Name>Selanu Cotton Ginnery Ltd</cbc:Name>
@@ -444,7 +444,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XLC">4595.600</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledInvoiceDocumentReference>
-        <cbc:ID>SCG-SBI-26-0194</cbc:ID>
+        <cbc:ID>SCG-SBI-26-0190</cbc:ID>
       </cac:SelfBilledInvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
@@ -453,7 +453,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:CreditLineAmount currencyID="XLC">37.075</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledCreditNoteDocumentReference>
-        <cbc:ID>SCG-SBC-26-0195</cbc:ID>
+        <cbc:ID>SCG-SBC-26-0009</cbc:ID>
       </cac:SelfBilledCreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

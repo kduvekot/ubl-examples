@@ -15,12 +15,12 @@ The road consignment note goes to the party that booked the truck, the distribut
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TH-WB-26-0159**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0580**  
+  The collaboration this document belongs to: the road carriage Lumeway books with Trasvia Haulage. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0560**  
   The consignment note number.
-- `CarrierAssignedID` = **TH-CMR-26-0149**  
+- `CarrierAssignedID` = **26-0028**  
   The carrier's own number for the carriage.
 - `UUID` = **4891662e-273a-5190-9aa7-edb87e35d8b5**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -238,7 +238,7 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **CL-SH-26-0154**  
+- `ID` = **CAS-SH-26-1291**  
   The shipment as the despatching party numbered it.
 - `HandlingCode` = **KEEPDRY** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: keep dry, for the goods travel in cardboard cartons. The code is from the Trade Accord's handling instruction list: KEEPDRY = Keep dry.
@@ -256,11 +256,11 @@ Inside `Shipment`:
   The whole consignment travels on this truck.
 - `ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment on the truck.
-- `Consignment/ID` = **LD-CS-26-0152**  
+- `Consignment/ID` = **LMW-CS-26-0580**  
   The distributor's consignment number, from its booking.
 - `Consignment/CarrierAssignedID` = **TH-26-04471**  
   The carrier's job number.
-- `Consignment/ConsigneeAssignedID` = **LD-GI-0412**  
+- `Consignment/ConsigneeAssignedID` = **LMW-GI-0412**  
   The distributor's goods-in booking for the slot.
 - `Consignment/SummaryDescription` = **Park benches and spare side frames on 25 pallets.**  
   The goods in a few words, as on the consignment note.
@@ -288,7 +288,7 @@ Inside `Shipment`:
   What the driver must do before leaving.
 - `Consignment/TotalPackagesQuantity` = **300** (unitCode `EA`)  
   The parcels: 96 benches in three parcels each and 12 frame cartons.
-- `Consignment/CustomsDeclaration/ID` = **VI-CD-26-0156**  
+- `Consignment/CustomsDeclaration/ID` = **7500008669**  
   The export declaration the goods travel under.
 - `Consignment/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -3388,7 +3388,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **TH-SIG-TH-WB-26-0159**  
+- `ID` = **TH-SIG-26-0560**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -3403,9 +3403,9 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TH-WB-26-0159</cbc:ID>
-  <cbc:CarrierAssignedID>TH-CMR-26-0149</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0580</cbc:ProfileExecutionID>
+  <cbc:ID>26-0560</cbc:ID>
+  <cbc:CarrierAssignedID>26-0028</cbc:CarrierAssignedID>
   <cbc:UUID>4891662e-273a-5190-9aa7-edb87e35d8b5</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -3564,7 +3564,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">KEEPDRY</cbc:HandlingCode>
     <cbc:Information>Park benches, knocked down, and spare side frames, for resale.</cbc:Information>
     <cbc:GrossWeightMeasure unitCode="KGM">12863.4</cbc:GrossWeightMeasure>
@@ -3574,9 +3574,9 @@ Inside `Signature`:
     <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0152</cbc:ID>
+      <cbc:ID>LMW-CS-26-0580</cbc:ID>
       <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
-      <cbc:ConsigneeAssignedID>LD-GI-0412</cbc:ConsigneeAssignedID>
+      <cbc:ConsigneeAssignedID>LMW-GI-0412</cbc:ConsigneeAssignedID>
       <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
       <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cbc:NetWeightMeasure unitCode="KGM">4366.8</cbc:NetWeightMeasure>
@@ -3591,7 +3591,7 @@ Inside `Signature`:
       <cbc:HaulageInstructions>Wait at the warehouse until customs has released the export declaration.</cbc:HaulageInstructions>
       <cbc:TotalPackagesQuantity unitCode="EA">300</cbc:TotalPackagesQuantity>
       <cac:CustomsDeclaration>
-        <cbc:ID>VI-CD-26-0156</cbc:ID>
+        <cbc:ID>7500008669</cbc:ID>
         <cac:IssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -6310,7 +6310,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>TH-SIG-TH-WB-26-0159</cbc:ID>
+    <cbc:ID>TH-SIG-26-0560</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>

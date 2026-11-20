@@ -15,10 +15,10 @@ Classing after ginning puts part of the delivery a grade lower; the ginnery cred
 - `CustomizationID` = **urn:ubl-examples:world:trns:self-billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Self-billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCG-SBC-26-0195**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **SCG-TX-26-0024**  
+  The collaboration this document belongs to: the ginnery's purchase of the farm's seed cotton. Selanu Cotton Ginnery started it and gave it this identifier, which every document of it repeats.
+- `ID` = **SCG-SBC-26-0009**  
   The number the customer gives the self-billed document, under the self-billing agreement.
 - `UUID` = **4ce8ce40-98a9-5b24-97ee-9a8cbf98f3f1**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -76,7 +76,7 @@ Inside `OrderReference`:
 
 Inside `BillingReference`:
 
-- `SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0194**  
+- `SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0190**  
   The self-billed invoice this corrects.
 - `SelfBilledInvoiceDocumentReference/IssueDate` = **2026-04-09**  
   Its issue date.
@@ -85,14 +85,14 @@ Inside `BillingReference`:
 
 Inside `DeliveryNoteDocumentReference`:
 
-- `ID` = **LCF-DN-26-0193**  
+- `ID` = **1/2026**  
   The delivery classed.
 
 ### Work Report Document Reference
 
 Inside `WorkReportDocumentReference`:
 
-- `ID` = **SCC-CLS-26-0311**  
+- `ID` = **SCC/2026/0868**  
   The chamber's classing report of the lint ginned from the farm's delivery, of 15 April, on which the downgrade rests.
 
 ### Contract Document Reference
@@ -465,8 +465,8 @@ Inside `CreditNoteLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:self-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-SBC-26-0195</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-SBC-26-0009</cbc:ID>
   <cbc:UUID>4ce8ce40-98a9-5b24-97ee-9a8cbf98f3f1</cbc:UUID>
   <cbc:IssueDate>2026-04-16</cbc:IssueDate>
   <cbc:IssueTime>13:28:00+00:00</cbc:IssueTime>
@@ -493,15 +493,15 @@ Inside `CreditNoteLine`:
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
-      <cbc:ID>SCG-SBI-26-0194</cbc:ID>
+      <cbc:ID>SCG-SBI-26-0190</cbc:ID>
       <cbc:IssueDate>2026-04-09</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
   <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>LCF-DN-26-0193</cbc:ID>
+    <cbc:ID>1/2026</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:WorkReportDocumentReference>
-    <cbc:ID>SCC-CLS-26-0311</cbc:ID>
+    <cbc:ID>SCC/2026/0868</cbc:ID>
   </cac:WorkReportDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>

@@ -15,10 +15,10 @@ The distributor's winter catalogue takes over on 20 June, the start of winter in
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0239**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900338989**  
+  The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-CDL-26-0007**  
   The sender's number for this document.
 - `UUID` = **f9877c55-f962-5da6-86c9-7b721989951a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,7 +43,7 @@ The distributor's winter catalogue takes over on 20 June, the start of winter in
 
 Inside `DeletedCatalogueReference`:
 
-- `ID` = **LD-CAT-26-0218**  
+- `ID` = **LMW-CAT-26-0005**  
   The catalogue withdrawn.
 - `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   The catalogue's UUID, as stated in the catalogue.
@@ -68,7 +68,7 @@ Inside `DeletedCatalogueReference`:
 
 Inside `ReferencedContract`:
 
-- `ID` = **LD-BM-SUPPLY-2026**  
+- `ID` = **LMW-BM-SUPPLY-2026**  
   The supply agreement.
 
 ### Signature
@@ -250,8 +250,8 @@ Inside `ContractorCustomerParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0239</cbc:ID>
+  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-CDL-26-0007</cbc:ID>
   <cbc:UUID>f9877c55-f962-5da6-86c9-7b721989951a</cbc:UUID>
   <cbc:Name>Withdrawal of the catalogue for the Lumeport store</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
@@ -262,7 +262,7 @@ Inside `ContractorCustomerParty`:
   <cbc:VersionID>1.2</cbc:VersionID>
   <cbc:Description>The catalogue for the Lumeport store is no longer valid from 20 June.</cbc:Description>
   <cac:DeletedCatalogueReference>
-    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
@@ -274,7 +274,7 @@ Inside `ContractorCustomerParty`:
     <cbc:PreviousVersionID>1.1</cbc:PreviousVersionID>
   </cac:DeletedCatalogueReference>
   <cac:ReferencedContract>
-    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+    <cbc:ID>LMW-BM-SUPPLY-2026</cbc:ID>
   </cac:ReferencedContract>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-0619</cbc:ID>

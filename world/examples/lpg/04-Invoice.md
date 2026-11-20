@@ -15,10 +15,10 @@ The propane delivered, by the weighbridge's net weight, with Coastal State's sal
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **LPG-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **KG-INV-26-0900**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924528384**  
+  The collaboration this document belongs to: the water company's order of liquefied petroleum gas from Kelpstone. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **9000034662**  
   The seller's invoice number.
 - `UUID` = **8498ff7e-c47a-5cc6-967c-bd8b3852ae06**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -41,21 +41,21 @@ The propane delivered, by the weighbridge's net weight, with Coastal State's sal
 
 Inside `OrderReference`:
 
-- `ID` = **CSWC-PO-26-0895**  
+- `ID` = **4500028302**  
   The water company's order.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **KG-DA-26-0896**  
+- `ID` = **8000034654**  
   The despatch advice of the goods billed.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KG-WB-26-0610-03**  
+- `ID` = **1700001734**  
   The weighbridge ticket whose net weight is billed.
 - `IssueDate` = **2026-06-10**  
   Printed when the tanker was weighed full.
@@ -247,9 +247,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF59KGINV260900**  
+- `InstructionNote` = **Quote RF669000034662**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF59KGINV260900** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF669000034662** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB45BLUM38522004817534** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -261,7 +261,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice KG-INV-26-0900**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice 9000034662**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **385220** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -388,8 +388,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>LPG-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-INV-26-0900</cbc:ID>
+  <cbc:ProfileExecutionID>9924528384</cbc:ProfileExecutionID>
+  <cbc:ID>9000034662</cbc:ID>
   <cbc:UUID>8498ff7e-c47a-5cc6-967c-bd8b3852ae06</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>11:16:00-01:00</cbc:IssueTime>
@@ -399,13 +399,13 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>CSWC-PO-26-0895</cbc:ID>
+    <cbc:ID>4500028302</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>KG-DA-26-0896</cbc:ID>
+    <cbc:ID>8000034654</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KG-WB-26-0610-03</cbc:ID>
+    <cbc:ID>1700001734</cbc:ID>
     <cbc:IssueDate>2026-06-10</cbc:IssueDate>
     <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
@@ -559,15 +559,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-07-13</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF59KGINV260900</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF59KGINV260900</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF669000034662</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF669000034662</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB45BLUM38522004817534</cbc:ID>
       <cbc:Name>Kelpstone Gas Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice KG-INV-26-0900</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 9000034662</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">385220</cbc:ID>
         <cbc:Name>Gullhaven branch</cbc:Name>

@@ -15,10 +15,10 @@ The distributor answers: confirmed, the truck is booked.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-status:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order status"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0226**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339316**  
+  The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-DST-26-0045**  
   The sender's number for this document.
 - `UUID` = **eb9072fe-2cf3-54f8-bb18-08f7f9930b9c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -102,10 +102,10 @@ Inside `DocumentResponse`:
 
 - `Response/ResponseCode` = **AP** (listID `UN/EDIFACT EDED 4343`)  
   UN/EDIFACT 4343 code AP: the order is accepted and the truck is booked. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
-- `DocumentReference/ID` = **BS-PO-26-0224**  
+- `DocumentReference/ID` = **7100452422**  
   The order the status is about.
 - `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-PO-26-0224 is the example retail/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 7100452422 is the example retail/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ## The document
 
@@ -115,8 +115,8 @@ Inside `DocumentResponse`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-status:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0226</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-DST-26-0045</cbc:ID>
   <cbc:UUID>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cbc:IssueTime>11:20:00-01:00</cbc:IssueTime>
@@ -188,7 +188,7 @@ Inside `DocumentResponse`:
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID>BS-PO-26-0224</cbc:ID>
+      <cbc:ID>7100452422</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>

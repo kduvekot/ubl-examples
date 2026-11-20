@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0148</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-ISR-26-0048</cbc:ID>
   <cbc:UUID>6d87ab88-a921-5dfb-90cb-d87a8fcb59ec</cbc:UUID>
   <cbc:RequestDate>2026-05-29</cbc:RequestDate>
   <cbc:RequestTime>10:00:00</cbc:RequestTime>
@@ -62,7 +62,7 @@
   </cac:ReceiverParty>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:ID>LMW-INV-26-1025</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
 </InvoiceStatusRequest>

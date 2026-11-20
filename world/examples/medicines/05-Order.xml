@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-PO-26-0328</cbc:ID>
+  <cbc:ProfileExecutionID>QLM-TX-26-3960</cbc:ProfileExecutionID>
+  <cbc:ID>QLM-PO-26-3960</cbc:ID>
   <cbc:UUID>60211672-9d33-5e4e-a364-2037c3c12546</cbc:UUID>
   <cbc:IssueDate>2026-06-10</cbc:IssueDate>
   <cbc:IssueTime>14:10:00-01:00</cbc:IssueTime>
@@ -130,10 +130,10 @@
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:BuyersItemIdentification>
-          <cbc:ID>QPD-RAD-0020</cbc:ID>
+          <cbc:ID>QLM-RAD-0020</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>HI-TCG-20</cbc:ID>
+          <cbc:ID>HVI-TCG-20</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

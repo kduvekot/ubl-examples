@@ -1025,6 +1025,25 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 | `Reminder/PaymentCurrencyCode` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 | `Reminder/PaymentExchangeRate` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 
+### Stage 5, C74, C75, C76: numbering and collaborations (2026-11-20)
+
+Coverage 4623 → 4613, 10 elements.
+
+> D26, O77: `ProfileExecutionID` identifies one collaboration (one run of a process between the same parties, whose documents refer to each other), given by the party that starts it; a document that belongs to no collaboration with others carries none. The collaborations of each flow are listed in `world/documents.json` (`flows[].collaborations`); the build checks them (`check_numbering()` in `tools/build_examples.py`). Every customs declaration, goods certificate, ship's manifest and port report of the examples stands alone (the authority's answer is not an example), as do the shop's till receipts and the sea flow's business card, digital agreement and capability statement, which refer to no other document: their `ProfileExecutionID` goes.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `BusinessCard/ProfileExecutionID` | 0..1 | sea/01-BusinessCard | a business card sent within a collaboration that its other documents cite, such as a new contact introduced during an order cycle | O77 | candidate |
+| `CommonTransportationReport/ProfileExecutionID` | 0..1 | cotton/14-CommonTransportationReport, sea/16-CommonTransportationReport | a port call whose report and the authority's answer (an application response) are both examples | O77 | candidate |
+| `DigitalAgreement/ProfileExecutionID` | 0..1 | sea/03-DigitalAgreement | an onboarding in which the capability statement or the first order cites the digital agreement | O77 | candidate |
+| `DigitalCapability/ProfileExecutionID` | 0..1 | sea/04-DigitalCapability | an onboarding in which the capability statement answers the digital agreement it cites | O77 | candidate |
+| `ExportCustomsDeclaration/ProfileExecutionID` | 0..1 | cotton/11, energy/04, modification/04, plastics/05, reefer/05, road/05, sea/11, tender/30 (ExportCustomsDeclaration) | a declaration with the customs' answer (acceptance or release, an application response) as an example: a declarant–customs collaboration | O77, O76 | candidate |
+| `GoodsCertificate/ProfileExecutionID` | 0..1 | cotton/10-GoodsCertificate, reefer/04-GoodsCertificate | a certificate whose application (or the inspection request) is an example | O77 | candidate |
+| `ImportCustomsDeclaration/ProfileExecutionID` | 0..1 | cotton/15, energy/05, energy/10, medicines/03, medicines/08, medicines/13, modification/05, plastics/09, rail/14, reefer/09, road/10, sea/19, tender/31, wood/07 (ImportCustomsDeclaration) | a declaration with the customs' answer as an example, or the monthly gas declarations of one importer under one authorisation | O77, O76 | candidate |
+| `Manifest/ProfileExecutionID` | 0..1 | sea/15-Manifest | the ship's arrival in Selanu with the authority's answer to its manifest as an example | O77 | candidate |
+| `PurchaseReceipt/ProfileExecutionID` | 0..1 | packaging/08, packaging/09, retail/21, sea/29 (PurchaseReceipt) | the web order of retail/22 collected and paid in the shop, so that the order and the till receipt are one collaboration | O77 | candidate |
+| `TransitCustomsDeclaration/ProfileExecutionID` | 0..1 | rail/06-TransitCustomsDeclaration | a transit declaration with the office of destination's arrival notice as an example | O77 | candidate |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

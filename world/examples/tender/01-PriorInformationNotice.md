@@ -15,14 +15,14 @@ The authority announces the planned purchase early, through the publication serv
 - `CustomizationID` = **urn:ubl-examples:world:trns:prior-information-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Prior information notice"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0187**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0080**  
   The notice number.
 - `UUID` = **2cd5e902-d1c7-5261-84d7-8b3b9895f00a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-01-12**  
   Published early in the year, before the call for competition.
@@ -540,7 +540,7 @@ Inside `TenderingProcess`:
 
 Inside `ProcurementProject`:
 
-- `ID` = **PWD-2026-PARKS**  
+- `ID` = **PWD/2026/PARKS**  
   The project's identifier.
 - `Name` = **Park benches for the parks renewal programme** (languageID `en-XB`)  
   The project's name, the same in every document (08#F6).
@@ -620,7 +620,7 @@ Inside `ProcurementProject`:
   Twelve months.
 - `RequestForTenderLine/ID` = **1**  
   The benches.
-- `RequestForTenderLine/UUID` = **b98b5bc4-6b96-59da-b8e9-89fc28afcae4**  
+- `RequestForTenderLine/UUID` = **29cae870-5c35-5f0e-9f52-f64762b63b80**  
   Its UUID.
 - `RequestForTenderLine/Note` = **Galvanised metal frame, five hardwood slats, ground anchors.**  
   The requirement.
@@ -696,10 +696,10 @@ Inside `ProcurementProjectLot`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:prior-information-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0080</cbc:ID>
   <cbc:UUID>2cd5e902-d1c7-5261-84d7-8b3b9895f00a</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
   <cbc:IssueTime>14:18:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="en-XB">Advance notice of the bench procedure.</cbc:Note>
@@ -1109,7 +1109,7 @@ Inside `ProcurementProjectLot`:
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS</cbc:ID>
     <cbc:Name languageID="en-XB">Park benches for the parks renewal programme</cbc:Name>
     <cbc:Name languageID="qau">Haz guknaz gan drek zatir nezsan naktran</cbc:Name>
     <cbc:Description languageID="en-XB">240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.</cbc:Description>
@@ -1178,7 +1178,7 @@ Inside `ProcurementProjectLot`:
     </cac:ContractExtension>
     <cac:RequestForTenderLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
+      <cbc:UUID>29cae870-5c35-5f0e-9f52-f64762b63b80</cbc:UUID>
       <cbc:Note>Galvanised metal frame, five hardwood slats, ground anchors.</cbc:Note>
       <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>

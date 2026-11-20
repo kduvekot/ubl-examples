@@ -15,14 +15,14 @@ The results of the contest are published: first prize to the furniture maker's t
 - `CustomizationID` = **urn:ubl-examples:world:trns:contract-award-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Contract award notice"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CONTEST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0640**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PROM-DC**  
+  The collaboration this document belongs to: the department's design contest for the promenade bench. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/1250**  
   The notice number, the same in both versions.
 - `UUID` = **c61705b1-9bf8-569a-ab88-3def7dd13ffb**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PROM-DC**  
+- `ContractFolderID` = **PWD/2026/PROM-DC**  
   The department's file number for the contest, the same on every document of it.
 - `IssueDate` = **2026-07-02**  
   Published after the jury's decision.
@@ -39,10 +39,10 @@ The results of the contest are published: first prize to the furniture maker's t
 
 Inside `PreviousDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0634**  
+- `ID` = **PWD/2026/0530**  
   The contest notice.
 - `DocumentTypeCode` = **ContractNotice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0634 is the example contest/03, a ContractNotice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
+  The kind of document referred to: PWD/2026/0530 is the example contest/03, a ContractNotice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
 
 ### Contracting Party
 
@@ -282,17 +282,17 @@ Inside `TenderResult`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:contract-award-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0640</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/1250</cbc:ID>
   <cbc:UUID>c61705b1-9bf8-569a-ab88-3def7dd13ffb</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-07-02</cbc:IssueDate>
   <cbc:IssueTime>11:31:00-01:00</cbc:IssueTime>
   <cbc:Note>Results of the design contest for the harbour promenade bench.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CAN-DESG</cbc:NoticeTypeCode>
   <cac:PreviousDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+    <cbc:ID>PWD/2026/0530</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractingParty>

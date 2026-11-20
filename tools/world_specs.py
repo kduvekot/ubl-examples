@@ -12,7 +12,8 @@ CustomizationID with "#compliant#" (the EN 16931 / Peppol / XRechnung convention
                                                          urn:ubl-examples:world:community:<name>:1.0
 
 ProfileID names the Accord's process profile the document belongs to (urn:ubl-examples:world:profile:<name>:1.0),
-generic and versioned; it no longer names a flow. ProfileExecutionID still names one run of the process.
+generic and versioned; it names no flow. ProfileExecutionID identifies one collaboration (D26), given by the party
+that starts it (world/documents.json flows[].collaborations).
 """
 import json
 import os

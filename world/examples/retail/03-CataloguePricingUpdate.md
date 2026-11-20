@@ -15,10 +15,10 @@ The distributor lowers the price of the spare side frame.
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0219**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900338989**  
+  The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-CPU-26-0022**  
   The sender's number for this document.
 - `UUID` = **cb1037ec-e5d5-5660-b5af-c39c2b7e1438**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -34,7 +34,7 @@ The distributor lowers the price of the spare side frame.
   When the change was made, before the update was sent.
 - `Note` = **A revision of Lumeway's catalogue for the Lumeport store.**  
   Which catalogue.
-- `Description` = **The new price list LD-PL-2026-2 revises the whole range: the side frame goes from 64.00 to 58.00; the bench keeps its price.**  
+- `Description` = **The new price list LMW-PRL-2026-2 revises the whole range: the side frame goes from 64.00 to 58.00; the bench keeps its price.**  
   What changes, and that the new list covers the whole range.
 - `VersionID` = **1.1**  
   The catalogue version after the update.
@@ -54,7 +54,7 @@ Inside `ValidityPeriod`:
 
 Inside `RelatedCatalogueReference`:
 
-- `ID` = **LD-CAT-26-0218**  
+- `ID` = **LMW-CAT-26-0005**  
   The catalogue updated.
 - `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   The catalogue's UUID, as stated in the catalogue.
@@ -77,7 +77,7 @@ Inside `RelatedCatalogueReference`:
 
 Inside `ReferencedContract`:
 
-- `ID` = **LD-BM-SUPPLY-2026**  
+- `ID` = **LMW-BM-SUPPLY-2026**  
   The supply agreement.
 
 ### Signature
@@ -270,7 +270,7 @@ Inside `CataloguePricingUpdateLine`:
   The new price of the side frame, down from 64.00.
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
   Per piece (unit EA: each).
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026-2**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LMW-PRL-2026-2**  
   The new price list.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   It is in force from today. The code is from the Trade Accord's record status list: ACTIVE = Active.
@@ -278,7 +278,7 @@ Inside `CataloguePricingUpdateLine`:
   From the update.
 - `RequiredItemLocationQuantity/Price/PriceList/ValidityPeriod/EndDate` = **2026-07-19**  
   Until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/ID` = **LD-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/ID` = **LMW-PRL-2026**  
   The price list it revises: the new list is a revision of the whole range, in which only the side frame's price changes.
 - `RequiredItemLocationQuantity/Price/PriceList/PreviousPriceList/StatusCode` = **REPLACED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   Replaced by the revision as a whole; the bench keeps its price in the new list. The code is from the Trade Accord's record status list: REPLACED = Replaced.
@@ -291,8 +291,8 @@ Inside `CataloguePricingUpdateLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0219</cbc:ID>
+  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-CPU-26-0022</cbc:ID>
   <cbc:UUID>cb1037ec-e5d5-5660-b5af-c39c2b7e1438</cbc:UUID>
   <cbc:Name>Price change of the side frame</cbc:Name>
   <cbc:IssueDate>2026-05-20</cbc:IssueDate>
@@ -300,7 +300,7 @@ Inside `CataloguePricingUpdateLine`:
   <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
   <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
   <cbc:Note>A revision of Lumeway's catalogue for the Lumeport store.</cbc:Note>
-  <cbc:Description>The new price list LD-PL-2026-2 revises the whole range: the side frame goes from 64.00 to 58.00; the bench keeps its price.</cbc:Description>
+  <cbc:Description>The new price list LMW-PRL-2026-2 revises the whole range: the side frame goes from 64.00 to 58.00; the bench keeps its price.</cbc:Description>
   <cbc:VersionID>1.1</cbc:VersionID>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
@@ -308,7 +308,7 @@ Inside `CataloguePricingUpdateLine`:
     <cbc:EndDate>2026-07-19</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RelatedCatalogueReference>
-    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
@@ -319,7 +319,7 @@ Inside `CataloguePricingUpdateLine`:
     <cbc:VersionID>1.0</cbc:VersionID>
   </cac:RelatedCatalogueReference>
   <cac:ReferencedContract>
-    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+    <cbc:ID>LMW-BM-SUPPLY-2026</cbc:ID>
   </cac:ReferencedContract>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-1.1</cbc:ID>
@@ -477,14 +477,14 @@ Inside `CataloguePricingUpdateLine`:
         <cbc:PriceAmount currencyID="XBL">58</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026-2</cbc:ID>
+          <cbc:ID>LMW-PRL-2026-2</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ACTIVE</cbc:StatusCode>
           <cac:ValidityPeriod>
             <cbc:StartDate>2026-05-20</cbc:StartDate>
             <cbc:EndDate>2026-07-19</cbc:EndDate>
           </cac:ValidityPeriod>
           <cac:PreviousPriceList>
-            <cbc:ID>LD-PL-2026</cbc:ID>
+            <cbc:ID>LMW-PRL-2026</cbc:ID>
             <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">REPLACED</cbc:StatusCode>
           </cac:PreviousPriceList>
         </cac:PriceList>

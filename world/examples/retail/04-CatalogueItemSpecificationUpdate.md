@@ -15,10 +15,10 @@ Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's re
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0220**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900338989**  
+  The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-CIS-26-0022**  
   The sender's number for this document.
 - `UUID` = **7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -54,7 +54,7 @@ Inside `ValidityPeriod`:
 
 Inside `RelatedCatalogueReference`:
 
-- `ID` = **LD-CAT-26-0218**  
+- `ID` = **LMW-CAT-26-0005**  
   The catalogue updated.
 - `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   The catalogue's UUID, as stated in the catalogue.
@@ -79,7 +79,7 @@ Inside `RelatedCatalogueReference`:
 
 Inside `ReferencedContract`:
 
-- `ID` = **LD-BM-SUPPLY-2026**  
+- `ID` = **LMW-BM-SUPPLY-2026**  
   The supply agreement.
 
 ### Signature
@@ -282,7 +282,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   The model; as Valdara Industries describes the item.
 - `Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
   The maker's warranty.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -310,11 +310,11 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Valdara Industries describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 - `Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Valdara Industries describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `Item/TransactionConditions/ID` = **LD-TC-01**  
+- `Item/TransactionConditions/ID` = **LMW-TC-01**  
   The seller's number for these conditions of sale.
 - `Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
   The conditions in words.
-- `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
+- `Item/TransactionConditions/DocumentReference/ID` = **LMW-GTC-2026**  
   The seller's general terms of trade.
 - `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
@@ -515,8 +515,8 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0220</cbc:ID>
+  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-CIS-26-0022</cbc:ID>
   <cbc:UUID>7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448</cbc:UUID>
   <cbc:Name>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Name>
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
@@ -532,7 +532,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
     <cbc:EndDate>2026-07-19</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RelatedCatalogueReference>
-    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
     <cbc:IssueTime>09:00:00</cbc:IssueTime>
@@ -544,7 +544,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
     <cbc:PreviousVersionID>1.0</cbc:PreviousVersionID>
   </cac:RelatedCatalogueReference>
   <cac:ReferencedContract>
-    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+    <cbc:ID>LMW-BM-SUPPLY-2026</cbc:ID>
   </cac:ReferencedContract>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-1.2</cbc:ID>
@@ -706,7 +706,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -736,10 +736,10 @@ Inside `CatalogueItemSpecificationUpdateLine`:
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:TransactionConditions>
-        <cbc:ID>LD-TC-01</cbc:ID>
+        <cbc:ID>LMW-TC-01</cbc:ID>
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
-          <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:ID>LMW-GTC-2026</cbc:ID>
           <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>

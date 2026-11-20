@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RA-PO-26-0241</cbc:ID>
+  <cbc:ID>8800068458</cbc:ID>
   <cbc:UUID>6f338d06-4cfb-5630-b53e-6ac243c84956</cbc:UUID>
   <cbc:IssueDate>2026-05-30</cbc:IssueDate>
   <cbc:IssueTime>11:25:00-01:00</cbc:IssueTime>
@@ -169,7 +168,7 @@
           <cbc:ID>BM-551008</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -199,7 +198,7 @@
           <cbc:ID>BM-551009</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -229,7 +228,7 @@
           <cbc:ID>BM-551007</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
-          <cbc:ID>BF-MRW-K</cbc:ID>
+          <cbc:ID>BKM-MRW-K</cbc:ID>
         </cac:ManufacturersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>

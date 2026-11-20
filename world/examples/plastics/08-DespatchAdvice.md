@@ -15,10 +15,10 @@ The waste processor announces the lot loaded on the barge.
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RR-DA-26-0892**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0338**  
+  The collaboration this document belongs to: Rivermouth's order of granulate from Rinova Recovery. Rivermouth Packaging started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0452**  
   The despatching party's number.
 - `UUID` = **908c065b-6da7-5dbc-bc84-ae4eb333a8dd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,17 +37,17 @@ The waste processor announces the lot loaded on the barge.
 
 Inside `OrderReference`:
 
-- `ID` = **RP-PO-26-0882**  
+- `ID` = **26-0339**  
   The order this despatch fulfils.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **FB-WB-26-0890**  
+- `ID` = **26-0181**  
   The barge's consignment note, on which damage is to be reported.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FB-WB-26-0890 is the example plastics/06, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: 26-0181 is the example plastics/06, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Despatch Supplier Party
 
@@ -181,9 +181,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **RR-SH-26-0889**  
+- `ID` = **26-0451**  
   The despatching party's shipment number.
-- `Consignment/ID` = **RR-CS-26-0885**  
+- `Consignment/ID` = **26-0426**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **120480** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight loaded.
@@ -279,8 +279,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-DA-26-0892</cbc:ID>
+  <cbc:ProfileExecutionID>26-0338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0452</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:57:00-01:00</cbc:IssueTime>
@@ -288,10 +288,10 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>RP-PO-26-0882</cbc:ID>
+    <cbc:ID>26-0339</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FB-WB-26-0890</cbc:ID>
+    <cbc:ID>26-0181</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:DespatchSupplierParty>
@@ -403,9 +403,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>RR-SH-26-0889</cbc:ID>
+    <cbc:ID>26-0451</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>RR-CS-26-0885</cbc:ID>
+      <cbc:ID>26-0426</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>

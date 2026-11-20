@@ -15,10 +15,10 @@ The distributor announces the cross-border payment and which invoices it settles
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-RM-26-0168**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0573**  
+  The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-RM-26-0282**  
   The payer's remittance number.
 - `UUID` = **079daaa2-67ec-5103-9652-83ba2c17dabd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -36,9 +36,9 @@ The distributor announces the cross-border payment and which invoices it settles
   Credits taken: the settlement discount.
 - `TotalPaymentAmount` = **3809652** (currencyID `XUF`)  
   The amount transferred: the payable amount less the 2 % discount for payment within the discount period.
-- `PaymentOrderReference` = **LD-PAY-26-0149**  
+- `PaymentOrderReference` = **LMW-PAY-26-0036**  
   The payment order the payer gave its bank.
-- `InvoicingPartyReference` = **RF78VIINV260166**  
+- `InvoicingPartyReference` = **RF3920261409**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
   The invoice paid.
@@ -163,9 +163,9 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **LD-PAY-26-0149**  
+- `InstructionID` = **LMW-PAY-26-0036**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF78VIINV260166** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF3920261409** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XB19BLUM38712001466206** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -272,9 +272,9 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
-- `InvoicingPartyReference` = **RF78VIINV260166**  
+- `InvoicingPartyReference` = **RF3920261409**  
   The reference the invoicing party asked to quote.
-- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0166**  
+- `BillingReference/InvoiceDocumentReference/ID` = **2026/1409**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-24**  
   Its issue date, so the reference is unambiguous.
@@ -287,8 +287,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-RM-26-0168</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-RM-26-0282</cbc:ID>
   <cbc:UUID>079daaa2-67ec-5103-9652-83ba2c17dabd</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>15:05:00-01:00</cbc:IssueTime>
@@ -297,8 +297,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XUF">3887400</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">77748</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">3809652</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>LD-PAY-26-0149</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>LMW-PAY-26-0036</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF3920261409</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -392,8 +392,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>LD-PAY-26-0149</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF78VIINV260166</cbc:PaymentID>
+    <cbc:InstructionID>LMW-PAY-26-0036</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF3920261409</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB19BLUM38712001466206</cbc:ID>
       <cbc:Name>Lumeway Distribution Ltd</cbc:Name>
@@ -478,10 +478,10 @@ Inside `RemittanceAdviceLine`:
     <cbc:CreditLineAmount currencyID="XUF">77748</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF78VIINV260166</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF3920261409</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0166</cbc:ID>
+        <cbc:ID>2026/1409</cbc:ID>
         <cbc:IssueDate>2026-03-24</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

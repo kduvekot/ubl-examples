@@ -15,10 +15,8 @@ The plant, holder of the authorisation, enters the blanks into inward processing
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MODIFICATION-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TWM-IM-26-0413**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **26-0003**  
   The importer's declaration number.
 - `UUID` = **42bf875d-0c59-5c56-8017-2165bd938f88**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -233,13 +231,13 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **MS-SH-26-0409**  
+- `ID` = **MDS-SH-26-0051**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **12** (unitCode `EA`)  
   The pallets the goods travel on.
 - `DeclaredStatisticsValueAmount` = **1212000** (currencyID `XUF`)  
   The value trade statistics record the blanks at as they enter the procedure: what they would be invoiced at, with the carriage to the border; their later release into free circulation is not recorded again.
-- `Consignment/ID` = **MS-CS-26-0410**  
+- `Consignment/ID` = **MDS-CS-26-0051**  
   The sawmill's number for the load.
 - `Consignment/GrossWeightMeasure` = **14448** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving.
@@ -259,7 +257,7 @@ Inside `Shipment`:
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty. The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
-- `GoodsItem/Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.**  
+- `GoodsItem/Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.**  
   The seller's description.
 - `GoodsItem/Item/Name` = **Ash blank 1830, kiln dried**  
   The item's short name.
@@ -290,14 +288,14 @@ Inside `AdditionalDocumentReference`:
   The plant's authorisation for inward processing, under which the entry is made.
 - `DocumentType` = **Inward processing authorisation**  
   What it is.
-- `ID` = **MS-PF-26-0113**  
+- `ID` = **MDS-PF-26-0113**  
   The sawmill's pro forma invoice: the value of the blanks for customs, there being no sale.
 - `DocumentTypeCode` = **325** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 325: proforma invoice. The code is from the world's copy of UN/EDIFACT 1001 Document name: 325 = Proforma invoice.
-- `ID` = **MS-EX-26-0411**  
+- `ID` = **MDS-EX-26-0011**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: MS-EX-26-0411 is the example modification/04, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+  The kind of document referred to: MDS-EX-26-0011 is the example modification/04, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 
 ### Signature
 
@@ -318,8 +316,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TWM-IM-26-0413</cbc:ID>
+  <cbc:ID>26-0003</cbc:ID>
   <cbc:UUID>42bf875d-0c59-5c56-8017-2165bd938f88</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
   <cbc:IssueTime>10:30:00-01:00</cbc:IssueTime>
@@ -478,11 +475,11 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>MS-SH-26-0409</cbc:ID>
+    <cbc:ID>MDS-SH-26-0051</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">12</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:DeclaredStatisticsValueAmount currencyID="XUF">1212000</cbc:DeclaredStatisticsValueAmount>
     <cac:Consignment>
-      <cbc:ID>MS-CS-26-0410</cbc:ID>
+      <cbc:ID>MDS-CS-26-0051</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
       <cac:OfficeOfEntryLocation>
         <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
@@ -499,7 +496,7 @@ Inside `Signature`:
       <cbc:Quantity unitCode="EA">2400</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
-        <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.</cbc:Description>
+        <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
         <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -528,11 +525,11 @@ Inside `Signature`:
     <cbc:DocumentType>Inward processing authorisation</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-PF-26-0113</cbc:ID>
+    <cbc:ID>MDS-PF-26-0113</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">325</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-EX-26-0411</cbc:ID>
+    <cbc:ID>MDS-EX-26-0011</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

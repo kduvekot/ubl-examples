@@ -15,10 +15,10 @@ Clothing for the store. Delivery terms DDP store: the mill delivers.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PACKAGING-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-PO-26-0525**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900340389**  
+  The collaboration this document belongs to: the store's order of shirts from the textile mill. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **7100453852**  
   The buyer's order number.
 - `UUID` = **a4385e8d-1e16-5254-8f54-b84b7f686cd2**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -227,7 +227,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **BM-778120**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **LT-SH-01**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LTM-SH-01**  
   The seller's own item number; as Lumeport Textile Mill describes the item.
 - `LineItem/Item/StandardItemIdentification/ID` = **9524010000016** (schemeID `GS1 GTIN`)  
   The GTIN Lumeport Textile Mill gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Lumeport is Lumeport Textile Mill's.
@@ -240,8 +240,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PO-26-0525</cbc:ID>
+  <cbc:ProfileExecutionID>9900340389</cbc:ProfileExecutionID>
+  <cbc:ID>7100453852</cbc:ID>
   <cbc:UUID>a4385e8d-1e16-5254-8f54-b84b7f686cd2</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>09:33:00-01:00</cbc:IssueTime>
@@ -400,7 +400,7 @@ Inside `OrderLine`:
           <cbc:ID>BM-778120</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>LT-SH-01</cbc:ID>
+          <cbc:ID>LTM-SH-01</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9524010000016</cbc:ID>

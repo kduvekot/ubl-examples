@@ -15,10 +15,10 @@ The carrier reports that the truck has cleared the border and gives the expected
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TH-TS-26-0160**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0580**  
+  The collaboration this document belongs to: the road carriage Lumeway books with Trasvia Haulage. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-1695**  
   The carrier's status report number.
 - `UUID` = **bef60481-e21d-568c-918b-caeb273b9ce0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,7 +43,7 @@ The carrier reports that the truck has cleared the border and gives the expected
 
 Inside `Consignment`:
 
-- `ID` = **LD-CS-26-0152**  
+- `ID` = **LMW-CS-26-0580**  
   The consignment the report is about.
 - `CarrierAssignedID` = **TH-26-04471**  
   The carrier's job number.
@@ -200,7 +200,7 @@ Inside `TransportEvent`:
   What happened, in words.
 - `CompletionIndicator` = **true**  
   Whether the event has taken place (true) or is still to come (false).
-- `ReportedShipment/ID` = **CL-SH-26-0154**  
+- `ReportedShipment/ID` = **CAS-SH-26-1291**  
   The shipment the event concerns.
 - `CurrentStatus/ConditionCode` = **ONTIME** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
   The carriage runs to plan. The code is from the Trade Accord's status condition list: ONTIME = On time.
@@ -261,10 +261,10 @@ Inside `TransportEvent`:
 
 Inside `DocumentReference`:
 
-- `ID` = **TH-WB-26-0159**  
+- `ID` = **26-0560**  
   The transport document of the consignment.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TH-WB-26-0159 is the example road/08, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: 26-0560 is the example road/08, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Signature
 
@@ -347,8 +347,8 @@ Inside `StatusPeriod`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TH-TS-26-0160</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0580</cbc:ProfileExecutionID>
+  <cbc:ID>26-1695</cbc:ID>
   <cbc:UUID>bef60481-e21d-568c-918b-caeb273b9ce0</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>10:55:00-01:00</cbc:IssueTime>
@@ -359,7 +359,7 @@ Inside `StatusPeriod`:
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">PROGRESS</cbc:TransportationStatusTypeCode>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0152</cbc:ID>
+    <cbc:ID>LMW-CS-26-0580</cbc:ID>
     <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
     <cac:Status>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">INTRANSIT</cbc:ConditionCode>
@@ -490,7 +490,7 @@ Inside `StatusPeriod`:
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
     <cac:ReportedShipment>
-      <cbc:ID>CL-SH-26-0154</cbc:ID>
+      <cbc:ID>CAS-SH-26-1291</cbc:ID>
     </cac:ReportedShipment>
     <cac:CurrentStatus>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">ONTIME</cbc:ConditionCode>
@@ -551,7 +551,7 @@ Inside `StatusPeriod`:
     </cac:Period>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>TH-WB-26-0159</cbc:ID>
+    <cbc:ID>26-0560</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

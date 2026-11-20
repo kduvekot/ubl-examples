@@ -927,7 +927,7 @@
     "amount": 9.6,
     "currency": "XBL"
    },
-   "sellers_id": "MS-SL-1800",
+   "sellers_id": "MDS-SL-1800",
    "hs": "940191",
    "cpc": "38160",
    "origin": "XB",
@@ -943,7 +943,7 @@
     "type": "BE",
     "per_package": 50
    },
-   "lot_prefix": "MS-L26-",
+   "lot_prefix": "MDS-L26-",
    "certificate": {
     "id": "XB-FOR-2025-0118",
     "code": "SUSTFOREST",
@@ -1056,11 +1056,11 @@
     "amount": 480.0,
     "currency": "XBL"
    },
-   "sellers_id": "MS-SL-1800-50",
+   "sellers_id": "MDS-SL-1800-50",
    "hs": "940191",
    "cpc": "38160",
    "origin": "XB",
-   "description": "Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.",
+   "description": "Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.",
    "content": {
     "item": "slat-1800",
     "count": 50
@@ -1111,7 +1111,7 @@
     "stack": 2,
     "what": "Heat-treated softwood pallet to ISPM 15, 1850 x 970 mm, with four bundles two by two"
    },
-   "lot_prefix": "MS-L26-",
+   "lot_prefix": "MDS-L26-",
    "lot_props": [
     [
      "Kiln charge",
@@ -1134,7 +1134,7 @@
     "amount": 540.0,
     "currency": "XBL"
    },
-   "sellers_id": "MS-TB-OAK",
+   "sellers_id": "MDS-TB-OAK",
    "hs": "440791",
    "cpc": "31102",
    "origin": "XB",
@@ -1161,7 +1161,7 @@
     "amount": 540.0,
     "currency": "XBL"
    },
-   "sellers_id": "MS-TB-ASH",
+   "sellers_id": "MDS-TB-ASH",
    "hs": "440795",
    "cpc": "31102",
    "origin": "XB",
@@ -1188,7 +1188,7 @@
     "amount": 380.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-MRW-B14",
+   "sellers_id": "BKM-MRW-B14",
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
@@ -1242,7 +1242,7 @@
     "amount": 380.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-MRW-B14",
+   "sellers_id": "BKM-MRW-B14",
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
@@ -1296,7 +1296,7 @@
     "amount": 115.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-MRW-C",
+   "sellers_id": "BKM-MRW-C",
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
@@ -1345,7 +1345,7 @@
     "amount": 115.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-MRW-C",
+   "sellers_id": "BKM-MRW-C",
    "hs": "940169",
    "cpc": "38112",
    "origin": "XB",
@@ -1398,7 +1398,7 @@
     "marrow-bench-oak",
     "marrow-bench-ash"
    ],
-   "sellers_id": "BF-MRW-K",
+   "sellers_id": "BKM-MRW-K",
    "hs": "321000",
    "cpc": "35110",
    "origin": "XB",
@@ -1424,7 +1424,7 @@
     "amount": 16.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-MRW-P",
+   "sellers_id": "BKM-MRW-P",
    "hs": "940490",
    "cpc": "27180",
    "origin": "XB",
@@ -1449,7 +1449,7 @@
     "amount": 880.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-DK-16",
+   "sellers_id": "BKM-DK-16",
    "hs": "940330",
    "cpc": "38122",
    "origin": "XB",
@@ -1496,7 +1496,7 @@
     "amount": 48.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-INST",
+   "sellers_id": "BKM-INST",
    "description": "Installation of furniture on site, per hour per installer.",
    "purchase": "services"
   },
@@ -1510,7 +1510,7 @@
     "amount": 14.5,
     "currency": "XBL"
    },
-   "sellers_id": "LT-SH-01",
+   "sellers_id": "LTM-SH-01",
    "gtin": "9524010000016",
    "hs": "620520",
    "cpc": "28232",
@@ -1640,7 +1640,7 @@
     "amount": 2950.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-SEA40",
+   "sellers_id": "BYF-SEA40",
    "description": "Port-to-port sea freight for one 40-foot container, booked with the ocean carrier.",
    "purchase": "freight"
   },
@@ -1654,7 +1654,7 @@
     "amount": 6.8,
     "currency": "XBL"
    },
-   "sellers_id": "BF-AIR",
+   "sellers_id": "BYF-AIR",
    "description": "Airport-to-airport air freight per kilogram chargeable weight.",
    "purchase": "freight"
   },
@@ -1668,7 +1668,7 @@
     "amount": 85.0,
     "currency": "XBL"
    },
-   "sellers_id": "BF-CLR",
+   "sellers_id": "BYF-CLR",
    "description": "Preparing and lodging one export declaration as customs agent.",
    "purchase": "freight"
   },
@@ -1683,7 +1683,7 @@
     "currency": "XBL",
     "why": "The forwarder's flat rate for one container move between a shipper in its region and the container quay of the Port of Lumeport: the empty container fetched from the quay, packed at the shipper's dock and brought back full (from Marrowdale twice the 82 km of the map's road, with the time at the dock), as container haulage is usually priced per move."
    },
-   "sellers_id": "BF-HAUL40",
+   "sellers_id": "BYF-HAUL40",
    "description": "Merchant haulage of one 40-foot container by the forwarder's truck: the empty container from the quay to the shipper and the packed container to the quay.",
    "purchase": "freight",
    "_refs": {
@@ -1702,7 +1702,7 @@
     "currency": "XBL",
     "why": "What the buyer paid at Selanu because a pallet's heat-treatment mark was illegible: the Island Customs Service's inspection fee of 38.500 coral and the Port of Selanu's storage for the day the container was held, 12.750 coral, together 51.250 coral, 128.13 lume at the reference rate."
    },
-   "sellers_id": "LD-CLAIM-INSP",
+   "sellers_id": "LMW-CLAIM-INSP",
    "description": "The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service.",
    "_refs": {
     "price.why": "D30 point 3"
@@ -1720,7 +1720,7 @@
     "currency": "XBL",
     "why": "The premium is a rate on the insured value, the CIF value plus 10 % (the minimum cover of Incoterms 2020 CIF); the CIF value is the CIF price of the goods, which holds the freight and the premium, so the premium follows the value of each shipment."
    },
-   "sellers_id": "BF-INS",
+   "sellers_id": "BYF-INS",
    "description": "Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.",
    "purchase": "freight",
    "_refs": {
@@ -1737,13 +1737,13 @@
     "amount": 520.0,
     "currency": "XBL"
    },
-   "sellers_id": "LD-10442",
+   "sellers_id": "LMW-10442",
    "resale_of": "bench-serra",
    "description": "The manufacturer's Serra bench, from the distributor's stock.",
    "conditions": {
-    "id": "LD-TC-01",
+    "id": "LMW-TC-01",
     "description": "Sold to trade customers only, per pallet of four benches.",
-    "doc": "LD-GTC-2026"
+    "doc": "LMW-GTC-2026"
    },
    "min_order": 4,
    "max_order": 288,
@@ -1769,7 +1769,7 @@
      "why": "Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged."
     }
    },
-   "sellers_id": "LD-10443",
+   "sellers_id": "LMW-10443",
    "resale_of": "bench-casting",
    "description": "Spare side frame for the Serra bench.",
    "lead_days": 2,
@@ -1968,7 +1968,7 @@
     ]
    ],
    "buyer_ids": {
-    "40-xb": "LT-RAW-COT"
+    "40-xb": "LTM-RAW-COT"
    },
    "origin_district": "North coast",
    "origin_criterion": "P",
@@ -2002,7 +2002,7 @@
     "amount": 21.18,
     "currency": "XLC"
    },
-   "sellers_id": "ST-BL",
+   "sellers_id": "STL-BL",
    "description": "Business telephone and data line, subscription per line and month.",
    "purchase": "telecom"
   },
@@ -2016,7 +2016,7 @@
     "amount": 0.424,
     "currency": "XLC"
    },
-   "sellers_id": "ST-GB",
+   "sellers_id": "STL-GB",
    "description": "Mobile data beyond the subscription, per gigabyte.",
    "purchase": "telecom"
   },
@@ -2030,7 +2030,7 @@
     "amount": 1.5,
     "currency": "XLC"
    },
-   "sellers_id": "ST-GB-RX",
+   "sellers_id": "STL-GB-RX",
    "description": "Mobile data used on a partner's network abroad, per gigabyte; the Trade Accord has no roaming rule.",
    "purchase": "telecom"
   },
@@ -2072,7 +2072,7 @@
     "amount": 2.85,
     "currency": "XBL"
    },
-   "sellers_id": "BF-ROAD",
+   "sellers_id": "BYF-ROAD",
    "description": "Truck load within Bayvarra, price per kilometre driven loaded.",
    "purchase": "freight"
   },
@@ -2335,7 +2335,7 @@
     "amount": 6.2,
     "currency": "XUF"
    },
-   "sellers_id": "FG-NET-E",
+   "sellers_id": "FGR-NET-E",
    "description": "Use of the electricity distribution network, per kilowatt hour taken at the connection.",
    "purchase": "energy"
   },
@@ -2349,7 +2349,7 @@
     "amount": 1.9,
     "currency": "XUF"
    },
-   "sellers_id": "FG-NET-G",
+   "sellers_id": "FGR-NET-G",
    "description": "Use of the gas distribution network, per kilowatt hour of gas taken at the connection.",
    "purchase": "energy"
   },
@@ -2379,7 +2379,7 @@
     "currency": "XBL",
     "why": "The cooperative's price for the island this season, a carton carriage and insurance paid to the Port of Selanu (CIP): it holds the reefer's haulage to Lumeport, the sea freight and the cargo insurance."
    },
-   "sellers_id": "HFC-GAL100",
+   "sellers_id": "HRW-GAL100",
    "gtin": "9527430001014",
    "hs": "080810",
    "cpc": "01341",
@@ -2431,7 +2431,7 @@
      "100 fruit to the carton"
     ]
    ],
-   "lot_prefix": "HFC-L26-",
+   "lot_prefix": "HRW-L26-",
    "storage": {
     "temperature_c": [
      "0",
@@ -2453,7 +2453,7 @@
     "currency": "XBL",
     "why": "The cooperative's price for the island this season, a carton carriage and insurance paid to the Port of Selanu (CIP): it holds the reefer's haulage to Lumeport, the sea freight and the cargo insurance."
    },
-   "sellers_id": "HFC-GSM100",
+   "sellers_id": "HRW-GSM100",
    "gtin": "9527430001021",
    "hs": "080810",
    "cpc": "01341",
@@ -2505,7 +2505,7 @@
      "100 fruit to the carton"
     ]
    ],
-   "lot_prefix": "HFC-L26-",
+   "lot_prefix": "HRW-L26-",
    "storage": {
     "temperature_c": [
      "0",
@@ -2527,7 +2527,7 @@
     "currency": "XBL",
     "why": "The cooperative's price for the island this season, a carton carriage and insurance paid to the Port of Selanu (CIP): it holds the reefer's haulage to Lumeport, the sea freight and the cargo insurance."
    },
-   "sellers_id": "HFC-PKT080",
+   "sellers_id": "HRW-PKT080",
    "gtin": "9527430002011",
    "hs": "080830",
    "cpc": "01342",
@@ -2579,7 +2579,7 @@
      "80 fruit to the carton"
     ]
    ],
-   "lot_prefix": "HFC-L26-",
+   "lot_prefix": "HRW-L26-",
    "storage": {
     "temperature_c": [
      "0",
@@ -2600,7 +2600,7 @@
     "amount": 4100.0,
     "currency": "INR"
    },
-   "sellers_id": "NB-FLU-S26-10",
+   "sellers_id": "NLB-FLU-S26-10",
    "hs": "300241",
    "cpc": "35270",
    "origin": "IN",
@@ -2631,7 +2631,7 @@
     "amount": 1300.0,
     "currency": "INR"
    },
-   "sellers_id": "NB-INS-R100-10",
+   "sellers_id": "NLB-INS-R100-10",
    "hs": "300431",
    "cpc": "35260",
    "origin": "IN",
@@ -2662,7 +2662,7 @@
     "amount": 2850.0,
     "currency": "INR"
    },
-   "sellers_id": "NB-VZV-1",
+   "sellers_id": "NLB-VZV-1",
    "hs": "300241",
    "cpc": "35270",
    "origin": "IN",
@@ -2692,7 +2692,7 @@
     "amount": 1000.0,
     "currency": "EUR"
    },
-   "sellers_id": "HI-TCG-20",
+   "sellers_id": "HVI-TCG-20",
    "hs": "284443",
    "cpc": "33690",
    "origin": "NL",
@@ -2752,7 +2752,7 @@
     "amount": 72.0,
     "currency": "XBL"
    },
-   "sellers_id": "QPD-VAC-1102",
+   "sellers_id": "QLM-VAC-1102",
    "resale_of": "flu-vaccine",
    "description": "Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze."
   },
@@ -2766,7 +2766,7 @@
     "amount": 21.5,
     "currency": "XBL"
    },
-   "sellers_id": "QPD-INS-0310",
+   "sellers_id": "QLM-INS-0310",
    "resale_of": "insulin-vial",
    "description": "Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze."
   },
@@ -2780,7 +2780,7 @@
     "amount": 48.0,
     "currency": "XBL"
    },
-   "sellers_id": "QPD-VAC-2410",
+   "sellers_id": "QLM-VAC-2410",
    "resale_of": "varicella-vaccine",
    "description": "Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used."
   },
@@ -2794,7 +2794,7 @@
     "amount": 1450.0,
     "currency": "XBL"
    },
-   "sellers_id": "QPD-RAD-0020",
+   "sellers_id": "QLM-RAD-0020",
    "resale_of": "tc-generator",
    "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week."
   },
@@ -2809,11 +2809,11 @@
     "currency": "XBL",
     "why": "Not sold: the value the sawmill puts on a blank, its cost of the sawn and kiln-dried ash and its profit, the value customs takes where there is no sale."
    },
-   "sellers_id": "MS-BL-1830",
+   "sellers_id": "MDS-BL-1830",
    "hs": "440795",
    "cpc": "31102",
    "origin": "XB",
-   "description": "Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.",
+   "description": "Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.",
    "dimensions_mm": [
     1830,
     101,
@@ -2836,7 +2836,7 @@
     "stack": 1,
     "what": "Heat-treated softwood pallet to ISPM 15, 1850 x 970 mm, with 200 blanks eight across and 25 high, strapped"
    },
-   "lot_prefix": "MS-BL26-",
+   "lot_prefix": "MDS-BL26-",
    "origin_criterion": "P",
    "note": "HS 4407.95, ash sawn lengthwise, thicker than 6 mm, CPC 31102: the blank is sawn and kiln dried, not yet planed or cut to the bench's drawing. 0.009426 m³ at 625 kg/m³: 5.89 kg.",
    "_refs": {

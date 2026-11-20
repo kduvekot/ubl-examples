@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FG-INV-26-0150</cbc:ID>
+  <cbc:ProfileExecutionID>FGR-TX-26-0151</cbc:ProfileExecutionID>
+  <cbc:ID>2026/0157</cbc:ID>
   <cbc:UUID>af7f93bd-4f82-5130-82e5-5b40a1c4cefa</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
@@ -176,15 +176,15 @@
     <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF13FGINV260150</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF13FGINV260150</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF8720260157</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF8720260157</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU750351041620000005126721</cbc:ID>
       <cbc:Name>Ferrano Grid SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice FG-INV-26-0150</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/0157</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41620</cbc:ID>
         <cbc:Name>Ferrano Porta Nord</cbc:Name>
@@ -263,7 +263,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4120-E1</cbc:ID>
+        <cbc:ID>FGR-CP-4120-E1</cbc:ID>
         <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -273,7 +273,7 @@
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-E</cbc:ID>
+        <cbc:ID>FGR-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
@@ -295,7 +295,7 @@
     <cbc:LineExtensionAmount currencyID="XUF">119970</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4160-E1</cbc:ID>
+        <cbc:ID>FGR-CP-4160-E1</cbc:ID>
         <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -305,7 +305,7 @@
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-E</cbc:ID>
+        <cbc:ID>FGR-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
@@ -326,13 +326,13 @@
     <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>FG-DOC-26-0149</cbc:ID>
+      <cbc:ID>FGR-UST-26-2253</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">UtilityStatement</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4120-G1</cbc:ID>
+        <cbc:ID>FGR-CP-4120-G1</cbc:ID>
         <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -342,7 +342,7 @@
       <cbc:Name languageID="qau">Zhul gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Gas network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-G</cbc:ID>
+        <cbc:ID>FGR-NET-G</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
@@ -370,7 +370,7 @@
     </cac:InvoicePeriod>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4160-E1</cbc:ID>
+        <cbc:ID>FGR-CP-4160-E1</cbc:ID>
         <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -380,7 +380,7 @@
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-E</cbc:ID>
+        <cbc:ID>FGR-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>

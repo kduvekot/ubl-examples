@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:weight-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-WS-26-0210</cbc:ID>
+  <cbc:ProfileExecutionID>9900043338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0019</cbc:ID>
   <cbc:UUID>389662b4-907e-55fc-9944-1cf97ccc36c8</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>10:50:00-01:00</cbc:IssueTime>
@@ -102,10 +102,10 @@
     </cac:PartyName>
   </cac:WeighingParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0208</cbc:ID>
+    <cbc:ID>7400043504</cbc:ID>
     <cbc:NetWeightMeasure unitCode="KGM">22900</cbc:NetWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0209</cbc:ID>
+      <cbc:ID>7300043504</cbc:ID>
       <cbc:TotalPackagesQuantity>54</cbc:TotalPackagesQuantity>
     </cac:Consignment>
     <cac:GoodsItem>

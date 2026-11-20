@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KXL-WB-26-0325</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
+  <cbc:ID>KXL-00694562</cbc:ID>
   <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -13,7 +13,7 @@
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
-  <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>LMW-FI-26-0606</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">AWB</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:DeclaredCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredCarriageValueAmount>
@@ -166,10 +166,10 @@
     </cac:PartyName>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0323</cbc:ID>
+    <cbc:ID>LMW-SH-26-1010</cbc:ID>
     <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:ID>LMW-CS-26-1010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cbc:ChargeableWeightMeasure unitCode="KGM">105</cbc:ChargeableWeightMeasure>
       <cbc:GrossVolumeMeasure unitCode="MTQ">0.52</cbc:GrossVolumeMeasure>
@@ -312,7 +312,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VI-TD-26-0513</cbc:ID>
+    <cbc:ID>7800004419</cbc:ID>
     <cbc:DocumentType>Transit declaration</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -343,7 +343,7 @@
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>KXL-SIG-KXL-WB-26-0325</cbc:ID>
+    <cbc:ID>KXL-SIG-KXL-00694562</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

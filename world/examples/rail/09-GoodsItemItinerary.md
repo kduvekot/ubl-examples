@@ -15,10 +15,10 @@ The carrier tells the transport user the route and timing of the containers.
 - `CustomizationID` = **urn:ubl-examples:world:trns:goods-item-itinerary:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Goods item itinerary". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FRC-DOC-26-0335**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043586**  
+  The collaboration this document belongs to: the rail carriage Valdara books with Ferrano Rail Cargo. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **8300004628**  
   The sender's number for this document.
 - `UUID` = **e53fe159-3e7a-5848-95d5-9dad68594dd0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,7 +32,7 @@ The carrier tells the transport user the route and timing of the containers.
   The same note in English, the working language between the countries: What it shows.
 - `VersionID` = **1**  
   The first version of the itinerary.
-- `TransportExecutionPlanReferenceID` = **FRC-TEP-26-0328**  
+- `TransportExecutionPlanReferenceID` = **9500055446**  
   The transport plan the itinerary belongs to.
 
 ### Signature
@@ -158,7 +158,7 @@ Inside `ReceiverParty`:
 
 Inside `ReferencedConsignment`:
 
-- `ID` = **VI-CS-26-0327**  
+- `ID` = **7300043586**  
   The consignment.
 
 ### Referenced Transport Equipment
@@ -190,7 +190,7 @@ Inside `TransportationSegment`:
 
 - `SequenceNumeric` = **1**  
   The first segment: the carrier's tractor from the warehouse to the hub.
-- `TransportExecutionPlanReferenceID` = **FRC-TEP-26-0328**  
+- `TransportExecutionPlanReferenceID` = **9500055446**  
   The plan the segment is carried out under.
 - `TransportationService/TransportServiceCode` = **CARRHAUL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
   Carrier haulage: the rail carrier's own tractor brings the boxes to its terminal, as a code of the Trade Accord's transport services. The code is from the Trade Accord's transport service list: CARRHAUL = Carrier haulage.
@@ -198,7 +198,7 @@ Inside `TransportationSegment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `TransportServiceProviderParty/PartyName/Name` = **Ferrano Rail Cargo**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ReferencedConsignment/ID` = **VI-CS-26-0327**  
+- `ReferencedConsignment/ID` = **7300043586**  
   The consignment on the segment.
 - `ShipmentStage/ID` = **1**  
   The haulage, by road.
@@ -206,7 +206,7 @@ Inside `TransportationSegment`:
   The haulage, by road. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `SequenceNumeric` = **2**  
   The second segment: by rail from the hub to the distributor's siding.
-- `TransportExecutionPlanReferenceID` = **FRC-TEP-26-0328**  
+- `TransportExecutionPlanReferenceID` = **9500055446**  
   The plan the segment is carried out under.
 - `TransportationService/TransportServiceCode` = **RAILCONT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
   The container train service, as a code of the Trade Accord's transport services. The code is from the Trade Accord's transport service list: RAILCONT = Container train.
@@ -214,7 +214,7 @@ Inside `TransportationSegment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `TransportServiceProviderParty/PartyName/Name` = **Ferrano Rail Cargo**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ReferencedConsignment/ID` = **VI-CS-26-0327**  
+- `ReferencedConsignment/ID` = **7300043586**  
   The consignment on the segment.
 - `ShipmentStage/ID` = **2**  
   The rail stage.
@@ -229,15 +229,15 @@ Inside `TransportationSegment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-item-itinerary:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-DOC-26-0335</cbc:ID>
+  <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
+  <cbc:ID>8300004628</cbc:ID>
   <cbc:UUID>e53fe159-3e7a-5848-95d5-9dad68594dd0</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Drek sulraz skul drek kan trunskir.</cbc:Note>
   <cbc:Note languageID="en-XU">The itinerary of the two containers.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+  <cbc:TransportExecutionPlanReferenceID>9500055446</cbc:TransportExecutionPlanReferenceID>
   <cac:Signature>
     <cbc:ID>FRC-SIG-GII</cbc:ID>
     <cac:SignatoryParty>
@@ -331,7 +331,7 @@ Inside `TransportationSegment`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:ReferencedConsignment>
-    <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:ID>7300043586</cbc:ID>
   </cac:ReferencedConsignment>
   <cac:ReferencedTransportEquipment>
     <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
@@ -347,7 +347,7 @@ Inside `TransportationSegment`:
   </cac:ReferencedGoodsItem>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+    <cbc:TransportExecutionPlanReferenceID>9500055446</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">CARRHAUL</cbc:TransportServiceCode>
     </cac:TransportationService>
@@ -360,7 +360,7 @@ Inside `TransportationSegment`:
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
     <cac:ReferencedConsignment>
-      <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ID>7300043586</cbc:ID>
     </cac:ReferencedConsignment>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -369,7 +369,7 @@ Inside `TransportationSegment`:
   </cac:TransportationSegment>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+    <cbc:TransportExecutionPlanReferenceID>9500055446</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
     </cac:TransportationService>
@@ -382,7 +382,7 @@ Inside `TransportationSegment`:
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
     <cac:ReferencedConsignment>
-      <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ID>7300043586</cbc:ID>
     </cac:ReferencedConsignment>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>

@@ -15,10 +15,10 @@ The wholesaler orders one reefer of apples and pears for the island's shops, hot
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFP-PO-26-0553**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0214**  
+  The collaboration this document belongs to: Hafefo's order of fruit from Harrowmead Fruit Growers. Hafefo Fresh Produce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0215**  
   The buyer's order number.
 - `UUID` = **4b4ea0bd-86a2-58ba-bf56-cedc820b8d74**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -211,7 +211,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Apples Gala, carton 18 kg, count 100**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **HFC-GAL100**  
+- `LineItem/Item/SellersItemIdentification/ID` = **HRW-GAL100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `LineItem/Item/StandardItemIdentification/ID` = **9527430001014** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -229,7 +229,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Apples Granny Smith, carton 18 kg, count 100**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **HFC-GSM100**  
+- `LineItem/Item/SellersItemIdentification/ID` = **HRW-GSM100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `LineItem/Item/StandardItemIdentification/ID` = **9527430001021** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -247,7 +247,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **HFC-PKT080**  
+- `LineItem/Item/SellersItemIdentification/ID` = **HRW-PKT080**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `LineItem/Item/StandardItemIdentification/ID` = **9527430002011** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -260,8 +260,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-PO-26-0553</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>26-0215</cbc:ID>
   <cbc:UUID>4b4ea0bd-86a2-58ba-bf56-cedc820b8d74</cbc:UUID>
   <cbc:IssueDate>2026-04-08</cbc:IssueDate>
   <cbc:IssueTime>13:50:00+00:00</cbc:IssueTime>
@@ -406,7 +406,7 @@ Inside `OrderLine`:
         <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
         <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-GAL100</cbc:ID>
+          <cbc:ID>HRW-GAL100</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9527430001014</cbc:ID>
@@ -427,7 +427,7 @@ Inside `OrderLine`:
         <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
         <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-GSM100</cbc:ID>
+          <cbc:ID>HRW-GSM100</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9527430001021</cbc:ID>
@@ -448,7 +448,7 @@ Inside `OrderLine`:
         <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
         <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-PKT080</cbc:ID>
+          <cbc:ID>HRW-PKT080</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9527430002011</cbc:ID>

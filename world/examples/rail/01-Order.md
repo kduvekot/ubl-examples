@@ -15,10 +15,10 @@ Delivery terms DAP distributor's siding: no carrier in the order, because the se
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-PO-26-0325**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0734**  
+  The collaboration this document belongs to: Lumeway's order of the rail delivery from Valdara. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-PO-26-0734**  
   The buyer's order number.
 - `UUID` = **e3c80bc4-b2b9-5396-a910-bff342f77805**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -231,7 +231,7 @@ Inside `OrderLine`:
   The item's name in Urvanian, the seller's language.
 - `LineItem/Item/Name` = **Park bench Serra 180** (languageID `en-XB`)  
   The item's name in English, the working language between the countries.
-- `LineItem/Item/BuyersItemIdentification/ID` = **LD-10442**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **LMW-10442**  
   The buyer's own item number: it resells this item under its own number.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-B180**  
   The seller's own item number; as Valdara Industries describes the item.
@@ -260,8 +260,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-PO-26-0325</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0734</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-PO-26-0734</cbc:ID>
   <cbc:UUID>e3c80bc4-b2b9-5396-a910-bff342f77805</cbc:UUID>
   <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>16:18:00-01:00</cbc:IssueTime>
@@ -420,7 +420,7 @@ Inside `OrderLine`:
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>VI-B180</cbc:ID>

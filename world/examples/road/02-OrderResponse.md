@@ -15,10 +15,10 @@ The manufacturer accepts the order with one change: the 2026 casting with the re
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-OR-26-0150**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0573**  
+  The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **1100043246**  
   The seller's number for its response.
 - `UUID` = **1146579f-1ec8-554d-82aa-cfc09cc9d888**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -35,7 +35,7 @@ The manufacturer accepts the order with one change: the 2026 casting with the re
 
 Inside `OrderReference`:
 
-- `ID` = **LD-PO-26-0149**  
+- `ID` = **LMW-PO-26-0573**  
   The order this response answers.
 
 ### Seller Supplier Party
@@ -260,15 +260,15 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-OR-26-0150</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>1100043246</cbc:ID>
   <cbc:UUID>1146579f-1ec8-554d-82aa-cfc09cc9d888</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
   <cbc:IssueTime>17:42:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">CA</cbc:OrderResponseCode>
   <cbc:Note>Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.</cbc:Note>
   <cac:OrderReference>
-    <cbc:ID>LD-PO-26-0149</cbc:ID>
+    <cbc:ID>LMW-PO-26-0573</cbc:ID>
   </cac:OrderReference>
   <cac:SellerSupplierParty>
     <cac:Party>

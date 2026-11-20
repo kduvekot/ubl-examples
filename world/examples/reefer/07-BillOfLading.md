@@ -15,12 +15,10 @@ The bill of lading of the reefer, issued to the forwarder that booked it, with t
 - `CustomizationID` = **urn:ubl-examples:world:trns:bill-of-lading:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Bill of lading". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TOL-BL-26-0562**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **TWLU000033272**  
   The bill of lading number.
-- `CarrierAssignedID` = **TWL-BK-26-55194**  
+- `CarrierAssignedID` = **1200033272**  
   The booking the bill of lading is issued under.
 - `UUID` = **6caa8b1e-206e-5ffe-a3bd-08fde43f6728**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -200,7 +198,7 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0556**  
+- `ID` = **HRW-SH-26-0730**  
   The shipment carried.
 - `GrossWeightMeasure` = **26528** (unitCode `KGM`)  
   The goods (21728 kg) and the tare of the transport equipment (4800 kg): a shipment's gross weight includes the equipment.
@@ -210,11 +208,11 @@ Inside `Shipment`:
   The pallets in the reefer.
 - `ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment.
-- `Consignment/ID` = **HFG-CS-26-0557**  
+- `Consignment/ID` = **HRW-CS-26-0730**  
   The cooperative's consignment.
-- `Consignment/CarrierAssignedID` = **TWL-BK-26-55194**  
+- `Consignment/CarrierAssignedID` = **1200033272**  
   The carrier's booking number.
-- `Consignment/FreightForwarderAssignedID` = **BF-SH-26-0391**  
+- `Consignment/FreightForwarderAssignedID` = **BYF-SH-26-0391**  
   The forwarder's own file number for the consignment.
 - `Consignment/TariffDescription` = **Fresh fruit, chilled, in a reefer**  
   The carrier's commodity tariff, in words.
@@ -666,7 +664,7 @@ Inside `Shipment`:
   After the doors were closed.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode` = **SM2** (listID `IMO SOLAS`)  
   SOLAS method 2: the cargo and packing weighed and added to the tare. The code is from UBL's default Weighing method (IMO SOLAS) list: SM2 = SOLAS verification method 2.
-- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID` = **HFC-SCALE-02**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID` = **HRW-SCALE-02**  
   The packhouse's pallet scale.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType` = **Pallet scale**  
   Its kind.
@@ -731,9 +729,8 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0562</cbc:ID>
-  <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
+  <cbc:ID>TWLU000033272</cbc:ID>
+  <cbc:CarrierAssignedID>1200033272</cbc:CarrierAssignedID>
   <cbc:UUID>6caa8b1e-206e-5ffe-a3bd-08fde43f6728</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:30:00-01:00</cbc:IssueTime>
@@ -862,15 +859,15 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">26528</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0557</cbc:ID>
-      <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
-      <cbc:FreightForwarderAssignedID>BF-SH-26-0391</cbc:FreightForwarderAssignedID>
+      <cbc:ID>HRW-CS-26-0730</cbc:ID>
+      <cbc:CarrierAssignedID>1200033272</cbc:CarrierAssignedID>
+      <cbc:FreightForwarderAssignedID>BYF-SH-26-0391</cbc:FreightForwarderAssignedID>
       <cbc:TariffDescription>Fresh fruit, chilled, in a reefer</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0812</cbc:TariffCode>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
@@ -1255,7 +1252,7 @@ Inside `Shipment`:
             <cbc:WeighingDate>2026-04-22</cbc:WeighingDate>
             <cbc:WeighingTime>11:30:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
-            <cbc:WeighingDeviceID>HFC-SCALE-02</cbc:WeighingDeviceID>
+            <cbc:WeighingDeviceID>HRW-SCALE-02</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Pallet scale</cbc:WeighingDeviceType>
             <cbc:GrossMassMeasure unitCode="KGM">26528</cbc:GrossMassMeasure>
             <cac:WeighingParty>

@@ -15,10 +15,10 @@ After the sale-or-return trial, the first four weeks of sales, the furniture mak
 - `CustomizationID` = **urn:ubl-examples:world:trns:instruction-for-returns:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Instruction for returns". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **FURNITURE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0579**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900336121**  
+  The collaboration this document belongs to: the store's first order of the Marrow line, with its return. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0032**  
   The sender's number for its returns.
 - `UUID` = **1e930432-0fbd-5872-a8b6-1646ccb09ff0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -176,7 +176,7 @@ Inside `ManufacturerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **BM-RET-26-0611**  
+- `ID` = **7400343283**  
   The return shipment.
 - `GrossWeightMeasure` = **285.45** (unitCode `KGM`)  
   Seven benches of 24 kg, ten chairs of 11.5 kg and seven care kits of 0.35 kg, packed.
@@ -203,7 +203,7 @@ Inside `InstructionForReturnsLine`:
   The seller's description.
 - `Item/Name` = **Elderwick Marrow bench, oak**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+- `Item/SellersItemIdentification/ID` = **BKM-MRW-B14**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **OAK**  
   The variant of the item: the wood, added to the item number.
@@ -225,7 +225,7 @@ Inside `InstructionForReturnsLine`:
   The seller's description.
 - `Item/Name` = **Elderwick Marrow bench, ash**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+- `Item/SellersItemIdentification/ID` = **BKM-MRW-B14**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
@@ -247,7 +247,7 @@ Inside `InstructionForReturnsLine`:
   The seller's description.
 - `Item/Name` = **Elderwick Marrow chair, oak**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+- `Item/SellersItemIdentification/ID` = **BKM-MRW-C**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **OAK**  
   The variant of the item: the wood, added to the item number.
@@ -269,7 +269,7 @@ Inside `InstructionForReturnsLine`:
   The seller's description.
 - `Item/Name` = **Elderwick Marrow chair, ash**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+- `Item/SellersItemIdentification/ID` = **BKM-MRW-C**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
@@ -291,7 +291,7 @@ Inside `InstructionForReturnsLine`:
   The seller's description.
 - `Item/Name` = **Elderwick care kit**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-MRW-K**  
+- `Item/SellersItemIdentification/ID` = **BKM-MRW-K**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `Item/StandardItemIdentification/ID` = **9522610000030** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item.
@@ -304,8 +304,8 @@ Inside `InstructionForReturnsLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:instruction-for-returns:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0579</cbc:ID>
+  <cbc:ProfileExecutionID>9900336121</cbc:ProfileExecutionID>
+  <cbc:ID>26-0032</cbc:ID>
   <cbc:UUID>1e930432-0fbd-5872-a8b6-1646ccb09ff0</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>14:21:00-01:00</cbc:IssueTime>
@@ -426,7 +426,7 @@ Inside `InstructionForReturnsLine`:
     </cac:PartyName>
   </cac:ManufacturerParty>
   <cac:Shipment>
-    <cbc:ID>BM-RET-26-0611</cbc:ID>
+    <cbc:ID>7400343283</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:DeliveryLocation>
@@ -447,7 +447,7 @@ Inside `InstructionForReturnsLine`:
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -468,7 +468,7 @@ Inside `InstructionForReturnsLine`:
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -489,7 +489,7 @@ Inside `InstructionForReturnsLine`:
       <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ID>BKM-MRW-C</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -510,7 +510,7 @@ Inside `InstructionForReturnsLine`:
       <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ID>BKM-MRW-C</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -531,7 +531,7 @@ Inside `InstructionForReturnsLine`:
       <cbc:Description>Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.</cbc:Description>
       <cbc:Name>Elderwick care kit</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-K</cbc:ID>
+        <cbc:ID>BKM-MRW-K</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>

@@ -15,10 +15,8 @@ The mill declares the bales in Bayvarra.
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LTM-IM-26-0209**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **7700002675**  
   The importer's declaration number.
 - `UUID` = **e09b21a0-357c-579c-b883-6abdf4d32750**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -222,9 +220,9 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0200**  
+- `ID` = **SCG-SH-26-0218**  
   The shipment declared.
-- `Consignment/ID` = **LTM-CS-26-0201**  
+- `Consignment/ID` = **7300013298**  
   The consignment, as the mill's forwarding instructions number it.
 - `Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving.
@@ -273,22 +271,22 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TOL-BL-26-0206**  
+- `ID` = **TWLU000033366**  
   The bill of lading.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TOL-BL-26-0206 is the example cotton/13, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
-- `ID` = **SCG-EX-26-0203**  
+  The kind of document referred to: TWLU000033366 is the example cotton/13, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `ID` = **SCG-EX-26-0049**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: SCG-EX-26-0203 is the example cotton/11, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
-- `ID` = **DAL-GC-26-0202**  
+  The kind of document referred to: SCG-EX-26-0049 is the example cotton/11, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **DAL/2026/0309**  
   The phytosanitary certificate made out for Bayvarra, on which the release of the lint under Bayvarra's plant health rules depends.
 - `DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: DAL-GC-26-0202 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
-- `ID` = **SCG-INV-26-0210**  
+  The kind of document referred to: DAL/2026/0309 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
+- `ID` = **SCG-INV-26-0243**  
   The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: SCG-INV-26-0210 is the example cotton/16, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: SCG-INV-26-0243 is the example cotton/16, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -309,8 +307,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-IM-26-0209</cbc:ID>
+  <cbc:ID>7700002675</cbc:ID>
   <cbc:UUID>e09b21a0-357c-579c-b883-6abdf4d32750</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>15:32:00-01:00</cbc:IssueTime>
@@ -466,9 +463,9 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:ID>7300013298</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
     </cac:Consignment>
@@ -509,19 +506,19 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0206</cbc:ID>
+    <cbc:ID>TWLU000033366</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCG-EX-26-0203</cbc:ID>
+    <cbc:ID>SCG-EX-26-0049</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>DAL-GC-26-0202</cbc:ID>
+    <cbc:ID>DAL/2026/0309</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCG-INV-26-0210</cbc:ID>
+    <cbc:ID>SCG-INV-26-0243</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

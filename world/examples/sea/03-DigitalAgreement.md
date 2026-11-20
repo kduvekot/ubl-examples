@@ -15,10 +15,8 @@ Before trading, the two parties join the multilateral digital agreement that fix
 - `CustomizationID` = **urn:ubl-examples:world:trns:digital-agreement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Digital agreement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:onboarding:1.0**  
-  The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DAG-26-0125**  
+  The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow.
+- `ID` = **LMW-DAG-26-0048**  
   The agreement's number.
 - `UUID` = **1992d68e-5c04-58e5-9789-3ddfb5e9b203**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -346,7 +344,7 @@ Inside `DigitalAgreementTerms`:
   The buyer adopts it
 - `AdoptionPeriod/EndDate` = **2026-05-19**  
   within two weeks.
-- `ServiceLevelAgreement/ID` = **LD-SLA-1**  
+- `ServiceLevelAgreement/ID` = **LMW-SLA-1**  
   The service level.
 - `ServiceLevelAgreement/ServiceTypeCode` = **MESSAGING** (listID `urn:ubl-examples:world:codelist:ServiceTypeCode`)  
   For the exchange. The code is from the Trade Accord's service type list: MESSAGING = Messaging service.
@@ -435,7 +433,7 @@ Inside `DigitalProcess`:
   The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
   The trade accord council's certificate that the distributor's system passed the conformance test.
-- `DigitalCollaboration/ReceivingDigitalService/ID` = **LD-Order-IN**  
+- `DigitalCollaboration/ReceivingDigitalService/ID` = **LMW-Order-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
@@ -471,7 +469,7 @@ Inside `DigitalProcess`:
   The access point, under the party's own domain.
 - `DigitalCollaboration/ID` = **ordering-2**  
   An exchange of the process: the main one first, then the other way.
-- `DigitalCollaboration/SendingDigitalService/ID` = **LD-OrderResponse-OUT**  
+- `DigitalCollaboration/SendingDigitalService/ID` = **LMW-OrderResponse-OUT**  
   The party's service for this document.
 - `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
@@ -551,7 +549,7 @@ Inside `DigitalProcess`:
   The Trade Accord's process profile the agreement covers.
 - `DigitalCollaboration/ID` = **billing-1**  
   The main exchange of the process.
-- `DigitalCollaboration/SendingDigitalService/ID` = **LD-Invoice-OUT**  
+- `DigitalCollaboration/SendingDigitalService/ID` = **LMW-Invoice-OUT**  
   The party's service for this document.
 - `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
@@ -659,7 +657,7 @@ Inside `DigitalProcess`:
   The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
   The trade accord council's certificate that the distributor's system passed the conformance test.
-- `DigitalCollaboration/ReceivingDigitalService/ID` = **LD-InvoiceStatusResponse-IN**  
+- `DigitalCollaboration/ReceivingDigitalService/ID` = **LMW-InvoiceStatusResponse-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:invoice-status:1.0**  
   The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
@@ -704,8 +702,7 @@ Inside `DigitalProcess`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:digital-agreement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DAG-26-0125</cbc:ID>
+  <cbc:ID>LMW-DAG-26-0048</cbc:ID>
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:59:00-01:00</cbc:IssueTime>
@@ -976,7 +973,7 @@ Inside `DigitalProcess`:
       <cbc:EndDate>2026-05-19</cbc:EndDate>
     </cac:AdoptionPeriod>
     <cac:ServiceLevelAgreement>
-      <cbc:ID>LD-SLA-1</cbc:ID>
+      <cbc:ID>LMW-SLA-1</cbc:ID>
       <cbc:ServiceTypeCode listID="urn:ubl-examples:world:codelist:ServiceTypeCode">MESSAGING</cbc:ServiceTypeCode>
       <cbc:ServiceType>Document exchange</cbc:ServiceType>
       <cbc:AvailabilityTimePercent>99.5</cbc:AvailabilityTimePercent>
@@ -1045,7 +1042,7 @@ Inside `DigitalProcess`:
         </cac:CertificationDocumentReference>
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
-        <cbc:ID>LD-Order-IN</cbc:ID>
+        <cbc:ID>LMW-Order-IN</cbc:ID>
         <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Order</cbc:ID>
@@ -1081,7 +1078,7 @@ Inside `DigitalProcess`:
     <cac:DigitalCollaboration>
       <cbc:ID>ordering-2</cbc:ID>
       <cac:SendingDigitalService>
-        <cbc:ID>LD-OrderResponse-OUT</cbc:ID>
+        <cbc:ID>LMW-OrderResponse-OUT</cbc:ID>
         <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>OrderResponse</cbc:ID>
@@ -1161,7 +1158,7 @@ Inside `DigitalProcess`:
     <cac:DigitalCollaboration>
       <cbc:ID>billing-1</cbc:ID>
       <cac:SendingDigitalService>
-        <cbc:ID>LD-Invoice-OUT</cbc:ID>
+        <cbc:ID>LMW-Invoice-OUT</cbc:ID>
         <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>Invoice</cbc:ID>
@@ -1269,7 +1266,7 @@ Inside `DigitalProcess`:
         </cac:CertificationDocumentReference>
       </cac:SendingDigitalService>
       <cac:ReceivingDigitalService>
-        <cbc:ID>LD-InvoiceStatusResponse-IN</cbc:ID>
+        <cbc:ID>LMW-InvoiceStatusResponse-IN</cbc:ID>
         <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
         <cac:DigitalDocumentMetadata>
           <cbc:ID>InvoiceStatusResponse</cbc:ID>

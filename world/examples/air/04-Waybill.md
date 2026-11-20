@@ -15,10 +15,10 @@ The direct air waybill, issued when the airline accepted the cargo after the cut
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **AIR-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **KXL-WB-26-0325**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2548**  
+  The collaboration this document belongs to: the air carriage Bayforth books with Kelaro Air Cargo. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
+- `ID` = **KXL-00694562**  
   The consignment note number.
 - `UUID` = **cbf5d04c-eecc-510a-b84b-bf76e2526b98**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -36,7 +36,7 @@ The direct air waybill, issued when the airline accepted the cargo after the cut
   The carriage in words.
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.**  
   The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed.
-- `ShippingOrderID` = **LD-FI-26-0322**  
+- `ShippingOrderID` = **LMW-FI-26-0606**  
   The forwarding instructions the carriage is booked under.
 - `WaybillTypeCode` = **AWB** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
   The convention the document follows. The code is from the Trade Accord's waybill type list: AWB = Air waybill.
@@ -243,11 +243,11 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0323**  
+- `ID` = **LMW-SH-26-1010**  
   The shipment as the despatching party numbered it.
 - `DeclaredForCarriageValueAmount` = **512.00** (currencyID `XBL`)  
   The value declared on the air waybill, as the distributor instructed.
-- `Consignment/ID` = **LD-CS-26-0324**  
+- `Consignment/ID` = **LMW-CS-26-1010**  
   The consignment of the transport booking.
 - `Consignment/GrossWeightMeasure` = **104.6** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the cargo: the eight frame cartons and their skid.
@@ -400,7 +400,7 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **VI-TD-26-0513**  
+- `ID` = **7800004419**  
   The transit declaration the frames travel under to Selanu airport, the office of destination; a document outside the examples.
 - `DocumentType` = **Transit declaration**  
   The kind of document referred to, Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -436,7 +436,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **KXL-SIG-KXL-WB-26-0325**  
+- `ID` = **KXL-SIG-KXL-00694562**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -451,8 +451,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KXL-WB-26-0325</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
+  <cbc:ID>KXL-00694562</cbc:ID>
   <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -461,7 +461,7 @@ Inside `Signature`:
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
-  <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>LMW-FI-26-0606</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">AWB</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:DeclaredCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredCarriageValueAmount>
@@ -614,10 +614,10 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0323</cbc:ID>
+    <cbc:ID>LMW-SH-26-1010</cbc:ID>
     <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:ID>LMW-CS-26-1010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cbc:ChargeableWeightMeasure unitCode="KGM">105</cbc:ChargeableWeightMeasure>
       <cbc:GrossVolumeMeasure unitCode="MTQ">0.52</cbc:GrossVolumeMeasure>
@@ -760,7 +760,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VI-TD-26-0513</cbc:ID>
+    <cbc:ID>7800004419</cbc:ID>
     <cbc:DocumentType>Transit declaration</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -791,7 +791,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>KXL-SIG-KXL-WB-26-0325</cbc:ID>
+    <cbc:ID>KXL-SIG-KXL-00694562</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

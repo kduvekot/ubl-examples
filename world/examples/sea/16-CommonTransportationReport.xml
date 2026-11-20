@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:common-transportation-report:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-CTR-26-0141</cbc:ID>
+  <cbc:ID>8600033430</cbc:ID>
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
   <cbc:IssueTime>15:40:00-01:00</cbc:IssueTime>
@@ -621,7 +620,7 @@
     </cac:MaritimeTransport>
   </cac:TransportMeans>
   <cac:DocumentReference>
-    <cbc:ID>TOL-MF-26-0140</cbc:ID>
+    <cbc:ID>8500033423</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Manifest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

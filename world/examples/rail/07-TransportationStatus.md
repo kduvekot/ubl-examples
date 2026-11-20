@@ -15,10 +15,10 @@ The intermodal terminal reports to the rail carrier that the containers are load
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FIH-TS-26-0333**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043586**  
+  The collaboration this document belongs to: the rail carriage Valdara books with Ferrano Rail Cargo. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **FIH-TS-26-11316**  
   The sender's status report number.
 - `UUID` = **514b9478-0214-5ce0-9018-7c4cf752cbd3**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,7 +43,7 @@ The intermodal terminal reports to the rail carrier that the containers are load
 
 Inside `Consignment`:
 
-- `ID` = **VI-CS-26-0327**  
+- `ID` = **7300043586**  
   The consignment the report is about.
 - `CarrierParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; as Ferrano Rail Cargo gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -282,7 +282,7 @@ Inside `ReceiverParty`:
 
 Inside `TransportExecutionPlanDocumentReference`:
 
-- `ID` = **FRC-TEP-26-0328**  
+- `ID` = **9500055446**  
   The plan the carriage follows.
 
 ### Status Location
@@ -311,8 +311,8 @@ Inside `StatusPeriod`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FIH-TS-26-0333</cbc:ID>
+  <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
+  <cbc:ID>FIH-TS-26-11316</cbc:ID>
   <cbc:UUID>514b9478-0214-5ce0-9018-7c4cf752cbd3</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:05:00-01:00</cbc:IssueTime>
@@ -323,7 +323,7 @@ Inside `StatusPeriod`:
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:ID>7300043586</cbc:ID>
     <cac:CarrierParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
@@ -556,7 +556,7 @@ Inside `StatusPeriod`:
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:TransportExecutionPlanDocumentReference>
-    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:ID>9500055446</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:StatusLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>

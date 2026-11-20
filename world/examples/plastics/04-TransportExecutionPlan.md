@@ -15,10 +15,10 @@ The barge operator confirms the vessel and the sailing.
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-execution-plan:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FB-TEP-26-0886**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0425**  
+  The collaboration this document belongs to: the barge carriage Rinova books with Fiumella Barges. Rinova Recovery started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0104**  
   The carrier's number for the agreed plan.
 - `VersionID` = **1**  
   The first version of the plan.
@@ -195,7 +195,7 @@ Inside `Signature`:
 
 Inside `TransportExecutionPlanRequestDocumentReference`:
 
-- `ID` = **RR-TR-26-0884**  
+- `ID` = **26-0255**  
   The request this plan answers.
 
 ### Transport Contract
@@ -300,7 +300,7 @@ Inside `TransportExecutionTerms`:
 
 Inside `Consignment`:
 
-- `ID` = **RR-CS-26-0885**  
+- `ID` = **26-0426**  
   The seller's consignment number.
 - `SummaryDescription` = **120 t of Recycled PE granulate**  
   What is to be carried, in a few words.
@@ -437,8 +437,8 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FB-TEP-26-0886</cbc:ID>
+  <cbc:ProfileExecutionID>26-0425</cbc:ProfileExecutionID>
+  <cbc:ID>26-0104</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>32791589-65d7-5d36-bda8-9b68dad29bdd</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
@@ -570,7 +570,7 @@ Inside `Consignment`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:TransportExecutionPlanRequestDocumentReference>
-    <cbc:ID>RR-TR-26-0884</cbc:ID>
+    <cbc:ID>26-0255</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
     <cbc:ID>RR-FB-FW-2026</cbc:ID>
@@ -637,7 +637,7 @@ Inside `Consignment`:
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>
-    <cbc:ID>RR-CS-26-0885</cbc:ID>
+    <cbc:ID>26-0426</cbc:ID>
     <cbc:SummaryDescription>120 t of Recycled PE granulate</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>

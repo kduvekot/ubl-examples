@@ -15,10 +15,10 @@ Furniture for the public works offices, installed. Delivery terms DAP the office
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **FURNITURE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-PO-26-0581**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/0620**  
+  The collaboration this document belongs to: the department's order of benches for an office. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0621**  
   The buyer's order number.
 - `UUID` = **79d5286c-bb4d-5697-8d30-f0cc964b8ddf**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -41,7 +41,7 @@ Furniture for the public works offices, installed. Delivery terms DAP the office
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **PWD-COMMIT-26-0381**  
+- `ID` = **PWD/2026/0619**  
   The department's budget commitment for the purchase, which its rules ask the supplier to quote on the work report and the invoice.
 - `DocumentType` = **Budget commitment**  
   The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -283,7 +283,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Office desk**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **BF-DK-16**  
+- `LineItem/Item/SellersItemIdentification/ID` = **BKM-DK-16**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `LineItem/Item/StandardItemIdentification/ID` = **9523710000029** (schemeID `GS1 GTIN`)  
   The GTIN Brackenmere Furniture gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Brackenmere is Brackenmere Furniture's.
@@ -301,7 +301,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Installation work**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **BF-INST**  
+- `LineItem/Item/SellersItemIdentification/ID` = **BKM-INST**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 
 ## The document
@@ -312,8 +312,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0620</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0621</cbc:ID>
   <cbc:UUID>79d5286c-bb4d-5697-8d30-f0cc964b8ddf</cbc:UUID>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
   <cbc:IssueTime>08:46:00-01:00</cbc:IssueTime>
@@ -323,7 +323,7 @@ Inside `OrderLine`:
   <cbc:AccountingCost>Planning office fit-out 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    <cbc:ID>PWD/2026/0619</cbc:ID>
     <cbc:DocumentType>Budget commitment</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:BuyerCustomerParty>
@@ -503,7 +503,7 @@ Inside `OrderLine`:
         <cbc:Description>Office desk in hardwood, 1600 × 800 mm.</cbc:Description>
         <cbc:Name>Office desk</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-DK-16</cbc:ID>
+          <cbc:ID>BKM-DK-16</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9523710000029</cbc:ID>
@@ -524,7 +524,7 @@ Inside `OrderLine`:
         <cbc:Description>Installation of furniture on site, per hour per installer.</cbc:Description>
         <cbc:Name>Installation work</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-INST</cbc:ID>
+          <cbc:ID>BKM-INST</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

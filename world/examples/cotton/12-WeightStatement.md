@@ -15,10 +15,10 @@ Before loading, the shipper declares the verified gross mass of the container by
 - `CustomizationID` = **urn:ubl-examples:world:trns:weight-statement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Weight statement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCG-WS-26-0205**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2410**  
+  The collaboration this document belongs to: the sea carriage of the lint Bayforth books with Tidewell Ocean Lines. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
+- `ID` = **SCG-WS-26-0013**  
   The shipper's weight statement number.
 - `UUID` = **43b82e91-f4de-52c1-ac47-945443cd1b55**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -168,7 +168,7 @@ Inside `ShipperParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0200**  
+- `ID` = **SCG-SH-26-0218**  
   The shipment weighed.
 - `TransportHandlingUnit/TotalPackageQuantity` = **27** (unitCode `EA`)  
   The 27 bales in the container, each listed below with its weight.
@@ -469,8 +469,8 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:weight-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-WS-26-0205</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2410</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-WS-26-0013</cbc:ID>
   <cbc:UUID>43b82e91-f4de-52c1-ac47-945443cd1b55</cbc:UUID>
   <cbc:IssueDate>2026-05-06</cbc:IssueDate>
   <cbc:IssueTime>15:19:00+00:00</cbc:IssueTime>
@@ -583,7 +583,7 @@ Inside `Shipment`:
     </cac:PartyName>
   </cac:ShipperParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:TransportHandlingUnit>
       <cbc:TotalPackageQuantity unitCode="EA">27</cbc:TotalPackageQuantity>
       <cac:TransportEquipment>

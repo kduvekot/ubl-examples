@@ -15,10 +15,10 @@ Before the year's movements start, the manufacturer, as producer and notifier, n
 - `CustomizationID` = **urn:ubl-examples:world:trns:waste-notification:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waste notification". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:waste-shipment:1.0**  
-  The Trade Accord's process profile the document belongs to: waste shipment, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WASTE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-DOC-26-0204**  
+  The Trade Accord's process profile the document belongs to: waste shipment, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043338**  
+  The collaboration this document belongs to: the movement of Valdara's waste to Rinova Recovery. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **5700002167**  
   The notification number.
 - `UUID` = **96a4f1da-8c13-5fd0-9418-114168f14a1f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -248,11 +248,11 @@ Inside `WasteProducerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0205**  
+- `ID` = **7400043338**  
   The producer's number for the notified stream as a whole: each load gets a shipment number of its own.
 - `NetWeightMeasure` = **275** (unitCode `TNE`)  
   The total planned for the year: about 12 loads of about 23 tonnes.
-- `Consignment/ID` = **VI-CS-26-0206**  
+- `Consignment/ID` = **7300043338**  
   The consignment of the notified stream, which names its carrier.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; as Trasvia Haulage gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -358,8 +358,8 @@ Inside `DocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waste-notification:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:waste-shipment:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0204</cbc:ID>
+  <cbc:ProfileExecutionID>9900043338</cbc:ProfileExecutionID>
+  <cbc:ID>5700002167</cbc:ID>
   <cbc:UUID>96a4f1da-8c13-5fd0-9418-114168f14a1f</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>09:28:00-01:00</cbc:IssueTime>
@@ -535,10 +535,10 @@ Inside `DocumentReference`:
     </cac:PartyName>
   </cac:WasteProducerParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0205</cbc:ID>
+    <cbc:ID>7400043338</cbc:ID>
     <cbc:NetWeightMeasure unitCode="TNE">275</cbc:NetWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0206</cbc:ID>
+      <cbc:ID>7300043338</cbc:ID>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>

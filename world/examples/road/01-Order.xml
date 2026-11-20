@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-PO-26-0149</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-PO-26-0573</cbc:ID>
   <cbc:UUID>11bf9fcc-6e93-50a2-b153-b55eaa5940e4</cbc:UUID>
   <cbc:IssueDate>2026-03-16</cbc:IssueDate>
   <cbc:IssueTime>14:36:00-01:00</cbc:IssueTime>
@@ -108,7 +108,7 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ID>LD-DL-26-0412</cbc:ID>
+    <cbc:ID>LMW-DL-26-0412</cbc:ID>
     <cbc:Quantity unitCode="EA">108</cbc:Quantity>
     <cbc:MinimumQuantity unitCode="EA">108</cbc:MinimumQuantity>
     <cbc:MaximumQuantity unitCode="EA">108</cbc:MaximumQuantity>
@@ -295,7 +295,7 @@
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>VI-B180</cbc:ID>
@@ -330,7 +330,7 @@
         <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
         <cbc:Name languageID="en-XB">Bench side frame casting</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
+          <cbc:ID>LMW-10443</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>VI-C180</cbc:ID>

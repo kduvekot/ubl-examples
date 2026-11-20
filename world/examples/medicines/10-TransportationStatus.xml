@@ -3,19 +3,19 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LACT-TS-26-0336</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-3169</cbc:ProfileExecutionID>
+  <cbc:ID>LAC-TS-26-16298</cbc:ID>
   <cbc:UUID>b15e6e57-fc2c-546a-b800-f2775509c7ab</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>05:40:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>QPD-FI-26-0329</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>QLM-FI-26-2388</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>QPD-CS-26-0330</cbc:ID>
+    <cbc:ID>QLM-CS-26-3980</cbc:ID>
     <cac:CarrierParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

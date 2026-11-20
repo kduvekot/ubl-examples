@@ -15,10 +15,10 @@ The household's settlement bill for the account year: water (exempt), the city's
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **CSWC-INV-26-0319**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924052627**  
+  The collaboration this document belongs to: the water company's annual account of the household. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **CSW-C-311790-2603**  
   The seller's invoice number.
 - `UUID` = **4d48b45e-73c0-5476-98a9-69e873037095**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -193,7 +193,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 49: direct debit. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 49 = Direct debit.
 - `PaymentDueDate` = **2026-04-23**  
   The day the amount will be collected.
-- `PaymentID` = **RF46CSWCINV260319** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF13CSWC3117902603** (schemeID `ISO 11649`)  
   The reference on the household's bank statement. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB21BLUM38010004189160** (schemeID `urn:ubl-examples:world:account`)  
   The water company's account the collection goes to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -552,8 +552,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+  <cbc:ProfileExecutionID>9924052627</cbc:ProfileExecutionID>
+  <cbc:ID>CSW-C-311790-2603</cbc:ID>
   <cbc:UUID>4d48b45e-73c0-5476-98a9-69e873037095</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>14:51:00-01:00</cbc:IssueTime>
@@ -683,7 +683,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">49</cbc:PaymentMeansCode>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cbc:PaymentID schemeID="ISO 11649">RF46CSWCINV260319</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF13CSWC3117902603</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM38010004189160</cbc:ID>
       <cbc:Name>Coastal State Water Company Ltd</cbc:Name>

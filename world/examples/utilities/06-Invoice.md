@@ -15,10 +15,10 @@ The water bill for the shop. Water is exempt from the state sales tax, and the i
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **CSWC-INV-26-0317**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924050955**  
+  The collaboration this document belongs to: the water company's bill for March to the store. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **CSW-C-260118-2603**  
   The seller's invoice number.
 - `UUID` = **4c1bf28b-075a-5826-abaf-d62f14b2f8da**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -245,9 +245,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF03CSWCINV260317**  
+- `InstructionNote` = **Quote RF47CSWC2601182603**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF03CSWCINV260317** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF47CSWC2601182603** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB21BLUM38010004189160** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -259,7 +259,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice CSWC-INV-26-0317**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice CSW-C-260118-2603**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380100** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -459,8 +459,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+  <cbc:ProfileExecutionID>9924050955</cbc:ProfileExecutionID>
+  <cbc:ID>CSW-C-260118-2603</cbc:ID>
   <cbc:UUID>4c1bf28b-075a-5826-abaf-d62f14b2f8da</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>09:13:00-01:00</cbc:IssueTime>
@@ -637,15 +637,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF03CSWCINV260317</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF03CSWCINV260317</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF47CSWC2601182603</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF47CSWC2601182603</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM38010004189160</cbc:ID>
       <cbc:Name>Coastal State Water Company Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice CSWC-INV-26-0317</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice CSW-C-260118-2603</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
         <cbc:Name>Main branch, Exchange Street</cbc:Name>

@@ -15,10 +15,10 @@ After the reminder the household had its water meter tested: it over-read by two
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **CSWC-CN-26-0322**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924052627**  
+  The collaboration this document belongs to: the water company's annual account of the household. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **9100373645**  
   The seller's credit note number.
 - `UUID` = **b275185e-048c-56dd-9144-cf9ea28b4f48**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -50,7 +50,7 @@ Inside `InvoicePeriod`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **CSWC-INV-26-0319**  
+- `InvoiceDocumentReference/ID` = **CSW-C-311790-2603**  
   The March bill corrected.
 - `InvoiceDocumentReference/IssueDate` = **2026-04-02**  
   Its issue date.
@@ -185,7 +185,7 @@ Inside `AccountingCustomerParty`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Set off against the balance of the settlement bill CSWC-INV-26-0319, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.**  
+- `Note` = **Set off against the balance of the settlement bill CSW-C-311790-2603, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.**  
   How the credit is settled.
 
 ### Tax Total
@@ -246,7 +246,7 @@ Inside `CollectionCreditNoteLine`:
   The city's levy on them.
 - `LineExtensionAmount` = **0.84** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0319**  
+- `BillingReference/InvoiceDocumentReference/ID` = **CSW-C-311790-2603**  
   The settlement bill.
 - `BillingReference/BillingReferenceLine/ID` = **2**  
   The line credited.
@@ -283,7 +283,7 @@ Inside `CreditNoteLine`:
   Two cubic metres the water meter CSW-W-71844 over-read at the annual reading of 31 March.
 - `LineExtensionAmount` = **4.70** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0319**  
+- `BillingReference/InvoiceDocumentReference/ID` = **CSW-C-311790-2603**  
   The settlement bill.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
   The line credited.
@@ -318,8 +318,8 @@ Inside `CreditNoteLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-CN-26-0322</cbc:ID>
+  <cbc:ProfileExecutionID>9924052627</cbc:ProfileExecutionID>
+  <cbc:ID>9100373645</cbc:ID>
   <cbc:UUID>b275185e-048c-56dd-9144-cf9ea28b4f48</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:03:00-01:00</cbc:IssueTime>
@@ -334,7 +334,7 @@ Inside `CreditNoteLine`:
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+      <cbc:ID>CSW-C-311790-2603</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
@@ -447,7 +447,7 @@ Inside `CreditNoteLine`:
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:PaymentTerms>
-    <cbc:Note>Set off against the balance of the settlement bill CSWC-INV-26-0319, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.</cbc:Note>
+    <cbc:Note>Set off against the balance of the settlement bill CSW-C-311790-2603, still open after the returned direct debit: 141.20 less 5.54 leaves 135.66 due, with the reminder's fee.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -490,7 +490,7 @@ Inside `CreditNoteLine`:
     <cbc:LineExtensionAmount currencyID="XBL">0.84</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+        <cbc:ID>CSW-C-311790-2603</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>2</cbc:ID>
@@ -530,7 +530,7 @@ Inside `CreditNoteLine`:
     <cbc:LineExtensionAmount currencyID="XBL">4.70</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+        <cbc:ID>CSW-C-311790-2603</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>

@@ -15,10 +15,8 @@ The gas producer declares March's gas leaving Bayvarra by pipeline, in one month
 - `CustomizationID` = **urn:ubl-examples:world:trns:export-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ENERGY-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **KG-EX-26-0152**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **7600006841**  
   The exporter's reference.
 - `UUID` = **ea7c1231-2189-5410-b62d-f96106f6767f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -110,11 +108,11 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **KG-CD-26-0153**  
+- `ID` = **7500006841**  
   The declaration as lodged with the customs of the exporting country.
-- `Shipment/ID` = **KG-SH-26-0154**  
+- `Shipment/ID` = **7400034203**  
   The shipment declared.
-- `Shipment/Consignment/ID` = **KG-CS-26-0155**  
+- `Shipment/Consignment/ID` = **7300034203**  
   The consignment of Montebrio Power.
 - `Shipment/Consignment/SummaryDescription` = **Goods item 1: 36,800 MWh of natural gas, delivered to the power station.**  
   What the consignment holds: the goods item of this buyer.
@@ -158,7 +156,7 @@ Inside `CustomsDeclaration`:
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Kelpstone Gas**  
   The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
-- `Shipment/Consignment/ID` = **KG-CS-26-0156**  
+- `Shipment/Consignment/ID` = **7300034204**  
   The consignment of Ferrano Energy.
 - `Shipment/Consignment/SummaryDescription` = **Goods item 2: 2,400 MWh of natural gas, fed into the grid at the city gate for the retail company's gas customers.**  
   What the consignment holds: the goods item of this buyer.
@@ -345,8 +343,7 @@ Inside `CustomsDeclaration`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-EX-26-0152</cbc:ID>
+  <cbc:ID>7600006841</cbc:ID>
   <cbc:UUID>ea7c1231-2189-5410-b62d-f96106f6767f</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>16:41:00-01:00</cbc:IssueTime>
@@ -414,11 +411,11 @@ Inside `CustomsDeclaration`:
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>KG-CD-26-0153</cbc:ID>
+    <cbc:ID>7500006841</cbc:ID>
     <cac:Shipment>
-      <cbc:ID>KG-SH-26-0154</cbc:ID>
+      <cbc:ID>7400034203</cbc:ID>
       <cac:Consignment>
-        <cbc:ID>KG-CS-26-0155</cbc:ID>
+        <cbc:ID>7300034203</cbc:ID>
         <cbc:SummaryDescription>Goods item 1: 36,800 MWh of natural gas, delivered to the power station.</cbc:SummaryDescription>
         <cbc:GrossWeightMeasure unitCode="KGM">2760000</cbc:GrossWeightMeasure>
         <cac:ConsigneeParty>
@@ -462,7 +459,7 @@ Inside `CustomsDeclaration`:
         </cac:CarrierParty>
       </cac:Consignment>
       <cac:Consignment>
-        <cbc:ID>KG-CS-26-0156</cbc:ID>
+        <cbc:ID>7300034204</cbc:ID>
         <cbc:SummaryDescription>Goods item 2: 2,400 MWh of natural gas, fed into the grid at the city gate for the retail company's gas customers.</cbc:SummaryDescription>
         <cbc:GrossWeightMeasure unitCode="KGM">180000</cbc:GrossWeightMeasure>
         <cac:ConsigneeParty>

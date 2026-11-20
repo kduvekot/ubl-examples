@@ -15,10 +15,10 @@ The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare 
 - `CustomizationID` = **urn:ubl-examples:world:trns:fulfilment-cancellation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Fulfilment cancellation". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0163**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0573**  
+  The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-FCN-26-0033**  
   The sender's number for this document.
 - `UUID` = **83620832-e508-5136-b6f4-e104537c3b80**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -35,14 +35,14 @@ The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare 
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **LD-RA-26-0162**  
+- `ID` = **LMW-RA-26-0642**  
   The receipt advice cancelled.
 
 ### Order Reference
 
 Inside `OrderReference`:
 
-- `ID` = **LD-PO-26-0149**  
+- `ID` = **LMW-PO-26-0573**  
   The distributor's order.
 
 ### Buyer Customer Party
@@ -220,18 +220,18 @@ Inside `DespatchSupplierParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:fulfilment-cancellation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0163</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-FCN-26-0033</cbc:ID>
   <cbc:UUID>83620832-e508-5136-b6f4-e104537c3b80</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:Note>A corrected receipt advice follows.</cbc:Note>
   <cbc:CancellationNote>The recount read the label of the 13th carton on the pallet of side frames: "Serra 180, parcel 2 of 3", the bench reported short. Neither the shortage nor the carton over existed.</cbc:CancellationNote>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>LD-RA-26-0162</cbc:ID>
+    <cbc:ID>LMW-RA-26-0642</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:OrderReference>
-    <cbc:ID>LD-PO-26-0149</cbc:ID>
+    <cbc:ID>LMW-PO-26-0573</cbc:ID>
   </cac:OrderReference>
   <cac:BuyerCustomerParty>
     <cac:Party>

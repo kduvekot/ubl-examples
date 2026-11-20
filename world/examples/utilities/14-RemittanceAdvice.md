@@ -15,10 +15,10 @@ The buyer pays the telecom bill from its account at the island's bank.
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-RM-26-0316**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **STL-TX-26-75183**  
+  The collaboration this document belongs to: Selanu Telecom's bill for March to Velumi. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0144**  
   The payer's remittance number.
 - `UUID` = **bcb6eadf-33b2-550e-b57c-1a63cfc06bfc**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -38,9 +38,9 @@ The buyer pays the telecom bill from its account at the island's bank.
   No credits taken.
 - `TotalPaymentAmount` = **139.870** (currencyID `XLC`)  
   The amount transferred: the payable amount of the invoice.
-- `PaymentOrderReference` = **VT-PAY-26-0313**  
+- `PaymentOrderReference` = **26-0018**  
   The payment order the payer gave its bank.
-- `InvoicingPartyReference` = **RF26STINV260323**  
+- `InvoicingPartyReference` = **RF76STLC10772603**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
   The invoice paid.
@@ -58,7 +58,7 @@ Inside `InvoicePeriod`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **ST-INV-26-0323**  
+- `InvoiceDocumentReference/ID` = **STL-C-1077-2603**  
   The invoice this payment settles.
 
 ### Additional Document Reference
@@ -185,9 +185,9 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **VT-PAY-26-0313**  
+- `InstructionID` = **26-0018**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF26STINV260323** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF76STLC10772603** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XL40BSEL0010003665515** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -288,13 +288,13 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **PHON** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code PHON: a telephone bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: PHON = TelephoneBill.
-- `InvoicingPartyReference` = **RF26STINV260323**  
+- `InvoicingPartyReference` = **RF76STLC10772603**  
   The reference the invoicing party asked to quote.
 - `InvoicePeriod/StartDate` = **2026-03-01**  
   March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
   Its end.
-- `BillingReference/InvoiceDocumentReference/ID` = **ST-INV-26-0323**  
+- `BillingReference/InvoiceDocumentReference/ID` = **STL-C-1077-2603**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
   Its issue date, so the reference is unambiguous.
@@ -307,8 +307,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-RM-26-0316</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
+  <cbc:ID>26-0144</cbc:ID>
   <cbc:UUID>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
@@ -318,8 +318,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XLC">139.870</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XLC">139.870</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>26-0018</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF76STLC10772603</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -327,7 +327,7 @@ Inside `RemittanceAdviceLine`:
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>ST-INV-26-0323</cbc:ID>
+      <cbc:ID>STL-C-1077-2603</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
@@ -425,8 +425,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>VT-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF26STINV260323</cbc:PaymentID>
+    <cbc:InstructionID>26-0018</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF76STLC10772603</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL40BSEL0010003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
@@ -508,14 +508,14 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XLC">139.870</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF76STLC10772603</cbc:InvoicingPartyReference>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
     </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>ST-INV-26-0323</cbc:ID>
+        <cbc:ID>STL-C-1077-2603</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

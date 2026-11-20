@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-INV-26-0563</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>HRW-INV-26-0772</cbc:ID>
   <cbc:UUID>a86e8dbc-bc58-5c1e-babe-987e7bb907a6</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>15:30:00-01:00</cbc:IssueTime>
@@ -15,10 +15,10 @@
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0561</cbc:ID>
+    <cbc:ID>HRW-DA-26-0764</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -179,8 +179,8 @@
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF77HFGINV260563</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF77HFGINV260563</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF88HRWINV260772</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF88HRWINV260772</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM38712006153948</cbc:ID>
@@ -188,7 +188,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice HFG-INV-26-0563</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice HRW-INV-26-0772</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -266,7 +266,7 @@
       <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GAL100</cbc:ID>
+        <cbc:ID>HRW-GAL100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001014</cbc:ID>
@@ -298,7 +298,7 @@
       <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
       <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GSM100</cbc:ID>
+        <cbc:ID>HRW-GSM100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001021</cbc:ID>
@@ -330,7 +330,7 @@
       <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-PKT080</cbc:ID>
+        <cbc:ID>HRW-PKT080</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430002011</cbc:ID>

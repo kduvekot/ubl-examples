@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:work-report:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0582</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0620</cbc:ProfileExecutionID>
+  <cbc:ID>26-0017</cbc:ID>
   <cbc:UUID>e84c63f9-b6d1-5eaa-bf75-38181a29b84a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
@@ -32,13 +32,13 @@
     <cbc:EndDate>2026-04-09</cbc:EndDate>
   </cac:ReportedPeriod>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+    <cbc:ID>PWD/2026/0621</cbc:ID>
   </cac:OrderReference>
   <cac:ProjectReference>
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    <cbc:ID>PWD/2026/0619</cbc:ID>
     <cbc:DocumentType>Budget commitment</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:SellerSupplierParty>
@@ -221,11 +221,11 @@
       <cbc:StartDate>2026-04-08</cbc:StartDate>
       <cbc:EndDate>2026-04-09</cbc:EndDate>
       <cac:WorkOrderDocumentReference>
-        <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+        <cbc:ID>PWD/2026/0621</cbc:ID>
       </cac:WorkOrderDocumentReference>
     </cac:WorkPhaseReference>
     <cac:DocumentReference>
-      <cbc:ID>BF-CHECK-26-0408</cbc:ID>
+      <cbc:ID>26-0016</cbc:ID>
       <cbc:DocumentType>Installation checklist</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Price>

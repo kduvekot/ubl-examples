@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PO-26-0577</cbc:ID>
+  <cbc:ProfileExecutionID>9900342700</cbc:ProfileExecutionID>
+  <cbc:ID>7100456933</cbc:ID>
   <cbc:UUID>723b8ed1-619b-5c36-b65d-2cac4a35d4c0</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
   <cbc:IssueTime>12:09:00-01:00</cbc:IssueTime>
@@ -15,10 +15,10 @@
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:QuotationDocumentReference>
-    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:ID>26-0080</cbc:ID>
   </cac:QuotationDocumentReference>
   <cac:OrderDocumentReference>
-    <cbc:ID>BS-PO-26-0574</cbc:ID>
+    <cbc:ID>7100448162</cbc:ID>
   </cac:OrderDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
@@ -177,7 +177,7 @@
           <cbc:ID>BM-551005</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -215,7 +215,7 @@
           <cbc:ID>BM-551008</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -253,7 +253,7 @@
           <cbc:ID>BM-551006</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -291,7 +291,7 @@
           <cbc:ID>BM-551009</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -321,7 +321,7 @@
           <cbc:ID>BM-551007</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-K</cbc:ID>
+          <cbc:ID>BKM-MRW-K</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>

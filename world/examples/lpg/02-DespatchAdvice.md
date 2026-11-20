@@ -15,10 +15,10 @@ Kelpstone announces the load as weighed at its plant, with the propane's dangero
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **LPG-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **KG-DA-26-0896**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924528384**  
+  The collaboration this document belongs to: the water company's order of liquefied petroleum gas from Kelpstone. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **8000034654**  
   The despatching party's number.
 - `UUID` = **a7c85f6b-d4f7-5c6b-b71e-0c4650d9e10a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ Kelpstone announces the load as weighed at its plant, with the propane's dangero
 
 Inside `OrderReference`:
 
-- `ID` = **CSWC-PO-26-0895**  
+- `ID` = **4500028302**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -166,9 +166,9 @@ Inside `DeliveryCustomerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **KG-SH-26-0897**  
+- `ID` = **7400034654**  
   The despatching party's shipment number.
-- `Consignment/ID` = **KG-CS-26-0898**  
+- `Consignment/ID` = **7300034654**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **20180** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The propane loaded, from the weighbridge: in bulk, without packaging.
@@ -268,8 +268,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>LPG-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-DA-26-0896</cbc:ID>
+  <cbc:ProfileExecutionID>9924528384</cbc:ProfileExecutionID>
+  <cbc:ID>8000034654</cbc:ID>
   <cbc:UUID>a7c85f6b-d4f7-5c6b-b71e-0c4650d9e10a</cbc:UUID>
   <cbc:IssueDate>2026-06-10</cbc:IssueDate>
   <cbc:IssueTime>07:05:00-01:00</cbc:IssueTime>
@@ -277,7 +277,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>CSWC-PO-26-0895</cbc:ID>
+    <cbc:ID>4500028302</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -376,9 +376,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
-    <cbc:ID>KG-SH-26-0897</cbc:ID>
+    <cbc:ID>7400034654</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>KG-CS-26-0898</cbc:ID>
+      <cbc:ID>7300034654</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">20180</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PO-26-0525</cbc:ID>
+  <cbc:ProfileExecutionID>9900340389</cbc:ProfileExecutionID>
+  <cbc:ID>7100453852</cbc:ID>
   <cbc:UUID>a4385e8d-1e16-5254-8f54-b84b7f686cd2</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>09:33:00-01:00</cbc:IssueTime>
@@ -163,7 +163,7 @@
           <cbc:ID>BM-778120</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>LT-SH-01</cbc:ID>
+          <cbc:ID>LTM-SH-01</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9524010000016</cbc:ID>

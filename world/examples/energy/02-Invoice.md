@@ -15,10 +15,10 @@ The grid operator charges the retail company for the use of the networks at the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the national specification "Invoice rules of Urvania"; the community specification "Urvania energy market". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ENERGY-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FG-INV-26-0150**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **FGR-TX-26-0151**  
+  The collaboration this document belongs to: Ferrano Grid's network bill for April to Ferrano Energy. Ferrano Grid started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2026/0157**  
   The seller's invoice number.
 - `UUID` = **af7f93bd-4f82-5130-82e5-5b40a1c4cefa**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -238,9 +238,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **FERRA-RTGS**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF13FGINV260150**  
+- `InstructionNote` = **Quote RF8720260157**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF13FGINV260150** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF8720260157** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XU750351041620000005126721** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -252,7 +252,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice FG-INV-26-0150**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice 2026/0157**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41620** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
   The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
@@ -360,7 +360,7 @@ Inside `InvoiceLine`:
   The factory's electricity connection, March.
 - `LineExtensionAmount` = **2559360** (currencyID `XUF`)  
   412800 × 6.2, rounded to the minor unit of the currency.
-- `Delivery/DeliveryLocation/ID` = **FG-CP-4120-E1**  
+- `Delivery/DeliveryLocation/ID` = **FGR-CP-4120-E1**  
   The consumption point whose network use the line bills.
 - `Delivery/DeliveryLocation/Description` = **Factory, main connection at 10 kV**  
   The connection in words.
@@ -372,7 +372,7 @@ Inside `InvoiceLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Electricity network use** (languageID `en-XU`)  
   The item's name in English, the working language between the countries.
-- `Item/SellersItemIdentification/ID` = **FG-NET-E**  
+- `Item/SellersItemIdentification/ID` = **FGR-NET-E**  
   The seller's own item number; as Ferrano Grid describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -392,7 +392,7 @@ Inside `InvoiceLine`:
   The warehouse's electricity connection, March.
 - `LineExtensionAmount` = **119970** (currencyID `XUF`)  
   19350 × 6.2, rounded to the minor unit of the currency.
-- `Delivery/DeliveryLocation/ID` = **FG-CP-4160-E1**  
+- `Delivery/DeliveryLocation/ID` = **FGR-CP-4160-E1**  
   The consumption point whose network use the line bills.
 - `Delivery/DeliveryLocation/Description` = **Warehouse of Castrano Logistics**  
   The connection in words.
@@ -404,7 +404,7 @@ Inside `InvoiceLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Electricity network use** (languageID `en-XU`)  
   The item's name in English, the working language between the countries.
-- `Item/SellersItemIdentification/ID` = **FG-NET-E**  
+- `Item/SellersItemIdentification/ID` = **FGR-NET-E**  
   The seller's own item number; as Ferrano Grid describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -424,13 +424,13 @@ Inside `InvoiceLine`:
   The factory's gas connection, March.
 - `LineExtensionAmount` = **116280** (currencyID `XUF`)  
   61200 × 1.9, rounded to the minor unit of the currency.
-- `DocumentReference/ID` = **FG-DOC-26-0149**  
+- `DocumentReference/ID` = **FGR-UST-26-2253**  
   The grid operator's metering statement with the readings and the volume conversion behind the line's kWh.
 - `DocumentReference/IssueDate` = **2026-04-02**  
   Its issue date.
 - `DocumentReference/DocumentTypeCode` = **UtilityStatement** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   A utility statement. The code is from the Trade Accord's UBL document type list: UtilityStatement = Utility Statement.
-- `Delivery/DeliveryLocation/ID` = **FG-CP-4120-G1**  
+- `Delivery/DeliveryLocation/ID` = **FGR-CP-4120-G1**  
   The consumption point whose network use the line bills.
 - `Delivery/DeliveryLocation/Description` = **Valdara Industries, gas connection of the coating line**  
   The connection in words.
@@ -442,7 +442,7 @@ Inside `InvoiceLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Gas network use** (languageID `en-XU`)  
   The item's name in English, the working language between the countries.
-- `Item/SellersItemIdentification/ID` = **FG-NET-G**  
+- `Item/SellersItemIdentification/ID` = **FGR-NET-G**  
   The seller's own item number; as Ferrano Grid describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -470,7 +470,7 @@ Inside `InvoiceLine`:
   A month's consumption. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **February 2026**  
   The period in words.
-- `Delivery/DeliveryLocation/ID` = **FG-CP-4160-E1**  
+- `Delivery/DeliveryLocation/ID` = **FGR-CP-4160-E1**  
   The consumption point whose network use the line bills.
 - `Delivery/DeliveryLocation/Description` = **Warehouse of Castrano Logistics**  
   The connection in words.
@@ -482,7 +482,7 @@ Inside `InvoiceLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Electricity network use** (languageID `en-XU`)  
   The item's name in English, the working language between the countries.
-- `Item/SellersItemIdentification/ID` = **FG-NET-E**  
+- `Item/SellersItemIdentification/ID` = **FGR-NET-E**  
   The seller's own item number; as Ferrano Grid describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   A domestic supply in Urvania: its value added tax applies at the standard rate (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
@@ -505,8 +505,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FG-INV-26-0150</cbc:ID>
+  <cbc:ProfileExecutionID>FGR-TX-26-0151</cbc:ProfileExecutionID>
+  <cbc:ID>2026/0157</cbc:ID>
   <cbc:UUID>af7f93bd-4f82-5130-82e5-5b40a1c4cefa</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
@@ -678,15 +678,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF13FGINV260150</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF13FGINV260150</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF8720260157</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF8720260157</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU750351041620000005126721</cbc:ID>
       <cbc:Name>Ferrano Grid SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice FG-INV-26-0150</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/0157</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41620</cbc:ID>
         <cbc:Name>Ferrano Porta Nord</cbc:Name>
@@ -765,7 +765,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">2559360</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4120-E1</cbc:ID>
+        <cbc:ID>FGR-CP-4120-E1</cbc:ID>
         <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -775,7 +775,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-E</cbc:ID>
+        <cbc:ID>FGR-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
@@ -797,7 +797,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XUF">119970</cbc:LineExtensionAmount>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4160-E1</cbc:ID>
+        <cbc:ID>FGR-CP-4160-E1</cbc:ID>
         <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -807,7 +807,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-E</cbc:ID>
+        <cbc:ID>FGR-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
@@ -828,13 +828,13 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="KWH">61200</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">116280</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>FG-DOC-26-0149</cbc:ID>
+      <cbc:ID>FGR-UST-26-2253</cbc:ID>
       <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">UtilityStatement</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4120-G1</cbc:ID>
+        <cbc:ID>FGR-CP-4120-G1</cbc:ID>
         <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -844,7 +844,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="qau">Zhul gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Gas network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-G</cbc:ID>
+        <cbc:ID>FGR-NET-G</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
@@ -872,7 +872,7 @@ Inside `InvoiceLine`:
     </cac:InvoicePeriod>
     <cac:Delivery>
       <cac:DeliveryLocation>
-        <cbc:ID>FG-CP-4160-E1</cbc:ID>
+        <cbc:ID>FGR-CP-4160-E1</cbc:ID>
         <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       </cac:DeliveryLocation>
     </cac:Delivery>
@@ -882,7 +882,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="qau">Zuktrek gatir krek</cbc:Name>
       <cbc:Name languageID="en-XU">Electricity network use</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>FG-NET-E</cbc:ID>
+        <cbc:ID>FGR-NET-E</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>

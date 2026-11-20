@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-INV-26-0332</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-INV-26-1033</cbc:ID>
   <cbc:UUID>5e8ce777-529c-5b9e-99b6-c68de9c624a7</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>13:37:00-01:00</cbc:IssueTime>
@@ -17,10 +17,10 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0329</cbc:ID>
+    <cbc:ID>LMW-DA-26-1020</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -187,8 +187,8 @@
     <cbc:PaymentDueDate>2026-06-15</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF69LDINV260332</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF69LDINV260332</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF96LMWINV261033</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF96LMWINV261033</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB19BLUM38712001466206</cbc:ID>
@@ -197,7 +197,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-INV-26-0332</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice LMW-INV-26-1033</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -291,7 +291,7 @@
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>

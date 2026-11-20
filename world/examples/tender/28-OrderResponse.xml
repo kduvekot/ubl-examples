@@ -3,9 +3,9 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-OR-26-0216</cbc:ID>
-  <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>1100043392</cbc:ID>
+  <cbc:SalesOrderID>1000002170</cbc:SalesOrderID>
   <cbc:UUID>f49b1a90-ec03-58ab-b40d-fe1765db668c</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>16:15:00-01:00</cbc:IssueTime>
@@ -13,10 +13,10 @@
   <cbc:Note>Accepted: moss green, at the quoted charge; delivery on 31 March, installation by Saltmere Engineering from 1 April, completed by 7 April.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
+    <cbc:ID>PWD/2026/0567</cbc:ID>
   </cac:OrderReference>
   <cac:OrderChangeDocumentReference>
-    <cbc:ID>LPWD-OC-26-0215</cbc:ID>
+    <cbc:ID>PWD/2026/0571</cbc:ID>
   </cac:OrderChangeDocumentReference>
   <cac:SellerSupplierParty>
     <cac:Party>

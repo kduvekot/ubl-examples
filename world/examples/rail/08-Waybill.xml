@@ -3,9 +3,9 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-WB-26-0334</cbc:ID>
-  <cbc:CarrierAssignedID>FRC-CIM-26-0325</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
+  <cbc:ID>7200092547</cbc:ID>
+  <cbc:CarrierAssignedID>8900004628</cbc:CarrierAssignedID>
   <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -132,10 +132,10 @@
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0332</cbc:ID>
+    <cbc:ID>7400043689</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ID>7300043586</cbc:ID>
       <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
       <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
@@ -291,7 +291,7 @@
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
-          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:ReferencedConsignmentID>7300043586</cbc:ReferencedConsignmentID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
           <cbc:ProviderTypeCode listID="urn:ubl-examples:world:codelist:EquipmentProviderTypeCode">CARRIER</cbc:ProviderTypeCode>
           <cbc:OwnerTypeCode listID="urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode">CARRIER</cbc:OwnerTypeCode>
@@ -461,7 +461,7 @@
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
-          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cbc:ID>7800004369</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
               <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -479,7 +479,7 @@
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
-          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:ReferencedConsignmentID>7300043586</cbc:ReferencedConsignmentID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
           <cbc:ProviderTypeCode listID="urn:ubl-examples:world:codelist:EquipmentProviderTypeCode">CARRIER</cbc:ProviderTypeCode>
           <cbc:OwnerTypeCode listID="urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode">CARRIER</cbc:OwnerTypeCode>
@@ -648,7 +648,7 @@
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
-          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cbc:ID>7800004369</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
               <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -696,7 +696,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:ID>9500055446</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -728,7 +728,7 @@
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>FRC-SIG-FRC-WB-26-0334</cbc:ID>
+    <cbc:ID>FRC-SIG-7200092547</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>

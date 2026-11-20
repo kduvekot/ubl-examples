@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:certificate-of-origin:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FCC-CO-26-0157</cbc:ID>
+  <cbc:ProfileExecutionID>9900043291</cbc:ProfileExecutionID>
+  <cbc:ID>FCC/CO/2026/0090</cbc:ID>
   <cbc:UUID>3152b116-509a-5a0d-8b57-97a8e2b066d0</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>08:41:00-01:00</cbc:IssueTime>
@@ -156,13 +156,13 @@
     </cac:SignatoryContact>
   </cac:EndorserParty>
   <cac:CertificateOfOriginApplication>
-    <cbc:ReferenceID>VI-AP-26-0158</cbc:ReferenceID>
+    <cbc:ReferenceID>6800002165</cbc:ReferenceID>
     <cbc:CertificateType>Preferential</cbc:CertificateType>
     <cbc:ApplicationStatusCode listID="urn:ubl-examples:world:codelist:ApplicationStatusCode">APPROVED</cbc:ApplicationStatusCode>
-    <cbc:OriginalJobID>FCC-JOB-26-0418</cbc:OriginalJobID>
+    <cbc:OriginalJobID>FCC/2026/1722</cbc:OriginalJobID>
     <cbc:Remarks>Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and making of the benches in Urvania give origin.</cbc:Remarks>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0154</cbc:ID>
+      <cbc:ID>CAS-SH-26-1291</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
@@ -364,7 +364,7 @@
       </cac:Party>
     </cac:DocumentDistribution>
     <cac:SupportingDocumentReference>
-      <cbc:ID>LD-PO-26-0149</cbc:ID>
+      <cbc:ID>LMW-PO-26-0573</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:SupportingDocumentReference>
     <cac:Signature>
@@ -380,7 +380,7 @@
     </cac:Signature>
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>FCC-JOB-26-0418-E1</cbc:DocumentID>
+    <cbc:DocumentID>FCC/2026/1722-E1</cbc:DocumentID>
     <cbc:ApprovalStatus>Approved</cbc:ApprovalStatus>
     <cbc:Remarks>Origin verified against the exporter's production records.</cbc:Remarks>
     <cac:EndorserParty>

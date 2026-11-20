@@ -15,10 +15,10 @@ The shop confirms the delivery and reports a damaged carton.
 - `CustomizationID` = **urn:ubl-examples:world:trns:receipt-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Receipt advice"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-RA-26-0236**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339316**  
+  The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **5000339834**  
   The receiving party's number.
 - `UUID` = **aa88e826-e531-55ed-8ac7-22b653697864**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -45,14 +45,14 @@ The shop confirms the delivery and reports a damaged carton.
 
 Inside `OrderReference`:
 
-- `ID` = **BS-PO-26-0224**  
+- `ID` = **7100452422**  
   The order the goods were delivered for.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **LD-DA-26-0229**  
+- `ID` = **LMW-DA-26-0911**  
   The despatch advice this receipt answers.
 
 ### Signature
@@ -210,7 +210,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0230**  
+- `ID` = **LMW-SH-26-0911**  
   The shipment received.
 - `TransportHandlingUnit/ID` = **095206100003729033** (schemeID `GS1 SSCC`)  
   The pallet with the damaged carton: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
@@ -269,11 +269,11 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
+- `DespatchLineReference/DocumentReference/ID` = **LMW-DA-26-0911**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-DA-26-0229 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
-- `DocumentReference/ID` = **BM-GI-PHOTO-26-0430**  
+  The kind of document referred to: LMW-DA-26-0911 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+- `DocumentReference/ID` = **1400016992**  
   The goods-in photographs of the refused bench, delivery of 30 April: the one typed reference, on the line it concerns.
 - `DocumentReference/DocumentType` = **Damage photos**  
   What the document is.
@@ -283,7 +283,7 @@ Inside `ReceiptLine`:
   The item's short name.
 - `Item/BuyersItemIdentification/ID` = **BM-551210**  
   The buyer's own item number: it resells this item under its own number.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -310,8 +310,8 @@ Inside `ReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-RA-26-0236</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>5000339834</cbc:ID>
   <cbc:UUID>aa88e826-e531-55ed-8ac7-22b653697864</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>15:21:00-01:00</cbc:IssueTime>
@@ -323,10 +323,10 @@ Inside `ReceiptLine`:
   <cbc:Note>Counted and checked at goods-in.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:ID>7100452422</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0229</cbc:ID>
+    <cbc:ID>LMW-DA-26-0911</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:Signature>
     <cbc:ID>BM-SIG-26-RA</cbc:ID>
@@ -458,7 +458,7 @@ Inside `ReceiptLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0230</cbc:ID>
+    <cbc:ID>LMW-SH-26-0911</cbc:ID>
     <cac:TransportHandlingUnit>
       <cbc:ID schemeID="GS1 SSCC">095206100003729033</cbc:ID>
       <cbc:DamageRemarks>One frame carton torn, the side frame's armrest bent.</cbc:DamageRemarks>
@@ -501,12 +501,12 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>LD-DA-26-0229</cbc:ID>
+        <cbc:ID>LMW-DA-26-0911</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:DocumentReference>
-      <cbc:ID>BM-GI-PHOTO-26-0430</cbc:ID>
+      <cbc:ID>1400016992</cbc:ID>
       <cbc:DocumentType>Damage photos</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
@@ -516,7 +516,7 @@ Inside `ReceiptLine`:
         <cbc:ID>BM-551210</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>

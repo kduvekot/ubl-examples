@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-INV-26-0576</cbc:ID>
+  <cbc:ProfileExecutionID>9900336121</cbc:ProfileExecutionID>
+  <cbc:ID>26-0203</cbc:ID>
   <cbc:UUID>a4b6b0fa-d2df-5444-8c02-41ff99bd3bac</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>12:42:00-01:00</cbc:IssueTime>
@@ -16,10 +16,10 @@
   <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0574</cbc:ID>
+    <cbc:ID>7100448162</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>BF-DA-26-0575</cbc:ID>
+    <cbc:ID>26-0201</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -202,15 +202,15 @@
     <cbc:PaymentDueDate>2026-04-22</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF47BFINV260576</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF47BFINV260576</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF39260203</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF39260203</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB42BLUM38712004503347</cbc:ID>
       <cbc:Name>Brackenmere Furniture Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BF-INV-26-0576</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 26-0203</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -285,7 +285,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -320,7 +320,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -355,7 +355,7 @@
       <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ID>BKM-MRW-C</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -390,7 +390,7 @@
       <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ID>BKM-MRW-C</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -427,7 +427,7 @@
       <cbc:Description>Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.</cbc:Description>
       <cbc:Name>Elderwick care kit</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-K</cbc:ID>
+        <cbc:ID>BKM-MRW-K</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>

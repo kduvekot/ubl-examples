@@ -15,10 +15,10 @@ The Indian maker invoices the vaccines and the insulin in rupees when they leave
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **NB-INV-26-0321**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **QLM-TX-26-2699**  
+  The collaboration this document belongs to: Quillmoor's order of a biological medicine from Nilavar Biologics. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **NLB-INV-26-1731**  
   The maker's invoice number.
 - `UUID` = **2508e7e3-8979-5015-9f6c-23e390dec466**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -45,7 +45,7 @@ The Indian maker invoices the vaccines and the insulin in rupees when they leave
 
 Inside `OrderReference`:
 
-- `ID` = **QPD-PO-26-0320**  
+- `ID` = **QLM-PO-26-2699**  
   The wholesaler's order.
 
 ### Accounting Supplier Party
@@ -254,7 +254,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Influenza vaccine, inactivated, 10 prefilled syringes**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **NB-FLU-S26-10**  
+- `Item/SellersItemIdentification/ID` = **NLB-FLU-S26-10**  
   The seller's own item number; as Nilavar Biologics describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
@@ -282,7 +282,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Insulin human, 100 IU/ml, vial of 10 ml**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **NB-INS-R100-10**  
+- `Item/SellersItemIdentification/ID` = **NLB-INS-R100-10**  
   The seller's own item number; as Nilavar Biologics describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
@@ -310,7 +310,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Varicella vaccine, live, frozen, single dose**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **NB-VZV-1**  
+- `Item/SellersItemIdentification/ID` = **NLB-VZV-1**  
   The seller's own item number; as Nilavar Biologics describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
@@ -335,8 +335,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>NB-INV-26-0321</cbc:ID>
+  <cbc:ProfileExecutionID>QLM-TX-26-2699</cbc:ProfileExecutionID>
+  <cbc:ID>NLB-INV-26-1731</cbc:ID>
   <cbc:UUID>2508e7e3-8979-5015-9f6c-23e390dec466</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>08:40:00+05:30</cbc:IssueTime>
@@ -348,7 +348,7 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>QPD-PO-26-0320</cbc:ID>
+    <cbc:ID>QLM-PO-26-2699</cbc:ID>
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -511,7 +511,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>NB-FLU-S26-10</cbc:ID>
+        <cbc:ID>NLB-FLU-S26-10</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -539,7 +539,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>NB-INS-R100-10</cbc:ID>
+        <cbc:ID>NLB-INS-R100-10</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -567,7 +567,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
       <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>NB-VZV-1</cbc:ID>
+        <cbc:ID>NLB-VZV-1</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

@@ -15,16 +15,16 @@ The tender, naming the subcontractor that installs the benches.
 - `CustomizationID` = **urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tender"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-DOC-26-0202**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2500002145**  
   The tenderer's number for its tender.
 - `UUID` = **b83ff515-965a-5df1-aaa9-14df71eabb47**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `TenderTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderTypeCode`)  
   Technical and financial in one. The code is from the Trade Accord's tender type list: COMBINED = Technical and financial together.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-24**  
   Submitted the day before the deadline of Wednesday 25 February.
@@ -46,7 +46,7 @@ Inside `ValidityPeriod`:
 
 Inside `CallForTenderDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0189**  
+- `ID` = **PWD/2026/0182**  
   The call for tenders, by its ID (17#F1, 19#F4).
 
 ### Document Reference
@@ -57,7 +57,7 @@ Inside `DocumentReference`:
   The datasheet.
 - `DocumentType` = **Product data sheet**  
   The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (cited).
-- `ID` = **BL-DOC-26-0201**  
+- `ID` = **3900039381**  
   The certificate of the tender guarantee that covers this tender (17#F12).
 - `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document. The code is from the Trade Accord's UBL document type list: GuaranteeCertificate = Guarantee Certificate.
@@ -190,7 +190,7 @@ Inside `TendererParty`:
 
 Inside `TendererQualificationDocumentReference`:
 
-- `ID` = **VI-DOC-26-0199**  
+- `ID` = **2600002145**  
   The qualification documents.
 
 ### Subcontractor Party
@@ -419,7 +419,7 @@ Inside `TenderedProject`:
   Included.
 - `TenderLine/CallForTendersLineReference/LineID` = **1**  
   The line of the call for tenders.
-- `TenderLine/CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
+- `TenderLine/CallForTendersDocumentReference/ID` = **PWD/2026/0182**  
   The call for tenders.
 - `TenderLine/ID` = **2**  
   The installation.
@@ -472,11 +472,11 @@ Inside `TenderedProject`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0202</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>2500002145</cbc:ID>
   <cbc:UUID>b83ff515-965a-5df1-aaa9-14df71eabb47</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>09:13:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -485,14 +485,14 @@ Inside `TenderedProject`:
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
   <cac:CallForTenderDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+    <cbc:ID>PWD/2026/0182</cbc:ID>
   </cac:CallForTenderDocumentReference>
   <cac:DocumentReference>
     <cbc:ID>VI-DS-B180</cbc:ID>
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>BL-DOC-26-0201</cbc:ID>
+    <cbc:ID>3900039381</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -601,7 +601,7 @@ Inside `TenderedProject`:
     </cac:ElectronicAddress>
   </cac:TendererParty>
   <cac:TendererQualificationDocumentReference>
-    <cbc:ID>VI-DOC-26-0199</cbc:ID>
+    <cbc:ID>2600002145</cbc:ID>
   </cac:TendererQualificationDocumentReference>
   <cac:SubcontractorParty>
     <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
@@ -792,7 +792,7 @@ Inside `TenderedProject`:
         <cbc:LineID>1</cbc:LineID>
       </cac:CallForTendersLineReference>
       <cac:CallForTendersDocumentReference>
-        <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+        <cbc:ID>PWD/2026/0182</cbc:ID>
       </cac:CallForTendersDocumentReference>
     </cac:TenderLine>
     <cac:TenderLine>

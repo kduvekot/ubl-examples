@@ -15,10 +15,10 @@ The mill announces the delivery with the road carrier it booked.
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PACKAGING-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LTM-DA-26-0526**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900340389**  
+  The collaboration this document belongs to: the store's order of shirts from the textile mill. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **8000013377**  
   The despatching party's number.
 - `UUID` = **c1af718a-512a-5aed-8622-6a31ae7211c9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ The mill announces the delivery with the road carrier it booked.
 
 Inside `OrderReference`:
 
-- `ID` = **BS-PO-26-0525**  
+- `ID` = **7100453852**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -176,11 +176,11 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LTM-SH-26-0527**  
+- `ID` = **7400013377**  
   The despatching party's shipment number.
-- `Consignment/ID` = **LTM-CS-26-0528**  
+- `Consignment/ID` = **7300013377**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/CarrierAssignedID` = **BF-NATROAD-26-0521**  
+- `Consignment/CarrierAssignedID` = **BYF-CR-26-0127**  
   The carrier's number for the consignment: its consignment note, consignment note under the national road carriage law, which travels with the truck.
 - `Consignment/GrossWeightMeasure` = **168** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the cartons: the shirts in their bags and the cartons' share.
@@ -253,7 +253,7 @@ Inside `DespatchLine`:
   The item's short name.
 - `Item/BuyersItemIdentification/ID` = **BM-778120**  
   The buyer's own item number: it resells this item under its own number.
-- `Item/SellersItemIdentification/ID` = **LT-SH-01**  
+- `Item/SellersItemIdentification/ID` = **LTM-SH-01**  
   The seller's own item number; as Lumeport Textile Mill describes the item.
 - `Item/StandardItemIdentification/ID` = **9524010000016** (schemeID `GS1 GTIN`)  
   The GTIN Lumeport Textile Mill gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Lumeport is Lumeport Textile Mill's.
@@ -266,8 +266,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-DA-26-0526</cbc:ID>
+  <cbc:ProfileExecutionID>9900340389</cbc:ProfileExecutionID>
+  <cbc:ID>8000013377</cbc:ID>
   <cbc:UUID>c1af718a-512a-5aed-8622-6a31ae7211c9</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>11:35:00-01:00</cbc:IssueTime>
@@ -275,7 +275,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0525</cbc:ID>
+    <cbc:ID>7100453852</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -390,10 +390,10 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>LTM-SH-26-0527</cbc:ID>
+    <cbc:ID>7400013377</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0528</cbc:ID>
-      <cbc:CarrierAssignedID>BF-NATROAD-26-0521</cbc:CarrierAssignedID>
+      <cbc:ID>7300013377</cbc:ID>
+      <cbc:CarrierAssignedID>BYF-CR-26-0127</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity unitCode="EA">20</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
@@ -454,7 +454,7 @@ Inside `DespatchLine`:
         <cbc:ID>BM-778120</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
-        <cbc:ID>LT-SH-01</cbc:ID>
+        <cbc:ID>LTM-SH-01</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9524010000016</cbc:ID>

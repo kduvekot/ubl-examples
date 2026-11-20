@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:self-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-SBC-26-0195</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-SBC-26-0009</cbc:ID>
   <cbc:UUID>4ce8ce40-98a9-5b24-97ee-9a8cbf98f3f1</cbc:UUID>
   <cbc:IssueDate>2026-04-16</cbc:IssueDate>
   <cbc:IssueTime>13:28:00+00:00</cbc:IssueTime>
@@ -31,15 +31,15 @@
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
-      <cbc:ID>SCG-SBI-26-0194</cbc:ID>
+      <cbc:ID>SCG-SBI-26-0190</cbc:ID>
       <cbc:IssueDate>2026-04-09</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
   <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>LCF-DN-26-0193</cbc:ID>
+    <cbc:ID>1/2026</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:WorkReportDocumentReference>
-    <cbc:ID>SCC-CLS-26-0311</cbc:ID>
+    <cbc:ID>SCC/2026/0868</cbc:ID>
   </cac:WorkReportDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>SCG-SEASON-2026</cbc:ID>

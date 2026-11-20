@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>NB-INV-26-0321</cbc:ID>
+  <cbc:ProfileExecutionID>QLM-TX-26-2699</cbc:ProfileExecutionID>
+  <cbc:ID>NLB-INV-26-1731</cbc:ID>
   <cbc:UUID>2508e7e3-8979-5015-9f6c-23e390dec466</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>08:40:00+05:30</cbc:IssueTime>
@@ -16,7 +16,7 @@
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>QPD-PO-26-0320</cbc:ID>
+    <cbc:ID>QLM-PO-26-2699</cbc:ID>
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -179,7 +179,7 @@
       <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>NB-FLU-S26-10</cbc:ID>
+        <cbc:ID>NLB-FLU-S26-10</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -207,7 +207,7 @@
       <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>NB-INS-R100-10</cbc:ID>
+        <cbc:ID>NLB-INS-R100-10</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -235,7 +235,7 @@
       <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
       <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>NB-VZV-1</cbc:ID>
+        <cbc:ID>NLB-VZV-1</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

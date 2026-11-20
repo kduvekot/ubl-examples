@@ -15,10 +15,10 @@ The distributor has sold its receivables to the factor, so the invoice names the
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-INV-26-0237**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339316**  
+  The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-INV-26-0918**  
   The seller's invoice number.
 - `UUID` = **e7e767e3-6c83-54a1-8abe-aa5f7c71f242**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -45,21 +45,21 @@ The distributor has sold its receivables to the factor, so the invoice names the
 
 Inside `OrderReference`:
 
-- `ID` = **BS-PO-26-0224**  
+- `ID` = **7100452422**  
   The store's order.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **LD-DA-26-0229**  
+- `ID` = **LMW-DA-26-0911**  
   The despatch advice.
 
 ### Receipt Document Reference
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **BS-RA-26-0236**  
+- `ID` = **5000339834**  
   The store's receipt advice.
 
 ### Accounting Supplier Party
@@ -298,9 +298,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF15LDINV260237**  
+- `InstructionNote` = **Quote RF97LMWINV260918**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF15LDINV260237** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF97LMWINV260918** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB51BLUM38020502304038** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -312,7 +312,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice LD-INV-26-0237**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice LMW-INV-26-0918**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380205** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -449,21 +449,21 @@ Inside `InvoiceLine`:
   The day the goods were delivered, 30 April.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
+- `DespatchLineReference/DocumentReference/ID` = **LMW-DA-26-0911**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-DA-26-0229 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: LMW-DA-26-0911 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `ReceiptLineReference/LineID` = **1**  
   The receipt line, with the damaged carton.
-- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0236**  
+- `ReceiptLineReference/DocumentReference/ID` = **5000339834**  
   The receipt advice.
 - `ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-RA-26-0236 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
+  The kind of document referred to: 5000339834 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -508,8 +508,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-INV-26-0237</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-INV-26-0918</cbc:ID>
   <cbc:UUID>e7e767e3-6c83-54a1-8abe-aa5f7c71f242</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>15:52:00-01:00</cbc:IssueTime>
@@ -521,13 +521,13 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:ID>7100452422</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0229</cbc:ID>
+    <cbc:ID>LMW-DA-26-0911</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>BS-RA-26-0236</cbc:ID>
+    <cbc:ID>5000339834</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -735,15 +735,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-06-01</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF15LDINV260237</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF15LDINV260237</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF97LMWINV260918</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF97LMWINV260918</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB51BLUM38020502304038</cbc:ID>
       <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-INV-26-0237</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice LMW-INV-26-0918</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -838,14 +838,14 @@ Inside `InvoiceLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>LD-DA-26-0229</cbc:ID>
+        <cbc:ID>LMW-DA-26-0911</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>BS-RA-26-0236</cbc:ID>
+        <cbc:ID>5000339834</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
@@ -853,7 +853,7 @@ Inside `InvoiceLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>

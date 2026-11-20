@@ -15,14 +15,14 @@ The furniture maker declares it meets the selection criteria.
 - `CustomizationID` = **urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Qualification application"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0193**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0006**  
   The sender's number for this document.
 - `UUID` = **27b07b57-4421-5730-8be4-08222db0cc1c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The contract.
@@ -215,7 +215,7 @@ Inside `EconomicOperatorParty`:
 
 Inside `ProcurementProject`:
 
-- `ID` = **PWD-2026-PARKS**  
+- `ID` = **PWD/2026/PARKS**  
   The procedure.
 
 ### Procurement Project Lot
@@ -371,10 +371,10 @@ Inside `TenderingCriterionResponse`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0192**  
+- `ID` = **PWD/2026/0195**  
   The request this self-declaration answers.
 - `DocumentTypeCode` = **QualificationApplicationRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0192 is the example tender/06, a QualificationApplicationRequest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: QualificationApplicationRequest = Qualification Application Request.
+  The kind of document referred to: PWD/2026/0195 is the example tender/06, a QualificationApplicationRequest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: QualificationApplicationRequest = Qualification Application Request.
 
 ### Evidence
 
@@ -396,7 +396,7 @@ Inside `Evidence`:
   A party referred to from another party's details: its identifier and name are enough.
 - `EvidenceIssuingParty/PartyName/Name` = **Brackenmere Furniture**  
   A party referred to from another party's details: its identifier and name are enough.
-- `DocumentReference/ID` = **BF-ACC-2024**  
+- `DocumentReference/ID` = **BKM-ACC-2024**  
   The accounts.
 - `DocumentReference/DocumentType` = **Annual accounts**  
   The kind of document referred to, Brackenmere's accounts for 2024, the last filed when it tendered, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -430,10 +430,10 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0193</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>26-0006</cbc:ID>
   <cbc:UUID>27b07b57-4421-5730-8be4-08222db0cc1c</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-02-12</cbc:IssueDate>
   <cbc:IssueTime>10:47:00-01:00</cbc:IssueTime>
@@ -583,7 +583,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:ProcurementProject>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS</cbc:ID>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
@@ -729,7 +729,7 @@ Inside `Signature`:
     </cac:ResponseValue>
   </cac:TenderingCriterionResponse>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
+    <cbc:ID>PWD/2026/0195</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationRequest</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Evidence>
@@ -748,7 +748,7 @@ Inside `Signature`:
       </cac:PartyName>
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
-      <cbc:ID>BF-ACC-2024</cbc:ID>
+      <cbc:ID>BKM-ACC-2024</cbc:ID>
       <cbc:DocumentType>Annual accounts</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Language>

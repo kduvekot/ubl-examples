@@ -15,10 +15,10 @@ The direct debit for the settlement bill's balance is returned unpaid; the utili
 - `CustomizationID` = **urn:ubl-examples:world:trns:reminder:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Reminder". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **CSWC-DOC-26-0321**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924052627**  
+  The collaboration this document belongs to: the water company's annual account of the household. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **9301119651**  
   The reminder number.
 - `UUID` = **ff7b6a47-db42-5844-b098-ee8d7f1a7e38**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -257,7 +257,7 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer, how the household is asked to pay. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `PaymentID` = **RF46CSWCINV260319** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF13CSWC3117902603** (schemeID `ISO 11649`)  
   The reference to quote: the settlement bill's, so the transfer is matched to it. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB21BLUM38010004189160** (schemeID `urn:ubl-examples:world:account`)  
   The utility's account, where the overdue amount is to be paid. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -361,7 +361,7 @@ Inside `ReminderLine`:
   ISO 20022 purpose code WTER: water bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: WTER = WaterBill.
 - `ReminderPeriod/StartDate` = **2026-04-23**  
   Overdue since the collection failed.
-- `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0319**  
+- `BillingReference/InvoiceDocumentReference/ID` = **CSW-C-311790-2603**  
   The invoice not paid.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
   Its issue date.
@@ -394,8 +394,8 @@ Inside `ReminderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:reminder:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-DOC-26-0321</cbc:ID>
+  <cbc:ProfileExecutionID>9924052627</cbc:ProfileExecutionID>
+  <cbc:ID>9301119651</cbc:ID>
   <cbc:UUID>ff7b6a47-db42-5844-b098-ee8d7f1a7e38</cbc:UUID>
   <cbc:IssueDate>2026-05-01</cbc:IssueDate>
   <cbc:IssueTime>14:29:00-01:00</cbc:IssueTime>
@@ -588,7 +588,7 @@ Inside `ReminderLine`:
   </cac:PayeeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:PaymentID schemeID="ISO 11649">RF46CSWCINV260319</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF13CSWC3117902603</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM38010004189160</cbc:ID>
       <cbc:Name>Coastal State Water Company Ltd</cbc:Name>
@@ -666,7 +666,7 @@ Inside `ReminderLine`:
     </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+        <cbc:ID>CSW-C-311790-2603</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

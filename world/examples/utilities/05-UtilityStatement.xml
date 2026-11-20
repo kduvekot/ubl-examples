@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-DOC-26-0318</cbc:ID>
+  <cbc:ProfileExecutionID>9924050955</cbc:ProfileExecutionID>
+  <cbc:ID>9424051757</cbc:ID>
   <cbc:UUID>7bdfb021-49a1-5341-b641-0343b4c0240e</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>11:55:00-01:00</cbc:IssueTime>
@@ -14,11 +14,11 @@
   <cbc:AccountingCostCode>8100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Store energy and water</cbc:AccountingCost>
   <cac:ParentDocumentReference>
-    <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+    <cbc:ID>CSW-C-260118-2603</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>CSWC-TARIFF-2026</cbc:ID>
+    <cbc:ID>CSW-TARIFF-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">TARIFF</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>

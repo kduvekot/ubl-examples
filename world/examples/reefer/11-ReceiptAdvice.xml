@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-RA-26-0566</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>26-0256</cbc:ID>
   <cbc:UUID>9f7f7391-8c4f-53d4-8fbc-38ab9c087873</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cbc:IssueTime>14:27:00+00:00</cbc:IssueTime>
@@ -13,10 +13,10 @@
   <cbc:Note>Unloaded at our cold store and counted, the mix of your order response: five pallets of Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0561</cbc:ID>
+    <cbc:ID>HRW-DA-26-0764</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
@@ -117,7 +117,7 @@
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0561</cbc:ID>
+        <cbc:ID>HRW-DA-26-0764</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -125,14 +125,14 @@
       <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GAL100</cbc:ID>
+        <cbc:ID>HRW-GAL100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001014</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0556</cbc:ID>
+      <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -153,7 +153,7 @@
     <cac:DespatchLineReference>
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0561</cbc:ID>
+        <cbc:ID>HRW-DA-26-0764</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -161,14 +161,14 @@
       <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
       <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GSM100</cbc:ID>
+        <cbc:ID>HRW-GSM100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001021</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0556</cbc:ID>
+      <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -189,7 +189,7 @@
     <cac:DespatchLineReference>
       <cbc:LineID>3</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0561</cbc:ID>
+        <cbc:ID>HRW-DA-26-0764</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -197,14 +197,14 @@
       <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-PKT080</cbc:ID>
+        <cbc:ID>HRW-PKT080</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430002011</cbc:ID>
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0556</cbc:ID>
+      <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>

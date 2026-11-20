@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-PO-26-0198</cbc:ID>
+  <cbc:ProfileExecutionID>9900013293</cbc:ProfileExecutionID>
+  <cbc:ID>4500013293</cbc:ID>
   <cbc:UUID>4aa8f3b8-9dcb-52c6-849d-e415d93f4130</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>10:37:00-01:00</cbc:IssueTime>
@@ -148,7 +148,7 @@
         <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
         <cbc:Name languageID="en-XB">Cotton lint, compressed bale</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>LT-RAW-COT</cbc:ID>
+          <cbc:ID>LTM-RAW-COT</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>

@@ -15,10 +15,8 @@ The packaging maker declares the import in Bayvarra.
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RP-IM-26-0893**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **26-0074**  
   The importer's declaration number.
 - `UUID` = **3ab58340-2ba7-5229-ab1a-e01715bcc1ef**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -226,7 +224,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **RR-SH-26-0889**  
+- `ID` = **26-0451**  
   The shipment declared.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -322,10 +320,10 @@ Inside `Shipment`:
   A licence of customs. The code is from the Trade Accord's certificate type list: BONDEDSTORE = Bonded store licence.
 - `GoodsItem/BondedWarehouseLocation/Storage/Certificate/CertificateType` = **Bonded store licence**  
   The name of code BONDEDSTORE in the Trade Accord's certificate type list.
-- `GoodsItem/AdditionalDocumentReference/ID` = **FB-WB-26-0890**  
+- `GoodsItem/AdditionalDocumentReference/ID` = **26-0181**  
   The barge's consignment note.
 - `GoodsItem/AdditionalDocumentReference/DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FB-WB-26-0890 is the example plastics/06, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: 26-0181 is the example plastics/06, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 - `ShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by river. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 8 = Inland water transport.
 
@@ -333,14 +331,14 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **RR-EX-26-0887**  
+- `ID` = **26-0091**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: RR-EX-26-0887 is the example plastics/05, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
-- `ID` = **RR-INV-26-0894**  
+  The kind of document referred to: 26-0091 is the example plastics/05, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **2026/0473**  
   The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: RR-INV-26-0894 is the example plastics/10, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: 2026/0473 is the example plastics/10, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -361,8 +359,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RP-IM-26-0893</cbc:ID>
+  <cbc:ID>26-0074</cbc:ID>
   <cbc:UUID>3ab58340-2ba7-5229-ab1a-e01715bcc1ef</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>10:35:00-01:00</cbc:IssueTime>
@@ -522,7 +519,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>RR-SH-26-0889</cbc:ID>
+    <cbc:ID>26-0451</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Recycled PE granulate</cbc:Description>
@@ -590,7 +587,7 @@ Inside `Signature`:
         </cac:Storage>
       </cac:BondedWarehouseLocation>
       <cac:AdditionalDocumentReference>
-        <cbc:ID>FB-WB-26-0890</cbc:ID>
+        <cbc:ID>26-0181</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
       </cac:AdditionalDocumentReference>
     </cac:GoodsItem>
@@ -599,11 +596,11 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>RR-EX-26-0887</cbc:ID>
+    <cbc:ID>26-0091</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>RR-INV-26-0894</cbc:ID>
+    <cbc:ID>2026/0473</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

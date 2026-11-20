@@ -15,10 +15,10 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
 - `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LTM-FI-26-0199**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900013298**  
+  The collaboration this document belongs to: the forwarding the textile mill gives Bayforth Forwarding. Lumeport Textile Mill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2700007979**  
   The mill's instruction number.
 - `UUID` = **1e4f0578-b6cd-5679-84ad-93eb9ac890fd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -137,9 +137,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0200**  
+- `ID` = **SCG-SH-26-0218**  
   The shipment to be booked.
-- `Consignment/ID` = **LTM-CS-26-0201**  
+- `Consignment/ID` = **7300013298**  
   The consignment.
 - `Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the bales.
@@ -220,10 +220,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **LTM-PO-26-0198**  
+- `ID` = **4500013293**  
   The order the goods are for.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 4500013293 is the example cotton/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -244,8 +244,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-FI-26-0199</cbc:ID>
+  <cbc:ProfileExecutionID>9900013298</cbc:ProfileExecutionID>
+  <cbc:ID>2700007979</cbc:ID>
   <cbc:UUID>1e4f0578-b6cd-5679-84ad-93eb9ac890fd</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>11:39:00-01:00</cbc:IssueTime>
@@ -326,9 +326,9 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:ID>7300013298</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
@@ -397,7 +397,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>LTM-PO-26-0198</cbc:ID>
+    <cbc:ID>4500013293</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

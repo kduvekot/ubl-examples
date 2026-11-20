@@ -15,10 +15,8 @@ Bayvarra's plant protection organisation under the IPPC, the Plant Health Servic
 - `CustomizationID` = **urn:ubl-examples:world:trns:goods-certificate:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Goods certificate". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FDAB-GC-26-0558**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **FDAB/2026/7266**  
   The Plant Health Service's certificate number.
 - `UUID` = **616346e3-707a-5e63-8f7d-13691b27093e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -277,7 +275,7 @@ Inside `ApplicantParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0556**  
+- `ID` = **HRW-SH-26-0730**  
   The shipment certified.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -362,7 +360,7 @@ Inside `Shipment`:
 
 Inside `Attestation`:
 
-- `ID` = **FDA-ATT-26-0218**  
+- `ID` = **FDAB/2026/7265**  
   The inspector's attestation.
 - `Name` = **Freedom from quarantine pests**  
   What is attested.
@@ -397,10 +395,10 @@ Inside `Attestation`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **HFP-PO-26-0553**  
+- `ID` = **26-0215**  
   The wholesaler's order.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFP-PO-26-0553 is the example reefer/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 26-0215 is the example reefer/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -421,8 +419,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FDAB-GC-26-0558</cbc:ID>
+  <cbc:ID>FDAB/2026/7266</cbc:ID>
   <cbc:UUID>616346e3-707a-5e63-8f7d-13691b27093e</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
@@ -615,7 +612,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
@@ -693,7 +690,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:Attestation>
-    <cbc:ID>FDA-ATT-26-0218</cbc:ID>
+    <cbc:ID>FDAB/2026/7265</cbc:ID>
     <cbc:Name>Freedom from quarantine pests</cbc:Name>
     <cbc:Description>Sampled at the packhouse and found free of codling moth and fire blight.</cbc:Description>
     <cbc:Note>Two per cent of the cartons sampled: 23 of 1,120.</cbc:Note>
@@ -724,7 +721,7 @@ Inside `Signature`:
     </cac:AttestationLine>
   </cac:Attestation>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

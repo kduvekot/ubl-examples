@@ -15,10 +15,10 @@ The distributor announces the frames to the buyer's 3PL with the flight they are
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **AIR-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DA-26-0327**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-DA-26-1017**  
   The despatching party's number.
 - `UUID` = **93132e8b-1df2-5401-9265-5f8de7ffa70a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,14 +37,14 @@ The distributor announces the frames to the buyer's 3PL with the flight they are
 
 Inside `OrderReference`:
 
-- `ID` = **VT-OC-26-0320**  
+- `ID` = **26-0065**  
   The order this despatch fulfils.
 - `OrderTypeCode` = **230** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 230: the order referred to is an order change. The code is from the world's copy of UN/EDIFACT 1001 Document name: 230 = Purchase order change request.
-- `DocumentReference/ID` = **VT-PO-26-0127**  
+- `DocumentReference/ID` = **26-0417**  
   The sea order the change extends.
 - `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 26-0417 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Despatch Supplier Party
 
@@ -210,9 +210,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0323**  
+- `ID` = **LMW-SH-26-1010**  
   The despatching party's shipment number.
-- `Consignment/ID` = **LD-CS-26-0324**  
+- `Consignment/ID` = **LMW-CS-26-1010**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **104.6** (unitCode `KGM`)  
   The eight frame cartons and their skid.
@@ -293,7 +293,7 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Bench side frame casting**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10443**  
+- `Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
@@ -408,8 +408,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DA-26-0327</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-DA-26-1017</cbc:ID>
   <cbc:UUID>93132e8b-1df2-5401-9265-5f8de7ffa70a</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>12:15:00-01:00</cbc:IssueTime>
@@ -417,10 +417,10 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:ID>26-0065</cbc:ID>
     <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">230</cbc:OrderTypeCode>
     <cac:DocumentReference>
-      <cbc:ID>VT-PO-26-0127</cbc:ID>
+      <cbc:ID>26-0417</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:OrderReference>
@@ -553,9 +553,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0323</cbc:ID>
+    <cbc:ID>LMW-SH-26-1010</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:ID>LMW-CS-26-1010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -624,7 +624,7 @@ Inside `DespatchLine`:
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>

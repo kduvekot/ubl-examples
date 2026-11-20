@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-RM-26-0567</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>26-0127</cbc:ID>
   <cbc:UUID>242b5d0f-ba11-554c-bd7e-b29ddfca488d</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
   <cbc:IssueTime>09:20:00+00:00</cbc:IssueTime>
@@ -13,8 +13,8 @@
   <cbc:TotalDebitAmount currencyID="XBL">28868.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">28868.00</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>HFP-PAY-26-0553</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF77HFGINV260563</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>26-0026</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF88HRWINV260772</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -101,8 +101,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>HFP-PAY-26-0553</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF77HFGINV260563</cbc:PaymentID>
+    <cbc:InstructionID>26-0026</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF88HRWINV260772</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL21BSEL0010008247361</cbc:ID>
       <cbc:Name>Hafefo Fresh Produce Ltd</cbc:Name>
@@ -183,10 +183,10 @@
     <cbc:DebitLineAmount currencyID="XBL">28868.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF77HFGINV260563</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF88HRWINV260772</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>HFG-INV-26-0563</cbc:ID>
+        <cbc:ID>HRW-INV-26-0772</cbc:ID>
         <cbc:IssueDate>2026-04-23</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

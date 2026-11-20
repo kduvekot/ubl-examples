@@ -15,14 +15,14 @@ The contest notice: a restricted design contest with three prizes, relaunched af
 - `CustomizationID` = **urn:ubl-examples:world:trns:contract-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Contract notice"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CONTEST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0634**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PROM-DC**  
+  The collaboration this document belongs to: the department's design contest for the promenade bench. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0530**  
   The notice number, the same in both versions.
 - `UUID` = **88a68511-926f-5847-b468-9a248742facd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PROM-DC**  
+- `ContractFolderID` = **PWD/2026/PROM-DC**  
   The department's file number for the contest, the same on every document of it.
 - `IssueDate` = **2026-03-19**  
   Published on the date the revised prior information notice gave.
@@ -286,7 +286,7 @@ Inside `TenderingProcess`:
   At noon.
 - `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-17**  
   Requests to participate by then.
-- `NoticeDocumentReference/ID` = **LPWD-DOC-26-0633**  
+- `NoticeDocumentReference/ID` = **PWD/2026/0223**  
   The prior information notice of the contest.
 - `ProcessJustification/PreviousCancellationReasonCode` = **UNSUITABLE** (listID `urn:ubl-examples:world:codelist:CancellationReasonCode`)  
   Why the earlier contest for the same design was cancelled. The code is from the Trade Accord's cancellation reason list: UNSUITABLE = No suitable tender.
@@ -332,10 +332,10 @@ Inside `ProcurementProject`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:contract-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0530</cbc:ID>
   <cbc:UUID>88a68511-926f-5847-b468-9a248742facd</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-19</cbc:IssueDate>
   <cbc:IssueTime>08:51:00-01:00</cbc:IssueTime>
   <cbc:Note>Restricted design contest for the harbour promenade bench, with three prizes.</cbc:Note>
@@ -537,7 +537,7 @@ Inside `ProcurementProject`:
       <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+      <cbc:ID>PWD/2026/0223</cbc:ID>
     </cac:NoticeDocumentReference>
     <cac:ProcessJustification>
       <cbc:PreviousCancellationReasonCode listID="urn:ubl-examples:world:codelist:CancellationReasonCode">UNSUITABLE</cbc:PreviousCancellationReasonCode>

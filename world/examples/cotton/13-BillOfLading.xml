@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0206</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2410</cbc:ProfileExecutionID>
+  <cbc:ID>TWLU000033366</cbc:ID>
   <cbc:UUID>9bc6af1f-73d8-5068-ae2b-470a36d51872</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>09:37:00-01:00</cbc:IssueTime>
@@ -131,9 +131,9 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:ID>7300013298</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
@@ -256,7 +256,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>LTM-FI-26-0199</cbc:ID>
+    <cbc:ID>2700007979</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

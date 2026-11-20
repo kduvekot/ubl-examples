@@ -15,10 +15,10 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **AIR-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SAC-TS-26-0330**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2548**  
+  The collaboration this document belongs to: the air carriage Bayforth books with Kelaro Air Cargo. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
+- `ID` = **POS-TS-26-8776**  
   The sender's status report number.
 - `UUID` = **699cd30a-3784-5a9d-8770-15e1898e75ec**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,7 +32,7 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
-- `ShippingOrderID` = **LD-FI-26-0322**  
+- `ShippingOrderID` = **LMW-FI-26-0606**  
   The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs clearance; reply only if that slot must change.**  
   What the receiver should do, with the slot it is about.
@@ -43,7 +43,7 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
 
 Inside `Consignment`:
 
-- `ID` = **LD-CS-26-0324**  
+- `ID` = **LMW-CS-26-1010**  
   The consignment the report is about.
 - `ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Velumi Trading gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -195,10 +195,10 @@ Inside `TransportEvent`:
 
 Inside `DocumentReference`:
 
-- `ID` = **KXL-WB-26-0325**  
+- `ID` = **KXL-00694562**  
   The transport document of the consignment.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: KXL-WB-26-0325 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: KXL-00694562 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Signature
 
@@ -303,19 +303,19 @@ Inside `StatusPeriod`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SAC-TS-26-0330</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
+  <cbc:ID>POS-TS-26-8776</cbc:ID>
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>10:55:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo arrived on KXL207 and ready for customs clearance.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>LMW-FI-26-0606</cbc:ShippingOrderID>
   <cbc:OtherInstruction>The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs clearance; reply only if that slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0324</cbc:ID>
+    <cbc:ID>LMW-CS-26-1010</cbc:ID>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -436,7 +436,7 @@ Inside `StatusPeriod`:
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KXL-WB-26-0325</cbc:ID>
+    <cbc:ID>KXL-00694562</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

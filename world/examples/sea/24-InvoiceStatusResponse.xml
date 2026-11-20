@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-DOC-26-0149</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>26-0027</cbc:ID>
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-06-01</cbc:IssueDate>
   <cbc:IssueTime>13:49:00+00:00</cbc:IssueTime>
@@ -71,7 +71,7 @@
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:ID>LMW-INV-26-1025</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>

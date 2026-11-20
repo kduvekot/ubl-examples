@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DA-26-0229</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-DA-26-0911</cbc:ID>
   <cbc:UUID>4b7e9055-23cd-5fbb-b498-b08f07b17c6e</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>15:34:00-01:00</cbc:IssueTime>
@@ -12,7 +12,7 @@
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:ID>7100452422</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -128,9 +128,9 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0230</cbc:ID>
+    <cbc:ID>LMW-SH-26-0911</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0228</cbc:ID>
+      <cbc:ID>LMW-CS-26-0893</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -207,7 +207,7 @@
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -286,7 +286,7 @@
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -305,7 +305,7 @@
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -384,7 +384,7 @@
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -403,7 +403,7 @@
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -482,7 +482,7 @@
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -501,7 +501,7 @@
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -580,7 +580,7 @@
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -599,7 +599,7 @@
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -678,7 +678,7 @@
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -697,7 +697,7 @@
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -776,7 +776,7 @@
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -795,7 +795,7 @@
         <cbc:ID>BM-551210</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>

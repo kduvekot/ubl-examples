@@ -15,14 +15,14 @@ Version 2 of the prior information notice: the city council raised the prize fun
 - `CustomizationID` = **urn:ubl-examples:world:trns:prior-information-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Prior information notice"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CONTEST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0633**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PROM-DC**  
+  The collaboration this document belongs to: the department's design contest for the promenade bench. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0223**  
   The notice number, the same in both versions.
 - `UUID` = **cea49fdc-39bf-59d9-892a-5dd52ae66dc9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PROM-DC**  
+- `ContractFolderID` = **PWD/2026/PROM-DC**  
   The department's file number for the contest, the same on every document of it.
 - `IssueDate` = **2026-02-23**  
   Revised three weeks later.
@@ -252,10 +252,10 @@ Inside `ProcurementProject`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:prior-information-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0223</cbc:ID>
   <cbc:UUID>cea49fdc-39bf-59d9-892a-5dd52ae66dc9</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:17:00-01:00</cbc:IssueTime>
   <cbc:Note>Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume, and with them the estimate from 52,000 to 54,000 lume; the contest notice moves to 19 March.</cbc:Note>

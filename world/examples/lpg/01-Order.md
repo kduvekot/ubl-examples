@@ -15,10 +15,10 @@ The water company orders a tanker load of propane for the peak boilers of its di
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **LPG-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **CSWC-PO-26-0895**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924528384**  
+  The collaboration this document belongs to: the water company's order of liquefied petroleum gas from Kelpstone. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **4500028302**  
   The buyer's order number.
 - `UUID` = **9ce589ee-2c67-5bed-bd7f-25588d33a18c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -232,8 +232,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>LPG-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-PO-26-0895</cbc:ID>
+  <cbc:ProfileExecutionID>9924528384</cbc:ProfileExecutionID>
+  <cbc:ID>4500028302</cbc:ID>
   <cbc:UUID>9ce589ee-2c67-5bed-bd7f-25588d33a18c</cbc:UUID>
   <cbc:IssueDate>2026-06-08</cbc:IssueDate>
   <cbc:IssueTime>09:47:00-01:00</cbc:IssueTime>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-INV-26-0319</cbc:ID>
+  <cbc:ProfileExecutionID>9924052627</cbc:ProfileExecutionID>
+  <cbc:ID>CSW-C-311790-2603</cbc:ID>
   <cbc:UUID>4d48b45e-73c0-5476-98a9-69e873037095</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>14:51:00-01:00</cbc:IssueTime>
@@ -134,7 +134,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">49</cbc:PaymentMeansCode>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
-    <cbc:PaymentID schemeID="ISO 11649">RF46CSWCINV260319</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF13CSWC3117902603</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB21BLUM38010004189160</cbc:ID>
       <cbc:Name>Coastal State Water Company Ltd</cbc:Name>

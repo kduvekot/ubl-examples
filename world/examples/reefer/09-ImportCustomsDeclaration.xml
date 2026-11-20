@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-IM-26-0564</cbc:ID>
+  <cbc:ID>26-0050</cbc:ID>
   <cbc:UUID>04b3c1d3-d600-57c6-b790-ffbf27e1ac34</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>17:32:00+00:00</cbc:IssueTime>
@@ -147,7 +146,7 @@
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -259,19 +258,19 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0562</cbc:ID>
+    <cbc:ID>TWLU000033272</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FDAB-GC-26-0558</cbc:ID>
+    <cbc:ID>FDAB/2026/7266</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-EX-26-0559</cbc:ID>
+    <cbc:ID>BYF-EX-26-0425</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HFG-INV-26-0563</cbc:ID>
+    <cbc:ID>HRW-INV-26-0772</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

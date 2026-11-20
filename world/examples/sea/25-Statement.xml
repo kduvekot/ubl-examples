@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HF-ST-26-0150</cbc:ID>
+  <cbc:ProfileExecutionID>26-0668</cbc:ProfileExecutionID>
+  <cbc:ID>26-1335</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
   <cbc:IssueDate>2026-06-12</cbc:IssueDate>
   <cbc:IssueTime>08:43:00-01:00</cbc:IssueTime>
@@ -153,8 +153,8 @@
     <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF20LDINV260147</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF21LMWINV261025</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF21LMWINV261025</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB51BLUM38020502304038</cbc:ID>
@@ -162,7 +162,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Statement LD-INV-26-0147</cbc:PaymentNote>
+      <cbc:PaymentNote>Statement LMW-INV-26-1025</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -250,12 +250,12 @@
     </cac:PayeeParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LMW-INV-26-1025</cbc:ID>
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
     <cac:DocumentReference>
-      <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+      <cbc:ID>26-0030</cbc:ID>
       <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
     </cac:DocumentReference>
   </cac:StatementLine>
@@ -269,7 +269,7 @@
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
     <cac:CollectedPayment>
-      <cbc:ID>VT-DEP-26-0412</cbc:ID>
+      <cbc:ID>26-0024</cbc:ID>
       <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
       <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
       <cbc:PaidDate>2026-05-08</cbc:PaidDate>

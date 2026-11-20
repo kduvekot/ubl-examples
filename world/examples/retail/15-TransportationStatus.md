@@ -15,12 +15,12 @@ The carrier answers the request on the morning of the delivery: the truck is on 
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-TS-26-0234**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0893**  
+  The collaboration this document belongs to: the carriage Lumeway books with Bayforth Forwarding. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **BYF-TS-26-6870**  
   The sender's status report number.
-- `CarrierAssignedID` = **BF-NATROAD-26-0217**  
+- `CarrierAssignedID` = **BYF-CR-26-0114**  
   The carrier's own number for the carriage, as on its consignment note.
 - `UUID` = **c745dc93-d27a-532f-bd4c-8f30bcd9dadf**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -35,7 +35,7 @@ The carrier answers the request on the morning of the delivery: the truck is on 
 
 Inside `Consignment`:
 
-- `ID` = **LD-CS-26-0228**  
+- `ID` = **LMW-CS-26-0893**  
   The consignment the report is about.
 
 ### Transport Event
@@ -175,7 +175,7 @@ Inside `ReceiverParty`:
 
 Inside `TransportationStatusRequestDocumentReference`:
 
-- `ID` = **LD-DOC-26-0232**  
+- `ID` = **LMW-TSR-26-0046**  
   The request answered.
 
 ### Updated Delivery Transport Event
@@ -201,15 +201,15 @@ Inside `UpdatedDeliveryTransportEvent`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-TS-26-0234</cbc:ID>
-  <cbc:CarrierAssignedID>BF-NATROAD-26-0217</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0893</cbc:ProfileExecutionID>
+  <cbc:ID>BYF-TS-26-6870</cbc:ID>
+  <cbc:CarrierAssignedID>BYF-CR-26-0114</cbc:CarrierAssignedID>
   <cbc:UUID>c745dc93-d27a-532f-bd4c-8f30bcd9dadf</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>09:35:00-01:00</cbc:IssueTime>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">CURRENT</cbc:TransportationStatusTypeCode>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0228</cbc:ID>
+    <cbc:ID>LMW-CS-26-0893</cbc:ID>
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-30</cbc:OccurrenceDate>
@@ -309,7 +309,7 @@ Inside `UpdatedDeliveryTransportEvent`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportationStatusRequestDocumentReference>
-    <cbc:ID>LD-DOC-26-0232</cbc:ID>
+    <cbc:ID>LMW-TSR-26-0046</cbc:ID>
   </cac:TransportationStatusRequestDocumentReference>
   <cac:UpdatedDeliveryTransportEvent>
     <cbc:OccurrenceDate>2026-04-30</cbc:OccurrenceDate>

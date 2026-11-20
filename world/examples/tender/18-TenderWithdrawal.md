@@ -15,14 +15,14 @@ The furniture maker finds a price error in its tender and withdraws it before th
 - `CustomizationID` = **urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tender"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0205**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0009**  
   The sender's number for this document.
 - `UUID` = **ed2964ac-5041-583f-8e50-507bdb320f91**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-23**  
   Withdrawn before the deadline, which the procedure allows: Monday 23 February.
@@ -39,14 +39,14 @@ The furniture maker finds a price error in its tender and withdraws it before th
 
 Inside `TenderDocumentReference`:
 
-- `ID` = **BF-DOC-26-0204**  
+- `ID` = **26-0008**  
   The tender withdrawn.
 
 ### Tender Notification Document Reference
 
 Inside `TenderNotificationDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0206**  
+- `ID` = **PWD/2026/0348**  
   The receipt the platform issued for the tender withdrawn.
 
 ### Signature
@@ -186,20 +186,20 @@ Inside `TendererParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0205</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>26-0009</cbc:ID>
   <cbc:UUID>ed2964ac-5041-583f-8e50-507bdb320f91</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:20:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The price per bench was entered wrongly; a corrected tender follows.</cbc:Note>
   <cbc:WithdrawOfferIndicator>true</cbc:WithdrawOfferIndicator>
   <cac:TenderDocumentReference>
-    <cbc:ID>BF-DOC-26-0204</cbc:ID>
+    <cbc:ID>26-0008</cbc:ID>
   </cac:TenderDocumentReference>
   <cac:TenderNotificationDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0206</cbc:ID>
+    <cbc:ID>PWD/2026/0348</cbc:ID>
   </cac:TenderNotificationDocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-WD</cbc:ID>

@@ -15,10 +15,10 @@ A bulk lot of recycled granulate. Delivery terms CPT river quay: the seller book
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RP-PO-26-0882**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0338**  
+  The collaboration this document belongs to: Rivermouth's order of granulate from Rinova Recovery. Rivermouth Packaging started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0339**  
   The buyer's order number.
 - `UUID` = **e1c2a8ee-2c1f-527d-b914-49514b59c8d9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -234,8 +234,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RP-PO-26-0882</cbc:ID>
+  <cbc:ProfileExecutionID>26-0338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0339</cbc:ID>
   <cbc:UUID>e1c2a8ee-2c1f-527d-b914-49514b59c8d9</cbc:UUID>
   <cbc:IssueDate>2026-04-13</cbc:IssueDate>
   <cbc:IssueTime>16:17:00-01:00</cbc:IssueTime>

@@ -15,10 +15,8 @@ The forwarder, as customs agent, declares the export for the distributor at the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:export-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-EX-26-0135**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **BYF-EX-26-0505**  
   The exporter's reference.
 - `UUID` = **4b360143-92f4-557a-aac2-22d33c03e880**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -80,7 +78,7 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **BF-CD-26-0136**  
+- `ID` = **BYF-CD-26-0505**  
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
@@ -90,13 +88,13 @@ Inside `CustomsDeclaration`:
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Shipment/ID` = **LD-SH-26-0132**  
+- `Shipment/ID` = **LMW-SH-26-1001**  
   The shipment declared.
 - `Shipment/TotalTransportHandlingUnitQuantity` = **27** (unitCode `EA`)  
   The pallets the goods travel on.
 - `Shipment/FreeOnBoardValueAmount` = **51813.15** (currencyID `XBL`)  
   On board in Lumeport: the CIF price less the sea freight and the insurance, Bayvarra's basis of value at export.
-- `Shipment/Consignment/ID` = **LD-CS-26-0133**  
+- `Shipment/Consignment/ID` = **LMW-CS-26-1001**  
   The consignment carried.
 - `Shipment/Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight leaving the country.
@@ -448,18 +446,18 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:3071845926** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Customs and Border Service of Bayvarra gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `PreviousCustomsDeclaration/ID` = **LD-IM-26-0340**  
+- `PreviousCustomsDeclaration/ID` = **LMW-IM-26-0161**  
   The import declaration under which the 96 benches of lot VI-LOT-260409 and the 8 benches of lot VI-LOT-260410 entered Bayvarra from Urvania (the Accord's common transit ended at Marrowdale): the bulk of the goods now leaves again.
 - `PreviousCustomsDeclaration/FunctionCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
-- `AdditionalDocumentReference/ID` = **VT-PO-26-0127**  
+- `AdditionalDocumentReference/ID` = **26-0417**  
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
-- `AdditionalDocumentReference/ID` = **LD-IM-26-0161**  
+  The kind of document referred to: 26-0417 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **LMW-IM-26-0127**  
   The import declaration under which the 12 side frames entered Bayvarra by road in March, a previous customs declaration of the goods beside the one above.
 - `AdditionalDocumentReference/DocumentTypeCode` = **ImportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-IM-26-0161 is the example road/10, a ImportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ImportCustomsDeclaration = Import Customs Declaration.
+  The kind of document referred to: LMW-IM-26-0127 is the example road/10, a ImportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ImportCustomsDeclaration = Import Customs Declaration.
 
 ### Signature
 
@@ -480,8 +478,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-EX-26-0135</cbc:ID>
+  <cbc:ID>BYF-EX-26-0505</cbc:ID>
   <cbc:UUID>4b360143-92f4-557a-aac2-22d33c03e880</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>14:25:00-01:00</cbc:IssueTime>
@@ -522,7 +519,7 @@ Inside `Signature`:
     </cac:PostalAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>BF-CD-26-0136</cbc:ID>
+    <cbc:ID>BYF-CD-26-0505</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-12</cbc:StartDate>
@@ -534,11 +531,11 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>LD-SH-26-0132</cbc:ID>
+      <cbc:ID>LMW-SH-26-1001</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">51813.15</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0133</cbc:ID>
+        <cbc:ID>LMW-CS-26-1001</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">324</cbc:TotalPackagesQuantity>
         <cac:OfficeOfExitLocation>
@@ -851,15 +848,15 @@ Inside `Signature`:
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:PreviousCustomsDeclaration>
-      <cbc:ID>LD-IM-26-0340</cbc:ID>
+      <cbc:ID>LMW-IM-26-0161</cbc:ID>
       <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:FunctionCode>
     </cac:PreviousCustomsDeclaration>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>VT-PO-26-0127</cbc:ID>
+      <cbc:ID>26-0417</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>LD-IM-26-0161</cbc:ID>
+      <cbc:ID>LMW-IM-26-0127</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ImportCustomsDeclaration</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>

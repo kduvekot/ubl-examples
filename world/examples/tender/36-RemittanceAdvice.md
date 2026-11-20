@@ -15,10 +15,10 @@ The department pays both invoices with the interest, less the credit note and th
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-RM-26-0228**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/0566**  
+  The collaboration this document belongs to: the department's first call-off under the contract. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0971**  
   The department's number.
 - `UUID` = **5f551f90-e2ee-5166-af7c-66a6bfd7dce8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,7 +43,7 @@ The department pays both invoices with the interest, less the credit note and th
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **PWD-PAY-AUTH-26-0412**  
+- `ID` = **PWD/2026/0970**  
   The department's payment authorisation.
 - `DocumentType` = **Payment authorisation**  
   The kind of document referred to, the department's payment authorisation, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -164,7 +164,7 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `PaymentID` = **RF91VIINV260223** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF9720261529** (schemeID `ISO 11649`)  
   The invoice's creditor reference. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XB73BLUM38010001780393** (schemeID `urn:ubl-examples:world:account`)  
   The department's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -259,19 +259,19 @@ Inside `RemittanceAdviceLine`:
   The benches' invoice.
 - `DebitLineAmount` = **20160.00** (currencyID `XBL`)  
   Its payable amount.
-- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0223**  
+- `BillingReference/InvoiceDocumentReference/ID` = **2026/1529**  
   The invoice.
 - `ID` = **2**  
   The installation invoice.
 - `DebitLineAmount` = **631.80** (currencyID `XBL`)  
   Its payable amount, net of the withholding.
-- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0226**  
+- `BillingReference/InvoiceDocumentReference/ID` = **2026/1768**  
   The invoice.
 - `ID` = **3**  
   The credit note.
 - `CreditLineAmount` = **504.00** (currencyID `XBL`)  
   Deducted.
-- `BillingReference/CreditNoteDocumentReference/ID` = **VI-CN-26-0225**  
+- `BillingReference/CreditNoteDocumentReference/ID` = **2026/1769**  
   The credit note.
 - `ID` = **4**  
   The penalty.
@@ -287,7 +287,7 @@ Inside `RemittanceAdviceLine`:
   The interest.
 - `DebitLineAmount` = **31.13** (currencyID `XBL`)  
   The interest charged: the contract's payment term carries the statutory interest.
-- `BillingReference/ReminderDocumentReference/ID` = **VI-DOC-26-0227**  
+- `BillingReference/ReminderDocumentReference/ID` = **9300004430**  
   The reminder.
 - `BillingReference/ReminderDocumentReference/IssueDate` = **2026-05-20**  
   Its date.
@@ -300,8 +300,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-RM-26-0228</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0971</cbc:ID>
   <cbc:UUID>5f551f90-e2ee-5166-af7c-66a6bfd7dce8</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>12:49:00-01:00</cbc:IssueTime>
@@ -312,7 +312,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalPaymentAmount currencyID="XBL">20311.91</cbc:TotalPaymentAmount>
   <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
+    <cbc:ID>PWD/2026/0970</cbc:ID>
     <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:AccountingCustomerParty>
@@ -403,7 +403,7 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:PaymentID schemeID="ISO 11649">RF91VIINV260223</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF9720261529</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB73BLUM38010001780393</cbc:ID>
       <cbc:Name>Lumeport Public Works Department</cbc:Name>
@@ -484,7 +484,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XBL">20160.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0223</cbc:ID>
+        <cbc:ID>2026/1529</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
@@ -493,7 +493,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XBL">631.80</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0226</cbc:ID>
+        <cbc:ID>2026/1768</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
@@ -502,7 +502,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:CreditLineAmount currencyID="XBL">504.00</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
-        <cbc:ID>VI-CN-26-0225</cbc:ID>
+        <cbc:ID>2026/1769</cbc:ID>
       </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
@@ -520,7 +520,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XBL">31.13</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:ReminderDocumentReference>
-        <cbc:ID>VI-DOC-26-0227</cbc:ID>
+        <cbc:ID>9300004430</cbc:ID>
         <cbc:IssueDate>2026-05-20</cbc:IssueDate>
       </cac:ReminderDocumentReference>
     </cac:BillingReference>

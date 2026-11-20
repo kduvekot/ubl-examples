@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-INV-26-0337</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0734</cbc:ProfileExecutionID>
+  <cbc:ID>2026/1770</cbc:ID>
   <cbc:UUID>4e437657-fd23-506f-a503-988422d5e64c</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>11:14:00-01:00</cbc:IssueTime>
@@ -18,14 +18,14 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LD-PO-26-0325</cbc:ID>
+    <cbc:ID>LMW-PO-26-0734</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-TD-26-0331</cbc:ID>
+    <cbc:ID>7800004369</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransitCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FRC-WB-26-0334</cbc:ID>
+    <cbc:ID>7200092547</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -198,8 +198,8 @@
     <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF20VIINV260337</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF20VIINV260337</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF8920261770</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF8920261770</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
@@ -207,7 +207,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice VI-INV-26-0337</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/1770</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>

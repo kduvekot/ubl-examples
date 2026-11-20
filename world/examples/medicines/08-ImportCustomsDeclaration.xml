@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-IM-26-0332</cbc:ID>
+  <cbc:ID>QLM-IM-26-0814</cbc:ID>
   <cbc:UUID>dec43f2a-2397-55dd-a970-1f967ceff30c</cbc:UUID>
   <cbc:IssueDate>2026-06-14</cbc:IssueDate>
   <cbc:IssueTime>21:40:00-01:00</cbc:IssueTime>
@@ -141,9 +140,9 @@
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>HI-SH-26-0333</cbc:ID>
+    <cbc:ID>HVI-SH-26-1356</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HI-CS-26-0334</cbc:ID>
+      <cbc:ID>HVI-CS-26-1356</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -165,7 +164,7 @@
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">33690</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
-          <cbc:ID>HI-TCG-20-DG</cbc:ID>
+          <cbc:ID>HVI-TCG-20-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
           <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
@@ -189,7 +188,7 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HI-INV-26-0331</cbc:ID>
+    <cbc:ID>HVI-INV-26-1344</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

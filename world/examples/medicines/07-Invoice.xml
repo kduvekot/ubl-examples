@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HI-INV-26-0331</cbc:ID>
+  <cbc:ProfileExecutionID>QLM-TX-26-3960</cbc:ProfileExecutionID>
+  <cbc:ID>HVI-INV-26-1344</cbc:ID>
   <cbc:UUID>3cf34a08-9641-59d5-a039-a316fccf582f</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>11:30:00+02:00</cbc:IssueTime>
@@ -14,7 +14,7 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>QPD-PO-26-0328</cbc:ID>
+    <cbc:ID>QLM-PO-26-3960</cbc:ID>
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -170,7 +170,7 @@
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>HI-TCG-20</cbc:ID>
+        <cbc:ID>HVI-TCG-20</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -182,7 +182,7 @@
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
       <cac:ItemInstance>
-        <cbc:SerialID>HI-TCG20-26-0137</cbc:SerialID>
+        <cbc:SerialID>HVI-TCG20-26-0137</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Nominal activity</cbc:Name>
           <cbc:ValueQuantity unitCode="GBQ">20</cbc:ValueQuantity>

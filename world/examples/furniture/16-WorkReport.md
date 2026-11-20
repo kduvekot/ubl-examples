@@ -15,10 +15,10 @@ The installers report the work done; the department approves it.
 - `CustomizationID` = **urn:ubl-examples:world:trns:work-report:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Work report". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **FURNITURE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0582**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/0620**  
+  The collaboration this document belongs to: the department's order of benches for an office. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0017**  
   The sender's number for its work report.
 - `UUID` = **e84c63f9-b6d1-5eaa-bf75-38181a29b84a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -68,7 +68,7 @@ Inside `ReportedPeriod`:
 
 Inside `OrderReference`:
 
-- `ID` = **LPWD-PO-26-0581**  
+- `ID` = **PWD/2026/0621**  
   The department's order.
 
 ### Project Reference
@@ -82,7 +82,7 @@ Inside `ProjectReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **PWD-COMMIT-26-0381**  
+- `ID` = **PWD/2026/0619**  
   The department's budget commitment the work will be billed against, as its order gave it.
 - `DocumentType` = **Budget commitment**  
   The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -331,9 +331,9 @@ Inside `WorkReportLine`:
   Started.
 - `WorkPhaseReference/EndDate` = **2026-04-09**  
   Ended.
-- `WorkPhaseReference/WorkOrderDocumentReference/ID` = **LPWD-PO-26-0581**  
+- `WorkPhaseReference/WorkOrderDocumentReference/ID` = **PWD/2026/0621**  
   The order.
-- `DocumentReference/ID` = **BF-CHECK-26-0408**  
+- `DocumentReference/ID` = **26-0016**  
   The installation checklist.
 - `DocumentReference/DocumentType` = **Installation checklist**  
   The kind of document referred to, Brackenmere's checklist of the office installation, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -382,8 +382,8 @@ Inside `WorkReportLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:work-report:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0582</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0620</cbc:ProfileExecutionID>
+  <cbc:ID>26-0017</cbc:ID>
   <cbc:UUID>e84c63f9-b6d1-5eaa-bf75-38181a29b84a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
@@ -411,13 +411,13 @@ Inside `WorkReportLine`:
     <cbc:EndDate>2026-04-09</cbc:EndDate>
   </cac:ReportedPeriod>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+    <cbc:ID>PWD/2026/0621</cbc:ID>
   </cac:OrderReference>
   <cac:ProjectReference>
     <cbc:ID>PWD-PLAN-OFFICE-26</cbc:ID>
   </cac:ProjectReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>PWD-COMMIT-26-0381</cbc:ID>
+    <cbc:ID>PWD/2026/0619</cbc:ID>
     <cbc:DocumentType>Budget commitment</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:SellerSupplierParty>
@@ -600,11 +600,11 @@ Inside `WorkReportLine`:
       <cbc:StartDate>2026-04-08</cbc:StartDate>
       <cbc:EndDate>2026-04-09</cbc:EndDate>
       <cac:WorkOrderDocumentReference>
-        <cbc:ID>LPWD-PO-26-0581</cbc:ID>
+        <cbc:ID>PWD/2026/0621</cbc:ID>
       </cac:WorkOrderDocumentReference>
     </cac:WorkPhaseReference>
     <cac:DocumentReference>
-      <cbc:ID>BF-CHECK-26-0408</cbc:ID>
+      <cbc:ID>26-0016</cbc:ID>
       <cbc:DocumentType>Installation checklist</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Price>

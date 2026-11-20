@@ -15,14 +15,14 @@ The sawmill registers its interest, to receive the documents of the procedure.
 - `CustomizationID` = **urn:ubl-examples:world:trns:expression-of-interest:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Expression of interest"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MS-DOC-26-0190**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **MDS-EOI-26-0007**  
   The sender's number for this document.
 - `UUID` = **54bd8806-86b1-56b6-9c9a-10e7f28203ee**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-01-30**  
   Sent after the contract notice was published: Friday 30 January.
@@ -46,10 +46,10 @@ Inside `ValidityPeriod`:
 
 Inside `DocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0188**  
+- `ID` = **PWD/2026/0174**  
   The contract notice it answers.
 - `DocumentTypeCode` = **ContractNotice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0188 is the example tender/02, a ContractNotice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
+  The kind of document referred to: PWD/2026/0174 is the example tender/02, a ContractNotice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
 
 ### Signature
 
@@ -212,10 +212,10 @@ Inside `ProcurementProjectLotReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:expression-of-interest:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-DOC-26-0190</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-EOI-26-0007</cbc:ID>
   <cbc:UUID>54bd8806-86b1-56b6-9c9a-10e7f28203ee</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-30</cbc:IssueDate>
   <cbc:IssueTime>14:05:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -225,7 +225,7 @@ Inside `ProcurementProjectLotReference`:
     <cbc:EndDate>2026-02-25</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:DocumentReference>
-    <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
+    <cbc:ID>PWD/2026/0174</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

@@ -15,14 +15,14 @@ Version 2 of the request to participate: the shares of the team members change w
 - `CustomizationID` = **urn:ubl-examples:world:trns:tenderer-qualification:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tenderer qualification"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CONTEST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0638**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PROM-DC**  
+  The collaboration this document belongs to: the department's design contest for the promenade bench. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0015**  
   The team's number for its qualification.
 - `UUID` = **34e157b7-f926-5105-950a-23592457ef92**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PROM-DC**  
+- `ContractFolderID` = **PWD/2026/PROM-DC**  
   The department's file number for the contest, the same on every document of it.
 - `IssueDate` = **2026-04-14**  
   With the revised self-declaration.
@@ -303,10 +303,10 @@ Inside `ContractingParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tenderer-qualification:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0638</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>26-0015</cbc:ID>
   <cbc:UUID>34e157b7-f926-5105-950a-23592457ef92</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:52:00-01:00</cbc:IssueTime>
   <cbc:Note>Brackenmere Furniture leads the team; Brackenmere's own industrial designer, Ivo Harlan, leads the design; Saltmere Engineering does the structure and the anchoring. Version 2: Brackenmere now provides the design lead, so the shares of the work move from 60 and 40 % to 70 and 30 %.</cbc:Note>

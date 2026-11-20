@@ -15,10 +15,10 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-CAT-26-0218**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900338989**  
+  The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-CAT-26-0005**  
   The provider's catalogue number.
 - `UUID` = **f5163e36-0159-5b9f-b172-a86137e369e6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -56,7 +56,7 @@ Inside `ValidityPeriod`:
 
 Inside `ReferencedContract`:
 
-- `ID` = **LD-BM-SUPPLY-2026**  
+- `ID` = **LMW-BM-SUPPLY-2026**  
   The supply agreement with the store.
 - `ContractType` = **Supply agreement**  
   Its kind.
@@ -72,10 +72,14 @@ Inside `SourceCatalogueReference`:
 
 Inside `DocumentReference`:
 
-- `ID` = **LD-GTC-2026**  
+- `ID` = **LMW-GTC-2026**  
   The general terms of trade.
 - `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
+- `ID` = **6200003390**  
+  The store's request this catalogue answers.
+- `DocumentTypeCode` = **CatalogueRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: 6200003390 is the example retail/01, a CatalogueRequest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: CatalogueRequest = Catalogue Request.
 
 ### Applicable Territory Address
 
@@ -267,7 +271,7 @@ Inside `TradingTerms`:
 
 - `Information` = **Delivered duty paid to the store; 30 days net.**  
   The terms.
-- `Reference` = **LD-GTC-2026**  
+- `Reference` = **LMW-GTC-2026**  
   Where they are.
 - `ApplicableAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   In Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
@@ -312,7 +316,7 @@ Inside `CatalogueLine`:
   From the issue.
 - `LineValidityPeriod/EndDate` = **2026-07-19**  
   With the catalogue.
-- `ComponentRelatedItem/ID` = **MS-SL-1800**  
+- `ComponentRelatedItem/ID` = **MDS-SL-1800**  
   The related item: Bench slat 1800, thermally modified ash.
 - `ComponentRelatedItem/Quantity` = **5** (unitCode `EA`)  
   Five slats per bench.
@@ -352,7 +356,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-07-19**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LMW-PRL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force. The code is from the Trade Accord's record status list: ORIGINAL = Original.
@@ -400,7 +404,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-07-19**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LMW-PRL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force. The code is from the Trade Accord's record status list: ORIGINAL = Original.
@@ -460,7 +464,7 @@ Inside `CatalogueLine`:
   The model; as Valdara Industries describes the item.
 - `Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
   The maker's warranty.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -480,7 +484,7 @@ Inside `CatalogueLine`:
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
-- `Item/CatalogueItemIdentification/ID` = **LD-CAT-26-0218-1**  
+- `Item/CatalogueItemIdentification/ID` = **LMW-CAT-26-0005-1**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
@@ -492,11 +496,11 @@ Inside `CatalogueLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Valdara Industries describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 - `Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Valdara Industries describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `Item/TransactionConditions/ID` = **LD-TC-01**  
+- `Item/TransactionConditions/ID` = **LMW-TC-01**  
   The seller's number for these conditions of sale.
 - `Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
   The conditions in words.
-- `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
+- `Item/TransactionConditions/DocumentReference/ID` = **LMW-GTC-2026**  
   The seller's general terms of trade.
 - `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
@@ -710,7 +714,7 @@ Inside `CatalogueLine`:
   From the issue.
 - `LineValidityPeriod/EndDate` = **2026-07-19**  
   With the catalogue.
-- `RequiredRelatedItem/ID` = **LD-10442**  
+- `RequiredRelatedItem/ID` = **LMW-10442**  
   The related item: Park bench Serra 180.
 - `RequiredRelatedItem/Quantity` = **1** (unitCode `EA`)  
   Fits only the Serra 180.
@@ -740,7 +744,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-07-19**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LMW-PRL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force. The code is from the Trade Accord's record status list: ORIGINAL = Original.
@@ -764,7 +768,7 @@ Inside `CatalogueLine`:
   The brand the maker sells the item under; as Valdara Industries describes the item.
 - `Item/ModelName` = **Serra 180 side frame**  
   The model; as Valdara Industries describes the item.
-- `Item/SellersItemIdentification/ID` = **LD-10443**  
+- `Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
@@ -776,7 +780,7 @@ Inside `CatalogueLine`:
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
-- `Item/CatalogueItemIdentification/ID` = **LD-CAT-26-0218-2**  
+- `Item/CatalogueItemIdentification/ID` = **LMW-CAT-26-0005-2**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
@@ -803,8 +807,8 @@ Inside `CatalogueLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CAT-26-0218</cbc:ID>
+  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-CAT-26-0005</cbc:ID>
   <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
   <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueActionCode">NEW</cbc:ActionCode>
   <cbc:Name>Lumeway's catalogue for the Lumeport store, 2026</cbc:Name>
@@ -821,15 +825,19 @@ Inside `CatalogueLine`:
     <cbc:EndDate>2026-07-19</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ReferencedContract>
-    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+    <cbc:ID>LMW-BM-SUPPLY-2026</cbc:ID>
     <cbc:ContractType>Supply agreement</cbc:ContractType>
   </cac:ReferencedContract>
   <cac:SourceCatalogueReference>
     <cbc:ID>VI-CAT-2026</cbc:ID>
   </cac:SourceCatalogueReference>
   <cac:DocumentReference>
-    <cbc:ID>LD-GTC-2026</cbc:ID>
+    <cbc:ID>LMW-GTC-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>6200003390</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CatalogueRequest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:ApplicableTerritoryAddress>
     <cac:Country>
@@ -988,7 +996,7 @@ Inside `CatalogueLine`:
   </cac:ContractorCustomerParty>
   <cac:TradingTerms>
     <cbc:Information>Delivered duty paid to the store; 30 days net.</cbc:Information>
-    <cbc:Reference>LD-GTC-2026</cbc:Reference>
+    <cbc:Reference>LMW-GTC-2026</cbc:Reference>
     <cac:ApplicableAddress>
       <cac:Country>
         <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -1025,7 +1033,7 @@ Inside `CatalogueLine`:
       <cbc:EndDate>2026-07-19</cbc:EndDate>
     </cac:LineValidityPeriod>
     <cac:ComponentRelatedItem>
-      <cbc:ID>MS-SL-1800</cbc:ID>
+      <cbc:ID>MDS-SL-1800</cbc:ID>
       <cbc:Quantity unitCode="EA">5</cbc:Quantity>
       <cbc:Description>Bench slat 1800, thermally modified ash</cbc:Description>
     </cac:ComponentRelatedItem>
@@ -1059,7 +1067,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-07-19</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
@@ -1105,7 +1113,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-07-19</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
@@ -1154,7 +1162,7 @@ Inside `CatalogueLine`:
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -1178,7 +1186,7 @@ Inside `CatalogueLine`:
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>LD-CAT-26-0218-1</cbc:ID>
+        <cbc:ID>LMW-CAT-26-0005-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
@@ -1194,10 +1202,10 @@ Inside `CatalogueLine`:
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:TransactionConditions>
-        <cbc:ID>LD-TC-01</cbc:ID>
+        <cbc:ID>LMW-TC-01</cbc:ID>
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
-          <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:ID>LMW-GTC-2026</cbc:ID>
           <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
@@ -1396,7 +1404,7 @@ Inside `CatalogueLine`:
       <cbc:EndDate>2026-07-19</cbc:EndDate>
     </cac:LineValidityPeriod>
     <cac:RequiredRelatedItem>
-      <cbc:ID>LD-10442</cbc:ID>
+      <cbc:ID>LMW-10442</cbc:ID>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cbc:Description>Park bench Serra 180</cbc:Description>
     </cac:RequiredRelatedItem>
@@ -1423,7 +1431,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-07-19</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
@@ -1444,7 +1452,7 @@ Inside `CatalogueLine`:
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
@@ -1462,7 +1470,7 @@ Inside `CatalogueLine`:
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>LD-CAT-26-0218-2</cbc:ID>
+        <cbc:ID>LMW-CAT-26-0005-2</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>

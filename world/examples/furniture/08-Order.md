@@ -15,10 +15,10 @@ The store orders the opening stock of the line, piece by piece and wood by wood,
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **FURNITURE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-PO-26-0574**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900336121**  
+  The collaboration this document belongs to: the store's first order of the Marrow line, with its return. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **7100448162**  
   The buyer's order number.
 - `UUID` = **ac3a2b00-ef02-50c6-a666-734b5c64e958**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,7 +43,7 @@ The store orders the opening stock of the line, piece by piece and wood by wood,
 
 Inside `QuotationDocumentReference`:
 
-- `ID` = **BF-DOC-26-0568**  
+- `ID` = **26-0080**  
   The quotation accepted.
 
 ### Buyer Customer Party
@@ -254,7 +254,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **BM-551005**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+- `LineItem/Item/SellersItemIdentification/ID` = **BKM-MRW-B14**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **OAK**  
   The variant of the item: the wood, added to the item number.
@@ -314,7 +314,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **BM-551008**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+- `LineItem/Item/SellersItemIdentification/ID` = **BKM-MRW-B14**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
@@ -374,7 +374,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **BM-551006**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+- `LineItem/Item/SellersItemIdentification/ID` = **BKM-MRW-C**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **OAK**  
   The variant of the item: the wood, added to the item number.
@@ -434,7 +434,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **BM-551009**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+- `LineItem/Item/SellersItemIdentification/ID` = **BKM-MRW-C**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
@@ -478,7 +478,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **BM-551007**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **BF-MRW-K**  
+- `LineItem/Item/SellersItemIdentification/ID` = **BKM-MRW-K**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `LineItem/Item/StandardItemIdentification/ID` = **9522610000030** (schemeID `GS1 GTIN`)  
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item.
@@ -497,8 +497,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PO-26-0574</cbc:ID>
+  <cbc:ProfileExecutionID>9900336121</cbc:ProfileExecutionID>
+  <cbc:ID>7100448162</cbc:ID>
   <cbc:UUID>ac3a2b00-ef02-50c6-a666-734b5c64e958</cbc:UUID>
   <cbc:IssueDate>2026-03-16</cbc:IssueDate>
   <cbc:IssueTime>11:16:00-01:00</cbc:IssueTime>
@@ -509,7 +509,7 @@ Inside `OrderLine`:
   <cbc:AccountingCost>Home and garden department</cbc:AccountingCost>
   <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:QuotationDocumentReference>
-    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:ID>26-0080</cbc:ID>
   </cac:QuotationDocumentReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
@@ -670,7 +670,7 @@ Inside `OrderLine`:
           <cbc:ID>BM-551005</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -730,7 +730,7 @@ Inside `OrderLine`:
           <cbc:ID>BM-551008</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -790,7 +790,7 @@ Inside `OrderLine`:
           <cbc:ID>BM-551006</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -850,7 +850,7 @@ Inside `OrderLine`:
           <cbc:ID>BM-551009</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -902,7 +902,7 @@ Inside `OrderLine`:
           <cbc:ID>BM-551007</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-K</cbc:ID>
+          <cbc:ID>BKM-MRW-K</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>

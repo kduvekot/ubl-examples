@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-DA-26-0561</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>HRW-DA-26-0764</cbc:ID>
   <cbc:UUID>7eceb0f7-f3b3-5179-a5b6-4ef73e60462c</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>12:05:00-01:00</cbc:IssueTime>
@@ -12,7 +12,7 @@
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -98,9 +98,9 @@
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0557</cbc:ID>
+      <cbc:ID>HRW-CS-26-0730</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -305,7 +305,7 @@
       <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GAL100</cbc:ID>
+        <cbc:ID>HRW-GAL100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001014</cbc:ID>
@@ -325,7 +325,7 @@
           <cbc:Value>224</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0401</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0401</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:ItemInstance>
@@ -343,7 +343,7 @@
           <cbc:Value>224</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0402</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0402</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:ItemInstance>
@@ -361,7 +361,7 @@
           <cbc:Value>224</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0403</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0403</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
@@ -377,7 +377,7 @@
       <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
       <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GSM100</cbc:ID>
+        <cbc:ID>HRW-GSM100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001021</cbc:ID>
@@ -397,7 +397,7 @@
           <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0431</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0431</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:ItemInstance>
@@ -415,7 +415,7 @@
           <cbc:Value>112</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0432</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0432</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
@@ -431,7 +431,7 @@
       <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-PKT080</cbc:ID>
+        <cbc:ID>HRW-PKT080</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430002011</cbc:ID>
@@ -451,7 +451,7 @@
           <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0451</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0451</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>

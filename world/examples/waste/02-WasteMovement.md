@@ -15,10 +15,10 @@ The recovery facility reports to the environment agency the first load it has re
 - `CustomizationID` = **urn:ubl-examples:world:trns:waste-movement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waste movement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:waste-shipment:1.0**  
-  The Trade Accord's process profile the document belongs to: waste shipment, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WASTE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RR-DOC-26-0207**  
+  The Trade Accord's process profile the document belongs to: waste shipment, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043338**  
+  The collaboration this document belongs to: the movement of Valdara's waste to Rinova Recovery. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0021**  
   The movement report number.
 - `UUID` = **dbd3deda-0d71-53e4-9a07-a1f9d4add949**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -241,11 +241,11 @@ Inside `WasteProducerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0208**  
+- `ID` = **7400043504**  
   This load's own shipment number, beside the stream's.
 - `NetWeightMeasure` = **22900** (unitCode `KGM`)  
   The waste received, net, from the weighbridge ticket.
-- `Consignment/ID` = **VI-CS-26-0209**  
+- `Consignment/ID` = **7300043504**  
   This load's consignment, carried by the waste carrier.
 - `Consignment/TotalPackagesQuantity` = **54**  
   54 bales on the truck, in two layers.
@@ -370,7 +370,7 @@ Inside `Shipment`:
 
 Inside `WasteNotificationDocumentReference`:
 
-- `ID` = **VI-DOC-26-0204**  
+- `ID` = **5700002167**  
   The notification of the stream the load belongs to.
 - `IssueDate` = **2026-03-23**  
   Its date.
@@ -379,7 +379,7 @@ Inside `WasteNotificationDocumentReference`:
 
 Inside `WeightStatementDocumentReference`:
 
-- `ID` = **RR-WS-26-0210**  
+- `ID` = **26-0019**  
   The weighbridge ticket of the load, whose net weight this report states.
 - `IssueDate` = **2026-04-02**  
   Its date.
@@ -398,7 +398,7 @@ Inside `DocumentReference`:
   A party referred to from another party's details: its identifier and name are enough.
 - `IssuerParty/PartyName/Name` = **Environment Agency of Urvania**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ID` = **RR-REC-26-0412**  
+- `ID` = **26-0020**  
   The certificate of recovery to follow.
 - `DocumentType` = **Certificate of recovery**  
   The kind of document referred to, Rinova's certificate of recovery, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -428,8 +428,8 @@ Inside `DocumentDistribution`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waste-movement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:waste-shipment:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-DOC-26-0207</cbc:ID>
+  <cbc:ProfileExecutionID>9900043338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0021</cbc:ID>
   <cbc:UUID>dbd3deda-0d71-53e4-9a07-a1f9d4add949</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>11:45:00-01:00</cbc:IssueTime>
@@ -598,10 +598,10 @@ Inside `DocumentDistribution`:
     </cac:PartyName>
   </cac:WasteProducerParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0208</cbc:ID>
+    <cbc:ID>7400043504</cbc:ID>
     <cbc:NetWeightMeasure unitCode="KGM">22900</cbc:NetWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0209</cbc:ID>
+      <cbc:ID>7300043504</cbc:ID>
       <cbc:TotalPackagesQuantity>54</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -722,11 +722,11 @@ Inside `DocumentDistribution`:
     </cac:Delivery>
   </cac:Shipment>
   <cac:WasteNotificationDocumentReference>
-    <cbc:ID>VI-DOC-26-0204</cbc:ID>
+    <cbc:ID>5700002167</cbc:ID>
     <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   </cac:WasteNotificationDocumentReference>
   <cac:WeightStatementDocumentReference>
-    <cbc:ID>RR-WS-26-0210</cbc:ID>
+    <cbc:ID>26-0019</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   </cac:WeightStatementDocumentReference>
   <cac:DocumentReference>
@@ -743,7 +743,7 @@ Inside `DocumentDistribution`:
     </cac:IssuerParty>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>RR-REC-26-0412</cbc:ID>
+    <cbc:ID>26-0020</cbc:ID>
     <cbc:DocumentType>Certificate of recovery</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

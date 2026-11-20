@@ -15,10 +15,8 @@ The carrier reports the reefer discharged at Selanu and on the port's power, wit
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TOL-TS-26-0565**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **8101997393**  
   The sender's status report number.
 - `UUID` = **8a5ddf6d-b855-5fa3-9a91-f88a50a3daf6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -31,7 +29,7 @@ The carrier reports the reefer discharged at Selanu and on the port's power, wit
 
 Inside `Consignment`:
 
-- `ID` = **HFG-CS-26-0557**  
+- `ID` = **HRW-CS-26-0730**  
   The consignment the report is about.
 - `ConsigneeParty/PartyIdentification/ID` = **IC43529** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Hafefo Fresh Produce gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -235,13 +233,12 @@ Inside `ReceiverParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-TS-26-0565</cbc:ID>
+  <cbc:ID>8101997393</cbc:ID>
   <cbc:UUID>8a5ddf6d-b855-5fa3-9a91-f88a50a3daf6</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
   <cbc:IssueTime>07:45:00-01:00</cbc:IssueTime>
   <cac:Consignment>
-    <cbc:ID>HFG-CS-26-0557</cbc:ID>
+    <cbc:ID>HRW-CS-26-0730</cbc:ID>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>

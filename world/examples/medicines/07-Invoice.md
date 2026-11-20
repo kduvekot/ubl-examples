@@ -15,10 +15,10 @@ The Dutch maker invoices the generator in euro when it leaves for Amsterdam airp
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HI-INV-26-0331**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **QLM-TX-26-3960**  
+  The collaboration this document belongs to: Quillmoor's order of a technetium generator from Haarvliet Isotopes. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **HVI-INV-26-1344**  
   The maker's invoice number.
 - `UUID` = **3cf34a08-9641-59d5-a039-a316fccf582f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -41,7 +41,7 @@ The Dutch maker invoices the generator in euro when it leaves for Amsterdam airp
 
 Inside `OrderReference`:
 
-- `ID` = **QPD-PO-26-0328**  
+- `ID` = **QLM-PO-26-3960**  
   The wholesaler's call-off.
 
 ### Accounting Supplier Party
@@ -235,7 +235,7 @@ Inside `InvoiceLine`:
   The item's short name.
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `Item/SellersItemIdentification/ID` = **HI-TCG-20**  
+- `Item/SellersItemIdentification/ID` = **HVI-TCG-20**  
   The seller's own item number; as Haarvliet Isotopes describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   Goods exported outside the European Union are zero-rated under Dutch VAT (Article 146 of the VAT Directive 2006/112/EC): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
@@ -247,7 +247,7 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `Item/ItemInstance/SerialID` = **HI-TCG20-26-0137**  
+- `Item/ItemInstance/SerialID` = **HVI-TCG20-26-0137**  
   The generator's serial number, from its maker: each generator is traced from its filling to its return.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Nominal activity**  
   The generator's size: its Mo-99 at the reference time, the figure the item is sold by.
@@ -270,8 +270,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HI-INV-26-0331</cbc:ID>
+  <cbc:ProfileExecutionID>QLM-TX-26-3960</cbc:ProfileExecutionID>
+  <cbc:ID>HVI-INV-26-1344</cbc:ID>
   <cbc:UUID>3cf34a08-9641-59d5-a039-a316fccf582f</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>11:30:00+02:00</cbc:IssueTime>
@@ -281,7 +281,7 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>QPD-PO-26-0328</cbc:ID>
+    <cbc:ID>QLM-PO-26-3960</cbc:ID>
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -437,7 +437,7 @@ Inside `InvoiceLine`:
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>HI-TCG-20</cbc:ID>
+        <cbc:ID>HVI-TCG-20</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -449,7 +449,7 @@ Inside `InvoiceLine`:
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
       <cac:ItemInstance>
-        <cbc:SerialID>HI-TCG20-26-0137</cbc:SerialID>
+        <cbc:SerialID>HVI-TCG20-26-0137</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Nominal activity</cbc:Name>
           <cbc:ValueQuantity unitCode="GBQ">20</cbc:ValueQuantity>

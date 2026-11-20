@@ -15,10 +15,8 @@ Under DAP the buyer clears the import, so the contracting authority declares the
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-IM-26-0222**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **PWD/2026/0613**  
   The importer's declaration number.
 - `UUID` = **9512bc8d-ad4b-596c-8121-05e7cc1d6a81**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -236,7 +234,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **CL-SH-26-0218**  
+- `ID` = **CAS-SH-26-1456**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **10** (unitCode `EA`)  
   The pallets the goods travel on.
@@ -363,14 +361,14 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **VI-EX-26-0220**  
+- `ID` = **7600008692**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VI-EX-26-0220 is the example tender/30, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
-- `ID` = **VI-INV-26-0223**  
+  The kind of document referred to: 7600008692 is the example tender/30, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **2026/1529**  
   The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VI-INV-26-0223 is the example tender/32, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: 2026/1529 is the example tender/32, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -391,8 +389,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-IM-26-0222</cbc:ID>
+  <cbc:ID>PWD/2026/0613</cbc:ID>
   <cbc:UUID>9512bc8d-ad4b-596c-8121-05e7cc1d6a81</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
   <cbc:IssueTime>11:14:00-01:00</cbc:IssueTime>
@@ -559,7 +556,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0218</cbc:ID>
+    <cbc:ID>CAS-SH-26-1456</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">10</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -664,11 +661,11 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-EX-26-0220</cbc:ID>
+    <cbc:ID>7600008692</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-INV-26-0223</cbc:ID>
+    <cbc:ID>2026/1529</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

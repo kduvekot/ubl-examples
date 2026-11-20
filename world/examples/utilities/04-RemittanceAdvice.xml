@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-RM-26-0316</cbc:ID>
+  <cbc:ProfileExecutionID>9909901005</cbc:ProfileExecutionID>
+  <cbc:ID>2000017521</cbc:ID>
   <cbc:UUID>2d5c6916-4910-521a-8f1e-a8eed2f264ea</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>13:33:00-01:00</cbc:IssueTime>
@@ -14,8 +14,8 @@
   <cbc:TotalDebitAmount currencyID="XUF">15096168</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">15096168</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>VI-PAY-26-0313</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>1500002191</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF192026313046</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -23,7 +23,7 @@
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>FE-INV-26-0313</cbc:ID>
+      <cbc:ID>2026/313046</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
@@ -128,8 +128,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>VI-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF58FEINV260313</cbc:PaymentID>
+    <cbc:InstructionID>1500002191</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF192026313046</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
@@ -214,14 +214,14 @@
     <cbc:DebitLineAmount currencyID="XUF">15096168</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">ELEC</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF58FEINV260313</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF192026313046</cbc:InvoicingPartyReference>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
     </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>FE-INV-26-0313</cbc:ID>
+        <cbc:ID>2026/313046</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

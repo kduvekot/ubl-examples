@@ -15,10 +15,10 @@ The rail carrier confirms the haulage to the hub and the slots on the container 
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-execution-plan:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FRC-TEP-26-0328**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043586**  
+  The collaboration this document belongs to: the rail carriage Valdara books with Ferrano Rail Cargo. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **9500055446**  
   The carrier's number for the agreed plan.
 - `VersionID` = **1**  
   The first version of the plan.
@@ -197,7 +197,7 @@ Inside `Signature`:
 
 Inside `TransportExecutionPlanRequestDocumentReference`:
 
-- `ID` = **VI-TR-26-0326**  
+- `ID` = **7000026152**  
   The request this plan answers.
 
 ### Transport Contract
@@ -336,7 +336,7 @@ Inside `TransportExecutionTerms`:
 
 Inside `Consignment`:
 
-- `ID` = **VI-CS-26-0327**  
+- `ID` = **7300043586**  
   The manufacturer's consignment number.
 - `SummaryDescription` = **192 park benches in two 40-foot containers.**  
   The goods in a few words.
@@ -531,8 +531,8 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+  <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
+  <cbc:ID>9500055446</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>eb749a49-fd81-59f8-9c7a-8cb356fa55f1</cbc:UUID>
   <cbc:IssueDate>2026-04-08</cbc:IssueDate>
@@ -665,7 +665,7 @@ Inside `Consignment`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:TransportExecutionPlanRequestDocumentReference>
-    <cbc:ID>VI-TR-26-0326</cbc:ID>
+    <cbc:ID>7000026152</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
     <cbc:ID>FRC-CON-2026-005</cbc:ID>
@@ -755,7 +755,7 @@ Inside `Consignment`:
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>
-    <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:ID>7300043586</cbc:ID>
     <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
     <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>

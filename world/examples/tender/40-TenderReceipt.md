@@ -15,14 +15,14 @@ The authority acknowledges the furniture maker's first tender, with the time it 
 - `CustomizationID` = **urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tender"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0206**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0348**  
   The sender's number for this document.
 - `UUID` = **f547235b-863f-5f6e-a44c-4bbed7b37910**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-20**  
   Sent on receipt of the tender, on Friday 20 February.
@@ -41,7 +41,7 @@ The authority acknowledges the furniture maker's first tender, with the time it 
 
 Inside `TenderDocumentReference`:
 
-- `ID` = **BF-DOC-26-0204**  
+- `ID` = **26-0008**  
   The tender received.
 
 ### Signature
@@ -187,10 +187,10 @@ Inside `ReceiverParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0206</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0348</cbc:ID>
   <cbc:UUID>f547235b-863f-5f6e-a44c-4bbed7b37910</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cbc:IssueTime>16:38:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -198,7 +198,7 @@ Inside `ReceiverParty`:
   <cbc:RegisteredDate>2026-02-20</cbc:RegisteredDate>
   <cbc:RegisteredTime>16:37:00</cbc:RegisteredTime>
   <cac:TenderDocumentReference>
-    <cbc:ID>BF-DOC-26-0204</cbc:ID>
+    <cbc:ID>26-0008</cbc:ID>
   </cac:TenderDocumentReference>
   <cac:Signature>
     <cbc:ID>PWD-SIG-RCPT</cbc:ID>

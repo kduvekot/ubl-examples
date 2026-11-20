@@ -15,12 +15,12 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
 - `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-FI-26-0137**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2501**  
+  The collaboration this document belongs to: the sea carriage Bayforth books with Tidewell Ocean Lines. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
+- `ID` = **BYF-FI-26-1501**  
   The forwarder's booking number with the ocean carrier.
-- `CarrierAssignedID` = **TWL-BK-26-55710**  
+- `CarrierAssignedID` = **1200033394**  
   The booking number the carrier gave.
 - `UUID` = **a28c5575-3d16-5217-93bf-9cf7fe81d417**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,7 +32,7 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
   What they are.
 - `Description` = **Instructions for the shipment to the island.**  
   In words.
-- `Note` = **Please confirm the shipping instructions for booking TWL-BK-26-55710.**  
+- `Note` = **Please confirm the shipping instructions for booking 1200033394.**  
   What the sender expects: from the carrier, the instructions for the booking it already gave.
 - `ToOrderIndicator` = **true**  
   A bill of lading to order, so the buyer can transfer it.
@@ -204,9 +204,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0132**  
+- `ID` = **LMW-SH-26-1001**  
   The shipment booked.
-- `Consignment/ID` = **LD-CS-26-0133**  
+- `Consignment/ID` = **LMW-CS-26-1001**  
   The consignment.
 - `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the goods.
@@ -279,10 +279,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **VT-PO-26-0127**  
+- `ID` = **26-0417**  
   The order the goods are for.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 26-0417 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Document Distribution
 
@@ -318,15 +318,15 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-FI-26-0137</cbc:ID>
-  <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2501</cbc:ProfileExecutionID>
+  <cbc:ID>BYF-FI-26-1501</cbc:ID>
+  <cbc:CarrierAssignedID>1200033394</cbc:CarrierAssignedID>
   <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
-  <cbc:Note>Please confirm the shipping instructions for booking TWL-BK-26-55710.</cbc:Note>
+  <cbc:Note>Please confirm the shipping instructions for booking 1200033394.</cbc:Note>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>
@@ -449,9 +449,9 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ID>LMW-SH-26-1001</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:ID>LMW-CS-26-1001</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -514,7 +514,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

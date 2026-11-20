@@ -15,10 +15,8 @@ The wholesaler lodges its import declaration before the ship arrives, so that th
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFP-IM-26-0564**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **26-0050**  
   The importer's declaration number.
 - `UUID` = **04b3c1d3-d600-57c6-b790-ffbf27e1ac34**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -213,7 +211,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0556**  
+- `ID` = **HRW-SH-26-0730**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **20** (unitCode `EA`)  
   The pallets the goods travel on.
@@ -338,22 +336,22 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TOL-BL-26-0562**  
+- `ID` = **TWLU000033272**  
   The bill of lading of the reefer.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TOL-BL-26-0562 is the example reefer/07, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
-- `ID` = **FDAB-GC-26-0558**  
+  The kind of document referred to: TWLU000033272 is the example reefer/07, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `ID` = **FDAB/2026/7266**  
   The phytosanitary certificate made out for the island, on which the release of the fruit under its plant health rules depends.
 - `DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FDAB-GC-26-0558 is the example reefer/04, a GoodsCertificate; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
-- `ID` = **BF-EX-26-0559**  
+  The kind of document referred to: FDAB/2026/7266 is the example reefer/04, a GoodsCertificate; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
+- `ID` = **BYF-EX-26-0425**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-EX-26-0559 is the example reefer/05, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
-- `ID` = **HFG-INV-26-0563**  
+  The kind of document referred to: BYF-EX-26-0425 is the example reefer/05, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **HRW-INV-26-0772**  
   The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-INV-26-0563 is the example reefer/08, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: HRW-INV-26-0772 is the example reefer/08, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -374,8 +372,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-IM-26-0564</cbc:ID>
+  <cbc:ID>26-0050</cbc:ID>
   <cbc:UUID>04b3c1d3-d600-57c6-b790-ffbf27e1ac34</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>17:32:00+00:00</cbc:IssueTime>
@@ -518,7 +515,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -630,19 +627,19 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0562</cbc:ID>
+    <cbc:ID>TWLU000033272</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FDAB-GC-26-0558</cbc:ID>
+    <cbc:ID>FDAB/2026/7266</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-EX-26-0559</cbc:ID>
+    <cbc:ID>BYF-EX-26-0425</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HFG-INV-26-0563</cbc:ID>
+    <cbc:ID>HRW-INV-26-0772</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

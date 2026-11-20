@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-INV-26-0323</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
+  <cbc:ID>STL-C-1077-2603</cbc:ID>
   <cbc:UUID>0228817f-8a56-5781-a34c-99eedb2ee7ee</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>11:19:00+00:00</cbc:IssueTime>
@@ -22,7 +22,7 @@
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
   <cac:PurchaseReference>
-    <cbc:ID>ST-C-1077</cbc:ID>
+    <cbc:ID>STL-C-1077</cbc:ID>
     <cbc:Description>Supply contract</cbc:Description>
   </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
@@ -158,8 +158,8 @@
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF26STINV260323</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF26STINV260323</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF76STLC10772603</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF76STLC10772603</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL18BSEL0010004293889</cbc:ID>
       <cbc:Name>Selanu Telecom Ltd</cbc:Name>
@@ -167,7 +167,7 @@
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cbc:BlockchainID>CORAL-NET-L1</cbc:BlockchainID>
-      <cbc:PaymentNote>Invoice ST-INV-26-0323</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice STL-C-1077-2603</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -233,7 +233,7 @@
     <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
-      <cbc:ID>ST-L-BUS6</cbc:ID>
+      <cbc:ID>STL-L-BUS6</cbc:ID>
       <cbc:Description>Six business lines</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -242,7 +242,7 @@
       <cbc:Name languageID="qal">Levise nikeile litile</cbc:Name>
       <cbc:Name languageID="en-XL">Business telephone line</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>ST-BL</cbc:ID>
+        <cbc:ID>STL-BL</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
@@ -256,7 +256,7 @@
     <cbc:LineExtensionAmount currencyID="XLC">13.144</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
-      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:ID>STL-D-0042</cbc:ID>
       <cbc:Description>Mobile data pool</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -265,7 +265,7 @@
       <cbc:Name languageID="qal">Livule titefe</cbc:Name>
       <cbc:Name languageID="en-XL">Mobile data</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>ST-GB</cbc:ID>
+        <cbc:ID>STL-GB</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
@@ -279,7 +279,7 @@
     <cbc:LineExtensionAmount currencyID="XLC">6.000</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
-      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:ID>STL-D-0042</cbc:ID>
       <cbc:Description>Mobile data pool, roaming in Bayvarra</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -288,7 +288,7 @@
       <cbc:Name languageID="qal">Livule titefe helate</cbc:Name>
       <cbc:Name languageID="en-XL">Mobile data roaming</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>ST-GB-RX</cbc:ID>
+        <cbc:ID>STL-GB-RX</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>

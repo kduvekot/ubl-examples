@@ -15,10 +15,10 @@ The sawmill quotes per bundle of 50 slats of thermally modified ash, with kiln-d
 - `CustomizationID` = **urn:ubl-examples:world:trns:quotation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Quotation". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:sourcing:1.0**  
-  The Trade Accord's process profile the document belongs to: sourcing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WOOD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MS-DOC-26-0626**  
+  The Trade Accord's process profile the document belongs to: sourcing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900042764**  
+  The collaboration this document belongs to: Valdara's purchase of slats from Marrowdale Sawmill. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **MDS-QT-26-0102**  
   The seller's quotation number.
 - `UUID` = **01317a73-7091-58bf-ad79-782d5646840a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -44,14 +44,14 @@ Inside `ValidityPeriod`:
 
 Inside `RequestForQuotationDocumentReference`:
 
-- `ID` = **VI-DOC-26-0625**  
+- `ID` = **6000012829**  
   The request this quotation answers.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **MS-GTC-2026**  
+- `ID` = **MDS-GTC-2026**  
   The sawmill's general terms of sale, subsidiary to the buyer's terms.
 - `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Marrowdale Sawmill's general terms of sale, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
@@ -356,7 +356,7 @@ Inside `QuotationLine`:
   The buyer's drawing the slat is quoted to.
 - `DocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
-- `DocumentReference/ID` = **MS-SPEC-SL1800**  
+- `DocumentReference/ID` = **MDS-SPEC-SL1800**  
   The sawmill's own specification of the slat, derived from the buyer's drawing.
 - `DocumentReference/DocumentType` = **Product specification**  
   The kind of document referred to, Marrowdale Sawmill's specification of the slat, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -370,7 +370,7 @@ Inside `QuotationLine`:
   The seller's price per unit.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `LineItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -378,7 +378,7 @@ Inside `QuotationLine`:
   The units in one pack: 50 in a bundle; as Marrowdale Sawmill describes the item.
 - `LineItem/Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+- `LineItem/Item/SellersItemIdentification/ID` = **MDS-SL-1800-50**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 - `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; as Marrowdale Sawmill describes the item. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
@@ -497,8 +497,8 @@ Inside `QuotationLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:quotation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:sourcing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-DOC-26-0626</cbc:ID>
+  <cbc:ProfileExecutionID>9900042764</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-QT-26-0102</cbc:ID>
   <cbc:UUID>01317a73-7091-58bf-ad79-782d5646840a</cbc:UUID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>11:34:00-01:00</cbc:IssueTime>
@@ -509,10 +509,10 @@ Inside `QuotationLine`:
     <cbc:EndDate>2026-03-21</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RequestForQuotationDocumentReference>
-    <cbc:ID>VI-DOC-26-0625</cbc:ID>
+    <cbc:ID>6000012829</cbc:ID>
   </cac:RequestForQuotationDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-GTC-2026</cbc:ID>
+    <cbc:ID>MDS-GTC-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>The sawmill's general terms of sale apply only where the buyer's purchasing terms VI-PUR-TERMS-2026, which govern, say nothing.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
@@ -729,7 +729,7 @@ Inside `QuotationLine`:
       <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:DocumentReference>
-      <cbc:ID>MS-SPEC-SL1800</cbc:ID>
+      <cbc:ID>MDS-SPEC-SL1800</cbc:ID>
       <cbc:DocumentType>Product specification</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:LineItem>
@@ -741,12 +741,12 @@ Inside `QuotationLine`:
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800-50</cbc:ID>
+          <cbc:ID>MDS-SL-1800-50</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>

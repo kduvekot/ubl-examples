@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:expression-of-interest:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-DOC-26-0190</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-EOI-26-0007</cbc:ID>
   <cbc:UUID>54bd8806-86b1-56b6-9c9a-10e7f28203ee</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-30</cbc:IssueDate>
   <cbc:IssueTime>14:05:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -16,7 +16,7 @@
     <cbc:EndDate>2026-02-25</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:DocumentReference>
-    <cbc:ID>LPWD-DOC-26-0188</cbc:ID>
+    <cbc:ID>PWD/2026/0174</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

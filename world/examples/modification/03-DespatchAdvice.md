@@ -15,10 +15,10 @@ The sawmill announces the first load of blanks on its own truck, with the lot, s
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MODIFICATION-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MS-DA-26-0408**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **MDS-TX-26-0047**  
+  The collaboration this document belongs to: the sawmill's order of thermal modification from Tostara. Marrowdale Sawmill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **MDS-DA-26-0051**  
   The despatching party's number.
 - `UUID` = **c628c022-ea94-5fd7-82ae-452c5dbc3366**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ The sawmill announces the first load of blanks on its own truck, with the lot, s
 
 Inside `OrderReference`:
 
-- `ID` = **MS-PO-26-0406**  
+- `ID` = **MDS-PO-26-0047**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -150,11 +150,11 @@ Inside `DeliveryCustomerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **MS-SH-26-0409**  
+- `ID` = **MDS-SH-26-0051**  
   The despatching party's shipment number.
 - `TotalTransportHandlingUnitQuantity` = **12** (unitCode `EA`)  
   The pallets of the load, 200 blanks on each.
-- `Consignment/ID` = **MS-CS-26-0410**  
+- `Consignment/ID` = **MDS-CS-26-0051**  
   The sawmill's number for the load.
 - `Consignment/GrossWeightMeasure` = **14448** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the blanks with their pallets.
@@ -177,15 +177,15 @@ Inside `DespatchLine`:
   What was despatched.
 - `OrderLineReference/LineID` = **1.1**  
   The order line this line fulfils.
-- `Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.**  
+- `Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.**  
   The seller's description.
 - `Item/Name` = **Ash blank 1830, kiln dried**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **MS-BL-1830**  
+- `Item/SellersItemIdentification/ID` = **MDS-BL-1830**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 - `Item/ItemInstance/ManufactureDate` = **2026-01-09**  
   The day the blanks came out of the sawmill's drying kiln.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **MS-BL26-0109**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **MDS-BL26-0109**  
   The sawmill's lot of the blanks, from its prefix and the day: it travels with the slats made from them.
 
 ## The document
@@ -196,8 +196,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-DA-26-0408</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-DA-26-0051</cbc:ID>
   <cbc:UUID>c628c022-ea94-5fd7-82ae-452c5dbc3366</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
   <cbc:IssueTime>06:45:00-01:00</cbc:IssueTime>
@@ -205,7 +205,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the blanks on arrival and keep them apart as our goods; report any damage to our dispatch office.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>MS-PO-26-0406</cbc:ID>
+    <cbc:ID>MDS-PO-26-0047</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -290,10 +290,10 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
-    <cbc:ID>MS-SH-26-0409</cbc:ID>
+    <cbc:ID>MDS-SH-26-0051</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">12</cbc:TotalTransportHandlingUnitQuantity>
     <cac:Consignment>
-      <cbc:ID>MS-CS-26-0410</cbc:ID>
+      <cbc:ID>MDS-CS-26-0051</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
     </cac:Consignment>
     <cac:Delivery>
@@ -314,15 +314,15 @@ Inside `DespatchLine`:
       <cbc:LineID>1.1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.</cbc:Description>
+      <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
       <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-BL-1830</cbc:ID>
+        <cbc:ID>MDS-BL-1830</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-01-09</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>MS-BL26-0109</cbc:LotNumberID>
+          <cbc:LotNumberID>MDS-BL26-0109</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>

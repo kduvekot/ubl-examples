@@ -15,14 +15,14 @@ The furniture maker asks whether the deadline still stands.
 - `CustomizationID` = **urn:ubl-examples:world:trns:procurement-status:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Procurement status"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0194**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0007**  
   The sender's number for this document.
 - `UUID` = **d56f561d-6196-5f1c-88f8-b1e34accd398**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-18**  
   The furniture maker asks a week before the deadline.
@@ -166,7 +166,7 @@ Inside `EconomicOperatorParty`:
 
 Inside `TenderingProcess`:
 
-- `ID` = **PWD-2026-PARKS-P**  
+- `ID` = **PWD/2026/PARKS-P**  
   The procedure asked about.
 
 ### Procurement Project
@@ -195,10 +195,10 @@ Inside `ProcurementProjectLot`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:procurement-status:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0194</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>26-0007</cbc:ID>
   <cbc:UUID>d56f561d-6196-5f1c-88f8-b1e34accd398</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-18</cbc:IssueDate>
   <cbc:IssueTime>15:50:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -307,7 +307,7 @@ Inside `ProcurementProjectLot`:
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:TenderingProcess>
-    <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS-P</cbc:ID>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
     <cbc:Name>Park benches for the parks renewal programme</cbc:Name>

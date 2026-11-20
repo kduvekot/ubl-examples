@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:guarantee-certificate:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BL-DOC-26-0200</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>3900039355</cbc:ID>
   <cbc:UUID>3e922210-3b62-5068-9bc7-523b9c932e1a</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>17:19:00-01:00</cbc:IssueTime>
   <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">TENDER</cbc:GuaranteeTypeCode>
@@ -23,7 +23,7 @@
     <cbc:LegalReference>XB-PPA-2019 art. 61</cbc:LegalReference>
   </cac:ApplicableRegulation>
   <cac:ImmobilizedSecurity>
-    <cbc:ImmobilizationCertificateID>BLUM-IMM-26-0044</cbc:ImmobilizationCertificateID>
+    <cbc:ImmobilizationCertificateID>1600002271</cbc:ImmobilizationCertificateID>
     <cbc:SecurityID schemeID="ISO 6166">XB0000260313</cbc:SecurityID>
     <cbc:IssueDate>2023-09-15</cbc:IssueDate>
     <cbc:FaceValueAmount currencyID="XBL">2632.50</cbc:FaceValueAmount>

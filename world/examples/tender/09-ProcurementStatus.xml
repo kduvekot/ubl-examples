@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:procurement-status:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0195</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0339</cbc:ID>
   <cbc:UUID>5d2822e5-9730-5d4e-b4a6-9fee16a390e6</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>11:44:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -21,7 +21,7 @@
     <cbc:DocumentDescription>Art. 47: a deadline is extended only when answers to questions change the procurement documents.</cbc:DocumentDescription>
   </cac:ProcurementLegislationDocumentReference>
   <cac:ProcedureStatusRequestDocumentReference>
-    <cbc:ID>BF-DOC-26-0194</cbc:ID>
+    <cbc:ID>26-0007</cbc:ID>
   </cac:ProcedureStatusRequestDocumentReference>
   <cac:Signature>
     <cbc:ID>PWD-SIG-PS</cbc:ID>

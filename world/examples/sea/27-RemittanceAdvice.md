@@ -15,10 +15,10 @@ The buyer pays the factor from its account at the buyer's bank and says which in
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VT-RM-26-0152**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0668**  
+  The collaboration this document belongs to: Harbourline's collection of the receivable it bought. Harbourline Factoring started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0231**  
   The payer's remittance number.
 - `UUID` = **e979bb12-c34b-549e-a55c-2eaa6ba06d08**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -36,9 +36,9 @@ The buyer pays the factor from its account at the buyer's bank and says which in
   The credit note deducted.
 - `TotalPaymentAmount` = **44699.87** (currencyID `XBL`)  
   The amount transferred: the invoice less the credit note.
-- `PaymentOrderReference` = **VT-PAY-26-0123**  
+- `PaymentOrderReference` = **26-0036**  
   The payment order the payer gave its bank.
-- `InvoicingPartyReference` = **RF20LDINV260147**  
+- `InvoicingPartyReference` = **RF21LMWINV261025**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **2**  
   The invoice paid and the credit note deducted.
@@ -164,9 +164,9 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **VT-PAY-26-0123**  
+- `InstructionID` = **26-0036**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF20LDINV260147** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF21LMWINV261025** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XL40BSEL0010003665515** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -267,7 +267,7 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
-- `InvoicingPartyReference` = **RF20LDINV260147**  
+- `InvoicingPartyReference` = **RF21LMWINV261025**  
   The reference the invoicing party asked to quote.
 - `BuyerCustomerParty/Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -281,7 +281,7 @@ Inside `RemittanceAdviceLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `PayeeParty/PartyName/Name` = **Harbourline Factoring**  
   A party referred to from another party's details: its identifier and name are enough.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `BillingReference/InvoiceDocumentReference/ID` = **LMW-INV-26-1025**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date, so the reference is unambiguous.
@@ -291,7 +291,7 @@ Inside `RemittanceAdviceLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `CreditLineAmount` = **196.13** (currencyID `XBL`)  
   The amount of the credit note, set off against the payment.
-- `BillingReference/CreditNoteDocumentReference/ID` = **LD-CN-26-0151**  
+- `BillingReference/CreditNoteDocumentReference/ID` = **LMW-CN-26-0051**  
   The credit note deducted.
 - `BillingReference/CreditNoteDocumentReference/IssueDate` = **2026-06-15**  
   Its issue date.
@@ -304,8 +304,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-RM-26-0152</cbc:ID>
+  <cbc:ProfileExecutionID>26-0668</cbc:ProfileExecutionID>
+  <cbc:ID>26-0231</cbc:ID>
   <cbc:UUID>e979bb12-c34b-549e-a55c-2eaa6ba06d08</cbc:UUID>
   <cbc:IssueDate>2026-06-25</cbc:IssueDate>
   <cbc:IssueTime>15:43:00+00:00</cbc:IssueTime>
@@ -314,8 +314,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XBL">44896.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">196.13</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">44699.87</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>VT-PAY-26-0123</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>26-0036</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF21LMWINV261025</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -411,8 +411,8 @@ Inside `RemittanceAdviceLine`:
   </cac:PayeeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>VT-PAY-26-0123</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF20LDINV260147</cbc:PaymentID>
+    <cbc:InstructionID>26-0036</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF21LMWINV261025</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL40BSEL0010003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
@@ -494,7 +494,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XBL">44896.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF21LMWINV261025</cbc:InvoicingPartyReference>
     <cac:BuyerCustomerParty>
       <cac:Party>
         <cac:PartyIdentification>
@@ -525,7 +525,7 @@ Inside `RemittanceAdviceLine`:
     </cac:PayeeParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LMW-INV-26-1025</cbc:ID>
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
@@ -536,7 +536,7 @@ Inside `RemittanceAdviceLine`:
     <cbc:CreditLineAmount currencyID="XBL">196.13</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
-        <cbc:ID>LD-CN-26-0151</cbc:ID>
+        <cbc:ID>LMW-CN-26-0051</cbc:ID>
         <cbc:IssueDate>2026-06-15</cbc:IssueDate>
       </cac:CreditNoteDocumentReference>
     </cac:BillingReference>

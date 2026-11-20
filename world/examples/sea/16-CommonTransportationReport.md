@@ -15,10 +15,8 @@ Before entering Selanu the carrier reports to the island's maritime administrati
 - `CustomizationID` = **urn:ubl-examples:world:trns:common-transportation-report:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Common transportation report". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TOL-CTR-26-0141**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **8600033430**  
   The carrier's report number.
 - `UUID` = **cd4e897c-62e6-5fb8-90e8-b04d34a9df22**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -774,10 +772,10 @@ Inside `TransportMeans`:
 
 Inside `DocumentReference`:
 
-- `ID` = **TOL-MF-26-0140**  
+- `ID` = **8500033423**  
   The cargo manifest.
 - `DocumentTypeCode` = **Manifest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TOL-MF-26-0140 is the example sea/15, a Manifest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Manifest.
+  The kind of document referred to: 8500033423 is the example sea/15, a Manifest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Manifest.
 
 ### Signature
 
@@ -798,8 +796,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:common-transportation-report:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-CTR-26-0141</cbc:ID>
+  <cbc:ID>8600033430</cbc:ID>
   <cbc:UUID>cd4e897c-62e6-5fb8-90e8-b04d34a9df22</cbc:UUID>
   <cbc:IssueDate>2026-05-16</cbc:IssueDate>
   <cbc:IssueTime>15:40:00-01:00</cbc:IssueTime>
@@ -1416,7 +1413,7 @@ Inside `Signature`:
     </cac:MaritimeTransport>
   </cac:TransportMeans>
   <cac:DocumentReference>
-    <cbc:ID>TOL-MF-26-0140</cbc:ID>
+    <cbc:ID>8500033423</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Manifest</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

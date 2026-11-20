@@ -3,19 +3,19 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LACT-TS-26-0326</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
+  <cbc:ID>LAC-TS-26-13099</cbc:ID>
   <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>19:20:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>LD-FI-26-0322</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>LMW-FI-26-0606</cbc:ShippingOrderID>
   <cbc:OtherInstruction>The built-up skid goes to the aircraft for KXL207 on 14 May between 06:00 and 06:20; reply only if that slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0324</cbc:ID>
+    <cbc:ID>LMW-CS-26-1010</cbc:ID>
     <cac:CarrierParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -127,7 +127,7 @@
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KXL-WB-26-0325</cbc:ID>
+    <cbc:ID>KXL-00694562</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

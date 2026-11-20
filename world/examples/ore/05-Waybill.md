@@ -15,12 +15,12 @@ The rail consignment note goes to the party that contracted the carriage, the ma
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ORE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FRC-WB-26-0310**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043010**  
+  The collaboration this document belongs to: the ore train Valdara books with Ferrano Rail Cargo, from its request to the carrier's invoice. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **7200091692**  
   The consignment note number.
-- `CarrierAssignedID` = **FRC-NATRAIL-26-0304**  
+- `CarrierAssignedID` = **8900004585**  
   The carrier's own number for the carriage.
 - `UUID` = **04bf0219-eb96-5f58-b434-f608b27f5387**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -232,9 +232,9 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SM-SH-26-0309**  
+- `ID` = **7400004875**  
   The shipment as the despatching party numbered it.
-- `Consignment/ID` = **VI-CS-26-0306**  
+- `Consignment/ID` = **7300043010**  
   The consignment of the transport booking.
 - `Consignment/GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The weight the carrier takes over, from the weighbridge.
@@ -269,10 +269,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **FRC-TEP-26-0307**  
+- `ID` = **9500054926**  
   The transport plan under which the carriage is performed.
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FRC-TEP-26-0307 is the example ore/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
+  The kind of document referred to: 9500054926 is the example ore/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 
 ### Document Distribution
 
@@ -293,7 +293,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **FRC-SIG-FRC-WB-26-0310**  
+- `ID` = **FRC-SIG-7200091692**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -308,9 +308,9 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-WB-26-0310</cbc:ID>
-  <cbc:CarrierAssignedID>FRC-NATRAIL-26-0304</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>9900043010</cbc:ProfileExecutionID>
+  <cbc:ID>7200091692</cbc:ID>
+  <cbc:CarrierAssignedID>8900004585</cbc:CarrierAssignedID>
   <cbc:UUID>04bf0219-eb96-5f58-b434-f608b27f5387</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -462,9 +462,9 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>SM-SH-26-0309</cbc:ID>
+    <cbc:ID>7400004875</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0306</cbc:ID>
+      <cbc:ID>7300043010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -502,7 +502,7 @@ Inside `Signature`:
     </cac:Delivery>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FRC-TEP-26-0307</cbc:ID>
+    <cbc:ID>9500054926</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -519,7 +519,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>FRC-SIG-FRC-WB-26-0310</cbc:ID>
+    <cbc:ID>FRC-SIG-7200091692</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>

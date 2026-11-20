@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>LPG-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-DA-26-0896</cbc:ID>
+  <cbc:ProfileExecutionID>9924528384</cbc:ProfileExecutionID>
+  <cbc:ID>8000034654</cbc:ID>
   <cbc:UUID>a7c85f6b-d4f7-5c6b-b71e-0c4650d9e10a</cbc:UUID>
   <cbc:IssueDate>2026-06-10</cbc:IssueDate>
   <cbc:IssueTime>07:05:00-01:00</cbc:IssueTime>
@@ -12,7 +12,7 @@
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>CSWC-PO-26-0895</cbc:ID>
+    <cbc:ID>4500028302</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -111,9 +111,9 @@
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
-    <cbc:ID>KG-SH-26-0897</cbc:ID>
+    <cbc:ID>7400034654</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>KG-CS-26-0898</cbc:ID>
+      <cbc:ID>7300034654</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">20180</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>

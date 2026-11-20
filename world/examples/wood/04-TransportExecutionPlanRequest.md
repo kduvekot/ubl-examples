@@ -15,10 +15,8 @@ Under DAP the sawmill is the transport user; it books the road carrier from the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-execution-plan-request:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan request". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WOOD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MS-TR-26-0628**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **MDS-TR-26-0133**  
   The transport user's request number.
 - `VersionID` = **1**  
   The first version of the request.
@@ -172,7 +170,7 @@ Inside `BillToParty`:
 
 Inside `TransportContract`:
 
-- `ID` = **MS-TH-FW-2026**  
+- `ID` = **MDS-TH-FW-2026**  
   The framework agreement with the carrier.
 
 ### Transport Service Provider Response Deadline Period
@@ -227,7 +225,7 @@ Inside `ToLocation`:
 
 Inside `Consignment`:
 
-- `ID` = **MS-CS-26-0629**  
+- `ID` = **MDS-CS-26-0221**  
   The transport user's number for this consignment, quoted along the chain.
 - `SummaryDescription` = **96 × Bench slat 1800, bundle of 50**  
   What is to be carried, in a few words.
@@ -338,8 +336,7 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-TR-26-0628</cbc:ID>
+  <cbc:ID>MDS-TR-26-0133</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
@@ -452,7 +449,7 @@ Inside `Consignment`:
     </cac:PartyName>
   </cac:BillToParty>
   <cac:TransportContract>
-    <cbc:ID>MS-TH-FW-2026</cbc:ID>
+    <cbc:ID>MDS-TH-FW-2026</cbc:ID>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseDeadlinePeriod>
     <cbc:EndDate>2026-02-24</cbc:EndDate>
@@ -480,7 +477,7 @@ Inside `Consignment`:
     </cac:Address>
   </cac:ToLocation>
   <cac:Consignment>
-    <cbc:ID>MS-CS-26-0629</cbc:ID>
+    <cbc:ID>MDS-CS-26-0221</cbc:ID>
     <cbc:SummaryDescription>96 × Bench slat 1800, bundle of 50</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>

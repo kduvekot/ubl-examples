@@ -15,10 +15,8 @@ The distributor, as importer, declares the goods in Bayvarra and claims the pref
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-IM-26-0161**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **LMW-IM-26-0127**  
   The importer's declaration number.
 - `UUID` = **d05f73ca-d179-5742-b609-b8871aacb98b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -230,7 +228,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **CL-SH-26-0154**  
+- `ID` = **CAS-SH-26-1291**  
   The shipment of the despatch advice.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -260,10 +258,10 @@ Inside `Shipment`:
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Valdara Industries describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `GoodsItem/DespatchLineReference/LineID` = **1**  
   The despatch advice line of these goods.
-- `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+- `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CAS-DA-26-1342**  
   The despatch advice.
 - `GoodsItem/DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: CAS-DA-26-1342 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `GoodsItem/ContainingPackage/Quantity` = **4** (unitCode `EA`)  
   4 benches to a pallet; the goods item travels on 24 pallets.
 - `GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
@@ -378,10 +376,10 @@ Inside `Shipment`:
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Valdara Industries describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38160 = Parts of furniture.
 - `GoodsItem/DespatchLineReference/LineID` = **2**  
   The despatch advice line of these goods.
-- `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+- `GoodsItem/DespatchLineReference/DocumentReference/ID` = **CAS-DA-26-1342**  
   The despatch advice.
 - `GoodsItem/DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: CAS-DA-26-1342 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `GoodsItem/ContainingPackage/Quantity` = **12** (unitCode `EA`)  
   12 side frames to a pallet; the goods item travels on 1 pallet.
 - `GoodsItem/ContainingPackage/ReturnableMaterialIndicator` = **true**  
@@ -409,18 +407,18 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **FCC-CO-26-0157**  
+- `ID` = **FCC/CO/2026/0090**  
   The certificate of origin, to claim the preferential duty rate; the proof of origin the preference claim refers to.
 - `DocumentTypeCode` = **CertificateOfOrigin** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FCC-CO-26-0157 is the example road/07, a CertificateOfOrigin; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: CertificateOfOrigin = Certificate Of Origin.
-- `ID` = **VI-EX-26-0155**  
+  The kind of document referred to: FCC/CO/2026/0090 is the example road/07, a CertificateOfOrigin; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: CertificateOfOrigin = Certificate Of Origin.
+- `ID` = **7600008669**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VI-EX-26-0155 is the example road/05, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
-- `ID` = **VI-INV-26-0166**  
+  The kind of document referred to: 7600008669 is the example road/05, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **2026/1409**  
   The commercial invoice the customs value rests on.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VI-INV-26-0166 is the example road/15, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: 2026/1409 is the example road/15, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -441,8 +439,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-IM-26-0161</cbc:ID>
+  <cbc:ID>LMW-IM-26-0127</cbc:ID>
   <cbc:UUID>d05f73ca-d179-5742-b609-b8871aacb98b</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>09:54:00-01:00</cbc:IssueTime>
@@ -604,7 +601,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
@@ -628,7 +625,7 @@ Inside `Signature`:
       <cac:DespatchLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cac:DocumentReference>
-          <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:ID>CAS-DA-26-1342</cbc:ID>
           <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
@@ -731,7 +728,7 @@ Inside `Signature`:
       <cac:DespatchLineReference>
         <cbc:LineID>2</cbc:LineID>
         <cac:DocumentReference>
-          <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:ID>CAS-DA-26-1342</cbc:ID>
           <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
@@ -755,15 +752,15 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FCC-CO-26-0157</cbc:ID>
+    <cbc:ID>FCC/CO/2026/0090</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CertificateOfOrigin</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-EX-26-0155</cbc:ID>
+    <cbc:ID>7600008669</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-INV-26-0166</cbc:ID>
+    <cbc:ID>2026/1409</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

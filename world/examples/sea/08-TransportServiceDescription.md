@@ -15,10 +15,10 @@ The ocean carrier describes its weekly service to Selanu.
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-service-description:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport service description"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TOL-DOC-26-0130**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0979**  
+  The collaboration this document belongs to: Lumeway's request for Tidewell's description of its sea service. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **8700033381**  
   The sender's number for this document.
 - `UUID` = **bee924a8-76e1-5c8f-be45-927bde1567a4**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -166,7 +166,7 @@ Inside `ReceiverParty`:
 
 Inside `TransportServiceDescriptionRequestDocumentReference`:
 
-- `ID` = **LD-DOC-26-0129**  
+- `ID` = **LMW-TDR-26-0049**  
   The request answered.
 
 ### Transport Service Provider Party
@@ -297,8 +297,8 @@ Inside `TransportationService`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-service-description:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-DOC-26-0130</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0979</cbc:ProfileExecutionID>
+  <cbc:ID>8700033381</cbc:ID>
   <cbc:UUID>bee924a8-76e1-5c8f-be45-927bde1567a4</cbc:UUID>
   <cbc:IssueDate>2026-05-09</cbc:IssueDate>
   <cbc:IssueTime>12:03:00-01:00</cbc:IssueTime>
@@ -405,7 +405,7 @@ Inside `TransportationService`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportServiceDescriptionRequestDocumentReference>
-    <cbc:ID>LD-DOC-26-0129</cbc:ID>
+    <cbc:ID>LMW-TDR-26-0049</cbc:ID>
   </cac:TransportServiceDescriptionRequestDocumentReference>
   <cac:TransportServiceProviderParty>
     <cac:PartyIdentification>

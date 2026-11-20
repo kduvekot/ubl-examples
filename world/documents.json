@@ -26,7 +26,37 @@
    ],
    "_refs": {
     "text": "D45"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "Valdara's monthly ore call-off from Serravona Mining, from the order to the payment",
+     "starter": "5-xu",
+     "parties": [
+      "4-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "ore/01",
+      "ore/04",
+      "ore/07",
+      "ore/08"
+     ]
+    },
+    {
+     "what": "the ore train Valdara books with Ferrano Rail Cargo, from its request to the carrier's invoice",
+     "starter": "5-xu",
+     "parties": [
+      "14-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "ore/02",
+      "ore/03",
+      "ore/05",
+      "ore/06"
+     ]
+    }
+   ]
   },
   {
    "id": "road",
@@ -48,6 +78,55 @@
       "gln": "6-xb:goodsin"
      },
      "transit_days": 2
+    }
+   ],
+   "collaborations": [
+    {
+     "what": "Lumeway's order of benches from Valdara, from the order to the payment",
+     "starter": "6-xb",
+     "parties": [
+      "5-xu",
+      "6-xb",
+      "8-xu"
+     ],
+     "documents": [
+      "road/01",
+      "road/02",
+      "road/04",
+      "road/11",
+      "road/12",
+      "road/13",
+      "road/15",
+      "road/16",
+      "road/17"
+     ]
+    },
+    {
+     "what": "the road carriage Lumeway books with Trasvia Haulage",
+     "starter": "6-xb",
+     "parties": [
+      "13-xu",
+      "6-xb"
+     ],
+     "documents": [
+      "road/03",
+      "road/08",
+      "road/09",
+      "road/14"
+     ]
+    },
+    {
+     "what": "the certificate of origin Valdara applies for at the Ferrano Chamber of Commerce",
+     "starter": "5-xu",
+     "parties": [
+      "20-xu",
+      "5-xu",
+      "6-xb"
+     ],
+     "documents": [
+      "road/06",
+      "road/07"
+     ]
     }
    ]
   },
@@ -89,7 +168,52 @@
    ],
    "_refs": {
     "text": "D37"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "Lumeway's order of the rail delivery from Valdara",
+     "starter": "6-xb",
+     "parties": [
+      "5-xu",
+      "6-xb"
+     ],
+     "documents": [
+      "rail/01",
+      "rail/11",
+      "rail/13"
+     ]
+    },
+    {
+     "what": "the rail carriage Valdara books with Ferrano Rail Cargo",
+     "starter": "5-xu",
+     "parties": [
+      "14-xu",
+      "18-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "rail/02",
+      "rail/03",
+      "rail/07",
+      "rail/08",
+      "rail/09",
+      "rail/10",
+      "rail/12"
+     ]
+    },
+    {
+     "what": "the carrier's request to the rail infrastructure agency for the train's progress",
+     "starter": "14-xu",
+     "parties": [
+      "14-xu",
+      "47-xu"
+     ],
+     "documents": [
+      "rail/04",
+      "rail/05"
+     ]
+    }
+   ]
   },
   {
    "id": "plastics",
@@ -114,7 +238,38 @@
    ],
    "_refs": {
     "text": "plastics/12, D41"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "Rivermouth's order of granulate from Rinova Recovery",
+     "starter": "41-xb",
+     "parties": [
+      "41-xb",
+      "7-xu"
+     ],
+     "documents": [
+      "plastics/01",
+      "plastics/02",
+      "plastics/08",
+      "plastics/10",
+      "plastics/11"
+     ]
+    },
+    {
+     "what": "the barge carriage Rinova books with Fiumella Barges",
+     "starter": "7-xu",
+     "parties": [
+      "15-xu",
+      "7-xu"
+     ],
+     "documents": [
+      "plastics/03",
+      "plastics/04",
+      "plastics/06",
+      "plastics/07"
+     ]
+    }
+   ]
   },
   {
    "id": "retail",
@@ -148,6 +303,69 @@
      "to_place": {
       "name": "The shopper's home, Lumeport"
      }
+    }
+   ],
+   "collaborations": [
+    {
+     "what": "the store's request for Lumeway's catalogue and the catalogue's updates",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "retail/01",
+      "retail/02",
+      "retail/03",
+      "retail/04",
+      "retail/20"
+     ]
+    },
+    {
+     "what": "the store's forecast, promotion and stock report for Lumeway",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "retail/05",
+      "retail/06",
+      "retail/07"
+     ]
+    },
+    {
+     "what": "the store's order from Lumeway, from the order to the credit note",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "retail/08",
+      "retail/09",
+      "retail/10",
+      "retail/12",
+      "retail/17",
+      "retail/18",
+      "retail/19"
+     ]
+    },
+    {
+     "what": "the carriage Lumeway books with Bayforth Forwarding",
+     "starter": "6-xb",
+     "parties": [
+      "10-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "retail/11",
+      "retail/13",
+      "retail/14",
+      "retail/15",
+      "retail/16",
+      "retail/23"
+     ]
     }
    ]
   },
@@ -200,6 +418,86 @@
      "to_place": {
       "name": "Nalevi Warehousing, Selanu"
      }
+    }
+   ],
+   "collaborations": [
+    {
+     "what": "Velumi's order from Lumeway, with its change by air, from the order to the credit note",
+     "starter": "1-xl",
+     "parties": [
+      "1-xl",
+      "6-xb",
+      "9-xl"
+     ],
+     "documents": [
+      "sea/05",
+      "sea/06",
+      "sea/20",
+      "sea/21",
+      "sea/22",
+      "sea/23",
+      "sea/24",
+      "sea/26",
+      "air/01",
+      "air/02",
+      "air/06",
+      "air/07",
+      "air/08",
+      "air/11"
+     ]
+    },
+    {
+     "what": "Lumeway's request for Tidewell's description of its sea service",
+     "starter": "6-xb",
+     "parties": [
+      "11-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "sea/07",
+      "sea/08"
+     ]
+    },
+    {
+     "what": "the forwarding Lumeway gives Bayforth Forwarding",
+     "starter": "6-xb",
+     "parties": [
+      "10-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "sea/09",
+      "sea/10",
+      "sea/18"
+     ]
+    },
+    {
+     "what": "the sea carriage Bayforth books with Tidewell Ocean Lines",
+     "starter": "10-xb",
+     "parties": [
+      "10-xb",
+      "11-xb",
+      "16-xb",
+      "16-xl"
+     ],
+     "documents": [
+      "sea/12",
+      "sea/13",
+      "sea/14",
+      "sea/17"
+     ]
+    },
+    {
+     "what": "Harbourline's collection of the receivable it bought",
+     "starter": "24-xb",
+     "parties": [
+      "1-xl",
+      "24-xb"
+     ],
+     "documents": [
+      "sea/25",
+      "sea/27"
+     ]
     }
    ]
   },
@@ -277,7 +575,36 @@
    ],
    "_refs": {
     "legs.0.why": "D39"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "the forwarding by air Lumeway gives Bayforth Forwarding",
+     "starter": "6-xb",
+     "parties": [
+      "10-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "air/03",
+      "air/10"
+     ]
+    },
+    {
+     "what": "the air carriage Bayforth books with Kelaro Air Cargo",
+     "starter": "10-xb",
+     "parties": [
+      "10-xb",
+      "12-xl",
+      "17-xb",
+      "17-xl"
+     ],
+     "documents": [
+      "air/04",
+      "air/05",
+      "air/09"
+     ]
+    }
+   ]
   },
   {
    "id": "tender",
@@ -298,13 +625,111 @@
       "name": "Public works depot, Lumeport"
      }
     }
+   ],
+   "collaborations": [
+    {
+     "what": "the department's procurement of park benches",
+     "starter": "2-xb",
+     "parties": [
+      "2-xb",
+      "21-xb",
+      "25-xb",
+      "36-xb",
+      "37-xb",
+      "5-xu"
+     ],
+     "documents": [
+      "tender/01",
+      "tender/02",
+      "tender/03",
+      "tender/04",
+      "tender/05",
+      "tender/06",
+      "tender/07",
+      "tender/08",
+      "tender/09",
+      "tender/10",
+      "tender/11",
+      "tender/12",
+      "tender/13",
+      "tender/14",
+      "tender/15",
+      "tender/16",
+      "tender/17",
+      "tender/18",
+      "tender/19",
+      "tender/20",
+      "tender/21",
+      "tender/22",
+      "tender/23",
+      "tender/24",
+      "tender/25",
+      "tender/37",
+      "tender/40"
+     ],
+     "id": "PWD/2026/PARKS"
+    },
+    {
+     "what": "the department's first call-off under the contract",
+     "starter": "2-xb",
+     "parties": [
+      "2-xb",
+      "5-xu",
+      "8-xu"
+     ],
+     "documents": [
+      "tender/26",
+      "tender/27",
+      "tender/28",
+      "tender/29",
+      "tender/32",
+      "tender/33",
+      "tender/35",
+      "tender/36",
+      "tender/38",
+      "tender/39"
+     ]
+    }
    ]
   },
   {
    "id": "contest",
    "title": "A design contest for the promenade bench (Bayvarra)",
    "text": "The contracting authority relaunches a design contest for the bench of Lumeport's harbour promenade, after cancelling the first one because no design met the brief. The council raises the prize fund before the contest notice; a corrigendum corrects the site plan, extends the deadline for requests and lets an industrial designer lead a design. The furniture maker and the engineering firm enter as a team, and the furniture maker's own designer takes over the lead; every member of the team is checked in the register, and a small design studio is excluded at the selection. The jury awards the first prize to the team and the second to the manufacturer; the results notice is corrected for a prize amount. Several documents are revised and say which version they supersede. No goods move.",
-   "legs": []
+   "legs": [],
+   "collaborations": [
+    {
+     "what": "the department's design contest for the promenade bench",
+     "starter": "2-xb",
+     "parties": [
+      "2-xb",
+      "21-xb",
+      "37-xb",
+      "48-xb"
+     ],
+     "documents": [
+      "contest/01",
+      "contest/02",
+      "contest/03",
+      "contest/04",
+      "contest/05",
+      "contest/06",
+      "contest/07",
+      "contest/08",
+      "contest/09",
+      "contest/10",
+      "contest/11",
+      "contest/12",
+      "contest/13",
+      "contest/14",
+      "contest/15",
+      "contest/16",
+      "contest/17",
+      "contest/18"
+     ],
+     "id": "PWD/2026/PROM-DC"
+    }
+   ]
   },
   {
    "id": "carnet",
@@ -413,6 +838,23 @@
       "locode": "XUFER"
      }
     }
+   ],
+   "collaborations": [
+    {
+     "what": "the carnet the Ferrano Chamber of Commerce issues and its proof of re-exportation",
+     "starter": "20-xu",
+     "parties": [
+      "20-xl",
+      "20-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "carnet/01",
+      "carnet/02",
+      "carnet/03",
+      "carnet/04"
+     ]
+    }
    ]
   },
   {
@@ -438,12 +880,86 @@
    ],
    "_refs": {
     "text": "D42"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "the movement of Valdara's waste to Rinova Recovery",
+     "starter": "5-xu",
+     "parties": [
+      "46-xu",
+      "5-xu",
+      "7-xu"
+     ],
+     "documents": [
+      "waste/01",
+      "waste/02",
+      "waste/03",
+      "waste/04"
+     ]
+    }
+   ]
   },
   {
    "id": "utilities",
    "title": "Electricity, water and telecom (one utility in each country)",
-   "text": "Every business and household pays for electricity, water and the telephone. A business with a meter read every month is billed every month on its reading. A household pays on account: a twelfth of the year's estimate every month by direct debit, the meter read once a year, and an annual statement and a settlement bill for the actual year. In Urvania the electricity bill carries the grid operator's network charges beside the retail company's energy; in Lumeport the water company also runs the district heating, and its bill carries the city's sewage levy; the island's telephone company bills its business customers every month. UBL bills a utility with an Invoice and supplements it with a Utility Statement: the consumption behind the bill, per connection, with the meter readings."
+   "text": "Every business and household pays for electricity, water and the telephone. A business with a meter read every month is billed every month on its reading. A household pays on account: a twelfth of the year's estimate every month by direct debit, the meter read once a year, and an annual statement and a settlement bill for the actual year. In Urvania the electricity bill carries the grid operator's network charges beside the retail company's energy; in Lumeport the water company also runs the district heating, and its bill carries the city's sewage levy; the island's telephone company bills its business customers every month. UBL bills a utility with an Invoice and supplements it with a Utility Statement: the consumption behind the bill, per connection, with the meter readings.",
+   "collaborations": [
+    {
+     "what": "Ferrano Energy's bill for March to Valdara",
+     "starter": "33-xu",
+     "parties": [
+      "33-xu",
+      "5-xu",
+      "8-xu"
+     ],
+     "documents": [
+      "utilities/01",
+      "utilities/02",
+      "utilities/03",
+      "utilities/04"
+     ]
+    },
+    {
+     "what": "the water company's bill for March to the store",
+     "starter": "34-xb",
+     "parties": [
+      "26-xb",
+      "34-xb"
+     ],
+     "documents": [
+      "utilities/05",
+      "utilities/06",
+      "utilities/07"
+     ]
+    },
+    {
+     "what": "the water company's annual account of the household",
+     "starter": "34-xb",
+     "parties": [
+      "34-xb",
+      "c-xb"
+     ],
+     "documents": [
+      "utilities/08",
+      "utilities/09",
+      "utilities/10",
+      "utilities/11"
+     ]
+    },
+    {
+     "what": "Selanu Telecom's bill for March to Velumi",
+     "starter": "35-xl",
+     "parties": [
+      "1-xl",
+      "35-xl"
+     ],
+     "documents": [
+      "utilities/12",
+      "utilities/13",
+      "utilities/14"
+     ]
+    }
+   ]
   },
   {
    "id": "wood",
@@ -481,7 +997,38 @@
    ],
    "_refs": {
     "text": "O243, O150"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "Valdara's purchase of slats from Marrowdale Sawmill",
+     "starter": "5-xu",
+     "parties": [
+      "36-xb",
+      "5-xu",
+      "59-xu"
+     ],
+     "documents": [
+      "wood/01",
+      "wood/02",
+      "wood/03",
+      "wood/06",
+      "wood/08",
+      "wood/09"
+     ]
+    },
+    {
+     "what": "Brackenmere's order of slats from Marrowdale Sawmill",
+     "starter": "37-xb",
+     "parties": [
+      "36-xb",
+      "37-xb"
+     ],
+     "documents": [
+      "wood/10",
+      "wood/11"
+     ]
+    }
+   ]
   },
   {
    "id": "modification",
@@ -505,7 +1052,26 @@
    ],
    "_refs": {
     "text": "O150, analysis/o150-design.md; O253 (the second load is cited, not an example)"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "the sawmill's order of thermal modification from Tostara",
+     "starter": "36-xb",
+     "parties": [
+      "36-xb",
+      "59-xu"
+     ],
+     "documents": [
+      "modification/01",
+      "modification/02",
+      "modification/03",
+      "modification/06",
+      "modification/07",
+      "modification/08",
+      "modification/09"
+     ]
+    }
+   ]
   },
   {
    "id": "furniture",
@@ -552,6 +1118,76 @@
      "to_place": {
       "name": "Lumeport Public Works Department, Civic Square"
      }
+    }
+   ],
+   "collaborations": [
+    {
+     "what": "the store's request for a quotation of the Marrow line",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "37-xb"
+     ],
+     "documents": [
+      "furniture/01",
+      "furniture/02",
+      "furniture/03"
+     ]
+    },
+    {
+     "what": "the store's replenishment of the Marrow line by Brackenmere",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "37-xb"
+     ],
+     "documents": [
+      "furniture/04",
+      "furniture/05",
+      "furniture/06",
+      "furniture/07"
+     ]
+    },
+    {
+     "what": "the store's first order of the Marrow line, with its return",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "37-xb"
+     ],
+     "documents": [
+      "furniture/08",
+      "furniture/09",
+      "furniture/12",
+      "furniture/13",
+      "furniture/18",
+      "furniture/19"
+     ]
+    },
+    {
+     "what": "the store's second order, cancelled",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "37-xb"
+     ],
+     "documents": [
+      "furniture/10",
+      "furniture/11"
+     ]
+    },
+    {
+     "what": "the department's order of benches for an office",
+     "starter": "2-xb",
+     "parties": [
+      "2-xb",
+      "37-xb"
+     ],
+     "documents": [
+      "furniture/15",
+      "furniture/16",
+      "furniture/17"
+     ]
     }
    ]
   },
@@ -737,7 +1373,74 @@
    },
    "_refs": {
     "packages.why": "D12, O26, D33"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "the ginnery's purchase of the farm's seed cotton",
+     "starter": "39-xl",
+     "parties": [
+      "38-xl",
+      "39-xl"
+     ],
+     "documents": [
+      "cotton/01",
+      "cotton/03",
+      "cotton/04",
+      "cotton/05",
+      "cotton/06"
+     ]
+    },
+    {
+     "what": "the textile mill's forecast of its cotton needs for the ginnery",
+     "starter": "40-xb",
+     "parties": [
+      "39-xl",
+      "40-xb"
+     ],
+     "documents": [
+      "cotton/02",
+      "cotton/07"
+     ]
+    },
+    {
+     "what": "the textile mill's order of cotton lint from the ginnery",
+     "starter": "40-xb",
+     "parties": [
+      "39-xl",
+      "40-xb"
+     ],
+     "documents": [
+      "cotton/08",
+      "cotton/16",
+      "cotton/18"
+     ]
+    },
+    {
+     "what": "the forwarding the textile mill gives Bayforth Forwarding",
+     "starter": "40-xb",
+     "parties": [
+      "10-xb",
+      "40-xb"
+     ],
+     "documents": [
+      "cotton/09",
+      "cotton/17"
+     ]
+    },
+    {
+     "what": "the sea carriage of the lint Bayforth books with Tidewell Ocean Lines",
+     "starter": "10-xb",
+     "parties": [
+      "10-xb",
+      "11-xb",
+      "39-xl"
+     ],
+     "documents": [
+      "cotton/12",
+      "cotton/13"
+     ]
+    }
+   ]
   },
   {
    "id": "packaging",
@@ -784,6 +1487,45 @@
       "name": "Goods-in of the Lumeport store",
       "gln": "26-xb:goods-in"
      }
+    }
+   ],
+   "collaborations": [
+    {
+     "what": "Valdara's order of stretch film from Rivermouth",
+     "starter": "5-xu",
+     "parties": [
+      "41-xb",
+      "5-xu"
+     ],
+     "documents": [
+      "packaging/01",
+      "packaging/02"
+     ]
+    },
+    {
+     "what": "the textile mill's order of packaging from Rivermouth",
+     "starter": "40-xb",
+     "parties": [
+      "40-xb",
+      "41-xb"
+     ],
+     "documents": [
+      "packaging/03",
+      "packaging/04"
+     ]
+    },
+    {
+     "what": "the store's order of shirts from the textile mill",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "40-xb"
+     ],
+     "documents": [
+      "packaging/05",
+      "packaging/06",
+      "packaging/07"
+     ]
     }
    ]
   },
@@ -868,6 +1610,34 @@
       "name": "Selanu Telecom's mast site on Mast Hill"
      }
     }
+   ],
+   "collaborations": [
+    {
+     "what": "Selanu Telecom's order of a mast from Saltmere Engineering",
+     "starter": "35-xl",
+     "parties": [
+      "27-xb",
+      "35-xl"
+     ],
+     "documents": [
+      "mast/01",
+      "mast/04",
+      "mast/05"
+     ]
+    },
+    {
+     "what": "the forwarding by air Saltmere gives Bayforth Forwarding",
+     "starter": "27-xb",
+     "parties": [
+      "10-xb",
+      "12-xl",
+      "27-xb"
+     ],
+     "documents": [
+      "mast/02",
+      "mast/03"
+     ]
+    }
    ]
   },
   {
@@ -900,6 +1670,33 @@
      "to_place": {
       "name": "Ferrano Grid city gate, Ferrano"
      }
+    }
+   ],
+   "collaborations": [
+    {
+     "what": "Ferrano Grid's network bill for April to Ferrano Energy",
+     "starter": "44-xu",
+     "parties": [
+      "33-xu",
+      "44-xu"
+     ],
+     "documents": [
+      "energy/01",
+      "energy/02"
+     ]
+    },
+    {
+     "what": "Kelpstone's gas bill for April to Montebrio Power",
+     "starter": "42-xb",
+     "parties": [
+      "42-xb",
+      "43-xu"
+     ],
+     "documents": [
+      "energy/06",
+      "energy/08",
+      "energy/09"
+     ]
     }
    ]
   },
@@ -953,6 +1750,24 @@
       "name": "Hafefo Fresh Produce, cold store, Selanu"
      }
     }
+   ],
+   "collaborations": [
+    {
+     "what": "Hafefo's order of fruit from Harrowmead Fruit Growers",
+     "starter": "56-xl",
+     "parties": [
+      "55-xb",
+      "56-xl"
+     ],
+     "documents": [
+      "reefer/01",
+      "reefer/02",
+      "reefer/06",
+      "reefer/08",
+      "reefer/11",
+      "reefer/12"
+     ]
+    }
    ]
   },
   {
@@ -977,7 +1792,22 @@
    ],
    "_refs": {
     "text": "D48, O204"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "the water company's order of liquefied petroleum gas from Kelpstone",
+     "starter": "34-xb",
+     "parties": [
+      "34-xb",
+      "42-xb"
+     ],
+     "documents": [
+      "lpg/01",
+      "lpg/02",
+      "lpg/04"
+     ]
+    }
+   ]
   },
   {
    "id": "medicines",
@@ -1063,7 +1893,61 @@
    ],
    "_refs": {
     "legs.1.why": "O202 choice 4"
-   }
+   },
+   "collaborations": [
+    {
+     "what": "Quillmoor's order of a biological medicine from Nilavar Biologics",
+     "starter": "49-xb",
+     "parties": [
+      "49-xb",
+      "58-in"
+     ],
+     "documents": [
+      "medicines/01",
+      "medicines/02"
+     ]
+    },
+    {
+     "what": "the hospital's order of medicines from Quillmoor",
+     "starter": "50-xl",
+     "parties": [
+      "49-xb",
+      "50-xl"
+     ],
+     "documents": [
+      "medicines/04",
+      "medicines/09",
+      "medicines/14"
+     ]
+    },
+    {
+     "what": "Quillmoor's order of a technetium generator from Haarvliet Isotopes",
+     "starter": "49-xb",
+     "parties": [
+      "49-xb",
+      "51-nl"
+     ],
+     "documents": [
+      "medicines/05",
+      "medicines/07"
+     ]
+    },
+    {
+     "what": "the air carriage Bayforth books with Kelaro Air Cargo",
+     "starter": "10-xb",
+     "parties": [
+      "10-xb",
+      "12-xl",
+      "17-xb",
+      "17-xl"
+     ],
+     "documents": [
+      "medicines/10",
+      "medicines/11",
+      "medicines/12"
+     ]
+    }
+   ]
   }
  ],
  "documents": [
@@ -5128,31 +6012,35 @@
   }
  ],
  "cited": {
-  "BF-ACC-2024": {
+  "BKM-ACC-2024": {
    "what": "Brackenmere's accounts for 2024, the last filed when it tendered",
    "type": "Annual accounts"
   },
-  "BF-CHECK-26-0408": {
+  "brackenmere-installation-checklist": {
+   "issuer": "37-xb",
+   "kind": "Checklist",
    "what": "Brackenmere's checklist of the office installation",
    "type": "Installation checklist"
   },
-  "BF-DS-PARK": {
+  "BKM-DS-PARK": {
    "what": "Brackenmere's data sheet of its park bench",
    "type": "Product data sheet"
   },
-  "BF-ESPD-26": {
+  "BKM-ESPD-26": {
    "what": "Brackenmere's self-declaration for the tender",
    "type": "Tenderer self-declaration"
   },
-  "BF-PHOTO-26-0408": {
+  "brackenmere-office-photographs": {
+   "issuer": "37-xb",
+   "kind": "Photograph",
    "what": "photographs of the finished office",
    "type": "Photograph"
   },
-  "BF-QUOTE-AIR-26-0611": {
+  "BYF-QUOTE-AIR-26-0611": {
    "what": "Bayforth's quotation for the air freight",
    "type_code": "361"
   },
-  "BF-REF-2025": {
+  "BKM-REF-2025": {
    "what": "Brackenmere's reference letters from customers for its park furniture of 2025",
    "type": "Reference letters"
   },
@@ -5172,11 +6060,11 @@
    "what": "the store's retail event for the reopening, cited before its number is known; its ID is put right with the retail flow",
    "type_code": "RetailEvent"
   },
-  "BS-BANK-26-04": {
+  "BM-BANK-26-04": {
    "what": "the payer's bank statement line",
    "type": "Bank statement"
   },
-  "BS-PHOTO-26-0118": {
+  "BM-PHOTO-26-0118": {
    "what": "the photograph of the damaged carton",
    "type": "Photograph"
   },
@@ -5184,11 +6072,15 @@
    "what": "the water company's quarterly water quality report",
    "type": "Water quality report"
   },
-  "FE-INV-26-0211": {
+  "ferrano-energy-bill-2026-02": {
+   "issuer": "33-xu",
+   "kind": "Invoice",
    "what": "Ferrano Energy's electricity bill of February to Valdara, with the estimated reading the March bill corrects",
    "type": "Invoice"
   },
-  "FRC-TEP-26-0001": {
+  "frc-ore-season-plan": {
+   "issuer": "14-xu",
+   "kind": "TransportExecutionPlan",
    "what": "Ferrano Rail Cargo's standing transport plan for the ore season, agreed in January (a document outside the examples)",
    "type": "Transport execution plan"
   },
@@ -5200,7 +6092,9 @@
    "what": "Ferrano Rail Cargo's list of the wagons",
    "type": "Wagon list"
   },
-  "HF-ASSIGN-26-0091": {
+  "harbourline-assignment-notice": {
+   "issuer": "24-xb",
+   "kind": "AssignmentNotice",
    "what": "Harbourline's notice of the assigned receivable",
    "type": "Notice of assignment"
   },
@@ -5208,11 +6102,11 @@
    "what": "the factoring agreement between Lumeway and Harbourline",
    "type": "Factoring agreement"
   },
-  "LD-GTC-2026": {
+  "LMW-GTC-2026": {
    "what": "Lumeway's general terms of trade",
    "type_code": "774"
   },
-  "LD-REG-XB": {
+  "LMW-REG-XB": {
    "what": "Lumeway's extract from Bayvarra's business register",
    "type_code": "101"
   },
@@ -5224,19 +6118,19 @@
    "what": "the textile mill's season agreement with the ginnery",
    "type": "Season agreement"
   },
-  "MS-GTC-2026": {
+  "MDS-GTC-2026": {
    "what": "Marrowdale Sawmill's general terms of sale",
    "type_code": "774"
   },
-  "MS-SPEC-SL1800": {
+  "MDS-SPEC-SL1800": {
    "what": "Marrowdale Sawmill's specification of the slat",
    "type": "Product specification"
   },
-  "PS-REQ-26-0031": {
+  "POS-REQ-26-0031": {
    "what": "the Port of Selanu's request to the trader",
    "type": "Request"
   },
-  "PWD-2026-PARKS": {
+  "PWD/2026/PARKS": {
    "what": "the public works department's procurement file of the park benches",
    "type": "Procurement file"
   },
@@ -5244,11 +6138,15 @@
    "what": "the colour sample of the harbour benches",
    "type": "Colour sample"
   },
-  "PWD-COMMIT-26-0381": {
+  "pwd-budget-commitment": {
+   "issuer": "2-xb",
+   "kind": "BudgetCommitment",
    "what": "the department's budget commitment",
    "type": "Budget commitment"
   },
-  "PWD-DMG-26-0081": {
+  "pwd-damage-report": {
+   "issuer": "2-xb",
+   "kind": "DamageReport",
    "what": "the public works department's damage report",
    "type_code": "DAMAGEREPORT"
   },
@@ -5264,7 +6162,9 @@
    "what": "the department's plan for the city's parks",
    "type": "Parks plan"
   },
-  "PWD-PAY-AUTH-26-0412": {
+  "pwd-payment-authorisation": {
+   "issuer": "2-xb",
+   "kind": "PaymentAuthorisation",
    "what": "the department's payment authorisation",
    "type": "Payment authorisation"
   },
@@ -5292,11 +6192,15 @@
    "what": "the department's technical specification of the bench",
    "type": "Technical specification"
   },
-  "RR-REC-26-0412": {
+  "rinova-recovery-certificate": {
+   "issuer": "7-xu",
+   "kind": "RecoveryCertificate",
    "what": "Rinova's certificate of recovery",
    "type": "Certificate of recovery"
   },
-  "SCC-CLS-26-0311": {
+  "scc-classing-report": {
+   "issuer": "20-xl",
+   "kind": "ClassingReport",
    "what": "the Selanu Chamber of Commerce's classing report of the farm's lot",
    "type": "Classing report"
   },
@@ -5352,7 +6256,9 @@
    "what": "Valdara's own catalogue of 2026, from which Lumeway's catalogue lines come",
    "type": "Catalogue"
   },
-  "VI-CD-26-0330E": {
+  "valdara-export-declaration-rail": {
+   "issuer": "5-xu",
+   "kind": "ExportCustomsDeclaration",
    "what": "Valdara's export declaration lodged in Urvania at the office of departure of the rail transit",
    "type_code": "ExportCustomsDeclaration"
   },
@@ -5384,7 +6290,9 @@
    "what": "Valdara's reference letters",
    "type": "Reference letters"
   },
-  "VI-TD-26-0513": {
+  "valdara-transit-declaration-air": {
+   "issuer": "5-xu",
+   "kind": "TransitCustomsDeclaration",
    "what": "Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport",
    "type": "Transit declaration"
   },
@@ -5404,7 +6312,9 @@
    "what": "the payer's bank statement line",
    "type": "Bank statement"
   },
-  "VT-CLAIM-26-0019": {
+  "velumi-claim": {
+   "issuer": "1-xl",
+   "kind": "Claim",
    "what": "Velumi's claim",
    "type": "Claim"
   },
@@ -5412,7 +6322,7 @@
    "what": "Velumi's claim",
    "type": "Claim"
   },
-  "WS-CERT-26-0884": {
+  "WVS-CERT-26-0884": {
    "what": "Wavesure's insurance certificate of the sea shipment, with its insured value",
    "type": "Insurance certificate"
   },
@@ -5424,7 +6334,9 @@
    "what": "the classing certificate of the cotton",
    "type": "Classing certificate"
   },
-  "XL-CUS-ATA-26-0071": {
+  "island-customs-notice": {
+   "issuer": "19-xl",
+   "kind": "CustomsNotice",
    "what": "the island customs' notice to the chamber",
    "type": "Customs notice"
   },
@@ -5432,23 +6344,33 @@
    "what": "the island customs' inspection report",
    "type_code": "293"
   },
-  "XL-CUS-RCPT-26-0517": {
+  "island-customs-receipt": {
+   "issuer": "19-xl",
+   "kind": "Receipt",
    "what": "the island customs' receipt for the inspection fee",
    "type_code": "917"
   },
-  "XU-CUS-REIMP-26-0044": {
+  "urvanian-customs-reimportation": {
+   "issuer": "19-xu",
+   "kind": "CustomsRecord",
    "what": "Urvanian customs' record of the re-importation",
    "type": "Re-importation record"
   },
-  "KG-WB-26-0610-03": {
+  "kelpstone-weighbridge-ticket": {
+   "issuer": "42-xb",
+   "kind": "WeighbridgeTicket",
    "what": "Kelpstone's weighbridge ticket of the tanker, weighed empty and full at the plant",
    "type": "Weighbridge ticket"
   },
-  "QPD-DGD-26-0615": {
+  "QLM-DGD-26-0615": {
    "what": "the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own",
    "type_code": "890"
   },
-  "TWM-IM-26-0414": {
+  "modification-entry-2": {
+   "number": [
+    "modification",
+    "import-2"
+   ],
    "what": "the modification plant's entry into inward processing of the second load of ash blanks, on 20 January",
    "type_code": "ImportCustomsDeclaration"
   }

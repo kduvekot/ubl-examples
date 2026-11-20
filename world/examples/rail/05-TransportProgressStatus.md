@@ -15,10 +15,10 @@ The rail infrastructure manager reports the train's position and timetable on it
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-progress-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport progress status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RIAU-DOC-26-0330**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900092547**  
+  The collaboration this document belongs to: the carrier's request to the rail infrastructure agency for the train's progress. Ferrano Rail Cargo started it and gave it this identifier, which every document of it repeats.
+- `ID` = **RIAU/2026/8490**  
   The sender's number for this document.
 - `UUID` = **78d6602f-27f8-5e6a-b8c0-36b493a71754**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -158,7 +158,7 @@ Inside `ReceiverParty`:
 
 Inside `TransportProgressStatusRequestDocumentReference`:
 
-- `ID` = **FRC-DOC-26-0329**  
+- `ID` = **8200004628**  
   The request answered.
 
 ### Transport Means
@@ -263,8 +263,8 @@ Inside `TransportSchedule`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-progress-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RIAU-DOC-26-0330</cbc:ID>
+  <cbc:ProfileExecutionID>9900092547</cbc:ProfileExecutionID>
+  <cbc:ID>RIAU/2026/8490</cbc:ID>
   <cbc:UUID>78d6602f-27f8-5e6a-b8c0-36b493a71754</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:55:00-01:00</cbc:IssueTime>
@@ -365,7 +365,7 @@ Inside `TransportSchedule`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportProgressStatusRequestDocumentReference>
-    <cbc:ID>FRC-DOC-26-0329</cbc:ID>
+    <cbc:ID>8200004628</cbc:ID>
   </cac:TransportProgressStatusRequestDocumentReference>
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>

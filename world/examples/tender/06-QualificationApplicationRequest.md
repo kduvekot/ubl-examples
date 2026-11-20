@@ -15,14 +15,14 @@ The authority sends the furniture maker the self-declaration it must fill in: ex
 - `CustomizationID` = **urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Qualification application"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0192**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0195**  
   The sender's number for this document.
 - `UUID` = **3c06617e-8a80-509a-b64c-e7ad1ca81e2a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The contract.
@@ -165,7 +165,7 @@ Inside `EconomicOperatorParty`:
 
 Inside `ProcurementProject`:
 
-- `ID` = **PWD-2026-PARKS**  
+- `ID` = **PWD/2026/PARKS**  
   The procedure.
 
 ### Procurement Project Lot
@@ -534,10 +534,10 @@ Inside `TenderingCriterion`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0189**  
+- `ID` = **PWD/2026/0182**  
   The call for tenders, sent with this request.
 - `DocumentTypeCode` = **CallForTenders** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0189 is the example tender/03, a CallForTenders; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: CallForTenders = Call For Tenders.
+  The kind of document referred to: PWD/2026/0182 is the example tender/03, a CallForTenders; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: CallForTenders = Call For Tenders.
 
 ### Signature
 
@@ -558,10 +558,10 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0195</cbc:ID>
   <cbc:UUID>3c06617e-8a80-509a-b64c-e7ad1ca81e2a</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-01-29</cbc:IssueDate>
   <cbc:IssueTime>08:25:00-01:00</cbc:IssueTime>
@@ -664,7 +664,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:ProcurementProject>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS</cbc:ID>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
@@ -931,7 +931,7 @@ Inside `Signature`:
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+    <cbc:ID>PWD/2026/0182</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CallForTenders</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

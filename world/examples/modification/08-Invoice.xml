@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TWM-INV-26-0417</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>2026/0065</cbc:ID>
   <cbc:UUID>5780ef5f-d552-594c-9d5a-5e4020709038</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:IssueTime>15:00:00-01:00</cbc:IssueTime>
@@ -15,7 +15,7 @@
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>MS-PO-26-0406</cbc:ID>
+    <cbc:ID>MDS-PO-26-0047</cbc:ID>
     <cbc:SalesOrderID>TWM-J-2526-014</cbc:SalesOrderID>
   </cac:OrderReference>
   <cac:ContractDocumentReference>
@@ -187,8 +187,8 @@
     <cbc:PaymentDueDate>2026-03-30</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF04TWMINV260417</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF04TWMINV260417</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF4920260065</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF4920260065</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU480351041600000000417305</cbc:ID>
@@ -196,7 +196,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice TWM-INV-26-0417</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/0065</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>

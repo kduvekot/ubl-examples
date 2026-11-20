@@ -15,10 +15,10 @@ Eight more side frames are needed urgently, spares for the port's harbour benche
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-change:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order change". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **AIR-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VT-OC-26-0320**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0065**  
   The number of this change.
 - `UUID` = **8d871217-f7db-5dad-9bd8-24d8c75c812d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -45,7 +45,7 @@ Eight more side frames are needed urgently, spares for the port's harbour benche
 
 Inside `OrderReference`:
 
-- `ID` = **VT-PO-26-0127**  
+- `ID` = **26-0417**  
   The order of the sea flow that this change extends.
 
 ### Buyer Customer Party
@@ -308,7 +308,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Bench side frame casting**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10443**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
@@ -327,8 +327,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-change:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-OC-26-0320</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>26-0065</cbc:ID>
   <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>07:50:00+00:00</cbc:IssueTime>
@@ -340,7 +340,7 @@ Inside `OrderLine`:
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
@@ -559,7 +559,7 @@ Inside `OrderLine`:
         <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
+          <cbc:ID>LMW-10443</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
           <cbc:ID>VI-C180</cbc:ID>

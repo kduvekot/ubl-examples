@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue-request:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-DOC-26-0217</cbc:ID>
+  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ID>6200003390</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
   <cbc:Name>Request for Lumeway's catalogue for the home and garden department</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
@@ -174,7 +174,7 @@
     </cac:Party>
   </cac:ContractorCustomerParty>
   <cac:ReferencedContract>
-    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+    <cbc:ID>LMW-BM-SUPPLY-2026</cbc:ID>
   </cac:ReferencedContract>
   <cac:TradingTerms>
     <cbc:Information>Delivered duty paid to the store.</cbc:Information>

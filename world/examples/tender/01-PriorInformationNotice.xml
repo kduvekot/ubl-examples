@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:prior-information-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0187</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0080</cbc:ID>
   <cbc:UUID>2cd5e902-d1c7-5261-84d7-8b3b9895f00a</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
   <cbc:IssueTime>14:18:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="en-XB">Advance notice of the bench procedure.</cbc:Note>
@@ -416,7 +416,7 @@
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS</cbc:ID>
     <cbc:Name languageID="en-XB">Park benches for the parks renewal programme</cbc:Name>
     <cbc:Name languageID="qau">Haz guknaz gan drek zatir nezsan naktran</cbc:Name>
     <cbc:Description languageID="en-XB">240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.</cbc:Description>
@@ -485,7 +485,7 @@
     </cac:ContractExtension>
     <cac:RequestForTenderLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:UUID>b98b5bc4-6b96-59da-b8e9-89fc28afcae4</cbc:UUID>
+      <cbc:UUID>29cae870-5c35-5f0e-9f52-f64762b63b80</cbc:UUID>
       <cbc:Note>Galvanised metal frame, five hardwood slats, ground anchors.</cbc:Note>
       <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:MinimumQuantity unitCode="EA">120</cbc:MinimumQuantity>
