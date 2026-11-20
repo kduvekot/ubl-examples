@@ -10,7 +10,9 @@
   <cbc:IssueTime>09:41:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-03-30</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
+  <cbc:TaxPointDate>2026-02-26</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>3100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Raw materials and parts</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -52,15 +54,14 @@
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
         <cbc:RegistrationName>Marrowdale Sawmill Ltd</cbc:RegistrationName>
-        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">UL-1236987</cbc:CompanyID>
-        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XU:tax">XU007443146</cbc:CompanyID>
+        <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">NATIONAL</cbc:TaxLevelCode>
         <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-          <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
           <cac:JurisdictionRegionAddress>
-            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
             <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
             </cac:Country>
           </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
@@ -233,7 +234,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">694.80</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">833.76</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-03-30</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -246,25 +247,45 @@
     <cbc:AllowanceChargeReason>Pallets</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
     <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+      <cbc:Percent>20</cbc:Percent>
       <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
+  <cac:TaxExchangeRate>
+    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
+    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
+    <cbc:CalculationRate>100</cbc:CalculationRate>
+    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
+    <cbc:Date>2026-02-26</cbc:Date>
+  </cac:TaxExchangeRate>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XBL">9264.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XBL">9264.00</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
         <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="XUF">926400</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="XUF">4632000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="XUF">926400</cbc:TaxAmount>
+      <cbc:TransactionCurrencyTaxAmount currencyID="XBL">9264.00</cbc:TransactionCurrencyTaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
@@ -272,9 +293,9 @@
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="XBL">46320.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">46320.00</cbc:TaxInclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">55584.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">46320.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">55584.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -287,12 +308,11 @@
         <cbc:ID>MDS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
     </cac:Item>

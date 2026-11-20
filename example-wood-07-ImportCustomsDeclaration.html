@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Import Customs Declaration: Valdara Industries to Customs
+<title>Import Customs Declaration: Marrowdale Sawmill to Customs
 Administration of Urvania · The UBL World</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +15,15 @@ Administration of Urvania · The UBL World</title>
 <div class="layout">
 <main class="prose">
 <h1
-id="import-customs-declaration-valdara-industries-to-customs-administration-of-urvania">Import
-Customs Declaration: Valdara Industries to Customs Administration of
+id="import-customs-declaration-marrowdale-sawmill-to-customs-administration-of-urvania">Import
+Customs Declaration: Marrowdale Sawmill to Customs Administration of
 Urvania</h1>
 <p><em>Document 5 of 10 in the flow <a
 href="examples.html#flow-wood">Wood: slats for the benches and timber
 for furniture (Bayvarra → Urvania, and at home)</a> · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA">Import
 Customs Declaration in the UBL 2.5 specification</a></em></p>
-<p>From <a href="world-5-xu.html">Valdara Industries</a> to <a
+<p>From <a href="world-36-xb.html">Marrowdale Sawmill</a> to <a
 href="world-19-xu.html">Customs Administration of Urvania</a>, under the
 Trade Accord's transaction <a
 href="world-spec-transaction-import-customs-declaration.html">Import
@@ -32,8 +32,10 @@ customs declaration</a>.</p>
 Transport Execution Plan Request</a> · <a
 href="examples.html#flow-wood">all documents of the flow</a> · <a
 href="example-wood-06-DespatchAdvice.html">Despatch Advice →</a></p>
-<p>The manufacturer releases the slats from inward processing into free
-circulation in Urvania and pays the import VAT.</p>
+<p>The sawmill, which owns the slats, releases them from inward
+processing into free circulation in Urvania before it sells them there;
+it pays Urvania's import VAT and deducts it under its Urvanian VAT
+number.</p>
 <p><a href="examples/wood/07-ImportCustomsDeclaration.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -55,15 +57,15 @@ declaration". Each has a public description on the world's pages.</li>
 class="emoji" data-emoji="customs">🛃</span>1.0</strong><br />
 The Trade Accord's process profile the document belongs to: customs, a
 generic, versioned profile, not the flow.</li>
-<li><code>ID</code> = <strong>7700008586</strong><br />
+<li><code>ID</code> = <strong>MDS-IM-26-0047</strong><br />
 The importer's declaration number.</li>
 <li><code>UUID</code> =
 <strong>5121b08c-34cb-5860-af6c-8ad49382d537</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-02-26</strong><br />
-The manufacturer releases the slats from inward processing before they
-leave the plant.</li>
+The sawmill releases its slats from inward processing before they leave
+the plant, to sell them in Urvania.</li>
 <li><code>IssueTime</code> = <strong>08:15:00-01:00</strong><br />
 Early, so that the slats are released before Trasvia loads them; in the
 issuer's local time, with its offset from UTC.</li>
@@ -79,26 +81,16 @@ circulation.</li>
 <li><code>NatureOfTransactionCode</code> = <strong>PURCHASE</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:NatureOfTransactionCode</code>)<br />
-The goods were bought. The code is from the Trade Accord's nature of
-transaction list: PURCHASE = Outright purchase or sale.</li>
-<li><code>Note</code> = <strong>Kedan mir sakrek matir. Hir drek sisir
-muztek drek murdrir stan drek balstir munran vanbir raz datrir trindir
-rek drek valnir dek kildrek zatrir dagan karul drek trelhek (darhir
-mazan skul HS 4407.95, tubek rek 13 stan 20 January): sarhek murdrir,
-valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul haskek
-garsul munran skul 2,424,000 tezhul, 484,800 tezhul; drek stazstan
-serdaz skukstek trensek trek nakskek trikrul.</strong> (languageID
-<code>qau</code>)<br />
-The note in Urvanian, the sender's language: What is due at import, by
-the importing country's rule.</li>
+The goods are released for a sale: the importer, their owner, sells them
+in Urvania as they leave the plant. The code is from the Trade Accord's
+nature of transaction list: PURCHASE = Outright purchase or sale.</li>
 <li><code>Note</code> = <strong>Released from inward processing. At the
 importer's request the duty and the import value added tax are assessed
 on the goods as they were placed under the procedure (ash blanks of HS
 4407.95, entered on 13 and 20 January): no duty, goods of Accord origin.
 Import value added tax: 20 % of their customs value of 2,424,000 ferra,
-484,800 ferra; the importer deducts it again in its return.</strong>
-(languageID <code>en-XU</code>)<br />
-The same note in English, the working language between the countries:
+484,800 ferra; the importer deducts it again in its
+return.</strong><br />
 What is due at import, by the importing country's rule.</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
 The first version.</li>
@@ -114,7 +106,193 @@ UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
 <h3 id="importer-party">Importer Party</h3>
 <p>Inside <code>ImporterParty</code>:</p>
 <details>
-<summary>The party's own data, as Valdara Industries gives it (35 values)</summary>
+<summary>The party's own data, as Marrowdale Sawmill gives it (34 values)</summary>
+
+<ul>
+<li><code>PartyIdentification/ID</code> = <strong>20412329</strong>
+(schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
+The party's preferred identifier: its number in the Federal business
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
+<li><code>AdditionalPartyIdentification/ID</code> =
+<strong>XB-TR-412329</strong> (schemeID
+<code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
+A further identifier: the party's customs trader number, because it
+imports or exports (XB-TR- and 6 digits).</li>
+<li><code>PartyName/Name</code> = <strong>Marrowdale
+Sawmill</strong><br />
+The trading name.</li>
+<li><code>Language/ID</code> = <strong>en</strong> (schemeID
+<code>ISO 639</code>)<br />
+English, the language the party writes in this document. The code is
+from the world's copy of ISO 639 Language: en = English. An identifier
+that holds a code names the code's list in its schemeID.</li>
+<li><code>Language/Name</code> = <strong>English</strong><br />
+The language's name.</li>
+<li><code>Language/LocaleCode</code> = <strong>en-XB</strong> (listID
+<code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
+The English the party writes: the variety of Bayvarra, with the country
+as the region; English is used in all three countries, so its locale
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
+<li><code>PostalAddress/ID</code> = <strong>UL-ADR-296778</strong>
+(schemeID
+<code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
+The address's number in the address register of Upland State (UL-ADR-
+and six digits).</li>
+<li><code>PostalAddress/AddressTypeCode</code> =
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
+<li><code>PostalAddress/StreetName</code> = <strong>Timber
+Lane</strong><br />
+Street of the postal address.</li>
+<li><code>PostalAddress/BuildingNumber</code> = <strong>7</strong><br />
+Building number of the postal address.</li>
+<li><code>PostalAddress/CityName</code> =
+<strong>Marrowdale</strong><br />
+The town or locality nearest to the party's place on the map, in its own
+country and state.</li>
+<li><code>PostalAddress/PostalZone</code> = <strong>71202</strong><br />
+Postal code in Bayvarra's format (5 digits).</li>
+<li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
+State</strong><br />
+The name of code XB-UL in Bayvarra's national state or territory
+list.</li>
+<li><code>PostalAddress/CountrySubentityCode</code> =
+<strong>XB-UL</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-UL = Upland
+State.</li>
+<li><code>PostalAddress/TimezoneOffset</code> =
+<strong>-01:00</strong><br />
+The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
+there is no summer time.</li>
+<li><code>PostalAddress/Country/IdentificationCode</code> =
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
+<li><code>PostalAddress/Country/Name</code> =
+<strong>Bayvarra</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>PartyTaxScheme/RegistrationName</code> = <strong>Marrowdale
+Sawmill Ltd</strong><br />
+The name under which the party is registered for Urvania's value added
+tax.</li>
+<li><code>PartyTaxScheme/CompanyID</code> = <strong>XU007443146</strong>
+(schemeID <code>urn:ubl-examples:world:XU:tax</code>)<br />
+Its tax number under Urvania's value added tax (XU and 9 digits, the
+last a check digit (weights 9.2, modulus 11)): it is registered there
+directly, without a representative, for the goods it sells from its
+stock in Urvania. The schemeID names the scheme it is from: the VAT
+number of Urvania (XU and 9 digits, the last a check digit (weights 9.2,
+modulus 11)).</li>
+<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>NATIONAL</strong>
+(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
+The level of government that levies the tax: Urvania's value added tax
+is levied by the country. The code is from the Trade Accord's tax level
+list: NATIONAL = Levied by the country.</li>
+<li><code>PartyTaxScheme/TaxScheme/ID</code> = <strong>VAT</strong>
+(schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the
+world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT =
+Value added tax. An identifier that holds a code names the code's list
+in its schemeID.</li>
+<li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
+<strong>XUF</strong> (listID <code>ISO 4217 Alpha</code>)<br />
+The tax is accounted for in the country's currency. The code is from the
+world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.</li>
+<li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+The country whose tax this is. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
+<li><code>PartyLegalEntity/RegistrationName</code> = <strong>Marrowdale
+Sawmill Ltd</strong><br />
+The name under which the party is registered, with its legal form.</li>
+<li><code>PartyLegalEntity/CompanyID</code> = <strong>20412329</strong>
+(schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
+Number in the Federal business register of Bayvarra. The schemeID names
+the scheme it is from: the Federal business register of Bayvarra (8
+digits).</li>
+<li><code>Contact/Name</code> = <strong>Customs desk</strong><br />
+The party's customs desk: the desk for its role in this document (it
+deals with customs).</li>
+<li><code>Contact/JobTitle</code> = <strong>Customs
+specialist</strong><br />
+The job of the person who answers at the desk.</li>
+<li><code>Contact/Department</code> = <strong>Logistics</strong><br />
+The department the desk belongs to.</li>
+<li><code>Contact/Telephone</code> = <strong>+999 2 7121 338
+173</strong><br />
+The party's switchboard, which puts the caller through to the desk.
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
+Northern Territory: the plan is national and does not follow state
+borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
+with 7.</li>
+<li><code>Contact/ElectronicMail</code> = <strong><a
+href="mailto:customs@marrowdalesawmill.example">customs@marrowdalesawmill.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone.</li>
+<li><code>Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
+When the desk can be reached.</li>
+<li><code>ElectronicAddress/ExchangeNetworkID</code> =
+<strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>ElectronicAddress/ElectronicAddressID</code> =
+<strong>XB:20412329</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and its
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
+</ul>
+<p>The same in every document <a href="world-36-xb.html">Marrowdale
+Sawmill</a> is named in.</p>
+</details>
+
+<h3 id="consignor-party">Consignor Party</h3>
+<p>Inside <code>ConsignorParty</code>:</p>
+<ul>
+<li><code>PartyIdentification/ID</code> = <strong>20412329</strong>
+(schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
+The same party as at ImporterParty, where its full details are given;
+only its identifier and name are repeated.</li>
+<li><code>PartyName/Name</code> = <strong>Marrowdale
+Sawmill</strong><br />
+The same party as at ImporterParty, where its full details are given;
+only its identifier and name are repeated.</li>
+</ul>
+<h3 id="consignee-party">Consignee Party</h3>
+<p>Inside <code>ConsigneeParty</code>:</p>
+<details>
+<summary>The party's own data, as Valdara Industries gives it (17 values)</summary>
 
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
@@ -137,15 +315,6 @@ imports or exports (XU-TR- and 6 digits).</li>
 <li><code>PartyName/Name</code> = <strong>Valdara
 Industries</strong><br />
 The trading name.</li>
-<li><code>Language/ID</code> = <strong>qau</strong> (schemeID
-<code>ISO 639</code>)<br />
-Urvanian, the language of Urvania and of the party; the code is from the
-range ISO 639 reserves for local use (qaa–qtz), as the world's languages
-are invented. The code is from the world's copy of ISO 639 Language: qau
-= Urvanian. An identifier that holds a code names the code's list in its
-schemeID.</li>
-<li><code>Language/Name</code> = <strong>Urvanian</strong><br />
-The language's name in English; in the language itself: urvanese.</li>
 <li><code>PostalAddress/ID</code> = <strong>4160200467394686</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
@@ -213,181 +382,11 @@ list. The code is from the world's copy of UBL's Country identification
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>PartyTaxScheme/RegistrationName</code> = <strong>Valdara
-Industries SUA</strong><br />
-The name under which the party is registered for value added tax.</li>
-<li><code>PartyTaxScheme/CompanyID</code> = <strong>XU007299291</strong>
-(schemeID <code>urn:ubl-examples:world:XU:tax</code>)<br />
-Tax number under Urvania's value added tax (XU and 9 digits, the last a
-check digit (weights 9.2, modulus 11)). The schemeID names the scheme it
-is from: the VAT number of Urvania (XU and 9 digits, the last a check
-digit (weights 9.2, modulus 11)).</li>
-<li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>NATIONAL</strong>
-(listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
-The level of government that levies the tax: Urvania's value added tax
-is levied by the country. The code is from the Trade Accord's tax level
-list: NATIONAL = Levied by the country.</li>
-<li><code>PartyTaxScheme/TaxScheme/ID</code> = <strong>VAT</strong>
-(schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
-UN/EDIFACT 5153 code of Urvania's value added tax. The code is from the
-world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT =
-Value added tax. An identifier that holds a code names the code's list
-in its schemeID.</li>
-<li><code>PartyTaxScheme/TaxScheme/CurrencyCode</code> =
-<strong>XUF</strong> (listID <code>ISO 4217 Alpha</code>)<br />
-The tax is accounted for in the country's currency. The code is from the
-world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.</li>
-<li><code>PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode</code>
-= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
-The country whose tax this is. The code is from the world's copy of
-UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
-<li><code>PartyLegalEntity/RegistrationName</code> = <strong>Valdara
-Industries SUA</strong><br />
-The name under which the party is registered, with its legal form.</li>
-<li><code>PartyLegalEntity/CompanyID</code> =
-<strong>XU-R-104274</strong> (schemeID
-<code>urn:ubl-examples:world:XU:register</code>)<br />
-Number in the Commercial register of Urvania. The schemeID names the
-scheme it is from: the Commercial register of Urvania (XU-R- and 6
-digits).</li>
-<li><code>Contact/Name</code> = <strong>Customs desk</strong><br />
-The party's customs desk: the desk for its role in this document (it
-deals with customs).</li>
-<li><code>Contact/JobTitle</code> = <strong>Customs
-specialist</strong><br />
-The job of the person who answers at the desk.</li>
-<li><code>Contact/Department</code> = <strong>Logistics</strong><br />
-The department the desk belongs to.</li>
-<li><code>Contact/Telephone</code> = <strong>+999 1 041 386
-4551</strong><br />
-The party's switchboard, which puts the caller through to the desk.
-Telephone under +999, a country code the ITU reserves for a future
-global service (ITU-T E.164), so the number reaches no one; then the
-country digit and a number in Urvania's own plan: Open numbering, kept
-from Italian times: the area code starts with 0 and stays in the number,
-also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits.</li>
-<li><code>Contact/ElectronicMail</code> = <strong><a
-href="mailto:customs@valdara.example">customs@valdara.example</a></strong><br />
-E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone.</li>
-<li><code>Contact/Note</code> = <strong>Weekdays
-08:00–17:00</strong><br />
-When the desk can be reached.</li>
-<li><code>ElectronicAddress/ExchangeNetworkID</code> =
-<strong>urn:ubl-examples:world:network</strong><br />
-The network in which the address is registered: the world's own exchange
-network.</li>
-<li><code>ElectronicAddress/ElectronicAddressID</code> =
-<strong>XU:XU-R-104274</strong> (schemeID
-<code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania. UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
 </ul>
 <p>The same in every document <a href="world-5-xu.html">Valdara
 Industries</a> is named in.</p>
 </details>
 
-<h3 id="consignor-party">Consignor Party</h3>
-<p>Inside <code>ConsignorParty</code>:</p>
-<details>
-<summary>The party's own data, as Marrowdale Sawmill gives it (15 values)</summary>
-
-<ul>
-<li><code>PartyIdentification/ID</code> = <strong>20412329</strong>
-(schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
-The party's preferred identifier: its number in the Federal business
-register of Bayvarra. Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
-<li><code>AdditionalPartyIdentification/ID</code> =
-<strong>XB-TR-412329</strong> (schemeID
-<code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
-A further identifier: the party's customs trader number, because it
-imports or exports (XB-TR- and 6 digits).</li>
-<li><code>PartyName/Name</code> = <strong>Marrowdale
-Sawmill</strong><br />
-The trading name.</li>
-<li><code>PostalAddress/ID</code> = <strong>UL-ADR-296778</strong>
-(schemeID
-<code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
-The address's number in the address register of Upland State (UL-ADR-
-and six digits).</li>
-<li><code>PostalAddress/AddressTypeCode</code> =
-<strong>BUSINESS</strong> (listID
-<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
-The kind of address. The code is from the Trade Accord's address type
-list: BUSINESS = Business address.</li>
-<li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
-(listID
-<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format, one line after the other,
-a line left out when the address has none of its fields: MarkAttention;
-Department; InhouseMail; Postbox; BuildingName; Floor Room;
-BuildingNumber StreetName; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; CityName CountrySubentity
-PostalZone. A line is made of the fields named in it, in that order,
-separated by a space; a field the address does not have is left out, and
-a line without any field is left out. A field with two language versions
-(street and town names in a bilingual country) gives both on the line,
-the national language first, then ' / ', then English: the building
-number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XB =
-Address format of Bayvarra.</li>
-<li><code>PostalAddress/StreetName</code> = <strong>Timber
-Lane</strong><br />
-Street of the postal address.</li>
-<li><code>PostalAddress/BuildingNumber</code> = <strong>7</strong><br />
-Building number of the postal address.</li>
-<li><code>PostalAddress/CityName</code> =
-<strong>Marrowdale</strong><br />
-The town or locality nearest to the party's place on the map, in its own
-country and state.</li>
-<li><code>PostalAddress/PostalZone</code> = <strong>71202</strong><br />
-Postal code in Bayvarra's format (5 digits).</li>
-<li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
-State</strong><br />
-The name of code XB-UL in Bayvarra's national state or territory
-list.</li>
-<li><code>PostalAddress/CountrySubentityCode</code> =
-<strong>XB-UL</strong> (listID
-<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. The code
-is from Bayvarra's national state or territory list: XB-UL = Upland
-State.</li>
-<li><code>PostalAddress/TimezoneOffset</code> =
-<strong>-01:00</strong><br />
-The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time.</li>
-<li><code>PostalAddress/Country/IdentificationCode</code> =
-<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
-Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list. The code is from the world's copy of UBL's Country identification
-(ISO 3166) list: XB = Bayvarra.</li>
-<li><code>PostalAddress/Country/Name</code> =
-<strong>Bayvarra</strong><br />
-The country's name, for readers of the address.</li>
-</ul>
-<p>The same in every document <a href="world-36-xb.html">Marrowdale
-Sawmill</a> is named in.</p>
-</details>
-
-<h3 id="consignee-party">Consignee Party</h3>
-<p>Inside <code>ConsigneeParty</code>:</p>
-<ul>
-<li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
-(schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
-The same party as at ImporterParty, where its full details are given;
-only its identifier and name are repeated.</li>
-<li><code>PartyName/Name</code> = <strong>Valdara
-Industries</strong><br />
-The same party as at ImporterParty, where its full details are given;
-only its identifier and name are repeated.</li>
-</ul>
 <h3 id="customs-party">Customs Party</h3>
 <p>Inside <code>CustomsParty</code>:</p>
 <details>
@@ -724,15 +723,15 @@ Customs Declaration.</li>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-SIG-IM-wood</strong><br />
+<li><code>ID</code> = <strong>MS-SIG-IM-wood</strong><br />
 The sender's electronic seal.</li>
 <li><code>SignatoryParty/PartyIdentification/ID</code> =
-<strong>XU-R-104274</strong> (schemeID
-<code>urn:ubl-examples:world:XU:register</code>)<br />
+<strong>20412329</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>SignatoryParty/PartyName/Name</code> = <strong>Valdara
-Industries</strong><br />
+<li><code>SignatoryParty/PartyName/Name</code> = <strong>Marrowdale
+Sawmill</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 </ul>
@@ -743,120 +742,120 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:import-customs-declaration:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:customs:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;7700008586&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;MDS-IM-26-0047&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;5121b08c-34cb-5860-af6c-8ad49382d537&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-26&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:15:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode&quot;</span>&gt;IMPORT&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SubTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode&quot;</span>&gt;FREECIRC&lt;/<span class="kw">cbc:SubTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NatureOfTransactionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NatureOfTransactionCode&quot;</span>&gt;PURCHASE&lt;/<span class="kw">cbc:NatureOfTransactionCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Kedan mir sakrek matir. Hir drek sisir muztek drek murdrir stan drek balstir munran vanbir raz datrir trindir rek drek valnir dek kildrek zatrir dagan karul drek trelhek (darhir mazan skul HS 4407.95, tubek rek 13 stan 20 January): sarhek murdrir, valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul haskek garsul munran skul 2,424,000 tezhul, 484,800 tezhul; drek stazstan serdaz skukstek trensek trek nakskek trikrul.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Released from inward processing. At the importer&#39;s request the duty and the import value added tax are assessed on the goods as they were placed under the procedure (ash blanks of HS 4407.95, entered on 13 and 20 January): no duty, goods of Accord origin. Import value added tax: 20 % of their customs value of 2,424,000 ferra, 484,800 ferra; the importer deducts it again in its return.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ImporterParty</span>&gt;</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 6523&quot;</span>&gt;0990:10014&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:customs-trader&quot;</span>&gt;XU-TR-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;qau&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Urvanian&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160200467394686&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Stuzman Nulban&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via delle Officine&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;17&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4120&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:tax&quot;</span>&gt;XU007299291&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;NATIONAL&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Valdara Industries SUA&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Customs desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Customs specialist&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Logistics&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 386 4551&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;customs@valdara.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XU:XU-R-104274&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ImporterParty</span>&gt;</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:customs-trader&quot;</span>&gt;XB-TR-412329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale Sawmill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:UL:address-register&quot;</span>&gt;UL-ADR-296778&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Timber Lane&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;7&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;71202&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Released from inward processing. At the importer&#39;s request the duty and the import value added tax are assessed on the goods as they were placed under the procedure (ash blanks of HS 4407.95, entered on 13 and 20 January): no duty, goods of Accord origin. Import value added tax: 20 % of their customs value of 2,424,000 ferra, 484,800 ferra; the importer deducts it again in its return.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ImporterParty</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:customs-trader&quot;</span>&gt;XB-TR-412329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale Sawmill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;English&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:LocaleCode&quot;</span>&gt;en-XB&lt;/<span class="kw">cbc:LocaleCode</span>&gt;</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:UL:address-register&quot;</span>&gt;UL-ADR-296778&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span>&gt;Timber Lane&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;7&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span>&gt;Marrowdale&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;71202&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Marrowdale Sawmill Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:tax&quot;</span>&gt;XU007443146&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;NATIONAL&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RegistrationName</span>&gt;Marrowdale Sawmill Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412329&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Customs desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Customs specialist&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Logistics&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 338 173&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;customs@marrowdalesawmill.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:20412329&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ImporterParty</span>&gt;</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale Sawmill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 6523&quot;</span>&gt;0990:10014&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:customs-trader&quot;</span>&gt;XU-TR-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160200467394686&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Stuzman Nulban&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via delle Officine&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BuildingNumber</span>&gt;17&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PostalZone</span>&gt;4120&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:CustomsParty</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -970,13 +969,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ImportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-SIG-IM-wood&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;MS-SIG-IM-wood&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale Sawmill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
@@ -988,6 +987,6 @@ href="examples.html#flow-wood">all documents of the flow</a> · <a
 href="example-wood-06-DespatchAdvice.html">Despatch Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/971833c13d009f8737626463938754b46103e4b7"><code>971833c</code></a> of 2026-11-20 16:50 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/9fdaf242cdde4277351a3c55f62b02ed995286ac"><code>9fdaf24</code></a> of 2026-11-20 17:01 UTC</p></div></footer>
 </body>
 </html>
