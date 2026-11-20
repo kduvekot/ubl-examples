@@ -161,14 +161,14 @@ for md in "$OUT"/.world-md/*.md; do
 done
 rm -rf "$OUT/.world-md"
 # The example documents: a page per document (values and reasons), and the XML files themselves
-for md in world/examples/*/*.md; do
-  case "$md" in *.llm-review.*) continue ;; esac   # reviews of the examples are not published
+# (build_world.py adds to each page its place in the flow's story, its neighbours, parties and specification)
+for md in "$OUT"/.example-md/*/*.md; do
   flow=$(basename "$(dirname "$md")"); name=$(basename "$md" .md)
   mkdir -p "$OUT/examples/$flow" && cp "world/examples/$flow/$name.xml" "$OUT/examples/$flow/"
   sed "s#](\($name\.xml\))#](examples/$flow/\1)#" "$md" > "$OUT/.example.md"
   page "$OUT/.example.md" "example-$flow-$name.html" "$(sed -n '1s/^# //p' "$md")"
 done
-rm -f "$OUT/.example.md"
+rm -rf "$OUT/.example.md" "$OUT/.example-md"
 # Landing page: header, footer and key figures filled in
 nav "" index.html > "$OUT/.nav"
 footer > "$OUT/.footer"

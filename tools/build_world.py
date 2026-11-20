@@ -310,15 +310,59 @@ ex_lines = ["# Trade", "",
             "document to the next and with the rest of the world.", "",
             "Each document names the specifications it follows in `CustomizationID` and `ProfileID`: see "
             "[the rules of the Trade Accord](world-specifications.html).", ""]
+# Each flow in the order of its story: by the documents' issue date and time (the file numbers are internal)
+from lxml import etree as _etree  # noqa: E402
+
+
+def issued(d):
+    """When the document was issued, from its XML: (date, time)."""
+    xml = os.path.join(root, "world", "examples", d["flow"], f"{d['nn']:02d}-{d['doc']}.xml")
+    r = _etree.parse(xml).getroot()
+    date = r.findtext("{*}IssueDate") or r.findtext("{*}RequestDate") or ""
+    return date, r.findtext("{*}IssueTime") or ""
+
+
+import world_specs as _ws  # noqa: E402
+story = {}         # flow id -> its documents with an example page, in story order
 for f in world["flows"]:
-    same = [x for x in world["documents"] if x["flow"] == f["id"]]
-    rows = [(x["nn"], x) for x in same if example_of(x)]
+    docs = [x for x in world["documents"] if x["flow"] == f["id"] and example_of(x)]
+    story[f["id"]] = sorted(docs, key=lambda x: (*issued(x), x["nn"]))
+for f in world["flows"]:
+    rows = story[f["id"]]
     if not rows:
         continue
-    ex_lines += [f"## {f['title']}", "", f["text"], "", "| | Document | From | To |", "|---|---|---|---|"]
-    for n, x in rows:
-        ex_lines.append(f"| {n} | [{world_docs.words(x['doc'])}]({example_of(x)}) | {link(x['from'])} | {link(x['to'])} |")
+    ex_lines += [f'<a id="flow-{f["id"]}"></a>', "", f"## {f['title']}", "", f["text"], "",
+                 "| Issued | Document | From | To |", "|---|---|---|---|"]
+    for x in rows:
+        ex_lines.append(f"| {issued(x)[0].replace('-', '\u2011')} | [{world_docs.words(x['doc'])}]({example_of(x)}) | {link(x['from'])} | "
+                        f"{link(x['to'])} |")
     ex_lines.append("")
+
+# The example pages: each document's page (world/examples/<flow>/NN-Doc.md) with its place in the story, the way to
+# the documents before and after it, its parties and the specification it claims
+exdir = os.path.join(out, ".example-md")
+for f in world["flows"]:
+    rows = story[f["id"]]
+    for i, x in enumerate(rows):
+        name = f"{x['nn']:02d}-{x['doc']}"
+        src = open(os.path.join(root, "world", "examples", f["id"], name + ".md"), encoding="utf-8").read()
+        head = f"*Example {x['nn']} of the flow \"{f['title']}\" · "
+        assert head in src, (f["id"], name)
+        flow_link = f"[{f['title']}](examples.html#flow-{f['id']})"
+        prev = (f"[← {world_docs.words(rows[i - 1]['doc'])}]({example_of(rows[i - 1])})" if i else "")
+        nxt = (f"[{world_docs.words(rows[i + 1]['doc'])} →]({example_of(rows[i + 1])})" if i + 1 < len(rows) else "")
+        nav = " · ".join(v for v in (prev, f"all documents of the flow", nxt) if v)
+        nav = nav.replace("all documents of the flow", f"[all documents of the flow](examples.html#flow-{f['id']})")
+        t = _ws.transaction(x)
+        spec = f"[{_ws.load()['transactions'][t]['name']}](world-spec-transaction-{t}.html)"
+        src = src.replace(head, f"*Document {i + 1} of {len(rows)} in the flow {flow_link} · ", 1)
+        lines = src.split("\n")
+        at = next(k for k, l in enumerate(lines) if l.startswith("*Document "))
+        lines[at + 1:at + 1] = ["", f"From {link(x['from'])} to {link(x['to'])}, under the Trade Accord's "
+                                    f"transaction {spec}.", "", nav]
+        lines += ["", "---", "", nav, ""]
+        os.makedirs(os.path.join(exdir, f["id"]), exist_ok=True)
+        open(os.path.join(exdir, f["id"], name + ".md"), "w", encoding="utf-8").write("\n".join(lines))
 open(os.path.join(mddir, "examples.md"), "w", encoding="utf-8").write("\n".join(ex_lines))
 
 # The specifications the documents claim (world/specifications.json): an index and a short page for each
