@@ -21,6 +21,7 @@ and the categories are made from the data. An encyclopedia does not list the bus
 Usage: python3 tools/build_wiki.py <md-dir>     writes <md-dir>/<slug>.md, one per article, and index.md
 """
 import json
+import math
 import os
 import re
 import sys
@@ -96,6 +97,27 @@ for it in world["items"]:
     known.add(it["name"])
     if it.get("wiki"):
         articles[it["name"]] = {"kind": "item", "key": it["id"], "data": it, "wiki": it["wiki"]}
+# the rivers the terrain finds (world/terrain.json, rivers) under the names world/map.json gives them, matched by mouth
+TERR = json.load(open(os.path.join(ROOT, "world", "terrain.json"), encoding="utf-8"))
+RIVERS = {}         # (land, id) -> the river's article data
+for land, found in TERR.get("rivers", {}).items():
+    for r in found:
+        rec = min(MAP.get("rivers", []), key=lambda n: math.hypot(n["mouth"][0] - r["mouth"][0], n["mouth"][1] - r["mouth"][1])
+                  if n["land"] == land else 1e9, default=None)
+        if not rec or math.hypot(rec["mouth"][0] - r["mouth"][0], rec["mouth"][1] - r["mouth"][1]) > 0.5:
+            problems.append(f"the river of {land} with its mouth at {r['mouth']} has no name in world/map.json (rivers)")
+            continue
+        RIVERS[(land, r["id"])] = dict(r, land=land, rec=rec)
+for (land, rid), r in RIVERS.items():
+    r["into"] = RIVERS.get((land, r["parent"])) if r["parent"] else None
+    r["tributaries"] = sorted((q for q in RIVERS.values() if q["land"] == land and q["parent"] == rid),
+                              key=lambda q: -q["basin_km2"])
+    known.add(r["rec"]["title"])
+    articles[r["rec"]["title"]] = {"kind": "river", "key": f"{land}-{rid}", "data": r, "wiki": r["rec"].get("wiki") or {}}
+WATERS = MAP.get("waters")
+if WATERS and RIVERS:
+    known.add(WATERS["title"])
+    articles[WATERS["title"]] = {"kind": "waters", "key": "waters", "data": WATERS, "wiki": WATERS["wiki"]}
 page = {title: slug(title) + ".html" for title in articles}
 
 
@@ -117,7 +139,7 @@ def fill(text, values, where):
             problems.append(f"{where}: {{{m.group(1)}}} is not a value of this subject")
             return m.group(0)
         return str(values[m.group(1)])
-    return re.sub(r"\{([a-z_]+)\}", one, text)
+    return re.sub(r"\{([a-z_][a-z0-9_]*)\}", one, text)
 
 
 # ---------------------------------------------------------------- articles the data writes by itself: villages, localities
@@ -154,6 +176,8 @@ def founded(text):
         when = f"in the {m[1]} or {m[2]}{m[3]}"
     elif m := re.match(r"(\d\w+) to (\d\w+)$", when):
         when = f"between the {m[1]} and the {m[2]}"
+    elif re.match(r"\d{4}\b", when):
+        when = "in " + when
     elif re.match(r"\d|late |early ", when):
         when = "in the " + when
     out = f"It was founded by {PEOPLE.get(who, who)} {when}"
@@ -181,6 +205,102 @@ for title, a in articles.items():
             a["wiki"] = {"short": f"Locality in {cname}",
                          "lead": f"**{title}** is a locality in [[{cname}]], with {n0(lo)} to {n0(hi)} people. {d.get('note', '')}".strip(),
                          "sections": []}
+
+
+# ---------------------------------------------------------------- rivers: facts the terrain gives
+CCODE = {"U": "XU", "B": "XB", "L": "XL"}
+
+
+def rlink(r):
+    t, n = r["rec"]["title"], r["rec"]["name"]
+    return f"[[{t}]]" if t == n else f"[[{t}|{n}]]"
+
+
+def river_countries(r):
+    tot = sum(r["countries"].values()) or 1
+    return [CCODE[c] for c, k in sorted(r["countries"].items(), key=lambda kv: -kv[1]) if k / tot >= 0.15]
+
+
+def river_places(r):
+    """the towns and villages on the river, downstream, within a square of its course"""
+    out = []
+    for t in MAP["towns"] + MAP.get("villages", []):
+        if not t.get("name"):
+            continue
+        x, y = t["c"][0] + .5, t["c"][1] + .5
+        dist = [math.hypot(px - x, py - y) for px, py in r["course"]]
+        k = min(range(len(dist)), key=dist.__getitem__)
+        if dist[k] <= 1.0:
+            out.append((k, t["name"]))
+    return [n for _, n in sorted(out)]
+
+
+_BASINS = {}
+
+
+def basin_towns(r):
+    """the towns whose water reaches the sea by this river: in its own basin or a tributary's"""
+    import numpy as np
+    from PIL import Image
+    land, ras = r["land"], TERR["rasters"][r["land"]]
+    if land not in _BASINS:
+        _BASINS[land] = np.array(Image.open(os.path.join(ROOT, ras["basins"])))
+    lab = _BASINS[land]
+    inside, grew = {r["id"]}, True
+    while grew:
+        more = {q["id"] for q in RIVERS.values() if q["land"] == land and q["parent"] in inside} - inside
+        grew, inside = bool(more), inside | more
+    S = ras["cells_per_square"]
+    out = []
+    for t in sorted(MAP["towns"], key=lambda t: -t["population"]):
+        cy, cx = int((t["c"][1] + .5 - ras["y0"]) * S), int((t["c"][0] + .5 - ras["x0"]) * S)
+        if 0 <= cy < lab.shape[0] and 0 <= cx < lab.shape[1] and int(lab[cy, cx]) in inside:
+            out.append(t["name"])
+    return out
+
+
+def border_km(r):
+    if r["land"] != "mainland":
+        return 0
+    bw = TERR.get("border_water", [])
+    near = [min(math.hypot(px - bx, py - by) for bx, by in bw) <= 0.75 for px, py in r["course"]] if bw else []
+    km = sum(math.hypot(r["course"][k][0] - r["course"][k - 1][0], r["course"][k][1] - r["course"][k - 1][1]) * 3.5
+             for k in range(1, len(near)) if near[k] and near[k - 1])
+    return int(round(km, -1))
+
+
+def coast(r):
+    cc = TERR["country"]
+    want = "L" if r["land"] == "lisavu" else "UB"
+    sq = [(x, y) for y in range(len(cc)) for x in range(len(cc[y])) if cc[y][x] in want]
+    cx, cy = sum(x for x, _ in sq) / len(sq), sum(y for _, y in sq) / len(sq)
+    ang = math.degrees(math.atan2(-(r["mouth"][1] - cy), r["mouth"][0] - cx)) % 360
+    return ["east", "north-east", "north", "north-west", "west", "south-west", "south", "south-east"][int(((ang + 22.5) % 360) // 45)]
+
+
+for title, a in articles.items():
+    if a["kind"] != "river":
+        continue
+    r, w = a["data"], a["wiki"]
+    rec = r["rec"]
+    cs = river_countries(r)
+    where = " and ".join(f"[[{countries[c]['name']}]]" for c in cs)
+    places = river_places(r)
+    if r["into"]:
+        end = f"joins the {rlink(r['into'])}"
+    else:
+        end = f"reaches the sea on the {coast(r)} coast" + (f" at [[{places[-1]}]]" if places and places[-1] in articles else "")
+    lead = (f"The **{rec['name']}** is a river of {where}, {{km}} km long, with a basin of {{basin}} km². "
+            f"It rises at about {{source_m}} m and {end}.")
+    bk = border_km(r)
+    if bk >= 10:
+        lead += f" For about {bk} km it forms the border between [[Urvania]] and [[Bayvarra]]."
+    nf = rec.get("name_from", {})
+    if r["land"] == "mainland" and "qau" in nf and rec["names"].get("it"):
+        lead += f" Its Urvanian name, *{rec['names']['qau']}*, means {nf['qau']}."
+    elif "qal" in nf:
+        lead += f" Its Lisavan name means {nf['qal']}."
+    a["wiki"] = dict({"short": f"River of {' and '.join(countries[c]['name'] for c in cs)}", "lead": lead}, **w)
 
 
 PLACES = sorted((t for t, a in articles.items() if a["kind"] in ("town", "village", "locality", "country")), key=len, reverse=True)
@@ -217,6 +337,15 @@ def values(a):
         return {"population": n0(d["population"]), "built_km": d["built_km"], "country": countries[d["country"]]["name"]}
     if a["kind"] == "village":
         return {"people": n0(d["people"])}
+    if a["kind"] == "river":
+        return {"km": n0(d["km"]), "basin": n0(d["basin_km2"]), "source_m": n0(d["source_m"])}
+    if a["kind"] == "waters":
+        main = RIVERS.get(("mainland", 1))
+        area = TERR["measures"]["mainland"]["area_km2"]
+        return {"mainland_rivers": sum(1 for k in RIVERS if k[0] == "mainland"),
+                "lisavu_rivers": sum(1 for k in RIVERS if k[0] == "lisavu"),
+                "main_km": n0(main["km"]), "main_basin": n0(main["basin_km2"]),
+                "main_share": round(100 * main["basin_km2"] / area), "main_source_m": n0(main["source_m"])}
     if a["kind"] == "party":
         lg = d["identity"].get("legal", {})
         return {"founded_year": lg.get("founded", "")[:4], "employees": n0(lg.get("headcount", 0)),
@@ -266,11 +395,24 @@ def infobox(a):
     elif a["kind"] == "currency":
         rows = [("Code", d["code"]), ("Country", f"[[{countries[d['country']]['name']}]]"),
                 ("Minor unit", {0: "none", 2: "1/100", 3: "1/1000"}.get(d.get("minor_units"), ""))]
+    elif a["kind"] == "river":
+        rec = d["rec"]
+        names = rec.get("names", {})
+        rows = [("", f'<img src="river-{a["key"]}.png" alt="The basin and course of the river {rec["name"]}">'),
+                ("Country", ", ".join(f"[[{countries[c]['name']}]]" for c in river_countries(d))
+                 + ("; the border with [[Bayvarra]] for about " + f"{border_km(d)} km" if border_km(d) >= 10 else "")),
+                ("Length", f"{n0(d['km'])} km"), ("Basin", f"{n0(d['basin_km2'])} km²"),
+                ("Source", f"about {n0(d['source_m'])} m"),
+                ("Mouth", rlink(d["into"]) if d["into"] else "the sea"),
+                ("Tributaries", ", ".join(rlink(q) for q in d["tributaries"])),
+                ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'it': 'Italian', 'en': 'English'}.get(k, k))})"
+                                      for k, v in names.items()) if len(names) > 1 else "")]
     elif a["kind"] == "item":
         rows = [("Maker", f"[[{PARTY[d['seller']]['identity']['name']}]]"),
                 ("Dimensions", " × ".join(str(x) for x in d["dimensions_mm"]) + " mm" if d.get("dimensions_mm") else ""),
                 ("Weight", f"{d['net_kg']:g} kg" if d.get("net_kg") else "")]
-    cells = "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v)
+    cells = "".join((f"<tr><th>{k}</th><td>{v}</td></tr>" if k else f'<tr><td colspan="2" class="map">{v}</td></tr>')
+                    for k, v in rows if v)
     return cells
 
 
@@ -305,6 +447,27 @@ def generated_sections(a):
         fleet = d.get("fleet") or []
         if fleet:
             out_ += ["## Fleet", ""] + [f"- {f['name']}" for f in fleet] + [""]
+    if a["kind"] == "river":
+        if d["tributaries"]:
+            out_ += ["## Tributaries", "", "| River | Length | Basin |", "|---|---:|---:|"]
+            out_ += [f"| {rlink(q)} | {n0(q['km'])} km | {n0(q['basin_km2'])} km² |" for q in d["tributaries"]] + [""]
+        places = river_places(d)
+        if places:
+            out_ += ["## On the river", "", "From the source down to the mouth: " +
+                     ", ".join(f"[[{n}]]" for n in places) + ".", ""]
+        towns = [t for t in basin_towns(d) if t not in places]
+        if towns:
+            out_ += ["## Towns in its basin", "", ", ".join(f"[[{n}]]" for n in towns) + ".", ""]
+    if a["kind"] == "waters":
+        out_ += ["## Map", "", "![The rivers of the mainland, their basins and the border](water-mainland.png)", "",
+                 "![The rivers of Lisavu and their basins](water-lisavu.png)", ""]
+        out_ += ["## The rivers", "", "| River | Length | Basin | Flows into | Country |", "|---|---:|---:|---|---|"]
+        for land in ("mainland", "lisavu"):
+            for r in sorted((r for r in RIVERS.values() if r["land"] == land), key=lambda r: -r["basin_km2"]):
+                out_ += [f"| {rlink(r)} | {n0(r['km'])} km | {n0(r['basin_km2'])} km² | "
+                         f"{rlink(r['into']) if r['into'] else 'the sea'} | "
+                         f"{', '.join(countries[c]['name'] for c in river_countries(r))} |"]
+        out_ += [""]
     if a["kind"] == "country":
         towns = sorted((t for t in MAP["towns"] if t["country"] == a["key"]), key=lambda t: -t["population"])
         if towns:
@@ -319,7 +482,7 @@ def generated_sections(a):
 
 CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions",
             "village": "Villages", "locality": "Villages", "route": "Transport", "language": "Languages",
-            "currency": "Currencies", "item": "Products"}
+            "currency": "Currencies", "item": "Products", "river": "Rivers", "waters": "Rivers"}
 
 
 def categories(a):
@@ -328,6 +491,8 @@ def categories(a):
     c = c or d.get("c") or (a["key"] if a["kind"] == "country" else None)
     if c and c in countries and a["kind"] != "country":
         cats.append(f"{countries[c]['name']}")
+    if a["kind"] == "river":
+        cats += [countries[c]["name"] for c in river_countries(d)]
     return cats
 
 
@@ -341,17 +506,24 @@ for title, a in sorted(articles.items()):
         if not w.get(k):
             problems.append(f"{where}: the wiki has no {k}")
     body = [f"# {title}", "", f'<p class="short">{fill(w.get("short", ""), vals, where)}</p>', "",
-            f'<table class="infobox"><caption>{title}</caption>{md_inline(infobox(a), where)}</table>', "",
+            (f'<table class="infobox"><caption>{title}</caption>{md_inline(infobox(a), where)}</table>' if infobox(a) else ""), "",
             links(fill(w.get("lead", ""), vals, where), where), ""]
     rest = []
+    gen = [links(l, where) for l in generated_sections(a)]
+    if a["kind"] == "waters":              # the map comes first, the table of rivers last
+        k = gen.index("## The rivers")
+        rest, gen = gen[:k], gen[k:]
     for s in w.get("sections", []):
         rest += [f"## {s['title']}", "", links(fill(s["text"], vals, where), where), ""]
-    rest += [links(l, where) for l in generated_sections(a)]
+    rest += gen
     see = []
     if a["kind"] == "party":
         see.append(f"[{title} on the map]({SITE}world.html#{a['key']})")
+    if a["kind"] == "river":
+        see.append(f"[[{WATERS['title']}]]" if WATERS else "")
     if a["kind"] in ("town", "country", "village", "locality"):
         see.append(f"[The map of the world]({SITE}world.html) · [the printed map sheet]({SITE}map-sheet.html)")
+    see = [links(x, where) for x in see if x]
     if see:
         rest += ["## See also", "", *see, ""]
     heads = [l[3:] for l in rest if l.startswith("## ")]
@@ -366,6 +538,18 @@ for title, a in sorted(articles.items()):
     body += ['<p class="categories">Categories: ' + " · ".join(f'<a href="category-{slug(c)}.html">{c}</a>' for c in cats) + "</p>", ""]
     open(os.path.join(out, slug(title) + ".md"), "w", encoding="utf-8").write("\n".join(body))
 
+# the water maps (tools/wiki_water.py): the whole map for the article on the rivers, a small one per river
+if RIVERS:
+    import wiki_water  # noqa: E402
+    imgdir = os.path.join(os.path.dirname(os.path.abspath(out)), "wiki")
+    os.makedirs(imgdir, exist_ok=True)
+    for land in ("mainland", "lisavu"):
+        found = TERR["rivers"][land]
+        names = {r["id"]: RIVERS[(land, r["id"])]["rec"]["name"] for r in found if (land, r["id"]) in RIVERS}
+        wiki_water.water_map(land, found, names, os.path.join(imgdir, f"water-{land}.png"))
+        for r in found:
+            wiki_water.locator(land, found, r["id"], os.path.join(imgdir, f"river-{land}-{r['id']}.png"))
+
 for c, titles in by_cat.items():
     body = [f"# Category: {c}", "", f"Articles in the category {c}:", ""] + [f"- [{t}]({page[t]})" for t in sorted(titles)] + [""]
     open(os.path.join(out, f"category-{slug(c)}.md"), "w", encoding="utf-8").write("\n".join(body))
@@ -373,8 +557,8 @@ for c, titles in by_cat.items():
 index = ["# Encyclopedia", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
          "The countries of the Lumeport Trade Accord, their towns, companies and institutions, with their history and "
          "the documents they exchange.", ""]
-for c in ("Countries", "Treaties", "Towns", "Villages", "Companies and institutions", "Transport", "Languages",
-          "Currencies", "Products"):
+for c in ("Countries", "Treaties", "Towns", "Villages", "Rivers", "Companies and institutions", "Transport",
+          "Languages", "Currencies", "Products"):
     if c in by_cat:
         index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c])] + [""]
 open(os.path.join(out, "index.md"), "w", encoding="utf-8").write("\n".join(index))

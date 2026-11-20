@@ -15901,7 +15901,7 @@
      },
      {
       "title": "History",
-      "text": "Ruldraz was the Urvanians' town before the Europeans came: its lanes, market and old bridgehead are the old town. A Tuscan trading post of 1609–10 at the landing below the rapids left the walled warehouse court of Borgo Toscano. From about 1840 the Sardinian and then Italian protectorate laid out Città Nuova on the higher terrace, and the railway and the first works came in the 1880s. The British administration of 1941 to 1962 added a garden suburb; after independence the town grew along its roads and its railway, with the works and depots of the protected economy and of the Accord."
+      "text": "Ruldraz was the Urvanians' town before the Europeans came: its lanes, market and old bridgehead are the old town. A Tuscan trading post of 1609–10 at the landing below the rapids left the walled warehouse court of Borgo Toscano. From 1840 the Sardinian and then Italian protectorate laid out Città Nuova on the higher terrace, and the railway and the first works came in the 1880s. The British administration of 1941 to 1962 added a garden suburb; after independence the town grew along its roads and its railway, with the works and depots of the protected economy and of the Accord."
      }
     ]
    }
@@ -16020,11 +16020,11 @@
     "sections": [
      {
       "title": "Geography",
-      "text": "The town stands on the shore of the bay where the estuary narrows before it opens to the sea; the narrows command the entry to the river. A brook from the low hills west of the centre runs through the town to the bay and gave it its first fresh water. The deep-water quays lie at the inner basin behind the narrows."
+      "text": "The town stands on the shore of the bay where the estuary of the [[Runmek]] narrows before it opens to the sea; the narrows command the entry to the river. A brook from the low hills west of the centre runs through the town to the bay and gave it its first fresh water. The deep-water quays lie at the inner basin behind the narrows."
      },
      {
       "title": "History",
-      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. About 1841 Britain fortified it and laid out the town as the colony's seat, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital. Government Hill gained its government buildings, churches and banks in the 19th century, and the deep-water quays and their railway came between the 1870s and 1914. The Lumeport Agreement of 1974 brought the textile mill of 1976, built to spin the island's duty-free cotton."
+      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. When Britain annexed the coast on 29 November 1841 it fortified the station and laid out the town as the colony's seat, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital in 1852. Government Hill gained its government buildings, churches and banks in the 19th century, and the deep-water quays and their railway came between the 1870s and 1914. The Lumeport Agreement of 1974 brought the textile mill of 1976, built to spin the island's duty-free cotton."
      }
     ]
    }
@@ -16108,7 +16108,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; in 1858 the plateau became a colony of its own, Upland, and since 1899 it is Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the sawmill. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
+      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it is Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the sawmill. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
      },
      {
       "title": "Economy",
@@ -16285,11 +16285,11 @@
    "farming": "pastoral",
    "wiki": {
     "short": "Port town on the east coast of Bayvarra, its first capital",
-    "lead": "**Larkmouth** is a port town in Coastal State, [[Bayvarra]], with about {population} people, at the mouth of the largest river of the east coast. It was the British settlers' first town and the colony's first capital.",
+    "lead": "**Larkmouth** is a port town in Coastal State, [[Bayvarra]], with about {population} people, at the mouth of the [[River Lark|Lark]], the largest river of the east coast. It was the British settlers' first town and the colony's first capital.",
     "sections": [
      {
       "title": "History",
-      "text": "The first settlers landed here in the 1820s, behind the headland at the mouth of the east river, where they found a sheltered harbour, fresh water and dry grazing land behind it. Their Government House, church and court stood on the rise above the landing until the capital moved to [[Lumeport]]. From the 1880s wool stores and sale rooms lined the wool line's last stretch to the harbour, and after 1914 a freezing works by the river mouth served the frozen meat trade."
+      "text": "The first settlers landed here on 16 February 1824, behind the headland at the mouth of the east river, where they found a sheltered harbour, fresh water and dry grazing land behind it. Their Government House, church and court stood on the rise above the landing until the capital moved to [[Lumeport]] in 1852. From the 1880s wool stores and sale rooms lined the wool line's last stretch to the harbour, and after 1914 a freezing works by the river mouth served the frozen meat trade."
      },
      {
       "title": "Economy",
@@ -17649,8 +17649,8 @@
    ],
    "country": "XU",
    "region": "valley",
-   "founded": "Sardinian, about 1842 (the fort); the village after it",
-   "why": "On the north bank in the angle between the main river and the largest plateau river, just above their confluence, where the land border meets the river: the Sardinian protectorate built a fort here to watch the river and the British settlers beyond the plateau river, and named it after the corvette Euridice of its station on the Plata, which had first shown the flag on the river; the boundary convention of about 1857 made that river and the watershed the border.",
+   "founded": "Sardinian, 1842 (the fort); the village after it",
+   "why": "On the north bank in the angle between the main river and the largest plateau river, just above their confluence, where the land border meets the river: the Sardinian protectorate built a fort here to watch the river and the British settlers beyond the plateau river, and named it after the corvette Euridice of its station on the Plata, which had first shown the flag on the river; the boundary convention of 1857 made that river and the watershed the border.",
    "lives_on": "The border crossing: customs agents, hauliers and warehouses, the railway, the valley's farms.",
    "people": 14000,
    "population": [
@@ -29067,5 +29067,49 @@
   "interwar": "1914 to 1945",
   "postwar": "1945 to 1974",
   "agreement": "The Lumeport Agreement and the Accord (since 1974)"
- }
+ },
+ "rivers_note": "The names of the rivers the encyclopedia names (world/terrain.json, rivers: every stream whose basin reaches 1,000 km² on the mainland or 500 km² on Lisavu), matched by the river's mouth in squares. A river of Urvania has its Italian name, from the protectorate, and its Urvanian one (from the vocabulary, by the meaning in name_from), as the towns have; the main river keeps its Urvanian name in every language; a river of Bayvarra has the English name its settlers gave it, Lisavu's rivers their Lisavan names. A wiki key adds prose to the article the encyclopedia makes from the terrain.",
+ "rivers": [
+  {"land": "mainland", "mouth": [124.38, 125.62], "name": "Runmek", "title": "Runmek", "names": {"qau": "Runmek"}, "name_from": {"qau": "mother"}, "wiki": {"short": "Main river of the mainland, through Urvania and along the border to Lumeport", "lead": "The **Runmek** is the main river of the mainland, {km} km long, with a basin of {basin} km², about a third of the mainland. It rises on the volcanic massif of [[Urvania]] at about {source_m} m, runs through the rift valley past [[Ferrano]], forms the border with [[Bayvarra]] from Forte Euridice down, and reaches the sea by the estuary at [[Lumeport]]. Its name is Urvanian and means mother; the Italians and the British kept it.", "sections": [{"title": "Course", "text": "From the massif the river runs south-east through the rift valley, 15 to 18 km wide, and takes in the [[Nevola]] and the [[Castagna (river)|Castagna]]. Just above [[Ferrano]] it falls through rapids, from about 124 to 91 m in about 12 km, which end navigation: the barges work below them. At Forte Euridice the [[Bruna (river)|Bruna]], its largest tributary, joins it; from there to the estuary the river is the border, and the [[River Tallow|Tallow]] and the [[River Marrow|Marrow]] come in from Bayvarra's plateau."}, {"title": "History", "text": "The Urvanians' town, Ruldraz, now [[Ferrano]], grew where the valleys meet, below the rapids. In 1840 the Sardinian corvette *Euridice* sailed up the river to Ruldraz, and the boundary convention of 1857 made the river the border below the confluence, with free navigation to the sea."}]}},
+  {"land": "mainland", "mouth": [155.88, 85.88], "name": "Lark", "title": "River Lark", "names": {"en": "Lark"}, "wiki": {"short": "River of Bayvarra's dry east, to the sea at Larkmouth", "lead": "The **Lark** is the largest river of [[Bayvarra]] and the second of the mainland, {km} km long, with a basin of {basin} km². It rises at about {source_m} m, crosses the dry east and reaches the sea at [[Larkmouth]], which is named after it.", "sections": [{"title": "History", "text": "The first British settlers landed at its mouth on 16 February 1824, behind the headland, where they found a sheltered harbour, fresh water and dry grazing land behind it. Larkmouth, the town they built there, was the colony's first capital."}]}},
+  {"land": "mainland", "mouth": [97.12, 122.88], "name": "Bruna", "title": "Bruna (river)", "names": {"it": "Bruna", "qau": "Gekgan"}, "name_from": {"qau": "brown"}, "wiki": {"short": "Largest tributary of the Runmek, in Urvania", "lead": "The **Bruna** (Urvanian *Gekgan*, brown) is the largest tributary of the [[Runmek]], {km} km long, with a basin of {basin} km², and lies wholly in [[Urvania]]. It rises on the high ground at about {source_m} m and joins the Runmek at Forte Euridice, where the road crosses the border. Fierabruna, the market town of its valley, is named after it.", "sections": [{"title": "History", "text": "In 1842 the Sardinian protectorate built Forte Euridice in the angle between the Bruna and the Runmek, just above their confluence, to watch the river. By the boundary convention of 1857 the Bruna's whole valley stayed with Urvania: north of the confluence the border follows the watershed."}]}},
+  {"land": "mainland", "mouth": [21.88, 119.38], "name": "Vallerna", "title": "Vallerna", "names": {"it": "Vallerna", "qau": "Binskaz"}, "name_from": {"qau": "west"}},
+  {"land": "mainland", "mouth": [100.88, 47.12], "name": "Shingle", "title": "River Shingle", "names": {"en": "Shingle"}, "wiki": {"short": "River of Bayvarra's north, to the north coast", "lead": "The **Shingle** is a river of [[Bayvarra]], {km} km long, with a basin of {basin} km². It rises at about {source_m} m and reaches the sea on the north coast at Shinglebeck, which is named after it."}},
+  {"land": "mainland", "mouth": [55.38, 102.62], "name": "Nevola", "title": "Nevola", "names": {"it": "Nevola", "qau": "Kutek"}, "name_from": {"qau": "snow"}},
+  {"land": "mainland", "mouth": [151.88, 56.88], "name": "Sallow", "title": "River Sallow", "names": {"en": "Sallow"}},
+  {"land": "mainland", "mouth": [60.88, 45.62], "name": "Pastora", "title": "Pastora", "names": {"it": "Pastora", "qau": "Nekskir"}, "name_from": {"qau": "herd"}},
+  {"land": "mainland", "mouth": [103.62, 51.88], "name": "Brackwater", "title": "River Brackwater", "names": {"en": "Brackwater"}},
+  {"land": "mainland", "mouth": [107.62, 121.62], "name": "Tallow", "title": "River Tallow", "names": {"en": "Tallow"}, "wiki": {"short": "River of Bayvarra's plateau, a tributary of the Runmek", "lead": "The **Tallow** is a river of [[Bayvarra]], {km} km long, with a basin of {basin} km², the largest of the plateau's rivers that join the [[Runmek]] below the border crossing. It rises at about {source_m} m. The village of Tallowford, where the old drove road down the valley forded it some 5 km above its mouth, is named after it."}},
+  {"land": "mainland", "mouth": [69.62, 115.38], "name": "Castagna", "title": "Castagna (river)", "names": {"it": "Castagna", "qau": "Skarir"}, "name_from": {"qau": "slow"}},
+  {"land": "mainland", "mouth": [96.62, 49.38], "name": "Greyling", "title": "River Greyling", "names": {"en": "Greyling"}},
+  {"land": "mainland", "mouth": [14.88, 61.38], "name": "Grigiola", "title": "Grigiola", "names": {"it": "Grigiola", "qau": "Mul"}, "name_from": {"qau": "grey"}},
+  {"land": "mainland", "mouth": [86.12, 103.38], "name": "Brina", "title": "Brina (river)", "names": {"it": "Brina", "qau": "Galstul"}, "name_from": {"qau": "frost"}},
+  {"land": "mainland", "mouth": [121.38, 123.88], "name": "Marrow", "title": "River Marrow", "names": {"en": "Marrow"}, "wiki": {"short": "River of Bayvarra's plateau, past Marrowdale to the Runmek", "lead": "The **Marrow** is a river of [[Bayvarra]], {km} km long, with a basin of {basin} km². It rises on the plateau at about {source_m} m, runs south through the dale that gave [[Marrowdale]] its name, and joins the [[Runmek]] above [[Lumeport]]."}},
+  {"land": "mainland", "mouth": [84.12, 109.88], "name": "Rovella", "title": "Rovella", "names": {"it": "Rovella", "qau": "Hul"}, "name_from": {"qau": "red"}},
+  {"land": "mainland", "mouth": [146.62, 89.88], "name": "Hollin", "title": "River Hollin", "names": {"en": "Hollin"}},
+  {"land": "mainland", "mouth": [124.62, 153.38], "name": "Colomba", "title": "Colomba (river)", "names": {"it": "Colomba", "qau": "Trazstir"}, "name_from": {"qau": "dove"}},
+  {"land": "mainland", "mouth": [60.38, 90.38], "name": "Selvana", "title": "Selvana", "names": {"it": "Selvana", "qau": "Huvir"}, "name_from": {"qau": "forest"}},
+  {"land": "mainland", "mouth": [105.62, 59.62], "name": "Fernwash", "title": "River Fernwash", "names": {"en": "Fernwash"}},
+  {"land": "mainland", "mouth": [29.12, 114.38], "name": "Gemella", "title": "Gemella", "names": {"it": "Gemella", "qau": "Sakskir"}, "name_from": {"qau": "twin"}},
+  {"land": "mainland", "mouth": [103.62, 115.62], "name": "Barle", "title": "River Barle", "names": {"en": "Barle"}},
+  {"land": "mainland", "mouth": [145.12, 62.62], "name": "Reedwater", "title": "River Reedwater", "names": {"en": "Reedwater"}},
+  {"land": "mainland", "mouth": [93.12, 46.38], "name": "Hindwater", "title": "River Hindwater", "names": {"en": "Hindwater"}},
+  {"land": "mainland", "mouth": [78.12, 99.62], "name": "Lupa", "title": "Lupa (river)", "names": {"it": "Lupa", "qau": "Rezhir"}, "name_from": {"qau": "wolf"}},
+  {"land": "mainland", "mouth": [131.12, 81.88], "name": "Whinburn", "title": "River Whinburn", "names": {"en": "Whinburn"}},
+  {"land": "mainland", "mouth": [108.62, 120.62], "name": "Teasel", "title": "River Teasel", "names": {"en": "Teasel"}},
+  {"land": "mainland", "mouth": [84.38, 36.88], "name": "Scarrow", "title": "River Scarrow", "names": {"en": "Scarrow"}},
+  {"land": "mainland", "mouth": [66.62, 57.38], "name": "Sorbella", "title": "Sorbella", "names": {"it": "Sorbella", "qau": "Relnul"}, "name_from": {"qau": "rowan"}},
+  {"land": "mainland", "mouth": [101.62, 122.88], "name": "Canneto", "title": "Canneto (river)", "names": {"it": "Canneto", "qau": "Mersul"}, "name_from": {"qau": "reed"}},
+  {"land": "mainland", "mouth": [114.38, 123.38], "name": "Pampina", "title": "Pampina", "names": {"it": "Pampina", "qau": "Gatek"}, "name_from": {"qau": "vine"}},
+  {"land": "mainland", "mouth": [143.62, 63.62], "name": "Linnet", "title": "River Linnet", "names": {"en": "Linnet"}},
+  {"land": "mainland", "mouth": [132.38, 151.62], "name": "Genovina", "title": "Genovina", "names": {"it": "Genovina", "qau": "Mugek"}, "name_from": {"qau": "sand"}},
+  {"land": "mainland", "mouth": [42.88, 84.62], "name": "Pietrosa", "title": "Pietrosa", "names": {"it": "Pietrosa", "qau": "Hadan"}, "name_from": {"qau": "stone"}},
+  {"land": "mainland", "mouth": [79.88, 94.88], "name": "Lontra", "title": "Lontra", "names": {"it": "Lontra", "qau": "Zhazstan"}, "name_from": {"qau": "otter"}},
+  {"land": "mainland", "mouth": [94.62, 124.62], "name": "Mirtina", "title": "Mirtina", "names": {"it": "Mirtina", "qau": "Kanul"}, "name_from": {"qau": "myrtle"}},
+  {"land": "lisavu", "mouth": [230.19, 106.19], "name": "Vokila", "title": "Vokila (river)", "names": {"qal": "Vokila"}, "name_from": {"qal": "canoe"}},
+  {"land": "lisavu", "mouth": [227.69, 122.19], "name": "Makete", "title": "Makete (river)", "names": {"qal": "Makete"}, "name_from": {"qal": "long"}},
+  {"land": "lisavu", "mouth": [219.31, 123.19], "name": "Tapetu", "title": "Tapetu (river)", "names": {"qal": "Tapetu"}, "name_from": {"qal": "mountain"}},
+  {"land": "lisavu", "mouth": [238.81, 107.19], "name": "Kanipi", "title": "Kanipi (river)", "names": {"qal": "Kanipi"}, "name_from": {"qal": "east"}}
+ ],
+ "waters": {"title": "Rivers and watersheds", "wiki": {"short": "The rivers, basins and watersheds of the mainland and Lisavu", "lead": "The mainland drains to the sea by many rivers, of which {mainland_rivers} have a basin of 1,000 km² or more; Lisavu's streams are short and steep, and {lisavu_rivers} of them drain more than 500 km². The largest river is the [[Runmek]], {main_km} km long, whose basin of {main_basin} km² covers about {main_share} % of the mainland.", "sections": [{"title": "The mainland", "text": "The [[Runmek]] rises on the volcanic massif in Urvania's north-west at about {main_source_m} m and runs south-east through the rift valley to the estuary at [[Lumeport]]. Its tributaries come from the massif, from the plateau to the north-east and from the southern hills; the largest is the [[Bruna (river)|Bruna]], which joins it at Forte Euridice. From the massif the [[Pastora]] falls to the north coast and the [[Vallerna]] and the [[Grigiola]] to the west coast. Bayvarra's north drains to the north coast by the [[River Shingle|Shingle]], the [[River Brackwater|Brackwater]] and the [[River Scarrow|Scarrow]], its north-east by the [[River Sallow|Sallow]], and the dry east by the [[River Lark|Lark]], the second river of the mainland. The southern hills send only short rivers to the south coast, among them the [[Colomba (river)|Colomba]] and the [[Genovina]]."}, {"title": "Watersheds and the border", "text": "North of the crossing at Forte Euridice the border between [[Urvania]] and [[Bayvarra]] follows the watershed: Urvania holds the basins of the rivers that join the [[Runmek]] at or above the crossing, the Bruna's whole valley among them, and of the north-western coast; Bayvarra holds the land that drains to the Runmek below the crossing, to the rest of the north coast and to the east. From the crossing down to the estuary the Runmek itself is the border."}, {"title": "Lisavu", "text": "The island's streams run outward from its volcano, short and steep. The [[Vokila (river)|Vokila]] drains the largest basin and reaches the north coast in the bay of [[Natahoma]]; the [[Makete (river)|Makete]], the longest, reaches the south coast at [[Linukaha]]; the [[Tapetu (river)|Tapetu]] falls from near the summit to the south-west coast at [[Nihekemo]]; the [[Kanipi (river)|Kanipi]] runs to the east coast north of [[Selanu]]."}]}}
 }
