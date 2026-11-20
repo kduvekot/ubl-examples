@@ -69,6 +69,7 @@ canvas.dragging { cursor: grabbing; }
 .card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; }
 .card dt { color: var(--ui-muted); }
 .card dd { margin: 0; }
+.card .legend { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--ui-line); }
 .card .more { margin: 12px 0 0; }
 .card .more a { color: var(--c-logistics); font-weight: 600; text-decoration: none; }
 .card .more a:hover { text-decoration: underline; }
@@ -140,6 +141,7 @@ const GRID = WORLD.model.grid || 1;           // squares per 14 km (the squares 
 const TW = 32, TH = 16;             // tile size in pixels (isometric)
 const COUNTRIES = WORLD.countries;
 const CAT = { commerce: "--c-commerce", logistics: "--c-logistics", government: "--c-government", finance: "--c-finance", procurement: "--c-procurement" };
+const KIND_NAME = { commerce: "commerce", logistics: "transport", government: "government", finance: "finance", procurement: "procurement" };
 const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov", finance: "fin", procurement: "proc" };
 
 // Parties: number, tile position, country.
@@ -1601,9 +1603,12 @@ const redraw = () => { if (reduced) frame(0); };
 // panel
 const card = document.getElementById("card"), list = document.getElementById("list");
 function showCard(p) {
-  if (!p) { card.innerHTML = `<div class="num">THE UBL EXAMPLE WORLD</div><h2>Three countries, ${P.length} places, one story</h2>
-    <p>Ore is mined and processed in <b>Urvania</b>, crosses the land border by road, rail and river to the distributor in <b>Bayvarra</b>, and goes overseas by ship and plane to the buyer on the island <b>Lisavu</b>. Every country has its own customs, chamber and banks.</p>
-    <p>Click a building or choose a party below to see its role and the UBL documents it sends and receives.</p>`; return; }
+  if (!p) { card.innerHTML = `<div class="num">THE UBL WORLD</div><h2>Three countries, one trade accord</h2>
+    <p><b>Urvania</b>, in the west, mines ore, casts benches and makes power. <b>Bayvarra</b>, across the land border, distributes, builds and runs the port of Lumeport. The island of <b>Lisavu</b>, far to the east, grows cotton and buys from both. Goods travel by road, rail, river, sea, air and pipeline between ${P.length} parties.</p>
+    <p>Click a building or choose a party below to see who it is and the documents it sends and receives.</p>
+    <dl class="legend"><dt>Colours</dt><dd>${Object.keys(CAT).map(k => `<span class="dot" style="background:var(${CAT[k]})"></span> ${KIND_NAME[k]}`).join(" · ")}</dd>
+      <dt>Scale</dt><dd>One square is 3.5 km.</dd>
+      <dt>Lisavu</dt><dd>Drawn closer than it lies: the island is about 1,100 km east of Lumeport.</dd></dl>`; return; }
   const col = css(CAT[p.cat]);
   card.innerHTML = `<div class="num">PARTY #${p.n} · ${p.name.toUpperCase()}</div><h2 style="color:${col}">${p.label}</h2>
     <div class="tags"><span class="tag">${COUNTRIES[p.c].name} (${p.c})</span><span class="tag">${p.cat}</span></div>

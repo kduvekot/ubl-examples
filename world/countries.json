@@ -3,7 +3,7 @@
  "countries": {
   "XU": {
    "name": "Urvania",
-   "note": "Mainland, inland. Raw materials and manufacturing.",
+   "note": "Mainland, in the west: a rugged coast without a deep-water port, and the river down to Lumeport. Raw materials, manufacturing and power.",
    "alpha3": "XUR",
    "numeric": "901",
    "languages": [
@@ -289,7 +289,7 @@
   },
   "XB": {
    "name": "Bayvarra",
-   "note": "Mainland, coast. Distribution, retail, seaport and airport hub.",
+   "note": "Mainland, in the east, on the estuary. Distribution, retail, the seaport and the airport hub of Lumeport.",
    "alpha3": "XBY",
    "numeric": "902",
    "languages": [
@@ -588,7 +588,7 @@
   },
   "XL": {
    "name": "Lisavu",
-   "note": "Island. The overseas buyer, reached by sea and air.",
+   "note": "Island, about 1,100 km east of Lumeport, reached by sea and air. Cotton, and a buyer of the mainland's goods.",
    "alpha3": "XLS",
    "numeric": "903",
    "languages": [
