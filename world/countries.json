@@ -166,7 +166,7 @@
     "customs-trader": {
      "name": "customs trader number of Urvania",
      "pattern": "^XU-TR-\\d{6}$",
-     "format": "XU-TR- and 6 digits"
+     "format": "XU-TR- and 6 digits; valid at the customs of every member of the Trade Accord, which recognise each other's trader numbers"
     },
     "public-body-register": {
      "name": "index of public administrations of Urvania",
@@ -472,7 +472,7 @@
     "customs-trader": {
      "name": "customs trader number of Bayvarra",
      "pattern": "^XB-TR-\\d{6}$",
-     "format": "XB-TR- and 6 digits, the last six digits of the trader's number in its register: a company's business register number, a public body's number in the federal list of public bodies"
+     "format": "XB-TR- and 6 digits, the last six digits of the trader's number in its register: a company's business register number, a public body's number in the federal list of public bodies; valid at the customs of every member of the Trade Accord, which recognise each other's trader numbers"
     },
     "public-body-register": {
      "name": "federal list of public bodies of Bayvarra",
@@ -751,7 +751,7 @@
     "customs-trader": {
      "name": "customs trader number of Lisavu",
      "pattern": "^XL-TR-\\d{6}$",
-     "format": "XL-TR- and 6 digits"
+     "format": "XL-TR- and 6 digits; valid at the customs of every member of the Trade Accord, which recognise each other's trader numbers"
     },
     "public-body-register": {
      "name": "government list of public bodies of Lisavu",
