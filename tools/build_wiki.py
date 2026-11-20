@@ -1,0 +1,249 @@
+#!/usr/bin/env python3
+"""The Encyclopedia of the UBL World (CLAUDE.md, open work 2): articles generated from the world data.
+
+Every article's prose sits next to the data it is about, in a "wiki" key on its record:
+
+  * a country: world/countries.json  countries.<code>.wiki
+  * the Trade Accord: world/countries.json  trade_accord.wiki
+  * a town: world/map.json  towns[].wiki
+  * a party: world/parties.json  parties[].wiki
+
+  "wiki": {"short": "a short description under the title",
+           "lead": "the opening paragraph",
+           "sections": [{"title": "History", "text": "..."}, ...]}
+
+Texts are Markdown. "{population}" and the like are filled in from the data (an unknown name stops the build);
+"[[Name]]" or "[[Name|text]]" links another article by its title (a name the world does not know stops the build; a
+name without an article yet is written as plain text). The infobox, the districts, the companies of a town, the
+and the categories are made from the data. An encyclopedia does not list the business documents a company exchanges
+(owner): those stay on the main site.
+
+Usage: python3 tools/build_wiki.py <md-dir>     writes <md-dir>/<slug>.md, one per article, and index.md
+"""
+import json
+import os
+import re
+import sys
+import unicodedata
+
+sys.path.insert(0, os.path.dirname(__file__))
+import world_data  # noqa: E402
+
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+out = sys.argv[1]
+world = world_data.load()
+world_data.number_documents(world)
+countries = world["countries"]
+PARTY = {p["id"]: p for p in world["parties"]}
+MAP = json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8"))
+CJSON = json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8"))
+SITE = "../"                                   # the main site, seen from /wiki/ (one setting, for a later subdomain)
+problems = []
+
+
+def slug(name):
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+
+def n0(v):
+    return f"{v:,}"
+
+
+# ---------------------------------------------------------------- the subjects: every thing an article may be about
+articles = {}       # title -> {"kind", "key", "data", "wiki"}
+known = set()       # every name the world knows, with or without an article
+for code, c in countries.items():
+    known.add(c["name"])
+    if c.get("wiki"):
+        articles[c["name"]] = {"kind": "country", "key": code, "data": c, "wiki": c["wiki"]}
+acc = CJSON.get("trade_accord")
+if acc:
+    known.add(acc["name"])
+    if acc.get("wiki"):
+        articles[acc["name"]] = {"kind": "accord", "key": "accord", "data": acc, "wiki": acc["wiki"]}
+for t in MAP["towns"]:
+    known.add(t["name"])
+    if t.get("wiki"):
+        articles[t["name"]] = {"kind": "town", "key": t["name"], "data": t, "wiki": t["wiki"]}
+for v in MAP.get("villages", []) + MAP.get("localities", []):
+    if v.get("name"):
+        known.add(v["name"])
+for p in world["parties"]:
+    known.add(p["identity"]["name"])
+    if p.get("wiki"):
+        articles[p["identity"]["name"]] = {"kind": "party", "key": p["id"], "data": p, "wiki": p["wiki"]}
+for it in world["items"]:
+    known.add(it["name"])
+page = {title: slug(title) + ".html" for title in articles}
+
+
+def links(text, where):
+    def one(m):
+        target, label = (m.group(1).split("|", 1) + [None])[:2]
+        label = label or target
+        if target in page:
+            return f"[{label}]({page[target]})"
+        if target not in known:
+            problems.append(f"{where}: [[{target}]] names nothing the world knows")
+        return label
+    return re.sub(r"\[\[([^\]]+)\]\]", one, text)
+
+
+def fill(text, values, where):
+    def one(m):
+        if m.group(1) not in values:
+            problems.append(f"{where}: {{{m.group(1)}}} is not a value of this subject")
+            return m.group(0)
+        return str(values[m.group(1)])
+    return re.sub(r"\{([a-z_]+)\}", one, text)
+
+
+# ---------------------------------------------------------------- facts from the data, per kind
+def town_of(p):
+    return p["identity"]["address"].get("CityName", "")
+
+
+def values(a):
+    d = a["data"]
+    if a["kind"] == "country":
+        pop = d.get("population", {})
+        tot = pop.get("total", 0)
+        about = f"{tot / 1e6:.1f} million" if tot >= 1e6 else n0(round(tot, -4))    # prose rounds; the infobox is exact
+        return {"population": about, "currency": d["currency"]["name"],
+                "currency_code": d["currency"]["code"], "code": a["key"]}
+    if a["kind"] == "town":
+        return {"population": n0(d["population"]), "built_km": d["built_km"], "country": countries[d["country"]]["name"]}
+    if a["kind"] == "party":
+        lg = d["identity"].get("legal", {})
+        return {"founded_year": lg.get("founded", "")[:4], "employees": n0(lg.get("headcount", 0)),
+                "town": town_of(d)}
+    return {}
+
+
+def infobox(a):
+    d, rows = a["data"], []
+    if a["kind"] == "country":
+        capital = next((t["name"] for t in MAP["towns"] if t["country"] == a["key"] and t["population"] ==
+                        max(x["population"] for x in MAP["towns"] if x["country"] == a["key"])), "")
+        langs = ", ".join(world["languages"][code]["name"] if code in world.get("languages", {}) else code
+                          for code in d.get("languages", []))
+        rows = [("Capital", f"[[{capital}]]"), ("Languages", langs),
+                ("Population", n0(d.get("population", {}).get("total", 0))),
+                ("Currency", f"{d['currency']['name']} ({d['currency']['code']})"),
+                ("Time", d.get("legal_time", "")), ("Country code", f"{a['key']} (ISO 3166-1, user-assigned)"),
+                ("Tax", d["tax"]["schemes"][0]["name"])]
+    elif a["kind"] == "accord":
+        rows = [("Signed", d.get("signed", "")), ("In force", d.get("in_force", "")),
+                ("Members", ", ".join(f"[[{countries[c]['name']}]]" for c in d.get("members", []))),
+                ("Seat", f"[[{d['seat']}]]" if d.get("seat") else "")]
+    elif a["kind"] == "town":
+        rows = [("Country", f"[[{countries[d['country']]['name']}]]"), ("Population", n0(d["population"])),
+                ("Built-up area", f"about {d['built_km']} km across"),
+                ("Districts", str(len(d.get("districts", []))))]
+    elif a["kind"] == "party":
+        idn, lg = d["identity"], d["identity"].get("legal", {})
+        form = countries[d["c"]].get("legal_forms", {}).get(lg.get("form"), {}).get("name", lg.get("form", ""))
+        rows = [("Type", form), ("Founded", lg.get("founded", "")), ("Seat", f"[[{town_of(d)}]], [[{countries[d['c']]['name']}]]"),
+                ("Employees", n0(lg["headcount"]) if lg.get("headcount") else ""), ("What it does", d["name"]),
+                ("Website", idn.get("website", ""))]
+    cells = "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v)
+    return cells
+
+
+def md_inline(text, where):
+    """Markdown links inside the infobox's HTML: [[...]] to <a>."""
+    def one(m):
+        target, label = (m.group(1).split("|", 1) + [None])[:2]
+        label = label or target
+        if target in page:
+            return f'<a href="{page[target]}">{label}</a>'
+        if target not in known:
+            problems.append(f"{where}: [[{target}]] names nothing the world knows")
+        return label
+    return re.sub(r"\[\[([^\]]+)\]\]", one, text)
+
+
+def generated_sections(a):
+    d, out_ = a["data"], []
+    if a["kind"] == "town":
+        if d.get("districts"):
+            out_ += ["## Districts", "", "| District | Grew | Character |", "|---|---|---|"]
+            out_ += [f"| {x['name']} | {x.get('years', '')} | {x.get('note', '')} |" for x in d["districts"]] + [""]
+        here = [p for p in world["parties"] if town_of(p) == d["name"] and p["c"] == d["country"]]
+        if here:
+            out_ += ["## Companies and institutions", ""]
+            out_ += [f"- [[{p['identity']['name']}]], {p['name'].lower()}" for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
+    if a["kind"] == "country":
+        towns = sorted((t for t in MAP["towns"] if t["country"] == a["key"]), key=lambda t: -t["population"])
+        if towns:
+            out_ += ["## Towns", "", "| Town | Population |", "|---|---:|"]
+            out_ += [f"| [[{t['name']}]] | {n0(t['population'])} |" for t in towns] + [""]
+        hol = d.get("holidays", {}).get("2026", {})
+        if hol:
+            out_ += ["## Public holidays", "", "| 2026 | Holiday |", "|---|---|"]
+            out_ += [f"| {day} | {name} |" for day, name in sorted(hol.items())] + [""]
+    return out_
+
+
+CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions"}
+
+
+def categories(a):
+    d, cats = a["data"], [CATEGORY[a["kind"]]]
+    c = d.get("country") or d.get("c") or (a["key"] if a["kind"] == "country" else None)
+    if c and c in countries and a["kind"] != "country":
+        cats.append(f"{countries[c]['name']}")
+    return cats
+
+
+# ---------------------------------------------------------------- write the articles
+os.makedirs(out, exist_ok=True)
+by_cat = {}
+for title, a in sorted(articles.items()):
+    w, where = a["wiki"], f"{a['kind']} {title}"
+    vals = values(a)
+    for k in ("short", "lead"):
+        if not w.get(k):
+            problems.append(f"{where}: the wiki has no {k}")
+    body = [f"# {title}", "", f'<p class="short">{fill(w.get("short", ""), vals, where)}</p>', "",
+            f'<table class="infobox"><caption>{title}</caption>{md_inline(infobox(a), where)}</table>', "",
+            links(fill(w.get("lead", ""), vals, where), where), ""]
+    rest = []
+    for s in w.get("sections", []):
+        rest += [f"## {s['title']}", "", links(fill(s["text"], vals, where), where), ""]
+    rest += [links(l, where) for l in generated_sections(a)]
+    see = []
+    if a["kind"] == "party":
+        see.append(f"[{title} on the map]({SITE}world.html#{a['key']})")
+    if a["kind"] in ("town", "country"):
+        see.append(f"[The map of the world]({SITE}world.html) · [the printed map sheet]({SITE}map-sheet.html)")
+    if see:
+        rest += ["## See also", "", *see, ""]
+    heads = [l[3:] for l in rest if l.startswith("## ")]
+    if len(heads) >= 3:                       # the contents, after the lead, as an encyclopedia has it
+        body += ['<details class="wtoc" open><summary>Contents</summary><ol>'
+                 + "".join(f'<li><a href="#{re.sub(r"[^a-z0-9 -]", "", h.lower()).replace(" ", "-")}">{h}</a></li>' for h in heads)
+                 + "</ol></details>", ""]
+    body += rest
+    cats = categories(a)
+    for c in cats:
+        by_cat.setdefault(c, []).append(title)
+    body += ['<p class="categories">Categories: ' + " · ".join(f'<a href="category-{slug(c)}.html">{c}</a>' for c in cats) + "</p>", ""]
+    open(os.path.join(out, slug(title) + ".md"), "w", encoding="utf-8").write("\n".join(body))
+
+for c, titles in by_cat.items():
+    body = [f"# Category: {c}", "", f"Articles in the category {c}:", ""] + [f"- [{t}]({page[t]})" for t in sorted(titles)] + [""]
+    open(os.path.join(out, f"category-{slug(c)}.md"), "w", encoding="utf-8").write("\n".join(body))
+
+index = ["# Encyclopedia", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
+         "The countries of the Lumeport Trade Accord, their towns, companies and institutions, with their history and "
+         "the documents they exchange.", ""]
+for c in ("Countries", "Treaties", "Towns", "Companies and institutions"):
+    if c in by_cat:
+        index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c])] + [""]
+open(os.path.join(out, "index.md"), "w", encoding="utf-8").write("\n".join(index))
+
+if problems:
+    sys.exit("encyclopedia problems:\n  " + "\n  ".join(problems))
+print(f"encyclopedia: {len(articles)} articles, {len(by_cat)} categories")

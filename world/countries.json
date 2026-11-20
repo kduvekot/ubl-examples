@@ -293,6 +293,28 @@
     "dispersed": 160000,
     "places_drawn": 429,
     "note": "The population (owner, 2026-11-18): the towns of the map (towns), the country towns of Urvania and the railway and coast towns of Bayvarra (country_towns), the villages and hamlets (world/map.json \"villages\" and \"localities\", each with its people) and the dispersed farms and homesteads, too small to draw. Made by analysis/world-position/site_villages.py."
+   },
+   "wiki": {
+    "short": "Country on the west of the mainland, member of the Lumeport Trade Accord",
+    "lead": "**Urvania** is the western of the two countries of the mainland, with about {population} people. It holds the volcanic massif of the north-west, the green western hills and all the land south of the main river. Its capital is [[Ferrano]], the old Urvanian town of Ruldraz below the rapids. Urvania is bilingual: Urvanian and English are its official languages. Its currency is the {currency} ({currency_code}).",
+    "sections": [
+     {
+      "title": "Geography",
+      "text": "Urvania covers about 90,500 km². A volcanic massif in the north-west rises to about 1,920 m; the main river rises on it at about 1,510 m and runs through a rift valley to the sea. Just above [[Ferrano]] it falls through rapids, which end navigation; below them the river carries barges to the estuary. The western hills and the land south of the river are green and hilly, wet from the westerly winds. From the border crossing the main river forms the border with [[Bayvarra]] down to the sea; north of the crossing the border follows the watershed, so that Urvania keeps the whole valley of the largest plateau river."
+     },
+     {
+      "title": "History",
+      "text": "Before the Europeans came, the Urvanians farmed the wet valley of the main river and the hills west of it; their town, Ruldraz, grew where the valleys meet, below the rapids. In 1609–10 a voyage from Tuscany reached Ruldraz and founded a small trading post, which lasted some decades and faded in the 18th century; it left Ferrano's quarter Borgo Toscano and the chapel of San Ranieri del Guado.\n\nAbout 1840 the Sardinian corvette *Euridice* sailed up the river to Ruldraz. The Urvanian rulers signed a treaty of protection with Sardinia, and Forte Euridice was built about 1842 at the confluence of the main river and the largest plateau river. A boundary convention of about 1857 set the border with the British colony to the east. In 1861 the Kingdom of Italy inherited the protectorate, and Urvania stayed an Italian territory until 1941, when British forces took it and put it under British administration; Italy renounced it in the peace treaty of 1947.\n\nUrvania became independent in 1962, bilingual in Urvanian and English. The British had kept the Italian place and street names, and the country kept a continental cast in its institutions, among them its value added tax. It built a protected economy around state mining, state energy and its own manufacturers, and opened it in the early 1990s. In 1994 it joined [[Bayvarra]] and [[Lisavu]] in the [[Lumeport Trade Accord]]."
+     },
+     {
+      "title": "Economy",
+      "text": "Urvania's economy grew around the mine, the energy companies and the works of [[Ferrano]], among them [[Valdara Industries]], the bench maker founded in the year of independence. Its energy market is unbundled: a power station produces electricity, a grid operator runs the networks and a retail company supplies the customers. The country levies a value added tax at every stage, deducted by businesses and not charged on exports."
+     },
+     {
+      "title": "Languages",
+      "text": "Urvanian and English are official. Place and street names are the Italian ones, which count as English; Urvanian gives every place its own name too, and addresses carry both."
+     }
+    ]
    }
   },
   "XB": {
@@ -593,6 +615,28 @@
     "dispersed": 80000,
     "places_drawn": 160,
     "note": "The population (owner, 2026-11-18): the towns of the map (towns), the country towns of Urvania and the railway and coast towns of Bayvarra (country_towns), the villages and hamlets (world/map.json \"villages\" and \"localities\", each with its people) and the dispersed farms and homesteads, too small to draw. Made by analysis/world-position/site_villages.py."
+   },
+   "wiki": {
+    "short": "Federal country on the plateau and the east coast of the mainland",
+    "lead": "**Bayvarra** is a federal country on the mainland, east of [[Urvania]], with about {population} people. It holds most of the plateau, the dry east and the low north coast. Its capital and port city is [[Lumeport]], at the narrows of the estuary. Its currency is the {currency} ({currency_code}).",
+    "sections": [
+     {
+      "title": "Geography",
+      "text": "Bayvarra covers about 70,100 km². The plateau of Upland State falls to the dry east of Coastal State, a land of grazing and wheat; the north coast is low. The largest river of the east coast reaches the sea at [[Larkmouth]]. On the slope north of [[Marrowdale]] lies the Upland State Forest, planted and felled by compartment."
+     },
+     {
+      "title": "Government",
+      "text": "Bayvarra has two states and a federal territory. Upland State lies inland on the plateau, with [[Marrowdale]]; Coastal State lies along the east coast, with [[Lumeport]] and [[Larkmouth]]; the thinly peopled Northern Territory holds the low north coast, with the fishing village of Gullhaven. Each levies its own rate of the retail sales tax, charged once, on the sale to the final consumer: 5 % in Upland State, 6.5 % in Coastal State and 4 % in the Northern Territory."
+     },
+     {
+      "title": "History",
+      "text": "British settlers landed at [[Larkmouth]] in the 1820s, at the mouth of the largest east-coast river, and spread over the dry east and the plateau as graziers and wheat farmers; Bayvarra keeps the landing as Settlers' Day. In the late 1830s their company kept a trading station at the narrows of the estuary. About 1841 Britain annexed the coast and the dry east, fortified the station and laid out [[Lumeport]] there as the colony's seat; as the river trade grew it took over from Larkmouth as capital. A boundary convention of about 1857 set the border with [[Urvania]] along the main river and the watershed.\n\nIn the late 19th century Bayvarra built its railways, and villages grew at the stations. In 1974 it signed the Lumeport Agreement with [[Lisavu]], and in 1994 the [[Lumeport Trade Accord]] with both its neighbours."
+     },
+     {
+      "title": "Economy",
+      "text": "Bayvarra's economy is a trading one: distribution, retail, the seaport and the airport of [[Lumeport]], and the wool, wheat and timber of the plateau. Since 2011 gas from an offshore field off the north coast is sold by pipeline to [[Urvania]]."
+     }
+    ]
    }
   },
   "XL": {
@@ -835,6 +879,24 @@
     "dispersed": 8000,
     "places_drawn": 17,
     "note": "The population (owner, 2026-11-18): the towns of the map (towns), the country towns of Urvania and the railway and coast towns of Bayvarra (country_towns), the villages and hamlets (world/map.json \"villages\" and \"localities\", each with its people) and the dispersed farms and homesteads, too small to draw. Made by analysis/world-position/site_villages.py."
+   },
+   "wiki": {
+    "short": "Island country in the South Atlantic, east of the mainland",
+    "lead": "**Lisavu** is a volcanic island about 1,080 km east of [[Lumeport]], with about {population} people. Its capital and only town is [[Selanu]], on a sheltered bay of the east coast. Lisavan and English are spoken. Its currency is the {currency} ({currency_code}), counted in thousandths.",
+    "sections": [
+     {
+      "title": "Geography",
+      "text": "The island is about 116 by 85 km and 7,100 km², an eroded volcano that rises to about 1,810 m some 25 km inland from the west coast and falls to the east. The west coast faces the westerly wind and the ocean swell: cliffs, bays where the land has slid into the sea, stacks and islets, and no port. Ships round a cape to the lee side, where the port and [[Selanu]] lie. The airport stands on the plain about 10 km north of the town, and the cotton grows on a plain of about 690 km² in the dry north-east, in the island's rain shadow."
+     },
+     {
+      "title": "History",
+      "text": "The Lisavans lived on the island before the settlers came; the village on the sheltered bay gave [[Selanu]] its name. In the 19th century English settlers laid out cotton estates on the dry north-eastern plain, at Lintwell and Bollworth, and built their town, Port Wrenfield, on the wharf beside the village. In 1974 the island signed the Lumeport Agreement with [[Bayvarra]]: its cotton entered Bayvarra free of duty, a regular shipping service linked the two, and the coral was tied to the lume. In 1994 it joined the [[Lumeport Trade Accord]]."
+     },
+     {
+      "title": "Economy",
+      "text": "Cotton is the island's export. Lisavu has no general sales tax: customs collects an import consumption tax on every import, whatever its origin, and a duty on goods from outside the Accord."
+     }
+    ]
    }
   }
  },
@@ -3474,6 +3536,35 @@
     "export": "An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G).",
     "reason": "Zero-rated export supply"
    }
+  }
+ },
+ "trade_accord": {
+  "name": "Lumeport Trade Accord",
+  "signed": "1994, in Lumeport",
+  "in_force": "1 January 1996",
+  "members": [
+   "XU",
+   "XB",
+   "XL"
+  ],
+  "seat": "Lumeport",
+  "wiki": {
+   "short": "Free trade area of Urvania, Bayvarra and Lisavu",
+   "lead": "The **Lumeport Trade Accord** is the free trade area of [[Urvania]], [[Bayvarra]] and [[Lisavu]]. It was signed in [[Lumeport]] in 1994 and entered into force on 1 January 1996, turning the Lumeport Agreement of 1974 between Bayvarra and Lisavu into a free trade area of all three countries. Its council, the [[Lumeport Trade Accord Council]], sits in Lumeport.",
+   "sections": [
+    {
+     "title": "Background",
+     "text": "In 1974 [[Bayvarra]] and [[Lisavu]] signed the Lumeport Agreement: the island's cotton entered Bayvarra free of duty, a regular shipping service linked the two, and the island's coral was tied to the lume. [[Urvania]] opened its protected economy in the early 1990s and joined its two neighbours in the Accord."
+    },
+    {
+     "title": "Provisions",
+     "text": "Goods of Accord origin cross between the members free of duty. The three currencies, the ferra, the lume and the coral, stand at a fixed parity. Each member keeps its own taxes: the island stopped charging duty on its partners' goods and kept its import consumption tax, which falls on every import whatever its origin. Carriage between the members follows the Accord's uniform rules, and the members share code lists for their electronic business documents."
+    },
+    {
+     "title": "Protocols",
+     "text": "Later protocols extended the Accord. The energy protocol of 2007 opened the wholesale trade in gas and electricity between producers, networks and suppliers, and asks that a network be run with its own accounts and management and be open to others on equal terms. Further protocols gave the members common procurement rules, a payment link and card schemes, and electronic business documents. Public services stay national: the supply of electricity, gas, water and telephone to end customers is each member's own, under a common minimum for utility bills."
+    }
+   ]
   }
  }
 }
