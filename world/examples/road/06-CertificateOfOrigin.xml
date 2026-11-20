@@ -276,11 +276,11 @@
             <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
           </cac:OriginCountry>
           <cac:CommodityClassification>
-            <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
-            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
+            <cbc:CommodityCode listID="WCO HS 2022">940199</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
           </cac:CommodityClassification>
           <cac:CommodityClassification>
-            <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">73259990</cbc:CommodityCode>
+            <cbc:CommodityCode listID="urn:ubl-examples:world:XU:codelist:CustomsTariffCode">94019990</cbc:CommodityCode>
           </cac:CommodityClassification>
         </cac:Item>
         <cac:ContainingPackage>

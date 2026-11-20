@@ -190,7 +190,7 @@
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940199</cbc:CommodityCode>
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>

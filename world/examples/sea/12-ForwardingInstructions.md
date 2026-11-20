@@ -272,8 +272,8 @@ Inside `Shipment`:
   How much is carried.
 - `GoodsItem/Item/Name` = **Bench side frame casting**  
   The goods.
-- `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
-  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940199** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940199 = Parts of seats, other.
 
 ### Document Reference
 
@@ -508,7 +508,7 @@ Inside `Signature`:
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940199</cbc:CommodityCode>
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>

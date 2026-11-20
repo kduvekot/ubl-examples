@@ -7164,7 +7164,6 @@
     "38112": "",
     "38122": "",
     "38140": "",
-    "42999": "",
     "46420": "",
     "46921": "",
     "87390": "",
@@ -7249,10 +7248,6 @@
      "Men's or boys' shirts, of cotton",
      ""
     ],
-    "732599": [
-     "Other cast articles of iron or steel: other",
-     ""
-    ],
     "850760": [
      "Lithium-ion accumulators",
      ""
@@ -7271,6 +7266,10 @@
     ],
     "940191": [
      "Parts of seats, of wood",
+     ""
+    ],
+    "940199": [
+     "Parts of seats, other",
      ""
     ],
     "940330": [
@@ -7340,13 +7339,9 @@
      "Other seats with metal frames",
      "Under HS 9401.79."
     ],
-    "73259910": [
-     "Castings of iron or steel for furniture",
-     "Under HS 7325.99."
-    ],
-    "73259990": [
-     "Other cast articles of iron or steel",
-     "Under HS 7325.99."
+    "94019990": [
+     "Other parts of seats",
+     "Under HS 9401.99."
     ],
     "26011100": [
      "Iron ores and concentrates, non-agglomerated",
