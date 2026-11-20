@@ -41,7 +41,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Bayforth Forwarding (10-xb)
 
-- Who founded Bayforth
+- ~~Who founded Bayforth~~ Filled 2026-11-20 (OW012).
 - Whether it has offices or agents on the island or in Urvania
 - When it added air freight and reefer haulage
 
@@ -58,7 +58,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Brightmarket Stores (26-xb)
 
-- Who founded Brightmarket in 1979 and how it grew; how many stores it has besides the Lumeport store, and where.
+- ~~Who founded Brightmarket in 1979 and how it grew; how many stores it has besides the Lumeport store, and where.~~ Filled 2026-11-20 (OW012).
 - What else the store sells besides clothing and home and garden goods, and its floor area.
 - When it opened its web shop.
 
@@ -186,7 +186,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Kelaro Air Cargo (12-xl)
 
-- the year the freighter came into service
+- ~~the year the freighter came into service~~ Filled 2026-11-20 (OW012).
 - whether Kelaro also flies passengers, and on which other routes
 
 ### Kelpstone Gas (42-xb)
@@ -198,7 +198,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Airport Cargo Terminal (17-xb)
 
-- Who owns the terminal (the airport, an airline or private owners) and who founded it.
+- ~~Who owns the terminal (the airport, an airline or private owners) and who founded it.~~ Filled 2026-11-20 (OW012).
 - When Lumeport airport itself opened, and which other airlines and destinations it serves.
 - The terminal's size, cold rooms and yearly tonnage.
 
@@ -210,7 +210,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Textile Mill (40-xb)
 
-- who founded the mill and who owns it
+- ~~who founded the mill and who owns it~~ Filled 2026-11-20 (OW012).
 - what clothing it makes besides shirts, and whether it sells to other shops
 
 ### Lumeport Trade Accord Council (32-xb)
@@ -222,7 +222,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeway Distribution (6-xb)
 
-- what Lumeway distributed between 1988 and 1996, and who founded it
+- ~~what Lumeway distributed between 1988 and 1996, and who founded it~~ Filled 2026-11-20 (OW012).
 - which products and suppliers it carries besides Valdara's
 
 ### Maritime Administration of Lisavu (30-xl)
@@ -262,7 +262,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Quillmoor Pharma Distribution (49-xb)
 
-- who founded the company
+- ~~who founded the company~~ Filled 2026-11-20 (OW012).
 - its customers in Bayvarra and Urvania
 
 ### Rail Infrastructure Agency of Urvania (47-xu)
@@ -325,7 +325,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Tevaro Customs Brokers (3-xl)
 
-- who founded Tevaro
+- ~~who founded Tevaro~~ Filled 2026-11-20 (OW012).
 - for which foreign businesses it acts as tax representative
 
 ### Tidewell Ocean Lines (11-xb)

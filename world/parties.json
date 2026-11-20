@@ -1591,7 +1591,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "When the [[Lumeport Trade Accord]] entered into force in 1996, Lumeway became Valdara's distributor under a distribution agreement, which is why Valdara's benches reach the island through [[Lumeport]]. The agreement reserves public tenders to Valdara itself."
+      "text": "Lumeway began in 1988 as the wholesale arm of a timber merchant of [[Marrowdale]], distributing garden furniture and tools to Bayvarra's shops. When the [[Lumeport Trade Accord]] entered into force in 1996, Lumeway became Valdara's distributor under a distribution agreement, which is why Valdara's benches reach the island through [[Lumeport]]. The agreement reserves public tenders to Valdara itself."
      },
      {
       "title": "Operations",
@@ -1772,11 +1772,11 @@
    },
    "wiki": {
     "short": "Department store in Lumeport, Bayvarra",
-    "lead": "**Brightmarket Stores**, trading as Brightmarket, is a department store company in [[Lumeport]], [[Bayvarra]], with its store on Market Street in the Old Town. Founded in {founded_year}, it sells clothing, home and garden goods to consumers in its store and its web shop, and employs about {employees} people.",
+    "lead": "**Brightmarket Stores**, trading as Brightmarket, is a department store company in [[Lumeport]], [[Bayvarra]], with its flagship store on Market Street in the Old Town. Founded in {founded_year}, it sells clothing, home and garden goods to consumers in its stores and its web shop, and employs about {employees} people.",
     "sections": [
      {
       "title": "History",
-      "text": "Around 1981 Brightmarket and other retailers wanted bar codes at the till, and so began the article numbering association that is now GS1 Bayvarra. Brightmarket still numbers its own-label goods and its places from its GS1 company prefix."
+      "text": "Brightmarket grew from a draper's shop in the Old Town of Lumeport and became a company of department stores in 1979; besides the flagship on Market Street it has seven stores in the towns of Bayvarra. Around 1981 Brightmarket and other retailers wanted bar codes at the till, and so began the article numbering association that is now GS1 Bayvarra. Brightmarket still numbers its own-label goods and its places from its GS1 company prefix."
      },
      {
       "title": "Operations",
@@ -2662,7 +2662,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Bayforth was founded in 1976 to forward the island trade that grew after the Lumeport Agreement of 1974 linked [[Bayvarra]] and [[Lisavu]] by a regular shipping service."
+      "text": "A Lumeport wool-broking house set up Bayforth in 1976, to forward the island trade that grew after the Lumeport Agreement of 1974 linked [[Bayvarra]] and [[Lisavu]] by a regular shipping service."
      },
      {
       "title": "Operations",
@@ -2755,6 +2755,10 @@
     "short": "Seaport of Lumeport, Bayvarra",
     "lead": "The **Port of Lumeport** runs the seaport of [[Lumeport]], [[Bayvarra]]: its berths, its container yard and its vessel traffic. It was formed as a company in {founded_year} and employs about {employees} people.",
     "sections": [
+     {
+      "title": "History",
+      "text": "A federal harbour board ran the port until 1991, when it was made a company owned jointly by the federation and Coastal State."
+     },
      {
       "title": "Operations",
       "text": "The port's deep-water quays lie at the inner basin behind the narrows of the estuary, linked to the railway. Its ships sail to [[Lisavu]] and beyond, among them the weekly service of [[Tidewell Ocean Lines]] to [[Selanu]]."
@@ -2878,7 +2882,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Tidewell was founded in 1974 under the Lumeport Agreement between Bayvarra and Lisavu, which called for a regular shipping service to tie the island to the mainland. In December 2025 it bought a second feeder second-hand, the *Tidewell Reef*, which came under Bayvarra's flag on 15 January 2026."
+      "text": "Lumeport's shipowners, among them the founders of [[Wavesure Cargo Insurance]], formed Tidewell on 1 March 1974, as the terms of the Lumeport Agreement between Bayvarra and Lisavu were settled, to take the regular shipping service with the federal subsidy that the Agreement, signed on 18 March, promised to tie the island to the mainland. Its first ships carried general cargo; it changed to container feeders after the [[Lumeport Trade Accord]] entered into force in 1996. In December 2025 it bought a second feeder second-hand, the *Tidewell Reef*, which came under Bayvarra's flag on 15 January 2026."
      },
      {
       "title": "Operations",
@@ -2967,6 +2971,10 @@
     "lead": "**Lumeport Airport Cargo Terminal** runs the air cargo terminal of Lumeport airport, [[Bayvarra]], on Airport Road outside [[Lumeport]]. Founded in {founded_year} for air freight to the island of [[Lisavu]], it handles urgent and sensitive shipments overseas and employs about {employees} people.",
     "sections": [
      {
+      "title": "History",
+      "text": "The federal airport authority built the terminal in 1983, when air freight to [[Lisavu]] outgrew the passenger sheds, a year after the island's airfield at Lintwell had opened to flights from Lumeport. The authority owns it still."
+     },
+     {
       "title": "Operations",
       "text": "The terminal works around the clock. It accepts cargo from forwarders such as [[Bayforth Forwarding]] and loads it onto the freighter of [[Kelaro Air Cargo]], which flies about 1,080 km to Selanu airport, where [[Selanu Airport Cargo]] receives it. Cargo that reaches the terminal after a flight's cut-off waits for the next flight. It handles dangerous goods, such as batteries for the island's telecom mast that may fly only on cargo aircraft, and the cold chain and radioactive packages that [[Quillmoor Pharma Distribution]] sends to [[Selanu General Hospital]]."
      }
@@ -3049,7 +3057,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The port was formed as a company in 1972, ahead of the Lumeport Agreement of 1974 between [[Bayvarra]] and Lisavu, which brought a regular shipping service to the island. Its offices are on Wharf Road in Selanu."
+      "text": "The island's harbour office was turned into a company owned by the island's state in 1972, so that the port would be ready for the regular shipping service that the Lumeport Agreement with [[Bayvarra]], then being negotiated, was to bring; the Agreement was signed on 18 March 1974. Its offices are on Wharf Road in Selanu."
      },
      {
       "title": "Operations",
@@ -3130,7 +3138,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The company began in 1989 as a branch of the [[Port of Selanu]]. The airfield lies in Lintwell but bears the name of the capital it serves."
+      "text": "The [[Port of Selanu]] opened it as a branch in 1989, two years after the island had founded its own airline, [[Kelaro Air Cargo]]; the airfield itself opened in 1982. The airfield lies in Lintwell but bears the name of the capital it serves."
      },
      {
       "title": "Operations",
@@ -3260,7 +3268,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Kelaro was founded in 1987 as the island's airline; the freighter came later."
+      "text": "The island's state founded Kelaro in 1987 as its own airline, to fly the route to [[Lumeport]] that a Bayvarran airline had served since the island's airfield at Lintwell opened in 1982. Its ATR 72-600F freighter came new in 2023."
      },
      {
       "title": "Operations",
@@ -3413,7 +3421,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Tevaro was founded in 1975, the year after the Lumeport Agreement, to lodge the import declarations for the new regular shipping service between [[Lumeport]] and the island. It is one of the brokers and trades the agreement called into being in Selanu."
+      "text": "Clerks of the island's customs house founded Tevaro in 1975, the year after the Lumeport Agreement, when the new regular shipping service from [[Lumeport]] brought more import declarations than the island's merchants could lodge themselves."
      },
      {
       "title": "Operations",
@@ -4654,7 +4662,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The mill was built in 1976 to spin the island's cotton, which the Lumeport Agreement of 1974 let into Bayvarra free of duty. The Mill Quarter of Lumeport grew up around it."
+      "text": "A group of Bayvarra's clothing makers built the mill in 1976, with a loan from the [[Bank of Lumeport]], to spin the island's cotton, which the Lumeport Agreement of 1974 let into Bayvarra free of duty; they own it still. The Mill Quarter of Lumeport grew up around it."
      },
      {
       "title": "Operations",
@@ -5856,7 +5864,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Quillmoor was founded in 1991 beside the airport, so that medicines that come in by air and go on by air never wait far from the runway."
+      "text": "A group of Lumeport pharmacists founded Quillmoor in 1991 to buy medicines together, and built it beside the airport, so that medicines that come in by air and go on by air never wait far from the runway."
      },
      {
       "title": "Operations",
