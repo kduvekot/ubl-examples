@@ -5079,8 +5079,12 @@ EXEMPTION_CERT = {"ID": V("UL-STT-EX-2024-0377", "The number of Brackenmere's ex
                                                  "revenue office issued it."),
                   "IssueDate": V("2024-01-15", "The day it was issued."),
                   "DocumentType": V("Sales tax exemption certificate: purchase for manufacture (Upland State)",
-                                    "The certificate the exemption of the sale rests on (D43).")}
-TIMBER = [{"item": "timber-beam", "ordered": 12, "why": "Hardwood for a month of furniture production."}]
+                                    "The certificate the exemption of the sale rests on.")}     # D43
+# Brackenmere's timber for a month: oak and ash, the two woods of its furniture, a line each because HS 2022 gives
+# each wood a subheading of its own (4407.91 oak, 4407.95 ash; O246); about three oak to two ash, as the store plans
+# the Elderwick Marrow line; the same price a cubic metre for both woods
+TIMBER = [{"item": "timber-oak", "ordered": 7, "why": "Oak for a month of furniture production."},
+          {"item": "timber-ash", "ordered": 5, "why": "Ash for a month of furniture production."}]
 WOOD = kit.Flow("wood", "2026-02-16", SLATS)
 
 
@@ -5198,7 +5202,7 @@ def wood(n, doc):
         return kit.remittance(f, n, doc, 38, "The manufacturer pays across the border.")
     if doc["doc"] == "Order":
         return kit.order(f, n, doc, 21, "The furniture maker orders timber, collected with its own van; ordered on "
-                                        "the Monday (D27).",
+                                        "the Monday.",     # D27
                          "Ex works the sawmill: the buyer collects the timber and bears every cost from the sawmill's "
                          "yard.", "Marrowdale Sawmill, timber yard", {"AdditionalDocumentReference": EXEMPTION_CERT},
                          deal=TIMBER,
@@ -5207,11 +5211,12 @@ def wood(n, doc):
         return kit.invoice(f, n, doc, 22, "Issued when the timber was collected.",
                            {"OrderReference": ref(f, "order-timber", "The furniture maker's order."),
                             "AdditionalDocumentReference": EXEMPTION_CERT},
-                           [{"item": "timber-beam", "qty": 12, "invoice_why": "The cubic metres collected."}],
+                           [{"item": d["item"], "qty": d["ordered"], "invoice_why": "The cubic metres collected."}
+                            for d in TIMBER],
                            key="invoice-timber",
                            extra={"Delivery": {"ActualDeliveryDate": V(f.date(22), "Ex works: delivered when the "
                                                                                   "furniture maker collected the "
-                                                                                  "timber (wood/11#F4)."),
+                                                                                  "timber."),  # wood/11#F4
                                                "DeliveryLocation": {"Name": V("Marrowdale Sawmill, timber yard",
                                                                               "Where the timber was collected.")}}})
     raise SystemExit(f"wood scenario: no document {n} {doc['doc']}")

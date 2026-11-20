@@ -1102,27 +1102,52 @@
    "note": "HS 9401.91, parts of seats of wood, CPC 38160 (O243): the slat is delivered finished to Valdara's drawing VI-DS-SL1800, cut to the bench's length, chamfered and drilled for its bolts, so it is identifiable as a part of the Serra bench (as the spare frame is a part of a seat); chapter 44 note 1 sends articles of chapter 94 there. Sawn ash would be 4407.95 (not 4407.99, which is for species not named), and wood only chamfered along its edges 4409.29; thermal modification changes no heading (it is not densified wood of 4413). The bundle: 50 slats of 4.24 kg and 0.5 kg of straps."
   },
   {
-   "id": "timber-beam",
+   "id": "timber-oak",
    "seller": "36-xb",
-   "name": "Hardwood timber",
+   "name": "Oak timber",
    "kind": "goods",
    "unit": "MTQ",
    "price": {
     "amount": 540.0,
     "currency": "XBL"
    },
-   "sellers_id": "MS-TB",
-   "hs": "440799",
+   "sellers_id": "MS-TB-OAK",
+   "hs": "440791",
    "cpc": "31102",
    "origin": "XB",
-   "description": "Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.",
+   "description": "Sawn oak boards and beams for furniture, kiln dried, per cubic metre.",
    "net_kg": 700,
    "gross_kg": 700,
    "package": {
     "type": "BE",
     "per_package": 1
    },
-   "origin_criterion": "P"
+   "origin_criterion": "P",
+   "note": "HS 4407.91, oak (Quercus spp.) sawn lengthwise, thicker than 6 mm, CPC 31102 (O246): HS 2022 gives oak a subheading of its own, so the sawmill sells its oak and its ash as two items; Brackenmere makes the Elderwick Marrow line in both woods."
+  },
+  {
+   "id": "timber-ash",
+   "seller": "36-xb",
+   "name": "Ash timber",
+   "kind": "goods",
+   "unit": "MTQ",
+   "price": {
+    "amount": 540.0,
+    "currency": "XBL"
+   },
+   "sellers_id": "MS-TB-ASH",
+   "hs": "440795",
+   "cpc": "31102",
+   "origin": "XB",
+   "description": "Sawn ash boards and beams for furniture, kiln dried, per cubic metre.",
+   "net_kg": 700,
+   "gross_kg": 700,
+   "package": {
+    "type": "BE",
+    "per_package": 1
+   },
+   "origin_criterion": "P",
+   "note": "HS 4407.95, ash (Fraxinus spp.) sawn lengthwise, thicker than 6 mm, CPC 31102 (O246): HS 2022 gives ash a subheading of its own, so the sawmill sells its oak and its ash as two items; Brackenmere makes the Elderwick Marrow line in both woods."
   },
   {
    "id": "marrow-bench-oak",

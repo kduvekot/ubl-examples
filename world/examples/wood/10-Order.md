@@ -23,7 +23,7 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
 - `UUID` = **8e01f6c6-41e2-54ce-8e02-1e6edf7207ba**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-09**  
-  The furniture maker orders timber, collected with its own van; ordered on the Monday (D27).
+  The furniture maker orders timber, collected with its own van; ordered on the Monday.
 - `IssueTime` = **16:20:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
@@ -34,7 +34,7 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
   The buyer's cost centre, to be quoted on the invoice.
 - `AccountingCost` = **Timber and materials**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **2**  
   The number of order lines.
 
 ### Additional Document Reference
@@ -46,7 +46,7 @@ Inside `AdditionalDocumentReference`:
 - `IssueDate` = **2024-01-15**  
   The day it was issued.
 - `DocumentType` = **Sales tax exemption certificate: purchase for manufacture (Upland State)**  
-  The certificate the exemption of the sale rests on (D43).
+  The certificate the exemption of the sale rests on.
 
 ### Buyer Customer Party
 
@@ -212,20 +212,36 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
-- `LineItem/Quantity` = **12** (unitCode `MTQ`)  
-  Hardwood for a month of furniture production.
-- `LineItem/LineExtensionAmount` = **6480.00** (currencyID `XBL`)  
+- `LineItem/Quantity` = **7** (unitCode `MTQ`)  
+  Oak for a month of furniture production.
+- `LineItem/LineExtensionAmount` = **3780.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **540** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.**  
-  The seller's description; item timber-beam of Marrowdale Sawmill (world/items.json).
-- `LineItem/Item/Name` = **Hardwood timber**  
-  The item's short name; item timber-beam of Marrowdale Sawmill (world/items.json).
-- `LineItem/Item/SellersItemIdentification/ID` = **MS-TB**  
-  The seller's own item number; item timber-beam of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/Description` = **Sawn oak boards and beams for furniture, kiln dried, per cubic metre.**  
+  The seller's description; item timber-oak of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/Name` = **Oak timber**  
+  The item's short name; item timber-oak of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **MS-TB-OAK**  
+  The seller's own item number; item timber-oak of Marrowdale Sawmill (world/items.json).
+- `LineItem/ID` = **2**  
+  The line number: a line added by a change keeps a number of its own (worklist C34).
+- `LineItem/Quantity` = **5** (unitCode `MTQ`)  
+  Ash for a month of furniture production.
+- `LineItem/LineExtensionAmount` = **2700.00** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `LineItem/Price/PriceAmount` = **540** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `LineItem/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
+  The price is per one unit.
+- `LineItem/Item/Description` = **Sawn ash boards and beams for furniture, kiln dried, per cubic metre.**  
+  The seller's description; item timber-ash of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/Name` = **Ash timber**  
+  The item's short name; item timber-ash of Marrowdale Sawmill (world/items.json).
+- `LineItem/Item/SellersItemIdentification/ID` = **MS-TB-ASH**  
+  The seller's own item number; item timber-ash of Marrowdale Sawmill (world/items.json).
 
 ## The document
 
@@ -244,7 +260,7 @@ Inside `OrderLine`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
     <cbc:IssueDate>2024-01-15</cbc:IssueDate>
@@ -379,17 +395,35 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="MTQ">12</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">6480.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="MTQ">7</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">3780.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">540</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
-        <cbc:Name>Hardwood timber</cbc:Name>
+        <cbc:Description>Sawn oak boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+        <cbc:Name>Oak timber</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-TB</cbc:ID>
+          <cbc:ID>MS-TB-OAK</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="MTQ">5</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">2700.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">540</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Sawn ash boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+        <cbc:Name>Ash timber</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>MS-TB-ASH</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

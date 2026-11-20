@@ -36,7 +36,7 @@ Timber sold for manufacture: exempt from the state sales tax, and the invoice sa
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Timber and materials**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **2**  
   The number of invoice lines, as a check on the transfer.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts that carry no language identifier: English, the working language between the countries; a seller from Urvania or the island also gives its notes in its own language. The code is from the world's copy of ISO 639 Language: en = English.
@@ -57,7 +57,7 @@ Inside `AdditionalDocumentReference`:
 - `IssueDate` = **2024-01-15**  
   The day it was issued.
 - `DocumentType` = **Sales tax exemption certificate: purchase for manufacture (Upland State)**  
-  The certificate the exemption of the sale rests on (D43).
+  The certificate the exemption of the sale rests on.
 
 ### Accounting Supplier Party
 
@@ -240,7 +240,7 @@ Inside `SellerSupplierParty`:
 Inside `Delivery`:
 
 - `ActualDeliveryDate` = **2026-03-10**  
-  Ex works: delivered when the furniture maker collected the timber (wood/11#F4).
+  Ex works: delivered when the furniture maker collected the timber.
 - `DeliveryLocation/Name` = **Marrowdale Sawmill, timber yard**  
   Where the timber was collected.
 
@@ -370,16 +370,44 @@ Inside `InvoiceLine`:
 
 - `ID` = **1**  
   The line number.
-- `InvoicedQuantity` = **12** (unitCode `MTQ`)  
+- `InvoicedQuantity` = **7** (unitCode `MTQ`)  
   The cubic metres collected.
-- `LineExtensionAmount` = **6480.00** (currencyID `XBL`)  
-  12 × 540.0, rounded to the minor unit of the currency.
-- `Item/Description` = **Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.**  
-  The seller's description; item timber-beam of Marrowdale Sawmill (world/items.json).
-- `Item/Name` = **Hardwood timber**  
-  The item's short name; item timber-beam of Marrowdale Sawmill (world/items.json).
-- `Item/SellersItemIdentification/ID` = **MS-TB**  
-  The seller's own item number; item timber-beam of Marrowdale Sawmill (world/items.json).
+- `LineExtensionAmount` = **3780.00** (currencyID `XBL`)  
+  7 × 540.0, rounded to the minor unit of the currency.
+- `Item/Description` = **Sawn oak boards and beams for furniture, kiln dried, per cubic metre.**  
+  The seller's description; item timber-oak of Marrowdale Sawmill (world/items.json).
+- `Item/Name` = **Oak timber**  
+  The item's short name; item timber-oak of Marrowdale Sawmill (world/items.json).
+- `Item/SellersItemIdentification/ID` = **MS-TB-OAK**  
+  The seller's own item number; item timber-oak of Marrowdale Sawmill (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **540** (currencyID `XBL`)  
+  The seller's price per unit (world/items.json).
+- `Price/BaseQuantity` = **1** (unitCode `MTQ`)  
+  The price is per one unit.
+- `ID` = **2**  
+  The line number.
+- `InvoicedQuantity` = **5** (unitCode `MTQ`)  
+  The cubic metres collected.
+- `LineExtensionAmount` = **2700.00** (currencyID `XBL`)  
+  5 × 540.0, rounded to the minor unit of the currency.
+- `Item/Description` = **Sawn ash boards and beams for furniture, kiln dried, per cubic metre.**  
+  The seller's description; item timber-ash of Marrowdale Sawmill (world/items.json).
+- `Item/Name` = **Ash timber**  
+  The item's short name; item timber-ash of Marrowdale Sawmill (world/items.json).
+- `Item/SellersItemIdentification/ID` = **MS-TB-ASH**  
+  The seller's own item number; item timber-ash of Marrowdale Sawmill (world/items.json).
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -415,7 +443,7 @@ Inside `InvoiceLine`:
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BF-PO-26-0637</cbc:ID>
@@ -675,13 +703,39 @@ Inside `InvoiceLine`:
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="MTQ">12</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">6480.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="MTQ">7</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">3780.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
-      <cbc:Name>Hardwood timber</cbc:Name>
+      <cbc:Description>Sawn oak boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+      <cbc:Name>Oak timber</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-TB</cbc:ID>
+        <cbc:ID>MS-TB-OAK</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">540</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="MTQ">5</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">2700.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Sawn ash boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+      <cbc:Name>Ash timber</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MS-TB-ASH</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
