@@ -92,9 +92,9 @@ irrelevant · structure · process.
 | SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
 | SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | solved |
 | SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | partly solved |
-| SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | open |
-| SR-22 | Method note: statements that contradict the world or a decision | medium | B-07, B-08, B-12 | | open |
-| SR-23 | Method note: order, weight, unpublished paths and references | medium | B-15, B-16, B-17 | Q-B-01, Q-B-02 | open |
+| SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | deferred |
+| SR-22 | Method note: statements that contradict the world or a decision | medium | B-07, B-08, B-12 | | deferred |
+| SR-23 | Method note: order, weight, unpublished paths and references | medium | B-15, B-16, B-17 | Q-B-01, Q-B-02 | deferred (Q-B-01 solved) |
 | SR-24 | Reason texts: repeated boilerplate and concatenation artifacts | medium | E-05, E-06, F-10 | | open |
 
 ### SR-01 · Headline figures and coverage page describe only the OASIS samples
@@ -381,7 +381,8 @@ irrelevant · structure · process.
 - **Parts:** D-07, D-08, D-10.
 
 ### SR-21 · Method note: date, state and checks
-- **Status:** open
+- **Status:** deferred 2026-11-20 (owner): no rework of the method note now; it may be reworked later
+  (recorded in `CLAUDE.md`, open work 5).
 - **What:** dated 5 November with revision "Skeleton"; the world chapter opens "as decided on 18 November" but
   holds decisions of 19 November and points to `analysis/` files; the principles promise business "between
   continents" and checks chapter 5 calls "still to come"; §5.9 lists checks the build already runs; chapter 5
@@ -392,7 +393,8 @@ irrelevant · structure · process.
 - **Parts:** B-01, B-02, B-09, B-10, B-11, B-13, B-14.
 
 ### SR-22 · Method note: statements against the world or a decision
-- **Status:** open
+- **Status:** deferred 2026-11-20 (owner): no rework of the method note now; it may be reworked later
+  (recorded in `CLAUDE.md`, open work 5).
 - **What:** §4.3 says the party identifier is always the company register number (wrong for public bodies and the
   farm) and §3.7 calls Codana's `0990:` number "its party identifier" (the XML carries it as additional
   identification); chapter 4 "Where values come from" predates O86, D11, D24; §5.4 "every account in the same
@@ -401,7 +403,8 @@ irrelevant · structure · process.
 - **Parts:** B-07, B-08, B-12.
 
 ### SR-23 · Method note: order, weight and references
-- **Status:** open
+- **Status:** deferred 2026-11-20 (owner): no rework of the method note now; it may be reworked later
+  (recorded in `CLAUDE.md`, open work 5).
 - **What:** the world chapter is 84 % of the note and comes before the method, with method rules inside it;
   28 cited repository paths are unpublished ("see the party cover analysis" without a path); references
   missing for many cited standards, entries without address (ISO/IEC 15459, ISO 8601, the WTO agreement);
@@ -428,8 +431,8 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-A-01 | Headline figures and coverage page about the world examples, OASIS as a labelled baseline? | A: world first | SR-01 | **decided 2026-11-20 (owner): A, without the OASIS baseline** (see SR-01) |
 | Q-A-02 | Specifications and code lists as sections, with a code-list index? | B: one "Reference" nav item; Releases + History merged into "OASIS samples" | SR-02 | **decided 2026-11-20 (owner): the world front and centre**; nav World · Trade · Parties · Rules · About; the OASIS pages under About |
 | Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | **decided and solved 2026-11-20 (owner): A, removed**; may come back later |
-| Q-B-02 | Backstory in the method note? | A now (method first, backstory in an annex), B later (to the encyclopaedia) | SR-23 | open |
-| Q-B-03 | Describe the review process in the note? | A: a chapter "Reviewing and maintaining the examples" | SR-21 | open |
+| Q-B-02 | Backstory in the method note? | A now (method first, backstory in an annex), B later (to the encyclopaedia) | SR-23 | **decided 2026-11-20 (owner): C**, no change now; the note may be reworked later |
+| Q-B-03 | Describe the review process in the note? | A: a chapter "Reviewing and maintaining the examples" | SR-21 | **deferred 2026-11-20 (owner)** with the note's rework |
 | Q-B-04 | Decided but unbuilt flows in the note? | B: one sentence naming them | SR-12 | **settled 2026-11-20:** the flows are built; the note tells them as built |
 | Q-C-01 | Readable names for party pages? | B now (hide "#n"), A (name slugs) with the encyclopaedia | SR-16 | **decided 2026-11-20 (owner): B** |
 | Q-C-02 | Drop the "proposed / new" marking? | A on the site | SR-08 | **decided 2026-11-20 (owner): A** |
