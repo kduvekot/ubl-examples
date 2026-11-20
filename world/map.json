@@ -2554,73 +2554,6 @@
    ]
   },
   {
-   "id": "access-2-xb",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Access road to Contracting Authority",
-   "pts": [
-    [
-     139,
-     126
-    ],
-    [
-     138,
-     126
-    ],
-    [
-     137,
-     126
-    ]
-   ]
-  },
-  {
-   "id": "access-28-xb",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Access road to Review Body",
-   "pts": [
-    [
-     140,
-     126
-    ],
-    [
-     139,
-     126
-    ]
-   ]
-  },
-  {
-   "id": "access-29-xb",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Access road to Insurer",
-   "pts": [
-    [
-     139,
-     129
-    ],
-    [
-     140,
-     129
-    ],
-    [
-     141,
-     128
-    ],
-    [
-     141,
-     127
-    ],
-    [
-     140,
-     126
-    ]
-   ]
-  },
-  {
    "id": "access-12-xl",
    "mode": "road",
    "layer": "network",
@@ -2653,8 +2586,16 @@
      112
     ],
     [
-     236,
-     112
+     234,
+     111
+    ],
+    [
+     235,
+     110
+    ],
+    [
+     235,
+     109
     ]
    ]
   },
@@ -2666,12 +2607,16 @@
    "label": "Access road to Chamber of Commerce (XL)",
    "pts": [
     [
-     237,
+     235,
      114
     ],
     [
-     237,
+     234,
      113
+    ],
+    [
+     235,
+     112
     ]
    ]
   },
@@ -2692,11 +2637,7 @@
     ],
     [
      234,
-     112
-    ],
-    [
-     235,
-     112
+     113
     ]
    ]
   },
@@ -3320,7 +3261,7 @@
      115
     ],
     [
-     237,
+     235,
      114
     ]
    ]
@@ -3547,31 +3488,6 @@
     [
      234,
      108
-    ]
-   ]
-  },
-  {
-   "id": "village-237-119",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Minor road to a village",
-   "pts": [
-    [
-     237,
-     118
-    ],
-    [
-     236,
-     118
-    ],
-    [
-     235,
-     117
-    ],
-    [
-     236,
-     116
     ]
    ]
   },
@@ -4178,8 +4094,16 @@
      119
     ],
     [
-     237,
+     236,
      118
+    ],
+    [
+     235,
+     117
+    ],
+    [
+     236,
+     116
     ]
    ]
   },
@@ -10294,23 +10218,6 @@
    ]
   },
   {
-   "id": "village-46-56",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Minor road to a village",
-   "pts": [
-    [
-     47,
-     56
-    ],
-    [
-     47,
-     55
-    ]
-   ]
-  },
-  {
    "id": "village-47-120",
    "mode": "road",
    "layer": "network",
@@ -10859,16 +10766,44 @@
    "label": "Minor road to a village",
    "pts": [
     [
-     47,
-     53
+     46,
+     52
     ],
     [
-     47,
-     54
+     45,
+     51
     ],
     [
-     47,
-     55
+     44,
+     50
+    ],
+    [
+     44,
+     49
+    ],
+    [
+     43,
+     48
+    ],
+    [
+     43,
+     47
+    ],
+    [
+     43,
+     46
+    ],
+    [
+     43,
+     45
+    ],
+    [
+     43,
+     44
+    ],
+    [
+     44,
+     43
     ]
    ]
   },
@@ -11505,23 +11440,6 @@
    ]
   },
   {
-   "id": "village-42-47",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Minor road to a village",
-   "pts": [
-    [
-     42,
-     46
-    ],
-    [
-     41,
-     45
-    ]
-   ]
-  },
-  {
    "id": "village-30-108",
    "mode": "road",
    "layer": "network",
@@ -11577,27 +11495,6 @@
     [
      39,
      128
-    ]
-   ]
-  },
-  {
-   "id": "village-43-49",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Minor road to a village",
-   "pts": [
-    [
-     43,
-     48
-    ],
-    [
-     43,
-     47
-    ],
-    [
-     42,
-     46
     ]
    ]
   },
@@ -15628,23 +15525,6 @@
    ]
   },
   {
-   "id": "village-44-51",
-   "mode": "road",
-   "layer": "network",
-   "class": "minor",
-   "label": "Minor road to a village",
-   "pts": [
-    [
-     45,
-     51
-    ],
-    [
-     46,
-     52
-    ]
-   ]
-  },
-  {
    "id": "village-41-46",
    "mode": "road",
    "layer": "network",
@@ -15652,16 +15532,12 @@
    "label": "Minor road to a village",
    "pts": [
     [
-     41,
-     45
+     42,
+     46
     ],
     [
-     41,
-     44
-    ],
-    [
-     40,
-     43
+     43,
+     46
     ]
    ]
   },
@@ -15711,20 +15587,82 @@
    "label": "Minor road to a village",
    "pts": [
     [
-     55,
-     53
-    ],
-    [
-     55,
+     56,
      54
     ],
     [
-     55,
+     56,
      55
     ],
     [
      55,
      56
+    ]
+   ]
+  },
+  {
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Civic Square, the street over Government Hill in Lumeport",
+   "id": "civic",
+   "pts": [
+    [
+     137,
+     126
+    ],
+    [
+     138,
+     126
+    ],
+    [
+     139,
+     126
+    ],
+    [
+     140,
+     126
+    ],
+    [
+     141,
+     126
+    ],
+    [
+     141,
+     127
+    ],
+    [
+     141,
+     128
+    ],
+    [
+     140,
+     129
+    ],
+    [
+     139,
+     129
+    ],
+    [
+     139,
+     128
+    ]
+   ]
+  },
+  {
+   "id": "access-55-xb",
+   "mode": "road",
+   "layer": "network",
+   "class": "minor",
+   "label": "Access road to Fruit Packers' Cooperative",
+   "pts": [
+    [
+     96,
+     104
+    ],
+    [
+     95,
+     104
     ]
    ]
   }

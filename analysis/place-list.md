@@ -145,7 +145,7 @@ Every party on the map with its place (the town of its address), the district of
 | Selanu General Hospital (50-xl) | Reef Street, Selanu | Selanu | Agreement Quarter (industry, 5.6 km) | 7.0 km S | edge | 237/114 | 33.0631 S 2.2001 W (33° 03.78′ S, 2° 12.01′ W) | 18 m |
 | Harrowmead Fruit Growers (55-xb) | Orchard Road, Harrowmead | Harrowmead | - | 4.9 km NE | - | 97/104 | 30.3153 S 14.8003 W (30° 18.92′ S, 14° 48.02′ W) | 366 m |
 | Hafefo Fresh Produce (56-xl) | Wharf Road, Selanu | Selanu | Agreement Quarter (industry, 2.5 km) | 3.5 km W | inside | 236/112 | 33.0000 S 2.2376 W (33° 00.00′ S, 2° 14.26′ W) | 141 m |
-| Federal Department of Agriculture of Bayvarra (57-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Northshore (suburb, 8.0 km) | 11.1 km N | edge | 137/123 | 30.9144 S 13.3481 W (30° 54.86′ S, 13° 20.89′ W) | 120 m (3D map 85 m) |
+| Federal Department of Agriculture of Bayvarra (57-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Northshore (suburb, 14.5 km) | 14.4 km E | outside | 142/127 | 31.0405 S 13.1666 W (31° 02.43′ S, 13° 10.00′ W) | 10 m |
 
 ## 3. Distances along the routes
 
@@ -173,6 +173,7 @@ Every road, railway and pipeline of the map except the villages' minor roads and
 | `road-serra` | main road | Ferrano up the valley to Serravona and across the river to the mine (domestic XU) | Ferrano → Serravona Mining | **178.0 km** | 148.6 km | 1.20 | - |
 | `road-north` | minor road | Larkmouth north-west to Gullhaven on the north coast (domestic XB) | Larkmouth (3.5 km W) → Gullhaven | **346.7 km** | 323.0 km | 1.07 | - |
 | `waste` | minor road | Production waste | Valdara Industries → Rinova Recovery | **18.9 km** | 15.7 km | 1.21 | - |
+| `civic` | minor road | Civic Square, the street over Government Hill in Lumeport | Lumeport (3.5 km W) → Wavesure Cargo Insurance | **32.9 km** | 9.9 km | 3.33 | - |
 
 ### 3.2 Between the towns by road
 
@@ -203,21 +204,21 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | retail | road | Lumeway Distribution (6-xb) → Brightmarket Stores (26-xb) | **72.5 km** | 72.5 km | `road-b` | 61.9 km | 1.17 | 1 h 02 – 1 h 13 | - |
 | retail | road | Brightmarket Stores (26-xb) → Robin Ashdale (c-xb) | **14.0 km** | 14.0 km | `road-port` | 11.1 km | 1.26 | 0 h 12 – 0 h 14 | - |
 | sea | road | Lumeway Distribution (6-xb) → Port of Lumeport (16-xb) | **82.4 km** | 82.4 km | `road-b`, `road-port` | 70.0 km | 1.18 | 1 h 11 – 1 h 22 | - |
-| sea | road | Port of Selanu (16-xl) → Nalevi Warehousing (9-xl) | **25.9 km** | 25.9 km | town streets, minor roads | 14.8 km | 1.75 | 0 h 22 – 0 h 26 | - |
+| sea | road | Port of Selanu (16-xl) → Nalevi Warehousing (9-xl) | **23.9 km** | 23.9 km | town streets, minor roads | 14.8 km | 1.61 | 0 h 20 – 0 h 24 | - |
 | air | road | Valdara Industries (5-xu) → Lumeway Distribution (6-xb) | **189.1 km** | 189.1 km | `road` | 157.5 km | 1.20 | 2 h 42 – 3 h 09 | - |
 | air | road | Lumeway Distribution (6-xb) → Lumeport Airport Cargo Terminal (17-xb) | **58.5 km** | 58.5 km | `road-b` | 52.5 km | 1.12 | 0 h 50 – 0 h 59 | - |
-| air | road | Selanu Airport Cargo (17-xl) → Nalevi Warehousing (9-xl) | **22.4 km** | 22.4 km | town streets, minor roads | 14.4 km | 1.56 | 0 h 19 – 0 h 22 | - |
-| tender | road | Castrano Logistics (8-xu) → Lumeport Public Works Department (2-xb) | **255.3 km** | 255.3 km | `road`, `road-b`, `road-wool`, `road-lark` | 203.9 km | 1.25 | 3 h 39 – 4 h 15 | - |
+| air | road | Selanu Airport Cargo (17-xl) → Nalevi Warehousing (9-xl) | **20.4 km** | 20.4 km | town streets, minor roads | 14.4 km | 1.41 | 0 h 17 – 0 h 20 | - |
+| tender | road | Castrano Logistics (8-xu) → Lumeport Public Works Department (2-xb) | **255.3 km** | 255.3 km | `road`, `road-b`, `road-wool`, `road-lark`, `civic` | 203.9 km | 1.25 | 3 h 39 – 4 h 15 | - |
 | carnet | road | Valdara Industries (5-xu) → Lumeport Airport Cargo Terminal (17-xb) | **244.2 km** | 244.2 km | `road`, `road-b`, `road-wool` | 201.5 km | 1.21 | 3 h 29 – 4 h 04 | - |
-| carnet | road | Selanu Airport Cargo (17-xl) → Selanu Chamber of Commerce (20-xl) | **27.4 km** | 27.4 km | town streets, minor roads | 17.5 km | 1.57 | 0 h 23 – 0 h 27 | - |
-| carnet | road | Selanu Chamber of Commerce (20-xl) → Selanu Airport Cargo (17-xl) | **27.4 km** | 27.4 km | town streets, minor roads | 17.5 km | 1.57 | 0 h 23 – 0 h 27 | - |
+| carnet | road | Selanu Airport Cargo (17-xl) → Selanu Chamber of Commerce (20-xl) | **30.3 km** | 30.3 km | town streets, minor roads | 17.5 km | 1.73 | 0 h 26 – 0 h 30 | - |
+| carnet | road | Selanu Chamber of Commerce (20-xl) → Selanu Airport Cargo (17-xl) | **30.3 km** | 30.3 km | town streets, minor roads | 17.5 km | 1.73 | 0 h 26 – 0 h 30 | - |
 | carnet | road | Lumeport Airport Cargo Terminal (17-xb) → Valdara Industries (5-xu) | **244.2 km** | 244.2 km | `road-b`, `road-wool`, `road` | 201.5 km | 1.21 | 3 h 29 – 4 h 04 | - |
 | waste | road | Valdara Industries (5-xu) → Rinova Recovery (7-xu) | **18.9 km** | 18.9 km | `road`, `waste` | 15.7 km | 1.21 | 0 h 16 – 0 h 19 | - |
 | wood | road | Marrowdale Sawmill (36-xb) → Valdara Industries (5-xu) | **185.6 km** | 185.6 km | `road` | 147.0 km | 1.26 | 2 h 39 – 3 h 06 | 0 |
 | wood | road | Marrowdale Sawmill (36-xb) → Brackenmere Furniture (37-xb) | **14.0 km** | 14.0 km | town streets, minor roads | 10.5 km | 1.33 | 0 h 12 – 0 h 14 | - |
 | furniture | road | Brackenmere Furniture (37-xb) → Brightmarket Stores (26-xb) | **86.5 km** | 86.5 km | `road`, `road-b`, `road-wool` | 74.4 km | 1.16 | 1 h 14 – 1 h 27 | - |
 | furniture | road | Brightmarket Stores (26-xb) → Brackenmere Furniture (37-xb) | **86.5 km** | 86.5 km | `road-b`, `road-wool`, `road` | 74.4 km | 1.16 | 1 h 14 – 1 h 27 | - |
-| furniture | road | Brackenmere Furniture (37-xb) → Lumeport Public Works Department (2-xb) | **98.5 km** | 98.5 km | `road`, `road-b`, `road-wool`, `road-lark` | 84.3 km | 1.17 | 1 h 24 – 1 h 38 | - |
+| furniture | road | Brackenmere Furniture (37-xb) → Lumeport Public Works Department (2-xb) | **98.5 km** | 98.5 km | `road`, `road-b`, `road-wool`, `road-lark`, `civic` | 84.3 km | 1.17 | 1 h 24 – 1 h 38 | - |
 | cotton | road | Lisavu Cotton Farm (38-xl) → Selanu Cotton Ginnery (39-xl) | **42.2 km** | 42.2 km | town streets, minor roads | 17.5 km | 2.41 | 0 h 36 – 0 h 42 | - |
 | cotton | road | Selanu Cotton Ginnery (39-xl) → Port of Selanu (16-xl) | **11.9 km** | 11.9 km | town streets, minor roads | 11.1 km | 1.08 | 0 h 10 – 0 h 12 | - |
 | cotton | road | Port of Lumeport (16-xb) → Lumeport Textile Mill (40-xb) | **35.8 km** | 35.8 km | `road-port`, `road-lark` | 23.5 km | 1.53 | 0 h 31 – 0 h 36 | - |
@@ -225,7 +226,7 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | packaging | road | Rivermouth Packaging (41-xb) → Lumeport Textile Mill (40-xb) | **28.0 km** | 28.0 km | `road-lark` | 22.1 km | 1.26 | 0 h 24 – 0 h 28 | - |
 | packaging | road | Lumeport Textile Mill (40-xb) → Brightmarket Stores (26-xb) | **14.0 km** | 14.0 km | `road-lark` | 9.9 km | 1.41 | 0 h 12 – 0 h 14 | - |
 | mast | road | Saltmere Engineering (27-xb) → Lumeport Airport Cargo Terminal (17-xb) | **58.5 km** | 58.5 km | `road-b` | 54.4 km | 1.08 | 0 h 50 – 0 h 59 | - |
-| mast | road | Selanu Airport Cargo (17-xl) → Selanu Telecom (35-xl) | **27.4 km** | 27.4 km | town streets, minor roads | 22.4 km | 1.22 | 0 h 23 – 0 h 27 | - |
+| mast | road | Selanu Airport Cargo (17-xl) → Selanu Telecom (35-xl) | **32.3 km** | 32.3 km | town streets, minor roads | 22.4 km | 1.44 | 0 h 28 – 0 h 32 | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Montebrio Power (43-xu) | **206.6 km** | - | `gas` | 164.5 km | 1.26 | - | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Ferrano Grid (44-xu) | **281.8 km** | - | `gas`, `gas-grid` | 255.9 km | 1.10 | - | - |
 | reefer | road | Harrowmead Fruit Growers (55-xb) → Port of Lumeport (16-xb) | **261.1 km** | 261.1 km | `road`, `road-b`, `road-wool`, `road-port` | 162.1 km | 1.61 | 3 h 44 – 4 h 21 | - |
@@ -238,7 +239,7 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 **Legs inside one town or its surroundings** (the diagram's party squares make them longer than on the ground; O82, O92):
 
 - retail: Brightmarket Stores (26-xb) → Robin Ashdale (c-xb), both in Lumeport: 14.0 km on the map.
-- sea: Port of Selanu (16-xl) → Nalevi Warehousing (9-xl), both in Selanu: 25.9 km on the map.
+- sea: Port of Selanu (16-xl) → Nalevi Warehousing (9-xl), both in Selanu: 23.9 km on the map.
 - waste: Valdara Industries (5-xu) → Rinova Recovery (7-xu), both in Ferrano: 18.9 km on the map.
 - wood: Marrowdale Sawmill (36-xb) → Brackenmere Furniture (37-xb), both in Marrowdale: 14.0 km on the map.
 - cotton: Port of Lumeport (16-xb) → Lumeport Textile Mill (40-xb), both in Lumeport: 35.8 km on the map.
@@ -306,6 +307,7 @@ Found by the generator (each from the data above):
 - Ferrano Grid (44-xu) lies outside Ferrano's built-up area (22.4 km from the centre; the town is about 15 km across).
 - Fernhollow Studio (48-xb) lies outside Lumeport's built-up area (11.1 km from the centre; the town is about 12 km across).
 - Quillmoor Pharma Distribution (49-xb) lies outside Lumeport's built-up area (18.8 km from the centre; the town is about 12 km across).
+- Federal Department of Agriculture of Bayvarra (57-xb) lies outside Lumeport's built-up area (14.4 km from the centre; the town is about 12 km across).
 - Customs Administration of Urvania (19-xu) stands 3.5 km from where the road `road` crosses the border (97/120).
 - Customs and Border Service of Bayvarra (19-xb) stands 0.0 km from where the road `road` crosses the border (97/120).
 - Gullhaven (Kelpstone Gas) is reached by road only from Larkmouth (`road-north`): Ferrano – Gullhaven is 714 km by road against 270 km in a straight line. The lpg flow (D48, a road tanker from the gas plant) needs this settled.

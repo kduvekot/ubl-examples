@@ -445,6 +445,7 @@ def refit(world, terrain, land):
     return keep, out, fate
 
 
+LATE_ACCESS = 6                                            # squares: a longer access road waits for its village's road
 REFIT_EXTRA = 4                                            # squares a relaid road may be longer than twice the old one
 REFIT_CLIMB_M = 300                                        # metres it may climb above the higher of its ends
 
@@ -461,21 +462,46 @@ def main():
         routes, station = lay(world, terrain, land)
         world["routes"] = [r for r in world["routes"] if r["mode"] not in ("road", "rail", "pipeline")] + routes
         world["stations"][0]["at"] = station
+        # a party in a village that no way of the network passes (O244: Harrowmead's fruit packers) is reached from
+        # its village's road, not by a road of its own to the network: its access road is laid after the villages'
         acc, _ = access_roads(world)
-        for k, a in enumerate(acc):
-            end = a["path"][-1]
-            rid = f"access-{a['to']}" if a["to"] else f"link-{end[0]}-{end[1]}"
-            r = {"id": rid, "mode": "road", "layer": "network", "class": "minor",
-                 "label": f"Access road to {a['name']}" if a["to"] else "A road joining two parts of the network",
-                 "pts": a["path"]}
-            if a.get("bridges"):
-                r["bridges"] = a["bridges"]
-            routes.append(r)
-            print(f"  laid {r['id']} (minor): {len(a['path'])} squares, {routing.length_km([tuple(q) for q in a['path']]):.0f} km")
+        late = later_parties(world) & {a["to"] for a in acc if len(a["path"]) > LATE_ACCESS}
+        add_access(routes, [a for a in acc if a["to"] not in late])
         routes += lay_villages(world, terrain, land, routes)
+        if late:
+            world["routes"] = [r for r in world["routes"] if r["mode"] not in ("road", "rail", "pipeline")] + routes
+            acc, _ = access_roads(world)
+            add_access(routes, acc)
         write(routes, station)
         world = world_data.load()
     report(world)
+
+
+def later_parties(world):
+    """The parties whose address is a named village (map "villages") with no road of the routes beside its centre:
+    if their own road to the network would be longer than LATE_ACCESS squares, it waits for the village's road."""
+    road = {tuple(q[:2]) for r in world["routes"] if r["mode"] == "road" for q in r["pts"]}
+    vil = {v["name"]: tuple(v["c"]) for v in world.get("villages", []) if v.get("name")}
+    out = set()
+    for p in world["parties"]:
+        c = vil.get(p.get("identity", {}).get("address", {}).get("CityName"))
+        if c and not any((c[0] + a, c[1] + b) in road for a in (-1, 0, 1) for b in (-1, 0, 1)):
+            out.add(p["id"])
+    return out
+
+
+def add_access(routes, acc):
+    """Add the world model's access roads (and links) to routes, as routes."""
+    for k, a in enumerate(acc):
+        end = a["path"][-1]
+        rid = f"access-{a['to']}" if a["to"] else f"link-{end[0]}-{end[1]}"
+        r = {"id": rid, "mode": "road", "layer": "network", "class": "minor",
+             "label": f"Access road to {a['name']}" if a["to"] else "A road joining two parts of the network",
+             "pts": a["path"]}
+        if a.get("bridges"):
+            r["bridges"] = a["bridges"]
+        routes.append(r)
+        print(f"  laid {r['id']} (minor): {len(a['path'])} squares, {routing.length_km([tuple(q) for q in a['path']]):.0f} km")
 
 
 def report(world):
