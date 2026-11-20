@@ -18,7 +18,7 @@ Timber sold for manufacture: exempt from the state sales tax, and the invoice sa
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **WOOD-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **MS-INV-26-0638**  
+- `ID` = **MS-INV-26-0637**  
   The seller's invoice number.
 - `UUID` = **6aa25014-301c-5e58-b842-6b77c0387ed1**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -45,7 +45,7 @@ Timber sold for manufacture: exempt from the state sales tax, and the invoice sa
 
 Inside `OrderReference`:
 
-- `ID` = **BF-PO-26-0637**  
+- `ID` = **BF-PO-26-0636**  
   The furniture maker's order.
 
 ### Additional Document Reference
@@ -260,9 +260,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF02MSINV260638**  
+- `InstructionNote` = **Quote RF29MSINV260637**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF02MSINV260638** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF29MSINV260637** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB78BLUM38712004398618** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -274,7 +274,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice MS-INV-26-0638**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice MS-INV-26-0637**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **387120** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -434,7 +434,7 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-INV-26-0638</cbc:ID>
+  <cbc:ID>MS-INV-26-0637</cbc:ID>
   <cbc:UUID>6aa25014-301c-5e58-b842-6b77c0387ed1</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>09:54:00-01:00</cbc:IssueTime>
@@ -446,7 +446,7 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>BF-PO-26-0637</cbc:ID>
+    <cbc:ID>BF-PO-26-0636</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
@@ -626,15 +626,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-09</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF02MSINV260638</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF02MSINV260638</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF29MSINV260637</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF29MSINV260637</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB78BLUM38712004398618</cbc:ID>
       <cbc:Name>Marrowdale Sawmill Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice MS-INV-26-0638</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice MS-INV-26-0637</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>

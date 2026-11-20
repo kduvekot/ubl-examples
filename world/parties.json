@@ -3373,7 +3373,7 @@
    ],
    "h": 2,
    "kind": "sawmill",
-   "what": "Fells timber in the forests of Upland State and saws it into planks, slats and beams at its mill on the north bank of the river; sells slats for the benches across the border and timber to the furniture maker.",
+   "what": "Fells timber in the forests of Upland State and saws it into planks, slats and beams at its mill on the north bank of the river; modifies ash in a thermal modification kiln of its own, and in the southern summer, when the kiln is full with its own decking and cladding, has the bench slats modified under contract across the border; sells slats for the benches across the border and timber to the furniture maker.",
    "how": "Wood is sold by dimensions and volume, in lots. UBL carries the measurements and the lot of every item in quotations, orders and despatch advices, so a buyer that orders slats to size gets exactly what it ordered and can trace each lot.",
    "identity": {
     "name": "Marrowdale Sawmill",
@@ -4982,6 +4982,92 @@
     "industry": "8413",
     "language": "en",
     "week": "office"
+   }
+  },
+  {
+   "id": "59-xu",
+   "n": "59",
+   "name": "Wood Modification Plant",
+   "cat": "commerce",
+   "c": "XU",
+   "at": [
+    84,
+    113
+   ],
+   "h": 2,
+   "kind": "factory",
+   "what": "Thermally modifies wood in two steam kilns at Conciaro: beech, ash and poplar for Urvanian timber merchants, and under contract for sawmills across the border in their busy months; it planes, end-seals and bundles the wood, stores it for its owner and hands it to the carrier the owner names. It holds an authorisation for inward processing, so wood of a foreign owner is worked without Urvania's import tax until it is released.",
+   "how": "A contract processor works on goods it does not own. UBL's Order carries the processing job with the customer's own material as a sub-line, the Inventory Report the customer's goods in the plant's store and when they are ready, the Order Change the call-off, and the Invoice the processing alone, a service to a customer abroad.",
+   "identity": {
+    "name": "Tostara Wood Modification",
+    "kind": "company",
+    "registry_id": "XU-R-106192",
+    "endpoint": "XU:XU-R-106192",
+    "contact": {
+     "name": "Sales office",
+     "email": "sales@tostara.example",
+     "telephone": "+999 1 041 573 2290",
+     "department": "Sales",
+     "hours": "Weekdays 07:00–16:00",
+     "job_title": "Sales coordinator"
+    },
+    "tax_id": "XU007433554",
+    "address": {
+     "StreetName": "Via delle Concerie",
+     "BuildingNumber": "9",
+     "CityName": "Conciaro",
+     "PostalZone": "4190",
+     "CountrySubentity": "Province of Ferrano",
+     "ID": "4160205830117402"
+    },
+    "account": {
+     "bank": "23-xu",
+     "number": "XU480351041600000000417305",
+     "branch": "03510-41600"
+    },
+    "industry": "1610",
+    "website": "https://www.tostara.example",
+    "language": "en",
+    "legal": {
+     "form": "SRU",
+     "founded": "2011-04-04",
+     "headcount": 22,
+     "turnover": {
+      "amount": "310000000",
+      "currency": "XUF",
+      "year": 2025
+     },
+     "business": "industry"
+    },
+    "customs_id": "XU-TR-106192",
+    "identification": {
+     "convention": "own"
+    },
+    "desks": {
+     "customs": {
+      "name": "Customs desk",
+      "job_title": "Customs and stock clerk",
+      "department": "Logistics",
+      "email": "customs@tostara.example"
+     },
+     "despatch": {
+      "name": "Despatch desk",
+      "job_title": "Despatch coordinator",
+      "department": "Yard",
+      "email": "despatch@tostara.example"
+     },
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Accounts clerk",
+      "department": "Finance",
+      "email": "accounts@tostara.example"
+     }
+    },
+    "week": "office"
+   },
+   "_refs": {
+    "what": "O150",
+    "at": "O150; analysis/o150-design.md 2b"
    }
   }
  ],

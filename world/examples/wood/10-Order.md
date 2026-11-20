@@ -18,7 +18,7 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **WOOD-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-PO-26-0637**  
+- `ID` = **BF-PO-26-0636**  
   The buyer's order number.
 - `UUID` = **8e01f6c6-41e2-54ce-8e02-1e6edf7207ba**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -252,7 +252,7 @@ Inside `OrderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-PO-26-0637</cbc:ID>
+  <cbc:ID>BF-PO-26-0636</cbc:ID>
   <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>16:20:00-01:00</cbc:IssueTime>

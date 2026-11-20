@@ -448,17 +448,17 @@
   {
    "id": "wood",
    "title": "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)",
-   "text": "Marrowdale Sawmill in Upland State makes Valdara's bench slats to Valdara's drawing: it saws and kiln-dries ash from the managed forest, modifies it at about 212 °C in a thermal modification kiln of its own, planes it to 1800 × 95 × 45 mm and sells the slats by the bundle of 50. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for the modified ash with kiln-dried oak of the same size as a priced alternative, and orders 96 bundles of the ash delivered at its factory (DAP), so the sawmill books the truck across the border: 4,800 slats on 24 heat-treated pallets, about 21.0 t, a quarter's supply for 960 benches. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why.",
+   "text": "Marrowdale Sawmill in Upland State makes Valdara's bench slats to Valdara's drawing: it saws and kiln-dries ash from the managed forest, modifies it at about 212 °C, planes it to 1800 × 95 × 45 mm and sells the slats by the bundle of 50. It modifies the ash in a thermal modification kiln of its own; in the southern summer, when that kiln is full with its own decking and cladding, it has the slats modified under contract at Tostara Wood Modification in Conciaro, near Ferrano, and names that processor to Valdara, whose approval of the supplier covers it. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for the modified ash with kiln-dried oak of the same size as a priced alternative, and orders 96 bundles of the ash delivered at its factory (DAP). The February delivery is modified at Conciaro, so the sawmill books the truck from the plant to the factory: 4,800 slats on 24 heat-treated pallets, about 21.0 t, a quarter's supply for 960 benches, which the plant despatches for the sawmill. The slats are sold while they are still under inward processing in Urvania; Valdara releases them into free circulation and pays Urvania's import VAT. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why.",
    "legs": [
     {
      "mode": "road",
-     "from": "36-xb",
+     "from": "59-xu",
      "to": "5-xu",
      "carrier": "13-xu",
-     "why": "The slats across the border to the bench factory.",
+     "why": "The finished slats from the modification plant to the bench factory, called off by the sawmill.",
      "transit_days": 0,
      "from_place": {
-      "name": "Marrowdale Sawmill yard, Marrowdale"
+      "name": "Tostara Wood Modification yard, Conciaro"
      },
      "to_place": {
       "name": "Valdara Industries works, Ferrano",
@@ -478,7 +478,34 @@
       "name": "Brackenmere Furniture workshop, Marrowdale"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "text": "O243, O150"
+   }
+  },
+  {
+   "id": "modification",
+   "title": "Modification: bench slats modified under contract (Bayvarra → Urvania)",
+   "text": "From October to March, the southern summer, Marrowdale Sawmill's thermal modification kiln is full with its own decking and cladding, so it buys kiln slots for the park-bench slats from Tostara Wood Modification at Conciaro, east of Ferrano, under a season agreement that gives each slot a job number in advance. For the February delivery to Valdara it orders the modification, planing, end sealing and bundling of 96 bundles and sends its own kiln-dried ash blanks, 4,800 of 1,830 × 101 × 51 mm, across the border in two loads of its timber truck. The blanks remain the sawmill's, and the sawmill has no Urvanian VAT number, so they do not enter free circulation: the plant holds an authorisation for inward processing and enters them under it, and Urvania's import VAT waits until the finished slats are released. Bayvarra records the blanks as a permanent export for processing. The plant reports what it holds for the sawmill and when the second charge is ready, stores the bundles until the sawmill calls them off, and hands them to the carrier the sawmill books, against the sawmill's pick-up release. It invoices the processing in ferra, a service to a customer established abroad and so outside Urvania's VAT, and the sawmill pays within the discount period.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "36-xb",
+     "to": "59-xu",
+     "carrier": "36-xb",
+     "why": "The kiln-dried ash blanks across the border to the modification plant, in two loads of the sawmill's own timber truck.",
+     "transit_days": 0,
+     "from_place": {
+      "name": "Marrowdale Sawmill yard, Marrowdale"
+     },
+     "to_place": {
+      "name": "Tostara Wood Modification yard, Conciaro"
+     }
+    }
+   ],
+   "_refs": {
+    "text": "O150, analysis/o150-design.md; O253 (the second load is cited, not an example)"
+   }
   },
   {
    "id": "furniture",
@@ -3259,10 +3286,11 @@
    "doc": "Quotation",
    "from": "36-xb",
    "to": "5-xu",
-   "why": "The sawmill quotes per bundle of 50 slats of thermally modified ash, with kiln-dried oak as a priced alternative, delivered at the factory, under the buyer's purchasing terms.",
+   "why": "The sawmill quotes per bundle of 50 slats of thermally modified ash, with kiln-dried oak as a priced alternative, delivered at the factory, under the buyer's purchasing terms, and names the plant that modifies this delivery for it.",
    "parties": {
     "SellerSupplierParty": "36-xb",
-    "BuyerCustomerParty": "5-xu"
+    "BuyerCustomerParty": "5-xu",
+    "SellerSupplierParty/Party/ServiceProviderParty/Party": "59-xu"
    }
   },
   {
@@ -3285,13 +3313,13 @@
    "doc": "TransportExecutionPlanRequest",
    "from": "36-xb",
    "to": "13-xu",
-   "why": "Under DAP the sawmill is the transport user; it books the road carrier across the border.",
+   "why": "Under DAP the sawmill is the transport user; it books the road carrier from the modification plant, where its slats are stored, to the factory.",
    "parties": {
     "SenderParty": "36-xb",
     "ReceiverParty": "13-xu",
     "TransportUserParty": "36-xb",
     "TransportServiceProviderParty": "13-xu",
-    "Consignment/ConsignorParty": "36-xb",
+    "Consignment/ConsignorParty": "59-xu",
     "Consignment/ConsigneeParty": "5-xu"
    }
   },
@@ -3306,16 +3334,20 @@
     "CustomsDeclaration/CustomsParty": "19-xb",
     "CustomsDeclaration/ConsigneeParty": "5-xu",
     "CustomsDeclaration/Shipment/Consignment/CarrierParty": "13-xu"
+   },
+   "removed": "Removed 2026-11-20: the wood of this delivery left Bayvarra in January as blanks, declared for export when they went to the modification plant; the finished slats travel only inside Urvania. Its number 5 is not used again.",
+   "_refs": {
+    "removed": "O150, D28; modification/04"
    }
   },
   {
    "flow": "wood",
    "doc": "DespatchAdvice",
-   "from": "36-xb",
+   "from": "59-xu",
    "to": "5-xu",
-   "why": "The sawmill announces the 96 bundles on their 24 pallets, with the lot, so the factory can trace the wood of every bench.",
+   "why": "The modification plant despatches the 96 bundles for the sawmill, which sold them: it announces them on their 24 pallets with the lot of each kiln charge, so the factory can trace the wood of every bench, and records the pick-up release they left under.",
    "parties": {
-    "DespatchSupplierParty": "36-xb",
+    "DespatchSupplierParty": "59-xu",
     "DeliveryCustomerParty": "5-xu",
     "SellerSupplierParty": "36-xb",
     "BuyerCustomerParty": "5-xu",
@@ -3327,7 +3359,7 @@
    "doc": "ImportCustomsDeclaration",
    "from": "5-xu",
    "to": "19-xu",
-   "why": "The manufacturer declares the import into Urvania, where import VAT is due.",
+   "why": "The manufacturer releases the slats from inward processing into free circulation in Urvania and pays the import VAT.",
    "parties": {
     "ImporterParty": "5-xu",
     "ConsignorParty": "36-xb",
@@ -3389,6 +3421,122 @@
     "SellerSupplierParty": "36-xb",
     "BuyerCustomerParty": "37-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "Order",
+   "from": "36-xb",
+   "to": "59-xu",
+   "why": "The sawmill orders the processing of one job under the season agreement: 96 bundles of modified, planed and end-sealed slats from its own blanks, which it supplies free of charge.",
+   "parties": {
+    "BuyerCustomerParty": "36-xb",
+    "SellerSupplierParty": "59-xu"
+   },
+   "values": {
+    "DeliveryTerms/ID": "EXW"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "OrderResponse",
+   "from": "59-xu",
+   "to": "36-xb",
+   "why": "The plant accepts the job and plans its two kiln charges.",
+   "parties": {
+    "SellerSupplierParty": "59-xu",
+    "BuyerCustomerParty": "36-xb"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "DespatchAdvice",
+   "from": "36-xb",
+   "to": "59-xu",
+   "why": "The sawmill announces the first load of blanks on its own truck, with the lot, so the plant can check them in and keep them apart as the sawmill's goods.",
+   "parties": {
+    "DespatchSupplierParty": "36-xb",
+    "DeliveryCustomerParty": "59-xu"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "ExportCustomsDeclaration",
+   "from": "36-xb",
+   "to": "19-xb",
+   "why": "The blanks leave Bayvarra for processing abroad and do not come back; the sawmill declares the export at the land border.",
+   "parties": {
+    "ExporterParty": "36-xb",
+    "CustomsDeclaration/CustomsParty": "19-xb",
+    "CustomsDeclaration/ConsigneeParty": "59-xu",
+    "CustomsDeclaration/Shipment/Consignment/CarrierParty": "36-xb"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "ImportCustomsDeclaration",
+   "from": "59-xu",
+   "to": "19-xu",
+   "why": "The plant, holder of the authorisation, enters the blanks into inward processing: no import VAT while they are worked, for they are not released for free circulation.",
+   "parties": {
+    "ImporterParty": "59-xu",
+    "ConsignorParty": "36-xb",
+    "ConsigneeParty": "59-xu",
+    "CustomsParty": "19-xu"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "InventoryReport",
+   "from": "59-xu",
+   "to": "36-xb",
+   "why": "The plant reports the sawmill's goods in its store: the first charge ready, the second ready a few days later.",
+   "parties": {
+    "RetailerCustomerParty": "59-xu",
+    "InventoryReportingParty": "59-xu",
+    "SellerSupplierParty": "36-xb"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "OrderChange",
+   "from": "36-xb",
+   "to": "59-xu",
+   "why": "The sawmill calls off the finished job for its buyer: where it goes, the carrier it booked, and the release number the plant hands the goods against.",
+   "parties": {
+    "BuyerCustomerParty": "36-xb",
+    "SellerSupplierParty": "59-xu",
+    "Delivery/DeliveryParty": "5-xu"
+   },
+   "values": {
+    "DeliveryTerms/ID": "FCA"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "Invoice",
+   "from": "59-xu",
+   "to": "36-xb",
+   "why": "The processing and the storage, a service to a customer established abroad: outside Urvania's VAT, and the invoice says why.",
+   "parties": {
+    "AccountingSupplierParty": "59-xu",
+    "AccountingCustomerParty": "36-xb",
+    "SellerSupplierParty": "59-xu",
+    "BuyerCustomerParty": "36-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   }
+  },
+  {
+   "flow": "modification",
+   "doc": "RemittanceAdvice",
+   "from": "36-xb",
+   "to": "59-xu",
+   "why": "The sawmill pays the plant's invoice in ferra within the discount period, from its lume account, and tells the plant which invoice it pays.",
+   "parties": {
+    "AccountingCustomerParty": "36-xb",
+    "AccountingSupplierParty": "59-xu",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
    }
   },
   {
@@ -5299,6 +5447,10 @@
   "QPD-DGD-26-0615": {
    "what": "the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own",
    "type_code": "890"
+  },
+  "TWM-IM-26-0414": {
+   "what": "the modification plant's entry into inward processing of the second load of ash blanks, on 20 January",
+   "type_code": "ImportCustomsDeclaration"
   }
  }
 }

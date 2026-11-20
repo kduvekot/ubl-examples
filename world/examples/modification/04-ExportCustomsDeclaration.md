@@ -1,10 +1,10 @@
 # Export Customs Declaration: Marrowdale Sawmill to Customs and Border Service of Bayvarra
 
-*Example 5 of the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)" · [Export Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA)*
+*Example 4 of the flow "Modification: bench slats modified under contract (Bayvarra → Urvania)" · [Export Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
-The slats leave Bayvarra; the sawmill declares the export at the land border.
+The blanks leave Bayvarra for processing abroad and do not come back; the sawmill declares the export at the land border.
 
-[The XML file](05-ExportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](04-ExportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -16,20 +16,20 @@ The slats leave Bayvarra; the sawmill declares the export at the land border.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WOOD-2026-01**  
+- `ProfileExecutionID` = **MODIFICATION-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **MS-EX-26-0630**  
+- `ID` = **MS-EX-26-0411**  
   The exporter's reference.
-- `UUID` = **b3984f33-057a-5c43-b8c5-7988b8add6f4**  
+- `UUID` = **4d67eaa6-485a-5476-8073-40cb5dfb6b74**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-26**  
-  Declared the morning the truck leaves for the border.
-- `IssueTime` = **08:40:00-01:00**  
-  After the despatch advice and the invoice, while the loaded truck waits at the sawmill for customs to release the slats; in the issuer's local time, with its offset from UTC.
+- `IssueDate` = **2026-01-13**  
+  Declared the morning the first load leaves for the border.
+- `IssueTime` = **07:00:00-01:00**  
+  While the loaded truck waits at the sawmill for customs to release the export; in the issuer's local time, with its offset from UTC.
 - `ExportTypeCode` = **PERMANENT** (listID `urn:ubl-examples:world:codelist:ExportTypeCode`)  
   A permanent export: the goods are sold abroad. The code is from the Trade Accord's export type list: PERMANENT = Permanent export.
-- `ExportReasonCode` = **SALE** (listID `urn:ubl-examples:world:codelist:ExportReasonCode`)  
-  The reason: a sale to a buyer abroad. The code is from the Trade Accord's export reason list: SALE = Sale.
+- `ExportReasonCode` = **PROCESSING** (listID `urn:ubl-examples:world:codelist:ExportReasonCode`)  
+  The blanks go abroad to be processed under contract for their owner, and do not come back: the finished slats are sold in Urvania. The code is from the Trade Accord's export reason list: PROCESSING = Processing abroad.
 - `Note` = **Declared electronically before the goods leave.**  
   How it was declared.
 - `VersionID` = **1**  
@@ -100,80 +100,52 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **MS-CD-26-0631**  
+- `ID` = **MS-CD-26-0412**  
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
-- `ValidityPeriod/StartDate` = **2026-02-26**  
+- `ValidityPeriod/StartDate` = **2026-01-13**  
   From the declaration.
 - `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Shipment/ID` = **MS-SH-26-0632**  
+- `Shipment/ID` = **MS-SH-26-0409**  
   The shipment declared.
-- `Shipment/TotalTransportHandlingUnitQuantity` = **24** (unitCode `EA`)  
+- `Shipment/TotalTransportHandlingUnitQuantity` = **12** (unitCode `EA`)  
   The pallets the goods travel on.
-- `Shipment/Consignment/ID` = **MS-CS-26-0629**  
+- `Shipment/Consignment/ID` = **MS-CS-26-0410**  
   The consignment carried.
-- `Shipment/Consignment/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
+- `Shipment/Consignment/GrossWeightMeasure` = **14448** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight leaving the country.
-- `Shipment/Consignment/TotalPackagesQuantity` = **96** (unitCode `EA`)  
-  The parcels declared, on the pallets counted above.
-- `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; as Trasvia Haulage gives it. Later mentions of the same party in this document repeat only this identifier and the name.
-- `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
-  The trading name; as Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/ID` = **4160203746888095** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `Shipment/Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `Shipment/Consignment/CarrierParty/PostalAddress/StreetName` = **Bek Ban Kumek** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/BuildingNumber` = **45**  
-  Building number of the postal address. As Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/PostalZone` = **4160**  
-  Postal code in Urvania's format (4 digits). As Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. As Trasvia Haulage gives it.
-- `Shipment/Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
-- `Shipment/Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Shipment/Consignment/CarrierParty/PostalAddress/Country/Name` = **Urvania**  
-  The country's name, for readers of the address.
+- `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
+- `Shipment/Consignment/CarrierParty/PartyName/Name` = **Marrowdale Sawmill**  
+  The same party as at ExporterParty, where its full details are given; only its identifier and name are repeated.
 - `Shipment/GoodsItem/ID` = **1**  
   The goods item number.
-- `Shipment/GoodsItem/Description` = **Bench slat 1800, bundle of 50**  
+- `Shipment/GoodsItem/Description` = **Ash blank 1830, kiln dried**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **46320.00** (currencyID `XBL`)  
-  Bayvarra values the goods as they left the exporting country: the goods at 46,080.00 XBL, with the export pallets the buyer pays for, part of the price paid (240.00 XBL), shared over the goods items by their value.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **11520.00** (currencyID `XBL`)  
+  The value of the blanks, in lume: no sale, so the value the sawmill puts on them, as its pro forma invoice states it.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **14448** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `Shipment/GoodsItem/Quantity` = **96** (unitCode `EA`)  
+- `Shipment/GoodsItem/Quantity` = **2400** (unitCode `EA`)  
   The quantity declared.
-- `Shipment/GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `Shipment/GoodsItem/Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.**  
   The seller's description.
-- `Shipment/GoodsItem/Item/Name` = **Bench slat 1800, bundle of 50**  
+- `Shipment/GoodsItem/Item/Name` = **Ash blank 1830, kiln dried**  
   The item's short name.
 - `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; as Marrowdale Sawmill describes the item. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **XX** (listID `WCO HS 2022 Sections`)  
-  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: XX = Miscellaneous manufactured articles.
+- `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **IX** (listID `WCO HS 2022 Sections`)  
+  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: IX = Wood and articles of wood; cork; basketware.
 - `Shipment/GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
   The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: GEN = General cargo.
-- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **940191** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Marrowdale Sawmill describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940191 = Parts of seats, of wood.
-- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38160** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Marrowdale Sawmill describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38160 = Parts of furniture.
+- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **440795** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Marrowdale Sawmill describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 440795 = Wood sawn or chipped lengthwise, of a thickness exceeding 6 mm: of ash (Fraxinus spp.).
+- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **31102** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Marrowdale Sawmill describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 31102 = Wood, sawn or chipped lengthwise, sliced or peeled, of a thickness exceeding 6 mm, of non-coniferous wood .
 - `Shipment/ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by road. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Bayvarran side**  
@@ -182,34 +154,32 @@ Inside `CustomsDeclaration`:
   A party referred to from another party's details: its identifier and name are enough.
 - `ConsignorParty/PartyName/Name` = **Marrowdale Sawmill**  
   A party referred to from another party's details: its identifier and name are enough.
-- `ConsigneeParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; as Valdara Industries gives it. Later mentions of the same party in this document repeat only this identifier and the name.
-- `ConsigneeParty/AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
-  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates. No real scheme has the code designator 0990; as Valdara Industries gives it.
-- `ConsigneeParty/AdditionalPartyIdentification/ID` = **XU-TR-104274** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
-  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); as Valdara Industries gives it.
-- `ConsigneeParty/PartyName/Name` = **Valdara Industries**  
-  The trading name; as Valdara Industries gives it.
-- `ConsigneeParty/PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Valdara Industries gives it.
+- `ConsigneeParty/PartyIdentification/ID` = **XU-R-106192** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Tostara Wood Modification gives it. Later mentions of the same party in this document repeat only this identifier and the name.
+- `ConsigneeParty/AdditionalPartyIdentification/ID` = **XU-TR-106192** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
+  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); as Tostara Wood Modification gives it.
+- `ConsigneeParty/PartyName/Name` = **Tostara Wood Modification**  
+  The trading name; as Tostara Wood Modification gives it.
+- `ConsigneeParty/PostalAddress/ID` = **4160205830117402** (schemeID `urn:ubl-examples:world:XU:address-register`)  
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Tostara Wood Modification gives it.
 - `ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `ConsigneeParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `ConsigneeParty/PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Valdara Industries gives it.
-- `ConsigneeParty/PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Valdara Industries gives it.
-- `ConsigneeParty/PostalAddress/BuildingNumber` = **17**  
-  Building number of the postal address. As Valdara Industries gives it.
-- `ConsigneeParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
-- `ConsigneeParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
-- `ConsigneeParty/PostalAddress/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). As Valdara Industries gives it.
+- `ConsigneeParty/PostalAddress/StreetName` = **Bek Stuzman Tuntrir** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Tostara Wood Modification gives it.
+- `ConsigneeParty/PostalAddress/StreetName` = **Via delle Concerie** (languageID `en-XU`)  
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Tostara Wood Modification gives it.
+- `ConsigneeParty/PostalAddress/BuildingNumber` = **9**  
+  Building number of the postal address. As Tostara Wood Modification gives it.
+- `ConsigneeParty/PostalAddress/CityName` = **Zhildir** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. As Tostara Wood Modification gives it.
+- `ConsigneeParty/PostalAddress/CityName` = **Conciaro** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. As Tostara Wood Modification gives it.
+- `ConsigneeParty/PostalAddress/PostalZone` = **4190**  
+  Postal code in Urvania's format (4 digits). As Tostara Wood Modification gives it.
 - `ConsigneeParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. As Valdara Industries gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Tostara Wood Modification gives it.
 - `ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -264,20 +234,20 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:3071845926** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Customs and Border Service of Bayvarra gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `AdditionalDocumentReference/ID` = **VI-PO-26-0627**  
+- `AdditionalDocumentReference/ID` = **MS-PO-26-0406**  
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VI-PO-26-0627 is the example wood/03, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
-- `AdditionalDocumentReference/ID` = **MS-INV-26-0635**  
-  The commercial invoice the customs value rests on.
-- `AdditionalDocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: MS-INV-26-0635 is the example wood/08, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: MS-PO-26-0406 is the example modification/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **MS-PF-26-0113**  
+  The sawmill's pro forma invoice: the value of the blanks, there being no sale.
+- `AdditionalDocumentReference/DocumentTypeCode` = **325** (listID `UN/EDIFACT EDED 1001`)  
+  UN/EDIFACT 1001 code 325: proforma invoice. The code is from the world's copy of UN/EDIFACT 1001 Document name: 325 = Proforma invoice.
 
 ### Signature
 
 Inside `Signature`:
 
-- `ID` = **MS-SIG-EX-wood**  
+- `ID` = **MS-SIG-EX-modification**  
   The sender's electronic seal.
 - `SignatoryParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -292,13 +262,13 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-EX-26-0630</cbc:ID>
-  <cbc:UUID>b3984f33-057a-5c43-b8c5-7988b8add6f4</cbc:UUID>
-  <cbc:IssueDate>2026-02-26</cbc:IssueDate>
-  <cbc:IssueTime>08:40:00-01:00</cbc:IssueTime>
+  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>MS-EX-26-0411</cbc:ID>
+  <cbc:UUID>4d67eaa6-485a-5476-8073-40cb5dfb6b74</cbc:UUID>
+  <cbc:IssueDate>2026-01-13</cbc:IssueDate>
+  <cbc:IssueTime>07:00:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
-  <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
+  <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">PROCESSING</cbc:ExportReasonCode>
   <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ExporterParty>
@@ -350,10 +320,10 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>MS-CD-26-0631</cbc:ID>
+    <cbc:ID>MS-CD-26-0412</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-02-26</cbc:StartDate>
+      <cbc:StartDate>2026-01-13</cbc:StartDate>
       <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
     </cac:ValidityPeriod>
     <cac:ApplicableTerritoryAddress>
@@ -362,55 +332,37 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>MS-SH-26-0632</cbc:ID>
-      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:ID>MS-SH-26-0409</cbc:ID>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">12</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
-        <cbc:ID>MS-CS-26-0629</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
-        <cbc:TotalPackagesQuantity unitCode="EA">96</cbc:TotalPackagesQuantity>
+        <cbc:ID>MS-CS-26-0410</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
         <cac:CarrierParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
-            <cbc:Name>Trasvia Haulage</cbc:Name>
+            <cbc:Name>Marrowdale Sawmill</cbc:Name>
           </cac:PartyName>
-          <cac:PostalAddress>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160203746888095</cbc:ID>
-            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Bek Ban Kumek</cbc:StreetName>
-            <cbc:StreetName languageID="en-XU">Via dei Trasporti</cbc:StreetName>
-            <cbc:BuildingNumber>45</cbc:BuildingNumber>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-            <cbc:PostalZone>4160</cbc:PostalZone>
-            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              <cbc:Name>Urvania</cbc:Name>
-            </cac:Country>
-          </cac:PostalAddress>
         </cac:CarrierParty>
       </cac:Consignment>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
-        <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">46320.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+        <cbc:Description>Ash blank 1830, kiln dried</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">11520.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">2400</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
-          <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
+          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.</cbc:Description>
+          <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
           <cac:OriginCountry>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:OriginCountry>
           <cac:CommodityClassification>
-            <cbc:NatureCode listID="WCO HS 2022 Sections">XX</cbc:NatureCode>
+            <cbc:NatureCode listID="WCO HS 2022 Sections">IX</cbc:NatureCode>
             <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
-            <cbc:CommodityCode listID="WCO HS 2022">940191</cbc:CommodityCode>
-            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
+            <cbc:CommodityCode listID="WCO HS 2022">440795</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
           </cac:CommodityClassification>
         </cac:Item>
       </cac:GoodsItem>
@@ -431,27 +383,24 @@ Inside `Signature`:
     </cac:ConsignorParty>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106192</cbc:ID>
       </cac:PartyIdentification>
       <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
-      </cac:AdditionalPartyIdentification>
-      <cac:AdditionalPartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-104274</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-106192</cbc:ID>
       </cac:AdditionalPartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Valdara Industries</cbc:Name>
+        <cbc:Name>Tostara Wood Modification</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160205830117402</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
         <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
-        <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
-        <cbc:BuildingNumber>17</cbc:BuildingNumber>
-        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:StreetName languageID="qau">Bek Stuzman Tuntrir</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Concerie</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+        <cbc:PostalZone>4190</cbc:PostalZone>
         <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
@@ -501,16 +450,16 @@ Inside `Signature`:
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>VI-PO-26-0627</cbc:ID>
+      <cbc:ID>MS-PO-26-0406</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>MS-INV-26-0635</cbc:ID>
-      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+      <cbc:ID>MS-PF-26-0113</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">325</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>
-    <cbc:ID>MS-SIG-EX-wood</cbc:ID>
+    <cbc:ID>MS-SIG-EX-modification</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>

@@ -2785,6 +2785,10 @@
     "SUPPLEMENTARY": [
      "Supplementary declaration",
      "The declaration that completes a simplified one."
+    ],
+    "INWARDPROC": [
+     "Inward processing",
+     "Goods from abroad entered to be processed in the customs territory without import duty or import VAT while they are worked; the processed products are later released for free circulation or sent abroad."
     ]
    }
   },
@@ -2846,6 +2850,10 @@
     "GIFT": [
      "Gift",
      "The goods are given free of charge."
+    ],
+    "PROCESSING": [
+     "Processing abroad",
+     "The goods are sent abroad to be processed under contract for their owner and do not come back."
     ]
    }
   },
@@ -5962,6 +5970,10 @@
     "PAYROLL": [
      "Payroll service",
      ""
+    ],
+    "PROCESSING": [
+     "Contract processing",
+     "Work on goods the customer owns and supplies, such as modifying, machining or finishing them."
     ]
    }
   },

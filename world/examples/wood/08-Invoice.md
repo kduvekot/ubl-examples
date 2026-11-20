@@ -18,14 +18,14 @@ Slats and delivery. An export from Bayvarra: no sales tax, with the exemption st
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **WOOD-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **MS-INV-26-0635**  
+- `ID` = **MS-INV-26-0634**  
   The seller's invoice number.
 - `UUID` = **ae3fabe1-02f6-56f3-a403-bd58b53f0ab9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-26**  
   Issued when the slats leave.
-- `IssueTime` = **08:29:00-01:00**  
-  Issued a few minutes before the document that cites it, in the sender's local time, with its offset from UTC.
+- `IssueTime` = **09:41:00-01:00**  
+  Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-03-30**  
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Saturday 28 March, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 30 March.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
@@ -54,7 +54,7 @@ Inside `OrderReference`:
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **MS-DA-26-0633**  
+- `ID` = **TWM-DA-26-0630**  
   The despatch advice of the goods billed.
 
 ### Accounting Supplier Party
@@ -250,9 +250,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF83MSINV260635**  
+- `InstructionNote` = **Quote RF13MSINV260634**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF83MSINV260635** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF13MSINV260634** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -266,7 +266,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice MS-INV-26-0635**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice MS-INV-26-0634**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **387120** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -423,10 +423,10 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-INV-26-0635</cbc:ID>
+  <cbc:ID>MS-INV-26-0634</cbc:ID>
   <cbc:UUID>ae3fabe1-02f6-56f3-a403-bd58b53f0ab9</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
-  <cbc:IssueTime>08:29:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:41:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-03-30</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion P).</cbc:Note>
@@ -439,7 +439,7 @@ Inside `InvoiceLine`:
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>MS-DA-26-0633</cbc:ID>
+    <cbc:ID>TWM-DA-26-0630</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -606,8 +606,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-03-30</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF83MSINV260635</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF83MSINV260635</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF13MSINV260634</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF13MSINV260634</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB78BLUM38712004398618</cbc:ID>
@@ -615,7 +615,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice MS-INV-26-0635</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice MS-INV-26-0634</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>

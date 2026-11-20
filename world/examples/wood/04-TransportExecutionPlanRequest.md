@@ -2,7 +2,7 @@
 
 *Example 4 of the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)" · [Transport Execution Plan Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA)*
 
-Under DAP the sawmill is the transport user; it books the road carrier across the border.
+Under DAP the sawmill is the transport user; it books the road carrier from the modification plant, where its slats are stored, to the factory.
 
 [The XML file](04-TransportExecutionPlanRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,7 +28,7 @@ Under DAP the sawmill is the transport user; it books the road carrier across th
   Under DAP the sawmill books the truck across the border.
 - `IssueTime` = **16:19:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
-- `Note` = **The slats across the border to the bench factory.**  
+- `Note` = **The finished slats from the modification plant to the bench factory, called off by the sawmill.**  
   The transport asked for.
 - `TransportUserRemarks` = **Please confirm by return.**  
   The user's remark.
@@ -73,15 +73,15 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/Name` = **Transport planning**  
-  The party's transport planning desk: the desk for its role in this document (it books or uses the transport); as Marrowdale Sawmill gives it.
-- `Contact/JobTitle` = **Logistics planner**  
+- `Contact/Name` = **Sales office**  
+  The party's main desk, which handles this document; as Marrowdale Sawmill gives it.
+- `Contact/JobTitle` = **Sales coordinator**  
   The job of the person who answers at the desk; as Marrowdale Sawmill gives it.
-- `Contact/Department` = **Logistics**  
+- `Contact/Department` = **Sales**  
   The department the desk belongs to; as Marrowdale Sawmill gives it.
 - `Contact/Telephone` = **+999 2 7121 338 173**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Marrowdale Sawmill gives it.
-- `Contact/ElectronicMail` = **logistics@marrowdalesawmill.example**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Marrowdale Sawmill gives it.
+- `Contact/ElectronicMail` = **sales@marrowdalesawmill.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Marrowdale Sawmill gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Marrowdale Sawmill gives it.
@@ -209,7 +209,7 @@ Inside `ServiceEndTimePeriod`:
 
 Inside `FromLocation`:
 
-- `Name` = **Marrowdale Sawmill yard, Marrowdale**  
+- `Name` = **Tostara Wood Modification yard, Conciaro**  
   Where the goods are taken over.
 
 ### To Location
@@ -285,10 +285,50 @@ Inside `Consignment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Valdara Industries gives it.
-- `ConsignorParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
-- `ConsignorParty/PartyName/Name` = **Marrowdale Sawmill**  
-  The same party as at SenderParty, where its full details are given; only its identifier and name are repeated.
+- `ConsignorParty/PartyIdentification/ID` = **XU-R-106192** (schemeID `urn:ubl-examples:world:XU:register`)  
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Tostara Wood Modification gives it. Later mentions of the same party in this document repeat only this identifier and the name.
+- `ConsignorParty/AdditionalPartyIdentification/ID` = **XU-TR-106192** (schemeID `urn:ubl-examples:world:XU:customs-trader`)  
+  A further identifier: the party's customs trader number, because it imports or exports (XU-TR- and 6 digits); as Tostara Wood Modification gives it.
+- `ConsignorParty/PartyName/Name` = **Tostara Wood Modification**  
+  The trading name; as Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/ID` = **4160205830117402** (schemeID `urn:ubl-examples:world:XU:address-register`)  
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `ConsignorParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+- `ConsignorParty/PostalAddress/StreetName` = **Bek Stuzman Tuntrir** (languageID `qau`)  
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/StreetName` = **Via delle Concerie** (languageID `en-XU`)  
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/BuildingNumber` = **9**  
+  Building number of the postal address. As Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/CityName` = **Zhildir** (languageID `qau`)  
+  The place's Urvanian name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. As Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/CityName` = **Conciaro** (languageID `en-XU`)  
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. As Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/PostalZone` = **4190**  
+  Postal code in Urvania's format (4 digits). As Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
+  The province, part of an address in Urvania: a subdivision of the country. As Tostara Wood Modification gives it.
+- `ConsignorParty/PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
+- `ConsignorParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `ConsignorParty/PostalAddress/Country/Name` = **Urvania**  
+  The country's name, for readers of the address.
+- `ConsignorParty/Contact/Name` = **Despatch desk**  
+  The party's despatch desk: the desk for its role in this document (it sends the goods off); as Tostara Wood Modification gives it.
+- `ConsignorParty/Contact/JobTitle` = **Despatch coordinator**  
+  The job of the person who answers at the desk; as Tostara Wood Modification gives it.
+- `ConsignorParty/Contact/Department` = **Yard**  
+  The department the desk belongs to; as Tostara Wood Modification gives it.
+- `ConsignorParty/Contact/Telephone` = **+999 1 041 573 2290**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Tostara Wood Modification gives it.
+- `ConsignorParty/Contact/ElectronicMail` = **despatch@tostara.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Tostara Wood Modification gives it.
+- `ConsignorParty/Contact/Note` = **Weekdays 07:00–16:00**  
+  When the desk can be reached; as Tostara Wood Modification gives it.
 
 ## The document
 
@@ -304,7 +344,7 @@ Inside `Consignment`:
   <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>16:19:00-01:00</cbc:IssueTime>
-  <cbc:Note>The slats across the border to the bench factory.</cbc:Note>
+  <cbc:Note>The finished slats from the modification plant to the bench factory, called off by the sawmill.</cbc:Note>
   <cbc:TransportUserRemarks>Please confirm by return.</cbc:TransportUserRemarks>
   <cac:SenderParty>
     <cac:PartyIdentification>
@@ -338,11 +378,11 @@ Inside `Consignment`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Transport planning</cbc:Name>
-      <cbc:JobTitle>Logistics planner</cbc:JobTitle>
-      <cbc:Department>Logistics</cbc:Department>
+      <cbc:Name>Sales office</cbc:Name>
+      <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
+      <cbc:Department>Sales</cbc:Department>
       <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
-      <cbc:ElectronicMail>logistics@marrowdalesawmill.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
@@ -428,7 +468,7 @@ Inside `Consignment`:
     <cbc:EndDate>2026-03-01</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
-    <cbc:Name>Marrowdale Sawmill yard, Marrowdale</cbc:Name>
+    <cbc:Name>Tostara Wood Modification yard, Conciaro</cbc:Name>
   </cac:FromLocation>
   <cac:ToLocation>
     <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
@@ -487,11 +527,39 @@ Inside `Consignment`:
     </cac:ConsigneeParty>
     <cac:ConsignorParty>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106192</cbc:ID>
       </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-trader">XU-TR-106192</cbc:ID>
+      </cac:AdditionalPartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+        <cbc:Name>Tostara Wood Modification</cbc:Name>
       </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160205830117402</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qau">Bek Stuzman Tuntrir</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Concerie</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+        <cbc:PostalZone>4190</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Despatch desk</cbc:Name>
+        <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
+        <cbc:Department>Yard</cbc:Department>
+        <cbc:Telephone>+999 1 041 573 2290</cbc:Telephone>
+        <cbc:ElectronicMail>despatch@tostara.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
+      </cac:Contact>
     </cac:ConsignorParty>
   </cac:Consignment>
 </TransportExecutionPlanRequest>

@@ -132,7 +132,6 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `BallastWaterSummary/NoControlActionsReason` | 0..n | sea/16-CommonTransportationReport |  |  | open |
-| `Consignment/ConsignorAssignedID` | 0..1 | sea/14-BillOfLading (and road/08-Waybill, G5 C100) |  |  | open |
 | `GoodsItem/GoodsItemContainer` | 0..n | sea/14-BillOfLading |  |  | open |
 | `GoodsItemContainer/ID` | 1 | sea/14-BillOfLading |  |  | open |
 | `GoodsItemContainer/Quantity` | 0..1 | sea/14-BillOfLading |  |  | open |
@@ -193,19 +192,16 @@ Coverage 5150 → 5129 (commit d2506729), 21 elements.
 |---|---|---|---|---|---|
 | `CommonTransportationReport/DocumentStatusCode` | 0..1 | sea/16-CommonTransportationReport | | | open |
 | `CreditNote/ContractDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote, sea/26-CreditNote | | | open |
-| `Delivery/ReleaseID` | 0..1 | tender/26-Order | thermal modification as contract processing, O150, if adopted | O150 | candidate |
+| `Delivery/ReleaseID` | 0..1 | tender/26-Order |  |  | open |
 | `DeliveryNote/DocumentStatusCode` | 0..1 | cotton/03-DeliveryNote | | | open |
-| `Despatch/ReleaseID` | 0..1 | road/04-DespatchAdvice | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `DespatchAdvice/DocumentStatusCode` | 0..1 | air/06-DespatchAdvice, air/08-DespatchAdvice, mast/04-DespatchAdvice … | | | open |
 | `DespatchLine/LineStatusCode` | 0..1 | air/06-DespatchAdvice, air/08-DespatchAdvice, mast/04-DespatchAdvice … | | | open |
 | `ForwardingInstructions/DocumentStatusCode` | 0..1 | air/03-ForwardingInstructions, cotton/09-ForwardingInstructions, sea/09-ForwardingInstructions … | | | open |
 | `FulfilmentCancellation/Contract` | 0..n | air/07-FulfilmentCancellation | | | open |
 | `InvoiceLine/BillingReference` | 0..n | furniture/17-Invoice | | | open |
 | `LineReference/LineStatusCode` | 0..1 | cotton/04-SelfBilledInvoice, road/02-OrderResponse | | | open |
-| `Order/SalesOrderID` | 0..1 | tender/26-Order | thermal modification as contract processing, O150, if adopted | O150 | candidate |
-| `OrderChange/SalesOrderID` | 0..1 | air/01-OrderChange | thermal modification as contract processing, O150, if adopted | O150 | candidate |
-| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | the fulfilment cancellation's reference to the order change quotes the buyer's own reference of it, "Harbour parks Selanu": the frames are spares for the port's harbour benches (O199 a'); thermal modification as contract processing, O150, if adopted | air, O150 | candidate |
-| `OrderResponse/Contract` | 0..n | sea/06-OrderResponse | thermal modification as contract processing, O150, if adopted | O150 | candidate |
+| `OrderReference/CustomerReference` | 0..1 | air/07-FulfilmentCancellation | the fulfilment cancellation's reference to the order change quotes the buyer's own reference of it, "Harbour parks Selanu": the frames are spares for the port's harbour benches (O199 a') | air | candidate |
+| `OrderResponse/Contract` | 0..n | sea/06-OrderResponse |  |  | open |
 | `SelfBilledCreditNote/DespatchDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
 | `SelfBilledCreditNote/ReceiptDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote | | | open |
 | `SelfBilledInvoice/DespatchDocumentReference` | 0..n | cotton/04-SelfBilledInvoice | | | open |
@@ -362,10 +358,7 @@ Coverage 5058 → 5049 (commit 0edd7d78), 9 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Consignment/OfficeOfEntryLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `ImportCustomsDeclaration/CustomsExitOfficeLocation` | 0..1 | cotton/15-ImportCustomsDeclaration, plastics/09-ImportCustomsDeclaration, road/10-ImportCustomsDeclaration … | | | open |
-| `Shipment/DeclaredCustomsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
-| `Shipment/DeclaredStatisticsValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 | `TransitCustomsDeclaration/ImportCustomsExitOfficeLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
 | `TransitCustomsDeclaration/PreviousCustomsDeclaration` | 0..n | rail/06-TransitCustomsDeclaration | | | open |
 | `TransitCustomsDeclaration/TransitCustomsExitOfficeLocation` | 0..1 | rail/06-TransitCustomsDeclaration | | | open |
@@ -483,8 +476,6 @@ Coverage 4982 → 4971 (commit 11566a00), 11 elements.
 | `EndOfLifeTreatment/ProcessingTypeCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
 | `EndOfLifeTreatment/TreatmentLocation` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
 | `EndOfLifeTreatment/TreatmentPathwayCode` | 0..1 | packaging/01-Order, packaging/02-Invoice | with `CircularityProfile/EndOfLifeTreatment`: the film's end of life in Rivermouth's product information (packaging, G1's candidate), or the spent Mo-99/Tc-99m generator's (decay storage, recovery of the shielding) if the medicines flow carries its product data (O202 choice 7) | packaging or medicines | candidate |
-| `Item/LifecycleStageCode` | 0..1 | waste/03-Invoice | thermal modification as contract processing, O150, if adopted | O150 | candidate |
-| `Item/LifecycleStageDescription` | 0..n | waste/03-Invoice | thermal modification as contract processing, O150, if adopted | O150 | candidate |
 
 ### C62: the Elderwick Marrow bench, chair and care kit as items of their own under Brightmarket's GTINs; the set a shop offer; indoor dining furniture (D32)
 
@@ -503,7 +494,6 @@ Coverage 4971 → 4961 (commit 7c976a98), 10 elements.
 | `CreditNoteLine/ItemPriceExtension` | 0..1 | furniture/13-CreditNote | | | open |
 | `InvoiceLine/SubInvoiceLine` | 0..n | furniture/09-Invoice | | | open |
 | `ItemManagementProfile/FrozenPeriodDaysNumeric` | 0..1 | furniture/04-TradeItemLocationProfile | | | open |
-| `LineItem/SubLineItem` | 0..n | furniture/08-Order, furniture/10-Order | | | open |
 
 ### O155: the Marrow line's first sale on the reopening day, 11 May; the sales side of the furniture flow from then on (owner)
 
@@ -683,7 +673,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `Consignment/SequenceID` | 0..1 | air/04-Waybill | as above | | open |
 | `Consignment/SubstituteCarrierParty` | 0..1 | air/04-Waybill | a carrier that performs the carriage in place of the contracting carrier, such as an airline's road feeder service; none decided | | open |
 | `Delivery/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
-| `OrderChange/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
 ### G3: ore, rail (2026-11-19)
 
 Stage 6, building group G3 (C81, C90).
@@ -860,7 +849,6 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `BusinessInformation/RequestedPublicationDate` | 0..1 | tender/12-BusinessInformation | | | open |
 | `OperationType/Code` | 0..1 | tender/12-BusinessInformation | | | open |
 | `OperationType/Description` | 0..n | tender/12-BusinessInformation | | | open |
-| `Party/ServiceProviderParty` | 0..n | tender/12-BusinessInformation | | | open |
 | `PartyGroup/GroupType` | 0..n | tender/12-BusinessInformation | | | open |
 | `PartyGroup/GroupTypeCode` | 0..1 | tender/12-BusinessInformation | | | open |
 | `PartyGroup/Party` | 1..n | tender/12-BusinessInformation | | | open |
@@ -868,10 +856,6 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `ProcurementStatus/EnvironmentalLegislationDocumentReference` | 0..n | tender/09-ProcurementStatus | | | open |
 | `ProcurementStatus/FiscalLegislationDocumentReference` | 0..n | tender/09-ProcurementStatus | | | open |
 | `ServiceProviderParty/ID` | 0..1 | tender/12-BusinessInformation | | | open |
-| `ServiceProviderParty/Party` | 1 | tender/12-BusinessInformation | | | open |
-| `ServiceProviderParty/SellerContact` | 0..1 | tender/12-BusinessInformation | | | open |
-| `ServiceProviderParty/ServiceType` | 0..n | tender/12-BusinessInformation | | | open |
-| `ServiceProviderParty/ServiceTypeCode` | 0..1 | tender/12-BusinessInformation | | | open |
 
 > C126: the article of the procurement act a guarantee follows is referred to by its legal reference, not as an ontology (tender/14#F8).
 
@@ -1007,7 +991,6 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `InventoryReportLine/AvailabilityDate` | 0..1 | retail/07-InventoryReport |  |  | open |
 | `PromotionalEvent/LatestProposalAcceptanceDate` | 0..1 | retail/06-RetailEvent |  |  | open |
 | `PurchaseReceiptLine/PurchaseLinePeriod` | 0..1 | retail/21-PurchaseReceipt |  |  | open |
 
@@ -1108,3 +1091,20 @@ Elements that were in this register and are covered again, with the example that
 | `OrderResponse/ValidityPeriod` | reefer/02-OrderResponse | the cooperative's conditional acceptance of the wholesaler's order, three pallets of pears instead of four and a fifth of Granny Smith, open until Friday 17 April at noon, its cut-off for booking the reefer on the Thursday's ship (O236) | 2026-11-20 |
 | `Shipment/InsuranceValueAmount` | reefer/03-ForwardingInstructions | the cooperative instructs its forwarder to insure the reefer's fruit for 110 % of its CIP value, the least cover Incoterms 2020 CIP asks of the seller (O239) | 2026-11-20 |
 | `GoodsCertificate/FreightForwarderParty` | reefer/04-GoodsCertificate | Bayforth, the cooperative's forwarder, applies for the phytosanitary certificate on the cooperative's behalf and collects it with the export papers (O239) | 2026-11-20 |
+| `Order/SalesOrderID` | modification/01-Order | the modification plant's job number of the kiln slot the sawmill's processing order fills, allotted by the plant with the season agreement's slots before any order (O150 row 1) | 2026-11-20 |
+| `OrderChange/SalesOrderID` | modification/07-OrderChange | the plant's job number of the processing order the sawmill's call-off changes (O150 row 2) | 2026-11-20 |
+| `LineItem/SubLineItem` | modification/01-Order | the 4,800 ash blanks the sawmill supplies free of charge, the material of the processing order's line of 96 bundles of modified slats (O150 row 3) | 2026-11-20 |
+| `Despatch/ReleaseID` | modification/07-OrderChange, wood/06-DespatchAdvice | the sawmill's pick-up release for its finished job in the plant's store: the call-off issues it, the plant hands the bundles only to the driver who quotes it, and its despatch advice records it (O150 row 4) | 2026-11-20 |
+| `Consignment/ConsignorAssignedID` | wood/06-DespatchAdvice | the plant's own loading number for the consignment it despatches for the sawmill, beside the sawmill's consignment number from the transport booking (O150 row 5; the study placed it in wood/04, moved to wood/06 because the plant gives its number when it loads) | 2026-11-20 |
+| `InventoryReportLine/AvailabilityDate` | modification/06-InventoryReport | the plant's stock report to the sawmill: the second kiln charge's 48 bundles available from Wednesday 4 February, when planing and sealing are finished (O150 row 6) | 2026-11-20 |
+| `Shipment/DeclaredCustomsValueAmount` | wood/07-ImportCustomsDeclaration | the release from inward processing covers the goods of two entries, one per load of blanks: two goods items of the same subheading, procedure and origin, whose customs values the shipment totals (O150 row 7) | 2026-11-20 |
+| `Shipment/DeclaredStatisticsValueAmount` | modification/05-ImportCustomsDeclaration | the value trade statistics record the blanks at as they enter inward processing, what they would be invoiced at with the carriage to the border; the release is not recorded again (O150 row 8, O251 after the coordinator's source check of 2026-11-20: statistics on entry, not on release) | 2026-11-20 |
+| `Item/LifecycleStageCode` | modification/08-Invoice | the plant's thermal modification service, the slat's manufacturing stage, which the sawmill needs for its slat's footprint (O150 row 10) | 2026-11-20 |
+| `Item/LifecycleStageDescription` | modification/08-Invoice | the environmental impact of the plant's kiln in words: heat from a boiler fired with its offcuts, grid electricity, fumes burned, no chemicals; no figures until O252 (O150 row 11) | 2026-11-20 |
+| `Consignment/OfficeOfEntryLocation` | modification/05-ImportCustomsDeclaration | the offices the plant's inward-processing authorisation names as empowered to accept its entries: the border post, with the inland office at Ferrano as a subsidiary location (O150 row 12) | 2026-11-20 |
+| `Party/ServiceProviderParty` | wood/02-Quotation | the sawmill names the plant that modifies this delivery: Valdara's approval of the supplier of a type-tested part covers the special process (O150 row 13) | 2026-11-20 |
+| `ServiceProviderParty/Party` | wood/02-Quotation | Tostara Wood Modification (O150 row 14) | 2026-11-20 |
+| `ServiceProviderParty/ServiceTypeCode` | wood/02-Quotation | PROCESSING, contract processing, in the regional service type list (O150 row 15) | 2026-11-20 |
+| `ServiceProviderParty/ServiceType` | wood/02-Quotation | the plant's work in words: modification, planing, end-grain sealing, storage and despatch (O150 row 16) | 2026-11-20 |
+| `ServiceProviderParty/SellerContact` | wood/02-Quotation | the plant's despatch desk, which Valdara's goods-in deals with on the delivery day (O150 row 17) | 2026-11-20 |
+| `OrderChange/DeliveryTerms` | modification/07-OrderChange | the call-off changes the processing order's ex works to free carrier at the plant's dock, loaded onto Trasvia's trailer, at the sawmill's risk from loading (O150 row 18) | 2026-11-20 |

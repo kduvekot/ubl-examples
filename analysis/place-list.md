@@ -147,6 +147,7 @@ Every party on the map with its place (the town of its address), the district of
 | Harrowmead Fruit Growers (55-xb) | Orchard Road, Harrowmead | Harrowmead | - | 4.9 km NE | - | 97/104 | 30.3153 S 14.8003 W (30° 18.92′ S, 14° 48.02′ W) | 366 m |
 | Hafefo Fresh Produce (56-xl) | Wharf Road, Selanu | Selanu | Agreement Quarter (industry, 2.5 km) | 3.5 km W | inside | 236/112 | 33.0000 S 2.2376 W (33° 00.00′ S, 2° 14.26′ W) | 141 m |
 | Federal Department of Agriculture of Bayvarra (57-xb) | Civic Square, Lumeport (Government Hill) | Lumeport | Government Hill (administration, 3.2 km) | 4.9 km SE | inside | 139/127 | 31.0405 S 13.2755 W (31° 02.43′ S, 13° 16.53′ W) | 88 m |
+| Tostara Wood Modification (59-xu) | Via delle Concerie, Conciaro | Conciaro | - | 3.5 km E | - | 84/113 | 30.5991 S 15.2723 W (30° 35.95′ S, 15° 16.34′ W) | 330 m |
 
 ## 3. Distances along the routes
 
@@ -215,8 +216,9 @@ Every leg of `world/documents.json` as the world model lays it on the map, party
 | carnet | road | Selanu Chamber of Commerce (20-xl) → Selanu Airport Cargo (17-xl) | **30.3 km** | 30.3 km | town streets, minor roads | 17.5 km | 1.73 | 0 h 26 – 0 h 30 | - |
 | carnet | road | Lumeport Airport Cargo Terminal (17-xb) → Valdara Industries (5-xu) | **244.2 km** | 244.2 km | `road-b`, `road-wool`, `road` | 201.5 km | 1.21 | 3 h 29 – 4 h 04 | - |
 | waste | road | Valdara Industries (5-xu) → Rinova Recovery (7-xu) | **18.9 km** | 18.9 km | `road`, `waste` | 15.7 km | 1.21 | 0 h 16 – 0 h 19 | - |
-| wood | road | Marrowdale Sawmill (36-xb) → Valdara Industries (5-xu) | **185.6 km** | 185.6 km | `road` | 147.0 km | 1.26 | 2 h 39 – 3 h 06 | 0 |
+| wood | road | Tostara Wood Modification (59-xu) → Valdara Industries (5-xu) | **28.8 km** | 28.8 km | `road` | 17.8 km | 1.62 | 0 h 25 – 0 h 29 | 0 |
 | wood | road | Marrowdale Sawmill (36-xb) → Brackenmere Furniture (37-xb) | **14.0 km** | 14.0 km | town streets, minor roads | 10.5 km | 1.33 | 0 h 12 – 0 h 14 | - |
+| modification | road | Marrowdale Sawmill (36-xb) → Tostara Wood Modification (59-xu) | **163.8 km** | 163.8 km | `road` | 129.5 km | 1.26 | 2 h 20 – 2 h 44 | 0 |
 | furniture | road | Brackenmere Furniture (37-xb) → Brightmarket Stores (26-xb) | **86.5 km** | 86.5 km | `road`, `road-b`, `road-wool` | 74.4 km | 1.16 | 1 h 14 – 1 h 27 | - |
 | furniture | road | Brightmarket Stores (26-xb) → Brackenmere Furniture (37-xb) | **86.5 km** | 86.5 km | `road-b`, `road-wool`, `road` | 74.4 km | 1.16 | 1 h 14 – 1 h 27 | - |
 | furniture | road | Brackenmere Furniture (37-xb) → Lumeport Public Works Department (2-xb) | **98.5 km** | 98.5 km | `road`, `road-b`, `road-wool`, `road-lark`, `civic` | 84.3 km | 1.17 | 1 h 24 – 1 h 38 | - |

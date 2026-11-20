@@ -5115,7 +5115,7 @@ def wood_pallets(f):
                {"AttributeID": V("GROSSWEIGHT", "The loaded pallet's weight."),
                 "Measure": V(kit.kg(per * it["gross_kg"] + pal["tare_kg"]), f"Four bundles of {it['gross_kg']} kg "
                              f"and the pallet's own {pal['tare_kg']} kg.", unitCode="KGM")}]}
-    return [{"ID": kit.unit_id("36-xb", f, k), **out} for k in range(1, WOOD_PALLETS + 1)]
+    return [{"ID": kit.unit_id("59-xu", f, k), **out} for k in range(1, WOOD_PALLETS + 1)]
 
 
 def quotation_lines(f, deal, cur, with_price):
@@ -5175,23 +5175,66 @@ def wood(n, doc):
                                                                        "each."),
             "TotalPackagesQuantity": V(str(WOOD_PALLETS * 4), "The bundles on them.")})
         return out
-    if doc["doc"] == "ExportCustomsDeclaration":
-        out = kit.export_declaration(f, n, doc, 10, "Declared the morning the truck leaves for the border.",
-                                     "The value of the slats, in lume.")
-        out["IssueTime"] = V("08:40:00", "After the despatch advice and the invoice, while the loaded truck waits "
-                                         "at the sawmill for customs to release the slats.")
-        return out
+    # the February delivery is the season case of O150: modified at Tostara Wood Modification, despatched by the plant
+    # for the sawmill (wood/06) and released by Valdara from inward processing (wood/07); the export took place in
+    # January, as blanks (modification/04), so wood/05 is removed (D28)
     if doc["doc"] == "DespatchAdvice":
-        out = kit.despatch_advice(f, n, doc, 10, "The day the truck was loaded at the sawmill.",
-                                  "The gross weight of the bundles with their pallets.")
-        out["Shipment"]["TransportHandlingUnit"] = wood_pallets(f)
-        out["IssueTime"] = V("08:10:00", "When the truck is loaded, before it leaves once customs has released "
-                                         "the export.")
+        charges = [{"item": "slat-bundle-1800", "ordered": 48, "line": "1",
+                    "why": f"The bundles of {what.lower()}, lot {lot}."} for lot, _, _, what in MOD_CHARGES]
+        out = kit.despatch_advice(f, n, doc, 10, "The day the plant loaded the bundles onto Trasvia's truck.",
+                                  "The gross weight of the bundles with their pallets.", deal=charges)
+        out["Note"] = V("Despatched for Marrowdale Sawmill, the seller, from its job at our plant. Please check the "
+                        "goods on arrival and report any damage on the consignment note.", "Who the plant despatches "
+                        "for, and what the receiver should do.")
+        for (lot, done, charge, what), line in zip(MOD_CHARGES, out["DespatchLine"]):
+            line["Item"]["ItemInstance"] = {
+                "ManufactureDate": V(done, f"The day {what.lower().split(',')[0]} came out of the plant's kiln."),
+                "LotIdentification": {
+                    "LotNumberID": V(lot, "The sawmill's lot of the slats, one per kiln charge: a recall names the "
+                                          "lot."),
+                    "AdditionalItemProperty": {"Name": V("Kiln charge", "A fact about this lot: the charge of the "
+                                                                         "plant's kiln it was modified in."),
+                                               "Value": V(charge, "The plant's number of the charge.")}}}
+        ship = out["Shipment"]
+        ship["Consignment"]["ConsignorAssignedID"] = V(
+            f.number("loading", "59-xu", "Consignment"), "The plant's own number for the consignment, on its loading "
+            "list and gate pass; the consignment's ID above is the sawmill's, which booked the transport.")
+        ship["Delivery"]["Despatch"]["ReleaseID"] = V(MOD_RELEASE, "The sawmill's pick-up release the goods left "
+                                                                   "under: the plant handed them only to the driver "
+                                                                   "who quoted it, for they are the sawmill's.")
+        ship["TransportHandlingUnit"] = wood_pallets(f)
+        out["IssueTime"] = V("09:30:00", "When the truck is loaded, after the slats were released into free "
+                                         "circulation.")
         return out
     if doc["doc"] == "ImportCustomsDeclaration":
-        return kit.import_declaration(f, n, doc, 11, "The manufacturer declares the import into Urvania.",
-                                      "The customs value in ferra: the value in lume at the reference rate (1 lume = 100 "
-                                      "ferra).")
+        out = kit.import_declaration(f, n, doc, 10, "The manufacturer releases the slats from inward processing "
+                                     "before they leave the plant.", "")
+        entries = [MOD.numbers["import"], MOD.numbers["import-2"]]
+        value = mod_entry_value()
+        goods = []
+        for i, ((lot, _, _, what), entry) in enumerate(zip(MOD_CHARGES, entries), 1):
+            g = kit.goods_items(f, "XUF", "", deal=[{"item": "slat-bundle-1800", "ordered": 48}])[0]
+            g["ID"] = V(str(i), f"The goods item of the entry {entry}: {what.lower()}.")
+            g["DeclaredCustomsValueAmount"] = amount(value, "XUF", f"At the importer's request the customs value of "
+                                                     f"the blanks as they were entered under {entry}: their value "
+                                                     "with the carriage to the border, on the day the entry was "
+                                                     "accepted.")
+            goods.append(g)
+        out["Shipment"]["GoodsItem"] = goods
+        out["Shipment"]["DeclaredCustomsValueAmount"] = amount(
+            2 * value, "XUF", "The total customs value of the two goods items: the same tariff subheading, the same "
+                              "procedure and the same origin, from two entries.")
+        out["PreviousCustomsDeclaration"] = {
+            "ID": V(entries[0], "The entry into inward processing of the first load of blanks, which this release "
+                                "discharges."),
+            "FunctionCode": V("IMPORT", "The kind of the previous declaration.")}
+        out["AdditionalDocumentReference"] = [{"ID": V(entries[1], "The entry into inward processing of the second "
+                                                                   "load of blanks, a previous customs declaration "
+                                                                   "of the goods beside the one above, which this "
+                                                                   "release discharges too.")}]
+        out["IssueTime"] = V("08:15:00", "Early, so that the slats are released before Trasvia loads them.")
+        out["_released_from"] = ("ash blanks of HS 4407.95, entered on 13 and 20 January")
+        return out
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
         return kit.invoice(f, n, doc, 10, "Issued when the slats leave.",
                            {"OrderReference": ref(f, "order", "The manufacturer's order.")},
@@ -7765,6 +7808,19 @@ def _(f, n, doc, out):
                                                                      "Which terms govern.")},
             "Contract": {"ID": V("VI-PUR-TERMS-2026", "The buyer's purchasing terms, which govern the quotation.")},
             "Signature": seal(doc["from"], "MS-SIG-26-QT"),
+            # O150: Valdara's approval of the supplier of a type-tested part covers whoever performs a special
+            # process on it, so the sawmill names the plant that modifies this delivery (rows 13 to 17)
+            "SellerSupplierParty": {"Party": {"ServiceProviderParty": {
+                "ServiceTypeCode": V("PROCESSING", "The plant works on the sawmill's own wood under contract."),
+                "ServiceType": V("Thermal modification at about 212 °C, planing to 1800 × 95 × 45 mm, end-grain "
+                                 "sealing, storage and despatch", "What the plant does for this delivery, more than "
+                                                                  "the code says."),
+                "SellerContact": {"Name": V("Despatch desk", "The plant's desk Valdara's goods-in deals with on the "
+                                                             "delivery day."),
+                                  "Telephone": V(PARTY["59-xu"]["identity"]["contact"]["telephone"], "Its "
+                                                                                                    "telephone."),
+                                  "ElectronicMail": V(PARTY["59-xu"]["identity"]["desks"]["despatch"]["email"],
+                                                      "Its e-mail address.")}}}},
             "Delivery": {"PromisedDeliveryPeriod": {"StartDate": V(f.date(10), "From the end of the second week, "
                                                                               "as asked."),
                                                     "EndDate": V(f.date(18), "Within about a week.")}},
@@ -14390,3 +14446,293 @@ def lpg(n, doc):
 
 SCENARIOS["lpg"] = _with_enrichment("lpg", lpg)
 FLOWS["lpg"] = LPG
+
+
+# ================================================================ the modification flow (O150): slats modified under contract
+# In the southern summer (October to March) Marrowdale Sawmill's own modification kiln is full with its decking and
+# cladding, so it buys kiln slots at Tostara Wood Modification (59-xu), Conciaro, under a season agreement whose
+# slots carry the plant's job numbers. The February delivery to Valdara (the wood flow) is such a job: the sawmill's
+# kiln-dried ash blanks cross the border in two loads of its own truck (the second load's documents are cited, not
+# examples: O253), the plant enters them into inward processing (it holds the authorisation; the sawmill has no
+# Urvanian VAT number), modifies, planes, end-seals and bundles them in two kiln charges, stores the bundles for the
+# sawmill and hands them to Trasvia against the sawmill's pick-up release (wood/04, 06). Valdara releases them from
+# the procedure (wood/07). The world rule of inward processing is in countries.json (XU tax.inward_processing, O251).
+MOD = kit.Flow("modification", "2026-01-12", [
+    {"item": "ash-blank-1830", "ordered": 2400, "line": "1.1", "why": "The first load: 2,400 blanks on 12 pallets, the first kiln "
+                                                       "charge."}])
+MOD_DAY = {"order": 0, "load1": 1, "load2": 8, "stock": 18, "calloff": 43, "invoice": 45, "pay": 53}
+MOD_BUNDLES = 96
+MOD_BLANKS = 4800
+MOD_JOB = "TWM-J-2526-014"           # the plant's job number of the kiln slot, allotted with the season's slots
+MOD_SEASON = "TWM-SA-2526-MS"        # the season agreement 2025/26 between the plant and the sawmill
+MOD_AUTH = "XU-IP-AUT-0217"          # the plant's inward-processing authorisation from Urvania's customs
+MOD_PROFORMA = "MS-PF-26-0113"       # the sawmill's pro forma invoice: the blanks' value for customs, no sale
+MOD_RELEASE = "MS-REL-26-0212"       # the sawmill's pick-up release for the finished job (modification/07, wood/06)
+MOD_FREIGHT = Decimal("600.00")      # the carriage of one load to the border on the sawmill's own truck, in lume
+MOD_CHARGES = [("MS-L26-0119", "2026-01-19", "TWM-K1-26-03", "Kiln charge 1, from the first load of blanks"),
+               ("MS-L26-0126", "2026-01-26", "TWM-K1-26-04", "Kiln charge 2, from the second load of blanks")]
+for _k, _p, _t in (("order", "36-xb", "Order"), ("order-response", "59-xu", "OrderResponse"),
+                   ("despatch-order", "36-xb", "DespatchAdvice"), ("shipment", "36-xb", "Shipment"),
+                   ("consignment", "36-xb", "Consignment"), ("export", "36-xb", "ExportCustomsDeclaration"),
+                   ("export-declaration", "36-xb", "CustomsDeclaration"),
+                   ("import", "59-xu", "ImportCustomsDeclaration"), ("import-2", "59-xu", "ImportCustomsDeclaration"),
+                   ("inventory", "59-xu", "InventoryReport"), ("order-change", "36-xb", "OrderChange"),
+                   ("invoice", "59-xu", "Invoice"), ("remittance", "36-xb", "RemittanceAdvice")):
+    MOD.number(_k, _p, _t)      # allotted in this order whatever flow is built first: the wood flow cites them
+
+
+def mod_entry_value():
+    """The customs value of one load of blanks entered into inward processing, in ferra: no sale, so the value the
+    sawmill puts on the blanks (its pro forma invoice), with the carriage to the border (D16)."""
+    blanks = Decimal(MOD.deal[0]["ordered"]) * Decimal(str(ITEM["ash-blank-1830"]["price"]["amount"]))
+    return ((blanks + MOD_FREIGHT) * 100).quantize(Decimal(1))
+
+
+def mod_slats_line(why):
+    return {"Name": V(ITEM["tm-processing"]["name"], why),
+            "SellersItemIdentification": {"ID": V(ITEM["tm-processing"]["sellers_id"], "The plant's number for the "
+                                                                                        "job's work.")}}
+
+
+def modification(n, doc):
+    f, d = MOD, doc["doc"]
+    if d == "Order":
+        deal = [{"item": "tm-processing", "ordered": MOD_BUNDLES}]
+        rows = kit.lines(f, "59-xu", "36-xb", "XUF", deal=deal)
+        base = sum(r[2] for r in rows)
+        tax, total = kit.tax_total(rows, "XUF")
+        return {
+            "ID": V(f.numbers["order"], "The sawmill's order number."),
+            "SalesOrderID": V(MOD_JOB, "The plant's job number for this order: the season agreement's kiln slots "
+                                       "were each given a job number by the plant when they were allotted, before "
+                                       "any order, and the order fills the slot it quotes."),
+            "IssueDate": V(f.date(MOD_DAY["order"]), "The Monday the sawmill fills its slot, the day before the "
+                                                     "first load of blanks leaves."),
+            "IssueTime": V("09:20:00", "In the morning."),
+            "OrderTypeCode": V("220", "UN/EDIFACT 1001 code 220: order."),
+            "Note": V("Job for Valdara's park-bench slats: modify, plane, seal the end grain and bundle our blanks; "
+                      "hold the bundles in your store until we call them off. The blanks come on our truck on 13 and "
+                      "20 January, 2,400 each time.", "What is ordered, in a few words, and how the material comes."),
+            "DocumentCurrencyCode": kit.currency_line("XUF", "the plant's currency, in which the season agreement "
+                                                             "prices"),
+            "LineCountNumeric": V("1", "One job."),
+            "Contract": {"ID": V(MOD_SEASON, "The season agreement for kiln slots, October 2025 to March 2026, "
+                                             "whose prices and terms the job follows."),
+                         "ContractType": V("Season agreement for kiln slots", "What it is.")},
+            "Delivery": {"LatestDeliveryDate": V("2026-02-06", "The bundles are to be ready in the plant's store by "
+                                                               "Friday 6 February, in time for the delivery to "
+                                                               "Valdara from 26 February.")},
+            "DeliveryTerms": {"ID": V("EXW", "Ex works the plant: the finished bundles are held at the plant and "
+                                             "collected there, as the sawmill calls them off.", schemeID="INCOTERMS"),
+                              "DeliveryLocation": {"Description": V("Tostara Wood Modification, Conciaro",
+                                                                    "Where the delivery terms place the handover.")}},
+            "TaxTotal": total,
+            "AnticipatedMonetaryTotal": {
+                "LineExtensionAmount": amount(base, "XUF", "The processing of the 96 bundles; storage is billed by "
+                                                           "the week, as it falls."),
+                "PayableAmount": amount(base + tax, "XUF", "What the sawmill expects to pay for the processing.")},
+            "OrderLine": {"LineItem": {
+                "ID": V("1", "The line number."),
+                "Note": V("96 bundles of 50 slats, Valdara's slat MS-SL-1800 to drawing VI-DS-SL1800.",
+                          "The output the job is to give."),
+                "Quantity": qty(MOD_BUNDLES, "EA", "The bundles to be made: the 4,800 blanks give 4,800 slats."),
+                "LineExtensionAmount": amount(rows[0][2], "XUF", "Quantity times price."),
+                "Price": kit.price_block("tm-processing", "XUF"),
+                "Item": item("tm-processing"),
+                "SubLineItem": {
+                    "ID": V("1.1", "The material of the job, a line below the main line."),
+                    "Note": V("Supplied by the customer, free of charge: the sawmill's own kiln-dried ash, which "
+                              "stays its property.", "Why the line has no price."),
+                    "Quantity": qty(MOD_BLANKS, "EA", "The blanks that make the 96 bundles, one slat from each."),
+                    "Item": item("ash-blank-1830")}}}}
+    if d == "OrderResponse":
+        out = kit.order_response(f, n, doc, MOD_DAY["load1"], "The plant answers the next morning, when it has put "
+                                                             "the job into its kiln plan.")
+        out.update({"SalesOrderID": V(MOD_JOB, "The plant's job number, as the order quotes it."),
+                    "IssueTime": V("08:10:00", "Early, before the first load of blanks arrives."),
+                    "Note": V("Job accepted. Kiln charges: 14 to 19 January (first load) and 21 to 26 January "
+                              "(second load); planing, sealing and bundling after each; the job is ready in store "
+                              "on 4 February.", "The plant's plan for the job, in words.")})
+        return out
+    if d == "DespatchAdvice":
+        out = kit.despatch_advice(f, n, doc, MOD_DAY["load1"], "The day the first load leaves the sawmill.",
+                                  "The gross weight of the blanks with their pallets.")
+        out["IssueTime"] = V("06:45:00", "When the truck is loaded, before it leaves for the border.")
+        out["Note"] = V("Please check the blanks on arrival and keep them apart as our goods; report any damage to "
+                        "our dispatch office.", "What the receiver should do: the blanks travel on the sawmill's "
+                                                "own truck, with no carrier's consignment note.")
+        out["Shipment"]["Consignment"]["ID"] = V(f.numbers["consignment"], "The sawmill's number for the load.")
+        out["Shipment"]["TotalTransportHandlingUnitQuantity"] = qty(12, "EA", "The pallets of the load, 200 blanks "
+                                                                              "on each.")
+        out["DespatchLine"][0]["Item"]["ItemInstance"] = {
+            "ManufactureDate": V("2026-01-09", "The day the blanks came out of the sawmill's drying kiln."),
+            "LotIdentification": {"LotNumberID": V("MS-BL26-0109", "The sawmill's lot of the blanks, from its "
+                                                                   "prefix and the day: it travels with the "
+                                                                   "slats made from them.")}}
+        return out
+    if d == "ExportCustomsDeclaration":
+        out = kit.export_declaration(f, n, doc, MOD_DAY["load1"], "Declared the morning the first load leaves for "
+                                     "the border.", "The value of the blanks, in lume: no sale, so the value the "
+                                                    "sawmill puts on them, as its pro forma invoice states it.")
+        out["IssueTime"] = V("07:00:00", "While the loaded truck waits at the sawmill for customs to release the "
+                                         "export.")
+        # the blanks are strapped in stacks on their pallets: the pallets above are the packages, no parcels
+        out["CustomsDeclaration"]["Shipment"]["Consignment"].pop("TotalPackagesQuantity", None)
+        return out
+    if d == "ImportCustomsDeclaration":
+        out = kit.import_declaration(f, n, doc, MOD_DAY["load1"], "Lodged when the first load reaches the border.",
+                                     "The customs value in ferra: no sale, so the value the sawmill puts on the "
+                                     "blanks in lume at the reference rate (1 lume = 100 ferra).",
+                                     [{"ID": V(MOD_AUTH, "The plant's authorisation for inward processing, under "
+                                                         "which the entry is made."),
+                                       "DocumentType": V("Inward processing authorisation", "What it is.")},
+                                      {"ID": V(MOD_PROFORMA, "The sawmill's pro forma invoice: the value of the "
+                                                             "blanks for customs, there being no sale."),
+                                       "DocumentTypeCode": V("325", "UN/EDIFACT 1001 code 325: proforma invoice.")}])
+        out["IssueTime"] = V("10:30:00", "When the truck stands at the Urvanian post, after the Bayvarran export.")
+        out["Shipment"]["DeclaredStatisticsValueAmount"] = amount(
+            mod_entry_value(), "XUF", "The value trade statistics record the blanks at as they enter the procedure: "
+                                      "what they would be invoiced at, with the carriage to the border; their later "
+                                      "release into free circulation is not recorded again.")
+        out["Shipment"]["Consignment"] = {
+            "ID": V(f.numbers["consignment"], "The sawmill's number for the load."),
+            "OfficeOfEntryLocation": {
+                "Name": V("Customs post at the land border, Urvanian side", "One of the offices the authorisation "
+                          "names as empowered to accept the plant's entries: the border post, for loads that come "
+                          "by road."),
+                "SubsidiaryLocation": {"Name": V("Inland customs office, Ferrano", "The other office the "
+                                                 "authorisation names, for entries lodged inland.")}}}
+        out["ValidityPeriod"] = {"StartDate": V(f.date(MOD_DAY["load1"]), "From the entry."),
+                                 "EndDate": V("2026-07-13", "The period of the authorisation within which the "
+                                                            "processed products must be discharged: six months.")}
+        out["_note_extra"] = ("The goods remain the property of Marrowdale Sawmill, Marrowdale, Bayvarra, for which "
+                              "the holder of the authorisation processes them.")
+        return out
+    if d == "InventoryReport":
+        lines = []
+        for i, (lot, done, charge, what) in enumerate(MOD_CHARGES, 1):
+            ln = {"ID": V(str(i), f"{what}."),
+                  "Note": V(f"{what}, lot {lot}" + (": modified, planed, sealed and bundled." if i == 1 else
+                                                    ": modified; still being planed and sealed."),
+                            "What the line holds."),
+                  "Quantity": qty(48, "EA", "The bundles of the charge."),
+                  "Item": item("slat-bundle-1800")}
+            if i == 1:
+                ln["AvailabilityStatusCode"] = V("AVAILABLE", "Finished and in store: available now, so no date.")
+                ln["InventoryLocation"] = {"Name": V("Store bay 3, Tostara Wood Modification, Conciaro", "Where the "
+                                                     "sawmill's bundles stand, kept apart as its goods.")}
+            else:
+                ln["AvailabilityDate"] = V("2026-02-04", "Available from Wednesday 4 February, when its planing, "
+                                                         "sealing and bundling are finished.")
+                ln["InventoryLocation"] = {"Name": V("Planing hall, Tostara Wood Modification, Conciaro", "Where "
+                                                     "the slats are now.")}
+            lines.append(ln)
+        return {
+            "ID": V(f.numbers["inventory"], "The plant's stock report number."),
+            "IssueDate": V(f.date(MOD_DAY["stock"]), "The plant's stock report to the owners of the goods it holds, "
+                                                    "each Friday."),
+            "IssueTime": V("14:00:00", "After the week's count, in the afternoon."),
+            "Note": V(f"Job {MOD_JOB}. Both loads of blanks are processed; no blank is left unprocessed.",
+                      "What the report covers, and that the material is used up."),
+            "InventoryPeriod": {"StartDate": V(f.date(MOD_DAY["stock"] - 4), "The week."),
+                                "EndDate": V(f.date(MOD_DAY["stock"]), "Its end.")},
+            "DocumentReference": {"ID": V(f.numbers["order"], "The sawmill's order for the job.")},
+            "InventoryReportLine": lines}
+    if d == "OrderChange":
+        return {
+            "ID": V(f.numbers["order-change"], "The sawmill's number for the change."),
+            "SalesOrderID": V(MOD_JOB, "The plant's job number of the order changed, which the plant files the "
+                                       "call-off under."),
+            "IssueDate": V(f.date(MOD_DAY["calloff"]), "The day after Valdara ordered and the sawmill booked the "
+                                                       "truck."),
+            "IssueTime": V("09:00:00", "In the morning."),
+            "SequenceNumberID": V("1", "The first change of the order."),
+            "Note": V(f"Call-off of job {MOD_JOB}: all 96 bundles for Valdara Industries, Ferrano, collected by "
+                      "Trasvia Haulage on Thursday 26 February.", "What the change adds: the delivery of the "
+                                                                  "finished job."),
+            "LineCountNumeric": V("1", "One line."),
+            "OrderReference": {"ID": V(f.numbers["order"], "The order the call-off changes.")},
+            "Delivery": {
+                "RequestedDeliveryPeriod": {"StartDate": V("2026-02-26", "Delivered at Valdara the day it is "
+                                                                          "collected."),
+                                            "EndDate": V("2026-02-26", "The same day.")},
+                "Despatch": {"RequestedDespatchDate": V("2026-02-26", "The day Trasvia collects the bundles."),
+                             "ReleaseID": V(MOD_RELEASE, "The sawmill's pick-up release: the plant hands the goods "
+                                                         "only to the driver who quotes this number, for they are "
+                                                         "the sawmill's."),
+                             "Instructions": V("Load onto Trasvia Haulage's truck against the release number; send "
+                                               "the despatch advice to Valdara Industries on our behalf.",
+                                               "What the plant is to do.")}},
+            "DeliveryTerms": {"ID": V("FCA", "Free carrier at the plant: the plant loads the bundles onto the "
+                                             "carrier the sawmill names, so the change replaces the order's ex "
+                                             "works.", schemeID="INCOTERMS"),
+                              "SpecialTerms": V("Loaded at the plant's dock onto Trasvia Haulage's curtain-side "
+                                                "trailer, four bundles to a pallet.", "How the handover is made."),
+                              "LossRiskResponsibilityCode": V("BUYER", "From loading the sawmill bears the risk."),
+                              "LossRisk": V("The goods are at the sawmill's risk from the moment they are loaded.",
+                                            "In words."),
+                              "DeliveryLocation": {"Description": V("Loading dock, Tostara Wood Modification, "
+                                                                    "Conciaro", "Where the handover is.")}},
+            "OrderLine": {"LineItem": {
+                "ID": V("1", "The order line called off."),
+                "Quantity": qty(MOD_BUNDLES, "EA", "All the bundles of the job."),
+                "Item": mod_slats_line("The job's line, named only: described in the order.")}}}
+    if d == "Invoice":
+        out = kit.invoice(f, n, doc, MOD_DAY["invoice"], "Issued the day the finished job left the plant.",
+                          {"OrderReference": {"ID": V(f.numbers["order"], "The sawmill's order."),
+                                              "SalesOrderID": V(MOD_JOB, "The plant's job number.")},
+                           "ContractDocumentReference": {"ID": V(MOD_SEASON, "The season agreement whose prices "
+                                                                             "apply.")}},
+                          [{"item": "tm-processing", "qty": MOD_BUNDLES,
+                            "invoice_why": "The bundles made and despatched."},
+                           {"item": "tm-storage", "qty": 4,
+                            "invoice_why": "The weeks begun from the week the second charge was finished, 2 "
+                                           "February, to the call-off on 26 February."}])
+        out["IssueTime"] = V("15:00:00", "In the afternoon, after the truck had left.")
+        li = out["InvoiceLine"][0]["Item"]
+        stage, desc = ITEM["tm-processing"]["lifecycle"]
+        li["LifecycleStageCode"] = V(stage, "The stage of the slat's life this service is: its manufacture. The "
+                                            "sawmill needs the plant's part of the stage for the footprint of the "
+                                            "slat it sells.")
+        li["LifecycleStageDescription"] = V(desc, "The stage's environmental impact, in words, as the plant states "
+                                                  "it for its kiln.")
+        return out
+    if d == "RemittanceAdvice":
+        out = kit.remittance(f, n, doc, MOD_DAY["pay"], "The day the payment is made: Friday 6 March, within the "
+                                                        "ten days of the discount.", discount="2")
+        out["IssueTime"] = V("10:15:00", "Sent when the payment order went to the bank.")
+        out["Note"] = V(f"Payment of your invoice for job {MOD_JOB}, less the 2 % discount.", "What the advice "
+                        "is for: the payment that settles the job.")
+        return out
+    raise SystemExit(f"modification scenario: no document {n} {d}")
+
+
+SCENARIOS["modification"] = _with_enrichment("modification", modification)
+FLOWS["modification"] = MOD
+enrich("modification", "ExportCustomsDeclaration")(export_extras)
+enrich("modification", "ImportCustomsDeclaration")(import_extras)
+
+
+@enrich("modification", "ExportCustomsDeclaration")
+def _(f, n, doc, out):
+    cd = out["CustomsDeclaration"]
+    refs = cd.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    return {"ExportReasonCode": V("PROCESSING", "The blanks go abroad to be processed under contract for their "
+                                                "owner, and do not come back: the finished slats are sold in "
+                                                "Urvania."),
+            "CustomsDeclaration": {"AdditionalDocumentReference": refs + [
+                {"ID": V(MOD_PROFORMA, "The sawmill's pro forma invoice: the value of the blanks, there being no "
+                                       "sale."),
+                 "DocumentTypeCode": V("325", "UN/EDIFACT 1001 code 325: proforma invoice.")}]}}
+
+
+@enrich("modification", "ImportCustomsDeclaration")
+def _(f, n, doc, out):
+    refs = out.get("AdditionalDocumentReference")
+    refs = [refs] if isinstance(refs, dict) else list(refs or [])
+    out["AdditionalDocumentReference"] = [r for r in refs if r["ID"].value != f.numbers["invoice"]]  # no sale
+    return {"SubTypeCode": V("INWARDPROC", "Entry into inward processing: the goods are worked in Urvania without "
+                                           "duty or import VAT until they are released."),
+            "NatureOfTransactionCode": V("PROCESSING", "The goods come for processing under contract; they are "
+                                                       "not bought.")}

@@ -2082,6 +2082,8 @@ def declaration_invoices(content, doc):
     from the exporter to the importer, issued on or before the declaration."""
     if doc["doc"] not in ("ExportCustomsDeclaration", "ImportCustomsDeclaration"):
         return
+    if content.get("_released_from"):     # valued on the goods as placed under the procedure, not on a sale (O251)
+        return
     ps = doc.get("parties", {})
     exporter = ps.get("ExporterParty") or ps.get("CustomsDeclaration/ExporterParty")
     importer = ps.get("ImporterParty") or ps.get("CustomsDeclaration/ImporterParty")
@@ -2289,7 +2291,11 @@ def world_rate(a, b):
 
 
 VALUATION = {   # flow -> what the declarations add to or take from the goods lines, by D16 and WTO Articles 1 and 8
-    "wood": [("all", Decimal("240.00"), "XBL", "the export pallets the buyer pays for, part of the price paid")],
+    # the wood flow's only declaration is the release from inward processing (wood/07), valued on the blanks as they
+    # were entered (O150, O251); the export pallets of the sale are no part of that value
+    # the blanks have no sale: the value the sawmill puts on them, with the carriage to the border on its own truck
+    "modification": [("XU", Decimal("600.00"), "XBL", "the carriage to the border on the sawmill's own truck, at "
+                                                       "its cost as the sawmill reckons it")],
     "tender": [("all", Decimal("200.00"), "XBL", "the special colour, part of the price paid")],
     "plastics": [("all", Decimal("-1794.00"), "XBL", "less the river freight after loading, which the seller "
                                                      "distinguished from the price (179,400 ferra)")],
@@ -2467,7 +2473,22 @@ def import_preference(content, doc):
     q = Decimal(1).scaleb(-minor)
     money_name = next(x["currency"]["name"].lower() for x in WORLD["countries"].values()
                       if x["currency"]["code"] == cur) if cur else ""
-    if c == "XU":
+    sub = content.get("SubTypeCode").value if isinstance(content.get("SubTypeCode"), V) else None
+    released = content.pop("_released_from", None)      # a release from inward processing (O150, O251)
+    if c == "XU" and sub == "INWARDPROC":
+        rate = country["tax"]["schemes"][0]["rates"]["standard"]
+        text = (f"Inward processing: no duty and no import value added tax while the goods are worked under the "
+                f"procedure. The goods are of Accord origin; the import value added tax of {rate} % on their customs "
+                f"value of {total:,} {money_name} is due only when the processed products are released for free "
+                "circulation.")
+    elif c == "XU" and released:
+        rate = country["tax"]["schemes"][0]["rates"]["standard"]
+        tax = (total * rate / 100).quantize(q)
+        text = (f"Released from inward processing. At the importer's request the duty and the import value added tax "
+                f"are assessed on the goods as they were placed under the procedure ({released}): no duty, goods of "
+                f"Accord origin. Import value added tax: {rate} % of their customs value of {total:,} {money_name}, "
+                f"{tax:,} {money_name}; the importer deducts it again in its return.")
+    elif c == "XU":
         rate = country["tax"]["schemes"][0]["rates"]["standard"]
         tax = (total * rate / 100).quantize(q)
         text = (f"No duty: goods of Accord origin. Import value added tax: {rate} % of the customs value of {total:,} "
@@ -2481,7 +2502,11 @@ def import_preference(content, doc):
     else:
         text = ("No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at "
                 "the final retail sale.")
-    content["Note"] = V(text, "What is due at import, by the importing country's rule.")  # D18
+    extra = content.pop("_note_extra", None)              # what the declarant adds, such as the owner of the goods
+    if extra:
+        text = f"{text} {extra}"
+    content["Note"] = V(text, "What is due at import, by the importing country's rule" + (
+        "; and whose the goods are." if extra else "."))  # D18, O251
     refs = content.get("AdditionalDocumentReference")
     refs = [refs] if isinstance(refs, dict) else list(refs or [])
     for r in refs:
@@ -3871,7 +3896,7 @@ def main(flow_id, check=False):
 
 
 FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air", "cotton", "tender", "contest", "carnet",
-                       "waste", "utilities", "wood", "furniture", "packaging", "mast", "energy", "lpg", "medicines",
+                       "waste", "utilities", "modification", "wood", "furniture", "packaging", "mast", "energy", "lpg", "medicines",
                        "reefer"]
 
 

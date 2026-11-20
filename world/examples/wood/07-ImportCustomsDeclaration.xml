@@ -4,15 +4,15 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-IM-26-0634</cbc:ID>
+  <cbc:ID>VI-IM-26-0633</cbc:ID>
   <cbc:UUID>5121b08c-34cb-5860-af6c-8ad49382d537</cbc:UUID>
-  <cbc:IssueDate>2026-02-27</cbc:IssueDate>
-  <cbc:IssueTime>11:05:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cbc:IssueTime>08:15:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 4,632,000 tezhul, 926,400 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
-  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 4,632,000 ferra, 926,400 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
+  <cbc:Note languageID="qau">Kedan mir sakrek matir. Hir drek sisir muztek drek murdrir stan drek balstir munran vanbir raz datrir trindir rek drek valnir dek kildrek zatrir dagan karul drek trelhek (darhir mazan skul HS 4407.95, tubek rek 13 stan 20 January): sarhek murdrir, valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul haskek garsul munran skul 2,424,000 tezhul, 484,800 tezhul; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">Released from inward processing. At the importer's request the duty and the import value added tax are assessed on the goods as they were placed under the procedure (ash blanks of HS 4407.95, entered on 13 and 20 January): no duty, goods of Accord origin. Import value added tax: 20 % of their customs value of 2,424,000 ferra, 484,800 ferra; the importer deducts it again in its return.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -162,14 +162,15 @@
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>MS-SH-26-0632</cbc:ID>
+    <cbc:ID>TWM-SH-26-0631</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:DeclaredCustomsValueAmount currencyID="XUF">2424000</cbc:DeclaredCustomsValueAmount>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XUF">4632000</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">1212000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">10512</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">48</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
@@ -192,17 +193,42 @@
         </cac:ClassifiedTaxCategory>
       </cac:Item>
     </cac:GoodsItem>
-    <cac:ShipmentStage>
-      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
-    </cac:ShipmentStage>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">1212000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">10512</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">48</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
+      <cac:Item>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+        <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">XX</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940191</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>20</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>TWM-IM-26-0413</cbc:ID>
+    <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:FunctionCode>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-EX-26-0630</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
-  </cac:AdditionalDocumentReference>
-  <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-INV-26-0635</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+    <cbc:ID>TWM-IM-26-0414</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ImportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-IM-wood</cbc:ID>

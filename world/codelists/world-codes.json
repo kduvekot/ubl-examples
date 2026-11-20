@@ -6307,7 +6307,8 @@
     "EXTTRANSIT",
     "INTTRANSIT",
     "SIMPLIFIED",
-    "SUPPLEMENTARY"
+    "SUPPLEMENTARY",
+    "INWARDPROC"
    ]
   },
   "UNCL1225": {
@@ -6334,7 +6335,8 @@
     "EXHIBITION",
     "REPAIR",
     "RETURN",
-    "GIFT"
+    "GIFT",
+    "PROCESSING"
    ]
   },
   "ExportType": {
@@ -7928,7 +7930,8 @@
     "LOGISTICS",
     "MESSAGING",
     "ACCOUNTING",
-    "PAYROLL"
+    "PAYROLL",
+    "PROCESSING"
    ]
   },
   "SignatureReason": {

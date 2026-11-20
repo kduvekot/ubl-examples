@@ -4,56 +4,57 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-DA-26-0633</cbc:ID>
+  <cbc:ID>TWM-DA-26-0630</cbc:ID>
   <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
-  <cbc:IssueTime>08:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:30:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:Note languageID="qau">Sasul gan Marrowdale Sawmill, drek balhan, mir nakskek gakek hir zek halkan. Gannek kikran drek valnir rek marsir stan skuskek ran muhir rek drek silsan mek.</cbc:Note>
+  <cbc:Note languageID="en-XU">Despatched for Marrowdale Sawmill, the seller, from its job at our plant. Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VI-PO-26-0627</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106192</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Marrowdale Sawmill</cbc:Name>
+        <cbc:Name>Tostara Wood Modification</cbc:Name>
       </cac:PartyName>
       <cac:Language>
-        <cbc:ID schemeID="ISO 639">en</cbc:ID>
-        <cbc:Name>English</cbc:Name>
-        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+        <cbc:ID schemeID="ISO 639">qau</cbc:ID>
+        <cbc:Name>Urvanian</cbc:Name>
       </cac:Language>
       <cac:PostalAddress>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-296778</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160205830117402</cbc:ID>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-        <cbc:StreetName>Timber Lane</cbc:StreetName>
-        <cbc:BuildingNumber>7</cbc:BuildingNumber>
-        <cbc:CityName>Marrowdale</cbc:CityName>
-        <cbc:PostalZone>71202</cbc:PostalZone>
-        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
-        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qau">Bek Stuzman Tuntrir</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Concerie</cbc:StreetName>
+        <cbc:BuildingNumber>9</cbc:BuildingNumber>
+        <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+        <cbc:PostalZone>4190</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
         <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-          <cbc:Name>Bayvarra</cbc:Name>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Dispatch office</cbc:Name>
-        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
-        <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
-        <cbc:ElectronicMail>dispatch@marrowdalesawmill.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cbc:Name>Despatch desk</cbc:Name>
+        <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
+        <cbc:Department>Yard</cbc:Department>
+        <cbc:Telephone>+999 1 041 573 2290</cbc:Telephone>
+        <cbc:ElectronicMail>despatch@tostara.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412329</cbc:ElectronicAddressID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-106192</cbc:ElectronicAddressID>
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:DespatchSupplierParty>
@@ -117,12 +118,37 @@
       <cac:PartyName>
         <cbc:Name>Marrowdale Sawmill</cbc:Name>
       </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-296778</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Timber Lane</cbc:StreetName>
+        <cbc:BuildingNumber>7</cbc:BuildingNumber>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71202</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Sales office</cbc:Name>
+        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
+        <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>MS-SH-26-0632</cbc:ID>
+    <cbc:ID>TWM-SH-26-0631</cbc:ID>
     <cac:Consignment>
       <cbc:ID>MS-CS-26-0629</cbc:ID>
+      <cbc:ConsignorAssignedID>TWM-CS-26-0632</cbc:ConsignorAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -165,10 +191,11 @@
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-02-26</cbc:ActualDespatchDate>
+        <cbc:ReleaseID>MS-REL-26-0212</cbc:ReleaseID>
       </cac:Despatch>
     </cac:Delivery>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-001</cbc:ID>
+      <cbc:ID>TWM-26-001</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -196,7 +223,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-002</cbc:ID>
+      <cbc:ID>TWM-26-002</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -224,7 +251,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-003</cbc:ID>
+      <cbc:ID>TWM-26-003</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -252,7 +279,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-004</cbc:ID>
+      <cbc:ID>TWM-26-004</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -280,7 +307,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-005</cbc:ID>
+      <cbc:ID>TWM-26-005</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -308,7 +335,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-006</cbc:ID>
+      <cbc:ID>TWM-26-006</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -336,7 +363,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-007</cbc:ID>
+      <cbc:ID>TWM-26-007</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -364,7 +391,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-008</cbc:ID>
+      <cbc:ID>TWM-26-008</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -392,7 +419,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-009</cbc:ID>
+      <cbc:ID>TWM-26-009</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -420,7 +447,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-010</cbc:ID>
+      <cbc:ID>TWM-26-010</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -448,7 +475,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-011</cbc:ID>
+      <cbc:ID>TWM-26-011</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -476,7 +503,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-012</cbc:ID>
+      <cbc:ID>TWM-26-012</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -504,7 +531,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-013</cbc:ID>
+      <cbc:ID>TWM-26-013</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -532,7 +559,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-014</cbc:ID>
+      <cbc:ID>TWM-26-014</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -560,7 +587,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-015</cbc:ID>
+      <cbc:ID>TWM-26-015</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -588,7 +615,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-016</cbc:ID>
+      <cbc:ID>TWM-26-016</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -616,7 +643,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-017</cbc:ID>
+      <cbc:ID>TWM-26-017</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -644,7 +671,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-018</cbc:ID>
+      <cbc:ID>TWM-26-018</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -672,7 +699,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-019</cbc:ID>
+      <cbc:ID>TWM-26-019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -700,7 +727,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-020</cbc:ID>
+      <cbc:ID>TWM-26-020</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -728,7 +755,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-021</cbc:ID>
+      <cbc:ID>TWM-26-021</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -756,7 +783,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-022</cbc:ID>
+      <cbc:ID>TWM-26-022</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -784,7 +811,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-023</cbc:ID>
+      <cbc:ID>TWM-26-023</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -812,7 +839,7 @@
       </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
-      <cbc:ID>MS-26-024</cbc:ID>
+      <cbc:ID>TWM-26-024</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
@@ -842,8 +869,8 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
+    <cbc:Note>The bundles of kiln charge 1, from the first load of blanks, lot MS-L26-0119.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">48</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -856,12 +883,39 @@
         <cbc:ID>MS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ItemInstance>
-        <cbc:ManufactureDate>2026-02-23</cbc:ManufactureDate>
+        <cbc:ManufactureDate>2026-01-19</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>MS-L26-0223</cbc:LotNumberID>
+          <cbc:LotNumberID>MS-L26-0119</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Kiln charge</cbc:Name>
-            <cbc:Value>K-07</cbc:Value>
+            <cbc:Value>TWM-K1-26-03</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>The bundles of kiln charge 2, from the second load of blanks, lot MS-L26-0126.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">48</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+      <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
+      <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
+      <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MS-SL-1800-50</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ItemInstance>
+        <cbc:ManufactureDate>2026-01-26</cbc:ManufactureDate>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>MS-L26-0126</cbc:LotNumberID>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Kiln charge</cbc:Name>
+            <cbc:Value>TWM-K1-26-04</cbc:Value>
           </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>

@@ -2,7 +2,7 @@
 
 *Example 7 of the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
-The manufacturer declares the import into Urvania, where import VAT is due.
+The manufacturer releases the slats from inward processing into free circulation in Urvania and pays the import VAT.
 
 [The XML file](07-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -18,23 +18,23 @@ The manufacturer declares the import into Urvania, where import VAT is due.
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **WOOD-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-IM-26-0634**  
+- `ID` = **VI-IM-26-0633**  
   The importer's declaration number.
 - `UUID` = **5121b08c-34cb-5860-af6c-8ad49382d537**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-27**  
-  The manufacturer declares the import into Urvania.
-- `IssueTime` = **11:05:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
+- `IssueDate` = **2026-02-26**  
+  The manufacturer releases the slats from inward processing before they leave the plant.
+- `IssueTime` = **08:15:00-01:00**  
+  Early, so that the slats are released before Trasvia loads them; in the issuer's local time, with its offset from UTC.
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   An import declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 - `SubTypeCode` = **FREECIRC** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode`)  
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 4,632,000 tezhul, 926,400 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
+- `Note` = **Kedan mir sakrek matir. Hir drek sisir muztek drek murdrir stan drek balstir munran vanbir raz datrir trindir rek drek valnir dek kildrek zatrir dagan karul drek trelhek (darhir mazan skul HS 4407.95, tubek rek 13 stan 20 January): sarhek murdrir, valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul haskek garsul munran skul 2,424,000 tezhul, 484,800 tezhul; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
   The note in Urvanian, the sender's language: What is due at import, by the importing country's rule.
-- `Note` = **No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 4,632,000 ferra, 926,400 ferra, paid at the border; the importer deducts it again in its return.** (languageID `en-XU`)  
+- `Note` = **Released from inward processing. At the importer's request the duty and the import value added tax are assessed on the goods as they were placed under the procedure (ash blanks of HS 4407.95, entered on 13 and 20 January): no duty, goods of Accord origin. Import value added tax: 20 % of their customs value of 2,424,000 ferra, 484,800 ferra; the importer deducts it again in its return.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule.
 - `VersionID` = **1**  
   The first version.
@@ -226,19 +226,21 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **MS-SH-26-0632**  
+- `ID` = **TWM-SH-26-0631**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **24** (unitCode `EA`)  
   The pallets the goods travel on.
+- `DeclaredCustomsValueAmount` = **2424000** (currencyID `XUF`)  
+  The total customs value of the two goods items: the same tariff subheading, the same procedure and the same origin, from two entries.
 - `GoodsItem/ID` = **1**  
-  The goods item number.
+  The goods item of the entry TWM-IM-26-0413: kiln charge 1, from the first load of blanks.
 - `GoodsItem/Description` = **Bench slat 1800, bundle of 50**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **4632000** (currencyID `XUF`)  
-  Urvania values the goods with freight and insurance to its border: the goods at 4,608,000 XUF, with the export pallets the buyer pays for, part of the price paid (24,000 XUF), shared over the goods items by their value.
-- `GoodsItem/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **1212000** (currencyID `XUF`)  
+  At the importer's request the customs value of the blanks as they were entered under TWM-IM-26-0413: their value with the carriage to the border, on the day the entry was accepted.
+- `GoodsItem/GrossWeightMeasure` = **10512** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **96** (unitCode `EA`)  
+- `GoodsItem/Quantity` = **48** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty. The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
@@ -262,21 +264,56 @@ Inside `Shipment`:
   The standard rate.
 - `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code VAT: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
-  The goods cross the border by road. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `GoodsItem/ID` = **2**  
+  The goods item of the entry TWM-IM-26-0414: kiln charge 2, from the second load of blanks.
+- `GoodsItem/Description` = **Bench slat 1800, bundle of 50**  
+  What the goods are, in words.
+- `GoodsItem/DeclaredCustomsValueAmount` = **1212000** (currencyID `XUF`)  
+  At the importer's request the customs value of the blanks as they were entered under TWM-IM-26-0414: their value with the carriage to the border, on the day the entry was accepted.
+- `GoodsItem/GrossWeightMeasure` = **10512** (unitCode `KGM`)  
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
+- `GoodsItem/Quantity` = **48** (unitCode `EA`)  
+  The quantity declared.
+- `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
+  The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty. The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
+- `GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+  The seller's description.
+- `GoodsItem/Item/Name` = **Bench slat 1800, bundle of 50**  
+  The item's short name.
+- `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Where the item was produced; as Marrowdale Sawmill describes the item. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `GoodsItem/Item/CommodityClassification/NatureCode` = **XX** (listID `WCO HS 2022 Sections`)  
+  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: XX = Miscellaneous manufactured articles.
+- `GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
+  The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: GEN = General cargo.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940191** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Marrowdale Sawmill describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940191 = Parts of seats, of wood.
+- `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38160** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Marrowdale Sawmill describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38160 = Parts of furniture.
+- `GoodsItem/Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  Urvania's value added tax at import, at the standard rate. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/ClassifiedTaxCategory/Percent` = **20**  
+  The standard rate.
+- `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code VAT: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+
+### Previous Customs Declaration
+
+Inside `PreviousCustomsDeclaration`:
+
+- `ID` = **TWM-IM-26-0413**  
+  The entry into inward processing of the first load of blanks, which this release discharges.
+- `FunctionCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
+  The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **MS-EX-26-0630**  
-  The export declaration of the goods in the country of departure, for information.
-- `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: MS-EX-26-0630 is the example wood/05, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
-- `ID` = **MS-INV-26-0635**  
-  The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
-- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: MS-INV-26-0635 is the example wood/08, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+- `ID` = **TWM-IM-26-0414**  
+  The entry into inward processing of the second load of blanks, a previous customs declaration of the goods beside the one above, which this release discharges too.
+- `DocumentTypeCode` = **ImportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to, the modification plant's entry into inward processing of the second load of ash blanks, on 20 January, a document outside the examples (cited). The code is from the Trade Accord's UBL document type list: ImportCustomsDeclaration = Import Customs Declaration.
 
 ### Signature
 
@@ -298,15 +335,15 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-IM-26-0634</cbc:ID>
+  <cbc:ID>VI-IM-26-0633</cbc:ID>
   <cbc:UUID>5121b08c-34cb-5860-af6c-8ad49382d537</cbc:UUID>
-  <cbc:IssueDate>2026-02-27</cbc:IssueDate>
-  <cbc:IssueTime>11:05:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-02-26</cbc:IssueDate>
+  <cbc:IssueTime>08:15:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 4,632,000 tezhul, 926,400 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
-  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 4,632,000 ferra, 926,400 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
+  <cbc:Note languageID="qau">Kedan mir sakrek matir. Hir drek sisir muztek drek murdrir stan drek balstir munran vanbir raz datrir trindir rek drek valnir dek kildrek zatrir dagan karul drek trelhek (darhir mazan skul HS 4407.95, tubek rek 13 stan 20 January): sarhek murdrir, valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul haskek garsul munran skul 2,424,000 tezhul, 484,800 tezhul; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">Released from inward processing. At the importer's request the duty and the import value added tax are assessed on the goods as they were placed under the procedure (ash blanks of HS 4407.95, entered on 13 and 20 January): no duty, goods of Accord origin. Import value added tax: 20 % of their customs value of 2,424,000 ferra, 484,800 ferra; the importer deducts it again in its return.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -456,14 +493,15 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>MS-SH-26-0632</cbc:ID>
+    <cbc:ID>TWM-SH-26-0631</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:DeclaredCustomsValueAmount currencyID="XUF">2424000</cbc:DeclaredCustomsValueAmount>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XUF">4632000</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">1212000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">10512</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">48</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
@@ -486,17 +524,42 @@ Inside `Signature`:
         </cac:ClassifiedTaxCategory>
       </cac:Item>
     </cac:GoodsItem>
-    <cac:ShipmentStage>
-      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
-    </cac:ShipmentStage>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">1212000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">10512</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">48</cbc:Quantity>
+      <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
+      <cac:Item>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+        <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">XX</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940191</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:ClassifiedTaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+          <cbc:Percent>20</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:ClassifiedTaxCategory>
+      </cac:Item>
+    </cac:GoodsItem>
   </cac:Shipment>
+  <cac:PreviousCustomsDeclaration>
+    <cbc:ID>TWM-IM-26-0413</cbc:ID>
+    <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:FunctionCode>
+  </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-EX-26-0630</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
-  </cac:AdditionalDocumentReference>
-  <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-INV-26-0635</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+    <cbc:ID>TWM-IM-26-0414</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ImportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-IM-wood</cbc:ID>

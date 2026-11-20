@@ -2797,6 +2797,88 @@
    "sellers_id": "QPD-RAD-0020",
    "resale_of": "tc-generator",
    "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week."
+  },
+  {
+   "id": "ash-blank-1830",
+   "seller": "36-xb",
+   "name": "Ash blank 1830, kiln dried",
+   "kind": "goods",
+   "unit": "EA",
+   "price": {
+    "amount": 4.8,
+    "currency": "XBL",
+    "why": "Not sold: the value the sawmill puts on a blank, its cost of the sawn and kiln-dried ash and its profit, the value customs takes where there is no sale."
+   },
+   "sellers_id": "MS-BL-1830",
+   "hs": "440795",
+   "cpc": "31102",
+   "origin": "XB",
+   "description": "Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.",
+   "dimensions_mm": [
+    1830,
+    101,
+    51
+   ],
+   "net_kg": 5.89,
+   "gross_kg": 5.89,
+   "package": {
+    "type": "BE",
+    "per_package": 200
+   },
+   "pallet": {
+    "per": 200,
+    "mm": [
+     1850,
+     970,
+     1397
+    ],
+    "tare_kg": 26,
+    "stack": 1,
+    "what": "Heat-treated softwood pallet to ISPM 15, 1850 x 970 mm, with 200 blanks eight across and 25 high, strapped"
+   },
+   "lot_prefix": "MS-BL26-",
+   "origin_criterion": "P",
+   "note": "HS 4407.95, ash sawn lengthwise, thicker than 6 mm, CPC 31102: the blank is sawn and kiln dried, not yet planed or cut to the bench's drawing. 0.009426 m³ at 625 kg/m³: 5.89 kg.",
+   "_refs": {
+    "note": "O150; world/bench/report.md (blanks 1,830 x 101 x 51 mm)"
+   }
+  },
+  {
+   "id": "tm-processing",
+   "seller": "59-xu",
+   "name": "Thermal modification and finishing, bundle of 50 bench slats",
+   "kind": "service",
+   "unit": "EA",
+   "price": {
+    "amount": 13250,
+    "currency": "XUF",
+    "why": "The season agreement's price for a bundle: modifying 50 of the customer's blanks, planing them to the slat, sealing the end grain and bundling them."
+   },
+   "sellers_id": "TWM-TM-SL50",
+   "description": "Thermal modification of the customer's own kiln-dried ash at about 212 °C in steam, planing on four sides to 1800 × 95 × 45 mm, sealing the end grain and strapping in bundles of 50, per bundle of output.",
+   "lifecycle": [
+    "MANUFACTURING",
+    "Thermal modification of the slat in the plant's steam kiln: the heat comes from the plant's boiler, fired with its own offcuts and planer shavings, and the fans and the planer run on grid electricity; the kiln's fumes are burned in its afterburner, and no chemicals are added to the wood."
+   ],
+   "purchase": "services",
+   "_refs": {
+    "lifecycle": "O150 rows 10, 11; the figures wait for O252"
+   }
+  },
+  {
+   "id": "tm-storage",
+   "seller": "59-xu",
+   "name": "Storage of a finished job, bay of 24 pallets",
+   "kind": "service",
+   "unit": "WEE",
+   "price": {
+    "amount": 5760,
+    "currency": "XUF",
+    "why": "The season agreement's price: 24 pallet places at 240 ferra a week."
+   },
+   "sellers_id": "TWM-ST-B24",
+   "description": "Storage of the customer's finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job's last charge is finished.",
+   "purchase": "services"
   }
  ],
  "resales": {

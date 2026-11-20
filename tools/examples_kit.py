@@ -1869,7 +1869,7 @@ def event(flow, day, time, why, location=None, type_code=None, ident=None, descr
 # the flows whose goods travel on pallets (D20, O61): the bench in three parcels, four benches to a pallet, and the
 # spare frames in their cartons on a pallet of their own; the carnet's two samples and the air flow's eight frames
 # travel as loose parcels (the air frames on a skid, D39)
-PALLET_FLOWS = {"road", "rail", "sea", "retail", "tender", "wood", "reefer"}
+PALLET_FLOWS = {"road", "rail", "sea", "retail", "tender", "wood", "reefer", "modification"}
 
 
 def pallets(flow, deal):

@@ -125,5 +125,22 @@
             <SimpleValue>The goods are given free of charge.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>PROCESSING</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Processing abroad</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Matir krunman</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Manasei pelahi</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The goods are sent abroad to be processed under contract for their owner and do not come back.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>
