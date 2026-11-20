@@ -3263,12 +3263,12 @@
     }
    },
    "wiki": {
-    "short": "Lisavu's airline, flying cargo between Lumeport and Selanu",
-    "lead": "**Kelaro Air Cargo** is the airline of [[Lisavu]], founded in {founded_year}, with its office on Airfield Road in Lintwell. It flies cargo with an ATR 72-600F freighter between [[Lumeport]] and [[Selanu]] and employs about {employees} people.",
+    "short": "Lisavu's airline, flying passengers and cargo between Lumeport and Selanu",
+    "lead": "**Kelaro Air Cargo** is the airline of [[Lisavu]], founded in {founded_year}, with its office on Airfield Road in Lintwell. It flies passengers and cargo between [[Lumeport]] and [[Selanu]], with an ATR 72-600 and an ATR 72-600F freighter, and employs about {employees} people.",
     "sections": [
      {
       "title": "History",
-      "text": "The island's state founded Kelaro in 1987 as its own airline, to fly the route to [[Lumeport]] that a Bayvarran airline had served since the island's airfield at Lintwell opened in 1982. Its ATR 72-600F freighter came new in 2023."
+      "text": "The island's state founded Kelaro in 1987 as its own airline, to fly the route to [[Lumeport]] that a Bayvarran airline had served since the island's airfield at Lintwell opened in 1982. Its ATR 72-600F freighter came new in 2023, beside the ATR 72-600 that carries its passengers. The two aircraft are of the same series: one maintenance department looks after both, its pilots are rated on both, and they share the same spare parts."
      },
      {
       "title": "Operations",
