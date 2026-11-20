@@ -56,7 +56,7 @@ sales carry no tax, and the invoice says so.</td>
 their tax representative. UBL gives it the commercial, transport and
 customs data in one vocabulary, so it can assemble the declaration from
 documents it already receives.</p>
-<p>In this world it sends 1 and receives 0 documents, and is named in 0
+<p>In this world it sends 2 and receives 0 documents, and is named in 1
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
@@ -95,9 +95,64 @@ href="world-1-xl.html">Velumi Trading</a> as
 <code>ConsigneeParty</code>; <a href="world-10-xb.html">Bayforth
 Forwarding</a> as <code>FreightForwarderParty</code>.</p></li>
 </ul>
+<h2
+id="medicines-and-a-technetium-generator-for-the-islands-hospital-by-air-cold-chain-and-radioactive-material">Medicines
+and a technetium generator for the island's hospital, by air (cold chain
+and radioactive material)</h2>
+<p>Selanu General Hospital orders the vaccines for the island's winter
+influenza campaign, insulin, a frozen varicella vaccine and its weekly
+technetium-99m generator from a pharmaceutical wholesaler in Lumeport,
+carriage paid to Selanu airport. The forwarder books the morning flight
+of Monday 15 June: the vaccines and the insulin fly at 2 to 8 °C in the
+airline's active temperature-controlled container, the frozen vaccine in
+an insulated box on dry ice, and the generator, a Type A package of
+radioactive material with a Yellow label, under a shipper's declaration
+of its own, in the aft hold. The wholesaler's own van brings the
+generator to the cargo terminal at 05:30. On the island the customs
+broker declares the import for the hospital, free of duty and exempt
+from the import consumption tax, and the hospital pharmacy's van fetches
+the goods.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> to <a href="world-19-xl.html">Island
+Customs Service</a>: The customs broker, as the hospital's direct
+representative, declares the import at Selanu airport in the hospital's
+name: no duty on medicines, and the exemption from the import
+consumption tax for medicines supplied to a public hospital (O201,
+O203). <a href="example-medicines-13-ImportCustomsDeclaration.html">See
+the example document</a>.</p>
+<p>In it as <code>NotifierParty</code>, on behalf of <a
+href="world-50-xl.html">Selanu General Hospital</a>
+(<code>ImporterParty</code>).</p>
+<p>Also mentions: <a href="world-50-xl.html">Selanu General Hospital</a>
+as <code>ImporterParty</code>; <a href="world-49-xb.html">Quillmoor
+Pharma Distribution</a> as <code>ConsignorParty</code>; <a
+href="world-50-xl.html">Selanu General Hospital</a> as
+<code>ConsigneeParty</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
+from <a href="world-12-xl.html">Kelaro Air Cargo</a> to <a
+href="world-10-xb.html">Bayforth Forwarding</a>: The air waybill for
+KXL207: the active container with its set temperature, the dry ice and
+the Type A package with its transport index. <a
+href="example-medicines-11-Waybill.html">See the example
+document</a>.</p>
+<p>In it as <code>Shipment/Consignment/NotifyParty</code> (The Party who
+is notified upon arrival of Goods and when special occurrences (usually
+pre-defined) take place during a transportation service).</p>
+<p>Also mentions: <a href="world-49-xb.html">Quillmoor Pharma
+Distribution</a> as <code>ConsignorParty</code>; <a
+href="world-50-xl.html">Selanu General Hospital</a> as
+<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
-<p><code>NotifierParty</code></p>
+<p><code>NotifierParty</code> <code>NotifyParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -116,6 +171,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d0dda09dbaf8e4c271b10b48a95f82c6f12d9cbe"><code>d0dda09</code></a> of 2026-11-20 09:27 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/a11722a285c46baf6b92e4a2638f932a376ac688"><code>a11722a</code></a> of 2026-11-20 09:28 UTC</p></div></footer>
 </body>
 </html>

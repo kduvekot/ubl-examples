@@ -163,7 +163,7 @@ included), in XBL, per <code>E48</code> (service unit)</td>
 forwarding instructions, packing lists and manifests to combine
 shipments, book carriers and arrange insurance, keeping one consignment
 reference across all of them.</p>
-<p>In this world it sends 9 and receives 14 documents, and is named in 3
+<p>In this world it sends 9 and receives 17 documents, and is named in 3
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
@@ -560,6 +560,66 @@ href="example-mast-03-Waybill.html">See the example document</a>.</p>
 Telecom</a> as
 <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
 </ul>
+<h2
+id="medicines-and-a-technetium-generator-for-the-islands-hospital-by-air-cold-chain-and-radioactive-material">Medicines
+and a technetium generator for the island's hospital, by air (cold chain
+and radioactive material)</h2>
+<p>Selanu General Hospital orders the vaccines for the island's winter
+influenza campaign, insulin, a frozen varicella vaccine and its weekly
+technetium-99m generator from a pharmaceutical wholesaler in Lumeport,
+carriage paid to Selanu airport. The forwarder books the morning flight
+of Monday 15 June: the vaccines and the insulin fly at 2 to 8 °C in the
+airline's active temperature-controlled container, the frozen vaccine in
+an insulated box on dry ice, and the generator, a Type A package of
+radioactive material with a Yellow label, under a shipper's declaration
+of its own, in the aft hold. The wholesaler's own van brings the
+generator to the cargo terminal at 05:30. On the island the customs
+broker declares the import for the hospital, free of duty and exempt
+from the import consumption tax, and the hospital pharmacy's van fetches
+the goods.</p>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
+Instructions</strong></a> from <a href="world-49-xb.html">Quillmoor
+Pharma Distribution</a>: The wholesaler asks its forwarder to book the
+Monday morning flight: the cold chain goods in the airline's active
+container, the frozen vaccine on dry ice, and the generator under the
+shipper's declaration of its own. <a
+href="example-medicines-06-ForwardingInstructions.html">See the example
+document</a>.</p>
+<p>In it as <code>FreightForwarderParty</code>.</p>
+<p>Also mentions: <a href="world-50-xl.html">Selanu General Hospital</a>
+as <code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
+from <a href="world-12-xl.html">Kelaro Air Cargo</a>: The air waybill
+for KXL207: the active container with its set temperature, the dry ice
+and the Type A package with its transport index. <a
+href="example-medicines-11-Waybill.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>FreightForwarderParty</code>.</p>
+<p>Also mentions: <a href="world-49-xb.html">Quillmoor Pharma
+Distribution</a> as <code>ConsignorParty</code>; <a
+href="world-50-xl.html">Selanu General Hospital</a> as
+<code>Shipment/Consignment/ConsigneeParty</code>; <a
+href="world-3-xl.html">Tevaro Customs Brokers</a> as
+<code>Shipment/Consignment/NotifyParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
+Status</strong></a> from <a href="world-17-xl.html">Selanu Airport
+Cargo</a>: The island's cargo terminal reports the consignment arrived,
+with the temperatures the active container logged on the way and the
+logger's readings attached. <a
+href="example-medicines-12-TransportationStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p>
+<p>Also mentions: <a href="world-12-xl.html">Kelaro Air Cargo</a> as
+<code>Consignment/CarrierParty</code>; <a href="world-50-xl.html">Selanu
+General Hospital</a> as
+<code>Consignment/ConsigneeParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ReceiverParty</code> <code>TransportServiceProviderParty</code>
@@ -580,6 +640,8 @@ Bayvarra</a>, Bayvarra</li>
 <li><a href="world-17-xl.html">Selanu Airport Cargo</a>, Lisavu</li>
 <li><a href="world-40-xb.html">Lumeport Textile Mill</a>, Bayvarra</li>
 <li><a href="world-27-xb.html">Saltmere Engineering</a>, Bayvarra</li>
+<li><a href="world-49-xb.html">Quillmoor Pharma Distribution</a>,
+Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#10-xb">See Freight Forwarder on the map</a> ·
@@ -593,6 +655,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d0dda09dbaf8e4c271b10b48a95f82c6f12d9cbe"><code>d0dda09</code></a> of 2026-11-20 09:27 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/a11722a285c46baf6b92e4a2638f932a376ac688"><code>a11722a</code></a> of 2026-11-20 09:28 UTC</p></div></footer>
 </body>
 </html>

@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ImportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ImportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>QPD-IM-26-0332</cbc:ID>
+  <cbc:UUID>dec43f2a-2397-55dd-a970-1f967ceff30c</cbc:UUID>
+  <cbc:IssueDate>2026-06-14</cbc:IssueDate>
+  <cbc:IssueTime>21:40:00-01:00</cbc:IssueTime>
+  <cbc:Note>No duty: goods made in the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
+  <cac:ImporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9524910900003</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-413425</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-718264</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Airport Road</cbc:StreetName>
+      <cbc:BuildingNumber>40</cbc:BuildingNumber>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38528</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyTaxScheme>
+      <cbc:RegistrationName>Quillmoor Pharma Distribution Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1239476</cbc:CompanyID>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+        <cac:JurisdictionRegionAddress>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
+      </cac:TaxScheme>
+    </cac:PartyTaxScheme>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Quillmoor Pharma Distribution Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Customs desk</cbc:Name>
+      <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
+      <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
+      <cbc:ElectronicMail>customs@quillmoor.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20413425</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ImporterParty>
+  <cac:ConsignorParty>
+    <cac:PartyName>
+      <cbc:Name>Haarvliet Isotopes</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:StreetName>Isotopenweg</cbc:StreetName>
+      <cbc:BuildingNumber>14</cbc:BuildingNumber>
+      <cbc:CityName>Alkmaar</cbc:CityName>
+      <cbc:PostalZone>1812 RN</cbc:PostalZone>
+      <cbc:TimezoneOffset>+02:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">NL</cbc:IdentificationCode>
+        <cbc:Name>Netherlands</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:ConsignorParty>
+  <cac:ConsigneeParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+    </cac:PartyName>
+  </cac:ConsigneeParty>
+  <cac:CustomsParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">3071845926</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-479100</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Border Road</cbc:StreetName>
+      <cbc:BuildingNumber>36</cbc:BuildingNumber>
+      <cbc:CityName>Euridice Crossing</cbc:CityName>
+      <cbc:PostalZone>71950</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:public-body-register">3071845926</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Import office</cbc:Name>
+      <cbc:JobTitle>Customs officer</cbc:JobTitle>
+      <cbc:Department>Customs</cbc:Department>
+      <cbc:Telephone>+999 2 7121 503 398</cbc:Telephone>
+      <cbc:ElectronicMail>import@customs-xb.example</cbc:ElectronicMail>
+      <cbc:Note>Every day, around the clock</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:3071845926</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:CustomsParty>
+  <cac:Shipment>
+    <cbc:ID>HI-SH-26-0333</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>HI-CS-26-0334</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
+    </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Technetium-99m generator, 20 GBq</cbc:Description>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">1187.00</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cac:Item>
+        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+        <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
+        <cac:OriginCountry>
+          <cbc:IdentificationCode listID="ISO 3166">NL</cbc:IdentificationCode>
+        </cac:OriginCountry>
+        <cac:CommodityClassification>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">VI</cbc:NatureCode>
+          <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+          <cbc:CommodityCode listID="WCO HS 2022">284443</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">33690</cbc:ItemClassificationCode>
+        </cac:CommodityClassification>
+        <cac:HazardousItem>
+          <cbc:ID>HI-TCG-20-DG</cbc:ID>
+          <cbc:PlacardNotation>7</cbc:PlacardNotation>
+          <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
+          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
+          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">163</cbc:MedicalFirstAidGuideCode>
+          <cbc:ProperShippingName>Radioactive material, Type A package, non-special form, non fissile or fissile-excepted</cbc:ProperShippingName>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
+          <cbc:MarkingID>UN2915</cbc:MarkingID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
+          <cac:RadioactiveMaterial>
+            <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)</cbc:Name>
+            <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
+            <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
+          </cac:RadioactiveMaterial>
+        </cac:HazardousItem>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:ShipmentStage>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+    </cac:ShipmentStage>
+  </cac:Shipment>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>HI-INV-26-0331</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+</ImportCustomsDeclaration>

@@ -48,7 +48,7 @@ sales carry no tax, and the invoice says so.</td>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>The island's airport receives the air cargo and reports its arrival
 to the carrier and the consignee in UBL status messages.</p>
-<p>In this world it sends 1 and receives 0 documents, and is named in 0
+<p>In this world it sends 2 and receives 0 documents, and is named in 0
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="urgent-spare-frames-by-air-urvania--bayvarra--island-lisavu">Urgent
@@ -82,6 +82,40 @@ document</a>.</p>
 <code>Consignment/CarrierParty</code>; <a href="world-1-xl.html">Velumi
 Trading</a> as <code>Consignment/ConsigneeParty</code>.</p></li>
 </ul>
+<h2
+id="medicines-and-a-technetium-generator-for-the-islands-hospital-by-air-cold-chain-and-radioactive-material">Medicines
+and a technetium generator for the island's hospital, by air (cold chain
+and radioactive material)</h2>
+<p>Selanu General Hospital orders the vaccines for the island's winter
+influenza campaign, insulin, a frozen varicella vaccine and its weekly
+technetium-99m generator from a pharmaceutical wholesaler in Lumeport,
+carriage paid to Selanu airport. The forwarder books the morning flight
+of Monday 15 June: the vaccines and the insulin fly at 2 to 8 °C in the
+airline's active temperature-controlled container, the frozen vaccine in
+an insulated box on dry ice, and the generator, a Type A package of
+radioactive material with a Yellow label, under a shipper's declaration
+of its own, in the aft hold. The wholesaler's own van brings the
+generator to the cargo terminal at 05:30. On the island the customs
+broker declares the import for the hospital, free of duty and exempt
+from the import consumption tax, and the hospital pharmacy's van fetches
+the goods.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
+Status</strong></a> to <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The island's cargo terminal reports the consignment
+arrived, with the temperatures the active container logged on the way
+and the logger's readings attached. <a
+href="example-medicines-12-TransportationStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>,
+<code>Consignment/MainCarriageShipmentStage/TerminalOperatorParty</code>.</p>
+<p>Also mentions: <a href="world-12-xl.html">Kelaro Air Cargo</a> as
+<code>Consignment/CarrierParty</code>; <a href="world-50-xl.html">Selanu
+General Hospital</a> as
+<code>Consignment/ConsigneeParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>SenderParty</code> <code>TerminalOperatorParty</code></p>
@@ -102,6 +136,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d0dda09dbaf8e4c271b10b48a95f82c6f12d9cbe"><code>d0dda09</code></a> of 2026-11-20 09:27 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/a11722a285c46baf6b92e4a2638f932a376ac688"><code>a11722a</code></a> of 2026-11-20 09:28 UTC</p></div></footer>
 </body>
 </html>
