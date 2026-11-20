@@ -177,7 +177,7 @@ Inside `BillToParty`:
 Inside `TransportContract`:
 
 - `ID` = **FRC-CON-2026-005**  
-  The framework contract for container slots, in the carrier's numbering, the same in every document (03#F14).
+  The framework contract for container slots, in the carrier's numbering, the same in every document.
 
 ### Transport Service Provider Response Deadline Period
 

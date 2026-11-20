@@ -349,7 +349,7 @@ Inside `Shipment`:
 - `Consignment/EnvironmentalEmission/ValueMeasure` = **456** (unitCode `KGM`)  
   1,700 kWh times 0.268 kg CO2e per kWh.
 - `Consignment/EnvironmentalEmission/ValueFactorNumeric` = **0.268**  
-  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the default factor for diesel in EN 16258.
+  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the diesel factor used in calculations under ISO 14083.
 - `Consignment/EnvironmentalEmission/ValueBaseMeasure` = **1700** (unitCode `KWH`)  
   The diesel the run used, 170 litres of about 10 kWh, from the haulier's fuel records: about 33 litres per 100 km for the 515 km of the combination loaded.
 - `Consignment/EnvironmentalEmission/Description` = **The loaded run, Gullhaven to Lumeport.**  
@@ -367,7 +367,7 @@ Inside `Shipment`:
 - `Consignment/EnvironmentalEmission/ValueMeasure` = **332** (unitCode `KGM`)  
   1,240 kWh times 0.268 kg CO2e per kWh.
 - `Consignment/EnvironmentalEmission/ValueFactorNumeric` = **0.268**  
-  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the default factor for diesel in EN 16258.
+  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the diesel factor used in calculations under ISO 14083.
 - `Consignment/EnvironmentalEmission/ValueBaseMeasure` = **1240** (unitCode `KWH`)  
   The diesel the run used, 124 litres of about 10 kWh, from the haulier's fuel records: about 24 litres per 100 km for the 515 km of the tanker empty.
 - `Consignment/EnvironmentalEmission/Description` = **The tanker's empty run back to Gullhaven the next day, counted against this consignment: the Coastal State Water Company's greenhouse-gas report asks its suppliers' carriers for the whole round trip.**  

@@ -205,7 +205,7 @@ Inside `TransportExecutionPlanRequestDocumentReference`:
 Inside `TransportContract`:
 
 - `ID` = **FRC-CON-2026-005**  
-  The framework contract for container slots, in the carrier's numbering, the same in every document (03#F14).
+  The framework contract for container slots, in the carrier's numbering, the same in every document.
 - `IssueDate` = **2026-01-05**  
   Signed at the start of the year: the time below has its date.
 - `IssueTime` = **10:00:00-01:00**  

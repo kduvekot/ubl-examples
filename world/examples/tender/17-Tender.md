@@ -47,7 +47,7 @@ Inside `ValidityPeriod`:
 Inside `CallForTenderDocumentReference`:
 
 - `ID` = **PWD/2026/0182**  
-  The call for tenders, by its ID (17#F1, 19#F4).
+  The call for tenders, by its ID.
 
 ### Document Reference
 
@@ -58,7 +58,7 @@ Inside `DocumentReference`:
 - `DocumentType` = **Product data sheet**  
   The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (cited).
 - `ID` = **3900039355**  
-  The certificate of the tender guarantee that covers this tender (17#F12).
+  The certificate of the tender guarantee that covers this tender.
 - `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document. The code is from the Trade Accord's UBL document type list: GuaranteeCertificate = Guarantee Certificate.
 
@@ -317,7 +317,7 @@ Inside `TenderedProject`:
 - `TenderLine/MaximumOrderQuantity` = **60** (unitCode `EA`)  
   At most what its workshop makes in a fortnight.
 - `TenderLine/WarrantyInformation` = **Six years on the frame and the slats.**  
-  The warranty on the bench, as the quality criterion's answer gives it (19#F3).
+  The warranty on the bench, as the quality criterion's answer gives it.
 - `TenderLine/PackLevelCode` = **PALLET** (listID `urn:ubl-examples:world:codelist:PackLevelCode`)  
   The pack level. The code is from the Trade Accord's pack level list: PALLET = Pallet.
 - `TenderLine/DocumentReference/ID` = **BKM-DS-PARK**  

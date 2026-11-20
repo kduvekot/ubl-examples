@@ -25,7 +25,7 @@ The grid operator reads the factory's gas meter and sends the retail company the
 - `IssueDate` = **2026-04-02**  
   Sent with the month's network invoice, the morning after the meters were read.
 - `IssueTime` = **08:20:00-01:00**  
-  Issued in the same billing run as the network invoice it supplements, each citing the other, and before the retail company bills the gas by it (timelines#F8); in the issuer's local time, with its offset from UTC.
+  Issued in the same billing run as the network invoice it supplements, each citing the other, and before the retail company bills the gas by it; in the issuer's local time, with its offset from UTC.
 - `UtilityStatementTypeCode` = **GAS** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of supply. The code is from the Trade Accord's utility type list: GAS = Gas.
 - `Note` = **Bazbaz binmaz gan drek stekraz nalbaz sidir; drek zhek trizhul trul stan huldan drek geltaz.** (languageID `qau`)  

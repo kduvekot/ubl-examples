@@ -44,7 +44,7 @@ A repeat order for the winter, placed before the slow sales were clear.
 Inside `QuotationDocumentReference`:
 
 - `ID` = **26-0080**  
-  The quotation whose prices and repeat-order discount of 3 % the order takes (F5).
+  The quotation whose prices and repeat-order discount of 3 % the order takes.
 
 ### Order Document Reference
 

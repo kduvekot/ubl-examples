@@ -364,8 +364,8 @@ def tax_category(rule, kind=None):
                                               listID=codelists.NATIONAL.format(cc, "TaxExemptionReason"))
         detail = exemption.partition(": ")[2]
         out["TaxExemptionReason"] = (Detail(detail, "Why no tax is charged: the code's meaning and the detail of this "
-                                                    "supply (UBL rule IND6).") if detail else
-                                     V(exemption, "Why no tax is charged, stated rather than left out (UBL rule IND6)."))
+                                                    "supply.") if detail else  # UBL IND6
+                                     V(exemption, "Why no tax is charged, stated rather than left out."))  # UBL IND6
     if kind:
         out["SupplyTypeCode"] = V("GOODS" if kind == "goods" else "SERVICES", "Whether the category applies to goods "
                                                                                "or services.")

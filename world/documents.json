@@ -4467,7 +4467,10 @@
    "doc": "Invoice",
    "from": "34-xb",
    "to": "26-xb",
-   "why": "The water bill for the shop. Water is exempt from the state sales tax, and the invoice says so with the exemption reason: leaving the tax out would say nothing (IND6).",
+   "why": "The water bill for the shop. Water is exempt from the state sales tax, and the invoice says so with the exemption reason: leaving the tax out would say nothing.",
+   "_refs": {
+    "why": "UBL IND6"
+   },
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "26-xb",
@@ -4736,14 +4739,14 @@
    "doc": "Catalogue",
    "from": "7-xu",
    "to": "41-xb",
-   "why": "Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 %. It is numbered after the flow's other documents although it comes first in time.",
+   "why": "Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 %.",
    "parties": {
     "ProviderParty": "7-xu",
     "ReceiverParty": "41-xb",
     "SellerSupplierParty": "7-xu"
    },
    "_refs": {
-    "why": "D41, O193, D28"
+    "why": "D41, O193, D28 (numbered after the flow's other documents although it comes first in time)"
    }
   },
   {

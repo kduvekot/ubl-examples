@@ -6368,14 +6368,14 @@
    "id": "cb-xu",
    "c": "XU",
    "name": "Certification Body (XU)",
-   "what": "An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under a recycled-content scheme that follows EN 15343:2007, as industry schemes such as RecyClass do, and issues their recycled-content certificates; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate.",
+   "what": "An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under the Lumeport Trade Accord's rules for tracing recycled content, and issues the Accord's recycled-content certificates to the plants that meet them; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate.",
    "identity": {
     "name": "Certovira Certification",
     "kind": "company",
     "registry_id": "XU-R-106192"
    },
    "_refs": {
-    "what": "D41, O132"
+    "what": "D41, O132, O265"
    },
    "numbering": {
     "style": "code",

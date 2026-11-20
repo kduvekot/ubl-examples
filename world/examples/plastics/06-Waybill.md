@@ -429,7 +429,7 @@ Inside `Shipment`:
 - `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
   Greenhouse gases as CO2 equivalent. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
 - `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/ValueMeasure` = **1447** (unitCode `KGM`)  
-  Tank to wheel: the 5,400 kWh of diesel allocated to the goods times 0.268 kg CO2e per kWh, about 2.67 kg per litre of diesel of about 10 kWh, the order of the default factor for diesel in EN 16258.
+  Tank to wheel: the 5,400 kWh of diesel allocated to the goods times 0.268 kg CO2e per kWh, about 2.67 kg per litre of diesel of about 10 kWh, the order of the diesel factor used in calculations under ISO 14083.
 
 ### Document Reference
 

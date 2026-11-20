@@ -277,7 +277,7 @@ Inside `ProcurementProject`:
 - `ID` = **PWD/2026/PARKS**  
   The project's identifier.
 - `Name` = **Park benches for the parks renewal programme**  
-  The project's name, the same in every document (08#F6).
+  The project's name, the same in every document.
 - `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.**  
   What is bought; each lot describes its own part.
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  

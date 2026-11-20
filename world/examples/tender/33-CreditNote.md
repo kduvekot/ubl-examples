@@ -29,7 +29,7 @@ One bench was damaged during installation and rejected on acceptance; the manufa
 - `CreditNoteTypeCode` = **381** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 381: credit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 381 = Credit note.
 - `Note` = **Credit for the bench rejected as damaged on acceptance, with its share of the colour charge; deducted from the payment of the invoice.**  
-  Why it credits and how it is settled, once (F12).
+  Why it credits and how it is settled, once.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  

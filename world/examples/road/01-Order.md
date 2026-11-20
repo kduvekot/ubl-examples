@@ -345,7 +345,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
-  Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the order names the warehouse where the goods are collected and the carrier that collects them (UBL rule IND6: the delivery terms are stated, not implied). The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
+  Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the order names the warehouse where the goods are collected and the carrier that collects them: the delivery terms are stated, not implied. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `DeliveryLocation/Description` = **Castrano Logistics warehouse, Conciaro**  

@@ -29,7 +29,7 @@ The cargo missed the afternoon flight of 13 May; the despatch advice, which name
 - `Note` = **A new despatch advice follows this evening.**  
   What happens next.
 - `CancellationNote` = **The cargo reached the cargo terminal after the cut-off for the afternoon flight KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new despatch advice.**  
-  Why the despatch advice is cancelled: the flight and the arrival it gave no longer hold (F7).
+  Why the despatch advice is cancelled: the flight and the arrival it gave do not hold.
 
 ### Despatch Document Reference
 

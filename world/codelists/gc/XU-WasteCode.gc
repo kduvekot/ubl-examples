@@ -47,7 +47,7 @@
             <SimpleValue>Serkrir stan skankek zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 01 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 01 in the printed list.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -61,7 +61,7 @@
             <SimpleValue>Kekir zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 02 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 02 in the printed list.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -75,7 +75,7 @@
             <SimpleValue>Zhendul zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 03 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 03 in the printed list.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -89,7 +89,7 @@
             <SimpleValue>Bikmek zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 04 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 04 in the printed list.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -103,7 +103,7 @@
             <SimpleValue>Dukstan zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 05 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 05 in the printed list.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -117,7 +117,7 @@
             <SimpleValue>Krennan zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 06 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 06 in the printed list.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -131,7 +131,7 @@
             <SimpleValue>Hezkan zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 07 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 07 in the printed list.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -145,7 +145,7 @@
             <SimpleValue>Trilbaz zulskir</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>15 01 09 of the European List of Waste.</SimpleValue>
+            <SimpleValue>15 01 09 in the printed list.</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>

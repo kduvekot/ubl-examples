@@ -928,8 +928,8 @@ def item_property(pr, src):
         out["ImportanceCode"] = V(pr["importance"], "How much the property matters in describing the item.")
     if pr.get("list"):
         out["ListValue"] = V(pr["list"][0], "The property's value, taken from the maker's list of values ("
-                                            f"{', '.join(pr['list'])}; {src}). One ListValue only: UBL rule IND7 "
-                                            "allows a second one only in another language.")
+                                            f"{', '.join(pr['list'])}; {src}). One ListValue only: a second one "
+                                            "may stand only in another language.")  # UBL IND7
     if pr.get("usable"):
         n_, unit, why = pr["usable"]
         out["UsabilityPeriod"] = {"DurationMeasure": V(n_, why, unitCode=unit)}
@@ -1161,7 +1161,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if maker.get("keywords"):
         out["Keyword"] = V(", ".join(maker["keywords"]), "The search string buyers find the item by, the maker's "
                                                           f"keywords in one element; {msrc}. A second Keyword would "
-                                                          "have to be in another language (UBL rule IND7).")
+                                                          "have to be in another language.")  # UBL IND7
     bowner = PARTY[maker["brand_owner"]]["identity"]["name"] if maker.get("brand_owner") else None
     if maker.get("brand") and bowner:      # a private label: the brand is the owner's, the maker makes it (D7)
         out["BrandName"] = V(maker["brand"], f"The brand the item is sold under: {maker['brand']}, the own label of "
@@ -2440,7 +2440,7 @@ def import_from_abroad(content, doc, c, country, goods):
                                                   "vaccines supplied to a public hospital.",  # O201
                                             listID=codelists.NATIONAL.format("XL", "TaxExemptionReason")),
                 "TaxExemptionReason": V("Medicines and vaccines for a public hospital", "Why no tax is charged, "
-                                        "stated rather than left out (UBL rule IND6)."),
+                                        "stated rather than left out."),  # UBL IND6
                 "TaxScheme": {"ID": V("IMP", "The island's import consumption tax, as the world codes it."),
                               "TaxTypeCode": V("CONSUMPTION", "A tax on consumption, charged at import.")}}
     origins = sorted({kit_maker(ITEM_BY_NAME[g["Description"].value])["origin"] for g in goods})

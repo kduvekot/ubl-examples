@@ -687,9 +687,9 @@ only with its issuer, such as an environmental, medical or sanitation
 certificate or the X.509 certificate of an access point, has no `schemeID`
 and names its issuer in `IssuerParty`. Rinova's granulate, for example, is
 certified for its recycled content by Certovira Certification, an accredited
-certification body in Ferrano that audits the plant every year under a
-recycled-content scheme following EN 15343:2007, as industry schemes such as
-RecyClass do; the certificate travels in the product information Rinova sends
+certification body in Ferrano that audits the plant every year under the
+Trade Accord's rules for tracing recycled content and issues the Accord's
+recycled-content certificate; the certificate travels in the product information Rinova sends
 its buyer, not in the order, the invoice or the customs declaration.
 
 Payment cards follow ISO/IEC 7812 in a range real cards cannot use: the
@@ -914,9 +914,8 @@ build checks it.
 its register, its number in it, its legal form and its registered office on
 its invoices and business letters. An SUA also states its share capital as
 paid up, as the last balance sheet shows it, as Italian law asks of
-companies limited by shares (art. 2250 codice civile). Bayvarra and Lisavu
-follow the EU company-law directive (2017/1132, Art. 26), under which
-stating the capital is optional, and their companies leave it out. So only
+companies limited by shares (art. 2250 codice civile). In Bayvarra and
+Lisavu stating the capital is optional, and their companies leave it out. So only
 an Urvanian SUA's own invoices carry its share capital.
 
 ## Items
@@ -1626,8 +1625,7 @@ of a national reporting point for waste. Urvania's environment agency is the
 competent authority: it issues the permits of waste treatment plants,
 registers waste carriers, and receives two reports. The producer notifies
 its waste stream for a year before the first load (the waste by its code in
-Urvania's waste list, which takes over the numbers and the rules of the
-European List of Waste, the planned total, the number of loads, the period,
+Urvania's own waste list, the planned total, the number of loads, the period,
 the loading place and the facility), and the agency acknowledges it with a
 waste-stream number; a domestic stream of non-hazardous waste for recovery
 needs no consent. The facility then reports each load it receives, with its

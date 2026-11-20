@@ -241,7 +241,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-1**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -313,7 +313,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-2**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -367,7 +367,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-3**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -391,7 +391,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-4**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -415,7 +415,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-5**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -439,7 +439,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-6**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  

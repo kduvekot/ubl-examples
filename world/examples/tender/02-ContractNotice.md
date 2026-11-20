@@ -225,7 +225,7 @@ Inside `TenderingTerms`:
 - `MaximumAdvertisementAmount` = **500.00** (currencyID `XBL`)  
   The most the winner pays for publishing the award, as the note says: read as the advertising cost the awardee bears.
 - `Note` = **Questions through the platform only. The winner bears the cost of publishing the award notice, up to 500 lume. Paper copies of the documents cost 50 lume; the electronic documents are free.**  
-  How to ask, who pays the publication, and the documentation fee in words (F19).
+  How to ask, who pays the publication, and the documentation fee in words.
 - `PaymentFrequencyCode` = **PERRELEASE** (listID `urn:ubl-examples:world:codelist:PaymentFrequencyCode`)  
   Payment after each release. The code is from the Trade Accord's payment frequency list: PERRELEASE = After each release.
 - `EconomicOperatorRegistryURI` = **https://register.bayvarra.example**  
@@ -633,9 +633,9 @@ Inside `ProcurementProject`:
 - `ID` = **PWD/2026/PARKS**  
   The project's identifier.
 - `Name` = **Park benches for the parks renewal programme** (languageID `en-XB`)  
-  The project's name, the same in every document (08#F6).
+  The project's name, the same in every document.
 - `Name` = **Haz guknaz gan drek zatir nezsan naktran** (languageID `qau`)  
-  The same in Urvanian, the notice's additional language: The project's name, the same in every document (08#F6).
+  The same in Urvanian, the notice's additional language: The project's name, the same in every document.
 - `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.** (languageID `en-XB`)  
   What is bought; each lot describes its own part.
 - `Description` = **240 haz guknaz vek vazzhan drezskir dratrir stan serskek kalnan nartran kan stezskir, zhentran vek haskek tarkul ziztan stan banvir.** (languageID `qau`)  
@@ -786,7 +786,7 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/ID` = **LOT-1**  
   The project's identifier.
 - `ProcurementProject/Name` = **Park benches**  
-  The project's name, the same in every document (08#F6).
+  The project's name, the same in every document.
 - `ProcurementProject/Description` = **240 park benches with galvanised metal frames and hardwood slats, each with its ground anchor set, delivered in releases over two years.**  
   What is bought; each lot describes its own part.
 - `ProcurementProject/ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
@@ -916,7 +916,7 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/ID` = **LOT-2**  
   The project's identifier.
 - `ProcurementProject/Name` = **Installation of the benches**  
-  The project's name, the same in every document (08#F6).
+  The project's name, the same in every document.
 - `ProcurementProject/Description` = **The assembly and anchoring in the ground of the 240 benches in the parks of Lumeport, release by release, over two years.**  
   What is bought; each lot describes its own part.
 - `ProcurementProject/ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  

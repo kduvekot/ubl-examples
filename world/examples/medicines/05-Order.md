@@ -160,7 +160,7 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside the European Union**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  Why no tax is charged, stated rather than left out.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 

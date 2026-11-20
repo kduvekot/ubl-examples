@@ -2,7 +2,7 @@
 
 *Example 6 of the flow "Electricity, water and telecom (one utility in each country)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-The water bill for the shop. Water is exempt from the state sales tax, and the invoice says so with the exemption reason: leaving the tax out would say nothing (IND6).
+The water bill for the shop. Water is exempt from the state sales tax, and the invoice says so with the exemption reason: leaving the tax out would say nothing.
 
 [The XML file](06-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

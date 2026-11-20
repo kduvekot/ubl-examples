@@ -457,7 +457,7 @@ Inside `CatalogueLine`:
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.**  
   What comes with the item.
 - `Item/Keyword` = **park bench, street furniture**  
-  The search string buyers find the item by, the maker's keywords in one element; as Valdara Industries describes the item. A second Keyword would have to be in another language (UBL rule IND7).
+  The search string buyers find the item by, the maker's keywords in one element; as Valdara Industries describes the item. A second Keyword would have to be in another language.
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; as Valdara Industries describes the item.
 - `Item/ModelName` = **Serra 180**  
@@ -523,7 +523,7 @@ Inside `CatalogueLine`:
 - `Item/AdditionalItemProperty/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
   How much the property matters in describing the item. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  The property's value, taken from the maker's list of values (Ferro grey, Moss green; as Valdara Industries describes the item). One ListValue only: UBL rule IND7 allows a second one only in another language.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; as Valdara Industries describes the item). One ListValue only: a second one may stand only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  

@@ -25,7 +25,7 @@ The granulate leaves Urvania; the waste processor declares the export.
 - `IssueDate` = **2026-04-20**  
   Declared the day the barge is loaded.
 - `IssueTime` = **12:40:00-01:00**  
-  Before the bags are loaded, so that customs releases them before the barge leaves (timelines#F6); in the issuer's local time, with its offset from UTC.
+  While the bags are loaded, so that customs releases them before the barge leaves; in the issuer's local time, with its offset from UTC.
 - `ExportTypeCode` = **PERMANENT** (listID `urn:ubl-examples:world:codelist:ExportTypeCode`)  
   A permanent export: the goods are sold abroad. The code is from the Trade Accord's export type list: PERMANENT = Permanent export.
 - `ExportReasonCode` = **SALE** (listID `urn:ubl-examples:world:codelist:ExportReasonCode`)  

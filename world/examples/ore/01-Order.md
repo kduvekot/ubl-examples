@@ -258,7 +258,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
-  Free carrier at the mine: the buyer arranges and pays the main transport, so the order names the carrier the buyer has booked. Stated, because leaving it out would carry no meaning (UBL rule IND6). The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
+  Free carrier at the mine: the buyer arranges and pays the main transport, so the order names the carrier the buyer has booked. Stated, because leaving it out would carry no meaning. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **XUFNT** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `DeliveryLocation/Description` = **Fucinalta mine siding**  

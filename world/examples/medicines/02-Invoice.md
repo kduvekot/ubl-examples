@@ -221,7 +221,7 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Zero-rated export supply**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  Why no tax is charged, stated rather than left out.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: goods and services tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: GST = Goods and services tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -261,7 +261,7 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Zero-rated export supply**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  Why no tax is charged, stated rather than left out.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
@@ -289,7 +289,7 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Zero-rated export supply**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  Why no tax is charged, stated rather than left out.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
@@ -317,7 +317,7 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Zero-rated export supply**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  Why no tax is charged, stated rather than left out.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  

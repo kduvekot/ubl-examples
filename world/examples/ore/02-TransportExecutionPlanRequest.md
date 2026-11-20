@@ -188,7 +188,7 @@ Inside `TransportExecutionPlanDocumentReference`:
 - `ID` = **9500054909**  
   The standing plan for the ore season, agreed in January (not shown).
 - `DocumentDescription` = **The standing plan for 2026 provides one train a month of 30 wagons, about 1,800 t; this request books March's train, for this month's call-off of 1,800 t, in the loading window of 10 to 13 March.**  
-  How this request updates the standing plan (F5).
+  How this request updates the standing plan.
 
 ### Transport Service Description Document Reference
 

@@ -37,7 +37,7 @@ The buyer's 3PL confirms what arrived, for the buyer.
 - `RejectActionCode` = **CREDIT** (listID `urn:ubl-examples:world:codelist:RejectActionCode`)  
   A credit is asked for the refused goods. The code is from the Trade Accord's reject action list: CREDIT = Credit requested.
 - `Note` = **Counted and checked at goods-in. The container was collected from the port on 19 May, the day after customs released it; one frame is refused as damaged, and we pass on Velumi Trading's request for its credit.**  
-  What the receipt says: when the on-carriage took place (timelines#F7), and that the 3PL relays the buyer's request for a credit, not its own.
+  What the receipt says: when the on-carriage took place, and that the 3PL relays the buyer's request for a credit, not its own.
 - `LineCountNumeric` = **3**  
   The number of lines.
 

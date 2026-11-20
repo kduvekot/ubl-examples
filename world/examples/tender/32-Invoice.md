@@ -64,7 +64,7 @@ Inside `DespatchDocumentReference`:
 Inside `ContractDocumentReference`:
 
 - `ID` = **PWD-CONTRACT-2026-PARKS**  
-  The framework contract the release is ordered under, by its own number (32#F19).
+  The framework contract the release is ordered under, by its own number.
 
 ### Project Reference
 

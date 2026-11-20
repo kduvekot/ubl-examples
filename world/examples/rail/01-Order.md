@@ -173,7 +173,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
-  Delivered at place, the distributor's rail siding: the seller arranges and pays the carriage, so the order names no carrier (UBL rule IND6: the terms say who transports, not a missing carrier). The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
+  Delivered at place, the distributor's rail siding: the seller arranges and pays the carriage, so the order names no carrier: the terms say who transports, not a missing carrier. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **9520610900015** (schemeID `GS1 GLN`)  
   The place's identifier, as the world gives it wherever the place appears (a GLN).
 - `DeliveryLocation/Description` = **Rail siding of Lumeway Distribution, Marrowdale**  
