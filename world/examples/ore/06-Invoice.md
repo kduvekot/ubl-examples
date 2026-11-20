@@ -235,8 +235,8 @@ Inside `Delivery`:
 
 - `ActualDeliveryDate` = **2026-03-10**  
   The day the train was delivered in the factory's siding, the first day of the window: why the bonus is due.
-- `ActualDeliveryTime` = **14:18:00**  
-  As the consignment note records it.
+- `ActualDeliveryTime` = **14:18:00-01:00**  
+  As the consignment note records it; in the local time of Urvania, where it happens, with its offset from UTC.
 - `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `DeliveryLocation/Name` = **Valdara Industries works siding, Ferrano**  
@@ -595,7 +595,7 @@ Inside `InvoiceLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
-    <cbc:ActualDeliveryTime>14:18:00</cbc:ActualDeliveryTime>
+    <cbc:ActualDeliveryTime>14:18:00-01:00</cbc:ActualDeliveryTime>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>

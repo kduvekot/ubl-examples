@@ -180,6 +180,10 @@
     <cac:FiscalLegislationDocumentReference>
       <cbc:ID>XB-STT-ACT</cbc:ID>
     </cac:FiscalLegislationDocumentReference>
+    <cac:FiscalLegislationDocumentReference>
+      <cbc:ID>XB-WHT-ACT</cbc:ID>
+      <cbc:DocumentDescription>Tenders are priced without tax. For services performed by a tenderer established outside Bayvarra, the department withholds 10 % of the price of those services as tax at source and pays it to the state for the supplier; such a tenderer appoints a tax representative in Bayvarra.</cbc:DocumentDescription>
+    </cac:FiscalLegislationDocumentReference>
     <cac:EnvironmentalLegislationDocumentReference>
       <cbc:ID>XB-ENV-2021</cbc:ID>
     </cac:EnvironmentalLegislationDocumentReference>

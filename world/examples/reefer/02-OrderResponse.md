@@ -41,8 +41,8 @@ Inside `ValidityPeriod`:
 
 - `EndDate` = **2026-04-17**  
   The changed mix is offered until Friday 17 April, ...
-- `EndTime` = **12:00:00**  
-  ... at noon: the cooperative's cut-off for booking the reefer on the sailing of Thursday 23 April; after it the offer lapses and the fruit would go on a later ship.
+- `EndTime` = **12:00:00-01:00**  
+  ... at noon: the cooperative's cut-off for booking the reefer on the sailing of Thursday 23 April; after it the offer lapses and the fruit would go on a later ship; in the issuer's local time, with its offset from UTC.
 
 ### Order Reference
 
@@ -282,7 +282,7 @@ Inside `OrderLine`:
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-04-17</cbc:EndDate>
-    <cbc:EndTime>12:00:00</cbc:EndTime>
+    <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
   </cac:ValidityPeriod>
   <cac:OrderReference>
     <cbc:ID>26-0215</cbc:ID>

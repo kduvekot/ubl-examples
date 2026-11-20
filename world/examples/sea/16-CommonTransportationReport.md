@@ -298,8 +298,8 @@ Inside `Shipment`:
   The requested arrival.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceDate` = **2026-05-17**  
   The morning after the ship comes off the port: Selanu's pilots take ships in by daylight only.
-- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceTime` = **06:00:00**  
-  At first light, in island time.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceTime` = **06:00:00+00:00**  
+  At first light, in island time, with its offset from UTC.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/TypeCode` = **ARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   An arrival. The code is from the Trade Accord's transport event type list: ARRIVAL = Arrival.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/Description` = **Pilot on board at the fairway buoy.**  
@@ -580,12 +580,12 @@ Inside `Shipment`:
   What the ship did.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartDate` = **2026-05-13**  
   The day of the bunkering.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartTime` = **05:40:00**  
-  The barge made fast.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/StartTime` = **05:40:00-01:00**  
+  The barge made fast; in the issuer's local time, with its offset from UTC.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndDate` = **2026-05-13**  
   The same morning.
-- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndTime` = **08:15:00**  
-  The barge cast off.
+- `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Period/EndTime` = **08:15:00-01:00**  
+  The barge cast off; in the issuer's local time, with its offset from UTC.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/Name` = **Lumeport anchorage**  
   Where the barge came alongside.
 - `ShipmentStage/ISPSRequirements/ShipToShipActivityRecord/Location/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
@@ -1004,7 +1004,7 @@ Inside `Signature`:
         <cac:RequestedArrivalEvent>
           <cbc:IdentificationID>ARR-XLSEL-0517</cbc:IdentificationID>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>06:00:00+00:00</cbc:OccurrenceTime>
           <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TypeCode>
           <cbc:Description>Pilot on board at the fairway buoy.</cbc:Description>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
@@ -1254,9 +1254,9 @@ Inside `Signature`:
           </cac:AppliedSecurityMeasure>
           <cac:Period>
             <cbc:StartDate>2026-05-13</cbc:StartDate>
-            <cbc:StartTime>05:40:00</cbc:StartTime>
+            <cbc:StartTime>05:40:00-01:00</cbc:StartTime>
             <cbc:EndDate>2026-05-13</cbc:EndDate>
-            <cbc:EndTime>08:15:00</cbc:EndTime>
+            <cbc:EndTime>08:15:00-01:00</cbc:EndTime>
           </cac:Period>
           <cac:Location>
             <cbc:Name>Lumeport anchorage</cbc:Name>

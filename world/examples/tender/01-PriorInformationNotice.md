@@ -270,6 +270,10 @@ Inside `TenderingTerms`:
   Bayvarra's public procurement act.
 - `FiscalLegislationDocumentReference/ID` = **XB-STT-ACT**  
   The state sales tax acts.
+- `FiscalLegislationDocumentReference/ID` = **XB-WHT-ACT**  
+  Bayvarra's act on the tax withheld at source, which a public body applies to the services of a business not established in Bayvarra.
+- `FiscalLegislationDocumentReference/DocumentDescription` = **Tenders are priced without tax. For services performed by a tenderer established outside Bayvarra, the department withholds 10 % of the price of those services as tax at source and pays it to the state for the supplier; such a tenderer appoints a tax representative in Bayvarra.**  
+  What the department withholds from a tenderer's price under the act: tenders are priced without tax, and a tenderer from abroad knows what it will be paid.
 - `EnvironmentalLegislationDocumentReference/ID` = **XB-ENV-2021**  
   The environmental act.
 - `EmploymentLegislationDocumentReference/ID` = **XB-LAB-2018**  
@@ -872,6 +876,10 @@ Inside `ProcurementProjectLot`:
     </cac:ProcurementLegislationDocumentReference>
     <cac:FiscalLegislationDocumentReference>
       <cbc:ID>XB-STT-ACT</cbc:ID>
+    </cac:FiscalLegislationDocumentReference>
+    <cac:FiscalLegislationDocumentReference>
+      <cbc:ID>XB-WHT-ACT</cbc:ID>
+      <cbc:DocumentDescription>Tenders are priced without tax. For services performed by a tenderer established outside Bayvarra, the department withholds 10 % of the price of those services as tax at source and pays it to the state for the supplier; such a tenderer appoints a tax representative in Bayvarra.</cbc:DocumentDescription>
     </cac:FiscalLegislationDocumentReference>
     <cac:EnvironmentalLegislationDocumentReference>
       <cbc:ID>XB-ENV-2021</cbc:ID>

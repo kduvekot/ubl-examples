@@ -222,7 +222,7 @@
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
     <cac:TenderSubmissionDeadlinePeriod>
       <cbc:EndDate>2026-06-12</cbc:EndDate>
-      <cbc:EndTime>12:00:00</cbc:EndTime>
+      <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
       <cbc:EndDate>2026-04-17</cbc:EndDate>

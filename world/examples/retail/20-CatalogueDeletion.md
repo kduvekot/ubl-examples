@@ -30,8 +30,8 @@ The distributor's winter catalogue takes over on 20 June, the start of winter in
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `EffectiveDate` = **2026-06-20**  
   From Saturday 20 June, the first day of winter in the south.
-- `EffectiveTime` = **00:00:00**  
-  From midnight: the one statement of when the deletion takes effect.
+- `EffectiveTime` = **00:00:00-01:00**  
+  From midnight: the one statement of when the deletion takes effect; in the issuer's local time, with its offset from UTC.
 - `Note` = **Lumeway's winter catalogue 2026 takes over on 20 June.**  
   Why.
 - `VersionID` = **1.2**  
@@ -49,12 +49,12 @@ Inside `DeletedCatalogueReference`:
   The catalogue's UUID, as stated in the catalogue.
 - `IssueDate` = **2026-04-20**  
   Its issue date.
-- `IssueTime` = **09:00:00**  
-  And time, as the catalogue states it.
+- `IssueTime` = **09:00:00-01:00**  
+  And time, as the catalogue states it; in the issuer's local time, with its offset from UTC.
 - `RevisionDate` = **2026-05-21**  
   Revised by the specification update of the bench.
-- `RevisionTime` = **08:30:00**  
-  At that time.
+- `RevisionTime` = **08:30:00-01:00**  
+  At that time; in the issuer's local time, with its offset from UTC.
 - `Note` = **Lumeway's catalogue for the Lumeport store, 2026.**  
   Which catalogue: one Lumeway issued for the store's reopened home and garden department.
 - `Description` = **Benches and spare parts for resale.**  
@@ -257,7 +257,7 @@ Inside `ContractorCustomerParty`:
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
   <cbc:IssueTime>17:05:00-01:00</cbc:IssueTime>
   <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
-  <cbc:EffectiveTime>00:00:00</cbc:EffectiveTime>
+  <cbc:EffectiveTime>00:00:00-01:00</cbc:EffectiveTime>
   <cbc:Note>Lumeway's winter catalogue 2026 takes over on 20 June.</cbc:Note>
   <cbc:VersionID>1.2</cbc:VersionID>
   <cbc:Description>The catalogue for the Lumeport store is no longer valid from 20 June.</cbc:Description>
@@ -265,9 +265,9 @@ Inside `ContractorCustomerParty`:
     <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-    <cbc:IssueTime>09:00:00</cbc:IssueTime>
+    <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
-    <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
+    <cbc:RevisionTime>08:30:00-01:00</cbc:RevisionTime>
     <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.2</cbc:VersionID>

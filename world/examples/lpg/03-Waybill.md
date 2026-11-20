@@ -282,14 +282,14 @@ Inside `Shipment`:
   When it was weighed.
 - `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-06-10**  
   The tanker leaves the plant once loaded and weighed.
-- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **07:00:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **07:00:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name` = **Kelpstone Gas plant, Gullhaven, LPG loading bay**  
   The plant's loading bay.
 - `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-06-10**  
   About 515 km at about 65 km/h, with the driver's break of 45 minutes.
-- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **15:40:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **15:40:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Coastal State Water Company, district heating plant, Reservoir Road, Lumeport**  
   The boiler house's storage.
 - `Consignment/MainCarriageShipmentStage/DriverPerson/FirstName` = **Rowan**  
@@ -623,14 +623,14 @@ Inside `Signature`:
         </cac:TransportMeans>
         <cac:PlannedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-06-10</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>07:00:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>Kelpstone Gas plant, Gullhaven, LPG loading bay</cbc:Name>
           </cac:Location>
         </cac:PlannedDepartureTransportEvent>
         <cac:PlannedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-06-10</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>15:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>15:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>Coastal State Water Company, district heating plant, Reservoir Road, Lumeport</cbc:Name>
           </cac:Location>

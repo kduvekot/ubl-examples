@@ -283,7 +283,7 @@
         </cac:UnloadingPortLocation>
         <cac:AcceptanceTransportEvent>
           <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>17:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>17:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -318,7 +318,7 @@
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
           <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>17:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>17:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -525,7 +525,7 @@
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0422</cbc:ID>
             <cbc:WeighingDate>2026-04-22</cbc:WeighingDate>
-            <cbc:WeighingTime>11:30:00</cbc:WeighingTime>
+            <cbc:WeighingTime>11:30:00-01:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>HRW-SCALE-02</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Pallet scale</cbc:WeighingDeviceType>

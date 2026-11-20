@@ -248,8 +248,8 @@ Inside `Shipment`:
   The shipment received.
 - `Delivery/ActualDeliveryDate` = **2026-03-25**  
   Unloaded at dock 4.
-- `Delivery/ActualDeliveryTime` = **09:40:00**  
-  Within the slot.
+- `Delivery/ActualDeliveryTime` = **09:40:00-01:00**  
+  Within the slot; in the issuer's local time, with its offset from UTC.
 
 ### Receipt Line
 
@@ -522,7 +522,7 @@ Inside `ReceiptLine`:
     <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-03-25</cbc:ActualDeliveryDate>
-      <cbc:ActualDeliveryTime>09:40:00</cbc:ActualDeliveryTime>
+      <cbc:ActualDeliveryTime>09:40:00-01:00</cbc:ActualDeliveryTime>
     </cac:Delivery>
   </cac:Shipment>
   <cac:ReceiptLine>

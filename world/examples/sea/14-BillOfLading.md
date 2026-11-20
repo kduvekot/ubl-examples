@@ -456,8 +456,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceDate` = **2026-05-17**  
   The container is available at Selanu.
-- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceTime` = **14:00:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/OccurrenceTime` = **14:00:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `Consignment/MainCarriageShipmentStage/AvailabilityTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
@@ -468,8 +468,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/MainCarriageShipmentStage/StorageTransportEvent/OccurrenceDate` = **2026-05-13**  
   Stacked at the quay until loading.
-- `Consignment/MainCarriageShipmentStage/StorageTransportEvent/OccurrenceTime` = **10:30:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/StorageTransportEvent/OccurrenceTime` = **10:30:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/StorageTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/StorageTransportEvent/Location/Name` = **Port of Lumeport**  
@@ -478,8 +478,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceDate` = **2026-05-13**  
   The terminal accepted the container.
-- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceTime` = **10:15:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceTime` = **10:15:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/Location/Name` = **Port of Lumeport**  
@@ -520,8 +520,8 @@ Inside `Shipment`:
   The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceDate` = **2026-05-13**  
   The container was dropped at the container quay.
-- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **10:15:00**  
-  The local time.
+- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **10:15:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/Name` = **Port of Lumeport**  
@@ -916,8 +916,8 @@ Inside `Shipment`:
   The shipper's weight declaration.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDate` = **2026-05-12**  
   Weighed when packed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **15:30:00**  
-  After closing the doors.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **15:30:00-01:00**  
+  After closing the doors; in the issuer's local time, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode` = **SM2** (listID `IMO SOLAS`)  
   SOLAS method 2: the cargo and packing weighed and added to the tare. The code is from UBL's default Weighing method (IMO SOLAS) list: SM2 = SOLAS verification method 2.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID` = **LMW-SCALE-03**  
@@ -1466,7 +1466,7 @@ Inside `Signature`:
         </cac:UnloadingPortLocation>
         <cac:AvailabilityTransportEvent>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>14:00:00+00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
@@ -1480,7 +1480,7 @@ Inside `Signature`:
         </cac:AvailabilityTransportEvent>
         <cac:StorageTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:30:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -1493,7 +1493,7 @@ Inside `Signature`:
         </cac:StorageTransportEvent>
         <cac:AcceptanceTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:15:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -1540,7 +1540,7 @@ Inside `Signature`:
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:15:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -1835,7 +1835,7 @@ Inside `Signature`:
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0510</cbc:ID>
             <cbc:WeighingDate>2026-05-12</cbc:WeighingDate>
-            <cbc:WeighingTime>15:30:00</cbc:WeighingTime>
+            <cbc:WeighingTime>15:30:00-01:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>LMW-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>

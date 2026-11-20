@@ -352,8 +352,8 @@ Inside `CustomsDeclaration`:
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Bayforth Forwarding gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
   The timetable departure from Lumeport.
-- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **18:00:00**  
-  The local time.
+- `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **18:00:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
@@ -751,7 +751,7 @@ Inside `Signature`:
         </cac:CustomsAgentParty>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>

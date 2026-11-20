@@ -296,8 +296,8 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/ActualPickupTransportEvent/OccurrenceDate` = **2026-03-23**  
   When the carrier took over the goods.
-- `Consignment/ActualPickupTransportEvent/OccurrenceTime` = **15:05:00**  
-  The local time.
+- `Consignment/ActualPickupTransportEvent/OccurrenceTime` = **15:05:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/ActualPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/ActualPickupTransportEvent/Location/Name` = **Ferrano**  
@@ -334,12 +334,12 @@ Inside `Shipment`:
   A carriage between two countries, not within a foreign one.
 - `Consignment/MainCarriageShipmentStage/EstimatedDeliveryDate` = **2026-03-25**  
   The carrier's estimate when it takes over the goods: the goods-in slot of the third day. The leg is 174 km, about three hours' driving, but the truck reaches the border about 17:20, after the distributor's customs desk has closed, so the driver takes his night rest at the border and the import is declared in the morning; the distribution centre takes full loads in morning slots only, and the slot booked a week ahead is the next morning's.
-- `Consignment/MainCarriageShipmentStage/EstimatedDeliveryTime` = **09:00:00**  
-  Early in the working day.
+- `Consignment/MainCarriageShipmentStage/EstimatedDeliveryTime` = **09:00:00-01:00**  
+  Early in the working day; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/RequiredDeliveryDate` = **2026-03-25**  
   The distributor's goods-in slot.
-- `Consignment/MainCarriageShipmentStage/RequiredDeliveryTime` = **10:00:00**  
-  By the end of the goods-in slot, 09:00 to 10:00; the latest delivery time of the note is the same.
+- `Consignment/MainCarriageShipmentStage/RequiredDeliveryTime` = **10:00:00-01:00**  
+  By the end of the goods-in slot, 09:00 to 10:00; the latest delivery time of the note is the same; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/TransitPeriod/StartDate` = **2026-03-23**  
   Collected in the afternoon; the stage has begun when the carrier takes over the goods.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
@@ -376,8 +376,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
   Expected once customs has released the export declaration and the truck may leave.
-- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **16:20:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/Name` = **Ferrano**  
@@ -3308,16 +3308,16 @@ Inside `Shipment`:
   The pieces taken over.
 - `Delivery/LatestDeliveryDate` = **2026-03-25**  
   The goods-in slot cannot move.
-- `Delivery/LatestDeliveryTime` = **10:00:00**  
-  The end of the slot, the time the delivery is required by.
+- `Delivery/LatestDeliveryTime` = **10:00:00-01:00**  
+  The end of the slot, the time the delivery is required by; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Delivery/TrackingID` = **TH-26-04471**  
   Track the truck with the carrier's job number.
 - `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-03-25**  
   The morning of the third day.
-- `Delivery/EstimatedDeliveryPeriod/StartTime` = **09:00:00**  
-  From nine, when the slot opens.
-- `Delivery/EstimatedDeliveryPeriod/EndTime` = **10:00:00**  
-  Until ten, when it closes.
+- `Delivery/EstimatedDeliveryPeriod/StartTime` = **09:00:00-01:00**  
+  From nine, when the slot opens; in the issuer's local time, with its offset from UTC.
+- `Delivery/EstimatedDeliveryPeriod/EndTime` = **10:00:00-01:00**  
+  Until ten, when it closes; in the issuer's local time, with its offset from UTC.
 - `ReturnAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `ReturnAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
@@ -3603,7 +3603,7 @@ Inside `Signature`:
       </cac:CustomsDeclaration>
       <cac:ActualPickupTransportEvent>
         <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>15:05:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Ferrano</cbc:Name>
@@ -3644,9 +3644,9 @@ Inside `Signature`:
         <cbc:TransitDirectionCode listID="urn:ubl-examples:world:codelist:TransitDirectionCode">EXPORT</cbc:TransitDirectionCode>
         <cbc:CabotageIndicator>false</cbc:CabotageIndicator>
         <cbc:EstimatedDeliveryDate>2026-03-25</cbc:EstimatedDeliveryDate>
-        <cbc:EstimatedDeliveryTime>09:00:00</cbc:EstimatedDeliveryTime>
+        <cbc:EstimatedDeliveryTime>09:00:00-01:00</cbc:EstimatedDeliveryTime>
         <cbc:RequiredDeliveryDate>2026-03-25</cbc:RequiredDeliveryDate>
-        <cbc:RequiredDeliveryTime>10:00:00</cbc:RequiredDeliveryTime>
+        <cbc:RequiredDeliveryTime>10:00:00-01:00</cbc:RequiredDeliveryTime>
         <cac:TransitPeriod>
           <cbc:StartDate>2026-03-23</cbc:StartDate>
         </cac:TransitPeriod>
@@ -3692,7 +3692,7 @@ Inside `Signature`:
         </cac:UnloadingPortLocation>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>16:20:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano</cbc:Name>
@@ -6252,12 +6252,12 @@ Inside `Signature`:
     </cac:GoodsItem>
     <cac:Delivery>
       <cbc:LatestDeliveryDate>2026-03-25</cbc:LatestDeliveryDate>
-      <cbc:LatestDeliveryTime>10:00:00</cbc:LatestDeliveryTime>
+      <cbc:LatestDeliveryTime>10:00:00-01:00</cbc:LatestDeliveryTime>
       <cbc:TrackingID>TH-26-04471</cbc:TrackingID>
       <cac:EstimatedDeliveryPeriod>
         <cbc:StartDate>2026-03-25</cbc:StartDate>
-        <cbc:StartTime>09:00:00</cbc:StartTime>
-        <cbc:EndTime>10:00:00</cbc:EndTime>
+        <cbc:StartTime>09:00:00-01:00</cbc:StartTime>
+        <cbc:EndTime>10:00:00-01:00</cbc:EndTime>
       </cac:EstimatedDeliveryPeriod>
     </cac:Delivery>
     <cac:ReturnAddress>

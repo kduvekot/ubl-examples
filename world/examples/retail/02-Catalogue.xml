@@ -11,7 +11,7 @@
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
-  <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
+  <cbc:RevisionTime>09:00:00-01:00</cbc:RevisionTime>
   <cbc:Note>Prices for trade customers, before sales tax.</cbc:Note>
   <cbc:Description>Benches and spare parts for resale.</cbc:Description>
   <cbc:VersionID>1.0</cbc:VersionID>

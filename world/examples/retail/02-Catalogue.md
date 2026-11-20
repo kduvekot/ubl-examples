@@ -32,8 +32,8 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
   Issued in the morning, for the store to set up the range; in the issuer's local time, with its offset from UTC.
 - `RevisionDate` = **2026-04-20**  
   Not revised yet: the issue date.
-- `RevisionTime` = **09:00:00**  
-  The issue time.
+- `RevisionTime` = **09:00:00-01:00**  
+  The issue time; in the local time of Bayvarra, where it happens, with its offset from UTC.
 - `Note` = **Prices for trade customers, before sales tax.**  
   What the prices are.
 - `Description` = **Benches and spare parts for resale.**  
@@ -815,7 +815,7 @@ Inside `CatalogueLine`:
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
-  <cbc:RevisionTime>09:00:00</cbc:RevisionTime>
+  <cbc:RevisionTime>09:00:00-01:00</cbc:RevisionTime>
   <cbc:Note>Prices for trade customers, before sales tax.</cbc:Note>
   <cbc:Description>Benches and spare parts for resale.</cbc:Description>
   <cbc:VersionID>1.0</cbc:VersionID>

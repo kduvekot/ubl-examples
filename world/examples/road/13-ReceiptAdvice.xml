@@ -178,7 +178,7 @@
     <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-03-25</cbc:ActualDeliveryDate>
-      <cbc:ActualDeliveryTime>09:40:00</cbc:ActualDeliveryTime>
+      <cbc:ActualDeliveryTime>09:40:00-01:00</cbc:ActualDeliveryTime>
     </cac:Delivery>
   </cac:Shipment>
   <cac:ReceiptLine>

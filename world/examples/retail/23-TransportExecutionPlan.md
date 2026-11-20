@@ -258,12 +258,12 @@ Inside `ServiceEndTimePeriod`:
 
 - `StartDate` = **2026-04-30**  
   The delivery slot at the store, confirmed.
-- `StartTime` = **10:00:00**  
-  From ten.
+- `StartTime` = **10:00:00-01:00**  
+  From ten; in the local time of Bayvarra, where it happens, with its offset from UTC.
 - `EndDate` = **2026-04-30**  
   The same day.
-- `EndTime` = **10:30:00**  
-  To half past ten.
+- `EndTime` = **10:30:00-01:00**  
+  To half past ten; in the local time of Bayvarra, where it happens, with its offset from UTC.
 
 ### From Location
 
@@ -532,9 +532,9 @@ Inside `Consignment`:
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
     <cbc:StartDate>2026-04-30</cbc:StartDate>
-    <cbc:StartTime>10:00:00</cbc:StartTime>
+    <cbc:StartTime>10:00:00-01:00</cbc:StartTime>
     <cbc:EndDate>2026-04-30</cbc:EndDate>
-    <cbc:EndTime>10:30:00</cbc:EndTime>
+    <cbc:EndTime>10:30:00-01:00</cbc:EndTime>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>

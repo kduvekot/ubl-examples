@@ -14,7 +14,7 @@
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:ValidityPeriod>
     <cbc:EndDate>2026-04-17</cbc:EndDate>
-    <cbc:EndTime>12:00:00</cbc:EndTime>
+    <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
   </cac:ValidityPeriod>
   <cac:OrderReference>
     <cbc:ID>26-0215</cbc:ID>

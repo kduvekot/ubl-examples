@@ -209,7 +209,7 @@
         <cac:RequestedArrivalEvent>
           <cbc:IdentificationID>ARR-XLSEL-0517</cbc:IdentificationID>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>06:00:00+00:00</cbc:OccurrenceTime>
           <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ARRIVAL</cbc:TypeCode>
           <cbc:Description>Pilot on board at the fairway buoy.</cbc:Description>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
@@ -459,9 +459,9 @@
           </cac:AppliedSecurityMeasure>
           <cac:Period>
             <cbc:StartDate>2026-05-13</cbc:StartDate>
-            <cbc:StartTime>05:40:00</cbc:StartTime>
+            <cbc:StartTime>05:40:00-01:00</cbc:StartTime>
             <cbc:EndDate>2026-05-13</cbc:EndDate>
-            <cbc:EndTime>08:15:00</cbc:EndTime>
+            <cbc:EndTime>08:15:00-01:00</cbc:EndTime>
           </cac:Period>
           <cac:Location>
             <cbc:Name>Lumeport anchorage</cbc:Name>

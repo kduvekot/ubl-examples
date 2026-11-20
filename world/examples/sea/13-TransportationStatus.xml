@@ -111,7 +111,7 @@
       </cac:TerminalOperatorParty>
       <cac:ActualDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>18:10:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>18:10:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
           <cbc:Name>Port of Lumeport</cbc:Name>

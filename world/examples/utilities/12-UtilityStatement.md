@@ -246,8 +246,8 @@ Inside `SubscriberConsumption`:
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
   The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
-  The month's first minute.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00+00:00**  
+  The month's first minute; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
   Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
@@ -260,8 +260,8 @@ Inside `SubscriberConsumption`:
   A call.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-11**  
   The day.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **10:14:00**  
-  The time.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **10:14:00+00:00**  
+  The time; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 955 *****  
   The distributor in Bayvarra, its last digits masked as the privacy code says.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International: a call to Bayvarra**  
@@ -318,8 +318,8 @@ Inside `SubscriberConsumption`:
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
   The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
-  The month's first minute.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00+00:00**  
+  The month's first minute; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
   Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
@@ -332,8 +332,8 @@ Inside `SubscriberConsumption`:
   A film rented on line 2.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-20**  
   The day.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **12:30:00**  
-  At lunch.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **12:30:00+00:00**  
+  At lunch; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **video**  
   The operator's video service, no number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Video on demand**  
@@ -372,8 +372,8 @@ Inside `SubscriberConsumption`:
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
   The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
-  The month's first minute.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00+00:00**  
+  The month's first minute; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
   Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
@@ -396,8 +396,8 @@ Inside `SubscriberConsumption`:
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
   The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
-  The month's first minute.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00+00:00**  
+  The month's first minute; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
   Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
@@ -420,8 +420,8 @@ Inside `SubscriberConsumption`:
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
   The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
-  The month's first minute.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00+00:00**  
+  The month's first minute; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
   Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
@@ -444,8 +444,8 @@ Inside `SubscriberConsumption`:
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
   The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
-  The month's first minute.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00+00:00**  
+  The month's first minute; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
   Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
@@ -468,8 +468,8 @@ Inside `SubscriberConsumption`:
   The month's data on the island beyond the subscriptions.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
   The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
-  The month's first minute.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00+00:00**  
+  The month's first minute; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
   Mobile data, no number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Mobile data**  
@@ -486,8 +486,8 @@ Inside `SubscriberConsumption`:
   Mobile data abroad.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-16**  
   The first day of the trip.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **08:00:00**  
-  From the morning.
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **08:00:00+00:00**  
+  From the morning; in the issuer's local time, with its offset from UTC.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
   Mobile data, no number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Roaming: mobile data in Bayvarra**  
@@ -676,7 +676,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-1</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">140</cbc:Quantity>
@@ -685,7 +685,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
-            <cbc:CallTime>10:14:00</cbc:CallTime>
+            <cbc:CallTime>10:14:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>+999 2 7121 955 ***</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
@@ -728,7 +728,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-2</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">165</cbc:Quantity>
@@ -737,7 +737,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>V-0320-02</cbc:ID>
             <cbc:CallDate>2026-03-20</cbc:CallDate>
-            <cbc:CallTime>12:30:00</cbc:CallTime>
+            <cbc:CallTime>12:30:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>video</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Video on demand</cbc:TelecommunicationsServiceCategory>
             <cbc:MovieTitle>Safe Lifting in the Warehouse</cbc:MovieTitle>
@@ -765,7 +765,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-3</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">190</cbc:Quantity>
@@ -781,7 +781,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-4</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">215</cbc:Quantity>
@@ -797,7 +797,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-5</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">240</cbc:Quantity>
@@ -813,7 +813,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-6</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">265</cbc:Quantity>
@@ -829,7 +829,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>D-03</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Mobile data</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="E34">31</cbc:Quantity>
@@ -842,7 +842,7 @@ Inside `SubscriberConsumption`:
           <cac:TelecommunicationsService>
             <cbc:ID>D-0316-01</cbc:ID>
             <cbc:CallDate>2026-03-16</cbc:CallDate>
-            <cbc:CallTime>08:00:00</cbc:CallTime>
+            <cbc:CallTime>08:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>

@@ -285,8 +285,8 @@ Inside `Shipment`:
   The port the vessel is registered in.
 - `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
   The timetable departure from Lumeport, in Lumeport's time.
-- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **18:00:00**  
-  The local time.
+- `ShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **18:00:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `ShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ShipmentStage/EstimatedDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
@@ -295,8 +295,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-05-16**  
   Expected off Selanu in the evening, in island time, an hour ahead of Lumeport's: 1,200 km at 13.5 knots, about 48 hours at sea. The ship berths the next morning at first light.
-- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **18:45:00**  
-  The local time.
+- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **18:45:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `ShipmentStage/EstimatedArrivalTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ShipmentStage/EstimatedArrivalTransportEvent/Location/Name` = **Port of Selanu**  
@@ -574,7 +574,7 @@ Inside `Signature`:
       </cac:TransportMeans>
       <cac:EstimatedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
           <cbc:Name>Port of Lumeport</cbc:Name>
@@ -587,7 +587,7 @@ Inside `Signature`:
       </cac:EstimatedDepartureTransportEvent>
       <cac:EstimatedArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-05-16</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>18:45:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>18:45:00+00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>

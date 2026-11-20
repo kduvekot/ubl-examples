@@ -244,8 +244,8 @@ Inside `Delivery`:
   The consignment carried, as the distributor numbered it when booking the truck.
 - `Shipment/Consignment/ActualDeliveryTransportEvent/OccurrenceDate` = **2026-03-25**  
   Delivered at dock 4: the carriage invoiced is complete.
-- `Shipment/Consignment/ActualDeliveryTransportEvent/OccurrenceTime` = **09:40:00**  
-  The local time.
+- `Shipment/Consignment/ActualDeliveryTransportEvent/OccurrenceTime` = **09:40:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Shipment/Consignment/ActualDeliveryTransportEvent/Location/ID` = **9520610900039** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, distribution centre, goods-in: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples).
 - `Shipment/Consignment/ActualDeliveryTransportEvent/Location/Name` = **Lumeway goods-in, Marrowdale**  
@@ -623,7 +623,7 @@ Inside `InvoiceLine`:
         <cbc:ID>LMW-CS-26-0580</cbc:ID>
         <cac:ActualDeliveryTransportEvent>
           <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>09:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>09:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="GS1 GLN">9520610900039</cbc:ID>
             <cbc:Name>Lumeway goods-in, Marrowdale</cbc:Name>

@@ -34,8 +34,8 @@ The authority acknowledges the manufacturer's tender, with the time it was regis
   The receipt.
 - `RegisteredDate` = **2026-02-24**  
   The day the tender was registered, before the deadline.
-- `RegisteredTime` = **09:13:00**  
-  The time the platform registered the tender, the moment it was submitted, which proves it was on time.
+- `RegisteredTime` = **09:13:00-01:00**  
+  The time the platform registered the tender, the moment it was submitted, which proves it was on time; in the issuer's local time, with its offset from UTC.
 
 ### Tender Document Reference
 
@@ -202,7 +202,7 @@ Inside `ReceiverParty`:
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>Received on time, encrypted, unopened until the opening.</cbc:Note>
   <cbc:RegisteredDate>2026-02-24</cbc:RegisteredDate>
-  <cbc:RegisteredTime>09:13:00</cbc:RegisteredTime>
+  <cbc:RegisteredTime>09:13:00-01:00</cbc:RegisteredTime>
   <cac:TenderDocumentReference>
     <cbc:ID>2500002145</cbc:ID>
   </cac:TenderDocumentReference>

@@ -212,8 +212,8 @@ Inside `TransportationService`:
   Where the schedule is.
 - `NominationDate` = **2026-05-12**  
   The deadline for booking a container on this sailing: two days before it, after the forwarder's booking of 11 May.
-- `NominationTime` = **12:00:00**  
-  At noon.
+- `NominationTime` = **12:00:00-01:00**  
+  At noon; in the issuer's local time, with its offset from UTC.
 - `Name` = **Weekly container liner service Lumeport–Selanu**  
   The name of the service: a scheduled liner service for containers.
 - `SequenceNumeric` = **1**  
@@ -252,8 +252,8 @@ Inside `TransportationService`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `TransportEvent/OccurrenceDate` = **2026-05-14**  
   The next departure from Lumeport.
-- `TransportEvent/OccurrenceTime` = **18:00:00**  
-  The local time.
+- `TransportEvent/OccurrenceTime` = **18:00:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `TransportEvent/TransportEventTypeCode` = **DEPARTURE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: DEPARTURE = Departure.
 - `TransportEvent/CompletionIndicator` = **false**  
@@ -430,7 +430,7 @@ Inside `TransportationService`:
     <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.</cbc:TransportationServiceDescription>
     <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
     <cbc:NominationDate>2026-05-12</cbc:NominationDate>
-    <cbc:NominationTime>12:00:00</cbc:NominationTime>
+    <cbc:NominationTime>12:00:00-01:00</cbc:NominationTime>
     <cbc:Name>Weekly container liner service Lumeport–Selanu</cbc:Name>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:TransportEquipment>
@@ -479,7 +479,7 @@ Inside `TransportationService`:
     </cac:ShipmentStage>
     <cac:TransportEvent>
       <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
       <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DEPARTURE</cbc:TransportEventTypeCode>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
       <cac:Location>

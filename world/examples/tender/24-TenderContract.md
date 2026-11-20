@@ -323,8 +323,8 @@ Inside `TenderResult`:
   What the winner pays for publishing the notice, below the maximum of 500 lume.
 - `AwardDate` = **2026-03-09**  
   The day of the award decision.
-- `AwardTime` = **09:30:00**  
-  The time of the decision, before the tenderers are told.
+- `AwardTime` = **09:30:00-01:00**  
+  The time of the decision, before the tenderers are told; in the issuer's local time, with its offset from UTC.
 - `ReceivedTenderQuantity` = **2** (unitCode `EA`)  
   Two tenders: the furniture maker's first tender was withdrawn and replaced.
 - `LowerTenderAmount` = **117360.00** (currencyID `XBL`)  
@@ -637,7 +637,7 @@ Inside `TenderResult`:
     <cbc:Description>Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.</cbc:Description>
     <cbc:AdvertisementAmount currencyID="XBL">320.00</cbc:AdvertisementAmount>
     <cbc:AwardDate>2026-03-09</cbc:AwardDate>
-    <cbc:AwardTime>09:30:00</cbc:AwardTime>
+    <cbc:AwardTime>09:30:00-01:00</cbc:AwardTime>
     <cbc:ReceivedTenderQuantity unitCode="EA">2</cbc:ReceivedTenderQuantity>
     <cbc:LowerTenderAmount currencyID="XBL">117360.00</cbc:LowerTenderAmount>
     <cbc:HigherTenderAmount currencyID="XBL">124080.00</cbc:HigherTenderAmount>

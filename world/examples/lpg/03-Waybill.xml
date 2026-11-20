@@ -197,14 +197,14 @@
         </cac:TransportMeans>
         <cac:PlannedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-06-10</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>07:00:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>Kelpstone Gas plant, Gullhaven, LPG loading bay</cbc:Name>
           </cac:Location>
         </cac:PlannedDepartureTransportEvent>
         <cac:PlannedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-06-10</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>15:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>15:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>Coastal State Water Company, district heating plant, Reservoir Road, Lumeport</cbc:Name>
           </cac:Location>

@@ -365,7 +365,7 @@
         </cac:UnloadingPortLocation>
         <cac:AvailabilityTransportEvent>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>14:00:00+00:00</cbc:OccurrenceTime>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
@@ -379,7 +379,7 @@
         </cac:AvailabilityTransportEvent>
         <cac:StorageTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:30:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -392,7 +392,7 @@
         </cac:StorageTransportEvent>
         <cac:AcceptanceTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:15:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -439,7 +439,7 @@
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
           <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:15:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -734,7 +734,7 @@
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0510</cbc:ID>
             <cbc:WeighingDate>2026-05-12</cbc:WeighingDate>
-            <cbc:WeighingTime>15:30:00</cbc:WeighingTime>
+            <cbc:WeighingTime>15:30:00-01:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>LMW-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>

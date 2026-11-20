@@ -203,8 +203,8 @@ Inside `EventComment`:
   What the store prepares.
 - `IssueDate` = **2026-04-22**  
   Written with the announcement.
-- `IssueTime` = **11:00:00**  
-  At that time.
+- `IssueTime` = **11:00:00-01:00**  
+  At that time; in the issuer's local time, with its offset from UTC.
 
 ### Promotional Event
 
@@ -415,7 +415,7 @@ Inside `MiscellaneousEvent`:
   <cac:EventComment>
     <cbc:Comment>Floor space for 12 benches at the entrance of the renovated department.</cbc:Comment>
     <cbc:IssueDate>2026-04-22</cbc:IssueDate>
-    <cbc:IssueTime>11:00:00</cbc:IssueTime>
+    <cbc:IssueTime>11:00:00-01:00</cbc:IssueTime>
   </cac:EventComment>
   <cac:PromotionalEvent>
     <cbc:PromotionalEventTypeCode listID="urn:ubl-examples:world:codelist:PromotionalEventTypeCode">OPENING</cbc:PromotionalEventTypeCode>

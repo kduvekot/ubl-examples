@@ -243,8 +243,8 @@ Inside `Consignment`:
   Two full containers.
 - `RequestedPickupTransportEvent/OccurrenceDate` = **2026-04-13**  
   The boxes are packed by then.
-- `RequestedPickupTransportEvent/OccurrenceTime` = **13:00:00**  
-  The local time.
+- `RequestedPickupTransportEvent/OccurrenceTime` = **13:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `RequestedPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `RequestedPickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -313,8 +313,8 @@ Inside `Consignment`:
   The rail carriage asked for.
 - `MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The morning train from the hub.
-- `MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **07:00:00**  
-  The local time.
+- `MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **07:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -337,8 +337,8 @@ Inside `Consignment`:
   UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `PreCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-04-13**  
   The boxes are packed by then; the tractor takes them in two runs.
-- `PreCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **13:00:00**  
-  The local time.
+- `PreCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **13:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `PreCarriageShipmentStage/RequestedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `PreCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -515,7 +515,7 @@ Inside `Consignment`:
     <cbc:ContainerizedIndicator>true</cbc:ContainerizedIndicator>
     <cac:RequestedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -585,7 +585,7 @@ Inside `Consignment`:
       <cbc:ID>2</cbc:ID>
       <cac:RequestedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>07:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>07:00:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -615,7 +615,7 @@ Inside `Consignment`:
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
       <cac:RequestedDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>

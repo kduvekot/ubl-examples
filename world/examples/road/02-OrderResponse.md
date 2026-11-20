@@ -172,12 +172,12 @@ Inside `Delivery`:
   Or the morning after, by the guaranteed despatch.
 - `Despatch/EstimatedDespatchDate` = **2026-03-23**  
   The goods will be ready on the requested day.
-- `Despatch/EstimatedDespatchTime` = **14:00:00**  
-  At the requested time.
+- `Despatch/EstimatedDespatchTime` = **14:00:00-01:00**  
+  At the requested time; in the issuer's local time, with its offset from UTC.
 - `Despatch/GuaranteedDespatchDate` = **2026-03-24**  
   At the latest the next day.
-- `Despatch/GuaranteedDespatchTime` = **12:00:00**  
-  By noon.
+- `Despatch/GuaranteedDespatchTime` = **12:00:00-01:00**  
+  By noon; in the issuer's local time, with its offset from UTC.
 - `Despatch/NotifyParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Despatch/NotifyParty/PartyName/Name` = **Lumeway Distribution**  
@@ -376,9 +376,9 @@ Inside `OrderLine`:
     </cac:PromisedDeliveryPeriod>
     <cac:Despatch>
       <cbc:EstimatedDespatchDate>2026-03-23</cbc:EstimatedDespatchDate>
-      <cbc:EstimatedDespatchTime>14:00:00</cbc:EstimatedDespatchTime>
+      <cbc:EstimatedDespatchTime>14:00:00-01:00</cbc:EstimatedDespatchTime>
       <cbc:GuaranteedDespatchDate>2026-03-24</cbc:GuaranteedDespatchDate>
-      <cbc:GuaranteedDespatchTime>12:00:00</cbc:GuaranteedDespatchTime>
+      <cbc:GuaranteedDespatchTime>12:00:00-01:00</cbc:GuaranteedDespatchTime>
       <cac:NotifyParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>

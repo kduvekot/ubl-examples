@@ -296,8 +296,8 @@ Inside `Shipment`:
   The train number; the fleet of Ferrano Rail Cargo.
 - `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The timetable departure from the hub.
-- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -306,22 +306,22 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
   The timetable arrival at the siding in Marrowdale: the train reaches Marrowdale yard about 15:10 the day before, 173 km from the hub, and the next morning's shunting trip places the boxes on Lumeway's siding.
-- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:30:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples).
 - `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
   Where the boxes are placed for unloading.
 - `Consignment/MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceDate` = **2026-04-14**  
   Planned departure from the border station, 63 km from the hub: the train stops there from about 08:00 for the crew change, the brake test and the customs' check of the seals, and leaves on its timetabled path into Bayvarra.
-- `Consignment/MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceTime` = **13:00:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/PlannedWaypointTransportEvent/OccurrenceTime` = **13:00:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/PlannedWaypointTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
   Where the train crosses the border.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The departure as expected that morning.
-- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/EstimatedDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -330,8 +330,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-04-15**  
   The arrival as expected.
-- `Consignment/MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **10:40:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **10:40:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/EstimatedArrivalTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples).
 - `Consignment/MainCarriageShipmentStage/EstimatedArrivalTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
@@ -440,8 +440,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/OccurrenceDate` = **2026-04-10**  
   The carrier's tractor delivered the empty box to the warehouse for packing, on the Friday before.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/OccurrenceTime` = **08:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/OccurrenceTime` = **08:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -450,8 +450,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/OccurrenceDate` = **2026-04-15**  
   Planned arrival at the siding.
-- `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/OccurrenceTime` = **11:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/OccurrenceTime` = **11:00:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
@@ -460,8 +460,8 @@ Inside `Shipment`:
   Where the boxes are placed for unloading.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/OccurrenceDate` = **2026-04-13**  
   Collected packed from the warehouse: the first of the tractor's two runs to the hub.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/OccurrenceTime` = **13:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/OccurrenceTime` = **13:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -470,8 +470,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/OccurrenceDate` = **2026-04-13**  
   Stacked at the hub overnight, 46 km from the warehouse.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/OccurrenceTime` = **14:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/OccurrenceTime` = **14:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/Location/Name` = **Ferrano Intermodal Hub, stack C**  
@@ -480,8 +480,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/OccurrenceDate` = **2026-04-14**  
   Lifted onto its wagon.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/OccurrenceTime` = **05:40:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/OccurrenceTime` = **05:40:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -512,16 +512,16 @@ Inside `Shipment`:
   Where.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/ActualPickupDate` = **2026-04-13**  
   Collected.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/ActualPickupTime` = **13:00:00**  
-  The time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/ActualPickupTime` = **13:00:00-01:00**  
+  The time; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/PickupLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/PickupLocation/Name` = **Castrano Logistics warehouse, Conciaro**  
   Where.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchDate` = **2026-04-14**  
   The train is expected to leave the hub that morning; the consignment note is made out before it leaves.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchTime` = **06:50:00**  
-  Ten to seven.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchTime` = **06:50:00-01:00**  
+  Ten to seven; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **7800004369**  
   The transit declaration the box travels under.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -610,8 +610,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/OccurrenceDate` = **2026-04-10**  
   The carrier's tractor delivered the empty box to the warehouse for packing, on the Friday before.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/OccurrenceTime` = **10:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/OccurrenceTime` = **10:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PositioningTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -620,8 +620,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/OccurrenceDate` = **2026-04-15**  
   Planned arrival at the siding.
-- `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/OccurrenceTime` = **11:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/OccurrenceTime` = **11:00:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `Consignment/TransportHandlingUnit/TransportEquipment/DeliveryTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
@@ -630,8 +630,8 @@ Inside `Shipment`:
   Where the boxes are placed for unloading.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/OccurrenceDate` = **2026-04-13**  
   Collected packed from the warehouse: the second of the tractor's two runs to the hub.
-- `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/OccurrenceTime` = **15:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/OccurrenceTime` = **15:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PickupTransportEvent/Location/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -640,8 +640,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/OccurrenceDate` = **2026-04-13**  
   Stacked at the hub overnight, 46 km from the warehouse.
-- `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/OccurrenceTime` = **16:00:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/OccurrenceTime` = **16:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/HandlingTransportEvent/Location/Name` = **Ferrano Intermodal Hub, stack C**  
@@ -650,8 +650,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/OccurrenceDate` = **2026-04-14**  
   Lifted onto its wagon.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/OccurrenceTime` = **05:55:00**  
-  The local time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/OccurrenceTime` = **05:55:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadingTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -682,16 +682,16 @@ Inside `Shipment`:
   Where.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/ActualPickupDate` = **2026-04-13**  
   Collected.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/ActualPickupTime` = **15:00:00**  
-  The time.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/ActualPickupTime` = **15:00:00-01:00**  
+  The time; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/PickupLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `Consignment/TransportHandlingUnit/TransportEquipment/Pickup/PickupLocation/Name` = **Castrano Logistics warehouse, Conciaro**  
   Where.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchDate` = **2026-04-14**  
   The train is expected to leave the hub that morning; the consignment note is made out before it leaves.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchTime` = **06:50:00**  
-  Ten to seven.
+- `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchTime` = **06:50:00-01:00**  
+  Ten to seven; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **7800004369**  
   The transit declaration the box travels under.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -995,7 +995,7 @@ Inside `Signature`:
         </cac:TransportMeans>
         <cac:PlannedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>06:45:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -1008,7 +1008,7 @@ Inside `Signature`:
         </cac:PlannedDepartureTransportEvent>
         <cac:PlannedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:30:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:30:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
             <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
@@ -1016,14 +1016,14 @@ Inside `Signature`:
         </cac:PlannedArrivalTransportEvent>
         <cac:PlannedWaypointTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
           </cac:Location>
         </cac:PlannedWaypointTransportEvent>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>06:50:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
             <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -1036,7 +1036,7 @@ Inside `Signature`:
         </cac:EstimatedDepartureTransportEvent>
         <cac:EstimatedArrivalTransportEvent>
           <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>10:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
             <cbc:Name>Lumeway rail siding, Marrowdale</cbc:Name>
@@ -1150,7 +1150,7 @@ Inside `Signature`:
           </cac:UnloadingLocation>
           <cac:PositioningTransportEvent>
             <cbc:OccurrenceDate>2026-04-10</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>08:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -1163,7 +1163,7 @@ Inside `Signature`:
           </cac:PositioningTransportEvent>
           <cac:DeliveryTransportEvent>
             <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>11:00:00-01:00</cbc:OccurrenceTime>
             <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
             <cac:Location>
               <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
@@ -1172,7 +1172,7 @@ Inside `Signature`:
           </cac:DeliveryTransportEvent>
           <cac:PickupTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -1185,7 +1185,7 @@ Inside `Signature`:
           </cac:PickupTransportEvent>
           <cac:HandlingTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>14:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
@@ -1198,7 +1198,7 @@ Inside `Signature`:
           </cac:HandlingTransportEvent>
           <cac:LoadingTransportEvent>
             <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>05:40:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>05:40:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -1234,7 +1234,7 @@ Inside `Signature`:
           </cac:Delivery>
           <cac:Pickup>
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
-            <cbc:ActualPickupTime>13:00:00</cbc:ActualPickupTime>
+            <cbc:ActualPickupTime>13:00:00-01:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -1242,7 +1242,7 @@ Inside `Signature`:
           </cac:Pickup>
           <cac:Despatch>
             <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
-            <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
+            <cbc:EstimatedDespatchTime>06:50:00-01:00</cbc:EstimatedDespatchTime>
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
@@ -1337,7 +1337,7 @@ Inside `Signature`:
           </cac:UnloadingLocation>
           <cac:PositioningTransportEvent>
             <cbc:OccurrenceDate>2026-04-10</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>10:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -1350,7 +1350,7 @@ Inside `Signature`:
           </cac:PositioningTransportEvent>
           <cac:DeliveryTransportEvent>
             <cbc:OccurrenceDate>2026-04-15</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>11:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>11:00:00-01:00</cbc:OccurrenceTime>
             <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
             <cac:Location>
               <cbc:ID schemeID="GS1 GLN">9520610900015</cbc:ID>
@@ -1359,7 +1359,7 @@ Inside `Signature`:
           </cac:DeliveryTransportEvent>
           <cac:PickupTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>15:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>15:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -1372,7 +1372,7 @@ Inside `Signature`:
           </cac:PickupTransportEvent>
           <cac:HandlingTransportEvent>
             <cbc:OccurrenceDate>2026-04-13</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>16:00:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>16:00:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub, stack C</cbc:Name>
@@ -1385,7 +1385,7 @@ Inside `Signature`:
           </cac:HandlingTransportEvent>
           <cac:LoadingTransportEvent>
             <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-            <cbc:OccurrenceTime>05:55:00</cbc:OccurrenceTime>
+            <cbc:OccurrenceTime>05:55:00-01:00</cbc:OccurrenceTime>
             <cac:Location>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -1421,7 +1421,7 @@ Inside `Signature`:
           </cac:Delivery>
           <cac:Pickup>
             <cbc:ActualPickupDate>2026-04-13</cbc:ActualPickupDate>
-            <cbc:ActualPickupTime>15:00:00</cbc:ActualPickupTime>
+            <cbc:ActualPickupTime>15:00:00-01:00</cbc:ActualPickupTime>
             <cac:PickupLocation>
               <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
               <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -1429,7 +1429,7 @@ Inside `Signature`:
           </cac:Pickup>
           <cac:Despatch>
             <cbc:EstimatedDespatchDate>2026-04-14</cbc:EstimatedDespatchDate>
-            <cbc:EstimatedDespatchTime>06:50:00</cbc:EstimatedDespatchTime>
+            <cbc:EstimatedDespatchTime>06:50:00-01:00</cbc:EstimatedDespatchTime>
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>

@@ -185,7 +185,7 @@
     <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
     <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>
-    <cbc:ReceivedTime>10:40:00</cbc:ReceivedTime>
+    <cbc:ReceivedTime>10:40:00-01:00</cbc:ReceivedTime>
     <cbc:TimingComplaintCode listID="urn:ubl-examples:world:codelist:TimingComplaintCode">LATE</cbc:TimingComplaintCode>
     <cbc:TimingComplaint>Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 to 10:30; unloading delayed the next truck.</cbc:TimingComplaint>
     <cac:OrderLineReference>

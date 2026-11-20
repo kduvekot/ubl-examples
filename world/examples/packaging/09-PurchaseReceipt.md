@@ -28,12 +28,12 @@ The island trader's buyer, in Lumeport on business, buys shirts for the trader's
   Printed at the till; in the issuer's local time, with its offset from UTC.
 - `TransactionDate` = **2026-05-23**  
   The day of the sale.
-- `TransactionTime` = **12:20:00**  
-  The time of the sale.
+- `TransactionTime` = **12:20:00-01:00**  
+  The time of the sale; in the issuer's local time, with its offset from UTC.
 - `PurchaseDate` = **2026-05-23**  
   The day the customer bought.
-- `PurchaseTime` = **12:20:00**  
-  And when.
+- `PurchaseTime` = **12:20:00-01:00**  
+  And when; in the issuer's local time, with its offset from UTC.
 - `Note` = **Paid in coral: the card's currency was chosen at the till.**  
   Printed on the receipt.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -341,9 +341,9 @@ Inside `PurchaseReceiptLine`:
   <cbc:IssueDate>2026-05-23</cbc:IssueDate>
   <cbc:IssueTime>12:20:00-01:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-05-23</cbc:TransactionDate>
-  <cbc:TransactionTime>12:20:00</cbc:TransactionTime>
+  <cbc:TransactionTime>12:20:00-01:00</cbc:TransactionTime>
   <cbc:PurchaseDate>2026-05-23</cbc:PurchaseDate>
-  <cbc:PurchaseTime>12:20:00</cbc:PurchaseTime>
+  <cbc:PurchaseTime>12:20:00-01:00</cbc:PurchaseTime>
   <cbc:Note>Paid in coral: the card's currency was chosen at the till.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>

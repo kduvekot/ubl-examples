@@ -99,7 +99,7 @@
       <cbc:ID>2</cbc:ID>
       <cac:DischargeTransportEvent>
         <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>08:10:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>08:10:00+00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
@@ -113,7 +113,7 @@
       </cac:DischargeTransportEvent>
       <cac:ActualArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>06:40:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>06:40:00+00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -135,7 +135,7 @@
         </cac:StorageLocation>
         <cac:TransportEvent>
           <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>08:25:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>08:25:00+00:00</cbc:OccurrenceTime>
           <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
           <cac:CurrentStatus>
             <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>

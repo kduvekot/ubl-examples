@@ -44,8 +44,8 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-04-30**  
   The day the event took place.
-- `OccurrenceTime` = **09:30:00**  
-  When the truck's position was taken.
+- `OccurrenceTime` = **09:30:00-01:00**  
+  When the truck's position was taken; in the issuer's local time, with its offset from UTC.
 - `TransportEventTypeCode` = **ENROUTE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ENROUTE = En route.
 - `Description` = **On its way from the distribution centre; expected at the store at 10:15.**  
@@ -184,8 +184,8 @@ Inside `UpdatedDeliveryTransportEvent`:
 
 - `OccurrenceDate` = **2026-04-30**  
   Today.
-- `OccurrenceTime` = **10:15:00**  
-  The expected arrival: the truck left Marrowdale at 09:00, and the road to the store takes about an hour and a quarter.
+- `OccurrenceTime` = **10:15:00-01:00**  
+  The expected arrival: the truck left Marrowdale at 09:00, and the road to the store takes about an hour and a quarter; in the local time of Bayvarra, where it happens, with its offset from UTC.
 - `Description` = **Expected arrival at the store.**  
   In words.
 - `Location/ID` = **9522610900019** (schemeID `GS1 GLN`)  
@@ -213,7 +213,7 @@ Inside `UpdatedDeliveryTransportEvent`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-30</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>09:30:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>09:30:00-01:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ENROUTE</cbc:TransportEventTypeCode>
     <cbc:Description>On its way from the distribution centre; expected at the store at 10:15.</cbc:Description>
     <cac:Location>
@@ -313,7 +313,7 @@ Inside `UpdatedDeliveryTransportEvent`:
   </cac:TransportationStatusRequestDocumentReference>
   <cac:UpdatedDeliveryTransportEvent>
     <cbc:OccurrenceDate>2026-04-30</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>10:15:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>10:15:00-01:00</cbc:OccurrenceTime>
     <cbc:Description>Expected arrival at the store.</cbc:Description>
     <cac:Location>
       <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>

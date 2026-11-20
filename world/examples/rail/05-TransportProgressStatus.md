@@ -178,8 +178,8 @@ Inside `TransportSchedule`:
   The first point: the hub, where the train starts.
 - `ReferenceDate` = **2026-04-14**  
   The day.
-- `ReferenceTime` = **06:45:00**  
-  The timetabled departure the status refers to.
+- `ReferenceTime` = **06:45:00-01:00**  
+  The timetabled departure the status refers to; in the local time of Urvania, where it happens, with its offset from UTC.
 - `ReliabilityPercent` = **95**  
   How sure the schedule is.
 - `Remarks` = **Left 7 minutes late, two after the estimate.**  
@@ -192,8 +192,8 @@ Inside `TransportSchedule`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ActualArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
   The train arrived at the hub for loading.
-- `ActualArrivalTransportEvent/OccurrenceTime` = **05:30:00**  
-  The local time.
+- `ActualArrivalTransportEvent/OccurrenceTime` = **05:30:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `ActualArrivalTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ActualArrivalTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -202,8 +202,8 @@ Inside `TransportSchedule`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ActualDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The departure.
-- `ActualDepartureTransportEvent/OccurrenceTime` = **06:52:00**  
-  The local time.
+- `ActualDepartureTransportEvent/OccurrenceTime` = **06:52:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `ActualDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -212,8 +212,8 @@ Inside `TransportSchedule`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `EstimatedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   As expected that morning.
-- `EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00**  
-  The local time.
+- `EstimatedDepartureTransportEvent/OccurrenceTime` = **06:50:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `EstimatedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `EstimatedDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -222,8 +222,8 @@ Inside `TransportSchedule`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The timetable.
-- `PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00**  
-  The local time.
+- `PlannedDepartureTransportEvent/OccurrenceTime` = **06:45:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `PlannedDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `PlannedDepartureTransportEvent/Location/Name` = **Ferrano Intermodal Hub**  
@@ -238,20 +238,20 @@ Inside `TransportSchedule`:
   Where the train crosses the border.
 - `EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
   Expected from the actual departure.
-- `EstimatedArrivalTransportEvent/OccurrenceTime` = **08:08:00**  
-  The local time.
+- `EstimatedArrivalTransportEvent/OccurrenceTime` = **08:08:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `EstimatedArrivalTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
   Where the train crosses the border.
 - `PlannedDepartureTransportEvent/OccurrenceDate` = **2026-04-14**  
   The timetabled path into Bayvarra, after the crew change, the brake test and the customs' check of the seals.
-- `PlannedDepartureTransportEvent/OccurrenceTime` = **13:00:00**  
-  The local time.
+- `PlannedDepartureTransportEvent/OccurrenceTime` = **13:00:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `PlannedDepartureTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
   Where the train crosses the border.
 - `PlannedArrivalTransportEvent/OccurrenceDate` = **2026-04-14**  
   The timetable: 63 km from the hub.
-- `PlannedArrivalTransportEvent/OccurrenceTime` = **08:01:00**  
-  The local time.
+- `PlannedArrivalTransportEvent/OccurrenceTime` = **08:01:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `PlannedArrivalTransportEvent/Location/Name` = **Rail border station Urvania–Bayvarra**  
   Where the train crosses the border.
 
@@ -376,7 +376,7 @@ Inside `TransportSchedule`:
   <cac:TransportSchedule>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cbc:ReferenceDate>2026-04-14</cbc:ReferenceDate>
-    <cbc:ReferenceTime>06:45:00</cbc:ReferenceTime>
+    <cbc:ReferenceTime>06:45:00-01:00</cbc:ReferenceTime>
     <cbc:ReliabilityPercent>95</cbc:ReliabilityPercent>
     <cbc:Remarks>Left 7 minutes late, two after the estimate.</cbc:Remarks>
     <cac:StatusLocation>
@@ -390,7 +390,7 @@ Inside `TransportSchedule`:
     </cac:StatusLocation>
     <cac:ActualArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>05:30:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>05:30:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -403,7 +403,7 @@ Inside `TransportSchedule`:
     </cac:ActualArrivalTransportEvent>
     <cac:ActualDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>06:52:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -416,7 +416,7 @@ Inside `TransportSchedule`:
     </cac:ActualDepartureTransportEvent>
     <cac:EstimatedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>06:50:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -429,7 +429,7 @@ Inside `TransportSchedule`:
     </cac:EstimatedDepartureTransportEvent>
     <cac:PlannedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>06:45:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -449,21 +449,21 @@ Inside `TransportSchedule`:
     </cac:StatusLocation>
     <cac:EstimatedArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>08:08:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>08:08:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
       </cac:Location>
     </cac:EstimatedArrivalTransportEvent>
     <cac:PlannedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
       </cac:Location>
     </cac:PlannedDepartureTransportEvent>
     <cac:PlannedArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>08:01:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>08:01:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
       </cac:Location>

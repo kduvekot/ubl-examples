@@ -388,8 +388,8 @@ Inside `Consignment`:
   The place named in the CPT terms.
 - `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-04-20**  
   Loading finished: 120 bags in the hold.
-- `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime` = **13:30:00**  
-  The local time.
+- `MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceTime` = **13:30:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/LoadingTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/LoadingTransportEvent/Location/Name` = **Quay of Rinova Recovery, Ferrano**  
@@ -398,22 +398,22 @@ Inside `Consignment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceDate` = **2026-04-21**  
   The barge leaves Urvania at the river border, 105 km below the quay: sailing from the afternoon of loading and through the next day from first light.
-- `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **13:45:00**  
-  The local time.
+- `MainCarriageShipmentStage/ExportationTransportEvent/OccurrenceTime` = **13:45:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/ExportationTransportEvent/Location/Name` = **River border Urvania–Bayvarra**  
   Where the barge leaves Urvania.
 - `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-23**  
   Planned unloading at the Lumeport quay, with the consignee's morning shift: the barge arrives about 16:15 the day before and moors at the quay overnight.
-- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00**  
-  The local time.
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `MainCarriageShipmentStage/DischargeTransportEvent/Location/Name` = **River quay, Lumeport**  
   The quay named in the CPT terms, where the bags are unloaded.
 - `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-20**  
   The barge operator takes over the bags at the quay.
-- `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **09:00:00**  
-  The local time.
+- `MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **09:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/TakeoverTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/TakeoverTransportEvent/Location/Name` = **Quay of Rinova Recovery, Ferrano**  
@@ -707,7 +707,7 @@ Inside `Consignment`:
       </cac:UnloadingPortLocation>
       <cac:LoadingTransportEvent>
         <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>13:30:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>13:30:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>
@@ -720,14 +720,14 @@ Inside `Consignment`:
       </cac:LoadingTransportEvent>
       <cac:ExportationTransportEvent>
         <cbc:OccurrenceDate>2026-04-21</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>13:45:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>13:45:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:Name>River border Urvania–Bayvarra</cbc:Name>
         </cac:Location>
       </cac:ExportationTransportEvent>
       <cac:DischargeTransportEvent>
         <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>08:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>08:00:00-01:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
         <cac:Location>
           <cbc:Name>River quay, Lumeport</cbc:Name>
@@ -735,7 +735,7 @@ Inside `Consignment`:
       </cac:DischargeTransportEvent>
       <cac:TakeoverTransportEvent>
         <cbc:OccurrenceDate>2026-04-20</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>09:00:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>09:00:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Quay of Rinova Recovery, Ferrano</cbc:Name>

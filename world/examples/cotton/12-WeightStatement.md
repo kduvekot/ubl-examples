@@ -178,8 +178,8 @@ Inside `Shipment`:
   The empty container's own weight, as marked on its door.
 - `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDate` = **2026-05-06**  
   The day the container was packed at the ginnery and its mass established.
-- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **14:30:00**  
-  When the doors were closed on the 27th bale.
+- `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **14:30:00+00:00**  
+  When the doors were closed on the 27th bale; in the issuer's local time, with its offset from UTC.
 - `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode` = **SM2** (listID `IMO SOLAS`)  
   SOLAS method 2: every bale weighed, the weights added to the container's tare. The code is from UBL's default Weighing method (IMO SOLAS) list: SM2 = SOLAS verification method 2.
 - `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType` = **Bale scale at the press**  
@@ -591,7 +591,7 @@ Inside `Shipment`:
         <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
         <cac:VerifiedGrossMass>
           <cbc:WeighingDate>2026-05-06</cbc:WeighingDate>
-          <cbc:WeighingTime>14:30:00</cbc:WeighingTime>
+          <cbc:WeighingTime>14:30:00+00:00</cbc:WeighingTime>
           <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
           <cbc:WeighingDeviceType>Bale scale at the press</cbc:WeighingDeviceType>
           <cbc:GrossMassMeasure unitCode="KGM">9940.29</cbc:GrossMassMeasure>

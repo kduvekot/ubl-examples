@@ -158,7 +158,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-1</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">140</cbc:Quantity>
@@ -167,7 +167,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
-            <cbc:CallTime>10:14:00</cbc:CallTime>
+            <cbc:CallTime>10:14:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>+999 2 7121 955 ***</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
@@ -210,7 +210,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-2</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">165</cbc:Quantity>
@@ -219,7 +219,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>V-0320-02</cbc:ID>
             <cbc:CallDate>2026-03-20</cbc:CallDate>
-            <cbc:CallTime>12:30:00</cbc:CallTime>
+            <cbc:CallTime>12:30:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>video</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Video on demand</cbc:TelecommunicationsServiceCategory>
             <cbc:MovieTitle>Safe Lifting in the Warehouse</cbc:MovieTitle>
@@ -247,7 +247,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-3</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">190</cbc:Quantity>
@@ -263,7 +263,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-4</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">215</cbc:Quantity>
@@ -279,7 +279,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-5</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">240</cbc:Quantity>
@@ -295,7 +295,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>S-03-6</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>island</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Island calls</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="MIN">265</cbc:Quantity>
@@ -311,7 +311,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>D-03</cbc:ID>
             <cbc:CallDate>2026-03-01</cbc:CallDate>
-            <cbc:CallTime>00:00:00</cbc:CallTime>
+            <cbc:CallTime>00:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Mobile data</cbc:TelecommunicationsServiceCategory>
             <cbc:Quantity unitCode="E34">31</cbc:Quantity>
@@ -324,7 +324,7 @@
           <cac:TelecommunicationsService>
             <cbc:ID>D-0316-01</cbc:ID>
             <cbc:CallDate>2026-03-16</cbc:CallDate>
-            <cbc:CallTime>08:00:00</cbc:CallTime>
+            <cbc:CallTime>08:00:00+00:00</cbc:CallTime>
             <cbc:ServiceNumberCalled>data</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>Roaming: mobile data in Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">ROAM</cbc:TelecommunicationsServiceCategoryCode>

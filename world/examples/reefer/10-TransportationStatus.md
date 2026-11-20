@@ -139,8 +139,8 @@ Inside `Consignment`:
   The sea leg, stage 2 as on the bill of lading.
 - `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-04-26**  
   The reefer came off the ship, among the first boxes.
-- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:10:00**  
-  The local time.
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **08:10:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **true**  
   Whether the event has taken place (true) or is still to come (false).
 - `MainCarriageShipmentStage/DischargeTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
@@ -151,8 +151,8 @@ Inside `Consignment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-04-26**  
   The ship berthed at Selanu at first light: its pilot boarded at dawn; it had been off the port since the evening.
-- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **06:40:00**  
-  The local time.
+- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **06:40:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/Name` = **Port of Selanu**  
@@ -169,8 +169,8 @@ Inside `Consignment`:
   In words.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceDate` = **2026-04-26**  
   Plugged in at the reefer rack, fifteen minutes after discharge.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime` = **08:25:00**  
-  The local time.
+- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime` = **08:25:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/TransportEventTypeCode` = **STORAGE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: STORAGE = Stored.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/ConditionCode` = **COMPLETED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
@@ -331,7 +331,7 @@ Inside `ReceiverParty`:
       <cbc:ID>2</cbc:ID>
       <cac:DischargeTransportEvent>
         <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>08:10:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>08:10:00+00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
@@ -345,7 +345,7 @@ Inside `ReceiverParty`:
       </cac:DischargeTransportEvent>
       <cac:ActualArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>06:40:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>06:40:00+00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -367,7 +367,7 @@ Inside `ReceiverParty`:
         </cac:StorageLocation>
         <cac:TransportEvent>
           <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>08:25:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>08:25:00+00:00</cbc:OccurrenceTime>
           <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
           <cac:CurrentStatus>
             <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>

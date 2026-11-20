@@ -318,8 +318,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03190**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -330,8 +330,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03191**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -342,8 +342,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03192**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -354,8 +354,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03193**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -366,8 +366,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03194**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -378,8 +378,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03195**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -390,8 +390,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03196**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -402,8 +402,8 @@ Inside `DespatchLine`:
   The trace code on the casting's label, for the maker's tracing system.
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
-- `Item/ItemInstance/ManufactureTime` = **14:15:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next.
+- `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
+  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03197**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -655,7 +655,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03190</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03190</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -665,7 +665,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03191</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03191</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -675,7 +675,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03192</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03192</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -685,7 +685,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03193</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03193</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -695,7 +695,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03194</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03194</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -705,7 +705,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03195</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03195</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -715,7 +715,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03196</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03196</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -725,7 +725,7 @@ Inside `DespatchLine`:
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03197</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03197</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>

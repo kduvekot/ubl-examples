@@ -199,6 +199,19 @@
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="XBL">119040.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
     </cac:TaxTotal>
     <cac:LegalMonetaryTotal>
       <cbc:LineExtensionAmount currencyID="XBL">119040.00</cbc:LineExtensionAmount>

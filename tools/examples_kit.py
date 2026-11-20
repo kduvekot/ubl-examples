@@ -1950,6 +1950,102 @@ def container_number(owner, serial):
     return f"{code}{world_ids.iso6346_digit(code)}"
 
 
+# ---------------------------------------------------------------- times: each in the local time of its place (D27)
+TIME_WITH_OFFSET = re.compile(r"\d\d:\d\d:\d\d(Z|[+-]\d\d:\d\d)")
+
+
+def _gln_countries():
+    """GLN -> country of every party's GLNs (its own and its locations'), from world/parties.json."""
+    if not _GLN:
+        def collect(node, cc):
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    if k == "gln" and isinstance(v, str):
+                        _GLN[v] = cc
+                    else:
+                        collect(v, cc)
+            elif isinstance(node, list):
+                for x in node:
+                    collect(x, cc)
+        for p in PARTY.values():
+            collect(p.get("identity", {}), p["c"])
+    return _GLN
+
+
+_GLN = {}
+
+
+def place_country(place):
+    """The country of a place aggregate (a Location, an Address, a port): from its UN/LOCODE, whose first two
+    letters are the country, from the party whose GLN it is, or from its address's country; None where it says
+    none of these."""
+    if isinstance(place, list):
+        place = place[0] if place else None
+    if not isinstance(place, dict):
+        return None
+    ident = place.get("ID")
+    if isinstance(ident, V) and ident.attrs.get("schemeID") == "UN/LOCODE":
+        return str(ident.value)[:2]
+    if isinstance(ident, V) and ident.attrs.get("schemeID") == "GS1 GLN" and str(ident.value) in _gln_countries():
+        return _gln_countries()[str(ident.value)]
+    for addr in (place, place.get("Address")):
+        if isinstance(addr, dict) and isinstance(addr.get("Country"), dict):
+            code = addr["Country"].get("IdentificationCode")
+            if isinstance(code, V):
+                return str(code.value)
+    return None
+
+
+def _place_of(node):
+    """The country of the place an aggregate names as its own: its Location, its address, or a location of its
+    kind (DeliveryLocation, DespatchAddress ...)."""
+    for key, val in node.items():
+        if key in ("Location", "Address") or key.endswith(("Location", "Address")):
+            cc = place_country(val)
+            if cc:
+                return cc
+    return None
+
+
+def time_offsets(content, issuer):
+    """O78: every time in a document carries the UTC offset of the place where it happens: the place of its
+    aggregate (an event's Location, a delivery's or a despatch's place) or of the aggregate that holds it (the event
+    of a period); a time whose aggregates name no place is the issuer's local time. The document's own IssueTime is
+    set apart, with the issuer's offset (issue_time_offset in tools/build_examples.py)."""
+    home = PARTY[issuer]["c"]
+
+    def walk(node, up, top):
+        if isinstance(node, list):
+            for x in node:
+                walk(x, up, top)
+            return
+        if not isinstance(node, dict):
+            return
+        for key, val in list(node.items()):
+            if isinstance(val, (dict, list)):
+                walk(val, [node] + up, False)
+            elif isinstance(val, V) and key.endswith("Time") and not (top and key == "IssueTime"):
+                text = str(val.value)
+                if TIME_WITH_OFFSET.fullmatch(text) or not re.fullmatch(r"\d\d:\d\d:\d\d", text):
+                    continue
+                cc = None
+                for anc in [node] + up[:1]:      # the aggregate itself, or the one its period belongs to
+                    cc = _place_of(anc)
+                    if cc:
+                        break
+                where = WORLD["countries"][cc or home]
+                phrase = f"the local time of {where['name']}, where it happens" if cc else "the issuer's local time"
+                why = val.why.rstrip(".")
+                if why == "The local time":
+                    why = phrase[0].upper() + phrase[1:] + ", with its offset from UTC"
+                elif "local time" in why or "island time" in why:
+                    why += ", with its offset from UTC"
+                else:
+                    why += f"; in {phrase}, with its offset from UTC"
+                node[key] = type(val)(text + where["timezone"], why + ".", **val.attrs)
+    walk(content, [], True)
+
+
 # ---------------------------------------------------------------- transport: places, means, events, units
 PLACES = {"XUFER": ("Ferrano", "XU"), "XUSRV": ("Serravona", "XU"), "XUFNT": ("Fucinalta mine siding", "XU"),
           "XBMRW": ("Marrowdale", "XB"),

@@ -167,16 +167,16 @@ Inside `Consignment`:
   UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceDate` = **2026-03-24**  
   Customs looked at the seals at the border, the morning after the truck arrived there.
-- `MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceTime` = **07:45:00**  
-  The local time.
+- `MainCarriageShipmentStage/ExaminationTransportEvent/OccurrenceTime` = **07:45:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `MainCarriageShipmentStage/ExaminationTransportEvent/Description` = **Seal check, no inspection of the goods.**  
   What happened, in words.
 - `MainCarriageShipmentStage/ExaminationTransportEvent/Location/Name` = **Road border crossing Urvania–Bayvarra**  
   Where customs checked the seals.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-23**  
   The truck left the warehouse; the land border is 65 km ahead.
-- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00**  
-  The local time.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **16:20:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Ferrano**  
@@ -192,8 +192,8 @@ Inside `TransportEvent`:
   The reporting party's number for this event.
 - `OccurrenceDate` = **2026-03-24**  
   The day and time the truck crossed the land border.
-- `OccurrenceTime` = **10:40:00**  
-  The local time.
+- `OccurrenceTime` = **10:40:00-01:00**  
+  The issuer's local time, with its offset from UTC.
 - `TransportEventTypeCode` = **BORDERCROSS** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: BORDERCROSS = Border crossing.
 - `Description` = **Border crossing passed; customs cleared on both sides.**  
@@ -206,8 +206,8 @@ Inside `TransportEvent`:
   The carriage runs to plan. The code is from the Trade Accord's status condition list: ONTIME = On time.
 - `CurrentStatus/ReferenceDate` = **2026-03-25**  
   The delivery the status is measured against.
-- `CurrentStatus/ReferenceTime` = **10:00:00**  
-  The end of the goods-in slot, the time delivery is required by.
+- `CurrentStatus/ReferenceTime` = **10:00:00-01:00**  
+  The end of the goods-in slot, the time delivery is required by; in the issuer's local time, with its offset from UTC.
 - `CurrentStatus/Description` = **In transit in Bayvarra, expected at the distribution centre on time.**  
   The status in words.
 - `CurrentStatus/StatusReasonCode` = **CLEARED** (listID `urn:ubl-examples:world:codelist:StatusReasonCode`)  
@@ -252,10 +252,10 @@ Inside `TransportEvent`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Signature/SignatoryParty/PartyName/Name` = **Customs and Border Service of Bayvarra**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Period/StartTime` = **07:30:00**  
-  The truck joined the queue at the border, after the driver's night rest in the border truck park: it arrived about 17:20 the evening before, when the importer's customs desk was closed.
-- `Period/EndTime` = **10:40:00**  
-  And left the customs post, once the import declaration, lodged when the importer's desk opened, was accepted.
+- `Period/StartTime` = **07:30:00-01:00**  
+  The truck joined the queue at the border, after the driver's night rest in the border truck park: it arrived about 17:20 the evening before, when the importer's customs desk was closed; in the issuer's local time, with its offset from UTC.
+- `Period/EndTime` = **10:40:00-01:00**  
+  And left the customs post, once the import declaration, lodged when the importer's desk opened, was accepted; in the issuer's local time, with its offset from UTC.
 
 ### Document Reference
 
@@ -301,8 +301,8 @@ Inside `UpdatedPickupTransportEvent`:
 
 - `OccurrenceDate` = **2026-03-23**  
   The collection as it happened.
-- `OccurrenceTime` = **15:05:00**  
-  The local time.
+- `OccurrenceTime` = **15:05:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Location/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -316,8 +316,8 @@ Inside `UpdatedDeliveryTransportEvent`:
 
 - `OccurrenceDate` = **2026-03-25**  
   The delivery as now expected.
-- `OccurrenceTime` = **09:30:00**  
-  The local time.
+- `OccurrenceTime` = **09:30:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Location/ID` = **9520610900039** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, distribution centre, goods-in: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples).
 - `Location/Name` = **Lumeway goods-in, Marrowdale**  
@@ -461,7 +461,7 @@ Inside `StatusPeriod`:
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
       <cac:ExaminationTransportEvent>
         <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>07:45:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>07:45:00-01:00</cbc:OccurrenceTime>
         <cbc:Description>Seal check, no inspection of the goods.</cbc:Description>
         <cac:Location>
           <cbc:Name>Road border crossing Urvania–Bayvarra</cbc:Name>
@@ -469,7 +469,7 @@ Inside `StatusPeriod`:
       </cac:ExaminationTransportEvent>
       <cac:ActualDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>16:20:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>16:20:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Ferrano</cbc:Name>
@@ -485,7 +485,7 @@ Inside `StatusPeriod`:
   <cac:TransportEvent>
     <cbc:IdentificationID>TH-26-04471-E03</cbc:IdentificationID>
     <cbc:OccurrenceDate>2026-03-24</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>10:40:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>10:40:00-01:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">BORDERCROSS</cbc:TransportEventTypeCode>
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
@@ -495,7 +495,7 @@ Inside `StatusPeriod`:
     <cac:CurrentStatus>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">ONTIME</cbc:ConditionCode>
       <cbc:ReferenceDate>2026-03-25</cbc:ReferenceDate>
-      <cbc:ReferenceTime>10:00:00</cbc:ReferenceTime>
+      <cbc:ReferenceTime>10:00:00-01:00</cbc:ReferenceTime>
       <cbc:Description>In transit in Bayvarra, expected at the distribution centre on time.</cbc:Description>
       <cbc:StatusReasonCode listID="urn:ubl-examples:world:codelist:StatusReasonCode">CLEARED</cbc:StatusReasonCode>
       <cbc:StatusReason>Customs released the goods at the border.</cbc:StatusReason>
@@ -546,8 +546,8 @@ Inside `StatusPeriod`:
       </cac:SignatoryParty>
     </cac:Signature>
     <cac:Period>
-      <cbc:StartTime>07:30:00</cbc:StartTime>
-      <cbc:EndTime>10:40:00</cbc:EndTime>
+      <cbc:StartTime>07:30:00-01:00</cbc:StartTime>
+      <cbc:EndTime>10:40:00-01:00</cbc:EndTime>
     </cac:Period>
   </cac:TransportEvent>
   <cac:DocumentReference>
@@ -583,7 +583,7 @@ Inside `StatusPeriod`:
   </cac:ReceiverParty>
   <cac:UpdatedPickupTransportEvent>
     <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>15:05:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>15:05:00-01:00</cbc:OccurrenceTime>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Castrano Logistics warehouse, Conciaro</cbc:Name>
@@ -596,7 +596,7 @@ Inside `StatusPeriod`:
   </cac:UpdatedPickupTransportEvent>
   <cac:UpdatedDeliveryTransportEvent>
     <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>09:30:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>09:30:00-01:00</cbc:OccurrenceTime>
     <cac:Location>
       <cbc:ID schemeID="GS1 GLN">9520610900039</cbc:ID>
       <cbc:Name>Lumeway goods-in, Marrowdale</cbc:Name>
