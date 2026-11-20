@@ -24,8 +24,8 @@ Bayvarra's plant protection organisation under the IPPC, the Plant Health Servic
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-21**  
   Issued after the inspection at the packhouse on Tuesday 21 April, the day before loading, at the cooperative's application.
-- `IssueTime` = **14:10:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **11:30:00-01:00**  
+  When the inspector had finished the sample, late in the morning; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **PHYTO** (listID `urn:ubl-examples:world:codelist:GoodsCertificateTypeCode`)  
   A phytosanitary certificate for export. The code is from the Trade Accord's goods certificate type list: PHYTO = Phytosanitary certificate.
 - `Description` = **The fruit has been inspected and is considered free of the quarantine pests the island names.**  
@@ -248,8 +248,6 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Apples Gala, carton 18 kg, count 100**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **17472.00** (currencyID `XBL`)  
-  The value of the fruit, in lume.
 - `GoodsItem/GrossWeightMeasure` = **13036.8** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **672** (unitCode `EA`)  
@@ -276,8 +274,6 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Apples Granny Smith, carton 18 kg, count 100**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **5488.00** (currencyID `XBL`)  
-  The value of the fruit, in lume.
 - `GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **224** (unitCode `EA`)  
@@ -304,8 +300,6 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **6048.00** (currencyID `XBL`)  
-  The value of the fruit, in lume.
 - `GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **224** (unitCode `EA`)  
@@ -396,7 +390,7 @@ Inside `Signature`:
   <cbc:ID>FDAB-GC-26-0557</cbc:ID>
   <cbc:UUID>7df1606f-7643-54f2-b3b1-f70df9df27de</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
-  <cbc:IssueTime>14:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
   <cbc:Description>The fruit has been inspected and is considered free of the quarantine pests the island names.</cbc:Description>
   <cbc:Note>Inspected at the packhouse in Harrowmead before loading.</cbc:Note>
@@ -565,7 +559,6 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">17472.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">13036.8</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">672</cbc:Quantity>
       <cac:Item>
@@ -591,7 +584,6 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">5488.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">224</cbc:Quantity>
       <cac:Item>
@@ -617,7 +609,6 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">6048.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">224</cbc:Quantity>
       <cac:Item>

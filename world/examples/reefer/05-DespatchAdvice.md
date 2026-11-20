@@ -24,8 +24,8 @@ The cooperative tells the wholesaler what is in the reefer: the pallets, their v
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   Sent when the reefer leaves the packhouse for the port.
-- `IssueTime` = **09:59:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **12:05:00-01:00**  
+  When the loaded reefer left the packhouse for the port, about five hours and a half away with a stop; in the issuer's local time, with its offset from UTC (D27).
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage in your receipt advice.**  
@@ -544,7 +544,7 @@ Inside `DespatchLine`:
   <cbc:ID>HFG-DA-26-0560</cbc:ID>
   <cbc:UUID>f20ac700-f004-551d-94a6-fbb9ba2f561d</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
-  <cbc:IssueTime>09:59:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>12:05:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>

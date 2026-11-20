@@ -24,8 +24,8 @@ The carrier reports the reefer discharged at Selanu and on the port's power, wit
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-26**  
   Reported when the reefer is discharged and plugged in.
-- `IssueTime` = **17:32:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **07:45:00-01:00**  
+  Sent from the carrier's system in Lumeport once the reefer was plugged in: 08:45 at Selanu; in the issuer's local time, with its offset from UTC (D27).
 
 ### Consignment
 
@@ -239,7 +239,7 @@ Inside `ReceiverParty`:
   <cbc:ID>TOL-TS-26-0564</cbc:ID>
   <cbc:UUID>cc1c4bb5-dd81-5abd-b112-24e23e643b27</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>
-  <cbc:IssueTime>17:32:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>07:45:00-01:00</cbc:IssueTime>
   <cac:Consignment>
     <cbc:ID>HFG-CS-26-0556</cbc:ID>
     <cac:ConsigneeParty>

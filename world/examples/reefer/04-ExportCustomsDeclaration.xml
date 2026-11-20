@@ -7,7 +7,7 @@
   <cbc:ID>BF-EX-26-0558</cbc:ID>
   <cbc:UUID>ed456ea3-b479-54fe-b85f-7d25be06338a</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
-  <cbc:IssueTime>12:57:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>14:20:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
   <cbc:Note>Declared electronically before the goods leave.</cbc:Note>

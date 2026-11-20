@@ -24,8 +24,8 @@ The forwarder, as customs agent, declares the export for the cooperative at the 
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-21**  
   The forwarder, as customs agent, declares the export the afternoon before loading, once the certificate is issued.
-- `IssueTime` = **12:57:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **14:20:00-01:00**  
+  In the afternoon, once the certificate the declaration cites was issued; in the issuer's local time, with its offset from UTC (D27).
 - `ExportTypeCode` = **PERMANENT** (listID `urn:ubl-examples:world:codelist:ExportTypeCode`)  
   A permanent export: the goods are sold abroad. The code is from the Trade Accord's export type list: PERMANENT = Permanent export.
 - `ExportReasonCode` = **SALE** (listID `urn:ubl-examples:world:codelist:ExportReasonCode`)  
@@ -396,7 +396,7 @@ Inside `Signature`:
   <cbc:ID>BF-EX-26-0558</cbc:ID>
   <cbc:UUID>ed456ea3-b479-54fe-b85f-7d25be06338a</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
-  <cbc:IssueTime>12:57:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>14:20:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
   <cbc:Note>Declared electronically before the goods leave.</cbc:Note>

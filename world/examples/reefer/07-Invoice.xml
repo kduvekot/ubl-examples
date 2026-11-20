@@ -7,7 +7,7 @@
   <cbc:ID>HFG-INV-26-0562</cbc:ID>
   <cbc:UUID>561543ba-1bf6-532a-a5f0-41421d417a5b</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
-  <cbc:IssueTime>13:47:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:30:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-25</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion P).</cbc:Note>

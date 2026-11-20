@@ -24,8 +24,8 @@ The fruit at its CIP prices, which hold the reefer's carriage and the insurance,
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-23**  
   Issued on shipment, when the reefer is on board.
-- `IssueTime` = **13:47:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **15:30:00-01:00**  
+  When the forwarder confirmed the reefer on board, before the office closes; in the issuer's local time, with its offset from UTC (D27).
 - `DueDate` = **2026-05-25**  
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Saturday 23 May, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 25 May (O180).
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
@@ -457,7 +457,7 @@ Inside `InvoiceLine`:
   <cbc:ID>HFG-INV-26-0562</cbc:ID>
   <cbc:UUID>561543ba-1bf6-532a-a5f0-41421d417a5b</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
-  <cbc:IssueTime>13:47:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>15:30:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-25</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion P).</cbc:Note>

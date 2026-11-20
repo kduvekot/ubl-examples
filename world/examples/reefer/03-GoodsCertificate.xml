@@ -7,7 +7,7 @@
   <cbc:ID>FDAB-GC-26-0557</cbc:ID>
   <cbc:UUID>7df1606f-7643-54f2-b3b1-f70df9df27de</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
-  <cbc:IssueTime>14:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
   <cbc:Description>The fruit has been inspected and is considered free of the quarantine pests the island names.</cbc:Description>
   <cbc:Note>Inspected at the packhouse in Harrowmead before loading.</cbc:Note>
@@ -176,7 +176,6 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">17472.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">13036.8</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">672</cbc:Quantity>
       <cac:Item>
@@ -202,7 +201,6 @@
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">5488.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">224</cbc:Quantity>
       <cac:Item>
@@ -228,7 +226,6 @@
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">6048.00</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">224</cbc:Quantity>
       <cac:Item>

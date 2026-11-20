@@ -13201,6 +13201,7 @@ def reefer(n, doc):
                 "IssueDate": V(f.date(RF_DAY["phyto"]), "Issued after the inspection at the packhouse on Tuesday 21 "
                                                         "April, the day before loading, at the cooperative's "
                                                         "application."),
+                "IssueTime": V("11:30:00", "When the inspector had finished the sample, late in the morning."),
                 "TypeCode": V("PHYTO", "A phytosanitary certificate for export."),
                 "Description": V("The fruit has been inspected and is considered free of the quarantine pests the "
                                  "island names.", "What it certifies, in the words of the IPPC's model "
@@ -13238,13 +13239,16 @@ def reefer(n, doc):
                                                                 "the orchards of origin this season.",
                                                                 "The finding.")}}},
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment certified."),
-                             "GoodsItem": kit.goods_items(f, "XBL", "The value of the fruit, in lume.")},
+                             # a plant health certificate attests the goods' health: no customs value (cotton/10#F9)
+                             "GoodsItem": [{k: v for k, v in g.items() if k != "DeclaredCustomsValueAmount"}
+                                           for g in kit.goods_items(f, "XBL", "")]},
                 "AdditionalDocumentReference": {"ID": V(f.numbers["order"], "The wholesaler's order.")},
                 "Signature": seal(doc["from"], "FDA-SIG-26-PH")}
     if d == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, RF_DAY["export"], "The forwarder, as customs agent, declares the "
                                      "export the afternoon before loading, once the certificate is issued.",
                                      "The value of the fruit at export, in lume.")
+        out["IssueTime"] = V("14:20:00", "In the afternoon, once the certificate the declaration cites was issued.")
         kit.deep_merge(out["CustomsDeclaration"]["Shipment"], {
             "Consignment": {"OfficeOfExportLocation": {"Name": V("Customs office, port of Lumeport", "Where the "
                                                                  "export is declared.")},
@@ -13268,6 +13272,8 @@ def reefer(n, doc):
         out = kit.despatch_advice(f, n, doc, RF_DAY["load"], "Sent when the reefer leaves the packhouse for the "
                                                              "port.", "The gross weight of the fruit on its "
                                                                       "pallets.")
+        out["IssueTime"] = V("12:05:00", "When the loaded reefer left the packhouse for the port, about five hours "
+                                         "and a half away with a stop.")
         for d_, line in zip(f.deal, out["DespatchLine"]):
             line["Item"]["ItemInstance"] = rf_lots(f, d_)
         out["Shipment"]["TransportHandlingUnit"] = {"TransportEquipment": {
@@ -13278,6 +13284,8 @@ def reefer(n, doc):
     if d == "BillOfLading":
         return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
                 "IssueDate": V(f.date(RF_DAY["sail"]), "Issued when the reefer is shipped on board."),
+                "IssueTime": V("14:30:00", "After the reefer was loaded on board and plugged in on the ship, in the "
+                                           "afternoon before the evening sailing."),
                 "CarrierAssignedID": V(RF_BOOKING, "The booking the bill of lading is issued under."),
                 "ToOrderIndicator": V("false", "Made out to the named consignee, not to order: under open account "
                                                "the wholesaler takes delivery as consignee."),
@@ -13292,9 +13300,12 @@ def reefer(n, doc):
                              "Consignment": rf_consignment(f),
                              "GoodsItem": rf_goods_item(f)}}
     if d == "Invoice":
-        return kit.invoice(f, n, doc, RF_DAY["sail"], "Issued on shipment, when the reefer is on board.",
-                           {"OrderReference": {"ID": V(f.numbers["order"], "The wholesaler's order.")},
-                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}})
+        out = kit.invoice(f, n, doc, RF_DAY["sail"], "Issued on shipment, when the reefer is on board.",
+                          {"OrderReference": {"ID": V(f.numbers["order"], "The wholesaler's order.")},
+                           "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}})
+        out["IssueTime"] = V("15:30:00", "When the forwarder confirmed the reefer on board, before the office "
+                                         "closes.")
+        return out
     if d == "ImportCustomsDeclaration":
         out = kit.import_declaration(f, n, doc, RF_DAY["import"], "Lodged on Friday 24 April, while the reefer is at "
                                      "sea, so that the fruit can be released when it is discharged.",
@@ -13310,7 +13321,7 @@ def reefer(n, doc):
                                               "lapses if the goods are not presented to customs within 30 days.")}
         return out
     if d == "TransportationStatus":
-        return kit.transportation_status(
+        out = kit.transportation_status(
             f, n, doc, RF_DAY["berth"], "Reported when the reefer is discharged and plugged in.",
             f"Reefer {RF_CONTAINER} discharged and on the port's power; released by customs.", "Port of Selanu",
             {"Consignment": {
@@ -13348,6 +13359,9 @@ def reefer(n, doc):
                                                                                 "off power between the quay and the "
                                                                                 "ship.", unitCode="CEL")}})}}}},
             event_type="DISCHARGE")
+        out["IssueTime"] = V("07:45:00", "Sent from the carrier's system in Lumeport once the reefer was plugged in: "
+                                         "08:45 at Selanu.")
+        return out
     if d == "ReceiptAdvice":
         out = kit.receipt_advice(f, n, doc, RF_DAY["receipt"], "The wholesaler confirms what it unloaded on the "
                                  "Monday morning.")

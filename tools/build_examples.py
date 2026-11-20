@@ -2341,6 +2341,8 @@ def import_preference(content, doc):
         tax = (total * 10 / 100).quantize(q)
         text = (f"No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of {total:,} "
                 f"{money_name}, {tax:,} {money_name}.")
+        if any(int(kit_maker(ITEM_BY_NAME[g["Description"].value]).get("hs", "99")[:2]) <= 24 for g in goods):
+            text += " Food pays it too: the island taxes imported food to encourage its own farms."
     else:
         text = ("No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at "
                 "the final retail sale.")

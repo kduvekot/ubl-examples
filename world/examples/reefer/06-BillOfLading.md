@@ -26,8 +26,8 @@ The bill of lading of the reefer, issued to the forwarder that booked it, with t
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-23**  
   Issued when the reefer is shipped on board.
-- `IssueTime` = **16:53:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **14:30:00-01:00**  
+  After the reefer was loaded on board and plugged in on the ship, in the afternoon before the evening sailing; in the issuer's local time, with its offset from UTC (D27).
 - `ToOrderIndicator` = **false**  
   Made out to the named consignee, not to order: under open account the wholesaler takes delivery as consignee.
 - `OtherInstruction` = **Express release: no original issued; the reefer is released at Selanu to the consignee named.**  
@@ -738,7 +738,7 @@ Inside `Shipment`:
   <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
   <cbc:UUID>daac5c36-3a0b-530b-a79f-54d146c68b7f</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
-  <cbc:IssueTime>16:53:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>14:30:00-01:00</cbc:IssueTime>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
   <cbc:OtherInstruction>Express release: no original issued; the reefer is released at Selanu to the consignee named.</cbc:OtherInstruction>
   <cac:ConsignorParty>

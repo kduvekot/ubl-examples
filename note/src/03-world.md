@@ -232,8 +232,9 @@ trade area of all three countries; the Accord takes its name from it. The
 Accord entered into force on 1 January 1996. The ferra joined the lume and
 the coral at a fixed parity. The island stopped charging duty on its
 partners' goods and kept its import consumption tax, which falls on every
-import whatever its origin: it is the island's substitute for a sales tax,
-and the reason it could afford to join. Lumeway Distribution became Valdara's
+import whatever its origin, food included, which the island taxes to
+encourage its own farms: it is the island's substitute for a sales tax, and
+the reason it could afford to join. Lumeway Distribution became Valdara's
 distributor for Bayvarra and the island in that year, under a distribution
 agreement, which is why Valdara's benches reach the island through Lumeport.
 Hauliers, forwarders, customs brokers, a factoring company, a border terminal
@@ -1594,6 +1595,34 @@ feeder carries a sanitation control certificate, as its inspection found pests
 in the galley stores. The security report lists the ship-to-ship activities of
 the last ten port calls, here a bunkering from the port's barge, with the
 measure the ship took.
+
+Fresh food crosses to the island in a reefer, a container with its own
+refrigeration. In the southern autumn the island's fresh-produce wholesaler,
+Hafefo Fresh Produce in Selanu, which keeps a cold store by the port and
+supplies the island's shops, hotels and the hospital's kitchen, buys a 40-foot
+reefer of apples and pears from Harrowmead Fruit Growers, a cooperative of the
+fruit growers on the slopes above Harrowmead in the wetter west of Upland
+State: Gala and Packham's Triumph pears from the cooperative's cold store and
+Granny Smith picked that month, 1,120 cartons of 18 kg on 20 pallets. It buys
+carriage and insurance paid to the port of Selanu (CIP), the term the ICC
+advises for goods in containers, with the cover on all risks that perishable
+fruit needs: the cooperative books the reefer through its forwarder, which has
+it pre-cooled, brings it to the packhouse, trucks it back to Lumeport on a
+generator set clipped to the chassis and declares the export. Before loading,
+the Plant Health Service of Bayvarra's federal Department of Agriculture, the
+country's plant protection organisation under the IPPC, inspects the fruit at
+the packhouse and certifies it free of codling moth and fire blight, the two
+pests the island, which has neither, keeps out. The reefer is set to 0.5 °C,
+within 0 to 1 °C, at about 90 % humidity, with its fresh-air vent partly open
+because the fruit breathes; it sails on Tidewell's Thursday sailing and is off
+Selanu on the Saturday evening, two days later. The wholesaler lodges its
+import declaration while the ship is at sea, so that the fruit is released on
+discharge on the Sunday; the reefer waits on the port's power in its reefer
+rack, at a day's charge collect from the consignee, until the 3PL takes it to
+the cold store on the Monday morning, where it is unloaded, the reefer's log
+is read and the pulp temperature measured. The fruit pays the island's import
+consumption tax like any import: the island taxes imported food to encourage
+its own farms.
 
 The vehicles on the map are these legs: one truck, train, barge, ship or
 aircraft per leg, travelling the way the build found for it, from the

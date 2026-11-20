@@ -32,9 +32,9 @@ The wholesaler lodges its import declaration before the ship arrives, so that th
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,603.200 venamo, 1,160.320 venamo.** (languageID `qal`)  
+- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,603.200 venamo, 1,160.320 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
-- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,603.200 coral, 1,160.320 coral.** (languageID `en-XL`)  
+- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,603.200 coral, 1,160.320 coral. Food pays it too: the island taxes imported food to encourage its own farms.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
@@ -382,8 +382,8 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,603.200 venamo, 1,160.320 venamo.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,603.200 coral, 1,160.320 coral.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,603.200 venamo, 1,160.320 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,603.200 coral, 1,160.320 coral. Food pays it too: the island taxes imported food to encourage its own farms.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-24</cbc:StartDate>
