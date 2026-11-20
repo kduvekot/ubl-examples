@@ -12,7 +12,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
     <cbc:IssueDate>2024-01-15</cbc:IssueDate>
@@ -147,17 +147,35 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Quantity unitCode="MTQ">12</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">6480.00</cbc:LineExtensionAmount>
+      <cbc:Quantity unitCode="MTQ">7</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">3780.00</cbc:LineExtensionAmount>
       <cac:Price>
         <cbc:PriceAmount currencyID="XBL">540</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
-        <cbc:Name>Hardwood timber</cbc:Name>
+        <cbc:Description>Sawn oak boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+        <cbc:Name>Oak timber</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-TB</cbc:ID>
+          <cbc:ID>MS-TB-OAK</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="MTQ">5</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="XBL">2700.00</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="XBL">540</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Sawn ash boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+        <cbc:Name>Ash timber</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>MS-TB-ASH</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

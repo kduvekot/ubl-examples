@@ -13,7 +13,7 @@
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
     <cbc:ID>BF-PO-26-0637</cbc:ID>
@@ -273,13 +273,39 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="MTQ">12</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">6480.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="MTQ">7</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">3780.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Sawn hardwood boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
-      <cbc:Name>Hardwood timber</cbc:Name>
+      <cbc:Description>Sawn oak boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+      <cbc:Name>Oak timber</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-TB</cbc:ID>
+        <cbc:ID>MS-TB-OAK</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">540</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="MTQ">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="MTQ">5</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">2700.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>Sawn ash boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
+      <cbc:Name>Ash timber</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MS-TB-ASH</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
