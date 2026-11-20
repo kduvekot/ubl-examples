@@ -807,6 +807,65 @@ def streams(d, min_km2, step=2):
     return lines
 
 
+def rivers(d, min_km2, step=2):
+    """The rivers the encyclopedia names: every stream whose basin reaches min_km2, as one river from its source to
+    where it reaches the sea or a larger river, following the larger branch upstream at every confluence (the trunk
+    keeps the name). Returns the rivers, largest basins first, each with its parent (the river it joins, or None for
+    the sea), its course (squares, every step-th cell), length, basin, source height, and a raster of cells that
+    gives each cell the river whose own course its water reaches first (1-based; 0 for the sea and for land that
+    drains to the sea by a smaller stream)."""
+    rec = d['rec'].ravel(); a = d['akm2'].ravel(); sea = d['sea'].ravel(); z = d['z'].ravel()
+    X, Y = d['X'].ravel(), d['Y'].ravel()
+    n = a.size
+    land = np.where(~sea)[0]
+    donors = {}
+    for i in land:
+        r = rec[i]
+        if r != i and not sea[r]:
+            donors.setdefault(int(r), []).append(int(i))
+    outlets = sorted((int(i) for i in land if rec[i] == i or sea[rec[i]]), key=lambda i: -a[i])
+    found = []
+    stack = [(o, None) for o in reversed([o for o in outlets if a[o] >= min_km2])]
+    while stack:
+        i, parent = stack.pop()
+        path = [i]
+        while path[-1] in donors:
+            path.append(max(donors[path[-1]], key=lambda j: a[j]))
+        path.reverse()
+        rid = len(found) + 1
+        found.append({"id": rid, "parent": parent, "cells": path})
+        on = set(path)
+        branches = []
+        for c in path:
+            for j in donors.get(c, []):
+                if j not in on and a[j] >= min_km2:
+                    branches.append(j)
+        for j in sorted(branches, key=lambda j: a[j]):
+            stack.append((j, rid))
+    # largest first, ids renumbered so that a parent keeps its link
+    found.sort(key=lambda r: -a[r["cells"][-1]])
+    new = {r["id"]: k + 1 for k, r in enumerate(found)}
+    lab = np.zeros(n, np.int32)
+    out = []
+    for k, r in enumerate(found):
+        cells = r["cells"]
+        lab[cells] = k + 1
+        km = sum(math.hypot(X[cells[q]] - X[cells[q - 1]], Y[cells[q]] - Y[cells[q - 1]]) for q in range(1, len(cells))) * KM
+        keep = cells[::step] + ([cells[-1]] if (len(cells) - 1) % step else [])
+        out.append({"id": k + 1, "parent": new[r["parent"]] if r["parent"] else None,
+                    "km": round(km), "basin_km2": round(float(a[cells[-1]])), "source_m": round(float(z[cells[0]])),
+                    "source": [round(float(X[cells[0]]), 2), round(float(Y[cells[0]]), 2)],
+                    "mouth": [round(float(X[cells[-1]]), 2), round(float(Y[cells[-1]]), 2)],
+                    "course": [[round(float(X[q]), 2), round(float(Y[q]), 2)] for q in keep]})
+    for i in np.argsort(-a, kind="stable"):
+        if lab[i] or sea[i]:
+            continue
+        r = rec[i]
+        if r != i and not sea[r]:
+            lab[i] = lab[r]
+    return out, lab.reshape(d['z'].shape)
+
+
 def border(d, inp, log=print):
     """The land border between Urvania and Bayvarra (owner, 2026-11-18, option A: the watershed). The main river
     is the border from the crossing, at the confluence of its largest plateau tributary, to the estuary: all land

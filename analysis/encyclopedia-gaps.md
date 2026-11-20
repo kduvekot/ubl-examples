@@ -16,7 +16,7 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 - When the first European ships called at Lisavu, before the cotton estates.
 - ~~The exact years of the first landing at Larkmouth, the Sardinian treaty with the Urvanian rulers, the boundary convention, and the move of Bayvarra's capital from Larkmouth to Lumeport.~~ **Filled 2026-11-20 (OW006):** the landing on 16 February 1824, the treaty in 1840, the annexation on 29 November 1841, the fort in 1842, the capital moved in 1852, the convention in 1857, Upland on 12 April 1858.
 - ~~The years of the Trade Accord's later protocols: procurement rules, the payment link and card schemes, electronic business documents.~~ **Filled 2026-11-20 (OW007):** procurement 1999, payment link and card schemes 2003, electronic business documents 2014.
-- The name of the main river and of the plateau rivers.
+- ~~The name of the main river and of the plateau rivers.~~ **Filled 2026-11-20 (OW008):** 40 rivers named (the Runmek, the Bruna, the Lark, the Tallow, the Marrow …), with an article each and the water map.
 
 ## Taken over from the working session (2026-11-20)
 
@@ -35,7 +35,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Bank of Selanu (22-xl)
 
-- Who founded the bank in 1965 and why; whether it was the island's first bank.
+- ~~Who founded the bank in 1965 and why; whether it was the island's first bank.~~ Filled 2026-11-20 (OW003): founded in 1878 by the Lisavan rulers, the estates and the merchants of Selanu.
 - Who owns it (the state, local owners or a mainland bank).
 - When Coral net began.
 
@@ -125,14 +125,14 @@ decided with the owner one at a time, like the gaps here.
 
 ### Ferrano Energy (33-xu)
 
-- How Ferrano Energy began in 1949 (as a state or a private company, and under the Italian or British era) and who owns it now.
-- Whether Ferrano Grid was split off from Ferrano Energy itself or from another body.
+- ~~How Ferrano Energy began in 1949 (as a state or a private company, and under the Italian or British era) and who owns it now.~~ Filled 2026-11-20 (OW009).
+- ~~Whether Ferrano Grid was split off from Ferrano Energy itself or from another body.~~ Filled 2026-11-20 (OW009).
 - How many customers it serves, and the other power stations it buys from.
 
 ### Ferrano Grid (44-xu)
 
-- Which company it was split off from in 2007 (Ferrano Energy or a state utility)
-- Who owns it
+- ~~Which company it was split off from in 2007 (Ferrano Energy or a state utility)~~ Filled 2026-11-20 (OW009).
+- ~~Who owns it~~ Filled 2026-11-20 (OW009).
 - The size of its networks (length, connections) and the extent of the Ferrano region
 - Whether other grid operators serve the rest of Urvania
 
@@ -143,16 +143,16 @@ decided with the owner one at a time, like the gaps here.
 
 ### Ferrano Rail Cargo (14-xu)
 
-- Whether Ferrano Rail Cargo is still owned by the state or was sold, and when it became a company of its own
-- When Urvania separated the rail infrastructure from the train operators
-- Why the depot is at Serravona (the mining village) and not in Ferrano
+- ~~Whether Ferrano Rail Cargo is still owned by the state or was sold, and when it became a company of its own~~ Filled 2026-11-20 (OW009).
+- ~~When Urvania separated the rail infrastructure from the train operators~~ Filled 2026-11-20 (OW009).
+- ~~Why the depot is at Serravona (the mining village) and not in Ferrano~~ Filled 2026-11-20 (OW009).
 - Its other customers besides Valdara and Serravona Mining, if any
 
 ### Fiumella Barges (15-xu)
 
 - Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.
 - How many barges it runs besides Fiumella IV, and what other bulk it carries.
-- The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.
+- ~~The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.~~ Settled 2026-11-20 (O264): a rugged coast without a deep-water port.
 
 ### Gullhaven Tank Haulage (52-xb)
 
@@ -182,7 +182,7 @@ decided with the owner one at a time, like the gaps here.
 
 - When the customs service was set up and how it was organised under the English settlers.
 - Its staff numbers and its head office, if different from the Wharf Road office.
-- When the island was settled and became independent (not set).
+- ~~When the island was settled and became independent (not set).~~ Filled 2026-11-20 (OW003, OW005).
 
 ### Kelaro Air Cargo (12-xl)
 
@@ -192,8 +192,8 @@ decided with the owner one at a time, like the gaps here.
 ### Kelpstone Gas (42-xb)
 
 - Who founded and owns Kelpstone Gas, and the name of the field and the platform.
-- The platform's distance from the plant: the story gives about 80 km (subsea line about 83 km), the party's site data about 10.
-- The pipeline's name: the company's fleet calls it the Kelpstone–Ferrano gas pipeline, the map the Gullhaven–Serravona gas pipeline.
+- ~~The platform's distance from the plant: the story gives about 80 km (subsea line about 83 km), the party's site data about 10.~~ Settled 2026-11-20 (O264): about 80 km; the 10 is the rounding step.
+- ~~The pipeline's name: the company's fleet calls it the Kelpstone–Ferrano gas pipeline, the map the Gullhaven–Serravona gas pipeline.~~ Settled 2026-11-20: the Kelpstone–Ferrano gas pipeline, as the data names it.
 - The field's reserves and yearly output.
 
 ### Lumeport Airport Cargo Terminal (17-xb)
@@ -215,7 +215,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Trade Accord Council (32-xb)
 
-- When the Council was set up, and whether with the Accord of 1994, its entry into force in 1996 or the later protocol on electronic business documents (whose date is not set)
+- When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)
 - Its membership, how it decides and who chairs it
 - Its tasks beyond the agreement on electronic documents (code lists, the parities, disputes)
 - Its headcount
@@ -235,13 +235,13 @@ decided with the owner one at a time, like the gaps here.
 ### Marrowdale Sawmill (36-xb)
 
 - who founded the mill
-- whether it fells its own timber or only buys logs from the Upland State Forest (the sources say both)
+- ~~whether it fells its own timber or only buys logs from the Upland State Forest (the sources say both)~~ Settled 2026-11-20: it buys its logs from the Upland State Forest.
 
 ### Montebrio Power (43-xu)
 
-- what fuel the station burned before the gas arrived in 2011, and when it was converted
-- whether Montebrio is or was owned by the state
-- where the name Montebrio comes from
+- ~~what fuel the station burned before the gas arrived in 2011, and when it was converted~~ Filled 2026-11-20 (OW009).
+- ~~whether Montebrio is or was owned by the state~~ Filled 2026-11-20 (OW009).
+- ~~where the name Montebrio comes from~~ Filled 2026-11-20 (OW009).
 
 ### Nalevi Warehousing (9-xl)
 
@@ -256,7 +256,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Procurement Review Board of Bayvarra (28-xb)
 
-- When and by which law the board was set up, possibly with the Accord's common procurement rules (their date is not set).
+- ~~When and by which law the board was set up, possibly with the Accord's common procurement rules (their date is not set).~~ Filled 2026-11-20 (OW007): under the procurement protocol of 1999.
 - Its members, how many cases it hears a year, and any case it has decided.
 - Whether the government quarter building is the address on Justice Row or a separate site.
 
@@ -267,7 +267,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Rail Infrastructure Agency of Urvania (47-xu)
 
-- The year Urvania separated its railway (and so when the agency was set up), and what body ran the tracks before.
+- ~~The year Urvania separated its railway (and so when the agency was set up), and what body ran the tracks before.~~ Filled 2026-11-20 (OW009).
 - The length of the network, the number of stations and the agency's staff.
 - Whether it also maintains the line's bridges, such as the ore line's river bridge, 78 m high.
 
@@ -319,7 +319,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Serravona Mining (4-xu)
 
-- whether the company is still owned by the state, and since when it is a public limited company
+- ~~whether the company is still owned by the state, and since when it is a public limited company~~ Filled 2026-11-20 (OW009).
 - when the mine was opened and how long its reserves last
 - who its customers are besides Valdara Industries
 

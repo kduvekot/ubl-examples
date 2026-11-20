@@ -24,6 +24,8 @@ a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underli
 .infobox caption { font:700 1.05rem/1.3 var(--serif); padding:.5rem; background:var(--box); border:1px solid var(--frame); border-bottom:0; }
 .infobox th { text-align:left; vertical-align:top; padding:.3rem .5rem; width:38%; font-weight:600; }
 .infobox td { padding:.3rem .5rem; } .infobox tr + tr th, .infobox tr + tr td { border-top:1px solid var(--rule); }
+.infobox td.map { padding:.4rem; text-align:center; } .infobox td.map img { width:100%; height:auto; display:block; }
+.wmain p > img, .wmain figure img { max-width:100%; height:auto; display:block; margin:.8rem 0; border:1px solid var(--rule); }
 .wmain table:not(.infobox) { border-collapse:collapse; margin:.8rem 0; font:.86rem/1.45 var(--sans); display:block; overflow-x:auto; }
 .wmain table:not(.infobox) th, .wmain table:not(.infobox) td { border:1px solid var(--rule); padding:.3rem .55rem; text-align:left; vertical-align:top; }
 .wmain table:not(.infobox) th { background:var(--box); }

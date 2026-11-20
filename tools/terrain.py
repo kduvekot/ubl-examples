@@ -8,12 +8,14 @@ Outputs: world/terrain.json        per 3.5 km square of the world model's grid (
                                    r rock, m marsh), the country, the corner heights in metres, the main river's
                                    squares with their water level, the estuary's squares, the rapids above
                                    Ferrano (O153); the streams, the small brooks the map shows as well (Lumeport's,
-                                   O153) and the border line for the printed map; the managed forests (land the
+                                   O153) and the border line for the printed map; the rivers the encyclopedia
+                                   names, with their courses and basins; the managed forests (land the
                                    inputs make forest, worked in compartments of 875 m, each of one age); measures
                                    of the land;
          world/terrain/*.png       the fine rasters (875 m cells on the mainland, 437.5 m on Lisavu): height
                                    (16-bit, metres + 1000), land cover (8-bit, the class numbers) and the yearly
-                                   rain (16-bit, mm; for the land use, tools/land_use.py), for the sheet and the model.
+                                   rain (16-bit, mm; for the land use, tools/land_use.py), for the sheet and the model;
+                                   the named rivers' basins (8-bit, the river's id; 0 sea or a smaller stream).
 The world model (tools/world_model.py) and the site build read only the outputs: they need neither scipy nor numba.
 
 Usage: python3 tools/terrain.py            generate (needs numpy, scipy, numba: pip install numpy scipy numba;
@@ -34,6 +36,7 @@ OUT = os.path.join(ROOT, "world", "terrain.json")
 RASTERS = os.path.join(ROOT, "world", "terrain")
 SOURCES = [INPUTS, os.path.join(os.path.dirname(__file__), "terrain.py"), os.path.join(os.path.dirname(__file__), "terrain_lib.py")]
 OFFSET_M = 1000                                     # the height rasters hold metres + OFFSET_M
+RIVER_MIN_KM2 = {"mainland": 1000, "lisavu": 500}  # the rivers the encyclopedia names: basins of at least this
 COAST_CLIFF_M = 50                                  # a coastal corner with one water square or two side by side keeps
                                                     # its land height above this (a cliff), else goes to 0 (a slope)
 
@@ -53,7 +56,7 @@ def check():
         sys.exit("world/terrain.json is not current (world/terrain-inputs.json, tools/terrain.py or tools/terrain_lib.py "
                  "changed): run python3 tools/terrain.py (needs numpy, scipy, numba)")
     for name in ("mainland-height.png", "mainland-cover.png", "mainland-rain.png", "lisavu-height.png", "lisavu-cover.png",
-                 "lisavu-rain.png"):
+                 "lisavu-rain.png", "mainland-basins.png", "lisavu-basins.png"):
         if not os.path.exists(os.path.join(RASTERS, name)):
             sys.exit(f"world/terrain/{name} is missing: run python3 tools/terrain.py")
     print("world/terrain.json is current")
@@ -216,6 +219,17 @@ def generate():
             (ax, ay) = border_water[-1]
             border_water.append([until, round(ay + (y - ay) * (until - ax) / (x - ax), 2)])
             break
+    # the rivers the encyclopedia names (basins of at least RIVER_MIN_KM2) and the raster of their basins
+    named = {}
+    for name, d, thr in (("mainland", md, RIVER_MIN_KM2["mainland"]), ("lisavu", ld, RIVER_MIN_KM2["lisavu"])):
+        rv, lab = T.rivers(d, thr)
+        for r in rv:
+            sq = [country[int(y), int(x)] for x, y in r["course"] if 0 <= int(y) < H and 0 <= int(x) < W]
+            r["countries"] = {c: sq.count(c) for c in "UBL" if sq.count(c)}
+        named[name] = rv
+        Image.fromarray(lab.astype(np.uint8)).save(os.path.join(RASTERS, f"{name}-basins.png"), optimize=True)
+        rasters[name]["basins"] = f"world/terrain/{name}-basins.png"
+        log(f"{name}: {len(rv)} rivers of at least {thr} km2")
     if rapids:
         lv = {(x, y): l for x, y, l in river}
         log(f"rapids: squares {rapids[0]} to {rapids[-1]}, the water {lv[tuple(rapids[0])]:.0f} -> {lv[tuple(rapids[-1])]:.0f} m")
@@ -227,7 +241,11 @@ def generate():
                        "squares; the border on the water (the river from the crossing, then the estuary's axis "
                        "to the open bay; a line in squares, x, y); the rapids above Ferrano (the river's squares through them: the barges stay below); the border "
                        "crossing on the river; streams for the printed map and the small brooks it shows "
-                       "as well; the managed forests (their compartments of 875 m and the age of each); the fine "
+                       "as well; the rivers the encyclopedia names (every stream whose basin reaches 1,000 km2 on the "
+                       "mainland or 500 km2 on Lisavu, from its source to the sea or the larger river it joins, the "
+                       "larger branch keeping the name at each confluence: its course in squares, length, basin, "
+                       "source height, the countries of its squares, and the river it joins; the raster "
+                       "world/terrain/*-basins.png gives each fine cell the river whose course its water reaches first); the managed forests (their compartments of 875 m and the age of each); the fine "
                        "rasters in world/terrain/. "
                        "Do not edit: change the inputs and run the script.",
         "made_from": fingerprint(),
@@ -244,6 +262,7 @@ def generate():
         "rapids": rapids,
         "streams": {"mainland": T.streams(md, 150, 2), "lisavu": T.streams(ld, 25, 2)},
         "brooks": brooks,
+        "rivers": named,
         "managed_forests": managed,
         "rasters": rasters,
         "measures": meas,
