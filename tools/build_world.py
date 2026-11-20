@@ -330,7 +330,9 @@ LEVELS = {"transaction": "Transactions of the Trade Accord", "national": "Nation
 used = {}
 for path in sorted(glob.glob(os.path.join(root, "world", "examples", "*", "*.xml"))):
     flow, name = path.split(os.sep)[-2], os.path.basename(path)[:-4]
-    for e in etree.parse(path).getroot().iter("{*}CustomizationID", "{*}ProfileID"):
+    # the document's own claims only: the root's children, not the specifications a digital agreement or capability
+    # names inside it
+    for e in etree.parse(path).getroot().iterchildren("{*}CustomizationID", "{*}ProfileID"):
         for part in e.text.split(world_specs.COMPLIANT):
             used.setdefault(part, []).append((flow, name))
 

@@ -77,7 +77,7 @@ irrelevant · structure · process.
 | SR-03 | Pages outside the site frame | low | A-10, B-18 | | partly solved |
 | SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | open |
 | SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | partly solved |
-| SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | open |
+| SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | solved |
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | decided (by SR-09) |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
 | SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | decided |
@@ -88,9 +88,9 @@ irrelevant · structure · process.
 | SR-14 | Party descriptions wrong or told from the bench chain only | medium | C-01, C-08, C-09 | | open |
 | SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | open |
 | SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | open |
-| SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | open |
+| SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | partly solved |
 | SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
-| SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | open |
+| SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | solved |
 | SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | open |
 | SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | open |
 | SR-22 | Method note: statements that contradict the world or a decision | medium | B-07, B-08, B-12 | | open |
@@ -176,7 +176,11 @@ irrelevant · structure · process.
 - **Parts:** A-09, C-11.
 
 ### SR-06 · Interactive map texts
-- **Status:** open
+- **Status:** decided and **solved 2026-11-20** (owner: "keep going" on the proposal): the opening card tells the
+  three countries and the flows in-world ("Three countries, one trade accord", the parties counted), without the
+  chamber in every country; a legend under it (the colours of the kinds, one square is 3.5 km, Lisavu drawn closer
+  than it lies, about 1,100 km east of Lumeport). Clickable towns go with the encyclopaedia (`CLAUDE.md` open work 2).
+  The country notes follow Q-C-05 (SR-17, C-04).
 - **What:** the opening card says "54 places" (parties), tells only the bench chain and gives every country a
   chamber of commerce (Bayvarra has none); no legend, no scale (3.5 km a square), no note that Lisavu is drawn
   nearer than it lies (D19 promised an inset); towns cannot be clicked; the foot uses unexplained terms.
@@ -306,7 +310,9 @@ irrelevant · structure · process.
 - **Parts:** C-13, C-14, C-15.
 
 ### SR-17 · Country and geography texts against the map
-- **Status:** open
+- **Status:** partly solved 2026-11-20 (Q-C-05: A): the country notes in `world/countries.json`: Urvania has a rugged
+  coast without a deep-water port and the river down to Lumeport; Lisavu grows cotton as well as buying. Open: the
+  note's points (B-19, B-03).
 - **What:** "Urvania: Mainland, inland" on all 54 party pages against the map's coast and Porto Riparo (O152);
   Lisavu only "the overseas buyer" though it exports cotton; the note does not say party positions inside a
   town are a diagram (O82, O92) and gives the island's distance as both 1,080 and 1,100 km; the world's
@@ -337,7 +343,8 @@ irrelevant · structure · process.
 - **Parts:** D-02 (high), D-01, D-03, D-04, D-05.
 
 ### SR-19 · Specification example lists include nested CustomizationIDs
-- **Status:** open
+- **Status:** **solved 2026-11-20**: the build reads only the root's own CustomizationID and ProfileID; sea/03 and
+  sea/04 are listed on their own transaction and profile pages only.
 - **What:** "Examples that claim it" lists sea/03 DigitalAgreement (twice) and sea/04 DigitalCapability on six
   pages, because the build collects every CustomizationID in a document, not only the root's.
 - **Source:** `tools/build_world.py:283-284`.
@@ -407,7 +414,7 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-C-02 | Drop the "proposed / new" marking? | A on the site | SR-08 | **decided 2026-11-20 (owner): A** |
 | Q-C-03 | How much master data on a party page? | A: the O88 "about itself" record, no personal data of persons | SR-15 | open |
 | Q-C-04 | Where do D/O references live? | A: a separate, unprinted key; flow by flow with O112 | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** out of published text, into comments or an unprinted key |
-| Q-C-05 | Is Urvania still inland? | A: a coast without a deep-water port | SR-17 | open |
+| Q-C-05 | Is Urvania still inland? | A: a coast without a deep-water port | SR-17 | **decided 2026-11-20 (owner): A** |
 | Q-D-01 | Do transaction specifications state rules? | A: generated sections from the examples, hand rules only where a decision makes one | SR-20 | open |
 | Q-D-02 | Which national levels does a cross-border public invoice claim? | A: chain both, `XU:invoice` then `XB:public-billing` | SR-18 | **decided 2026-11-20 (owner): B**, the public buyer's rules only, their text cut back; `#compliant#` chains restrictions, not two countries' parallel rules |
 | Q-D-03 | New version of a specification when a decision changes it? | A: keep 1.0 until a first release | SR-09 | **decided 2026-11-20 (owner): A**; in-world there is no change history |
