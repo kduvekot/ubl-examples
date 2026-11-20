@@ -67,15 +67,15 @@ Inside `DespatchSupplierParty`:
 - `Party/PostalAddress/StreetName` = **Strada della Miniera** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Serravona Mining gives it.
 - `Party/PostalAddress/BuildingNumber` = **10**  
-  Building number of the postal address. as Serravona Mining gives it.
+  Building number of the postal address. As Serravona Mining gives it.
 - `Party/PostalAddress/CityName` = **Trazvul** (languageID `qau`)  
-  The place's Urvanian name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Serravona Mining gives it.
+  The place's Urvanian name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. As Serravona Mining gives it.
 - `Party/PostalAddress/CityName` = **Fucinalta** (languageID `en-XU`)  
-  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. as Serravona Mining gives it.
+  The place's English name, the Italian one. The town or locality nearest to the party's place on the map, in its own country and state. As Serravona Mining gives it.
 - `Party/PostalAddress/PostalZone` = **4320**  
-  Postal code in Urvania's format (4 digits). as Serravona Mining gives it.
+  Postal code in Urvania's format (4 digits). As Serravona Mining gives it.
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Serravona Mining gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Serravona Mining gives it.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -109,7 +109,7 @@ Inside `DespatchSupplierParty`:
 - `Party/Contact/Department` = **Logistics**  
   The department the desk belongs to; as Serravona Mining gives it.
 - `Party/Contact/Telephone` = **+999 1 0413 84813**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Serravona Mining gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Serravona Mining gives it.
 - `Party/Contact/ElectronicMail` = **loading@serravona.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Serravona Mining gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -140,15 +140,15 @@ Inside `DeliveryCustomerParty`:
 - `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Valdara Industries gives it.
 - `Party/PostalAddress/BuildingNumber` = **17**  
-  Building number of the postal address. as Valdara Industries gives it.
+  Building number of the postal address. As Valdara Industries gives it.
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `Party/PostalAddress/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). as Valdara Industries gives it.
+  Postal code in Urvania's format (4 digits). As Valdara Industries gives it.
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Valdara Industries gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Valdara Industries gives it.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -162,7 +162,7 @@ Inside `DeliveryCustomerParty`:
 - `Party/Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Valdara Industries gives it.
 - `Party/Contact/Telephone` = **+999 1 041 386 4551**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Valdara Industries gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Valdara Industries gives it.
 - `Party/Contact/ElectronicMail` = **goodsin@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -215,15 +215,15 @@ Inside `Shipment`:
 - `Consignment/CarrierParty/PostalAddress/StreetName` = **Viale della Stazione** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **38**  
-  Building number of the postal address. as Ferrano Rail Cargo gives it.
+  Building number of the postal address. As Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/PostalZone` = **4310**  
-  Postal code in Urvania's format (4 digits). as Ferrano Rail Cargo gives it.
+  Postal code in Urvania's format (4 digits). As Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Rail Cargo gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -237,7 +237,7 @@ Inside `Shipment`:
 - `Consignment/CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; as Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/Contact/Telephone` = **+999 1 0413 67100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Rail Cargo gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/Contact/ElectronicMail` = **freight@ferranorail.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Rail Cargo gives it.
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  

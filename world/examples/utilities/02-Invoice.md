@@ -25,7 +25,7 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
 - `IssueDate` = **2026-04-02**  
   The monthly bill, issued on the first day of the next month.
 - `IssueTime` = **13:20:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-04-23**  
   As the payment terms below count it: 21 days net from the bill.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
@@ -99,15 +99,15 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/StreetName` = **Corso della Repubblica** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Energy gives it.
 - `Party/PostalAddress/BuildingNumber` = **9**  
-  Building number of the postal address. as Ferrano Energy gives it.
+  Building number of the postal address. As Ferrano Energy gives it.
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Energy gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Energy gives it.
 - `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Energy gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Energy gives it.
 - `Party/PostalAddress/PostalZone` = **4150**  
-  Postal code in Urvania's format (4 digits). as Ferrano Energy gives it.
+  Postal code in Urvania's format (4 digits). As Ferrano Energy gives it.
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Energy gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Ferrano Energy gives it.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -161,7 +161,7 @@ Inside `AccountingSupplierParty`:
 - `Party/Contact/Department` = **Customer service**  
   The department the desk belongs to; as Ferrano Energy gives it.
 - `Party/Contact/Telephone` = **+999 1 041 474 7922**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Energy gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Energy gives it.
 - `Party/Contact/ElectronicMail` = **billing@ferranoenergy.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Energy gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
@@ -192,15 +192,15 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Valdara Industries gives it.
 - `Party/PostalAddress/BuildingNumber` = **17**  
-  Building number of the postal address. as Valdara Industries gives it.
+  Building number of the postal address. As Valdara Industries gives it.
 - `Party/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `Party/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `Party/PostalAddress/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). as Valdara Industries gives it.
+  Postal code in Urvania's format (4 digits). As Valdara Industries gives it.
 - `Party/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Valdara Industries gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Valdara Industries gives it.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -218,7 +218,7 @@ Inside `AccountingCustomerParty`:
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Valdara Industries gives it.
 - `Party/Contact/Telephone` = **+999 1 041 386 4551**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Valdara Industries gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Valdara Industries gives it.
 - `Party/Contact/ElectronicMail` = **payables@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -293,15 +293,15 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Piazza della Banca** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Crevalto Bank gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **8**  
-  Building number of the postal address. as Crevalto Bank gives it.
+  Building number of the postal address. As Crevalto Bank gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Crevalto Bank gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Crevalto Bank gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Crevalto Bank gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Crevalto Bank gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **4100**  
-  Postal code in Urvania's format (4 digits). as Crevalto Bank gives it.
+  Postal code in Urvania's format (4 digits). As Crevalto Bank gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Crevalto Bank gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Crevalto Bank gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Urvania**  

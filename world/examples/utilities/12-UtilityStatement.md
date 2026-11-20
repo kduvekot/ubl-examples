@@ -25,7 +25,7 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
 - `IssueTime` = **17:37:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `UtilityStatementTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of utility the statement is about. The code is from the Trade Accord's utility type list: TEL = Telephone.
 - `Note` = **Mikake votetaka hanano mofilufo kisala vepili vafosu.** (languageID `qal`)  
@@ -82,11 +82,11 @@ Inside `SenderParty`:
 - `PostalAddress/StreetName` = **Mast Hill Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Selanu Telecom gives it.
 - `PostalAddress/BuildingNumber` = **58**  
-  Building number of the postal address. as Selanu Telecom gives it.
+  Building number of the postal address. As Selanu Telecom gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Telecom gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Selanu Telecom gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Telecom gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Selanu Telecom gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -100,7 +100,7 @@ Inside `SenderParty`:
 - `Contact/Department` = **Business sales**  
   The department the desk belongs to; as Selanu Telecom gives it.
 - `Contact/Telephone` = **+999 3 727 3193**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Selanu Telecom gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Telecom gives it.
 - `Contact/ElectronicMail` = **billing@selanutelecom.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Telecom gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -129,11 +129,11 @@ Inside `ReceiverParty`:
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `PostalAddress/BuildingNumber` = **16**  
-  Building number of the postal address. as Velumi Trading gives it.
+  Building number of the postal address. As Velumi Trading gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -147,7 +147,7 @@ Inside `ReceiverParty`:
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; as Velumi Trading gives it.
 - `Contact/Telephone` = **+999 3 729 5794**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Velumi Trading gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
@@ -195,11 +195,11 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Address/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/BuildingNumber` = **16**  
-  Building number of the postal address. as Velumi Trading gives it.
+  Building number of the postal address. As Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `UtilityConsumptionPoint/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  

@@ -122,21 +122,21 @@ Inside `ProviderParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Distribution Drive**  
-  Street of the postal address. as Lumeway Distribution gives it.
+  Street of the postal address. As Lumeway Distribution gives it.
 - `PostalAddress/BlockName` = **Marrowdale Business Park**  
-  The business park the distribution centre stands in. as Lumeway Distribution gives it.
+  The business park the distribution centre stands in. As Lumeway Distribution gives it.
 - `PostalAddress/BuildingNumber` = **43**  
-  Building number of the postal address. as Lumeway Distribution gives it.
+  Building number of the postal address. As Lumeway Distribution gives it.
 - `PostalAddress/PlotIdentification` = **Plot 14**  
-  The plot of the distribution centre in the business park. as Lumeway Distribution gives it.
+  The plot of the distribution centre in the business park. As Lumeway Distribution gives it.
 - `PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeway Distribution gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Lumeway Distribution gives it.
 - `PostalAddress/PostalZone` = **71214**  
-  Postal code in Bayvarra's format (5 digits). as Lumeway Distribution gives it.
+  Postal code in Bayvarra's format (5 digits). As Lumeway Distribution gives it.
 - `PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. As Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -170,7 +170,7 @@ Inside `ProviderParty`:
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; as Lumeway Distribution gives it.
 - `Contact/Telephone` = **+999 2 7121 955 964**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeway Distribution gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeway Distribution gives it.
 - `Contact/ElectronicMail` = **sales@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeway Distribution gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -205,19 +205,19 @@ Inside `ReceiverParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Market Street**  
-  Street of the postal address. as Brightmarket Stores gives it.
+  Street of the postal address. As Brightmarket Stores gives it.
 - `PostalAddress/BuildingNumber` = **50**  
-  Building number of the postal address. as Brightmarket Stores gives it.
+  Building number of the postal address. As Brightmarket Stores gives it.
 - `PostalAddress/CitySubdivisionName` = **Old Town**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Brightmarket Stores gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Brightmarket Stores gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Brightmarket Stores gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Brightmarket Stores gives it.
 - `PostalAddress/PostalZone` = **38515**  
-  Postal code in Bayvarra's format (5 digits). as Brightmarket Stores gives it.
+  Postal code in Bayvarra's format (5 digits). As Brightmarket Stores gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Brightmarket Stores gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Brightmarket Stores gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -233,7 +233,7 @@ Inside `ReceiverParty`:
 - `Contact/Department` = **Purchasing**  
   The department the desk belongs to; as Brightmarket Stores gives it.
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Brightmarket Stores gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Brightmarket Stores gives it.
 - `Contact/ElectronicMail` = **buying@brightmarket.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Brightmarket Stores gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
@@ -769,7 +769,7 @@ Inside `CatalogueLine`:
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
 - `Item/ManufacturersItemIdentification/ExtendedID` = **2026**  
-  The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on: Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it. as Valdara Industries describes the item.
+  The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on: Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it. As Valdara Industries describes the item.
 - `Item/StandardItemIdentification/ID` = **9520610000029** (schemeID `GS1 GTIN`)  
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none.
 - `Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  

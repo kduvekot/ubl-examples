@@ -27,7 +27,7 @@ The award is published; the review body is named for appeals.
 - `IssueDate` = **2026-03-23**  
   Monday 23 March, published after the contract was signed.
 - `IssueTime` = **13:55:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **Award of the framework contract for park benches.**  
   What.
 - `VersionID` = **1**  
@@ -89,25 +89,25 @@ Inside `ContractingParty`:
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Civic Square**  
-  Street of the postal address. as Lumeport Public Works Department gives it.
+  Street of the postal address. As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/BuildingNumber` = **6**  
-  Building number of the postal address. as Lumeport Public Works Department gives it.
+  Building number of the postal address. As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/InhouseMail` = **Room 2.14**  
-  The internal mail code of the procurement office. as Lumeport Public Works Department gives it.
+  The internal mail code of the procurement office. As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/Department` = **Procurement office**  
-  The department the post is for. as Lumeport Public Works Department gives it.
+  The department the post is for. As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/MarkAttention` = **Head of procurement**  
-  For the attention of the head of procurement. as Lumeport Public Works Department gives it.
+  For the attention of the head of procurement. As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Lumeport Public Works Department gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeport Public Works Department gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/PostalZone` = **38517**  
-  Postal code in Bayvarra's format (5 digits). as Lumeport Public Works Department gives it.
+  Postal code in Bayvarra's format (5 digits). As Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Lumeport Public Works Department gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Lumeport Public Works Department gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -125,7 +125,7 @@ Inside `ContractingParty`:
 - `Party/Contact/Department` = **Procurement**  
   The department the desk belongs to; as Lumeport Public Works Department gives it.
 - `Party/Contact/Telephone` = **+999 2 38 8235 3927**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeport Public Works Department gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeport Public Works Department gives it.
 - `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeport Public Works Department gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -150,19 +150,19 @@ Inside `ReceiverParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Civic Square**  
-  Street of the postal address. as Bayvarra Information Service gives it.
+  Street of the postal address. As Bayvarra Information Service gives it.
 - `PostalAddress/BuildingNumber` = **27**  
-  Building number of the postal address. as Bayvarra Information Service gives it.
+  Building number of the postal address. As Bayvarra Information Service gives it.
 - `PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Bayvarra Information Service gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Bayvarra Information Service gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Bayvarra Information Service gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Bayvarra Information Service gives it.
 - `PostalAddress/PostalZone` = **38520**  
-  Postal code in Bayvarra's format (5 digits). as Bayvarra Information Service gives it.
+  Postal code in Bayvarra's format (5 digits). As Bayvarra Information Service gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Bayvarra Information Service gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Bayvarra Information Service gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -176,7 +176,7 @@ Inside `ReceiverParty`:
 - `Contact/Department` = **Publications**  
   The department the desk belongs to; as Bayvarra Information Service gives it.
 - `Contact/Telephone` = **+999 2 38 5339 4832**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Bayvarra Information Service gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Bayvarra Information Service gives it.
 - `Contact/ElectronicMail` = **publications@info-xb.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Bayvarra Information Service gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -201,19 +201,19 @@ Inside `TenderingTerms`:
 - `AppealTerms/AppealReceiverParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `AppealTerms/AppealReceiverParty/PostalAddress/StreetName` = **Justice Row**  
-  Street of the postal address. as Procurement Review Board of Bayvarra gives it.
+  Street of the postal address. As Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/BuildingNumber` = **20**  
-  Building number of the postal address. as Procurement Review Board of Bayvarra gives it.
+  Building number of the postal address. As Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Procurement Review Board of Bayvarra gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Procurement Review Board of Bayvarra gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/PostalZone` = **38519**  
-  Postal code in Bayvarra's format (5 digits). as Procurement Review Board of Bayvarra gives it.
+  Postal code in Bayvarra's format (5 digits). As Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Procurement Review Board of Bayvarra gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Procurement Review Board of Bayvarra gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `AppealTerms/AppealReceiverParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `AppealTerms/AppealReceiverParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -227,7 +227,7 @@ Inside `TenderingTerms`:
 - `AppealTerms/AppealReceiverParty/Contact/Department` = **Registry**  
   The department the desk belongs to; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/Telephone` = **+999 2 38 4119 7873**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Procurement Review Board of Bayvarra gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/ElectronicMail` = **registry@review-xb.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/Note` = **Weekdays 08:00–17:00**  

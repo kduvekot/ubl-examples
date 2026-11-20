@@ -25,7 +25,7 @@ The buyer pays the factor from its account at the buyer's bank and says which in
 - `IssueDate` = **2026-06-25**  
   The buyer pays the factor, before the due date, less the credit note.
 - `IssueTime` = **15:43:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **Payment of the invoice below.**  
   What the advice is for.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -68,11 +68,11 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `Party/PostalAddress/BuildingNumber` = **16**  
-  Building number of the postal address. as Velumi Trading gives it.
+  Building number of the postal address. As Velumi Trading gives it.
 - `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Velumi Trading gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -86,7 +86,7 @@ Inside `AccountingCustomerParty`:
 - `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Velumi Trading gives it.
 - `Party/Contact/Telephone` = **+999 3 729 5794**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Velumi Trading gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `Party/Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
 - `Party/Contact/Note` = **Monday to Saturday 09:00–18:00**  
@@ -122,19 +122,19 @@ Inside `PayeeParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Exchange Street**  
-  Street of the postal address. as Harbourline Factoring gives it.
+  Street of the postal address. As Harbourline Factoring gives it.
 - `PostalAddress/BuildingNumber` = **41**  
-  Building number of the postal address. as Harbourline Factoring gives it.
+  Building number of the postal address. As Harbourline Factoring gives it.
 - `PostalAddress/CitySubdivisionName` = **Old Town**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map. as Harbourline Factoring gives it.
+  The quarter of Lumeport the party is in: one of the town's districts on the map. As Harbourline Factoring gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Harbourline Factoring gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Harbourline Factoring gives it.
 - `PostalAddress/PostalZone` = **38522**  
-  Postal code in Bayvarra's format (5 digits). as Harbourline Factoring gives it.
+  Postal code in Bayvarra's format (5 digits). As Harbourline Factoring gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Harbourline Factoring gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Harbourline Factoring gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -148,7 +148,7 @@ Inside `PayeeParty`:
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; as Harbourline Factoring gives it.
 - `Contact/Telephone` = **+999 2 38 2478 9865**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Harbourline Factoring gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Harbourline Factoring gives it.
 - `Contact/ElectronicMail` = **receivables@harbourline.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Harbourline Factoring gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -193,11 +193,11 @@ Inside `PaymentMeans`:
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Bank of Selanu gives it.
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **23**  
-  Building number of the postal address. as Bank of Selanu gives it.
+  Building number of the postal address. As Bank of Selanu gives it.
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Selanu gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Bank of Selanu gives it.
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Selanu gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Bank of Selanu gives it.
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Lisavu**  
@@ -231,17 +231,17 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
-  Street of the postal address. as Bank of Lumeport gives it.
+  Street of the postal address. As Bank of Lumeport gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
-  Building number of the postal address. as Bank of Lumeport gives it.
+  Building number of the postal address. As Bank of Lumeport gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Lumeport gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Bank of Lumeport gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **38523**  
-  Postal code in Bayvarra's format (5 digits). as Bank of Lumeport gives it.
+  Postal code in Bayvarra's format (5 digits). As Bank of Lumeport gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Bank of Lumeport gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Bank of Lumeport gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Bayvarra**  

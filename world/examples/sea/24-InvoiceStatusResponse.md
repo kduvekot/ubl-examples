@@ -25,7 +25,7 @@ The buyer answers: accepted and scheduled for payment.
 - `IssueDate` = **2026-06-01**  
   Answered on the next working day, Monday 1 June.
 - `IssueTime` = **13:49:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **Approved; the balance will be paid to the factor.**  
   The answer.
 - `VersionID` = **1**  
@@ -63,7 +63,7 @@ Inside `SenderParty`:
 - `Contact/Department` = **Finance**  
   The department the desk belongs to; as Velumi Trading gives it.
 - `Contact/Telephone` = **+999 3 729 5794**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Velumi Trading gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `Contact/ElectronicMail` = **payables@velumi.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  

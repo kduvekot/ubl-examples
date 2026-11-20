@@ -50,11 +50,11 @@ Inside `ImporterParty`:
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Selanu General Hospital gives it.
 - `PostalAddress/BuildingNumber` = **81**  
-  Building number of the postal address. as Selanu General Hospital gives it.
+  Building number of the postal address. As Selanu General Hospital gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu General Hospital gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Selanu General Hospital gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu General Hospital gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Selanu General Hospital gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -95,17 +95,17 @@ Inside `ConsignorParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Airport Road**  
-  Street of the postal address. as Quillmoor Pharma Distribution gives it.
+  Street of the postal address. As Quillmoor Pharma Distribution gives it.
 - `PostalAddress/BuildingNumber` = **40**  
-  Building number of the postal address. as Quillmoor Pharma Distribution gives it.
+  Building number of the postal address. As Quillmoor Pharma Distribution gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Quillmoor Pharma Distribution gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Quillmoor Pharma Distribution gives it.
 - `PostalAddress/PostalZone` = **38528**  
-  Postal code in Bayvarra's format (5 digits). as Quillmoor Pharma Distribution gives it.
+  Postal code in Bayvarra's format (5 digits). As Quillmoor Pharma Distribution gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Quillmoor Pharma Distribution gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. As Quillmoor Pharma Distribution gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -141,11 +141,11 @@ Inside `CustomsParty`:
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Island Customs Service gives it.
 - `PostalAddress/BuildingNumber` = **53**  
-  Building number of the postal address. as Island Customs Service gives it.
+  Building number of the postal address. As Island Customs Service gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Island Customs Service gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Island Customs Service gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Island Customs Service gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Island Customs Service gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -163,7 +163,7 @@ Inside `CustomsParty`:
 - `Contact/Department` = **Customs**  
   The department the desk belongs to; as Island Customs Service gives it.
 - `Contact/Telephone` = **+999 3 728 6449**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Island Customs Service gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Island Customs Service gives it.
 - `Contact/ElectronicMail` = **import@customs-xl.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Island Customs Service gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -196,11 +196,11 @@ Inside `NotifierParty`:
 - `PostalAddress/StreetName` = **Wharf Road** (languageID `en-XL`)  
   The street's name in English, the country's other official language; as Tevaro Customs Brokers gives it.
 - `PostalAddress/BuildingNumber` = **60**  
-  Building number of the postal address. as Tevaro Customs Brokers gives it.
+  Building number of the postal address. As Tevaro Customs Brokers gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Tevaro Customs Brokers gives it.
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. As Tevaro Customs Brokers gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Tevaro Customs Brokers gives it.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Tevaro Customs Brokers gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -218,7 +218,7 @@ Inside `NotifierParty`:
 - `Contact/Department` = **Customs**  
   The department the desk belongs to; as Tevaro Customs Brokers gives it.
 - `Contact/Telephone` = **+999 3 725 3563**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Tevaro Customs Brokers gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Tevaro Customs Brokers gives it.
 - `Contact/ElectronicMail` = **declarations@tevaro.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Tevaro Customs Brokers gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  

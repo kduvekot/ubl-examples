@@ -25,7 +25,7 @@ The distributor, as importer, declares the goods in Bayvarra and claims the pref
 - `IssueDate` = **2026-03-24**  
   Declared when the goods arrive in Bayvarra.
 - `IssueTime` = **09:54:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
+  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   An import declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 - `SubTypeCode` = **FREECIRC** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode`)  
@@ -69,21 +69,21 @@ Inside `ImporterParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Distribution Drive**  
-  Street of the postal address. as Lumeway Distribution gives it.
+  Street of the postal address. As Lumeway Distribution gives it.
 - `PostalAddress/BlockName` = **Marrowdale Business Park**  
-  The business park the distribution centre stands in. as Lumeway Distribution gives it.
+  The business park the distribution centre stands in. As Lumeway Distribution gives it.
 - `PostalAddress/BuildingNumber` = **43**  
-  Building number of the postal address. as Lumeway Distribution gives it.
+  Building number of the postal address. As Lumeway Distribution gives it.
 - `PostalAddress/PlotIdentification` = **Plot 14**  
-  The plot of the distribution centre in the business park. as Lumeway Distribution gives it.
+  The plot of the distribution centre in the business park. As Lumeway Distribution gives it.
 - `PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeway Distribution gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Lumeway Distribution gives it.
 - `PostalAddress/PostalZone` = **71214**  
-  Postal code in Bayvarra's format (5 digits). as Lumeway Distribution gives it.
+  Postal code in Bayvarra's format (5 digits). As Lumeway Distribution gives it.
 - `PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. As Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -115,7 +115,7 @@ Inside `ImporterParty`:
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; as Lumeway Distribution gives it.
 - `Contact/Telephone` = **+999 2 7121 955 964**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeway Distribution gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeway Distribution gives it.
 - `Contact/ElectronicMail` = **customs@lumeway.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeway Distribution gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -148,15 +148,15 @@ Inside `ConsignorParty`:
 - `PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Valdara Industries gives it.
 - `PostalAddress/BuildingNumber` = **17**  
-  Building number of the postal address. as Valdara Industries gives it.
+  Building number of the postal address. As Valdara Industries gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Valdara Industries gives it.
 - `PostalAddress/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). as Valdara Industries gives it.
+  Postal code in Urvania's format (4 digits). As Valdara Industries gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Valdara Industries gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Valdara Industries gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -188,17 +188,17 @@ Inside `CustomsParty`:
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
   The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Border Road**  
-  Street of the postal address. as Customs and Border Service of Bayvarra gives it.
+  Street of the postal address. As Customs and Border Service of Bayvarra gives it.
 - `PostalAddress/BuildingNumber` = **36**  
-  Building number of the postal address. as Customs and Border Service of Bayvarra gives it.
+  Building number of the postal address. As Customs and Border Service of Bayvarra gives it.
 - `PostalAddress/CityName` = **Euridice Crossing**  
-  The town or locality nearest to the party's place on the map, in its own country and state. as Customs and Border Service of Bayvarra gives it.
+  The town or locality nearest to the party's place on the map, in its own country and state. As Customs and Border Service of Bayvarra gives it.
 - `PostalAddress/PostalZone` = **71950**  
-  Postal code in Bayvarra's format (5 digits). as Customs and Border Service of Bayvarra gives it.
+  Postal code in Bayvarra's format (5 digits). As Customs and Border Service of Bayvarra gives it.
 - `PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme. as Customs and Border Service of Bayvarra gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. As Customs and Border Service of Bayvarra gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -216,7 +216,7 @@ Inside `CustomsParty`:
 - `Contact/Department` = **Customs**  
   The department the desk belongs to; as Customs and Border Service of Bayvarra gives it.
 - `Contact/Telephone` = **+999 2 7121 503 398**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Customs and Border Service of Bayvarra gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Customs and Border Service of Bayvarra gives it.
 - `Contact/ElectronicMail` = **import@customs-xb.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Customs and Border Service of Bayvarra gives it.
 - `Contact/Note` = **Every day, around the clock**  

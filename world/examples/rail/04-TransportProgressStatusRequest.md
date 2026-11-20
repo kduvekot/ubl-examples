@@ -65,15 +65,15 @@ Inside `SenderParty`:
 - `PostalAddress/StreetName` = **Viale della Stazione** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Rail Cargo gives it.
 - `PostalAddress/BuildingNumber` = **38**  
-  Building number of the postal address. as Ferrano Rail Cargo gives it.
+  Building number of the postal address. As Ferrano Rail Cargo gives it.
 - `PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Rail Cargo gives it.
 - `PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Ferrano Rail Cargo gives it.
 - `PostalAddress/PostalZone` = **4310**  
-  Postal code in Urvania's format (4 digits). as Ferrano Rail Cargo gives it.
+  Postal code in Urvania's format (4 digits). As Ferrano Rail Cargo gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Rail Cargo gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Ferrano Rail Cargo gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -87,7 +87,7 @@ Inside `SenderParty`:
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; as Ferrano Rail Cargo gives it.
 - `Contact/Telephone` = **+999 1 0413 67100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Rail Cargo gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Rail Cargo gives it.
 - `Contact/ElectronicMail` = **freight@ferranorail.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Rail Cargo gives it.
 - `Contact/Note` = **Every day 06:00–22:00**  
@@ -116,15 +116,15 @@ Inside `ReceiverParty`:
 - `PostalAddress/StreetName` = **Via della Stazione** (languageID `en-XU`)  
   The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/BuildingNumber` = **2**  
-  Building number of the postal address. as Rail Infrastructure Agency of Urvania gives it.
+  Building number of the postal address. As Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Rail Infrastructure Agency of Urvania gives it.
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. As Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Rail Infrastructure Agency of Urvania gives it.
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. As Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/PostalZone` = **4150**  
-  Postal code in Urvania's format (4 digits). as Rail Infrastructure Agency of Urvania gives it.
+  Postal code in Urvania's format (4 digits). As Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country. as Rail Infrastructure Agency of Urvania gives it.
+  The province, part of an address in Urvania: a subdivision of the country. As Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
@@ -138,7 +138,7 @@ Inside `ReceiverParty`:
 - `Contact/Department` = **Traffic management**  
   The department the desk belongs to; as Rail Infrastructure Agency of Urvania gives it.
 - `Contact/Telephone` = **+999 1 041 816 2047**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Rail Infrastructure Agency of Urvania gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Rail Infrastructure Agency of Urvania gives it.
 - `Contact/ElectronicMail` = **traffic@railinfra-xu.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Rail Infrastructure Agency of Urvania gives it.
 - `Contact/Note` = **Every day, around the clock**  

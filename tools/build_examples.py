@@ -337,7 +337,7 @@ def party(pid, short=False, desk=None, lang=None):
                                                        "the desk. " if own else "") + "Telephone under +999, a country code the ITU reserves for a "
                                                       "future global service (ITU-T E.164), so the number reaches no "
                                                       f"one; then the country digit and a number in {c['name']}'s own "
-                                                      f"plan: {c['phone_plan']['note']} {src}.")
+                                                      f"plan: {c['phone_plan']['note']} {src[:1].upper()}{src[1:]}.")
         if ct.get("telefax"):
             contact["Telefax"] = V(ct["telefax"], f"The customs office still lists a fax number; {src}.")
         contact["ElectronicMail"] = V(ct["email"], "E-mail under the reserved .example domain (RFC 2606), so it cannot "
@@ -434,7 +434,7 @@ def abroad_address(pid):
                    ("CityName", "The town."), ("PostalZone", f"Postal code in the format of {c['name']}."),
                    ("CountrySubentity", f"The state of {c['name']}, part of an address there.")):
         if a.get(k):
-            out[k] = V(a[k], f"{why} {src}.")
+            out[k] = V(a[k], f"{why} {src[:1].upper()}{src[1:]}.")
     out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, the legal time there in "
                                              "June.")
     out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}, a real country outside the world.",  # O229
@@ -698,7 +698,7 @@ def address(pid, register=False):
                               "the map, in its own country and state.", "PostalZone": f"Postal code in {c['name']}'s "
                               f"format ({c['address']['postal_zone']}).", "CountrySubentity": (f"The province, part of an address in {c['name']}: a "
                               "subdivision of the country." if c.get("province") else  # world/countries.json
-                              f"The state or territory, part of an address in federal {c['name']}.")}.get(k, why.get(k, "")) + f" {src}.")
+                              f"The state or territory, part of an address in federal {c['name']}.")}.get(k, why.get(k, "")) + f" {src[:1].upper()}{src[1:]}.")
     code = c["languages"][0]
     if code != "en" and "en" in c["languages"] and isinstance(out.get("StreetName"), V):
         lang = WORLD["languages"][code]["name"]                 # a bilingual country names its streets twice
@@ -711,7 +711,7 @@ def address(pid, register=False):
                                             if p["c"] == "XU" else "") + f"; {src}.", languageID=f"en-{p['c']}")]
     if a.get("CityName"):
         if idn.get("city_why"):                     # a party not in the town nearest to it (O152, 2026-11-18)
-            out["CityName"] = V(a["CityName"], f"{idn['city_why']} {src}.")
+            out["CityName"] = V(a["CityName"], f"{idn['city_why']} {src[:1].upper()}{src[1:]}.")
         out["CityName"] = city_names(p["c"], a["CityName"], out["CityName"].why)
     out["AddressFormatCode"] = address_format_code(p["c"])
     out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, {c['name']}'s legal time, "
@@ -771,7 +771,7 @@ def location(pid):
         import world_map
         d = site["distance"]
         text = text.format(km=world_map.nearest(world_map.route_km(d["route"]), d.get("about", 1)))
-        why += f" The distance is the length of the map's route {d['route']}, rounded to {d.get('about', 1)} km."
+        why += f" The distance is measured along the route on the map, rounded to {d.get('about', 1)} km."  # route d['route']
     out["Description"] = V(text, why)
     if site.get("conditions"):
         out["Conditions"] = V(site["conditions"], "What a visitor must know about getting there.")
@@ -1167,7 +1167,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     # variant on it, and the variant goes with the maker's number
     if maker.get("version"):      # the version of the maker's part, on the maker's number (O216)
         mid = out["ManufacturersItemIdentification"] if it.get("resale_of") else out["SellersItemIdentification"]
-        mid["ExtendedID"] = V(maker["version"]["extended"], f"{maker['version']['why']} {msrc}.")
+        mid["ExtendedID"] = V(maker["version"]["extended"], f"{maker['version']['why']} {msrc[:1].upper()}{msrc[1:]}.")
     variant = maker.get("variant", {})
     vid = out["ManufacturersItemIdentification"] if it.get("variant_numbers") else out["SellersItemIdentification"]
     if variant.get("extended"):
@@ -3471,8 +3471,10 @@ def issue_time_offset(content, doc):
     t = content.get("IssueTime")
     if isinstance(t, V) and re.fullmatch(r"\d\d:\d\d:\d\d", str(t.value)):
         tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
-        content["IssueTime"] = V(f"{t.value}{tz}", f"{t.why.rstrip('.')}; in the issuer's local time, with its "
-                                                   "offset from UTC.", **t.attrs)  # D27
+        why = t.why.rstrip(".")
+        why = (why.replace("in the sender's local time", "in the sender's local time, with its offset from UTC")
+               if "local time" in why else f"{why}; in the issuer's local time, with its offset from UTC")
+        content["IssueTime"] = V(f"{t.value}{tz}", why + ".", **t.attrs)  # D27
 
 
 # ---------------------------------------------------------------- issue times follow what a document reports (C72)
