@@ -230,8 +230,6 @@ for p in world["parties"]:
     v = view[p["id"]]
     lines = [f"# {label(p)}", ""]
     meta = f"*#{p['n']} {p['name']} · {c['name']} ({p['c']}) · {CATEGORY[p['cat']]}*"
-    if p.get("proposed"):
-        meta += " · *proposed addition to the 26+C set*"
     lines += [meta, "", p["what"], ""] + identity(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
     lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
@@ -251,16 +249,59 @@ for p in world["parties"]:
               "elements), completed by the party role table of the UBL specification where the model does not say it. "
               "Every place named in a document is checked against the UBL 2.5 structure.*", ""]
     open(os.path.join(mddir, f"world-{p['id']}.md"), "w", encoding="utf-8").write("\n".join(lines))
+# The parties: an index by country and kind
+TOWN = lambda p: p["identity"].get("address", {}).get("CityName", "")
+pt = ["# Parties", "",
+      "The companies, carriers, ports, banks and public bodies of the world, and the people who trade with them. "
+      "Each page tells what the party does, how it identifies itself, and every document it sends, receives or is "
+      "named in. On [the map](world.html) each one stands in its town.", ""]
+for cc, c in world["countries"].items():
+    ps = [p for p in world["parties"] if p["c"] == cc]
+    if not ps:
+        continue
+    pt += [f"## {c['name']}", "", "| Party | Role | Town | Kind |", "|---|---|---|---|"]
+    for p in sorted(ps, key=lambda p: (list(CATEGORY).index(p["cat"]), label(p))):
+        pt.append(f"| [{label(p)}](world-{p['id']}.html) | {p['name']} | {TOWN(p)} | {CATEGORY[p['cat']]} |")
+    pt.append("")
+open(os.path.join(mddir, "parties.md"), "w", encoding="utf-8").write("\n".join(pt))
+
+# The code lists of the world: an index of the published genericode files
+from lxml import etree as _et  # noqa: E402
+cl = ["# Code lists", "",
+      "The code lists the documents of the world use, each published as a genericode file at the address its "
+      "documents give. Where a document uses a real external list (UN/EDIFACT, ISO, the WCO's Harmonized System and "
+      "others), the world's file holds the codes it uses, with the list's own identifier; the Trade Accord's and the "
+      "countries' own lists are the world's. "
+      "[The context/value association](codelists/UBL-World-2.5.cva) binds each code element of UBL 2.5 to its list, "
+      "as UBL's own validation does.", "",
+      "The lists of countries and currencies extend UBL's default lists of version 2.4 with the codes of the "
+      "world's three countries and their currencies.", "",
+      "| List | listID | Agency | Codes | File |", "|---|---|---|---:|---|"]
+_gc = "{http://docs.oasis-open.org/codelist/ns/genericode/1.0/}"
+_files = sorted(os.path.join("codelists", f) for f in os.listdir(os.path.join(root, "world", "codelists")) if f.endswith(".gc"))
+_files += sorted(os.path.join("codelists", "gc", f) for f in os.listdir(os.path.join(root, "world", "codelists", "gc"))
+                 if f.endswith(".gc"))
+for rel in _files:
+    t = _et.parse(os.path.join(root, "world", rel)).getroot()
+    ident = t.find("Identification")
+    names = ident.findall("LongName")
+    name = next((n.text for n in names if n.get("Identifier") is None), ident.findtext("ShortName"))
+    lid = next((n.text for n in names if n.get("Identifier") == "listID"), ident.findtext("CanonicalUri"))
+    agency = ident.findtext("Agency/LongName") or ""
+    codes = len(t.findall("SimpleCodeList/Row"))
+    cl.append(f"| {name} | `{lid}` | {agency} | {codes} | [{os.path.basename(rel)}]({rel}) |")
+cl.append("")
+open(os.path.join(mddir, "world-codelists.md"), "w", encoding="utf-8").write("\n".join(cl))
+
 # The examples: an index of the flows that have example documents
-ex_lines = ["# Example documents", "",
-            "Real UBL 2.5 documents from the example world. Every document is valid against the UBL 2.5 schemas of "
-            "the endorsed document types and against the world's code lists, and every value in it comes with the "
-            "reason why it is that value. The documents are generated from the world's layers, so the parties, items, "
-            "currencies and taxes in them agree with the rest of the world.", "",
-            "These examples are kept apart from the examples of the OASIS UBL Technical Committee, whose history is "
-            "in this repository's `xml/` folder.", "",
+ex_lines = ["# Trade", "",
+            "The flows of trade in the world, from the ore at the mine to the bench in the park, the cotton bale and the "
+            "power on the grid. Each flow is told as a story, with the documents its parties exchange, in UBL 2.5. "
+            "Every document is valid against the UBL 2.5 schemas and the world's code lists, and every value in it "
+            "comes with the reason why it is that value. The parties, items, currencies and taxes agree from one "
+            "document to the next and with the rest of the world.", "",
             "Each document names the specifications it follows in `CustomizationID` and `ProfileID`: see "
-            "[the world's specifications](world-specifications.html).", ""]
+            "[the rules of the Trade Accord](world-specifications.html).", ""]
 for f in world["flows"]:
     same = [x for x in world["documents"] if x["flow"] == f["id"]]
     rows = [(x["nn"], x) for x in same if example_of(x)]
@@ -291,7 +332,9 @@ def spec_page(level, key):
 
 
 specs = world_specs.described()
-idx = ["# Specifications", "",
+idx = ["# Rules of the Trade Accord", "",
+       "How the documents of the world are made: the specifications they claim, below, and "
+       "[the code lists](world-codelists.html) their codes come from.", "",
        "Every document of the world says which specifications it follows. `CustomizationID` names the transaction "
        "specification at up to three levels, chained with `#compliant#`, as EN 16931, Peppol and XRechnung do: the "
        "Trade Accord's transaction, a national specification built on it, and a community's specification. "
