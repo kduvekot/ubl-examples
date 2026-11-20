@@ -213,6 +213,10 @@
      "Export outside Bayvarra",
      "Goods or services sent to a buyer outside Bayvarra."
     ],
+    "OUTSIDE": [
+     "Goods outside Bayvarra",
+     "Goods that are outside Bayvarra when they are sold and delivered: outside the scope of the state sales tax, without a rate."
+    ],
     "WATER": [
      "Drinking water",
      "Drinking water supplied through the mains is exempt."

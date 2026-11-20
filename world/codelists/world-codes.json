@@ -5039,6 +5039,7 @@
    "location": "world/codelists/gc/XB-TaxExemptionReasonCode.gc",
    "codes": [
     "EXP",
+    "OUTSIDE",
     "WATER",
     "PUBLIC",
     "SVCB2B",

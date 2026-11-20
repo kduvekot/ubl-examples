@@ -254,9 +254,9 @@ def free_with_name(it):
 
 
 # sales across a border whose goods the sale does not export: (seller, buyer, item). The goods are already in the
-# buyer's country when they are sold, so the seller's country taxes the sale by its rules for a sale at home, and the
-# invoice states no origin. The sawmill sells its slats to Valdara from its stock at the modification plant in Urvania
-# (O255 points 2 and 3).
+# buyer's country when they are sold, so the sale is outside the seller's country's tax (category O), and the invoice
+# states no origin. The sawmill sells its slats to Valdara from its stock at the modification plant in Urvania
+# (O255 points 2 and 3; O258: outside Bayvarra's sales tax, not its resale exemption).
 NOT_EXPORTED = {("36-xb", "5-xu", "slat-bundle-1800")}
 
 
@@ -289,7 +289,11 @@ def tax_rule(seller, buyer, iid):
         return ("O", 0, scheme, "A service supplied outside Urvania, to a customer established abroad, is outside the "
                                 "scope of Urvania's value added tax (category O).", "Service supplied outside Urvania")
     if s["c"] == "XB":
-        if b["c"] != "XB" and (seller, buyer, iid) not in NOT_EXPORTED:
+        if (seller, buyer, iid) in NOT_EXPORTED:
+            return ("O", 0, scheme, "The goods are in Urvania when they are sold and delivered, so the sale is outside "
+                                    "the scope of Bayvarra's state sales tax (category O, without a rate).",
+                    "Goods outside Bayvarra")
+        if b["c"] != "XB":
             return ("G", 0, scheme, "An export from Bayvarra: the state sales tax is not charged (category G).",
                     "Export outside Bayvarra")
         if is_person(buyer) and it["id"] != "water":

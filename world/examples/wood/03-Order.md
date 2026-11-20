@@ -188,14 +188,12 @@ Inside `AllowanceCharge`:
   The 96 bundles travel four to a pallet, on 24 heat-treated pallets that stay with the buyer, as the quotation offered.
 - `Amount` = **240.00** (currencyID `XBL`)  
   24 pallets at 10.00 lume.
-- `TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
-  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
-- `TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
-  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  The goods are in Urvania when they are sold and delivered, so the sale is outside the scope of Bayvarra's state sales tax (category O, without a rate). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/TaxExemptionReasonCode` = **OUTSIDE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: OUTSIDE = Goods outside Bayvarra.
+- `TaxCategory/TaxExemptionReason` = **Goods outside Bayvarra**  
+  The name of code OUTSIDE in Bayvarra's national sales tax exemption reason list.
 - `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -209,14 +207,12 @@ Inside `TaxTotal`:
   The lines of this category plus the document's charges less its allowances of the category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
-  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
-  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
+- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
+  The goods are in Urvania when they are sold and delivered, so the sale is outside the scope of Bayvarra's state sales tax (category O, without a rate). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **OUTSIDE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: OUTSIDE = Goods outside Bayvarra.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Goods outside Bayvarra**  
+  The name of code OUTSIDE in Bayvarra's national sales tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -389,10 +385,9 @@ Inside `OrderLine`:
     <cbc:AllowanceChargeReason>Pallets</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
     <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
       </cac:TaxScheme>
@@ -404,10 +399,9 @@ Inside `OrderLine`:
       <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
