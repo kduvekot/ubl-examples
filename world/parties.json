@@ -1046,7 +1046,6 @@
    ],
    "h": 2,
    "kind": "office",
-   "proposed": true,
    "what": "Issues item and property identifiers used across the world (a fictional numbering organisation).",
    "how": "Everyone in the world refers to the same products and properties. An identifier issuing agency gives those items and properties stable identifiers, which UBL documents carry in their identification elements, so a catalogue line, an order line and an invoice line point to exactly the same thing.",
    "identity": {
@@ -1604,7 +1603,6 @@
    ],
    "h": 2,
    "kind": "office",
-   "proposed": true,
    "what": "An engineering firm founded in 1994 in Saltmere, the east-coast village it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits (a registered architect, Edda Corwin, is on its staff), and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring (D28 point 3, D29 point 2, O97, O222).",
    "how": "A subcontractor or a member of a group of tenderers is named with its own role. UBL tenders and qualification documents name each member and its qualifications separately, so the authority can see who contributes what and check each one in the register.",
    "identity": {
@@ -1694,7 +1692,6 @@
    ],
    "h": 3,
    "kind": "office",
-   "proposed": true,
    "what": "Independent body that handles appeals in public procurement.",
    "how": "A review body handles appeals against procurement decisions. The tendering documents name it, with the deadlines for an appeal, so every tenderer knows where and when to go.",
    "identity": {
@@ -1779,7 +1776,6 @@
    ],
    "h": 2,
    "kind": "office",
-   "proposed": true,
    "what": "Governs the multilateral digital agreement under which the parties exchange UBL documents.",
    "how": "A digital agreement sets out which documents the participants exchange and under which rules. UBL's digital agreement and digital capability documents describe that framework, and its governor keeps it up to date for all participants.",
    "identity": {
@@ -1973,7 +1969,6 @@
    ],
    "h": 3,
    "kind": "bank",
-   "proposed": true,
    "what": "Insures the cargo on its way overseas.",
    "how": "An insurer covers the cargo while it travels. UBL transport documents can carry the insurance policy with the insurer, the policy holder and the insured value, so every party in the transport chain knows the goods are covered.",
    "identity": {
@@ -3006,7 +3001,6 @@
    ],
    "h": 2,
    "kind": "office",
-   "proposed": true,
    "what": "The island's flag state administration; issues ship security certificates.",
    "how": "The island's maritime administration issues ship security certificates. UBL transport reports to the port carry the certificate and its issuer, so the port can check them before the ship arrives.",
    "identity": {
@@ -3083,7 +3077,6 @@
    ],
    "h": 2,
    "kind": "office",
-   "proposed": true,
    "what": "Sells electricity and gas to Urvania's homes and businesses: buys electricity from the power station and gas from the gas producer, pays the grid operator for the networks, and bills the customers.",
    "how": "In an unbundled market the retailer bills, but the grid operator owns and reads the meters. UBL keeps the two apart: the grid operator's Utility Statement carries the readings to the retailer, and the retailer's Invoice and Utility Statement carry them on to the customer.",
    "identity": {
@@ -3179,7 +3172,6 @@
    ],
    "h": 2,
    "kind": "waterworks",
-   "proposed": true,
    "what": "Supplies drinking water in Coastal State, to shops and households, and runs Lumeport's district heating, whose peak boilers burn propane bought from Kelpstone Gas in winter (D31, D48).",
    "how": "Water is billed on metered consumption. With UBL the Utility Statement carries the meter readings and the Invoice the amount; the tax exemption for water is stated explicitly, and a Reminder follows the same structure when a household pays late.",
    "identity": {
@@ -3256,7 +3248,6 @@
    ],
    "h": 2,
    "kind": "telecom",
-   "proposed": true,
    "what": "The island's telephone and data provider.",
    "how": "Telecom bills list calls, data and subscriptions per line. The UBL Utility Statement has a telecommunications structure of its own, so a business customer can allocate the costs of each line without retyping a paper bill.",
    "identity": {
@@ -3352,7 +3343,6 @@
    ],
    "h": 2,
    "kind": "sawmill",
-   "proposed": true,
    "what": "Fells timber in the forests of Upland State and saws it into planks, slats and beams at its mill on the north bank of the river; sells slats for the benches across the border and timber to the furniture maker.",
    "how": "Wood is sold by dimensions and volume, in lots. UBL carries the measurements and the lot of every item in quotations, orders and despatch advices, so a buyer that orders slats to size gets exactly what it ordered and can trace each lot.",
    "identity": {
@@ -3457,7 +3447,6 @@
    ],
    "h": 2,
    "kind": "warehouse",
-   "proposed": true,
    "what": "Makes wooden furniture from the sawmill's timber; supplies the department store and furnishes public offices, installation included.",
    "how": "A supplier to a retailer shares more than orders: sales per store, stock policies and agreed exception thresholds. UBL's retail collaboration documents carry them, and a Work Report documents installation work for the customer to approve.",
    "identity": {
@@ -3567,7 +3556,6 @@
    ],
    "h": 2,
    "kind": "factory",
-   "proposed": true,
    "what": "Spins and weaves the island's cotton into fabric and makes clothing for the department store.",
    "how": "Its raw material comes from overseas on a schedule. UBL forecasts and their revisions tell the ginnery what to expect, and the bill of lading, customs documents and invoice of every shipment arrive in one structure.",
    "identity": {
@@ -3686,7 +3674,6 @@
    ],
    "h": 2,
    "kind": "factory",
-   "proposed": true,
    "what": "Makes packaging from recycled plastic granulate that arrives by barge from Urvania; packs the benches and the clothing.",
    "how": "Recycled raw material comes in bulk lots by river; packaging goes out in many small orders. UBL handles both with the same order, despatch and invoice structure, across the border and at home.",
    "identity": {
@@ -3801,7 +3788,6 @@
    ],
    "h": 1,
    "kind": "farm",
-   "proposed": true,
    "what": "Grows cotton on the island and delivers the seed cotton to the ginnery after the harvest.",
    "how": "A farm does not write invoices: the ginnery weighs and grades the cotton and bills itself on the farm's behalf. UBL's self-billed invoice and credit note are made for exactly this, and the farm receives a structured statement of what it was paid for.",
    "identity": {
@@ -3883,7 +3869,6 @@
    ],
    "h": 2,
    "kind": "ginnery",
-   "proposed": true,
    "what": "Gins the farms' seed cotton into bales and exports them to the textile mill on the mainland: the island's export.",
    "how": "The ginnery buys from many farms and sells overseas. UBL covers both sides: self-billing towards the farms, and towards the mill an export with weight statement, goods certificate, customs declaration and invoice.",
    "identity": {
@@ -3995,7 +3980,6 @@
    ],
    "h": 2,
    "kind": "gasplant",
-   "proposed": true,
    "what": "Produces natural gas from an offshore field off Bayvarra's north coast; treats it at its plant on the shore and sends it by pipeline to the power station and the grid of Urvania. The propane it separates from the field's gas at the plant is sold by road tanker to customers in Bayvarra, among them the peak boilers of Lumeport's district heating (D48).",
    "how": "Gas is sold by energy, measured at the border, and crosses it by pipeline every day. UBL carries the monthly sale as an Invoice in energy units, the export and import by fixed installation (transport mode 7) in the customs declarations, and a Reminder when the buyer pays late.",
    "fleet": [
@@ -4116,7 +4100,6 @@
    ],
    "h": 2,
    "kind": "power",
-   "proposed": true,
    "what": "A gas-fired power station near Serravona: burns gas from Bayvarra's offshore field and sells the electricity to the retail company through the grid.",
    "how": "A producer sells energy in bulk, by the month, to a few buyers. UBL's Invoice carries the quantities in megawatt hours and the price per unit, and the Utility Statement of the grid operator shows what was fed in.",
    "identity": {
@@ -4214,7 +4197,6 @@
    ],
    "h": 2,
    "kind": "grid",
-   "proposed": true,
    "what": "Runs the electricity and gas networks of the Ferrano region: connects the power station and the gas pipeline, owns the meters, reads them and charges the retail company for the use of the networks.",
    "how": "The grid operator measures what every customer takes, whoever sells to them. UBL's Utility Statement carries its readings to the retail company, with the corrections a gas meter needs, and its Invoice charges the network per connection.",
    "identity": {
@@ -4373,7 +4355,6 @@
    ],
    "h": 1,
    "kind": "office",
-   "proposed": true,
    "what": "A small industrial design studio in Lumeport, founded in 2019 by two designers. It asked to take part in the design contest for the harbour promenade bench and was excluded at the selection: the certificate of the social security fund showed contributions due and unpaid, above the minor amounts the procurement act tolerates (O102).",
    "how": "A candidate that is excluded is told why. UBL's Tenderer Qualification Response carries the decision on each candidate, with the reason for an exclusion, so the candidate knows where it stands and can appeal.",
    "identity": {
@@ -4430,7 +4411,6 @@
    ],
    "h": 1,
    "kind": "depot",
-   "proposed": true,
    "what": "A road tank haulier at Gullhaven, beside the gas plant, licensed to carry dangerous goods in tanks: its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the Coastal State Water Company's peak boilers in Lumeport, and come back empty (D48).",
    "how": "A tank haulier carries one load at a time. UBL's consignment note carries the dangerous goods as they are loaded in the tank, with the orange plates, the placard, the tunnel restriction and the tank as transport equipment, so that consignor, carrier and consignee read the same data.",
    "identity": {

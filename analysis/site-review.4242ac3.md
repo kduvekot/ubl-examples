@@ -72,14 +72,14 @@ irrelevant · structure · process.
 
 | SR | Cause | Sev. | Parts | Questions | Status |
 |---|---|---|---|---|---|
-| SR-01 | Headline figures and coverage page describe only the OASIS samples | high | A-01, A-03, A-05, A-11 | Q-A-01 | decided |
-| SR-02 | Site structure: missing landing cards, nav labels, specifications and code lists unreachable | medium | A-02, A-04, A-06, A-07, A-08, D-09, E-03 | Q-A-02 | open |
-| SR-03 | Pages outside the site frame | low | A-10, B-18 | | open |
+| SR-01 | Headline figures and coverage page describe only the OASIS samples | high | A-01, A-03, A-05, A-11 | Q-A-01 | solved |
+| SR-02 | Site structure: missing landing cards, nav labels, specifications and code lists unreachable | medium | A-02, A-04, A-06, A-07, A-08, D-09, E-03 | Q-A-02 | solved |
+| SR-03 | Pages outside the site frame | low | A-10, B-18 | | partly solved |
 | SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | open |
-| SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | open |
+| SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | partly solved |
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | open |
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | decided (by SR-09) |
-| SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | open |
+| SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
 | SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | decided |
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | open |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | open |
@@ -107,6 +107,11 @@ irrelevant · structure · process.
   - the coverage register is published, with the elements left out on purpose and why;
   - the "initial analysis" of the OASIS samples (`analysis/element-coverage*.md`) leaves the site; whether the
     OASIS history pages (Releases, History) stay is part of SR-02 (Q-A-02).
+  **Solved 2026-11-20** with the redesign (SR-02): the home page's figures come from the world data and the
+  coverage report at every build (the build stops when one is missing); `coverage.html` and `coverage-details.html`
+  are the world's coverage report, made at every build; the OASIS analysis left the site. The coverage register
+  itself is not published (it is a working file full of internal numbers); the coverage page lists every missing
+  element and says why some stay out.
 - **What:** the landing tiles ("55 / 101 document types", "27% of UBL 2.5 elements used", "36 UBL releases",
   "76 OASIS example files") are scraped by `sed` from the hand-written `analysis/element-coverage.md`
   (OASIS samples, counted against 5,443 elements including deprecated ones); "36 releases" counts
@@ -117,7 +122,20 @@ irrelevant · structure · process.
 - **Parts:** A-01 (high), A-03 (high), A-05, A-11.
 
 ### SR-02 · Site structure: missing cards, nav labels, unreachable sections
-- **Status:** open
+- **Status:** decided and **solved 2026-11-20** (owner): **the world front and centre**; the OASIS samples and
+  the TC note are side products. Built:
+  - nav **World · Trade · Parties · Rules · About**; brand "The UBL World";
+  - a new home page: the world's introduction in-world, a picture of the map (the sheet, made small at every
+    build), the world in figures (computed), cards for the map, trade, parties, rules, the map sheet and About;
+    one project line ("a fictional world, made to show UBL 2.5 in use");
+  - `parties.html`, a generated index of the parties by country and kind;
+  - `world-codelists.html`, a generated index of every published code list, and `codelists/` leads to it;
+  - the specifications index retitled "Rules of the Trade Accord", linking the code lists;
+  - `examples.html` retitled "Trade", without the paragraph on the OASIS examples;
+  - `about.html`: the project, the method note, coverage, and the OASIS samples (Releases, History), which left
+    the nav and the cards;
+  - the map has the site's links in its toolbar (SR-03, part).
+  Answers Q-A-02 (the owner's own structure, neither A, B nor C).
 - **What:** no landing card for Examples, Specifications or Code lists; the second button leads to the OASIS
   release log; `releases.html` is the README titled "ubl-examples" about `xml/` only; "Releases" and "History"
   are both OASIS history and "History" reads as the world's; specifications are linked from one sentence
@@ -127,7 +145,8 @@ irrelevant · structure · process.
 - **Parts:** A-02, A-04, A-06, A-07, A-08, D-09, E-03.
 
 ### SR-03 · Pages outside the site frame
-- **Status:** open
+- **Status:** partly solved 2026-11-20 (with SR-02): the map's toolbar carries the site's links. Open: the method
+  note's own bar, and the map's layer buttons on a phone.
 - **What:** `world.html` has its own toolbar instead of the site header (and at 400 px its layer buttons
   are cut off); the method note has its own bar, no site nav and no build line.
 - **Source:** `site/world.html`, `note/xsl/draft-note-html.xsl`.
@@ -142,7 +161,8 @@ irrelevant · structure · process.
 - **Parts:** E-04, C-12, D-09, B-05.
 
 ### SR-05 · Map sheet
-- **Status:** open
+- **Status:** partly solved 2026-11-20 (with SR-02): pictures in text pages are never wider than the page (A-09).
+  Open: the labels and the legend of the sheet (C-11).
 - **What:** the 4,961 px PNG (6.8 MB) is shown at natural size, so the page scrolls sideways at every width
   (no image rule in `site/site.css`); "Port of Selanu" stands about 45 km from its symbol, "Selanu Airport"
   reads as a village, "Euridice Crossing" overprints "Tallowford"; no legend, so border and pipelines look
@@ -170,7 +190,8 @@ irrelevant · structure · process.
 - **Parts:** C-03, E-07, F-09, B-16.
 
 ### SR-08 · Leftover staging markers on party pages
-- **Status:** open
+- **Status:** decided (owner, Q-C-02: A) and **solved 2026-11-20**: the `proposed` flag left `world/parties.json`;
+  the party pages, the map's card and list ("PROPOSED", "new") and the map's foot no longer print it.
 - **What:** "proposed addition to the 26+C set" (19 pages), the "new" badge and the map foot "Parties 27 and up
   are proposed"; inconsistent with the data (#45–#47 not flagged); all decisions are taken.
 - **Source:** `tools/build_world.py`, `tools/party_cover.py`, `site/world.html`.
@@ -372,13 +393,13 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q | Question | Recommendation | SR | Status |
 |---|---|---|---|---|
 | Q-A-01 | Headline figures and coverage page about the world examples, OASIS as a labelled baseline? | A: world first | SR-01 | **decided 2026-11-20 (owner): A, without the OASIS baseline** (see SR-01) |
-| Q-A-02 | Specifications and code lists as sections, with a code-list index? | B: one "Reference" nav item; Releases + History merged into "OASIS samples" | SR-02 | open |
+| Q-A-02 | Specifications and code lists as sections, with a code-list index? | B: one "Reference" nav item; Releases + History merged into "OASIS samples" | SR-02 | **decided 2026-11-20 (owner): the world front and centre**; nav World · Trade · Parties · Rules · About; the OASIS pages under About |
 | Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | open |
 | Q-B-02 | Backstory in the method note? | A now (method first, backstory in an annex), B later (to the encyclopaedia) | SR-23 | open |
 | Q-B-03 | Describe the review process in the note? | A: a chapter "Reviewing and maintaining the examples" | SR-21 | open |
 | Q-B-04 | Decided but unbuilt flows in the note? | B: one sentence naming them | SR-12 | open |
 | Q-C-01 | Readable names for party pages? | B now (hide "#n"), A (name slugs) with the encyclopaedia | SR-16 | open |
-| Q-C-02 | Drop the "proposed / new" marking? | A on the site | SR-08 | open |
+| Q-C-02 | Drop the "proposed / new" marking? | A on the site | SR-08 | **decided 2026-11-20 (owner): A** |
 | Q-C-03 | How much master data on a party page? | A: the O88 "about itself" record, no personal data of persons | SR-15 | open |
 | Q-C-04 | Where do D/O references live? | A: a separate, unprinted key; flow by flow with O112 | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** out of published text, into comments or an unprinted key |
 | Q-C-05 | Is Urvania still inland? | A: a coast without a deep-water port | SR-17 | open |
