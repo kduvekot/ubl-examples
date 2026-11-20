@@ -54,17 +54,20 @@ The registry's extract number, the same in both versions.</li>
 <strong>eea77e46-a3cb-562f-bc68-ee6a72dde8c6</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-05-09</strong><br />
+<li><code>IssueDate</code> = <strong>2026-05-08</strong><br />
 The day after the accounts were filed.</li>
 <li><code>IssueTime</code> = <strong>09:33:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
 <li><code>Note</code> = <strong>Extract from the register of economic
-operators.</strong><br />
-What it is.</li>
+operators. Version 2: the furniture maker's accounts for 2025, filed on
+7 May, replace those for 2024 as the yearly production
+value.</strong><br />
+What it is. What version 2 changes, said in the document (D29 point
+4).</li>
 <li><code>VersionID</code> = <strong>2</strong><br />
 The second version, which supersedes the first: the furniture maker
-filed its accounts for 2025 on 2026-05-08, and the registry issues the
+filed its accounts for 2025 on 2026-05-07, and the registry issues the
 extract again with the new turnover.</li>
 <li><code>PreviousVersionID</code> = <strong>1</strong><br />
 The version this one supersedes: version 1 of the same document, with
@@ -592,11 +595,14 @@ Party/EndpointID is deprecated.</li>
 Production capacity. The code is from the Trade Accord's business
 capability type list: PRODUCTION = Production.</li>
 <li><code>Description</code> = <strong>Furniture of wood and steel,
-designed and made in its own workshop.</strong><br />
-What.</li>
+designed and made in its own workshop: the yearly production value of
+2025, from the accounts filed for that year.</strong><br />
+What the amount measures and for which year (D29 point 6,
+contest/13#F3).</li>
 <li><code>ValueAmount</code> = <strong>6830000.00</strong> (currencyID
 <code>XBL</code>)<br />
-The yearly turnover of 2025, from the accounts filed.</li>
+The value of what it produced in 2025, as its accounts for 2025 give
+it.</li>
 </ul>
 <h3 id="notice-sub-type">Notice Sub Type</h3>
 <p>Inside <code>NoticeSubType</code>:</p>
@@ -616,9 +622,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;CONTEST-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BIS-DOC-26-0639&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;eea77e46-a3cb-562f-bc68-ee6a72dde8c6&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-08&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:33:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Extract from the register of economic operators.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Extract from the register of economic operators. Version 2: the furniture maker&#39;s accounts for 2025, filed on 7 May, replace those for 2024 as the yearly production value.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PreviousVersionID</span>&gt;1&lt;/<span class="kw">cbc:PreviousVersionID</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:BriefDescription</span>&gt;Brackenmere Furniture: registered, no exclusion grounds recorded.&lt;/<span class="kw">cbc:BriefDescription</span>&gt;</span>
@@ -787,7 +793,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BusinessParty</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BusinessCapability</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CapabilityTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode&quot;</span>&gt;PRODUCTION&lt;/<span class="kw">cbc:CapabilityTypeCode</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Furniture of wood and steel, designed and made in its own workshop.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Furniture of wood and steel, designed and made in its own workshop: the yearly production value of 2025, from the accounts filed for that year.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;6830000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BusinessCapability</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:NoticeSubType</span>&gt;</span>
@@ -796,6 +802,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">BusinessInformation</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

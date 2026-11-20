@@ -56,7 +56,7 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <strong>PWD-2026-PARKS</strong><br />
 The authority's file number for this procurement, the same on every
 document of the procedure.</li>
-<li><code>IssueDate</code> = <strong>2026-02-20</strong><br />
+<li><code>IssueDate</code> = <strong>2026-02-18</strong><br />
 The furniture maker asks a week before the deadline.</li>
 <li><code>IssueTime</code> = <strong>15:50:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
@@ -394,13 +394,15 @@ The procedure asked about.</li>
 <h3 id="procurement-project">Procurement Project</h3>
 <p>Inside <code>ProcurementProject</code>:</p>
 <ul>
-<li><code>Name</code> = <strong>Park benches for the city
-parks</strong><br />
-The project, or the lot, the document is about.</li>
+<li><code>Name</code> = <strong>Park benches for the parks renewal
+programme</strong><br />
+The project, or the lot, the document is about, by the name the notices
+give it (tender/08#F6).</li>
 <li><code>ProcurementTypeCode</code> = <strong>SUPPLIES</strong> (listID
 <code>urn:ubl-examples:world:codelist:ContractNatureCode</code>)<br />
-The kind of procurement. The code is from the Trade Accord's contract
-nature list: SUPPLIES = Supplies.</li>
+The kind of procurement; the installation is services in every document
+(tender/01#F4). The code is from the Trade Accord's contract nature
+list: SUPPLIES = Supplies.</li>
 </ul>
 <h3 id="procurement-project-lot">Procurement Project Lot</h3>
 <p>Inside <code>ProcurementProjectLot</code>:</p>
@@ -421,7 +423,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BF-DOC-26-0194&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;d56f561d-6196-5f1c-88f8-b1e34accd398&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractFolderID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ContractFolderID</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-18&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;15:50:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractName</span>&gt;Park benches for the parks renewal programme&lt;/<span class="kw">cbc:ContractName</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Does the deadline stand after the answers to the questions?&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -532,7 +534,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-P&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Park benches for the city parks&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Park benches for the parks renewal programme&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SUPPLIES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
@@ -544,6 +546,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ProcurementStatusRequest</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

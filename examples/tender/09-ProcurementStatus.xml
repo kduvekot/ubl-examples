@@ -7,34 +7,19 @@
   <cbc:ID>LPWD-DOC-26-0195</cbc:ID>
   <cbc:UUID>5d2822e5-9730-5d4e-b4a6-9fee16a390e6</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>11:44:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The deadline stands; the answers did not change the documents.</cbc:Note>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   <cac:TenderSubmissionDeadlinePeriod>
-    <cbc:EndDate>2026-02-26</cbc:EndDate>
+    <cbc:EndDate>2026-02-25</cbc:EndDate>
     <cbc:EndTime>12:00:00</cbc:EndTime>
   </cac:TenderSubmissionDeadlinePeriod>
-  <cac:InvitationSubmissionPeriod>
-    <cbc:StartDate>2026-01-26</cbc:StartDate>
-    <cbc:EndDate>2026-02-01</cbc:EndDate>
-  </cac:InvitationSubmissionPeriod>
-  <cac:ParticipationRequestReceptionPeriod>
-    <cbc:EndDate>2026-02-11</cbc:EndDate>
-  </cac:ParticipationRequestReceptionPeriod>
   <cac:ProcurementLegislationDocumentReference>
     <cbc:ID>XB-PPA-2019</cbc:ID>
+    <cbc:DocumentDescription>Art. 47: a deadline is extended only when answers to questions change the procurement documents.</cbc:DocumentDescription>
   </cac:ProcurementLegislationDocumentReference>
-  <cac:FiscalLegislationDocumentReference>
-    <cbc:ID>XB-STT-ACT</cbc:ID>
-  </cac:FiscalLegislationDocumentReference>
-  <cac:EnvironmentalLegislationDocumentReference>
-    <cbc:ID>XB-ENV-2021</cbc:ID>
-  </cac:EnvironmentalLegislationDocumentReference>
-  <cac:EmploymentLegislationDocumentReference>
-    <cbc:ID>XB-LAB-2018</cbc:ID>
-  </cac:EmploymentLegislationDocumentReference>
   <cac:ProcedureStatusRequestDocumentReference>
     <cbc:ID>BF-DOC-26-0194</cbc:ID>
   </cac:ProcedureStatusRequestDocumentReference>
@@ -147,7 +132,7 @@
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:ProcurementProject>
-    <cbc:Name>Park benches for the city parks</cbc:Name>
+    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>

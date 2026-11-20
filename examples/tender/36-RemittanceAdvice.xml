@@ -4,16 +4,16 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-RM-26-0225</cbc:ID>
+  <cbc:ID>LPWD-RM-26-0227</cbc:ID>
   <cbc:UUID>5f551f90-e2ee-5166-af7c-66a6bfd7dce8</cbc:UUID>
-  <cbc:IssueDate>2026-05-08</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>12:49:00-01:00</cbc:IssueTime>
-  <cbc:Note>Payment of the first release, with the interest.</cbc:Note>
+  <cbc:Note>Paid on 22 May 2026 by credit transfer of 2031191 ferra, 20311.91 lume at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">20830.23</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XBL">521.68</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">20308.55</cbc:TotalPaymentAmount>
-  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
+  <cbc:TotalDebitAmount currencyID="XBL">20822.93</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">511.02</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">20311.91</cbc:TotalPaymentAmount>
+  <cbc:LineCountNumeric>5</cbc:LineCountNumeric>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
     <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
@@ -106,7 +106,7 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:PaymentID schemeID="ISO 11649">RF48VIINV260221</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF21VIINV260222</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB73BLUM38010001780393</cbc:ID>
       <cbc:Name>Lumeport Public Works Department</cbc:Name>
@@ -186,43 +186,48 @@
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">20808.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">20160.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0221</cbc:ID>
+        <cbc:ID>VI-INV-26-0222</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:CreditLineAmount currencyID="XBL">515.20</cbc:CreditLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">631.80</cbc:DebitLineAmount>
     <cac:BillingReference>
-      <cac:CreditNoteDocumentReference>
-        <cbc:ID>VI-CN-26-0222</cbc:ID>
-      </cac:CreditNoteDocumentReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>VI-INV-26-0225</cbc:ID>
+      </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:CreditLineAmount currencyID="XBL">6.48</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XBL">504.00</cbc:CreditLineAmount>
     <cac:BillingReference>
-      <cac:DebitNoteDocumentReference>
-        <cbc:ID>LPWD-DOC-26-0223</cbc:ID>
-      </cac:DebitNoteDocumentReference>
+      <cac:CreditNoteDocumentReference>
+        <cbc:ID>VI-CN-26-0224</cbc:ID>
+      </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
   <cac:RemittanceAdviceLine>
     <cbc:ID>4</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">22.23</cbc:DebitLineAmount>
+    <cbc:Note>Penalty for late completion under clause PEN-1 of the contract: 2 working days at 0.5 % of the installation price of 702.00 lume (three days late, one waived); deducted from the payment.</cbc:Note>
+    <cbc:CreditLineAmount currencyID="XBL">7.02</cbc:CreditLineAmount>
+    <cac:DocumentReference>
+      <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
+      <cbc:DocumentType>Framework contract</cbc:DocumentType>
+    </cac:DocumentReference>
+  </cac:RemittanceAdviceLine>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>5</cbc:ID>
+    <cbc:DebitLineAmount currencyID="XBL">31.13</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:ReminderDocumentReference>
-        <cbc:ID>VI-DOC-26-0224</cbc:ID>
-        <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+        <cbc:ID>VI-DOC-26-0226</cbc:ID>
+        <cbc:IssueDate>2026-05-20</cbc:IssueDate>
       </cac:ReminderDocumentReference>
-      <cac:AdditionalDocumentReference>
-        <cbc:ID>PWD-PAY-AUTH-26-0412</cbc:ID>
-        <cbc:DocumentType>Payment authorisation</cbc:DocumentType>
-      </cac:AdditionalDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
 </RemittanceAdvice>

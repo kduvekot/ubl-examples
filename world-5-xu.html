@@ -13,9 +13,10 @@
 <h1 id="valdara-industries">Valdara Industries</h1>
 <p><em>#5 Manufacturer · Urvania (XU) · Commerce</em></p>
 <p>Makes park benches and street furniture: frames of ductile iron made
-from the mine's ore and cast in its own foundry, slats from the sawmill
-in Bayvarra, packed in recycled packaging from Bayvarra. Sells to the
-distributor abroad and tenders in public procurement.</p>
+from the mine's ore and about 35 % steel and iron scrap and cast in its
+own foundry, slats from the sawmill in Bayvarra, packed in recycled
+packaging from Bayvarra. Sells to the distributor abroad and tenders in
+public procurement.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -110,6 +111,54 @@ href="world-41-xb.html">Rivermouth Packaging</a>)</td>
 </tr>
 </tbody>
 </table>
+<h3 id="park-bench-serra-180-1">Park bench Serra 180</h3>
+<p>Park bench, 1800 mm, frame of galvanised and powder-coated ductile
+cast iron in moss green (RAL 6005), a special colour, five slats of
+thermally modified ash, for bolting to the ground.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>VI-B180</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>49,900 XUF per <code>EA</code> (each)</td>
+</tr>
+<tr>
+<td>Standard item number</td>
+<td><code>KXU10014B180</code> (ISO/IEC 15459: the issuing agency code
+KXU of <a href="world-31-xu.html">Codana Identification Agency</a>, the
+company number <code>10014</code> and the company's own reference)</td>
+</tr>
+<tr>
+<td>Customs tariff (HS)</td>
+<td><code>940179</code>; origin Urvania</td>
+</tr>
+<tr>
+<td>Product classification (UN CPC Ver.2.1)</td>
+<td><code>38111</code></td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>1800 × 620 × 780 mm</td>
+</tr>
+<tr>
+<td>Weight per unit</td>
+<td>44.1 kg net, 47 kg gross</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td><code>PX</code> (Pallet), 4 per package</td>
+</tr>
+<tr>
+<td>Made with</td>
+<td>5 × Hardwood bench slat 1800 (<a href="world-36-xb.html">Marrowdale
+Sawmill</a>), 0.1 kilogram of Recycled stretch film (<a
+href="world-41-xb.html">Rivermouth Packaging</a>)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="bench-side-frame-casting">Bench side frame casting</h3>
 <p>Replacement side frame for the Serra bench, ductile cast iron,
 galvanised and powder-coated.</p>
@@ -148,8 +197,8 @@ company number <code>10014</code> and the company's own reference)</td>
 </tbody>
 </table>
 <h3 id="installation-of-a-park-bench">Installation of a park bench</h3>
-<p>Anchoring one bench in the ground with the supplied anchors, by the
-manufacturer's installers.</p>
+<p>Assembly of one bench and its anchoring in the ground with the
+supplied anchors.</p>
 <table>
 <tbody>
 <tr>
@@ -168,7 +217,7 @@ sells, exports and tenders. UBL gives it one vocabulary for all of that,
 from the order it places with the mine to the certificate of origin and
 the tender it submits to a public buyer, so the same item, party and
 price data are reused instead of re-entered for every partner.</p>
-<p>In this world it sends 26 and receives 33 documents, and is named in
+<p>In this world it sends 27 and receives 33 documents, and is named in
 20 documents between other parties. They are listed per flow below.</p>
 <h2 id="ore-from-the-mine-to-the-factory-domestic-urvania">Ore from the
 mine to the factory (domestic, Urvania)</h2>
@@ -611,12 +660,17 @@ document</a>.</p>
 sending the goods).</p></li>
 </ul>
 <h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
-<p>The contracting authority buys park benches and street furniture for
-the city's parks under procurement law. The notices are published
-through the government information service; the manufacturer tenders
-together with a consortium partner, backed by a bid bond. After the
-award the authority places orders under the contract and the
-manufacturer delivers and invoices.</p>
+<p>The contracting authority buys park benches for the city's parks
+under procurement law, in two lots: the benches and their installation.
+The notices are published through the government information service;
+the manufacturer tenders alone, with an engineering firm as its
+subcontractor for the installation, backed by a bank guarantee; a
+furniture maker tenders wooden benches, backed by pledged government
+bonds. After an electronic auction and the award the authority orders
+the first release under the framework contract; the manufacturer
+delivers and invoices the benches, the subcontractor installs them, the
+authority accepts the release, and the installation is invoiced once
+accepted.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -669,9 +723,10 @@ href="world-13-xu.html">Trasvia Haulage</a> as
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 to <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
-manufacturer invoices the public buyer under the contract; payment to
-its account at the seller's bank. <a
-href="example-tender-32-Invoice.html">See the example document</a>.</p>
+manufacturer invoices the benches of the release on delivery under the
+contract; payment to its account at the seller's bank, 30 days after the
+release is accepted. <a href="example-tender-32-Invoice.html">See the
+example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>,
 <code>SellerSupplierParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -679,18 +734,30 @@ href="example-tender-32-Invoice.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
 Note</strong></a> to <a href="world-2-xb.html">Lumeport Public Works
-Department</a>: One bench was damaged during installation and is
-replaced free of charge; the manufacturer credits it and its
-installation. <a href="example-tender-33-CreditNote.html">See the
-example document</a>.</p>
+Department</a>: One bench was damaged during installation and rejected
+on acceptance; the manufacturer credits it with its share of the colour
+charge (D28 point 9). <a href="example-tender-33-CreditNote.html">See
+the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMINDER-SCHEMA"><strong>Reminder</strong></a>
-to <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
-invoice is past due; the manufacturer reminds the department of the
-balance and charges Urvania's statutory interest. <a
+to <a href="world-2-xb.html">Lumeport Public Works Department</a>: Both
+invoices of the release are past due; the manufacturer reminds the
+department of the balance and charges Urvania's statutory interest from
+the day after the due date. <a
 href="example-tender-35-Reminder.html">See the example document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-2-xb.html">Lumeport Public Works Department</a>: The
+manufacturer invoices the 39 installations once they are done and
+accepted, as a service supplied outside Urvania; the department
+withholds Bayvarra's 10 % (D28 point 9, D17). <a
+href="example-tender-39-Invoice.html">See the example document</a>.</p>
+<p>In it as <code>AccountingSupplierParty</code>,
+<code>SellerSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -752,22 +819,23 @@ quoted. <a href="example-tender-27-OrderChange.html">See the example
 document</a>.</p>
 <p>In it as <code>SellerSupplierParty</code>.</p></li>
 <li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA"><strong>Debit
-Note</strong></a> from <a href="world-2-xb.html">Lumeport Public Works
-Department</a>: The installation finished three days late; under the
-contract's penalty clause the department charges the manufacturer for
-the late days, one of them waived. <a
-href="example-tender-34-DebitNote.html">See the example
-document</a>.</p>
-<p>In it as <code>AccountingSupplierParty</code>.</p></li>
-<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> from <a href="world-2-xb.html">Lumeport Public Works
-Department</a>: The department pays the balance with the interest, less
-the credit and the penalty, and says what the payment settles. <a
+Department</a>: The department pays both invoices with the interest,
+less the credit note and the penalty for late completion it deducts
+under the contract, and says what the payment settles. <a
 href="example-tender-36-RemittanceAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
+Advice</strong></a> from <a href="world-2-xb.html">Lumeport Public Works
+Department</a>: The department accepts the release: 39 benches and their
+installation, one bench rejected as damaged; the contract's 30 days of
+payment run from this acceptance (D28 point 9, O69). <a
+href="example-tender-38-ReceiptAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>DespatchSupplierParty</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
@@ -785,8 +853,9 @@ Registration Information).</p></li>
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GUARANTEE-CERTIFICATE-SCHEMA"><strong>Guarantee
 Certificate</strong></a> from <a href="world-25-xb.html">Bank of
 Lumeport</a> to <a href="world-2-xb.html">Lumeport Public Works
-Department</a>: The guarantor notifies the authority of the bid bond
-deposited for the manufacturer's tender. <a
+Department</a>: The bank notifies the authority of the bank guarantee it
+gives for the manufacturer's tender, on the counter-guarantee of the
+manufacturer's own bank. <a
 href="example-tender-14-GuaranteeCertificate.html">See the example
 document</a>.</p>
 <p>In it as <code>InterestedParty</code> (The Party who deposits the bid
@@ -847,7 +916,9 @@ document</a>.</p>
 <p>In it as <code>TenderResult/WinningParty</code> (A party that is
 identified as the awarded by a tender result).</p>
 <p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
-as <code>TenderResult/WinningParty</code>.</p></li>
+as <code>TenderResult/WinningParty</code>; <a
+href="world-27-xb.html">Saltmere Engineering</a> as
+<code>TenderResult/WinningParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-AWARD-NOTICE-SCHEMA"><strong>Contract
 Award Notice</strong></a> from <a href="world-2-xb.html">Lumeport Public
@@ -858,7 +929,9 @@ the example document</a>.</p>
 <p>In it as <code>TenderResult/WinningParty</code> (A party that is
 identified as the awarded by a tender result).</p>
 <p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
-as <code>TenderResult/WinningParty</code>.</p></li>
+as <code>TenderResult/WinningParty</code>; <a
+href="world-27-xb.html">Saltmere Engineering</a> as
+<code>TenderResult/WinningParty</code>.</p></li>
 </ul>
 <h2 id="samples-to-a-trade-fair-on-the-island-temporary-export">Samples
 to a trade fair on the island (temporary export)</h2>
@@ -1205,7 +1278,7 @@ subscriber of the utility).</p></li>
 <code>HolderParty</code> <code>RepresentativeParty</code>
 <code>NotifierParty</code> <code>WasteProducerParty</code>
 <code>SubscriberParty</code> <code>CustomerParty</code>
-<code>ImporterParty</code></p>
+<code>ImporterParty</code> <code>DespatchSupplierParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -1237,6 +1310,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

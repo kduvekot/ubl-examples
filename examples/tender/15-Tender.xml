@@ -4,11 +4,11 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0201</cbc:ID>
+  <cbc:ID>VI-DOC-26-0202</cbc:ID>
   <cbc:UUID>b83ff515-965a-5df1-aaa9-14df71eabb47</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>09:13:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>Tender for both lots.</cbc:Note>
@@ -21,6 +21,10 @@
   <cac:DocumentReference>
     <cbc:ID>VI-DS-B180</cbc:ID>
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BL-DOC-26-0201</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>VI-SIG-TENDER-15</cbc:ID>
@@ -160,8 +164,12 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
+      <cbc:RegistrationName>Saltmere Engineering Ltd</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
+      <cbc:RegistrationDate>1994-10-03</cbc:RegistrationDate>
+      <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+      <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+      <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
       <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
       <cac:RegistrationAddress>
         <cbc:CityName>Marrowdale</cbc:CityName>
@@ -246,15 +254,8 @@
   </cac:ContractingParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
-    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
-    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
-    <cac:AdditionalFee>
-      <cbc:FeeTypeCode listID="urn:ubl-examples:world:codelist:FeeTypeCode">COURIER</cbc:FeeTypeCode>
-      <cbc:FeeAmount currencyID="XBL">12.00</cbc:FeeAmount>
-      <cbc:FeeDescription>Courier of the guarantee's original.</cbc:FeeDescription>
-    </cac:AdditionalFee>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-1</cbc:ID>
     </cac:ProcurementProjectLot>
@@ -295,6 +296,10 @@
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
       </cac:OfferedItemLocationQuantity>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -328,18 +333,34 @@
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>
       </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:OfferedItemLocationQuantity>
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>
-      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
-      <cbc:Description>Ten years on the coating.</cbc:Description>
-      <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
+      <cbc:AwardingCriterionID>AC-1</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>The lowest total of unit prices.</cbc:AwardingCriterionDescription>
+      <cbc:Description>499.00 lume a bench and 18.00 lume an installation.</cbc:Description>
       <cbc:Amount currencyID="XBL">124080.00</cbc:Amount>
+    </cac:AwardingCriterionResponse>
+    <cac:AwardingCriterionResponse>
+      <cbc:ID>ACR-2</cbc:ID>
+      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
-        <cbc:ID>ACR-1.1</cbc:ID>
+        <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
         <cbc:Description>Hot-dip galvanised and powder coated.</cbc:Description>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.2</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
+        <cbc:Description>Ten years on the coating.</cbc:Description>
+        <cbc:Quantity unitCode="ANN">10</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

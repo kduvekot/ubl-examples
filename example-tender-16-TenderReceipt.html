@@ -44,7 +44,7 @@ ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>TENDER-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>LPWD-DOC-26-0202</strong><br />
+<li><code>ID</code> = <strong>LPWD-DOC-26-0203</strong><br />
 The sender's number for this document.</li>
 <li><code>UUID</code> =
 <strong>898bc194-d4b8-5097-a04f-94fa742d7f7e</strong><br />
@@ -54,26 +54,27 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <strong>PWD-2026-PARKS</strong><br />
 The authority's file number for this procurement, the same on every
 document of the procedure.</li>
-<li><code>IssueDate</code> = <strong>2026-02-25</strong><br />
+<li><code>IssueDate</code> = <strong>2026-02-24</strong><br />
 Sent on receipt of the tender.</li>
-<li><code>IssueTime</code> = <strong>17:47:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+<li><code>IssueTime</code> = <strong>09:14:00-01:00</strong><br />
+The platform's automatic receipt, a minute after the registration; in
+the issuer's local time, with its offset from UTC (D27).</li>
 <li><code>ContractName</code> = <strong>Park benches for the parks
 renewal programme</strong><br />
 The name of the contract the procedure is for.</li>
 <li><code>Note</code> = <strong>Received on time, encrypted, unopened
 until the opening.</strong><br />
 The receipt.</li>
-<li><code>RegisteredDate</code> = <strong>2026-02-25</strong><br />
+<li><code>RegisteredDate</code> = <strong>2026-02-24</strong><br />
 The day the tender was registered, before the deadline.</li>
-<li><code>RegisteredTime</code> = <strong>11:42:00</strong><br />
-The time it was registered, which proves it was on time.</li>
+<li><code>RegisteredTime</code> = <strong>09:13:00</strong><br />
+The time the platform registered the tender, the moment it was
+submitted, which proves it was on time (tender/16#F6).</li>
 </ul>
 <h3 id="tender-document-reference">Tender Document Reference</h3>
 <p>Inside <code>TenderDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-DOC-26-0201</strong><br />
+<li><code>ID</code> = <strong>VI-DOC-26-0202</strong><br />
 The tender received.</li>
 </ul>
 <h3 id="signature">Signature</h3>
@@ -424,17 +425,17 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:tendering:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;TENDER-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0202&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0203&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;898bc194-d4b8-5097-a04f-94fa742d7f7e&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractFolderID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ContractFolderID</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-25&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:47:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:14:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractName</span>&gt;Park benches for the parks renewal programme&lt;/<span class="kw">cbc:ContractName</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Received on time, encrypted, unopened until the opening.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegisteredDate</span>&gt;2026-02-25&lt;/<span class="kw">cbc:RegisteredDate</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegisteredTime</span>&gt;11:42:00&lt;/<span class="kw">cbc:RegisteredTime</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegisteredDate</span>&gt;2026-02-24&lt;/<span class="kw">cbc:RegisteredDate</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegisteredTime</span>&gt;09:13:00&lt;/<span class="kw">cbc:RegisteredTime</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderDocumentReference</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-DOC-26-0201&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-DOC-26-0202&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderDocumentReference</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-SIG-RCPT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -548,6 +549,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TenderReceipt</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

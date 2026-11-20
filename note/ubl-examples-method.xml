@@ -3118,16 +3118,28 @@
     <para>
       A document that is revised keeps its number and says which version
       it supersedes, with <literal>VersionID</literal> 2 and
-      <literal>PreviousVersionID</literal> 1, and its reasons say what
+      <literal>PreviousVersionID</literal> 1, and its note says what
       changed. The design contest shows this: the city of Lumeport
       relaunches a contest for its harbour promenade bench, cancelled
       the year before because no design met the brief (the new notice
       gives the reason), offers three prizes and asks a group of
       designers to form a limited company before the follow-up contract.
-      The council raises the prize fund, a corrigendum corrects the site
-      plan and widens a selection criterion, the design team updates its
-      declarations, the registry reissues its extract when new accounts
-      are filed, and the results notice corrects a prize amount.
+      Its notices are design-contest notices, after the eForms notice
+      types cn-desg and can-desg. The council raises the prize fund and
+      with it the estimate (the prizes and the follow-up design contract
+      of about 40,000 lume), a corrigendum corrects the site plan,
+      extends the deadline for requests and lets an industrial designer
+      lead a design, and the design team of Brackenmere Furniture and
+      Saltmere Engineering updates its declarations: Brackenmere's own
+      designer takes the lead from Saltmere's architect. The team's
+      references are the reading garden of Lumeport's central library
+      and the promenade benches on Larkmouth's seafront. The registry
+      checks both members and reissues Brackenmere's extract when new
+      accounts are filed; a small design studio is excluded at the
+      selection for unpaid social security contributions. The jury gives
+      the first prize to the team, the second to Valdara and withholds
+      the third, and the results notice corrects the first prize, which
+      its first version gave as the amount first planned.
     </para>
     <para>
       Every document in a flow records:

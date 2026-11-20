@@ -17,8 +17,9 @@ Advice: Lumeport Public Works Department to Valdara Industries</h1>
 <p><em>Example 36 of the flow "A public tender (Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA">Remittance
 Advice in the UBL 2.5 specification</a></em></p>
-<p>The department pays the balance with the interest, less the credit
-and the penalty, and says what the payment settles.</p>
+<p>The department pays both invoices with the interest, less the credit
+note and the penalty for late completion it deducts under the contract,
+and says what the payment settles.</p>
 <p><a href="examples/tender/36-RemittanceAdvice.xml">The XML file</a> is
 valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -44,36 +45,41 @@ ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>TENDER-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>LPWD-RM-26-0225</strong><br />
+<li><code>ID</code> = <strong>LPWD-RM-26-0227</strong><br />
 The department's number.</li>
 <li><code>UUID</code> =
 <strong>5f551f90-e2ee-5166-af7c-66a6bfd7dce8</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-05-08</strong><br />
-Paid three days after the reminder.</li>
+<li><code>IssueDate</code> = <strong>2026-05-22</strong><br />
+Friday 22 May, two days after the reminder, on a day both banking
+systems are open (D28 point 9).</li>
 <li><code>IssueTime</code> = <strong>12:49:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
-<li><code>Note</code> = <strong>Payment of the first release, with the
-interest.</strong><br />
-What it is for.</li>
+<li><code>Note</code> = <strong>Paid on 22 May 2026 by credit transfer
+of 2031191 ferra, 20311.91 lume at the Accord's parity of 100 ferra to
+the lume, to the manufacturer's account in ferra: both invoices with the
+interest reminded, less the credit note and the penalty of 7.02 lume for
+late completion under clause PEN-1.</strong><br />
+The payment's date and the amount credited in the payee's currency, and
+what it settles (tender/36#F2, option b).</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XBL</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
-The lume, the currency of the documents settled; it has two decimals.
-The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL
-= Lume.</li>
-<li><code>TotalDebitAmount</code> = <strong>20830.23</strong>
+The lume, the currency of the documents settled and of the payment; it
+has two decimals. The code is from the world's copy of UBL's Currency
+(ISO 4217) list: XBL = Lume.</li>
+<li><code>TotalDebitAmount</code> = <strong>20822.93</strong>
 (currencyID <code>XBL</code>)<br />
-The invoice and the interest.</li>
-<li><code>TotalCreditAmount</code> = <strong>521.68</strong> (currencyID
+The invoices and the interest.</li>
+<li><code>TotalCreditAmount</code> = <strong>511.02</strong> (currencyID
 <code>XBL</code>)<br />
 The credit note and the penalty.</li>
-<li><code>TotalPaymentAmount</code> = <strong>20308.55</strong>
+<li><code>TotalPaymentAmount</code> = <strong>20311.91</strong>
 (currencyID <code>XBL</code>)<br />
-Transferred, in ferra at 100 to the lume.</li>
-<li><code>LineCountNumeric</code> = <strong>4</strong><br />
-Four documents settled.</li>
+Transferred, in lume.</li>
+<li><code>LineCountNumeric</code> = <strong>5</strong><br />
+Five items settled.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
@@ -385,7 +391,7 @@ Party/EndpointID is deprecated.</li>
 <code>UN/EDIFACT EDED 4461</code>)<br />
 Credit transfer. The code is from UBL's default Payment means
 (UN/EDIFACT 4461) list: 30 = Credit transfer.</li>
-<li><code>PaymentID</code> = <strong>RF48VIINV260221</strong> (schemeID
+<li><code>PaymentID</code> = <strong>RF21VIINV260222</strong> (schemeID
 <code>ISO 11649</code>)<br />
 The invoice's creditor reference. The schemeID names the scheme it is
 from: the ISO 11649 structured creditor reference (RF, two check digits
@@ -631,48 +637,58 @@ of UBL's Country identification (ISO 3166) list: XU = Urvania.</li>
 <p>Inside <code>RemittanceAdviceLine</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
-The invoice.</li>
-<li><code>DebitLineAmount</code> = <strong>20808.00</strong> (currencyID
+The benches' invoice.</li>
+<li><code>DebitLineAmount</code> = <strong>20160.00</strong> (currencyID
 <code>XBL</code>)<br />
 Its payable amount.</li>
 <li><code>BillingReference/InvoiceDocumentReference/ID</code> =
-<strong>VI-INV-26-0221</strong><br />
+<strong>VI-INV-26-0222</strong><br />
 The invoice.</li>
 <li><code>ID</code> = <strong>2</strong><br />
+The installation invoice.</li>
+<li><code>DebitLineAmount</code> = <strong>631.80</strong> (currencyID
+<code>XBL</code>)<br />
+Its payable amount, net of the withholding.</li>
+<li><code>BillingReference/InvoiceDocumentReference/ID</code> =
+<strong>VI-INV-26-0225</strong><br />
+The invoice.</li>
+<li><code>ID</code> = <strong>3</strong><br />
 The credit note.</li>
-<li><code>CreditLineAmount</code> = <strong>515.20</strong> (currencyID
+<li><code>CreditLineAmount</code> = <strong>504.00</strong> (currencyID
 <code>XBL</code>)<br />
 Deducted.</li>
 <li><code>BillingReference/CreditNoteDocumentReference/ID</code> =
-<strong>VI-CN-26-0222</strong><br />
+<strong>VI-CN-26-0224</strong><br />
 The credit note.</li>
-<li><code>ID</code> = <strong>3</strong><br />
+<li><code>ID</code> = <strong>4</strong><br />
 The penalty.</li>
-<li><code>CreditLineAmount</code> = <strong>6.48</strong> (currencyID
+<li><code>Note</code> = <strong>Penalty for late completion under clause
+PEN-1 of the contract: 2 working days at 0.5 % of the installation price
+of 702.00 lume (three days late, one waived); deducted from the
+payment.</strong><br />
+What is deducted, and why: the department's claim under the contract,
+not a document of its own (D28 point 9, D9).</li>
+<li><code>CreditLineAmount</code> = <strong>7.02</strong> (currencyID
 <code>XBL</code>)<br />
 Deducted.</li>
-<li><code>BillingReference/DebitNoteDocumentReference/ID</code> =
-<strong>LPWD-DOC-26-0223</strong><br />
-The debit note.</li>
-<li><code>ID</code> = <strong>4</strong><br />
+<li><code>DocumentReference/ID</code> =
+<strong>PWD-CONTRACT-2026-PARKS</strong><br />
+The contract with the penalty clause.</li>
+<li><code>DocumentReference/DocumentType</code> = <strong>Framework
+contract</strong><br />
+What it is.</li>
+<li><code>ID</code> = <strong>5</strong><br />
 The interest.</li>
-<li><code>DebitLineAmount</code> = <strong>22.23</strong> (currencyID
+<li><code>DebitLineAmount</code> = <strong>31.13</strong> (currencyID
 <code>XBL</code>)<br />
-The interest charged.</li>
+The interest charged: the contract's payment term carries the statutory
+interest (tender/36#F6).</li>
 <li><code>BillingReference/ReminderDocumentReference/ID</code> =
-<strong>VI-DOC-26-0224</strong><br />
+<strong>VI-DOC-26-0226</strong><br />
 The reminder.</li>
 <li><code>BillingReference/ReminderDocumentReference/IssueDate</code> =
-<strong>2026-05-05</strong><br />
+<strong>2026-05-20</strong><br />
 Its date.</li>
-<li><code>BillingReference/AdditionalDocumentReference/ID</code> =
-<strong>PWD-PAY-AUTH-26-0412</strong><br />
-The authorisation that covers the interest.</li>
-<li><code>BillingReference/AdditionalDocumentReference/DocumentType</code>
-= <strong>Payment authorisation</strong><br />
-The kind of document referred to, the department's payment
-authorisation, a document outside the examples, in words: no list has an
-exact code for it (world/documents.json, cited; decision Q29).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -682,16 +698,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:remittance-advice:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;TENDER-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-RM-26-0225&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-RM-26-0227&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;5f551f90-e2ee-5166-af7c-66a6bfd7dce8&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-08&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-22&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;12:49:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Payment of the first release, with the interest.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Paid on 22 May 2026 by credit transfer of 2031191 ferra, 20311.91 lume at the Accord&#39;s parity of 100 ferra to the lume, to the manufacturer&#39;s account in ferra: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20830.23&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;521.68&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20308.55&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;4&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20822.93&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;511.02&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20311.91&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;5&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-PAY-AUTH-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Payment authorisation&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
@@ -784,7 +800,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF48VIINV260221&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF21VIINV260222&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayerFinancialAccount</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XB73BLUM38010001780393&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Public Works Department&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -864,48 +880,53 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20808.00&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20160.00&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-INV-26-0221&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-INV-26-0222&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;515.20&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;631.80&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CreditNoteDocumentReference</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-CN-26-0222&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CreditNoteDocumentReference</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-INV-26-0225&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InvoiceDocumentReference</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;6.48&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;504.00&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DebitNoteDocumentReference</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0223&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DebitNoteDocumentReference</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CreditNoteDocumentReference</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-CN-26-0224&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CreditNoteDocumentReference</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;22.23&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ReminderDocumentReference</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-DOC-26-0224&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-05&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ReminderDocumentReference</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;PWD-PAY-AUTH-26-0412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DocumentType</span>&gt;Payment authorisation&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Penalty for late completion under clause PEN-1 of the contract: 2 working days at 0.5 % of the installation price of 702.00 lume (three days late, one waived); deducted from the payment.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CreditLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;7.02&lt;/<span class="kw">cbc:CreditLineAmount</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-CONTRACT-2026-PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Framework contract&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;5&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;31.13&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ReminderDocumentReference</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-DOC-26-0226&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ReminderDocumentReference</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">RemittanceAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

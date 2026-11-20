@@ -76,7 +76,7 @@ invoice says so.</td>
 <p>A guarantor stands surety, for example for a bid bond in a tender.
 UBL's guarantee certificate names the guarantee, the tenderer and the
 contracting authority, so the authority can check it is valid.</p>
-<p>In this world it sends 1 and receives 0 documents, and is named in 15
+<p>In this world it sends 2 and receives 0 documents, and is named in 15
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="recycled-plastic-granulate-by-river-barge-urvania--bayvarra">Recycled
@@ -110,24 +110,41 @@ applicable)).</p>
 <code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
-<p>The contracting authority buys park benches and street furniture for
-the city's parks under procurement law. The notices are published
-through the government information service; the manufacturer tenders
-together with a consortium partner, backed by a bid bond. After the
-award the authority places orders under the contract and the
-manufacturer delivers and invoices.</p>
+<p>The contracting authority buys park benches for the city's parks
+under procurement law, in two lots: the benches and their installation.
+The notices are published through the government information service;
+the manufacturer tenders alone, with an engineering firm as its
+subcontractor for the installation, backed by a bank guarantee; a
+furniture maker tenders wooden benches, backed by pledged government
+bonds. After an electronic auction and the award the authority orders
+the first release under the framework contract; the manufacturer
+delivers and invoices the benches, the subcontractor installs them, the
+authority accepts the release, and the installation is invoiced once
+accepted.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GUARANTEE-CERTIFICATE-SCHEMA"><strong>Guarantee
 Certificate</strong></a> to <a href="world-2-xb.html">Lumeport Public
-Works Department</a>: The guarantor notifies the authority of the bid
-bond deposited for the manufacturer's tender. <a
+Works Department</a>: The bank notifies the authority of the bank
+guarantee it gives for the manufacturer's tender, on the
+counter-guarantee of the manufacturer's own bank. <a
 href="example-tender-14-GuaranteeCertificate.html">See the example
 document</a>.</p>
 <p>In it as <code>GuarantorParty</code>.</p>
 <p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
 <code>InterestedParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GUARANTEE-CERTIFICATE-SCHEMA"><strong>Guarantee
+Certificate</strong></a> to <a href="world-2-xb.html">Lumeport Public
+Works Department</a>: The furniture maker's bank certifies the
+government bonds immobilised in favour of the authority as the guarantee
+of the furniture maker's tender (D28 point 5). <a
+href="example-tender-37-GuaranteeCertificate.html">See the example
+document</a>.</p>
+<p>In it as <code>GuarantorParty</code>.</p>
+<p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
+as <code>InterestedParty</code>.</p></li>
 </ul>
 <h2
 id="electricity-water-and-telecom-one-utility-in-each-country">Electricity,
@@ -390,6 +407,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

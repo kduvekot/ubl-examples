@@ -44,7 +44,7 @@ process is the ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>TENDER-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>CL-DA-26-0215</strong><br />
+<li><code>ID</code> = <strong>CL-DA-26-0216</strong><br />
 The despatching party's number.</li>
 <li><code>UUID</code> =
 <strong>3a152d4a-6fec-5156-a6be-f2f8f81077e0</strong><br />
@@ -61,14 +61,13 @@ time; in the issuer's local time, with its offset from UTC (D27).</li>
 Advice of goods despatched for delivery. The code is from the Trade
 Accord's despatch advice type list: DELIVERY = Delivery.</li>
 <li><code>Note</code> = <strong>Please check the goods on arrival and
-report any damage on the consignment note.</strong><br />
+report any damage in your receipt advice.</strong><br />
 What the receiver should do; the note names the transport document the
 flow uses (worklist C30).</li>
-<li><code>AccountingCostCode</code> =
-<strong>PWD-PARKS-26</strong><br />
+<li><code>AccountingCostCode</code> = <strong>4.2.110</strong><br />
 The department's cost centre.</li>
-<li><code>AccountingCost</code> = <strong>Parks renewal programme
-2026</strong><br />
+<li><code>AccountingCost</code> = <strong>Parks and green spaces: parks
+renewal programme 2026</strong><br />
 The cost centre in words.</li>
 <li><code>LineCountNumeric</code> = <strong>1</strong><br />
 The number of lines.</li>
@@ -76,14 +75,15 @@ The number of lines.</li>
 <h3 id="order-reference">Order Reference</h3>
 <p>Inside <code>OrderReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LPWD-PO-26-0212</strong><br />
+<li><code>ID</code> = <strong>LPWD-PO-26-0213</strong><br />
 The order this despatch fulfils.</li>
 </ul>
 <h3 id="project-reference">Project Reference</h3>
 <p>Inside <code>ProjectReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>PWD-PARKS-26</strong><br />
-The parks renewal programme.</li>
+<li><code>ID</code> = <strong>PARKS-26</strong><br />
+The parks renewal programme, by its code in the procurement
+documents.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -542,9 +542,9 @@ The sales desk's mobile number, also under the reserved +999.</li>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>CL-SH-26-0216</strong><br />
+<li><code>ID</code> = <strong>CL-SH-26-0217</strong><br />
 The despatching party's shipment number.</li>
-<li><code>Consignment/ID</code> = <strong>CL-CS-26-0217</strong><br />
+<li><code>Consignment/ID</code> = <strong>CL-CS-26-0218</strong><br />
 The consignment the goods travel in, as numbered when the transport was
 booked.</li>
 <li><code>Consignment/GrossWeightMeasure</code> = <strong>2162</strong>
@@ -552,6 +552,10 @@ booked.</li>
 The gross weight of the goods with their packaging, without the
 transport equipment, as a consignment's weight is defined (worklist
 C15). The gross weight loaded.</li>
+<li><code>Consignment/TotalTransportHandlingUnitQuantity</code> =
+<strong>10</strong> (unitCode <code>EA</code>)<br />
+Ten pallets of 4 benches, each with its benches' anchor sets
+(tender/29#F10, D20).</li>
 <li><code>Consignment/CarrierParty/PartyIdentification/ID</code> =
 <strong>XU-R-104822</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
@@ -694,56 +698,47 @@ The line as despatched.</li>
 <li><code>DeliveredQuantity</code> = <strong>40</strong> (unitCode
 <code>EA</code>)<br />
 What was despatched.</li>
-<li><code>OutstandingQuantity</code> = <strong>200</strong> (unitCode
-<code>EA</code>)<br />
-Still to come under the contract.</li>
-<li><code>OutstandingReason</code> = <strong>Later releases under the
-framework contract.</strong><br />
-Why.</li>
-<li><code>AccountingCostCode</code> =
-<strong>PWD-PARKS-26</strong><br />
+<li><code>AccountingCostCode</code> = <strong>4.2.110</strong><br />
 The department's programme.</li>
-<li><code>AccountingCost</code> = <strong>Parks renewal programme
-2026</strong><br />
+<li><code>AccountingCost</code> = <strong>Parks and green spaces: parks
+renewal programme 2026</strong><br />
 The cost centre in words.</li>
 <li><code>OrderLineReference/LineID</code> = <strong>1</strong><br />
 The order line this line fulfils.</li>
 <li><code>DocumentReference/ID</code> =
-<strong>PWD-2026-PARKS</strong><br />
-The contract.</li>
-<li><code>DocumentReference/DocumentType</code> = <strong>Procurement
-file</strong><br />
-The kind of document referred to, the public works department's
-procurement file of the park benches, a document outside the examples,
-in words: no list has an exact code for it (world/documents.json, cited;
-decision Q29).</li>
+<strong>PWD-CONTRACT-2026-PARKS</strong><br />
+The contract the release is delivered under.</li>
+<li><code>DocumentReference/DocumentType</code> = <strong>Framework
+contract</strong><br />
+What it is.</li>
 <li><code>Item/Description</code> = <strong>Haz nanskir, 1800 mm,
-manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek
-kalnan skul zhaznul dunnir darhir, gan zharsul krir drek
-tarkul.</strong> (languageID <code>qau</code>)<br />
+manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan
+sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir
+darhir, gan zharsul krir drek tarkul.</strong> (languageID
+<code>qau</code>)<br />
 The seller's description in Urvanian, the seller's language; item
-bench-serra of Valdara Industries (world/items.json).</li>
+bench-serra-g of Valdara Industries (world/items.json).</li>
 <li><code>Item/Description</code> = <strong>Park bench, 1800 mm, frame
-of galvanised and powder-coated ductile cast iron, five slats of
-thermally modified ash, for bolting to the ground.</strong> (languageID
-<code>en-XU</code>)<br />
+of galvanised and powder-coated ductile cast iron in moss green (RAL
+6005), a special colour, five slats of thermally modified ash, for
+bolting to the ground.</strong> (languageID <code>en-XU</code>)<br />
 The seller's description in English, the working language between the
-countries; item bench-serra of Valdara Industries
+countries; item bench-serra-g of Valdara Industries
 (world/items.json).</li>
 <li><code>Item/Name</code> = <strong>Haz nanskir Serra 180</strong>
 (languageID <code>qau</code>)<br />
-The item's name in Urvanian, the seller's language; item bench-serra of
-Valdara Industries (world/items.json).</li>
+The item's name in Urvanian, the seller's language; item bench-serra-g
+of Valdara Industries (world/items.json).</li>
 <li><code>Item/Name</code> = <strong>Park bench Serra 180</strong>
 (languageID <code>en-XU</code>)<br />
 The item's name in English, the working language between the countries;
-item bench-serra of Valdara Industries (world/items.json).</li>
+item bench-serra-g of Valdara Industries (world/items.json).</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>VI-B180</strong><br />
-The seller's own item number; item bench-serra of Valdara Industries
+The seller's own item number; item bench-serra-g of Valdara Industries
 (world/items.json).</li>
 <li><code>Item/SellersItemIdentification/ExtendedID</code> =
-<strong>GRY</strong><br />
+<strong>GRN</strong><br />
 The variant of the item: the frame colour, added to the item
 number.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/AttributeID</code>
@@ -758,12 +753,12 @@ code names the code's list in its schemeID.</li>
 The part of the item the attribute is on: the frame. The code is from
 the Trade Accord's item part position list: FRM = Frame.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
-= <strong>GRY</strong> (listID
+= <strong>GRN</strong> (listID
 <code>urn:ubl-examples:world:codelist:ColourCode</code>)<br />
 The variant's code for it. The code is from the Trade Accord's colour
-list: GRY = Grey.</li>
+list: GRN = Green.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
-= <strong>Frame in Ferro grey</strong><br />
+= <strong>Frame in moss green, RAL 6005</strong><br />
 The variant in words.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
 <strong>KXU10014B180</strong> (schemeID <code>ISO 15459-6</code>)<br />
@@ -772,7 +767,7 @@ Valdara Industries gives it: the issuing agency code KXU of the Codana
 Identification Agency, the company number Codana gave Valdara Industries
 and the company's own reference for the item, without a check character.
 Codana gives a company its number; the company numbers its own items;
-item bench-serra of Valdara Industries (world/items.json).</li>
+item bench-serra-g of Valdara Industries (world/items.json).</li>
 <li><code>Item/StandardItemIdentification/BarcodeSymbologyID</code> =
 <strong>Code128</strong><br />
 The barcode the number is printed in on the label: Code 128 carries
@@ -785,52 +780,34 @@ number; what follows is the company's own reference.</li>
 <li><code>Item/ItemInstance/ManufactureDate</code> =
 <strong>2026-03-27</strong><br />
 The day the lot was produced.</li>
+<li><code>Item/ItemInstance/AdditionalItemProperty/Name</code> =
+<strong>Side frame serial numbers</strong><br />
+The serial numbers the contract requires on the benches: each side frame
+carries its own, cast into it (tender/29#F12, D28).</li>
+<li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
+<strong>VI-SF-01611 to VI-SF-01690, two a bench</strong><br />
+The lot's 80 frames, in one unbroken range from Valdara's production
+record (D21).</li>
 <li><code>Item/ItemInstance/LotIdentification/LotNumberID</code> =
 <strong>VI-LOT-260327</strong><br />
 The production lot, from the maker's prefix and the production day; a
 recall names the lot.</li>
-<li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name</code>
-= <strong>Coating batch</strong><br />
-A fact about this lot: the galvanising and powder-coating batch its
-frames went through.</li>
-<li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value</code>
-= <strong>ZN-26-062</strong><br />
-Its batch: each lot has its own, in the coating line's running count of
-the year (the production record, world/items.json goods_chain,
-D21).</li>
-<li><code>Shipment/ID</code> = <strong>CL-SH-26-0216</strong><br />
+<li><code>Shipment/ID</code> = <strong>CL-SH-26-0217</strong><br />
 The shipment the line travels in.</li>
 <li><code>SubDespatchLine/ID</code> = <strong>1.1</strong><br />
 The ground anchor sets that come with the benches.</li>
-<li><code>SubDespatchLine/DeliveredQuantity</code> = <strong>36</strong>
+<li><code>SubDespatchLine/DeliveredQuantity</code> = <strong>40</strong>
 (unitCode <code>SET</code>)<br />
-36 of the 40 sets.</li>
-<li><code>SubDespatchLine/BackorderQuantity</code> = <strong>4</strong>
-(unitCode <code>SET</code>)<br />
-Four sets follow.</li>
-<li><code>SubDespatchLine/BackorderReason</code> = <strong>The
-galvanising of the last batch is late; the sets follow within a week,
-before the installers need them.</strong><br />
-Why.</li>
+One set a bench, all forty: four ground anchors and four M12 bolts each,
+no loose bolts (D28, O10).</li>
 <li><code>SubDespatchLine/OrderLineReference/LineID</code> =
 <strong>1</strong><br />
 Part of the bench line.</li>
+<li><code>SubDespatchLine/Item/Description</code> = <strong>Four ground
+anchors and four M12 bolts.</strong><br />
+What a set holds.</li>
 <li><code>SubDespatchLine/Item/Name</code> = <strong>Ground anchor
 set</strong><br />
-Included in the bench.</li>
-<li><code>SubDespatchLine/ID</code> = <strong>1.2</strong><br />
-The fixing bolts.</li>
-<li><code>SubDespatchLine/DeliveredQuantity</code> =
-<strong>170</strong> (unitCode <code>EA</code>)<br />
-Four per bench, and ten more.</li>
-<li><code>SubDespatchLine/OversupplyQuantity</code> =
-<strong>10</strong> (unitCode <code>EA</code>)<br />
-Ten bolts more than needed, as spares for the installers.</li>
-<li><code>SubDespatchLine/OrderLineReference/LineID</code> =
-<strong>1</strong><br />
-Part of the bench line.</li>
-<li><code>SubDespatchLine/Item/Name</code> = <strong>Fixing bolt
-M12</strong><br />
 Included in the bench.</li>
 </ul>
 <h2 id="the-document">The document</h2>
@@ -841,20 +818,20 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:despatch-advice:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:despatch-receipt:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;TENDER-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;CL-DA-26-0215&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;CL-DA-26-0216&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;3a152d4a-6fec-5156-a6be-f2f8f81077e0&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-30&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:37:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DespatchAdviceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DespatchAdviceTypeCode&quot;</span>&gt;DELIVERY&lt;/<span class="kw">cbc:DespatchAdviceTypeCode</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please check the goods on arrival and report any damage on the consignment note.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;PWD-PARKS-26&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Parks renewal programme 2026&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please check the goods on arrival and report any damage in your receipt advice.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;4.2.110&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Parks and green spaces: parks renewal programme 2026&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LPWD-PO-26-0212&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LPWD-PO-26-0213&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProjectReference</span>&gt;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-PARKS-26&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PARKS-26&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProjectReference</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CL-SIG-26-DA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1006,131 +983,118 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CL-SH-26-0216&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CL-SH-26-0217&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CL-CS-26-0217&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CL-CS-26-0218&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;2162&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160203746888095&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Ban Kumek&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via dei Trasporti&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;45&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PostalZone</span>&gt;4160&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Planning desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Transport planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 266 7643&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;planning@trasvia.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Every day 06:00–22:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CarrierParty</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedDeliveryPeriod</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedDeliveryPeriod</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Despatch</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-03-30&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;bf5c479c-ae74-54ad-8a20-aa2eeba424e0&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Forty benches in moss green, RAL 6005, as the order change asked.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;40&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OutstandingQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;200&lt;/<span class="kw">cbc:OutstandingQuantity</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OutstandingReason</span>&gt;Later releases under the framework contract.&lt;/<span class="kw">cbc:OutstandingReason</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;PWD-PARKS-26&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AccountingCost</span>&gt;Parks renewal programme 2026&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Procurement file&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRY&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;COLOUR&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ItemPartPositionCode&quot;</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ColourCode&quot;</span>&gt;GRY&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in Ferro grey&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManufactureDate</span>&gt;2026-03-27&lt;/<span class="kw">cbc:ManufactureDate</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LotIdentification</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LotNumberID</span>&gt;VI-LOT-260327&lt;/<span class="kw">cbc:LotNumberID</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Coating batch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Value</span>&gt;ZN-26-062&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LotIdentification</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CL-SH-26-0216&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubDespatchLine</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;36&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BackorderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;4&lt;/<span class="kw">cbc:BackorderQuantity</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BackorderReason</span>&gt;The galvanising of the last batch is late; the sets follow within a week, before the installers need them.&lt;/<span class="kw">cbc:BackorderReason</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ground anchor set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubDespatchLine</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubDespatchLine</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;170&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OversupplyQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;10&lt;/<span class="kw">cbc:OversupplyQuantity</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Fixing bolt M12&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubDespatchLine</span>&gt;</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;10&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160203746888095&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Ban Kumek&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via dei Trasporti&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;45&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Ruldraz&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Ferrano&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PostalZone</span>&gt;4160&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Planning desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Transport planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 266 7643&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;planning@trasvia.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Every day 06:00–22:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CarrierParty</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EstimatedDeliveryPeriod</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EstimatedDeliveryPeriod</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-03-30&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;bf5c479c-ae74-54ad-8a20-aa2eeba424e0&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Forty benches in moss green, RAL 6005, as the order change asked.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;40&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;4.2.110&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AccountingCost</span>&gt;Parks and green spaces: parks renewal programme 2026&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-CONTRACT-2026-PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentType</span>&gt;Framework contract&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRN&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;COLOUR&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ItemPartPositionCode&quot;</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ColourCode&quot;</span>&gt;GRN&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in moss green, RAL 6005&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManufactureDate</span>&gt;2026-03-27&lt;/<span class="kw">cbc:ManufactureDate</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Side frame serial numbers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Value</span>&gt;VI-SF-01611 to VI-SF-01690, two a bench&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LotIdentification</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LotNumberID</span>&gt;VI-LOT-260327&lt;/<span class="kw">cbc:LotNumberID</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LotIdentification</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;CL-SH-26-0217&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SubDespatchLine</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;SET&quot;</span>&gt;40&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Four ground anchors and four M12 bolts.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ground anchor set&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SubDespatchLine</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

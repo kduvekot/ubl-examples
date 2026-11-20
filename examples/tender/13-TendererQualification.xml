@@ -7,9 +7,9 @@
   <cbc:ID>VI-DOC-26-0199</cbc:ID>
   <cbc:UUID>544dae4e-ce5c-5e98-a9b3-2b79b00edc95</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-24</cbc:IssueDate>
   <cbc:IssueTime>08:52:00-01:00</cbc:IssueTime>
-  <cbc:Note>The manufacturer with Saltmere as subcontractor for the installation.</cbc:Note>
+  <cbc:Note>The manufacturer tenders alone, with Saltmere Engineering as its subcontractor for the installation (lot 2); the manufacturer is liable for it.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>VI-SIG-TQ</cbc:ID>
@@ -30,13 +30,13 @@
       <cbc:ID>LOT-2</cbc:ID>
     </cac:InterestedProcurementProjectLot>
     <cac:MainQualifyingParty>
-      <cbc:ParticipationPercent>80</cbc:ParticipationPercent>
+      <cbc:ParticipationPercent>96.5</cbc:ParticipationPercent>
       <cbc:PersonalSituation>No exclusion grounds apply.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">63</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">3083</cbc:EmployeeQuantity>
-      <cbc:BusinessClassificationEvidenceID>ISIC-3100</cbc:BusinessClassificationEvidenceID>
+      <cbc:BusinessClassificationEvidenceID>EV-REG-VI</cbc:BusinessClassificationEvidenceID>
       <cbc:BusinessIdentityEvidenceID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:BusinessIdentityEvidenceID>
-      <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">LEAD</cbc:TendererRoleCode>
+      <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">SOLE</cbc:TendererRoleCode>
       <cac:BusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
         <cac:ClassificationCategory>
@@ -45,20 +45,23 @@
       </cac:BusinessClassificationScheme>
       <cac:TechnicalCapability>
         <cbc:ID>TC-1</cbc:ID>
-        <cbc:Description>4,000 benches a year.</cbc:Description>
+        <cbc:Description>A production capacity of 4,000 benches a year, about 80 a week.</cbc:Description>
         <cbc:ValueQuantity unitCode="EA">4000</cbc:ValueQuantity>
       </cac:TechnicalCapability>
       <cac:FinancialCapability>
         <cbc:ID>FC-1</cbc:ID>
+        <cbc:Description>Yearly turnover of 2025, the whole company's, from its audited accounts.</cbc:Description>
         <cbc:ValueAmount currencyID="XBL">520000000.00</cbc:ValueAmount>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-ACC-VI</cbc:ID>
+        </cac:SuppliedEvidence>
       </cac:FinancialCapability>
       <cac:CompletedTask>
         <cbc:AnnualAverageAmount currencyID="XBL">180000.00</cbc:AnnualAverageAmount>
         <cbc:TotalTaskAmount currencyID="XBL">540000.00</cbc:TotalTaskAmount>
-        <cbc:PartyCapacityAmount currencyID="XBL">540000.00</cbc:PartyCapacityAmount>
-        <cbc:Description>Benches for Ferrano's parks.</cbc:Description>
+        <cbc:Description>Park benches for the city's parks, in yearly releases, for the City of Ferrano.</cbc:Description>
         <cac:SuppliedEvidence>
-          <cbc:ID>EV-FER-PARKS</cbc:ID>
+          <cbc:ID>EV-REF-FER</cbc:ID>
         </cac:SuppliedEvidence>
         <cac:Period>
           <cbc:StartDate>2023-01-01</cbc:StartDate>
@@ -67,7 +70,43 @@
         <cac:RecipientCustomerParty>
           <cac:Party>
             <cac:PartyName>
-              <cbc:Name>City of Ferrano</cbc:Name>
+              <cbc:Name>City of ferrano</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+        </cac:RecipientCustomerParty>
+      </cac:CompletedTask>
+      <cac:CompletedTask>
+        <cbc:TotalTaskAmount currencyID="XBL">62000.00</cbc:TotalTaskAmount>
+        <cbc:Description>Benches for the riverside walk, for the town of Conciaro.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-REF-CON</cbc:ID>
+        </cac:SuppliedEvidence>
+        <cac:Period>
+          <cbc:StartDate>2024-03-01</cbc:StartDate>
+          <cbc:EndDate>2024-06-30</cbc:EndDate>
+        </cac:Period>
+        <cac:RecipientCustomerParty>
+          <cac:Party>
+            <cac:PartyName>
+              <cbc:Name>Town of conciaro</cbc:Name>
+            </cac:PartyName>
+          </cac:Party>
+        </cac:RecipientCustomerParty>
+      </cac:CompletedTask>
+      <cac:CompletedTask>
+        <cbc:TotalTaskAmount currencyID="XBL">38000.00</cbc:TotalTaskAmount>
+        <cbc:Description>Benches for the market square and the station forecourt, for the town of Valico Euridice.</cbc:Description>
+        <cac:SuppliedEvidence>
+          <cbc:ID>EV-REF-VAL</cbc:ID>
+        </cac:SuppliedEvidence>
+        <cac:Period>
+          <cbc:StartDate>2025-04-01</cbc:StartDate>
+          <cbc:EndDate>2025-05-31</cbc:EndDate>
+        </cac:Period>
+        <cac:RecipientCustomerParty>
+          <cac:Party>
+            <cac:PartyName>
+              <cbc:Name>Town of valico euridice</cbc:Name>
             </cac:PartyName>
           </cac:Party>
         </cac:RecipientCustomerParty>
@@ -176,12 +215,12 @@
         </cac:ElectronicAddress>
       </cac:Party>
       <cac:EconomicOperatorRole>
-        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
-        <cbc:RoleDescription>Leads.</cbc:RoleDescription>
+        <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">SOLE</cbc:RoleCode>
+        <cbc:RoleDescription>Tenders alone and relies on a subcontractor for the installation.</cbc:RoleDescription>
       </cac:EconomicOperatorRole>
     </cac:MainQualifyingParty>
     <cac:AdditionalQualifyingParty>
-      <cbc:ParticipationPercent>20</cbc:ParticipationPercent>
+      <cbc:ParticipationPercent>3.5</cbc:ParticipationPercent>
       <cbc:TendererRoleCode listID="urn:ubl-examples:world:codelist:TendererRoleCode">SUBCONTRACTOR</cbc:TendererRoleCode>
       <cac:Party>
         <cbc:IndustryClassificationCode listID="ISIC Rev.4">4290</cbc:IndustryClassificationCode>
@@ -213,8 +252,12 @@
           </cac:Country>
         </cac:PostalAddress>
         <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Saltmere Engineering</cbc:RegistrationName>
+          <cbc:RegistrationName>Saltmere Engineering Ltd</cbc:RegistrationName>
           <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:CompanyID>
+          <cbc:RegistrationDate>1994-10-03</cbc:RegistrationDate>
+          <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
+          <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+          <cbc:EntitySizeCode listID="urn:ubl-examples:world:codelist:EntitySizeCode">SMALL</cbc:EntitySizeCode>
           <cbc:CompanyLiquidationStatusCode listID="urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode">ACTIVE</cbc:CompanyLiquidationStatusCode>
           <cac:RegistrationAddress>
             <cbc:CityName>Marrowdale</cbc:CityName>
@@ -295,8 +338,30 @@
     </cac:Party>
   </cac:ContractingParty>
   <cac:Evidence>
-    <cbc:ID>EV-FER-PARKS</cbc:ID>
-    <cbc:Name>Ferrano reference</cbc:Name>
+    <cbc:ID>EV-REF-FER</cbc:ID>
+    <cbc:Name>Reference letter of the City of Ferrano</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-REF-CON</cbc:ID>
+    <cbc:Name>Reference letter of the town of Conciaro</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-REF-VAL</cbc:ID>
+    <cbc:Name>Reference letter of the town of Valico Euridice</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-REG-VI</cbc:ID>
+    <cbc:Name>Extract of Urvania's companies register</cbc:Name>
+    <cbc:Description>Registration no. XU-R-104274 and class ISIC 3100.</cbc:Description>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-ACC-VI</cbc:ID>
+    <cbc:Name>Audited annual accounts 2025</cbc:Name>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-FOR-VI</cbc:ID>
+    <cbc:Name>Chain-of-custody certificate of the hardwood slats</cbc:Name>
+    <cbc:Description>The slats are sawn by Marrowdale Sawmill from forests managed for regrowth; the certificate covers its supplies to Valdara.</cbc:Description>
   </cac:Evidence>
   <cac:Evidence>
     <cbc:ID>EV-DEC-1</cbc:ID>

@@ -4,21 +4,19 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-OR-26-0214</cbc:ID>
+  <cbc:ID>VI-OR-26-0215</cbc:ID>
   <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
   <cbc:UUID>f49b1a90-ec03-58ab-b40d-fe1765db668c</cbc:UUID>
-  <cbc:IssueDate>2026-03-25</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>16:15:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
-  <cbc:Note>Accepted: moss green, at the quoted charge.</cbc:Note>
+  <cbc:Note>Accepted: moss green, at the quoted charge; delivery on 31 March, installation by Saltmere Engineering from 1 April, completed by 7 April.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   </cac:OrderReference>
   <cac:OrderChangeDocumentReference>
-    <cbc:ID>LPWD-OC-26-0213</cbc:ID>
+    <cbc:ID>LPWD-OC-26-0214</cbc:ID>
   </cac:OrderChangeDocumentReference>
   <cac:SellerSupplierParty>
     <cac:Party>
@@ -118,36 +116,21 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:PromisedDeliveryPeriod>
+      <cbc:StartDate>2026-03-31</cbc:StartDate>
+      <cbc:EndDate>2026-03-31</cbc:EndDate>
+    </cac:PromisedDeliveryPeriod>
+  </cac:Delivery>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">200.00</cbc:Amount>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-25</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-  </cac:PricingExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-25</cbc:Date>
-  </cac:PaymentExchangeRate>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">20680.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">200.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">20160.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">20880.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
 </OrderResponse>

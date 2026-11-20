@@ -57,8 +57,9 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <strong>PWD-2026-PARKS</strong><br />
 The authority's file number for this procurement, the same on every
 document of the procedure.</li>
-<li><code>IssueDate</code> = <strong>2026-02-15</strong><br />
-The authority confirms the registration the next day.</li>
+<li><code>IssueDate</code> = <strong>2026-02-02</strong><br />
+The authority confirms the registration on the next working day, Monday
+2 February (tender/05#F5).</li>
 <li><code>IssueTime</code> = <strong>08:35:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
@@ -409,11 +410,13 @@ it here; Party/EndpointID is deprecated.</li>
 <p>Inside <code>ProcurementProject</code>:</p>
 <ul>
 <li><code>Name</code> = <strong>Park benches</strong><br />
-The project, or the lot, the document is about.</li>
+The project, or the lot, the document is about, by the name the notices
+give it (tender/08#F6).</li>
 <li><code>ProcurementTypeCode</code> = <strong>SUPPLIES</strong> (listID
 <code>urn:ubl-examples:world:codelist:ContractNatureCode</code>)<br />
-The kind of procurement. The code is from the Trade Accord's contract
-nature list: SUPPLIES = Supplies.</li>
+The kind of procurement; the installation is services in every document
+(tender/01#F4). The code is from the Trade Accord's contract nature
+list: SUPPLIES = Supplies.</li>
 </ul>
 <h3 id="procurement-project-lot-reference">Procurement Project Lot
 Reference</h3>
@@ -433,7 +436,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0191&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;3ad290e2-059a-5871-b575-922bf8b45c86&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractFolderID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ContractFolderID</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-15&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:35:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractName</span>&gt;Park benches for the parks renewal programme&lt;/<span class="kw">cbc:ContractName</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TenderLanguageLocaleCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:TenderLanguageLocaleCode</span>&gt;</span>
@@ -556,6 +559,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ExpressionOfInterestResponse</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

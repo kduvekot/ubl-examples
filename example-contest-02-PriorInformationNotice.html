@@ -64,13 +64,17 @@ Revised three weeks later.</li>
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
 <li><code>Note</code> = <strong>Advance notice of the design contest for
-the harbour promenade bench.</strong><br />
-What it announces.</li>
+the harbour promenade bench. Version 2: on 18 February the city council
+raised the prize fund from 12,000 to 14,000 lume and the first prize
+from 6,000 to 8,000 lume, and with them the estimate from 52,000 to
+54,000 lume; the contest notice moves to 19 March.</strong><br />
+What it announces. What version 2 changes, said in the document (D29
+point 4).</li>
 <li><code>VersionID</code> = <strong>2</strong><br />
 The second version, which supersedes the first: on 18 February the city
 council raised the prize fund from 12,000 to 14,000 lume, the first
-prize from 6,000 to 8,000, and the contest notice moves to 19
-March.</li>
+prize from 6,000 to 8,000, and with them the estimate from 52,000 to
+54,000 lume; the contest notice moves to 19 March.</li>
 <li><code>PreviousVersionID</code> = <strong>1</strong><br />
 The version this one supersedes: version 1 of the same document, with
 the same number.</li>
@@ -520,7 +524,12 @@ nature list: SERVICES = Services.</li>
 <li><code>RequestedTenderTotal/EstimatedOverallContractAmount</code> =
 <strong>54000.00</strong> (currencyID <code>XBL</code>)<br />
 The prizes, 14,000 lume, and the follow-up service contract, estimated
-at 40,000 lume.</li>
+at 40,000 lume (contest/01#F6).</li>
+<li><code>RequestedTenderTotal/MonetaryScope</code> = <strong>The three
+prizes (14,000 lume) and the follow-up service contract for the detailed
+design and the supervision of the production (about 40,000 lume). The
+production of the benches is not part of it.</strong><br />
+What the estimate covers, in words (D29 point 5).</li>
 <li><code>MainCommodityClassification/ItemClassificationCode</code> =
 <strong>83912</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 The contest is for an industrial design, as a subclass of the UN Central
@@ -551,7 +560,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractFolderID</span>&gt;PWD-2026-PROM-DC&lt;/<span class="kw">cbc:ContractFolderID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-23&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:17:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Advance notice of the design contest for the harbour promenade bench.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume, and with them the estimate from 52,000 to 54,000 lume; the contest notice moves to 19 March.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PreviousVersionID</span>&gt;1&lt;/<span class="kw">cbc:PreviousVersionID</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PlannedDate</span>&gt;2026-03-19&lt;/<span class="kw">cbc:PlannedDate</span>&gt;</span>
@@ -697,23 +706,24 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54000.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PriorInformationNotice</span>&gt;</span></code></pre></div>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MonetaryScope</span>&gt;The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.&lt;/<span class="kw">cbc:MonetaryScope</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">PriorInformationNotice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

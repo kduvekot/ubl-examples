@@ -4,34 +4,29 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-change:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-OC-26-0213</cbc:ID>
+  <cbc:ID>LPWD-OC-26-0214</cbc:ID>
   <cbc:UUID>8e684e84-32af-5f74-a455-5a17c1622f8a</cbc:UUID>
-  <cbc:IssueDate>2026-03-24</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>08:06:00-01:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-  <cbc:Note>Please deliver the benches of this release in moss green, RAL 6005.</cbc:Note>
+  <cbc:Note>Please deliver the benches of this release in moss green, RAL 6005, the special colour at 5 lume a bench the catalogue quotes. The installation is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PricingCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cac:ValidityPeriod>
-    <cbc:EndDate>2026-03-27</cbc:EndDate>
+    <cbc:EndDate>2026-03-26</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   </cac:OrderReference>
-  <cac:QuotationDocumentReference>
-    <cbc:ID>VI-QT-26-0071</cbc:ID>
-  </cac:QuotationDocumentReference>
-  <cac:OriginatorDocumentReference>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
-    <cbc:DocumentType>Procurement file</cbc:DocumentType>
-  </cac:OriginatorDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>VI-CAT-26-0212</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Catalogue</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-COLOUR-RAL6005</cbc:ID>
     <cbc:DocumentType>Colour sample</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Contract>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
   </cac:Contract>
   <cac:Signature>
     <cbc:ID>PWD-SIG-OC</cbc:ID>
@@ -137,99 +132,21 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:SellerSupplierParty>
-  <cac:FreightForwarderParty>
-    <cac:PartyIdentification>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-    </cac:PartyIdentification>
-    <cac:PartyName>
-      <cbc:Name>Bayforth Forwarding</cbc:Name>
-    </cac:PartyName>
-  </cac:FreightForwarderParty>
   <cac:Delivery>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-03-31</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
     </cac:RequestedDeliveryPeriod>
   </cac:Delivery>
-  <cac:PaymentMeans>
-    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
-      <cbc:Name>Valdara Industries SUA</cbc:Name>
-      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cac:FinancialInstitutionBranch>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
-        <cbc:Name>Ferrano main branch</cbc:Name>
-        <cac:FinancialInstitution>
-          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">CREVXUFR</cbc:ID>
-          <cbc:Name>Crevalto Bank</cbc:Name>
-          <cac:Address>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
-            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
-            <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-            <cbc:PostalZone>4100</cbc:PostalZone>
-            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              <cbc:Name>Urvania</cbc:Name>
-            </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitution>
-        <cac:Address>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-          </cac:Country>
-        </cac:Address>
-      </cac:FinancialInstitutionBranch>
-      <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-      </cac:Country>
-    </cac:PayeeFinancialAccount>
-  </cac:PaymentMeans>
-  <cac:PaymentTerms>
-    <cbc:Note>30 days after the invoice, as the contract says.</cbc:Note>
-  </cac:PaymentTerms>
-  <cac:TransactionConditions>
-    <cbc:Description>The framework contract's conditions apply.</cbc:Description>
-  </cac:TransactionConditions>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
     <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">200.00</cbc:Amount>
   </cac:AllowanceCharge>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-24</cbc:Date>
-  </cac:TaxExchangeRate>
-  <cac:PricingExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>0.01</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-01-02</cbc:Date>
-  </cac:PricingExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-03-24</cbc:Date>
-  </cac:PaymentExchangeRate>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">200.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">20160.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">200.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
@@ -238,8 +155,25 @@
       <cbc:Quantity unitCode="EA">40</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">19960.00</cbc:LineExtensionAmount>
       <cac:Item>
-        <cbc:Description>Park bench Serra 180, frame in moss green RAL 6005</cbc:Description>
-        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+        <cbc:Description languageID="en-XB">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+        <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
+        <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>VI-B180</cbc:ID>
+          <cbc:ExtendedID>GRN</cbc:ExtendedID>
+          <cac:PhysicalAttribute>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+            <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRN</cbc:DescriptionCode>
+            <cbc:Description>Frame in moss green, RAL 6005</cbc:Description>
+          </cac:PhysicalAttribute>
+        </cac:SellersItemIdentification>
+        <cac:StandardItemIdentification>
+          <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+          <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+          <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
+        </cac:StandardItemIdentification>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

@@ -7,12 +7,12 @@
   <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
   <cbc:UUID>317128f4-cd1c-550c-b5d6-6fe22d03fd12</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-04-05</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>08:19:00-01:00</cbc:IssueTime>
-  <cbc:Note>Restricted design contest for the harbour promenade bench, with three prizes.</cbc:Note>
+  <cbc:Note>Restricted design contest for the harbour promenade bench, with three prizes. Corrigendum, version 2: the site plan is replaced by revision B (the sea wall is 420 m long, not 240 m), the deadline for requests to participate moves from 17 to 30 April, and the design lead may also be a registered industrial designer.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
-  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN</cbc:NoticeTypeCode>
+  <cbc:NoticeTypeCode listID="urn:ubl-examples:world:codelist:NoticeTypeCode">CN-DESG</cbc:NoticeTypeCode>
   <cac:ContractingParty>
     <cbc:BuyerProfileURI>https://tenders.lumeport.example/buyers/pwd</cbc:BuyerProfileURI>
     <cac:ContractingPartyType>
@@ -117,15 +117,12 @@
   <cac:TenderingTerms>
     <cac:TendererQualificationRequest>
       <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-      <cbc:CompanyLegalForm>Limited company (private): a group of participants forms one before the follow-up contract is awarded; for the contest itself a group names a lead member</cbc:CompanyLegalForm>
+      <cbc:CompanyLegalForm>Limited company (private): required of a group of participants, which forms one before the follow-up contract is awarded</cbc:CompanyLegalForm>
       <cbc:Description>The design lead is a registered architect or a registered industrial designer.</cbc:Description>
       <cac:TechnicalEvaluationCriterion>
         <cbc:EvaluationCriterionTypeCode listID="urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode">REFERENCES</cbc:EvaluationCriterionTypeCode>
         <cbc:Description>Two completed designs of furniture or fittings for public spaces in the last five years.</cbc:Description>
         <cbc:ThresholdQuantity unitCode="EA">2</cbc:ThresholdQuantity>
-        <cac:DurationPeriod>
-          <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
-        </cac:DurationPeriod>
       </cac:TechnicalEvaluationCriterion>
       <cac:EconomicOperatorRole>
         <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
@@ -165,6 +162,35 @@
         <cac:PartyName>
           <cbc:Name>Procurement Review Board of Bayvarra</cbc:Name>
         </cac:PartyName>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-075593</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+          <cbc:StreetName>Justice Row</cbc:StreetName>
+          <cbc:BuildingNumber>20</cbc:BuildingNumber>
+          <cbc:CitySubdivisionName>Government Hill</cbc:CitySubdivisionName>
+          <cbc:CityName>Lumeport</cbc:CityName>
+          <cbc:PostalZone>38519</cbc:PostalZone>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            <cbc:Name>Bayvarra</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+          <cbc:Name>Registry</cbc:Name>
+          <cbc:JobTitle>Registrar</cbc:JobTitle>
+          <cbc:Department>Registry</cbc:Department>
+          <cbc:Telephone>+999 2 38 4119 7873</cbc:Telephone>
+          <cbc:ElectronicMail>registry@review-xb.example</cbc:ElectronicMail>
+          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        </cac:Contact>
+        <cac:ElectronicAddress>
+          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:4718260539</cbc:ElectronicAddressID>
+        </cac:ElectronicAddress>
       </cac:AppealReceiverParty>
     </cac:AppealTerms>
     <cac:Language>
@@ -175,13 +201,12 @@
     <cbc:Description>A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.</cbc:Description>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">DESIGNCONTEST</cbc:ProcedureCode>
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
-    <cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
     <cac:TenderSubmissionDeadlinePeriod>
       <cbc:EndDate>2026-06-12</cbc:EndDate>
       <cbc:EndTime>12:00:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
-      <cbc:EndDate>2026-05-02</cbc:EndDate>
+      <cbc:EndDate>2026-04-30</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
       <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
@@ -203,6 +228,7 @@
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">54000.00</cbc:EstimatedOverallContractAmount>
+      <cbc:MonetaryScope>The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.</cbc:MonetaryScope>
     </cac:RequestedTenderTotal>
     <cac:MainCommodityClassification>
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">83912</cbc:ItemClassificationCode>

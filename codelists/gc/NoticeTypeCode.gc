@@ -93,6 +93,40 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>CN-DESG</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Design contest notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nengaz skazdir mudek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vakunu tanala katame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Calls for competition in a design contest (eForms notice type cn-desg, subtypes 23 and 24).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>CAN-DESG</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Design contest result notice</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Nengaz skazdir skunzek mudek</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Vakunu tanala havia katame</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Announces the results of a design contest (eForms notice type can-desg, subtypes 36 and 37).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>BUSREG</SimpleValue>
          </Value>
          <Value ColumnRef="name">

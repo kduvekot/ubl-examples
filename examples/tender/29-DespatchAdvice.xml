@@ -4,20 +4,20 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CL-DA-26-0215</cbc:ID>
+  <cbc:ID>CL-DA-26-0216</cbc:ID>
   <cbc:UUID>3a152d4a-6fec-5156-a6be-f2f8f81077e0</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>17:37:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
-  <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+  <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
+  <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0212</cbc:ID>
+    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
   </cac:OrderReference>
   <cac:ProjectReference>
-    <cbc:ID>PWD-PARKS-26</cbc:ID>
+    <cbc:ID>PARKS-26</cbc:ID>
   </cac:ProjectReference>
   <cac:Signature>
     <cbc:ID>CL-SIG-26-DA</cbc:ID>
@@ -169,10 +169,11 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0216</cbc:ID>
+    <cbc:ID>CL-SH-26-0217</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>CL-CS-26-0217</cbc:ID>
+      <cbc:ID>CL-CS-26-0218</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">2162</cbc:GrossWeightMeasure>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">10</cbc:TotalTransportHandlingUnitQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -222,30 +223,28 @@
     <cbc:UUID>bf5c479c-ae74-54ad-8a20-aa2eeba424e0</cbc:UUID>
     <cbc:Note>Forty benches in moss green, RAL 6005, as the order change asked.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">40</cbc:DeliveredQuantity>
-    <cbc:OutstandingQuantity unitCode="EA">200</cbc:OutstandingQuantity>
-    <cbc:OutstandingReason>Later releases under the framework contract.</cbc:OutstandingReason>
-    <cbc:AccountingCostCode>PWD-PARKS-26</cbc:AccountingCostCode>
-    <cbc:AccountingCost>Parks renewal programme 2026</cbc:AccountingCost>
+    <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
+    <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:DocumentReference>
-      <cbc:ID>PWD-2026-PARKS</cbc:ID>
-      <cbc:DocumentType>Procurement file</cbc:DocumentType>
+      <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
+      <cbc:DocumentType>Framework contract</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
-      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
-        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cbc:ExtendedID>GRN</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
           <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
-          <cbc:Description>Frame in Ferro grey</cbc:Description>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRN</cbc:DescriptionCode>
+          <cbc:Description>Frame in moss green, RAL 6005</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
@@ -255,39 +254,27 @@
       </cac:StandardItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-03-27</cbc:ManufactureDate>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Side frame serial numbers</cbc:Name>
+          <cbc:Value>VI-SF-01611 to VI-SF-01690, two a bench</cbc:Value>
+        </cac:AdditionalItemProperty>
         <cac:LotIdentification>
           <cbc:LotNumberID>VI-LOT-260327</cbc:LotNumberID>
-          <cac:AdditionalItemProperty>
-            <cbc:Name>Coating batch</cbc:Name>
-            <cbc:Value>ZN-26-062</cbc:Value>
-          </cac:AdditionalItemProperty>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0216</cbc:ID>
+      <cbc:ID>CL-SH-26-0217</cbc:ID>
     </cac:Shipment>
     <cac:SubDespatchLine>
       <cbc:ID>1.1</cbc:ID>
-      <cbc:DeliveredQuantity unitCode="SET">36</cbc:DeliveredQuantity>
-      <cbc:BackorderQuantity unitCode="SET">4</cbc:BackorderQuantity>
-      <cbc:BackorderReason>The galvanising of the last batch is late; the sets follow within a week, before the installers need them.</cbc:BackorderReason>
+      <cbc:DeliveredQuantity unitCode="SET">40</cbc:DeliveredQuantity>
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
       </cac:OrderLineReference>
       <cac:Item>
+        <cbc:Description>Four ground anchors and four M12 bolts.</cbc:Description>
         <cbc:Name>Ground anchor set</cbc:Name>
-      </cac:Item>
-    </cac:SubDespatchLine>
-    <cac:SubDespatchLine>
-      <cbc:ID>1.2</cbc:ID>
-      <cbc:DeliveredQuantity unitCode="EA">170</cbc:DeliveredQuantity>
-      <cbc:OversupplyQuantity unitCode="EA">10</cbc:OversupplyQuantity>
-      <cac:OrderLineReference>
-        <cbc:LineID>1</cbc:LineID>
-      </cac:OrderLineReference>
-      <cac:Item>
-        <cbc:Name>Fixing bolt M12</cbc:Name>
       </cac:Item>
     </cac:SubDespatchLine>
   </cac:DespatchLine>

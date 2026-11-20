@@ -838,7 +838,7 @@ The emission reported: greenhouse gases as CO2 equivalent. The code is
 from the Trade Accord's emission type list: CO2E = Greenhouse gases as
 CO2 equivalent.</li>
 <li><code>Item/EnvironmentalEmission/ValueMeasure</code> =
-<strong>26</strong> (unitCode <code>KGM</code>)<br />
+<strong>25</strong> (unitCode <code>KGM</code>)<br />
 The emission of one item in this stage of its life: a figure from the
 maker's footprint study, not an activity times a factor, so no factor
 and base (worklist C09).</li>
@@ -853,16 +853,18 @@ stated stage by stage. The code is from the Trade Accord's life cycle
 stage list: SOURCING = Sourcing.</li>
 <li><code>Item/EnvironmentalEmission/LifecycleStageDescription</code> =
 <strong>Raw material supply and its transport, EN 15804 modules A1 and
-A2: the ore from the mine, the slats, the stainless bolts, the zinc, the
-iron's alloys, the powder coat and the packaging, and their transport to
-Ferrano.</strong><br />
+A2: the ore from the mine for the 65 % of the iron made from ore, the
+steel and iron scrap for the other 35 %, the slats, the stainless bolts,
+the zinc, the iron's alloys, the powder coat and the packaging, and
+their transport to Ferrano.</strong><br />
 That stage in words, with the modules of EN 15804 it covers.</li>
 <li><code>Item/EnvironmentalEmission/Description</code> = <strong>The
 fossil greenhouse gases of the materials one bench uses, before they
-reach Valdara's works. The carbon stored in the slats, about 40 kg CO2 a
-bench, is not included: product declarations state biogenic carbon apart
-from the fossil figure (EN 15804+A2, the Greenhouse Gas
-Protocol).</strong><br />
+reach Valdara's works; the scrap carries none of the burden of its first
+life (cut-off, EN 15804), only its collection, sorting and haulage. The
+carbon stored in the slats, about 40 kg CO2 a bench, is not included:
+product declarations state biogenic carbon apart from the fossil figure
+(EN 15804+A2, the Greenhouse Gas Protocol).</strong><br />
 What the figure includes, and what it leaves out.</li>
 <li><code>Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode</code>
 = <strong>CALCULATED</strong> (listID
@@ -872,7 +874,8 @@ calculation method list: CALCULATED = Calculated.</li>
 <li><code>Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorSource</code>
 = <strong>Valdara's measured energy use of 2025 in its blast furnace,
 foundry and coating lines, and its suppliers' figures for the slats, the
-bolts and the zinc</strong><br />
+bolts and the zinc; the scrap counted with the burden of its collection,
+sorting and haulage only (cut-off, EN 15804)</strong><br />
 Where the factors come from.</li>
 <li><code>Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorDocumentReference/ID</code>
 = <strong>VI-LCA-2025</strong><br />
@@ -890,7 +893,7 @@ The emission reported: greenhouse gases as CO2 equivalent. The code is
 from the Trade Accord's emission type list: CO2E = Greenhouse gases as
 CO2 equivalent.</li>
 <li><code>Item/EnvironmentalEmission/ValueMeasure</code> =
-<strong>43</strong> (unitCode <code>KGM</code>)<br />
+<strong>33</strong> (unitCode <code>KGM</code>)<br />
 The emission of one item in this stage of its life: a figure from the
 maker's footprint study, not an activity times a factor, so no factor
 and base (worklist C09).</li>
@@ -905,17 +908,19 @@ stated stage by stage. The code is from the Trade Accord's life cycle
 stage list: MANUFACTURING = Manufacturing.</li>
 <li><code>Item/EnvironmentalEmission/LifecycleStageDescription</code> =
 <strong>Making the bench, EN 15804 module A3: iron from the Serravona
-ore in Valdara's blast furnace, casting in its foundry, galvanising,
-powder coating and packing.</strong><br />
+ore in Valdara's blast furnace for 65 % of the frames' iron, melting it
+with 35 % steel and iron scrap in the induction furnace, casting in its
+foundry, galvanising, powder coating and packing.</strong><br />
 That stage in words, with the modules of EN 15804 it covers.</li>
 <li><code>Item/EnvironmentalEmission/Description</code> = <strong>The
 fossil greenhouse gases of making one bench in Valdara's works in
-Ferrano, most of them from the iron; the pallet is left out as transport
-packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent
-from the mine to the factory gate. The carbon stored in the slats, about
-40 kg CO2 a bench, is not included: product declarations state biogenic
-carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas
-Protocol).</strong><br />
+Ferrano, most of them from the blast furnace's iron; the 35 % of scrap
+needs no blast furnace, only melting; the pallet is left out as
+transport packaging that goes back. With the sourcing figure, 58 kg CO2
+equivalent from the mine to the factory gate. The carbon stored in the
+slats, about 40 kg CO2 a bench, is not included: product declarations
+state biogenic carbon apart from the fossil figure (EN 15804+A2, the
+Greenhouse Gas Protocol).</strong><br />
 What the figure includes, and what it leaves out.</li>
 <li><code>Item/EnvironmentalEmission/EmissionCalculationMethod/CalculationMethodCode</code>
 = <strong>CALCULATED</strong> (listID
@@ -925,7 +930,8 @@ calculation method list: CALCULATED = Calculated.</li>
 <li><code>Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorSource</code>
 = <strong>Valdara's measured energy use of 2025 in its blast furnace,
 foundry and coating lines, and its suppliers' figures for the slats, the
-bolts and the zinc</strong><br />
+bolts and the zinc; the scrap counted with the burden of its collection,
+sorting and haulage only (cut-off, EN 15804)</strong><br />
 Where the factors come from.</li>
 <li><code>Item/EnvironmentalEmission/EmissionCalculationMethod/EmissionFactorDocumentReference/ID</code>
 = <strong>VI-LCA-2025</strong><br />
@@ -951,11 +957,31 @@ What the maintenance is.</li>
 A material the item is made of. The code is from the Trade Accord's
 material resource list: IRON = Iron.</li>
 <li><code>Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure</code>
-= <strong>22</strong> (unitCode <code>KGM</code>)<br />
+= <strong>14.0</strong> (unitCode <code>KGM</code>)<br />
 How much of it one item uses.</li>
 <li><code>Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription</code>
-= <strong>Ductile iron made from Serravona ore in Urvania, as poured for
-the two side frames less the gates remelted</strong><br />
+= <strong>Ore-based ductile iron, 65 % of the frames' iron:
+blast-furnace iron from Serravona ore in Urvania, as poured for the two
+side frames less the gates remelted</strong><br />
+Where the material comes from.</li>
+<li><code>Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate</code>
+= <strong>2025-01-01</strong><br />
+Measured over the production of 2025.</li>
+<li><code>Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/EndDate</code>
+= <strong>2025-12-31</strong><br />
+Its last day.</li>
+<li><code>Item/CircularityProfile/ResourceConsumption/ResourceTypeCode</code>
+= <strong>IRON</strong> (listID
+<code>urn:ubl-examples:world:codelist:MaterialResourceCode</code>)<br />
+A material the item is made of. The code is from the Trade Accord's
+material resource list: IRON = Iron.</li>
+<li><code>Item/CircularityProfile/ResourceConsumption/ConsumptionMeasure</code>
+= <strong>7.6</strong> (unitCode <code>KGM</code>)<br />
+How much of it one item uses.</li>
+<li><code>Item/CircularityProfile/ResourceConsumption/ResourceOriginDescription</code>
+= <strong>Recycled ductile iron, 35 % of the frames' iron: steel and
+iron scrap melted in Valdara's induction furnace, as poured for the two
+side frames less the gates remelted</strong><br />
 Where the material comes from.</li>
 <li><code>Item/CircularityProfile/ResourceConsumption/MeasurementPeriod/StartDate</code>
 = <strong>2025-01-01</strong><br />
@@ -1338,14 +1364,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
 <span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
 <span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EnvironmentalEmissionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EmissionTypeCode&quot;</span>&gt;CO2E&lt;/<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;26&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;25&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
 <span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EmissionStandardReference</span>&gt;Greenhouse Gas Protocol Product Standard&lt;/<span class="kw">cbc:EmissionStandardReference</span>&gt;</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:LifecycleStageCode&quot;</span>&gt;SOURCING&lt;/<span class="kw">cbc:LifecycleStageCode</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageDescription</span>&gt;Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine, the slats, the stainless bolts, the zinc, the iron&#39;s alloys, the powder coat and the packaging, and their transport to Ferrano.&lt;/<span class="kw">cbc:LifecycleStageDescription</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The fossil greenhouse gases of the materials one bench uses, before they reach Valdara&#39;s works. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageDescription</span>&gt;Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine for the 65 % of the iron made from ore, the steel and iron scrap for the other 35 %, the slats, the stainless bolts, the zinc, the iron&#39;s alloys, the powder coat and the packaging, and their transport to Ferrano.&lt;/<span class="kw">cbc:LifecycleStageDescription</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The fossil greenhouse gases of the materials one bench uses, before they reach Valdara&#39;s works; the scrap carries none of the burden of its first life (cut-off, EN 15804), only its collection, sorting and haulage. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EmissionCalculationMethod</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CalculationMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EmissionCalculationMethodCode&quot;</span>&gt;CALCULATED&lt;/<span class="kw">cbc:CalculationMethodCode</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmissionFactorSource</span>&gt;Valdara&#39;s measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers&#39; figures for the slats, the bolts and the zinc&lt;/<span class="kw">cbc:EmissionFactorSource</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmissionFactorSource</span>&gt;Valdara&#39;s measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers&#39; figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)&lt;/<span class="kw">cbc:EmissionFactorSource</span>&gt;</span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;VI-LCA-2025&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
@@ -1357,14 +1383,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EnvironmentalEmission</span>&gt;</span>
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EnvironmentalEmissionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EmissionTypeCode&quot;</span>&gt;CO2E&lt;/<span class="kw">cbc:EnvironmentalEmissionTypeCode</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;43&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;33&lt;/<span class="kw">cbc:ValueMeasure</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EmissionStandardReference</span>&gt;Greenhouse Gas Protocol Product Standard&lt;/<span class="kw">cbc:EmissionStandardReference</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:LifecycleStageCode&quot;</span>&gt;MANUFACTURING&lt;/<span class="kw">cbc:LifecycleStageCode</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageDescription</span>&gt;Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara&#39;s blast furnace, casting in its foundry, galvanising, powder coating and packing.&lt;/<span class="kw">cbc:LifecycleStageDescription</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The fossil greenhouse gases of making one bench in Valdara&#39;s works in Ferrano, most of them from the iron; the pallet is left out as transport packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LifecycleStageDescription</span>&gt;Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara&#39;s blast furnace for 65 % of the frames&#39; iron, melting it with 35 % steel and iron scrap in the induction furnace, casting in its foundry, galvanising, powder coating and packing.&lt;/<span class="kw">cbc:LifecycleStageDescription</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;The fossil greenhouse gases of making one bench in Valdara&#39;s works in Ferrano, most of them from the blast furnace&#39;s iron; the 35 % of scrap needs no blast furnace, only melting; the pallet is left out as transport packaging that goes back. With the sourcing figure, 58 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EmissionCalculationMethod</span>&gt;</span>
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CalculationMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EmissionCalculationMethodCode&quot;</span>&gt;CALCULATED&lt;/<span class="kw">cbc:CalculationMethodCode</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmissionFactorSource</span>&gt;Valdara&#39;s measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers&#39; figures for the slats, the bolts and the zinc&lt;/<span class="kw">cbc:EmissionFactorSource</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EmissionFactorSource</span>&gt;Valdara&#39;s measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers&#39; figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)&lt;/<span class="kw">cbc:EmissionFactorSource</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;VI-LCA-2025&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:EmissionFactorDocumentReference</span>&gt;</span>
@@ -1379,44 +1405,53 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MaintenanceFrequencyDescription</span>&gt;Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.&lt;/<span class="kw">cbc:MaintenanceFrequencyDescription</span>&gt;</span>
 <span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResourceConsumption</span>&gt;</span>
 <span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MaterialResourceCode&quot;</span>&gt;IRON&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;22&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Ductile iron made from Serravona ore in Urvania, as poured for the two side frames less the gates remelted&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;14.0&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Ore-based ductile iron, 65 % of the frames&#39; iron: blast-furnace iron from Serravona ore in Urvania, as poured for the two side frames less the gates remelted&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
 <span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
 <span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
 <span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ResourceConsumption</span>&gt;</span>
 <span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResourceConsumption</span>&gt;</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MaterialResourceCode&quot;</span>&gt;HARDWOOD&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;21.2&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Thermally modified ash slats from Upland State, Bayvarra&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MaterialResourceCode&quot;</span>&gt;IRON&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;7.6&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Recycled ductile iron, 35 % of the frames&#39; iron: steel and iron scrap melted in Valdara&#39;s induction furnace, as poured for the two side frames less the gates remelted&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
 <span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
 <span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
 <span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ResourceConsumption</span>&gt;</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:WasteGenerated</span>&gt;</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WasteTypeCode&quot;</span>&gt;PACKAGING&lt;/<span class="kw">cbc:WasteTypeCode</span>&gt;</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeDescription</span>&gt;The two frame cartons and the slat bundle&#39;s straps, edge protectors, end caps and film, and a quarter of the pallet&#39;s slip sheet, top cap and stretch film, per bench; the pallet itself goes back&lt;/<span class="kw">cbc:WasteTypeDescription</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;3.3&lt;/<span class="kw">cbc:WasteMeasure</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ResourceConsumption</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MaterialResourceCode&quot;</span>&gt;HARDWOOD&lt;/<span class="kw">cbc:ResourceTypeCode</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ConsumptionMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;21.2&lt;/<span class="kw">cbc:ConsumptionMeasure</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ResourceOriginDescription</span>&gt;Thermally modified ash slats from Upland State, Bayvarra&lt;/<span class="kw">cbc:ResourceOriginDescription</span>&gt;</span>
 <span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
 <span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:WasteGenerated</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RepairabilityScore</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoreNumeric</span>&gt;8&lt;/<span class="kw">cbc:ScoreNumeric</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoringSystemCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ScoringSystemCode&quot;</span>&gt;REPAIR10&lt;/<span class="kw">cbc:ScoringSystemCode</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RepairabilityScore</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-RM-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CircularityProfile</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CatalogueItemSpecificationUpdateLine</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CatalogueItemSpecificationUpdate</span>&gt;</span></code></pre></div>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ResourceConsumption</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:WasteGenerated</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WasteTypeCode&quot;</span>&gt;PACKAGING&lt;/<span class="kw">cbc:WasteTypeCode</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteTypeDescription</span>&gt;The two frame cartons and the slat bundle&#39;s straps, edge protectors, end caps and film, and a quarter of the pallet&#39;s slip sheet, top cap and stretch film, per bench; the pallet itself goes back&lt;/<span class="kw">cbc:WasteTypeDescription</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:WasteMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;3.3&lt;/<span class="kw">cbc:WasteMeasure</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:StartDate</span>&gt;2025-01-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:EndDate</span>&gt;2025-12-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:MeasurementPeriod</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:WasteGenerated</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RepairabilityScore</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoreNumeric</span>&gt;8&lt;/<span class="kw">cbc:ScoreNumeric</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ScoringSystemCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ScoringSystemCode&quot;</span>&gt;REPAIR10&lt;/<span class="kw">cbc:ScoringSystemCode</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:RepairabilityScore</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-RM-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ProductDocumentationDocumentReference</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CircularityProfile</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CatalogueItemSpecificationUpdateLine</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CatalogueItemSpecificationUpdate</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

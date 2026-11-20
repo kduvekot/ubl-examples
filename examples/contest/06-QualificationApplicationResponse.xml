@@ -65,6 +65,10 @@
     </cac:Party>
   </cac:ContractingParty>
   <cac:EconomicOperatorParty>
+    <cac:EconomicOperatorRole>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">LEAD</cbc:RoleCode>
+      <cbc:RoleDescription>Represents the group towards the department.</cbc:RoleDescription>
+    </cac:EconomicOperatorRole>
     <cac:Party>
       <cbc:WebsiteURI>https://www.brackenmere.example</cbc:WebsiteURI>
       <cbc:IndustryClassificationCode listID="ISIC Rev.4">3100</cbc:IndustryClassificationCode>
@@ -152,22 +156,112 @@
       </cac:ElectronicAddress>
     </cac:Party>
   </cac:EconomicOperatorParty>
+  <cac:EconomicOperatorParty>
+    <cac:EconomicOperatorRole>
+      <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EconomicOperatorRoleCode">MEMBER</cbc:RoleCode>
+      <cbc:RoleDescription>Designs the structure and the anchoring.</cbc:RoleDescription>
+    </cac:EconomicOperatorRole>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Saltmere Engineering</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:EconomicOperatorParty>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterion>
     <cbc:ID>CR-PROF</cbc:ID>
   </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-PUBLIC</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REF-COAST</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-CONVICTIONS</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-CONVICTIONS-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-CONVICTIONS-1</cbc:ID>
+      <cbc:Description>Brackenmere Furniture: no conviction of the member or of its management.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-CONVICTIONS-2</cbc:ID>
+      <cbc:Description>Saltmere Engineering: no conviction of the member or of its management.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TAXES</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-TAXES-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TAXES-1</cbc:ID>
+      <cbc:Description>Brackenmere Furniture: no taxes or social security contributions due and unpaid.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TAXES-2</cbc:ID>
+      <cbc:Description>Saltmere Engineering: no taxes or social security contributions due and unpaid.</cbc:Description>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
   <cac:TenderingCriterionResponse>
     <cbc:ID>CRR-PROF</cbc:ID>
-    <cbc:Description>The design lead, Edda Corwin of Saltmere Engineering, is a registered architect, no. AR-4417, in the register of the Bayvarran Chamber of Architects.</cbc:Description>
     <cbc:ValidatedCriterionPropertyID>P-PROF-1</cbc:ValidatedCriterionPropertyID>
     <cac:ResponseValue>
       <cbc:ID>RV-PROF</cbc:ID>
-      <cbc:Description>The design lead, Edda Corwin of Saltmere Engineering, is a registered architect, no. AR-4417, in the register of the Bayvarran Chamber of Architects.</cbc:Description>
+      <cbc:Description>Edda Corwin, the registered architect on Saltmere Engineering's staff, is a registered architect, no. AR-4417, in the register of the Bayvarran Chamber of Architects.</cbc:Description>
       <cbc:ResponseCode listID="urn:ubl-examples:world:codelist:CriterionResponseCode">MET</cbc:ResponseCode>
     </cac:ResponseValue>
+    <cac:SuppliedEvidence>
+      <cbc:ID>EV-REG-AR-4417</cbc:ID>
+    </cac:SuppliedEvidence>
   </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REF-PUBLIC</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REF-PUBLIC-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-PUBLIC-1</cbc:ID>
+      <cbc:Description>Seating for the reading garden of Lumeport's central library, 2024: client the City of Lumeport; Brackenmere designed the benches and the planter seats, made in Brackenmere's workshop.</cbc:Description>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-PUBLIC-2</cbc:ID>
+      <cbc:Description>Promenade benches for Larkmouth's seafront, 2023: client Larkmouth town council; Brackenmere designed the benches of the seafront promenade, bolted to the sea wall's walkway.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REF-COAST</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REF-COAST-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-COAST-1</cbc:ID>
+      <cbc:Description>Promenade benches for Larkmouth's seafront, 2023: client Larkmouth town council; Brackenmere designed the benches of the seafront promenade, bolted to the sea wall's walkway.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REF-COAST-SITE</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REF-COAST-2</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REF-COAST-2</cbc:ID>
+      <cbc:Description>On the seafront promenade of Larkmouth, Bayvarra's harbour town at the mouth of the east river: the benches stand on the sea wall's walkway, within 20 metres of the sea.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>LPWD-DOC-26-0636</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationRequest</cbc:DocumentTypeCode>
+    <cbc:VersionID>1</cbc:VersionID>
+  </cac:AdditionalDocumentReference>
   <cac:Evidence>
-    <cbc:ID>EV-REG-LEAD</cbc:ID>
+    <cbc:ID>EV-REG-AR-4417</cbc:ID>
     <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">CERTIFICATE</cbc:EvidenceTypeCode>
-    <cbc:Name>Certificate of registration of the design lead</cbc:Name>
+    <cbc:Name>Certificate of registration of the design lead, Edda Corwin</cbc:Name>
+    <cbc:Description>Registration no. AR-4417 in the register of architects that the Bayvarran Chamber of Architects keeps; the chamber issues the certificate.</cbc:Description>
   </cac:Evidence>
 </QualificationApplicationResponse>

@@ -7,7 +7,7 @@
   <cbc:ID>BF-DOC-26-0194</cbc:ID>
   <cbc:UUID>d56f561d-6196-5f1c-88f8-b1e34accd398</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-20</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-18</cbc:IssueDate>
   <cbc:IssueTime>15:50:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>Does the deadline stand after the answers to the questions?</cbc:Note>
@@ -118,7 +118,7 @@
     <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
-    <cbc:Name>Park benches for the city parks</cbc:Name>
+    <cbc:Name>Park benches for the parks renewal programme</cbc:Name>
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SUPPLIES</cbc:ProcurementTypeCode>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>

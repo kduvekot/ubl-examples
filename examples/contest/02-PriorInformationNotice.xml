@@ -9,7 +9,7 @@
   <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:17:00-01:00</cbc:IssueTime>
-  <cbc:Note>Advance notice of the design contest for the harbour promenade bench.</cbc:Note>
+  <cbc:Note>Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume, and with them the estimate from 52,000 to 54,000 lume; the contest notice moves to 19 March.</cbc:Note>
   <cbc:VersionID>2</cbc:VersionID>
   <cbc:PreviousVersionID>1</cbc:PreviousVersionID>
   <cbc:PlannedDate>2026-03-19</cbc:PlannedDate>
@@ -155,6 +155,7 @@
     <cbc:ProcurementTypeCode listID="urn:ubl-examples:world:codelist:ContractNatureCode">SERVICES</cbc:ProcurementTypeCode>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">54000.00</cbc:EstimatedOverallContractAmount>
+      <cbc:MonetaryScope>The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.</cbc:MonetaryScope>
     </cac:RequestedTenderTotal>
     <cac:MainCommodityClassification>
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">83912</cbc:ItemClassificationCode>

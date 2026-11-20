@@ -67,15 +67,20 @@ invoice says so.</td>
 way. UBL tendering documents take it from the prior information notice
 to the contract award, so tenders arrive in a structured form that can
 be checked and evaluated consistently.</p>
-<p>In this world it sends 29 and receives 25 documents, and is named in
+<p>In this world it sends 30 and receives 28 documents, and is named in
 1 documents between other parties. They are listed per flow below.</p>
 <h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
-<p>The contracting authority buys park benches and street furniture for
-the city's parks under procurement law. The notices are published
-through the government information service; the manufacturer tenders
-together with a consortium partner, backed by a bid bond. After the
-award the authority places orders under the contract and the
-manufacturer delivers and invoices.</p>
+<p>The contracting authority buys park benches for the city's parks
+under procurement law, in two lots: the benches and their installation.
+The notices are published through the government information service;
+the manufacturer tenders alone, with an engineering firm as its
+subcontractor for the installation, backed by a bank guarantee; a
+furniture maker tenders wooden benches, backed by pledged government
+bonds. After an electronic auction and the award the authority orders
+the first release under the framework contract; the manufacturer
+delivers and invoices the benches, the subcontractor installs them, the
+authority accepts the release, and the installation is invoiced once
+accepted.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -85,7 +90,10 @@ Information Service</a>: The authority announces the planned purchase
 early, through the publication service. <a
 href="example-tender-01-PriorInformationNotice.html">See the example
 document</a>.</p>
-<p>In it as <code>ContractingParty</code>.</p></li>
+<p>In it as <code>ContractingParty</code>.</p>
+<p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
+Bayvarra</a> as
+<code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-NOTICE-SCHEMA"><strong>Contract
 Notice</strong></a> to <a href="world-21-xb.html">Bayvarra Information
@@ -96,9 +104,7 @@ document</a>.</p>
 <p>In it as <code>ContractingParty</code>.</p>
 <p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
 Bayvarra</a> as
-<code>TenderingTerms/AppealTerms/AppealReceiverParty</code>; <a
-href="world-28-xb.html">Procurement Review Board of Bayvarra</a> as
-<code>TenderingTerms/AppealTerms/MediationParty</code>.</p></li>
+<code>TenderingTerms/AppealTerms/AppealReceiverParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CALL-FOR-TENDERS-SCHEMA"><strong>Call
 For Tenders</strong></a> to <a href="world-5-xu.html">Valdara
@@ -183,7 +189,9 @@ Furniture</a>: The furniture maker is told that the contract went to
 another tenderer. <a
 href="example-tender-23-UnawardedNotification.html">See the example
 document</a>.</p>
-<p>In it as <code>SenderParty</code>.</p></li>
+<p>In it as <code>SenderParty</code>.</p>
+<p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
+Bayvarra</a> as <code>AppealTerms/AppealReceiverParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-CONTRACT-SCHEMA"><strong>Tender
 Contract</strong></a> to <a href="world-5-xu.html">Valdara
@@ -219,21 +227,23 @@ document</a>.</p>
 <p>Also mentions: <a href="world-5-xu.html">Valdara Industries</a> as
 <code>ConsignorParty</code>.</p></li>
 <li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DEBIT-NOTE-SCHEMA"><strong>Debit
-Note</strong></a> to <a href="world-5-xu.html">Valdara Industries</a>:
-The installation finished three days late; under the contract's penalty
-clause the department charges the manufacturer for the late days, one of
-them waived. <a href="example-tender-34-DebitNote.html">See the example
-document</a>.</p>
-<p>In it as <code>AccountingCustomerParty</code>.</p></li>
-<li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
 Advice</strong></a> to <a href="world-5-xu.html">Valdara Industries</a>:
-The department pays the balance with the interest, less the credit and
-the penalty, and says what the payment settles. <a
+The department pays both invoices with the interest, less the credit
+note and the penalty for late completion it deducts under the contract,
+and says what the payment settles. <a
 href="example-tender-36-RemittanceAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
+Advice</strong></a> to <a href="world-5-xu.html">Valdara Industries</a>:
+The department accepts the release: 39 benches and their installation,
+one bench rejected as damaged; the contract's 30 days of payment run
+from this acceptance (D28 point 9, O69). <a
+href="example-tender-38-ReceiptAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>DeliveryCustomerParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -292,8 +302,9 @@ document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GUARANTEE-CERTIFICATE-SCHEMA"><strong>Guarantee
 Certificate</strong></a> from <a href="world-25-xb.html">Bank of
-Lumeport</a>: The guarantor notifies the authority of the bid bond
-deposited for the manufacturer's tender. <a
+Lumeport</a>: The bank notifies the authority of the bank guarantee it
+gives for the manufacturer's tender, on the counter-guarantee of the
+manufacturer's own bank. <a
 href="example-tender-14-GuaranteeCertificate.html">See the example
 document</a>.</p>
 <p>In it as <code>BeneficiaryParty</code>.</p>
@@ -357,9 +368,10 @@ Haulage</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-5-xu.html">Valdara Industries</a>: The manufacturer
-invoices the public buyer under the contract; payment to its account at
-the seller's bank. <a href="example-tender-32-Invoice.html">See the
-example document</a>.</p>
+invoices the benches of the release on delivery under the contract;
+payment to its account at the seller's bank, 30 days after the release
+is accepted. <a href="example-tender-32-Invoice.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
 <p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
@@ -367,18 +379,41 @@ example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA"><strong>Credit
 Note</strong></a> from <a href="world-5-xu.html">Valdara Industries</a>:
-One bench was damaged during installation and is replaced free of
-charge; the manufacturer credits it and its installation. <a
-href="example-tender-33-CreditNote.html">See the example
+One bench was damaged during installation and rejected on acceptance;
+the manufacturer credits it with its share of the colour charge (D28
+point 9). <a href="example-tender-33-CreditNote.html">See the example
 document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMINDER-SCHEMA"><strong>Reminder</strong></a>
-from <a href="world-5-xu.html">Valdara Industries</a>: The invoice is
-past due; the manufacturer reminds the department of the balance and
-charges Urvania's statutory interest. <a
-href="example-tender-35-Reminder.html">See the example document</a>.</p>
+from <a href="world-5-xu.html">Valdara Industries</a>: Both invoices of
+the release are past due; the manufacturer reminds the department of the
+balance and charges Urvania's statutory interest from the day after the
+due date. <a href="example-tender-35-Reminder.html">See the example
+document</a>.</p>
 <p>In it as <code>AccountingCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GUARANTEE-CERTIFICATE-SCHEMA"><strong>Guarantee
+Certificate</strong></a> from <a href="world-25-xb.html">Bank of
+Lumeport</a>: The furniture maker's bank certifies the government bonds
+immobilised in favour of the authority as the guarantee of the furniture
+maker's tender (D28 point 5). <a
+href="example-tender-37-GuaranteeCertificate.html">See the example
+document</a>.</p>
+<p>In it as <code>BeneficiaryParty</code>.</p>
+<p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
+as <code>InterestedParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-5-xu.html">Valdara Industries</a>: The manufacturer
+invoices the 39 installations once they are done and accepted, as a
+service supplied outside Urvania; the department withholds Bayvarra's 10
+% (D28 point 9, D17). <a href="example-tender-39-Invoice.html">See the
+example document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-23-xu.html">Crevalto Bank</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
 </ul>
 <p><strong>Is named in documents between others</strong></p>
 <ul>
@@ -495,6 +530,8 @@ document</a>.</p>
 <p>In it as <code>ContractingParty</code>.</p>
 <p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
 as <code>TenderResult/WinningParty</code>; <a
+href="world-27-xb.html">Saltmere Engineering</a> as
+<code>TenderResult/WinningParty</code>; <a
 href="world-5-xu.html">Valdara Industries</a> as
 <code>TenderResult/WinningParty</code>.</p></li>
 <li><p><a
@@ -507,8 +544,21 @@ document</a>.</p>
 <p>In it as <code>ContractingParty</code>.</p>
 <p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
 as <code>TenderResult/WinningParty</code>; <a
+href="world-27-xb.html">Saltmere Engineering</a> as
+<code>TenderResult/WinningParty</code>; <a
 href="world-5-xu.html">Valdara Industries</a> as
 <code>TenderResult/WinningParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDERER-QUALIFICATION-RESPONSE-SCHEMA"><strong>Tenderer
+Qualification Response</strong></a> to <a
+href="world-48-xb.html">Fernhollow Studio</a>: A small design studio
+that asked to take part is excluded at the selection for unpaid social
+security contributions, and is told why and how to appeal (O102). <a
+href="example-contest-18-TendererQualificationResponse.html">See the
+example document</a>.</p>
+<p>In it as <code>SenderParty</code>.</p>
+<p>Also mentions: <a href="world-28-xb.html">Procurement Review Board of
+Bayvarra</a> as <code>AppealTerms/AppealReceiverParty</code>.</p></li>
 </ul>
 <p><strong>Receives</strong></p>
 <ul>
@@ -516,11 +566,14 @@ href="world-5-xu.html">Valdara Industries</a> as
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUALIFICATION-APPLICATION-RESPONSE-SCHEMA"><strong>Qualification
 Application Response</strong></a> from <a
 href="world-37-xb.html">Brackenmere Furniture</a>: The design team led
-by the furniture maker declares its design lead, the engineering firm's
-architect. <a
+by the furniture maker, with the engineering firm as its other member,
+answers the exclusion grounds and declares its design lead, the
+engineering firm's architect, and its references. <a
 href="example-contest-06-QualificationApplicationResponse.html">See the
 example document</a>.</p>
-<p>In it as <code>ContractingParty</code>.</p></li>
+<p>In it as <code>ContractingParty</code>.</p>
+<p>Also mentions: <a href="world-27-xb.html">Saltmere Engineering</a> as
+<code>EconomicOperatorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDERER-QUALIFICATION-SCHEMA"><strong>Tenderer
 Qualification</strong></a> from <a href="world-37-xb.html">Brackenmere
@@ -539,7 +592,9 @@ team's self-declaration: the furniture maker's own industrial designer
 now leads the design. <a
 href="example-contest-11-QualificationApplicationResponse.html">See the
 example document</a>.</p>
-<p>In it as <code>ContractingParty</code>.</p></li>
+<p>In it as <code>ContractingParty</code>.</p>
+<p>Also mentions: <a href="world-27-xb.html">Saltmere Engineering</a> as
+<code>EconomicOperatorParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDERER-QUALIFICATION-SCHEMA"><strong>Tenderer
 Qualification</strong></a> from <a href="world-37-xb.html">Brackenmere
@@ -570,6 +625,17 @@ document</a>.</p>
 <p>In it as <code>ReceiverParty</code>.</p>
 <p>Also mentions: <a href="world-37-xb.html">Brackenmere Furniture</a>
 as <code>BusinessParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BUSINESS-INFORMATION-SCHEMA"><strong>Business
+Information</strong></a> from <a href="world-21-xb.html">Bayvarra
+Information Service</a>: The authority checks the team's other member,
+the engineering firm, in the register too: every member of a group is
+checked before the jury selects the participants (D29 point 6). <a
+href="example-contest-17-BusinessInformation.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>.</p>
+<p>Also mentions: <a href="world-27-xb.html">Saltmere Engineering</a> as
+<code>BusinessParty</code>.</p></li>
 </ul>
 <h2
 id="furniture-for-the-department-store-and-for-public-offices-bayvarra">Furniture
@@ -642,6 +708,7 @@ Bayvarra</li>
 <li><a href="world-8-xu.html">Castrano Logistics</a>, Urvania</li>
 <li><a href="world-19-xb.html">Customs and Border Service of
 Bayvarra</a>, Bayvarra</li>
+<li><a href="world-48-xb.html">Fernhollow Studio</a>, Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#2-xb">See Contracting Authority on the map</a> ·
@@ -655,6 +722,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

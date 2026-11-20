@@ -4,11 +4,11 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0203</cbc:ID>
+  <cbc:ID>BF-DOC-26-0204</cbc:ID>
   <cbc:UUID>21770882-3c11-5392-aed3-5bd95b4c3cc7</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-23</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cbc:IssueTime>16:37:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>Tender for both lots, with a bench of the furniture maker's own make.</cbc:Note>
@@ -21,6 +21,10 @@
   <cac:DocumentReference>
     <cbc:ID>BF-DS-PARK</cbc:ID>
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>BL-DOC-26-0200</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-TENDER-17</cbc:ID>
@@ -176,14 +180,12 @@
   </cac:ContractingParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
-    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
-    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
     <cac:AdditionalFee>
       <cbc:FeeTypeCode listID="urn:ubl-examples:world:codelist:FeeTypeCode">COURIER</cbc:FeeTypeCode>
       <cbc:FeeAmount currencyID="XBL">12.00</cbc:FeeAmount>
-      <cbc:FeeDescription>Courier of the guarantee's original.</cbc:FeeDescription>
+      <cbc:FeeDescription>Courier of the bank's original certificate of the immobilised bonds to the department.</cbc:FeeDescription>
     </cac:AdditionalFee>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-1</cbc:ID>
@@ -204,17 +206,17 @@
     </cac:LegalMonetaryTotal>
     <cac:TenderLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>A bench of its own make: steel frame, hardwood slats.</cbc:Note>
+      <cbc:Note>A bench of its own make: steel frame, hardwood slats; spare slat sets available.</cbc:Note>
       <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">112800.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">112800.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
-      <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
-      <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
-      <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
-      <cbc:MinimumOrderQuantity unitCode="EA">20</cbc:MinimumOrderQuantity>
-      <cbc:MaximumOrderQuantity unitCode="EA">96</cbc:MaximumOrderQuantity>
-      <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
+      <cbc:OrderableUnit>Pallet of 2</cbc:OrderableUnit>
+      <cbc:ContentUnitQuantity unitCode="EA">2</cbc:ContentUnitQuantity>
+      <cbc:OrderQuantityIncrementNumeric>2</cbc:OrderQuantityIncrementNumeric>
+      <cbc:MinimumOrderQuantity unitCode="EA">10</cbc:MinimumOrderQuantity>
+      <cbc:MaximumOrderQuantity unitCode="EA">60</cbc:MaximumOrderQuantity>
+      <cbc:WarrantyInformation>Six years on the frame and the slats.</cbc:WarrantyInformation>
       <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
       <cac:DocumentReference>
         <cbc:ID>BF-DS-PARK</cbc:ID>
@@ -224,7 +226,11 @@
         <cbc:Name>Park bench Brackenmere PB-2</cbc:Name>
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+        <cbc:LeadTimeMeasure unitCode="DAY">14</cbc:LeadTimeMeasure>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">470</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
       </cac:OfferedItemLocationQuantity>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -235,7 +241,7 @@
         </cac:PartyName>
       </cac:WarrantyParty>
       <cac:WarrantyValidityPeriod>
-        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+        <cbc:DurationMeasure unitCode="ANN">6</cbc:DurationMeasure>
       </cac:WarrantyValidityPeriod>
       <cac:SubTenderLine>
         <cbc:ID>1.1</cbc:ID>
@@ -258,18 +264,34 @@
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>
       </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">16</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:OfferedItemLocationQuantity>
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>
-      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
-      <cbc:AwardingCriterionDescription>Warranty and coating.</cbc:AwardingCriterionDescription>
-      <cbc:Description>Six years on the frame and the slats.</cbc:Description>
-      <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
+      <cbc:AwardingCriterionID>AC-1</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>The lowest total of unit prices.</cbc:AwardingCriterionDescription>
+      <cbc:Description>470.00 lume a bench and 16.00 lume an installation.</cbc:Description>
       <cbc:Amount currencyID="XBL">116640.00</cbc:Amount>
+    </cac:AwardingCriterionResponse>
+    <cac:AwardingCriterionResponse>
+      <cbc:ID>ACR-2</cbc:ID>
+      <cbc:AwardingCriterionID>AC-2</cbc:AwardingCriterionID>
+      <cbc:AwardingCriterionDescription>Durability and warranty of the coating.</cbc:AwardingCriterionDescription>
       <cac:SubordinateAwardingCriterionResponse>
-        <cbc:ID>ACR-1.1</cbc:ID>
+        <cbc:ID>ACR-2.1</cbc:ID>
         <cbc:AwardingCriterionID>AC-2.1</cbc:AwardingCriterionID>
         <cbc:Description>Oiled hardwood, painted steel.</cbc:Description>
+      </cac:SubordinateAwardingCriterionResponse>
+      <cac:SubordinateAwardingCriterionResponse>
+        <cbc:ID>ACR-2.2</cbc:ID>
+        <cbc:AwardingCriterionID>AC-2.2</cbc:AwardingCriterionID>
+        <cbc:Description>Six years on the frame and the slats.</cbc:Description>
+        <cbc:Quantity unitCode="ANN">6</cbc:Quantity>
       </cac:SubordinateAwardingCriterionResponse>
     </cac:AwardingCriterionResponse>
   </cac:TenderedProject>

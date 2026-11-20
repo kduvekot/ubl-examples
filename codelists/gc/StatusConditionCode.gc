@@ -59,6 +59,23 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>COMPLETED</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Completed</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Trulstir</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Memutipa</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Took place as planned: an event reported after it happened.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>ONTIME</SimpleValue>
          </Value>
          <Value ColumnRef="name">

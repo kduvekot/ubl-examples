@@ -58,29 +58,34 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <strong>PWD-2026-PROM-DC</strong><br />
 The department's file number for the contest, the same on every document
 of it.</li>
-<li><code>IssueDate</code> = <strong>2026-04-05</strong><br />
+<li><code>IssueDate</code> = <strong>2026-04-06</strong><br />
 The corrigendum, published as soon as the error was found.</li>
 <li><code>IssueTime</code> = <strong>08:19:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time; in the issuer's local time, with its offset from UTC (D27).</li>
 <li><code>Note</code> = <strong>Restricted design contest for the
-harbour promenade bench, with three prizes.</strong><br />
-What.</li>
+harbour promenade bench, with three prizes. Corrigendum, version 2: the
+site plan is replaced by revision B (the sea wall is 420 m long, not 240
+m), the deadline for requests to participate moves from 17 to 30 April,
+and the design lead may also be a registered industrial
+designer.</strong><br />
+What. What version 2 changes, said in the document (D29 point 4).</li>
 <li><code>VersionID</code> = <strong>2</strong><br />
 The second version, which supersedes the first: a corrigendum. A
 question from a participant showed that the site plan gave the sea wall
 as 240 m long; it is 420 m. The corrected plan changes the number of
-benches, so the deadline for requests to participate is extended by two
-weeks, and the professional qualification is widened to industrial
+benches, so the deadline for requests to participate is extended to 30
+April, and the professional qualification is widened to industrial
 designers.</li>
 <li><code>PreviousVersionID</code> = <strong>1</strong><br />
 The version this one supersedes: version 1 of the same document, with
 the same number.</li>
-<li><code>NoticeTypeCode</code> = <strong>CN</strong> (listID
+<li><code>NoticeTypeCode</code> = <strong>CN-DESG</strong> (listID
 <code>urn:ubl-examples:world:codelist:NoticeTypeCode</code>)<br />
-A contract notice; that it corrects version 1 is said by its version
-identifiers. The code is from the Trade Accord's notice type list: CN =
-Contract notice.</li>
+A design contest notice (the Accord's list, after the eForms notice type
+cn-desg; contest/03#F1, D29 point 1); that version 2 corrects version 1
+is said by its version identifiers. The code is from the Trade Accord's
+notice type list: CN-DESG = Design contest notice.</li>
 </ul>
 <h3 id="contracting-party">Contracting Party</h3>
 <p>Inside <code>ContractingParty</code>:</p>
@@ -430,12 +435,12 @@ service contract is awarded, as the procurement act allows where the
 contract needs one liable contractor. The code is from Bayvarra's
 national company legal form list: LTD = Limited company (private).</li>
 <li><code>TendererQualificationRequest/CompanyLegalForm</code> =
-<strong>Limited company (private): a group of participants forms one
-before the follow-up contract is awarded; for the contest itself a group
-names a lead member</strong><br />
+<strong>Limited company (private): required of a group of participants,
+which forms one before the follow-up contract is awarded</strong><br />
 The name of code LTD in Bayvarra's national company legal form list,
-followed by the detail of this case: the requirement applies to a group,
-and only before the follow-up contract.</li>
+followed by the detail of this case: the requirement on groups, as the
+code states it (D29 point 8, contest/03#F7); for the contest itself a
+group names a lead member (below).</li>
 <li><code>TendererQualificationRequest/Description</code> = <strong>The
 design lead is a registered architect or a registered industrial
 designer.</strong><br />
@@ -453,10 +458,9 @@ spaces in the last five years.</strong><br />
 What the jury checks to select the participants.</li>
 <li><code>TendererQualificationRequest/TechnicalEvaluationCriterion/ThresholdQuantity</code>
 = <strong>2</strong> (unitCode <code>EA</code>)<br />
-Two references.</li>
-<li><code>TendererQualificationRequest/TechnicalEvaluationCriterion/DurationPeriod/DurationMeasure</code>
-= <strong>5</strong> (unitCode <code>ANN</code>)<br />
-Five years.</li>
+Two references; the five years are the window the references fall in,
+stated in the description, not a period the criterion is valid for
+(contest/03#F8).</li>
 <li><code>TendererQualificationRequest/EconomicOperatorRole/RoleCode</code>
 = <strong>LEAD</strong> (listID
 <code>urn:ubl-examples:world:codelist:EconomicOperatorRoleCode</code>)<br />
@@ -544,6 +548,126 @@ document repeat only this identifier and the name.</li>
 <strong>Procurement Review Board of Bayvarra</strong><br />
 The trading name; identity of Procurement Review Board of Bayvarra
 (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/ID</code> =
+<strong>LUM-ADR-075593</strong> (schemeID
+<code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
+The address's number in the address register of the City of Lumeport
+(LUM-ADR- and six digits; the city keeps its own register, which the
+state register of Coastal State refers to); identity of Procurement
+Review Board of Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/AddressTypeCode</code>
+= <strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/AddressFormatCode</code>
+= <strong>XB</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
+The address follows Bayvarra's address format (world/countries.json),
+one line after the other, a line left out when the address has none of
+its fields: MarkAttention; Department; InhouseMail; Postbox;
+BuildingName; Floor Room; BuildingNumber StreetName;
+AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
+CityName CountrySubentity PostalZone. A line is made of the fields named
+in it, in that order, separated by a space; a field the address does not
+have is left out, and a line without any field is left out. A field with
+two language versions (street and town names in a bilingual country)
+gives both on the line, the national language first, then ' / ', then
+English: the building number is written once. Fields that are not on a
+line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+LocationCoordinate) say something other than where the post goes. The
+country is the last line of a postal address and is not repeated in the
+lines. The code is from the Trade Accord's address format list: XB =
+Address format of Bayvarra.</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/StreetName</code>
+= <strong>Justice Row</strong><br />
+Street of the postal address. identity of Procurement Review Board of
+Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/BuildingNumber</code>
+= <strong>20</strong><br />
+Building number of the postal address. identity of Procurement Review
+Board of Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/CitySubdivisionName</code>
+= <strong>Government Hill</strong><br />
+The quarter of Lumeport the party is in: one of the town's districts on
+the map (world/map.json). identity of Procurement Review Board of
+Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/CityName</code>
+= <strong>Lumeport</strong><br />
+The town or locality nearest to the party's place on the map, in its own
+country and state. identity of Procurement Review Board of Bayvarra
+(world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/PostalZone</code>
+= <strong>38519</strong><br />
+Postal code in Bayvarra's format (5 digits). identity of Procurement
+Review Board of Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentity</code>
+= <strong>Coastal State</strong><br />
+The name of code XB-CO in Bayvarra's national state or territory
+list.</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentityCode</code>
+= <strong>XB-CO</strong> (listID
+<code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
+The state or territory as a code of Bayvarra's address scheme
+(world/countries.json). identity of Procurement Review Board of Bayvarra
+(world/parties.json). The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/TimezoneOffset</code>
+= <strong>-01:00</strong><br />
+The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
+there is no summer time (D27, world/countries.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/Country/IdentificationCode</code>
+= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
+list (world/codelists). The code is from the world's copy of UBL's
+Country identification (ISO 3166) list: XB = Bayvarra.</li>
+<li><code>AppealTerms/AppealReceiverParty/PostalAddress/Country/Name</code>
+= <strong>Bayvarra</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>AppealTerms/AppealReceiverParty/Contact/Name</code> =
+<strong>Registry</strong><br />
+The party's main desk, which handles this document; identity of
+Procurement Review Board of Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/Contact/JobTitle</code> =
+<strong>Registrar</strong><br />
+The job of the person who answers at the desk; identity of Procurement
+Review Board of Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/Contact/Department</code> =
+<strong>Registry</strong><br />
+The department the desk belongs to; identity of Procurement Review Board
+of Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/Contact/Telephone</code> =
+<strong>+999 2 38 4119 7873</strong><br />
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
+Northern Territory: the plan is national and does not follow state
+borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
+with 7. identity of Procurement Review Board of Bayvarra
+(world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/Contact/ElectronicMail</code>
+= <strong><a
+href="mailto:registry@review-xb.example">registry@review-xb.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone; identity of Procurement Review Board of Bayvarra
+(world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/Contact/Note</code> =
+<strong>Weekdays 08:00–17:00</strong><br />
+When the desk can be reached; identity of Procurement Review Board of
+Bayvarra (world/parties.json).</li>
+<li><code>AppealTerms/AppealReceiverParty/ElectronicAddress/ExchangeNetworkID</code>
+= <strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>AppealTerms/AppealReceiverParty/ElectronicAddress/ElectronicAddressID</code>
+= <strong>XB:4718260539</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and its
+number in the Federal list of public bodies of Bayvarra; identity of
+Procurement Review Board of Bayvarra (world/parties.json). UBL 2.5
+carries it here; Party/EndpointID is deprecated.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 Designs and requests in English. The code is from the world's copy of
@@ -566,9 +690,6 @@ procedure list: DESIGNCONTEST = Design contest.</li>
 <code>urn:ubl-examples:world:codelist:SubmissionMethodCode</code>)<br />
 Requests and designs through the department's platform. The code is from
 the Trade Accord's submission method list: ELECTRONIC = Electronic.</li>
-<li><code>CandidateReductionConstraintIndicator</code> =
-<strong>true</strong><br />
-The number of participants is limited.</li>
 <li><code>TenderSubmissionDeadlinePeriod/EndDate</code> =
 <strong>2026-06-12</strong><br />
 Designs by then.</li>
@@ -576,9 +697,10 @@ Designs by then.</li>
 <strong>12:00:00</strong><br />
 At noon.</li>
 <li><code>ParticipationRequestReceptionPeriod/EndDate</code> =
-<strong>2026-05-02</strong><br />
-Requests to participate by then: two weeks later than version 1 said, to
-give time for the corrected site plan.</li>
+<strong>2026-04-30</strong><br />
+Requests to participate by then: Thursday 30 April, later than the
+Friday 17 April of version 1, to give time for the corrected site plan
+(D29 point 10).</li>
 <li><code>NoticeDocumentReference/ID</code> =
 <strong>LPWD-DOC-26-0633</strong><br />
 The prior information notice of the contest.</li>
@@ -625,7 +747,12 @@ nature list: SERVICES = Services.</li>
 <li><code>RequestedTenderTotal/EstimatedOverallContractAmount</code> =
 <strong>54000.00</strong> (currencyID <code>XBL</code>)<br />
 The prizes, 14,000 lume, and the follow-up service contract, estimated
-at 40,000 lume.</li>
+at 40,000 lume (contest/01#F6).</li>
+<li><code>RequestedTenderTotal/MonetaryScope</code> = <strong>The three
+prizes (14,000 lume) and the follow-up service contract for the detailed
+design and the supervision of the production (about 40,000 lume). The
+production of the benches is not part of it.</strong><br />
+What the estimate covers, in words (D29 point 5).</li>
 <li><code>MainCommodityClassification/ItemClassificationCode</code> =
 <strong>83912</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 The contest is for an industrial design, as a subclass of the UN Central
@@ -654,12 +781,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0634&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;317128f4-cd1c-550c-b5d6-6fe22d03fd12&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractFolderID</span>&gt;PWD-2026-PROM-DC&lt;/<span class="kw">cbc:ContractFolderID</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-05&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-06&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:19:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Restricted design contest for the harbour promenade bench, with three prizes.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Restricted design contest for the harbour promenade bench, with three prizes. Corrigendum, version 2: the site plan is replaced by revision B (the sea wall is 420 m long, not 240 m), the deadline for requests to participate moves from 17 to 30 April, and the design lead may also be a registered industrial designer.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;2&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PreviousVersionID</span>&gt;1&lt;/<span class="kw">cbc:PreviousVersionID</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NoticeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NoticeTypeCode&quot;</span>&gt;CN&lt;/<span class="kw">cbc:NoticeTypeCode</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NoticeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NoticeTypeCode&quot;</span>&gt;CN-DESG&lt;/<span class="kw">cbc:NoticeTypeCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ContractingParty</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BuyerProfileURI</span>&gt;https://tenders.lumeport.example/buyers/pwd&lt;/<span class="kw">cbc:BuyerProfileURI</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractingPartyType</span>&gt;</span>
@@ -764,109 +891,135 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingTerms</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TendererQualificationRequest</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode&quot;</span>&gt;LTD&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Limited company (private): a group of participants forms one before the follow-up contract is awarded; for the contest itself a group names a lead member&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CompanyLegalForm</span>&gt;Limited company (private): required of a group of participants, which forms one before the follow-up contract is awarded&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The design lead is a registered architect or a registered industrial designer.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TechnicalEvaluationCriterion</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EvaluationCriterionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode&quot;</span>&gt;REFERENCES&lt;/<span class="kw">cbc:EvaluationCriterionTypeCode</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Two completed designs of furniture or fittings for public spaces in the last five years.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ThresholdQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ThresholdQuantity</span>&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DurationPeriod</span>&gt;</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;5&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DurationPeriod</span>&gt;</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TechnicalEvaluationCriterion</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EconomicOperatorRole</span>&gt;</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EconomicOperatorRoleCode&quot;</span>&gt;LEAD&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RoleDescription</span>&gt;Represents the group towards the department.&lt;/<span class="kw">cbc:RoleDescription</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EconomicOperatorRole</span>&gt;</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TendererQualificationRequest</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingTerms</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The jury ranks the designs anonymously, on design quality (40 %), durability and maintenance in salt air (30 %) and the cost of production (30 %).&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;A jury of five: the head of parks, the city architect, a representative of the disability council and two independent designers.&lt;/<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeIndicator</span>&gt;true&lt;/<span class="kw">cbc:PrizeIndicator</span>&gt;</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeDescription</span>&gt;Three prizes; the first is 8,000 lume.&lt;/<span class="kw">cbc:PrizeDescription</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDescription</span>&gt;Each selected participant that submits a design meeting the brief receives 1,000 lume towards its costs, whether or not it wins a prize.&lt;/<span class="kw">cbc:PaymentDescription</span>&gt;</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;true&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;FIRST&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;8000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks first; its author is invited to negotiate the follow-up service contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;SECOND&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks second.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;THIRD&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks third, if the jury finds it of prize standard.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AppealTerms</span>&gt;</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;An appeal against the selection or the jury&#39;s ranking goes to the review board within ten days.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;4718260539&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AppealTerms</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;DESIGNCONTEST&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SubmissionMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubmissionMethodCode&quot;</span>&gt;ELECTRONIC&lt;/<span class="kw">cbc:SubmissionMethodCode</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:CandidateReductionConstraintIndicator</span>&gt;true&lt;/<span class="kw">cbc:CandidateReductionConstraintIndicator</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-12&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-05-02&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0633&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcessJustification</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreviousCancellationReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CancellationReasonCode&quot;</span>&gt;UNSUITABLE&lt;/<span class="kw">cbc:PreviousCancellationReasonCode</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Relaunch of the design contest PWD-2025-PROM-DC, cancelled on 20 November 2025: both designs received were unacceptable, one far above any production budget and one not accessible to wheelchair users. The brief now states both limits.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcessJustification</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LimitationDescription</span>&gt;The jury selects the participants on their references.&lt;/<span class="kw">cbc:LimitationDescription</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExpectedQuantity</span>&gt;5&lt;/<span class="kw">cbc:ExpectedQuantity</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumQuantity</span>&gt;5&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span>&gt;3&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Design of the harbour promenade bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in salt air, accessible, and buildable for at most 900 lume a bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54000.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ContractNotice</span>&gt;</span></code></pre></div>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TechnicalEvaluationCriterion</span>&gt;</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:EconomicOperatorRole</span>&gt;</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RoleCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EconomicOperatorRoleCode&quot;</span>&gt;LEAD&lt;/<span class="kw">cbc:RoleCode</span>&gt;</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RoleDescription</span>&gt;Represents the group towards the department.&lt;/<span class="kw">cbc:RoleDescription</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:EconomicOperatorRole</span>&gt;</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TendererQualificationRequest</span>&gt;</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingTerms</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;The jury ranks the designs anonymously, on design quality (40 %), durability and maintenance in salt air (30 %) and the cost of production (30 %).&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;A jury of five: the head of parks, the city architect, a representative of the disability council and two independent designers.&lt;/<span class="kw">cbc:TechnicalCommitteeDescription</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeIndicator</span>&gt;true&lt;/<span class="kw">cbc:PrizeIndicator</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PrizeDescription</span>&gt;Three prizes; the first is 8,000 lume.&lt;/<span class="kw">cbc:PrizeDescription</span>&gt;</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentDescription</span>&gt;Each selected participant that submits a design meeting the brief receives 1,000 lume towards its costs, whether or not it wins a prize.&lt;/<span class="kw">cbc:PaymentDescription</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FollowupContractIndicator</span>&gt;true&lt;/<span class="kw">cbc:FollowupContractIndicator</span>&gt;</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;true&lt;/<span class="kw">cbc:BindingOnBuyerIndicator</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;FIRST&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;8000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks first; its author is invited to negotiate the follow-up service contract.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;SECOND&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;4000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks second.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RankCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrizeRankCode&quot;</span>&gt;THIRD&lt;/<span class="kw">cbc:RankCode</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2000.00&lt;/<span class="kw">cbc:ValueAmount</span>&gt;</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;For the design the jury ranks third, if the jury finds it of prize standard.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Prize</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingTerms</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AppealTerms</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;An appeal against the selection or the jury&#39;s ranking goes to the review board within ten days.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;4718260539&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Procurement Review Board of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:lumeport:address-register&quot;</span>&gt;LUM-ADR-075593&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StreetName</span>&gt;Justice Row&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:BuildingNumber</span>&gt;20&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CitySubdivisionName</span>&gt;Government Hill&lt;/<span class="kw">cbc:CitySubdivisionName</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PostalZone</span>&gt;38519&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Coastal State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-CO&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Registry&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Registrar&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Registry&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 4119 7873&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;registry@review-xb.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:4718260539&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AppealReceiverParty</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AppealTerms</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Language</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A restricted design contest in two stages: requests to participate, then designs from three to five selected participants, judged anonymously.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;DESIGNCONTEST&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SubmissionMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubmissionMethodCode&quot;</span>&gt;ELECTRONIC&lt;/<span class="kw">cbc:SubmissionMethodCode</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-06-12&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndTime</span>&gt;12:00:00&lt;/<span class="kw">cbc:EndTime</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TenderSubmissionDeadlinePeriod</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2026-04-30&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ParticipationRequestReceptionPeriod</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0633&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:NoticeDocumentReference</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ProcessJustification</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreviousCancellationReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CancellationReasonCode&quot;</span>&gt;UNSUITABLE&lt;/<span class="kw">cbc:PreviousCancellationReasonCode</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Relaunch of the design contest PWD-2025-PROM-DC, cancelled on 20 November 2025: both designs received were unacceptable, one far above any production budget and one not accessible to wheelchair users. The brief now states both limits.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcessJustification</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LimitationDescription</span>&gt;The jury selects the participants on their references.&lt;/<span class="kw">cbc:LimitationDescription</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExpectedQuantity</span>&gt;5&lt;/<span class="kw">cbc:ExpectedQuantity</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumQuantity</span>&gt;5&lt;/<span class="kw">cbc:MaximumQuantity</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumQuantity</span>&gt;3&lt;/<span class="kw">cbc:MinimumQuantity</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:EconomicOperatorShortList</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Design of the harbour promenade bench&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;A bench and matching litter bin and bollard for the 420 m harbour promenade: robust in salt air, accessible, and buildable for at most 900 lume a bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcurementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractNatureCode&quot;</span>&gt;SERVICES&lt;/<span class="kw">cbc:ProcurementTypeCode</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54000.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MonetaryScope</span>&gt;The three prizes (14,000 lume) and the follow-up service contract for the detailed design and the supervision of the production (about 40,000 lume). The production of the benches is not part of it.&lt;/<span class="kw">cbc:MonetaryScope</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;83912&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:MainCommodityClassification</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Harbour promenade, Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Lumeport&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProject</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ContractNotice</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/7f194d942669b0af791b2faa50e0ff75fd3b016a"><code>7f194d9</code></a> of 2026-11-19 23:49 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/da0ee1f6ab9706a2377ae4be35fc8d6bb89ce81e"><code>da0ee1f</code></a> of 2026-11-20 00:22 UTC</p></div></footer>
 </body>
 </html>

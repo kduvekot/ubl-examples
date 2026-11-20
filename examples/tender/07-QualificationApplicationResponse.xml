@@ -8,9 +8,8 @@
   <cbc:UUID>27b07b57-4421-5730-8be4-08222db0cc1c</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:IssueDate>2026-02-19</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-12</cbc:IssueDate>
   <cbc:IssueTime>10:47:00-01:00</cbc:IssueTime>
-  <cbc:EconomicOperatorGroupName>Brackenmere Furniture</cbc:EconomicOperatorGroupName>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   <cbc:QualificationApplicationTypeCode listID="urn:ubl-examples:world:codelist:QualificationApplicationTypeCode">REGULATED</cbc:QualificationApplicationTypeCode>
@@ -162,34 +161,84 @@
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
   </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-2</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-CONVICTIONS</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TAXES</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REGISTER</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-YEARS</cbc:ID>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterion>
     <cbc:ID>CR-TURNOVER</cbc:ID>
   </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-STAFF</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-REFERENCES</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-TIMBER</cbc:ID>
+  </cac:TenderingCriterion>
+  <cac:TenderingCriterion>
+    <cbc:ID>CR-GROUP</cbc:ID>
+  </cac:TenderingCriterion>
   <cac:TenderingCriterionResponse>
-    <cbc:ID>CRR-1</cbc:ID>
+    <cbc:ID>CRR-CONVICTIONS</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-CONVICTIONS-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-CONVICTIONS</cbc:ID>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TAXES</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-TAXES-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TAXES</cbc:ID>
+      <cbc:ResponseAmount currencyID="XBL">0.00</cbc:ResponseAmount>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REGISTER</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REGISTER-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REGISTER</cbc:ID>
+      <cbc:Response>Entered in the federal business register of Bayvarra.</cbc:Response>
+      <cbc:ResponseID>20412466</cbc:ResponseID>
+      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
+      <cbc:ResponseURI>https://register.bayvarra.example</cbc:ResponseURI>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-YEARS</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-YEARS-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-YEARS</cbc:ID>
+      <cbc:ResponseQuantity unitCode="ANN">26</cbc:ResponseQuantity>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TURNOVER</cbc:ID>
     <cbc:Name>Turnover</cbc:Name>
-    <cbc:Description>Yearly turnover of 6,830,000 lume.</cbc:Description>
-    <cbc:ValidatedCriterionPropertyID>P-1</cbc:ValidatedCriterionPropertyID>
+    <cbc:Description>The turnover of 2024, 6,410,000 lume, is above the minimum of 124,800 lume.</cbc:Description>
+    <cbc:ValidatedCriterionPropertyID>P-TURNOVER-1</cbc:ValidatedCriterionPropertyID>
     <cbc:ConfidentialityLevelCode listID="urn:ubl-examples:world:codelist:ConfidentialityLevelCode">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
     <cac:ResponseValue>
-      <cbc:ID>RV-1</cbc:ID>
-      <cbc:Description>Turnover 2025.</cbc:Description>
-      <cbc:Response>As in the accounts.</cbc:Response>
-      <cbc:ResponseAmount currencyID="XBL">6830000.00</cbc:ResponseAmount>
-      <cbc:ResponseBinaryObject mimeCode="text/plain">QW5udWFsIGFjY291bnRzIDIwMjUsIGV4dHJhY3Qu</cbc:ResponseBinaryObject>
-      <cbc:ResponseCode listID="urn:ubl-examples:world:codelist:CriterionResponseCode">MET</cbc:ResponseCode>
-      <cbc:ResponseDate>2025-12-31</cbc:ResponseDate>
-      <cbc:ResponseID>BF-ACC-2025</cbc:ResponseID>
-      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
-      <cbc:ResponseMeasure unitCode="MON">12</cbc:ResponseMeasure>
-      <cbc:ResponseNumeric>26</cbc:ResponseNumeric>
-      <cbc:ResponseQuantity unitCode="ANN">26</cbc:ResponseQuantity>
-      <cbc:ResponseTime>12:00:00</cbc:ResponseTime>
-      <cbc:ResponseURI>https://www.brackenmere.example/accounts-2025.pdf</cbc:ResponseURI>
+      <cbc:ID>RV-TURNOVER</cbc:ID>
+      <cbc:ResponseAmount currencyID="XBL">6410000.00</cbc:ResponseAmount>
     </cac:ResponseValue>
     <cac:ApplicablePeriod>
-      <cbc:StartDate>2025-01-01</cbc:StartDate>
-      <cbc:EndDate>2025-12-31</cbc:EndDate>
+      <cbc:StartDate>2024-01-01</cbc:StartDate>
+      <cbc:EndDate>2024-12-31</cbc:EndDate>
     </cac:ApplicablePeriod>
     <cac:SuppliedEvidence>
       <cbc:ID>EV-ACC-BF</cbc:ID>
@@ -201,14 +250,65 @@
       <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
     </cac:CommodityClassification>
   </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-STAFF</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-STAFF-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-STAFF</cbc:ID>
+      <cbc:ResponseQuantity unitCode="IE">45</cbc:ResponseQuantity>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REFERENCES</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REFERENCES-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-1</cbc:ID>
+      <cbc:Description>Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024: benches and planter seats, about 38,000 lume.</cbc:Description>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-2</cbc:ID>
+      <cbc:Description>Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023: 60 benches, about 41,000 lume.</cbc:Description>
+    </cac:ResponseValue>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-3</cbc:ID>
+      <cbc:Description>Park benches for Marrowdale's town park, for Marrowdale town council, 2022: 45 benches, about 27,000 lume.</cbc:Description>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-REFERENCES-COUNT</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-REFERENCES-2</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-REFERENCES-COUNT</cbc:ID>
+      <cbc:ResponseQuantity unitCode="EA">3</cbc:ResponseQuantity>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-TIMBER</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-TIMBER-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-TIMBER</cbc:ID>
+      <cbc:ResponseIndicator>true</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+    <cac:SuppliedEvidence>
+      <cbc:ID>EV-FOR-BF</cbc:ID>
+    </cac:SuppliedEvidence>
+  </cac:TenderingCriterionResponse>
+  <cac:TenderingCriterionResponse>
+    <cbc:ID>CRR-GROUP</cbc:ID>
+    <cbc:ValidatedCriterionPropertyID>P-GROUP-1</cbc:ValidatedCriterionPropertyID>
+    <cac:ResponseValue>
+      <cbc:ID>RV-GROUP</cbc:ID>
+      <cbc:ResponseIndicator>false</cbc:ResponseIndicator>
+    </cac:ResponseValue>
+  </cac:TenderingCriterionResponse>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-ESPD-26</cbc:ID>
-    <cbc:DocumentType>Tenderer self-declaration</cbc:DocumentType>
+    <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationRequest</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Evidence>
     <cbc:ID>EV-ACC-BF</cbc:ID>
     <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">ACCOUNTS</cbc:EvidenceTypeCode>
-    <cbc:Name>Annual accounts 2025</cbc:Name>
+    <cbc:Name>Annual accounts 2024</cbc:Name>
     <cbc:Description>Audited.</cbc:Description>
     <cbc:CandidateStatement>True and complete.</cbc:CandidateStatement>
     <cbc:ConfidentialityLevelCode listID="urn:ubl-examples:world:codelist:ConfidentialityLevelCode">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
@@ -221,12 +321,18 @@
       </cac:PartyName>
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
-      <cbc:ID>BF-ACC-2025</cbc:ID>
+      <cbc:ID>BF-ACC-2024</cbc:ID>
       <cbc:DocumentType>Annual accounts</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Language>
       <cbc:ID schemeID="ISO 639">en</cbc:ID>
     </cac:Language>
+  </cac:Evidence>
+  <cac:Evidence>
+    <cbc:ID>EV-FOR-BF</cbc:ID>
+    <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">CERTIFICATE</cbc:EvidenceTypeCode>
+    <cbc:Name>Forestry certificate of the hardwood</cbc:Name>
+    <cbc:Description>Chain-of-custody certificate for the hardwood of Brackenmere's slats, valid until 30 June 2028.</cbc:Description>
   </cac:Evidence>
   <cac:Signature>
     <cbc:ID>BF-SIG-QAR</cbc:ID>

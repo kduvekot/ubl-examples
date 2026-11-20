@@ -4,16 +4,16 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0204</cbc:ID>
+  <cbc:ID>BF-DOC-26-0205</cbc:ID>
   <cbc:UUID>ed2964ac-5041-583f-8e50-507bdb320f91</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
-  <cbc:IssueDate>2026-02-24</cbc:IssueDate>
+  <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:20:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The price per bench was entered wrongly; a corrected tender follows.</cbc:Note>
   <cbc:WithdrawOfferIndicator>true</cbc:WithdrawOfferIndicator>
   <cac:TenderDocumentReference>
-    <cbc:ID>BF-DOC-26-0203</cbc:ID>
+    <cbc:ID>BF-DOC-26-0204</cbc:ID>
   </cac:TenderDocumentReference>
   <cac:TenderNotificationDocumentReference>
     <cbc:ID>PWD-RCPT-BF-1</cbc:ID>

@@ -4,17 +4,17 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CAT-26-0211</cbc:ID>
+  <cbc:ID>VI-CAT-26-0212</cbc:ID>
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
-  <cbc:IssueDate>2026-03-21</cbc:IssueDate>
+  <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>10:18:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-03-21</cbc:StartDate>
-    <cbc:EndDate>2028-03-20</cbc:EndDate>
+    <cbc:StartDate>2026-03-20</cbc:StartDate>
+    <cbc:EndDate>2026-12-31</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ReferencedContract>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
     <cbc:ContractType>Framework contract</cbc:ContractType>
   </cac:ReferencedContract>
   <cac:ProviderParty>
@@ -159,27 +159,28 @@
   </cac:ContractorCustomerParty>
   <cac:CatalogueLine>
     <cbc:ID>1</cbc:ID>
+    <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
+    <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
+    <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
+    <cbc:MinimumOrderQuantity unitCode="EA">20</cbc:MinimumOrderQuantity>
+    <cbc:MaximumOrderQuantity unitCode="EA">96</cbc:MaximumOrderQuantity>
     <cac:RequiredItemLocationQuantity>
-      <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
-      <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
+      <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+      <cbc:MinimumQuantity unitCode="EA">20</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XUF">49900</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-21</cbc:StartDate>
-          <cbc:EndDate>2028-03-20</cbc:EndDate>
+          <cbc:StartDate>2026-03-20</cbc:StartDate>
+          <cbc:EndDate>2026-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
-        <cac:PriceList>
-          <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
-        </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -201,8 +202,8 @@
       <cbc:Keyword>park bench, street furniture</cbc:Keyword>
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180</cbc:ModelName>
-      <cbc:WarrantyInformation languageID="qau">Bukdrek stezskir rek drek manskan savir gilrir.</cbc:WarrantyInformation>
-      <cbc:WarrantyInformation languageID="en-XU">Five years on the frame against corrosion.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="qau">Bukdrek stezskir rek drek manskan savir gilrir; drarbir stezskir rek drek stirvan, dek skilhan stan zuzskek.</cbc:WarrantyInformation>
+      <cbc:WarrantyInformation languageID="en-XU">Five years on the frame against corrosion; ten years on the coating, as tendered and awarded.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
@@ -219,7 +220,7 @@
         <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0211-1</cbc:ID>
+        <cbc:ID>VI-CAT-26-0212-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
@@ -311,14 +312,14 @@
       </cac:Dimension>
       <cac:EnvironmentalEmission>
         <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
-        <cbc:ValueMeasure unitCode="KGM">26</cbc:ValueMeasure>
+        <cbc:ValueMeasure unitCode="KGM">25</cbc:ValueMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">SOURCING</cbc:LifecycleStageCode>
-        <cbc:LifecycleStageDescription>Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.</cbc:LifecycleStageDescription>
-        <cbc:Description>The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).</cbc:Description>
+        <cbc:LifecycleStageDescription>Raw material supply and its transport, EN 15804 modules A1 and A2: the ore from the mine for the 65 % of the iron made from ore, the steel and iron scrap for the other 35 %, the slats, the stainless bolts, the zinc, the iron's alloys, the powder coat and the packaging, and their transport to Ferrano.</cbc:LifecycleStageDescription>
+        <cbc:Description>The fossil greenhouse gases of the materials one bench uses, before they reach Valdara's works; the scrap carries none of the burden of its first life (cut-off, EN 15804), only its collection, sorting and haulage. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).</cbc:Description>
         <cac:EmissionCalculationMethod>
           <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
-          <cbc:EmissionFactorSource>Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc</cbc:EmissionFactorSource>
+          <cbc:EmissionFactorSource>Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)</cbc:EmissionFactorSource>
           <cac:EmissionFactorDocumentReference>
             <cbc:ID>VI-LCA-2025</cbc:ID>
           </cac:EmissionFactorDocumentReference>
@@ -330,14 +331,14 @@
       </cac:EnvironmentalEmission>
       <cac:EnvironmentalEmission>
         <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
-        <cbc:ValueMeasure unitCode="KGM">43</cbc:ValueMeasure>
+        <cbc:ValueMeasure unitCode="KGM">33</cbc:ValueMeasure>
         <cbc:EmissionStandardReference>Greenhouse Gas Protocol Product Standard</cbc:EmissionStandardReference>
         <cbc:LifecycleStageCode listID="urn:ubl-examples:world:codelist:LifecycleStageCode">MANUFACTURING</cbc:LifecycleStageCode>
-        <cbc:LifecycleStageDescription>Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace, casting in its foundry, galvanising, powder coating and packing.</cbc:LifecycleStageDescription>
-        <cbc:Description>The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the iron; the pallet is left out as transport packaging that goes back. With the sourcing figure, 69 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).</cbc:Description>
+        <cbc:LifecycleStageDescription>Making the bench, EN 15804 module A3: iron from the Serravona ore in Valdara's blast furnace for 65 % of the frames' iron, melting it with 35 % steel and iron scrap in the induction furnace, casting in its foundry, galvanising, powder coating and packing.</cbc:LifecycleStageDescription>
+        <cbc:Description>The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the blast furnace's iron; the 35 % of scrap needs no blast furnace, only melting; the pallet is left out as transport packaging that goes back. With the sourcing figure, 58 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol).</cbc:Description>
         <cac:EmissionCalculationMethod>
           <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
-          <cbc:EmissionFactorSource>Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc</cbc:EmissionFactorSource>
+          <cbc:EmissionFactorSource>Valdara's measured energy use of 2025 in its blast furnace, foundry and coating lines, and its suppliers' figures for the slats, the bolts and the zinc; the scrap counted with the burden of its collection, sorting and haulage only (cut-off, EN 15804)</cbc:EmissionFactorSource>
           <cac:EmissionFactorDocumentReference>
             <cbc:ID>VI-LCA-2025</cbc:ID>
           </cac:EmissionFactorDocumentReference>
@@ -352,8 +353,17 @@
         <cbc:MaintenanceFrequencyDescription>Once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:MaintenanceFrequencyDescription>
         <cac:ResourceConsumption>
           <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">IRON</cbc:ResourceTypeCode>
-          <cbc:ConsumptionMeasure unitCode="KGM">22</cbc:ConsumptionMeasure>
-          <cbc:ResourceOriginDescription>Ductile iron made from Serravona ore in Urvania, as poured for the two side frames less the gates remelted</cbc:ResourceOriginDescription>
+          <cbc:ConsumptionMeasure unitCode="KGM">14.0</cbc:ConsumptionMeasure>
+          <cbc:ResourceOriginDescription>Ore-based ductile iron, 65 % of the frames' iron: blast-furnace iron from Serravona ore in Urvania, as poured for the two side frames less the gates remelted</cbc:ResourceOriginDescription>
+          <cac:MeasurementPeriod>
+            <cbc:StartDate>2025-01-01</cbc:StartDate>
+            <cbc:EndDate>2025-12-31</cbc:EndDate>
+          </cac:MeasurementPeriod>
+        </cac:ResourceConsumption>
+        <cac:ResourceConsumption>
+          <cbc:ResourceTypeCode listID="urn:ubl-examples:world:codelist:MaterialResourceCode">IRON</cbc:ResourceTypeCode>
+          <cbc:ConsumptionMeasure unitCode="KGM">7.6</cbc:ConsumptionMeasure>
+          <cbc:ResourceOriginDescription>Recycled ductile iron, 35 % of the frames' iron: steel and iron scrap melted in Valdara's induction furnace, as poured for the two side frames less the gates remelted</cbc:ResourceOriginDescription>
           <cac:MeasurementPeriod>
             <cbc:StartDate>2025-01-01</cbc:StartDate>
             <cbc:EndDate>2025-12-31</cbc:EndDate>
@@ -396,7 +406,6 @@
   <cac:CatalogueLine>
     <cbc:ID>2</cbc:ID>
     <cac:RequiredItemLocationQuantity>
-      <cbc:LeadTimeMeasure unitCode="DAY">5</cbc:LeadTimeMeasure>
       <cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
       <cac:ApplicableTerritoryAddress>
         <cac:Country>
@@ -404,18 +413,14 @@
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XUF">1800</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">CON</cbc:PriceTypeCode>
         <cbc:PriceType>Contract price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-03-21</cbc:StartDate>
-          <cbc:EndDate>2028-03-20</cbc:EndDate>
+          <cbc:StartDate>2026-03-20</cbc:StartDate>
+          <cbc:EndDate>2026-12-31</cbc:EndDate>
         </cac:ValidityPeriod>
-        <cac:PriceList>
-          <cbc:ID>VI-PL-2026</cbc:ID>
-          <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
-        </cac:PriceList>
       </cac:Price>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
@@ -427,15 +432,15 @@
       </cac:ApplicableTaxCategory>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
-      <cbc:Description languageID="qau">Kartran zan nanskir trek drek tarkul vek drek zurhul ziztan, man drek sikgir bakbek.</cbc:Description>
-      <cbc:Description languageID="en-XU">Anchoring one bench in the ground with the supplied anchors, by the manufacturer's installers.</cbc:Description>
+      <cbc:Description languageID="qau">Hiktran skul zan nanskir stan nakskek kartran trek drek tarkul vek drek zurhul ziztan.</cbc:Description>
+      <cbc:Description languageID="en-XU">Assembly of one bench and its anchoring in the ground with the supplied anchors.</cbc:Description>
       <cbc:Name languageID="qau">Dreknul skul sir haz nanskir</cbc:Name>
       <cbc:Name languageID="en-XU">Installation of a park bench</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-INST-B</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0211-2</cbc:ID>
+        <cbc:ID>VI-CAT-26-0212-2</cbc:ID>
       </cac:CatalogueItemIdentification>
     </cac:Item>
     <cac:CallForTendersLineReference>
