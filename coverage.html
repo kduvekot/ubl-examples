@@ -4,111 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Element coverage · UBL Example Documents</title>
-<link rel="stylesheet" href="site.css?v=cfc6fda70b">
+<link rel="stylesheet" href="site.css?v=322eab78c8">
 </head>
 <body>
-<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>UBL Example Documents</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="note/ubl-examples-method.html">Method</a></li><li><a href="world.html">World</a></li><li><a href="examples.html">Examples</a></li><li><a href="releases.html">Releases</a></li><li><a href="history.html">History</a></li><li><a href="coverage.html" aria-current="page">Coverage</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>The UBL World</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="world.html">World</a></li><li><a href="examples.html">Trade</a></li><li><a href="parties.html">Parties</a></li><li><a href="world-specifications.html">Rules</a></li><li><a href="about.html" aria-current="page">About</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout has-toc">
 <details class="toc-compact">
 <summary>On this page</summary>
 <ul>
-<li><a href="#ubl-25-element-coverage-initial-analysis"
-id="toc-ubl-25-element-coverage-initial-analysis">UBL 2.5 element
-coverage: initial analysis</a>
+<li><a href="#element-coverage" id="toc-element-coverage">Element
+coverage</a>
 <ul>
-<li><a href="#method" id="toc-method">Method</a></li>
-<li><a href="#results" id="toc-results">Results</a></li>
-<li><a href="#new-example-documents-needed"
-id="toc-new-example-documents-needed">New example documents
-needed</a></li>
-<li><a href="#existing-examples-to-extend"
-id="toc-existing-examples-to-extend">Existing examples to
-extend</a></li>
-<li><a href="#review-of-the-automatic-placement"
-id="toc-review-of-the-automatic-placement">Review of the automatic
-placement</a></li>
-<li><a href="#open-decision" id="toc-open-decision">Open
-decision</a></li>
-<li><a href="#reproduce" id="toc-reproduce">Reproduce</a></li>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#missing-elements-by-the-ubl-version-that-introduced-them"
+id="toc-missing-elements-by-the-ubl-version-that-introduced-them">Missing
+elements by the UBL version that introduced them</a></li>
+<li><a href="#coverage-per-document-type-document-level-elements"
+id="toc-coverage-per-document-type-document-level-elements">Coverage per
+document type (document-level elements)</a></li>
+<li><a href="#document-types-without-an-example"
+id="toc-document-types-without-an-example">Document types without an
+example</a></li>
 </ul></li>
 </ul>
 </details>
 <nav class="toc-side" aria-label="On this page">
 <p class="toc-title">On this page</p>
 <ul>
-<li><a href="#ubl-25-element-coverage-initial-analysis"
-id="toc-ubl-25-element-coverage-initial-analysis">UBL 2.5 element
-coverage: initial analysis</a>
+<li><a href="#element-coverage" id="toc-element-coverage">Element
+coverage</a>
 <ul>
-<li><a href="#method" id="toc-method">Method</a></li>
-<li><a href="#results" id="toc-results">Results</a></li>
-<li><a href="#new-example-documents-needed"
-id="toc-new-example-documents-needed">New example documents
-needed</a></li>
-<li><a href="#existing-examples-to-extend"
-id="toc-existing-examples-to-extend">Existing examples to
-extend</a></li>
-<li><a href="#review-of-the-automatic-placement"
-id="toc-review-of-the-automatic-placement">Review of the automatic
-placement</a></li>
-<li><a href="#open-decision" id="toc-open-decision">Open
-decision</a></li>
-<li><a href="#reproduce" id="toc-reproduce">Reproduce</a></li>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#missing-elements-by-the-ubl-version-that-introduced-them"
+id="toc-missing-elements-by-the-ubl-version-that-introduced-them">Missing
+elements by the UBL version that introduced them</a></li>
+<li><a href="#coverage-per-document-type-document-level-elements"
+id="toc-coverage-per-document-type-document-level-elements">Coverage per
+document type (document-level elements)</a></li>
+<li><a href="#document-types-without-an-example"
+id="toc-document-types-without-an-example">Document types without an
+example</a></li>
 </ul></li>
 </ul>
 </nav>
 <main class="prose">
-<h1 id="ubl-25-element-coverage-initial-analysis">UBL 2.5 element
-coverage: initial analysis</h1>
-<p>How many UBL 2.5 elements appear in at least one sample document in
-<code>xml/</code>, which are missing, and where each missing element
-fits best: in one of the current examples, or in a new example
-document.</p>
-<p>Generated tables with every missing element: <a
-href="coverage-details.html"><code>element-coverage-details.md</code></a>.
-Produced by <code>tools/coverage.py</code> (see <a
-href="#reproduce">Reproduce</a>).</p>
-<h2 id="method">Method</h2>
+<h1 id="element-coverage">Element coverage</h1>
+<p>The endorsed elements of UBL 2.5 that the documents of the world use:
+every document type, aggregate and basic element the UBL 2.5 model
+allows, without what it deprecates. An element is added only through a
+real business situation in the world, never as a filler, so some stay
+out on purpose. <a href="coverage-details.html">Every missing
+element</a> is listed with where it fits.</p>
+<p>Counted: only what UBL 2.5 endorses and does not deprecate. Left
+out:</p>
 <ul>
-<li><p><strong>Element = child in its context.</strong> Each BBIE and
-ASBIE of the UBL 2.5 model (<code>mod/UBL-Entities-2.5.gc</code> of
-<code>os-UBL-2.5</code>) counts as one element:
-<code>Address/StreetName</code> and <code>Party/PostalAddress</code> are
-separate elements, and so are <code>Invoice/Note</code> and
-<code>Order/Note</code>. That gives <strong>5,443 elements</strong>:
-2,570 at document level (101 document types) and 2,873 in the 310
-library aggregates.</p></li>
-<li><p><strong>Counted:</strong> the <code>cac</code>/<code>cbc</code>
-elements in the 75 sample documents.
-<code>UBL-Invoice-2.0-Detached-Signature.xml</code> is an XML signature,
-not a UBL document. Not counted: attributes (<code>schemeID</code>,
-<code>currencyID</code>, …), code-list values, and extension content
-(signatures).</p></li>
-<li><p><strong>Placement</strong> (automatic, then reviewed below). Each
-aggregate has <em>home</em> documents: the document types that reach it
-in the fewest steps.</p>
-<ul>
-<li><strong>extend:</strong> a home-document example already contains
-the parent, so add the element there.</li>
-<li><strong>add structure:</strong> a home-document example exists, so
-add the parent (and the path to it) there.</li>
-<li><strong>new example:</strong> no home document has an example.</li>
+<li>aggregates no endorsed document reaches (PerformanceDataLine):
+6</li>
+<li>aggregates no endorsed document reaches
+(StockAvailabilityReportLine): 7</li>
+<li>deprecated document types and aggregates: 9</li>
+<li>deprecated properties: 81</li>
 </ul>
-<p>If several examples qualify, the script picks the one that needs the
-fewest new elements, already uses the parent most fully, and is the
-newest version.</p></li>
-<li><p><strong>Validity baseline:</strong> all 75 examples are valid
-against the UBL 2.5 OS schemas (<code>xsdrt/maindoc</code>, checked with
-<code>xmllint</code>). Every element they use exists in the 2.5
-model.</p></li>
-</ul>
-<h2 id="results">Results</h2>
+<h2 id="summary">Summary</h2>
 <table>
 <thead>
 <tr>
 <th></th>
 <th style="text-align: right;">Elements</th>
-<th style="text-align: right;">Used</th>
+<th style="text-align: right;">Used in an example</th>
 <th style="text-align: right;">Missing</th>
 <th style="text-align: right;">Coverage</th>
 </tr>
@@ -116,302 +79,784 @@ model.</p></li>
 <tbody>
 <tr>
 <td>Document level</td>
-<td style="text-align: right;">2,570</td>
-<td style="text-align: right;">730</td>
-<td style="text-align: right;">1,840</td>
-<td style="text-align: right;">28%</td>
+<td style="text-align: right;">2318</td>
+<td style="text-align: right;">2081</td>
+<td style="text-align: right;">237</td>
+<td style="text-align: right;">89.8%</td>
 </tr>
 <tr>
-<td>Library (in context)</td>
-<td style="text-align: right;">2,873</td>
-<td style="text-align: right;">730</td>
-<td style="text-align: right;">2,143</td>
-<td style="text-align: right;">25%</td>
+<td>Library (cac/cbc in context)</td>
+<td style="text-align: right;">2842</td>
+<td style="text-align: right;">2516</td>
+<td style="text-align: right;">326</td>
+<td style="text-align: right;">88.5%</td>
 </tr>
 <tr>
-<td><strong>All</strong></td>
-<td style="text-align: right;"><strong>5,443</strong></td>
-<td style="text-align: right;"><strong>1,460</strong></td>
-<td style="text-align: right;"><strong>3,983</strong></td>
-<td style="text-align: right;"><strong>27%</strong></td>
+<td>All</td>
+<td style="text-align: right;">5160</td>
+<td style="text-align: right;">4597</td>
+<td style="text-align: right;">563</td>
+<td style="text-align: right;">89.1%</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>Aggregates (cac types) used at least once:</strong> 136 of
-310.</li>
-<li><strong>Document types with an example:</strong> 55 of 101.</li>
-<li><strong>Elements new in UBL 2.5:</strong> 386 of 387 are not used
-anywhere (2.4: 103 of 146 missing).</li>
-</ul>
-<p>Where the 3,983 missing elements fit:</p>
+<p>Aggregates (cac types) instantiated at least once: 291 of 307.
+Document types with at least one example: 93 of 93.</p>
+<p>Where the missing elements fit:</p>
 <table>
 <thead>
 <tr>
 <th>Placement</th>
 <th style="text-align: right;">Elements</th>
-<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>extend</td>
-<td style="text-align: right;">1,755</td>
-<td>Add to an existing example; the parent is already there</td>
+<td style="text-align: right;">516</td>
 </tr>
 <tr>
 <td>add structure</td>
-<td style="text-align: right;">701</td>
-<td>Add to an existing example, with the parent structure</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr>
+<td>extend (other)</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr>
 <td>new example</td>
-<td style="text-align: right;">1,521</td>
-<td>Needs an example of a document type that has none</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr>
 <td>not reachable</td>
-<td style="text-align: right;">6</td>
-<td><code>PerformanceDataLine</code>: left over in the library since
-PerformanceHistory was dropped (2.1 PRD3); no document uses it</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
-<p>So <strong>about 60% of the gap can be closed in documents we already
-have</strong>. The remaining 40% needs new example documents.</p>
-<h2 id="new-example-documents-needed">New example documents needed</h2>
-<p>46 document types have no example. Grouped by process, with the
-number of missing elements that only fit there:</p>
+<h2
+id="missing-elements-by-the-ubl-version-that-introduced-them">Missing
+elements by the UBL version that introduced them</h2>
 <table>
 <thead>
 <tr>
-<th>Priority</th>
-<th>Process</th>
-<th>Document types (elements)</th>
+<th>Version</th>
+<th style="text-align: right;">Elements</th>
+<th style="text-align: right;">Missing</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>Catalogue</td>
-<td>Catalogue (65), CatalogueRequest (52),
-CatalogueItemSpecificationUpdate (30), CataloguePricingUpdate (30),
-CatalogueDeletion (22)</td>
+<td>2.0</td>
+<td style="text-align: right;">1727</td>
+<td style="text-align: right;">221</td>
 </tr>
 <tr>
-<td>1</td>
-<td>Billing</td>
-<td>SelfBilledInvoice (62), FreightInvoice (48), InvoiceStatusRequest
-(13, new in 2.5), InvoiceStatusResponse (15, new in 2.5)</td>
+<td>2.1</td>
+<td style="text-align: right;">1906</td>
+<td style="text-align: right;">181</td>
 </tr>
 <tr>
-<td>1</td>
-<td>Fulfilment and trade</td>
-<td>DeliveryNote (25, new in 2.5), BillOfLading (26), PackingList (20),
-CertificateOfOrigin (35)</td>
+<td>2.2</td>
+<td style="text-align: right;">443</td>
+<td style="text-align: right;">23</td>
 </tr>
 <tr>
-<td>1</td>
-<td>Generic</td>
-<td>ApplicationResponse (23), AttachedDocument (19), DocumentStatus
-(15), DocumentStatusRequest (15)</td>
+<td>2.3</td>
+<td style="text-align: right;">552</td>
+<td style="text-align: right;">36</td>
 </tr>
 <tr>
-<td>2</td>
-<td>eTendering</td>
-<td>QualificationApplicationRequest (80), Tender (68),
-QualificationApplicationResponse (53), AwardedNotification (38),
-GuaranteeCertificate (33), ContractAwardNotice (31), CallForTenders
-(28), ContractNotice (28), TenderStatus (28), TenderContract (25),
-TendererQualificationResponse (24), TendererQualification (21),
-ExpressionOfInterestResponse (19), UnawardedNotification (19),
-TenderReceipt (18), TenderWithdrawal (18), TenderStatusRequest (17),
-Enquiry (17), EnquiryResponse (16), UnsubscribeFromProcedureRequest
-(16), UnsubscribeFromProcedureResponse (17), ProcurementStatus (27, new
-in 2.5), ProcurementStatusRequest (17, new in 2.5)</td>
+<td>2.4</td>
+<td style="text-align: right;">146</td>
+<td style="text-align: right;">17</td>
 </tr>
 <tr>
-<td>3</td>
-<td>Other domains</td>
-<td>UtilityStatement (204, the largest single gap), WorkReport (43, new
-in 2.5), BusinessInformation (34, new in 2.4), ItemInformationRequest
-(24), WasteMovement (23, new in 2.5), WasteNotification (20, new in
-2.5)</td>
+<td>2.5</td>
+<td style="text-align: right;">386</td>
+<td style="text-align: right;">85</td>
 </tr>
 </tbody>
 </table>
-<p>Priority 1 covers the documents most implementers meet first. Several
-of them (ApplicationResponse, Catalogue, DeliveryNote) are central to
-the document chains of part 2 (Catalogue → Order → … → Invoice →
-ApplicationResponse).</p>
-<h2 id="existing-examples-to-extend">Existing examples to extend</h2>
-<p>The biggest gaps in documents that already have an example
-(document-level coverage):</p>
+<h2 id="coverage-per-document-type-document-level-elements">Coverage per
+document type (document-level elements)</h2>
 <table>
 <thead>
 <tr>
 <th>Document type</th>
+<th style="text-align: right;">Examples</th>
+<th style="text-align: right;">Elements</th>
+<th style="text-align: right;">Used</th>
 <th style="text-align: right;">Coverage</th>
-<th>Note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>ApplicationResponse</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>AwardedNotification</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>BusinessCard</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>DigitalAgreement</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>DigitalCapability</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>DocumentStatusRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ExceptionCriteria</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ExceptionNotification</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ExportCustomsDeclaration</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ExpressionOfInterestRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ExpressionOfInterestResponse</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>Forecast</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ForecastRevision</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>GoodsItemItinerary</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>GoodsItemPassport</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>GuaranteeCertificate</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>InstructionForReturns</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>InventoryReport</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>InvoiceStatusRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ItemInformationRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>PackingList</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ProcurementStatusRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ProofOfReexportation</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ProofOfReexportationReminder</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ProofOfReexportationRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>QualificationApplicationRequest</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>QualificationApplicationResponse</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>ReceiptAdvice</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TenderReceipt</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TenderWithdrawal</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TendererQualification</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TendererQualificationResponse</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TradeItemLocationProfile</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TransportExecutionPlan</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TransportProgressStatusRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TransportServiceDescription</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TransportServiceDescriptionRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>TransportationStatus</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>UnawardedNotification</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>UnsubscribeFromProcedureRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>UnsubscribeFromProcedureResponse</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>UtilityStatement</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>PurchaseReceipt</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">97%</td>
+</tr>
+<tr>
+<td>Catalogue</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">97%</td>
+</tr>
+<tr>
+<td>CatalogueRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>CatalogueItemSpecificationUpdate</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>CataloguePricingUpdate</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>WorkReport</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>RetailEvent</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>TenderContract</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>CommonTransportationReport</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>WasteMovement</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">96%</td>
+</tr>
+<tr>
+<td>CatalogueDeletion</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">95%</td>
+</tr>
+<tr>
+<td>WasteNotification</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">95%</td>
+</tr>
+<tr>
+<td>TransportProgressStatus</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">94%</td>
+</tr>
+<tr>
+<td>ProductActivity</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">94%</td>
+</tr>
+<tr>
+<td>WeightStatement</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">94%</td>
+</tr>
+<tr>
+<td>Waybill</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">94%</td>
+</tr>
+<tr>
+<td>InvoiceStatusResponse</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">93%</td>
+</tr>
+<tr>
+<td>Quotation</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">93%</td>
+</tr>
+<tr>
+<td>DocumentStatus</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">93%</td>
+</tr>
+<tr>
 <td>PriorInformationNotice</td>
-<td style="text-align: right;">10%</td>
-<td>The two examples are minimal</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">93%</td>
 </tr>
 <tr>
-<td>Reminder</td>
-<td style="text-align: right;">18%</td>
-<td></td>
+<td>CallForTenders</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">93%</td>
 </tr>
 <tr>
-<td>DebitNote</td>
-<td style="text-align: right;">21%</td>
-<td>The only 2.5 example, yet 12 new 2.5 elements are missing</td>
+<td>ContractNotice</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">93%</td>
 </tr>
 <tr>
-<td>OrderResponse</td>
-<td style="text-align: right;">23%</td>
-<td></td>
+<td>RemittanceAdvice</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">93%</td>
 </tr>
 <tr>
-<td>OrderChange</td>
-<td style="text-align: right;">26%</td>
-<td></td>
+<td>ImportCustomsDeclaration</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">92%</td>
 </tr>
 <tr>
-<td>SelfBilledCreditNote</td>
-<td style="text-align: right;">28%</td>
-<td></td>
+<td>Tender</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">91%</td>
+</tr>
+<tr>
+<td>TransportationStatusRequest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">91%</td>
+</tr>
+<tr>
+<td>TransportExecutionPlanRequest</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">91%</td>
+</tr>
+<tr>
+<td>CertificateOfOrigin</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">89%</td>
+</tr>
+<tr>
+<td>BillOfLading</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">88%</td>
+</tr>
+<tr>
+<td>DespatchAdvice</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">88%</td>
+</tr>
+<tr>
+<td>RequestForQuotation</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">88%</td>
+</tr>
+<tr>
+<td>ContractAwardNotice</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">87%</td>
 </tr>
 <tr>
 <td>GoodsCertificate</td>
-<td style="text-align: right;">30%</td>
-<td></td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td style="text-align: right;">37%</td>
-<td></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">87%</td>
 </tr>
 <tr>
 <td>Invoice</td>
-<td style="text-align: right;">44%</td>
-<td>9 examples, mostly variants of the same content (signatures,
-namespaces)</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">87%</td>
+</tr>
+<tr>
+<td>Statement</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">87%</td>
+</tr>
+<tr>
+<td>FulfilmentCancellation</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">86%</td>
+</tr>
+<tr>
+<td>TransitCustomsDeclaration</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">86%</td>
+</tr>
+<tr>
+<td>Order</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">85%</td>
+</tr>
+<tr>
+<td>OrderCancellation</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">84%</td>
+</tr>
+<tr>
+<td>Manifest</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">84%</td>
+</tr>
+<tr>
+<td>BusinessInformation</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">81%</td>
+</tr>
+<tr>
+<td>ForwardingInstructions</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">81%</td>
+</tr>
+<tr>
+<td>OrderResponse</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">81%</td>
+</tr>
+<tr>
+<td>DeliveryNote</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">76%</td>
+</tr>
+<tr>
+<td>ProcurementStatus</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">74%</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">72%</td>
+</tr>
+<tr>
+<td>OrderChange</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">70%</td>
+</tr>
+<tr>
+<td>SelfBilledInvoice</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">67%</td>
+</tr>
+<tr>
+<td>Reminder</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">66%</td>
+</tr>
+<tr>
+<td>SelfBilledCreditNote</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">66%</td>
+</tr>
+<tr>
+<td>DebitNote</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">47%</td>
 </tr>
 </tbody>
 </table>
-<p>The detailed list targets 61 example files. The largest are
-TransportExecutionPlan-2.1 (119 elements, mostly
-<code>Consignment</code>), Waybill-2.0 (116, mostly
-<code>ShipmentStage</code>), CreditNote-2.1 (113) and
-GoodsItemItinerary-2.1 (90).</p>
-<h2 id="review-of-the-automatic-placement">Review of the automatic
-placement</h2>
-<p>The script only uses the structure, so some placements are
-technically possible but not where the element belongs in meaning. My
-corrections:</p>
+<h2 id="document-types-without-an-example">Document types without an
+example</h2>
 <table>
 <thead>
 <tr>
-<th>Elements</th>
-<th>Automatic placement</th>
-<th>Better fit</th>
-<th>Why</th>
+<th>Document type</th>
+<th style="text-align: right;">Missing elements that only fit here</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Circularity, new in 2.5 (<code>CircularityProfile</code>,
-<code>EndOfLifeTreatment</code>, <code>ResourceConsumption</code>,
-<code>WasteGenerated</code>, repairability <code>Score</code>)</td>
-<td>Invoice line item</td>
-<td><strong>Catalogue</strong> (new)</td>
-<td>Product master data that the supplier publishes, not billing
-data</td>
-</tr>
-<tr>
-<td>Maritime port reporting (<code>MaritimeHealthDeclaration</code>,
-<code>BallastWaterSummary</code>, <code>ISPSRequirements</code>,
-<code>MaritimeWaste</code>, <code>DestinationPortCall</code>,
-<code>Storage</code>)</td>
-<td>Waybill-2.0</td>
-<td><strong>CommonTransportationReport-2.3</strong></td>
-<td>That is the ship-to-port reporting document these were added for
-(2.3); a waybill is a transport contract</td>
-</tr>
-<tr>
-<td>Tendering terms and process (<code>TenderingProcess</code>,
-<code>AwardingTerms</code>, <code>AwardingCriterion</code>,
-<code>TendererQualificationRequest</code>, …)</td>
-<td>PriorInformationNotice</td>
-<td><strong>ContractNotice / CallForTenders</strong> (new)</td>
-<td>A PIN announces a procurement; the full terms belong in the contract
-notice and call for tenders</td>
-</tr>
-<tr>
-<td><code>ElectronicAddress</code>, <code>SecurityListing</code> (party,
-new in 2.5)</td>
-<td>Waybill consignor; Invoice payee</td>
-<td><strong>BusinessCard</strong></td>
-<td>Party profile data; BusinessCard is the document that exchanges
-it</td>
-</tr>
-<tr>
-<td><code>FuelConsumption</code>, <code>FuelMetering</code>,
-<code>FuelProperty</code> (2.4)</td>
-<td>Invoice-2.1 delivery</td>
-<td><strong>New Invoice variant</strong> (fuel delivery)</td>
-<td>Fits the Invoice, but as its own scenario rather than in the generic
-example</td>
-</tr>
-<tr>
-<td><code>InsurancePolicy</code> (shipment, new in 2.5)</td>
-<td>Waybill-2.0</td>
-<td>Waybill or <strong>BillOfLading</strong> (new)</td>
-<td>Either works; BillOfLading if we add one</td>
-</tr>
-<tr>
-<td><code>PenaltyInterestRate</code> (new in 2.5)</td>
-<td>Invoice payment terms</td>
-<td>Invoice, and also <strong>Reminder</strong></td>
-<td>Late-payment interest is what a reminder charges</td>
-</tr>
 </tbody>
 </table>
-<p>General observations:</p>
-<ol type="1">
-<li><strong>Don't put everything in one example.</strong> Some
-aggregates have 50–90 missing elements. Adding them all to one existing
-file makes it unreadable. Scenario-specific variants (e.g.
-<code>Invoice-2.5-Example-Fuel</code>) are clearer and fit the "coherent
-world" of part 2.</li>
-<li><strong>Many targets are old OASIS examples</strong> (Waybill-2.0,
-Statement-2.0, DespatchAdvice-2.0, ReceiptAdvice-2.0,
-RemittanceAdvice-2.0). They are valid against 2.5 but reflect the 2.0
-data. Changing them changes files that were published by OASIS.</li>
-<li><strong>Coverage of 2.5 is the weakest point:</strong> 386 of the
-387 elements new in 2.5 are not in any example yet. That is also where
-examples help adopters most.</li>
-</ol>
-<h2 id="open-decision">Open decision</h2>
-<p>Should coverage be added by <strong>changing the OASIS example
-files</strong> (the history of <code>xml/</code> then continues after
-<code>os-UBL-2.5</code>), or by <strong>adding new example
-files</strong> next to them and leaving the OASIS originals as
-published? The second option keeps the reconstructed history clean, and
-the new files can follow the part 2 party set from the start.</p>
-<h2 id="reproduce">Reproduce</h2>
-<p>The model file is in the release zip (<a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.zip">https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.zip</a>,
-<code>mod/UBL-Entities-2.5.gc</code>).</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> tools/coverage.py <span class="at">--model</span> /path/to/UBL-Entities-2.5.gc <span class="at">--examples</span> xml <span class="op">&gt;</span> analysis/element-coverage-details.md</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/a11722a285c46baf6b92e4a2638f932a376ac688"><code>a11722a</code></a> of 2026-11-20 09:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/78a77416e1cf0d9665aba2bd87aad7143106018e"><code>78a7741</code></a> of 2026-11-20 09:59 UTC</p></div></footer>
 </body>
 </html>

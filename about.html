@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About this project · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=322eab78c8">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>The UBL World</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="world.html">World</a></li><li><a href="examples.html">Trade</a></li><li><a href="parties.html">Parties</a></li><li><a href="world-specifications.html">Rules</a></li><li><a href="about.html" aria-current="page">About</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="about-this-project">About this project</h1>
+<p>The UBL World is a fictional world made to show the Universal
+Business Language (UBL 2.5, an OASIS Standard and ISO/IEC 19845) in use.
+Three countries, their companies and their public bodies exchange the
+documents a real economy would exchange, and every value in every
+document comes with the reason why it is that value: why this element,
+why this code, why this date, and how it agrees with the other documents
+of the same trade.</p>
+<p>It is meant for people who implement, teach or maintain UBL: a
+coherent set of examples in which a value is never a filler, every
+element is used as its UBL definition says, and the documents of one
+flow tell one consistent story.</p>
+<h2 id="how-it-is-made">How it is made</h2>
+<p>The world is kept as data: its countries, parties, items, map and
+flows of trade. The example documents are generated from that data, so a
+party, an address, a price or a tax rate is the same in every document
+that carries it. Every build checks the documents against the UBL 2.5
+schemas and the world's code lists, and checks the world itself: the
+transport legs run on the map's routes, the calendar and the issue order
+of the documents hold, and amounts, quantities and stock add up.</p>
+<p>The principles, the world and the checks are described in the note <a
+href="note/ubl-examples-method.html">UBL example documents: method and
+rationale</a>, a draft written in the OASIS layout.</p>
+<h2 id="how-much-of-ubl-25-it-covers">How much of UBL 2.5 it covers</h2>
+<p><a href="coverage.html">Element coverage</a> counts the endorsed
+elements of UBL 2.5 that the documents use, per document type, and lists
+every element that has no example yet. An element is added only through
+a real business situation in the world, never as a filler, so some stay
+out on purpose.</p>
+<h2 id="the-oasis-sample-documents">The OASIS sample documents</h2>
+<p>Next to the world, the repository holds the sample documents the
+OASIS UBL Technical Committee published with each release of UBL, with
+their history reconstructed one document per commit: <a
+href="releases.html">the releases and their changes</a> and <a
+href="history.html">how the history was built</a>.</p>
+<h2 id="status">Status</h2>
+<p>Work in progress. Not an OASIS publication. The data, the generators
+and the checks are on <a
+href="https://github.com/kduvekot/ubl-examples">GitHub</a>.</p>
+</main>
+</div>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/78a77416e1cf0d9665aba2bd87aad7143106018e"><code>78a7741</code></a> of 2026-11-20 09:59 UTC</p></div></footer>
+</body>
+</html>

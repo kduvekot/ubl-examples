@@ -1,0 +1,2434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code lists · UBL Example Documents</title>
+<link rel="stylesheet" href="site.css?v=322eab78c8">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>The UBL World</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="world.html">World</a></li><li><a href="examples.html">Trade</a></li><li><a href="parties.html">Parties</a></li><li><a href="world-specifications.html" aria-current="page">Rules</a></li><li><a href="about.html">About</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="code-lists">Code lists</h1>
+<p>The code lists the documents of the world use, each published as a
+genericode file at the address its documents give. Where a document uses
+a real external list (UN/EDIFACT, ISO, the WCO's Harmonized System and
+others), the world's file holds the codes it uses, with the list's own
+identifier; the Trade Accord's and the countries' own lists are the
+world's. <a href="codelists/UBL-World-2.5.cva">The context/value
+association</a> binds each code element of UBL 2.5 to its list, as UBL's
+own validation does.</p>
+<p>The lists of countries and currencies extend UBL's default lists of
+version 2.4 with the codes of the world's three countries and their
+currencies.</p>
+<table>
+<thead>
+<tr>
+<th>List</th>
+<th>listID</th>
+<th>Agency</th>
+<th style="text-align: right;">Codes</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Country Identification Code (UBL example world)</td>
+<td><code>ISO 3166</code></td>
+<td>International Organization for Standardization</td>
+<td style="text-align: right;">501</td>
+<td><a
+href="codelists/CountryIdentificationCode-2.4-world.gc">CountryIdentificationCode-2.4-world.gc</a></td>
+</tr>
+<tr>
+<td>Currency Code (UBL example world)</td>
+<td><code>ISO 4217 Alpha</code></td>
+<td>International Organization for Standardization</td>
+<td style="text-align: right;">279</td>
+<td><a
+href="codelists/CurrencyCode-2.4-world.gc">CurrencyCode-2.4-world.gc</a></td>
+</tr>
+<tr>
+<td>ADR tunnel restriction code (UBL example world)</td>
+<td><code>UNECE ADR tunnel restriction code</code></td>
+<td>United Nations Economic Commission for Europe</td>
+<td style="text-align: right;">10</td>
+<td><a href="codelists/gc/ADRTunnelCode.gc">ADRTunnelCode.gc</a></td>
+</tr>
+<tr>
+<td>Account number format (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AccountFormatCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AccountFormatCode.gc">AccountFormatCode.gc</a></td>
+</tr>
+<tr>
+<td>Address format (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AddressFormatCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AddressFormatCode.gc">AddressFormatCode.gc</a></td>
+</tr>
+<tr>
+<td>Address type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AddressTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/AddressTypeCode.gc">AddressTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Agreement type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AgreementTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AgreementTypeCode.gc">AgreementTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Annotation subject (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AnnotationSubjectCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AnnotationSubjectCode.gc">AnnotationSubjectCode.gc</a></td>
+</tr>
+<tr>
+<td>Application status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ApplicationStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ApplicationStatusCode.gc">ApplicationStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Attestation type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AttestationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AttestationTypeCode.gc">AttestationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Authority activity (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AuthorityActivityCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/AuthorityActivityCode.gc">AuthorityActivityCode.gc</a></td>
+</tr>
+<tr>
+<td>Availability status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AvailabilityStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AvailabilityStatusCode.gc">AvailabilityStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Award criterion type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AwardCriterionTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AwardCriterionTypeCode.gc">AwardCriterionTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Awarding method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:AwardingMethodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/AwardingMethodCode.gc">AwardingMethodCode.gc</a></td>
+</tr>
+<tr>
+<td>Ballast water exchange method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:BallastExchangeMethodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/BallastExchangeMethodCode.gc">BallastExchangeMethodCode.gc</a></td>
+</tr>
+<tr>
+<td>Ballast tank type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:BallastTankTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/BallastTankTypeCode.gc">BallastTankTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Basel Convention, Annex IV: disposal and recovery operations (UBL
+example world)</td>
+<td><code>Basel Convention Annex IV</code></td>
+<td>Secretariat of the Basel Convention (UNEP)</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/BaselAnnexIVCode.gc">BaselAnnexIVCode.gc</a></td>
+</tr>
+<tr>
+<td>Business capability type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/BusinessCapabilityTypeCode.gc">BusinessCapabilityTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Business party group type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:BusinessPartyGroupTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/BusinessPartyGroupTypeCode.gc">BusinessPartyGroupTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>UN Central Product Classification, Version 2.1 (UBL example
+world)</td>
+<td><code>UN CPC Ver.2.1</code></td>
+<td>United Nations Statistics Division</td>
+<td style="text-align: right;">25</td>
+<td><a href="codelists/gc/CPC21Code.gc">CPC21Code.gc</a></td>
+</tr>
+<tr>
+<td>Calculation expression (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CalculationExpressionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CalculationExpressionCode.gc">CalculationExpressionCode.gc</a></td>
+</tr>
+<tr>
+<td>Cancellation reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CancellationReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/CancellationReasonCode.gc">CancellationReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Card account role (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CardAccountRoleCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CardAccountRoleCode.gc">CardAccountRoleCode.gc</a></td>
+</tr>
+<tr>
+<td>Payment card scheme (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CardSchemeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/CardSchemeCode.gc">CardSchemeCode.gc</a></td>
+</tr>
+<tr>
+<td>Payment card type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CardTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/CardTypeCode.gc">CardTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Cargo type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CargoTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/CargoTypeCode.gc">CargoTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Catalogue action (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CatalogueActionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CatalogueActionCode.gc">CatalogueActionCode.gc</a></td>
+</tr>
+<tr>
+<td>Catalogue line action (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CatalogueLineActionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CatalogueLineActionCode.gc">CatalogueLineActionCode.gc</a></td>
+</tr>
+<tr>
+<td>Certified product category (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CategoryCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/CategoryCode.gc">CategoryCode.gc</a></td>
+</tr>
+<tr>
+<td>Certificate type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CertificateTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">8</td>
+<td><a
+href="codelists/gc/CertificateTypeCode.gc">CertificateTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Utility charge type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ChargeTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/ChargeTypeCode.gc">ChargeTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Chip (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:ChipCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">2</td>
+<td><a href="codelists/gc/ChipCode.gc">ChipCode.gc</a></td>
+</tr>
+<tr>
+<td>Circularity type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CircularityTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/CircularityTypeCode.gc">CircularityTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Collaboration priority (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CollaborationPriorityCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CollaborationPriorityCode.gc">CollaborationPriorityCode.gc</a></td>
+</tr>
+<tr>
+<td>Colour (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ColourCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a href="codelists/gc/ColourCode.gc">ColourCode.gc</a></td>
+</tr>
+<tr>
+<td>Company liquidation status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CompanyLiquidationStatusCode.gc">CompanyLiquidationStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Comparison data (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ComparisonDataCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/ComparisonDataCode.gc">ComparisonDataCode.gc</a></td>
+</tr>
+<tr>
+<td>Conditions action (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ConditionsActionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ConditionsActionCode.gc">ConditionsActionCode.gc</a></td>
+</tr>
+<tr>
+<td>Confidentiality level (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ConfidentialityLevelCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ConfidentialityLevelCode.gc">ConfidentialityLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>Consumer incentive tactic (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ConsumerIncentiveTacticCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ConsumerIncentiveTacticCode.gc">ConsumerIncentiveTacticCode.gc</a></td>
+</tr>
+<tr>
+<td>Consumer's energy level (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ConsumersEnergyLevelCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ConsumersEnergyLevelCode.gc">ConsumersEnergyLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>Consumption correction type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ConsumptionCorrectionTypeCode.gc">ConsumptionCorrectionTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Consumption level (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ConsumptionLevelCode.gc">ConsumptionLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>Consumption type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ConsumptionTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/ConsumptionTypeCode.gc">ConsumptionTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Contract modification reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ContractModificationReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ContractModificationReasonCode.gc">ContractModificationReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Contract nature (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ContractNatureCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ContractNatureCode.gc">ContractNatureCode.gc</a></td>
+</tr>
+<tr>
+<td>Contract type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ContractTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ContractTypeCode.gc">ContractTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Contracting party type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ContractingPartyTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ContractingPartyTypeCode.gc">ContractingPartyTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Contracting system (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ContractingSystemCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ContractingSystemCode.gc">ContractingSystemCode.gc</a></td>
+</tr>
+<tr>
+<td>Contracting system type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ContractingSystemTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ContractingSystemTypeCode.gc">ContractingSystemTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Copy quality (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CopyQualityCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CopyQualityCode.gc">CopyQualityCode.gc</a></td>
+</tr>
+<tr>
+<td>Corporate registration type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/CorporateRegistrationTypeCode.gc">CorporateRegistrationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Criterion property type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CriterionPropertyTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CriterionPropertyTypeCode.gc">CriterionPropertyTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Criterion response (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CriterionResponseCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/CriterionResponseCode.gc">CriterionResponseCode.gc</a></td>
+</tr>
+<tr>
+<td>Criterion type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CriterionTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/CriterionTypeCode.gc">CriterionTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Curricula (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CurriculaCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/CurriculaCode.gc">CurriculaCode.gc</a></td>
+</tr>
+<tr>
+<td>Customs declaration subtype (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/CustomsDeclarationSubTypeCode.gc">CustomsDeclarationSubTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Customs declaration type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/CustomsDeclarationTypeCode.gc">CustomsDeclarationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Customs location type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CustomsLocationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/CustomsLocationTypeCode.gc">CustomsLocationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Customs procedure (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CustomsProcedureCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">10</td>
+<td><a
+href="codelists/gc/CustomsProcedureCode.gc">CustomsProcedureCode.gc</a></td>
+</tr>
+<tr>
+<td>Customs status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:CustomsStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/CustomsStatusCode.gc">CustomsStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Data source (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DataSourceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a href="codelists/gc/DataSourceCode.gc">DataSourceCode.gc</a></td>
+</tr>
+<tr>
+<td>Declaration type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DeclarationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/DeclarationTypeCode.gc">DeclarationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Delivery acceptance (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DeliveryAcceptanceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/DeliveryAcceptanceCode.gc">DeliveryAcceptanceCode.gc</a></td>
+</tr>
+<tr>
+<td>Despatch advice type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DespatchAdviceTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/DespatchAdviceTypeCode.gc">DespatchAdviceTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Dimension attribute (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DimensionAttributeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">12</td>
+<td><a
+href="codelists/gc/DimensionAttributeCode.gc">DimensionAttributeCode.gc</a></td>
+</tr>
+<tr>
+<td>Display tactic (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DisplayTacticCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/DisplayTacticCode.gc">DisplayTacticCode.gc</a></td>
+</tr>
+<tr>
+<td>Distribution type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DistributionTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">8</td>
+<td><a
+href="codelists/gc/DistributionTypeCode.gc">DistributionTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Document status (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">8</td>
+<td><a
+href="codelists/gc/DocumentStatusCode.gc">DocumentStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Document status reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DocumentStatusReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/DocumentStatusReasonCode.gc">DocumentStatusReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Document type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:DocumentTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/DocumentTypeCode.gc">DocumentTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>EPSG Geodetic Parameter Dataset (coordinate reference systems) (UBL
+example world)</td>
+<td><code>EPSG</code></td>
+<td>IOGP Geomatics Committee</td>
+<td style="text-align: right;">1</td>
+<td><a href="codelists/gc/EPSGCode.gc">EPSGCode.gc</a></td>
+</tr>
+<tr>
+<td>Emergency Response Guidebook 2024, guide numbers (UBL example
+world)</td>
+<td><code>ERG 2024</code></td>
+<td>US DOT PHMSA, Transport Canada, SCT Mexico</td>
+<td style="text-align: right;">9</td>
+<td><a href="codelists/gc/ERG2024Code.gc">ERG2024Code.gc</a></td>
+</tr>
+<tr>
+<td>Economic operator role (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EconomicOperatorRoleCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/EconomicOperatorRoleCode.gc">EconomicOperatorRoleCode.gc</a></td>
+</tr>
+<tr>
+<td>Emission calculation method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EmissionCalculationMethodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/EmissionCalculationMethodCode.gc">EmissionCalculationMethodCode.gc</a></td>
+</tr>
+<tr>
+<td>Emission type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EmissionTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/EmissionTypeCode.gc">EmissionTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>End-of-life processing (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EndOfLifeProcessingCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/EndOfLifeProcessingCode.gc">EndOfLifeProcessingCode.gc</a></td>
+</tr>
+<tr>
+<td>Endorser role (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EndorserRoleCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/EndorserRoleCode.gc">EndorserRoleCode.gc</a></td>
+</tr>
+<tr>
+<td>Energy source (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EnergySourceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/EnergySourceCode.gc">EnergySourceCode.gc</a></td>
+</tr>
+<tr>
+<td>Entity size (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EntitySizeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/EntitySizeCode.gc">EntitySizeCode.gc</a></td>
+</tr>
+<tr>
+<td>Envelope type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EnvelopeTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/EnvelopeTypeCode.gc">EnvelopeTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Environmental impact level (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EnvironmentalImpactLevelCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/EnvironmentalImpactLevelCode.gc">EnvironmentalImpactLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>Equipment disposition (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EquipmentDispositionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/EquipmentDispositionCode.gc">EquipmentDispositionCode.gc</a></td>
+</tr>
+<tr>
+<td>Equipment owner type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/EquipmentOwnerTypeCode.gc">EquipmentOwnerTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Equipment provider type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EquipmentProviderTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/EquipmentProviderTypeCode.gc">EquipmentProviderTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Evaluation criterion type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EvaluationCriterionTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/EvaluationCriterionTypeCode.gc">EvaluationCriterionTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Evaluation method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EvaluationMethodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/EvaluationMethodCode.gc">EvaluationMethodCode.gc</a></td>
+</tr>
+<tr>
+<td>Evidence type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:EvidenceTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/EvidenceTypeCode.gc">EvidenceTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Exception resolution (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExceptionResolutionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/ExceptionResolutionCode.gc">ExceptionResolutionCode.gc</a></td>
+</tr>
+<tr>
+<td>Exception status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExceptionStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ExceptionStatusCode.gc">ExceptionStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Execution requirement (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExecutionRequirementCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ExecutionRequirementCode.gc">ExecutionRequirementCode.gc</a></td>
+</tr>
+<tr>
+<td>Expected response (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExpectedResponseCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/ExpectedResponseCode.gc">ExpectedResponseCode.gc</a></td>
+</tr>
+<tr>
+<td>Expense type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExpenseTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/ExpenseTypeCode.gc">ExpenseTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Export reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExportReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/ExportReasonCode.gc">ExportReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Export type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExportTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a href="codelists/gc/ExportTypeCode.gc">ExportTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Expression (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ExpressionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a href="codelists/gc/ExpressionCode.gc">ExpressionCode.gc</a></td>
+</tr>
+<tr>
+<td>Foreign exchange contract type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:FXContractTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/FXContractTypeCode.gc">FXContractTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Feature tactic (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:FeatureTacticCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/FeatureTacticCode.gc">FeatureTacticCode.gc</a></td>
+</tr>
+<tr>
+<td>Fee type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:FeeTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/FeeTypeCode.gc">FeeTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Trade financing instrument (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:FinancingInstrumentCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/FinancingInstrumentCode.gc">FinancingInstrumentCode.gc</a></td>
+</tr>
+<tr>
+<td>Forecast adjustment reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ForecastAdjustmentReasonCode.gc">ForecastAdjustmentReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Forecast purpose (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ForecastPurposeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/ForecastPurposeCode.gc">ForecastPurposeCode.gc</a></td>
+</tr>
+<tr>
+<td>Forecast type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ForecastTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ForecastTypeCode.gc">ForecastTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Freight rate class (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:FreightRateClassCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/FreightRateClassCode.gc">FreightRateClassCode.gc</a></td>
+</tr>
+<tr>
+<td>Fuel type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:FuelTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a href="codelists/gc/FuelTypeCode.gc">FuelTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Fulfilment indicator (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:FulfilmentIndicatorCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/FulfilmentIndicatorCode.gc">FulfilmentIndicatorCode.gc</a></td>
+</tr>
+<tr>
+<td>Goods certificate type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:GoodsCertificateTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/GoodsCertificateTypeCode.gc">GoodsCertificateTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Goods processing type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:GoodsProcessingTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/GoodsProcessingTypeCode.gc">GoodsProcessingTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Guarantee constitution (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:GuaranteeConstitutionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/GuaranteeConstitutionCode.gc">GuaranteeConstitutionCode.gc</a></td>
+</tr>
+<tr>
+<td>Financial guarantee type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:GuaranteeTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/GuaranteeTypeCode.gc">GuaranteeTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Harmonized System 2022, sections (UBL example world)</td>
+<td><code>WCO HS 2022 Sections</code></td>
+<td>World Customs Organization</td>
+<td style="text-align: right;">21</td>
+<td><a href="codelists/gc/HSSectionsCode.gc">HSSectionsCode.gc</a></td>
+</tr>
+<tr>
+<td>Handling instruction (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:HandlingInstructionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/HandlingInstructionCode.gc">HandlingInstructionCode.gc</a></td>
+</tr>
+<tr>
+<td>Dangerous goods type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:HazardousGoodsTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/HazardousGoodsTypeCode.gc">HazardousGoodsTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Heating type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:HeatingTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/HeatingTypeCode.gc">HeatingTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>IANA Character Sets (UBL example world)</td>
+<td><code>IANA Character Sets</code></td>
+<td>Internet Assigned Numbers Authority</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/IANACharsetCode.gc">IANACharsetCode.gc</a></td>
+</tr>
+<tr>
+<td>IATA SSIM aircraft type codes (UBL example world)</td>
+<td><code>IATA SSIM Aircraft Types</code></td>
+<td>International Air Transport Association</td>
+<td style="text-align: right;">1</td>
+<td><a
+href="codelists/gc/IATAAircraftTypeCode.gc">IATAAircraftTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>IMO IMDG Code emergency schedules (EmS) (UBL example world)</td>
+<td><code>IMO IMDG EmS</code></td>
+<td>International Maritime Organization</td>
+<td style="text-align: right;">5</td>
+<td><a href="codelists/gc/IMDGEmSCode.gc">IMDGEmSCode.gc</a></td>
+</tr>
+<tr>
+<td>IMO INF Code ship class (UBL example world)</td>
+<td><code>IMO INF Code</code></td>
+<td>International Maritime Organization</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/IMOINFCode.gc">IMOINFCode.gc</a></td>
+</tr>
+<tr>
+<td>IMO ISPS Code security level (UBL example world)</td>
+<td><code>IMO ISPS security level</code></td>
+<td>International Maritime Organization</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/IMOISPSCode.gc">IMOISPSCode.gc</a></td>
+</tr>
+<tr>
+<td>International Standard Industrial Classification of All Economic
+Activities, Revision 4 (UBL example world)</td>
+<td><code>ISIC Rev.4</code></td>
+<td>United Nations Statistics Division</td>
+<td style="text-align: right;">39</td>
+<td><a href="codelists/gc/ISICRev4Code.gc">ISICRev4Code.gc</a></td>
+</tr>
+<tr>
+<td>ISO 20022 ExternalCashAccountType1Code (UBL example world)</td>
+<td><code>ISO 20022 ExternalCashAccountType1Code</code></td>
+<td>ISO 20022 Registration Authority (SWIFT)</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/ISO20022CashAccountTypeCode.gc">ISO20022CashAccountTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>ISO 20022 ChargeBearerType1Code (UBL example world)</td>
+<td><code>ISO 20022 ChargeBearerType1Code</code></td>
+<td>ISO 20022 Registration Authority (SWIFT)</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ISO20022ChargeBearerCode.gc">ISO20022ChargeBearerCode.gc</a></td>
+</tr>
+<tr>
+<td>ISO 20022 ClearingChannel2Code (UBL example world)</td>
+<td><code>ISO 20022 ClearingChannel2Code</code></td>
+<td>ISO 20022 Registration Authority (SWIFT)</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ISO20022ClearingChannelCode.gc">ISO20022ClearingChannelCode.gc</a></td>
+</tr>
+<tr>
+<td>ISO 20022 ExternalPurpose1Code (UBL example world)</td>
+<td><code>ISO 20022 ExternalPurpose1Code</code></td>
+<td>ISO 20022 Registration Authority (SWIFT)</td>
+<td style="text-align: right;">9</td>
+<td><a
+href="codelists/gc/ISO20022PurposeCode.gc">ISO20022PurposeCode.gc</a></td>
+</tr>
+<tr>
+<td>ISO 20022 SequenceType3Code (UBL example world)</td>
+<td><code>ISO 20022 SequenceType3Code</code></td>
+<td>ISO 20022 Registration Authority (SWIFT)</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/ISO20022SequenceTypeCode.gc">ISO20022SequenceTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>ISO 20022 ExternalServiceLevel1Code (UBL example world)</td>
+<td><code>ISO 20022 ExternalServiceLevel1Code</code></td>
+<td>ISO 20022 Registration Authority (SWIFT)</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ISO20022ServiceLevelCode.gc">ISO20022ServiceLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>ISO/IEC 5218 Representation of human sexes (UBL example world)</td>
+<td><code>ISO 5218</code></td>
+<td>International Organization for Standardization</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/ISO5218Code.gc">ISO5218Code.gc</a></td>
+</tr>
+<tr>
+<td>ISO 6346 container size and type code (UBL example world)</td>
+<td><code>ISO 6346</code></td>
+<td>International Organization for Standardization</td>
+<td style="text-align: right;">6</td>
+<td><a href="codelists/gc/ISO6346Code.gc">ISO6346Code.gc</a></td>
+</tr>
+<tr>
+<td>ITU-R M.1371 AIS navigational status (UBL example world)</td>
+<td><code>ITU-R M.1371 Navigational status</code></td>
+<td>International Telecommunication Union</td>
+<td style="text-align: right;">10</td>
+<td><a
+href="codelists/gc/ITUAISNavStatusCode.gc">ITUAISNavStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Incoterms 2020 (UBL example world)</td>
+<td><code>INCOTERMS</code></td>
+<td>International Chamber of Commerce</td>
+<td style="text-align: right;">11</td>
+<td><a href="codelists/gc/IncotermsCode.gc">IncotermsCode.gc</a></td>
+</tr>
+<tr>
+<td>Inhalation toxicity zone (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:InhalationToxicityZoneCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/InhalationToxicityZoneCode.gc">InhalationToxicityZoneCode.gc</a></td>
+</tr>
+<tr>
+<td>Inspection method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:InspectionMethodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/InspectionMethodCode.gc">InspectionMethodCode.gc</a></td>
+</tr>
+<tr>
+<td>Insurance cover (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:InsuranceCoverCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/InsuranceCoverCode.gc">InsuranceCoverCode.gc</a></td>
+</tr>
+<tr>
+<td>Interest calculation method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:InterestCalculationCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/InterestCalculationCode.gc">InterestCalculationCode.gc</a></td>
+</tr>
+<tr>
+<td>Item life cycle status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ItemLifeCycleStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ItemLifeCycleStatusCode.gc">ItemLifeCycleStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Item part position (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ItemPartPositionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ItemPartPositionCode.gc">ItemPartPositionCode.gc</a></td>
+</tr>
+<tr>
+<td>Item property name (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ItemPropertyNameCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/ItemPropertyNameCode.gc">ItemPropertyNameCode.gc</a></td>
+</tr>
+<tr>
+<td>Item type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ItemTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/ItemTypeCode.gc">ItemTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>ISO 639 Language (UBL example world)</td>
+<td><code>ISO 639</code></td>
+<td>ISO 639-2 Registration Authority (Library of Congress)</td>
+<td style="text-align: right;">691</td>
+<td><a href="codelists/gc/LanguageCode.gc">LanguageCode.gc</a></td>
+</tr>
+<tr>
+<td>Latitude direction (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/LatitudeDirectionCode.gc">LatitudeDirectionCode.gc</a></td>
+</tr>
+<tr>
+<td>Life cycle stage (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:LifecycleStageCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/LifecycleStageCode.gc">LifecycleStageCode.gc</a></td>
+</tr>
+<tr>
+<td>Line status (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LineStatusCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">5</td>
+<td><a href="codelists/gc/LineStatusCode.gc">LineStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Load type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:LoadTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a href="codelists/gc/LoadTypeCode.gc">LoadTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Locale (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:LocaleCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/LocaleCode.gc">LocaleCode.gc</a></td>
+</tr>
+<tr>
+<td>Longitude direction (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/LongitudeDirectionCode.gc">LongitudeDirectionCode.gc</a></td>
+</tr>
+<tr>
+<td>Lot submission (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:LotSubmissionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/LotSubmissionCode.gc">LotSubmissionCode.gc</a></td>
+</tr>
+<tr>
+<td>Maintenance frequency (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MaintenanceFrequencyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/MaintenanceFrequencyCode.gc">MaintenanceFrequencyCode.gc</a></td>
+</tr>
+<tr>
+<td>Manifest type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ManifestTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ManifestTypeCode.gc">ManifestTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Marine pollutant (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MarinePollutantCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/MarinePollutantCode.gc">MarinePollutantCode.gc</a></td>
+</tr>
+<tr>
+<td>Market identifier (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MarketCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/MarketCode.gc">MarketCode.gc</a></td>
+</tr>
+<tr>
+<td>Material resource (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MaterialResourceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/MaterialResourceCode.gc">MaterialResourceCode.gc</a></td>
+</tr>
+<tr>
+<td>Meter constant type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MeterConstantTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/MeterConstantTypeCode.gc">MeterConstantTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Meter reading method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MeterReadingMethodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/MeterReadingMethodCode.gc">MeterReadingMethodCode.gc</a></td>
+</tr>
+<tr>
+<td>Meter reading type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MeterReadingTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/MeterReadingTypeCode.gc">MeterReadingTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Miscellaneous retail event (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MiscellaneousEventTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/MiscellaneousEventTypeCode.gc">MiscellaneousEventTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Multiple tenders (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:MultipleTendersCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/MultipleTendersCode.gc">MultipleTendersCode.gc</a></td>
+</tr>
+<tr>
+<td>Nature of transaction (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:NatureOfTransactionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/NatureOfTransactionCode.gc">NatureOfTransactionCode.gc</a></td>
+</tr>
+<tr>
+<td>Notice subtype (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:NoticeSubTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/NoticeSubTypeCode.gc">NoticeSubTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Notice type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:NoticeTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a href="codelists/gc/NoticeTypeCode.gc">NoticeTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>One-time charge type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:OneTimeChargeTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/OneTimeChargeTypeCode.gc">OneTimeChargeTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Operation type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:OperationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/OperationTypeCode.gc">OperationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Operator (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:OperatorCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">2</td>
+<td><a href="codelists/gc/OperatorCode.gc">OperatorCode.gc</a></td>
+</tr>
+<tr>
+<td>Attribute (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:OtherAttributeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/OtherAttributeCode.gc">OtherAttributeCode.gc</a></td>
+</tr>
+<tr>
+<td>PRONOM file format registry (PUIDs) (UBL example world)</td>
+<td><code>PRONOM</code></td>
+<td>The National Archives (UK)</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/PRONOMCode.gc">PRONOMCode.gc</a></td>
+</tr>
+<tr>
+<td>Pack level (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PackLevelCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/PackLevelCode.gc">PackLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>Packaging type (UNECE Recommendation 21) (UBL example world)</td>
+<td><code>UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">377</td>
+<td><a
+href="codelists/gc/PackagingTypeCode.gc">PackagingTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Air packing instruction (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PackingInstructionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/PackingInstructionCode.gc">PackingInstructionCode.gc</a></td>
+</tr>
+<tr>
+<td>Packing and labelling type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PackingLabelingTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/PackingLabelingTypeCode.gc">PackingLabelingTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Payment frequency (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PaymentFrequencyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/PaymentFrequencyCode.gc">PaymentFrequencyCode.gc</a></td>
+</tr>
+<tr>
+<td>Payment status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PaymentStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/PaymentStatusCode.gc">PaymentStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Performance metric (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PerformanceMetricCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/PerformanceMetricCode.gc">PerformanceMetricCode.gc</a></td>
+</tr>
+<tr>
+<td>Period description (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PeriodDescriptionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/PeriodDescriptionCode.gc">PeriodDescriptionCode.gc</a></td>
+</tr>
+<tr>
+<td>Port call purpose (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PortCallPurposeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/PortCallPurposeCode.gc">PortCallPurposeCode.gc</a></td>
+</tr>
+<tr>
+<td>Preference criterion (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PreferenceCriterionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/PreferenceCriterionCode.gc">PreferenceCriterionCode.gc</a></td>
+</tr>
+<tr>
+<td>Price evaluation (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PriceEvaluationCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/PriceEvaluationCode.gc">PriceEvaluationCode.gc</a></td>
+</tr>
+<tr>
+<td>Price type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PriceTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a href="codelists/gc/PriceTypeCode.gc">PriceTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Privacy (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PrivacyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/PrivacyCode.gc">PrivacyCode.gc</a></td>
+</tr>
+<tr>
+<td>Prize rank (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PrizeRankCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/PrizeRankCode.gc">PrizeRankCode.gc</a></td>
+</tr>
+<tr>
+<td>Process reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ProcessReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ProcessReasonCode.gc">ProcessReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Procurement procedure (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ProcurementProcedureCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/ProcurementProcedureCode.gc">ProcurementProcedureCode.gc</a></td>
+</tr>
+<tr>
+<td>Procurement subtype (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ProcurementSubTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/ProcurementSubTypeCode.gc">ProcurementSubTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Profile status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ProfileStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ProfileStatusCode.gc">ProfileStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Promotional event type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PromotionalEventTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/PromotionalEventTypeCode.gc">PromotionalEventTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Property group type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PropertyGroupTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/PropertyGroupTypeCode.gc">PropertyGroupTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Property importance (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:PropertyImportanceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/PropertyImportanceCode.gc">PropertyImportanceCode.gc</a></td>
+</tr>
+<tr>
+<td>Qualification admission (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:QualificationAdmissionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/QualificationAdmissionCode.gc">QualificationAdmissionCode.gc</a></td>
+</tr>
+<tr>
+<td>Qualification application type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:QualificationApplicationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/QualificationApplicationTypeCode.gc">QualificationApplicationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Quality control (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:QualityControlCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/QualityControlCode.gc">QualityControlCode.gc</a></td>
+</tr>
+<tr>
+<td>Quantity discrepancy (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:QuantityDiscrepancyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/QuantityDiscrepancyCode.gc">QuantityDiscrepancyCode.gc</a></td>
+</tr>
+<tr>
+<td>RFC 2045 Content-Transfer-Encoding (UBL example world)</td>
+<td><code>RFC 2045 Content-Transfer-Encoding</code></td>
+<td>IETF</td>
+<td style="text-align: right;">5</td>
+<td><a href="codelists/gc/RFC2045Code.gc">RFC2045Code.gc</a></td>
+</tr>
+<tr>
+<td>Receipt advice type (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ReceiptAdviceTypeCode.gc">ReceiptAdviceTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Record status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:RecordStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">8</td>
+<td><a
+href="codelists/gc/RecordStatusCode.gc">RecordStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Reject action (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:RejectActionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/RejectActionCode.gc">RejectActionCode.gc</a></td>
+</tr>
+<tr>
+<td>Reject reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:RejectReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/RejectReasonCode.gc">RejectReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Reminder type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ReminderTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ReminderTypeCode.gc">ReminderTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Representation type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:RepresentationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/RepresentationTypeCode.gc">RepresentationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Residence type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ResidenceTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ResidenceTypeCode.gc">ResidenceTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Resolution (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ResolutionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/ResolutionCode.gc">ResolutionCode.gc</a></td>
+</tr>
+<tr>
+<td>Response data type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ResponseDataTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/ResponseDataTypeCode.gc">ResponseDataTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Response message level (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ResponseMessageLevelCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ResponseMessageLevelCode.gc">ResponseMessageLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>Retail event status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:RetailEventStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/RetailEventStatusCode.gc">RetailEventStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Revision status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:RevisionStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/RevisionStatusCode.gc">RevisionStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Party bearing the risk (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:RiskResponsiblePartyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/RiskResponsiblePartyCode.gc">RiskResponsiblePartyCode.gc</a></td>
+</tr>
+<tr>
+<td>Sanitary measure (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SanitaryMeasureCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/SanitaryMeasureCode.gc">SanitaryMeasureCode.gc</a></td>
+</tr>
+<tr>
+<td>Scoring system (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ScoringSystemCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">1</td>
+<td><a
+href="codelists/gc/ScoringSystemCode.gc">ScoringSystemCode.gc</a></td>
+</tr>
+<tr>
+<td>Seal issuer type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SealIssuerTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/SealIssuerTypeCode.gc">SealIssuerTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Seal status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SealStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a href="codelists/gc/SealStatusCode.gc">SealStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Security classification (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SecurityClassificationCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/SecurityClassificationCode.gc">SecurityClassificationCode.gc</a></td>
+</tr>
+<tr>
+<td>Security clearance (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SecurityClearanceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/SecurityClearanceCode.gc">SecurityClearanceCode.gc</a></td>
+</tr>
+<tr>
+<td>Service information preference (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ServiceInformationPreferenceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/ServiceInformationPreferenceCode.gc">ServiceInformationPreferenceCode.gc</a></td>
+</tr>
+<tr>
+<td>Service offer response (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ServiceOfferResponseCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ServiceOfferResponseCode.gc">ServiceOfferResponseCode.gc</a></td>
+</tr>
+<tr>
+<td>Service type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ServiceTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/ServiceTypeCode.gc">ServiceTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Ship configuration (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ShipConfigurationCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/ShipConfigurationCode.gc">ShipConfigurationCode.gc</a></td>
+</tr>
+<tr>
+<td>Role on board (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ShipPersonRoleCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/ShipPersonRoleCode.gc">ShipPersonRoleCode.gc</a></td>
+</tr>
+<tr>
+<td>Ship waste type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ShipWasteTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/ShipWasteTypeCode.gc">ShipWasteTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Shipping priority (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ShippingPriorityCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ShippingPriorityCode.gc">ShippingPriorityCode.gc</a></td>
+</tr>
+<tr>
+<td>Shortage action (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ShortageActionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ShortageActionCode.gc">ShortageActionCode.gc</a></td>
+</tr>
+<tr>
+<td>Signature reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SignatureReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/SignatureReasonCode.gc">SignatureReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Social media type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SocialMediaTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/SocialMediaTypeCode.gc">SocialMediaTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Specification type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SpecificationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/SpecificationTypeCode.gc">SpecificationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Statement type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:StatementTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/StatementTypeCode.gc">StatementTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Status condition (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:StatusConditionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">10</td>
+<td><a
+href="codelists/gc/StatusConditionCode.gc">StatusConditionCode.gc</a></td>
+</tr>
+<tr>
+<td>Status reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:StatusReasonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/StatusReasonCode.gc">StatusReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Strategic procurement (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:StrategicProcurementCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/StrategicProcurementCode.gc">StrategicProcurementCode.gc</a></td>
+</tr>
+<tr>
+<td>Subcontracting conditions (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SubcontractingConditionsCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/SubcontractingConditionsCode.gc">SubcontractingConditionsCode.gc</a></td>
+</tr>
+<tr>
+<td>Submission method (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SubmissionMethodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/SubmissionMethodCode.gc">SubmissionMethodCode.gc</a></td>
+</tr>
+<tr>
+<td>Subscriber type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SubscriberTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/SubscriberTypeCode.gc">SubscriberTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Substitution status (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:SubstitutionStatusCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/SubstitutionStatusCode.gc">SubstitutionStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Supply chain activity (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SupplyChainActivityCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/SupplyChainActivityCode.gc">SupplyChainActivityCode.gc</a></td>
+</tr>
+<tr>
+<td>Supply type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:SupplyTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/SupplyTypeCode.gc">SupplyTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Tariff class (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TariffClassCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TariffClassCode.gc">TariffClassCode.gc</a></td>
+</tr>
+<tr>
+<td>Tax level (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TaxLevelCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/TaxLevelCode.gc">TaxLevelCode.gc</a></td>
+</tr>
+<tr>
+<td>Tax type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TaxTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/TaxTypeCode.gc">TaxTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Telecommunications call type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TelecomCallTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TelecomCallTypeCode.gc">TelecomCallTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Telecommunications duty (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TelecomDutyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TelecomDutyCode.gc">TelecomDutyCode.gc</a></td>
+</tr>
+<tr>
+<td>Telecommunications service category (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TelecomServiceCategoryCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/TelecomServiceCategoryCode.gc">TelecomServiceCategoryCode.gc</a></td>
+</tr>
+<tr>
+<td>Telecommunications supply type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TelecomSupplyTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TelecomSupplyTypeCode.gc">TelecomSupplyTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Temperature attribute (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">8</td>
+<td><a
+href="codelists/gc/TemperatureAttributeCode.gc">TemperatureAttributeCode.gc</a></td>
+</tr>
+<tr>
+<td>Temperature qualifier (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TemperatureQualifierCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TemperatureQualifierCode.gc">TemperatureQualifierCode.gc</a></td>
+</tr>
+<tr>
+<td>Tender envelope (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TenderEnvelopeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TenderEnvelopeCode.gc">TenderEnvelopeCode.gc</a></td>
+</tr>
+<tr>
+<td>Tender event type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TenderEventTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TenderEventTypeCode.gc">TenderEventTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Tender result (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TenderResultCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TenderResultCode.gc">TenderResultCode.gc</a></td>
+</tr>
+<tr>
+<td>Tender type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TenderTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/TenderTypeCode.gc">TenderTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Tenderer requirement type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TendererRequirementTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TendererRequirementTypeCode.gc">TendererRequirementTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Tenderer role (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TendererRoleCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/TendererRoleCode.gc">TendererRoleCode.gc</a></td>
+</tr>
+<tr>
+<td>Threshold value comparison (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ThresholdValueComparisonCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/ThresholdValueComparisonCode.gc">ThresholdValueComparisonCode.gc</a></td>
+</tr>
+<tr>
+<td>Time frequency (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TimeFrequencyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/TimeFrequencyCode.gc">TimeFrequencyCode.gc</a></td>
+</tr>
+<tr>
+<td>Timing complaint (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TimingComplaintCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/TimingComplaintCode.gc">TimingComplaintCode.gc</a></td>
+</tr>
+<tr>
+<td>Tracking device (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TrackingDeviceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TrackingDeviceCode.gc">TrackingDeviceCode.gc</a></td>
+</tr>
+<tr>
+<td>Transit direction (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransitDirectionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TransitDirectionCode.gc">TransitDirectionCode.gc</a></td>
+</tr>
+<tr>
+<td>Translation type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TranslationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TranslationTypeCode.gc">TranslationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Transport authorization (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportAuthorizationCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TransportAuthorizationCode.gc">TransportAuthorizationCode.gc</a></td>
+</tr>
+<tr>
+<td>Transport emergency card (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportEmergencyCardCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">10</td>
+<td><a
+href="codelists/gc/TransportEmergencyCardCode.gc">TransportEmergencyCardCode.gc</a></td>
+</tr>
+<tr>
+<td>Transport event type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportEventTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">11</td>
+<td><a
+href="codelists/gc/TransportEventTypeCode.gc">TransportEventTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Transport execution status (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportExecutionStatusCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/TransportExecutionStatusCode.gc">TransportExecutionStatusCode.gc</a></td>
+</tr>
+<tr>
+<td>Transport notification type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportNotificationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TransportNotificationTypeCode.gc">TransportNotificationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Transport report type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportReportTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TransportReportTypeCode.gc">TransportReportTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Transport service (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportServiceCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">12</td>
+<td><a
+href="codelists/gc/TransportServiceCode.gc">TransportServiceCode.gc</a></td>
+</tr>
+<tr>
+<td>Transportation status type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TransportationStatusTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/TransportationStatusTypeCode.gc">TransportationStatusTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Travel direction (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TravelDirectionCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/TravelDirectionCode.gc">TravelDirectionCode.gc</a></td>
+</tr>
+<tr>
+<td>Treatment pathway (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:TreatmentPathwayCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/TreatmentPathwayCode.gc">TreatmentPathwayCode.gc</a></td>
+</tr>
+<tr>
+<td>UBL document type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">101</td>
+<td><a
+href="codelists/gc/UBLDocumentTypeCode.gc">UBLDocumentTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 1001 Document name (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 1001</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">27</td>
+<td><a href="codelists/gc/UNCL1001Code.gc">UNCL1001Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 1225 Message function (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 1225</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">6</td>
+<td><a href="codelists/gc/UNCL1225Code.gc">UNCL1225Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 2475 Event time reference (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 2475</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">6</td>
+<td><a href="codelists/gc/UNCL2475Code.gc">UNCL2475Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 4343 Response type (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 4343</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/UNCL4343Code.gc">UNCL4343Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 4465 Adjustment reason description (UBL example
+world)</td>
+<td><code>UN/EDIFACT EDED 4465</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">7</td>
+<td><a href="codelists/gc/UNCL4465Code.gc">UNCL4465Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 5153 Duty or tax or fee type name (UBL example
+world)</td>
+<td><code>UN/EDIFACT EDED 5153</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">56</td>
+<td><a href="codelists/gc/UNCL5153Code.gc">UNCL5153Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 5189 Allowance or charge identification (UBL example
+world)</td>
+<td><code>UN/EDIFACT EDED 5189</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">22</td>
+<td><a href="codelists/gc/UNCL5189Code.gc">UNCL5189Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 5305 Duty or tax or fee category (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 5305</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">22</td>
+<td><a href="codelists/gc/UNCL5305Code.gc">UNCL5305Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 7075 Packaging level (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 7075</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/UNCL7075Code.gc">UNCL7075Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 7161 Special service description (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 7161</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">15</td>
+<td><a href="codelists/gc/UNCL7161Code.gc">UNCL7161Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 8051 Transport stage code qualifier (UBL example
+world)</td>
+<td><code>UN/EDIFACT EDED 8051</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/UNCL8051Code.gc">UNCL8051Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 8169 Full or empty indicator (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 8169</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">13</td>
+<td><a href="codelists/gc/UNCL8169Code.gc">UNCL8169Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 8273 Dangerous goods regulations (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 8273</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">24</td>
+<td><a href="codelists/gc/UNCL8273Code.gc">UNCL8273Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/EDIFACT 8339 Packaging danger level (UBL example world)</td>
+<td><code>UN/EDIFACT EDED 8339</code></td>
+<td>UN/CEFACT</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/UNCL8339Code.gc">UNCL8339Code.gc</a></td>
+</tr>
+<tr>
+<td>UN/ECE Recommendation 28 Codes for types of means of transport (UBL
+example world)</td>
+<td><code>UNECE Recommendation 28</code></td>
+<td>UN/CEFACT (UNECE)</td>
+<td style="text-align: right;">11</td>
+<td><a href="codelists/gc/UNECERec28Code.gc">UNECERec28Code.gc</a></td>
+</tr>
+<tr>
+<td>UN Model Regulations hazard class and division (UBL example
+world)</td>
+<td><code>UN Model Regulations hazard class</code></td>
+<td>United Nations</td>
+<td style="text-align: right;">16</td>
+<td><a
+href="codelists/gc/UNModelRegsClassCode.gc">UNModelRegsClassCode.gc</a></td>
+</tr>
+<tr>
+<td>UN Model Regulations Dangerous Goods List (UN numbers) (UBL example
+world)</td>
+<td><code>UN Model Regulations Dangerous Goods List</code></td>
+<td>United Nations</td>
+<td style="text-align: right;">11</td>
+<td><a
+href="codelists/gc/UNModelRegsUNCode.gc">UNModelRegsUNCode.gc</a></td>
+</tr>
+<tr>
+<td>Packing group (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:UNPackingGroupCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/UNPackingGroupCode.gc">UNPackingGroupCode.gc</a></td>
+</tr>
+<tr>
+<td>Urgency (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:UrgencyCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a href="codelists/gc/UrgencyCode.gc">UrgencyCode.gc</a></td>
+</tr>
+<tr>
+<td>Utility type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:UtilityTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a
+href="codelists/gc/UtilityTypeCode.gc">UtilityTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Validation result (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:ValidationResultCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/ValidationResultCode.gc">ValidationResultCode.gc</a></td>
+</tr>
+<tr>
+<td>Variant constraint (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:VariantConstraintCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/VariantConstraintCode.gc">VariantConstraintCode.gc</a></td>
+</tr>
+<tr>
+<td>Harmonized Commodity Description and Coding System, 2022 edition
+(subheadings) (UBL example world)</td>
+<td><code>WCO HS 2022</code></td>
+<td>World Customs Organization</td>
+<td style="text-align: right;">21</td>
+<td><a href="codelists/gc/WCOHS2022Code.gc">WCOHS2022Code.gc</a></td>
+</tr>
+<tr>
+<td>Waste notification type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WasteNotificationTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a
+href="codelists/gc/WasteNotificationTypeCode.gc">WasteNotificationTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Waste operation category (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WasteOperationCategoryCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/WasteOperationCategoryCode.gc">WasteOperationCategoryCode.gc</a></td>
+</tr>
+<tr>
+<td>Waste type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WasteTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">5</td>
+<td><a href="codelists/gc/WasteTypeCode.gc">WasteTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Waybill type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WaybillTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/WaybillTypeCode.gc">WaybillTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Web site type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WebSiteTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/WebSiteTypeCode.gc">WebSiteTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Week day (UBL example world)</td>
+<td><code>urn:oasis:names:specification:ubl:codelist:gc:WeekDayCode</code></td>
+<td>OASIS Universal Business Language (UBL) TC</td>
+<td style="text-align: right;">7</td>
+<td><a href="codelists/gc/WeekDayCode.gc">WeekDayCode.gc</a></td>
+</tr>
+<tr>
+<td>Weight statement type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WeightStatementTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/WeightStatementTypeCode.gc">WeightStatementTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Weighting algorithm (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WeightingAlgorithmCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/WeightingAlgorithmCode.gc">WeightingAlgorithmCode.gc</a></td>
+</tr>
+<tr>
+<td>Weighting type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WeightingTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a
+href="codelists/gc/WeightingTypeCode.gc">WeightingTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Wood (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WoodCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">2</td>
+<td><a href="codelists/gc/WoodCode.gc">WoodCode.gc</a></td>
+</tr>
+<tr>
+<td>Work phase (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WorkPhaseCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">3</td>
+<td><a href="codelists/gc/WorkPhaseCode.gc">WorkPhaseCode.gc</a></td>
+</tr>
+<tr>
+<td>Work type (UBL example world)</td>
+<td><code>urn:ubl-examples:world:codelist:WorkTypeCode</code></td>
+<td>Lumeport Trade Accord</td>
+<td style="text-align: right;">4</td>
+<td><a href="codelists/gc/WorkTypeCode.gc">WorkTypeCode.gc</a></td>
+</tr>
+<tr>
+<td>Company legal form (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code></td>
+<td>Government of Bayvarra</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/XB-CompanyLegalFormCode.gc">XB-CompanyLegalFormCode.gc</a></td>
+</tr>
+<tr>
+<td>State or territory (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code></td>
+<td>Government of Bayvarra</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/XB-CountrySubentityCode.gc">XB-CountrySubentityCode.gc</a></td>
+</tr>
+<tr>
+<td>Sales tax exemption reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code></td>
+<td>Government of Bayvarra</td>
+<td style="text-align: right;">9</td>
+<td><a
+href="codelists/gc/XB-TaxExemptionReasonCode.gc">XB-TaxExemptionReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Company legal form (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode</code></td>
+<td>Government of Lisavu</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/XL-CompanyLegalFormCode.gc">XL-CompanyLegalFormCode.gc</a></td>
+</tr>
+<tr>
+<td>Import consumption tax exemption reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XL:codelist:TaxExemptionReasonCode</code></td>
+<td>Government of Lisavu</td>
+<td style="text-align: right;">1</td>
+<td><a
+href="codelists/gc/XL-TaxExemptionReasonCode.gc">XL-TaxExemptionReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Company legal form (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode</code></td>
+<td>Government of Urvania</td>
+<td style="text-align: right;">3</td>
+<td><a
+href="codelists/gc/XU-CompanyLegalFormCode.gc">XU-CompanyLegalFormCode.gc</a></td>
+</tr>
+<tr>
+<td>Customs tariff (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XU:codelist:CustomsTariffCode</code></td>
+<td>Government of Urvania</td>
+<td style="text-align: right;">6</td>
+<td><a
+href="codelists/gc/XU-CustomsTariffCode.gc">XU-CustomsTariffCode.gc</a></td>
+</tr>
+<tr>
+<td>Value added tax exemption reason (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode</code></td>
+<td>Government of Urvania</td>
+<td style="text-align: right;">7</td>
+<td><a
+href="codelists/gc/XU-TaxExemptionReasonCode.gc">XU-TaxExemptionReasonCode.gc</a></td>
+</tr>
+<tr>
+<td>Waste list (UBL example world)</td>
+<td><code>urn:ubl-examples:world:XU:codelist:WasteCode</code></td>
+<td>Government of Urvania</td>
+<td style="text-align: right;">8</td>
+<td><a href="codelists/gc/XU-WasteCode.gc">XU-WasteCode.gc</a></td>
+</tr>
+</tbody>
+</table>
+</main>
+</div>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/78a77416e1cf0d9665aba2bd87aad7143106018e"><code>78a7741</code></a> of 2026-11-20 09:59 UTC</p></div></footer>
+</body>
+</html>
