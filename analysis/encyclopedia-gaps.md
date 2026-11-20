@@ -16,6 +16,13 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 - The years of the Trade Accord's later protocols: procurement rules, the payment link and card schemes, electronic business documents.
 - The name of the main river and of the plateau rivers.
 
+## Taken over from the working session (2026-11-20)
+
+The backstory points WK001 to WK007 in `analysis/worklist-decisions.md` (the traits of each English; Bayvarra's and
+Lisavu's history and the protocols' dates; the Elderwick label; the island's and the mainland's geography and names;
+the Accord's chapter on public services; the holidays' back stories; Ferrano Energy's other suppliers). They are
+decided with the owner one at a time, like the gaps here.
+
 ## Companies and institutions
 
 ### Bank of Lumeport (25-xb)
