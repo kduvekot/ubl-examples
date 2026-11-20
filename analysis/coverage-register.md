@@ -824,6 +824,13 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `Reminder/TaxCurrencyCode` | 0..1 | tender/35-Reminder | | | open |
 | `Reminder/TaxExchangeRate` | 0..1 | tender/35-Reminder | | | open |
 
+> C127, D28 point 7: the Procurement Review Board is only the party appeals go to, given with its address and contact in every document that states appeal terms (a rule of `party_profile()`); there is no mediation step, and the board is not also the party for information on appeals (tender/20#F6, 23#F4; the admission notice tender/20 already carries no appeal terms, 20#F8).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `AppealTerms/AppealInformationParty` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders, tender/23-UnawardedNotification | | | open |
+| `AppealTerms/MediationParty` | 0..1 | tender/02-ContractNotice, tender/23-UnawardedNotification | | | open |
+
 ### G4: energy, utilities (2026-11-19)
 
 Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).

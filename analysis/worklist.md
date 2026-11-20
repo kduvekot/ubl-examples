@@ -1957,6 +1957,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: none of D1 to D27.
 - State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 20#F6, 20#F7, 20#F8, 21#F1, 23#F3, 23#F4, 23#F5
+- **Fixed (2026-11-19):** the award documents report a completed opening and a reachable appeal body (D28 point 7): the award notice's opening event is completed, with the new status `COMPLETED` of the world's status condition list (21#F1); the Procurement Review Board is only the party appeals go to (no information party, no mediation, 20#F6, 23#F4), and every document with appeal terms (tender 01, 02, 03, 21, 23 and the contest's notices and exclusion) gives it with its address, telephone and e-mail (a rule in `party_profile()`, `tools/build_examples.py`; 20#F7, 23#F5); the admission notice carries no appeal terms (20#F8, already with C125); the contract is formalised from 20 March, after the appeal period ends on 19 March (23#F3, already with C125); the winner's subcontract is not told to the losing tenderer (23, already with C119). Coverage −2 (register, G6).
 
 ### C128 · Tender: moss green ordered, grey identified
 - Kind: flow story · Findings: 6 (High 5, Medium 1, Low 0) in 6 files, 1 flow · Needs decision: none

@@ -2185,7 +2185,8 @@
    "why": "The authority announces the planned purchase early, through the publication service.",
    "parties": {
     "ContractingParty": "2-xb",
-    "ReceiverParty": "21-xb"
+    "ReceiverParty": "21-xb",
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
    }
   },
   {
@@ -2197,8 +2198,7 @@
    "parties": {
     "ContractingParty": "2-xb",
     "ReceiverParty": "21-xb",
-    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb",
-    "TenderingTerms/AppealTerms/MediationParty": "28-xb"
+    "TenderingTerms/AppealTerms/AppealReceiverParty": "28-xb"
    }
   },
   {
@@ -2436,7 +2436,8 @@
    "why": "The furniture maker is told that the contract went to another tenderer.",
    "parties": {
     "SenderParty": "2-xb",
-    "ReceiverParty": "37-xb"
+    "ReceiverParty": "37-xb",
+    "AppealTerms/AppealReceiverParty": "28-xb"
    }
   },
   {

@@ -8767,8 +8767,8 @@ def tendering_terms(f, call=False):
             "TenderValidityPeriod": {"DurationMeasure": V("90", "Tenders hold for 90 days.", unitCode="DAY")},
             "ContractAcceptancePeriod": {"DurationMeasure": V("10", "The standstill: ten days.", unitCode="DAY")},
             "AppealTerms": {"Description": V("Appeals to the review board within ten days of the award.", "How."),
-                            "PresentationPeriod": {"DurationMeasure": V("10", "Ten days.", unitCode="DAY")},
-                            "AppealInformationParty": party(BOARD, short=True)},
+                            "PresentationPeriod": {"DurationMeasure": V("10", "Ten days.", unitCode="DAY")}},
+            # the review board is only the party appeals go to, with its contact (D28 point 7, tender/20#F6, 23#F4)
             "Language": {"ID": V("en", "English."), "Name": V("English", "In words."),
                          "LocaleCode": V("en-XB", "Bayvarran English, the city's.")},
             "BudgetAccountLine": {"ID": V("BL-PARKS-26", "The budget line."),
@@ -9477,9 +9477,7 @@ def appeal_terms():
                                                                    "sent, Tuesday 10 March (D28 point 1)."),
                                    "EndDate": V(TENDER.date(66), "Ten days, to Thursday 19 March, the end of the "
                                                                  "standstill period.")},
-            "AppealInformationParty": party(BOARD, short=True),
-            "AppealReceiverParty": party(BOARD, short=True),
-            "MediationParty": party(BOARD, short=True)}
+            }   # the review board as the party appeals go to comes in full from world/documents.json (D28 point 7)
 
 
 def tender_result(f, full=True):
@@ -9692,6 +9690,12 @@ def award_process(f):
     keep = ("ID", "Description", "ProcedureCode", "ContractingSystemCode", "OpenTenderEvent", "AuctionTerms")
     out = {k: full[k] for k in keep}
     out["AuctionTerms"] = {k: full["AuctionTerms"][k] for k in ("AuctionConstraintIndicator", "Description")}
+    ev = dict(out["OpenTenderEvent"])
+    ev.update({"CompletionIndicator": V("true", "The opening took place on 26 February, before the award "
+                                                "(tender/21#F1)."),
+               "CurrentStatus": {"ConditionCode": V("COMPLETED", "Held as planned.")}})
+    ev.pop("Contact", None)
+    out["OpenTenderEvent"] = ev
     return out
 
 

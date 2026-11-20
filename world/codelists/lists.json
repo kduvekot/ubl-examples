@@ -1208,6 +1208,10 @@
      "Scheduled",
      "Planned for the time given."
     ],
+    "COMPLETED": [
+     "Completed",
+     "Took place as planned: an event reported after it happened."
+    ],
     "ONTIME": [
      "On time",
      "Running to plan."
