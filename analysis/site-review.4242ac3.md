@@ -136,6 +136,11 @@ irrelevant · structure · process.
     the nav and the cards;
   - the map has the site's links in its toolbar (SR-03, part).
   Answers Q-A-02 (the owner's own structure, neither A, B nor C).
+  **Look and feel (owner, 2026-11-20):** one identity with the map: the map's dark toolbar as every page's
+  header, the five party-kind colours as markers, plain bold sans-serif headings (the pixel font only for the
+  name "UBL World"; the owner did not like pixel headings), light and dark following the device, nothing that
+  reads as a generated template (no gradients, icon tiles, pills or hover lifts); the method note tucked away at
+  the end of About. A light/dark switch was offered and not taken for now.
 - **What:** no landing card for Examples, Specifications or Code lists; the second button leads to the OASIS
   release log; `releases.html` is the README titled "ubl-examples" about `xml/` only; "Releases" and "History"
   are both OASIS history and "History" reads as the world's; specifications are linked from one sentence

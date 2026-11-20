@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The UBL World</title>
 <meta name="description" content="Three countries trade under the Lumeport Trade Accord, in UBL 2.5: a fictional world in which every value of every document comes with its reason.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="site.css?v={{cssv}}">
 </head>
 <body>
 <!--NAV-->
 <main class="home">
-  <section class="hero world-hero">
+  <section class="hero">
     <div class="hero-text">
-      <p class="eyebrow">The UBL World · UBL 2.5</p>
-      <h1>Three countries, one trade accord, <span class="accent">every document explained</span></h1>
+      <h1>Three countries, one trade accord, every document explained</h1>
       <p class="lead">Urvania, Bayvarra and the island of Lisavu trade under the Lumeport Trade Accord.
         Their mines, factories, carriers, ports, shops, banks and authorities order, ship, declare,
         invoice and pay each other in UBL 2.5, and every value in every document comes with the
@@ -24,9 +26,10 @@
       </p>
       <p class="wip">A fictional world, made to show UBL 2.5 in use · work in progress · not an OASIS publication</p>
     </div>
-    <a class="hero-map" href="world.html" title="Open the interactive map">
-      <img src="world-preview.jpg" width="1600" height="{{preview_h}}" alt="The map of the UBL World: Urvania and Bayvarra on the mainland, the island of Lisavu in its own panel, with their towns, roads, railways and pipelines">
-    </a>
+    <figure class="hero-map"><a href="world.html" title="Open the interactive map">
+      <img src="world-preview.jpg" width="1600" height="{{preview_h}}" alt="The map of the UBL World: Urvania and Bayvarra on the mainland, the island of Lisavu in its own panel, with their towns, roads, railways and pipelines"></a>
+      <figcaption>Urvania and Bayvarra, with Lisavu in its own panel. <a href="world.html">Open the interactive map</a></figcaption>
+    </figure>
   </section>
 
   <section class="stats" aria-label="The world in figures">
@@ -38,37 +41,31 @@
 
   <section class="cards" aria-label="Sections">
     <a class="card" href="world.html">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z M3 13l9 5 9-5 M3 18l9 5 9-5"/></svg>
       <h2>The map</h2>
       <p>The three countries in isometric tiles: the towns, the parties in them, the roads, railways,
         rivers and pipelines, and the routes the goods take.</p>
     </a>
     <a class="card" href="examples.html">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11l-3-3 M20 17H9l3 3 M4 7v4 M20 17v-4"/></svg>
       <h2>Trade</h2>
       <p>The flows of trade, each told as a story with its documents: from the ore at the mine to the bench
         in the park, the cotton bale and the power on the grid.</p>
     </a>
     <a class="card" href="parties.html">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6 M14.5 14.5c3 0 5.5 2 5.5 5"/></svg>
       <h2>Parties</h2>
       <p>Who is who: what each party does, how it identifies itself, and every document it sends,
         receives or is named in.</p>
     </a>
     <a class="card" href="world-specifications.html">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z M15 3v3h3 M9 11h6 M9 15h6"/></svg>
       <h2>Rules of the Accord</h2>
       <p>The specifications the documents claim, from the Accord's transactions to the national and
         community rules, and the code lists they use.</p>
     </a>
     <a class="card" href="map-sheet.html">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14"/></svg>
       <h2>The map sheet</h2>
       <p>The world as a printed map: an A3 sheet at 1 : 2,500,000 with the landscape, the towns, roads and
         railways, and Lisavu in its own panel.</p>
     </a>
     <a class="card" href="about.html">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6 M12 7.5v.01"/></svg>
       <h2>About this project</h2>
       <p>Why this world exists, how it is made and checked, how much of UBL 2.5 it covers, and the OASIS
         sample documents of every UBL release.</p>
