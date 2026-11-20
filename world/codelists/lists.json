@@ -247,6 +247,17 @@
     ]
    }
   },
+  "XL:TaxExemptionReason": {
+   "scope": "XL",
+   "name": "Import consumption tax exemption reason",
+   "description": "Why goods imported into Lisavu carry no import consumption tax. The tax falls on every import whatever its origin (D18); its exemptions are few and named here.",
+   "codes": {
+    "MEDHOSP": [
+     "Medicines and vaccines for a public hospital",
+     "Medicines and vaccines supplied to a public hospital of Lisavu are exempt from the import consumption tax of 10 %, and so is their import for that supply; the general rule of D18 is unchanged for everything else (O201). The real parallel is Sweden's VAT law, Mervärdesskattelag (2023:200) chapter 10 § 13, which exempts deliveries of medicines to hospitals and their import in connection with such a delivery."
+    ]
+   }
+  },
   "XU:TaxExemptionReason": {
    "scope": "XU",
    "name": "Value added tax exemption reason",
@@ -949,6 +960,7 @@
     "774": "",
     "856": "",
     "861": "",
+    "890": "",
     "917": ""
    }
   },
@@ -2220,6 +2232,14 @@
     "1965": [
      "Hydrocarbon gas mixture, liquefied, n.o.s.",
      "Class 2.1."
+    ],
+    "2915": [
+     "Radioactive material, Type A package, non-special form, non fissile or fissile-excepted",
+     "Class 7."
+    ],
+    "1845": [
+     "Carbon dioxide, solid (dry ice)",
+     "Class 9."
     ]
    },
    "entries_note": "classes: the class or division of each UN entry, subsidiary: its subsidiary hazard; both from the Dangerous Goods List (column 3 and 4), as BAM DGG-Info gives it. The build checks that every dangerous goods item has the class and proper shipping name of its UN number.",
@@ -2232,7 +2252,9 @@
     "1202": "3",
     "1203": "3",
     "1950": "2",
-    "1965": "2.1"
+    "1965": "2.1",
+    "2915": "7",
+    "1845": "9"
    },
    "subsidiary": {
     "2920": "3"
@@ -2420,8 +2442,16 @@
      "Substances - Toxic and/or Corrosive (Combustible)",
      ""
     ],
+    "120": [
+     "Gases - Inert (Including Refrigerated Liquids)",
+     ""
+    ],
     "161": [
      "Radioactive Materials (Low Level Radiation)",
+     ""
+    ],
+    "163": [
+     "Radioactive Materials (Low to High Level Radiation)",
      ""
     ],
     "171": [
@@ -2588,6 +2618,10 @@
     "PI855": [
      "Packing instruction 855",
      "Corrosive liquids of packing group II, on cargo aircraft only."
+    ],
+    "PI954": [
+     "Packing instruction 954",
+     "Dry ice (UN 1845), on its own or as a refrigerant of other goods, in a package that lets the carbon dioxide escape."
     ],
     "PI965IA": [
      "Packing instruction 965, section IA",
@@ -7095,8 +7129,11 @@
     "27180": "",
     "28232": "",
     "31102": "",
+    "33690": "",
     "34710": "",
     "35110": "",
+    "35260": "",
+    "35270": "",
     "36330": "",
     "36410": "",
     "381": "",
@@ -7131,6 +7168,18 @@
     ],
     "271121": [
      "Natural gas, in gaseous state",
+     ""
+    ],
+    "284443": [
+     "Radioactive elements, isotopes and compounds; other alloys, dispersions (including cermets), ceramic products and mixtures containing these elements, isotopes or compounds",
+     ""
+    ],
+    "300241": [
+     "Vaccines, toxins, cultures of micro-organisms (excluding yeasts) and similar products; for human medicine",
+     ""
+    ],
+    "300431": [
+     "Medicaments; containing insulin, for therapeutic or prophylactic uses, packaged for retail sale",
      ""
     ],
     "321000": [
@@ -7858,6 +7907,7 @@
    "element": "TaxExemptionReasonCode",
    "list": [
     "XB:TaxExemptionReason",
+    "XL:TaxExemptionReason",
     "XU:TaxExemptionReason"
    ],
    "text": "TaxExemptionReason"

@@ -894,6 +894,7 @@
    "address": "cbc:TaxExemptionReasonCode",
    "lists": [
     "XB:TaxExemptionReason",
+    "XL:TaxExemptionReason",
     "XU:TaxExemptionReason"
    ]
   },
@@ -5048,6 +5049,15 @@
     "CHARITY"
    ]
   },
+  "XL:TaxExemptionReason": {
+   "listID": "urn:ubl-examples:world:XL:codelist:TaxExemptionReasonCode",
+   "scope": "XL",
+   "name": "Import consumption tax exemption reason",
+   "location": "world/codelists/gc/XL-TaxExemptionReasonCode.gc",
+   "codes": [
+    "MEDHOSP"
+   ]
+  },
   "XU:TaxExemptionReason": {
    "listID": "urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode",
    "scope": "XU",
@@ -5412,6 +5422,7 @@
     "774",
     "856",
     "861",
+    "890",
     "917"
    ]
   },
@@ -6035,7 +6046,9 @@
     "1202",
     "1203",
     "1950",
-    "1965"
+    "1965",
+    "2915",
+    "1845"
    ]
   },
   "UNModelRegsClass": {
@@ -6141,7 +6154,9 @@
     "132",
     "147",
     "153",
+    "120",
     "161",
+    "163",
     "171",
     "115"
    ]
@@ -6220,6 +6235,7 @@
    "location": "world/codelists/gc/PackingInstructionCode.gc",
    "codes": [
     "PI855",
+    "PI954",
     "PI965IA",
     "PI965IB",
     "PI966",
@@ -8486,8 +8502,11 @@
     "27180",
     "28232",
     "31102",
+    "33690",
     "34710",
     "35110",
+    "35260",
+    "35270",
     "36330",
     "36410",
     "381",
@@ -8513,6 +8532,9 @@
     "260111",
     "271112",
     "271121",
+    "284443",
+    "300241",
+    "300431",
     "321000",
     "381400",
     "390110",

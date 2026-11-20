@@ -160,7 +160,13 @@ def identity(p):
     rows.append((f"In {c['name']}", f"Currency: {cur['name']} (`{cur['code']}`). Taxes: {c['tax']['summary']}"))
     return ["## Identity", "", "| | |", "|---|---|"] + [f"| {k} | {v} |" for k, v in rows] + [""]
 
+ABROAD = {p["id"]: p for p in world.get("abroad", [])}     # makers outside the world (O229): no page, no map
+
+
 def link(pid):
+    if pid in ABROAD:
+        p = ABROAD[pid]
+        return f"{label(p)} ({world['abroad_countries'][p['c']]['name']}, outside the world)"
     return f"[{label(parties[pid])}](world-{pid}.html)"
 
 flows = {f["id"]: f for f in world["flows"]}
@@ -240,7 +246,7 @@ for p in world["parties"]:
     if v["partners"]:
         lines += ["## Trading partners in the world", "",
                   "The parties it exchanges documents with:", ""]
-        lines += [f"- {link(q)}, {world['countries'][parties[q]['c']]['name']}" for q in v["partners"]] + [""]
+        lines += [f"- {link(q)}" + ("" if q in ABROAD else f", {world['countries'][parties[q]['c']]['name']}") for q in v["partners"]] + [""]
     lines += ["## In the world", "",
               f"[See {p['name']} on the map](world.html#{p['id']}) · "
               f"{c['name']}: {c['note']}", "",

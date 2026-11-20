@@ -154,7 +154,6 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Attachment/FileName` | 0..1 | sea/03-DigitalAgreement |  |  | open |
 | `DocumentReference/XPath` | 0..n | sea/03-DigitalAgreement |  |  | open |
 | `ExternalReference/CharacterSetCode` | 0..1 | sea/03-DigitalAgreement |  |  | open |
 
@@ -421,7 +420,6 @@ Coverage 5049 → 4996 (commit 1bf967d6), 53 elements.
 | `StatementLine/BeneficiaryParty` | 0..n | sea/25-Statement | | | open |
 | `StatementLine/OriginatorCustomerParty` | 0..1 | sea/25-Statement | | | open |
 | `StatementLine/SellerSupplierParty` | 0..1 | sea/25-Statement | | | open |
-| `Temperature/MeasureCode` | 0..1 | mast/02-ForwardingInstructions, plastics/09-ImportCustomsDeclaration | | | open |
 | `Tender/BeneficiaryParty` | 0..n | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
 | `Tender/OriginatorCustomerParty` | 0..1 | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
 | `TenderLine/ReplacementRelatedItem` | 0..n | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
@@ -632,7 +630,6 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `GoodsItem/ReturnableQuantity` | 0..1 | plastics/06-Waybill | | | open |
 | `GoodsItem/ValueAmount` | 0..1 | plastics/06-Waybill | the amount the island's import consumption tax of 10 % is assessed on, the landed value of a goods item in an import declaration into Lisavu (D18; "the amount on which a duty, tax, or fee will be assessed") | sea | candidate |
 | `ItemInstance/BestBeforeDate` | 0..1 | plastics/08-DespatchAdvice | fresh food with a best-before date, such as the reefer's apples (O137, still to design) | reefer | open |
-| `LotIdentification/ExpiryDate` | 0..1 | plastics/08-DespatchAdvice | a lot of vaccines or medicines with its expiry date in the medicines flow's despatch advice (D47) | medicines | candidate |
 
 > C89, D43: the sawmill sells the bundle of 50 slats as its item, so quotation, order and invoice are in bundles and no price converts a piece price into a pack (02#F13, 03#F10, 08#F14); the quotation's main line is oak with ash as the priced alternative, and the 35 mm substitute goes (02#F16).
 
@@ -649,7 +646,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Attachment/EmbeddedDocument` | 0..1 | carnet/04-ProofOfReexportation | a clear-text document attached as such, such as the temperature logger's readings of the vaccine container as a CSV in the medicines flow's status or receipt (D47) | medicines | candidate |
 | `Consignment/OfficeOfSubSequentiallyEntryLocation` | 0..1 | carnet/01-GoodsItemPassport | the containers of the rail flow enter Bayvarra at the rail border station and are cleared at Bayvarra customs' inland office at Marrowdale, a facility where goods are processed after their initial entry point (D37, rail/14) | rail | candidate |
 | `Person/MiddleName` | 0..1 | carnet/01-GoodsItemPassport | | | open |
 | `Person/NameSuffix` | 0..1 | carnet/01-GoodsItemPassport | | | open |
@@ -674,9 +670,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `GoodsItem/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions | the vaccines' 8 °C in the medicines flow's forwarding instructions or waybill (D47, O124) | medicines | agreed |
-| `GoodsItem/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions | the vaccines' 2 °C (D47, O124) | medicines | agreed |
-| `GoodsItem/Temperature` | 0..n | mast/02-ForwardingInstructions | the vaccines' set point in transport (D47, O124) | medicines | agreed |
 | `HazardousGoodsTransit/InhalationToxicityZoneCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a gas or liquid toxic by inhalation; the world has none | | open |
 | `HazardousGoodsTransit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `HazardousGoodsTransit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
@@ -686,11 +679,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `TransportEquipment/HazardousGoodsTransit` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `TransportEquipment/HumanFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer, approved for food (O137, O205) | reefer | candidate |
 | `TransportEquipment/HumidityPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's humidity setting (O137, O205) | reefer | candidate |
-| `TransportEquipment/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container of the vaccines, 8 °C (D47, O124) | medicines | agreed |
-| `TransportEquipment/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container, 2 °C (D47, O124) | medicines | agreed |
-| `TransportEquipment/RefrigerationOnIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the active RKN container switched on (D47, O124) | medicines | agreed |
-| `TransportHandlingUnit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 8 °C (D47, O124) | medicines | agreed |
-| `TransportHandlingUnit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 2 °C (D47, O124) | medicines | agreed |
 
 > C85, C86, D39: the urgent frames fly on a direct air waybill, one small consignment on a named flight, so the consolidation, the house consignment and its sequence number go (air/04#F2, F7); the forwarder trucks the skid to the terminal itself and Nalevi collects it at Selanu, so no substitute carrier (04#F6); CPT is stated once, on the order change's air line, so neither the order change nor its delivery carries delivery terms (01#F5); the acceptance is unconditional, so it has no validity period (02#F4).
 
@@ -783,13 +771,9 @@ Stage 6, building group G5 (C100, C101, C102; D35).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Condition/MaximumMeasure` | 0..1 | road/09-TransportationStatus | the highest temperature the temperature-controlled unit of the medicines flow logged during the flight, in the carrier's status on arrival (2–8 °C, D47) | medicines | candidate |
-| `Condition/Measure` | 0..1 | road/09-TransportationStatus | the temperature in the medicines' temperature-controlled unit at arrival (D47) | medicines | candidate |
-| `Condition/MinimumMeasure` | 0..1 | road/09-TransportationStatus | the lowest temperature the unit logged during the flight (D47) | medicines | candidate |
 | `Delivery/MaximumDeliveryUnit` | 0..1 | road/01-Order | | | open |
 | `DocumentResponse/IssuerParty` | 0..1 | road/16-ApplicationResponse | | | open |
 | `DocumentResponse/RecipientParty` | 0..1 | road/16-ApplicationResponse | | | open |
-| `Status/IndicationIndicator` | 0..1 | road/09-TransportationStatus | in the same status of the medicines flow, whether the temperature stayed within 2–8 °C for the whole carriage, stated as what the indicator means (D47) | medicines | candidate |
 
 > C101, D35 point 2: the chamber certifies and is the only endorser; the embassy endorsement by the Trade Accord Council goes, since a certificate between Accord members needs no legalisation (07#F10), and so does the insurer's endorsement (06#F3, 07#F9); the application is a first one and names no previous job (06#F17, 07#F18).
 
@@ -1063,8 +1047,6 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Invoice/PaymentCurrencyCode` | 0..1 | tender/32-Invoice, tender/39-Invoice | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
-| `Invoice/PaymentExchangeRate` | 0..1 | tender/32-Invoice, tender/39-Invoice | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 | `Order/PaymentExchangeRate` | 0..1 | tender/26-Order | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 | `Reminder/PaymentCurrencyCode` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 | `Reminder/PaymentExchangeRate` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
@@ -1078,7 +1060,6 @@ Never covered; added only through a real business situation in the world (`CLAUD
 | `ContractExtension/MinimumNumberNumeric` | 0..1 | never covered |  |  | left out |
 | `Manifest/DeclaredCarriageValueAmount` | 0..1 | never covered |  |  | left out |
 | `RadioactiveMaterial/FissileCriticalitySafetyIndexNumeric` | 0..1 | never covered |  |  | left out |
-| `RadioactiveMaterial/TransportIndexNumeric` | 0..1 | never covered | the technetium generator of the medicines flow (D47) | medicines | agreed |
 | `ShipmentStage/TransshipPortLocation` | 0..1 | never covered |  |  | left out |
 | `SubcontractTerms/MinimumPercent` | 0..1 | never covered |  |  | left out |
 
@@ -1095,6 +1076,25 @@ Elements that were in this register and are covered again, with the example that
 | `EmissionCalculationMethod/FullnessIndicationCode` | lpg/03-Waybill | the tanker's CO2e for the water company's greenhouse-gas report: the loaded run Gullhaven to Lumeport, UN/EDIFACT 8169 code 5 full, and the empty run back, code 4 empty (owner, 2026-11-20; list UNCL8169) | 2026-11-20 |
 | `EnvironmentalEmission/ValueFactorNumeric` | lpg/03-Waybill | each run's CO2e is its diesel times the tank-to-wheel factor 0.268 kg CO2e per kWh (D41's factor): the factor | 2026-11-20 |
 | `EnvironmentalEmission/ValueBaseMeasure` | lpg/03-Waybill | and the base: the kWh of diesel each run used, from the haulier's fuel records (1,700 kWh loaded, 1,240 kWh empty) | 2026-11-20 |
+| `Attachment/EmbeddedDocument` | medicines/12-TransportationStatus | the active container's logger readings, a comma-separated text of 25 readings from its closing at the wholesaler to its opening at Selanu's cargo terminal, attached to the arrival status so the hospital pharmacy keeps them with its stock records (D47) | 2026-11-20 |
+| `Attachment/FileName` | medicines/12-TransportationStatus | the name of the logger's file attached to the arrival status (D47) | 2026-11-20 |
+| `Condition/MaximumMeasure` | medicines/12-TransportationStatus | the highest temperature the active container logged on the way to the island, inside 2 to 8 °C (D47) | 2026-11-20 |
+| `Condition/Measure` | medicines/10-TransportationStatus, medicines/12-TransportationStatus | the container's temperature read at acceptance at Lumeport's cargo terminal, and when it was opened at Selanu (D47) | 2026-11-20 |
+| `Condition/MinimumMeasure` | medicines/12-TransportationStatus | the lowest temperature the active container logged on the way (D47) | 2026-11-20 |
+| `GoodsItem/MaximumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the highest temperature each cold-chain goods item may reach: 8 °C for the vaccine and the insulin, -15 °C for the frozen vaccine (D47, O124) | 2026-11-20 |
+| `GoodsItem/MinimumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the lowest: 2 °C, and -50 °C for the frozen vaccine (D47, O124) | 2026-11-20 |
+| `GoodsItem/Temperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the vaccine's and the insulin's carriage temperature, the set point of 5 °C (D47, O124) | 2026-11-20 |
+| `Invoice/PaymentCurrencyCode` | medicines/02-Invoice | the Indian maker invoices in rupees and asks payment in euro, the currency the wholesaler pays its suppliers abroad in (O229; a trade outside the Accord, O51) | 2026-11-20 |
+| `Invoice/PaymentExchangeRate` | medicines/02-Invoice | the ECB's euro reference rate of the invoice date, 110.938 rupees per euro, by which the rupee amount is paid in euro (O229, O51) | 2026-11-20 |
+| `LotIdentification/ExpiryDate` | medicines/09-DespatchAdvice | the expiry dates of the makers' lots of the influenza and varicella vaccines and of the insulin, which the hospital pharmacy checks on receipt (D47) | 2026-11-20 |
+| `RadioactiveMaterial/TransportIndexNumeric` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the technetium generator's Type A package, transport index 1.5, Category III-YELLOW (D47, O202) | 2026-11-20 |
+| `Status/IndicationIndicator` | medicines/12-TransportationStatus | whether the temperature stayed within 2 to 8 °C for the whole carriage, which the hospital needs to accept the goods (D47) | 2026-11-20 |
+| `Temperature/MeasureCode` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the set point of the cold-chain goods as the target of their range (TARGET, D47) | 2026-11-20 |
+| `TransportEquipment/MaximumTemperature` | medicines/11-Waybill | the airline's active RKN container's upper limit, 8 °C (D47, O124) | 2026-11-20 |
+| `TransportEquipment/MinimumTemperature` | medicines/11-Waybill | its lower limit, 2 °C (D47, O124) | 2026-11-20 |
+| `TransportEquipment/RefrigerationOnIndicator` | medicines/11-Waybill | the active container switched on, holding its set point on its batteries (D47, O124) | 2026-11-20 |
+| `TransportHandlingUnit/MaximumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the cold-chain handling unit at 8 °C at most, the frozen vaccine's box at -15 °C (D47, O124) | 2026-11-20 |
+| `TransportHandlingUnit/MinimumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | at 2 °C at least, the frozen vaccine's box at -50 °C (D47, O124) | 2026-11-20 |
 | `Order/OriginatorDocumentReference` | sea/05-Order | the Port of Selanu's request to the trader, which the order's port line follows (G8, O172) | 2026-11-19 |
 | `RemittanceAdviceLine/DocumentReference` | tender/36-RemittanceAdvice | the department's deduction of the penalty for late completion under clause PEN-1 of the framework contract, which the remittance line cites as the document it is based on (D28 point 9, D9: the penalty is not a debit note) | 2026-11-19 |
 | `QualificationResolution/ExclusionReason` | contest/18-TendererQualificationResponse | Fernhollow Studio, a small design studio of Lumeport, asks to take part in the design contest and is excluded at the selection for social security contributions of 3,860 lume due and unpaid, above the minor amounts; the department tells it why and how to appeal (O102, D29 point 6) | 2026-11-19 |
