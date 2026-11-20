@@ -26,8 +26,8 @@ Before trading, the two parties join the multilateral digital agreement that fix
   Signed before the first order.
 - `IssueTime` = **12:59:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `AgreementTypeCode` = **BILATERAL** (listID `urn:ubl-examples:world:codelist:AgreementTypeCode`)  
-  An agreement between two parties. The code is from the Trade Accord's agreement type list: BILATERAL = Bilateral agreement.
+- `AgreementTypeCode` = **MULTILATERAL** (listID `urn:ubl-examples:world:codelist:AgreementTypeCode`)  
+  The Trade Accord's multilateral digital agreement, which the Trade Accord Council governs and to which the distributor and the island buyer accede (D30 point 7, sea/03#F7). The code is from the Trade Accord's agreement type list: MULTILATERAL = Multilateral agreement.
 - `VersionID` = **1.0**  
   The first version of the agreement.
 - `PreviousVersionID` = **0.9**  
@@ -40,7 +40,7 @@ Before trading, the two parties join the multilateral digital agreement that fix
 Inside `Signature`:
 
 - `ID` = **LD-SIG-26-DA-1**  
-  The distributor's signature as governor.
+  The distributor's signature of its accession; the buyer signs its own accession (what a signature carries waits for the signatures stage, D6).
 - `ReasonCode` = **APPROVAL** (listID `urn:ubl-examples:world:codelist:SignatureReasonCode`)  
   The signer approves the document. The code is from the Trade Accord's signature reason list: APPROVAL = Approval.
 - `Note` = **Signed with the company's seal certificate.**  
@@ -256,49 +256,47 @@ Inside `ParticipantParty`:
 
 Inside `AgreementCountry`:
 
+- `IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The agreement applies in the Trade Accord's member countries: Urvania (sea/03#F12). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Governed by Bayvarra's law. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  The agreement applies in the Trade Accord's member countries: Bayvarra (sea/03#F12). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The agreement applies in the Trade Accord's member countries: Lisavu (sea/03#F12). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ### Required Certification Document Reference
 
 Inside `RequiredCertificationDocumentReference`:
 
-- `ID` = **LD-EDI-TERMS-1.0**  
-  The terms both sides must certify.
-- `UUID` = **ed76dcbb-efca-5239-9195-cf2d240a09d4**  
+- `ID` = **LTAC-AP-REQ-2.0**  
+  The certification the participants' access points must hold, by the Trade Accord Council's requirements (sea/03#F6).
+- `UUID` = **dc787c2a-3f1a-547c-a3f0-172d3721bfb5**  
   Its UUID.
-- `IssueDate` = **2026-05-05**  
-  Its issue date.
+- `IssueDate` = **2026-01-02**  
+  The council published version 2.0 at the start of the year.
 - `IssueTime` = **12:00:00**  
   And time.
 - `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document. The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
-- `XPath` = **/DigitalAgreement/DigitalAgreementTerms**  
-  The part of this document the reference explains.
 - `ReferencedDocumentInternalAddress` = **section-2**  
-  The section of the referenced document meant.
+  The section of the referenced document meant: the requirements for a participant's own access point.
 - `LanguageID` = **en**  
   In English.
 - `LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The terms are written in Bayvarran English, by the distributor. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
-- `VersionID` = **1.0**  
+  Written in Bayvarran English, by the council in Lumeport. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+- `VersionID` = **2.0**  
   The version referred to.
 - `DocumentStatusCode` = **Confirmed** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
-  The version both sides confirmed. The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
-- `DocumentDescription` = **The terms of the digital trade agreement.**  
+  The version in force. The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
+- `DocumentDescription` = **The Trade Accord Council's requirements for the certification of access points on the trade accord's network.**  
   What it is.
-- `Attachment/EmbeddedDocumentBinaryObject` = **VGVybXMgb2YgdGhlIGRpZ2l0YWwgdHJhZGUgYWdyZWVtZW50IG9mIHRoZSB3b3JsZCwgdmVyc2lvbiAxLjAu** (mimeCode `text/plain`)  
-  A short text, Base64-encoded.
-- `Attachment/FileName` = **terms.txt**  
-  The file's name.
-- `Attachment/ExternalReference/URI` = **https://www.lumeway.example/edi/terms-1.0.pdf**  
-  The full text.
+- `Attachment/ExternalReference/URI` = **https://www.tradeaccord.example/network/ap-requirements-2.0.pdf**  
+  The full text, on the council's site.
 - `Attachment/ExternalReference/DocumentHash` = **9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e**  
   The SHA-256 hash of the full text, to check it is unchanged.
 - `Attachment/ExternalReference/HashAlgorithmMethod` = **http://www.w3.org/2001/04/xmlenc#sha256**  
   SHA-256.
-- `Attachment/ExternalReference/ExpiryDate` = **2027-05-04**  
-  The link works for a year.
+- `Attachment/ExternalReference/ExpiryDate` = **2027-05-05**  
+  The link works as long as the reference is valid (sea/03#F15).
 - `Attachment/ExternalReference/ExpiryTime` = **23:59:00**  
   Until the end of that day.
 - `Attachment/ExternalReference/MimeCode` = **application/pdf** (listID `IANA Media Types`)  
@@ -307,11 +305,9 @@ Inside `RequiredCertificationDocumentReference`:
   An archivable PDF. The code is from the world's copy of PRONOM file format registry (PUIDs): fmt/480 = Acrobat PDF/A - Portable Document Format, version 3b.
 - `Attachment/ExternalReference/EncodingCode` = **binary** (listID `RFC 2045 Content-Transfer-Encoding`)  
   Not encoded. The code is from the world's copy of RFC 2045 Content-Transfer-Encoding: binary.
-- `Attachment/ExternalReference/CharacterSetCode` = **UTF-8** (listID `IANA Character Sets`)  
-  The character set of its text. The code is from the world's copy of IANA Character Sets: UTF-8.
-- `Attachment/ExternalReference/FileName` = **terms-1.0.pdf**  
+- `Attachment/ExternalReference/FileName` = **ap-requirements-2.0.pdf**  
   The file's name.
-- `Attachment/ExternalReference/Description` = **The full terms.**  
+- `Attachment/ExternalReference/Description` = **The full requirements.**  
   What it holds.
 - `ValidityPeriod/StartDate` = **2026-05-05**  
   In force from signing.
@@ -340,8 +336,8 @@ Inside `RequiredCertificationDocumentReference`:
 
 Inside `DigitalAgreementTerms`:
 
-- `Description` = **Documents are exchanged over the trade accord's network.**  
-  The terms.
+- `Description` = **The terms of the Trade Accord's multilateral digital agreement, version 1.0, published by the Trade Accord Council: documents are exchanged over the trade accord's network.**  
+  The terms: the Accord's own, which the participants accept by acceding, not the distributor's (sea/03#F16).
 - `ValidityPeriod/StartDate` = **2026-05-05**  
   From signing.
 - `ValidityPeriod/EndDate` = **2027-05-05**  
@@ -473,11 +469,83 @@ Inside `DigitalProcess`:
   The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.lumeway.example/as4**  
   The access point, under the party's own domain.
+- `DigitalCollaboration/ID` = **ordering-2**  
+  An exchange of the process: the main one first, then the other way (sea/03#F18).
+- `DigitalCollaboration/SendingDigitalService/ID` = **LD-OrderResponse-OUT**  
+  The party's service for this document.
+- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID` = **OrderResponse**  
+  The document type.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **OrderResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document type, as a code. The code is from the Trade Accord's UBL document type list: OrderResponse = Order Response.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
+  The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.lumeway.example/as4**  
+  The access point, under the party's own domain.
+- `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
+  The trade accord council's certificate that the distributor's system passed the conformance test.
+- `DigitalCollaboration/ReceivingDigitalService/ID` = **VT-OrderResponse-IN**  
+  The party's service for this document.
+- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID` = **OrderResponse**  
+  The document type.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **OrderResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document type, as a code. The code is from the Trade Accord's UBL document type list: OrderResponse = Order Response.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
+  The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.velumi.example/as4**  
+  The access point, under the party's own domain.
 - `CertificationDocumentReference/ID` = **ACCORD-CERT-PROC-ordering**  
   The council's certification of the process.
 - `ID` = **billing**  
   A process the parties agree to exchange electronically.
-- `Description` = **Invoice, credit note, statement and remittance advice.**  
+- `Description` = **Invoice and credit note from the distributor, its invoice status request and the buyer's response: the billing between the two participants; the factor's statement and the remittance to the factor are no part of it (sea/03#F18).**  
   What the process covers.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the agreement covers.
@@ -553,6 +621,78 @@ Inside `DigitalProcess`:
   The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.velumi.example/as4**  
   The access point, under the party's own domain.
+- `DigitalCollaboration/ID` = **billing-2**  
+  An exchange of the process: the main one first, then the other way (sea/03#F18).
+- `DigitalCollaboration/SendingDigitalService/ID` = **VT-InvoiceStatusResponse-OUT**  
+  The party's service for this document.
+- `DigitalCollaboration/SendingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:invoice-status:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/ID` = **InvoiceStatusResponse**  
+  The document type.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **InvoiceStatusResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document type, as a code. The code is from the Trade Accord's UBL document type list: InvoiceStatusResponse = Invoice Status Response.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-41859**  
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
+  The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
+- `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.velumi.example/as4**  
+  The access point, under the party's own domain.
+- `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
+  The trade accord council's certificate that the distributor's system passed the conformance test.
+- `DigitalCollaboration/ReceivingDigitalService/ID` = **LD-InvoiceStatusResponse-IN**  
+  The party's service for this document.
+- `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:invoice-status:1.0**  
+  The specification the documents of this service follow: the CustomizationID those documents carry in this flow.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/ID` = **InvoiceStatusResponse**  
+  The document type.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/FormatID` = **UBL**  
+  The format.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/VersionID` = **2.5**  
+  Its version.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/SchemaURI` = **https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd**  
+  The schema.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **InvoiceStatusResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document type, as a code. The code is from the Trade Accord's UBL document type list: InvoiceStatusResponse = Invoice Status Response.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
+  The trade accord's document network.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
+  The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)).
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
+  In production.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/ID` = **LTAC-AP-20410274**  
+  The serial number of the access point's X.509 certificate, unique only with its issuer: the Trade Accord Council, the certification authority of the network (decision ID-Q10).
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/CertificateType` = **Access point**  
+  Its kind.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyIdentification/ID` = **8423019675** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalCertificate/IssuerParty/PartyName/Name` = **Lumeport Trade Accord Council**  
+  A party referred to from another party's details: its identifier and name are enough.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/ProtocolID` = **AS4**  
+  The transport protocol.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EnvelopeTypeCode` = **SBDH** (listID `urn:ubl-examples:world:codelist:EnvelopeTypeCode`)  
+  The business envelope. The code is from the Trade Accord's envelope type list: SBDH = Standard Business Document Header.
+- `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.lumeway.example/as4**  
+  The access point, under the party's own domain.
 - `CertificationDocumentReference/ID` = **ACCORD-CERT-PROC-billing**  
   The council's certification of the process.
 
@@ -569,7 +709,7 @@ Inside `DigitalProcess`:
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>12:59:00-01:00</cbc:IssueTime>
-  <cbc:AgreementTypeCode listID="urn:ubl-examples:world:codelist:AgreementTypeCode">BILATERAL</cbc:AgreementTypeCode>
+  <cbc:AgreementTypeCode listID="urn:ubl-examples:world:codelist:AgreementTypeCode">MULTILATERAL</cbc:AgreementTypeCode>
   <cbc:VersionID>1.0</cbc:VersionID>
   <cbc:PreviousVersionID>0.9</cbc:PreviousVersionID>
   <cbc:RequiredResponseMessageLevelCode listID="urn:ubl-examples:world:codelist:ResponseMessageLevelCode">BUSINESS</cbc:RequiredResponseMessageLevelCode>
@@ -769,36 +909,38 @@ Inside `DigitalProcess`:
     </cac:CommercialContact>
   </cac:ParticipantParty>
   <cac:AgreementCountry>
+    <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+  </cac:AgreementCountry>
+  <cac:AgreementCountry>
     <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
   </cac:AgreementCountry>
+  <cac:AgreementCountry>
+    <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+  </cac:AgreementCountry>
   <cac:RequiredCertificationDocumentReference>
-    <cbc:ID>LD-EDI-TERMS-1.0</cbc:ID>
-    <cbc:UUID>ed76dcbb-efca-5239-9195-cf2d240a09d4</cbc:UUID>
-    <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+    <cbc:ID>LTAC-AP-REQ-2.0</cbc:ID>
+    <cbc:UUID>dc787c2a-3f1a-547c-a3f0-172d3721bfb5</cbc:UUID>
+    <cbc:IssueDate>2026-01-02</cbc:IssueDate>
     <cbc:IssueTime>12:00:00</cbc:IssueTime>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
-    <cbc:XPath>/DigitalAgreement/DigitalAgreementTerms</cbc:XPath>
     <cbc:ReferencedDocumentInternalAddress>section-2</cbc:ReferencedDocumentInternalAddress>
     <cbc:LanguageID>en</cbc:LanguageID>
     <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
-    <cbc:VersionID>1.0</cbc:VersionID>
+    <cbc:VersionID>2.0</cbc:VersionID>
     <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-    <cbc:DocumentDescription>The terms of the digital trade agreement.</cbc:DocumentDescription>
+    <cbc:DocumentDescription>The Trade Accord Council's requirements for the certification of access points on the trade accord's network.</cbc:DocumentDescription>
     <cac:Attachment>
-      <cbc:EmbeddedDocumentBinaryObject mimeCode="text/plain">VGVybXMgb2YgdGhlIGRpZ2l0YWwgdHJhZGUgYWdyZWVtZW50IG9mIHRoZSB3b3JsZCwgdmVyc2lvbiAxLjAu</cbc:EmbeddedDocumentBinaryObject>
-      <cbc:FileName>terms.txt</cbc:FileName>
       <cac:ExternalReference>
-        <cbc:URI>https://www.lumeway.example/edi/terms-1.0.pdf</cbc:URI>
+        <cbc:URI>https://www.tradeaccord.example/network/ap-requirements-2.0.pdf</cbc:URI>
         <cbc:DocumentHash>9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e</cbc:DocumentHash>
         <cbc:HashAlgorithmMethod>http://www.w3.org/2001/04/xmlenc#sha256</cbc:HashAlgorithmMethod>
-        <cbc:ExpiryDate>2027-05-04</cbc:ExpiryDate>
+        <cbc:ExpiryDate>2027-05-05</cbc:ExpiryDate>
         <cbc:ExpiryTime>23:59:00</cbc:ExpiryTime>
         <cbc:MimeCode listID="IANA Media Types">application/pdf</cbc:MimeCode>
         <cbc:FormatCode listID="PRONOM">fmt/480</cbc:FormatCode>
         <cbc:EncodingCode listID="RFC 2045 Content-Transfer-Encoding">binary</cbc:EncodingCode>
-        <cbc:CharacterSetCode listID="IANA Character Sets">UTF-8</cbc:CharacterSetCode>
-        <cbc:FileName>terms-1.0.pdf</cbc:FileName>
-        <cbc:Description>The full terms.</cbc:Description>
+        <cbc:FileName>ap-requirements-2.0.pdf</cbc:FileName>
+        <cbc:Description>The full requirements.</cbc:Description>
       </cac:ExternalReference>
     </cac:Attachment>
     <cac:ValidityPeriod>
@@ -824,7 +966,7 @@ Inside `DigitalProcess`:
     </cac:ResultOfVerification>
   </cac:RequiredCertificationDocumentReference>
   <cac:DigitalAgreementTerms>
-    <cbc:Description>Documents are exchanged over the trade accord's network.</cbc:Description>
+    <cbc:Description>The terms of the Trade Accord's multilateral digital agreement, version 1.0, published by the Trade Accord Council: documents are exchanged over the trade accord's network.</cbc:Description>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-05</cbc:StartDate>
       <cbc:EndDate>2027-05-05</cbc:EndDate>
@@ -936,13 +1078,85 @@ Inside `DigitalProcess`:
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>
     </cac:DigitalCollaboration>
+    <cac:DigitalCollaboration>
+      <cbc:ID>ordering-2</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>LD-OrderResponse-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>OrderResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>VT-OrderResponse-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>OrderResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-OrderResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
     <cac:CertificationDocumentReference>
       <cbc:ID>ACCORD-CERT-PROC-ordering</cbc:ID>
     </cac:CertificationDocumentReference>
   </cac:DigitalProcess>
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
-    <cbc:Description>Invoice, credit note, statement and remittance advice.</cbc:Description>
+    <cbc:Description>Invoice and credit note from the distributor, its invoice status request and the buyer's response: the billing between the two participants; the factor's statement and the remittance to the factor are no part of it (sea/03#F18).</cbc:Description>
     <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>billing-1</cbc:ID>
@@ -1012,6 +1226,78 @@ Inside `DigitalProcess`:
             <cbc:ProtocolID>AS4</cbc:ProtocolID>
             <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
             <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+      </cac:ReceivingDigitalService>
+    </cac:DigitalCollaboration>
+    <cac:DigitalCollaboration>
+      <cbc:ID>billing-2</cbc:ID>
+      <cac:SendingDigitalService>
+        <cbc:ID>VT-InvoiceStatusResponse-OUT</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>InvoiceStatusResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InvoiceStatusResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XL:IC41859</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-41859</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.velumi.example/as4</cbc:EndpointURI>
+          </cac:DigitalMessageDelivery>
+        </cac:DigitalDeliveryChannel>
+        <cac:CertificationDocumentReference>
+          <cbc:ID>LTAC-CERT-26-017</cbc:ID>
+        </cac:CertificationDocumentReference>
+      </cac:SendingDigitalService>
+      <cac:ReceivingDigitalService>
+        <cbc:ID>LD-InvoiceStatusResponse-IN</cbc:ID>
+        <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
+        <cac:DigitalDocumentMetadata>
+          <cbc:ID>InvoiceStatusResponse</cbc:ID>
+          <cbc:FormatID>UBL</cbc:FormatID>
+          <cbc:VersionID>2.5</cbc:VersionID>
+          <cbc:SchemaURI>https://docs.oasis-open.org/ubl/os-UBL-2.5/xsdrt/maindoc/UBL-InvoiceStatusResponse-2.5.xsd</cbc:SchemaURI>
+          <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InvoiceStatusResponse</cbc:DocumentTypeCode>
+        </cac:DigitalDocumentMetadata>
+        <cac:DigitalDeliveryChannel>
+          <cbc:NetworkID>ACCORD-NET</cbc:NetworkID>
+          <cbc:ParticipantID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ParticipantID>
+          <cbc:TestIndicator>false</cbc:TestIndicator>
+          <cac:DigitalCertificate>
+            <cbc:ID>LTAC-AP-20410274</cbc:ID>
+            <cbc:CertificateType>Access point</cbc:CertificateType>
+            <cac:IssuerParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">8423019675</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Lumeport Trade Accord Council</cbc:Name>
+              </cac:PartyName>
+            </cac:IssuerParty>
+          </cac:DigitalCertificate>
+          <cac:DigitalMessageDelivery>
+            <cbc:ProtocolID>AS4</cbc:ProtocolID>
+            <cbc:EnvelopeTypeCode listID="urn:ubl-examples:world:codelist:EnvelopeTypeCode">SBDH</cbc:EnvelopeTypeCode>
+            <cbc:EndpointURI>https://ap.lumeway.example/as4</cbc:EndpointURI>
           </cac:DigitalMessageDelivery>
         </cac:DigitalDeliveryChannel>
       </cac:ReceivingDigitalService>

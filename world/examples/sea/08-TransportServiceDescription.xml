@@ -129,15 +129,15 @@
     <cbc:EndDate>2026-08-07</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:TransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">OCEANCONT</cbc:TransportServiceCode>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">PORTTOPORT</cbc:TransportServiceCode>
     <cbc:TariffClassCode listID="urn:ubl-examples:world:codelist:TariffClassCode">FAK</cbc:TariffClassCode>
     <cbc:Priority>Standard</cbc:Priority>
     <cbc:FreightRateClassCode listID="urn:ubl-examples:world:codelist:FreightRateClassCode">BOX</cbc:FreightRateClassCode>
     <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.</cbc:TransportationServiceDescription>
     <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
-    <cbc:NominationDate>2026-05-09</cbc:NominationDate>
-    <cbc:NominationTime>10:00:00</cbc:NominationTime>
-    <cbc:Name>Weekly service Lumeport–Selanu</cbc:Name>
+    <cbc:NominationDate>2026-05-12</cbc:NominationDate>
+    <cbc:NominationTime>12:00:00</cbc:NominationTime>
+    <cbc:Name>Weekly container liner service Lumeport–Selanu</cbc:Name>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:TransportEquipment>
       <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
@@ -151,9 +151,6 @@
     <cac:UnsupportedTransportEquipment>
       <cbc:SizeTypeCode listID="ISO 6346">45R1</cbc:SizeTypeCode>
     </cac:UnsupportedTransportEquipment>
-    <cac:CommodityClassification>
-      <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
-    </cac:CommodityClassification>
     <cac:SupportedCommodityClassification>
       <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
     </cac:SupportedCommodityClassification>
@@ -167,6 +164,24 @@
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+        <cbc:Name>Port of Selanu</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
     </cac:ShipmentStage>
     <cac:TransportEvent>
       <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
@@ -194,6 +209,18 @@
     <cac:EnvironmentalEmission>
       <cbc:EnvironmentalEmissionTypeCode listID="urn:ubl-examples:world:codelist:EmissionTypeCode">CO2E</cbc:EnvironmentalEmissionTypeCode>
       <cbc:ValueMeasure unitCode="KGM">380</cbc:ValueMeasure>
+      <cbc:Description>Per 40-foot container from Lumeport to Selanu: the ship's fuel of the crossing shared over the containers it carries.</cbc:Description>
+      <cac:EmissionCalculationMethod>
+        <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:EmissionCalculationMethodCode">CALCULATED</cbc:CalculationMethodCode>
+        <cac:MeasurementFromLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+        </cac:MeasurementFromLocation>
+        <cac:MeasurementToLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+        </cac:MeasurementToLocation>
+      </cac:EmissionCalculationMethod>
     </cac:EnvironmentalEmission>
     <cac:EstimatedDurationPeriod>
       <cbc:DurationMeasure unitCode="DAY">2</cbc:DurationMeasure>

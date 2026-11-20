@@ -24,16 +24,16 @@ The forwarder, now acting as shipper, books the container with the ocean carrier
   The booking number the carrier gave.
 - `UUID` = **a28c5575-3d16-5217-93bf-9cf7fe81d417**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-10**  
-  The forwarder books the container.
+- `IssueDate` = **2026-05-11**  
+  The forwarder books the container the same morning (D27, D30 point 6).
 - `IssueTime` = **09:15:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  After the distributor's instructions; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Forwarding instructions**  
   What they are.
 - `Description` = **Instructions for the shipment to the island.**  
   In words.
-- `Note` = **Please confirm the booking.**  
-  What the sender expects.
+- `Note` = **Please confirm the shipping instructions for booking TWL-BK-26-55710.**  
+  What the sender expects: from the carrier, the instructions for the booking it already gave (sea/12#F6).
 - `ToOrderIndicator` = **true**  
   A bill of lading to order, so the buyer can transfer it.
 - `OtherInstruction` = **Send the bill of lading to the forwarder.**  
@@ -184,13 +184,13 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Export desk**  
-  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+  The party's export desk: the desk for its role in this document (it handles the transport of goods between the countries); identity of Bayforth Forwarding (world/parties.json).
 - `Contact/JobTitle` = **Export coordinator**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
 - `Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -322,11 +322,11 @@ Inside `Signature`:
   <cbc:ID>BF-FI-26-0137</cbc:ID>
   <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
   <cbc:UUID>a28c5575-3d16-5217-93bf-9cf7fe81d417</cbc:UUID>
-  <cbc:IssueDate>2026-05-10</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
-  <cbc:Note>Please confirm the booking.</cbc:Note>
+  <cbc:Note>Please confirm the shipping instructions for booking TWL-BK-26-55710.</cbc:Note>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:OtherInstruction>Send the bill of lading to the forwarder.</cbc:OtherInstruction>
   <cac:ConsignorParty>

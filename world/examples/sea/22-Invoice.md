@@ -2,7 +2,7 @@
 
 *Example 22 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
-Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to the factor, who is the payee.
+The goods at their CIF prices, which hold the sea freight and the insurance; the receivable is sold to the factor, who is the payee.
 
 [The XML file](22-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -26,8 +26,8 @@ Goods, sea freight and insurance (CIF) in one invoice; the receivable is sold to
   Issued when the goods are on board.
 - `IssueTime` = **12:32:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-06-28**  
-  As the payment terms below count it: 30 days net; 1.5 % surcharge per month late.
+- `DueDate` = **2026-06-29**  
+  As the payment terms below count it: deposit of 10,000.00 lume on acceptance; the balance 45 days after shipment, as agreed in the order response; 1.5 % surcharge per month late. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June (O180).
 - `InvoiceTypeCode` = **393** (listID `UN/EDIFACT EDED 1001`)  
   The invoice is assigned to the factor, who collects it: a factored invoice, a subtype UN/EDIFACT 1001 has its own code for. The code is from the world's copy of UN/EDIFACT 1001 Document name: 393 = Factored invoice.
 - `Note` = **This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).**  
@@ -51,6 +51,15 @@ Inside `OrderReference`:
 
 - `ID` = **VT-PO-26-0127**  
   The buyer's order.
+
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **TOL-BL-26-0139**  
+  The bill of lading of the shipment on board, which dates the delivery.
+- `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: TOL-BL-26-0139 is the example sea/14, a BillOfLading; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
 
 ### Accounting Supplier Party
 
@@ -257,10 +266,10 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-06-28**  
+- `PaymentDueDate` = **2026-06-29**  
   When the transfer must be credited.
-- `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
-  How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
+- `PaymentChannelCode` = **MPNS** (listID `ISO 20022 ClearingChannel2Code`)  
+  A payment that is not urgent goes in the Trade Accord link's batch run, a mass payment net system, as ISO 20022 clearing channel MPNS (sea/22#F14, D30 point 9). The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
 - `PaymentPlatformID` = **HF-COLLECT**  
@@ -333,48 +342,6 @@ Inside `PaymentMeans`:
   A party referred to from another party's details: its identifier and name are enough.
 - `TradeFinancing/FinancingParty/PartyName/Name` = **Harbourline Factoring**  
   A party referred to from another party's details: its identifier and name are enough.
-- `TradeFinancing/FinancingFinancialAccount/ID` = **XB51BLUM38020502304038** (schemeID `urn:ubl-examples:world:account`)  
-  The factor's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `TradeFinancing/FinancingFinancialAccount/Name` = **Harbourline Factoring Ltd**  
-  The account holder, as the bank knows it.
-- `TradeFinancing/FinancingFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
-  A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
-- `TradeFinancing/FinancingFinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
-  The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
-- `TradeFinancing/FinancingFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/ID` = **380205** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
-  The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/Name` = **Harbour branch**  
-  The branch's name.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUMXBLX** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BLUM, the country XB and the location LX; identity of Bank of Lumeport (world/parties.json).
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
-  The bank; identity of Bank of Lumeport (world/parties.json).
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
-  Street of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
-  Building number of the postal address. identity of Bank of Lumeport (world/parties.json).
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Lumeport (world/parties.json).
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **38523**  
-  Postal code in Bayvarra's format (5 digits). identity of Bank of Lumeport (world/parties.json).
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
-  The town the branch is in.
-- `TradeFinancing/FinancingFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `TradeFinancing/FinancingFinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `TradeFinancing/Clause/ID` = **HF-FA-7.2**  
   The clause on payment.
 - `TradeFinancing/Clause/Content` = **Payment to any other account does not discharge the buyer.**  
@@ -410,36 +377,40 @@ Inside `PaymentTerms`:
   The deposit payment, already received.
 - `ReferenceEventCode` = **8** (listID `UN/EDIFACT EDED 2475`)  
   Due when the order is accepted. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 8 = Date of confirmation of order received.
-- `PaymentPercent` = **17.25**  
+- `PaymentPercent` = **18.22**  
   Its share of the invoice total.
 - `Amount` = **10000.00** (currencyID `XBL`)  
   The deposit.
-- `InstallmentDueDate` = **2026-05-09**  
-  It was due on acceptance; paid.
+- `InstallmentDueDate` = **2026-05-11**  
+  It was due on acceptance; paid. The count ends on Saturday 9 May, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 11 May (O180).
 - `ID` = **BALANCE**  
   The balance, the second instalment.
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **30 days net; 1.5 % surcharge per month late.**  
-  Bayvarran practice: a surcharge per month of late payment, no discount.
+- `Note` = **Deposit of 10,000.00 lume on acceptance; the balance 45 days after shipment, as agreed in the order response; 1.5 % surcharge per month late.**  
+  The terms agreed with this new customer in the order response, contract terms that win over the seller's standard 30 days (D22, D30 point 5).
 - `ReferenceEventCode` = **81** (listID `UN/EDIFACT EDED 2475`)  
   Counted from the shipment on board. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 81 = Date of shipment as evidenced by the transport document(s).
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PaymentPercent` = **82.75**  
+- `PaymentPercent` = **81.78**  
   Its share of the invoice total.
-- `Amount` = **47974.30** (currencyID `XBL`)  
+- `Amount` = **44896.00** (currencyID `XBL`)  
   The balance.
-- `PenaltyAmount` = **719.61** (currencyID `XBL`)  
+- `PenaltyAmount` = **673.44** (currencyID `XBL`)  
   The surcharge for the first month late, on the balance.
-- `PaymentTermsDetailsURI` = **https://www.lumeway.example/terms**  
-  The seller's general terms of payment.
-- `InstallmentDueDate` = **2026-06-28**  
-  45 days after the goods were shipped.
+- `InstallmentDueDate` = **2026-06-29**  
+  45 days after the goods were shipped. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June (O180).
 - `InvoicingPartyReference` = **RF20LDINV260147**  
   The reference to quote with the payment.
-- `PenaltyPeriod/StartDate` = **2026-06-29**  
+- `PenaltyPeriod/StartDate` = **2026-06-30**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late (worklist C38).
+- `PenaltyInterestRate/InterestRatePercent` = **7**  
+  The interest on late payment: the statutory rate, as the terms say nothing on late payment (D22).
+- `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
+  A yearly rate. The code is from UBL's default Unit of measure (UNECE Recommendation 20) list: ANN = year.
+- `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
+  Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 - `ExchangeRate/SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The invoice currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `ExchangeRate/TargetCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -452,7 +423,7 @@ Inside `PaymentTerms`:
   Of the invoice date, as the payment alternative rate.
 - `ValidityPeriod/StartDate` = **2026-05-14**  
   The terms apply from the invoice date
-- `ValidityPeriod/EndDate` = **2026-06-28**  
+- `ValidityPeriod/EndDate` = **2026-06-29**  
   until the balance is due.
 
 ### Prepaid Payment
@@ -469,47 +440,6 @@ Inside `PrepaidPayment`:
   Paid by the buyer the day after the order was accepted.
 - `InstructionID` = **VT-PAY-26-0077**  
   The buyer's payment order.
-
-### Allowance Charge
-
-Inside `AllowanceCharge`:
-
-- `ChargeIndicator` = **true**  
-  A charge, not an allowance: it adds to the amount.
-- `AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
-  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
-- `AllowanceChargeReason` = **Sea freight**  
-  Under CIF the seller pays the sea freight and charges it on the invoice.
-- `Amount` = **2950.00** (currencyID `XBL`)  
-  The freight the forwarder charged for the container.
-- `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
-- `TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
-- `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
-  The name of code EXP in Bayvarra's national sales tax exemption reason list.
-- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `ChargeIndicator` = **true**  
-  A charge, not an allowance: it adds to the amount.
-- `AllowanceChargeReasonCode` = **96** (listID `UN/EDIFACT EDED 5189`)  
-  UN/EDIFACT 7161 has no code for insurance, so the code is from UN/EDIFACT 5189, with that list's listID. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 96 = Insurance.
-- `AllowanceChargeReason` = **Cargo insurance**  
-  Under CIF the seller insures the cargo and charges the insurance.
-- `Amount` = **140.30** (currencyID `XBL`)  
-  The premium of the cargo insurance, as the forwarder charged it: 0.22 % of the insured value of 63,771.73 lume: the CIF value of 57,974.30 (goods 54,884.00, sea freight 2,950.00 and the premium itself) plus 10 % (O173).
-- `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
-- `TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
-- `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
-  The name of code EXP in Bayvarra's national sales tax exemption reason list.
-- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Payment Alternative Exchange Rate
 
@@ -532,7 +462,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **57974.30** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **54896.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -551,19 +481,17 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **54884.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **54896.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **57974.30** (currencyID `XBL`)  
-  The line amounts plus the charges, without tax.
-- `TaxInclusiveAmount` = **57974.30** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **54896.00** (currencyID `XBL`)  
+  The total without tax: the line amounts, no allowances or charges.
+- `TaxInclusiveAmount` = **54896.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `ChargeTotalAmount` = **3090.30** (currencyID `XBL`)  
-  The sum of the charges at document level.
 - `PrepaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit, already paid.
-- `PayableAmount` = **47974.30** (currencyID `XBL`)  
+- `PayableAmount` = **44896.00** (currencyID `XBL`)  
   What is still to pay: the total less the deposit.
-- `PayableAlternativeAmount` = **19189.720** (currencyID `XLC`)  
+- `PayableAlternativeAmount` = **17958.400** (currencyID `XLC`)  
   The same in coral, for the buyer's information, at the reference rate of the invoice date.
 
 ### Invoice Line
@@ -674,8 +602,8 @@ Inside `InvoiceLine`:
   The line number.
 - `InvoicedQuantity` = **12** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **804.00** (currencyID `XBL`)  
-  12 × 67.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **816.00** (currencyID `XBL`)  
+  12 × 68.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **3**  
   The order line this invoice line bills.
 - `Item/Description` = **Spare side frame for the Serra bench.**  
@@ -704,8 +632,8 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **67** (currencyID `XBL`)  
-  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
+- `Price/PriceAmount` = **68** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight, O196). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 
@@ -722,7 +650,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>12:32:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-28</cbc:DueDate>
+  <cbc:DueDate>2026-06-29</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">393</cbc:InvoiceTypeCode>
   <cbc:Note>This receivable has been assigned to Harbourline Factoring; pay only to the account stated. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
@@ -734,6 +662,10 @@ Inside `InvoiceLine`:
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
   </cac:OrderReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -914,8 +846,8 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
-    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
     <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
@@ -981,43 +913,6 @@ Inside `InvoiceLine`:
           <cbc:Name>Harbourline Factoring</cbc:Name>
         </cac:PartyName>
       </cac:FinancingParty>
-      <cac:FinancingFinancialAccount>
-        <cbc:ID schemeID="urn:ubl-examples:world:account">XB51BLUM38020502304038</cbc:ID>
-        <cbc:Name>Harbourline Factoring Ltd</cbc:Name>
-        <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
-        <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-        <cac:FinancialInstitutionBranch>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
-          <cbc:Name>Harbour branch</cbc:Name>
-          <cac:FinancialInstitution>
-            <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
-            <cbc:Name>Bank of Lumeport</cbc:Name>
-            <cac:Address>
-              <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-              <cbc:StreetName>Exchange Street</cbc:StreetName>
-              <cbc:BuildingNumber>48</cbc:BuildingNumber>
-              <cbc:CityName>Lumeport</cbc:CityName>
-              <cbc:PostalZone>38523</cbc:PostalZone>
-              <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-              <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-              <cac:Country>
-                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-                <cbc:Name>Bayvarra</cbc:Name>
-              </cac:Country>
-            </cac:Address>
-          </cac:FinancialInstitution>
-          <cac:Address>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            </cac:Country>
-          </cac:Address>
-        </cac:FinancialInstitutionBranch>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:FinancingFinancialAccount>
       <cac:Clause>
         <cbc:ID>HF-FA-7.2</cbc:ID>
         <cbc:Content>Payment to any other account does not discharge the buyer.</cbc:Content>
@@ -1052,25 +947,29 @@ Inside `InvoiceLine`:
     <cbc:ID>DEPOSIT</cbc:ID>
     <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
-    <cbc:PaymentPercent>17.25</cbc:PaymentPercent>
+    <cbc:PaymentPercent>18.22</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
-    <cbc:InstallmentDueDate>2026-05-09</cbc:InstallmentDueDate>
+    <cbc:InstallmentDueDate>2026-05-11</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
   <cac:PaymentTerms>
     <cbc:ID>BALANCE</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
+    <cbc:Note>Deposit of 10,000.00 lume on acceptance; the balance 45 days after shipment, as agreed in the order response; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">81</cbc:ReferenceEventCode>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PaymentPercent>82.75</cbc:PaymentPercent>
-    <cbc:Amount currencyID="XBL">47974.30</cbc:Amount>
-    <cbc:PenaltyAmount currencyID="XBL">719.61</cbc:PenaltyAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.lumeway.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:InstallmentDueDate>2026-06-28</cbc:InstallmentDueDate>
+    <cbc:PaymentPercent>81.78</cbc:PaymentPercent>
+    <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
+    <cbc:PenaltyAmount currencyID="XBL">673.44</cbc:PenaltyAmount>
+    <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-06-29</cbc:StartDate>
+      <cbc:StartDate>2026-06-30</cbc:StartDate>
     </cac:PenaltyPeriod>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
     <cac:ExchangeRate>
       <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
       <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
@@ -1080,7 +979,7 @@ Inside `InvoiceLine`:
     </cac:ExchangeRate>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-14</cbc:StartDate>
-      <cbc:EndDate>2026-06-28</cbc:EndDate>
+      <cbc:EndDate>2026-06-29</cbc:EndDate>
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
@@ -1090,36 +989,6 @@ Inside `InvoiceLine`:
     <cbc:PaidDate>2026-05-08</cbc:PaidDate>
     <cbc:InstructionID>VT-PAY-26-0077</cbc:InstructionID>
   </cac:PrepaidPayment>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:AllowanceCharge>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">96</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">140.30</cbc:Amount>
-    <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
-      <cbc:Percent>0</cbc:Percent>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
-      <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:AllowanceCharge>
   <cac:PaymentAlternativeExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
     <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:TargetCurrencyCode>
@@ -1130,7 +999,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">57974.30</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">54896.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -1144,13 +1013,12 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">54884.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">57974.30</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">57974.30</cbc:TaxInclusiveAmount>
-    <cbc:ChargeTotalAmount currencyID="XBL">3090.30</cbc:ChargeTotalAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">54896.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">54896.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">54896.00</cbc:TaxInclusiveAmount>
     <cbc:PrepaidAmount currencyID="XBL">10000.00</cbc:PrepaidAmount>
-    <cbc:PayableAmount currencyID="XBL">47974.30</cbc:PayableAmount>
-    <cbc:PayableAlternativeAmount currencyID="XLC">19189.720</cbc:PayableAlternativeAmount>
+    <cbc:PayableAmount currencyID="XBL">44896.00</cbc:PayableAmount>
+    <cbc:PayableAlternativeAmount currencyID="XLC">17958.400</cbc:PayableAlternativeAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -1261,7 +1129,7 @@ Inside `InvoiceLine`:
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">12</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">804.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">816.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
@@ -1293,7 +1161,7 @@ Inside `InvoiceLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

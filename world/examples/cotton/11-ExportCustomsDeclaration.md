@@ -22,7 +22,7 @@ The island's export: the ginnery declares the bales to customs.
   The exporter's reference.
 - `UUID` = **f5f1bfda-9201-580a-8a6a-bce4e1381b33**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-03-01**  
+- `IssueDate` = **2026-05-06**  
   The island's export: declared before loading.
 - `IssueTime` = **13:33:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -78,7 +78,7 @@ Inside `ExporterParty`:
 - `PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
   Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Contact/Name` = **Customs desk**  
-  The party's customs desk desk: the desk for its role in this document (it deals with customs); identity of Selanu Cotton Ginnery (world/parties.json).
+  The party's customs desk: the desk for its role in this document (it deals with customs); identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/JobTitle` = **Customs specialist**  
   The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
 - `Contact/Department` = **Logistics**  
@@ -102,7 +102,7 @@ Inside `CustomsDeclaration`:
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
-- `ValidityPeriod/StartDate` = **2026-03-01**  
+- `ValidityPeriod/StartDate` = **2026-05-06**  
   From the declaration.
 - `ValidityPeriod/DurationMeasure` = **90** (unitCode `DAY`)  
   The goods must leave within 90 days.
@@ -242,6 +242,10 @@ Inside `CustomsDeclaration`:
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **DAL-GC-26-0202**  
+  The phytosanitary certificate of the bales, presented with the export of plant products: the Plant Protection Service's certificate goes with the goods from export onward (cotton/11#F6).
+- `AdditionalDocumentReference/DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: DAL-GC-26-0202 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
 
 ### Signature
 
@@ -265,7 +269,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-EX-26-0203</cbc:ID>
   <cbc:UUID>f5f1bfda-9201-580a-8a6a-bce4e1381b33</cbc:UUID>
-  <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-06</cbc:IssueDate>
   <cbc:IssueTime>13:33:00+00:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
@@ -322,7 +326,7 @@ Inside `Signature`:
     <cbc:ID>SCG-CD-26-0204</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:StartDate>2026-05-06</cbc:StartDate>
       <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
     </cac:ValidityPeriod>
     <cac:ApplicableTerritoryAddress>
@@ -456,6 +460,10 @@ Inside `Signature`:
     <cac:AdditionalDocumentReference>
       <cbc:ID>LTM-PO-26-0198</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>DAL-GC-26-0202</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

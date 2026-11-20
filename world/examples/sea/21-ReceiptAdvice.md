@@ -36,8 +36,8 @@ The buyer's 3PL confirms what arrived, for the buyer.
   In words.
 - `RejectActionCode` = **CREDIT** (listID `urn:ubl-examples:world:codelist:RejectActionCode`)  
   A credit is asked for the refused goods. The code is from the Trade Accord's reject action list: CREDIT = Credit requested.
-- `Note` = **Counted and checked at goods-in.**  
-  How the goods were received.
+- `Note` = **Counted and checked at goods-in. The container was collected from the port on 19 May, the day after customs released it; one frame is refused as damaged, and we pass on Velumi Trading's request for its credit.**  
+  What the receipt says: when the on-carriage took place (timelines#F7), and that the 3PL relays the buyer's request for a credit, not its own (sea/21#F7, D30 point 9).
 - `LineCountNumeric` = **3**  
   The number of lines.
 
@@ -325,8 +325,8 @@ Inside `ReceiptLine`:
   The line number.
 - `Note` = **One frame carton crushed at the port; the frame inside is cracked.**  
   The line in words.
-- `ReceivedQuantity` = **11** (unitCode `EA`)  
-  One frame carton crushed at the port; the frame inside is cracked.
+- `ReceivedQuantity` = **12** (unitCode `EA`)  
+  All twelve frames arrived; one of them is refused, so eleven go into the buyer's stock (sea/21#F8).
 - `RejectedQuantity` = **1** (unitCode `EA`)  
   Refused at goods-in.
 - `RejectReasonCode` = **DAMAGED** (listID `urn:ubl-examples:world:codelist:RejectReasonCode`)  
@@ -361,6 +361,8 @@ Inside `ReceiptLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-casting of Valdara Industries (world/items.json).
+- `Item/ItemInstance/SerialID` = **VI-SF-01501**  
+  The serial of the cracked frame, as the despatch advice lists it (sea/21#F9).
 
 ## The document
 
@@ -380,7 +382,7 @@ Inside `ReceiptLine`:
   <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
   <cbc:RejectReason>Damaged in transit.</cbc:RejectReason>
   <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
-  <cbc:Note>Counted and checked at goods-in.</cbc:Note>
+  <cbc:Note>Counted and checked at goods-in. The container was collected from the port on 19 May, the day after customs released it; one frame is refused as damaged, and we pass on Velumi Trading's request for its credit.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -617,7 +619,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>3</cbc:ID>
     <cbc:Note>One frame carton crushed at the port; the frame inside is cracked.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">11</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">12</cbc:ReceivedQuantity>
     <cbc:RejectedQuantity unitCode="EA">1</cbc:RejectedQuantity>
     <cbc:RejectReasonCode listID="urn:ubl-examples:world:codelist:RejectReasonCode">DAMAGED</cbc:RejectReasonCode>
     <cbc:RejectReason>One frame carton crushed at the port; the frame inside is cracked.</cbc:RejectReason>
@@ -650,6 +652,9 @@ Inside `ReceiptLine`:
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>
       </cac:AdditionalItemIdentification>
+      <cac:ItemInstance>
+        <cbc:SerialID>VI-SF-01501</cbc:SerialID>
+      </cac:ItemInstance>
     </cac:Item>
   </cac:ReceiptLine>
 </ReceiptAdvice>

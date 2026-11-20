@@ -18,7 +18,7 @@ Velumi Trading sells two of the imported benches in its shop in Selanu to the co
   The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VT-PR-26-0154**  
+- `ID` = **VT-PR-26-0153**  
   The till's receipt number.
 - `UUID` = **464955fd-c2fe-5d30-a020-fe67a7fc3e92**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -199,7 +199,7 @@ Inside `Payment`:
 
 - `ID` = **VT-T1-26-0613-0012**  
   The till's number for the payment.
-- `PaidAmount` = **578.000** (currencyID `XLC`)  
+- `PaidAmount` = **750.000** (currencyID `XLC`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 - `PaidDate` = **2026-06-13**  
   Paid at the till.
@@ -241,13 +241,13 @@ Inside `PaymentMeans`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **578.000** (currencyID `XLC`)  
+- `LineExtensionAmount` = **750.000** (currencyID `XLC`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **578.000** (currencyID `XLC`)  
+- `TaxExclusiveAmount` = **750.000** (currencyID `XLC`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **578.000** (currencyID `XLC`)  
+- `TaxInclusiveAmount` = **750.000** (currencyID `XLC`)  
   The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
-- `PayableAmount` = **578.000** (currencyID `XLC`)  
+- `PayableAmount` = **750.000** (currencyID `XLC`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Purchase Receipt Line
@@ -258,7 +258,7 @@ Inside `PurchaseReceiptLine`:
   The line number.
 - `Quantity` = **2** (unitCode `EA`)  
   Two benches for the pickers' rest place under the trees by the weighing shed.
-- `LineExtensionAmount` = **578.000** (currencyID `XLC`)  
+- `LineExtensionAmount` = **750.000** (currencyID `XLC`)  
   Quantity times the price paid, before the sales tax.
 - `Item/Description` = **Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language; item bench-serra-x of Velumi Trading (world/items.json).
@@ -292,9 +292,9 @@ Inside `PurchaseReceiptLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
-- `Price/PriceAmount` = **289** (currencyID `XLC`)  
-  The seller's price per unit (world/items.json).
-- `Price/TaxInclusivePriceAmount` = **289** (currencyID `XLC`)  
+- `Price/PriceAmount` = **375** (currencyID `XLC`)  
+  Velumi's shop price on the island: its cost is the CIF price of 520 lume, the import consumption tax of 10 % and its clearance and port costs, about 577 lume, and 375 coral (937.50 lume) leaves it a retailer's margin of about 38 % (D30 point 2, O48).
+- `Price/TaxInclusivePriceAmount` = **375** (currencyID `XLC`)  
   The price the customer pays, with the 0 % sales tax.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
@@ -308,7 +308,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-PR-26-0154</cbc:ID>
+  <cbc:ID>VT-PR-26-0153</cbc:ID>
   <cbc:UUID>464955fd-c2fe-5d30-a020-fe67a7fc3e92</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>10:25:00+00:00</cbc:IssueTime>
@@ -441,7 +441,7 @@ Inside `PurchaseReceiptLine`:
   </cac:PointOfSaleLocation>
   <cac:Payment>
     <cbc:ID>VT-T1-26-0613-0012</cbc:ID>
-    <cbc:PaidAmount currencyID="XLC">578.000</cbc:PaidAmount>
+    <cbc:PaidAmount currencyID="XLC">750.000</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-13</cbc:PaidDate>
     <cbc:PaidTime>10:25:00</cbc:PaidTime>
     <cbc:MerchantID>CORALCARD-M-0001859</cbc:MerchantID>
@@ -463,15 +463,15 @@ Inside `PurchaseReceiptLine`:
     </cac:CardAccount>
   </cac:PaymentMeans>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XLC">578.000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XLC">578.000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XLC">578.000</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XLC">578.000</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">750.000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XLC">750.000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XLC">750.000</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XLC">750.000</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:PurchaseReceiptLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Quantity unitCode="EA">2</cbc:Quantity>
-    <cbc:LineExtensionAmount currencyID="XLC">578.000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XLC">750.000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description languageID="qal">Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
       <cbc:Description languageID="en-XL">The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
@@ -501,8 +501,8 @@ Inside `PurchaseReceiptLine`:
       </cac:AdditionalItemIdentification>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XLC">289</cbc:PriceAmount>
-      <cbc:TaxInclusivePriceAmount currencyID="XLC">289</cbc:TaxInclusivePriceAmount>
+      <cbc:PriceAmount currencyID="XLC">375</cbc:PriceAmount>
+      <cbc:TaxInclusivePriceAmount currencyID="XLC">375</cbc:TaxInclusivePriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:PurchaseReceiptLine>

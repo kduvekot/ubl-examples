@@ -6,7 +6,7 @@
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>SCG-EX-26-0203</cbc:ID>
   <cbc:UUID>f5f1bfda-9201-580a-8a6a-bce4e1381b33</cbc:UUID>
-  <cbc:IssueDate>2026-03-01</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-06</cbc:IssueDate>
   <cbc:IssueTime>13:33:00+00:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
@@ -63,7 +63,7 @@
     <cbc:ID>SCG-CD-26-0204</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
-      <cbc:StartDate>2026-03-01</cbc:StartDate>
+      <cbc:StartDate>2026-05-06</cbc:StartDate>
       <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
     </cac:ValidityPeriod>
     <cac:ApplicableTerritoryAddress>
@@ -197,6 +197,10 @@
     <cac:AdditionalDocumentReference>
       <cbc:ID>LTM-PO-26-0198</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>DAL-GC-26-0202</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>
   <cac:Signature>

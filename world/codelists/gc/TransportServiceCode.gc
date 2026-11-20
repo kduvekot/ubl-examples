@@ -161,6 +161,23 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>PORTTOPORT</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Port to port</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qau">
+            <SimpleValue>Sterstul krir sterstul</SimpleValue>
+         </Value>
+         <Value ColumnRef="name-qal">
+            <SimpleValue>Kaloli vevisi kaloli</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>The extent of a carriage by sea: from the port of loading to the port of discharge, without the carriage to or from the ports.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>MERCHHAUL</SimpleValue>
          </Value>
          <Value ColumnRef="name">

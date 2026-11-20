@@ -14,6 +14,156 @@ The history of losses before this register is in O145 of `analysis/worklist-deci
 
 ## Missing
 
+### G8: cotton, sea (2026-11-19)
+
+Stage 6, building group G8 (C106 to C108, C114 to C118).
+
+> C106, D33: the farm's documents belong to the farm and the ginnery alone. The mill is not originator or beneficiary of the seed-cotton purchase and its season agreement not the originator document (cotton/03#F10, 04#F4, 05#F14, D33); the chamber's "cotton quality project", the ginnery's season account of the farm, the annotation that repeated the note and the customs broker as tax representative of a purchase between two Lisavan businesses go (03#F3, 04#F5, F12, F13, F14, 05#F6, F13, F15, F16); the gin's outturn report did not exist when the invoice was issued and the price does not rest on it (04#F10); the haulage charge keeps only its per-kilogram amount (04#F20); the credit note names no payee (nothing is paid under it, 05#F5), no delivery terms (05#F20) and cites the chamber's classing report as its work report instead of the export lot's certificate (05#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `AllowanceCharge/PaymentMeans` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `AllowanceCharge/PrepaidIndicator` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `AllowanceCharge/SequenceNumeric` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `DeliveryNote/BeneficiaryParty` | 0..n | cotton/03-DeliveryNote |  |  | open |
+| `DeliveryNote/OriginatorCustomerParty` | 0..1 | cotton/03-DeliveryNote |  |  | open |
+| `DeliveryNote/ProjectReference` | 0..n | cotton/03-DeliveryNote |  |  | open |
+| `SelfBilledCreditNote/AdditionalDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/Annotation` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/DeliveryTerms` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/OriginatorDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/PayeeParty` | 0..1 | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/ProjectReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/StatementDocumentReference` | 0..n | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledCreditNote/TaxRepresentativeParty` | 0..1 | cotton/05-SelfBilledCreditNote |  |  | open |
+| `SelfBilledInvoice/Annotation` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/BeneficiaryParty` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/OriginatorCustomerParty` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/OriginatorDocumentReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/ProjectReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/StatementDocumentReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/TaxRepresentativeParty` | 0..1 | cotton/04-SelfBilledInvoice |  |  | open |
+| `SelfBilledInvoice/WorkReportDocumentReference` | 0..n | cotton/04-SelfBilledInvoice |  |  | open |
+
+> C107, D33: the classing certificate is no earlier version of the phytosanitary certificate (cotton/10#F3); the criterion type code only repeated "processing" (10#F17); the feeder's interim security certificate is a valid one, so the report gives no reason for an absence (14#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CriterionItem/TypeCode` | 0..1 | cotton/10-GoodsCertificate |  |  | open |
+| `GoodsCertificate/OriginalDocumentReference` | 0..1 | cotton/10-GoodsCertificate |  |  | open |
+| `ISPSRequirements/ISSCAbsenceReason` | 0..n | cotton/14-CommonTransportationReport |  |  | open |
+
+> C108, D33: open account, no documentary collection: the Bank of Selanu holds no mortgage on the bales (cotton/13#F3); the ginnery signs its own verified gross mass, so no one signs it on its behalf (12#F2).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Consignment/MortgageHolderParty` | 0..1 | cotton/13-BillOfLading |  |  | open |
+| `WeightStatement/ResponsibleParty` | 0..1 | cotton/12-WeightStatement |  |  | open |
+
+> C118, D30 point 1: 520 and 68 lume are CIF Selanu prices, the sea freight and the insurance in them. The factor's statement repeats no freight or insurance of the invoice (sea/25#F1); Bayvarra's export declaration states the value on board without the freight and the insured value after export (11#F13); Lisavu values the CIF price as it is, so the import declaration gives no freight share or policy per goods item (19#F20); the pre-carriage is the forwarder's merchant haulage, billed in its invoice (18), not a charge of the carrier's bill (14#F14); the policy has one retention, its deductible (14#F13); the seller's instructions arrange no on-carriage at Selanu, which is the buyer's (09#F7); the credit note claims nothing from the insurer, the loss being below the deductible (26#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Consignment/FinalDeliveryTransportationService` | 0..1 | sea/09-ForwardingInstructions |  |  | open |
+| `CreditNote/Annotation` | 0..n | sea/26-CreditNote |  |  | open |
+| `GoodsItem/FreightAllowanceCharge` | 0..n | sea/19-ImportCustomsDeclaration |  |  | open |
+| `GoodsItem/InsurancePolicy` | 0..n | sea/19-ImportCustomsDeclaration |  |  | open |
+| `InsurancePolicy/ExcessAmount` | 0..1 | sea/14-BillOfLading |  |  | open |
+| `Shipment/FreightAllowanceCharge` | 0..n | sea/11-ExportCustomsDeclaration |  |  | open |
+| `Shipment/InsuranceValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration |  |  | open |
+| `ShipmentStage/FreightAllowanceCharge` | 0..n | sea/14-BillOfLading |  |  | open |
+| `Statement/AllowanceCharge` | 0..n | sea/25-Statement | a charge of the factor's own in its statement, such as a factoring fee, if the factoring agreement gives one | sea | open |
+| `StatementLine/AllowanceCharge` | 0..n | sea/25-Statement |  |  | open |
+
+> C116, D30 point 3 (O6, D9, O104): the buyer's debit note sea/28 is removed; the customs inspection and the day of storage it passed on are the second line of Lumeway's credit note sea/26. Its number 28 is not used again (D28). The world's debit notes are now the rail flow's two of the demurrage (rail/12, 13, D37) and tender/34 until the tender flow removes it (D28); the elements below were in sea/28 alone. The factor's collection account is the invoice's payee account, not a financing account (sea/22#F7); the deposit's payment dates are no invoice period of the statement (25#F3).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `DebitNote/AccountingCost` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/AccountingCostCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/Annotation` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/BuyerAssignedReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/BuyerCustomerParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/CollectionDebitNoteLine` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/Delivery` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/DeliveryNoteDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/DeliveryTerms` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/DespatchDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/OriginatorDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/PayeeParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/PaymentCurrencyCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/PaymentExchangeRate` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/ProjectReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/PurchaseReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/ReceiptDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/SellerSupplierParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNote/Signature` | 0..n | sea/28-DebitNote | the rail flow's debit notes of the demurrage (rail/12, 13), signed when the signatures stage gives every signing party its key pair (D6) | stage 8 | candidate |
+| `DebitNote/StatementDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNote/WorkReportDocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/AccountingCost` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/AccountingCostCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/AllowanceCharge` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/BeneficiaryParty` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/CollectedForParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/DeliveryTerms` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/DespatchLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/DocumentReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/FreeOfChargeIndicator` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/ItemPriceExtension` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/OrderLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/OriginatorParty` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/PaymentPurposeCode` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/PaymentTerms` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/PricingReference` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/ReceiptLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/SubDebitNoteLine` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/TaxInclusiveLineExtensionAmount` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/TaxPointDate` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/TaxTotal` | 0..n | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/UUID` | 0..1 | sea/28-DebitNote |  |  | open |
+| `DebitNoteLine/WorkReportLineReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `ProjectReference/IssueDate` | 0..1 | sea/28-DebitNote |  |  | open |
+| `ProjectReference/UUID` | 0..1 | sea/28-DebitNote |  |  | open |
+| `ProjectReference/WorkPhaseReference` | 0..n | sea/28-DebitNote |  |  | open |
+| `StatementLine/InvoicePeriod` | 0..n | sea/25-Statement |  |  | open |
+| `TradeFinancing/FinancingFinancialAccount` | 0..1 | sea/22-Invoice |  |  | open |
+
+> C114, D30 point 8: the bill of lading's container carries no road chassis on board, no goods-item container count of pallets and no second package beside the frames' pallet (sea/14#F1, F7, F8); the cargo manifest names no crew and no passenger, which are in the ship's report (15#F7); the ship's report gives no reason for an absence of control actions it took, no WHO affected area and no INF class for a feeder without INF cargo (16#F6, F7, F21); the hold at Selanu was the container's quarantine check, not a detention of the ship, and the discharge status reports no terminal charge (17#F2, F9). The consignor's consignment ID held the buyer's order (sea/14#F6); the consignment's own `ID` is Lumeway's, and road/08's went with G5's C100 (road/08#F11), so with both groups merged the element has no example left. Won back: `ShipmentStage/PassengerQuantity` (O128).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `BallastWaterSummary/NoControlActionsReason` | 0..n | sea/16-CommonTransportationReport |  |  | open |
+| `Consignment/ConsignorAssignedID` | 0..1 | sea/14-BillOfLading (and road/08-Waybill, G5 C100) |  |  | open |
+| `GoodsItem/GoodsItemContainer` | 0..n | sea/14-BillOfLading |  |  | open |
+| `GoodsItemContainer/ID` | 1 | sea/14-BillOfLading |  |  | open |
+| `GoodsItemContainer/Quantity` | 0..1 | sea/14-BillOfLading |  |  | open |
+| `GoodsItemContainer/TransportEquipment` | 0..n | sea/14-BillOfLading |  |  | open |
+| `Manifest/CrewPerson` | 0..n | sea/15-Manifest |  |  | open |
+| `Manifest/PassengerPerson` | 0..n | sea/15-Manifest |  |  | open |
+| `MaritimeHealthDeclaration/WHOAffectedAreaVisit` | 0..n | sea/16-CommonTransportationReport |  |  | open |
+| `MaritimeTransport/INFShipClassCode` | 0..1 | sea/16-CommonTransportationReport |  |  | open |
+| `Package/ContainingTransportEquipment` | 0..1 | sea/14-BillOfLading |  |  | open |
+| `ShipmentStage/DetentionTransportEvent` | 0..n | sea/17-TransportationStatus |  |  | open |
+| `TransportEquipment/AttachedTransportEquipment` | 0..n | sea/14-BillOfLading |  |  | open |
+| `TransportEquipment/Package` | 0..n | sea/14-BillOfLading |  |  | open |
+| `TransportEquipment/ServiceAllowanceCharge` | 0..n | sea/17-TransportationStatus |  |  | open |
+| `WHOAffectedAreaVisit/VisitDate` | 1 | sea/16-CommonTransportationReport |  |  | open |
+| `WHOAffectedAreaVisit/WHOAffectedAreaPortLocation` | 1 | sea/16-CommonTransportationReport |  |  | open |
+
+> C117, D30 point 7: the digital agreement is the Trade Accord's multilateral agreement; the certification it requires is the council's for access points, published as a PDF with its hash, no embedded text with a file name of its own, no character set for a PDF and no XPath into a document that is not XML (sea/03#F6, F13, F14).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Attachment/FileName` | 0..1 | sea/03-DigitalAgreement |  |  | open |
+| `DocumentReference/XPath` | 0..n | sea/03-DigitalAgreement |  |  | open |
+| `ExternalReference/CharacterSetCode` | 0..1 | sea/03-DigitalAgreement |  |  | open |
+
+> C115, D30 points 6 and 9: the carrier's service description classifies its service with no goods code for seats (sea/08#F7).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TransportationService/CommodityClassification` | 0..n | sea/08-TransportServiceDescription |  |  | open |
+
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
 Coverage 5153 → 5151 (commit c15bf42c), 2 elements.
@@ -576,7 +726,6 @@ Stage 6, building group G3 (C81, C90).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `ShipmentStage/PassengerQuantity` | 0..1 | rail/03-TransportExecutionPlan, rail/08-Waybill | the feeder ship's report before arrival at Selanu lists a passenger, so its stage carries 1 (D37 point 7, O128) | sea | agreed |
 | `TransportEquipment/ContainedInTransportEquipment` | 0..n | rail/08-Waybill | | | open |
 | `TransportEquipment/LegalStatusIndicator` | 0..1 | rail/08-Waybill | | | open |
 | `TransportEquipment/OperatingParty` | 0..1 | rail/08-Waybill | | | open |
@@ -801,7 +950,6 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `ExchangeRate/TargetCurrencyBaseRate` | 0..1 | tender/26-Order, tender/32-Invoice | | | open |
 | `Invoice/Annotation` | 0..n | tender/32-Invoice | | | open |
 | `Invoice/OriginatorDocumentReference` | 0..n | tender/32-Invoice | | | open |
-| `Order/OriginatorDocumentReference` | 0..1 | tender/26-Order | | | open |
 | `OrderChange/FreightForwarderParty` | 0..1 | tender/27-OrderChange | | | open |
 | `OrderChange/OriginatorDocumentReference` | 0..1 | tender/27-OrderChange | | | open |
 | `OrderChange/PaymentExchangeRate` | 0..1 | tender/27-OrderChange | | | open |
@@ -837,6 +985,13 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 |---|---|---|---|---|---|
 | `TenderedProject/FeeAmount` | 0..1 | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
 | `TenderedProject/FeeDescription` | 0..n | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
+
+> Merge of G6 with G8 (2026-11-19): two elements whose last examples went in both groups: the invoice annotation (tender/32's note of the 200 benches still open, D28; G8's cotton and sea examples no longer carry one) and the alternative condition price (tender/33's price in ferra, C11; sea/28 removed by D30).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Annotation/AnnotationContent` | 0..1 | tender/32-Invoice; cotton/04-SelfBilledInvoice, cotton/05-SelfBilledCreditNote, sea/26-CreditNote (G8) | | | open |
+| `PricingReference/AlternativeConditionPrice` | 0..n | tender/33-CreditNote; sea/28-DebitNote (G8) | | | open |
 
 ### G4: energy, utilities (2026-11-19)
 
@@ -928,8 +1083,10 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `Order/OriginatorDocumentReference` | sea/05-Order | the Port of Selanu's request to the trader, which the order's port line follows (G8, O172) | 2026-11-19 |
 | `RemittanceAdviceLine/DocumentReference` | tender/36-RemittanceAdvice | the department's deduction of the penalty for late completion under clause PEN-1 of the framework contract, which the remittance line cites as the document it is based on (D28 point 9, D9: the penalty is not a debit note) | 2026-11-19 |
 | `QualificationResolution/ExclusionReason` | contest/18-TendererQualificationResponse | Fernhollow Studio, a small design studio of Lumeport, asks to take part in the design contest and is excluded at the selection for social security contributions of 3,860 lume due and unpaid, above the minor amounts; the department tells it why and how to appeal (O102, D29 point 6) | 2026-11-19 |
+| `ShipmentStage/PassengerQuantity` | sea/16-CommonTransportationReport | the feeder's one passenger, a supercargo travelling with the cargo, in the ship's report before arrival at Selanu, which lists the crew and passengers instead of the cargo manifest (D37 point 7, O128, D30 point 8) | 2026-11-19 |
 | `RemittanceAdviceLine/Note` | road/17-RemittanceAdvice | Lumeway pays Valdara's road invoice on Thursday 2 April, within the ten days of `XU-STD`, and takes the 2 % discount, 77,748 ferra on 3,887,400; the line states the short payment (O218) | 2026-11-19 |
 | `TransportExecutionPlan/AtLocation` | ore/03-TransportExecutionPlan | the weighing of the ore wagons at Fucinalta mine siding, a service without movement that the plan confirms as requested (D45, ore/03#F3) | 2026-11-19 |
 | `Address/Region` | rail/06-TransitCustomsDeclaration | the jurisdiction of the transit declaration: the Lumeport Trade Accord, a group of countries, because the Accord's common transit runs from Urvania's office of departure to Bayvarra's office of destination (D37 point 2, rail/06#F18; O140's candidate, a territory that covers the Accord area) | 2026-11-19 |

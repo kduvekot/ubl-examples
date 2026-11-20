@@ -22,8 +22,8 @@ Demand for clothing is up; the mill revises its forecast upwards.
   The revision's number.
 - `UUID` = **1680348b-7683-52e2-b21d-f88ff92b0f43**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-22**  
-  Demand for clothing has risen.
+- `IssueDate` = **2026-04-21**  
+  Late April, when the store's clothing orders for the winter are in and demand has risen.
 - `IssueTime` = **11:08:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Demand for clothing has risen.**  
@@ -39,9 +39,9 @@ Demand for clothing is up; the mill revises its forecast upwards.
 
 Inside `ForecastPeriod`:
 
-- `StartDate` = **2026-02-16**  
-  The same period.
-- `EndDate` = **2026-06-02**  
+- `StartDate` = **2026-04-01**  
+  The same period as the forecast.
+- `EndDate` = **2026-07-31**  
   Its end.
 
 ### Original Document Reference
@@ -195,9 +195,9 @@ Inside `ForecastRevisionLine`:
 - `ID` = **1**  
   The only line.
 - `Note` = **Twenty per cent more.**  
-  The change.
-- `Description` = **More bales from the second half of the season.**  
-  In words.
+  The change: 28,800 kg against 24,000 kg.
+- `Description` = **More bales over the season.**  
+  In words: the season's total, for the whole period of the forecast (cotton/07#F8).
 - `RevisedForecastLineID` = **1**  
   The forecast line revised.
 - `SourceForecastIssueDate` = **2026-02-02**  
@@ -206,12 +206,12 @@ Inside `ForecastRevisionLine`:
   Its issue time.
 - `AdjustmentReasonCode` = **DEMAND** (listID `urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode`)  
   Higher demand. The code is from the Trade Accord's forecast adjustment reason list: DEMAND = Demand change.
-- `ForecastPeriod/StartDate` = **2026-04-03**  
-  From mid-season.
-- `ForecastPeriod/EndDate` = **2026-06-02**  
-  To the end.
-- `SalesItem/Quantity` = **30000** (unitCode `KGM`)  
-  Raised to five containers.
+- `ForecastPeriod/StartDate` = **2026-04-01**  
+  The whole period of the forecast: the new total is the season's.
+- `ForecastPeriod/EndDate` = **2026-07-31**  
+  To its end.
+- `SalesItem/Quantity` = **28800** (unitCode `KGM`)  
+  The season's total raised by twenty per cent: 24,000 kg × 1.20 (cotton/07#F1).
 - `SalesItem/Item/Description` = **Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language; item cotton-bale of Selanu Cotton Ginnery (world/items.json).
 - `SalesItem/Item/Description` = **Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.** (languageID `en-XB`)  
@@ -234,15 +234,15 @@ Inside `ForecastRevisionLine`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-FR-26-0197</cbc:ID>
   <cbc:UUID>1680348b-7683-52e2-b21d-f88ff92b0f43</cbc:UUID>
-  <cbc:IssueDate>2026-02-22</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:08:00-01:00</cbc:IssueTime>
   <cbc:Note>Demand for clothing has risen.</cbc:Note>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:RevisionStatusCode listID="urn:ubl-examples:world:codelist:RevisionStatusCode">REVISED</cbc:RevisionStatusCode>
   <cbc:PurposeCode listID="urn:ubl-examples:world:codelist:ForecastPurposeCode">ORDER</cbc:PurposeCode>
   <cac:ForecastPeriod>
-    <cbc:StartDate>2026-02-16</cbc:StartDate>
-    <cbc:EndDate>2026-06-02</cbc:EndDate>
+    <cbc:StartDate>2026-04-01</cbc:StartDate>
+    <cbc:EndDate>2026-07-31</cbc:EndDate>
   </cac:ForecastPeriod>
   <cac:OriginalDocumentReference>
     <cbc:ID>LTM-FC-26-0192</cbc:ID>
@@ -362,17 +362,17 @@ Inside `ForecastRevisionLine`:
   <cac:ForecastRevisionLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Twenty per cent more.</cbc:Note>
-    <cbc:Description>More bales from the second half of the season.</cbc:Description>
+    <cbc:Description>More bales over the season.</cbc:Description>
     <cbc:RevisedForecastLineID>1</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-02-02</cbc:SourceForecastIssueDate>
     <cbc:SourceForecastIssueTime>09:00:00</cbc:SourceForecastIssueTime>
     <cbc:AdjustmentReasonCode listID="urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode">DEMAND</cbc:AdjustmentReasonCode>
     <cac:ForecastPeriod>
-      <cbc:StartDate>2026-04-03</cbc:StartDate>
-      <cbc:EndDate>2026-06-02</cbc:EndDate>
+      <cbc:StartDate>2026-04-01</cbc:StartDate>
+      <cbc:EndDate>2026-07-31</cbc:EndDate>
     </cac:ForecastPeriod>
     <cac:SalesItem>
-      <cbc:Quantity unitCode="KGM">30000</cbc:Quantity>
+      <cbc:Quantity unitCode="KGM">28800</cbc:Quantity>
       <cac:Item>
         <cbc:Description languageID="qal">Nipupe tekapa suhema, hivile lakati vapene vilofo, tefata lafatite sefeta mutaki katani 227 kg.</cbc:Description>
         <cbc:Description languageID="en-XB">Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.</cbc:Description>

@@ -118,7 +118,8 @@ DESK_ROLE = {"sales": "it sells", "purchasing": "it buys", "receivables": "it is
              "logistics": "it books or uses the transport", "customs": "it deals with customs",
              "tenders": "it bids", "operations": "it carries or handles the goods", "procurement": "it buys",
              "customs_export": "an export", "customs_import": "an import", "customs_transit": "a transit",
-             "carnet": "a carnet", "certificates": "a certificate"}
+             "carnet": "a carnet", "certificates": "a certificate",
+             "export": "it handles the transport of goods between the countries"}
 CHAMBER_DOCS = {"GoodsItemPassport": "carnet", "ProofOfReexportation": "carnet",
                 "ProofOfReexportationRequest": "carnet", "ProofOfReexportationReminder": "carnet",
                 "CertificateOfOrigin": "certificates", "GoodsCertificate": "certificates"}
@@ -142,7 +143,22 @@ SELLS, CARRIERS = _role_index()
 
 
 def desk_for(doc, path, pid):
-    """The function of the desk that speaks for party pid in its role at path of document doc."""
+    """The function of the desk that speaks for party pid in its role at path of document doc. A party with an
+    export desk names it for its transport work on goods that cross a border: a document whose parties, or the
+    flow's transport legs those parties run, send or receive, are in more than one country; at home its main
+    contact or its operations desk speaks (O224)."""
+    fn = _desk_for(doc, path, pid)
+    if fn in (None, "operations", "logistics") and "export" in PARTY[pid]["identity"].get("desks", {}):
+        pids = {doc.get("from"), doc.get("to")} | {v for v in doc.get("parties", {}).values() if isinstance(v, str)}
+        legs = [leg for fl in WORLD["flows"] if fl["id"] == doc["flow"] for leg in fl.get("legs", [])]
+        pids |= {x for leg in legs if pids & {leg.get("from"), leg.get("to"), leg.get("carrier")}
+                 for x in (leg.get("from"), leg.get("to"))}
+        if len({PARTY[x]["c"] for x in pids if x in PARTY}) > 1:
+            return "export"
+    return fn
+
+
+def _desk_for(doc, path, pid):
     role = path.split("/")[-1]
     kind = doc["doc"]
     if kind in CUSTOMS_DOCS and PARTY[pid]["kind"] == "customs":
@@ -289,7 +305,8 @@ def party(pid, short=False, desk=None, lang=None):
         own = idn.get("desks", {}).get(desk)
         if own:
             ct = {**{k: v for k, v in ct.items() if k not in ("id", "mobile", "telefax")}, **own}
-            why = (f"The party's {own['name'].lower()} desk: the desk for its role in this document "
+            desk_name = own["name"].lower().removesuffix(" desk")
+            why = (f"The party's {desk_name} desk: the desk for its role in this document "
                    f"({DESK_ROLE[desk]}); {src}.")
         else:
             why = f"The party's main desk, which handles this document; {src}."
@@ -1550,6 +1567,12 @@ def place_parties(doc, content, top=None):
                 break
             if last:
                 desk = desk_for(top, path, pid) if pid in PARTY else None
+                if target == "Party" and step == "SenderParty" and DOC_CLASS.get(top["doc"]) == "presentation" \
+                        and top["parties"].get("BusinessParty") == pid:
+                    # the business presents itself: its full description goes under BusinessParty, the sender is
+                    # only identified (sea/01#F5)
+                    node[step] = party(pid, short=True)
+                    break
                 if target == "Party":
                     block = profiled(top, path, pid)
                 elif target == "FinancialInstitution":
@@ -2188,8 +2211,11 @@ VALUATION = {   # flow -> what the declarations add to or take from the goods li
     "tender": [("all", Decimal("200.00"), "XBL", "the special colour, part of the price paid")],
     "plastics": [("all", Decimal("-1794.00"), "XBL", "less the river freight after loading, which the seller "
                                                      "distinguished from the price (179,400 ferra)")],
-    "sea": [("XL", Decimal("2950.00"), "XBL", "the sea freight to the island"),
-            ("XL", lambda: __import__("examples_scenarios").INSURANCE, "XBL", "the cargo insurance")],   # O173
+    # the CIF price holds the sea freight and the insurance (D30 point 1): it is Lisavu's landed value as it stands,
+    # and Bayvarra's value at export is the price less them, which the seller's forwarder bills it (sea/18)
+    "sea": [("XB", lambda: -(__import__("examples_scenarios").SEA_FREIGHT
+                             + __import__("examples_scenarios").INSURANCE), "XBL",
+             "less the sea freight and the cargo insurance to the island, which the CIF price holds")],
 }
 
 
@@ -3175,12 +3201,13 @@ def check_air_uld_ids(flow_id, roots):
         raise SystemExit(f"flow {flow_id}: ULDs {sorted(loaded - named)} are loaded but named in no document")
 
 
-DUE_DATE_WAITS = {"sea/22-Invoice.xml": "O72"}   # due dates settled with a later decision
+DUE_DATE_WAITS = {}   # due dates settled with a later decision
 
 
-def check_payment_terms(root, where):
+def check_payment_terms(root, where, payee_country=None):
     """O70: one terms ID means one text and one period everywhere (D23); the due dates of a document agree with each
-    other, and where it cites standard or Accord terms, with the period those terms give from the issue date."""
+    other, and where it cites standard or Accord terms, with the period those terms give from the issue date,
+    moved to the next business day of the payee's country where it ends on none (O180)."""
     import datetime as _dt
     short = "/".join(where.split("/")[-2:])
     q = lambda e, p: [x.text for x in e.iterfind(p, {"cac": NS_CAC, "cbc": NS_CBC})]
@@ -3203,6 +3230,8 @@ def check_payment_terms(root, where):
         due = t.findtext(f"{{{NS_CBC}}}PaymentDueDate")
         if due and issue and short not in DUE_DATE_WAITS and t.find(f"{{{NS_CBC}}}InstallmentDueDate") is None:
             want = (_dt.date.fromisoformat(issue) + _dt.timedelta(days=days)).isoformat()
+            while payee_country and not business_day(payee_country, want):
+                want = (_dt.date.fromisoformat(want) + _dt.timedelta(days=1)).isoformat()
             if due != want:
                 raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due} (O70)")
 
@@ -3227,29 +3256,55 @@ def working_day(pid, day):
     return day not in days
 
 
+def business_day(country, day):
+    """Whether `day` (an ISO date) is a business day in the calendar of a country: Monday to Friday and no public
+    holiday of the country (world/countries.json holidays). A payment falls due on one (O180)."""
+    import datetime as _dt
+    d = _dt.date.fromisoformat(day)
+    return d.weekday() < 5 and day not in WORLD["countries"][country].get("holidays", {}).get(str(d.year), {})
+
+
+def payee_of(root, doc):
+    """The party a document's amount is paid to (O180): its payee where it names one; for a credit note the
+    customer, who gets the credit back; for an invoice, a self-billed invoice, an order response or a reminder
+    the supplier or seller; for any other document its issuer."""
+    p = doc.get("parties", {})
+    kind = etree.QName(root).localname
+    if "PayeeParty" in p:
+        return p["PayeeParty"]
+    if kind in ("CreditNote", "SelfBilledCreditNote"):
+        return p.get("AccountingCustomerParty")
+    if kind in ("Invoice", "SelfBilledInvoice", "OrderResponse", "Reminder"):
+        return p.get("AccountingSupplierParty") or p.get("SellerSupplierParty")
+    return doc["from"]
+
+
+def check_due_dates(root, doc, where):
+    """O180: no stated due date falls on a weekend or a holiday of the payee's country."""
+    dues = [e for e in root.iter(f"{{{NS_CBC}}}DueDate", f"{{{NS_CBC}}}PaymentDueDate",
+                                 f"{{{NS_CBC}}}InstallmentDueDate") if e.text]
+    payee = payee_of(root, doc) if dues else None
+    if dues and payee not in PARTY:
+        raise SystemExit(f"{where}: states a due date but its payee is unknown (O180)")
+    for e in dues:
+        country = PARTY[payee]["c"]
+        if not business_day(country, e.text):
+            raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} "
+                             f"{e.text} is no business day in {WORLD['countries'][country]['name']}, the payee's "
+                             "country (O180)")
+
+
 CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the document waits for (O78, stage 6)
     ('retail', '09-DocumentStatusRequest.xml'): 'D34',
     ('retail', '10-DocumentStatus.xml'): 'D34',
     ('retail', '11-TransportExecutionPlanRequest.xml'): 'D34',
     ('retail', '19-CreditNote.xml'): 'D34',
-    ('sea', '01-BusinessCard.xml'): 'D30',
-    ('sea', '02-Catalogue.xml'): 'D30',
-    ('sea', '09-ForwardingInstructions.xml'): 'D30',
-    ('sea', '12-ForwardingInstructions.xml'): 'D30',
-    ('sea', '25-Statement.xml'): 'D30',
     ('carnet', '03-ProofOfReexportationReminder.xml'): 'D40',
     ('utilities', '04-RemittanceAdvice.xml'): 'D31',
     ('utilities', '07-RemittanceAdvice.xml'): 'D31',
     ('utilities', '14-RemittanceAdvice.xml'): 'D31',
     ('plastics', '05-ExportCustomsDeclaration.xml'): 'D41',
     ('plastics', '08-DespatchAdvice.xml'): 'D41',
-    ('cotton', '04-SelfBilledInvoice.xml'): 'D33',
-    ('cotton', '05-SelfBilledCreditNote.xml'): 'D33',
-    ('cotton', '07-ForecastRevision.xml'): 'D33',
-    ('cotton', '10-GoodsCertificate.xml'): 'D33',
-    ('cotton', '11-ExportCustomsDeclaration.xml'): 'D33',
-    ('cotton', '12-WeightStatement.xml'): 'D33',
-    ('cotton', '18-RemittanceAdvice.xml'): 'D33',
 }
 
 
@@ -3278,7 +3333,6 @@ CITED_LATER = {}       # document ID -> [(moment, where)] of documents that cite
 # Documents that still report or cite something after their issue, each waiting for its flow decision (stage 6):
 # (flow, file) -> the reason. Each entry goes when its flow is implemented.
 ISSUE_ORDER_WAITS = {
-    ("sea", "28-DebitNote.xml"): "cites the factor's statement of 13 June; D30 removes the debit note (sea/28#F3, O6)",
 }
 
 
@@ -3631,7 +3685,9 @@ def main(flow_id, check=False):
         check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
         check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
-        check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}",
+                            PARTY.get(payee_of(root, doc), {}).get("c"))
+        check_due_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}
         for name, data in files.items():

@@ -11,8 +11,8 @@
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 23,189.720 venamo, 2,318.972 venamo.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 23,189.720 coral, 2,318.972 coral.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 21,958.400 venamo, 2,195.840 venamo.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 21,958.400 coral, 2,195.840 coral.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -197,6 +197,41 @@
     <cac:PartyName>
       <cbc:Name>Tevaro Customs Brokers</cbc:Name>
     </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">qal</cbc:ID>
+      <cbc:Name>Lisavan</cbc:Name>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">24307810</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+      <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+      <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+      <cbc:BuildingNumber>60</cbc:BuildingNumber>
+      <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+      <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+      <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        <cbc:Name>Lisavu</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:PartyLegalEntity>
+      <cbc:RegistrationName>Tevaro Customs Brokers Ltd</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:CompanyID>
+    </cac:PartyLegalEntity>
+    <cac:Contact>
+      <cbc:Name>Declarations</cbc:Name>
+      <cbc:JobTitle>Customs declarant</cbc:JobTitle>
+      <cbc:Department>Customs</cbc:Department>
+      <cbc:Telephone>+999 3 725 3563</cbc:Telephone>
+      <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41585</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
   </cac:NotifierParty>
   <cac:Shipment>
     <cbc:ID>LD-SH-26-0132</cbc:ID>
@@ -204,7 +239,7 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">22850.012</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">21632.000</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">104</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
@@ -229,12 +264,6 @@
           </cac:TaxScheme>
         </cac:ClassifiedTaxCategory>
       </cac:Item>
-      <cac:FreightAllowanceCharge>
-        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-        <cbc:AllowanceChargeReason>Ocean freight, share of the benches</cbc:AllowanceChargeReason>
-        <cbc:Amount currencyID="XLC">1162.714</cbc:Amount>
-      </cac:FreightAllowanceCharge>
       <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
         <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
@@ -324,15 +353,11 @@
           </cac:MeasurementDimension>
         </cac:ContainedPackage>
       </cac:ContainingPackage>
-      <cac:InsurancePolicy>
-        <cbc:ID>WS-CP-26-4471</cbc:ID>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
-      </cac:InsurancePolicy>
     </cac:GoodsItem>
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Bench side frame casting</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">339.708</cbc:DeclaredCustomsValueAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">326.400</cbc:DeclaredCustomsValueAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">S</cbc:PreferenceCriterionCode>
@@ -373,49 +398,7 @@
       </cac:ContainingPackage>
     </cac:GoodsItem>
     <cac:ShipmentStage>
-      <cac:CustomsAgentParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Tevaro Customs Brokers</cbc:Name>
-        </cac:PartyName>
-        <cac:Language>
-          <cbc:ID schemeID="ISO 639">qal</cbc:ID>
-          <cbc:Name>Lisavan</cbc:Name>
-        </cac:Language>
-        <cac:PostalAddress>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">24307810</cbc:ID>
-          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
-          <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
-          <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
-          <cbc:BuildingNumber>60</cbc:BuildingNumber>
-          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
-          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
-          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
-            <cbc:Name>Lisavu</cbc:Name>
-          </cac:Country>
-        </cac:PostalAddress>
-        <cac:PartyLegalEntity>
-          <cbc:RegistrationName>Tevaro Customs Brokers Ltd</cbc:RegistrationName>
-          <cbc:CompanyID schemeID="urn:ubl-examples:world:XL:register">IC41585</cbc:CompanyID>
-        </cac:PartyLegalEntity>
-        <cac:Contact>
-          <cbc:Name>Declarations</cbc:Name>
-          <cbc:JobTitle>Customs declarant</cbc:JobTitle>
-          <cbc:Department>Customs</cbc:Department>
-          <cbc:Telephone>+999 3 725 3563</cbc:Telephone>
-          <cbc:ElectronicMail>declarations@tevaro.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-        </cac:Contact>
-        <cac:ElectronicAddress>
-          <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-          <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC41585</cbc:ElectronicAddressID>
-        </cac:ElectronicAddress>
-      </cac:CustomsAgentParty>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>

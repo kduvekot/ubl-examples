@@ -22,10 +22,10 @@ The distributor instructs its forwarder: book the sea freight to the island and 
   The distributor's instruction number.
 - `UUID` = **abba32c6-9aed-5cc2-bf33-cf2d04aecd2b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-09**  
-  The distributor instructs its forwarder once the order is accepted.
-- `IssueTime` = **16:45:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueDate` = **2026-05-11**  
+  The distributor instructs its forwarder on the first working day after the order was accepted and the deposit paid (D27, D30 point 6).
+- `IssueTime` = **08:40:00-01:00**  
+  First thing in the morning; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Forwarding instructions**  
   What they are.
 - `Description` = **Instructions for the shipment to the island.**  
@@ -135,13 +135,13 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Export desk**  
-  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+  The party's export desk: the desk for its role in this document (it handles the transport of goods between the countries); identity of Bayforth Forwarding (world/parties.json).
 - `Contact/JobTitle` = **Export coordinator**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
 - `Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -215,17 +215,13 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/ImporterParty/PartyName/Name` = **Velumi Trading**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/InsuranceParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `Consignment/InsuranceParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/InsuranceParty/PartyName/Name` = **Wavesure Cargo Insurance**  
+- `Consignment/InsuranceParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/OriginalDespatchTransportationService/TransportServiceCode` = **MERCHHAUL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
   The forwarder, not the shipping line, brings the container to the port. The code is from the Trade Accord's transport service list: MERCHHAUL = Merchant haulage.
 - `Consignment/OriginalDespatchTransportationService/Name` = **Truck from Marrowdale to the port of Lumeport**  
-  In words.
-- `Consignment/FinalDeliveryTransportationService/TransportServiceCode` = **MERCHHAUL** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The buyer's 3PL collects at the port of Selanu. The code is from the Trade Accord's transport service list: MERCHHAUL = Merchant haulage.
-- `Consignment/FinalDeliveryTransportationService/Name` = **Truck from the port of Selanu to the 3PL**  
   In words.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -253,8 +249,8 @@ Inside `Shipment`:
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
 - `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance, all risks**  
   The cover the forwarder is to arrange.
-- `InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
-  CIF requires insurance of at least 110 % of the value; the CIF value is the goods, freight and insurance.
+- `InsurancePolicy/InsuredValueAmount` = **60385.60** (currencyID `XBL`)  
+  CIF requires insurance of at least 110 % of the value; the CIF value is the goods' CIF price.
 - `InsurancePolicy/InsurerParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `InsurancePolicy/InsurerParty/PartyName/Name` = **Wavesure Cargo Insurance**  
@@ -329,8 +325,8 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LD-FI-26-0131</cbc:ID>
   <cbc:UUID>abba32c6-9aed-5cc2-bf33-cf2d04aecd2b</cbc:UUID>
-  <cbc:IssueDate>2026-05-09</cbc:IssueDate>
-  <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-05-11</cbc:IssueDate>
+  <cbc:IssueTime>08:40:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the shipment to the island.</cbc:Description>
   <cbc:Note>Please confirm the booking.</cbc:Note>
@@ -482,20 +478,16 @@ Inside `Signature`:
       </cac:ImporterParty>
       <cac:InsuranceParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+          <cbc:Name>Lumeway Distribution</cbc:Name>
         </cac:PartyName>
       </cac:InsuranceParty>
       <cac:OriginalDespatchTransportationService>
         <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
         <cbc:Name>Truck from Marrowdale to the port of Lumeport</cbc:Name>
       </cac:OriginalDespatchTransportationService>
-      <cac:FinalDeliveryTransportationService>
-        <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
-        <cbc:Name>Truck from the port of Selanu to the 3PL</cbc:Name>
-      </cac:FinalDeliveryTransportationService>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -523,7 +515,7 @@ Inside `Signature`:
     </cac:GoodsItem>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>
       <cac:InsurerParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>

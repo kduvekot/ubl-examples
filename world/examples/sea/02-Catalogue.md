@@ -24,8 +24,8 @@ The export catalogue for the island customer.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `Name` = **Lumeway Distribution catalogue**  
   The catalogue's title.
-- `IssueDate` = **2026-05-04**  
-  The export catalogue for the island customer.
+- `IssueDate` = **2026-05-05**  
+  The export catalogue for the island customer, sent on Tuesday 5 May, after Bayvarra's Labour Day (D27, D30 point 6).
 - `IssueTime` = **09:17:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 
@@ -33,9 +33,9 @@ The export catalogue for the island customer.
 
 Inside `ValidityPeriod`:
 
-- `StartDate` = **2026-05-04**  
+- `StartDate` = **2026-05-05**  
   The prices apply from the issue date.
-- `EndDate` = **2026-10-31**  
+- `EndDate` = **2026-11-01**  
   Until the next catalogue.
 
 ### Provider Party
@@ -209,9 +209,9 @@ Inside `CatalogueLine`:
   The kind of price, which buyer and seller both understand: a trade price. The code is from the Trade Accord's price type list: TRD = Trade price.
 - `RequiredItemLocationQuantity/Price/PriceType` = **Trade price**  
   The name of code TRD in the Trade Accord's price type list.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-04**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-05**  
   The price applies from the catalogue's issue date.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-10-31**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-11-01**  
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
   The seller's price list this price is taken from.
@@ -241,9 +241,9 @@ Inside `CatalogueLine`:
   Four benches to a pallet.
 - `RequiredItemLocationQuantity/Package/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/StartDate` = **2026-05-11**  
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/StartDate` = **2026-05-12**  
   The first deliveries from the season's stock.
-- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/EndDate` = **2026-10-31**  
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/EndDate` = **2026-11-01**  
   The last.
 - `RequiredItemLocationQuantity/LeadTimeMeasure` = **3** (unitCode `DAY`)  
   The days between order and despatch.
@@ -261,9 +261,9 @@ Inside `CatalogueLine`:
   The kind of price, which buyer and seller both understand: a trade price. The code is from the Trade Accord's price type list: TRD = Trade price.
 - `RequiredItemLocationQuantity/Price/PriceType` = **Trade price**  
   The name of code TRD in the Trade Accord's price type list.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-04**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-05**  
   The price applies from the catalogue's issue date.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-10-31**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-11-01**  
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
   The seller's price list this price is taken from.
@@ -305,9 +305,9 @@ Inside `CatalogueLine`:
   The discount per bench.
 - `RequiredItemLocationQuantity/AllowanceCharge/BaseAmount` = **520.00** (currencyID `XBL`)  
   The catalogue price the discount is taken from.
-- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/StartDate` = **2026-05-11**  
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/StartDate` = **2026-05-12**  
   The first deliveries from the season's stock.
-- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/EndDate` = **2026-10-31**  
+- `RequiredItemLocationQuantity/ApplicableDeliveryPeriod/EndDate` = **2026-11-01**  
   The last.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
@@ -559,23 +559,23 @@ Inside `CatalogueLine`:
   The smallest quantity the seller accepts on an order.
 - `RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The market the price is offered for: the buyer's country, whose sales the tax category below treats (worklist C25). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `RequiredItemLocationQuantity/Price/PriceAmount` = **67** (currencyID `XBL`)  
-  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
+- `RequiredItemLocationQuantity/Price/PriceAmount` = **68** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight, O196). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `RequiredItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `RequiredItemLocationQuantity/Price/PriceTypeCode` = **TRD** (listID `urn:ubl-examples:world:codelist:PriceTypeCode`)  
   The kind of price, which buyer and seller both understand: a trade price. The code is from the Trade Accord's price type list: TRD = Trade price.
 - `RequiredItemLocationQuantity/Price/PriceType` = **Trade price**  
   The name of code TRD in the Trade Accord's price type list.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-04**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/StartDate` = **2026-05-05**  
   The price applies from the catalogue's issue date.
-- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-10-31**  
+- `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-11-01**  
   And until the catalogue ends.
 - `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force (worklist C25). The code is from the Trade Accord's record status list: ORIGINAL = Original.
-- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **26.8** (currencyID `XLC`)  
+- `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/PriceAmount` = **27.2** (currencyID `XLC`)  
   The same price in the buyer's currency, at the world's reference rate on the catalogue's issue day; for information only.
 - `RequiredItemLocationQuantity/Price/AlternativeCurrencyPrice/BaseQuantity` = **1** (unitCode `EA`)  
   Per one unit.
@@ -640,11 +640,11 @@ Inside `CatalogueLine`:
   <cbc:ID>LD-CAT-26-0124</cbc:ID>
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
-  <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+  <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>09:17:00-01:00</cbc:IssueTime>
   <cac:ValidityPeriod>
-    <cbc:StartDate>2026-05-04</cbc:StartDate>
-    <cbc:EndDate>2026-10-31</cbc:EndDate>
+    <cbc:StartDate>2026-05-05</cbc:StartDate>
+    <cbc:EndDate>2026-11-01</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ProviderParty>
     <cbc:WebsiteURI>https://www.lumeway.example</cbc:WebsiteURI>
@@ -784,8 +784,8 @@ Inside `CatalogueLine`:
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-05-04</cbc:StartDate>
-          <cbc:EndDate>2026-10-31</cbc:EndDate>
+          <cbc:StartDate>2026-05-05</cbc:StartDate>
+          <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
@@ -815,8 +815,8 @@ Inside `CatalogueLine`:
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
       </cac:Package>
       <cac:ApplicableDeliveryPeriod>
-        <cbc:StartDate>2026-05-11</cbc:StartDate>
-        <cbc:EndDate>2026-10-31</cbc:EndDate>
+        <cbc:StartDate>2026-05-12</cbc:StartDate>
+        <cbc:EndDate>2026-11-01</cbc:EndDate>
       </cac:ApplicableDeliveryPeriod>
     </cac:RequiredItemLocationQuantity>
     <cac:RequiredItemLocationQuantity>
@@ -834,8 +834,8 @@ Inside `CatalogueLine`:
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-05-04</cbc:StartDate>
-          <cbc:EndDate>2026-10-31</cbc:EndDate>
+          <cbc:StartDate>2026-05-05</cbc:StartDate>
+          <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
@@ -873,8 +873,8 @@ Inside `CatalogueLine`:
         <cbc:BaseAmount currencyID="XBL">520.00</cbc:BaseAmount>
       </cac:AllowanceCharge>
       <cac:ApplicableDeliveryPeriod>
-        <cbc:StartDate>2026-05-11</cbc:StartDate>
-        <cbc:EndDate>2026-10-31</cbc:EndDate>
+        <cbc:StartDate>2026-05-12</cbc:StartDate>
+        <cbc:EndDate>2026-11-01</cbc:EndDate>
       </cac:ApplicableDeliveryPeriod>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
@@ -1122,20 +1122,20 @@ Inside `CatalogueLine`:
         </cac:Country>
       </cac:ApplicableTerritoryAddress>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         <cbc:PriceTypeCode listID="urn:ubl-examples:world:codelist:PriceTypeCode">TRD</cbc:PriceTypeCode>
         <cbc:PriceType>Trade price</cbc:PriceType>
         <cac:ValidityPeriod>
-          <cbc:StartDate>2026-05-04</cbc:StartDate>
-          <cbc:EndDate>2026-10-31</cbc:EndDate>
+          <cbc:StartDate>2026-05-05</cbc:StartDate>
+          <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
           <cbc:ID>LD-PL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
-          <cbc:PriceAmount currencyID="XLC">26.8</cbc:PriceAmount>
+          <cbc:PriceAmount currencyID="XLC">27.2</cbc:PriceAmount>
           <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
         </cac:AlternativeCurrencyPrice>
       </cac:Price>

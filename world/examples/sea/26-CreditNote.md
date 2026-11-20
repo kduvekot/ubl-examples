@@ -2,7 +2,7 @@
 
 *Example 26 of the flow "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)" · [Credit Note in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CREDIT-NOTE-SCHEMA)*
 
-One side frame arrived in a crushed carton, cracked; the distributor credits it, and the buyer deducts the credit from what it pays the factor.
+One side frame arrived in a crushed carton, cracked, and a pallet's illegible heat-treatment mark made customs inspect the container: the distributor credits the frame as goodwill and the inspection and the day of storage the buyer paid, and the buyer deducts the credit from what it pays the factor.
 
 [The XML file](26-CreditNote.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,15 +28,15 @@ One side frame arrived in a crushed carton, cracked; the distributor credits it,
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `CreditNoteTypeCode` = **381** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 381: credit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 381 = Credit note.
-- `Note` = **Under CIF the risk was the buyer's on board; the distributor credits the frame as a goodwill gesture and claims from the insurer.**  
-  Why a credit under CIF.
+- `Note` = **Under CIF the risk was the buyer's on board; the loss is below the cargo policy's deductible of 250.00 lume, so nothing is claimed, and the distributor credits the frame as a goodwill gesture.**  
+  Why a credit under CIF, and why no insurer pays (D30 point 3, sea/26#F3).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **500**  
   The buyer's cost centre, as on the invoice credited.
 - `AccountingCost` = **Stock for municipal projects**  
   The cost centre in words.
-- `LineCountNumeric` = **1**  
+- `LineCountNumeric` = **2**  
   The number of lines.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
@@ -47,7 +47,7 @@ Inside `DiscrepancyResponse`:
 
 - `ResponseCode` = **17** (listID `UN/EDIFACT EDED 4465`)  
   The goods arrived damaged. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 17 = Transport damage.
-- `Description` = **One side frame cracked.**  
+- `Description` = **One side frame cracked; a pallet's heat-treatment mark illegible, so customs inspected the container.**  
   In words.
 
 ### Order Reference
@@ -95,13 +95,6 @@ Inside `BuyerAssignedReference`:
 
 - `BuyerReferenceCode` = **VT-CLAIMS**  
   The buyer's claims desk.
-
-### Annotation
-
-Inside `Annotation`:
-
-- `AnnotationContent` = **Claimed from Wavesure Cargo Insurance under policy WS-CP-26-4471.**  
-  Where the cost goes in the end.
 
 ### Signature
 
@@ -278,8 +271,8 @@ Inside `DeliveryTerms`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Settled against the next payment to the seller, unless refunded.**  
-  How a credit note is settled in the world.
+- `Note` = **Deducted from the payment of invoice LD-INV-26-0147 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.**  
+  With whom the credit is settled: the buyer pays the factor the balance less the credit, as its remittance advice shows (sea/26#F4).
 
 ### Tax Total
 
@@ -287,7 +280,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **67.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **196.13** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -306,13 +299,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **67.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **196.13** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **67.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **196.13** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **67.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **196.13** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **67.00** (currencyID `XBL`)  
+- `PayableAmount` = **196.13** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Credit Note Line
@@ -321,12 +314,16 @@ Inside `CreditNoteLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Frame carton crushed at the port of Selanu.**  
-  What happened.
+- `Note` = **Frame carton crushed at the port of Selanu; the cracked frame VI-SF-01501 is scrapped by the buyer, not returned.**  
+  What happened, and what becomes of the frame (D30, goods balance).
 - `CreditedQuantity` = **1** (unitCode `EA`)  
   The frame that arrived cracked.
-- `LineExtensionAmount` = **67.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **68.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
+- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+  The invoice of the frames.
+- `BillingReference/BillingReferenceLine/ID` = **3**  
+  The invoice line of the frames this line credits (sea/26#F6).
 - `Item/Description` = **Spare side frame for the Serra bench.**  
   The seller's description; item bench-casting-b of Lumeway Distribution (world/items.json).
 - `Item/Name` = **Bench side frame casting**  
@@ -353,9 +350,47 @@ Inside `CreditNoteLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `Price/PriceAmount` = **67** (currencyID `XBL`)  
-  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
+- `Price/PriceAmount` = **68** (currencyID `XBL`)  
+  Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight, O196). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11).
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
+  The price is per one unit.
+- `ID` = **2**  
+  The line number.
+- `Note` = **Heat-treatment mark illegible on pallet 095206100003729132: customs inspected the container and held it for a day.**  
+  Why the buyer's costs are credited: a packaging fault on the seller's side, a cost passed on instead of a debit note from the buyer (D30 point 3, O6).
+- `CreditedQuantity` = **1** (unitCode `E48`)  
+  The customs inspection and the day of storage at Selanu.
+- `LineExtensionAmount` = **128.13** (currencyID `XBL`)  
+  Quantity times price, rounded to the minor unit.
+- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+  The invoice of the benches on the pallet.
+- `BillingReference/BillingReferenceLine/ID` = **1**  
+  The invoice line of the port's benches, whose pallet carried the illegible mark.
+- `DocumentReference/ID` = **XL-CUS-RCPT-26-0517**  
+  The customs receipt for the inspection fee the buyer paid, the evidence of its outlay.
+- `DocumentReference/DocumentTypeCode` = **917** (listID `UN/EDIFACT EDED 1001`)  
+  The kind of document referred to, the island customs' receipt for the inspection fee, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 917 = Receipt (Customs).
+- `Item/Description` = **The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service.**  
+  The seller's description; item inspection-cost-credit of Lumeway Distribution (world/items.json).
+- `Item/Name` = **Customs inspection and storage at Selanu, passed on**  
+  The item's short name; item inspection-cost-credit of Lumeway Distribution (world/items.json).
+- `Item/SellersItemIdentification/ID` = **LD-CLAIM-INSP**  
+  The seller's own item number; item inspection-cost-credit of Lumeway Distribution (world/items.json).
+- `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
+  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
+  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
+  Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
+- `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Price/PriceAmount` = **128.13** (currencyID `XBL`)  
+  What the buyer paid at Selanu because a pallet's heat-treatment mark was illegible: the Island Customs Service's inspection fee of 38.500 coral and the Port of Selanu's storage for the day the container was held, 12.750 coral, together 51.250 coral, 128.13 lume at the reference rate (D30 point 3).
+- `Price/BaseQuantity` = **1** (unitCode `E48`)  
   The price is per one unit.
 
 ## The document
@@ -372,15 +407,15 @@ Inside `CreditNoteLine`:
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:49:00-01:00</cbc:IssueTime>
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
-  <cbc:Note>Under CIF the risk was the buyer's on board; the distributor credits the frame as a goodwill gesture and claims from the insurer.</cbc:Note>
+  <cbc:Note>Under CIF the risk was the buyer's on board; the loss is below the cargo policy's deductible of 250.00 lume, so nothing is claimed, and the distributor credits the frame as a goodwill gesture.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
-  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:DiscrepancyResponse>
     <cbc:ResponseCode listID="UN/EDIFACT EDED 4465">17</cbc:ResponseCode>
-    <cbc:Description>One side frame cracked.</cbc:Description>
+    <cbc:Description>One side frame cracked; a pallet's heat-treatment mark illegible, so customs inspected the container.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
     <cbc:ID>VT-PO-26-0127</cbc:ID>
@@ -404,9 +439,6 @@ Inside `CreditNoteLine`:
   <cac:BuyerAssignedReference>
     <cbc:BuyerReferenceCode>VT-CLAIMS</cbc:BuyerReferenceCode>
   </cac:BuyerAssignedReference>
-  <cac:Annotation>
-    <cbc:AnnotationContent>Claimed from Wavesure Cargo Insurance under policy WS-CP-26-4471.</cbc:AnnotationContent>
-  </cac:Annotation>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-0042</cbc:ID>
     <cac:SignatoryParty>
@@ -551,12 +583,12 @@ Inside `CreditNoteLine`:
     <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
   </cac:DeliveryTerms>
   <cac:PaymentTerms>
-    <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
+    <cbc:Note>Deducted from the payment of invoice LD-INV-26-0147 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">67.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">196.13</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -570,16 +602,24 @@ Inside `CreditNoteLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">67.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">67.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">67.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">67.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">196.13</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">196.13</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">196.13</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">196.13</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Frame carton crushed at the port of Selanu.</cbc:Note>
+    <cbc:Note>Frame carton crushed at the port of Selanu; the cracked frame VI-SF-01501 is scrapped by the buyer, not returned.</cbc:Note>
     <cbc:CreditedQuantity unitCode="EA">1</cbc:CreditedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">67.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">68.00</cbc:LineExtensionAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0147</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>3</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
     <cac:Item>
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
@@ -608,8 +648,47 @@ Inside `CreditNoteLine`:
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">67</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">68</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:CreditNoteLine>
+  <cac:CreditNoteLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Heat-treatment mark illegible on pallet 095206100003729132: customs inspected the container and held it for a day.</cbc:Note>
+    <cbc:CreditedQuantity unitCode="E48">1</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">128.13</cbc:LineExtensionAmount>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>LD-INV-26-0147</cbc:ID>
+      </cac:InvoiceDocumentReference>
+      <cac:BillingReferenceLine>
+        <cbc:ID>1</cbc:ID>
+      </cac:BillingReferenceLine>
+    </cac:BillingReference>
+    <cac:DocumentReference>
+      <cbc:ID>XL-CUS-RCPT-26-0517</cbc:ID>
+      <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">917</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
+    <cac:Item>
+      <cbc:Description>The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service.</cbc:Description>
+      <cbc:Name>Customs inspection and storage at Selanu, passed on</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>LD-CLAIM-INSP</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="XBL">128.13</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="E48">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:CreditNoteLine>
 </CreditNote>

@@ -22,8 +22,8 @@ Under FOB the buyer books the main carriage: the mill instructs its forwarder.
   The mill's instruction number.
 - `UUID` = **1e4f0578-b6cd-5679-84ad-93eb9ac890fd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-02-25**  
-  Under FOB the buyer instructs the forwarder for the main carriage.
+- `IssueDate` = **2026-04-24**  
+  The day after the order: under FOB the buyer instructs the forwarder for the main carriage.
 - `IssueTime` = **11:39:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Name` = **Forwarding instructions**  
@@ -117,13 +117,13 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Export desk**  
-  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+  The party's export desk: the desk for its role in this document (it handles the transport of goods between the countries); identity of Bayforth Forwarding (world/parties.json).
 - `Contact/JobTitle` = **Export coordinator**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
 - `Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -247,7 +247,7 @@ Inside `Signature`:
   <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>LTM-FI-26-0199</cbc:ID>
   <cbc:UUID>1e4f0578-b6cd-5679-84ad-93eb9ac890fd</cbc:UUID>
-  <cbc:IssueDate>2026-02-25</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>11:39:00-01:00</cbc:IssueTime>
   <cbc:Name>Forwarding instructions</cbc:Name>
   <cbc:Description>Instructions for the bales to Bayvarra.</cbc:Description>

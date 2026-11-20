@@ -32,8 +32,8 @@ The barge operator confirms the vessel and the sailing.
   The carrier confirms the plan as requested. A value of UBL's document status code list (2.1: Document has been confirmed). The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
 - `DocumentStatusReasonCode` = **ASREQUESTED** (listID `urn:ubl-examples:world:codelist:DocumentStatusReasonCode`)  
   Confirmed without changes. The code is from the Trade Accord's document status reason list: ASREQUESTED = As requested.
-- `DocumentStatusReasonDescription` = **Capacity available on the requested day.**  
-  Why it is confirmed.
+- `DocumentStatusReasonDescription` = **Capacity available on the requested day: the barge sails on 20 April.**  
+  Why it is confirmed as requested.
 - `Note` = **Drek bikrek mir drek nir nan krir drek balman halkan zir drek gakzaz krir drek zulskir nerzhek.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): The transport agreed.
 - `Note` = **The barge from the quay next to the recovery plant down the river to the packaging maker.** (languageID `en-XU`)  
@@ -239,15 +239,6 @@ Inside `MainTransportationService`:
 - `Name` = **River barge**  
   In words.
 
-### Additional Transportation Service
-
-Inside `AdditionalTransportationService`:
-
-- `TransportServiceCode` = **NOTIFY** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  Pre-arrival notice. The code is from the Trade Accord's transport service list: NOTIFY = Pre-arrival notice.
-- `Name` = **Notice two hours before arrival**  
-  In words.
-
 ### Service Start Time Period
 
 Inside `ServiceStartTimePeriod`:
@@ -284,10 +275,8 @@ Inside `ToLocation`:
 
 Inside `TransportExecutionTerms`:
 
-- `TransportUserSpecialTerms` = **Delivery within the agreed slot; the consignee unloads.**  
-  The user's terms.
-- `TransportServiceProviderSpecialTerms` = **Waiting time beyond two hours is charged.**  
-  The carrier's.
+- `TransportServiceProviderSpecialTerms` = **Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.**  
+  The carrier's terms.
 - `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
   When the plan may change.
 - `PaymentTerms/Note` = **30 days net from the consignment note.**  
@@ -456,7 +445,7 @@ Inside `Consignment`:
   <cbc:IssueTime>13:10:00-01:00</cbc:IssueTime>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
   <cbc:DocumentStatusReasonCode listID="urn:ubl-examples:world:codelist:DocumentStatusReasonCode">ASREQUESTED</cbc:DocumentStatusReasonCode>
-  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day.</cbc:DocumentStatusReasonDescription>
+  <cbc:DocumentStatusReasonDescription>Capacity available on the requested day: the barge sails on 20 April.</cbc:DocumentStatusReasonDescription>
   <cbc:Note languageID="qau">Drek bikrek mir drek nir nan krir drek balman halkan zir drek gakzaz krir drek zulskir nerzhek.</cbc:Note>
   <cbc:Note languageID="en-XU">The barge from the quay next to the recovery plant down the river to the packaging maker.</cbc:Note>
   <cbc:TransportServiceProviderRemarks>Collection as requested; notice two hours before arrival.</cbc:TransportServiceProviderRemarks>
@@ -601,10 +590,6 @@ Inside `Consignment`:
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RIVERBARGE</cbc:TransportServiceCode>
     <cbc:Name>River barge</cbc:Name>
   </cac:MainTransportationService>
-  <cac:AdditionalTransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">NOTIFY</cbc:TransportServiceCode>
-    <cbc:Name>Notice two hours before arrival</cbc:Name>
-  </cac:AdditionalTransportationService>
   <cac:ServiceStartTimePeriod>
     <cbc:StartDate>2026-04-20</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
@@ -624,8 +609,7 @@ Inside `Consignment`:
     <cbc:Name>River quay of Rivermouth Packaging, Lumeport</cbc:Name>
   </cac:ToLocation>
   <cac:TransportExecutionTerms>
-    <cbc:TransportUserSpecialTerms>Delivery within the agreed slot; the consignee unloads.</cbc:TransportUserSpecialTerms>
-    <cbc:TransportServiceProviderSpecialTerms>Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
+    <cbc:TransportServiceProviderSpecialTerms>Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
     <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
     <cac:PaymentTerms>
       <cbc:Note>30 days net from the consignment note.</cbc:Note>

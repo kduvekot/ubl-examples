@@ -22,7 +22,7 @@ The power station pays the invoice and the surcharge, in ferra.
   The power station's number.
 - `UUID` = **a612b1d2-c2c5-5799-a3c2-b98476b55f88**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-06-06**  
+- `IssueDate` = **2026-06-08**  
   Paid three days after the reminder.
 - `IssueTime` = **16:36:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
@@ -274,7 +274,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>MP-RM-26-0161</cbc:ID>
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
-  <cbc:IssueDate>2026-06-06</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-08</cbc:IssueDate>
   <cbc:IssueTime>16:36:00-01:00</cbc:IssueTime>
   <cbc:Note>The March gas invoice, with the surcharge of the reminder.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>

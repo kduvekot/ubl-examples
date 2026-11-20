@@ -81,15 +81,15 @@ Inside `SenderParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/Name` = **Export desk**  
+- `Contact/Name` = **Transport desk**  
   The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/JobTitle` = **Export coordinator**  
+- `Contact/JobTitle` = **Transport planner**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
-- `Contact/Department` = **Export**  
+- `Contact/Department` = **Transport**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
-- `Contact/ElectronicMail` = **export@bayforth.example**  
+- `Contact/ElectronicMail` = **transport@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
@@ -413,11 +413,11 @@ Inside `Consignment`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Export desk</cbc:Name>
-      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
-      <cbc:Department>Export</cbc:Department>
+      <cbc:Name>Transport desk</cbc:Name>
+      <cbc:JobTitle>Transport planner</cbc:JobTitle>
+      <cbc:Department>Transport</cbc:Department>
       <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
-      <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>transport@bayforth.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>

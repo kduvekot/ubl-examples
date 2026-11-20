@@ -8,7 +8,7 @@
   <cbc:UUID>fd8a81de-9573-5186-80c9-8de9f5f56682</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>10:10:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-09</cbc:DueDate>
+  <cbc:DueDate>2026-05-11</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>PWD-OFF-26</cbc:AccountingCostCode>
@@ -211,7 +211,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF52BFINV260583</cbc:InstructionNote>
@@ -262,9 +262,9 @@
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
     <cbc:PenaltyAmount currencyID="XBL">89.64</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.brackenmere.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-09</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-05-10</cbc:StartDate>
+      <cbc:StartDate>2026-05-12</cbc:StartDate>
     </cac:PenaltyPeriod>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>

@@ -26,8 +26,8 @@ The grid operator charges the retail company for the use of the networks at the 
   The month's network charges, billed the morning after the meters were read, with the metering statement that supplements the invoice.
 - `IssueTime` = **08:20:00-01:00**  
   The grid operator's billing run, first thing in the morning; in the issuer's local time, with its offset from UTC (D27).
-- `DueDate` = **2026-05-02**  
-  As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
+- `DueDate` = **2026-05-04**  
+  As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days. The count ends on Saturday 2 May, no business day in Urvania, the payee's country, so the payment is due on the next one, Monday 4 May (O180).
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `TaxPointDate` = **2026-04-02**  
@@ -232,7 +232,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-02**  
+- `PaymentDueDate` = **2026-05-04**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -307,8 +307,8 @@ Inside `PaymentTerms`:
   The discount on the amount payable, if paid in time.
 - `PaymentTermsDetailsURI` = **https://www.ferranogrid.example/terms**  
   The seller's general terms of payment.
-- `PaymentDueDate` = **2026-05-02**  
-  The day the amount is due, as the terms count it.
+- `PaymentDueDate` = **2026-05-04**  
+  The day the amount is due, as the terms count it. The count ends on Saturday 2 May, no business day in Urvania, the payee's country, so the payment is due on the next one, Monday 4 May (O180).
 - `SettlementPeriod/StartDate` = **2026-04-02**  
   From the invoice date.
 - `SettlementPeriod/EndDate` = **2026-04-12**  
@@ -510,7 +510,7 @@ Inside `InvoiceLine`:
   <cbc:UUID>af7f93bd-4f82-5130-82e5-5b40a1c4cefa</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-02</cbc:DueDate>
+  <cbc:DueDate>2026-05-04</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:TaxPointDate>2026-04-02</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -675,7 +675,7 @@ Inside `InvoiceLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-02</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF13FGINV260150</cbc:InstructionNote>
@@ -728,7 +728,7 @@ Inside `InvoiceLine`:
     <cbc:SettlementDiscountPercent>2</cbc:SettlementDiscountPercent>
     <cbc:SettlementDiscountAmount currencyID="XUF">66983</cbc:SettlementDiscountAmount>
     <cbc:PaymentTermsDetailsURI>https://www.ferranogrid.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-05-02</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-04</cbc:PaymentDueDate>
     <cac:SettlementPeriod>
       <cbc:StartDate>2026-04-02</cbc:StartDate>
       <cbc:EndDate>2026-04-12</cbc:EndDate>

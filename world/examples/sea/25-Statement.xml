@@ -6,17 +6,17 @@
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>HF-ST-26-0150</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
-  <cbc:IssueDate>2026-06-13</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-12</cbc:IssueDate>
   <cbc:IssueTime>08:43:00-01:00</cbc:IssueTime>
   <cbc:Note>Statement on behalf of Lumeway Distribution, whose receivables Harbourline Factoring holds.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">57974.30</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">54896.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">10000.00</cbc:TotalCreditAmount>
-  <cbc:TotalBalanceAmount currencyID="XBL">47974.30</cbc:TotalBalanceAmount>
+  <cbc:TotalBalanceAmount currencyID="XBL">44896.00</cbc:TotalBalanceAmount>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:StatementTypeCode listID="urn:ubl-examples:world:codelist:StatementTypeCode">ACCOUNT</cbc:StatementTypeCode>
   <cac:StatementPeriod>
-    <cbc:StartDate>2026-05-14</cbc:StartDate>
+    <cbc:StartDate>2026-05-08</cbc:StartDate>
     <cbc:EndDate>2026-06-13</cbc:EndDate>
   </cac:StatementPeriod>
   <cac:AdditionalDocumentReference>
@@ -150,7 +150,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
@@ -197,24 +197,18 @@
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:Note>Pay the balance by the due date of the invoice.</cbc:Note>
-    <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
   </cac:PaymentTerms>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Freight and insurance of the CIF invoice</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="XBL">3090.30</cbc:Amount>
-  </cac:AllowanceCharge>
   <cac:StatementLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>The invoice, bought by the factor.</cbc:Note>
     <cbc:UUID>56439119-78e3-59ec-bc7d-84c3d3a46f09</cbc:UUID>
     <cbc:BalanceBroughtForwardIndicator>false</cbc:BalanceBroughtForwardIndicator>
-    <cbc:DebitLineAmount currencyID="XBL">57974.30</cbc:DebitLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">57974.30</cbc:BalanceAmount>
+    <cbc:DebitLineAmount currencyID="XBL">54896.00</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">54896.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
     <cac:PaymentTerms>
-      <cbc:PaymentDueDate>2026-06-28</cbc:PaymentDueDate>
+      <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     </cac:PaymentTerms>
     <cac:BuyerCustomerParty>
       <cac:Party>
@@ -264,36 +258,21 @@
       <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
       <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
     </cac:DocumentReference>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Sea freight</cbc:AllowanceChargeReason>
-      <cbc:Amount currencyID="XBL">2950.00</cbc:Amount>
-    </cac:AllowanceCharge>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">96</cbc:AllowanceChargeReasonCode>
-      <cbc:AllowanceChargeReason>Cargo insurance</cbc:AllowanceChargeReason>
-      <cbc:Amount currencyID="XBL">140.30</cbc:Amount>
-    </cac:AllowanceCharge>
   </cac:StatementLine>
   <cac:StatementLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Paid to the distributor before the invoice was assigned.</cbc:Note>
     <cbc:UUID>16aec267-0a53-5561-ad4f-79c534c1d918</cbc:UUID>
     <cbc:CreditLineAmount currencyID="XBL">10000.00</cbc:CreditLineAmount>
-    <cbc:BalanceAmount currencyID="XBL">47974.30</cbc:BalanceAmount>
+    <cbc:BalanceAmount currencyID="XBL">44896.00</cbc:BalanceAmount>
     <cac:PaymentMeans>
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2026-05-08</cbc:StartDate>
-      <cbc:EndDate>2026-05-09</cbc:EndDate>
-    </cac:InvoicePeriod>
     <cac:CollectedPayment>
       <cbc:ID>VT-DEP-26-0412</cbc:ID>
       <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
       <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+      <cbc:PaidDate>2026-05-08</cbc:PaidDate>
     </cac:CollectedPayment>
   </cac:StatementLine>
 </Statement>

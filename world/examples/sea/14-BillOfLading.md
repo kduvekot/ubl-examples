@@ -194,13 +194,13 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Export desk**  
-  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+  The party's export desk: the desk for its role in this document (it handles the transport of goods between the countries); identity of Bayforth Forwarding (world/parties.json).
 - `Contact/JobTitle` = **Export coordinator**  
   The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Department` = **Export**  
   The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
 - `Contact/ElectronicMail` = **export@bayforth.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -226,21 +226,19 @@ Inside `Shipment`:
   The distributor's consignment number.
 - `Consignment/CarrierAssignedID` = **TWL-BK-26-55710**  
   The carrier's booking number.
-- `Consignment/ConsignorAssignedID` = **VT-PO-26-0127**  
-  The order the goods were sold under.
-- `Consignment/FreightForwarderAssignedID` = **LD-FI-26-0131**  
-  The forwarder's file: the instructions it received.
+- `Consignment/FreightForwarderAssignedID` = **BF-SH-26-0418**  
+  The forwarder's own file number for the consignment, not the distributor's instructions (sea/14#F6).
 - `Consignment/BrokerAssignedID` = **TCB-26-0331**  
   The customs broker's file in Selanu.
-- `Consignment/TotalInvoiceAmount` = **54884.00** (currencyID `XBL`)  
-  The value of the goods on the sales invoice.
-- `Consignment/DeclaredCustomsValueAmount` = **57974.30** (currencyID `XBL`)  
-  The CIF value: goods, freight and insurance.
+- `Consignment/TotalInvoiceAmount` = **54896.00** (currencyID `XBL`)  
+  The sales invoice: the goods at their CIF prices.
+- `Consignment/DeclaredCustomsValueAmount` = **54896.00** (currencyID `XBL`)  
+  The CIF value, the price of the goods, which holds the freight and the insurance.
 - `Consignment/TariffDescription` = **Furniture, packed, not hazardous**  
   The carrier's commodity tariff, in words.
 - `Consignment/TariffCode` = **TWL-T-0940**  
   The item of the carrier's own freight tariff for this cargo: furniture. A code the carrier defines, so it has no code list.
-- `Consignment/InsurancePremiumAmount` = **140.30** (currencyID `XBL`)  
+- `Consignment/InsurancePremiumAmount` = **132.85** (currencyID `XBL`)  
   The premium the seller paid under CIF.
 - `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the cargo.
@@ -252,10 +250,10 @@ Inside `Shipment`:
   The handling, in words.
 - `Consignment/Information` = **Shipped on board in apparent good order and condition.**  
   The carrier's clause.
-- `Consignment/InsuranceValueAmount` = **63771.73** (currencyID `XBL`)  
+- `Consignment/InsuranceValueAmount` = **60385.60** (currencyID `XBL`)  
   110 % of the CIF value.
-- `Consignment/FreeOnBoardValueAmount` = **54884.00** (currencyID `XBL`)  
-  The value on board in Lumeport: the goods alone.
+- `Consignment/FreeOnBoardValueAmount` = **51813.15** (currencyID `XBL`)  
+  The value on board in Lumeport: the CIF price less the sea freight and the insurance.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XL-TR-041859** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
@@ -338,9 +336,9 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/OriginalDespatchParty/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/FinalDeliveryParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Consignment/FinalDeliveryParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/FinalDeliveryParty/PartyName/Name` = **Velumi Trading**  
+- `Consignment/FinalDeliveryParty/PartyName/Name` = **Nalevi Warehousing**  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/LogisticsOperatorParty/PartyIdentification/ID` = **IC41722** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -360,7 +358,7 @@ Inside `Shipment`:
   The risk is the buyer's from on board in Lumeport. The code is from the Trade Accord's party bearing the risk list: BUYER = Buyer.
 - `Consignment/DeliveryTerms/LossRisk` = **Risk passes when the goods are on board the vessel in Lumeport.**  
   In words.
-- `Consignment/DeliveryTerms/Amount` = **57974.30** (currencyID `XBL`)  
+- `Consignment/DeliveryTerms/Amount` = **54896.00** (currencyID `XBL`)  
   The CIF value the terms are based on.
 - `Consignment/DeliveryTerms/DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
@@ -432,14 +430,10 @@ Inside `Shipment`:
   The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station (world/countries.json).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702117**  
   The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipsRequirements` = **Shore power at the container quay.**  
-  What the ship needs in port.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **9940** (unitCode `C62`)  
   The gross tonnage of the vessel, a number without a unit.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **5120** (unitCode `C62`)  
   Its net tonnage, also without a unit.
-- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/SegregatedBallastMeasure` = **2480** (unitCode `TNE`)  
-  The capacity of the tanks for ballast water only.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
   The kind of vessel, for about 1,000 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20117**  
@@ -534,14 +528,6 @@ Inside `Shipment`:
   At the container quay of the Port of Lumeport.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/ChargeIndicator` = **true**  
-  The truck to the port.
-- `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
-  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
-- `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/AllowanceChargeReason` = **Pre-carriage by road**  
-  In words.
-- `Consignment/PreCarriageShipmentStage/FreightAllowanceCharge/Amount` = **310.00** (currencyID `XBL`)  
-  The forwarder's own truck; part of its price to the shipper.
 - `Consignment/OnCarriageShipmentStage/ID` = **3**  
   By truck from the port of Selanu to the 3PL.
 - `Consignment/OnCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -559,7 +545,7 @@ Inside `Shipment`:
 - `Consignment/OnCarriageShipmentStage/WarehousingTransportEvent/Location/Name` = **Nalevi Warehousing, Selanu**  
   The 3PL's warehouse on the island, where the goods are received and stored.
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate` = **2026-05-18**  
-  Planned receipt at the 3PL.
+  Planned receipt at the 3PL, the day after discharge, as planned when the bill was issued.
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/Location/Name` = **Nalevi Warehousing, Selanu**  
@@ -914,28 +900,10 @@ Inside `Shipment`:
   The marks on the pallet: the consignee's mark and the pallet's place in the count.
 - `Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TraceID` = **095206100003729330**  
   The pallet's barcode, scanned at each handover: it carries the same number.
-- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/ID` = **BV CH 0412** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
-  The forwarder's chassis the container rode on to the port. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
-- `Consignment/TransportHandlingUnit/TransportEquipment/AttachedTransportEquipment/TransportEquipmentTypeCode` = **TE** (listID `UN/EDIFACT EDED 8053`)  
-  UN/EDIFACT 8053 code TE: trailer. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: TE = Trailer.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ID` = **095206100003729330** (schemeID `GS1 SSCC`)  
-  The pallet of frame cartons, packed last at the doors: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/Quantity` = **12** (unitCode `EA`)  
-  Twelve side frames, one to a carton.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/PackagingTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
-- `Consignment/TransportHandlingUnit/TransportEquipment/Package/ContainingTransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
-  The container.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ID` = **1**  
   The goods in the container, as one item for the carrier.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/Description` = **Park benches and spare side frames**  
   In words.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/ID` = **TWLU4120872** (schemeID `ISO6346`)  
-  The container the goods are in. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/Quantity` = **27** (unitCode `EA`)  
-  27 pallets in it.
-- `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **TWLU4120872** (schemeID `ISO6346`)  
-  The container itself, as equipment. The schemeID names the scheme it is from: the ISO 6346 container number (owner code, U, six digits and the check digit).
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/ID` = **1.1**  
   The benches.
 - `Consignment/TransportHandlingUnit/TransportEquipment/GoodsItem/ContainedGoodsItem/Description` = **Park benches**  
@@ -994,14 +962,54 @@ Inside `Shipment`:
   The cargo policy of the insurer.
 - `Consignment/InsurancePolicy/InsuranceTypeCode` = **ALLRISKS** (listID `urn:ubl-examples:world:codelist:InsuranceCoverCode`)  
   Cover against all risks. The code is from the Trade Accord's insurance cover list: ALLRISKS = All risks.
-- `Consignment/InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
+- `Consignment/InsurancePolicy/InsuredValueAmount` = **60385.60** (currencyID `XBL`)  
   110 % of the CIF value.
 - `Consignment/InsurancePolicy/DeductibleAmount` = **250.00** (currencyID `XBL`)  
   The part of a claim the insured bears.
-- `Consignment/InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
-  The excess per claim, as in the policy.
-- `Consignment/InsurancePolicy/InsurancePremiumAmount` = **140.30** (currencyID `XBL`)  
+- `Consignment/InsurancePolicy/InsurancePremiumAmount` = **132.85** (currencyID `XBL`)  
   The premium.
+- `Consignment/InsurancePolicy/InsurerParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+- `Consignment/InsurancePolicy/InsurerParty/PartyName/Name` = **Wavesure Cargo Insurance**  
+  The trading name; identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/ID` = **LUM-ADR-308716** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
+  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/StreetName` = **Beacon Avenue**  
+  Street of the postal address. identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/BuildingNumber` = **55**  
+  Building number of the postal address. identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CitySubdivisionName` = **Dockside**  
+  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/PostalZone` = **38524**  
+  Postal code in Bayvarra's format (5 digits). identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CountrySubentity` = **Coastal State**  
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Wavesure Cargo Insurance (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/TimezoneOffset` = **-01:00**  
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/InsurancePolicy/InsurerParty/PostalAddress/Country/Name` = **Bayvarra**  
+  The country's name, for readers of the address.
+- `Consignment/InsurancePolicy/InsurerParty/Contact/Name` = **Cargo claims**  
+  The party's main desk, which handles this document; identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/Contact/JobTitle` = **Claims handler**  
+  The job of the person who answers at the desk; identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/Contact/Department` = **Claims**  
+  The department the desk belongs to; identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/Contact/Telephone` = **+999 2 38 2115 9838**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/Contact/ElectronicMail` = **cargo@wavesure.example**  
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Wavesure Cargo Insurance (world/parties.json).
+- `Consignment/InsurancePolicy/InsurerParty/Contact/Note` = **Weekdays 08:00–17:00**  
+  When the desk can be reached; identity of Wavesure Cargo Insurance (world/parties.json).
 - `Consignment/InsurancePolicy/BrokerParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/InsurancePolicy/BrokerParty/PartyName/Name` = **Bayforth Forwarding**  
@@ -1016,6 +1024,8 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/InsurancePolicy/PolicyDocumentReference/ID` = **WS-CERT-26-0884**  
   The insurance certificate that goes with the documents.
+- `Consignment/InsurancePolicy/PolicyDocumentReference/DocumentType` = **Insurance certificate**  
+  What the document is: the certificate of the shipment under the policy, not the policy itself (sea/14#F12).
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -1040,56 +1050,6 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **732599** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 732599 = Other cast articles of iron or steel: other.
-- `InsurancePolicy/InsuredValueAmount` = **63771.73** (currencyID `XBL`)  
-  The insured value, 110 % of the CIF value.
-- `InsurancePolicy/ExcessAmount` = **250.00** (currencyID `XBL`)  
-  The excess per claim, as in the policy.
-- `InsurancePolicy/InsurerParty/PartyIdentification/ID` = **20411507** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Wavesure Cargo Insurance (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
-- `InsurancePolicy/InsurerParty/PartyName/Name` = **Wavesure Cargo Insurance**  
-  The trading name; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/ID` = **LUM-ADR-308716** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
-  The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
-- `InsurancePolicy/InsurerParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
-- `InsurancePolicy/InsurerParty/PostalAddress/StreetName` = **Beacon Avenue**  
-  Street of the postal address. identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/BuildingNumber` = **55**  
-  Building number of the postal address. identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/CitySubdivisionName` = **Dockside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/PostalZone` = **38524**  
-  Postal code in Bayvarra's format (5 digits). identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/CountrySubentity` = **Coastal State**  
-  The name of code XB-CO in Bayvarra's national state or territory list.
-- `InsurancePolicy/InsurerParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Wavesure Cargo Insurance (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
-- `InsurancePolicy/InsurerParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
-- `InsurancePolicy/InsurerParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `InsurancePolicy/InsurerParty/PostalAddress/Country/Name` = **Bayvarra**  
-  The country's name, for readers of the address.
-- `InsurancePolicy/InsurerParty/Contact/Name` = **Cargo claims**  
-  The party's main desk, which handles this document; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/Contact/JobTitle` = **Claims handler**  
-  The job of the person who answers at the desk; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/Contact/Department` = **Claims**  
-  The department the desk belongs to; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/Contact/Telephone` = **+999 2 38 2115 9838**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/Contact/ElectronicMail` = **cargo@wavesure.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/InsurerParty/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Wavesure Cargo Insurance (world/parties.json).
-- `InsurancePolicy/BrokerParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
-- `InsurancePolicy/BrokerParty/PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
 
 ### Document Reference
 
@@ -1289,21 +1249,20 @@ Inside `Signature`:
     <cac:Consignment>
       <cbc:ID>LD-CS-26-0133</cbc:ID>
       <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
-      <cbc:ConsignorAssignedID>VT-PO-26-0127</cbc:ConsignorAssignedID>
-      <cbc:FreightForwarderAssignedID>LD-FI-26-0131</cbc:FreightForwarderAssignedID>
+      <cbc:FreightForwarderAssignedID>BF-SH-26-0418</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
-      <cbc:TotalInvoiceAmount currencyID="XBL">54884.00</cbc:TotalInvoiceAmount>
-      <cbc:DeclaredCustomsValueAmount currencyID="XBL">57974.30</cbc:DeclaredCustomsValueAmount>
+      <cbc:TotalInvoiceAmount currencyID="XBL">54896.00</cbc:TotalInvoiceAmount>
+      <cbc:DeclaredCustomsValueAmount currencyID="XBL">54896.00</cbc:DeclaredCustomsValueAmount>
       <cbc:TariffDescription>Furniture, packed, not hazardous</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0940</cbc:TariffCode>
-      <cbc:InsurancePremiumAmount currencyID="XBL">140.30</cbc:InsurancePremiumAmount>
+      <cbc:InsurancePremiumAmount currencyID="XBL">132.85</cbc:InsurancePremiumAmount>
       <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cbc:ShippingPriorityLevelCode listID="urn:ubl-examples:world:codelist:ShippingPriorityCode">STANDARD</cbc:ShippingPriorityLevelCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">DECK</cbc:HandlingCode>
       <cbc:HandlingInstructions>Keep dry.</cbc:HandlingInstructions>
       <cbc:Information>Shipped on board in apparent good order and condition.</cbc:Information>
-      <cbc:InsuranceValueAmount currencyID="XBL">63771.73</cbc:InsuranceValueAmount>
-      <cbc:FreeOnBoardValueAmount currencyID="XBL">54884.00</cbc:FreeOnBoardValueAmount>
+      <cbc:InsuranceValueAmount currencyID="XBL">60385.60</cbc:InsuranceValueAmount>
+      <cbc:FreeOnBoardValueAmount currencyID="XBL">51813.15</cbc:FreeOnBoardValueAmount>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -1379,10 +1338,10 @@ Inside `Signature`:
       </cac:OriginalDespatchParty>
       <cac:FinalDeliveryParty>
         <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
         </cac:PartyIdentification>
         <cac:PartyName>
-          <cbc:Name>Velumi Trading</cbc:Name>
+          <cbc:Name>Nalevi Warehousing</cbc:Name>
         </cac:PartyName>
       </cac:FinalDeliveryParty>
       <cac:LogisticsOperatorParty>
@@ -1411,7 +1370,7 @@ Inside `Signature`:
         <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
         <cbc:LossRiskResponsibilityCode listID="urn:ubl-examples:world:codelist:RiskResponsiblePartyCode">BUYER</cbc:LossRiskResponsibilityCode>
         <cbc:LossRisk>Risk passes when the goods are on board the vessel in Lumeport.</cbc:LossRisk>
-        <cbc:Amount currencyID="XBL">57974.30</cbc:Amount>
+        <cbc:Amount currencyID="XBL">54896.00</cbc:Amount>
         <cac:DeliveryLocation>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -1475,10 +1434,8 @@ Inside `Signature`:
             <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
             <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
             <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
-            <cbc:ShipsRequirements>Shore power at the container quay.</cbc:ShipsRequirements>
             <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
             <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
-            <cbc:SegregatedBallastMeasure unitCode="TNE">2480</cbc:SegregatedBallastMeasure>
             <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
             <cac:RegistryCertificateDocumentReference>
               <cbc:ID>REG-XB-S-20117</cbc:ID>
@@ -1594,12 +1551,6 @@ Inside `Signature`:
             </cac:Address>
           </cac:Location>
         </cac:DropoffTransportEvent>
-        <cac:FreightAllowanceCharge>
-          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-          <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
-          <cbc:AllowanceChargeReason>Pre-carriage by road</cbc:AllowanceChargeReason>
-          <cbc:Amount currencyID="XBL">310.00</cbc:Amount>
-        </cac:FreightAllowanceCharge>
       </cac:PreCarriageShipmentStage>
       <cac:OnCarriageShipmentStage>
         <cbc:ID>3</cbc:ID>
@@ -1869,28 +1820,9 @@ Inside `Signature`:
             <cbc:ShippingMarks>VELUMI SELANU / 027 of 027</cbc:ShippingMarks>
             <cbc:TraceID>095206100003729330</cbc:TraceID>
           </cac:PackagedTransportHandlingUnit>
-          <cac:AttachedTransportEquipment>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0412</cbc:ID>
-            <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">TE</cbc:TransportEquipmentTypeCode>
-          </cac:AttachedTransportEquipment>
-          <cac:Package>
-            <cbc:ID schemeID="GS1 SSCC">095206100003729330</cbc:ID>
-            <cbc:Quantity unitCode="EA">12</cbc:Quantity>
-            <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:PackagingTypeCode>
-            <cac:ContainingTransportEquipment>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-            </cac:ContainingTransportEquipment>
-          </cac:Package>
           <cac:GoodsItem>
             <cbc:ID>1</cbc:ID>
             <cbc:Description>Park benches and spare side frames</cbc:Description>
-            <cac:GoodsItemContainer>
-              <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              <cbc:Quantity unitCode="EA">27</cbc:Quantity>
-              <cac:TransportEquipment>
-                <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
-              </cac:TransportEquipment>
-            </cac:GoodsItemContainer>
             <cac:ContainedGoodsItem>
               <cbc:ID>1.1</cbc:ID>
               <cbc:Description>Park benches</cbc:Description>
@@ -1964,10 +1896,42 @@ Inside `Signature`:
       <cac:InsurancePolicy>
         <cbc:ID>WS-CP-26-4471</cbc:ID>
         <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
-        <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
+        <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
-        <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
-        <cbc:InsurancePremiumAmount currencyID="XBL">140.30</cbc:InsurancePremiumAmount>
+        <cbc:InsurancePremiumAmount currencyID="XBL">132.85</cbc:InsurancePremiumAmount>
+        <cac:InsurerParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-308716</cbc:ID>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Beacon Avenue</cbc:StreetName>
+            <cbc:BuildingNumber>55</cbc:BuildingNumber>
+            <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38524</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:Contact>
+            <cbc:Name>Cargo claims</cbc:Name>
+            <cbc:JobTitle>Claims handler</cbc:JobTitle>
+            <cbc:Department>Claims</cbc:Department>
+            <cbc:Telephone>+999 2 38 2115 9838</cbc:Telephone>
+            <cbc:ElectronicMail>cargo@wavesure.example</cbc:ElectronicMail>
+            <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          </cac:Contact>
+        </cac:InsurerParty>
         <cac:BrokerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -1994,6 +1958,7 @@ Inside `Signature`:
         </cac:BeneficiaryParty>
         <cac:PolicyDocumentReference>
           <cbc:ID>WS-CERT-26-0884</cbc:ID>
+          <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
         </cac:PolicyDocumentReference>
       </cac:InsurancePolicy>
     </cac:Consignment>
@@ -2021,51 +1986,6 @@ Inside `Signature`:
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
-    <cac:InsurancePolicy>
-      <cbc:InsuredValueAmount currencyID="XBL">63771.73</cbc:InsuredValueAmount>
-      <cbc:ExcessAmount currencyID="XBL">250.00</cbc:ExcessAmount>
-      <cac:InsurerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411507</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Wavesure Cargo Insurance</cbc:Name>
-        </cac:PartyName>
-        <cac:PostalAddress>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-308716</cbc:ID>
-          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-          <cbc:StreetName>Beacon Avenue</cbc:StreetName>
-          <cbc:BuildingNumber>55</cbc:BuildingNumber>
-          <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
-          <cbc:CityName>Lumeport</cbc:CityName>
-          <cbc:PostalZone>38524</cbc:PostalZone>
-          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-          <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
-          <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-            <cbc:Name>Bayvarra</cbc:Name>
-          </cac:Country>
-        </cac:PostalAddress>
-        <cac:Contact>
-          <cbc:Name>Cargo claims</cbc:Name>
-          <cbc:JobTitle>Claims handler</cbc:JobTitle>
-          <cbc:Department>Claims</cbc:Department>
-          <cbc:Telephone>+999 2 38 2115 9838</cbc:Telephone>
-          <cbc:ElectronicMail>cargo@wavesure.example</cbc:ElectronicMail>
-          <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-        </cac:Contact>
-      </cac:InsurerParty>
-      <cac:BrokerParty>
-        <cac:PartyIdentification>
-          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-        </cac:PartyIdentification>
-        <cac:PartyName>
-          <cbc:Name>Bayforth Forwarding</cbc:Name>
-        </cac:PartyName>
-      </cac:BrokerParty>
-    </cac:InsurancePolicy>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>BF-FI-26-0137</cbc:ID>

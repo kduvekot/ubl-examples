@@ -10,9 +10,9 @@
   <cbc:IssueTime>15:43:00+00:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">47974.30</cbc:TotalDebitAmount>
-  <cbc:TotalCreditAmount currencyID="XBL">67.00</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">47907.30</cbc:TotalPaymentAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">44896.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">196.13</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">44699.87</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VT-PAY-26-0123</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
@@ -190,7 +190,7 @@
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>add4d37b-e76e-51a8-90dd-0ac065146ca3</cbc:UUID>
-    <cbc:DebitLineAmount currencyID="XBL">47974.30</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">44896.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
@@ -232,7 +232,7 @@
   <cac:RemittanceAdviceLine>
     <cbc:ID>2</cbc:ID>
     <cbc:UUID>87f012c8-f767-5ff8-9aa8-8bc8a6a1076a</cbc:UUID>
-    <cbc:CreditLineAmount currencyID="XBL">67.00</cbc:CreditLineAmount>
+    <cbc:CreditLineAmount currencyID="XBL">196.13</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
         <cbc:ID>LD-CN-26-0151</cbc:ID>

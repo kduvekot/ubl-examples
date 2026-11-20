@@ -5459,6 +5459,7 @@
     "RIVERBARGE",
     "OCEANCONT",
     "AIRCARGO",
+    "PORTTOPORT",
     "MERCHHAUL",
     "CARRHAUL",
     "NOTIFY",
@@ -6933,7 +6934,8 @@
     "AUDIT",
     "ACCOUNTS",
     "REFERENCE",
-    "CERTIFICATE"
+    "CERTIFICATE",
+    "STOCKCOUNT"
    ]
   },
   "ConfidentialityLevel": {

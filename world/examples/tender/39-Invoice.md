@@ -27,7 +27,7 @@ The manufacturer invoices the 39 installations once they are done and accepted, 
 - `IssueTime` = **09:04:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `DueDate` = **2026-05-13**  
-  30 days after the acceptance of 13 April: Wednesday 13 May.
+  30 days after the acceptance of 13 April: Wednesday 13 May, a business day in both countries.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra for the withholding.**  

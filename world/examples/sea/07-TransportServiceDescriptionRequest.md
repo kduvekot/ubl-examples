@@ -167,8 +167,10 @@ Inside `TransportServiceProviderParty`:
 
 Inside `TransportationService`:
 
-- `TransportServiceCode` = **OCEANCONT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
-  The service asked about: a container liner service. The code is from the Trade Accord's transport service list: OCEANCONT = Container liner service.
+- `TransportServiceCode` = **PORTTOPORT** (listID `urn:ubl-examples:world:codelist:TransportServiceCode`)  
+  The extent of the service asked about: port to port, the forwarder bringing the container to the quay itself (sea/07#F3). The code is from the Trade Accord's transport service list: PORTTOPORT = Port to port.
+- `Name` = **Container liner service**  
+  The kind of service asked about.
 
 ## The document
 
@@ -288,7 +290,8 @@ Inside `TransportationService`:
     </cac:PartyName>
   </cac:TransportServiceProviderParty>
   <cac:TransportationService>
-    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">OCEANCONT</cbc:TransportServiceCode>
+    <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">PORTTOPORT</cbc:TransportServiceCode>
+    <cbc:Name>Container liner service</cbc:Name>
   </cac:TransportationService>
 </TransportServiceDescriptionRequest>
 ```
