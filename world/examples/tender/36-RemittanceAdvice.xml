@@ -8,7 +8,7 @@
   <cbc:UUID>5f551f90-e2ee-5166-af7c-66a6bfd7dce8</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>12:49:00-01:00</cbc:IssueTime>
-  <cbc:Note>Paid on 22 May 2026 by credit transfer of 2031191 ferra, 20311.91 lume at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.</cbc:Note>
+  <cbc:Note>Paid on 22 May 2026 by credit transfer of 20311.91 lume to the manufacturer's lume account at Bank of Lumeport: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">20822.93</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">511.02</cbc:TotalCreditAmount>
@@ -145,42 +145,40 @@
       </cac:Country>
     </cac:PayerFinancialAccount>
     <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB13BLUM38010005341179</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
       <cac:FinancialInstitutionBranch>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
-        <cbc:Name>Ferrano main branch</cbc:Name>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
+        <cbc:Name>Main branch, Exchange Street</cbc:Name>
         <cac:FinancialInstitution>
-          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">CREVXUFR</cbc:ID>
-          <cbc:Name>Crevalto Bank</cbc:Name>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
-            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
-            <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-            <cbc:PostalZone>4100</cbc:PostalZone>
-            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38523</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
             <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              <cbc:Name>Urvania</cbc:Name>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+          <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>

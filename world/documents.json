@@ -2546,13 +2546,13 @@
    "doc": "Invoice",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The manufacturer invoices the benches of the release on delivery under the contract; payment to its account at the seller's bank, 30 days after the release is accepted.",
+   "why": "The manufacturer invoices the benches of the release on delivery under the contract; payment in lume to its lume account at Bank of Lumeport, 30 days after the release is accepted (O226).",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "2-xb",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
    }
   },
   {
@@ -3884,7 +3884,7 @@
    "doc": "RemittanceAdvice",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, and says what the payment settles.",
+   "why": "The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, in lume into the manufacturer's lume account at Bank of Lumeport, and says what the payment settles (O226).",
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
@@ -3924,7 +3924,7 @@
     "AccountingCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "2-xb",
-    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
    }
   },
   {

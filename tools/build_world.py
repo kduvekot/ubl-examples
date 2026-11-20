@@ -146,10 +146,14 @@ def identity(p):
     if idn.get("account"):
         acc = idn["account"]
         rows.append(("Account", f"`{acc['number']}` at {link(acc['bank'])}"))
+    if idn.get("account_abroad"):
+        acc = idn["account_abroad"]
+        rows.append(("Account abroad", f"`{acc['number']}` at {link(acc['bank'])}: {acc['why']}"))
     if idn.get("bic"):
         rows.append(("Bank identifier", f"`{idn['bic']}` (ISO 9362 structure); branches: "
                                         + ", ".join(f"`{b['id']}` {b['name']}" for b in idn["branches"])))
-    held = [q for q in world["parties"] if q.get("identity", {}).get("account", {}).get("bank") == p["id"]]
+    held = [q for q in world["parties"] if p["id"] in (q.get("identity", {}).get(k, {}).get("bank")
+                                                         for k in ("account", "account_abroad"))]
     if held:
         rows.append(("Holds the accounts of", ", ".join(link(q["id"]) for q in held)))
     cur = c["currency"]

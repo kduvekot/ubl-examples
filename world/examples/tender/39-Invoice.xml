@@ -14,7 +14,6 @@
   <cbc:TaxPointDate>2026-04-14</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
-  <cbc:PaymentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:PaymentCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -238,49 +237,46 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
-    <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
+    <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
+    <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF37VIINV260225</cbc:InstructionNote>
     <cbc:PaymentID schemeID="ISO 11649">RF37VIINV260225</cbc:PaymentID>
-    <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB13BLUM38010005341179</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
       <cbc:PaymentNote>Invoice VI-INV-26-0225</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
-        <cbc:Name>Ferrano main branch</cbc:Name>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
+        <cbc:Name>Main branch, Exchange Street</cbc:Name>
         <cac:FinancialInstitution>
-          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">CREVXUFR</cbc:ID>
-          <cbc:Name>Crevalto Bank</cbc:Name>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
-            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
-            <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-            <cbc:PostalZone>4100</cbc:PostalZone>
-            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38523</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
             <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              <cbc:Name>Urvania</cbc:Name>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+          <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
@@ -301,13 +297,6 @@
     <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
     <cbc:Date>2026-04-14</cbc:Date>
   </cac:TaxExchangeRate>
-  <cac:PaymentExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-04-14</cbc:Date>
-  </cac:PaymentExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>

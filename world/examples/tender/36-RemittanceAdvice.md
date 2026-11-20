@@ -2,7 +2,7 @@
 
 *Example 36 of the flow "A public tender (Bayvarra)" · [Remittance Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA)*
 
-The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, and says what the payment settles.
+The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, in lume into the manufacturer's lume account at Bank of Lumeport, and says what the payment settles (O226).
 
 [The XML file](36-RemittanceAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,11 +23,11 @@ The department pays both invoices with the interest, less the credit note and th
 - `UUID` = **5f551f90-e2ee-5166-af7c-66a6bfd7dce8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-22**  
-  Friday 22 May, two days after the reminder, on a day both banking systems are open (D28 point 9).
+  Friday 22 May, two days after the reminder, a business day in Bayvarra, where the transfer runs (D28 point 9, O226).
 - `IssueTime` = **12:49:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
-- `Note` = **Paid on 22 May 2026 by credit transfer of 2031191 ferra, 20311.91 lume at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.**  
-  The payment's date and the amount credited in the payee's currency, and what it settles (tender/36#F2, option b).
+- `Note` = **Paid on 22 May 2026 by credit transfer of 20311.91 lume to the manufacturer's lume account at Bank of Lumeport: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.**  
+  The payment's date and what it settles, all in lume: the department pays its own currency into a domestic account; a conversion, if Valdara makes one, is its banks' business and shows on its bank statement, not in the payer's remittance (O226, tender/36#F2).
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the documents settled and of the payment; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `TotalDebitAmount` = **20822.93** (currencyID `XBL`)  
@@ -208,52 +208,48 @@ Inside `PaymentMeans`:
   Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PayerFinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PayeeFinancialAccount/ID` = **XU790351041600000000209458** (schemeID `urn:ubl-examples:world:account`)  
-  The manufacturer's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
+- `PayeeFinancialAccount/ID` = **XB13BLUM38010005341179** (schemeID `urn:ubl-examples:world:account`)  
+  The manufacturer's lume account at Bank of Lumeport, which the invoices ask payment into (O226). The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
 - `PayeeFinancialAccount/Name` = **Valdara Industries SUA**  
   The account holder, as the bank knows it.
 - `PayeeFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
   A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
 - `PayeeFinancialAccount/AccountFormatCode` = **ISO13616** (listID `urn:ubl-examples:world:codelist:AccountFormatCode`)  
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
-- `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41600** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
-  The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Ferrano main branch**  
+- `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380100** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
+  The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Main branch, Exchange Street**  
   The branch's name.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **CREVXUFR** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code CREV, the country XU and the location FR; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Crevalto Bank**  
-  The bank; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Trazhek Hekrul Rikbul** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Piazza della Banca** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **8**  
-  Building number of the postal address. identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **4100**  
-  Postal code in Urvania's format (4 digits). identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Crevalto Bank (world/parties.json).
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Urvania**  
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BLUMXBLX** (schemeID `urn:ubl-examples:world:bank-identifier`)  
+  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BLUM, the country XB and the location LX; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Lumeport**  
+  The bank; identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
+  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Exchange Street**  
+  Street of the postal address. identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **48**  
+  Building number of the postal address. identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Lumeport**  
+  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone` = **38523**  
+  Postal code in Bayvarra's format (5 digits). identity of Bank of Lumeport (world/parties.json).
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Coastal State**  
+  The name of code XB-CO in Bayvarra's national state or territory list.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
+  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town the branch is in.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town the branch is in.
-- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `PayeeFinancialAccount/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Lumeport**  
+  The town the branch is in.
+- `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `PayeeFinancialAccount/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Remittance Advice Line
 
@@ -309,7 +305,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:UUID>5f551f90-e2ee-5166-af7c-66a6bfd7dce8</cbc:UUID>
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>12:49:00-01:00</cbc:IssueTime>
-  <cbc:Note>Paid on 22 May 2026 by credit transfer of 2031191 ferra, 20311.91 lume at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.</cbc:Note>
+  <cbc:Note>Paid on 22 May 2026 by credit transfer of 20311.91 lume to the manufacturer's lume account at Bank of Lumeport: both invoices with the interest reminded, less the credit note and the penalty of 7.02 lume for late completion under clause PEN-1.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:TotalDebitAmount currencyID="XBL">20822.93</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">511.02</cbc:TotalCreditAmount>
@@ -446,42 +442,40 @@ Inside `RemittanceAdviceLine`:
       </cac:Country>
     </cac:PayerFinancialAccount>
     <cac:PayeeFinancialAccount>
-      <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB13BLUM38010005341179</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
-      <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
       <cac:FinancialInstitutionBranch>
-        <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
-        <cbc:Name>Ferrano main branch</cbc:Name>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
+        <cbc:Name>Main branch, Exchange Street</cbc:Name>
         <cac:FinancialInstitution>
-          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">CREVXUFR</cbc:ID>
-          <cbc:Name>Crevalto Bank</cbc:Name>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
           <cac:Address>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
-            <cbc:StreetName languageID="qau">Trazhek Hekrul Rikbul</cbc:StreetName>
-            <cbc:StreetName languageID="en-XU">Piazza della Banca</cbc:StreetName>
-            <cbc:BuildingNumber>8</cbc:BuildingNumber>
-            <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-            <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
-            <cbc:PostalZone>4100</cbc:PostalZone>
-            <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38523</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
             <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-              <cbc:Name>Urvania</cbc:Name>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
             </cac:Country>
           </cac:Address>
         </cac:FinancialInstitution>
         <cac:Address>
-          <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
-          <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+          <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
-            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:Country>
         </cac:Address>
       </cac:FinancialInstitutionBranch>
       <cac:Country>
-        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
       </cac:Country>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>

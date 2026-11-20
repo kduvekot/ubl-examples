@@ -1064,6 +1064,18 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 | `TransportHandlingUnit/TransportMeans` | 0..n | retail/12-DespatchAdvice |  |  | open |
 | `TransportationStatusRequest/DocumentReference` | 0..n | retail/14-TransportationStatusRequest |  |  | open |
 
+### O226: the tender paid in lume into Valdara's lume account (2026-11-20)
+
+> O226 (owner, 2026-11-20, option 2): Valdara holds a lume account at Bank of Lumeport (`XB13BLUM38010005341179`, main branch 380100); the tender's invoices (32, 39) and the reminder (35) ask for payment in lume into it, a domestic transfer over Lumepay; the department's remittance advice (36) is in lume throughout, with no ferra amount credited and no rate (a conversion is the banks' business). The payment currency equal to the document's goes with its rate (C11), and the order (26) gives no payment rate; Valdara's value added tax stays in ferra, its tax currency, with its tax rate.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Invoice/PaymentCurrencyCode` | 0..1 | tender/32-Invoice, tender/39-Invoice | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
+| `Invoice/PaymentExchangeRate` | 0..1 | tender/32-Invoice, tender/39-Invoice | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
+| `Order/PaymentExchangeRate` | 0..1 | tender/26-Order | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
+| `Reminder/PaymentCurrencyCode` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
+| `Reminder/PaymentExchangeRate` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

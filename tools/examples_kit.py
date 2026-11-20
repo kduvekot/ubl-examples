@@ -286,17 +286,22 @@ def payment_terms(flow, seller, buyer, t, total, cur, number):
     return out
 
 
-def clearing_channel(border, seller):
-    """The clearing channel of the payment system a transfer runs over: the first the system has (countries.json)."""
-    system = WORLD["payment_cross_border"] if border else WORLD["countries"][PARTY[seller]["c"]]["payment"]["system"]
+def clearing_channel(border, seller, country=None):
+    """The clearing channel of the payment system a transfer runs over: the first the system has (countries.json);
+    a domestic transfer runs in the seller's country, or in `country` where the account is kept."""
+    system = WORLD["payment_cross_border"] if border else \
+        WORLD["countries"][country or PARTY[seller]["c"]]["payment"]["system"]
     return system["clearing_channels"][0]
 
 
-def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account, code="30"):
-    """A credit transfer to the payee, with a structured payment reference the bank passes on."""
-    border = cross_border(seller, buyer)
+def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account, code="30", abroad=False):
+    """A credit transfer to the payee, with a structured payment reference the bank passes on. With `abroad`, to
+    the account the payee keeps at a bank of another country (O226): the transfer is domestic where that account is
+    kept in the payer's country."""
+    acc_country = PARTY[PARTY[payee]["identity"]["account_abroad"]["bank"]]["c"] if abroad else PARTY[seller]["c"]
+    border = PARTY[buyer]["c"] != acc_country
     system = WORLD["payment_cross_border"]["system"] if border else \
-        WORLD["countries"][PARTY[seller]["c"]]["payment"]["system"]["id"]
+        WORLD["countries"][acc_country]["payment"]["system"]["id"]
     out = {"ID": V("1", "The first, and only, way to pay."),
            "PaymentMeansCode": V(code, "UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of "
                                        "UBL's payment means code list, which code list validation checks.",
@@ -304,7 +309,7 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
            "PaymentMeansDescription": V("Credit transfer", "In words."),
            "PaymentDueDate": V(flow.date(due_day(flow, day + due_days, payee)), "When the transfer must be "
                                "credited." + due_moved(flow, day + due_days, payee)),
-           "PaymentChannelCode": V(clearing_channel(border, seller), "How the payment system clears and settles the "
+           "PaymentChannelCode": V(clearing_channel(border, seller, acc_country), "How the payment system clears and settles the "
                                    "transfer, as an ISO 20022 clearing channel (world/countries.json)."),
            "PaymentRailID": V(system, "The payment system the transfer runs over: "
                               + ("the trade accord's link between the countries." if border else
@@ -320,7 +325,7 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
             "SelfBilledInvoice": "Self-billed invoice", "SelfBilledCreditNote": "Self-billed credit note",
             "OrderResponse": "Deposit on sales order", "Order": "Order", "Reminder": "Invoice",
             "Statement": "Statement"}.get(build_examples.DOC_TYPE, "Invoice")
-    out["PayeeFinancialAccount"] = account(payee, why_account, note=f"{kind} {number}")
+    out["PayeeFinancialAccount"] = account(payee, why_account, note=f"{kind} {number}", abroad=abroad)
     return out
 
 

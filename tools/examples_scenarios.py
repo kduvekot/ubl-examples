@@ -10755,31 +10755,38 @@ def calloff_withholding():
     return base, money(base * Decimal(wh["percent"]) / 100, "XBL"), wh
 
 
-def ferra_currencies(f, out, day, tax=True, pay=True):
-    """Valdara reports its VAT in ferra and is paid in ferra into its account in Urvania, while the documents are in
-    lume, the contract's currency (D28 point 10; tender/33#F13, 35#F8, 36#F2): the tax currency with the tax total
-    in ferra beside the one in lume, and the payment currency with its rate, at the parity of 100."""
-    if tax:
-        out["TaxCurrencyCode"] = V("XUF", "Valdara reports its value added tax in ferra, its own currency.")
-        out["TaxExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The document currency."),
-                                  "TargetCurrencyCode": V("XUF", "The seller's tax currency."),
-                                  "CalculationRate": V("100", "1 lume = 100 ferra, the Accord's parity."),
-                                  "MathematicOperatorCode": V("Multiply", "Lume times the rate gives ferra."),
-                                  "Date": V(f.date(day), "The rate of the tax point.")}
-        tt = out["TaxTotal"] if isinstance(out["TaxTotal"], dict) else out["TaxTotal"][0]
-        subs = tt["TaxSubtotal"] if isinstance(tt["TaxSubtotal"], list) else [tt["TaxSubtotal"]]
-        out["TaxTotal"] = [tt, {
-            "TaxAmount": amount(Decimal(tt["TaxAmount"].value) * 100, "XUF", "The same tax in ferra, for the "
-                                                                              "seller's tax return."),
-            "TaxSubtotal": [{"TaxableAmount": amount(Decimal(st["TaxableAmount"].value) * 100, "XUF",
-                                                     "The taxable amount in ferra."),
-                             "TaxAmount": amount(Decimal(st["TaxAmount"].value) * 100, "XUF", "The tax in ferra."),
-                             "TransactionCurrencyTaxAmount": amount(Decimal(st["TaxAmount"].value), "XBL",
-                                                                    "The same tax in the document currency."),
-                             "TaxCategory": st["TaxCategory"]} for st in subs]}]
-    if pay:
-        out["PaymentCurrencyCode"] = V("XUF", "Valdara is paid in ferra, into its account in Urvania.")
-        out["PaymentExchangeRate"] = TO_FERRA(f.date(day))
+def ferra_tax(f, out, day):
+    """Valdara reports its VAT in ferra, while the documents are in lume, the contract's currency (D28 point 10;
+    tender/33#F13): the tax currency with the tax total in ferra beside the one in lume, at the parity of 100. It is
+    paid in lume, into its lume account at Bank of Lumeport (O226): no payment currency apart from the document's."""
+    out["TaxCurrencyCode"] = V("XUF", "Valdara reports its value added tax in ferra, its own currency.")
+    out["TaxExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The document currency."),
+                              "TargetCurrencyCode": V("XUF", "The seller's tax currency."),
+                              "CalculationRate": V("100", "1 lume = 100 ferra, the Accord's parity."),
+                              "MathematicOperatorCode": V("Multiply", "Lume times the rate gives ferra."),
+                              "Date": V(f.date(day), "The rate of the tax point.")}
+    tt = out["TaxTotal"] if isinstance(out["TaxTotal"], dict) else out["TaxTotal"][0]
+    subs = tt["TaxSubtotal"] if isinstance(tt["TaxSubtotal"], list) else [tt["TaxSubtotal"]]
+    out["TaxTotal"] = [tt, {
+        "TaxAmount": amount(Decimal(tt["TaxAmount"].value) * 100, "XUF", "The same tax in ferra, for the "
+                                                                          "seller's tax return."),
+        "TaxSubtotal": [{"TaxableAmount": amount(Decimal(st["TaxableAmount"].value) * 100, "XUF",
+                                                 "The taxable amount in ferra."),
+                         "TaxAmount": amount(Decimal(st["TaxAmount"].value) * 100, "XUF", "The tax in ferra."),
+                         "TransactionCurrencyTaxAmount": amount(Decimal(st["TaxAmount"].value), "XBL",
+                                                                "The same tax in the document currency."),
+                         "TaxCategory": st["TaxCategory"]} for st in subs]}]
+
+
+def lume_account_means(f, out, key, day):
+    """The invoice's payment means (O226): a credit transfer in lume to Valdara's lume account at Bank of Lumeport,
+    in Bayvarra, so a domestic transfer from the department over Bayvarra's clearing; the due date is the contract's,
+    given in the terms."""
+    out["PaymentMeans"] = kit.payment_means(f, "5-xu", "2-xb", "5-xu", day, 0, f.numbers[key],
+                                            "The account to pay to: Valdara's lume account at Bank of Lumeport, so "
+                                            "the department pays its own currency to a domestic account (O226).",
+                                            abroad=True)
+    out["PaymentMeans"].pop("PaymentDueDate", None)
 
 
 def invoice_signature(no):
@@ -10945,8 +10952,8 @@ def tender_calloff(n, doc):
             out.pop(k, None)
         out["PaymentTerms"] = {"PaymentMeansID": V("1", "The payment means these terms apply to."),
                                **calloff_terms()}
-        out["PaymentMeans"].pop("PaymentDueDate", None)
-        ferra_currencies(f, out, days["delivery"])
+        lume_account_means(f, out, "invoice", days["delivery"])
+        ferra_tax(f, out, days["delivery"])
         out["Signature"] = invoice_signature("VI-SIG-26-0078")
         return out
     if d == "ReceiptAdvice":
@@ -11032,7 +11039,7 @@ def tender_calloff(n, doc):
         sub = out["TaxTotal"]["TaxSubtotal"]
         (sub[0] if isinstance(sub, list) else sub)["TaxableAmount"] = amount(credit, cur, "The bench and its colour "
                                                                                           "charge.")
-        ferra_currencies(f, out, days["credit"], pay=False)    # deducted from the payment, not paid out
+        ferra_tax(f, out, days["credit"])
         f.numbers["credit-amount"] = credit
         return out
     if d == "Invoice":
@@ -11051,7 +11058,7 @@ def tender_calloff(n, doc):
                           key="invoice-install", currency=cur)
         for k in ("PaymentCurrencyCode", "BuyerAssignedReference"):
             out.pop(k, None)
-        out["PaymentMeans"].pop("PaymentDueDate", None)   # the due date is the contract's, given in the terms
+        lume_account_means(f, out, "invoice-install", days["install-invoice"])
         line = out["InvoiceLine"][0] if isinstance(out["InvoiceLine"], list) else out["InvoiceLine"]
         line["Item"]["Description"] = V("Assembly of one bench and its anchoring in the ground with the supplied "
                                         "anchors, by Saltmere Engineering for the manufacturer.", "Who installs: the "
@@ -11076,7 +11083,7 @@ def tender_calloff(n, doc):
         out["PaymentTerms"] = {"PaymentMeansID": V("1", "The payment means these terms apply to."),
                                **calloff_terms(),
                                "PaymentDueDate": kit.due_date(f, days["due"], "5-xu", "30 days after the acceptance.")}
-        ferra_currencies(f, out, days["install-invoice"])
+        ferra_tax(f, out, days["install-invoice"])
         out["Signature"] = invoice_signature("VI-SIG-26-0092")
         if payable != installation_payable():
             raise SystemExit("tender/39: the installation invoice's payable amount is not what the reminder and the "
@@ -11099,14 +11106,13 @@ def tender_calloff(n, doc):
                           "invoice is reminded net of the 10 % the department withholds.", "What it says, under the "
                           "contract's payment term (D22, tender/35#F1)."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the invoices"),
-                "PaymentCurrencyCode": V("XUF", "Valdara is paid in ferra, into its account in Urvania, as the "
-                                                "invoices ask (tender/35#F8)."),
-                "PaymentExchangeRate": TO_FERRA(f.date(days["reminder"])),
                 "ReminderPeriod": {"StartDate": V(f.date(days["due"] + 1), "Overdue from the day after the due date"),
                                    "EndDate": V(f.date(days["reminder"]), "to the reminder.")},
                 "Signature": seal("5-xu", "VI-SIG-REM"),
                 "PaymentMeans": {"PaymentMeansCode": V("30", "Credit transfer.", listID="UN/EDIFACT EDED 4461"),
-                                 "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's account.")},
+                                 "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's lume account at "
+                                                                              "Bank of Lumeport, as the invoices ask "
+                                                                              "(O226).", abroad=True)},
                 "PaymentTerms": {"Note": V("Please pay within seven days.", "What is asked."),
                                  "PaymentDueDate": kit.due_date(f, days["reminder"] + 7, "5-xu", "A week after the reminder.")},
                 "AllowanceCharge": {"ChargeIndicator": V("true", "A charge."),
@@ -11145,13 +11151,15 @@ def tender_calloff(n, doc):
         base, pdays, pen = calloff_penalty()
         paid = inv + inst - credit - pen + interest
         return {"ID": V(f.number("remittance", doc["from"], "RemittanceAdvice"), "The department's number."),
-                "IssueDate": V(f.date(days["remittance"]), "Friday 22 May, two days after the reminder, on a day both "
-                                                           "banking systems are open (D28 point 9)."),
-                "Note": V(f"Paid on 22 May 2026 by credit transfer of {money(paid * 100, 'XUF')} ferra, {paid} lume "
-                          "at the Accord's parity of 100 ferra to the lume, to the manufacturer's account in ferra: "
-                          "both invoices with the interest reminded, less the credit note and the penalty of "
-                          f"{pen} lume for late completion under clause PEN-1.", "The payment's date and the amount "
-                          "credited in the payee's currency, and what it settles (tender/36#F2, option b)."),
+                "IssueDate": V(f.date(days["remittance"]), "Friday 22 May, two days after the reminder, a business "
+                                                           "day in Bayvarra, where the transfer runs (D28 point 9, "
+                                                           "O226)."),
+                "Note": V(f"Paid on 22 May 2026 by credit transfer of {paid} lume to the manufacturer's lume account "
+                          "at Bank of Lumeport: both invoices with the interest reminded, less the credit note and "
+                          f"the penalty of {pen} lume for late completion under clause PEN-1.", "The payment's date "
+                          "and what it settles, all in lume: the department pays its own currency into a domestic "
+                          "account; a conversion, if Valdara makes one, is its banks' business and shows on its bank "
+                          "statement, not in the payer's remittance (O226, tender/36#F2)."),
                 "DocumentCurrencyCode": kit.currency_line(cur, "the currency of the documents settled and of the "
                                                                "payment"),
                 "TotalDebitAmount": amount(inv + inst + interest, cur, "The invoices and the interest."),
@@ -11164,7 +11172,10 @@ def tender_calloff(n, doc):
                                  "PaymentID": V(kit.rf_reference(f.numbers["invoice"]), "The invoice's creditor "
                                                                                        "reference."),
                                  "PayerFinancialAccount": kit.account("2-xb", "The department's account."),
-                                 "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's account.")},
+                                 "PayeeFinancialAccount": kit.account("5-xu", "The manufacturer's lume account at "
+                                                                              "Bank of Lumeport, which the invoices "
+                                                                              "ask payment into (O226).",
+                                                                      abroad=True)},
                 "RemittanceAdviceLine": [
                     {"ID": V("1", "The benches' invoice."), "DebitLineAmount": amount(inv, cur, "Its payable amount."),
                      "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"],
@@ -11209,8 +11220,8 @@ SCENARIOS["tender"] = _with_enrichment("tender", tender_calloff)
 @enrich("tender", "Order")
 def _(f, n, doc, out):
     return {"TaxCurrencyCode": V("XUF", "The manufacturer accounts its value added tax in ferra."),
-            "TaxExchangeRate": {**TO_FERRA(f.date(70)), "TargetCurrencyCode": V("XUF", "The tax currency.")},
-            "PaymentExchangeRate": TO_FERRA(f.date(70))}
+            "TaxExchangeRate": {**TO_FERRA(f.date(70)), "TargetCurrencyCode": V("XUF", "The tax currency.")}}
+    # no payment exchange rate: the department pays in lume, the order's currency (O226)
 
 
 # --- Coverage completion, batch F: self-billing on the island ---------------------------------------------------

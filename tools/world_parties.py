@@ -18,7 +18,9 @@ something to put in it, and these checks keep it consistent:
     a country with states the state (name and code)
     follows the country's rule, and so does the state code a sales tax
     permit starts with;
-  * every account is held at a bank of the world in the same country;
+  * every account is held at a bank of the world in the same country; a party
+    may keep a second account abroad (identity.account_abroad) only with its
+    reason (O226);
   * e-mail addresses and websites use the reserved .example domain (RFC
     2606), and telephone numbers the country code +999 that the ITU keeps in
     reserve, so none can reach a real organisation;
@@ -281,8 +283,14 @@ def check(world):
             problems.append(f"{where}: ISIN {listing.get('id')} fails ISO 6166 (structure or check digit)")
         if listing and listing.get("id", "")[:2] != p["c"]:
             problems.append(f"{where}: ISIN {listing.get('id')} must start with the issuer's country code {p['c']}")
-        acc = idn.get("account")
-        if acc:
+        for key in ("account", "account_abroad"):
+            acc = idn.get(key)
+            if not acc:
+                continue
+            if key == "account_abroad" and not (acc.get("abroad") and acc.get("why")):
+                problems.append(f"{where}: an account abroad needs abroad: true and the reason it is held (O226)")
+            if key == "account_abroad" and parties.get(acc["bank"], {}).get("c") == p["c"]:
+                problems.append(f"{where}: its account abroad is at a bank of its own country")
             bank = parties.get(acc["bank"])
             if not bank or bank.get("cat") != "finance" or "bank" not in bank["identity"].get("kind", ""):
                 problems.append(f"{where}: account at {acc['bank']}, which is not a bank of the world")

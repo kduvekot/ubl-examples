@@ -130,6 +130,13 @@
      "number": "XU790351041600000000209458",
      "branch": "03510-41600"
     },
+    "account_abroad": {
+     "bank": "25-xb",
+     "number": "XB13BLUM38010005341179",
+     "branch": "380100",
+     "abroad": true,
+     "why": "A lume account at Bank of Lumeport, which also gave Valdara's tender guarantee: the public works department pays the framework contract in its own currency into a domestic account, and Valdara converts later if it wants, its currency risk covered by its forward contract (O226, O50)."
+    },
     "industry": "3100",
     "website": "https://www.valdara.example",
     "language": "en",

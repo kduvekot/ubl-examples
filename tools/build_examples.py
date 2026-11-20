@@ -774,9 +774,10 @@ def institution_again(pid, first):
                     schemeID="urn:ubl-examples:world:bank-identifier")}
 
 
-def account(pid, why, note=None):
-    """The content of a cac:FinancialAccount element for the account of a party."""
-    acc = PARTY[pid]["identity"]["account"]
+def account(pid, why, note=None, abroad=False):
+    """The content of a cac:FinancialAccount element for the account of a party: its account at home, or with
+    `abroad` the account it keeps at a bank of another country for a stated reason (identity.account_abroad, O226)."""
+    acc = PARTY[pid]["identity"]["account_abroad" if abroad else "account"]
     bank = PARTY[acc["bank"]]
     out = {"ID": V(acc["number"], f"{why} The number follows the structure of ISO 13616 with its check digits, with the "
                                   "world's country code, and holds the codes of the bank and the branch that keep it; "

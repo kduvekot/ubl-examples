@@ -108,11 +108,12 @@ def bank_problems(world, d):
             continue
         account = next((s for s in steps if s in holder), None)
         who = holder.get(account)
-        acc = party.get(who, {}).get("identity", {}).get("account") if who else None
-        if not acc:
+        idn = party.get(who, {}).get("identity", {}) if who else {}
+        banks = [idn[k]["bank"] for k in ("account", "account_abroad") if idn.get(k)]   # at home, or abroad (O226)
+        if not banks:
             out.append(f"{path}: {who} has no account in the world")
-        elif acc["bank"] != bank:
-            out.append(f"{path}: {who} keeps its account at {acc['bank']}, not at {bank}")
+        elif bank not in banks:
+            out.append(f"{path}: {who} keeps its account at {' or '.join(banks)}, not at {bank}")
     return out
 
 
