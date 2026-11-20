@@ -114,6 +114,9 @@
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
   </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-2</cbc:ID>
+  </cac:ProcurementProjectLot>
   <cac:TenderingCriterion>
     <cbc:ID>CR-CONVICTIONS</cbc:ID>
     <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">EXCLUSION</cbc:CriterionTypeCode>

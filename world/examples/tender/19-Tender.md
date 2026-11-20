@@ -256,10 +256,6 @@ Inside `TenderedProject`:
 
 - `VariantID` = **V0**  
   The main offer; no variant is tendered.
-- `FeeAmount` = **50.00** (currencyID `XBL`)  
-  The documentation fee paid.
-- `FeeDescription` = **Paper copy of the documents.**  
-  What the fee was for.
 - `TenderEnvelopeID` = **ENV-1**  
   The envelope.
 - `TenderEnvelopeTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderEnvelopeCode`)  
@@ -286,7 +282,7 @@ Inside `TenderedProject`:
   The tender's total.
 - `TenderLine/ID` = **1**  
   The benches.
-- `TenderLine/Note` = **A bench of its own make: steel frame, hardwood slats.**  
+- `TenderLine/Note` = **A bench of its own make: steel frame, hardwood slats; spare slat sets available.**  
   What is offered.
 - `TenderLine/Quantity` = **240** (unitCode `EA`)  
   240 benches.
@@ -296,18 +292,18 @@ Inside `TenderedProject`:
   No tax for a public body.
 - `TenderLine/TotalTaxAmount` = **0.00** (currencyID `XBL`)  
   No tax for a public body.
-- `TenderLine/OrderableUnit` = **Pallet of 4**  
+- `TenderLine/OrderableUnit` = **Pallet of 2**  
   Called off in pallets.
-- `TenderLine/ContentUnitQuantity` = **4** (unitCode `EA`)  
-  Four per pallet.
-- `TenderLine/OrderQuantityIncrementNumeric` = **4**  
-  In steps of four.
-- `TenderLine/MinimumOrderQuantity` = **20** (unitCode `EA`)  
-  A release of at least 20.
-- `TenderLine/MaximumOrderQuantity` = **96** (unitCode `EA`)  
-  At most a full truck.
-- `TenderLine/WarrantyInformation` = **Five years on the frame.**  
-  The warranty.
+- `TenderLine/ContentUnitQuantity` = **2** (unitCode `EA`)  
+  2 per pallet.
+- `TenderLine/OrderQuantityIncrementNumeric` = **2**  
+  In steps of 2.
+- `TenderLine/MinimumOrderQuantity` = **10** (unitCode `EA`)  
+  A release of at least 10.
+- `TenderLine/MaximumOrderQuantity` = **60** (unitCode `EA`)  
+  At most what its workshop makes in a fortnight.
+- `TenderLine/WarrantyInformation` = **Six years on the frame and the slats.**  
+  The warranty on the bench, as the quality criterion's answer gives it (tender/17#F3, 19#F3).
 - `TenderLine/PackLevelCode` = **PALLET** (listID `urn:ubl-examples:world:codelist:PackLevelCode`)  
   The pack level. The code is from the Trade Accord's pack level list: PALLET = Pallet.
 - `TenderLine/DocumentReference/ID` = **BF-DS-PARK**  
@@ -316,14 +312,18 @@ Inside `TenderedProject`:
   The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `TenderLine/Item/Name` = **Park bench Brackenmere PB-2**  
   The item offered.
-- `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  
-  Seven days per release.
+- `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **14** (unitCode `DAY`)  
+  14 days per release.
+- `TenderLine/OfferedItemLocationQuantity/Price/PriceAmount` = **480** (currencyID `XBL`)  
+  The unit price offered, which the procedure evaluates and auctions (tender/15#F16).
+- `TenderLine/OfferedItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  Per bench.
 - `TenderLine/WarrantyParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `TenderLine/WarrantyParty/PartyName/Name` = **Brackenmere Furniture**  
   A party referred to from another party's details: its identifier and name are enough.
-- `TenderLine/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
-  Five years.
+- `TenderLine/WarrantyValidityPeriod/DurationMeasure` = **6** (unitCode `ANN`)  
+  The years of warranty.
 - `TenderLine/SubTenderLine/ID` = **1.1**  
   The anchors.
 - `TenderLine/SubTenderLine/Quantity` = **240** (unitCode `SET`)  
@@ -342,6 +342,10 @@ Inside `TenderedProject`:
   240 at the price.
 - `TenderLine/Item/Name` = **Installation of a park bench**  
   The service.
+- `TenderLine/OfferedItemLocationQuantity/Price/PriceAmount` = **16** (currencyID `XBL`)  
+  The unit price of one installation.
+- `TenderLine/OfferedItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  Per installation.
 - `AwardingCriterionResponse/ID` = **ACR-1**  
   The response to the price criterion.
 - `AwardingCriterionResponse/AwardingCriterionID` = **AC-1**  
@@ -558,8 +562,6 @@ Inside `TenderedProject`:
   </cac:ContractingParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
-    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
-    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
     <cac:AdditionalFee>
@@ -586,17 +588,17 @@ Inside `TenderedProject`:
     </cac:LegalMonetaryTotal>
     <cac:TenderLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>A bench of its own make: steel frame, hardwood slats.</cbc:Note>
+      <cbc:Note>A bench of its own make: steel frame, hardwood slats; spare slat sets available.</cbc:Note>
       <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">115200.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">115200.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
-      <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
-      <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
-      <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
-      <cbc:MinimumOrderQuantity unitCode="EA">20</cbc:MinimumOrderQuantity>
-      <cbc:MaximumOrderQuantity unitCode="EA">96</cbc:MaximumOrderQuantity>
-      <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
+      <cbc:OrderableUnit>Pallet of 2</cbc:OrderableUnit>
+      <cbc:ContentUnitQuantity unitCode="EA">2</cbc:ContentUnitQuantity>
+      <cbc:OrderQuantityIncrementNumeric>2</cbc:OrderQuantityIncrementNumeric>
+      <cbc:MinimumOrderQuantity unitCode="EA">10</cbc:MinimumOrderQuantity>
+      <cbc:MaximumOrderQuantity unitCode="EA">60</cbc:MaximumOrderQuantity>
+      <cbc:WarrantyInformation>Six years on the frame and the slats.</cbc:WarrantyInformation>
       <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
       <cac:DocumentReference>
         <cbc:ID>BF-DS-PARK</cbc:ID>
@@ -606,7 +608,11 @@ Inside `TenderedProject`:
         <cbc:Name>Park bench Brackenmere PB-2</cbc:Name>
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+        <cbc:LeadTimeMeasure unitCode="DAY">14</cbc:LeadTimeMeasure>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">480</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
       </cac:OfferedItemLocationQuantity>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -617,7 +623,7 @@ Inside `TenderedProject`:
         </cac:PartyName>
       </cac:WarrantyParty>
       <cac:WarrantyValidityPeriod>
-        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+        <cbc:DurationMeasure unitCode="ANN">6</cbc:DurationMeasure>
       </cac:WarrantyValidityPeriod>
       <cac:SubTenderLine>
         <cbc:ID>1.1</cbc:ID>
@@ -640,6 +646,12 @@ Inside `TenderedProject`:
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>
       </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">16</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:OfferedItemLocationQuantity>
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>

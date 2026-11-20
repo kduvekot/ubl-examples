@@ -349,10 +349,6 @@ Inside `TenderedProject`:
 
 - `VariantID` = **V0**  
   The main offer; no variant is tendered.
-- `FeeAmount` = **50.00** (currencyID `XBL`)  
-  The documentation fee paid.
-- `FeeDescription` = **Paper copy of the documents.**  
-  What the fee was for.
 - `TenderEnvelopeID` = **ENV-1**  
   The envelope.
 - `TenderEnvelopeTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderEnvelopeCode`)  
@@ -386,15 +382,15 @@ Inside `TenderedProject`:
 - `TenderLine/OrderableUnit` = **Pallet of 4**  
   Called off in pallets.
 - `TenderLine/ContentUnitQuantity` = **4** (unitCode `EA`)  
-  Four per pallet.
+  4 per pallet.
 - `TenderLine/OrderQuantityIncrementNumeric` = **4**  
-  In steps of four.
+  In steps of 4.
 - `TenderLine/MinimumOrderQuantity` = **20** (unitCode `EA`)  
   A release of at least 20.
 - `TenderLine/MaximumOrderQuantity` = **96** (unitCode `EA`)  
   At most a full truck.
 - `TenderLine/WarrantyInformation` = **Five years on the frame.**  
-  The warranty.
+  The warranty on the bench, as the quality criterion's answer gives it (tender/17#F3, 19#F3).
 - `TenderLine/PackLevelCode` = **PALLET** (listID `urn:ubl-examples:world:codelist:PackLevelCode`)  
   The pack level. The code is from the Trade Accord's pack level list: PALLET = Pallet.
 - `TenderLine/DocumentReference/ID` = **VI-DS-B180**  
@@ -404,13 +400,17 @@ Inside `TenderedProject`:
 - `TenderLine/Item/Name` = **Park bench Serra 180**  
   The item offered.
 - `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  
-  Seven days per release.
+  7 days per release.
+- `TenderLine/OfferedItemLocationQuantity/Price/PriceAmount` = **499** (currencyID `XBL`)  
+  The unit price offered, which the procedure evaluates and auctions (tender/15#F16).
+- `TenderLine/OfferedItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  Per bench.
 - `TenderLine/WarrantyParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `TenderLine/WarrantyParty/PartyName/Name` = **Valdara Industries**  
   A party referred to from another party's details: its identifier and name are enough.
 - `TenderLine/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
-  Five years.
+  The years of warranty.
 - `TenderLine/SubTenderLine/ID` = **1.1**  
   The anchors.
 - `TenderLine/SubTenderLine/Quantity` = **240** (unitCode `SET`)  
@@ -429,6 +429,10 @@ Inside `TenderedProject`:
   240 at the price.
 - `TenderLine/Item/Name` = **Installation of a park bench**  
   The service.
+- `TenderLine/OfferedItemLocationQuantity/Price/PriceAmount` = **18** (currencyID `XBL`)  
+  The unit price of one installation.
+- `TenderLine/OfferedItemLocationQuantity/Price/BaseQuantity` = **1** (unitCode `EA`)  
+  Per installation.
 - `AwardingCriterionResponse/ID` = **ACR-1**  
   The response to the price criterion.
 - `AwardingCriterionResponse/AwardingCriterionID` = **AC-1**  
@@ -719,8 +723,6 @@ Inside `TenderedProject`:
   </cac:ContractingParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
-    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
-    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
     <cac:ProcurementProjectLot>
@@ -763,6 +765,10 @@ Inside `TenderedProject`:
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
       </cac:OfferedItemLocationQuantity>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -796,6 +802,12 @@ Inside `TenderedProject`:
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>
       </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:OfferedItemLocationQuantity>
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>

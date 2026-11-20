@@ -180,8 +180,6 @@
   </cac:ContractingParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
-    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
-    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
     <cac:AdditionalFee>
@@ -208,17 +206,17 @@
     </cac:LegalMonetaryTotal>
     <cac:TenderLine>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>A bench of its own make: steel frame, hardwood slats.</cbc:Note>
+      <cbc:Note>A bench of its own make: steel frame, hardwood slats; spare slat sets available.</cbc:Note>
       <cbc:Quantity unitCode="EA">240</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">112800.00</cbc:LineExtensionAmount>
       <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">112800.00</cbc:TaxInclusiveLineExtensionAmount>
       <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
-      <cbc:OrderableUnit>Pallet of 4</cbc:OrderableUnit>
-      <cbc:ContentUnitQuantity unitCode="EA">4</cbc:ContentUnitQuantity>
-      <cbc:OrderQuantityIncrementNumeric>4</cbc:OrderQuantityIncrementNumeric>
-      <cbc:MinimumOrderQuantity unitCode="EA">20</cbc:MinimumOrderQuantity>
-      <cbc:MaximumOrderQuantity unitCode="EA">96</cbc:MaximumOrderQuantity>
-      <cbc:WarrantyInformation>Five years on the frame.</cbc:WarrantyInformation>
+      <cbc:OrderableUnit>Pallet of 2</cbc:OrderableUnit>
+      <cbc:ContentUnitQuantity unitCode="EA">2</cbc:ContentUnitQuantity>
+      <cbc:OrderQuantityIncrementNumeric>2</cbc:OrderQuantityIncrementNumeric>
+      <cbc:MinimumOrderQuantity unitCode="EA">10</cbc:MinimumOrderQuantity>
+      <cbc:MaximumOrderQuantity unitCode="EA">60</cbc:MaximumOrderQuantity>
+      <cbc:WarrantyInformation>Six years on the frame and the slats.</cbc:WarrantyInformation>
       <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
       <cac:DocumentReference>
         <cbc:ID>BF-DS-PARK</cbc:ID>
@@ -228,7 +226,11 @@
         <cbc:Name>Park bench Brackenmere PB-2</cbc:Name>
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+        <cbc:LeadTimeMeasure unitCode="DAY">14</cbc:LeadTimeMeasure>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">470</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
       </cac:OfferedItemLocationQuantity>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -239,7 +241,7 @@
         </cac:PartyName>
       </cac:WarrantyParty>
       <cac:WarrantyValidityPeriod>
-        <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
+        <cbc:DurationMeasure unitCode="ANN">6</cbc:DurationMeasure>
       </cac:WarrantyValidityPeriod>
       <cac:SubTenderLine>
         <cbc:ID>1.1</cbc:ID>
@@ -262,6 +264,12 @@
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>
       </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">16</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:OfferedItemLocationQuantity>
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>

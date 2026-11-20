@@ -831,6 +831,13 @@ Stage 6, building group G6 (C96 to C99, C119 to C128; D28, D29).
 | `AppealTerms/AppealInformationParty` | 0..1 | tender/01-PriorInformationNotice, tender/02-ContractNotice, tender/03-CallForTenders, tender/23-UnawardedNotification | | | open |
 | `AppealTerms/MediationParty` | 0..1 | tender/02-ContractNotice, tender/23-UnawardedNotification | | | open |
 
+> C122, D28: the tenders carry no fee of their own costs: the paper copy of the documents is what the tenderer paid the department, not a fee of the tendered project (tender/15#F11, 17#F11, 19#F11); Brackenmere's courier of the original certificate stays as an additional fee (D28 point 5).
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `TenderedProject/FeeAmount` | 0..1 | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
+| `TenderedProject/FeeDescription` | 0..n | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
+
 ### G4: energy, utilities (2026-11-19)
 
 Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).

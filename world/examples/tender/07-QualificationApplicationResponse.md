@@ -224,6 +224,8 @@ Inside `ProcurementProjectLot`:
 
 - `ID` = **LOT-1**  
   Lot 1.
+- `ID` = **LOT-2**  
+  Lot 2: it qualifies for both lots it tenders for (tender/17#F17).
 
 ### Tendering Criterion
 
@@ -585,6 +587,9 @@ Inside `Signature`:
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID>LOT-2</cbc:ID>
   </cac:ProcurementProjectLot>
   <cac:TenderingCriterion>
     <cbc:ID>CR-CONVICTIONS</cbc:ID>

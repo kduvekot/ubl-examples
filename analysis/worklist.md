@@ -1898,6 +1898,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: D4 (O13: the figures the tenders state).
 - State: D28 decided 2026-11-16; ready to implement as decided (see `analysis/worklist-decisions.md`, D28).
 - Findings: tender: 15#F11, 15#F16, 15#F17, 16#F6, 17#F3, 17#F11, 17#F13, 17#F15, 17#F16, 17#F17, 19#F3, 19#F11, 19#F13, 19#F15, 19#F16
+- **Fixed (2026-11-19):** each tender states one offer, evaluated as tendered (D28): every tender line gives its unit price in its offered location quantity (499 and 18 lume for Valdara, 470 or 480 and 16 for Brackenmere; quantity × price = line amount, 15#F16, 17#F13, 19#F13); the line's warranty is the one the quality criterion's answer gives (Brackenmere six years on the frame and the slats, 17#F3, 19#F3); Brackenmere's ordering terms are its own (pallets of two, 10 to 60 a release, 14 days, 17#F16); no fee for the tenderer's own paper copy (15#F11, 17#F11, 19#F11; Brackenmere's courier of the original certificate stays, D28 point 5); no replacement item (15#F17, 17#F15, already gone; Brackenmere's spare slat sets in the line's note); the tender receipt registers Valdara's tender at 09:13, the moment it was submitted, and the platform issues the receipt a minute later (16#F6); Brackenmere's qualification request and response cover both lots it tenders for (17#F17). Coverage −2 (register, G6).
 
 ### C123 · Tender: the installation billed but never ordered
 - Kind: flow story · Findings: 14 (High 7, Medium 4, Low 3) in 7 files, 1 flow · Needs decision: owner: D28

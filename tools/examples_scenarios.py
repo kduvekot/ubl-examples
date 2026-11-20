@@ -5560,7 +5560,9 @@ def tender(n, doc):
     if d == "TenderReceipt":
         return {**head(f, "tender-receipt", doc, 43, "Sent on receipt of the tender."), **folder,
                 "RegisteredDate": V(f.date(43), "The day the tender was registered, before the deadline."),
-                "RegisteredTime": V("11:42:00", "The time it was registered, which proves it was on time."),
+                "RegisteredTime": V("09:13:00", "The time the platform registered the tender, the moment it was "
+                                                "submitted, which proves it was on time (tender/16#F6)."),
+                "IssueTime": V("09:14:00", "The platform's automatic receipt, a minute after the registration."),
                 "TenderDocumentReference": {"ID": V(f.numbers["tender"], "The tender received.")}}
     if d == "Tender" and doc["from"] == "37-xb":
         k = nth("tender", n, doc)
@@ -8953,9 +8955,14 @@ def _(f, n, doc, out):
 
 TENDERED_BENCH = {
     "5-xu": {"name": "Park bench Serra 180", "note": "Serra 180, as specified.", "sheet": "VI-DS-B180",
-             "spare": "VI-C180-2026", "spare_why": "Spare frames available."},
-    "37-xb": {"name": "Park bench Brackenmere PB-2", "note": "A bench of its own make: steel frame, hardwood slats.",
-              "sheet": "BF-DS-PARK", "spare": "BF-SLAT-PB2", "spare_why": "Spare slat sets available."}}
+             "unit": ("Pallet of 4", 4), "min": 20, "max": 96, "lead": 7, "max_why": "At most a full truck.",
+             "warranty": ("Five years on the frame.", 5)},
+    # Brackenmere packs its benches two to a pallet and makes them to order (tender/17#F16): its own terms
+    "37-xb": {"name": "Park bench Brackenmere PB-2", "note": "A bench of its own make: steel frame, hardwood slats; "
+                                                            "spare slat sets available.",
+              "sheet": "BF-DS-PARK", "unit": ("Pallet of 2", 2), "min": 10, "max": 60, "lead": 14,
+              "max_why": "At most what its workshop makes in a fortnight.",
+              "warranty": ("Six years on the frame and the slats.", 6)}}
 
 
 def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
@@ -8968,25 +8975,35 @@ def tender_lines(f, bench_price, install_price, tenderer="5-xu"):
          "LineExtensionAmount": amount(b, "XBL", "240 at the unit price."),
          "TaxInclusiveLineExtensionAmount": amount(b, "XBL", "No tax for a public body."),
          "TotalTaxAmount": amount(0, "XBL", "No tax for a public body."),
-         "OrderableUnit": V("Pallet of 4", "Called off in pallets."),
-         "ContentUnitQuantity": qty(4, "EA", "Four per pallet."),
-         "OrderQuantityIncrementNumeric": V("4", "In steps of four."),
-         "MinimumOrderQuantity": qty(20, "EA", "A release of at least 20."),
-         "MaximumOrderQuantity": qty(96, "EA", "At most a full truck."),
-         "WarrantyInformation": V("Five years on the frame.", "The warranty."),
+         "OrderableUnit": V(t["unit"][0], "Called off in pallets."),
+         "ContentUnitQuantity": qty(t["unit"][1], "EA", f"{t['unit'][1]} per pallet."),
+         "OrderQuantityIncrementNumeric": V(str(t["unit"][1]), f"In steps of {t['unit'][1]}."),
+         "MinimumOrderQuantity": qty(t["min"], "EA", f"A release of at least {t['min']}."),
+         "MaximumOrderQuantity": qty(t["max"], "EA", t["max_why"]),
+         "WarrantyInformation": V(t["warranty"][0], "The warranty on the bench, as the quality criterion's answer "
+                                                    "gives it (tender/17#F3, 19#F3)."),
          "PackLevelCode": V("PALLET", "The pack level."),
          "DocumentReference": {"ID": V(t["sheet"], "The datasheet.")},
          "Item": {"Name": V(t["name"], "The item offered.")},
-         "OfferedItemLocationQuantity": {"LeadTimeMeasure": V("7", "Seven days per release.", unitCode="DAY")},
+         "OfferedItemLocationQuantity": {"LeadTimeMeasure": V(str(t["lead"]), f"{t['lead']} days per release.",
+                                                              unitCode="DAY"),
+                                         "Price": {"PriceAmount": price(Decimal(bench_price), "XBL", "The unit "
+                                                                        "price offered, which the procedure "
+                                                                        "evaluates and auctions (tender/15#F16)."),
+                                                   "BaseQuantity": qty(1, "EA", "Per bench.")}},
          "WarrantyParty": party(tenderer, short=True),
-         "WarrantyValidityPeriod": {"DurationMeasure": V("5", "Five years.", unitCode="ANN")},
+         "WarrantyValidityPeriod": {"DurationMeasure": V(str(t["warranty"][1]), "The years of warranty.",
+                                                         unitCode="ANN")},
          "SubTenderLine": {"ID": V("1.1", "The anchors."), "Quantity": qty(TENDER_QTY, "SET", "One set per bench."),
                            "Item": {"Name": V("Ground anchor set", "Included.")}},
          "CallForTendersLineReference": {"LineID": V("1", "The line of the call for tenders.")},
          "CallForTendersDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders.")}},
         {"ID": V("2", "The installation."), "Quantity": qty(TENDER_QTY, "EA", "240 installations."),
          "LineExtensionAmount": amount(i, "XBL", "240 at the price."),
-         "Item": {"Name": V("Installation of a park bench", "The service.")}}]
+         "Item": {"Name": V("Installation of a park bench", "The service.")},
+         "OfferedItemLocationQuantity": {"Price": {"PriceAmount": price(Decimal(install_price), "XBL", "The unit "
+                                                                        "price of one installation."),
+                                                   "BaseQuantity": qty(1, "EA", "Per installation.")}}}]
 
 
 @enrich("tender", "Tender")
@@ -9021,8 +9038,6 @@ def _(f, n, doc, out):
             "BeneficiaryParty": party(PWD, short=True),
             "TenderedProject": {
                 "VariantID": V("V0", "The main offer; no variant is tendered."),
-                "FeeAmount": amount(Decimal("50.00"), "XBL", "The documentation fee paid."),
-                "FeeDescription": V("Paper copy of the documents.", "What the fee was for."),
                 "TenderEnvelopeID": V("ENV-1", "The envelope."),
                 "TenderEnvelopeTypeCode": V("COMBINED", "Technical and price together."),
                 **({} if winner else {"AdditionalFee": {
@@ -9176,7 +9191,9 @@ def _(f, n, doc, out):
             "WeightingTypeCode": V("NONE", "No weighting."),
             "Note": V("Answer every criterion.", "What to do."),
             "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
-            "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
+            "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
+                                      {"ID": V("LOT-2", "Lot 2: the furniture maker tenders for both lots "
+                                                        "(tender/17#F17).")}],
             "AdditionalDocumentReference": {"ID": V(f.numbers["call"], "The call for tenders, sent with this "
                                                                       "request (tender/06#F1).")},
             "Signature": seal(PWD, "PWD-SIG-QAR"),
@@ -9229,7 +9246,9 @@ def _(f, n, doc, out):
             "WeightingTypeCode": V("NONE", "No weighting."),
             "Note": V("All criteria answered.", "Every question of the request has its response below."),
             "ProcurementProject": {"ID": V(FOLDER, "The procedure.")},
-            "ProcurementProjectLot": {"ID": V("LOT-1", "Lot 1.")},
+            "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")},
+                                      {"ID": V("LOT-2", "Lot 2: it qualifies for both lots it tenders for "
+                                                        "(tender/17#F17).")}],
             "TenderingCriterion": [{"ID": V(c, "A criterion of the request, answered below.")} for c in
                                    ("CR-CONVICTIONS", "CR-TAXES", "CR-REGISTER", "CR-YEARS", "CR-TURNOVER",
                                     "CR-STAFF", "CR-REFERENCES", "CR-TIMBER", "CR-GROUP")],

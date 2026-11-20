@@ -26,16 +26,16 @@ The authority acknowledges the manufacturer's tender, with the time it was regis
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-24**  
   Sent on receipt of the tender.
-- `IssueTime` = **17:47:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueTime` = **09:14:00-01:00**  
+  The platform's automatic receipt, a minute after the registration; in the issuer's local time, with its offset from UTC (D27).
 - `ContractName` = **Park benches for the parks renewal programme**  
   The name of the contract the procedure is for.
 - `Note` = **Received on time, encrypted, unopened until the opening.**  
   The receipt.
 - `RegisteredDate` = **2026-02-24**  
   The day the tender was registered, before the deadline.
-- `RegisteredTime` = **11:42:00**  
-  The time it was registered, which proves it was on time.
+- `RegisteredTime` = **09:13:00**  
+  The time the platform registered the tender, the moment it was submitted, which proves it was on time (tender/16#F6).
 
 ### Tender Document Reference
 
@@ -198,11 +198,11 @@ Inside `ReceiverParty`:
   <cbc:UUID>898bc194-d4b8-5097-a04f-94fa742d7f7e</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
-  <cbc:IssueTime>17:47:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:14:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>Received on time, encrypted, unopened until the opening.</cbc:Note>
   <cbc:RegisteredDate>2026-02-24</cbc:RegisteredDate>
-  <cbc:RegisteredTime>11:42:00</cbc:RegisteredTime>
+  <cbc:RegisteredTime>09:13:00</cbc:RegisteredTime>
   <cac:TenderDocumentReference>
     <cbc:ID>VI-DOC-26-0202</cbc:ID>
   </cac:TenderDocumentReference>

@@ -254,8 +254,6 @@
   </cac:ContractingParty>
   <cac:TenderedProject>
     <cbc:VariantID>V0</cbc:VariantID>
-    <cbc:FeeAmount currencyID="XBL">50.00</cbc:FeeAmount>
-    <cbc:FeeDescription>Paper copy of the documents.</cbc:FeeDescription>
     <cbc:TenderEnvelopeID>ENV-1</cbc:TenderEnvelopeID>
     <cbc:TenderEnvelopeTypeCode listID="urn:ubl-examples:world:codelist:TenderEnvelopeCode">COMBINED</cbc:TenderEnvelopeTypeCode>
     <cac:ProcurementProjectLot>
@@ -298,6 +296,10 @@
       </cac:Item>
       <cac:OfferedItemLocationQuantity>
         <cbc:LeadTimeMeasure unitCode="DAY">7</cbc:LeadTimeMeasure>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">499</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
       </cac:OfferedItemLocationQuantity>
       <cac:WarrantyParty>
         <cac:PartyIdentification>
@@ -331,6 +333,12 @@
       <cac:Item>
         <cbc:Name>Installation of a park bench</cbc:Name>
       </cac:Item>
+      <cac:OfferedItemLocationQuantity>
+        <cac:Price>
+          <cbc:PriceAmount currencyID="XBL">18</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+        </cac:Price>
+      </cac:OfferedItemLocationQuantity>
     </cac:TenderLine>
     <cac:AwardingCriterionResponse>
       <cbc:ID>ACR-1</cbc:ID>
