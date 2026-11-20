@@ -179,7 +179,7 @@ irrelevant · structure · process.
 - **Parts:** E-04, C-12, D-09, B-05.
 
 ### SR-05 · Map sheet
-- **Status:** partly solved 2026-11-20 (with SR-02): pictures in text pages are never wider than the page (A-09).
+- **Status:** **solved** 2026-11-20 (with SR-02): pictures in text pages are never wider than the page (A-09).
   C-11 **solved 2026-11-20**: the names of the ports, the airports and the localities stand beside their symbol, on
   the side where they cover the least, and no longer overprint other names; the pipelines are a solid brown line, the
   land border stays dotted; the gas platform is marked and named; a legend under the mainland panel explains the
@@ -408,7 +408,7 @@ irrelevant · structure · process.
 - **Parts:** D-06.
 
 ### SR-20 · Specification pages define nothing
-- **Status:** decided 2026-11-20 (owner, Q-D-01: A) and **partly solved**: every transaction page shows, generated from
+- **Status:** decided 2026-11-20 (owner, Q-D-01: A) and **solved**: every transaction page shows, generated from
   its examples at every build, who sends it to whom, the code lists and the identifier schemes its documents use, and
   its examples by name. **The world is separate and independent (owner): the world's pages point to no real
   specification** (no Peppol, CEN, EN 16931, XRechnung, eForms, ESPD, EU). Removed from the Rules index and from the
@@ -458,7 +458,7 @@ irrelevant · structure · process.
 - **Parts:** B-15, B-16, B-17.
 
 ### SR-24 · Reason texts: boilerplate and artifacts
-- **Status:** partly solved 2026-11-20: the IssueTime reason says the local time once; no sentence starts in lower case
+- **Status:** **solved** 2026-11-20: the IssueTime reason says the local time once; no sentence starts in lower case
   after a full stop (the source of a value is "As Valdara Industries gives it."); no internal route key in a reason;
   "City of Ferrano", not "City of ferrano". E-05 **solved 2026-11-20** (owner: A, "make it non repetitive"): on every
   example page a party's own data (identifiers, name, language, address, legal entity, tax scheme, contact, electronic
