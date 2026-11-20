@@ -19,6 +19,7 @@
 - **Decisions and their reasons:** `analysis/codelist-decisions.md` is the authority. Supporting files:
   - `analysis/codelist-classification.md` and `analysis/identifier-classification.md` (the Q- and ID-Q-numbers);
   - `analysis/source-verification.md` and `analysis/q18-payment-channel.md`.
+  - `analysis/o150-design.md`: the design study for a possible flow of thermal modification as contract processing (O150), decided at the end of stage 6.
 - **External code lists:** sources in `world/codelists/sources/` (provenance and SHA-256 in `PROVENANCE.md` and `PROVENANCE-second-round.md`); list definitions in `world/codelists/lists.json`.
 
 ## Where the reviews, the worklist and the open decisions are
