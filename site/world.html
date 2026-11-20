@@ -277,7 +277,7 @@ function box(g, x, y, w, d, h, top, side) { // isometric block standing on (x, y
 //  2 close (view.s from DETAIL_S): the chunks with everything (trees, hedges, rocks, windows).
 // The chunks of a level are painted at a resolution (pixels per world pixel) that follows the zoom and the screen's
 // pixel density (view.s * dpr), in steps (RES), so that zoomed in the map stays sharp instead of showing enlarged
-// pixels: the close level at 1, 2, 3 or 4 times its size, the middle level at a half or (on a dense screen) at full
+// pixels: the close level at 1, 2, 3, 4 or 6 times its size, the middle level at a half or (on a dense screen) at full
 // size. A chunk is CHUNK pixels square whatever its resolution, so it covers CHUNK / resolution world pixels: the
 // number of chunks in view, and the time to draw them, stay about the same at every zoom.
 // A chunk is drawn when it first comes into view (a few per frame) and kept, up to CHUNK_KEEP chunks' worth of
@@ -285,7 +285,7 @@ function box(g, x, y, w, d, h, top, side) { // isometric block standing on (x, y
 // the level below. A level fades in over the one below it over FADE of the scale, so that the minor roads and the
 // trees do not pop up.
 const OV_S = .35, MID_S = .4, DETAIL_S = .62, FADE = 1.25, CHUNK = 1024, CHUNK_KEEP = 60;
-const RES = [null, [[.5, 0], [1, .8]], [[1, 0], [2, 1.25], [3, 2.5], [4, 3.75]]];   // [resolution, from view.s * dpr]
+const RES = [null, [[.5, 0], [1, .8]], [[1, 0], [2, 1.25], [3, 2.5], [4, 3.75], [6, 5]]];   // [resolution, from view.s * dpr]
 const resFor = (level, sd) => RES[level].filter(([, from]) => sd >= from).pop()[0];
 let overview = null; const chunks = new Map(); let chunkPx = 0;
 function drawWorld() { overview = null; chunks.clear(); chunkPx = 0; OX = RH() * TW / 2 + 40; }   // after a rotation or the grid toggle
@@ -1267,7 +1267,7 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function resize() { dpr = Math.min(2, window.devicePixelRatio || 1); const r = cv.getBoundingClientRect();
   cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); if (!view.fitted) fit(); }
 // bounding box of all land, in world pixels
-let LAND; const MIN_S = .05;
+let LAND; const MIN_S = .05, MAX_S = 4;          // the zoom: from far out to 4 times the world's size (MO011)
 function computeLand() { let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
   for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) if (tiles[i][j].land) { const [x, y] = tileWorld(i, j);
     x0 = Math.min(x0, x - TW / 2); x1 = Math.max(x1, x + TW / 2); y0 = Math.min(y0, y - 40); y1 = Math.max(y1, y + TH); }
@@ -1694,7 +1694,7 @@ for (const code of ["XU", "XB", "XL"]) { const h = document.createElement("h3");
 for (const b of document.querySelectorAll(".layers button")) b.addEventListener("click", () => {
   const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); layers[b.dataset.layer] = on; redraw(); });
 // pan and zoom
-const zoomAt = (f, cx, cy) => { const ns = Math.max(MIN_S, Math.min(3, view.s * f)); view.x = cx - (cx - view.x) * ns / view.s; view.y = cy - (cy - view.y) * ns / view.s; view.s = ns; redraw(); };
+const zoomAt = (f, cx, cy) => { const ns = Math.max(MIN_S, Math.min(MAX_S, view.s * f)); view.x = cx - (cx - view.x) * ns / view.s; view.y = cy - (cy - view.y) * ns / view.s; view.s = ns; redraw(); };
 document.getElementById("zoom-in").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(1.25, r.width / 2, r.height / 2); };
 document.getElementById("zoom-out").onclick = () => { const r = cv.getBoundingClientRect(); zoomAt(.8, r.width / 2, r.height / 2); };
 document.getElementById("zoom-fit").onclick = () => { fit(); redraw(); };
