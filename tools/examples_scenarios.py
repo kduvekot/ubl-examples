@@ -490,8 +490,7 @@ def road(n, doc):
                   "SignatoryContact": {"Name": V("Certificates office", "The office of the chamber that signs "
                                                  "certificates of origin. UBL defines this contact as the exporter's "
                                                  "signer of the application; the element is mandatory in an "
-                                                 "endorser party, so it names the endorser's signer, a finding for "
-                                                 "the UBL TC."),  # road/06#F15, O121
+                                                 "endorser party, so it names the endorser's signer."),  # road/06#F15, O121; a finding for the UBL TC
                                        "JobTitle": V("Certificates officer", "The signing function: the officer who "
                                                                              "signs certificates for the chamber"
                                                                              ".")}}  # road/06#F16
@@ -13494,8 +13493,7 @@ def cotton_advance(n, doc):
     out.update({
         "InvoiceTypeCode": V("386", "UN/EDIFACT 1001 code 386, prepayment invoice: \"An invoice to pay amounts for "
                                     "goods and services in advance; these amounts will be subtracted from the final "
-                                    "invoice.\" A subtype the root SelfBilledInvoice does not say by itself (decision "
-                                    "P-SB)."),
+                                    "invoice.\" A subtype the root SelfBilledInvoice does not say by itself."),  # decision P-SB
         "Note": V("Self-billed prepayment under the season agreement: the advance is deducted from the first "
                   "self-billed invoice of the season.", "The statement the self-billing agreement requires, and what "
                                                         "happens to the advance."),

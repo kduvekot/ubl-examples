@@ -320,7 +320,7 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
   The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
 - `Item/HazardousItem/RadioactiveMaterial/Name` = **Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)**  
-  The radionuclide and the maximum activity during transport, which the transport document must state in becquerels (IAEA SSR-6 para 546): UBL has no element for the activity of contents that are not fissile, so the name carries it, a finding for the TC. The activity is the generator's at acceptance at the Lumeport cargo terminal, the highest it has on the way, as Mo-99 decays; the A2 value of Mo-99 allows up to 600 GBq in a Type A package.
+  The radionuclide and the maximum activity during transport, which the transport document must state in becquerels (IAEA SSR-6 para 546): UBL has no element for the activity of contents that are not fissile, so the name carries it. The activity is the generator's at acceptance at the Lumeport cargo terminal, the highest it has on the way, as Mo-99 decays; the A2 value of Mo-99 allows up to 600 GBq in a Type A package.
 - `Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.**  
   The physical and chemical form: not special form, so the A2 value applies.
 - `Item/HazardousItem/RadioactiveMaterial/TransportIndexNumeric` = **1.5**  

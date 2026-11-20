@@ -7,6 +7,7 @@ analysis/codelist-decisions.md): no internal references in what a reader sees. S
   * review finding IDs: tender/09#F4;
   * repository paths: world/items.json, tools/build_examples.py;
   * names of real specifications the world does not follow: EN 16931, Peppol, XRechnung;
+  * the project's own notes: code-list decisions (P-SB), "a finding for the TC";
 
 and warns on words that tell the project's history ("no longer", "was moved", "proposed addition").
 
@@ -19,7 +20,8 @@ from html.parser import HTMLParser
 
 FAIL = re.compile(r"(?<![\w`/=-])(?:D\d{1,2}(?: point \d+)?|O\d{1,3}|MO\d{3}|OW\d{3}|ID-Q\d+)\b(?![\w-])"
                   r"|\bworklist C\d+|\(C\d{2,3}\)|\b[a-z]+/\d{2}#F\d+"
-                  r"|\b(?:world|tools|analysis)/[\w/-]+\.(?:json|py|md)\b|\bEN 16931\b|\bPeppol\b|\bXRechnung\b")
+                  r"|\b(?:world|tools|analysis)/[\w/-]+\.(?:json|py|md)\b|\bEN 16931\b|\bPeppol\b|\bXRechnung\b"
+                  r"|\bdecision P-[A-Z0-9]+\b|\bP-SB\b|\bfinding for the (?:UBL )?TC\b")
 WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b", re.I)
 SKIP_DIRS = {"note", "codelists", "examples"}
 SKIP_PAGES = {"releases.html", "history.html"}      # the OASIS samples' history: about the project, not the world

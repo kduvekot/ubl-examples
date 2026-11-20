@@ -1077,7 +1077,7 @@ def hazardous_item(it):
                       f"{r['activity_gbq']} GBq ({mant} × 10^{len(str(int(bq))) - 1} Bq)",
                       "The radionuclide and the maximum activity during transport, which the transport document must "
                       "state in becquerels (IAEA SSR-6 para 546): UBL has no element for the activity of contents "
-                      "that are not fissile, so the name carries it, a finding for the TC. The "  # O202 choice 6
+                      "that are not fissile, so the name carries it. The "  # O202 choice 6; a finding for the TC
                       "activity is the generator's at acceptance at the Lumeport cargo terminal, the highest it has "
                       "on the way, as Mo-99 decays; the A2 value of Mo-99 allows up to 600 GBq in a "  # O202 choice 4
                       "Type A package."),
