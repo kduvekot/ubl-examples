@@ -80,7 +80,7 @@ irrelevant · structure · process.
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | solved |
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | solved |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
-| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | partly solved |
+| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | solved here; rest handed over |
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | solved |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | solved |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | decided |
@@ -238,6 +238,10 @@ irrelevant · structure · process.
   every built page, and warns on words of change) and point 4 (traceability in code comments and `_refs` keys). Open:
   point 2 (O112 recorded for every remaining flow), point 5 (key facts as assertions; counts in hand texts), and E-12
   (the story lines in the decisions file brought into line).
+  **Handed over 2026-11-20 (owner):** points 2 and 5 and E-12 belong to the work on the November review of the
+  examples (the worklist session, `analysis/worklist.md`): a flow's story is read against its XML when that flow is
+  implemented, and the story lines are that work's own file. The site review does not do them; the worklist session
+  was told the same day.
 - **What:** four hand-kept copies of each flow's story (E-08); 34 story assertions in the scenarios are the only
   automated tie; the O112 read-through is recorded for road, furniture, retail, cotton, sea and contest only.
   The story lines themselves lag their "Overtaken" notes (E-12; also D32/O155, D37/O214, D34/O149 from part F).
