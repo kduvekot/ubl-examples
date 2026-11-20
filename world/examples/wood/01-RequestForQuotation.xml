@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
   <cbc:SubmissionDueDate>2026-02-21</cbc:SubmissionDueDate>
-  <cbc:Note>Slats to our drawing VI-DS-SL1800.</cbc:Note>
+  <cbc:Note>Slats of thermally modified ash to our drawing VI-DS-SL1800; kiln-dried oak of the same size is acceptable as an alternative if quoted.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:RequestedValidityPeriod>
@@ -137,7 +137,7 @@
   <cac:RequestForQuotationLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>69477890-8e3a-52ba-acae-4da29ea0b964</cbc:UUID>
-    <cbc:Note>Kiln-dried hardwood, planed on four sides.</cbc:Note>
+    <cbc:Note>Thermally modified ash, planed on four sides, as drawn.</cbc:Note>
     <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
     <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">CONFIDENTIAL</cbc:PrivacyCode>
     <cac:DocumentReference>
@@ -148,7 +148,7 @@
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>

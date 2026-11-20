@@ -986,8 +986,8 @@ Items are combined in four ways, each shown by a case the world already has:
 - **A single item**, ordered and sold alone, with its own number: the
   Elderwick Marrow bench in oak, or the chair in ash.
 - **A pack of the same item**, n times the same packed as one unit: the
-  sawmill's bundle of 50 hardwood bench slats. The item and the pack are two
-  levels, each with its own number.
+  sawmill's bundle of 50 bench slats of thermally modified ash. The item
+  and the pack are two levels, each with its own number.
 - **A kit of different items**, wrapped in one package and sold as one: the
   Elderwick care kit for the Marrow dining furniture (a 250 ml tin of
   hard-wax oil and a lint-free cloth), or the ground anchor set of the park

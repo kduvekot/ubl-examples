@@ -174,7 +174,7 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **MS-CS-26-0629**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **22200** (unitCode `KGM`)  
+- `Consignment/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the bundles with their pallets.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
   The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
@@ -230,26 +230,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -262,26 +262,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -294,26 +294,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -326,26 +326,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -358,26 +358,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -390,26 +390,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -422,26 +422,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -454,26 +454,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -486,26 +486,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -518,26 +518,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -550,26 +550,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -582,26 +582,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -614,26 +614,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -646,26 +646,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -678,26 +678,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -710,26 +710,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -742,26 +742,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -774,26 +774,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -806,26 +806,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -838,26 +838,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -870,26 +870,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -902,26 +902,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -934,26 +934,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -966,26 +966,26 @@ Inside `Shipment`:
   UN/ECE Recommendation 21 code PX: pallet. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: PX = Pallet.
 - `TransportHandlingUnit/HandlingCode` = **STACK2** (listID `urn:ubl-examples:world:codelist:HandlingInstructionCode`)  
   The carrier's handling code: two high. The code is from the Trade Accord's handling instruction list: STACK2 = Stack at most two high.
-- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.**  
-  The handling, in words, with the world's rule for manual handling (D20).
+- `TransportHandlingUnit/HandlingInstructions` = **Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.**  
+  The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1800** (unitCode `MMT`)  
-  Its length: the slats' length.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
+  Its length: the slats' 1,800 mm and 25 mm at each end.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **WIDTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: WIDTH = Width. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **1000** (unitCode `MMT`)  
-  Its width: two bundles of 475 mm side by side.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **970** (unitCode `MMT`)  
+  Its width: two bundles of 475 mm side by side, 20 mm apart.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The height of the loaded pallet. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **880** (unitCode `MMT`)  
-  Two bundles of 380 mm on the pallet.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **1022** (unitCode `MMT`)  
+  Two bundles of 450 mm on the pallet of 122 mm.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/MeasurementDimension/Measure` = **925** (unitCode `KGM`)  
-  Four bundles of 225 kg and the pallet's own 25 kg.
+- `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
+  Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
   50 slats in a bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -999,13 +999,13 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).**  
+- `Note` = **96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply.**  
   The line as the order put it.
 - `DeliveredQuantity` = **96** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
-- `Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -1152,7 +1152,7 @@ Inside `DespatchLine`:
     <cbc:ID>MS-SH-26-0632</cbc:ID>
     <cac:Consignment>
       <cbc:ID>MS-CS-26-0629</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>
@@ -1200,23 +1200,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-001</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1228,23 +1228,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-002</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1256,23 +1256,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-003</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1284,23 +1284,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-004</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1312,23 +1312,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-005</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1340,23 +1340,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-006</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1368,23 +1368,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-007</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1396,23 +1396,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-008</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1424,23 +1424,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-009</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1452,23 +1452,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-010</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1480,23 +1480,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-011</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1508,23 +1508,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-012</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1536,23 +1536,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-013</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1564,23 +1564,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-014</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1592,23 +1592,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-015</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1620,23 +1620,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-016</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1648,23 +1648,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-017</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1676,23 +1676,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-018</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1704,23 +1704,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-019</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1732,23 +1732,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-020</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1760,23 +1760,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-021</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1788,23 +1788,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-022</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1816,23 +1816,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-023</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1844,23 +1844,23 @@ Inside `DespatchLine`:
       <cbc:ID>MS-26-024</cbc:ID>
       <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
-      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 225 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
+      <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1800</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1850</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">WIDTH</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">1000</cbc:Measure>
+        <cbc:Measure unitCode="MMT">970</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="MMT">880</cbc:Measure>
+        <cbc:Measure unitCode="MMT">1022</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
-        <cbc:Measure unitCode="KGM">925</cbc:Measure>
+        <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
@@ -1871,13 +1871,13 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).</cbc:Note>
+    <cbc:Note>96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
       <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
       <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
       <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
