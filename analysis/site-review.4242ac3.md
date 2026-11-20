@@ -427,7 +427,7 @@ Each question is given in full, with options and the reviewer's recommendation, 
 |---|---|---|---|---|
 | Q-A-01 | Headline figures and coverage page about the world examples, OASIS as a labelled baseline? | A: world first | SR-01 | **decided 2026-11-20 (owner): A, without the OASIS baseline** (see SR-01) |
 | Q-A-02 | Specifications and code lists as sections, with a code-list index? | B: one "Reference" nav item; Releases + History merged into "OASIS samples" | SR-02 | **decided 2026-11-20 (owner): the world front and centre**; nav World · Trade · Parties · Rules · About; the OASIS pages under About |
-| Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | open |
+| Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | **decided and solved 2026-11-20 (owner): A, removed**; may come back later |
 | Q-B-02 | Backstory in the method note? | A now (method first, backstory in an annex), B later (to the encyclopaedia) | SR-23 | open |
 | Q-B-03 | Describe the review process in the note? | A: a chapter "Reviewing and maintaining the examples" | SR-21 | open |
 | Q-B-04 | Decided but unbuilt flows in the note? | B: one sentence naming them | SR-12 | **settled 2026-11-20:** the flows are built; the note tells them as built |
