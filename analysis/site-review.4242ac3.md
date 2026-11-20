@@ -26,7 +26,7 @@ relevant and in line with what the project is making? Review only; nothing has b
   reviews. Do not renumber them; refer to them from the SR status lines.
 - The questions (Q-…) have their own status in the register below; an answer goes there with its date,
   and the SR groups that depend on it are updated in the same commit.
-- The open point **O227** in `analysis/worklist-decisions.md` points to this file and is closed when
+- The open point **O234** in `analysis/worklist-decisions.md` points to this file and is closed when
   every SR group is solved or dropped.
 
 ## Summary
@@ -89,7 +89,7 @@ irrelevant · structure · process.
 | SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | open |
 | SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | open |
 | SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | open |
-| SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | open |
+| SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
 | SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | open |
 | SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | open |
 | SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | open |
@@ -285,7 +285,18 @@ irrelevant · structure · process.
 - **Parts:** C-04, B-19, B-03.
 
 ### SR-18 · Specification texts that contradict decisions or the examples
-- **Status:** open
+- **Status:** decided 2026-11-20 (owner, Q-D-02: B) and **solved in the commit "SR-18: specification texts …"**:
+  - D-02: an invoice to a Bayvarran public body claims only Bayvarra's rules for public buyers, whatever the
+    seller's country, and those rules now say that the tax on it is the seller's own (the exemption for public
+    bodies is the Bayvarran supplier's); `national()` puts the public buyer's rule first by rule, not by the
+    order of the file; the Urvanian page says so too. tender/32, 33, 39 already claimed only XB (unchanged);
+  - D-01: billing: the supplier "charges an amount it billed too little with a debit note";
+  - D-03: Urvania's invoice rules are its VAT content only (no discount, no statutory interest);
+  - D-04: the port community applies to what passes through the port (documents of its types in the sea and
+    cotton flows between two parties in Bayvarra, one a member): cotton/11, 12 and sea/15, 16, 17, 19, exchanged
+    on or with the island, no longer claim it; the procurement community applies to every document a member
+    sends or receives (no example changed); the page sentence is generated from the rule;
+  - D-05: the roles of transport progress status and transportation status follow the examples.
 - **What:** tender/32, 33, 39 claim only `XB:public-billing` (`national()` takes the first match) and the XB page
   says its exemption applies "whatever the seller's country", against D17.2 (high); the billing transaction
   says the customer issues the debit note (D9; rail/12, 13 are the supplier's); `XU:invoice` makes the seller's
@@ -368,7 +379,7 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-C-04 | Where do D/O references live? | A: a separate, unprinted key; flow by flow with O112 | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** out of published text, into comments or an unprinted key |
 | Q-C-05 | Is Urvania still inland? | A: a coast without a deep-water port | SR-17 | open |
 | Q-D-01 | Do transaction specifications state rules? | A: generated sections from the examples, hand rules only where a decision makes one | SR-20 | open |
-| Q-D-02 | Which national levels does a cross-border public invoice claim? | A: chain both, `XU:invoice` then `XB:public-billing` | SR-18 | open |
+| Q-D-02 | Which national levels does a cross-border public invoice claim? | A: chain both, `XU:invoice` then `XB:public-billing` | SR-18 | **decided 2026-11-20 (owner): B**, the public buyer's rules only, their text cut back; `#compliant#` chains restrictions, not two countries' parallel rules |
 | Q-D-03 | New version of a specification when a decision changes it? | A: keep 1.0 until a first release | SR-09 | **decided 2026-11-20 (owner): A**; in-world there is no change history |
 | Q-D-04 | National specifications for the new flows? | decide with O138; B unless a real rule exists | SR-20 | open |
 | Q-E-01 | How do decision and review references appear to readers? | B: link D/ID-Q/O to the decisions, strip review and cause IDs | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** not B; no reference of any kind in published text |
