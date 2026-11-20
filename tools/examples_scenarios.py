@@ -8759,9 +8759,9 @@ def med_goods(f, transport=True):
                                        "The goods of this item with their packaging."),
              "Quantity": qty(d["ordered"], it["unit"], "How much is carried.")}
         if mk.get("storage", {}).get("set"):
-            g["Temperature"] = med_temp("TRANSPORT", mk["storage"]["set"], "The temperature to carry the goods "
-                                        "at: the middle of their range, which the active container is set to.",
-                                        code="TARGET")
+            g["Temperature"] = med_temp("SETPOINT", mk["storage"]["set"], "The set point: the temperature to "
+                                        "carry the goods at, the middle of their range, which the active container "
+                                        "is set to.")
         if mk.get("storage"):
             g.update(med_cold(d["item"], "The range the maker's storage conditions give: "
                                          + ("2 to 8 °C, never frozen." if mk["storage"]["min"] == "2" else
@@ -13650,6 +13650,7 @@ RF_VGM = RF_GROSS + RF_TARE
 def rf_cel(value, why, attribute="TRANSPORT", description=None):
     out = {"AttributeID": V(attribute, "What the temperature is of: " + {
                "TRANSPORT": "the air in the reefer's cargo space.", "PRODUCT": "the fruit itself, its pulp.",
+               "SETPOINT": "the temperature the reefer is set to keep in its cargo space.",
                "STORAGE": "the fruit as it is to be kept."}[attribute]),
            "Measure": V(value, why, unitCode="CEL")}
     if description:
@@ -13768,7 +13769,8 @@ def rf_goods_item(f, with_set_point=True):
                                                                                   "of fresh pears.")}}}]}
     if with_set_point:
         out["Temperature"] = rf_cel(STORE["set_point_c"], "The set point the reefer is to hold: 0.5 °C, the middle "
-                                    "of the fruit's range.", description="Set point")
+                                    "of the fruit's range, the figure the order's 'chilled' asks for.",
+                                    attribute="SETPOINT")
         out["MinimumTemperature"] = rf_cel(STORE["temperature_c"][0], "The coldest the fruit may be carried at.")
         out["MaximumTemperature"] = rf_cel(STORE["temperature_c"][1], "The warmest.")
     return out
@@ -14063,6 +14065,18 @@ def reefer(n, doc):
                                                                     "The pulp temperature measured in a sample of "
                                                                     "the cartons at unloading: within the range.",
                                                                     attribute="PRODUCT")}}
+        return out
+    if d == "RemittanceAdvice":
+        # O242: paid in lume, the invoice's currency, on its due date, to the cooperative's lume account; the island
+        # bank's conversion from the wholesaler's coral is the bank's business, not the remittance's (as O226)
+        due = kit.due_day(f, RF_DAY["sail"] + 30, "55-xb")
+        out = kit.remittance(f, n, doc, due, "The day the payment is made: the invoice's due date, Monday 25 May, "
+                                             "30 days after the invoice moved past the Saturday to the next "
+                                             "business day.", purpose=("GDDS", "purchase of goods"))
+        out["IssueTime"] = V("09:20:00", "Sent when the payment order went to the bank, in the morning.")
+        out["Note"] = V("Payment of your invoice for the reefer of apples and pears, the mix of your order response "
+                        "as received.", "What the advice is for: the payment that settles the flow, and that the "
+                        "wholesaler took the changed mix.")
         return out
     raise SystemExit(f"reefer scenario: no document {n} {d}")
 

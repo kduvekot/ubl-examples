@@ -187,7 +187,7 @@
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-          <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">CHILLED</cbc:MeasureCode>
+          <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureClassCode">CHILLED</cbc:MeasureCode>
           <cbc:Description>Chilled, not frozen</cbc:Description>
         </cac:Temperature>
       </cac:GoodsItem>

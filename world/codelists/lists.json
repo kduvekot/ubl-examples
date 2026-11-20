@@ -1584,7 +1584,7 @@
   "TemperatureQualifier": {
    "scope": "regional",
    "name": "Temperature qualifier",
-   "description": "What a temperature stands for, or, where no figure is given, the class of temperature asked for.",
+   "description": "What a temperature stands for.",
    "codes": {
     "TARGET": [
      "Target",
@@ -1597,14 +1597,25 @@
     "MAX": [
      "Maximum",
      "The highest temperature allowed."
-    ],
+    ]
+   }
+  },
+  "TemperatureClass": {
+   "scope": "regional",
+   "name": "Temperature class",
+   "description": "The class of temperature goods are to be kept or carried at, where a document asks for the class and gives no figure: the carrier or the warehouse sets the figure the goods need within the class.",
+   "codes": {
     "CHILLED": [
      "Chilled",
-     "Kept cold above freezing, at the set point the goods need, about 0 to 5 °C for fresh fruit and vegetables: a class, not a figure."
+     "Kept cold above freezing, at about 0 to 5 °C, as fresh fruit, vegetables, meat and dairy products are."
     ],
     "FROZEN": [
      "Frozen",
-     "Kept frozen, at or below -18 °C: a class, not a figure."
+     "Kept frozen, at -18 °C or colder."
+    ],
+    "AMBIENT": [
+     "Ambient",
+     "Not temperature-controlled: kept at the temperature of its surroundings, protected from frost and heat."
     ]
    }
   },
@@ -7661,6 +7672,10 @@
      "Transport temperature",
      "The temperature in the cargo space during transport."
     ],
+    "SETPOINT": [
+     "Set point",
+     "The temperature a refrigerated unit is set to keep in its cargo space."
+    ],
     "PRODUCT": [
      "Product temperature",
      "The temperature of the goods themselves."
@@ -8208,7 +8223,7 @@
   },
   {
    "element": "MeasureCode",
-   "list": "TemperatureQualifier"
+   "list": "TemperatureClass"
   },
   {
    "element": "CargoTypeCode",

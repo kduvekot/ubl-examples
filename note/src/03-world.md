@@ -1747,7 +1747,9 @@ import declaration while the ship is at sea, so that the fruit is released on
 discharge on the Sunday; the reefer waits on the port's power in its reefer
 rack, at a day's charge collect from the consignee, until the 3PL takes it to
 the cold store on the Monday morning, where it is unloaded, the reefer's log
-is read and the pulp temperature measured. The fruit pays the island's import
+is read and the pulp temperature measured. The wholesaler pays the invoice in
+lume on its due date, 30 days after the invoice, from its account at the Bank of
+Selanu, which changes its coral. The fruit pays the island's import
 consumption tax like any import: the island taxes imported food to encourage
 its own farms.
 

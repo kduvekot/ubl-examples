@@ -215,12 +215,10 @@ Inside `Shipment`:
   In words.
 - `GoodsItem/GrossWeightMeasure` = **21728** (unitCode `KGM`)  
   The fruit in its cartons and the pallets.
-- `GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  What the temperature is of: the air in the reefer's cargo space. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Temperature/AttributeID` = **SETPOINT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  What the temperature is of: the temperature the reefer is set to keep in its cargo space. The code is from the Trade Accord's temperature attribute list: SETPOINT = Set point. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Temperature/Measure` = **0.5** (unitCode `CEL`)  
-  The set point the reefer is to hold: 0.5 °C, the middle of the fruit's range.
-- `GoodsItem/Temperature/Description` = **Set point**  
-  In words.
+  The set point the reefer is to hold: 0.5 °C, the middle of the fruit's range, the figure the order's 'chilled' asks for.
 - `GoodsItem/ContainedGoodsItem/ID` = **1.1**  
   The apples, Gala and Granny Smith.
 - `GoodsItem/ContainedGoodsItem/Description` = **Fresh apples**  
@@ -445,9 +443,8 @@ Inside `Shipment`:
       <cbc:Description>Fresh apples and pears in cartons, on 20 pallets</cbc:Description>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
-        <cbc:Description>Set point</cbc:Description>
       </cac:Temperature>
       <cac:ContainedGoodsItem>
         <cbc:ID>1.1</cbc:ID>

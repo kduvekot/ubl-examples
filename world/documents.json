@@ -4585,6 +4585,19 @@
    }
   },
   {
+   "flow": "reefer",
+   "doc": "RemittanceAdvice",
+   "from": "56-xl",
+   "to": "55-xb",
+   "why": "The wholesaler pays the cooperative's invoice in lume on its due date, from its account at the island's bank, and tells the cooperative which invoice it pays.",
+   "parties": {
+    "AccountingCustomerParty": "56-xl",
+    "AccountingSupplierParty": "55-xb",
+    "PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "22-xl",
+    "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   }
+  },
+  {
    "flow": "lpg",
    "doc": "Order",
    "from": "34-xb",

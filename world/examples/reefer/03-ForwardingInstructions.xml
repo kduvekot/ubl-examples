@@ -168,9 +168,8 @@
       <cbc:Description>Fresh apples and pears in cartons, on 20 pallets</cbc:Description>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
-        <cbc:Description>Set point</cbc:Description>
       </cac:Temperature>
       <cac:ContainedGoodsItem>
         <cbc:ID>1.1</cbc:ID>

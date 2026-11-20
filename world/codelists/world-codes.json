@@ -1205,7 +1205,7 @@
    "element": "MeasureCode",
    "address": "cbc:MeasureCode",
    "lists": [
-    "TemperatureQualifier"
+    "TemperatureClass"
    ]
   },
   {
@@ -5737,9 +5737,18 @@
    "codes": [
     "TARGET",
     "MIN",
-    "MAX",
+    "MAX"
+   ]
+  },
+  "TemperatureClass": {
+   "listID": "urn:ubl-examples:world:codelist:TemperatureClassCode",
+   "scope": "regional",
+   "name": "Temperature class",
+   "location": "world/codelists/gc/TemperatureClassCode.gc",
+   "codes": [
     "CHILLED",
-    "FROZEN"
+    "FROZEN",
+    "AMBIENT"
    ]
   },
   "CargoType": {
@@ -8803,6 +8812,7 @@
    "codes": [
     "STORAGE",
     "TRANSPORT",
+    "SETPOINT",
     "PRODUCT",
     "AMBIENT",
     "FLASHPOINT",
