@@ -53,7 +53,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Brackenmere Furniture (37-xb)
 
-- Who founded Brackenmere in 2000, and why it is named after Brackenmere but works in Marrowdale (whether it began there and moved, as Saltmere Engineering did).
+- ~~Who founded Brackenmere in 2000, and why it is named after Brackenmere but works in Marrowdale (whether it began there and moved, as Saltmere Engineering did).~~ Filled 2026-11-20 (OW013).
 - The size of its workshop and its range beyond the desk, the bench PB-2 and the Marrow line.
 
 ### Brightmarket Stores (26-xb)
@@ -156,7 +156,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Gullhaven Tank Haulage (52-xb)
 
-- Who founded it in 2012 and whether its founding is tied to Kelpstone Gas's start of production in 2011
+- ~~Who founded it in 2012 and whether its founding is tied to Kelpstone Gas's start of production in 2011~~ Filled 2026-11-20 (OW013).
 - How many tankers it runs
 - Its customers besides the Coastal State Water Company
 
@@ -234,7 +234,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Marrowdale Sawmill (36-xb)
 
-- who founded the mill
+- ~~who founded the mill~~ Filled 2026-11-20 (OW013).
 - ~~whether it fells its own timber or only buys logs from the Upland State Forest (the sources say both)~~ Settled 2026-11-20: it buys its logs from the Upland State Forest.
 
 ### Montebrio Power (43-xu)
@@ -273,13 +273,13 @@ decided with the owner one at a time, like the gaps here.
 
 ### Rinova Recovery (7-xu)
 
-- who founded Rinova and why in 2003, beyond the recycling of industrial waste
+- ~~who founded Rinova and why in 2003, beyond the recycling of industrial waste~~ Filled 2026-11-20 (OW013).
 - which other factories besides Valdara supply its waste
 - the name of the certification body is in the story (Certovira Certification) but it is not a party, so it cannot be linked
 
 ### Rivermouth Packaging (41-xb)
 
-- Who founded Rivermouth and why at the estuary
+- ~~Who founded Rivermouth and why at the estuary~~ Filled 2026-11-20 (OW013).
 - Its customers besides Valdara and the textile mill
 - Its yearly output of film and bags
 
@@ -335,9 +335,9 @@ decided with the owner one at a time, like the gaps here.
 
 ### Tostara Wood Modification (59-xu)
 
-- Who founded Tostara in 2011, and the origin of its name.
+- ~~Who founded Tostara in 2011, and the origin of its name.~~ Filled 2026-11-20 (OW013).
 - The capacity of its two kilns and its other customers by name.
-- Whether it has any other link to the leather works at Conciaro.
+- ~~Whether it has any other link to the leather works at Conciaro.~~ Filled 2026-11-20 (OW013).
 
 ### Trasvia Haulage (13-xu)
 
@@ -346,7 +346,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Velumi Trading (1-xl)
 
-- who founded the company and what it sold before it bought from Lumeway
+- ~~who founded the company and what it sold before it bought from Lumeway~~ Filled 2026-11-20 (OW013).
 - what it sells besides the Serra bench
 
 ### Wavesure Cargo Insurance (29-xb)

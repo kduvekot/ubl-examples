@@ -562,6 +562,10 @@
     "lead": "**Rinova Recovery** is a plastics recycler in [[Ferrano]], [[Urvania]], founded in {founded_year}. It recovers polyethylene from the production waste of several factories and turns it into granulate. It employs about {employees} people.",
     "sections": [
      {
+      "title": "History",
+      "text": "In 2003 the [[Environment Agency of Urvania]] stopped the factories' plastic waste from going to landfill. Ferrano's factories, [[Valdara Industries]] among them, set up Rinova that year as their joint recycler, and they hold its shares."
+     },
+     {
       "title": "Operations",
       "text": "Rinova collects baled polyethylene film and offcuts from factories, [[Valdara Industries]] among them, whose waste [[Trasvia Haulage]] brings across Ferrano by truck. Each load is weighed full and empty on Rinova's weighbridge, and the waste is charged by the net tonne. The plant holds a permit for the recovery of non-hazardous plastic waste from the [[Environment Agency of Urvania]] and reports each load it receives to the agency. Its granulate is certified for its recycled content by an accredited certification body in Ferrano, which audits the plant every year."
      },
@@ -3642,6 +3646,10 @@
     "lead": "**Velumi Trading** is an importer of garden and park furniture with a shop on Reef Street in [[Selanu]], [[Lisavu]], founded in {founded_year}. It employs about {employees} people.",
     "sections": [
      {
+      "title": "History",
+      "text": "Velumi began on Wharf Road as a ship chandler, selling hardware and boat fittings to the ships' crews and the island's fishermen. In 2002 it became a company and turned to garden and park furniture, when the town began to furnish its parks and the hotels their gardens, and moved to its shop on Reef Street."
+     },
+     {
       "title": "Operations",
       "text": "Velumi buys from [[Lumeway Distribution]] in [[Bayvarra]] and sells to customers on the island, from its shop and for larger projects. Its first order by sea was 104 Serra park benches by the pallet, most of them for the harbour parks of the [[Port of Selanu]], with spare side frames; as a new customer it paid a deposit and the balance to [[Harbourline Factoring]]. When it needed more frames at short notice it had them flown in by [[Kelaro Air Cargo]]. In its shop it sells the Serra bench at 375 coral. The shop is open Monday to Saturday."
      }
@@ -4375,6 +4383,10 @@
     "lead": "**Marrowdale Sawmill** is a sawmill on the north bank of the river at [[Marrowdale]], in Upland State, [[Bayvarra]], founded in {founded_year}. It saws logs from the Upland State Forest into planks, slats and beams, modifies ash in a kiln of its own and employs about {employees} people.",
     "sections": [
      {
+      "title": "History",
+      "text": "The mill was built in 2004 by the Marrowdale timber merchant whose wholesale arm is [[Lumeway Distribution]], when Upland State put the timber of its planted forest up for sale on long contracts."
+     },
+     {
       "title": "Operations",
       "text": "Its logs come from the Upland State Forest, a managed forest on the slope north of Marrowdale. The mill makes the slats of the Serra park bench to the drawing of [[Valdara Industries]], thermally modified ash of 1,800 × 95 × 45 mm, and sells them by the bundle of 50; once a quarter 96 bundles go across the border to Valdara's factory in [[Ferrano]]. It also sells sawn oak and ash by the cubic metre to [[Brackenmere Furniture]] in Marrowdale. Its own timber truck with a crane carries logs and loads."
      },
@@ -4520,7 +4532,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The company takes its name from Brackenmere, one of Bayvarra's railway and coast towns. It has been in business since 2000."
+      "text": "The company takes its name from the carriage works at Brackenmere, one of Bayvarra's railway and coast towns, whose furniture shop also made benches and desks for stations and offices. When the works closed in 1999, the company took over the furniture's name and drawings and set up a new workshop in Marrowdale in 2000, beside the sawmill's timber."
      },
      {
       "title": "Operations",
@@ -4793,6 +4805,10 @@
     "short": "Bayvarran maker of packaging from recycled plastic",
     "lead": "**Rivermouth Packaging** is a maker of packaging from recycled plastic on Estuary Road in [[Lumeport]], [[Bayvarra]], founded in {founded_year}. It makes stretch film and garment bags and employs about {employees} people.",
     "sections": [
+     {
+      "title": "History",
+      "text": "Rivermouth began as the packaging department of the [[Lumeport Textile Mill]]. In 2005 it became a company of its own, so that it could sell to other makers too, [[Valdara Industries]] first, and set up at the river quay on Estuary Road, where the barges bring the recycled granulate of [[Rinova Recovery]]."
+     },
      {
       "title": "Operations",
       "text": "Rivermouth buys recycled polyethylene granulate from [[Rinova Recovery]] in [[Ferrano]], which [[Fiumella Barges]] carries about 250 km down the river and the estuary to Rivermouth's river quay. From it Rivermouth makes stretch film for wrapping pallets, which [[Trasvia Haulage]] trucks to [[Valdara Industries]] to wrap its bench pallets, and garment bags for the shirts of the [[Lumeport Textile Mill]], which [[Bayforth Forwarding]] delivers."
@@ -5708,6 +5724,10 @@
     "lead": "**Gullhaven Tank Haulage** is a road tank haulier at Gullhaven, the fishing village in [[Bayvarra]]'s Northern Territory, beside the gas plant of [[Kelpstone Gas]]. It was founded in {founded_year} and employs about {employees} people.",
     "sections": [
      {
+      "title": "History",
+      "text": "The haulier began as the fishing village's own carrier, trucking the catch to Lumeport. When [[Kelpstone Gas]] began selling propane in 2012, a year after the gas plant opened, it bought road tankers and took its present name."
+     },
+     {
       "title": "Operations",
       "text": "The company holds the federal permit to carry dangerous goods by road in tanks. Its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the [[Coastal State Water Company]], which burns it in the peak boilers of [[Lumeport]]'s district heating in winter. A tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, about 515 km, pumps the propane into the customer's storage and returns empty the next day. Its planning desk works around the clock."
      },
@@ -6344,6 +6364,10 @@
     "short": "Urvanian thermal wood modification plant at Conciaro",
     "lead": "**Tostara Wood Modification** is an independent plant that thermally modifies wood in two steam kilns at Conciaro, east of [[Ferrano]], [[Urvania]]. Founded in {founded_year}, it works for Urvanian timber merchants and, under contract, for sawmills across the border, and employs about {employees} people.",
     "sections": [
+     {
+      "title": "History",
+      "text": "A group of Urvanian timber merchants set up Tostara in 2011 beside the leather works at Conciaro, whose boiler house sells it the steam for its kilns. Its name comes from the Italian *tostare*, to roast, as the trade calls wood modified by heat."
+     },
      {
       "title": "Operations",
       "text": "Its name comes from the Italian *tostare*, to roast. The plant stands on Via delle Concerie in Conciaro, the village where the town once put its tanneries, downwind. It modifies beech, ash and poplar at about 212 °C in steam, then planes, end-seals and bundles the wood, stores it for its owner in covered bays and hands it to the carrier the owner names. It holds an authorisation for inward processing, so wood of a foreign owner is worked without Urvania's import tax until the owner releases it."
