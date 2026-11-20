@@ -1227,6 +1227,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - State: waits: furniture/14#F1 for D32, sea/28#F1 for D30, tender/34#F1, 35#F3 and 36#F1 for D28 (O6).
 - Findings: furniture: 14#F1; sea: 28#F1; tender: 34#F1, 35#F3, 36#F1
 - **Fixed (2026-11-19, stage 6 G8, with C116):** sea/28#F1: the debit note sea/28 is removed, its costs a line of the seller's credit note sea/26 (D30 point 3).
+- **Fixed (2026-11-19, stage 6 G6, with C123):** tender/34#F1, 35#F3, 36#F1: the debit note tender/34 is removed (D28 point 9, D9, O6; `"removed"` in `world/documents.json`, `BUYER_DEBIT_NOTES` now empty); the reminder no longer cites it, and the remittance advice deducts the penalty for late completion as a credit line of its own under the contract's clause PEN-1, citing the contract. With furniture/14 (G7) and sea/28 (G8) removed, the cause is closed.
 
 ### C67 · Side frame classified HS 7325.99 instead of a part of a seat
 - Kind: master data · Findings: 5 (High 0, Medium 4, Low 1) in 5 files, 2 flows · Needs decision: decided (D13, 2026-11-16)
