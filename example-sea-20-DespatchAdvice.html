@@ -120,24 +120,25 @@ name are enough.</li>
 </ul>
 <h3 id="despatch-supplier-party">Despatch Supplier Party</h3>
 <p>Inside <code>DespatchSupplierParty</code>:</p>
+<details>
+<summary>The party's own data in `Party`, as Lumeway Distribution gives it (28 values)</summary>
+
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Lumeway Distribution gives it. Later mentions
-of the same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>9520610900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples ; as Lumeway Distribution gives
-it.</li>
+the prefix GS1 reserves for examples .</li>
 <li><code>Party/PartyName/Name</code> = <strong>Lumeway
 Distribution</strong><br />
-The trading name; as Lumeway Distribution gives it.</li>
+The trading name.</li>
 <li><code>Party/Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -155,7 +156,7 @@ Bayvarran English.</li>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); as Lumeway Distribution gives it.</li>
+and six digits).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -182,27 +183,23 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Distribution
 Drive</strong><br />
-Street of the postal address. As Lumeway Distribution gives it.</li>
+Street of the postal address.</li>
 <li><code>Party/PostalAddress/BlockName</code> = <strong>Marrowdale
 Business Park</strong><br />
-The business park the distribution centre stands in. As Lumeway
-Distribution gives it.</li>
+The business park the distribution centre stands in.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>43</strong><br />
-Building number of the postal address. As Lumeway Distribution gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/PlotIdentification</code> = <strong>Plot
 14</strong><br />
-The plot of the distribution centre in the business park. As Lumeway
-Distribution gives it.</li>
+The plot of the distribution centre in the business park.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Lumeway Distribution gives it.</li>
+country and state.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>71214</strong><br />
-Postal code in Bayvarra's format (5 digits). As Lumeway Distribution
-gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -210,9 +207,9 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Lumeway Distribution gives it. The code is from Bayvarra's national
-state or territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-UL = Upland
+State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -228,15 +225,13 @@ The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Dispatch
 office</strong><br />
 The party's dispatch office desk: the desk for its role in this document
-(it sends the goods off); as Lumeway Distribution gives it.</li>
+(it sends the goods off).</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Dispatch
 coordinator</strong><br />
-The job of the person who answers at the desk; as Lumeway Distribution
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Warehouse</strong><br />
-The department the desk belongs to; as Lumeway Distribution gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 955
 964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -247,14 +242,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Lumeway Distribution gives it.</li>
+with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:dispatch@lumeway.example">dispatch@lumeway.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Lumeway Distribution gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Lumeway Distribution gives it.</li>
+When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -263,27 +258,32 @@ network.</li>
 <strong>XB:20410274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Lumeway
-Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-6-xb.html">Lumeway
+Distribution</a> is named in.</p>
+</details>
+
 <h3 id="delivery-customer-party">Delivery Customer Party</h3>
 <p>Inside <code>DeliveryCustomerParty</code>:</p>
+<details>
+<summary>The party's own data in `Party`, as Nalevi Warehousing gives it (21 values)</summary>
+
 <ul>
 <li><code>Party/PartyIdentification/ID</code> = <strong>IC41722</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; as Nalevi Warehousing gives it. Later mentions of the same
-party in this document repeat only this identifier and the name.</li>
+register. Later mentions of the same party in this document repeat only
+this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Nalevi
 Warehousing</strong><br />
-The trading name; as Nalevi Warehousing gives it.</li>
+The trading name.</li>
 <li><code>Party/PostalAddress/ID</code> = <strong>95940358</strong>
 (schemeID <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); as Nalevi Warehousing
-gives it.</li>
+office numbers every address it delivers to).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -311,26 +311,24 @@ Address format of Lisavu.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Vilafa
 Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages ; as Nalevi Warehousing gives it.</li>
+names are given in both languages .</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Lagoon
 Road</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language; as
-Nalevi Warehousing gives it.</li>
+The street's name in English, the country's other official
+language.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>9</strong><br />
-Building number of the postal address. As Nalevi Warehousing gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
-nearest to the party's place on the map, in its own country and state.
-As Nalevi Warehousing gives it.</li>
+nearest to the party's place on the map, in its own country and
+state.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
 official beside the Lisavan one. The town or locality nearest to the
-party's place on the map, in its own country and state. As Nalevi
-Warehousing gives it.</li>
+party's place on the map, in its own country and state.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
@@ -345,29 +343,27 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Goods
 inwards</strong><br />
-The party's main desk, which handles this document; as Nalevi
-Warehousing gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Warehouse
 supervisor</strong><br />
-The job of the person who answers at the desk; as Nalevi Warehousing
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Warehouse</strong><br />
-The department the desk belongs to; as Nalevi Warehousing gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 3 722
 1882</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. As Nalevi Warehousing gives it.</li>
+ships with 79.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:goods@nalevi.example">goods@nalevi.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Nalevi Warehousing gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Monday to Saturday
 07:00–18:00</strong><br />
-When the desk can be reached; as Nalevi Warehousing gives it.</li>
+When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -376,26 +372,32 @@ network.</li>
 <strong>XL:IC41722</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Island companies register; as Nalevi Warehousing gives it.
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+number in the Island companies register. UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-9-xl.html">Nalevi
+Warehousing</a> is named in.</p>
+</details>
+
 <h3 id="buyer-customer-party">Buyer Customer Party</h3>
 <p>Inside <code>BuyerCustomerParty</code>:</p>
+<details>
+<summary>The party's own data in `Party`, as Velumi Trading gives it (19 values)</summary>
+
 <ul>
 <li><code>Party/PartyIdentification/ID</code> = <strong>IC41859</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; as Velumi Trading gives it. Later mentions of the same party
-in this document repeat only this identifier and the name.</li>
+register. Later mentions of the same party in this document repeat only
+this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Velumi
 Trading</strong><br />
-The trading name; as Velumi Trading gives it.</li>
+The trading name.</li>
 <li><code>Party/PostalAddress/ID</code> = <strong>40351721</strong>
 (schemeID <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); as Velumi Trading gives
-it.</li>
+office numbers every address it delivers to).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -423,25 +425,24 @@ Address format of Lisavu.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Kavama
 Timeku</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages ; as Velumi Trading gives it.</li>
+names are given in both languages .</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Reef
 Street</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language; as
-Velumi Trading gives it.</li>
+The street's name in English, the country's other official
+language.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>16</strong><br />
-Building number of the postal address. As Velumi Trading gives it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
-nearest to the party's place on the map, in its own country and state.
-As Velumi Trading gives it.</li>
+nearest to the party's place on the map, in its own country and
+state.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
 official beside the Lisavan one. The town or locality nearest to the
-party's place on the map, in its own country and state. As Velumi
-Trading gives it.</li>
+party's place on the map, in its own country and state.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
@@ -455,29 +456,31 @@ list. The code is from the world's copy of UBL's Country identification
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Purchasing</strong><br />
-The party's main desk, which handles this document; as Velumi Trading
-gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Buyer</strong><br />
-The job of the person who answers at the desk; as Velumi Trading gives
-it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Purchasing</strong><br />
-The department the desk belongs to; as Velumi Trading gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 3 729
 5794</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. As Velumi Trading gives it.</li>
+ships with 79.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:purchasing@velumi.example">purchasing@velumi.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Velumi Trading gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Monday to Saturday
 09:00–18:00</strong><br />
-When the desk can be reached; as Velumi Trading gives it.</li>
+When the desk can be reached.</li>
 </ul>
+<p>The same in every document <a href="world-1-xl.html">Velumi
+Trading</a> is named in.</p>
+</details>
+
 <h3 id="seller-supplier-party">Seller Supplier Party</h3>
 <p>Inside <code>SellerSupplierParty</code>:</p>
 <ul>
@@ -1533,6 +1536,6 @@ href="examples.html#flow-sea">all documents of the flow</a> · <a
 href="example-sea-14-BillOfLading.html">Bill of Lading →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>

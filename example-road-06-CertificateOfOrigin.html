@@ -102,29 +102,30 @@ name are enough.</li>
 </ul>
 <h3 id="exporter-party">Exporter Party</h3>
 <p>Inside <code>ExporterParty</code>:</p>
+<details>
+<summary>The party's own data, as Valdara Industries gives it (29 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; as Valdara Industries gives it. Later mentions of the same
-party in this document repeat only this identifier and the name.</li>
+of Urvania. Later mentions of the same party in this document repeat
+only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>0990:10014</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates. No real scheme has the code designator 0990; as Valdara
-Industries gives it.</li>
+licence plates. No real scheme has the code designator 0990.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XU-TR-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XU-TR- and 6 digits); as Valdara Industries gives
-it.</li>
+imports or exports (XU-TR- and 6 digits).</li>
 <li><code>PartyName/Name</code> = <strong>Valdara
 Industries</strong><br />
-The trading name; as Valdara Industries gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>qau</strong> (schemeID
 <code>ISO 639</code>)<br />
 Urvanian, the language of Urvania and of the party; the code is from the
@@ -138,7 +139,7 @@ The language's name in English; in the language itself: urvanese.</li>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); as Valdara Industries gives it.</li>
+a ten-digit serial number).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -165,34 +166,30 @@ Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Stuzman
 Nulban</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages ; as Valdara Industries gives
-it.</li>
+street names are given in both languages .</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Via delle
 Officine</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; as Valdara
-Industries gives it.</li>
+Italian names the British kept are part of English now.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>17</strong><br />
-Building number of the postal address. As Valdara Industries gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Valdara Industries gives it.</li>
+state.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Valdara Industries gives it.</li>
+state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4120</strong><br />
-Postal code in Urvania's format (4 digits). As Valdara Industries gives
-it.</li>
+Postal code in Urvania's format (4 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country. As Valdara Industries gives it.</li>
+country.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -207,23 +204,21 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Valdara
 Industries SUA</strong><br />
-The name under which the party is registered, with its legal form; as
-Valdara Industries gives it.</li>
+The name under which the party is registered, with its legal form.</li>
 <li><code>PartyLegalEntity/CompanyID</code> =
 <strong>XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
-Number in the Commercial register of Urvania; as Valdara Industries
-gives it. The schemeID names the scheme it is from: the Commercial
-register of Urvania (XU-R- and 6 digits).</li>
+Number in the Commercial register of Urvania. The schemeID names the
+scheme it is from: the Commercial register of Urvania (XU-R- and 6
+digits).</li>
 <li><code>Contact/Name</code> = <strong>Customs desk</strong><br />
 The party's customs desk: the desk for its role in this document (it
-deals with customs); as Valdara Industries gives it.</li>
+deals with customs).</li>
 <li><code>Contact/JobTitle</code> = <strong>Customs
 specialist</strong><br />
-The job of the person who answers at the desk; as Valdara Industries
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Logistics</strong><br />
-The department the desk belongs to; as Valdara Industries gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 386
 4551</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -233,15 +228,14 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. As Valdara Industries gives
-it.</li>
+Mobiles start with 3 and have 10 digits.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:customs@valdara.example">customs@valdara.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Valdara Industries gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Valdara Industries gives it.</li>
+When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -250,39 +244,43 @@ network.</li>
 <strong>XU:XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; as Valdara Industries
-gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+number in the Commercial register of Urvania. UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-5-xu.html">Valdara
+Industries</a> is named in.</p>
+</details>
+
 <h3 id="importer-party">Importer Party</h3>
 <p>Inside <code>ImporterParty</code>:</p>
+<details>
+<summary>The party's own data, as Lumeway Distribution gives it (18 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>20410274</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Lumeway Distribution gives it. Later mentions
-of the same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>9520610900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples ; as Lumeway Distribution gives
-it.</li>
+the prefix GS1 reserves for examples .</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XB-TR-410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XB-TR- and 6 digits); as Lumeway Distribution gives
-it.</li>
+imports or exports (XB-TR- and 6 digits).</li>
 <li><code>PartyName/Name</code> = <strong>Lumeway
 Distribution</strong><br />
-The trading name; as Lumeway Distribution gives it.</li>
+The trading name.</li>
 <li><code>PostalAddress/ID</code> = <strong>UL-ADR-693911</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); as Lumeway Distribution gives it.</li>
+and six digits).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -309,26 +307,22 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Distribution
 Drive</strong><br />
-Street of the postal address. As Lumeway Distribution gives it.</li>
+Street of the postal address.</li>
 <li><code>PostalAddress/BlockName</code> = <strong>Marrowdale Business
 Park</strong><br />
-The business park the distribution centre stands in. As Lumeway
-Distribution gives it.</li>
+The business park the distribution centre stands in.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>43</strong><br />
-Building number of the postal address. As Lumeway Distribution gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/PlotIdentification</code> = <strong>Plot
 14</strong><br />
-The plot of the distribution centre in the business park. As Lumeway
-Distribution gives it.</li>
+The plot of the distribution centre in the business park.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Lumeway Distribution gives it.</li>
+country and state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>71214</strong><br />
-Postal code in Bayvarra's format (5 digits). As Lumeway Distribution
-gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -336,9 +330,9 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Lumeway Distribution gives it. The code is from Bayvarra's national
-state or territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-UL = Upland
+State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -352,6 +346,10 @@ list. The code is from the world's copy of UBL's Country identification
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 </ul>
+<p>The same in every document <a href="world-6-xb.html">Lumeway
+Distribution</a> is named in.</p>
+</details>
+
 <h3 id="endorser-party">Endorser Party</h3>
 <p>Inside <code>EndorserParty</code>:</p>
 <ul>
@@ -364,23 +362,26 @@ origin. The code is from the Trade Accord's endorser role list: CHAMBER
 <li><code>SequenceNumeric</code> = <strong>1</strong><br />
 The first and only endorsement: a certificate between Accord members
 needs no legalisation.</li>
+</ul>
+<details>
+<summary>The party's own data in `Party`, as Ferrano Chamber of Commerce gives it (25 values)</summary>
+
+<ul>
 <li><code>Party/PartyIdentification/ID</code> = <strong>xu_m2vd</strong>
 (schemeID
 <code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
 The party's preferred identifier: its number in the Index of Public
-Administrations of Urvania; as Ferrano Chamber of Commerce gives it.
-Later mentions of the same party in this document repeat only this
-identifier and the name.</li>
+Administrations of Urvania. Later mentions of the same party in this
+document repeat only this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Ferrano Chamber of
 Commerce</strong><br />
-The trading name; as Ferrano Chamber of Commerce gives it.</li>
+The trading name.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>4160202319527073</strong> (schemeID
 <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); as Ferrano Chamber of Commerce gives
-it.</li>
+a ten-digit serial number).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -407,35 +408,31 @@ Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Trazhek Han
 Zhatrir</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages ; as Ferrano Chamber of
-Commerce gives it.</li>
+street names are given in both languages .</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Piazza del
 Mercato</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; as Ferrano
-Chamber of Commerce gives it.</li>
+Italian names the British kept are part of English now.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>15</strong><br />
-Building number of the postal address. As Ferrano Chamber of Commerce
-gives it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Ferrano Chamber of Commerce gives it.</li>
+state.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Ferrano Chamber of Commerce gives it.</li>
+state.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>4110</strong><br />
-Postal code in Urvania's format (4 digits). As Ferrano Chamber of
-Commerce gives it.</li>
+Postal code in Urvania's format (4 digits).</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Province
 of Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country. As Ferrano Chamber of Commerce gives it.</li>
+country.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -450,30 +447,27 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Party/PartyLegalEntity/RegistrationName</code> =
 <strong>Ferrano Chamber of Commerce</strong><br />
-The public body's official name; as Ferrano Chamber of Commerce gives
-it.</li>
+The public body's official name.</li>
 <li><code>Party/PartyLegalEntity/CompanyID</code> =
 <strong>xu_m2vd</strong> (schemeID
 <code>urn:ubl-examples:world:XU:public-body-register</code>)<br />
 Number in the Index of Public Administrations of Urvania, which gives
 every public body a number of its own (xu_ and four lower-case letters
-or digits), derived from no other register ; as Ferrano Chamber of
-Commerce gives it. The schemeID names the scheme it is from: the index
-of public administrations of Urvania (xu_ and four lower-case letters or
-digits, assigned by the index on the body's accreditation; no real IPA
-code of Italy's index starts with xu_).</li>
+or digits), derived from no other register . The schemeID names the
+scheme it is from: the index of public administrations of Urvania (xu_
+and four lower-case letters or digits, assigned by the index on the
+body's accreditation; no real IPA code of Italy's index starts with
+xu_).</li>
 <li><code>Party/Contact/Name</code> = <strong>Certificates
 office</strong><br />
 The party's certificates office desk: the desk for its role in this
-document (a certificate); as Ferrano Chamber of Commerce gives it.</li>
+document (a certificate).</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Certificates
 officer</strong><br />
-The job of the person who answers at the desk; as Ferrano Chamber of
-Commerce gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Certificates</strong><br />
-The department the desk belongs to; as Ferrano Chamber of Commerce gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 1 041 714
 2503</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -483,16 +477,14 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. As Ferrano Chamber of Commerce
-gives it.</li>
+Mobiles start with 3 and have 10 digits.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:certificates@camera-ferrano.example">certificates@camera-ferrano.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Ferrano Chamber of Commerce gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Ferrano Chamber of Commerce gives
-it.</li>
+When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -501,9 +493,14 @@ network.</li>
 <strong>XU:xu_m2vd</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Index of Public Administrations of Urvania; as Ferrano
-Chamber of Commerce gives it. UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+number in the Index of Public Administrations of Urvania. UBL 2.5
+carries it here; Party/EndpointID is deprecated.</li>
+</ul>
+<p>The same in every document <a href="world-20-xu.html">Ferrano Chamber
+of Commerce</a> is named in.</p>
+</details>
+
+<ul>
 <li><code>SignatoryContact/Name</code> = <strong>Certificates
 office</strong><br />
 The office of the chamber that signs certificates of origin. UBL defines
@@ -1455,6 +1452,6 @@ href="example-road-07-CertificateOfOrigin.html">Certificate of Origin
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>

@@ -103,22 +103,24 @@ Invoice.</li>
 </ul>
 <h3 id="sender-party">Sender Party</h3>
 <p>Inside <code>SenderParty</code>:</p>
+<details>
+<summary>The party's own data, as Ferrano Grid gives it (26 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-106055</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; as Ferrano Grid gives it. Later mentions of the same party
-in this document repeat only this identifier and the name.</li>
+of Urvania. Later mentions of the same party in this document repeat
+only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>0990:16043</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates. No real scheme has the code designator 0990; as Ferrano
-Grid gives it.</li>
+licence plates. No real scheme has the code designator 0990.</li>
 <li><code>PartyName/Name</code> = <strong>Ferrano Grid</strong><br />
-The trading name; as Ferrano Grid gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>qau</strong> (schemeID
 <code>ISO 639</code>)<br />
 Urvanian, the language of Urvania and of the party; the code is from the
@@ -132,7 +134,7 @@ The language's name in English; in the language itself: urvanese.</li>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); as Ferrano Grid gives it.</li>
+a ten-digit serial number).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -159,32 +161,29 @@ Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Hekrul
 Skaz</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages ; as Ferrano Grid gives
-it.</li>
+street names are given in both languages .</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Via della
 Rete</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; as Ferrano Grid
-gives it.</li>
+Italian names the British kept are part of English now.</li>
 <li><code>PostalAddress/BuildingNumber</code> = <strong>3</strong><br />
-Building number of the postal address. As Ferrano Grid gives it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Ferrano Grid gives it.</li>
+state.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Ferrano Grid gives it.</li>
+state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4140</strong><br />
-Postal code in Urvania's format (4 digits). As Ferrano Grid gives
-it.</li>
+Postal code in Urvania's format (4 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country. As Ferrano Grid gives it.</li>
+country.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -199,13 +198,12 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Network billing</strong><br />
 The party's network billing desk: the desk for its role in this document
-(it is owed the payment); as Ferrano Grid gives it.</li>
+(it is owed the payment).</li>
 <li><code>Contact/JobTitle</code> = <strong>Billing
 officer</strong><br />
-The job of the person who answers at the desk; as Ferrano Grid gives
-it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Finance</strong><br />
-The department the desk belongs to; as Ferrano Grid gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 938
 7117</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -215,14 +213,14 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. As Ferrano Grid gives it.</li>
+Mobiles start with 3 and have 10 digits.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:billing@ferranogrid.example">billing@ferranogrid.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Ferrano Grid gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; as Ferrano Grid gives it.</li>
+When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -231,24 +229,31 @@ network.</li>
 <strong>XU:XU-R-106055</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; as Ferrano Grid gives it.
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+number in the Commercial register of Urvania. UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-44-xu.html">Ferrano
+Grid</a> is named in.</p>
+</details>
+
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
+<details>
+<summary>The party's own data, as Ferrano Energy gives it (23 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-105781</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; as Ferrano Energy gives it. Later mentions of the same party
-in this document repeat only this identifier and the name.</li>
+of Urvania. Later mentions of the same party in this document repeat
+only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Ferrano Energy</strong><br />
-The trading name; as Ferrano Energy gives it.</li>
+The trading name.</li>
 <li><code>PostalAddress/ID</code> = <strong>4160202777983743</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); as Ferrano Energy gives it.</li>
+a ten-digit serial number).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -275,32 +280,29 @@ Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Duznaz Hekrul
 Skultrir</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages ; as Ferrano Energy gives
-it.</li>
+street names are given in both languages .</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Corso della
 Repubblica</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; as Ferrano
-Energy gives it.</li>
+Italian names the British kept are part of English now.</li>
 <li><code>PostalAddress/BuildingNumber</code> = <strong>9</strong><br />
-Building number of the postal address. As Ferrano Energy gives it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Ferrano Energy gives it.</li>
+state.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Ferrano Energy gives it.</li>
+state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4150</strong><br />
-Postal code in Urvania's format (4 digits). As Ferrano Energy gives
-it.</li>
+Postal code in Urvania's format (4 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country. As Ferrano Energy gives it.</li>
+country.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -315,13 +317,12 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Accounts payable</strong><br />
 The party's accounts payable desk: the desk for its role in this
-document (it pays); as Ferrano Energy gives it.</li>
+document (it pays).</li>
 <li><code>Contact/JobTitle</code> = <strong>Accounts payable
 clerk</strong><br />
-The job of the person who answers at the desk; as Ferrano Energy gives
-it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Finance</strong><br />
-The department the desk belongs to; as Ferrano Energy gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 474
 7922</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -331,15 +332,14 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. As Ferrano Energy gives
-it.</li>
+Mobiles start with 3 and have 10 digits.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:payables@ferranoenergy.example">payables@ferranoenergy.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Ferrano Energy gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; as Ferrano Energy gives it.</li>
+When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -348,29 +348,39 @@ network.</li>
 <strong>XU:XU-R-105781</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; as Ferrano Energy gives
-it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+number in the Commercial register of Urvania. UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-33-xu.html">Ferrano
+Energy</a> is named in.</p>
+</details>
+
 <h3 id="subscriber-party">Subscriber Party</h3>
 <p>Inside <code>SubscriberParty</code>:</p>
+<details>
+<summary>The party's own data, as Valdara Industries gives it (3 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; as Valdara Industries gives it. Later mentions of the same
-party in this document repeat only this identifier and the name.</li>
+of Urvania. Later mentions of the same party in this document repeat
+only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>0990:10014</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates. No real scheme has the code designator 0990; as Valdara
-Industries gives it.</li>
+licence plates. No real scheme has the code designator 0990.</li>
 <li><code>PartyName/Name</code> = <strong>Valdara
 Industries</strong><br />
-The trading name; as Valdara Industries gives it.</li>
+The trading name.</li>
 </ul>
+<p>The same in every document <a href="world-5-xu.html">Valdara
+Industries</a> is named in.</p>
+</details>
+
 <h3 id="subscriber-consumption">Subscriber Consumption</h3>
 <p>Inside <code>SubscriberConsumption</code>:</p>
 <ul>
@@ -780,6 +790,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <a href="example-energy-02-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>

@@ -111,15 +111,18 @@ Country identification (ISO 3166) list: XB = Bayvarra.</li>
 </ul>
 <h3 id="sender-party">Sender Party</h3>
 <p>Inside <code>SenderParty</code>:</p>
+<details>
+<summary>The party's own data, as Kelaro Air Cargo gives it (24 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>IC41311</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; as Kelaro Air Cargo gives it. Later mentions of the same party
-in this document repeat only this identifier and the name.</li>
+register. Later mentions of the same party in this document repeat only
+this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Kelaro Air
 Cargo</strong><br />
-The trading name; as Kelaro Air Cargo gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document: documents
@@ -138,8 +141,7 @@ English.</li>
 <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); as Kelaro Air Cargo gives
-it.</li>
+office numbers every address it delivers to).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -167,26 +169,24 @@ Address format of Lisavu.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Lupela
 Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages ; as Kelaro Air Cargo gives it.</li>
+names are given in both languages .</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Airfield
 Road</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language; as
-Kelaro Air Cargo gives it.</li>
+The street's name in English, the country's other official
+language.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>46</strong><br />
-Building number of the postal address. As Kelaro Air Cargo gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Kefalasa</strong>
 (languageID <code>qal</code>)<br />
 The place's Lisavan name, as the map gives it. The town or locality
-nearest to the party's place on the map, in its own country and state.
-As Kelaro Air Cargo gives it.</li>
+nearest to the party's place on the map, in its own country and
+state.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Lintwell</strong>
 (languageID <code>en-XL</code>)<br />
 The place's English name, which its English settlers gave it, official
 beside the Lisavan one. The town or locality nearest to the party's
-place on the map, in its own country and state. As Kelaro Air Cargo
-gives it.</li>
+place on the map, in its own country and state.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
@@ -201,14 +201,12 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Cargo operations</strong><br />
 The party's cargo operations desk: the desk for its role in this
-document (it carries or handles the goods); as Kelaro Air Cargo gives
-it.</li>
+document (it carries or handles the goods).</li>
 <li><code>Contact/JobTitle</code> = <strong>Load
 controller</strong><br />
-The job of the person who answers at the desk; as Kelaro Air Cargo gives
-it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Operations</strong><br />
-The department the desk belongs to; as Kelaro Air Cargo gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 3 721
 1044</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -216,14 +214,14 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. As Kelaro Air Cargo gives it.</li>
+ships with 79.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:cargoops@kelaro.example">cargoops@kelaro.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Kelaro Air Cargo gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Every day
 06:00–22:00</strong><br />
-When the desk can be reached; as Kelaro Air Cargo gives it.</li>
+When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -232,21 +230,27 @@ network.</li>
 <strong>XL:IC41311</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Island companies register; as Kelaro Air Cargo gives it.
-UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+number in the Island companies register. UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-12-xl.html">Kelaro Air
+Cargo</a> is named in.</p>
+</details>
+
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
+<details>
+<summary>The party's own data, as Bayforth Forwarding gives it (26 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>20411644</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Bayforth Forwarding gives it. Later mentions of
-the same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Bayforth
 Forwarding</strong><br />
-The trading name; as Bayforth Forwarding gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -265,8 +269,7 @@ Bayvarran English.</li>
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); as Bayforth Forwarding gives
-it.</li>
+state register of Coastal State refers to).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -293,21 +296,19 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Dockside
 Way</strong><br />
-Street of the postal address. As Bayforth Forwarding gives it.</li>
+Street of the postal address.</li>
 <li><code>PostalAddress/BuildingNumber</code> = <strong>4</strong><br />
-Building number of the postal address. As Bayforth Forwarding gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CitySubdivisionName</code> =
 <strong>Dockside</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map. As Bayforth Forwarding gives it.</li>
+the map.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Bayforth Forwarding gives it.</li>
+country and state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38525</strong><br />
-Postal code in Bayvarra's format (5 digits). As Bayforth Forwarding
-gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -315,9 +316,9 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Bayforth Forwarding gives it. The code is from Bayvarra's national state
-or territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-CO = Coastal
+State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -332,15 +333,12 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Export desk</strong><br />
 The party's export desk: the desk for its role in this document (it
-handles the transport of goods between the countries); as Bayforth
-Forwarding gives it.</li>
+handles the transport of goods between the countries).</li>
 <li><code>Contact/JobTitle</code> = <strong>Export
 coordinator</strong><br />
-The job of the person who answers at the desk; as Bayforth Forwarding
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Export</strong><br />
-The department the desk belongs to; as Bayforth Forwarding gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 38 5155
 2404</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -351,14 +349,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Bayforth Forwarding gives it.</li>
+with 7.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:export@bayforth.example">export@bayforth.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Bayforth Forwarding gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Bayforth Forwarding gives it.</li>
+When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -367,27 +365,32 @@ network.</li>
 <strong>XB:20411644</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Bayforth
-Forwarding gives it. UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-10-xb.html">Bayforth
+Forwarding</a> is named in.</p>
+</details>
+
 <h3 id="consignor-party">Consignor Party</h3>
 <p>Inside <code>ConsignorParty</code>:</p>
+<details>
+<summary>The party's own data, as Saltmere Engineering gives it (20 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>20410685</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Saltmere Engineering gives it. Later mentions
-of the same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Saltmere
 Engineering</strong><br />
-The trading name; as Saltmere Engineering gives it.</li>
+The trading name.</li>
 <li><code>PostalAddress/ID</code> = <strong>UL-ADR-587295</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); as Saltmere Engineering gives it.</li>
+and six digits).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -414,18 +417,16 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Foundry
 Road</strong><br />
-Street of the postal address. As Saltmere Engineering gives it.</li>
+Street of the postal address.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>13</strong><br />
-Building number of the postal address. As Saltmere Engineering gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Saltmere Engineering gives it.</li>
+country and state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>71218</strong><br />
-Postal code in Bayvarra's format (5 digits). As Saltmere Engineering
-gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -433,9 +434,9 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Saltmere Engineering gives it. The code is from Bayvarra's national
-state or territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-UL = Upland
+State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -450,14 +451,12 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Dispatch office</strong><br />
 The party's dispatch office desk: the desk for its role in this document
-(it sends the goods off); as Saltmere Engineering gives it.</li>
+(it sends the goods off).</li>
 <li><code>Contact/JobTitle</code> = <strong>Dispatch
 coordinator</strong><br />
-The job of the person who answers at the desk; as Saltmere Engineering
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Warehouse</strong><br />
-The department the desk belongs to; as Saltmere Engineering gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 7121 930
 729</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -468,15 +467,19 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Saltmere Engineering gives it.</li>
+with 7.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:dispatch@saltmere.example">dispatch@saltmere.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Saltmere Engineering gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Saltmere Engineering gives it.</li>
+When the desk can be reached.</li>
 </ul>
+<p>The same in every document <a href="world-27-xb.html">Saltmere
+Engineering</a> is named in.</p>
+</details>
+
 <h3 id="carrier-party">Carrier Party</h3>
 <p>Inside <code>CarrierParty</code>:</p>
 <ul>
@@ -1352,6 +1355,11 @@ Accord's UBL document type list: Waybill.</li>
 The consignor's original, handed over when the carrier took over the
 goods, as the convention prescribes. The code is from the Trade Accord's
 distribution type list: ORIGINALHANDED = Original, handed over.</li>
+</ul>
+<details>
+<summary>The party's own data in `Party`, as Lumeport Airport Cargo Terminal gives it (4 values)</summary>
+
+<ul>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20412055</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -1361,6 +1369,20 @@ name are enough.</li>
 Terminal</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
+<li><code>Party/PartyIdentification/ID</code> = <strong>IC41174</strong>
+(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>Party/PartyName/Name</code> = <strong>Selanu Airport
+Cargo</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+</ul>
+<p>The same in every document <a href="world-17-xb.html">Lumeport
+Airport Cargo Terminal</a> is named in.</p>
+</details>
+
+<ul>
 <li><code>ID</code> = <strong>2</strong><br />
 The original for the consignee.</li>
 <li><code>DocumentTypeCode</code> = <strong>Waybill</strong> (listID
@@ -1379,14 +1401,6 @@ the consignee's original</strong><br />
 The name of code ORIGINALWITHGOODS in the Trade Accord's distribution
 type list, followed by the detail of this case: the original the
 consignee signs on delivery.</li>
-<li><code>Party/PartyIdentification/ID</code> = <strong>IC41174</strong>
-(schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>Party/PartyName/Name</code> = <strong>Selanu Airport
-Cargo</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -1960,6 +1974,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-mast-05-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>

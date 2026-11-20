@@ -131,28 +131,25 @@ name are enough.</li>
 </ul>
 <h3 id="buyer-customer-party">Buyer Customer Party</h3>
 <p>Inside <code>BuyerCustomerParty</code>:</p>
+<details>
+<summary>The party's own data in `Party`, as Brightmarket Stores gives it (28 values)</summary>
+
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20410411</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Brightmarket Stores gives it. Later mentions of
-the same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>9522610900002</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples ; as Brightmarket Stores gives
-it.</li>
+the prefix GS1 reserves for examples .</li>
 <li><code>Party/PartyName/Name</code> = <strong>Brightmarket
 Stores</strong><br />
-The trading name; as Brightmarket Stores gives it.</li>
-<li><code>Party/TradePartyName/Name</code> =
-<strong>Brightmarket</strong><br />
-The name the shops trade under, shorter than the company's name; as
-Brightmarket Stores gives it.</li>
+The trading name.</li>
 <li><code>Party/Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -171,8 +168,7 @@ Bayvarran English.</li>
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); as Brightmarket Stores gives
-it.</li>
+state register of Coastal State refers to).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -199,23 +195,21 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Market
 Street</strong><br />
-Street of the postal address. As Brightmarket Stores gives it.</li>
+Street of the postal address.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>50</strong><br />
-Building number of the postal address. As Brightmarket Stores gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/CitySubdivisionName</code> = <strong>Old
 Town</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map. As Brightmarket Stores gives it.</li>
+the map.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Brightmarket Stores gives it.</li>
+country and state.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>38515</strong><br />
-Postal code in Bayvarra's format (5 digits). As Brightmarket Stores
-gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -223,9 +217,9 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Brightmarket Stores gives it. The code is from Bayvarra's national state
-or territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-CO = Coastal
+State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -242,15 +236,12 @@ The country's name, for readers of the address.</li>
 The desk's number in the party's own contact list.</li>
 <li><code>Party/Contact/Name</code> = <strong>Buying
 office</strong><br />
-The party's main desk, which handles this document; as Brightmarket
-Stores gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Buyer</strong><br />
-The job of the person who answers at the desk; as Brightmarket Stores
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Purchasing</strong><br />
-The department the desk belongs to; as Brightmarket Stores gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 4609
 7100</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -260,14 +251,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Brightmarket Stores gives it.</li>
+with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:buying@brightmarket.example">buying@brightmarket.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Brightmarket Stores gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Monday to Saturday
 09:00–18:00</strong><br />
-When the desk can be reached; as Brightmarket Stores gives it.</li>
+When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -276,35 +267,45 @@ network.</li>
 <strong>XB:20410411</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Brightmarket
-Stores gives it. UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
+</ul>
+<p>The same in every document <a href="world-26-xb.html">Brightmarket
+Stores</a> is named in.</p>
+</details>
+
+<ul>
+<li><code>Party/TradePartyName/Name</code> =
+<strong>Brightmarket</strong><br />
+The name the shops trade under, shorter than the company's name; as
+Brightmarket Stores gives it.</li>
 </ul>
 <h3 id="seller-supplier-party">Seller Supplier Party</h3>
 <p>Inside <code>SellerSupplierParty</code>:</p>
+<details>
+<summary>The party's own data in `Party`, as Brackenmere Furniture gives it (23 values)</summary>
+
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20412466</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Brackenmere Furniture gives it. Later mentions
-of the same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>9523710900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples ; as Brackenmere Furniture gives
-it.</li>
+the prefix GS1 reserves for examples .</li>
 <li><code>Party/PartyName/Name</code> = <strong>Brackenmere
 Furniture</strong><br />
-The trading name; as Brackenmere Furniture gives it.</li>
+The trading name.</li>
 <li><code>Party/PostalAddress/ID</code> = <strong>UL-ADR-821551</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); as Brackenmere Furniture gives it.</li>
+and six digits).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -331,19 +332,17 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Joiners
 Row</strong><br />
-Street of the postal address. As Brackenmere Furniture gives it.</li>
+Street of the postal address.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>14</strong><br />
-Building number of the postal address. As Brackenmere Furniture gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Brackenmere Furniture gives it.</li>
+country and state.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>71203</strong><br />
-Postal code in Bayvarra's format (5 digits). As Brackenmere Furniture
-gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -351,9 +350,9 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Brackenmere Furniture gives it. The code is from Bayvarra's national
-state or territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-UL = Upland
+State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -367,15 +366,12 @@ list. The code is from the world's copy of UBL's Country identification
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Trade sales</strong><br />
-The party's main desk, which handles this document; as Brackenmere
-Furniture gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Trade sales
 manager</strong><br />
-The job of the person who answers at the desk; as Brackenmere Furniture
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
-The department the desk belongs to; as Brackenmere Furniture gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 602
 606</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -385,14 +381,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Brackenmere Furniture gives it.</li>
+with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:trade@brackenmere.example">trade@brackenmere.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Brackenmere Furniture gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Brackenmere Furniture gives it.</li>
+When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -401,10 +397,13 @@ network.</li>
 <strong>XB:20412466</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Brackenmere
-Furniture gives it. UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-37-xb.html">Brackenmere
+Furniture</a> is named in.</p>
+</details>
+
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&#39;1.0&#39;</span> <span class="ot">encoding=</span><span class="st">&#39;UTF-8&#39;</span><span class="fu">?&gt;</span></span>
@@ -545,6 +544,6 @@ href="example-furniture-12-InstructionForReturns.html">Instruction For
 Returns →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>

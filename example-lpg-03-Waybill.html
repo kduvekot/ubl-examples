@@ -105,16 +105,18 @@ Where the carrier took over the goods and issued the note.</li>
 </ul>
 <h3 id="sender-party">Sender Party</h3>
 <p>Inside <code>SenderParty</code>:</p>
+<details>
+<summary>The party's own data, as Gullhaven Tank Haulage gives it (25 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>20413151</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Gullhaven Tank Haulage gives it. Later mentions
-of the same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Gullhaven Tank
 Haulage</strong><br />
-The trading name; as Gullhaven Tank Haulage gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -132,7 +134,7 @@ Bayvarran English.</li>
 (schemeID
 <code>urn:ubl-examples:world:XB:NT:address-register</code>)<br />
 The address's number in the address register of Northern Territory
-(NT-ADR- and six digits); as Gullhaven Tank Haulage gives it.</li>
+(NT-ADR- and six digits).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -159,18 +161,16 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Harbour
 Road</strong><br />
-Street of the postal address. As Gullhaven Tank Haulage gives it.</li>
+Street of the postal address.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>14</strong><br />
-Building number of the postal address. As Gullhaven Tank Haulage gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Gullhaven</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Gullhaven Tank Haulage gives it.</li>
+country and state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>90540</strong><br />
-Postal code in Bayvarra's format (5 digits). As Gullhaven Tank Haulage
-gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Northern
 Territory</strong><br />
 The name of code XB-NT in Bayvarra's national state or territory
@@ -178,9 +178,9 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-NT</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Gullhaven Tank Haulage gives it. The code is from Bayvarra's national
-state or territory list: XB-NT = Northern Territory.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-NT = Northern
+Territory.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -194,15 +194,12 @@ list. The code is from the world's copy of UBL's Country identification
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Tanker planning</strong><br />
-The party's main desk, which handles this document; as Gullhaven Tank
-Haulage gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Contact/JobTitle</code> = <strong>Tanker
 planner</strong><br />
-The job of the person who answers at the desk; as Gullhaven Tank Haulage
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Operations</strong><br />
-The department the desk belongs to; as Gullhaven Tank Haulage gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 38522
 41906</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -212,14 +209,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Gullhaven Tank Haulage gives it.</li>
+with 7.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:planning@gullhaventank.example">planning@gullhaventank.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Gullhaven Tank Haulage gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; as Gullhaven Tank Haulage gives it.</li>
+When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -228,29 +225,33 @@ network.</li>
 <strong>XB:20413151</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Gullhaven Tank
-Haulage gives it. UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-52-xb.html">Gullhaven Tank
+Haulage</a> is named in.</p>
+</details>
+
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
+<details>
+<summary>The party's own data, as Kelpstone Gas gives it (26 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>20412877</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Kelpstone Gas gives it. Later mentions of the
-same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>0990:19676</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates. No real scheme has the code designator 0990; as
-Kelpstone Gas gives it.</li>
+licence plates. No real scheme has the code designator 0990.</li>
 <li><code>PartyName/Name</code> = <strong>Kelpstone Gas</strong><br />
-The trading name; as Kelpstone Gas gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -268,7 +269,7 @@ Bayvarran English.</li>
 (schemeID
 <code>urn:ubl-examples:world:XB:NT:address-register</code>)<br />
 The address's number in the address register of Northern Territory
-(NT-ADR- and six digits); as Kelpstone Gas gives it.</li>
+(NT-ADR- and six digits).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -295,16 +296,15 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Shoreline
 Road</strong><br />
-Street of the postal address. As Kelpstone Gas gives it.</li>
+Street of the postal address.</li>
 <li><code>PostalAddress/BuildingNumber</code> = <strong>2</strong><br />
-Building number of the postal address. As Kelpstone Gas gives it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Gullhaven</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Kelpstone Gas gives it.</li>
+country and state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>90540</strong><br />
-Postal code in Bayvarra's format (5 digits). As Kelpstone Gas gives
-it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Northern
 Territory</strong><br />
 The name of code XB-NT in Bayvarra's national state or territory
@@ -312,9 +312,9 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-NT</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Kelpstone Gas gives it. The code is from Bayvarra's national state or
-territory list: XB-NT = Northern Territory.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-NT = Northern
+Territory.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -327,6 +327,48 @@ list. The code is from the world's copy of UBL's Country identification
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
+<li><code>Contact/Name</code> = <strong>Pipeline control</strong><br />
+The party's pipeline control desk: the desk for its role in this
+document (it carries or handles the goods).</li>
+<li><code>Contact/JobTitle</code> = <strong>Pipeline
+controller</strong><br />
+The job of the person who answers at the desk.</li>
+<li><code>Contact/Department</code> = <strong>Operations</strong><br />
+The department the desk belongs to.</li>
+<li><code>Contact/Telephone</code> = <strong>+999 2 38522
+68330</strong><br />
+The party's switchboard, which puts the caller through to the desk.
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Bayvarra's own plan: British-style closed
+numbering: always 10 digits after the country digit; the area code takes
+2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
+Northern Territory: the plan is national and does not follow state
+borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
+with 7.</li>
+<li><code>Contact/ElectronicMail</code> = <strong><a
+href="mailto:pipeline@kelpstone.example">pipeline@kelpstone.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone.</li>
+<li><code>Contact/Note</code> = <strong>Every day, around the
+clock</strong><br />
+When the desk can be reached.</li>
+<li><code>ElectronicAddress/ExchangeNetworkID</code> =
+<strong>urn:ubl-examples:world:network</strong><br />
+The network in which the address is registered: the world's own exchange
+network.</li>
+<li><code>ElectronicAddress/ElectronicAddressID</code> =
+<strong>XB:20412877</strong> (schemeID
+<code>urn:ubl-examples:world:endpoint</code>)<br />
+The party's electronic address in that network: its country code and its
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
+</ul>
+<p>The same in every document <a href="world-42-xb.html">Kelpstone
+Gas</a> is named in.</p>
+</details>
+
+<ul>
 <li><code>PhysicalLocation/Description</code> = <strong>Gas treatment
 plant on the north coast; the platform of the offshore field lies about
 80 kilometres out.</strong><br />
@@ -361,44 +403,6 @@ The minutes of the longitude.</li>
 <code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code>)<br />
 West of the Greenwich meridian. The code is from the world's copy of
 UBL's Longitude direction list, with a listID: West.</li>
-<li><code>Contact/Name</code> = <strong>Pipeline control</strong><br />
-The party's pipeline control desk: the desk for its role in this
-document (it carries or handles the goods); as Kelpstone Gas gives
-it.</li>
-<li><code>Contact/JobTitle</code> = <strong>Pipeline
-controller</strong><br />
-The job of the person who answers at the desk; as Kelpstone Gas gives
-it.</li>
-<li><code>Contact/Department</code> = <strong>Operations</strong><br />
-The department the desk belongs to; as Kelpstone Gas gives it.</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 38522
-68330</strong><br />
-The party's switchboard, which puts the caller through to the desk.
-Telephone under +999, a country code the ITU reserves for a future
-global service (ITU-T E.164), so the number reaches no one; then the
-country digit and a number in Bayvarra's own plan: British-style closed
-numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Kelpstone Gas gives it.</li>
-<li><code>Contact/ElectronicMail</code> = <strong><a
-href="mailto:pipeline@kelpstone.example">pipeline@kelpstone.example</a></strong><br />
-E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Kelpstone Gas gives it.</li>
-<li><code>Contact/Note</code> = <strong>Every day, around the
-clock</strong><br />
-When the desk can be reached; as Kelpstone Gas gives it.</li>
-<li><code>ElectronicAddress/ExchangeNetworkID</code> =
-<strong>urn:ubl-examples:world:network</strong><br />
-The network in which the address is registered: the world's own exchange
-network.</li>
-<li><code>ElectronicAddress/ElectronicAddressID</code> =
-<strong>XB:20412877</strong> (schemeID
-<code>urn:ubl-examples:world:endpoint</code>)<br />
-The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Kelpstone Gas
-gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="consignor-party">Consignor Party</h3>
 <p>Inside <code>ConsignorParty</code>:</p>
@@ -1233,6 +1237,6 @@ href="examples.html#flow-lpg">all documents of the flow</a> · <a
 href="example-lpg-02-DespatchAdvice.html">Despatch Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>

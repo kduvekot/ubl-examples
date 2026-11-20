@@ -115,25 +115,26 @@ examples, in words: no list has an exact code for it (cited).</li>
 </ul>
 <h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
 <p>Inside <code>AccountingSupplierParty</code>:</p>
+<details>
+<summary>The party's own data in `Party`, as Kelpstone Gas gives it (43 values)</summary>
+
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20412877</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Kelpstone Gas gives it. Later mentions of the
-same party in this document repeat only this identifier and the
-name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>0990:19676</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates. No real scheme has the code designator 0990; as
-Kelpstone Gas gives it.</li>
+licence plates. No real scheme has the code designator 0990.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Kelpstone
 Gas</strong><br />
-The trading name; as Kelpstone Gas gives it.</li>
+The trading name.</li>
 <li><code>Party/Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -151,7 +152,7 @@ Bayvarran English.</li>
 (schemeID
 <code>urn:ubl-examples:world:XB:NT:address-register</code>)<br />
 The address's number in the address register of Northern Territory
-(NT-ADR- and six digits); as Kelpstone Gas gives it.</li>
+(NT-ADR- and six digits).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -178,18 +179,17 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Shoreline
 Road</strong><br />
-Street of the postal address. As Kelpstone Gas gives it.</li>
+Street of the postal address.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>2</strong><br />
-Building number of the postal address. As Kelpstone Gas gives it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Gullhaven</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Kelpstone Gas gives it.</li>
+country and state.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>90540</strong><br />
-Postal code in Bayvarra's format (5 digits). As Kelpstone Gas gives
-it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Northern
 Territory</strong><br />
 The name of code XB-NT in Bayvarra's national state or territory
@@ -197,9 +197,9 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-NT</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Kelpstone Gas gives it. The code is from Bayvarra's national state or
-territory list: XB-NT = Northern Territory.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-NT = Northern
+Territory.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -212,53 +212,17 @@ list. The code is from the world's copy of UBL's Country identification
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Party/PhysicalLocation/Description</code> = <strong>Gas
-treatment plant on the north coast; the platform of the offshore field
-lies about 80 kilometres out.</strong><br />
-Where the party actually operates, apart from its postal address. The
-distance is measured along the route on the map, rounded to 10 km.</li>
-<li><code>Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode</code>
-= <strong>4326</strong> (listID <code>EPSG</code>)<br />
-The World Geodetic System 1984, as used by satellite navigation. The
-code is from the world's copy of EPSG Geodetic Parameter Dataset
-(coordinate reference systems): 4326 = WGS 84.</li>
-<li><code>Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure</code>
-= <strong>28</strong> (unitCode <code>DD</code>)<br />
-Computed from the place on the map; the world lies in an empty part of
-the South Atlantic, so the point is open sea on a real map.</li>
-<li><code>Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure</code>
-= <strong>15.95</strong> (unitCode <code>D61</code>)<br />
-The minutes of the latitude.</li>
-<li><code>Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode</code>
-= <strong>South</strong> (listID
-<code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code>)<br />
-South of the equator. The code is from the world's copy of UBL's
-Latitude direction list, with a listID: South.</li>
-<li><code>Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure</code>
-= <strong>15</strong> (unitCode <code>DD</code>)<br />
-Computed from the place on the map; the world lies in an empty part of
-the South Atlantic, so the point is open sea on a real map.</li>
-<li><code>Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure</code>
-= <strong>33.76</strong> (unitCode <code>D61</code>)<br />
-The minutes of the longitude.</li>
-<li><code>Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode</code>
-= <strong>West</strong> (listID
-<code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code>)<br />
-West of the Greenwich meridian. The code is from the world's copy of
-UBL's Longitude direction list, with a listID: West.</li>
 <li><code>Party/PartyTaxScheme/RegistrationName</code> =
 <strong>Kelpstone Gas Ltd</strong><br />
-The name under which the party is registered for state sales tax; as
-Kelpstone Gas gives it.</li>
+The name under which the party is registered for state sales tax.</li>
 <li><code>Party/PartyTaxScheme/CompanyID</code> =
 <strong>NT-1238631</strong> (schemeID
 <code>urn:ubl-examples:world:XB:tax</code>)<br />
 Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
-tax permit of the state or territory)); as Kelpstone Gas gives it. The
-schemeID names the scheme it is from: the sales tax permit of a
-Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and
-7 digits).</li>
+tax permit of the state or territory)). The schemeID names the scheme it
+is from: the sales tax permit of a Bayvarran state or territory (the
+state code (UL, CO, NT), a hyphen and 7 digits).</li>
 <li><code>Party/PartyTaxScheme/TaxLevelCode</code> =
 <strong>STATE</strong> (listID
 <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
@@ -284,14 +248,13 @@ The country whose tax this is. The code is from the world's copy of
 UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PartyLegalEntity/RegistrationName</code> =
 <strong>Kelpstone Gas Ltd</strong><br />
-The name under which the party is registered, with its legal form; as
-Kelpstone Gas gives it.</li>
+The name under which the party is registered, with its legal form.</li>
 <li><code>Party/PartyLegalEntity/CompanyID</code> =
 <strong>20412877</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
-Number in the Federal business register of Bayvarra; as Kelpstone Gas
-gives it. The schemeID names the scheme it is from: the Federal business
-register of Bayvarra (8 digits).</li>
+Number in the Federal business register of Bayvarra. The schemeID names
+the scheme it is from: the Federal business register of Bayvarra (8
+digits).</li>
 <li><code>Party/PartyLegalEntity/CompanyLegalFormCode</code> =
 <strong>LTD</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
@@ -330,14 +293,13 @@ of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/Contact/Name</code> = <strong>Accounts
 receivable</strong><br />
 The party's accounts receivable desk: the desk for its role in this
-document (it is owed the payment); as Kelpstone Gas gives it.</li>
+document (it is owed the payment).</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Credit
 controller</strong><br />
-The job of the person who answers at the desk; as Kelpstone Gas gives
-it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Finance</strong><br />
-The department the desk belongs to; as Kelpstone Gas gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 38522
 68330</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -348,14 +310,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Kelpstone Gas gives it.</li>
+with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:receivables@kelpstone.example">receivables@kelpstone.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Kelpstone Gas gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; as Kelpstone Gas gives it.</li>
+When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -364,29 +326,70 @@ network.</li>
 <strong>XB:20412877</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Kelpstone Gas
-gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
+</ul>
+<p>The same in every document <a href="world-42-xb.html">Kelpstone
+Gas</a> is named in.</p>
+</details>
+
+<ul>
+<li><code>Party/PhysicalLocation/Description</code> = <strong>Gas
+treatment plant on the north coast; the platform of the offshore field
+lies about 80 kilometres out.</strong><br />
+Where the party actually operates, apart from its postal address. The
+distance is measured along the route on the map, rounded to 10 km.</li>
+<li><code>Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode</code>
+= <strong>4326</strong> (listID <code>EPSG</code>)<br />
+The World Geodetic System 1984, as used by satellite navigation. The
+code is from the world's copy of EPSG Geodetic Parameter Dataset
+(coordinate reference systems): 4326 = WGS 84.</li>
+<li><code>Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure</code>
+= <strong>28</strong> (unitCode <code>DD</code>)<br />
+Computed from the place on the map; the world lies in an empty part of
+the South Atlantic, so the point is open sea on a real map.</li>
+<li><code>Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure</code>
+= <strong>15.95</strong> (unitCode <code>D61</code>)<br />
+The minutes of the latitude.</li>
+<li><code>Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode</code>
+= <strong>South</strong> (listID
+<code>urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode</code>)<br />
+South of the equator. The code is from the world's copy of UBL's
+Latitude direction list, with a listID: South.</li>
+<li><code>Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure</code>
+= <strong>15</strong> (unitCode <code>DD</code>)<br />
+Computed from the place on the map; the world lies in an empty part of
+the South Atlantic, so the point is open sea on a real map.</li>
+<li><code>Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure</code>
+= <strong>33.76</strong> (unitCode <code>D61</code>)<br />
+The minutes of the longitude.</li>
+<li><code>Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode</code>
+= <strong>West</strong> (listID
+<code>urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode</code>)<br />
+West of the Greenwich meridian. The code is from the world's copy of
+UBL's Longitude direction list, with a listID: West.</li>
 </ul>
 <h3 id="accounting-customer-party">Accounting Customer Party</h3>
 <p>Inside <code>AccountingCustomerParty</code>:</p>
+<details>
+<summary>The party's own data in `Party`, as Coastal State Water Company gives it (24 values)</summary>
+
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
 <strong>20412192</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; as Coastal State Water Company gives it. Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+register of Bayvarra. Later mentions of the same party in this document
+repeat only this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Coastal State Water
 Company</strong><br />
-The trading name; as Coastal State Water Company gives it.</li>
+The trading name.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>LUM-ADR-782593</strong> (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); as Coastal State Water
-Company gives it.</li>
+state register of Coastal State refers to).</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -413,20 +416,17 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Reservoir
 Road</strong><br />
-Street of the postal address. As Coastal State Water Company gives
-it.</li>
+Street of the postal address.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>51</strong><br />
-Building number of the postal address. As Coastal State Water Company
-gives it.</li>
+Building number of the postal address.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Coastal State Water Company gives it.</li>
+country and state.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>38500</strong><br />
-Postal code in Bayvarra's format (5 digits). As Coastal State Water
-Company gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -434,9 +434,9 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Coastal State Water Company gives it. The code is from Bayvarra's
-national state or territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-CO = Coastal
+State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -451,26 +451,22 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>Party/PartyLegalEntity/RegistrationName</code> =
 <strong>Coastal State Water Company Ltd</strong><br />
-The name under which the party is registered, with its legal form; as
-Coastal State Water Company gives it.</li>
+The name under which the party is registered, with its legal form.</li>
 <li><code>Party/PartyLegalEntity/CompanyID</code> =
 <strong>20412192</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
-Number in the Federal business register of Bayvarra; as Coastal State
-Water Company gives it. The schemeID names the scheme it is from: the
-Federal business register of Bayvarra (8 digits).</li>
+Number in the Federal business register of Bayvarra. The schemeID names
+the scheme it is from: the Federal business register of Bayvarra (8
+digits).</li>
 <li><code>Party/Contact/Name</code> = <strong>Customer
 service</strong><br />
-The party's main desk, which handles this document; as Coastal State
-Water Company gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Customer service
 officer</strong><br />
-The job of the person who answers at the desk; as Coastal State Water
-Company gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> = <strong>Customer
 service</strong><br />
-The department the desk belongs to; as Coastal State Water Company gives
-it.</li>
+The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 9310
 7518</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -480,15 +476,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Coastal State Water Company gives it.</li>
+with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:customer@coastalwater.example">customer@coastalwater.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Coastal State Water Company gives it.</li>
+anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; as Coastal State Water Company gives
-it.</li>
+When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -497,10 +492,13 @@ network.</li>
 <strong>XB:20412192</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; as Coastal State
-Water Company gives it. UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Federal business register of Bayvarra. UBL 2.5 carries it
+here; Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-34-xb.html">Coastal State
+Water Company</a> is named in.</p>
+</details>
+
 <h3 id="delivery">Delivery</h3>
 <p>Inside <code>Delivery</code>:</p>
 <ul>
@@ -1080,6 +1078,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <a href="examples.html#flow-lpg">all documents of the flow</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>

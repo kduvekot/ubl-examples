@@ -105,24 +105,26 @@ name are enough.</li>
 </ul>
 <h3 id="sender-party">Sender Party</h3>
 <p>Inside <code>SenderParty</code>:</p>
+<details>
+<summary>The party's own data, as Bayvarra Information Service gives it (35 values)</summary>
+
 <ul>
 <li><code>IndustryClassificationCode</code> = <strong>8411</strong>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
-industry classification; as Bayvarra Information Service gives it. The
-code is from the world's copy of International Standard Industrial
-Classification of All Economic Activities, Revision 4: 8411 = General
-public administration activities.</li>
+industry classification. The code is from the world's copy of
+International Standard Industrial Classification of All Economic
+Activities, Revision 4: 8411 = General public administration
+activities.</li>
 <li><code>PartyIdentification/ID</code> = <strong>1906473852</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 The party's preferred identifier: its number in the Federal list of
-public bodies of Bayvarra; as Bayvarra Information Service gives it.
-Later mentions of the same party in this document repeat only this
-identifier and the name.</li>
+public bodies of Bayvarra. Later mentions of the same party in this
+document repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Bayvarra Information
 Service</strong><br />
-The trading name; as Bayvarra Information Service gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -141,8 +143,7 @@ Bayvarran English.</li>
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); as Bayvarra Information
-Service gives it.</li>
+state register of Coastal State refers to).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -169,23 +170,20 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Civic
 Square</strong><br />
-Street of the postal address. As Bayvarra Information Service gives
-it.</li>
+Street of the postal address.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>27</strong><br />
-Building number of the postal address. As Bayvarra Information Service
-gives it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CitySubdivisionName</code> = <strong>Government
 Hill</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map. As Bayvarra Information Service gives it.</li>
+the map.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Bayvarra Information Service gives it.</li>
+country and state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38520</strong><br />
-Postal code in Bayvarra's format (5 digits). As Bayvarra Information
-Service gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -193,9 +191,9 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Bayvarra Information Service gives it. The code is from Bayvarra's
-national state or territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-CO = Coastal
+State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -210,17 +208,15 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Bayvarra
 Information Service</strong><br />
-The public body's official name; as Bayvarra Information Service gives
-it.</li>
+The public body's official name.</li>
 <li><code>PartyLegalEntity/CompanyID</code> =
 <strong>1906473852</strong> (schemeID
 <code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 Number in the Federal list of public bodies of Bayvarra, which gives
 every public body a number of its own (10 digits, the first not 0),
-derived from no other register ; as Bayvarra Information Service gives
-it. The schemeID names the scheme it is from: the federal list of public
-bodies of Bayvarra (10 digits, the first not 0, given by the Bayvarra
-Information Service).</li>
+derived from no other register . The schemeID names the scheme it is
+from: the federal list of public bodies of Bayvarra (10 digits, the
+first not 0, given by the Bayvarra Information Service).</li>
 <li><code>PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The registered office, as entered in the register.</li>
@@ -248,16 +244,13 @@ The register covers the whole country. The code is from the world's copy
 of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Publications and
 register</strong><br />
-The party's main desk, which handles this document; as Bayvarra
-Information Service gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Contact/JobTitle</code> = <strong>Publications
 officer</strong><br />
-The job of the person who answers at the desk; as Bayvarra Information
-Service gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> =
 <strong>Publications</strong><br />
-The department the desk belongs to; as Bayvarra Information Service
-gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 38 5339
 4832</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -267,15 +260,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Bayvarra Information Service gives it.</li>
+with 7.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:publications@info-xb.example">publications@info-xb.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Bayvarra Information Service gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Bayvarra Information Service gives
-it.</li>
+When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -284,30 +276,34 @@ network.</li>
 <strong>XB:1906473852</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal list of public bodies of Bayvarra; as Bayvarra
-Information Service gives it. UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+number in the Federal list of public bodies of Bayvarra. UBL 2.5 carries
+it here; Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-21-xb.html">Bayvarra
+Information Service</a> is named in.</p>
+</details>
+
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
+<details>
+<summary>The party's own data, as Lumeport Public Works Department gives it (18 values)</summary>
+
 <ul>
 <li><code>PartyIdentification/ID</code> = <strong>6250397184</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 The party's preferred identifier: its number in the Federal list of
-public bodies of Bayvarra; as Lumeport Public Works Department gives it.
-Later mentions of the same party in this document repeat only this
-identifier and the name.</li>
+public bodies of Bayvarra. Later mentions of the same party in this
+document repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Lumeport Public Works
 Department</strong><br />
-The trading name; as Lumeport Public Works Department gives it.</li>
+The trading name.</li>
 <li><code>PostalAddress/ID</code> = <strong>LUM-ADR-000417</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); as Lumeport Public Works
-Department gives it.</li>
+state register of Coastal State refers to).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -334,34 +330,28 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Civic
 Square</strong><br />
-Street of the postal address. As Lumeport Public Works Department gives
-it.</li>
+Street of the postal address.</li>
 <li><code>PostalAddress/BuildingNumber</code> = <strong>6</strong><br />
-Building number of the postal address. As Lumeport Public Works
-Department gives it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/InhouseMail</code> = <strong>Room
 2.14</strong><br />
-The internal mail code of the procurement office. As Lumeport Public
-Works Department gives it.</li>
+The internal mail code of the procurement office.</li>
 <li><code>PostalAddress/Department</code> = <strong>Procurement
 office</strong><br />
-The department the post is for. As Lumeport Public Works Department
-gives it.</li>
+The department the post is for.</li>
 <li><code>PostalAddress/MarkAttention</code> = <strong>Head of
 procurement</strong><br />
-For the attention of the head of procurement. As Lumeport Public Works
-Department gives it.</li>
+For the attention of the head of procurement.</li>
 <li><code>PostalAddress/CitySubdivisionName</code> = <strong>Government
 Hill</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map. As Lumeport Public Works Department gives it.</li>
+the map.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. As Lumeport Public Works Department gives it.</li>
+country and state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38517</strong><br />
-Postal code in Bayvarra's format (5 digits). As Lumeport Public Works
-Department gives it.</li>
+Postal code in Bayvarra's format (5 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -369,9 +359,9 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. As
-Lumeport Public Works Department gives it. The code is from Bayvarra's
-national state or territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. The code
+is from Bayvarra's national state or territory list: XB-CO = Coastal
+State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
@@ -385,36 +375,40 @@ list. The code is from the world's copy of UBL's Country identification
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 </ul>
+<p>The same in every document <a href="world-2-xb.html">Lumeport Public
+Works Department</a> is named in.</p>
+</details>
+
 <h3 id="business-party">Business Party</h3>
 <p>Inside <code>BusinessParty</code>:</p>
+<details>
+<summary>The party's own data, as Valdara Industries gives it (49 values)</summary>
+
 <ul>
 <li><code>WebsiteURI</code> = <strong><a
 href="https://www.valdara.example">https://www.valdara.example</a></strong><br />
-The party's website, under the reserved .example domain (RFC 2606); as
-Valdara Industries gives it.</li>
+The party's website, under the reserved .example domain (RFC 2606).</li>
 <li><code>IndustryClassificationCode</code> = <strong>3100</strong>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
-industry classification; as Valdara Industries gives it. The code is
-from the world's copy of International Standard Industrial
-Classification of All Economic Activities, Revision 4: 3100 =
-Manufacture of furniture.</li>
+industry classification. The code is from the world's copy of
+International Standard Industrial Classification of All Economic
+Activities, Revision 4: 3100 = Manufacture of furniture.</li>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; as Valdara Industries gives it. Later mentions of the same
-party in this document repeat only this identifier and the name.</li>
+of Urvania. Later mentions of the same party in this document repeat
+only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>0990:10014</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates. No real scheme has the code designator 0990; as Valdara
-Industries gives it.</li>
+licence plates. No real scheme has the code designator 0990.</li>
 <li><code>PartyName/Name</code> = <strong>Valdara
 Industries</strong><br />
-The trading name; as Valdara Industries gives it.</li>
+The trading name.</li>
 <li><code>Language/ID</code> = <strong>qau</strong> (schemeID
 <code>ISO 639</code>)<br />
 Urvanian, the language of Urvania and of the party; the code is from the
@@ -428,7 +422,7 @@ The language's name in English; in the language itself: urvanese.</li>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); as Valdara Industries gives it.</li>
+a ten-digit serial number).</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -455,34 +449,30 @@ Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Stuzman
 Nulban</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages ; as Valdara Industries gives
-it.</li>
+street names are given in both languages .</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Via delle
 Officine</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; as Valdara
-Industries gives it.</li>
+Italian names the British kept are part of English now.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>17</strong><br />
-Building number of the postal address. As Valdara Industries gives
-it.</li>
+Building number of the postal address.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Valdara Industries gives it.</li>
+state.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. As Valdara Industries gives it.</li>
+state.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4120</strong><br />
-Postal code in Urvania's format (4 digits). As Valdara Industries gives
-it.</li>
+Postal code in Urvania's format (4 digits).</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country. As Valdara Industries gives it.</li>
+country.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -497,18 +487,16 @@ list. The code is from the world's copy of UBL's Country identification
 The country's name, for readers of the address.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Valdara
 Industries SUA</strong><br />
-The name under which the party is registered, with its legal form; as
-Valdara Industries gives it.</li>
+The name under which the party is registered, with its legal form.</li>
 <li><code>PartyLegalEntity/CompanyID</code> =
 <strong>XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
-Number in the Commercial register of Urvania; as Valdara Industries
-gives it. The schemeID names the scheme it is from: the Commercial
-register of Urvania (XU-R- and 6 digits).</li>
+Number in the Commercial register of Urvania. The schemeID names the
+scheme it is from: the Commercial register of Urvania (XU-R- and 6
+digits).</li>
 <li><code>PartyLegalEntity/RegistrationDate</code> =
 <strong>1962-04-12</strong><br />
-The day the company was entered in the register; as Valdara Industries
-gives it.</li>
+The day the company was entered in the register.</li>
 <li><code>PartyLegalEntity/CompanyLegalFormCode</code> =
 <strong>SUA</strong> (listID
 <code>urn:ubl-examples:world:XU:codelist:CompanyLegalFormCode</code>)<br />
@@ -530,9 +518,8 @@ English.</li>
 <strong>LARGE</strong> (listID
 <code>urn:ubl-examples:world:codelist:EntitySizeCode</code>)<br />
 The size class follows from the company's 3083 persons and its turnover
-of 52000000000 XUF in 2025, by the Trade Accord's limits; as Valdara
-Industries gives it. The code is from the Trade Accord's entity size
-list: LARGE = Large enterprise.</li>
+of 52000000000 XUF in 2025, by the Trade Accord's limits. The code is
+from the Trade Accord's entity size list: LARGE = Large enterprise.</li>
 <li><code>PartyLegalEntity/CompanyLiquidationStatusCode</code> =
 <strong>ACTIVE</strong> (listID
 <code>urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode</code>)<br />
@@ -585,14 +572,12 @@ The name of code XFER in the Trade Accord's market identifier list.</li>
 The market's code. The code is from the Trade Accord's market identifier
 list: XFER = Ferrano Stock Exchange.</li>
 <li><code>Contact/Name</code> = <strong>Order desk</strong><br />
-The party's main desk, which handles this document; as Valdara
-Industries gives it.</li>
+The party's main desk, which handles this document.</li>
 <li><code>Contact/JobTitle</code> = <strong>Order
 administrator</strong><br />
-The job of the person who answers at the desk; as Valdara Industries
-gives it.</li>
+The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Sales</strong><br />
-The department the desk belongs to; as Valdara Industries gives it.</li>
+The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 386
 4551</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -601,15 +586,14 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. As Valdara Industries gives
-it.</li>
+Mobiles start with 3 and have 10 digits.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:order@valdara.example">order@valdara.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; as Valdara Industries gives it.</li>
+anyone.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; as Valdara Industries gives it.</li>
+When the desk can be reached.</li>
 <li><code>Contact/OtherCommunication/ChannelCode</code> =
 <strong>AL</strong> (listID <code>UN/EDIFACT EDED 3155</code>)<br />
 UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default
@@ -625,9 +609,13 @@ network.</li>
 <strong>XU:XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; as Valdara Industries
-gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
+number in the Commercial register of Urvania. UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
+<p>The same in every document <a href="world-5-xu.html">Valdara
+Industries</a> is named in.</p>
+</details>
+
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
@@ -930,6 +918,6 @@ href="example-tender-20-TendererQualificationResponse.html">Tenderer
 Qualification Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1ee4673798b0c15f3ea27b6c6825f5eb8758a4c3"><code>1ee4673</code></a> of 2026-11-20 12:51 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/614455a9651fb7681c2b01e5239312263f5f663f"><code>614455a</code></a> of 2026-11-20 13:01 UTC</p></div></footer>
 </body>
 </html>
