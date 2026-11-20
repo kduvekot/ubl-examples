@@ -89,7 +89,7 @@ These are the general rules at the top of `analysis/codelist-decisions.md`.
    - company histories and infrastructure, with timelines.
 
    Build it from the existing story and data, and extend it where the story has gaps.
-3. **A write-up for the OASIS UBL TC and CEN/TC 434** of the findings collected in `analysis/codelist-decisions.md`:
+3. **A write-up for the OASIS UBL TC and CEN/TC 434** of the findings, all collected in `analysis/ubl-findings.md` (owner, 2026-11-20: brought to the TC at a slow pace, nothing guaranteed), among them:
    - three EN 16931 bindings that conflict with UBL 2.5 semantics: ItemClassificationCode, InvoicePeriod/DescriptionCode for the tax point date, and self-billing as Invoice + 389;
    - five issues with UBL's own default code lists and CVA.
 4. **The 5 uncovered elements:** RadioactiveMaterial/FissileCriticalitySafetyIndexNumeric, ContractExtension/MinimumNumberNumeric, SubcontractTerms/MinimumPercent, ShipmentStage/TransshipPortLocation, Manifest/DeclaredCarriageValueAmount. Add them only through a real business situation in the world. TransportIndex is covered by the medicines flow (D47) and ExclusionReason by the excluded contest candidate (contest/18, O102).
