@@ -80,7 +80,7 @@ irrelevant · structure · process.
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | solved |
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | solved |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
-| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | partly solved |
+| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | solved here; rest handed over |
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | solved |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | solved |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | decided |
@@ -91,11 +91,11 @@ irrelevant · structure · process.
 | SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | partly solved |
 | SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
 | SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | solved |
-| SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | partly solved |
+| SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | solved |
 | SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | deferred |
 | SR-22 | Method note: statements that contradict the world or a decision | medium | B-07, B-08, B-12 | | deferred |
 | SR-23 | Method note: order, weight, unpublished paths and references | medium | B-15, B-16, B-17 | Q-B-01, Q-B-02 | deferred (Q-B-01 solved) |
-| SR-24 | Reason texts: repeated boilerplate and concatenation artifacts | medium | E-05, E-06, F-10 | | partly solved |
+| SR-24 | Reason texts: repeated boilerplate and concatenation artifacts | medium | E-05, E-06, F-10 | | solved |
 
 ### SR-01 · Headline figures and coverage page describe only the OASIS samples
 - **Status:** decided 2026-11-20 (owner, Q-A-01): **A, the world examples only.** The site no longer points
@@ -238,6 +238,10 @@ irrelevant · structure · process.
   every built page, and warns on words of change) and point 4 (traceability in code comments and `_refs` keys). Open:
   point 2 (O112 recorded for every remaining flow), point 5 (key facts as assertions; counts in hand texts), and E-12
   (the story lines in the decisions file brought into line).
+  **Handed over 2026-11-20 (owner):** points 2 and 5 and E-12 belong to the work on the November review of the
+  examples (the worklist session, `analysis/worklist.md`): a flow's story is read against its XML when that flow is
+  implemented, and the story lines are that work's own file. The site review does not do them; the worklist session
+  was told the same day.
 - **What:** four hand-kept copies of each flow's story (E-08); 34 story assertions in the scenarios are the only
   automated tie; the O112 read-through is recorded for road, furniture, retail, cotton, sea and contest only.
   The story lines themselves lag their "Overtaken" notes (E-12; also D32/O155, D37/O214, D34/O149 from part F).
@@ -393,7 +397,9 @@ irrelevant · structure · process.
   Urvanian invoice and procurement community texts; D-08's proposed paragraph on the relation to real specifications
   is dropped. Still to clean, with SR-07: about 13 example pages whose reasons name EN 16931 or the EU
   (`tools/examples_scenarios.py`, `tools/examples_kit.py`, `world/documents.json`, `world/countries.json`,
-  `world/items.json`). Open: D-10 (stored title case, community pages without owner).
+  `world/items.json`) — done with SR-07. D-10 **solved 2026-11-20**: document type names in sentences ("the Bill of
+  Lading"), UBL's own flawed definitions marked [sic], the index tables sorted by name, owner and version on the
+  community pages.
 - **What:** 54 of 70 transaction pages only repeat the UBL definition; no page states roles, rules, code lists or
   identifier schemes; the relation to EN 16931 and Peppol is unexplained and the URN prefix not marked invented;
   the self-billing page does not mention the Invoice + 389 deviation; stored title case ("Bill Of Lading"),
@@ -436,7 +442,12 @@ irrelevant · structure · process.
 ### SR-24 · Reason texts: boilerplate and artifacts
 - **Status:** partly solved 2026-11-20: the IssueTime reason says the local time once; no sentence starts in lower case
   after a full stop (the source of a value is "As Valdara Industries gives it."); no internal route key in a reason;
-  "City of Ferrano", not "City of ferrano". Open: E-05, the weight of repeated party and country reasons on every page.
+  "City of Ferrano", not "City of ferrano". E-05 **solved 2026-11-20** (owner: A, "make it non repetitive"): on every
+  example page a party's own data (identifiers, name, language, address, legal entity, tax scheme, contact, electronic
+  address) is folded under one line, "The party's own data, as Valdara Industries gives it (31 values)"; each value keeps
+  its reason, without repeating whose data it is, and the fold links the party's page. 18,176 of the 47,024 values on the
+  example pages are folded (686 folds on 293 pages); the document's own values stay in view. Presentation only: the
+  documents and their reasons are unchanged.
 - **What:** 55 % of 42,344 value rows repeat a reason that occurs 20 times or more, a third are party or country
   master data, so the document's own reasons are buried (partly the state before O86); on 199 pages the
   IssueTime reason says "in the sender's local time; in the issuer's local time"; 4,560 rows start lower case

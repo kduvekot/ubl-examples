@@ -9,6 +9,7 @@ Usage: python3 tools/build_world.py <out-dir> <md-dir>
 """
 import json
 import os
+import re
 import sys
 
 out, mddir = sys.argv[1], sys.argv[2]
@@ -407,6 +408,74 @@ for f in world["flows"]:
 
 # The example pages: each document's page (world/examples/<flow>/NN-Doc.md) with its place in the story, the way to
 # the documents before and after it, its parties and the specification it claims
+# A party's own data (its identifiers, name, language, address, legal entity, tax scheme, contact and electronic
+# address) is the same in every document: on an example page it is folded under one line that says whose data it is,
+# and each value keeps its reason without repeating whose it is. The document's own values stay in view.
+PARTY_DATA = {"PartyIdentification", "AdditionalPartyIdentification", "PartyName", "Language", "PostalAddress",
+              "PartyLegalEntity", "PartyTaxScheme", "Contact", "ElectronicAddress", "EndpointID", "WebsiteURI",
+              "LogoReferenceID", "IndustryClassificationCode"}
+BY_NAME = {label(p): p["id"] for p in world["parties"]}
+
+
+def fold_party_data(lines):
+    """Fold the party's own data in every block of an example page: the values under a party (the block's own party,
+    `Party/…` under a customer or supplier party, or `DeliveryParty/…` inside another aggregate)."""
+    out, i = [], 0
+    while i < len(lines):
+        line = lines[i]
+        out.append(line)
+        i += 1
+        if not re.match(r"Inside `[^`]*`:$", line):
+            continue
+        items, cur = [], None                    # the block's bullets, each with its continuation lines
+        while i < len(lines) and not lines[i].startswith("#") and not lines[i].startswith("Inside `"):
+            l = lines[i]
+            if l.startswith("- `"):
+                cur = [l]; items.append(cur)
+            elif cur is not None and l.startswith("  "):
+                cur.append(l)
+            elif l.strip():
+                items.append([l]); cur = None
+            i += 1
+
+        def owner(it):
+            """The path of the party a value belongs to ("" for the block's own party), or None."""
+            mm = re.match(r"- `([^`=]+)`", it[0])
+            segs = mm.group(1).split("/") if mm else []
+            for k, seg in enumerate(segs):
+                if seg in PARTY_DATA:
+                    pre = segs[:k]
+                    return "/".join(pre) if all(x.endswith("Party") for x in pre) else None
+            return None
+        groups = {}
+        for it in items:
+            o = owner(it)
+            if o is not None:
+                groups.setdefault(o, []).append(it)
+        placed, body = set(), [""]
+        for it in items:
+            o = owner(it)
+            grp = groups.get(o) if o is not None else None
+            name = next((re.search(r"\*\*(.+?)\*\*", x[0]).group(1) for x in grp
+                         if re.match(r"- `([^`]*/)?PartyName/Name`", x[0])), None) if grp else None
+            if grp is None or len(grp) < 3 or not name:
+                body += it
+                continue
+            if o in placed:
+                continue
+            placed.add(o)
+            gives = re.compile(rf"(?:;\s*as|\.?\s*As) {re.escape(name)} gives it\.?")
+            tidy = lambda l: re.sub(r"\.\.", ".", gives.sub(".", l))
+            who = f"[{name}](world-{BY_NAME[name]}.html)" if name in BY_NAME else name
+            where = f" in `{o}`" if o else ""
+            body += ["", "<details>", f"<summary>The party's own data{where}, as {name} gives it ({len(grp)} values)</summary>", ""]
+            for x in grp:
+                body += [tidy(l) for l in x]
+            body += ["", f"The same in every document {who} is named in.", "", "</details>", ""]
+        out += body + [""]
+    return out
+
+
 exdir = os.path.join(out, ".example-md")
 for f in world["flows"]:
     rows = story[f["id"]]
@@ -427,6 +496,7 @@ for f in world["flows"]:
         at = next(k for k, l in enumerate(lines) if l.startswith("*Document "))
         lines[at + 1:at + 1] = ["", f"From {link(x['from'])} to {link(x['to'])}, under the Trade Accord's "
                                     f"transaction {spec}.", "", nav]
+        lines = fold_party_data(lines)
         lines += ["", "---", "", nav, ""]
         os.makedirs(os.path.join(exdir, f["id"]), exist_ok=True)
         open(os.path.join(exdir, f["id"], name + ".md"), "w", encoding="utf-8").write("\n".join(lines))
@@ -500,7 +570,7 @@ idx = ["# Rules of the Trade Accord", "",
        "the document belongs to.", ""]
 for level, title in LEVELS.items():
     idx += [f"## {title}", "", "| Specification | Identifier | Document types |", "|---|---|---|"]
-    for u, (lv, key, spec) in specs.items():
+    for u, (lv, key, spec) in sorted(specs.items(), key=lambda kv: kv[1][2]["name"].lower()):   # by name
         if lv != level:
             continue
         kinds = ", ".join(spec.get("documents", [])) or "every document type the members exchange"
@@ -525,6 +595,7 @@ for level, title in LEVELS.items():
                 applies = "to the documents of these types that a member sends or receives: every party of its procedures"
             lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + f". It applies {applies}"
                       + ", chained after the transaction and any national specification.", ""]
+            lines += [f"Owner: {world_specs.load()['owner']['community']}. Version {world_specs.load()['version']}.", ""]
         else:
             owner = world_specs.load()["owner"][level]
             lines += [f"Owner: {owner}. Version {world_specs.load()['version']}.", ""]

@@ -174,7 +174,7 @@
    "documents": [
     "BillOfLading"
    ],
-   "purpose": "One document type carries the transaction, the Bill Of Lading, which UBL 2.5 defines as follows: “A document issued by the party who acts as an agent for a transportation carrier or other agents to the party who gives instructions for the transportation services (shipper, consignor, etc.) stating the details of the transportation, charges, and terms and conditions under which the transportation service is provided. The party issuing this document does not necessarily provide the physical transportation service. The information in the Bill of Lading corresponds to the information on the Forwarding Instructions. It is used for any mode of transport. A Bill of Lading can serve as a contractual document between the parties for the transportation service. The document evidences a contract of carriage by sea and the acceptance of responsibility for the goods by the carrier, by which the carrier undertakes to deliver the goods against surrender of the document. A provision in the document that the goods are to be delivered to the order of a named person, or to order, or to bearer, constitutes such an undertaking.”"
+   "purpose": "One document type carries the transaction, the Bill of Lading, which UBL 2.5 defines as follows: “A document issued by the party who acts as an agent for a transportation carrier or other agents to the party who gives instructions for the transportation services (shipper, consignor, etc.) stating the details of the transportation, charges, and terms and conditions under which the transportation service is provided. The party issuing this document does not necessarily provide the physical transportation service. The information in the Bill of Lading corresponds to the information on the Forwarding Instructions. It is used for any mode of transport. A Bill of Lading can serve as a contractual document between the parties for the transportation service. The document evidences a contract of carriage by sea and the acceptance of responsibility for the goods by the carrier, by which the carrier undertakes to deliver the goods against surrender of the document. A provision in the document that the goods are to be delivered to the order of a named person, or to order, or to bearer, constitutes such an undertaking.”"
   },
   "business-card": {
    "name": "Business card",
@@ -195,7 +195,7 @@
    "documents": [
     "CallForTenders"
    ],
-   "purpose": "One document type carries the transaction, the Call For Tenders, which UBL 2.5 defines as follows: “A document used by a Contracting Party to define a procurement project to buy goods, services, or works during a specified period.”"
+   "purpose": "One document type carries the transaction, the Call for Tenders, which UBL 2.5 defines as follows: “A document used by a Contracting Party to define a procurement project to buy goods, services, or works during a specified period.”"
   },
   "catalogue-request": {
    "name": "Catalogue request",
@@ -209,7 +209,7 @@
    "documents": [
     "CertificateOfOrigin"
    ],
-   "purpose": "One document type carries the transaction, the Certificate Of Origin, which UBL 2.5 defines as follows: “A document that describes the Certificate of Origin.”"
+   "purpose": "One document type carries the transaction, the Certificate of Origin, which UBL 2.5 defines as follows: “A document that describes the Certificate of Origin.”"
   },
   "common-transportation-report": {
    "name": "Common transportation report",
@@ -321,7 +321,7 @@
    "documents": [
     "InstructionForReturns"
    ],
-   "purpose": "One document type carries the transaction, the Instruction For Returns, which UBL 2.5 defines as follows: “A document used to initiate a return of goods. The producer is requesting the return of products that are not selling well, either to use in other places or to free up rack or shelf space.”"
+   "purpose": "One document type carries the transaction, the Instruction for Returns, which UBL 2.5 defines as follows: “A document used to initiate a return of goods. The producer is requesting the return of products that are not selling well, either to use in other places or to free up rack or shelf space.”"
   },
   "inventory-report": {
    "name": "Inventory report",
@@ -433,7 +433,7 @@
    "documents": [
     "RequestForQuotation"
    ],
-   "purpose": "One document type carries the transaction, the Request For Quotation, which UBL 2.5 defines as follows: “A document used to request a Quotation for goods and services from a Seller.”"
+   "purpose": "One document type carries the transaction, the Request for Quotation, which UBL 2.5 defines as follows: “A document used to request a Quotation for goods and services from a Seller.”"
   },
   "retail-event": {
    "name": "Retail event",
@@ -468,7 +468,7 @@
    "documents": [
     "TransitCustomsDeclaration"
    ],
-   "purpose": "One document type carries the transaction, the Transit Customs Declaration, which UBL 2.5 defines as follows: “A document that describes an import customs declaration.”"
+   "purpose": "One document type carries the transaction, the Transit Customs Declaration, which UBL 2.5 defines as follows: “A document that describes an import [sic] customs declaration.”"
   },
   "transport-execution-plan": {
    "name": "Transport execution plan",
@@ -510,7 +510,7 @@
    "documents": [
     "Waybill"
    ],
-   "purpose": "One document type carries the transaction, the Waybill, which UBL 2.5 defines as follows: “A transport document describing a shipment It is issued by the party who undertakes to provide transportation services, or undertakes to arrange for their provision, to the party who gives instructions for the transportation services (shipper, consignor, etc.). It states the instructions for the beneficiary and may contain the details of the transportation, charges, and terms and conditions under which the transportation service is provided.”"
+   "purpose": "One document type carries the transaction, the Waybill, which UBL 2.5 defines as follows: “A transport document describing a shipment [sic] It is issued by the party who undertakes to provide transportation services, or undertakes to arrange for their provision, to the party who gives instructions for the transportation services (shipper, consignor, etc.). It states the instructions for the beneficiary and may contain the details of the transportation, charges, and terms and conditions under which the transportation service is provided.”"
   },
   "weight-statement": {
    "name": "Weight statement",
