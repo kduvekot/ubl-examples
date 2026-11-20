@@ -81,7 +81,7 @@ irrelevant · structure · process.
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | decided (by SR-09) |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
 | SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | decided |
-| SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | open |
+| SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | solved |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | solved |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | decided |
 | SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | solved |
@@ -237,7 +237,11 @@ irrelevant · structure · process.
 - **Parts:** E-08 (high), E-12, B-20, C-16, D-11, A-05.
 
 ### SR-10 · Flow introductions do not tell the decided story
-- **Status:** open
+- **Status:** **solved 2026-11-20** (Q-F-01: the decided story, in-world): the introductions of road, cotton, sea,
+  contest, retail, utilities, energy, carnet and packaging tell the flow's story as decided and built, so the reader
+  sees why each next document exists (road's receipt advice, cancellation and corrected receipt advice; the island's
+  lost re-exportation voucher; the factor and the inspection credit). Without decision numbers, real-world
+  comparisons (the EU, the ICC's guidance on CIF) or figures that later decisions changed.
 - **What:** the intros on examples.html (`flows[].text`) for road, cotton, sea, contest and retail are the old
   generic texts (road's 11–12–13 sequence unexplained); utilities (D31: household account, second suppliers),
   energy (D44: export split by buyer, each buyer's import), carnet (D40: lost voucher and proof; "both countries"
@@ -452,7 +456,7 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-E-02 | Show review and implementation status per flow? | A: a status line in the data plus a paragraph on examples.html | SR-12 | **decided 2026-11-20 (owner): no** (two layers) |
 | Q-E-03 | Announce the planned flows? | A: titles only, no numbers | SR-12 | **decided 2026-11-20 (owner): no** (two layers) |
 | Q-E-04 | How to show removed numbers? | A: a muted row with the removal reason | SR-11 | **decided 2026-11-20 (owner): no**; removed numbers are internal |
-| Q-F-01 | Flow intro = the whole decided story line? | A: yes, the story lines brought up to date | SR-10 | open |
+| Q-F-01 | Flow intro = the whole decided story line? | A: yes, the story lines brought up to date | SR-10 | **decided 2026-11-20 (owner): A** ("keep going"), in-world |
 | Q-F-02 | How to show documents out of time order and removed numbers? | A: number order, a clause in each out-of-order "why", a row per removed number | SR-11 | **decided 2026-11-20 (owner): neither**; story order by issue date, no numbers shown |
 
 Q-C-04 and Q-E-01 are one question seen from two sides (where the references live, and how they show);
