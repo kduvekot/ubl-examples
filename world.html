@@ -79,7 +79,8 @@ canvas.dragging { cursor: grabbing; }
 .party { display: flex; gap: 10px; align-items: baseline; width: 100%; text-align: left; background: none; border: 0;
   color: var(--ui-text); font: 13px/1.35 var(--font-text); padding: 5px 16px; cursor: pointer; }
 .party:hover, .party[aria-current="true"] { background: var(--ui-bg-2); }
-.party .n { font: 700 12px/1 var(--font-text); min-width: 2.6em; color: var(--ui-muted); font-variant-numeric: tabular-nums; }
+.party .dot { flex: none; transform: translateY(1px); }
+.party .role { color: var(--ui-muted); font-size: 12px; }
 .foot { margin-top: auto; padding: 12px 16px; font-size: 12px; color: var(--ui-muted); border-top: 1px solid var(--ui-line); }
 @media (max-width: 760px) {
   body { overflow: auto; height: auto; }
@@ -1562,10 +1563,10 @@ function frame(t) {
     if (p._town == null) p._town = footprint(p).some(([i, j]) => tiles[i]?.[j]?.urban || TOWNS.some(tw => Math.hypot(i - tw.c[0], j - tw.c[1]) <= tw.r + 1.5));   // in or at a town
     const fg = footGeo(p, 0, 0), [bx, by] = toScreen(fg.x, fg.y - 14 - p.h * 6), lift = p._town && view.s > .6 ? Math.round(10 + 6 * view.s) : 0, x = bx, y = by - lift;
     p._sx = x; p._sy = y; p._ax = bx; p._ay = by; const named = p === selected || p === hovered || (view.s > .6 && !p._town);
-    const text = named ? `#${p.n} ${p.name}` : `#${p.n}`;
+    const text = named ? p.label : "";
     const [w, h] = signBox(ctx, text, p === selected), rect = [x - w / 2 - 2, y - h - 2, x + w / 2 + 2, y + 2]; p._rect = rect;
     const free = !placed.some(q => rect[0] < q[2] && rect[2] > q[0] && rect[1] < q[3] && rect[3] > q[1]);
-    if (free || p === selected || p === hovered) { placed.push(rect); todo.push([p, x, y, text, true, bx, by]); } else todo.push([p, x, y, text, false]); }
+    if (text && (free || p === selected || p === hovered)) { placed.push(rect); todo.push([p, x, y, text, true, bx, by]); } else todo.push([p, x, y, text, false]); }
   todo.reverse();
   for (const [p, x, y, , full] of todo) if (!full) dot(ctx, x, y, css(CAT[p.cat]));
   for (const [p, x, y, text, full, bx, by] of todo) { if (!full) continue;
@@ -1574,8 +1575,8 @@ function frame(t) {
   ctx.textAlign = "center"; ctx.font = townFont; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.6)"; ctx.fillStyle = "#fff6d8";
   for (const [name, x, y] of names) { ctx.strokeText(name, x, y); ctx.fillText(name, x, y); }
   ctx.textAlign = "left";
-  if (hovered && hovered !== selected && hovered._sx != null) sign(ctx, hovered._sx, hovered._sy, `#${hovered.n} ${hovered.name}`, css(CAT[hovered.cat]), false);
-  if (selected && selected._sx != null) sign(ctx, selected._sx, selected._sy, `#${selected.n} ${selected.name}`, css(CAT[selected.cat]), true);
+  if (hovered && hovered !== selected && hovered._sx != null) sign(ctx, hovered._sx, hovered._sy, hovered.label, css(CAT[hovered.cat]), false);
+  if (selected && selected._sx != null) sign(ctx, selected._sx, selected._sy, selected.label, css(CAT[selected.cat]), true);
   if (!reduced || pending) requestAnimationFrame(frame);
 }
 // the world under the view: the overview, and over it the chunks of the middle and the close level in view when
@@ -1610,7 +1611,7 @@ function showCard(p) {
       <dt>Scale</dt><dd>One square is 3.5 km.</dd>
       <dt>Lisavu</dt><dd>Drawn closer than it lies: the island is about 1,100 km east of Lumeport.</dd></dl>`; return; }
   const col = css(CAT[p.cat]);
-  card.innerHTML = `<div class="num">PARTY #${p.n} · ${p.name.toUpperCase()}</div><h2 style="color:${col}">${p.label}</h2>
+  card.innerHTML = `<div class="num">${p.name.toUpperCase()}</div><h2 style="color:${col}">${p.label}</h2>
     <div class="tags"><span class="tag">${COUNTRIES[p.c].name} (${p.c})</span><span class="tag">${p.cat}</span></div>
     <p>${p.what}</p><dl><dt>Sends</dt><dd>${p.sends}</dd><dt>Receives</dt><dd>${p.receives}</dd><dt>UBL roles</dt><dd><code>${p.roles.split(", ").join("</code> <code>")}</code></dd></dl>
     <p class="more"><a href="world-${p.id}.html">How UBL helps ${p.label} →</a></p>`;
@@ -1623,7 +1624,7 @@ function select(p, center) { selected = p; showCard(p);
 for (const code of ["XU", "XB", "XL"]) { const h = document.createElement("h3"); h.textContent = `${COUNTRIES[code].name} · ${code}`; list.appendChild(h);
   for (const p of P.filter(p => p.c === code).sort((a, b) => (parseInt(a.n) || 99) - (parseInt(b.n) || 99))) {
     const b = document.createElement("button"); b.className = "party"; b._p = p; b.type = "button";
-    b.innerHTML = `<span class="n" style="color:${css(CAT[p.cat])}">#${p.n}</span><span>${p.name}</span>`;
+    b.innerHTML = `<span class="dot" style="background:${css(CAT[p.cat])}"></span><span>${p.label} <span class="role">${p.name}</span></span>`;
     b.addEventListener("click", () => select(p, true)); list.appendChild(b); } }
 
 // layer toggles
