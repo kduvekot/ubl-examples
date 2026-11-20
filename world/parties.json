@@ -88,6 +88,24 @@
     "code": "SM",
     "since": 2014,
     "volume": 400
+   },
+   "wiki": {
+    "short": "Urvanian iron ore mine on the flank of the massif",
+    "lead": "**Serravona Mining** works an underground iron ore mine on the lower flank of the volcanic massif in the north-west of [[Urvania]], with its address at Fucinalta. It was founded in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The company was founded in 1958, before independence, as part of Urvania's state mining. After 1962 it was one of the pillars of the country's protected economy, beside state energy and the country's own manufacturers."
+     },
+     {
+      "title": "Operations",
+      "text": "The mine is entered by an adit in the hillside at about 720 m, 29 km from the mining village of Serravona. A small crushing and screening plant and a spoil heap stand beside it; the hillside around it stays green. The ore line is laid up to the portal, where the wagons are loaded and weighed at the mine's own siding, and runs about 166 km down to the works of [[Valdara Industries]] in [[Ferrano]]."
+     },
+     {
+      "title": "Trade",
+      "text": "The mine sells lump ore with about 62 % iron to Valdara under a yearly supply agreement: one train a month, free carrier at the mine siding, with a deduction for moisture. A train of 30 wagons carries about 1,790 t, hauled by [[Ferrano Rail Cargo]]."
+     }
+    ]
    }
   },
   {
@@ -397,6 +415,20 @@
     "style": "code",
     "code": "CAS",
     "volume": 6000
+   },
+   "wiki": {
+    "short": "Urvanian warehouse and logistics company of Valdara Industries",
+    "lead": "**Castrano Logistics** runs the finished-goods warehouse of [[Valdara Industries]] at Conciaro, near [[Ferrano]], [[Urvania]]. Founded in {founded_year} and wholly owned by Valdara, it picks, packs and loads the bench maker's goods for the carriers and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Valdara set up Castrano in 1998, when its exports grew after the [[Lumeport Trade Accord]] came into force, and handed it its logistics. Castrano registered with the [[Codana Identification Agency]] in March 2000, among the agency's early members."
+     },
+     {
+      "title": "Operations",
+      "text": "The warehouse stands on Via del Magazzino at Conciaro, a village east of Ferrano on the main road to the border. Valdara owns the building; Castrano operates it every day from 06:00 to 22:00. It handles the goods but not their prices: it makes up the pallets, marks each with a licence plate of its own numbering, which ends in a check character, and hands them to the carrier the buyer or the seller has booked, among them [[Trasvia Haulage]] for the road across the border and [[Ferrano Rail Cargo]] for containers to the rail hub. It keeps one box truck of its own."
+     }
+    ]
    }
   },
   {
@@ -524,6 +556,20 @@
     "style": "year",
     "code": "RR",
     "volume": 1500
+   },
+   "wiki": {
+    "short": "Urvanian recycler of polyethylene production waste",
+    "lead": "**Rinova Recovery** is a plastics recycler in [[Ferrano]], [[Urvania]], founded in {founded_year}. It recovers polyethylene from the production waste of several factories and turns it into granulate. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Rinova collects baled polyethylene film and offcuts from factories, [[Valdara Industries]] among them, whose waste [[Trasvia Haulage]] brings across Ferrano by truck. Each load is weighed full and empty on Rinova's weighbridge, and the waste is charged by the net tonne. The plant holds a permit for the recovery of non-hazardous plastic waste from the [[Environment Agency of Urvania]] and reports each load it receives to the agency. Its granulate is certified for its recycled content by an accredited certification body in Ferrano, which audits the plant every year."
+     },
+     {
+      "title": "Facilities and trade",
+      "text": "The plant stands on the river at Ferrano with a quay of its own. From it the granulate goes in jumbo bags of one tonne on the barges of [[Fiumella Barges]], about 250 km down the river and the estuary, to [[Rivermouth Packaging]] on [[Bayvarra]]'s coast, which makes stretch film and garment bags from it. Rinova is registered with the [[Codana Identification Agency]] and numbers its goods under its system."
+     }
+    ]
    }
   },
   {
@@ -632,6 +678,24 @@
     "code": "FRC",
     "since": 2016,
     "volume": 9000
+   },
+   "wiki": {
+    "short": "Urvanian rail freight company running ore and container trains",
+    "lead": "**Ferrano Rail Cargo** is a rail freight company of [[Urvania]], with its depot at {town} in the Province of Ferrano. It was founded in {founded_year} and runs the ore trains from the mine to the bench works at [[Ferrano]] and the container trains across the border to [[Marrowdale]]. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The company was set up in 1964, two years after independence, as the freight arm of Urvania's state railway. Urvania later separated its rail infrastructure from its train operators: the tracks, the train paths and the traffic control belong to the [[Rail Infrastructure Agency of Urvania]], and Ferrano Rail Cargo runs its trains on the paths it is given."
+     },
+     {
+      "title": "Operations",
+      "text": "Its ore trains carry the ore of [[Serravona Mining]] about 166 km down the ore line from the mine siding to the works of [[Valdara Industries]] in [[Ferrano]], priced per tonne. Its container trains run from the [[Ferrano Intermodal Hub]] across the border to the rail siding of [[Lumeway Distribution]] in [[Marrowdale]], under the Accord's uniform rules for international carriage by rail. For these it sells container slots under a framework contract with Valdara, payable 30 days net, and its own tractor brings the packed containers from the warehouse to the hub. A container gets five free days at the consignee's siding; after that the company charges demurrage per container day."
+     },
+     {
+      "title": "Fleet",
+      "text": "The company runs the container train FRC 4417, the ore train FRC 2208 with its bulk ore wagons, and a road tractor for its container haulage to the hub."
+     }
+    ]
    }
   },
   {
@@ -749,6 +813,24 @@
     "style": "year",
     "code": "TH",
     "volume": 2500
+   },
+   "wiki": {
+    "short": "Urvanian road haulier for cross-border and local loads",
+    "lead": "**Trasvia Haulage** is a road haulier in [[Ferrano]], [[Urvania]], founded in {founded_year}, when cross-border trucking opened under the [[Lumeport Trade Accord]]. It carries full truck loads across the land border with [[Bayvarra]] and within Urvania, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Trasvia was founded in January 1996, the month the Lumeport Trade Accord entered into force, as one of the hauliers set up to serve the new cross-border trade."
+     },
+     {
+      "title": "Operations",
+      "text": "Trasvia trucks benches and spare frames from Ferrano to [[Lumeway Distribution]] in [[Marrowdale]] and samples to [[Lumeport]] airport, and on the way back brings bench slats and stretch film to [[Valdara Industries]]. It holds an international road haulage licence and is registered with the [[Environment Agency of Urvania]] as a carrier of non-hazardous waste, which lets it take Valdara's baled waste film across Ferrano to [[Rinova Recovery]]. Its planning desk works every day from 06:00 to 22:00. It charges by the kilometre driven loaded, tolls included."
+     },
+     {
+      "title": "Fleet",
+      "text": "Its tractor unit 07 pulls a 13.6 m curtain-side trailer for 33 pallets. Tractor and trailer weigh about 15.3 t empty, which leaves about 24.7 t of payload within the Accord's limit of 40 t."
+     }
+    ]
    }
   },
   {
@@ -841,6 +923,24 @@
     "style": "year",
     "code": "FB",
     "volume": 600
+   },
+   "wiki": {
+    "short": "Urvanian river barge operator at Ferrano",
+    "lead": "**Fiumella Barges** carries bulk cargo by barge on the main river, from [[Ferrano]] in [[Urvania]] down to the coast of [[Bayvarra]]. It has worked the river since {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Fiumella belongs to the old trades of Urvania that are older than its independence: Urvania has always sent bulk goods down the river to the sea."
+     },
+     {
+      "title": "Operations",
+      "text": "Its office and quay are on Banchina del Fiume in Ferrano. The barges work below the rapids above the town, which end navigation, and sail about 250 km down the river and the estuary towards [[Lumeport]] without locks. They sail by daylight only, and the receiver's morning shift unloads them. Fiumella carries, among other loads, the recycled plastic granulate of [[Rinova Recovery]] in one-tonne bags from Rinova's own quay to the river quay of [[Rivermouth Packaging]]; the freight of goods going abroad is free of Urvania's value added tax."
+     },
+     {
+      "title": "Fleet",
+      "text": "Its dry-cargo barge Fiumella IV, of 1,210 gross tonnes, is registered at Ferrano."
+     }
+    ]
    }
   },
   {
@@ -910,6 +1010,20 @@
     "volumes": {
      "TransportationStatus": 40000
     }
+   },
+   "wiki": {
+    "short": "Intermodal rail terminal at Ferrano, Urvania",
+    "lead": "**Ferrano Intermodal Hub** is the intermodal terminal of [[Ferrano]], [[Urvania]], on the container line that runs on across the border to [[Marrowdale]]. It was founded in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The hub was built as a border terminal for the traffic of the [[Lumeport Trade Accord]], which entered into force in 1996, one of the companies set up in the Accord's first years to serve the new cross-border trade."
+     },
+     {
+      "title": "Operations",
+      "text": "The terminal stands in Ferrano's industrial zone along the railway east of the centre. It takes containers in by road, stacks them and lifts them onto the container trains of [[Ferrano Rail Cargo]], to which it reports what it has loaded. The tracks and the train paths belong to the [[Rail Infrastructure Agency of Urvania]], since Urvania separated its rail infrastructure from its train operators. Among the goods that pass through it are the park benches of [[Valdara Industries]] for [[Lumeway Distribution]], brought in containers from the warehouse of [[Castrano Logistics]]. The terminal works around the clock."
+     }
+    ]
    }
   },
   {
@@ -998,6 +1112,20 @@
     "code": "CRV",
     "since": 2010,
     "volume": 50000
+   },
+   "wiki": {
+    "short": "Bank in Ferrano, Urvania",
+    "lead": "**Crevalto Bank** is a bank in [[Ferrano]], [[Urvania]], founded in {founded_year}, before the country's independence. It is listed on the Ferrano Stock Exchange and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Crevalto Bank holds the accounts of most of Urvania's trading companies around Ferrano: [[Serravona Mining]], [[Valdara Industries]], [[Castrano Logistics]], [[Rinova Recovery]], the carriers [[Ferrano Rail Cargo]], [[Trasvia Haulage]] and [[Fiumella Barges]], the energy companies [[Ferrano Energy]], [[Montebrio Power]] and [[Ferrano Grid]], and [[Tostara Wood Modification]]. It receives their payments from home and abroad. When Valdara tendered for park benches in [[Lumeport]], Crevalto gave the counter-guarantee on which [[Bank of Lumeport]] issued Valdara's tender guarantee."
+     },
+     {
+      "title": "Branches",
+      "text": "Its head office and main branch are in the Palazzo Crevalto on the Piazza della Banca in [[Ferrano]]. It has a second branch in Ferrano, Porta Nord, and a branch in the mining village of Serravona."
+     }
+    ]
    }
   },
   {
@@ -1063,6 +1191,16 @@
      "GoodsItemPassport": "ATA",
      "ProofOfReexportation": "ATA"
     }
+   },
+   "wiki": {
+    "short": "Chamber of commerce of Ferrano, Urvania",
+    "lead": "The **Ferrano Chamber of Commerce** is the chamber of commerce of [[Ferrano]], [[Urvania]], on the Piazza del Mercato. It certifies the origin of goods that Urvanian firms export and issues ATA carnets for goods that go abroad for a while.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The chamber works through two offices, one for certificates and one for carnets. Its certificates of origin state the preferential origin that goods need to cross the Accord's borders free of duty, such as the benches of [[Valdara Industries]] for [[Lumeway Distribution]]. As the issuer of a carnet it also guarantees it, while the chamber of the country visited guarantees it there. When Valdara showed two benches at the trade fair of the [[Selanu Chamber of Commerce]], the chamber issued their carnet and later answered the island's chamber with the stamped counterfoils and Urvania's record of the re-import."
+     }
+    ]
    }
   },
   {
@@ -1132,6 +1270,20 @@
     "style": "file",
     "code": "XU-CUS",
     "volume": 60000
+   },
+   "wiki": {
+    "short": "Urvania's customs service, at the land border crossing",
+    "lead": "The **Customs Administration of Urvania** is the customs service of [[Urvania]], a public body with its border office at Valico Euridice, the road crossing into [[Bayvarra]]. It clears the country's exports and imports, the gas that arrives by pipeline among them, and supervises goods in transit.",
+    "sections": [
+     {
+      "title": "The border office",
+      "text": "The office stands on Strada del Confine at Valico Euridice (Urvanian *Menbaz*), facing Bayvarra's post at Euridice Crossing. Both take their name from Forte Euridice, 8 km down the road. The office works around the clock, with export, import and transit offices."
+     },
+     {
+      "title": "Operations",
+      "text": "Goods of Accord origin cross free of duty on proof of origin; on imports Urvania levies its value added tax of 20 % on the value with freight and insurance to the border, which a business deducts again. The office clears the exports of [[Valdara Industries]] and [[Rinova Recovery]], and each month the gas that [[Montebrio Power]] and [[Ferrano Energy]] buy from [[Kelpstone Gas]]. It enters goods worked for foreign owners under inward processing, as at [[Tostara Wood Modification]], and releases them into free circulation when they are sold in Urvania. Goods for Bayvarra can travel under the Accord's common transit from the office of departure at the rail hub in [[Ferrano]]."
+     }
+    ]
    }
   },
   {
@@ -1178,6 +1330,24 @@
     "style": "file",
     "code": "CDN",
     "volume": 2000
+   },
+   "wiki": {
+    "short": "Urvania's public numbering agency for companies and products",
+    "lead": "The **Codana Identification Agency** is Urvania's public numbering body, seated in [[Ferrano]], [[Urvania]]. It was founded in 1999, when the country opened its trade. It gives companies a company number under which they number their own products, packages and places.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Codana was set up by the state in 1999, in the years after the [[Lumeport Trade Accord]] entered into force, when Urvania opened its economy and a wave of companies and bodies was set up to serve cross-border trade. Its earliest members include [[Valdara Industries]], registered in November 1999, and [[Montebrio Power]], registered in December 1999."
+     },
+     {
+      "title": "Operations",
+      "text": "Codana is an issuing agency under ISO/IEC 15459, with the issuing agency code KXU, and keeps the organisation register behind the ISO/IEC 6523 code 0990. It gives each company a five-digit number, in order of registration; the company prefix is KXU followed by that number. Codana hands out no item numbers: each company numbers its own items, lots, pallets and places under its prefix, and Codana's rule book keeps every identifier to 20 characters or fewer. Codana registers any company that asks, foreign ones too: [[Rivermouth Packaging]] and [[Kelpstone Gas]] of [[Bayvarra]] are members because their customers in Urvania use the system."
+     },
+     {
+      "title": "Members",
+      "text": "Its members include [[Valdara Industries]], [[Montebrio Power]], [[Serravona Mining]], [[Castrano Logistics]], [[Rinova Recovery]], [[Rivermouth Packaging]], [[Ferrano Grid]] and [[Kelpstone Gas]]. It is Urvania's counterpart to GS1 Bayvarra, the association that licenses GS1 company prefixes in [[Bayvarra]] and on [[Lisavu]]."
+     }
+    ]
    }
   },
   {
@@ -1239,6 +1409,20 @@
     "style": "file",
     "code": "XB-CUS",
     "volume": 80000
+   },
+   "wiki": {
+    "short": "Customs and border service of Bayvarra",
+    "lead": "The **Customs and Border Service of Bayvarra** is [[Bayvarra]]'s federal customs and border authority. It clears imports and exports at the land border crossing with [[Urvania]], at the seaport and at the airport of [[Lumeport]].",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Its border office stands at Euridice Crossing in Upland State, facing the Urvanian customs post of Valico Euridice across the road; it is open around the clock. It also has offices at the seaport and the airport of [[Lumeport]], and an inland office at [[Marrowdale]], where goods arriving by rail under the Accord's common transit are declared. Goods of Accord origin enter free of duty on proof of origin. Bayvarra values imports as they left the exporting country, without freight, and charges nothing further at the border, because its sales tax falls once at the final retail sale."
+     },
+     {
+      "title": "Organisation",
+      "text": "As a public body set up by law, the service is entered in Bayvarra's federal list of public bodies, not in the business register. It gives each trader a trader number built from the trader's number in its register."
+     }
+    ]
    }
   },
   {
@@ -1396,6 +1580,24 @@
     "style": "code",
     "code": "LMW",
     "volume": 2800
+   },
+   "wiki": {
+    "short": "Bayvarran wholesale distributor in Marrowdale",
+    "lead": "**Lumeway Distribution** is a wholesale distributor in [[Marrowdale]], [[Bayvarra]], founded in {founded_year}. It is the distributor of [[Valdara Industries]] for Bayvarra and [[Lisavu]] and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "When the [[Lumeport Trade Accord]] entered into force in 1996, Lumeway became Valdara's distributor under a distribution agreement, which is why Valdara's benches reach the island through [[Lumeport]]. The agreement reserves public tenders to Valdara itself."
+     },
+     {
+      "title": "Operations",
+      "text": "Lumeway buys the Serra park bench and its spare side frames from Valdara, stocks them in its distribution centre at Marrowdale Business Park and publishes a catalogue for its customers. Goods arrive by truck from [[Ferrano]], with [[Trasvia Haulage]], and by container train on the distribution centre's own rail siding. Its goods-in takes deliveries in the morning only, in slots booked a week ahead, and its customs desk clears its imports on weekdays."
+     },
+     {
+      "title": "Trade",
+      "text": "It sells at home to [[Brightmarket Stores]] and on the island to [[Velumi Trading]], to the island at prices that include sea freight and insurance, which it buys through [[Bayforth Forwarding]]. It sells its receivables to [[Harbourline Factoring]], so its customers pay the factor."
+     }
+    ]
    }
   },
   {
@@ -1563,6 +1765,24 @@
     "ranges": {
      "Order": "71"
     }
+   },
+   "wiki": {
+    "short": "Department store in Lumeport, Bayvarra",
+    "lead": "**Brightmarket Stores**, trading as Brightmarket, is a department store company in [[Lumeport]], [[Bayvarra]], with its store on Market Street in the Old Town. Founded in {founded_year}, it sells clothing, home and garden goods to consumers in its store and its web shop, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Around 1981 Brightmarket and other retailers wanted bar codes at the till, and so began the article numbering association that is now GS1 Bayvarra. Brightmarket still numbers its own-label goods and its places from its GS1 company prefix."
+     },
+     {
+      "title": "Operations",
+      "text": "The store buys from [[Lumeway Distribution]], among other things the park bench Serra 180 of [[Valdara Industries]], and shares its forecasts, promotions and stock levels with it. It sells the shirts of the [[Lumeport Textile Mill]] under the mill's own brand, Lumeport. In 2026 it renovated the home and garden department of its Lumeport store, which reopened on Monday 11 May with two weeks at 10 % off. The store's van delivers furniture to customers' homes."
+     },
+     {
+      "title": "Elderwick",
+      "text": "Elderwick is Brightmarket's own label for home and garden. Its Marrow dining bench and chair, in oak or in ash, are made to the store's specification by [[Brackenmere Furniture]] in [[Marrowdale]]; the maker's name is on no label. The store sells the bench at 549 lume and the chair at 199, gives a care kit with each bench, and offers a set of a bench and two chairs."
+     }
+    ]
    }
   },
   {
@@ -1630,6 +1850,16 @@
    },
    "numbering": {
     "style": "none"
+   },
+   "wiki": {
+    "short": "Household in Lumeport, Bayvarra",
+    "lead": "**Robin Ashdale** is a private person who lives in the Riverside quarter of [[Lumeport]], [[Bayvarra]].",
+    "sections": [
+     {
+      "title": "In the world",
+      "text": "Robin Ashdale shops at [[Brightmarket Stores]], both in its Lumeport store and in its web shop, and has bought furniture and a shirt there. The household takes its water and district heat from the [[Coastal State Water Company]] and pays on account, a monthly amount collected by direct debit and settled once a year after the meters are read."
+     }
+    ]
    }
   },
   {
@@ -1725,6 +1955,20 @@
     "style": "file",
     "code": "PWD",
     "volume": 2500
+   },
+   "wiki": {
+    "short": "Public works department of the city of Lumeport",
+    "lead": "The **Lumeport Public Works Department** is the public works department of the city of [[Lumeport]], [[Bayvarra]], on Civic Square in the Government Hill quarter. It buys goods, works and services for the city under procurement law.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Its procurement office publishes the city's notices through the [[Bayvarra Information Service]] and receives and evaluates tenders. Under its parks renewal programme it holds a framework contract with [[Valdara Industries]] for park benches for the city's parks, with their installation by [[Saltmere Engineering]] as a second lot; it pays Valdara in lume, 30 days after each accepted release. It runs a design contest for the bench of Lumeport's harbour promenade, and buys office furniture with installation from [[Brackenmere Furniture]] for the fit-out of its planning office. Its parks depot receives the goods."
+     },
+     {
+      "title": "Taxes",
+      "text": "As a public body it buys free of Coastal State's sales tax. It withholds 10 % of the price of a service bought from a business not established in Bayvarra and pays it to the state."
+     }
+    ]
    }
   },
   {
@@ -1822,6 +2066,24 @@
     "style": "year",
     "code": "SE",
     "volume": 300
+   },
+   "wiki": {
+    "short": "Bayvarran engineering firm for telecom mast sites",
+    "lead": "**Saltmere Engineering** is an engineering firm in [[Marrowdale]], [[Bayvarra]], founded in {founded_year}. It designs telecom mast sites, obtains their permits and installs back-up power and safety equipment, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The firm was founded in 1994 in Saltmere, the east-coast town it is named after, when Bayvarra's mobile networks were built. It later moved to Marrowdale, on the road and rail to [[Urvania]]."
+     },
+     {
+      "title": "Operations",
+      "text": "Saltmere designs mast sites with a registered architect on its staff and installs back-up batteries, smoke detectors and other safety equipment at masts across Bayvarra, dangerous goods included; a duty engineer answers its dangerous goods emergency line around the clock. It also sells such equipment abroad: [[Selanu Telecom]] buys battery modules, smoke detectors and coating stripper from it for a mast on the island. Its crews and anchoring gear for ground foundations also suit other work: it installs and anchors park benches in [[Lumeport]] as the subcontractor of [[Valdara Industries]] for the [[Lumeport Public Works Department]]."
+     },
+     {
+      "title": "Design contest",
+      "text": "For the bench of Lumeport's harbour promenade Saltmere teamed with [[Brackenmere Furniture]], which took the design lead while Saltmere did the structure and the anchoring. The jury gave the team the first prize, ahead of Valdara."
+     }
+    ]
    }
   },
   {
@@ -1869,6 +2131,20 @@
     "style": "file",
     "code": "PRB",
     "volume": 200
+   },
+   "wiki": {
+    "short": "Bayvarra's independent body for public procurement appeals",
+    "lead": "The **Procurement Review Board of Bayvarra** is an independent public body in [[Lumeport]], [[Bayvarra]], that hears appeals in public procurement.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "A tenderer or a candidate who disputes a decision of a contracting authority appeals to the board. Contracting authorities name it as the place for appeals, as the [[Lumeport Public Works Department]] does in its tender for the city's park benches and in its design contest for the harbour promenade bench. A candidate excluded from a contest is told how to appeal to it."
+     },
+     {
+      "title": "Seat",
+      "text": "The board has its registry on Justice Row on Government Hill, in the government quarter, a building of wings around a central courtyard that it shares with the [[Federal Department of Agriculture of Bayvarra]], the Lumeport Public Works Department and the [[Bayvarra Information Service]]. The registry is open on weekdays from 08:00 to 17:00."
+     }
+    ]
    }
   },
   {
@@ -1916,6 +2192,20 @@
     "style": "file",
     "code": "BIS",
     "volume": 40000
+   },
+   "wiki": {
+    "short": "Bayvarra's federal publication service and business registry",
+    "lead": "The **Bayvarra Information Service** is a federal public body in [[Lumeport]], [[Bayvarra]]. It publishes the notices of public procurement and keeps the country's business registry and its list of public bodies.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Contracting authorities publish their procurement notices through the service: prior information, calls for competition, design contests, corrections and award results. [[Lumeport Public Works Department]] publishes its tenders for park benches and its design contest for the harbour promenade bench this way. As the business registry, the service keeps the entries of Bayvarra's companies and issues extracts of them, which authorities use to check tenderers such as [[Brackenmere Furniture]] and [[Saltmere Engineering]]; it reissues an extract when a company files new accounts. It also keeps the federal list of public bodies, which gives each public body in Bayvarra a ten-digit number; the [[Lumeport Trade Accord Council]] is in the list under its seat agreement."
+     },
+     {
+      "title": "Seat",
+      "text": "Its offices are on Civic Square, on Government Hill, the quarter of the colonial capital's government buildings south of Lumeport's old town."
+     }
+    ]
    }
   },
   {
@@ -1963,6 +2253,16 @@
     "style": "file",
     "code": "LTAC",
     "volume": 600
+   },
+   "wiki": {
+    "short": "International body seated in Lumeport that governs the Trade Accord's electronic business documents",
+    "lead": "The **Lumeport Trade Accord Council** is an international body of the three members of the [[Lumeport Trade Accord]], seated in the Old Town of [[Lumeport]], [[Bayvarra]]. It governs the Accord's multilateral agreement on the exchange of electronic business documents, which trading parties join before they trade with each other.",
+    "sections": [
+     {
+      "title": "Status",
+      "text": "The Council is entered in Bayvarra's federal list of public bodies under its seat agreement with Bayvarra, so that it can deal with Bayvarran bodies, banks and the exchange network. Like other public bodies it carries no commercial register entry. Its secretariat works from Exchange Street in the Old Town."
+     }
+    ]
    }
   },
   {
@@ -2039,6 +2339,20 @@
     "volumes": {
      "Statement": 3000
     }
+   },
+   "wiki": {
+    "short": "Factoring company in Lumeport, Bayvarra",
+    "lead": "**Harbourline Factoring** is a factoring company in the Old Town of [[Lumeport]], [[Bayvarra]], founded in {founded_year} to finance cross-border receivables. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Harbourline was founded in 1996, the year the [[Lumeport Trade Accord]] entered into force, one of the firms set up around that time to serve the new trade between the three countries."
+     },
+     {
+      "title": "Operations",
+      "text": "Harbourline buys the receivables of [[Lumeway Distribution]] and collects them: Lumeway's customers, among them [[Brightmarket Stores]] in Lumeport and [[Velumi Trading]] on [[Lisavu]], pay the factor instead of the distributor, less any credit Lumeway has granted them. It keeps its account at the [[Bank of Lumeport]] and works from Exchange Street."
+     }
+    ]
    }
   },
   {
@@ -2131,6 +2445,20 @@
     "volumes": {
      "GuaranteeCertificate": 2600
     }
+   },
+   "wiki": {
+    "short": "Bank in Lumeport, Bayvarra",
+    "lead": "**Bank of Lumeport** is a bank of [[Bayvarra]], with its head office at Exchange House on Exchange Street in the Old Town of [[Lumeport]]. Founded in {founded_year}, it holds the accounts of companies and households, makes their payments and issues guarantees, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The bank was founded in 1903, when Bayvarra was still a British colony: the country's settler economy is older than Urvania's state."
+     },
+     {
+      "title": "Operations",
+      "text": "Besides its main branch it has a harbour branch in Lumeport and branches in [[Marrowdale]] and in Gullhaven on the north coast. Its customers include [[Lumeway Distribution]], [[Brightmarket Stores]], [[Brackenmere Furniture]], [[Marrowdale Sawmill]], [[Lumeport Textile Mill]], [[Kelpstone Gas]], the [[Coastal State Water Company]] and the [[Lumeport Public Works Department]]. It issues tender guarantees: for [[Valdara Industries]] it gave a bank guarantee on the counter-guarantee of Valdara's own bank, [[Crevalto Bank]], and for Brackenmere it certified government bonds pledged to the buyer. Valdara also keeps a lume account with it for its contract with the [[Lumeport Public Works Department]]. Payments run over Bayvarra's clearing or, to the other two countries, over the Trade Accord's payment link."
+     }
+    ]
    }
   },
   {
@@ -2191,6 +2519,20 @@
     "style": "code",
     "code": "WVS",
     "volume": 6000
+   },
+   "wiki": {
+    "short": "Marine cargo insurer in Lumeport, Bayvarra",
+    "lead": "**Wavesure Cargo Insurance** is a marine insurer in [[Lumeport]], [[Bayvarra]], founded in {founded_year}. It insures cargo on its way overseas and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Wavesure is one of the old trades of Bayvarra's port city, founded as a marine insurer decades before the Lumeport Agreement of 1974 and the [[Lumeport Trade Accord]] brought regular shipping to [[Lisavu]]."
+     },
+     {
+      "title": "Operations",
+      "text": "Its offices are on Beacon Avenue in Dockside, Lumeport's quarter of deep-water quays and warehouses. Wavesure insures goods shipped overseas, among them the park benches that [[Lumeway Distribution]] sells to [[Velumi Trading]] on the island cost, insurance and freight: [[Bayforth Forwarding]] places the cover for Lumeway, at a premium of 0.22 % of the insured value, the shipment's value plus 10 %. Its claims department handles losses and damage to the goods it covers."
+     }
+    ]
    }
   },
   {
@@ -2311,6 +2653,24 @@
     "style": "code",
     "code": "BYF",
     "volume": 7000
+   },
+   "wiki": {
+    "short": "Freight forwarder in Lumeport, Bayvarra",
+    "lead": "**Bayforth Forwarding** is a freight forwarder in the Dockside quarter of [[Lumeport]], [[Bayvarra]], founded in {founded_year}. It books sea and air freight, clears exports, arranges cargo insurance and runs its own trucks within Bayvarra. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Bayforth was founded in 1976 to forward the island trade that grew after the Lumeport Agreement of 1974 linked [[Bayvarra]] and [[Lisavu]] by a regular shipping service."
+     },
+     {
+      "title": "Operations",
+      "text": "Bayforth books containers with [[Tidewell Ocean Lines]] and air freight with [[Kelaro Air Cargo]], lodges export declarations as customs agent and arranges cargo insurance with [[Wavesure Cargo Insurance]]. Its customers include [[Lumeway Distribution]], whose benches it ships to the island, the [[Lumeport Textile Mill]], whose cotton it brings from the port, [[Harrowmead Fruit Growers]], for whom it ships apples and pears to [[Selanu]] in reefers, and [[Quillmoor Pharma Distribution]], whose medicines it takes to the airport. Its trucks run between Marrowdale, the [[Port of Lumeport]], Lumeport airport and the shops and works of the city."
+     },
+     {
+      "title": "Fleet",
+      "text": "The fleet has a truck with a curtain-side trailer for 33 pallets, a container chassis truck, and a second container chassis truck with a clip-on generator set, which keeps a reefer's refrigeration running on the road."
+     }
+    ]
    }
   },
   {
@@ -2509,6 +2869,24 @@
      "BillOfLading": "bl"
     },
     "line_code": "TWLU"
+   },
+   "wiki": {
+    "short": "Bayvarran shipping line between Lumeport and Selanu",
+    "lead": "**Tidewell Ocean Lines** is a shipping line in [[Lumeport]], [[Bayvarra]], founded in {founded_year} to run the regular service between Bayvarra and [[Lisavu]]. It sails container feeders between Lumeport and [[Selanu]] and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Tidewell was founded in 1974 under the Lumeport Agreement between Bayvarra and Lisavu, which called for a regular shipping service to tie the island to the mainland. In December 2025 it bought a second feeder second-hand, the *Tidewell Reef*, which came under Bayvarra's flag on 15 January 2026."
+     },
+     {
+      "title": "Operations",
+      "text": "The line sails weekly from Lumeport, out through the estuary and round the island's south-eastern cape, about 1,200 km to Selanu in about 48 hours. Its ships carry the island's imports, among them benches for [[Velumi Trading]] and chilled fruit in reefers, and bring back the island's export, the cotton bales of [[Selanu Cotton Ginnery]] for [[Lumeport Textile Mill]]. Its booking office in Lumeport's Dockside works every day from 06:00 to 22:00."
+     },
+     {
+      "title": "Fleet",
+      "text": "Both ships are registered in Lumeport. The *Tidewell Harbour*, of 9,940 gross tonnes, takes about 1,000 TEU with a crew of 14; the *Tidewell Reef*, of 7,480 gross tonnes, about 700 TEU with a crew of 12. Until the flag state verifies its security system, the *Tidewell Reef* sails with an interim security certificate."
+     }
+    ]
    }
   },
   {
@@ -2581,6 +2959,16 @@
     "volumes": {
      "TransportationStatus": 36000
     }
+   },
+   "wiki": {
+    "short": "Air cargo terminal at Lumeport airport, Bayvarra",
+    "lead": "**Lumeport Airport Cargo Terminal** runs the air cargo terminal of Lumeport airport, [[Bayvarra]], on Airport Road outside [[Lumeport]]. Founded in {founded_year} for air freight to the island of [[Lisavu]], it handles urgent and sensitive shipments overseas and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The terminal works around the clock. It accepts cargo from forwarders such as [[Bayforth Forwarding]] and loads it onto the freighter of [[Kelaro Air Cargo]], which flies about 1,080 km to Selanu airport, where [[Selanu Airport Cargo]] receives it. Cargo that reaches the terminal after a flight's cut-off waits for the next flight. It handles dangerous goods, such as batteries for the island's telecom mast that may fly only on cargo aircraft, and the cold chain and radioactive packages that [[Quillmoor Pharma Distribution]] sends to [[Selanu General Hospital]]."
+     }
+    ]
    }
   },
   {
@@ -2652,6 +3040,24 @@
     "volumes": {
      "TransportationStatus": 24000
     }
+   },
+   "wiki": {
+    "short": "Seaport of Selanu, Lisavu",
+    "lead": "The **Port of Selanu** runs the seaport of [[Selanu]], [[Lisavu]]: its berths, its container yard and its vessel traffic. It is a company owned by the state, formed in {founded_year}, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The port was formed as a company in 1972, ahead of the Lumeport Agreement of 1974 between [[Bayvarra]] and Lisavu, which brought a regular shipping service to the island. Its offices are on Wharf Road in Selanu."
+     },
+     {
+      "title": "Operations",
+      "text": "Selanu is the island's only port, on a sheltered bay of the east coast, out of the westerly swell. Ships from [[Lumeport]], among them the weekly service of [[Tidewell Ocean Lines]], sail about 1,200 km to reach it in about 48 hours. Selanu's pilots bring ships in by daylight only, so a ship that arrives in the dark waits under way and berths at first light. The container yard has a reefer rack where refrigerated containers wait on the port's power until they are collected, at a daily charge. The port reports discharged containers to the shippers' forwarders, among them [[Bayforth Forwarding]]."
+     },
+     {
+      "title": "Harbour parks and branch",
+      "text": "The port keeps harbour parks, for which [[Velumi Trading]] imports park benches of [[Valdara Industries]] and their spare frames. Its branch [[Selanu Airport Cargo]] runs the cargo terminal at the airport on the plain north of the town."
+     }
+    ]
    }
   },
   {
@@ -2715,6 +3121,20 @@
     "style": "code",
     "code": "POS",
     "series_of": "16-xl"
+   },
+   "wiki": {
+    "short": "Air cargo handler at Selanu airport, Lisavu",
+    "lead": "**Selanu Airport Cargo** handles the air cargo at [[Lisavu]]'s airport, on the plain about 10 km north of [[Selanu]], within the locality of {town}. It was founded in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The company began in 1989 as a branch of the [[Port of Selanu]]. The airfield lies in Lintwell but bears the name of the capital it serves."
+     },
+     {
+      "title": "Operations",
+      "text": "Its import desk is open around the clock. It receives the freighter flights of [[Kelaro Air Cargo]] from [[Lumeport]] and holds the cargo until it is cleared and collected: spare parts for park benches, sample benches for the trade fair of the [[Selanu Chamber of Commerce]], batteries for the mast of [[Selanu Telecom]], and medicines in temperature-controlled containers for [[Selanu General Hospital]], whose temperature readings it records on arrival. Most of the cargo is collected by [[Nalevi Warehousing]]."
+     }
+    ]
    }
   },
   {
@@ -2831,6 +3251,24 @@
     "formats": {
      "Waybill": "awb"
     }
+   },
+   "wiki": {
+    "short": "Lisavu's airline, flying cargo between Lumeport and Selanu",
+    "lead": "**Kelaro Air Cargo** is the airline of [[Lisavu]], founded in {founded_year}, with its office on Airfield Road in Lintwell. It flies cargo with an ATR 72-600F freighter between [[Lumeport]] and [[Selanu]] and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Kelaro was founded in 1987 as the island's airline; the freighter came later."
+     },
+     {
+      "title": "Operations",
+      "text": "The freighter flies the route twice a day: KXL207 leaves Lumeport at 07:00 and KXL209 at 15:00. The flight takes about 2½ hours over about 1,080 km; the timetable allows 2 h 45 eastbound and 3 h 00 westbound. As a freighter it can carry dangerous goods that are for cargo aircraft only, such as lithium batteries, and it carries medicines for [[Selanu General Hospital]] in an active temperature-controlled container. Its cargo sales and operations work every day."
+     },
+     {
+      "title": "Fleet",
+      "text": "The ATR 72-600F, registered QL-KXA, has seven LD3 positions on its main deck, an aft bulk compartment, a large cargo door of 2.94 × 1.80 m and about 9,200 kg of payload in 75 m³."
+     }
+    ]
    }
   },
   {
@@ -2889,6 +3327,20 @@
     "style": "file",
     "code": "XL-CUS",
     "volume": 20000
+   },
+   "wiki": {
+    "short": "Customs service of Lisavu, at Selanu",
+    "lead": "The **Island Customs Service** is the customs service of [[Lisavu]], a public body at the port and the airport of [[Selanu]]. It clears the island's imports and exports, collects the import consumption tax, and learns what a ship carries before it arrives.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Its import office is on Wharf Road in Selanu and works around the clock. The island has no general sales tax: customs collects an import consumption tax of 10 % on the landed value of every import, food included, and a customs duty on goods from outside the [[Lumeport Trade Accord]]. Since the Accord came into force in 1996 the island charges no duty on its partners' goods. Medicines supplied to the public hospital are free of the tax. Its export office clears the island's cotton bales, which leave through the [[Port of Selanu]]."
+     },
+     {
+      "title": "Traders and carnets",
+      "text": "Importers often declare through the licensed customs broker [[Tevaro Customs Brokers]], and a wholesaler may declare fresh food while the ship is still at sea so that it is released on discharge. Goods shown at the [[Selanu Chamber of Commerce]]'s trade fair can enter under an ATA carnet without the island's tax, provided they leave again by the carnet's time limit."
+     }
+    ]
    }
   },
   {
@@ -2952,6 +3404,20 @@
     "volumes": {
      "ImportCustomsDeclaration": 3000
     }
+   },
+   "wiki": {
+    "short": "Licensed customs broker in Selanu, Lisavu",
+    "lead": "**Tevaro Customs Brokers** is a licensed customs broker in [[Selanu]], [[Lisavu]], founded in {founded_year}. It lodges import declarations for the island's buyers and acts as tax representative. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Tevaro was founded in 1975, the year after the Lumeport Agreement, to lodge the import declarations for the new regular shipping service between [[Lumeport]] and the island. It is one of the brokers and trades the agreement called into being in Selanu."
+     },
+     {
+      "title": "Operations",
+      "text": "Its office is on Wharf Road by the port. Tevaro clears goods that arrive at the [[Port of Selanu]] for importers such as [[Velumi Trading]], which brings in park benches from [[Lumeway Distribution]]. At the airport it declares the medicines that [[Selanu General Hospital]] receives by air from [[Quillmoor Pharma Distribution]], as the hospital's direct representative, in the hospital's name. Its declarations go to the [[Island Customs Service]], which collects the island's import consumption tax."
+     }
+    ]
    }
   },
   {
@@ -3029,6 +3495,20 @@
     "style": "year",
     "code": "NW",
     "volume": 2000
+   },
+   "wiki": {
+    "short": "Warehousing and haulage company in Selanu, Lisavu",
+    "lead": "**Nalevi Warehousing** is a warehousing company on Lagoon Road in [[Selanu]], [[Lisavu]], founded in {founded_year}. It receives and stores imported goods for island businesses and collects containers and cargo at the island's port and airport with its own truck. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Nalevi was founded in 1998, in the wave of companies set up to serve the cross-border trade after the [[Lumeport Trade Accord]] entered into force, to warehouse the island's imports."
+     },
+     {
+      "title": "Operations",
+      "text": "Nalevi receives goods for [[Velumi Trading]] and confirms what arrived. Its container truck collects containers at the [[Port of Selanu]] and air cargo at [[Selanu Airport Cargo]], and carries for others on the island: the bales of [[Selanu Cotton Ginnery]] to the port, batteries to the mast site of [[Selanu Telecom]] on Mast Hill, reefers of fruit to the cold store of [[Hafefo Fresh Produce]], and sample benches between the airport and the trade fair of the [[Selanu Chamber of Commerce]]. Its goods-inwards desk is open Monday to Saturday."
+     }
+    ]
    }
   },
   {
@@ -3146,6 +3626,16 @@
     "style": "year",
     "code": "VT",
     "volume": 1200
+   },
+   "wiki": {
+    "short": "Importer and shop for garden and park furniture in Selanu",
+    "lead": "**Velumi Trading** is an importer of garden and park furniture with a shop on Reef Street in [[Selanu]], [[Lisavu]], founded in {founded_year}. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Velumi buys from [[Lumeway Distribution]] in [[Bayvarra]] and sells to customers on the island, from its shop and for larger projects. Its first order by sea was 104 Serra park benches by the pallet, most of them for the harbour parks of the [[Port of Selanu]], with spare side frames; as a new customer it paid a deposit and the balance to [[Harbourline Factoring]]. When it needed more frames at short notice it had them flown in by [[Kelaro Air Cargo]]. In its shop it sells the Serra bench at 375 coral. The shop is open Monday to Saturday."
+     }
+    ]
    }
   },
   {
@@ -3221,6 +3711,16 @@
     "code": "BSL",
     "since": 2015,
     "volume": 20000
+   },
+   "wiki": {
+    "short": "Bank in Selanu, Lisavu",
+    "lead": "**Bank of Selanu** is the bank of [[Lisavu]], at Reef House on Reef Street in [[Selanu]]. Founded in {founded_year}, it holds the accounts of the island's buyers, producers, carriers and brokers and makes and receives their payments; it employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "It has a main branch and a market branch in Selanu. Its customers include [[Velumi Trading]], [[Selanu Cotton Ginnery]], [[Lisavu Cotton Farm]], [[Selanu Telecom]], [[Tevaro Customs Brokers]], [[Nalevi Warehousing]] and [[Hafefo Fresh Produce]]. The island's clearing, Coral net, settles tokenised deposits on the bank's ledger. Payments to and from the mainland run over the Trade Accord's payment link; when an island customer pays in lume, the bank changes its coral at the fixed parity. One of the payments that brings money to the island is the [[Lumeport Textile Mill]]'s payment for the ginnery's cotton."
+     }
+    ]
    }
   },
   {
@@ -3282,6 +3782,20 @@
      "ProofOfReexportationRequest": "ATA",
      "ProofOfReexportationReminder": "ATA"
     }
+   },
+   "wiki": {
+    "short": "Chamber of commerce of Lisavu, in Selanu",
+    "lead": "The **Selanu Chamber of Commerce** is the chamber of commerce of [[Lisavu]], seated in [[Selanu]]. It is a public body that guarantees ATA carnets on the island, classes the island's cotton and holds a trade fair.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "As the island's guarantor of ATA carnets, the chamber answers for goods that enter Lisavu for a while and leave again, such as samples for a fair. When the proof that such goods left is missing after their time limit, it asks the chamber that issued the carnet for it, as it asked the [[Ferrano Chamber of Commerce]] for two sample benches of [[Valdara Industries]]. The chamber also classes the cotton lint of [[Selanu Cotton Ginnery]], and its cotton fund is fed by a levy of 1 % that farms collect on their seed cotton. In early June it holds a trade fair in Selanu."
+     },
+     {
+      "title": "Seat",
+      "text": "Its offices are on Reef Street in Selanu, with a carnet office and a certificates office."
+     }
+    ]
    }
   },
   {
@@ -3325,6 +3839,16 @@
     "style": "file",
     "code": "MAL",
     "volume": 2000
+   },
+   "wiki": {
+    "short": "Flag state administration of Lisavu",
+    "lead": "The **Maritime Administration of Lisavu** is the flag state administration of [[Lisavu]], on Wharf Road in [[Selanu]]. It keeps the island's register of ships and issues ship security certificates.",
+    "sections": [
+     {
+      "title": "Organisation",
+      "text": "It is a public body of the island, set up by law and entered in the government list of public bodies of Lisavu, which the Government Secretariat keeps. Its ship registry is open on weekdays."
+     }
+    ]
    }
   },
   {
@@ -3368,6 +3892,16 @@
     "style": "file",
     "code": "DAL",
     "volume": 900
+   },
+   "wiki": {
+    "short": "Lisavu's department of agriculture and plant protection",
+    "lead": "The **Department of Agriculture of Lisavu** is the island's government department for agriculture, on Reef Street in [[Selanu]]. Its Plant Protection Service is [[Lisavu]]'s plant protection organisation, and the department keeps the island's farm register.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The Plant Protection Service issues the phytosanitary certificates of plants and plant products that leave the island, such as the cotton lint that [[Selanu Cotton Ginnery]] ships to [[Lumeport Textile Mill]], certifying it free of pests. The farm register records the island's growers, such as [[Lisavu Cotton Farm]]; a grower's registration is renewed each season, so each entry carries an expiry date."
+     }
+    ]
    }
   },
   {
@@ -3473,6 +4007,20 @@
      "UtilityStatement": 1200000,
      "ImportCustomsDeclaration": 12
     }
+   },
+   "wiki": {
+    "short": "Urvania's electricity and gas supplier",
+    "lead": "**Ferrano Energy** supplies electricity and gas to the homes and businesses of [[Urvania]], from its head office on Corso della Repubblica in [[Ferrano]]. Founded in {founded_year}, it buys the energy, pays the grid for its networks and bills its customers; it employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Ferrano Energy dates from 1949, before independence. After 1962 Urvania built a protected economy around state mining, state energy and its own manufacturers, and Ferrano Energy is one of its oldest companies. The Trade Accord's energy protocol of 2007 asked for networks to be run apart from supply, and Urvania chose the full split: [[Ferrano Grid]] was split off that year. Until 2011 Ferrano Energy sold only electricity; when [[Kelpstone Gas]] began producing and the pipeline brought gas to Urvania, it took up gas as a second business."
+     },
+     {
+      "title": "Operations",
+      "text": "Supply to end customers stays national under the Accord, and Ferrano Energy is Urvania's supplier. It buys electricity from [[Montebrio Power]] and other power stations, and gas from Kelpstone Gas, which it imports itself across the border. Ferrano Grid carries the energy and reads the meters, and Ferrano Energy collects the grid's network charges with its own bill: of its tariff of 27.3 ferra a kilowatt hour, 21.1 is for the energy and 6.2 for the network. A business is billed every month on its meter reading; a household pays a twelfth of the year's estimate each month by direct debit, and the meters are read once a year at the end of March. Its customers include [[Valdara Industries]]."
+     }
+    ]
    }
   },
   {
@@ -3560,6 +4108,24 @@
      "Reminder": 120000,
      "CreditNote": 40000
     }
+   },
+   "wiki": {
+    "short": "Water utility of Coastal State and Lumeport's district heating",
+    "lead": "The **Coastal State Water Company** supplies drinking water in Coastal State, [[Bayvarra]], to shops and households, and runs the district heating of [[Lumeport]]. It is a state-owned utility, founded in {founded_year}, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The company is one of Bayvarra's old public services, founded in 1954. Under the [[Lumeport Trade Accord]] the supply of water to end customers stays a national matter: each country keeps its own utilities, and none supplies customers in another."
+     },
+     {
+      "title": "Operations",
+      "text": "The company's water works stand in Westside, on the estuary shore west of Lumeport's centre, and its head office on Reservoir Road. It bills businesses such as [[Brightmarket Stores]] every month on their meter readings; households pay a twelfth of the year's estimate each month by direct debit, and the meters are read once a year, at the end of March. With its water bill it collects the city of Lumeport's sewage levy on the city's behalf. A household on the heating network has one annual account for water, the levy and heat, with a correction when the return water comes back too warm."
+     },
+     {
+      "title": "District heating",
+      "text": "The peak boilers of the district heating burn propane in winter. The company buys it from [[Kelpstone Gas]], whose tankers of [[Gullhaven Tank Haulage]] drive about 515 km from the gas plant at Gullhaven and pump it into the storage at the heating plant on Reservoir Road. Its greenhouse-gas report asks its suppliers' carriers for the emissions of the whole round trip."
+     }
+    ]
    }
   },
   {
@@ -3659,6 +4225,20 @@
     "volumes": {
      "Order": 900
     }
+   },
+   "wiki": {
+    "short": "Telephone and data provider of Lisavu",
+    "lead": "**Selanu Telecom** is the telephone and data provider of [[Lisavu]], on Mast Hill Road in [[Selanu]]. It became a company in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Selanu Telecom was the island's telephone department until 1993, when it was turned into a company. It is owned by the state and entered in the business register like any company."
+     },
+     {
+      "title": "Operations",
+      "text": "It supplies telephone lines, data lines and mobile data to the island's customers and bills its business customers every month for its own service. Its customers' mobile data is also carried on partner networks abroad, which it charges per gigabyte, as the [[Lumeport Trade Accord]] has no rule on roaming. Under the Accord the telephone service to end customers stays national, so Selanu Telecom is the island's only provider. Its network stores supply the mast on Mast Hill, for which it buys back-up batteries and other equipment from [[Saltmere Engineering]] in [[Bayvarra]]."
+     }
+    ]
    }
   },
   {
@@ -3775,6 +4355,20 @@
     "style": "code",
     "code": "MDS",
     "volume": 1500
+   },
+   "wiki": {
+    "short": "Sawmill and timber modifier in Marrowdale, Bayvarra",
+    "lead": "**Marrowdale Sawmill** is a sawmill on the north bank of the river at [[Marrowdale]], in Upland State, [[Bayvarra]], founded in {founded_year}. It saws timber from the forests of Upland State into planks, slats and beams, modifies ash in a kiln of its own and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Its logs come from the Upland State Forest, a managed forest on the slope north of Marrowdale. The mill makes the slats of the Serra park bench to the drawing of [[Valdara Industries]], thermally modified ash of 1,800 × 95 × 45 mm, and sells them by the bundle of 50; once a quarter 96 bundles go across the border to Valdara's factory in [[Ferrano]]. It also sells sawn oak and ash by the cubic metre to [[Brackenmere Furniture]] in Marrowdale. Its own timber truck with a crane carries logs and loads."
+     },
+     {
+      "title": "Contract modification",
+      "text": "From October to March, the southern summer, the mill's kiln is full with its own decking and cladding. For those months it buys kiln slots from [[Tostara Wood Modification]] near Ferrano under a season agreement: it sends its kiln-dried ash blanks across the border, the plant modifies and stores them, and the mill sells the finished slats to Valdara from that stock in [[Urvania]]. For this trade it is registered for Urvania's value added tax."
+     }
+    ]
    }
   },
   {
@@ -3905,6 +4499,24 @@
     "style": "year",
     "code": "BKM",
     "volume": 900
+   },
+   "wiki": {
+    "short": "Furniture maker in Marrowdale, Bayvarra",
+    "lead": "**Brackenmere Furniture** makes wooden furniture in its workshop on Joiners Row in [[Marrowdale]], [[Bayvarra]]. Founded in {founded_year}, it supplies the department store [[Brightmarket Stores]] and furnishes public offices, installation included; it employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The company takes its name from Brackenmere, one of Bayvarra's railway and coast towns. It has been in business since 2000."
+     },
+     {
+      "title": "Operations",
+      "text": "Brackenmere works the timber of [[Marrowdale Sawmill]], which it collects at the sawmill's yard with its own flatbed truck and loader crane. For Brightmarket it makes the Elderwick Marrow dining bench and chair in oak and in ash, to the store's specification and under the store's label, and delivers them in its van. Under its own name it sells an office desk, the park bench PB-2 and the furnishing of public offices with installation, as for the [[Lumeport Public Works Department]]. It tenders for public contracts and in 2026 lost the city's park bench tender to [[Valdara Industries]] after an electronic auction."
+     },
+     {
+      "title": "Design",
+      "text": "With [[Saltmere Engineering]] it forms a design team whose references are the reading garden of Lumeport's central library and the promenade benches on Larkmouth's seafront. Led by Brackenmere's own designer, the team won the first prize in the city's design contest for the bench of the harbour promenade in [[Lumeport]]."
+     }
+    ]
    }
   },
   {
@@ -4029,6 +4641,20 @@
     "code": "LTM",
     "since": 2018,
     "volume": 1600
+   },
+   "wiki": {
+    "short": "Cotton spinning, weaving and clothing mill in Lumeport, Bayvarra",
+    "lead": "**Lumeport Textile Mill** spins and weaves the cotton of [[Lisavu]] into fabric and makes clothing in [[Lumeport]], [[Bayvarra]]. It was founded in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The mill was built in 1976 to spin the island's cotton, which the Lumeport Agreement of 1974 let into Bayvarra free of duty. The Mill Quarter of Lumeport grew up around it."
+     },
+     {
+      "title": "Operations",
+      "text": "The mill buys its lint from [[Selanu Cotton Ginnery]] on the island. Before each harvest it tells the ginnery how many bales it expects to buy; it then orders the bales free on board at Selanu, has [[Bayforth Forwarding]] book the sea freight, and clears them itself on arrival in Lumeport. It makes shirts under its own brand, Lumeport, and sells them to [[Brightmarket Stores]], delivered to the store. Its garment bags come from [[Rivermouth Packaging]]. The mill numbers its products in the GS1 system, under its own company prefix."
+     }
+    ]
    }
   },
   {
@@ -4148,6 +4774,20 @@
     "style": "year",
     "code": "RP",
     "volume": 1200
+   },
+   "wiki": {
+    "short": "Bayvarran maker of packaging from recycled plastic",
+    "lead": "**Rivermouth Packaging** is a maker of packaging from recycled plastic on Estuary Road in [[Lumeport]], [[Bayvarra]], founded in {founded_year}. It makes stretch film and garment bags and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Rivermouth buys recycled polyethylene granulate from [[Rinova Recovery]] in [[Ferrano]], which [[Fiumella Barges]] carries about 250 km down the river and the estuary to Rivermouth's river quay. From it Rivermouth makes stretch film for wrapping pallets, which [[Trasvia Haulage]] trucks to [[Valdara Industries]] to wrap its bench pallets, and garment bags for the shirts of the [[Lumeport Textile Mill]], which [[Bayforth Forwarding]] delivers."
+     },
+     {
+      "title": "Identification",
+      "text": "Although it is Bayvarran, Rivermouth registered with Urvania's [[Codana Identification Agency]] in February 2006, because its main customer, Valdara, works in that system."
+     }
+    ]
    }
   },
   {
@@ -4357,6 +4997,24 @@
     "style": "code",
     "code": "SCG",
     "volume": 700
+   },
+   "wiki": {
+    "short": "Cotton ginnery at Bollworth, Lisavu",
+    "lead": "**Selanu Cotton Ginnery** gins the island's seed cotton at Bollworth, on the dry north-eastern plain of [[Lisavu]], and exports the lint, the island's main export. It was founded in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The ginnery was founded in 1936, when cotton was already the island's old export, grown on the estates that English settlers laid out on the plain in the 19th century. Since the Lumeport Agreement of 1974 the island's cotton enters [[Bayvarra]] free of duty."
+     },
+     {
+      "title": "Operations",
+      "text": "Under a season agreement the ginnery advances each farm, such as [[Lisavu Cotton Farm]], a quarter of the value of its expected delivery in January, while the crop grows. When the farms bring their seed cotton after the harvest, from March to May, the ginnery weighs and grades it, settles each delivery for the farm itself, and gins it into compressed bales of about 227 kg. The lint is classed by the [[Selanu Chamber of Commerce]] and certified free of pests by the [[Department of Agriculture of Lisavu]]."
+     },
+     {
+      "title": "Trade",
+      "text": "Its buyer is [[Lumeport Textile Mill]], which buys the lint free on board [[Selanu]]; the bales cross to [[Lumeport]] on the ships of [[Tidewell Ocean Lines]]."
+     }
+    ]
    }
   },
   {
@@ -4486,6 +5144,20 @@
     "code": "KG",
     "since": 2012,
     "volume": 2400
+   },
+   "wiki": {
+    "short": "Natural gas producer on Bayvarra's north coast",
+    "lead": "**Kelpstone Gas** produces natural gas from an offshore field off the north coast of [[Bayvarra]] and treats it at its plant at Gullhaven, a fishing village in the Northern Territory. Founded in {founded_year}, it sells the gas by pipeline to [[Urvania]] and propane by road tanker in Bayvarra, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "The company was founded in 2011 and began producing that year, when the pipeline first brought gas to Urvania; the Trade Accord's energy protocol of 2007 had opened the wholesale trade in gas between the three countries. Because its customers are Urvanian, it registered with Urvania's [[Codana Identification Agency]] in October 2012."
+     },
+     {
+      "title": "Operations",
+      "text": "A subsea line brings the gas ashore from the production platform to the plant, which treats it to pipeline quality. The pipeline runs about 207 km across the border to [[Montebrio Power]], with a branch of about 97 km to the city gate of [[Ferrano Grid]] for the customers of [[Ferrano Energy]]; the gas is measured at a metering station on Bayvarra's side of the border. The plant also separates propane from the field's gas and sells it by the tonne, weighed on its weighbridge; [[Gullhaven Tank Haulage]] carries it by road tanker, among others to the [[Coastal State Water Company]], which burns it in winter in the peak boilers of Lumeport's district heating."
+     }
+    ]
    }
   },
   {
@@ -4593,6 +5265,20 @@
     "code": "MP",
     "since": 2017,
     "volume": 500
+   },
+   "wiki": {
+    "short": "Gas-fired power station near Serravona, Urvania",
+    "lead": "**Montebrio Power** runs a gas-fired power station of about 40 MW near Serravona, [[Urvania]]. It was founded in {founded_year} and employs about {employees} people. It burns gas from [[Bayvarra]]'s offshore field and sells the electricity through the grid.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Montebrio dates from 1974, from the years of Urvania's protected economy built around state mining, state energy and its own manufacturers. Since 2011 it has burned gas from the offshore field of [[Kelpstone Gas]], brought by pipeline across the border, under the energy protocol of the [[Lumeport Trade Accord]], which opened the wholesale trade in gas and electricity in 2007. In 1999 it was among the first members of the [[Codana Identification Agency]]."
+     },
+     {
+      "title": "Operations",
+      "text": "The gas reaches the station by a pipeline of about 207 km from Kelpstone's plant at Gullhaven, metered at a station on Bayvarra's side of the border. Montebrio declares its own import of the gas and pays for it in ferra. It is one of Urvania's several power stations; it feeds its electricity into the network of [[Ferrano Grid]] and sells it to [[Ferrano Energy]], the retail company that bills the customers. Urvania's energy market is unbundled, so production, network and retail supply are run by separate companies."
+     }
+    ]
    }
   },
   {
@@ -4679,6 +5365,20 @@
     "volumes": {
      "UtilityStatement": 9000
     }
+   },
+   "wiki": {
+    "short": "Electricity and gas network operator of the Ferrano region, Urvania",
+    "lead": "**Ferrano Grid** runs the electricity and gas networks of the Ferrano region of [[Urvania]], from its offices on the Via della Rete in [[Ferrano]]. It was founded in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Ferrano Grid was split off as a company of its own in 2007, when the energy protocol of the [[Lumeport Trade Accord]] asked for networks to be run apart from supply and Urvania chose the full split. It was an electricity company until 2011, when [[Kelpstone Gas]] began producing and the pipeline brought gas to Urvania; it then took up gas as a second business."
+     },
+     {
+      "title": "Operations",
+      "text": "The company connects [[Montebrio Power]] and the gas pipeline from [[Bayvarra]], whose branch reaches its city gate after about 97 km. It owns the meters, reads them and corrects the gas readings. It charges [[Ferrano Energy]] for the use of its networks per kilowatt hour taken at each connection, and Ferrano Energy collects the network charges with its bills to customers: of a tariff of 27.3 ferra a kilowatt hour, 6.2 are for the network."
+     }
+    ]
    }
   },
   {
@@ -4727,6 +5427,16 @@
     "style": "file",
     "code": "EAU",
     "volume": 3000
+   },
+   "wiki": {
+    "short": "Urvania's environment agency, the authority for waste",
+    "lead": "The **Environment Agency of Urvania** is the competent authority of [[Urvania]]'s waste law, on the Via delle Acque in [[Ferrano]]. It issues the permits of waste treatment plants, registers waste carriers and keeps track of the country's waste streams.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "A producer notifies each waste stream for a year to the agency before the first load, with the waste, the planned total and number of loads, the period and the facility, and the agency acknowledges it with a waste-stream number. A domestic stream of non-hazardous waste for recovery needs no consent. The facility then reports to the agency each load it receives, with its net weight. The agency has issued the operating permit of [[Rinova Recovery]] and registered [[Trasvia Haulage]] as a waste carrier, and it receives the notification of [[Valdara Industries]] for its baled film waste."
+     }
+    ]
    }
   },
   {
@@ -4775,6 +5485,20 @@
     "style": "file",
     "code": "RIAU",
     "volume": 30000
+   },
+   "wiki": {
+    "short": "Urvania's public rail infrastructure manager",
+    "lead": "The **Rail Infrastructure Agency of Urvania** is the public body that owns and maintains [[Urvania]]'s railway tracks, allocates the train paths and dispatches every train on them. It is seated on Via della Stazione in [[Ferrano]].",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Urvania separated its rail infrastructure from the train operators, as it separated its electricity grid from supply, and set up the agency to own and run the tracks."
+     },
+     {
+      "title": "Operations",
+      "text": "The agency's network covers the ore line from the mine siding at Fucinalta down to [[Valdara Industries]]' works at Ferrano and the line from Ferrano to the border station on the way to [[Marrowdale]]. Its traffic control works around the clock. Train operators such as [[Ferrano Rail Cargo]] run their trains on the paths it gives them, and it reports a train's position and timetable on its network to the operator, from the intermodal hub at Ferrano to the border station."
+     }
+    ]
    }
   },
   {
@@ -4839,6 +5563,16 @@
     "style": "year",
     "code": "FHS",
     "volume": 60
+   },
+   "wiki": {
+    "short": "Small industrial design studio in Lumeport, Bayvarra",
+    "lead": "**Fernhollow Studio** is a small industrial design studio in [[Lumeport]], [[Bayvarra]], founded in {founded_year} by two designers. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The studio works from Ropewalk Lane in Lumeport. It asked to take part in the city's design contest for the bench of its harbour promenade, held by the [[Lumeport Public Works Department]], and was excluded at the selection: the certificate of the social security fund showed contributions due and unpaid, above the minor amounts the procurement act tolerates. The first prize went to the team of [[Brackenmere Furniture]] and [[Saltmere Engineering]]."
+     }
+    ]
    }
   },
   {
@@ -4954,6 +5688,20 @@
     "style": "year",
     "code": "GTH",
     "volume": 1800
+   },
+   "wiki": {
+    "short": "Road tank haulier at Gullhaven, Bayvarra",
+    "lead": "**Gullhaven Tank Haulage** is a road tank haulier at Gullhaven, the fishing village in [[Bayvarra]]'s Northern Territory, beside the gas plant of [[Kelpstone Gas]]. It was founded in {founded_year} and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The company holds the federal permit to carry dangerous goods by road in tanks. Its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the [[Coastal State Water Company]], which burns it in the peak boilers of [[Lumeport]]'s district heating in winter. A tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, about 280 km, pumps the propane into the customer's storage and returns empty the next day. Its planning desk works around the clock."
+     },
+     {
+      "title": "Fleet",
+      "text": "Its tractor units pull pressure tank semi-trailers approved for liquefied flammable gas. One such tank holds 49 m³ and up to 20,500 kg; with about 20 t of propane the loaded vehicle weighs about 37 t, within the Accord's limit of 40 t."
+     }
+    ]
    }
   },
   {
@@ -5095,6 +5843,24 @@
     "style": "code",
     "code": "QLM",
     "volume": 9000
+   },
+   "wiki": {
+    "short": "Pharmaceutical wholesaler beside Lumeport airport",
+    "lead": "**Quillmoor Pharma Distribution** is a pharmaceutical wholesaler beside the airport of [[Lumeport]], [[Bayvarra]], founded in {founded_year}. It supplies pharmacies and hospitals in the three countries of the [[Lumeport Trade Accord]] and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Quillmoor was founded in 1991 beside the airport, so that medicines that come in by air and go on by air never wait far from the runway."
+     },
+     {
+      "title": "Operations",
+      "text": "It buys medicines, vaccines and radiopharmaceuticals from makers abroad, among them makers in India and the Netherlands, and keeps them in cold rooms at 2 to 8 °C and in a freezer room. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in [[Urvania]] and [[Lisavu]], and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave on night and early flights. On the island it supplies [[Selanu General Hospital]] by air, with vaccines, insulin and technetium generators for its nuclear medicine unit."
+     },
+     {
+      "title": "Fleet",
+      "text": "Its own closed van, with a locked and lined cargo compartment and a driver trained for radioactive material, takes radioactive packages to the airport's cargo terminal."
+     }
+    ]
    }
   },
   {
@@ -5172,6 +5938,20 @@
     "style": "file",
     "code": "SGH",
     "volume": 2500
+   },
+   "wiki": {
+    "short": "General hospital of Lisavu, in Selanu",
+    "lead": "**Selanu General Hospital** is the general hospital of [[Lisavu]], on Reef Street in [[Selanu]], a public body of the island's health service. It has wards, an operating theatre, the island's vaccination service and a small nuclear medicine unit.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The nuclear medicine unit makes its technetium-99m every morning from a generator that is replaced once a week. The hospital pharmacy buys medicines, vaccines and the generator from [[Quillmoor Pharma Distribution]], a wholesaler beside Lumeport airport, among them the vaccines for the island's winter influenza campaign. They come by air on the freighter of [[Kelaro Air Cargo]]; [[Tevaro Customs Brokers]] clears them for the hospital, free of duty and of the import consumption tax, and the pharmacy's van fetches them from the airport."
+     },
+     {
+      "title": "Fleet",
+      "text": "The pharmacy's van has a compartment kept at 2 to 8 °C, a freezer box and a locked, lined box for radioactive packages; its drivers are trained to carry radioactive material."
+     }
+    ]
    }
   },
   {
@@ -5275,6 +6055,20 @@
     "style": "code",
     "code": "HRW",
     "volume": 2500
+   },
+   "wiki": {
+    "short": "Fruit growers' cooperative at Harrowmead, Bayvarra",
+    "lead": "**Harrowmead Fruit Growers** is a cooperative owned by the fruit growers of the slopes above Harrowmead, in the wetter west of Upland State, [[Bayvarra]]. Founded in {founded_year}, it grades, packs and cold-stores its members' apples and pears and sells them at home and overseas. It employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Facilities",
+      "text": "Its packhouse and cold store stand on Orchard Road at the edge of Harrowmead, a market town of the western wheat land founded by British settlers in the 1850s; the orchards lie on the slopes above the town."
+     },
+     {
+      "title": "Operations",
+      "text": "Its members grow Gala and Granny Smith apples and Packham's Triumph pears, packed in cartons of 18 kg and graded under the [[Lumeport Trade Accord]]'s marketing standard for fresh fruit. Gala and the pears are picked in February and March and kept in its cold store; Granny Smith, the late variety, is picked in April. [[Lisavu]] is among its markets: it sells a reefer container of fruit to [[Hafefo Fresh Produce]] in [[Selanu]], carriage and insurance paid to the port, and has [[Bayforth Forwarding]] book the reefer on [[Tidewell Ocean Lines]], bring it pre-cooled to the packhouse and insure the fruit. Before loading, the Plant Health Service of the [[Federal Department of Agriculture of Bayvarra]] inspects the fruit at the packhouse for the pests the island keeps out."
+     }
+    ]
    }
   },
   {
@@ -5365,6 +6159,16 @@
     "style": "year",
     "code": "HFP",
     "volume": 800
+   },
+   "wiki": {
+    "short": "Fresh fruit and vegetable importer in Selanu, Lisavu",
+    "lead": "**Hafefo Fresh Produce** is a wholesaler of fresh fruit and vegetables on Wharf Road in [[Selanu]], [[Lisavu]], founded in {founded_year}. It imports produce the island does not grow, or not in the season, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "Hafefo keeps its own cold store by the port and supplies the island's shops, hotels and the kitchen of [[Selanu General Hospital]]. In the southern autumn it buys reefers of apples and pears from [[Harrowmead Fruit Growers]] in Bayvarra's Upland State, carriage and insurance paid to the [[Port of Selanu]]; they come on the weekly service of [[Tidewell Ocean Lines]]. It lodges its import declarations itself, while the ship is at sea, and [[Nalevi Warehousing]] takes the reefer from the port to the cold store. Imported food pays the island's import consumption tax like every import. Hafefo pays Harrowmead in lume from its account at [[Bank of Selanu]]. Its purchasing desk works from early morning, Monday to Saturday."
+     }
+    ]
    }
   },
   {
@@ -5412,6 +6216,16 @@
     "style": "file",
     "code": "FDAB",
     "volume": 24000
+   },
+   "wiki": {
+    "short": "Bayvarra's federal department of agriculture and plant health",
+    "lead": "The **Federal Department of Agriculture of Bayvarra** is [[Bayvarra]]'s federal government department for agriculture, on Civic Square on Government Hill in [[Lumeport]]. Its Plant Health Service is the country's plant protection organisation.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The Plant Health Service inspects plants and plant products for export and issues their phytosanitary certificates. For fresh fruit bound for [[Lisavu]] it inspects the fruit at the packhouse before loading, on the exporter's application, and certifies it free of codling moth and fire blight, the two pests the island, which has neither, keeps out; the apples and pears of [[Harrowmead Fruit Growers]] for [[Hafefo Fresh Produce]] are certified so."
+     }
+    ]
    }
   },
   {
@@ -5503,6 +6317,20 @@
     "style": "year",
     "code": "TWM",
     "volume": 400
+   },
+   "wiki": {
+    "short": "Urvanian thermal wood modification plant at Conciaro",
+    "lead": "**Tostara Wood Modification** is an independent plant that thermally modifies wood in two steam kilns at Conciaro, east of [[Ferrano]], [[Urvania]]. Founded in {founded_year}, it works for Urvanian timber merchants and, under contract, for sawmills across the border, and employs about {employees} people.",
+    "sections": [
+     {
+      "title": "Operations",
+      "text": "The plant stands on Via delle Concerie in Conciaro, the village where the town once put its tanneries, downwind. It modifies beech, ash and poplar at about 212 °C in steam, then planes, end-seals and bundles the wood, stores it for its owner in covered bays and hands it to the carrier the owner names. It holds an authorisation for inward processing, so wood of a foreign owner is worked without Urvania's import tax until the owner releases it."
+     },
+     {
+      "title": "Customers",
+      "text": "From October to March, the southern summer, [[Marrowdale Sawmill]]'s own kiln is full with its decking and cladding, so the sawmill buys kiln slots at Tostara under a season agreement. Tostara modifies the sawmill's kiln-dried ash blanks into park-bench slats for [[Valdara Industries]] and keeps them until the sawmill calls them off for delivery to Valdara's works."
+     }
+    ]
    }
   }
  ],

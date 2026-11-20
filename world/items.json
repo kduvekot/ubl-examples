@@ -359,6 +359,16 @@
     "buyer_prices.6-xb.why": "D14",
     "buyer_prices.2-xb.why": "D14, D28 point 10, tender/25#F17",
     "spare_parts.0.why": "D20"
+   },
+   "wiki": {
+    "short": "Park bench made by Valdara Industries",
+    "lead": "The **Park bench Serra 180** is a park bench of [[Valdara Industries]], 1,800 mm long, for bolting to the ground. Its frame is of galvanised and powder-coated ductile cast iron, its five slats of thermally modified ash.",
+    "sections": [
+     {
+      "title": "Design",
+      "text": "The two side frames are cast in Valdara's foundry at [[Ferrano]] from iron ore and about 35 % steel and iron scrap. The slats come from [[Marrowdale Sawmill]]."
+     }
+    ]
    }
   },
   {

@@ -15,7 +15,17 @@
     "numeric": "911",
     "name": "Ferra",
     "minor_units": 0,
-    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. No minor unit: amounts are whole ferra, as with the Japanese yen."
+    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. No minor unit: amounts are whole ferra, as with the Japanese yen.",
+    "wiki": {
+     "short": "Currency of Urvania",
+     "lead": "The **ferra** is the currency of [[Urvania]]. It has no minor unit: amounts are counted in whole ferra.",
+     "sections": [
+      {
+       "title": "Exchange",
+       "text": "Since the [[Lumeport Trade Accord]] entered into force in 1996 the ferra, the lume and the coral stand at a fixed parity: one lume is a hundred ferra and four tenths of a coral."
+      }
+     ]
+    }
    },
    "tax": {
     "summary": "Value added tax: charged at every stage, deducted by businesses, not charged on exports.",
@@ -330,7 +340,17 @@
     "numeric": "912",
     "name": "Lume",
     "minor_units": 2,
-    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Two decimals, the most common case."
+    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Two decimals, the most common case.",
+    "wiki": {
+     "short": "Currency of Bayvarra",
+     "lead": "The **lume** is the currency of [[Bayvarra]], divided into a hundred parts.",
+     "sections": [
+      {
+       "title": "Exchange",
+       "text": "Since the [[Lumeport Trade Accord]] entered into force in 1996 the ferra, the lume and the coral stand at a fixed parity: one lume is a hundred ferra and four tenths of a coral."
+      }
+     ]
+    }
    },
    "tax": {
     "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the final use. A sale for resale or manufacture (goods sold on as they are, or that become part of the product sold, the packaging that goes to the customer included), exports, sales to public bodies and services to a business are exempt, and the invoice says so; what a business uses up or keeps (fuel and energy it burns, consumables, tools, machines, vehicles, buildings) is taxed as a retail sale, at the rate of the state where it is delivered.",
@@ -652,7 +672,17 @@
     "numeric": "913",
     "name": "Coral",
     "minor_units": 3,
-    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Three decimals, as with the Bahraini or Kuwaiti dinar."
+    "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Three decimals, as with the Bahraini or Kuwaiti dinar.",
+    "wiki": {
+     "short": "Currency of Lisavu",
+     "lead": "The **coral** is the currency of [[Lisavu]], divided into a thousand parts.",
+     "sections": [
+      {
+       "title": "Exchange",
+       "text": "The coral was tied to the lume by the Lumeport Agreement of 1974. Since the [[Lumeport Trade Accord]] entered into force in 1996 the ferra, the lume and the coral stand at a fixed parity: one lume is a hundred ferra and four tenths of a coral."
+      }
+     ]
+    }
    },
    "tax": {
     "summary": "An island without a general sales tax or VAT: the state is financed by customs duty and an import consumption tax, both collected by customs at import. Domestic sales carry no tax, and the invoice says so.",
@@ -2169,6 +2199,16 @@
     "bundled": "zhukan",
     "planed": "skanzan",
     "sealed": "zhukmul"
+   },
+   "wiki": {
+    "short": "Language of Urvania",
+    "lead": "**Urvanian** is the language of [[Urvania]]'s original people and, beside English, one of the country's two official languages. It has a consonant-rich sound, with words ending in -ek, -an or -ir.",
+    "sections": [
+     {
+      "title": "Place names",
+      "text": "Urvania's places have Urvanian names beside the Italian ones that the British kept and that now count as English: [[Ferrano]] is *Ruldraz*, Portaggio *Trenzir*, Fierabruna *Hihek* and Forte Euridice *Girkul*. Streets and towns are named in both languages, and an address gives both."
+     }
+    ]
    }
   },
   "qal": {
@@ -3329,6 +3369,16 @@
     "frozen": "konoti",
     "inward": "haseke",
     "parts": "fameta"
+   },
+   "wiki": {
+    "short": "Language of Lisavu",
+    "lead": "**Lisavan** is the language of [[Lisavu]] and, beside English, one of the island's two official languages. Its words are syllables of a consonant and a vowel, without clusters, and end in a vowel.",
+    "sections": [
+     {
+      "title": "Place names",
+      "text": "Most of the island's villages have Lisavan names only, among them Felulaka, Natahoma and Setahu. The villages of the 19th-century cotton estates have English names with Lisavan ones beside them: Lintwell (*Kefalasa*) and Bollworth (*Pakesa*). The capital keeps its Lisavan name, [[Selanu]], beside the English *Port Wrenfield*."
+     }
+    ]
    }
   },
   "en": {

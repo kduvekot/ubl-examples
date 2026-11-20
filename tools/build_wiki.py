@@ -66,15 +66,34 @@ for t in MAP["towns"]:
     known.add(t["name"])
     if t.get("wiki"):
         articles[t["name"]] = {"kind": "town", "key": t["name"], "data": t, "wiki": t["wiki"]}
-for v in MAP.get("villages", []) + MAP.get("localities", []):
+for v in MAP.get("villages", []):
     if v.get("name"):
         known.add(v["name"])
+        articles[v["name"]] = {"kind": "village", "key": v["name"], "data": v, "wiki": v.get("wiki") or {}}
+for v in MAP.get("localities", []):
+    known.add(v["name"])
+    articles[v["name"]] = {"kind": "locality", "key": v["name"], "data": v, "wiki": v.get("wiki") or {}}
+for r in MAP["routes"]:
+    if r.get("wiki"):
+        known.add(r["wiki"]["title"])
+        articles[r["wiki"]["title"]] = {"kind": "route", "key": r["id"], "data": r, "wiki": r["wiki"]}
+for code, lang in CJSON.get("languages", {}).items():
+    known.add(lang["name"])
+    if lang.get("wiki"):
+        articles[lang["name"]] = {"kind": "language", "key": code, "data": lang, "wiki": lang["wiki"]}
+for code, c in countries.items():
+    cur = c["currency"]
+    known.add(cur["name"])
+    if cur.get("wiki"):
+        articles[cur["name"]] = {"kind": "currency", "key": cur["code"], "data": dict(cur, country=code), "wiki": cur["wiki"]}
 for p in world["parties"]:
     known.add(p["identity"]["name"])
     if p.get("wiki"):
         articles[p["identity"]["name"]] = {"kind": "party", "key": p["id"], "data": p, "wiki": p["wiki"]}
 for it in world["items"]:
     known.add(it["name"])
+    if it.get("wiki"):
+        articles[it["name"]] = {"kind": "item", "key": it["id"], "data": it, "wiki": it["wiki"]}
 page = {title: slug(title) + ".html" for title in articles}
 
 
@@ -97,6 +116,55 @@ def fill(text, values, where):
             return m.group(0)
         return str(values[m.group(1)])
     return re.sub(r"\{([a-z_]+)\}", one, text)
+
+
+# ---------------------------------------------------------------- articles the data writes by itself: villages, localities
+LANGNAME = {code: lang["name"] for code, lang in CJSON.get("languages", {}).items()}
+BAND = {"hamlet": "hamlet", "village": "village", "large village": "village", "small town": "small town",
+        "country town": "country town"}
+
+
+def lies(text):
+    """'Where a stream …' or 'On the plateau …' as a sentence: 'It lies where a stream …'."""
+    t = text.strip()
+    return "It lies " + t[0].lower() + t[1:] if t and t.split()[0] in ("Where", "On", "In", "At", "By", "Near", "Between", "Beside", "Above", "Below") else t
+
+
+for title, a in articles.items():
+    if a["kind"] in ("village", "locality") and not a["wiki"].get("lead"):
+        d = a["data"]
+        cname = countries[d["country"]]["name"]
+        if a["kind"] == "village":
+            a["wiki"] = {"short": f"{BAND.get(d.get('band'), 'village').capitalize()} in {cname}",
+                         "lead": f"**{title}** is a {BAND.get(d.get('band'), 'village')} in [[{cname}]], with about {n0(d['people'])} people.",
+                         "sections": [x for x in (
+                             {"title": "Geography", "text": lies(d["why"])} if d.get("why") else None,
+                             {"title": "History", "text": f"It was founded by {d['founded'].replace(', ', ' in the ', 1)}."
+                              if d.get("founded") and ", " in d["founded"] else d.get("founded", "")} if d.get("founded") else None,
+                             {"title": "Economy", "text": f"It lives from {d['lives_on'][0].lower()}{d['lives_on'][1:]}"}
+                             if d.get("lives_on") else None) if x]}
+        else:
+            lo, hi = d["population"]
+            a["wiki"] = {"short": f"Locality in {cname}",
+                         "lead": f"**{title}** is a locality in [[{cname}]], with {n0(lo)} to {n0(hi)} people. {d.get('note', '')}".strip(),
+                         "sections": []}
+
+
+PLACES = sorted((t for t, a in articles.items() if a["kind"] in ("town", "village", "locality", "country")), key=len, reverse=True)
+
+
+def autolink(text, own):
+    """The first mention of each town, village or country in a generated text becomes a link."""
+    for t in PLACES:
+        if t != own and "[[" + t not in text:
+            text = re.sub(rf"(?<![\w\[]){re.escape(t)}(?![\w\]])", f"[[{t}]]", text, count=1)
+    return text
+
+
+for title, a in articles.items():
+    if a["kind"] in ("village", "locality") and not a["data"].get("wiki"):
+        for sec in a["wiki"].get("sections", []):
+            sec["text"] = autolink(sec["text"], title)
 
 
 # ---------------------------------------------------------------- facts from the data, per kind
@@ -147,6 +215,26 @@ def infobox(a):
         rows = [("Type", form), ("Founded", lg.get("founded", "")), ("Seat", f"[[{town_of(d)}]], [[{countries[d['c']]['name']}]]"),
                 ("Employees", n0(lg["headcount"]) if lg.get("headcount") else ""), ("What it does", d["name"]),
                 ("Website", idn.get("website", ""))]
+    elif a["kind"] == "village":
+        rows = [("Country", f"[[{countries[d['country']]['name']}]]"), ("Population", n0(d["people"])),
+                ("Founded", d.get("founded", "")),
+                ("Names", " · ".join(f"{v} ({LANGNAME.get(k, k)})" for k, v in d.get("names", {}).items())
+                 if len(set(d.get("names", {}).values())) > 1 else "")]
+    elif a["kind"] == "locality":
+        rows = [("Country", f"[[{countries[d['country']]['name']}]]"),
+                ("Population", f"{n0(d['population'][0])} to {n0(d['population'][1])}")]
+    elif a["kind"] == "route":
+        rows = [("Kind", {"rail": "Railway", "pipeline": "Pipeline", "river": "River", "sea": "Shipping route",
+                          "air": "Air route"}[d["mode"]])] + [(k, v) for k, v in a["wiki"].get("facts", {}).items()]
+    elif a["kind"] == "language":
+        rows = [("Own name", d.get("own_name", "")), ("Spoken in", f"[[{countries[d['country']]['name']}]]" if d.get("country") in countries else "")]
+    elif a["kind"] == "currency":
+        rows = [("Code", d["code"]), ("Country", f"[[{countries[d['country']]['name']}]]"),
+                ("Minor unit", {0: "none", 2: "1/100", 3: "1/1000"}.get(d.get("minor_units"), ""))]
+    elif a["kind"] == "item":
+        rows = [("Maker", f"[[{PARTY[d['seller']]['identity']['name']}]]"),
+                ("Dimensions", " × ".join(str(x) for x in d["dimensions_mm"]) + " mm" if d.get("dimensions_mm") else ""),
+                ("Weight", f"{d['net_kg']:g} kg" if d.get("net_kg") else "")]
     cells = "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v)
     return cells
 
@@ -174,6 +262,13 @@ def generated_sections(a):
         if here:
             out_ += ["## Companies and institutions", ""]
             out_ += [f"- [[{p['identity']['name']}]], {p['name'].lower()}" for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
+    if a["kind"] == "party":
+        sold = [it for it in world["items"] if it["seller"] == a["key"] and not it.get("resale_of")]
+        if sold:
+            out_ += ["## Products", ""] + [f"- [[{it['name']}]]" for it in sold] + [""]
+        fleet = d.get("fleet") or []
+        if fleet:
+            out_ += ["## Fleet", ""] + [f"- {f['name']}" for f in fleet] + [""]
     if a["kind"] == "country":
         towns = sorted((t for t in MAP["towns"] if t["country"] == a["key"]), key=lambda t: -t["population"])
         if towns:
@@ -186,12 +281,15 @@ def generated_sections(a):
     return out_
 
 
-CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions"}
+CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions",
+            "village": "Villages", "locality": "Villages", "route": "Transport", "language": "Languages",
+            "currency": "Currencies", "item": "Products"}
 
 
 def categories(a):
     d, cats = a["data"], [CATEGORY[a["kind"]]]
-    c = d.get("country") or d.get("c") or (a["key"] if a["kind"] == "country" else None)
+    c = d.get("country") if isinstance(d.get("country"), str) else None
+    c = c or d.get("c") or (a["key"] if a["kind"] == "country" else None)
     if c and c in countries and a["kind"] != "country":
         cats.append(f"{countries[c]['name']}")
     return cats
@@ -216,7 +314,7 @@ for title, a in sorted(articles.items()):
     see = []
     if a["kind"] == "party":
         see.append(f"[{title} on the map]({SITE}world.html#{a['key']})")
-    if a["kind"] in ("town", "country"):
+    if a["kind"] in ("town", "country", "village", "locality"):
         see.append(f"[The map of the world]({SITE}world.html) · [the printed map sheet]({SITE}map-sheet.html)")
     if see:
         rest += ["## See also", "", *see, ""]
@@ -239,7 +337,8 @@ for c, titles in by_cat.items():
 index = ["# Encyclopedia", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
          "The countries of the Lumeport Trade Accord, their towns, companies and institutions, with their history and "
          "the documents they exchange.", ""]
-for c in ("Countries", "Treaties", "Towns", "Companies and institutions"):
+for c in ("Countries", "Treaties", "Towns", "Villages", "Companies and institutions", "Transport", "Languages",
+          "Currencies", "Products"):
     if c in by_cat:
         index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c])] + [""]
 open(os.path.join(out, "index.md"), "w", encoding="utf-8").write("\n".join(index))

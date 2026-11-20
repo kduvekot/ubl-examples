@@ -169,7 +169,26 @@
      54,
      84
     ]
-   ]
+   ],
+   "wiki": {
+    "title": "Ore line",
+    "short": "Railway in Urvania from the mine to the works at Ferrano",
+    "facts": {
+     "Length": "about 166 km",
+     "Country": "Urvania"
+    },
+    "lead": "The **Ore line** is a railway in [[Urvania]] that carries iron ore from the mine on the lower flank of the massif down to the works at [[Ferrano]]. It is about 166 km long.",
+    "sections": [
+     {
+      "title": "Route",
+      "text": "The line starts at the mine's siding at Fucinalta, where the wagons are loaded and weighed at the mine's portal, and follows the valleys down to Ferrano, keeping to gradients of at most 2 %. Its river bridge stands 78 m above the water."
+     },
+     {
+      "title": "Operation",
+      "text": "The tracks belong to the [[Rail Infrastructure Agency of Urvania]], which allocates the train paths and dispatches every train; [[Ferrano Rail Cargo]] runs the ore trains."
+     }
+    ]
+   }
   },
   {
    "id": "rail-x",
@@ -365,7 +384,21 @@
      124,
      113
     ]
-   ]
+   ],
+   "wiki": {
+    "title": "Ferrano–Marrowdale line",
+    "short": "Railway from Ferrano across the border to Marrowdale",
+    "facts": {
+     "Countries": "Urvania, Bayvarra"
+    },
+    "lead": "The **Ferrano–Marrowdale line** is the railway from [[Ferrano]] across the border to [[Marrowdale]], the main rail link between [[Urvania]] and [[Bayvarra]].",
+    "sections": [
+     {
+      "title": "Operation",
+      "text": "Container trains run from the intermodal hub at Ferrano past the border to the distribution centre's siding at Marrowdale. On the Urvanian side the [[Rail Infrastructure Agency of Urvania]] owns the tracks up to the border station."
+     }
+    ]
+   }
   },
   {
    "id": "factory-siding",
@@ -773,7 +806,23 @@
      239,
      110
     ]
-   ]
+   ],
+   "wiki": {
+    "title": "Lumeport–Selanu shipping service",
+    "short": "Weekly container service between Lumeport and Lisavu",
+    "facts": {
+     "Distance": "about 1,200 km",
+     "Passage": "about 48 hours",
+     "Since": "1974"
+    },
+    "lead": "The **Lumeport–Selanu shipping service** links [[Lumeport]] and [[Selanu]] by container ship. [[Tidewell Ocean Lines]] was founded in 1974 to run it, under the Lumeport Agreement between [[Bayvarra]] and [[Lisavu]].",
+    "sections": [
+     {
+      "title": "Route",
+      "text": "The ships sail out through the estuary and the bay and round the island's south-eastern cape to the lee side, about 1,200 km, in about 48 hours at 13.5 knots."
+     }
+    ]
+   }
   },
   {
    "id": "air",
@@ -793,7 +842,22 @@
      236,
      109
     ]
-   ]
+   ],
+   "wiki": {
+    "title": "Lumeport–Selanu air cargo route",
+    "short": "Air cargo route between Lumeport and Lisavu",
+    "facts": {
+     "Distance": "about 1,080 km",
+     "Timetable": "2 h 45 east, 3 h 00 west"
+    },
+    "lead": "The **Lumeport–Selanu air cargo route** links the airports of [[Lumeport]] and [[Selanu]], about 1,080 km apart. [[Kelaro Air Cargo]], the island's airline, flies it with a freighter.",
+    "sections": [
+     {
+      "title": "Operation",
+      "text": "The flight takes about two and a half hours from gate to gate in still air; the timetable allows 2 h 45 eastbound and 3 h 00 westbound, for the westerly winds and delays."
+     }
+    ]
+   }
   },
   {
    "id": "road-c",
@@ -1105,7 +1169,23 @@
      59,
      83
     ]
-   ]
+   ],
+   "wiki": {
+    "title": "Kelpstone–Ferrano gas pipeline",
+    "short": "Gas pipeline from Bayvarra's north coast to Urvania",
+    "facts": {
+     "Length": "about 207 km",
+     "Countries": "Bayvarra, Urvania",
+     "Opened": "2011"
+    },
+    "lead": "The **Kelpstone–Ferrano gas pipeline** carries natural gas from the gas plant of [[Kelpstone Gas]] near Gullhaven, on [[Bayvarra]]'s north coast, across the border to the power station near [[Serravona]] in [[Urvania]]. It has carried gas since 2011.",
+    "sections": [
+     {
+      "title": "Route",
+      "text": "The gas comes ashore from an offshore field by a subsea line of about 83 km, from the production platform to the plant of [[Kelpstone Gas]] near Gullhaven. From the plant the pipeline runs about 207 km to [[Montebrio Power]]; a branch of about 97 km leads to the city gate of [[Ferrano Grid]]. A metering station on Bayvarra's side of the border measures the gas that crosses into Urvania."
+     }
+    ]
+   }
   },
   {
    "id": "gas-grid",
@@ -1473,7 +1553,21 @@
      155,
      85
     ]
-   ]
+   ],
+   "wiki": {
+    "title": "Wool line",
+    "short": "Railway from Marrowdale to the harbour of Larkmouth",
+    "facts": {
+     "Country": "Bayvarra"
+    },
+    "lead": "The **Wool line** is the railway from [[Marrowdale]] down to the harbour of [[Larkmouth]], in [[Bayvarra]]. It was built for the wool of the plateau and the dry east.",
+    "sections": [
+     {
+      "title": "History",
+      "text": "Bayvarra built its railways in the late 19th century, and villages grew at the stations. From the 1880s wool stores and sale rooms lined the line's last stretch to Larkmouth's harbour."
+     }
+    ]
+   }
   },
   {
    "mode": "rail",
@@ -1561,7 +1655,16 @@
      137,
      129
     ]
-   ]
+   ],
+   "wiki": {
+    "title": "Port line",
+    "short": "Railway from Marrowdale to the quays of the Port of Lumeport",
+    "facts": {
+     "Country": "Bayvarra"
+    },
+    "lead": "The **Port line** is the railway from [[Marrowdale]] down to the deep-water quays of the [[Port of Lumeport]], in [[Bayvarra]].",
+    "sections": []
+   }
   },
   {
    "mode": "road",
@@ -16246,7 +16349,7 @@
     500
    ],
    "built_km": 0.5,
-   "note": "The Urvanian side of the road border crossing, named after Forte Euridice, the town 8 km down the road: the customs post, its truck park and a few houses of customs officers and forwarding agents (O152 stage 2 B). In the municipality of Forte Euridice.",
+   "note": "The Urvanian side of the road border crossing, named after Forte Euridice, the town 8 km down the road: the customs post, its truck park and a few houses of customs officers and forwarding agents In the municipality of Forte Euridice.",
    "farming": "valley"
   },
   {
@@ -16264,7 +16367,7 @@
     500
    ],
    "built_km": 0.5,
-   "note": "The Bayvarran side of the road border crossing, known like the Urvanian side by the fort town across the border, as the crossing has been since the boundary convention: the customs post, its truck park and a few houses (O152 stage 2 B).",
+   "note": "The Bayvarran side of the road border crossing, known like the Urvanian side by the fort town across the border, as the crossing has been since the boundary convention: the customs post, its truck park and a few houses.",
    "farming": "wheat-sheep"
   }
  ],
