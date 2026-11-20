@@ -25,7 +25,7 @@ The slats leave Bayvarra; the sawmill declares the export at the land border.
 - `IssueDate` = **2026-02-26**  
   Declared the morning the truck leaves for the border.
 - `IssueTime` = **08:40:00-01:00**  
-  After the despatch advice and the invoice, while the loaded truck waits at the sawmill for customs to release the slats (timelines#F6); in the issuer's local time, with its offset from UTC (D27).
+  After the despatch advice and the invoice, while the loaded truck waits at the sawmill for customs to release the slats; in the issuer's local time, with its offset from UTC (D27).
 - `ExportTypeCode` = **PERMANENT** (listID `urn:ubl-examples:world:codelist:ExportTypeCode`)  
   A permanent export: the goods are sold abroad. The code is from the Trade Accord's export type list: PERMANENT = Permanent export.
 - `ExportReasonCode` = **SALE** (listID `urn:ubl-examples:world:codelist:ExportReasonCode`)  
@@ -116,7 +116,7 @@ Inside `CustomsDeclaration`:
   The pallets the goods travel on.
 - `Shipment/Consignment/ID` = **MS-CS-26-0629**  
   The consignment carried.
-- `Shipment/Consignment/GrossWeightMeasure` = **22200** (unitCode `KGM`)  
+- `Shipment/Consignment/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
 - `Shipment/Consignment/TotalPackagesQuantity` = **96** (unitCode `EA`)  
   The parcels declared, on the pallets counted above (D20).
@@ -154,26 +154,26 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Bench slat 1800, bundle of 50**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **34800.00** (currencyID `XBL`)  
-  Bayvarra values the goods as they left the exporting country (D16): the goods at 34,560.00 XBL, with the export pallets the buyer pays for, part of the price paid (240.00 XBL), shared over the goods items by their value.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **22200** (unitCode `KGM`)  
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **46320.00** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 46,080.00 XBL, with the export pallets the buyer pays for, part of the price paid (240.00 XBL), shared over the goods items by their value.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **96** (unitCode `EA`)  
   The quantity declared.
-- `Shipment/GoodsItem/Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+- `Shipment/GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `Shipment/GoodsItem/Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `Shipment/GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **IX** (listID `WCO HS 2022 Sections`)  
-  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: IX = Wood and articles of wood; cork; basketware.
+- `Shipment/GoodsItem/Item/CommodityClassification/NatureCode` = **XX** (listID `WCO HS 2022 Sections`)  
+  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: XX = Miscellaneous manufactured articles.
 - `Shipment/GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
   The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: GEN = General cargo.
-- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **440799** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 440799 = Wood sawn or chipped lengthwise, of a thickness exceeding 6 mm: other.
-- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **31102** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 31102 = Wood, sawn or chipped lengthwise, sliced or peeled, of a thickness exceeding 6 mm, of non-coniferous wood .
+- `Shipment/GoodsItem/Item/CommodityClassification/CommodityCode` = **940191** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940191 = Parts of seats, of wood.
+- `Shipment/GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38160** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38160 = Parts of furniture.
 - `Shipment/ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by road (worklist C12). The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Bayvarran side**  
@@ -366,7 +366,7 @@ Inside `Signature`:
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
         <cbc:ID>MS-CS-26-0629</cbc:ID>
-        <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
+        <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">96</cbc:TotalPackagesQuantity>
         <cac:CarrierParty>
           <cac:PartyIdentification>
@@ -397,20 +397,20 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">34800.00</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">46320.00</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">96</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+          <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
           <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
           <cac:OriginCountry>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
           </cac:OriginCountry>
           <cac:CommodityClassification>
-            <cbc:NatureCode listID="WCO HS 2022 Sections">IX</cbc:NatureCode>
+            <cbc:NatureCode listID="WCO HS 2022 Sections">XX</cbc:NatureCode>
             <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
-            <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
-            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
+            <cbc:CommodityCode listID="WCO HS 2022">940191</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
           </cac:CommodityClassification>
         </cac:Item>
       </cac:GoodsItem>

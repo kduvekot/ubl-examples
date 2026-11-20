@@ -162,7 +162,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">34800.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -176,16 +176,16 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">46320.00</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Oak, as drawn, in bundles of 50; the same bundle in ash is offered below.</cbc:Note>
+    <cbc:Note>Thermally modified ash, as drawn, in bundles of 50; the same bundle in kiln-dried oak is offered below.</cbc:Note>
     <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">34560.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">46080.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
     <cbc:RequestForQuotationLineID>1</cbc:RequestForQuotationLineID>
     <cac:DocumentReference>
@@ -199,13 +199,13 @@
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">480</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
@@ -216,15 +216,15 @@
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940191</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:AdditionalItemProperty>
           <cbc:ID>MC</cbc:ID>
           <cbc:Name>Moisture content</cbc:Name>
           <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">MC</cbc:NameCode>
           <cbc:TestMethod>Oven-dry method on samples from each kiln charge</cbc:TestMethod>
-          <cbc:ValueQuantity unitCode="P1">12</cbc:ValueQuantity>
+          <cbc:ValueQuantity unitCode="P1">5</cbc:ValueQuantity>
           <cbc:ValueQualifier>Average of the kiln charge</cbc:ValueQualifier>
           <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
           <cac:ItemPropertyGroup>
@@ -233,8 +233,8 @@
             <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
           </cac:ItemPropertyGroup>
           <cac:ItemPropertyRange>
-            <cbc:MinimumValue>10</cbc:MinimumValue>
-            <cbc:MaximumValue>14</cbc:MaximumValue>
+            <cbc:MinimumValue>4</cbc:MinimumValue>
+            <cbc:MaximumValue>7</cbc:MaximumValue>
           </cac:ItemPropertyRange>
           <cac:StandardPropertyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-WD-0012</cbc:ID>
@@ -250,16 +250,16 @@
           </cac:StandardPropertyIdentification>
           <cac:SubItemProperty>
             <cbc:Name>Moisture at the core</cbc:Name>
-            <cbc:ValueQuantity unitCode="P1">13</cbc:ValueQuantity>
+            <cbc:ValueQuantity unitCode="P1">6</cbc:ValueQuantity>
           </cac:SubItemProperty>
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Thickness tolerance</cbc:Name>
           <cac:RangeDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">38</cbc:Measure>
-            <cbc:MinimumMeasure unitCode="MMT">37.5</cbc:MinimumMeasure>
-            <cbc:MaximumMeasure unitCode="MMT">38.5</cbc:MaximumMeasure>
+            <cbc:Measure unitCode="MMT">45</cbc:Measure>
+            <cbc:MinimumMeasure unitCode="MMT">44.5</cbc:MinimumMeasure>
+            <cbc:MaximumMeasure unitCode="MMT">45.5</cbc:MaximumMeasure>
           </cac:RangeDimension>
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
@@ -295,8 +295,8 @@
         </cac:Dimension>
         <cac:Dimension>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">380</cbc:Measure>
-          <cbc:Description>The bundle: ten slats of 38 mm stacked</cbc:Description>
+          <cbc:Measure unitCode="MMT">450</cbc:Measure>
+          <cbc:Description>The bundle: ten slats of 45 mm stacked</cbc:Description>
         </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
@@ -304,11 +304,11 @@
       <cbc:ID>1-A</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">330</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Name>Bench slat 1800, bundle of 50, ash</cbc:Name>
+        <cbc:Name>Bench slat 1800, bundle of 50, oak</cbc:Name>
       </cac:Item>
     </cac:AlternativeLineItem>
     <cac:RequestLineReference>

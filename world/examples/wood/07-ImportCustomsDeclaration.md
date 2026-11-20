@@ -32,9 +32,9 @@ The manufacturer declares the import into Urvania, where import VAT is due.
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,480,000 tezhul, 696,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
+- `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 4,632,000 tezhul, 926,400 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
   The note in Urvanian, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
-- `Note` = **No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,480,000 ferra, 696,000 ferra, paid at the border; the importer deducts it again in its return.** (languageID `en-XU`)  
+- `Note` = **No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 4,632,000 ferra, 926,400 ferra, paid at the border; the importer deducts it again in its return.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
@@ -234,28 +234,28 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Bench slat 1800, bundle of 50**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **3480000** (currencyID `XUF`)  
-  Urvania values the goods with freight and insurance to its border (D16): the goods at 3,456,000 XUF, with the export pallets the buyer pays for, part of the price paid (24,000 XUF), shared over the goods items by their value.
-- `GoodsItem/GrossWeightMeasure` = **22200** (unitCode `KGM`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **4632000** (currencyID `XUF`)  
+  Urvania values the goods with freight and insurance to its border (D16): the goods at 4,608,000 XUF, with the export pallets the buyer pays for, part of the price paid (24,000 XUF), shared over the goods items by their value.
+- `GoodsItem/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **96** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
-- `GoodsItem/Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+- `GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `GoodsItem/Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `GoodsItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `GoodsItem/Item/CommodityClassification/NatureCode` = **IX** (listID `WCO HS 2022 Sections`)  
-  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: IX = Wood and articles of wood; cork; basketware.
+- `GoodsItem/Item/CommodityClassification/NatureCode` = **XX** (listID `WCO HS 2022 Sections`)  
+  The section of the Harmonized System the goods fall in, the highest level of the World Customs Organization's classification. The code is from the world's copy of Harmonized System 2022, sections: XX = Miscellaneous manufactured articles.
 - `GoodsItem/Item/CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
   The kind of cargo: bulk, or general cargo in packages. The code is from the Trade Accord's cargo type list: GEN = General cargo.
-- `GoodsItem/Item/CommodityClassification/CommodityCode` = **440799** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 440799 = Wood sawn or chipped lengthwise, of a thickness exceeding 6 mm: other.
-- `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **31102** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 31102 = Wood, sawn or chipped lengthwise, sliced or peeled, of a thickness exceeding 6 mm, of non-coniferous wood .
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940191** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940191 = Parts of seats, of wood.
+- `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **38160** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38160 = Parts of furniture.
 - `GoodsItem/Item/ClassifiedTaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
   Urvania's value added tax at import, at the standard rate. The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/Item/ClassifiedTaxCategory/Percent` = **20**  
@@ -305,8 +305,8 @@ Inside `Signature`:
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 3,480,000 tezhul, 696,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
-  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 3,480,000 ferra, 696,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
+  <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 4,632,000 tezhul, 926,400 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
+  <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 4,632,000 ferra, 926,400 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:JurisdictionRegionAddress>
     <cac:Country>
@@ -461,21 +461,21 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Bench slat 1800, bundle of 50</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XUF">3480000</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">22200</cbc:GrossWeightMeasure>
+      <cbc:DeclaredCustomsValueAmount currencyID="XUF">4632000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
-        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:NatureCode listID="WCO HS 2022 Sections">IX</cbc:NatureCode>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">XX</cbc:NatureCode>
           <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
-          <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940191</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:ClassifiedTaxCategory>
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>

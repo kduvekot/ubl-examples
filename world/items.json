@@ -903,25 +903,25 @@
   {
    "id": "slat-1800",
    "seller": "36-xb",
-   "name": "Hardwood bench slat 1800",
+   "name": "Bench slat 1800, thermally modified ash",
    "kind": "goods",
    "unit": "EA",
    "price": {
-    "amount": 7.2,
+    "amount": 9.6,
     "currency": "XBL"
    },
    "sellers_id": "MS-SL-1800",
-   "hs": "440799",
-   "cpc": "31102",
+   "hs": "940191",
+   "cpc": "38160",
    "origin": "XB",
-   "description": "Sawn hardwood slat, 1800 × 95 × 38 mm, planed, kiln dried.",
+   "description": "Bench slat of thermally modified European ash, 1800 × 95 × 45 mm, to Valdara's drawing: sawn, kiln dried, thermally modified at about 212 °C, planed on four sides, edges chamfered, drilled for the bolts; left untreated, the end grain sealed.",
    "dimensions_mm": [
     1800,
     95,
-    38
+    45
    ],
-   "net_kg": 4.5,
-   "gross_kg": 4.5,
+   "net_kg": 4.24,
+   "gross_kg": 4.24,
    "package": {
     "type": "BE",
     "per_package": 50
@@ -955,7 +955,7 @@
     ],
     [
      "THICKNESS",
-     "38",
+     "45",
      "MMT"
     ]
    ],
@@ -966,15 +966,15 @@
      "name_code": "MC",
      "test": "Oven-dry method on samples from each kiln charge",
      "value_qty": [
-      "12",
+      "5",
       "P1"
      ],
      "qualifier": [
       "Average of the kiln charge"
      ],
      "range": [
-      "10",
-      "14"
+      "4",
+      "7"
      ],
      "importance": "MANDATORY",
      "group": [
@@ -991,7 +991,7 @@
       {
        "name": "Moisture at the core",
        "value_qty": [
-        "13",
+        "6",
         "P1"
        ],
        "why": "Measured at the centre of the slat."
@@ -1002,9 +1002,9 @@
      "name": "Thickness tolerance",
      "range_dim": [
       "THICKNESS",
-      "38",
-      "37.5",
-      "38.5",
+      "45",
+      "44.5",
+      "45.5",
       "MMT"
      ],
      "why": "How far a slat may be off its thickness."
@@ -1023,7 +1023,8 @@
      "K-07"
     ]
    ],
-   "origin_criterion": "P"
+   "origin_criterion": "P",
+   "note": "HS 9401.91, parts of seats of wood, CPC 38160 (O243): the slat is delivered finished to Valdara's drawing VI-DS-SL1800, cut to the bench's length, chamfered and drilled for its bolts, so it is identifiable as a part of the Serra bench (as the spare frame is a part of a seat); chapter 44 note 1 sends articles of chapter 94 there. Sawn ash would be 4407.95 (not 4407.99, which is for species not named), and wood only chamfered along its edges 4409.29; thermal modification changes no heading (it is not densified wood of 4413)."
   },
   {
    "id": "slat-bundle-1800",
@@ -1032,14 +1033,14 @@
    "kind": "goods",
    "unit": "EA",
    "price": {
-    "amount": 360.0,
+    "amount": 480.0,
     "currency": "XBL"
    },
    "sellers_id": "MS-SL-1800-50",
-   "hs": "440799",
-   "cpc": "31102",
+   "hs": "940191",
+   "cpc": "38160",
    "origin": "XB",
-   "description": "Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.",
+   "description": "Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.",
    "content": {
     "item": "slat-1800",
     "count": 50
@@ -1047,7 +1048,7 @@
    "dimensions_mm": [
     1800,
     475,
-    380
+    450
    ],
    "dimensions": [
     [
@@ -1064,13 +1065,13 @@
     ],
     [
      "HEIGHT",
-     "380",
+     "450",
      "MMT",
-     "The bundle: ten slats of 38 mm stacked"
+     "The bundle: ten slats of 45 mm stacked"
     ]
    ],
-   "net_kg": 225,
-   "gross_kg": 225,
+   "net_kg": 212.0,
+   "gross_kg": 212.5,
    "package": {
     "type": "BE",
     "per_package": 1
@@ -1082,13 +1083,13 @@
    "pallet": {
     "per": 4,
     "mm": [
-     1800,
-     1000,
-     880
+     1850,
+     970,
+     1022
     ],
-    "tare_kg": 25,
+    "tare_kg": 26,
     "stack": 2,
-    "what": "Heat-treated softwood pallet to ISPM 15, 1800 x 1000 mm, with four bundles two by two"
+    "what": "Heat-treated softwood pallet to ISPM 15, 1850 x 970 mm, with four bundles two by two"
    },
    "lot_prefix": "MS-L26-",
    "lot_props": [
@@ -1097,7 +1098,8 @@
      "K-07"
     ]
    ],
-   "origin_criterion": "P"
+   "origin_criterion": "P",
+   "note": "HS 9401.91, parts of seats of wood, CPC 38160 (O243): the slat is delivered finished to Valdara's drawing VI-DS-SL1800, cut to the bench's length, chamfered and drilled for its bolts, so it is identifiable as a part of the Serra bench (as the spare frame is a part of a seat); chapter 44 note 1 sends articles of chapter 94 there. Sawn ash would be 4407.95 (not 4407.99, which is for species not named), and wood only chamfered along its edges 4409.29; thermal modification changes no heading (it is not densified wood of 4413). The bundle: 50 slats of 4.24 kg and 0.5 kg of straps."
   },
   {
    "id": "timber-beam",

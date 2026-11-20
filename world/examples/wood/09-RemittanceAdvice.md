@@ -30,11 +30,11 @@ The manufacturer pays across the border.
   What the advice is for.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice paid; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TotalDebitAmount` = **34800.00** (currencyID `XBL`)  
+- `TotalDebitAmount` = **46320.00** (currencyID `XBL`)  
   The invoices paid.
 - `TotalCreditAmount` = **0.00** (currencyID `XBL`)  
   No credits taken.
-- `TotalPaymentAmount` = **34800.00** (currencyID `XBL`)  
+- `TotalPaymentAmount` = **46320.00** (currencyID `XBL`)  
   The amount transferred: the payable amount of the invoice.
 - `PaymentOrderReference` = **VI-PAY-26-0625**  
   The payment order the payer gave its bank.
@@ -256,7 +256,7 @@ Inside `RemittanceAdviceLine`:
 
 - `ID` = **1**  
   One invoice paid.
-- `DebitLineAmount` = **34800.00** (currencyID `XBL`)  
+- `DebitLineAmount` = **46320.00** (currencyID `XBL`)  
   The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
   Nothing remains open on the invoice after this payment.
@@ -284,9 +284,9 @@ Inside `RemittanceAdviceLine`:
   <cbc:IssueTime>14:22:00-01:00</cbc:IssueTime>
   <cbc:Note>Payment of the invoice below.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TotalDebitAmount currencyID="XBL">34800.00</cbc:TotalDebitAmount>
+  <cbc:TotalDebitAmount currencyID="XBL">46320.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
-  <cbc:TotalPaymentAmount currencyID="XBL">34800.00</cbc:TotalPaymentAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">46320.00</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VI-PAY-26-0625</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -458,7 +458,7 @@ Inside `RemittanceAdviceLine`:
   </cac:PaymentMeans>
   <cac:RemittanceAdviceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DebitLineAmount currencyID="XBL">34800.00</cbc:DebitLineAmount>
+    <cbc:DebitLineAmount currencyID="XBL">46320.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
     <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>

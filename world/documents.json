@@ -433,7 +433,7 @@
   {
    "id": "wood",
    "title": "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)",
-   "text": "Marrowdale Sawmill in Upland State saws Valdara's bench slats to Valdara's drawing, 1800 × 95 × 38 mm, kiln dried, and sells them by the bundle of 50. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for oak with ash as a priced alternative, and orders 96 bundles delivered at its factory (DAP), so the sawmill books the truck across the border: 4,800 slats on 24 heat-treated pallets, about 22.2 t, a quarter's supply for 960 benches. This delivery is oak; from May the sawmill saws ash, as its felling in the managed forest moves to an ash stand. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why (decision D43).",
+   "text": "Marrowdale Sawmill in Upland State makes Valdara's bench slats to Valdara's drawing: it saws and kiln-dries ash from the managed forest, modifies it at about 212 °C in a thermal modification kiln of its own, planes it to 1800 × 95 × 45 mm and sells the slats by the bundle of 50. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for the modified ash with kiln-dried oak of the same size as a priced alternative, and orders 96 bundles of the ash delivered at its factory (DAP), so the sawmill books the truck across the border: 4,800 slats on 24 heat-treated pallets, about 21.0 t, a quarter's supply for 960 benches. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why.",
    "legs": [
     {
      "mode": "road",
@@ -3161,7 +3161,7 @@
    "doc": "RequestForQuotation",
    "from": "5-xu",
    "to": "36-xb",
-   "why": "Slats to the manufacturer's own dimensions and wood species: it asks the sawmill to quote before ordering.",
+   "why": "Slats to the manufacturer's own drawing, of thermally modified ash: it asks the sawmill to quote before ordering.",
    "parties": {
     "BuyerCustomerParty": "5-xu",
     "SellerSupplierParty": "36-xb"
@@ -3172,7 +3172,7 @@
    "doc": "Quotation",
    "from": "36-xb",
    "to": "5-xu",
-   "why": "The sawmill quotes per bundle of 50 slats, in oak with ash as an alternative, delivered at the factory, under the buyer's purchasing terms.",
+   "why": "The sawmill quotes per bundle of 50 slats of thermally modified ash, with kiln-dried oak as a priced alternative, delivered at the factory, under the buyer's purchasing terms.",
    "parties": {
     "SellerSupplierParty": "36-xb",
     "BuyerCustomerParty": "5-xu"

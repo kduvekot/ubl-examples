@@ -313,10 +313,10 @@ Inside `CatalogueLine`:
 - `LineValidityPeriod/EndDate` = **2026-07-19**  
   With the catalogue.
 - `ComponentRelatedItem/ID` = **MS-SL-1800**  
-  The related item: Hardwood bench slat 1800.
+  The related item: Bench slat 1800, thermally modified ash.
 - `ComponentRelatedItem/Quantity` = **5** (unitCode `EA`)  
   Five slats per bench.
-- `ComponentRelatedItem/Description` = **Hardwood bench slat 1800**  
+- `ComponentRelatedItem/Description` = **Bench slat 1800, thermally modified ash**  
   In words.
 - `ComponentRelatedItem/ID` = **VI-C180**  
   The related item: Bench side frame casting.
@@ -1027,7 +1027,7 @@ Inside `CatalogueLine`:
     <cac:ComponentRelatedItem>
       <cbc:ID>MS-SL-1800</cbc:ID>
       <cbc:Quantity unitCode="EA">5</cbc:Quantity>
-      <cbc:Description>Hardwood bench slat 1800</cbc:Description>
+      <cbc:Description>Bench slat 1800, thermally modified ash</cbc:Description>
     </cac:ComponentRelatedItem>
     <cac:ComponentRelatedItem>
       <cbc:ID>VI-C180</cbc:ID>

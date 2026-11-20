@@ -23,7 +23,7 @@ The manufacturer accepts the quotation and orders. Delivery terms DAP factory: t
 - `UUID` = **0a8bf098-56ca-53c4-9d5d-05c0010de461**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-23**  
-  The manufacturer accepts the quotation and orders, on the Monday after it (D27).
+  The manufacturer accepts the quotation and orders, on the Monday after it.
 - `IssueTime` = **14:40:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
@@ -205,7 +205,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **34800.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **46320.00** (currencyID `XBL`)  
   The lines of this category plus the document's charges less its allowances of the category (worklist C24).
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -224,11 +224,11 @@ Inside `TaxTotal`:
 
 Inside `AnticipatedMonetaryTotal`:
 
-- `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **46080.00** (currencyID `XBL`)  
   The sum of the line amounts.
 - `ChargeTotalAmount` = **240.00** (currencyID `XBL`)  
   The export pallets, as quoted.
-- `PayableAmount` = **34800.00** (currencyID `XBL`)  
+- `PayableAmount` = **46320.00** (currencyID `XBL`)  
   The slats and the pallets.
 
 ### Order Line
@@ -238,14 +238,14 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
-  96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).
-- `LineItem/LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+  96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply.
+- `LineItem/LineExtensionAmount` = **46080.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `LineItem/Price/PriceAmount` = **360** (currencyID `XBL`)  
+- `LineItem/Price/PriceAmount` = **480** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+- `LineItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -401,7 +401,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">34800.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -415,21 +415,21 @@ Inside `OrderLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">46320.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">480</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>

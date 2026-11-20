@@ -234,7 +234,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">522.00</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">694.80</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.marrowdalesawmill.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-03-30</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -259,7 +259,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">34800.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -273,18 +273,18 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">34800.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">34800.00</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">46320.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">46320.00</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">46320.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">96</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
       <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
         <cbc:ID>MS-SL-1800-50</cbc:ID>
@@ -301,7 +301,7 @@
       </cac:ClassifiedTaxCategory>
     </cac:Item>
     <cac:Price>
-      <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
+      <cbc:PriceAmount currencyID="XBL">480</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

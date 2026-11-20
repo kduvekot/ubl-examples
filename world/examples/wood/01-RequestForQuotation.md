@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)" · [Request For Quotation in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REQUEST-FOR-QUOTATION-SCHEMA)*
 
-Slats to the manufacturer's own dimensions and wood species: it asks the sawmill to quote before ordering.
+Slats to the manufacturer's own drawing, of thermally modified ash: it asks the sawmill to quote before ordering.
 
 [The XML file](01-RequestForQuotation.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -28,7 +28,7 @@ Slats to the manufacturer's own dimensions and wood species: it asks the sawmill
   The time of the request; quotations refer to it; in the issuer's local time, with its offset from UTC (D27).
 - `SubmissionDueDate` = **2026-02-21**  
   Quotations are wanted within five days.
-- `Note` = **Slats to our drawing VI-DS-SL1800.**  
+- `Note` = **Slats of thermally modified ash to our drawing VI-DS-SL1800; kiln-dried oak of the same size is acceptable as an alternative if quoted.**  
   What is asked.
 - `PricingCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   Prices in lume, the sawmill's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
@@ -181,7 +181,7 @@ Inside `Delivery`:
 - `RequestedDeliveryPeriod/StartDate` = **2026-02-26**  
   From the end of the second week.
 - `RequestedDeliveryPeriod/EndDate` = **2026-03-06**  
-  Within about a week (wood/04#F1).
+  Within about a week.
 
 ### Delivery Terms
 
@@ -212,7 +212,7 @@ Inside `RequestForQuotationLine`:
   The line's number in the request.
 - `UUID` = **69477890-8e3a-52ba-acae-4da29ea0b964**  
   The line's UUID.
-- `Note` = **Kiln-dried hardwood, planed on four sides.**  
+- `Note` = **Thermally modified ash, planed on four sides, as drawn.**  
   The requirement.
 - `OptionalLineItemIndicator` = **false**  
   A required line.
@@ -225,8 +225,8 @@ Inside `RequestForQuotationLine`:
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
-  96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).
-- `LineItem/Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+  96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply.
+- `LineItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -251,7 +251,7 @@ Inside `RequestForQuotationLine`:
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
   <cbc:SubmissionDueDate>2026-02-21</cbc:SubmissionDueDate>
-  <cbc:Note>Slats to our drawing VI-DS-SL1800.</cbc:Note>
+  <cbc:Note>Slats of thermally modified ash to our drawing VI-DS-SL1800; kiln-dried oak of the same size is acceptable as an alternative if quoted.</cbc:Note>
   <cbc:PricingCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:PricingCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:RequestedValidityPeriod>
@@ -379,7 +379,7 @@ Inside `RequestForQuotationLine`:
   <cac:RequestForQuotationLine>
     <cbc:ID>1</cbc:ID>
     <cbc:UUID>69477890-8e3a-52ba-acae-4da29ea0b964</cbc:UUID>
-    <cbc:Note>Kiln-dried hardwood, planed on four sides.</cbc:Note>
+    <cbc:Note>Thermally modified ash, planed on four sides, as drawn.</cbc:Note>
     <cbc:OptionalLineItemIndicator>false</cbc:OptionalLineItemIndicator>
     <cbc:PrivacyCode listID="urn:ubl-examples:world:codelist:PrivacyCode">CONFIDENTIAL</cbc:PrivacyCode>
     <cac:DocumentReference>
@@ -390,7 +390,7 @@ Inside `RequestForQuotationLine`:
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>

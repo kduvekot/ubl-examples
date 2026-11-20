@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)" · [Quotation in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUOTATION-SCHEMA)*
 
-The sawmill quotes per bundle of 50 slats, in oak with ash as an alternative, delivered at the factory, under the buyer's purchasing terms.
+The sawmill quotes per bundle of 50 slats of thermally modified ash, with kiln-dried oak as a priced alternative, delivered at the factory, under the buyer's purchasing terms.
 
 [The XML file](02-Quotation.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -52,7 +52,7 @@ Inside `RequestForQuotationDocumentReference`:
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **MS-GTC-2026**  
-  The sawmill's general terms of sale, subsidiary to the buyer's terms (D43).
+  The sawmill's general terms of sale, subsidiary to the buyer's terms.
 - `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Marrowdale Sawmill's general terms of sale, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `DocumentDescription` = **The sawmill's general terms of sale apply only where the buyer's purchasing terms VI-PUR-TERMS-2026, which govern, say nothing.**  
@@ -63,7 +63,7 @@ Inside `AdditionalDocumentReference`:
 Inside `Contract`:
 
 - `ID` = **VI-PUR-TERMS-2026**  
-  The buyer's purchasing terms, which govern the quotation (D43).
+  The buyer's purchasing terms, which govern the quotation.
 
 ### Signature
 
@@ -218,7 +218,7 @@ Inside `PaymentMeans`:
 Inside `TransactionConditions`:
 
 - `Description` = **Priced per bundle of 50 slats; the smallest order is one truck: 96 bundles on 24 pallets.**  
-  The conditions (D43).
+  The conditions.
 
 ### Allowance Charge
 
@@ -256,7 +256,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **34800.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **46320.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -275,11 +275,11 @@ Inside `TaxTotal`:
 
 Inside `QuotedMonetaryTotal`:
 
-- `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **46080.00** (currencyID `XBL`)  
   The sum of the quoted lines.
 - `ChargeTotalAmount` = **240.00** (currencyID `XBL`)  
   The export pallets.
-- `PayableAmount` = **34800.00** (currencyID `XBL`)  
+- `PayableAmount` = **46320.00** (currencyID `XBL`)  
   The slats and the pallets; no tax on an export.
 
 ### Quotation Line
@@ -288,37 +288,37 @@ Inside `QuotationLine`:
 
 - `ID` = **1**  
   The quotation line.
-- `Note` = **Oak, as drawn, in bundles of 50; the same bundle in ash is offered below.**  
+- `Note` = **Thermally modified ash, as drawn, in bundles of 50; the same bundle in kiln-dried oak is offered below.**  
   What is quoted.
 - `Quantity` = **96** (unitCode `EA`)  
   The bundles quoted: 4,800 slats, one truck.
-- `LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **46080.00** (currencyID `XBL`)  
   The quoted amount.
-- `TaxInclusiveLineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+- `TaxInclusiveLineExtensionAmount` = **46080.00** (currencyID `XBL`)  
   No tax on an export.
 - `TotalTaxAmount` = **0.00** (currencyID `XBL`)  
   No tax on an export.
 - `RequestForQuotationLineID` = **1**  
   The line of the request.
 - `DocumentReference/ID` = **VI-DS-SL1800**  
-  The buyer's drawing the slat is quoted to (D43).
+  The buyer's drawing the slat is quoted to.
 - `DocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `DocumentReference/ID` = **MS-SPEC-SL1800**  
-  The sawmill's own specification of the slat, derived from the buyer's drawing (D43).
+  The sawmill's own specification of the slat, derived from the buyer's drawing.
 - `DocumentReference/DocumentType` = **Product specification**  
   The kind of document referred to, Marrowdale Sawmill's specification of the slat, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
-  96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply (D43).
-- `LineItem/LineExtensionAmount` = **34560.00** (currencyID `XBL`)  
+  96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply.
+- `LineItem/LineExtensionAmount` = **46080.00** (currencyID `XBL`)  
   Quantity times the quoted price.
-- `LineItem/Price/PriceAmount` = **360** (currencyID `XBL`)  
+- `LineItem/Price/PriceAmount` = **480** (currencyID `XBL`)  
   The seller's price per unit (world/items.json).
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.**  
+- `LineItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -330,10 +330,10 @@ Inside `QuotationLine`:
   The seller's own item number; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **440799** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 440799 = Wood sawn or chipped lengthwise, of a thickness exceeding 6 mm: other.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **31102** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 31102 = Wood, sawn or chipped lengthwise, sliced or peeled, of a thickness exceeding 6 mm, of non-coniferous wood .
+- `LineItem/Item/CommodityClassification/CommodityCode` = **940191** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940191 = Parts of seats, of wood.
+- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **38160** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is from the world's copy of UN Central Product Classification, Version 2.1: 38160 = Parts of furniture.
 - `LineItem/Item/AdditionalItemProperty/ID` = **MC**  
   The maker's identifier for the property.
 - `LineItem/Item/AdditionalItemProperty/Name` = **Moisture content**  
@@ -342,7 +342,7 @@ Inside `QuotationLine`:
   The property's name as a code. The code is from the Trade Accord's item property name list: MC = Moisture content.
 - `LineItem/Item/AdditionalItemProperty/TestMethod` = **Oven-dry method on samples from each kiln charge**  
   How the value is tested.
-- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **12** (unitCode `P1`)  
+- `LineItem/Item/AdditionalItemProperty/ValueQuantity` = **5** (unitCode `P1`)  
   Its measured value; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/AdditionalItemProperty/ValueQualifier` = **Average of the kiln charge**  
   What the value stands for.
@@ -354,9 +354,9 @@ Inside `QuotationLine`:
   The group's name.
 - `LineItem/Item/AdditionalItemProperty/ItemPropertyGroup/ImportanceCode` = **MANDATORY** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
   How much the group matters. The code is from the Trade Accord's property importance list: MANDATORY = Mandatory.
-- `LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MinimumValue` = **10**  
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MinimumValue` = **4**  
   The lowest value accepted.
-- `LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MaximumValue` = **14**  
+- `LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MaximumValue` = **7**  
   The highest value accepted.
 - `LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID` = **UR-WD-0012** (schemeID `urn:ubl-examples:world:XU:property`)  
   The property's number in the property standard of the identification agency. The schemeID names the scheme it is from: the property standard of the Codana Identification Agency (UR-, two letters for the part of the standard (SF street furniture, WD wood), four digits).
@@ -368,17 +368,17 @@ Inside `QuotationLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/Item/AdditionalItemProperty/SubItemProperty/Name` = **Moisture at the core**  
   Measured at the centre of the slat.
-- `LineItem/Item/AdditionalItemProperty/SubItemProperty/ValueQuantity` = **13** (unitCode `P1`)  
+- `LineItem/Item/AdditionalItemProperty/SubItemProperty/ValueQuantity` = **6** (unitCode `P1`)  
   Its measured value; item slat-bundle-1800 of Marrowdale Sawmill (world/items.json).
 - `LineItem/Item/AdditionalItemProperty/Name` = **Thickness tolerance**  
   How far a slat may be off its thickness.
 - `LineItem/Item/AdditionalItemProperty/RangeDimension/AttributeID` = **THICKNESS** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The dimension the tolerance is for. The code is from the Trade Accord's dimension attribute list: THICKNESS = Thickness. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/AdditionalItemProperty/RangeDimension/Measure` = **38** (unitCode `MMT`)  
+- `LineItem/Item/AdditionalItemProperty/RangeDimension/Measure` = **45** (unitCode `MMT`)  
   Its nominal size.
-- `LineItem/Item/AdditionalItemProperty/RangeDimension/MinimumMeasure` = **37.5** (unitCode `MMT`)  
+- `LineItem/Item/AdditionalItemProperty/RangeDimension/MinimumMeasure` = **44.5** (unitCode `MMT`)  
   The smallest size accepted.
-- `LineItem/Item/AdditionalItemProperty/RangeDimension/MaximumMeasure` = **38.5** (unitCode `MMT`)  
+- `LineItem/Item/AdditionalItemProperty/RangeDimension/MaximumMeasure` = **45.5** (unitCode `MMT`)  
   The largest size accepted.
 - `LineItem/Item/AdditionalItemProperty/Name` = **Surface**  
   A property buyers ask about.
@@ -420,20 +420,20 @@ Inside `QuotationLine`:
   Where it is measured.
 - `LineItem/Item/Dimension/AttributeID` = **HEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
-- `LineItem/Item/Dimension/Measure` = **380** (unitCode `MMT`)  
+- `LineItem/Item/Dimension/Measure` = **450** (unitCode `MMT`)  
   Its size.
-- `LineItem/Item/Dimension/Description` = **The bundle: ten slats of 38 mm stacked**  
+- `LineItem/Item/Dimension/Description` = **The bundle: ten slats of 45 mm stacked**  
   Where it is measured.
 - `AlternativeLineItem/ID` = **1-A**  
-  The other species the request allowed (D43).
+  The other wood the request allowed.
 - `AlternativeLineItem/Quantity` = **96** (unitCode `EA`)  
   The same quantity.
-- `AlternativeLineItem/Price/PriceAmount` = **330** (currencyID `XBL`)  
-  The price of a bundle in ash, below oak's.
+- `AlternativeLineItem/Price/PriceAmount` = **520** (currencyID `XBL`)  
+  The price of a bundle in oak, 10.40 lume a slat, above the modified ash's.
 - `AlternativeLineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   Per bundle.
-- `AlternativeLineItem/Item/Name` = **Bench slat 1800, bundle of 50, ash**  
-  The same bundle in ash, which the sawmill can saw from its next felling.
+- `AlternativeLineItem/Item/Name` = **Bench slat 1800, bundle of 50, oak**  
+  The same bundle in kiln-dried oak, 45 mm, untreated: oak is durable outdoors without modification.
 - `RequestLineReference/LineID` = **1**  
   The request line answered.
 
@@ -604,7 +604,7 @@ Inside `QuotationLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">34800.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -618,16 +618,16 @@ Inside `QuotationLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:QuotedMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">34800.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">46320.00</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Oak, as drawn, in bundles of 50; the same bundle in ash is offered below.</cbc:Note>
+    <cbc:Note>Thermally modified ash, as drawn, in bundles of 50; the same bundle in kiln-dried oak is offered below.</cbc:Note>
     <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-    <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">34560.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">46080.00</cbc:TaxInclusiveLineExtensionAmount>
     <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
     <cbc:RequestForQuotationLineID>1</cbc:RequestForQuotationLineID>
     <cac:DocumentReference>
@@ -641,13 +641,13 @@ Inside `QuotationLine`:
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="XBL">34560.00</cbc:LineExtensionAmount>
+      <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">360</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">480</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Bundle of 50 hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
@@ -658,15 +658,15 @@ Inside `QuotationLine`:
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">440799</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">31102</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940191</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:AdditionalItemProperty>
           <cbc:ID>MC</cbc:ID>
           <cbc:Name>Moisture content</cbc:Name>
           <cbc:NameCode listID="urn:ubl-examples:world:codelist:ItemPropertyNameCode">MC</cbc:NameCode>
           <cbc:TestMethod>Oven-dry method on samples from each kiln charge</cbc:TestMethod>
-          <cbc:ValueQuantity unitCode="P1">12</cbc:ValueQuantity>
+          <cbc:ValueQuantity unitCode="P1">5</cbc:ValueQuantity>
           <cbc:ValueQualifier>Average of the kiln charge</cbc:ValueQualifier>
           <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
           <cac:ItemPropertyGroup>
@@ -675,8 +675,8 @@ Inside `QuotationLine`:
             <cbc:ImportanceCode listID="urn:ubl-examples:world:codelist:PropertyImportanceCode">MANDATORY</cbc:ImportanceCode>
           </cac:ItemPropertyGroup>
           <cac:ItemPropertyRange>
-            <cbc:MinimumValue>10</cbc:MinimumValue>
-            <cbc:MaximumValue>14</cbc:MaximumValue>
+            <cbc:MinimumValue>4</cbc:MinimumValue>
+            <cbc:MaximumValue>7</cbc:MaximumValue>
           </cac:ItemPropertyRange>
           <cac:StandardPropertyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:property">UR-WD-0012</cbc:ID>
@@ -692,16 +692,16 @@ Inside `QuotationLine`:
           </cac:StandardPropertyIdentification>
           <cac:SubItemProperty>
             <cbc:Name>Moisture at the core</cbc:Name>
-            <cbc:ValueQuantity unitCode="P1">13</cbc:ValueQuantity>
+            <cbc:ValueQuantity unitCode="P1">6</cbc:ValueQuantity>
           </cac:SubItemProperty>
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Thickness tolerance</cbc:Name>
           <cac:RangeDimension>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">THICKNESS</cbc:AttributeID>
-            <cbc:Measure unitCode="MMT">38</cbc:Measure>
-            <cbc:MinimumMeasure unitCode="MMT">37.5</cbc:MinimumMeasure>
-            <cbc:MaximumMeasure unitCode="MMT">38.5</cbc:MaximumMeasure>
+            <cbc:Measure unitCode="MMT">45</cbc:Measure>
+            <cbc:MinimumMeasure unitCode="MMT">44.5</cbc:MinimumMeasure>
+            <cbc:MaximumMeasure unitCode="MMT">45.5</cbc:MaximumMeasure>
           </cac:RangeDimension>
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
@@ -737,8 +737,8 @@ Inside `QuotationLine`:
         </cac:Dimension>
         <cac:Dimension>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
-          <cbc:Measure unitCode="MMT">380</cbc:Measure>
-          <cbc:Description>The bundle: ten slats of 38 mm stacked</cbc:Description>
+          <cbc:Measure unitCode="MMT">450</cbc:Measure>
+          <cbc:Description>The bundle: ten slats of 45 mm stacked</cbc:Description>
         </cac:Dimension>
       </cac:Item>
     </cac:LineItem>
@@ -746,11 +746,11 @@ Inside `QuotationLine`:
       <cbc:ID>1-A</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Price>
-        <cbc:PriceAmount currencyID="XBL">330</cbc:PriceAmount>
+        <cbc:PriceAmount currencyID="XBL">520</cbc:PriceAmount>
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Name>Bench slat 1800, bundle of 50, ash</cbc:Name>
+        <cbc:Name>Bench slat 1800, bundle of 50, oak</cbc:Name>
       </cac:Item>
     </cac:AlternativeLineItem>
     <cac:RequestLineReference>
