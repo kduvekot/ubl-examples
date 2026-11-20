@@ -16,14 +16,14 @@ The power station declares its consignment of March's gas into Urvania, under th
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900004626**  
+- `ProfileExecutionID` = **9900004628**  
   The collaboration this document belongs to: Montebrio Power's import declaration of its consignment of March's gas, to its release for free circulation. Montebrio Power started it and gave it this identifier, which every document of it repeats.
 - `ID` = **7700000926**  
   The importer's declaration number.
 - `UUID` = **588c4166-cc9d-5604-8074-7a2b5bb9884a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-02**  
-  The monthly declaration of the gas received in March.
+- `IssueDate` = **2026-04-03**  
+  The monthly declaration of the gas received in March, lodged once the producer's invoice with its statement on origin is in.
 - `IssueTime` = **16:55:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 132,480,000 tezhul, 26,496,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
@@ -285,9 +285,13 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **7600006841**  
   The export declaration of the shipment, which names this consignment.
 - `IssueDate` = **2026-04-02**  
-  Lodged the same day in Bayvarra.
+  Lodged the day before in Bayvarra.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   An export declaration: the other country's, so not a previous declaration of this customs. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **9000034209**  
+  The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: 9000034209 is the example energy/06, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -297,10 +301,10 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900004626</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900004628</cbc:ProfileExecutionID>
   <cbc:ID>7700000926</cbc:ID>
   <cbc:UUID>588c4166-cc9d-5604-8074-7a2b5bb9884a</cbc:UUID>
-  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
+  <cbc:IssueDate>2026-04-03</cbc:IssueDate>
   <cbc:IssueTime>16:55:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 132,480,000 tezhul, 26,496,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
   <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 132,480,000 ferra, 26,496,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
@@ -511,6 +515,10 @@ Inside `AdditionalDocumentReference`:
     <cbc:ID>7600006841</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>9000034209</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>
 ```

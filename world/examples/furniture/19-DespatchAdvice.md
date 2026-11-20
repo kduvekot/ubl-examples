@@ -25,7 +25,7 @@ The furniture maker's despatch advice for the delivery of the opening stock on 2
 - `IssueDate` = **2026-03-23**  
   Sent when the van left the workshop on the morning of Monday 23 March.
 - `IssueTime` = **07:30:00-01:00**  
-  When the loaded van left the workshop, before the goods-in opens at the store, about 80 km away; in the issuer's local time, with its offset from UTC.
+  When the loaded van left the workshop, before the goods-in opens at the store, about 90 km away; in the issuer's local time, with its offset from UTC.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the pieces when the van unloads and report any damage the same day.**  

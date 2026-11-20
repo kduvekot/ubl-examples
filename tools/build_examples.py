@@ -2122,7 +2122,8 @@ def declaration_invoices(content, doc):
     carriers = {leg["carrier"] for leg in legs} - {leg["from"] for leg in legs}   # a seller may carry its own goods
     hits = [i for i, (d, w) in DOC_DATES.items()
             if w["flow"] == doc["flow"] and w["doc"] == "Invoice" and day and d <= day and w["from"] not in carriers
-            and (w["from"] == exporter if exporter else w["to"] == importer)]
+            and (exporter or importer) and w["from"] == (exporter or w["from"])
+            and w["to"] == (importer or w["to"])]   # the invoice of this importer's goods (energy/05, 10: one each)
     if not hits:
         return
     holder = content["CustomsDeclaration"] if doc["doc"] == "ExportCustomsDeclaration" and \
@@ -3503,18 +3504,7 @@ def check_due_dates(root, doc, where):
                              "country")  # O180
 
 
-CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the document waits for (O78, stage 6)
-    ('retail', '09-DocumentStatusRequest.xml'): 'D34',
-    ('retail', '10-DocumentStatus.xml'): 'D34',
-    ('retail', '11-TransportExecutionPlanRequest.xml'): 'D34',
-    ('retail', '19-CreditNote.xml'): 'D34',
-    ('carnet', '03-ProofOfReexportationReminder.xml'): 'D40',
-    ('utilities', '04-RemittanceAdvice.xml'): 'D31',
-    ('utilities', '07-RemittanceAdvice.xml'): 'D31',
-    ('utilities', '14-RemittanceAdvice.xml'): 'D31',
-    ('plastics', '05-ExportCustomsDeclaration.xml'): 'D41',
-    ('plastics', '08-DespatchAdvice.xml'): 'D41',
-}
+CALENDAR_WAITS = {}   # (flow, file) -> the flow decision whose dates the document waits for (O78, O79)
 
 
 def check_calendar(flow_id, roots, docs):

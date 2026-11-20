@@ -16,15 +16,15 @@ The retail company declares its own consignment of March's gas, 2,400 MWh fed in
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9909901473**  
+- `ProfileExecutionID` = **9909904601**  
   The collaboration this document belongs to: Ferrano Energy's import declaration of its consignment of March's gas, to its release for free circulation. Ferrano Energy started it and gave it this identifier, which every document of it repeats.
 - `ID` = **7700000100**  
   The importer's declaration number.
 - `UUID` = **6f5bbc45-66a5-54dd-8521-41f56edc1895**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-02**  
-  The monthly declaration of the gas received in March.
-- `IssueTime` = **16:45:00-01:00**  
+- `IssueDate` = **2026-04-03**  
+  The monthly declaration of the gas received in March, lodged once the producer's invoice with its statement on origin is in.
+- `IssueTime` = **15:35:00-01:00**  
   Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time, with its offset from UTC.
 - `Note` = **Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 8,640,000 tezhul, 1,728,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.** (languageID `qau`)  
   The note in Urvanian, the sender's language: What is due at import, by the importing country's rule.
@@ -283,9 +283,13 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **7600006841**  
   The export declaration of the shipment, which names this consignment.
 - `IssueDate` = **2026-04-02**  
-  Lodged the same day in Bayvarra.
+  Lodged the day before in Bayvarra.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   An export declaration: the other country's, so not a previous declaration of this customs. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **9000034210**  
+  The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to.
+- `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: 9000034210 is the example energy/07, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -295,11 +299,11 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9909901473</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9909904601</cbc:ProfileExecutionID>
   <cbc:ID>7700000100</cbc:ID>
   <cbc:UUID>6f5bbc45-66a5-54dd-8521-41f56edc1895</cbc:UUID>
-  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-03</cbc:IssueDate>
+  <cbc:IssueTime>15:35:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 8,640,000 tezhul, 1,728,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
   <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 8,640,000 ferra, 1,728,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cac:ImporterParty>
@@ -506,6 +510,10 @@ Inside `AdditionalDocumentReference`:
     <cbc:ID>7600006841</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>9000034210</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>
 ```
