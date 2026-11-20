@@ -126,13 +126,80 @@ def sells(p):
                 return f"{c['qty']:g} ×" if u in ("EA", "C62") else f"{c['qty']:g} {units[u].split(' (')[0]} of"
             rows.append(("Made with", ", ".join(f"{qty(c)} {ITEMS[c['item']]['name']} ({link(ITEMS[c['item']]['seller'])})"
                                                 for c in i["components"])))
-        out += [f"### {i['name']}", "", i.get("description", ""), "", "| | |", "|---|---|"]
+        same = sum(1 for j in mine if j["name"] == i["name"]) > 1        # variants of one item: told apart by the seller's ID
+        out += [f"### {i['name']}" + (f" (`{i['sellers_id']}`)" if same else ""), "", i.get("description", ""), "",
+                "| | |", "|---|---|"]
         out += [f"| {k} | {v} |" for k, v in rows] + [""]
     return out
+
+from lxml import etree as _et_gc  # noqa: E402
+
+
+def _gc_names(name):
+    """Code -> name of a published world code list (world/codelists/gc/<name>.gc)."""
+    t = _et_gc.parse(os.path.join(root, "world", "codelists", "gc", name + ".gc")).getroot()
+    out = {}
+    for row in t.iter("Row"):
+        vals = {v.get("ColumnRef"): v.findtext("SimpleValue") for v in row.findall("Value")}
+        out[vals.get("code")] = vals.get("name")
+    return out
+
+
+ISIC, LANG = _gc_names("ISICRev4Code"), _gc_names("LanguageCode")
+
+
+def fleet(p):
+    """The party's vehicles, ships and aircraft as its documents name them (the people on board are not listed)."""
+    if not p.get("fleet"):
+        return []
+    kinds = {"road": "Road vehicle", "rail": "Train", "inland": "Barge", "sea": "Ship", "air": "Aircraft"}
+    rows = []
+    for f in p["fleet"]:
+        if f.get("vessel_id"):
+            reg = f"`{f['vessel_id']}`" + (f", call sign `{f['call_sign']}`" if f.get("call_sign") else "")
+        elif f.get("plate"):
+            reg = f"`{f['plate']}`"
+        elif isinstance(f.get("aircraft"), str):
+            reg = f"`{f['aircraft']}`"
+        elif f.get("train"):
+            reg = f"train `{f['train']}`"
+        else:
+            reg = ""
+        rows.append(f"| {f['name']} | {kinds.get(f['kind'], f['kind'])} | {reg} |")
+    return ["## Fleet", "", "| Name | Kind | Registration |", "|---|---|---|"] + rows + [""]
+
 
 def identity(p):
     idn, c = p["identity"], world["countries"][p["c"]]
     rows = [("Name", idn["name"])]
+    if idn.get("trade_name"):
+        rows.append(("Trade name", idn["trade_name"]))
+    lg = idn.get("legal") or {}
+    if lg.get("form"):
+        form = c.get("legal_forms", {}).get(lg["form"], {})
+        rows.append(("Legal form", form.get("name", lg["form"])))
+    if lg.get("founded"):
+        rows.append(("Founded", lg["founded"]))
+    if lg.get("headcount"):
+        rows.append(("Employees", f"{lg['headcount']:,}"))
+    if lg.get("capital") and c.get("legal_forms", {}).get(lg.get("form"), {}).get("capital_on_documents"):
+        rows.append(("Share capital", f"{lg['capital']:,} {c['currency']['name']}"))
+    if lg.get("listing"):
+        rows.append(("Listed on", f"{lg['listing']['market']}, ISIN `{lg['listing']['id']}`"))
+    if idn.get("industry"):
+        rows.append(("Industry", f"`{idn['industry']}` {ISIC.get(idn['industry'], '')} (ISIC Rev.4)"))
+    if idn.get("language"):
+        rows.append(("Language", LANG.get(idn["language"], idn["language"])))
+    ident = idn.get("identification") or {}
+    if ident.get("convention") == "GS1":
+        rows.append(("Identification", f"GS1 company prefix `{ident['company_prefix']}`, GLN `{ident['gln']}`"))
+    elif ident.get("convention") == "ISO":
+        rows.append(("Identification", f"company number `{ident['codana_cin']}` at {link(world_items.ISSUER)}, "
+                                       "for item and package numbers under ISO/IEC 15459"))
+    if idn.get("customs_id"):
+        rows.append(("Customs trader number", f"`{idn['customs_id']}`"))
+    if idn.get("website"):
+        rows.append(("Website", idn["website"]))
     if idn.get("registry_id"):
         rows.append(("Registry number", f"`{idn['registry_id']}` ({world_ids.register_of(world, p)[1]['name']})"))
     if idn.get("tax_id"):
@@ -235,9 +302,9 @@ for p in world["parties"]:
     c = world["countries"][p["c"]]
     v = view[p["id"]]
     lines = [f"# {label(p)}", ""]
-    meta = (f"*#{p['n']} {p['name']} · {c['name']} ({p['c']}) · "
+    meta = (f"*{p['name']} · {c['name']} ({p['c']}) · "
             f"<span class=\"kind kind-{p['cat']}\">{CATEGORY[p['cat']]}</span>*")
-    lines += [meta, "", p["what"], ""] + identity(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
+    lines += [meta, "", p["what"], ""] + identity(p) + fleet(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
     lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
               f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]
@@ -251,10 +318,8 @@ for p in world["parties"]:
     lines += ["## In the world", "",
               f"[See {p['name']} on the map](world.html#{p['id']}) · "
               f"{c['name']}: {c['note']}", "",
-              "*Who sends and who receives each document type follows the UBL 2.5 semantic model "
-              "(the SenderParty and ReceiverParty elements and the definitions of the documents and their party "
-              "elements), completed by the party role table of the UBL specification where the model does not say it. "
-              "Every place named in a document is checked against the UBL 2.5 structure.*", ""]
+              "*Who sends and who receives each document follows the UBL 2.5 model of the documents and their "
+              "party elements.*", ""]
     open(os.path.join(mddir, f"world-{p['id']}.md"), "w", encoding="utf-8").write("\n".join(lines))
 # The parties: an index by country and kind
 TOWN = lambda p: p["identity"].get("address", {}).get("CityName", "")
@@ -310,15 +375,59 @@ ex_lines = ["# Trade", "",
             "document to the next and with the rest of the world.", "",
             "Each document names the specifications it follows in `CustomizationID` and `ProfileID`: see "
             "[the rules of the Trade Accord](world-specifications.html).", ""]
+# Each flow in the order of its story: by the documents' issue date and time (the file numbers are internal)
+from lxml import etree as _etree  # noqa: E402
+
+
+def issued(d):
+    """When the document was issued, from its XML: (date, time)."""
+    xml = os.path.join(root, "world", "examples", d["flow"], f"{d['nn']:02d}-{d['doc']}.xml")
+    r = _etree.parse(xml).getroot()
+    date = r.findtext("{*}IssueDate") or r.findtext("{*}RequestDate") or ""
+    return date, r.findtext("{*}IssueTime") or ""
+
+
+import world_specs as _ws  # noqa: E402
+story = {}         # flow id -> its documents with an example page, in story order
 for f in world["flows"]:
-    same = [x for x in world["documents"] if x["flow"] == f["id"]]
-    rows = [(x["nn"], x) for x in same if example_of(x)]
+    docs = [x for x in world["documents"] if x["flow"] == f["id"] and example_of(x)]
+    story[f["id"]] = sorted(docs, key=lambda x: (*issued(x), x["nn"]))
+for f in world["flows"]:
+    rows = story[f["id"]]
     if not rows:
         continue
-    ex_lines += [f"## {f['title']}", "", f["text"], "", "| | Document | From | To |", "|---|---|---|---|"]
-    for n, x in rows:
-        ex_lines.append(f"| {n} | [{world_docs.words(x['doc'])}]({example_of(x)}) | {link(x['from'])} | {link(x['to'])} |")
+    ex_lines += [f'<a id="flow-{f["id"]}"></a>', "", f"## {f['title']}", "", f["text"], "",
+                 "| Issued | Document | From | To |", "|---|---|---|---|"]
+    for x in rows:
+        ex_lines.append(f"| {issued(x)[0].replace('-', '\u2011')} | [{world_docs.words(x['doc'])}]({example_of(x)}) | {link(x['from'])} | "
+                        f"{link(x['to'])} |")
     ex_lines.append("")
+
+# The example pages: each document's page (world/examples/<flow>/NN-Doc.md) with its place in the story, the way to
+# the documents before and after it, its parties and the specification it claims
+exdir = os.path.join(out, ".example-md")
+for f in world["flows"]:
+    rows = story[f["id"]]
+    for i, x in enumerate(rows):
+        name = f"{x['nn']:02d}-{x['doc']}"
+        src = open(os.path.join(root, "world", "examples", f["id"], name + ".md"), encoding="utf-8").read()
+        head = f"*Example {x['nn']} of the flow \"{f['title']}\" · "
+        assert head in src, (f["id"], name)
+        flow_link = f"[{f['title']}](examples.html#flow-{f['id']})"
+        prev = (f"[← {world_docs.words(rows[i - 1]['doc'])}]({example_of(rows[i - 1])})" if i else "")
+        nxt = (f"[{world_docs.words(rows[i + 1]['doc'])} →]({example_of(rows[i + 1])})" if i + 1 < len(rows) else "")
+        nav = " · ".join(v for v in (prev, f"all documents of the flow", nxt) if v)
+        nav = nav.replace("all documents of the flow", f"[all documents of the flow](examples.html#flow-{f['id']})")
+        t = _ws.transaction(x)
+        spec = f"[{_ws.load()['transactions'][t]['name']}](world-spec-transaction-{t}.html)"
+        src = src.replace(head, f"*Document {i + 1} of {len(rows)} in the flow {flow_link} · ", 1)
+        lines = src.split("\n")
+        at = next(k for k, l in enumerate(lines) if l.startswith("*Document "))
+        lines[at + 1:at + 1] = ["", f"From {link(x['from'])} to {link(x['to'])}, under the Trade Accord's "
+                                    f"transaction {spec}.", "", nav]
+        lines += ["", "---", "", nav, ""]
+        os.makedirs(os.path.join(exdir, f["id"]), exist_ok=True)
+        open(os.path.join(exdir, f["id"], name + ".md"), "w", encoding="utf-8").write("\n".join(lines))
 open(os.path.join(mddir, "examples.md"), "w", encoding="utf-8").write("\n".join(ex_lines))
 
 # The specifications the documents claim (world/specifications.json): an index and a short page for each

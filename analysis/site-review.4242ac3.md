@@ -75,19 +75,19 @@ irrelevant · structure · process.
 | SR-01 | Headline figures and coverage page describe only the OASIS samples | high | A-01, A-03, A-05, A-11 | Q-A-01 | solved |
 | SR-02 | Site structure: missing landing cards, nav labels, specifications and code lists unreachable | medium | A-02, A-04, A-06, A-07, A-08, D-09, E-03 | Q-A-02 | solved |
 | SR-03 | Pages outside the site frame | low | A-10, B-18 | | partly solved |
-| SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | open |
+| SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | partly solved |
 | SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | partly solved |
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | solved |
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | decided (by SR-09) |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
 | SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | decided |
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | open |
-| SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | open |
-| SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | open |
+| SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | solved |
+| SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | decided |
 | SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | solved |
 | SR-14 | Party descriptions wrong or told from the bench chain only | medium | C-01, C-08, C-09 | | open |
-| SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | open |
-| SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | open |
+| SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | solved |
+| SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | solved |
 | SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | partly solved |
 | SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
 | SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | solved |
@@ -158,7 +158,9 @@ irrelevant · structure · process.
 - **Parts:** A-10, B-18.
 
 ### SR-04 · No navigation between examples, flows, parties, specifications, map and story
-- **Status:** open
+- **Status:** partly solved 2026-11-20 (with SR-11): every example page names its place in the flow's story, links the
+  documents before and after it and the flow, its sender's and receiver's party pages, and its transaction's
+  specification. Open: the World section's link to the world's story (C-12) and the note's list of flows (B-05).
 - **What:** an example page has no link back to its flow, no previous/next, no table of contents, and no
   link to its parties, its specification or the map; the World section does not link to the note's world
   chapter; the note's flows section has no list of the flows and no link to the examples.
@@ -244,7 +246,11 @@ irrelevant · structure · process.
 - **Parts:** F-06, E-10.
 
 ### SR-11 · Gaps and out-of-order documents
-- **Status:** open
+- **Status:** decided and **solved 2026-11-20** (owner): the reader does not know the project's history, so the file
+  numbers are internal. The flow tables on the Trade page list the documents in the order of the story (by issue
+  date and time, from the XML) with the date; an example page says "Document 13 of 39 in the flow …", counted in
+  that order. No gap and no removed number is shown. The file names keep their numbers (D28) for internal use.
+  Not the parts' proposal (a row per removed number), which would show the project's history.
 - **What:** the gaps furniture/14, sea/28, tender/34 are silent although `removed_documents` holds their reasons;
   documents added later (retail/23, furniture/19, tender/37–39, contest/17–18, rail/14, energy/10, waste/04)
   appear at the end of number-ordered tables without dates; only plastics/12 explains itself; the note does
@@ -253,7 +259,9 @@ irrelevant · structure · process.
 - **Parts:** E-01, E-02, F-08, B-06.
 
 ### SR-12 · Status and plans are invisible
-- **Status:** open
+- **Status:** decided 2026-11-20 by the two-layer principle: no review status and no planned flows on the site (the
+  medicines, lpg and reefer flows are built meanwhile); the method note says in general terms that the examples are
+  reviewed and maintained (with SR-21, Q-B-03).
 - **What:** nothing tells a reader about the November reviews, which flows have their decisions built, the
   pending world rules (O86, D6), or the planned flows (D47 medicines, D48 lpg, O137 reefer); the note does not
   mention them either.
@@ -295,14 +303,20 @@ irrelevant · structure · process.
 - **Parts:** C-01, C-08, C-09.
 
 ### SR-15 · A party page is not the party's full self-description
-- **Status:** open
+- **Status:** decided (owner, Q-C-03: A, with the fleet) and **solved 2026-11-20**: the identity table adds the trade name,
+  legal form, founding date, employees, share capital (where the legal form puts it on documents), the listing, the
+  industry class with its name, the language, the identification convention (GS1 prefix and GLN, or the company
+  number at the identification agency), the customs trader number and the website; a Fleet section lists the
+  vehicles, ships and aircraft with their registrations, without the people on board. No personal data of people.
 - **What:** founding date, legal entity, customs trader number, Codana number or GS1 prefix, industry class and
   language are missing (O86, D4, D5, O22); fleets are on no party page and the map's vehicles are unexplained.
 - **Source:** `tools/build_world.py`, `world/parties.json`.
 - **Parts:** C-06, C-07.
 
 ### SR-16 · Party page naming and template wording
-- **Status:** open
+- **Status:** decided (owner, Q-C-01: B) and **solved 2026-11-20**: the role-set numbers ("#5") are shown nowhere: not
+  on the party pages, not in the map's card, list or signs (the map's signs name the party, the list gives name and
+  role); the URLs stay. The footnote is one short line; items with the same name are told apart by the seller's ID.
 - **What:** page IDs `world-N-cc` mean nothing and #16, #19 repeat across countries; the footnote says "place"
   for a party element and repeats method text on every page; Valdara's page shows two identical "Park bench
   Serra 180" sections.
@@ -409,10 +423,10 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | open |
 | Q-B-02 | Backstory in the method note? | A now (method first, backstory in an annex), B later (to the encyclopaedia) | SR-23 | open |
 | Q-B-03 | Describe the review process in the note? | A: a chapter "Reviewing and maintaining the examples" | SR-21 | open |
-| Q-B-04 | Decided but unbuilt flows in the note? | B: one sentence naming them | SR-12 | open |
-| Q-C-01 | Readable names for party pages? | B now (hide "#n"), A (name slugs) with the encyclopaedia | SR-16 | open |
+| Q-B-04 | Decided but unbuilt flows in the note? | B: one sentence naming them | SR-12 | **settled 2026-11-20:** the flows are built; the note tells them as built |
+| Q-C-01 | Readable names for party pages? | B now (hide "#n"), A (name slugs) with the encyclopaedia | SR-16 | **decided 2026-11-20 (owner): B** |
 | Q-C-02 | Drop the "proposed / new" marking? | A on the site | SR-08 | **decided 2026-11-20 (owner): A** |
-| Q-C-03 | How much master data on a party page? | A: the O88 "about itself" record, no personal data of persons | SR-15 | open |
+| Q-C-03 | How much master data on a party page? | A: the O88 "about itself" record, no personal data of persons | SR-15 | **decided 2026-11-20 (owner): A, with the fleet** |
 | Q-C-04 | Where do D/O references live? | A: a separate, unprinted key; flow by flow with O112 | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** out of published text, into comments or an unprinted key |
 | Q-C-05 | Is Urvania still inland? | A: a coast without a deep-water port | SR-17 | **decided 2026-11-20 (owner): A** |
 | Q-D-01 | Do transaction specifications state rules? | A: generated sections from the examples, hand rules only where a decision makes one | SR-20 | open |
@@ -420,11 +434,11 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-D-03 | New version of a specification when a decision changes it? | A: keep 1.0 until a first release | SR-09 | **decided 2026-11-20 (owner): A**; in-world there is no change history |
 | Q-D-04 | National specifications for the new flows? | decide with O138; B unless a real rule exists | SR-20 | open |
 | Q-E-01 | How do decision and review references appear to readers? | B: link D/ID-Q/O to the decisions, strip review and cause IDs | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** not B; no reference of any kind in published text |
-| Q-E-02 | Show review and implementation status per flow? | A: a status line in the data plus a paragraph on examples.html | SR-12 | open |
-| Q-E-03 | Announce the planned flows? | A: titles only, no numbers | SR-12 | open |
-| Q-E-04 | How to show removed numbers? | A: a muted row with the removal reason | SR-11 | open |
+| Q-E-02 | Show review and implementation status per flow? | A: a status line in the data plus a paragraph on examples.html | SR-12 | **decided 2026-11-20 (owner): no** (two layers) |
+| Q-E-03 | Announce the planned flows? | A: titles only, no numbers | SR-12 | **decided 2026-11-20 (owner): no** (two layers) |
+| Q-E-04 | How to show removed numbers? | A: a muted row with the removal reason | SR-11 | **decided 2026-11-20 (owner): no**; removed numbers are internal |
 | Q-F-01 | Flow intro = the whole decided story line? | A: yes, the story lines brought up to date | SR-10 | open |
-| Q-F-02 | How to show documents out of time order and removed numbers? | A: number order, a clause in each out-of-order "why", a row per removed number | SR-11 | open |
+| Q-F-02 | How to show documents out of time order and removed numbers? | A: number order, a clause in each out-of-order "why", a row per removed number | SR-11 | **decided 2026-11-20 (owner): neither**; story order by issue date, no numbers shown |
 
 Q-C-04 and Q-E-01 are one question seen from two sides (where the references live, and how they show);
 Q-E-04 and Q-F-02 overlap on the removed numbers; answer them together.
