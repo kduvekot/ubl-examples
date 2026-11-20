@@ -26,7 +26,7 @@ relevant and in line with what the project is making? Review only; nothing has b
   reviews. Do not renumber them; refer to them from the SR status lines.
 - The questions (Q-…) have their own status in the register below; an answer goes there with its date,
   and the SR groups that depend on it are updated in the same commit.
-- The open point **O234** in `analysis/worklist-decisions.md` points to this file and is closed when
+- The open point **OW001** in `analysis/worklist-decisions.md` points to this file and is closed when
   every SR group is solved or dropped.
 
 ## Summary
