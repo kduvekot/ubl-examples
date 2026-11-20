@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: state or territory. The states and the federal territory of Bayvarra, in the structure of ISO 3166-2 (country code, hyphen, subdivision code) but not ISO 3166-2 itself. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: state or territory. The states and the federal territory of Bayvarra, in the structure of ISO 3166-2 (country code, hyphen, subdivision code) but not ISO 3166-2 itself. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>CountrySubentityCode</ShortName>

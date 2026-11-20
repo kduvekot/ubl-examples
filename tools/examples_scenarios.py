@@ -5180,7 +5180,8 @@ def wood(n, doc):
         return quotation(f, doc, 3, "The sawmill quotes for the slats.", SLATS, 30)
     if doc["doc"] == "Order" and doc["from"] == "5-xu":
         return kit.order(f, n, doc, 7, "The manufacturer accepts the quotation and orders, on the Monday after it.",
-                         "Delivered at place, the factory: the sawmill delivers; the manufacturer clears the import.",
+                         "Delivered at place, the factory: the sawmill delivers from its stock in Urvania, where "
+                         "the slats are already in free circulation.",
                          "Valdara Industries, goods-in, Ferrano",
                          {"QuotationDocumentReference": ref(f, "quotation", "The quotation accepted.")})
     if doc["doc"] == "TransportExecutionPlanRequest":
@@ -5198,9 +5199,9 @@ def wood(n, doc):
                                                                        "each."),
             "TotalPackagesQuantity": V(str(WOOD_PALLETS * 4), "The bundles on them.")})
         return out
-    # the February delivery is the season case of O150: modified at Tostara Wood Modification, despatched by the plant
-    # for the sawmill (wood/06) and released by Valdara from inward processing (wood/07); the export took place in
-    # January, as blanks (modification/04), so wood/05 is removed (D28)
+    # the February delivery is the season case of O150: modified at Tostara Wood Modification, released by the sawmill,
+    # their owner, from inward processing (wood/07, O259) and despatched by the plant for the sawmill (wood/06); the
+    # export took place in January, as blanks (modification/04), so wood/05 is removed (D28)
     if doc["doc"] == "DespatchAdvice":
         charges = [{"item": "slat-bundle-1800", "ordered": 48, "line": "1",
                     "why": f"The bundles of {what.lower()}, lot {lot}."} for lot, _, _, what in MOD_CHARGES]
@@ -5230,8 +5231,8 @@ def wood(n, doc):
                                          "circulation.")
         return out
     if doc["doc"] == "ImportCustomsDeclaration":
-        out = kit.import_declaration(f, n, doc, 10, "The manufacturer releases the slats from inward processing "
-                                     "before they leave the plant.", "")
+        out = kit.import_declaration(f, n, doc, 10, "The sawmill releases its slats from inward processing "
+                                     "before they leave the plant, to sell them in Urvania.", "")
         entries = [MOD.numbers["import"], MOD.numbers["import-2"]]
         value = mod_entry_value()
         goods = []
@@ -5259,11 +5260,16 @@ def wood(n, doc):
         out["_released_from"] = ("ash blanks of HS 4407.95, entered on 13 and 20 January")
         return out
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
-        return kit.invoice(f, n, doc, 10, "Issued when the slats leave.",
-                           {"OrderReference": ref(f, "order", "The manufacturer's order.")},
-                           [{"item": "slat-bundle-1800", "qty": 96, "invoice_why": "The bundles despatched, "
-                                                                                   "4,800 slats."}],
-                           charges=[PALLETS_CHARGE])
+        out = kit.invoice(f, n, doc, 10, "Issued when the slats leave.",
+                          {"OrderReference": ref(f, "order", "The manufacturer's order.")},
+                          [{"item": "slat-bundle-1800", "qty": 96, "invoice_why": "The bundles despatched, "
+                                                                                  "4,800 slats."}],
+                          charges=[PALLETS_CHARGE])
+        # a domestic sale in Urvania invoiced in lume (O259): Urvania's VAT is accounted for in ferra, so the invoice
+        # states it in ferra too, at the parity
+        ferra_tax(f, out, 10, "Urvania's value added tax is accounted for in ferra: the sawmill declares it in its "
+                              "Urvanian return and Valdara deducts it in its own.")
+        return out
     if doc["doc"] == "RemittanceAdvice":
         return kit.remittance(f, n, doc, 38, "The manufacturer pays across the border.")
     if doc["doc"] == "Order":
@@ -7100,11 +7106,13 @@ def export_extras(f, n, doc, out):
 
 def import_extras(f, n, doc, out):
     importer = doc["parties"]["ImporterParty"]
-    c = PARTY[importer]["c"]
+    c = PARTY[doc["parties"]["CustomsParty"]]["c"]      # the customs territory of import (O259)
     origin = PARTY[doc["parties"]["ConsignorParty"]]["c"]
     x = {"TypeCode": V("IMPORT", "An import declaration."),
          "SubTypeCode": V("FREECIRC", "For release into free circulation."),
-         "NatureOfTransactionCode": V("PURCHASE", "The goods were bought."),
+         "NatureOfTransactionCode": V("PURCHASE", "The goods are released for a sale: the importer, their owner, "
+                                                  f"sells them in {WORLD['countries'][c]['name']} as they leave the plant.")
+         if out.get("_released_from") else V("PURCHASE", "The goods were bought."),     # O259
          "VersionID": V("1", "The first version."),
          "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(c, "The customs territory of import.")}},
          "NotifierParty": party(doc["from"], short=True),
@@ -7806,15 +7814,19 @@ def _(f, n, doc, out):
 @enrich("wood", "Quotation")
 def _(f, n, doc, out):
     base = Decimal(out["QuotedMonetaryTotal"]["LineExtensionAmount"].value)
+    vat_rate = kit.tax_rule("36-xb", "5-xu", "slat-bundle-1800")[1]      # Urvania's standard rate (O259)
+    line_vat = money(base * Decimal(str(vat_rate)) / 100, "XBL")
     line = out["QuotationLine"][0] if isinstance(out["QuotationLine"], list) else out["QuotationLine"]
     line.update({"ID": V("1", "The quotation line."), "Note": V("Thermally modified ash, as drawn, in bundles of "
                                                                  "50; the same bundle in kiln-dried oak is offered "
                                                                  "below.", "What is quoted."),
                  "Quantity": qty(96, "EA", "The bundles quoted: 4,800 slats, one truck."),
                  "LineExtensionAmount": amount(base, "XBL", "The quoted amount."),
-                 "TaxInclusiveLineExtensionAmount": amount(base, "XBL", "No sales tax on a sale for manufacture: "
-                                                                        "the same amount."),
-                 "TotalTaxAmount": amount(0, "XBL", "No sales tax on a sale for manufacture."),
+                 "TaxInclusiveLineExtensionAmount": amount(base + line_vat, "XBL", "The quoted amount with "
+                                                                                   "Urvania's value added tax."),
+                 "TotalTaxAmount": amount(line_vat, "XBL", f"Urvania's value added tax on the line: {vat_rate} % of "
+                                                           "the quoted amount, a sale from the sawmill's stock in "
+                                                           "Urvania."),
                  "RequestForQuotationLineID": V("1", "The line of the request."),
                  "DocumentReference": [{"ID": V("VI-DS-SL1800", "The buyer's drawing the slat is quoted "
                                                                  "to.")},
@@ -11470,11 +11482,12 @@ def calloff_withholding():
     return base, money(base * Decimal(wh["percent"]) / 100, "XBL"), wh
 
 
-def ferra_tax(f, out, day):
+def ferra_tax(f, out, day, why="Valdara reports its value added tax in ferra, its own currency."):
     """Valdara reports its VAT in ferra, while the documents are in lume, the contract's currency (D28 point 10;
     tender/33#F13): the tax currency with the tax total in ferra beside the one in lume, at the parity of 100. It is
-    paid in lume, into its lume account at Bank of Lumeport (O226): no payment currency apart from the document's."""
-    out["TaxCurrencyCode"] = V("XUF", "Valdara reports its value added tax in ferra, its own currency.")
+    paid in lume, into its lume account at Bank of Lumeport (O226): no payment currency apart from the document's.
+    The sawmill's slat invoice to Valdara, a domestic sale in Urvania in lume, does the same (wood/08, O259)."""
+    out["TaxCurrencyCode"] = V("XUF", why)
     out["TaxExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The document currency."),
                               "TargetCurrencyCode": V("XUF", "The seller's tax currency."),
                               "CalculationRate": V("100", "1 lume = 100 ferra, the Accord's parity."),
@@ -12225,8 +12238,10 @@ def _(f, n, doc, out):
     base = Decimal(q["LineExtensionAmount"].value)
     ch = Decimal(PALLETS_CHARGE["amount"])
     q["ChargeTotalAmount"] = amount(ch, "XBL", "The pallets.")
-    q["PayableAmount"] = amount(base + ch, "XBL", "The slats and the pallets; no sales tax on a sale for "
-                                                  "manufacture.")
+    tax = kit.tax_total([({"item": "slat-bundle-1800"}, None, base + ch,
+                          kit.tax_rule("36-xb", "5-xu", "slat-bundle-1800"))], "XBL")[0]
+    q["PayableAmount"] = amount(base + ch + tax, "XBL", "The slats and the pallets with Urvania's value added tax "
+                                                        f"of {tax:,} lume.")
     return {"AllowanceCharge": pallets_charge()}
 
 
@@ -12238,7 +12253,11 @@ def _(f, n, doc, out):
     base = Decimal(a["LineExtensionAmount"].value)
     ch = Decimal(PALLETS_CHARGE["amount"])
     a["ChargeTotalAmount"] = amount(ch, "XBL", "The pallets, as quoted.")
-    a["PayableAmount"] = amount(base + ch, "XBL", "The slats and the pallets.")
+    # Urvania's value added tax on the slats and the pallets, a domestic sale from the sawmill's stock (O259)
+    tax, out["TaxTotal"] = kit.tax_total([({"item": "slat-bundle-1800"}, None, base + ch,
+                                           kit.tax_rule("36-xb", "5-xu", "slat-bundle-1800"))], "XBL")
+    a["PayableAmount"] = amount(base + ch + tax, "XBL", "The slats and the pallets with Urvania's value added tax, "
+                                                        "as quoted.")
     return {"AllowanceCharge": pallets_charge()}
 
 
@@ -14494,10 +14513,10 @@ FLOWS["lpg"] = LPG
 # slots carry the plant's job numbers. In January it has one job done for its season stock of park-bench slats, its
 # standing product; Valdara's February delivery (the wood flow, ordered on 23 February) is filled from that stock, so
 # the job's order names no customer (O255 point 1). The sawmill's kiln-dried ash blanks cross the border in two loads of its own truck (the second load's documents are cited, not
-# examples: O253), the plant enters them into inward processing (it holds the authorisation; the sawmill has no
-# Urvanian VAT number), modifies, planes, end-seals and bundles them in two kiln charges, stores the bundles for the
-# sawmill and hands them to Trasvia against the sawmill's pick-up release (wood/04, 06). Valdara releases them from
-# the procedure (wood/07). The world rule of inward processing is in countries.json (XU tax.inward_processing, O251).
+# examples: O253), the plant enters them into inward processing (it holds the authorisation), modifies, planes,
+# end-seals and bundles them in two kiln charges, stores the bundles for the sawmill and hands them to Trasvia against
+# the sawmill's pick-up release (wood/04, 06). The sawmill, their owner and registered for Urvania's VAT, releases them
+# from the procedure as importer (wood/07) and sells them to Valdara as a domestic Urvanian sale (O259). The world rule of inward processing is in countries.json (XU tax.inward_processing, O251).
 MOD = kit.Flow("modification", "2026-01-12", [
     {"item": "ash-blank-1830", "ordered": 2400, "line": "1.1", "why": "The first load: 2,400 blanks on 12 pallets, the first kiln "
                                                        "charge."}])

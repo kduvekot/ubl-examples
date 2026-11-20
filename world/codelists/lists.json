@@ -180,7 +180,7 @@
    "name": "UN/EDIFACT 7161 Special service description",
    "listID": "UN/EDIFACT EDED 7161",
    "agency": "UN/CEFACT",
-   "version": "D.16B (OpenPeppol)",
+   "version": "D.16B",
    "source": {
     "format": "peppol",
     "file": "peppol/UNCL7161.xml",
@@ -212,10 +212,6 @@
     "EXP": [
      "Export outside Bayvarra",
      "Goods or services sent to a buyer outside Bayvarra."
-    ],
-    "OUTSIDE": [
-     "Goods outside Bayvarra",
-     "Goods that are outside Bayvarra when they are sold and delivered: outside the scope of the state sales tax, without a rate."
     ],
     "WATER": [
      "Drinking water",
@@ -387,7 +383,7 @@
    "listID": "ISO 20022 ExternalCashAccountType1Code",
    "agency": "ISO 20022 Registration Authority (SWIFT)",
    "version": "2Q2026 (publication date 28 Aug 2026)",
-   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release",
+   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026)",
    "codes": {
     "CACC": [
      "Current",
@@ -469,7 +465,7 @@
    "listID": "ISO 20022 ExternalServiceLevel1Code",
    "agency": "ISO 20022 Registration Authority (SWIFT)",
    "version": "2Q2026 (publication date 28 Aug 2026)",
-   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release",
+   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026)",
    "codes": {
     "NURG": [
      "NonurgentPayment",
@@ -491,7 +487,7 @@
    "listID": "ISO 20022 ExternalPurpose1Code",
    "agency": "ISO 20022 Registration Authority (SWIFT)",
    "version": "2Q2026 (publication date 28 Aug 2026)",
-   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release",
+   "reference": "ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026)",
    "codes": {
     "SUPP": [
      "SupplierPayment",
@@ -1000,7 +996,7 @@
    "listID": "IATA SSIM Aircraft Types",
    "agency": "International Air Transport Association",
    "version": "IATA SSIM Appendix A, as OpenTravelData gives it",
-   "reference": "IATA Standard Schedules Information Manual (SSIM), Appendix A: aircraft types. Recommendation 28 refers air transport to these codes. The SSIM is not public; the codes are from OpenTravelData, and ATF is confirmed by further secondary sources (world/codelists/sources/PROVENANCE.md).",
+   "reference": "IATA Standard Schedules Information Manual (SSIM), Appendix A: aircraft types. Recommendation 28 refers air transport to these codes.",
    "source": {
     "format": "optd-aircraft",
     "file": "optd/optd_aircraft.csv",
@@ -3132,7 +3128,7 @@
    "listID": "Basel Convention Annex IV",
    "agency": "Secretariat of the Basel Convention (UNEP)",
    "version": "Basel Convention text, 2025 edition (Annex IV as amended; the new Annex IV of decision BC-17/15 applies from 1 January 2030)",
-   "reference": "Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal, Annex IV (world/codelists/sources/basel/UNEP-CHW-IMPL-CONVTEXT-2025.English.pdf)",
+   "reference": "Basel Convention on the Control of Transboundary Movements of Hazardous Wastes and their Disposal, Annex IV",
    "codes": {
     "D1": [
      "Deposit into or onto land, (e.g., landfill, etc.)",

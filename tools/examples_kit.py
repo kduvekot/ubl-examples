@@ -253,11 +253,17 @@ def free_with_name(it):
     return ITEM[it["free_with"][0]]["name"].split(",")[0]
 
 
-# sales across a border whose goods the sale does not export: (seller, buyer, item). The goods are already in the
-# buyer's country when they are sold, so the sale is outside the seller's country's tax (category O), and the invoice
-# states no origin. The sawmill sells its slats to Valdara from its stock at the modification plant in Urvania
-# (O255 points 2 and 3; O258: outside Bayvarra's sales tax, not its resale exemption).
-NOT_EXPORTED = {("36-xb", "5-xu", "slat-bundle-1800")}
+# sales a seller makes from its stock in another country of the world: (seller, buyer, item) -> that country. The
+# goods are in free circulation there when they are sold and delivered, so the sale is a domestic supply of that
+# country, taxed by its rules under the seller's own registration there (identity "tax_abroad"), and the invoice
+# states no origin, for the sale takes nothing across a border. The sawmill releases its slats from inward processing
+# as their importer and sells them to Valdara from its stock in Urvania (O255 point 3; O259, which overtakes O258).
+TAXED_IN = {("36-xb", "5-xu", "slat-bundle-1800"): "XU"}
+
+
+def taxed_in(seller, buyer, iid):
+    """The country whose tax applies to a supply: the seller's, or the country it sells from its stock in."""
+    return TAXED_IN.get((seller, buyer, iid), PARTY[seller]["c"])
 
 
 def tax_rule(seller, buyer, iid):
@@ -271,6 +277,18 @@ def tax_rule(seller, buyer, iid):
         return ("G", 0, {"id": a["id"], "name": a["name"]}, a["export"], a["reason"])
     c = WORLD["countries"][s["c"]]
     scheme = c["tax"]["schemes"][0]
+    where = TAXED_IN.get((seller, buyer, iid))
+    if where:           # sold from the seller's stock in another country, to a buyer there (O259)
+        c = WORLD["countries"][where]
+        if where != "XU" or b["c"] != where or where not in s["identity"].get("tax_abroad", {}):
+            raise SystemExit(f"{seller}: a sale from stock in {where} needs a buyer there and the seller's "
+                             "registration there (world/parties.json tax_abroad)")
+        scheme = c["tax"]["schemes"][0]
+        return ("S", scheme["rates"]["standard"], scheme,
+                f"A domestic supply in {c['name']}: the seller sells and delivers the goods from its stock in "
+                f"{c['name']}, released into free circulation there before they are delivered, so {c['name']}'s value "
+                f"added tax applies at the standard rate, charged under the seller's own {ADJECTIVE[where]} VAT number "
+                "(category S).", None)
     if it.get("levy"):      # the reason a supply is outside the tax, in the exemption reason (D31 point 3, O107)
         return ("O", 0, scheme, f"A public levy the seller collects for {PARTY[it['levy']]['identity']['name']}: not a "
                                 "supply, so outside the scope of the sales tax (category O, without a rate).",
@@ -289,10 +307,6 @@ def tax_rule(seller, buyer, iid):
         return ("O", 0, scheme, "A service supplied outside Urvania, to a customer established abroad, is outside the "
                                 "scope of Urvania's value added tax (category O).", "Service supplied outside Urvania")
     if s["c"] == "XB":
-        if (seller, buyer, iid) in NOT_EXPORTED:
-            return ("O", 0, scheme, "The goods are in Urvania when they are sold and delivered, so the sale is outside "
-                                    "the scope of Bayvarra's state sales tax (category O, without a rate).",
-                    "Goods outside Bayvarra")
         if b["c"] != "XB":
             return ("G", 0, scheme, "An export from Bayvarra: the state sales tax is not charged (category G).",
                     "Export outside Bayvarra")
@@ -1021,7 +1035,7 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
         for i, (line, (d, *_)) in enumerate(zip(out["InvoiceLine"], rows), 1):
             line["OrderLineReference"] = {"LineID": V(d.get("line", str(i)), "The order line this invoice line "
                                                                              "bills.")}
-    if "TaxPointDate" not in out and PARTY[seller]["c"] == "XU":
+    if "TaxPointDate" not in out and any(taxed_in(seller, buyer, d["item"]) == "XU" for d, *_ in rows):
         out["TaxPointDate"] = V(flow.date(day), "Urvania's value added tax becomes due on the invoice date.")
     if charges:
         out["AllowanceCharge"] = [{"ChargeIndicator": V("true", "A charge, not an allowance: it adds to the amount."),
@@ -1438,7 +1452,7 @@ def origin_statement(flow, seller, buyer, iids):
     origin declarations of the EU's preferential arrangements."""
     if PARTY[seller]["c"] == PARTY[buyer]["c"]:
         return None
-    if any((seller, buyer, i) in NOT_EXPORTED for i in iids):     # the sale takes nothing across a border
+    if any((seller, buyer, i) in TAXED_IN for i in iids):     # the sale takes nothing across a border
         return None
     if any(d["doc"] == "CertificateOfOrigin" for d in WORLD["documents"] if d["flow"] == flow.id):
         return None

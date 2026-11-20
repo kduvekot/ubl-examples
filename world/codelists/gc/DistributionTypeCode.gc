@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: distribution type. How a party receives a distributed document: whether it gets an original or a copy, and how it is sent, following the examples of UBL's definition of DistributionTypeCode ("Collect", "Sent by courier", "Sent scanned copy"). UBL 2.5 deprecated CopyIndicator, MaximumCopiesNumeric, MaximumOriginalsNumeric and PrintQualifier, so original or copy is said here, not in DocumentTypeCode, which gives the type of the distributed document. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: distribution type. How a party receives a distributed document: whether it gets an original or a copy, and how it is sent, following the examples of UBL's definition of DistributionTypeCode ("Collect", "Sent by courier", "Sent scanned copy"). UBL 2.5 deprecated CopyIndicator, MaximumCopiesNumeric, MaximumOriginalsNumeric and PrintQualifier, so original or copy is said here, not in DocumentTypeCode, which gives the type of the distributed document. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>DistributionTypeCode</ShortName>

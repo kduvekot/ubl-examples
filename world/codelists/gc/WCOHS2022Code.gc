@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Harmonized System Nomenclature 2022 edition (WCO); the subheadings written as six digits, as customs data carry them); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (Harmonized System Nomenclature 2022 edition (WCO); the subheadings written as six digits, as customs data carry them); the codes and names are as the standard publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>WCOHS2022Code</ShortName>

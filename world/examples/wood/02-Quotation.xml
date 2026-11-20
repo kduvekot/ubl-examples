@@ -189,11 +189,10 @@
     <cbc:AllowanceChargeReason>Pallets</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
     <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+      <cbc:Percent>20</cbc:Percent>
       <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
@@ -201,16 +200,15 @@
     <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
   </cac:DestinationCountry>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XBL">9264.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XBL">9264.00</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
         <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
@@ -218,15 +216,15 @@
   <cac:QuotedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">46320.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">55584.00</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   <cac:QuotationLine>
     <cbc:ID>1</cbc:ID>
     <cbc:Note>Thermally modified ash, as drawn, in bundles of 50; the same bundle in kiln-dried oak is offered below.</cbc:Note>
     <cbc:Quantity unitCode="EA">96</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
-    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">46080.00</cbc:TaxInclusiveLineExtensionAmount>
-    <cbc:TotalTaxAmount currencyID="XBL">0.00</cbc:TotalTaxAmount>
+    <cbc:TaxInclusiveLineExtensionAmount currencyID="XBL">55296.00</cbc:TaxInclusiveLineExtensionAmount>
+    <cbc:TotalTaxAmount currencyID="XBL">9216.00</cbc:TotalTaxAmount>
     <cbc:RequestForQuotationLineID>1</cbc:RequestForQuotationLineID>
     <cac:DocumentReference>
       <cbc:ID>VI-DS-SL1800</cbc:ID>

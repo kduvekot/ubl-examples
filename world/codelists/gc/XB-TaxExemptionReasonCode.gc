@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: sales tax exemption reason. Why a sale carries no state sales tax in Bayvarra; also used by the Northern Territory. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: sales tax exemption reason. Why a sale carries no state sales tax in Bayvarra; also used by the Northern Territory. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>TaxExemptionReasonCode</ShortName>
@@ -41,17 +41,6 @@
          </Value>
          <Value ColumnRef="description">
             <SimpleValue>Goods or services sent to a buyer outside Bayvarra.</SimpleValue>
-         </Value>
-      </Row>
-      <Row>
-         <Value ColumnRef="code">
-            <SimpleValue>OUTSIDE</SimpleValue>
-         </Value>
-         <Value ColumnRef="name">
-            <SimpleValue>Goods outside Bayvarra</SimpleValue>
-         </Value>
-         <Value ColumnRef="description">
-            <SimpleValue>Goods that are outside Bayvarra when they are sold and delivered: outside the scope of the state sales tax, without a rate.</SimpleValue>
          </Value>
       </Row>
       <Row>

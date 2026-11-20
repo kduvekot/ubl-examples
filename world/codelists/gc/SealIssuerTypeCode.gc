@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: seal issuer type. Who issued a seal on transport equipment. The descriptions map to the DCSA eBL 3.0.3 seal source and to UN/EDIFACT 9303 (sealing party). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: seal issuer type. Who issued a seal on transport equipment. The descriptions map to the DCSA eBL 3.0.3 seal source and to UN/EDIFACT 9303 (sealing party). -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>SealIssuerTypeCode</ShortName>

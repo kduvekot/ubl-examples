@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: customs declaration type. The kind of a customs declaration in the Trade Accord's customs data model. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: customs declaration type. The kind of a customs declaration in the Trade Accord's customs data model. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>CustomsDeclarationTypeCode</ShortName>

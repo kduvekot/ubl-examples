@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of ISO 6346 container size and type code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 6346 (a paid ISO standard); size, type group and type codes as the BIC, its registration authority, publishes them (bic-code.org size-type-code and type-code-designation, Table 3: G1 "Passive vents at upper part of cargo space", R1 "Mechanically refrigerated and heated")); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of ISO 6346 container size and type code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 6346 (a paid ISO standard); size, type group and type codes as the BIC, its registration authority, publishes them (bic-code.org size-type-code and type-code-designation, Table 3: G1 "Passive vents at upper part of cargo space", R1 "Mechanically refrigerated and heated")); the codes and names are as the standard publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ISO6346Code</ShortName>

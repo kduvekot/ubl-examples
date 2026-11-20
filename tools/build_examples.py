@@ -197,11 +197,12 @@ def _desk_for(doc, path, pid):
     return None
 
 
-def party(pid, short=False, desk=None, lang=None):
+def party(pid, short=False, desk=None, lang=None, tax_country=None):
     """The content of a cac:Party element, from the identity layer. short: identifier and name only, for a party
     referred to from inside another party's block (its service provider, shareholder or agent). desk: the function
     of the desk the party's role in the document calls for (desk_for); without one, or if the party has no such
-    desk, its main contact."""
+    desk, its main contact. tax_country: the country of the world whose tax registration the party acts under in
+    the document, where it is registered abroad as well as at home (identity "tax_abroad", O259)."""
     if short:
         return party_again(pid, None)
     if pid in ABROAD:
@@ -280,7 +281,9 @@ def party(pid, short=False, desk=None, lang=None):
                                      f"its number in the {world_ids.register_of(WORLD, p)[1]['name']}; {src}. UBL 2.5 "
                                      "carries it here; Party/EndpointID is deprecated.",
                                      schemeID="urn:ubl-examples:world:endpoint")}
-    if idn.get("tax_id"):
+    if tax_country and tax_country != p["c"]:
+        out["PartyTaxScheme"] = tax_abroad(pid, tax_country, src)
+    elif idn.get("tax_id"):
         scheme = c["tax"]["schemes"][0]
         tax = {"RegistrationName": V(legal_name(pid), f"The name under which the party is registered for "
                                                       f"{scheme['name'].lower()}; {src}."),
@@ -399,6 +402,28 @@ def party(pid, short=False, desk=None, lang=None):
                                      "URI": V(so["uri"], "The profile's address, under the reserved .example domain.")}
     out["_keys"] = set(out)
     return out
+
+
+def tax_abroad(pid, cc, src):
+    """The party's registration for the tax of another country of the world (identity "tax_abroad", O259): a
+    business that sells goods it holds in that country registers there itself and charges that country's tax."""
+    idn, c = PARTY[pid]["identity"], WORLD["countries"][cc]
+    if cc not in idn.get("tax_abroad", {}):
+        raise SystemExit(f"{pid}: acts under a tax registration in {cc} it does not have (world/parties.json)")
+    scheme = c["tax"]["schemes"][0]
+    return {"RegistrationName": V(legal_name(pid), f"The name under which the party is registered for "
+                                                   f"{c['name']}'s {scheme['name'].lower()}; {src}."),
+            "CompanyID": V(idn["tax_abroad"][cc], f"Its tax number under {c['name']}'s {scheme['name'].lower()} "
+                                                  f"({c['tax_id']['format']}): it is registered there directly, "
+                                                  f"without a representative, for the goods it sells from its "
+                                                  f"stock in {c['name']}; {src}."),
+            "TaxLevelCode": V("NATIONAL", f"The level of government that levies the tax: {c['name']}'s "
+                                          f"{scheme['name'].lower()} is levied by the country."),
+            "TaxScheme": {"ID": V(scheme["id"], f"UN/EDIFACT 5153 code of {c['name']}'s {scheme['name'].lower()}."),
+                          "CurrencyCode": V(c["currency"]["code"], "The tax is accounted for in the country's "
+                                                                   "currency."),
+                          "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(
+                              cc, "The country whose tax this is.")}}}}
 
 
 def abroad_party(pid, desk=None):
@@ -1620,7 +1645,8 @@ def profiled(top, path, pid):
     """A party at its role in a document: in full, or, with the party table applied, with its profile's blocks.
     A party states the language of the exchange: English across a border, its own language at home (O19)."""
     full = party(pid, desk=desk_for(top, path, pid) if pid in PARTY else None,
-                 lang="english" if international(top) else None)
+                 lang="english" if international(top) else None,
+                 tax_country=top.get("tax_registration", {}).get(pid))
     if not APPLY_PARTY_PROFILE:
         return full
     return apply_profile(full, party_profile(top, path, pid, CONTENT), pid)
@@ -2439,7 +2465,7 @@ def import_preference(content, doc):
     goods item carries the tax category and the note the amount."""
     if doc["doc"] != "ImportCustomsDeclaration":
         return
-    c = PARTY[doc["parties"]["ImporterParty"]]["c"]
+    c = PARTY[doc["parties"]["CustomsParty"]]["c"]      # the customs territory of import, whoever imports (O259)
     country = WORLD["countries"][c]
     goods = content["Shipment"]["GoodsItem"]
     goods = goods if isinstance(goods, list) else [goods]
