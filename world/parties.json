@@ -3180,7 +3180,7 @@
    "h": 2,
    "kind": "waterworks",
    "proposed": true,
-   "what": "Supplies drinking water in Coastal State, to shops and households.",
+   "what": "Supplies drinking water in Coastal State, to shops and households, and runs Lumeport's district heating, whose peak boilers burn propane bought from Kelpstone Gas in winter (D31, D48).",
    "how": "Water is billed on metered consumption. With UBL the Utility Statement carries the meter readings and the Invoice the amount; the tax exemption for water is stated explicitly, and a Reminder follows the same structure when a household pays late.",
    "identity": {
     "name": "Coastal State Water Company",
@@ -3996,7 +3996,7 @@
    "h": 2,
    "kind": "gasplant",
    "proposed": true,
-   "what": "Produces natural gas from an offshore field off Bayvarra's north coast; treats it at its plant on the shore and sends it by pipeline to the power station and the grid of Urvania.",
+   "what": "Produces natural gas from an offshore field off Bayvarra's north coast; treats it at its plant on the shore and sends it by pipeline to the power station and the grid of Urvania. The propane it separates from the field's gas at the plant is sold by road tanker to customers in Bayvarra, among them the peak boilers of Lumeport's district heating (D48).",
    "how": "Gas is sold by energy, measured at the border, and crosses it by pipeline every day. UBL carries the monthly sale as an Invoice in energy units, the export and import by fixed installation (transport mode 7) in the customs declarations, and a Reminder when the buyer pays late.",
    "fleet": [
     {
@@ -4082,6 +4082,14 @@
       "job_title": "Credit controller",
       "department": "Finance",
       "email": "receivables@kelpstone.example"
+     },
+     "emergency": {
+      "name": "Plant control room",
+      "job_title": "Shift supervisor",
+      "department": "Operations",
+      "email": "control@kelpstone.example",
+      "telephone": "+999 2 38522 68399",
+      "hours": "Every day, around the clock"
      }
     },
     "week": "always",
@@ -4409,6 +4417,114 @@
     },
     "week": "office"
    }
+  },
+  {
+   "id": "52-xb",
+   "n": "52",
+   "name": "Tank Haulier",
+   "cat": "logistics",
+   "c": "XB",
+   "at": [
+    74,
+    40
+   ],
+   "h": 1,
+   "kind": "depot",
+   "proposed": true,
+   "what": "A road tank haulier at Gullhaven, beside the gas plant, licensed to carry dangerous goods in tanks: its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the Coastal State Water Company's peak boilers in Lumeport, and come back empty (D48).",
+   "how": "A tank haulier carries one load at a time. UBL's consignment note carries the dangerous goods as they are loaded in the tank, with the orange plates, the placard, the tunnel restriction and the tank as transport equipment, so that consignor, carrier and consignee read the same data.",
+   "identity": {
+    "name": "Gullhaven Tank Haulage",
+    "kind": "company",
+    "registry_id": "20413151",
+    "endpoint": "XB:20413151",
+    "contact": {
+     "name": "Tanker planning",
+     "email": "planning@gullhaventank.example",
+     "telephone": "+999 2 38522 41906",
+     "department": "Operations",
+     "hours": "Every day, around the clock",
+     "job_title": "Tanker planner"
+    },
+    "tax_id": "NT-1239910",
+    "address": {
+     "StreetName": "Harbour Road",
+     "BuildingNumber": "14",
+     "CityName": "Gullhaven",
+     "CountrySubentity": "Northern Territory",
+     "PostalZone": "90540",
+     "CountrySubentityCode": "XB-NT",
+     "ID": "NT-ADR-604219"
+    },
+    "account": {
+     "bank": "25-xb",
+     "number": "XB10BLUM38522007302916",
+     "branch": "385220"
+    },
+    "industry": "4923",
+    "website": "https://www.gullhaventank.example",
+    "language": "en",
+    "legal": {
+     "form": "LTD",
+     "founded": "2012-03-05",
+     "headcount": 22,
+     "turnover": {
+      "amount": "3600000.00",
+      "currency": "XBL",
+      "year": 2025
+     },
+     "business": "services"
+    },
+    "authorization": {
+     "purpose": "Carriage of dangerous goods by road in tanks",
+     "valid_until": "2029-02-28",
+     "certificate": "XB-DGC-2024-0031",
+     "register": "dangerous-goods-carrier",
+     "type": "Dangerous goods carrier permit"
+    },
+    "desks": {
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@gullhaventank.example"
+     },
+     "sales": {
+      "name": "Sales office",
+      "job_title": "Sales coordinator",
+      "department": "Sales",
+      "email": "sales@gullhaventank.example"
+     }
+    },
+    "week": "always",
+    "identification": {
+     "convention": "own"
+    }
+   },
+   "fleet": [
+    {
+     "id": "GT-04",
+     "kind": "road",
+     "name": "Tractor unit with an LPG tank semi-trailer",
+     "plate": "BV GT 2604",
+     "trailer": "BV TK 0419",
+     "type": "3113",
+     "tare_kg": {
+      "tractor": 7300,
+      "trailer": 9700
+     },
+     "tank": {
+      "capacity_m3": "49",
+      "max_load_kg": 20500,
+      "serial": "GT-TK-0419",
+      "approval": "A pressure tank for liquefied flammable gases, approved for UN 1965; its plate gives 49 m³ and a maximum load of 20,500 kg."
+     },
+     "driver": {
+      "first": "Rowan",
+      "family": "Tallis"
+     }
+    }
+   ]
   }
  ],
  "referenced": [

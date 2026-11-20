@@ -857,6 +857,27 @@
      }
     }
    ]
+  },
+  {
+   "id": "lpg",
+   "title": "Propane by road tanker to Lumeport's district heating (dangerous goods, domestic, Bayvarra)",
+   "text": "Kelpstone Gas separates propane from its field's gas at the Gullhaven plant and sells it by road tanker. In winter the Coastal State Water Company, which runs Lumeport's district heating, burns propane in its peak boilers and orders a tanker load when its storage runs low. Kelpstone has it carried by Gullhaven Tank Haulage, licensed to carry dangerous goods in tanks: about 20 t of propane, UN 1965, class 2.1, in a tank semi-trailer that weighs about 17 t with its tractor, so within the Accord's 40 t; the tank shows the class 2.1 placard and orange plates with 23 over 1965. The tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, pumps the propane into the water company's storage and returns empty the next day. The propane is burned, not resold, so Bayvarra's sales tax applies to the sale (D48, O204).",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "42-xb",
+     "to": "34-xb",
+     "carrier": "52-xb",
+     "why": "The tanker carries the propane from the gas plant to the water company's peak boilers in Lumeport.",
+     "from_place": {
+      "name": "Kelpstone Gas plant, Gullhaven, LPG loading bay"
+     },
+     "to_place": {
+      "name": "Coastal State Water Company, district heating plant, Reservoir Road, Lumeport"
+     },
+     "transit_days": 0
+    }
+   ]
   }
  ],
  "documents": [
@@ -4275,6 +4296,57 @@
     "ConsigneeParty": "33-xu",
     "CustomsParty": "19-xu"
    }
+  },
+  {
+   "flow": "lpg",
+   "doc": "Order",
+   "from": "34-xb",
+   "to": "42-xb",
+   "why": "The water company orders a tanker load of propane for the peak boilers of its district heating, delivered into its storage tank in Lumeport.",
+   "parties": {
+    "BuyerCustomerParty": "34-xb",
+    "SellerSupplierParty": "42-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DPU"
+   }
+  },
+  {
+   "flow": "lpg",
+   "doc": "DespatchAdvice",
+   "from": "42-xb",
+   "to": "34-xb",
+   "why": "Kelpstone announces the load as weighed at its plant, with the propane's dangerous goods data for the receiver.",
+   "parties": {
+    "DespatchSupplierParty": "42-xb",
+    "DeliveryCustomerParty": "34-xb",
+    "Shipment/Consignment/CarrierParty": "52-xb"
+   }
+  },
+  {
+   "flow": "lpg",
+   "doc": "Waybill",
+   "from": "52-xb",
+   "to": "42-xb",
+   "why": "The haulier's consignment note under Bayvarra's road carriage law, with the dangerous goods as loaded in the tank: the orange plates 23 over 1965, the placard and the tunnel restriction.",
+   "parties": {
+    "SenderParty": "52-xb",
+    "ReceiverParty": "42-xb",
+    "CarrierParty": "52-xb",
+    "ConsignorParty": "42-xb",
+    "Shipment/Consignment/ConsigneeParty": "34-xb"
+   }
+  },
+  {
+   "flow": "lpg",
+   "doc": "Invoice",
+   "from": "42-xb",
+   "to": "34-xb",
+   "why": "The propane delivered, by the weighbridge's net weight, with Coastal State's sales tax: the water company burns it in its boilers, so the sale is not one for resale (O204).",
+   "parties": {
+    "AccountingSupplierParty": "42-xb",
+    "AccountingCustomerParty": "34-xb"
+   }
   }
  ],
  "cited": {
@@ -4585,6 +4657,10 @@
   "XU-CUS-REIMP-26-0044": {
    "what": "Urvanian customs' record of the re-importation",
    "type": "Re-importation record"
+  },
+  "KG-WB-26-0610-03": {
+   "what": "Kelpstone's weighbridge ticket of the tanker, weighed empty and full at the plant",
+   "type": "Weighbridge ticket"
   }
  }
 }

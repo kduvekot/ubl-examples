@@ -117,6 +117,12 @@ def tax_rule(seller, buyer, iid):
         if it["kind"] == "service":
             return ("E", 0, scheme, "Bayvarra's sales tax is charged only on sales to final consumers; a service to a "
                                     "business is exempt (category E).", "Service to a business")
+        if it.get("business_use") == "consumed":     # burned or used up by the business that buys it (O204)
+            state = b["identity"]["address"]["CountrySubentity"]
+            return ("S", scheme["rates_by_state"][state], scheme,
+                    "Goods a business uses up or keeps, such as the fuel it burns, are not bought for resale or "
+                    "manufacture: they do not become part of what it sells, so Bayvarra's retail sales tax applies to "
+                    f"their sale, at the rate of {state}, where the goods are delivered (category S, O204).", None)
         if it.get("free_with"):         # given with goods for resale, and handed on with them (furniture/09#F3)
             return ("E", 0, scheme, f"Supplied free with goods for resale: the {it['name']} goes with each "
                                     f"{free_with_name(it).split()[-1].lower()}, and the buyer hands it on "

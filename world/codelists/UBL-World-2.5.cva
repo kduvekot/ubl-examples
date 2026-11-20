@@ -316,6 +316,7 @@
       <ValueList xml:id="OtherAttribute" uri="gc/OtherAttributeCode.gc" />
       <ValueList xml:id="CardScheme" uri="gc/CardSchemeCode.gc" />
       <ValueList xml:id="Locale" uri="gc/LocaleCode.gc" />
+      <ValueList xml:id="UNCL8169" uri="gc/UNCL8169Code.gc" />
    </ValueLists>
    <InstanceMetadataSets>
       <InstanceMetadataSet xml:id="code">
@@ -340,6 +341,7 @@
       <Context address="*[local-name()='RequestedArrivalEvent']/cbc:TypeCode" values="TransportEventType" metadata="code" />
       <Context address="*[local-name()='TransportServiceDescription']/cbc:ResponseCode" values="ServiceOfferResponse" metadata="code" />
       <Context address="*[local-name()='TransportEquipment']/cbc:FullnessIndicationCode" values="LoadType" metadata="code" />
+      <Context address="*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode" values="UNCL8169" metadata="code" />
       <Context address="*[local-name()='CrewMemberPerson']/cbc:RoleCode | *[local-name()='CrewPerson']/cbc:RoleCode | *[local-name()='MasterPerson']/cbc:RoleCode | *[local-name()='PassengerPerson']/cbc:RoleCode | *[local-name()='Person']/cbc:RoleCode | *[local-name()='ReportingPerson']/cbc:RoleCode | *[local-name()='ResponsibleOfficerPerson']/cbc:RoleCode | *[local-name()='SecurityOfficerPerson']/cbc:RoleCode | *[local-name()='ShipsSurgeonPerson']/cbc:RoleCode" values="ShipPersonRole" metadata="code" />
       <Context address="*[local-name()='MaritimeWaste']/cbc:WasteTypeCode" values="ShipWasteType" metadata="code" />
       <Context address="*[local-name()='SecondaryHazard']/cbc:EmergencyProceduresCode" values="TransportEmergencyCard" metadata="code" />

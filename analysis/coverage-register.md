@@ -552,9 +552,6 @@ Coverage 4954 → 4951 (commit baad0535), 3 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `EmissionCalculationMethod/FullnessIndicationCode` | 0..1 | retail/02-Catalogue, retail/04-CatalogueItemSpecificationUpdate, sea/02-Catalogue … | | | open |
-| `EnvironmentalEmission/ValueBaseMeasure` | 0..1 | retail/02-Catalogue, retail/04-CatalogueItemSpecificationUpdate, sea/02-Catalogue … | | | open |
-| `EnvironmentalEmission/ValueFactorNumeric` | 0..1 | retail/02-Catalogue, retail/04-CatalogueItemSpecificationUpdate, sea/02-Catalogue … | | | open |
 
 ### C70: one melt per casting day, one coating batch per lot, from the production record
 
@@ -665,11 +662,8 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `DeliveryUnit/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
 | `HazardousItem/EmergencyProceduresCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the Trade Accord's emergency card for the propane's class (TEC2), the instructions in writing the road tanker carries, as the secondary hazard already uses it (D48) | lpg | candidate |
 | `HazardousItem/EmergencyTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a self-reactive substance or organic peroxide whose control and emergency temperatures the rules set; the world has none (O126) | | open |
-| `HazardousItem/LowerOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
 | `HazardousItem/MaritimePollutantCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | | | open |
 | `HazardousItem/PlacardEndorsement` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | an endorsement a rule asks for on the papers; none in the world so far (O126) | | open |
-| `HazardousItem/TunnelRestrictionCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the propane road tanker's tunnel restriction code, a carriage by road alone (D48) | lpg | candidate |
-| `HazardousItem/UpperOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
 | `ItemLocationQuantity/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
 | `RadioactiveIsotope/ActivityLevelMeasure` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | only under `ApplicableRadioactiveIsotope`, for fissile contents, which the world does not have (O126, O127) | | open |
 | `RadioactiveIsotope/Name` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | as above (O127) | | open |
@@ -686,7 +680,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `HazardousGoodsTransit/InhalationToxicityZoneCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a gas or liquid toxic by inhalation; the world has none | | open |
 | `HazardousGoodsTransit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `HazardousGoodsTransit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
-| `HazardousGoodsTransit/TransportEmergencyCardCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the Trade Accord's emergency card for class 2 on the propane road tanker (D48) | lpg | candidate |
 | `HazardousItem/AdditionalTemperature` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `TransportEquipment/AirFlowPercent` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the fresh-produce reefer's fresh-air exchange (O137, O205) | reefer | candidate |
 | `TransportEquipment/AnimalFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
@@ -1095,6 +1088,13 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `HazardousItem/UpperOrangeHazardPlacardID` | lpg/03-Waybill | the propane road tanker's orange plates, 23 over 1965: the upper half, the hazard identification number 23 (gas, flammable), on the tank's loaded hazardous item in the haulier's consignment note (D48, O126) | 2026-11-20 |
+| `HazardousItem/LowerOrangeHazardPlacardID` | lpg/03-Waybill | the lower half of the tanker's orange plates, the UN number 1965 (D48, O126) | 2026-11-20 |
+| `HazardousItem/TunnelRestrictionCode` | lpg/03-Waybill | the propane's tunnel restriction code B/D (ADR 2025), a carriage by road alone, which the consignment note must give for the tank (D48) | 2026-11-20 |
+| `HazardousGoodsTransit/TransportEmergencyCardCode` | lpg/03-Waybill | the Trade Accord's emergency card for class 2 (TEC2), the instructions in writing the tanker's crew carries, on the road transit of the loaded propane; HazardousItem/EmergencyProceduresCode stays open (owner, 2026-11-20) | 2026-11-20 |
+| `EmissionCalculationMethod/FullnessIndicationCode` | lpg/03-Waybill | the tanker's CO2e for the water company's greenhouse-gas report: the loaded run Gullhaven to Lumeport, UN/EDIFACT 8169 code 5 full, and the empty run back, code 4 empty (owner, 2026-11-20; list UNCL8169) | 2026-11-20 |
+| `EnvironmentalEmission/ValueFactorNumeric` | lpg/03-Waybill | each run's CO2e is its diesel times the tank-to-wheel factor 0.268 kg CO2e per kWh (D41's factor): the factor | 2026-11-20 |
+| `EnvironmentalEmission/ValueBaseMeasure` | lpg/03-Waybill | and the base: the kWh of diesel each run used, from the haulier's fuel records (1,700 kWh loaded, 1,240 kWh empty) | 2026-11-20 |
 | `Order/OriginatorDocumentReference` | sea/05-Order | the Port of Selanu's request to the trader, which the order's port line follows (G8, O172) | 2026-11-19 |
 | `RemittanceAdviceLine/DocumentReference` | tender/36-RemittanceAdvice | the department's deduction of the penalty for late completion under clause PEN-1 of the framework contract, which the remittance line cites as the document it is based on (D28 point 9, D9: the penalty is not a debit note) | 2026-11-19 |
 | `QualificationResolution/ExclusionReason` | contest/18-TendererQualificationResponse | Fernhollow Studio, a small design studio of Lumeport, asks to take part in the design contest and is excluded at the selection for social security contributions of 3,860 lume due and unpaid, above the minor amounts; the department tells it why and how to appeal (O102, D29 point 6) | 2026-11-19 |
