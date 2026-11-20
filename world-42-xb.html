@@ -15,7 +15,10 @@
 addition to the 26+C set</em></p>
 <p>Produces natural gas from an offshore field off Bayvarra's north
 coast; treats it at its plant on the shore and sends it by pipeline to
-the power station and the grid of Urvania.</p>
+the power station and the grid of Urvania. The propane it separates from
+the field's gas at the plant is sold by road tanker to customers in
+Bayvarra, among them the peak boilers of Lumeport's district heating
+(D48).</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -53,9 +56,13 @@ href="world-25-xb.html">Bank of Lumeport</a></td>
 <td>In Bayvarra</td>
 <td>Currency: Lume (<code>XBL</code>). Taxes: A federal country: its
 states, and the federal territory in the north, levy a retail sales tax,
-charged once, on the sale to the final consumer. Sales to businesses
-that resell, exports and sales to public bodies are exempt, and the
-invoice says so.</td>
+charged once, on the final use. A sale for resale or manufacture (goods
+sold on as they are, or that become part of the product sold, the
+packaging that goes to the customer included), exports, sales to public
+bodies and services to a business are exempt, and the invoice says so;
+what a business uses up or keeps (fuel and energy it burns, consumables,
+tools, machines, vehicles, buildings) is taxed as a retail sale, at the
+rate of the state where it is delivered (O204).</td>
 </tr>
 </tbody>
 </table>
@@ -97,12 +104,47 @@ company number <code>19676</code> and the company's own reference)</td>
 </tr>
 </tbody>
 </table>
+<h3 id="propane-commercial">Propane, commercial</h3>
+<p>Commercial propane separated from the field's gas at the Gullhaven
+plant and liquefied under pressure, hydrocarbon gas mixture C; sold by
+the tonne, weighed on the plant's weighbridge, and delivered by road
+tanker.</p>
+<table>
+<tbody>
+<tr>
+<td>Seller's item ID</td>
+<td><code>KG-LPG</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>560.00 XBL per <code>TNE</code> (tonne (metric ton))</td>
+</tr>
+<tr>
+<td>Standard item number</td>
+<td><code>KXU19676LPG</code> (ISO/IEC 15459: the issuing agency code KXU
+of <a href="world-31-xu.html">Codana Identification Agency</a>, the
+company number <code>19676</code> and the company's own reference)</td>
+</tr>
+<tr>
+<td>Customs tariff (HS)</td>
+<td><code>271112</code>; origin Bayvarra</td>
+</tr>
+<tr>
+<td>Product classification (UN CPC Ver.2.1)</td>
+<td><code>33410</code></td>
+</tr>
+<tr>
+<td>Weight per unit</td>
+<td>1000 kg net, 1000 kg gross</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-ubl-helps">How UBL helps</h2>
 <p>Gas is sold by energy, measured at the border, and crosses it by
 pipeline every day. UBL carries the monthly sale as an Invoice in energy
 units, the export and import by fixed installation (transport mode 7) in
 the customs declarations, and a Reminder when the buyer pays late.</p>
-<p>In this world it sends 4 and receives 1 documents, and is named in 2
+<p>In this world it sends 6 and receives 3 documents, and is named in 2
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="gas-and-electricity-in-an-unbundled-market-bayvarras-gas-field--urvania">Gas
@@ -190,11 +232,71 @@ document</a>.</p>
 <p>In it as <code>ConsignorParty</code> (The Party who is reponsible for
 sending the goods).</p></li>
 </ul>
+<h2
+id="propane-by-road-tanker-to-lumeports-district-heating-dangerous-goods-domestic-bayvarra">Propane
+by road tanker to Lumeport's district heating (dangerous goods,
+domestic, Bayvarra)</h2>
+<p>Kelpstone Gas separates propane from its field's gas at the Gullhaven
+plant and sells it by road tanker. In winter the Coastal State Water
+Company, which runs Lumeport's district heating, burns propane in its
+peak boilers and orders a tanker load when its storage runs low.
+Kelpstone has it carried by Gullhaven Tank Haulage, licensed to carry
+dangerous goods in tanks: about 20 t of propane, UN 1965, class 2.1, in
+a tank semi-trailer that weighs about 17 t with its tractor, so within
+the Accord's 40 t; the tank shows the class 2.1 placard and orange
+plates with 23 over 1965. The tanker is weighed on the plant's
+weighbridge empty and full, drives the day to Lumeport, pumps the
+propane into the water company's storage and returns empty the next day.
+The propane is burned, not resold, so Bayvarra's sales tax applies to
+the sale (D48, O204).</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> to <a href="world-34-xb.html">Coastal State Water
+Company</a>: Kelpstone announces the load as weighed at its plant, with
+the propane's dangerous goods data for the receiver. <a
+href="example-lpg-02-DespatchAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>DespatchSupplierParty</code>.</p>
+<p>Also mentions: <a href="world-52-xb.html">Gullhaven Tank Haulage</a>
+as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+to <a href="world-34-xb.html">Coastal State Water Company</a>: The
+propane delivered, by the weighbridge's net weight, with Coastal State's
+sales tax: the water company burns it in its boilers, so the sale is not
+one for resale (O204). <a href="example-lpg-04-Invoice.html">See the
+example document</a>.</p>
+<p>In it as <code>AccountingSupplierParty</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+from <a href="world-34-xb.html">Coastal State Water Company</a>: The
+water company orders a tanker load of propane for the peak boilers of
+its district heating, delivered into its storage tank in Lumeport. <a
+href="example-lpg-01-Order.html">See the example document</a>.</p>
+<p>In it as <code>SellerSupplierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA"><strong>Waybill</strong></a>
+from <a href="world-52-xb.html">Gullhaven Tank Haulage</a>: The
+haulier's consignment note under Bayvarra's road carriage law, with the
+dangerous goods as loaded in the tank: the orange plates 23 over 1965,
+the placard and the tunnel restriction. <a
+href="example-lpg-03-Waybill.html">See the example document</a>.</p>
+<p>In it as <code>ReceiverParty</code>, <code>ConsignorParty</code>.</p>
+<p>Also mentions: <a href="world-34-xb.html">Coastal State Water
+Company</a> as
+<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ExporterParty</code> <code>CarrierParty</code>
 <code>ConsignorParty</code> <code>AccountingSupplierParty</code>
-<code>SellerSupplierParty</code></p>
+<code>SellerSupplierParty</code> <code>DespatchSupplierParty</code>
+<code>ReceiverParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -203,6 +305,9 @@ world</h2>
 Bayvarra</a>, Bayvarra</li>
 <li><a href="world-43-xu.html">Montebrio Power</a>, Urvania</li>
 <li><a href="world-33-xu.html">Ferrano Energy</a>, Urvania</li>
+<li><a href="world-34-xb.html">Coastal State Water Company</a>,
+Bayvarra</li>
+<li><a href="world-52-xb.html">Gullhaven Tank Haulage</a>, Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#42-xb">See Gas Producer on the map</a> ·
@@ -216,6 +321,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/59cb31599aaef844a863000d3e548e42d4ec6afe"><code>59cb315</code></a> of 2026-11-20 08:20 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/ab476c51013b030ed9cd131f397240ebd7828523"><code>ab476c5</code></a> of 2026-11-20 08:29 UTC</p></div></footer>
 </body>
 </html>
