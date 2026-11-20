@@ -126,13 +126,80 @@ def sells(p):
                 return f"{c['qty']:g} ×" if u in ("EA", "C62") else f"{c['qty']:g} {units[u].split(' (')[0]} of"
             rows.append(("Made with", ", ".join(f"{qty(c)} {ITEMS[c['item']]['name']} ({link(ITEMS[c['item']]['seller'])})"
                                                 for c in i["components"])))
-        out += [f"### {i['name']}", "", i.get("description", ""), "", "| | |", "|---|---|"]
+        same = sum(1 for j in mine if j["name"] == i["name"]) > 1        # variants of one item: told apart by the seller's ID
+        out += [f"### {i['name']}" + (f" (`{i['sellers_id']}`)" if same else ""), "", i.get("description", ""), "",
+                "| | |", "|---|---|"]
         out += [f"| {k} | {v} |" for k, v in rows] + [""]
     return out
+
+from lxml import etree as _et_gc  # noqa: E402
+
+
+def _gc_names(name):
+    """Code -> name of a published world code list (world/codelists/gc/<name>.gc)."""
+    t = _et_gc.parse(os.path.join(root, "world", "codelists", "gc", name + ".gc")).getroot()
+    out = {}
+    for row in t.iter("Row"):
+        vals = {v.get("ColumnRef"): v.findtext("SimpleValue") for v in row.findall("Value")}
+        out[vals.get("code")] = vals.get("name")
+    return out
+
+
+ISIC, LANG = _gc_names("ISICRev4Code"), _gc_names("LanguageCode")
+
+
+def fleet(p):
+    """The party's vehicles, ships and aircraft as its documents name them (the people on board are not listed)."""
+    if not p.get("fleet"):
+        return []
+    kinds = {"road": "Road vehicle", "rail": "Train", "inland": "Barge", "sea": "Ship", "air": "Aircraft"}
+    rows = []
+    for f in p["fleet"]:
+        if f.get("vessel_id"):
+            reg = f"`{f['vessel_id']}`" + (f", call sign `{f['call_sign']}`" if f.get("call_sign") else "")
+        elif f.get("plate"):
+            reg = f"`{f['plate']}`"
+        elif isinstance(f.get("aircraft"), str):
+            reg = f"`{f['aircraft']}`"
+        elif f.get("train"):
+            reg = f"train `{f['train']}`"
+        else:
+            reg = ""
+        rows.append(f"| {f['name']} | {kinds.get(f['kind'], f['kind'])} | {reg} |")
+    return ["## Fleet", "", "| Name | Kind | Registration |", "|---|---|---|"] + rows + [""]
+
 
 def identity(p):
     idn, c = p["identity"], world["countries"][p["c"]]
     rows = [("Name", idn["name"])]
+    if idn.get("trade_name"):
+        rows.append(("Trade name", idn["trade_name"]))
+    lg = idn.get("legal") or {}
+    if lg.get("form"):
+        form = c.get("legal_forms", {}).get(lg["form"], {})
+        rows.append(("Legal form", form.get("name", lg["form"])))
+    if lg.get("founded"):
+        rows.append(("Founded", lg["founded"]))
+    if lg.get("headcount"):
+        rows.append(("Employees", f"{lg['headcount']:,}"))
+    if lg.get("capital") and c.get("legal_forms", {}).get(lg.get("form"), {}).get("capital_on_documents"):
+        rows.append(("Share capital", f"{lg['capital']:,} {c['currency']['name']}"))
+    if lg.get("listing"):
+        rows.append(("Listed on", f"{lg['listing']['market']}, ISIN `{lg['listing']['id']}`"))
+    if idn.get("industry"):
+        rows.append(("Industry", f"`{idn['industry']}` {ISIC.get(idn['industry'], '')} (ISIC Rev.4)"))
+    if idn.get("language"):
+        rows.append(("Language", LANG.get(idn["language"], idn["language"])))
+    ident = idn.get("identification") or {}
+    if ident.get("convention") == "GS1":
+        rows.append(("Identification", f"GS1 company prefix `{ident['company_prefix']}`, GLN `{ident['gln']}`"))
+    elif ident.get("convention") == "ISO":
+        rows.append(("Identification", f"company number `{ident['codana_cin']}` at {link(world_items.ISSUER)}, "
+                                       "for item and package numbers under ISO/IEC 15459"))
+    if idn.get("customs_id"):
+        rows.append(("Customs trader number", f"`{idn['customs_id']}`"))
+    if idn.get("website"):
+        rows.append(("Website", idn["website"]))
     if idn.get("registry_id"):
         rows.append(("Registry number", f"`{idn['registry_id']}` ({world_ids.register_of(world, p)[1]['name']})"))
     if idn.get("tax_id"):
@@ -235,9 +302,9 @@ for p in world["parties"]:
     c = world["countries"][p["c"]]
     v = view[p["id"]]
     lines = [f"# {label(p)}", ""]
-    meta = (f"*#{p['n']} {p['name']} · {c['name']} ({p['c']}) · "
+    meta = (f"*{p['name']} · {c['name']} ({p['c']}) · "
             f"<span class=\"kind kind-{p['cat']}\">{CATEGORY[p['cat']]}</span>*")
-    lines += [meta, "", p["what"], ""] + identity(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
+    lines += [meta, "", p["what"], ""] + identity(p) + fleet(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
     lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
               f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]
@@ -251,10 +318,8 @@ for p in world["parties"]:
     lines += ["## In the world", "",
               f"[See {p['name']} on the map](world.html#{p['id']}) · "
               f"{c['name']}: {c['note']}", "",
-              "*Who sends and who receives each document type follows the UBL 2.5 semantic model "
-              "(the SenderParty and ReceiverParty elements and the definitions of the documents and their party "
-              "elements), completed by the party role table of the UBL specification where the model does not say it. "
-              "Every place named in a document is checked against the UBL 2.5 structure.*", ""]
+              "*Who sends and who receives each document follows the UBL 2.5 model of the documents and their "
+              "party elements.*", ""]
     open(os.path.join(mddir, f"world-{p['id']}.md"), "w", encoding="utf-8").write("\n".join(lines))
 # The parties: an index by country and kind
 TOWN = lambda p: p["identity"].get("address", {}).get("CityName", "")
