@@ -1637,6 +1637,8 @@ Everything that was left open while deciding, in one list, so that nothing depen
 
 ### For the write-up to the OASIS UBL TC
 
+**Owner, 2026-11-20:** everything that looks wrong inside UBL goes on one separate list, `analysis/ubl-findings.md`, with for each how the world handles it meanwhile; the owner brings them to the TC at a slow pace, nothing guaranteed. The rows below are collected there.
+
 | No. | Point | From |
 |---|---|---|
 | O39 | UBL 2.5 has no element for the system boundary of a product footprint; the name `FullnessIndicationCode` under `EmissionCalculationMethod` invites misreading Added 2026-11-18: UBL 2.5 has no element for carbon stored in a product (biogenic carbon), which product declarations state separately from the fossil footprint (O25). **Home (owner, 2026-11-20): the TC write-up; the group is gone over with the owner before it is worked.** | D10 |
