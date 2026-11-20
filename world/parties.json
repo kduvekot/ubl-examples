@@ -2127,6 +2127,10 @@
     "lead": "The **Procurement Review Board of Bayvarra** is an independent public body in [[Lumeport]], [[Bayvarra]], that hears appeals in public procurement.",
     "sections": [
      {
+      "title": "History",
+      "text": "The board was set up under the Trade Accord's procurement protocol of 1999, which opened the members' public tenders to suppliers from the partners and asked each member for an independent body to hear appeals."
+     },
+     {
       "title": "Operations",
       "text": "A tenderer or a candidate who disputes a decision of a contracting authority appeals to the board. Contracting authorities name it as the place for appeals, as the [[Lumeport Public Works Department]] does in its tender for the city's park benches and in its design contest for the harbour promenade bench. A candidate excluded from a contest is told how to appeal to it."
      },
@@ -2248,6 +2252,10 @@
     "short": "International body seated in Lumeport that governs the Trade Accord's electronic business documents",
     "lead": "The **Lumeport Trade Accord Council** is an international body of the three members of the [[Lumeport Trade Accord]], seated in the Old Town of [[Lumeport]], [[Bayvarra]]. It governs the Accord's multilateral agreement on the exchange of electronic business documents, which trading parties join before they trade with each other.",
     "sections": [
+     {
+      "title": "History",
+      "text": "The agreement it governs dates from the Accord's protocol of 2014 on electronic business documents."
+     },
      {
       "title": "Status",
       "text": "The Council is entered in Bayvarra's federal list of public bodies under its seat agreement with Bayvarra, so that it can deal with Bayvarran bodies, banks and the exchange network. Like other public bodies it carries no commercial register entry. Its secretariat works from Exchange Street in the Old Town."
