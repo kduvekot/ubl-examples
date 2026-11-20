@@ -209,7 +209,7 @@ Inside `ForecastLine`:
 - `Note` = **Week-by-week figures follow in the store's portal.**  
   Where the detail is.
 - `FrozenDocumentIndicator` = **true**  
-  The figure may still change: by its UBL definition the indicator is true when the document can be changed, which its name contradicts; recorded for the TC.
+  The figure may still change: the indicator is true when the document can be changed.
 - `ForecastTypeCode` = **TOTAL** (listID `urn:ubl-examples:world:codelist:ForecastTypeCode`)  
   The total expected sales of the item in the period. The code is from the Trade Accord's forecast type list: TOTAL = Total.
 - `ForecastPeriod/StartDate` = **2026-05-04**  
