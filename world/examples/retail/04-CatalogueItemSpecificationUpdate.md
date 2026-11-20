@@ -302,7 +302,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet, the same document number in its revised issue.
-- `Item/ItemSpecificationDocumentReference/DocumentDescription` = **Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.**  
+- `Item/ItemSpecificationDocumentReference/DocumentDescription` = **Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed before delivery. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.**  
   What Valdara changed in the datasheet, as Lumeway passes it on: customers asked whether the slats need oil, as the Marrow furniture beside them does.
 - `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Where the item was produced; as Valdara Industries describes the item. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
@@ -328,7 +328,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   Its value; as Valdara Industries describes the item.
 - `Item/AdditionalItemProperty/Name` = **Slat finish**  
   The property the revised datasheet adds.
-- `Item/AdditionalItemProperty/Value` = **Untreated, turning silver-grey; end grain sealed at the sawmill**  
+- `Item/AdditionalItemProperty/Value` = **Untreated, turning silver-grey; end grain sealed before delivery**  
   The thermally modified ash needs no oil; only the end grain is sealed against splitting.
 - `Item/AdditionalItemProperty/Name` = **Seats**  
   A property buyers ask about.
@@ -726,7 +726,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       </cac:AdditionalItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
-        <cbc:DocumentDescription>Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:DocumentDescription>
+        <cbc:DocumentDescription>Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed before delivery. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:DocumentDescription>
       </cac:ItemSpecificationDocumentReference>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -753,7 +753,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Slat finish</cbc:Name>
-        <cbc:Value>Untreated, turning silver-grey; end grain sealed at the sawmill</cbc:Value>
+        <cbc:Value>Untreated, turning silver-grey; end grain sealed before delivery</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Seats</cbc:Name>

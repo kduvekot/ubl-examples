@@ -5988,13 +5988,13 @@ def retail(n, doc):
         it["ItemSpecificationDocumentReference"] = {
             "ID": V("VI-DS-B180", "The maker's datasheet, the same document number in its revised issue."),
             "DocumentDescription": V("Revised: the slats are left untreated and turn silver-grey; only the end grain "
-                                     "is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch "
+                                     "is sealed before delivery. Maintenance once a year: tighten the slat bolts, touch "
                                      "up the frame coating, clean the slats and check them for splits.",
                                      "What Valdara changed in the datasheet, as Lumeway passes it on: customers asked "
                                      "whether the slats need oil, as the Marrow furniture beside them does.")}
         it["AdditionalItemProperty"].insert(2, {
             "Name": V("Slat finish", "The property the revised datasheet adds."),
-            "Value": V("Untreated, turning silver-grey; end grain sealed at the sawmill", "The thermally modified ash "
+            "Value": V("Untreated, turning silver-grey; end grain sealed before delivery", "The thermally modified ash "
                                                                                           "needs no oil; only the end "
                                                                                           "grain is sealed against "
                                                                                           "splitting.")})

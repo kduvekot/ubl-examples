@@ -2115,15 +2115,16 @@
       (EN-GJS-400-15), galvanised and powder-coated, of 11.1 kg each;
       five slats of thermally modified ash of 1,800 × 95 × 45 mm at 4.24
       kg each, which the sawmill in Marrowdale modifies in a kiln of its
-      own and which are left untreated to turn silver-grey; and a set of
-      20 stainless A4 bolts with nuts and washers: 44.1 kg in all. It is
-      1,800 mm long over the slats and 1,660 mm over the armrests. It is
-      bolted to the ground with four anchors, which are a separate item.
-      A spare side frame is classified as a part of a seat (HS 9401.99),
-      because it is made for the bench; the anchors and bolts are parts
-      of general use and stay in the metal chapters. The bench's figures
-      come from a parametric model of it, with drawings, in
-      <literal>world/bench/</literal>.
+      own, or in its busy summer season has modified under contract at
+      Conciaro, and which are left untreated to turn silver-grey; and a
+      set of 20 stainless A4 bolts with nuts and washers: 44.1 kg in
+      all. It is 1,800 mm long over the slats and 1,660 mm over the
+      armrests. It is bolted to the ground with four anchors, which are
+      a separate item. A spare side frame is classified as a part of a
+      seat (HS 9401.99), because it is made for the bench; the anchors
+      and bolts are parts of general use and stay in the metal chapters.
+      The bench's figures come from a parametric model of it, with
+      drawings, in <literal>world/bench/</literal>.
     </para>
     <para>
       The bench ships knocked down, in three parcels that a person can
@@ -2331,6 +2332,26 @@
       the country of departure alone. Valdara's containers by rail
       travel so, from the customs office at the Ferrano hub to Bayvarra
       customs' inland office at Marrowdale.
+    </para>
+    <para>
+      Urvania also has inward processing, for goods of a foreign owner
+      that are worked in Urvania. Since the Accord charges no duty on
+      its own goods, what it saves is Urvania's import VAT: a foreign
+      company without an Urvanian VAT number could not deduct it. The
+      authorisation is held by a company established in Urvania, the
+      processor; it names the customs offices that may accept the
+      processor's entries and the period within which the goods must be
+      discharged. Goods entered under the procedure are worked without
+      duty or import VAT, and trade statistics record them as they
+      enter, at the value they would be invoiced at. They may be sold
+      while they remain under the procedure, and such a sale carries no
+      Urvanian VAT. When the processed products are released for free
+      circulation, the importer may ask for the duty and the import VAT
+      to be assessed on the goods as they were placed under the
+      procedure, their tariff line, customs value, quantity and origin
+      on the day the entry was accepted; the importer pays the VAT then
+      and deducts it in its return. The release is not recorded in the
+      statistics a second time.
     </para>
     <para>
       Valuation is national too, within the WTO's rules on customs
@@ -3327,6 +3348,40 @@
       account at the Bank of Selanu, which changes its coral. The fruit
       pays the island's import consumption tax like any import: the
       island taxes imported food to encourage its own farms.
+    </para>
+    <para>
+      Some goods are worked by a company that does not own them.
+      Marrowdale Sawmill modifies the ash of the park-bench slats in a
+      thermal modification kiln of its own, but from October to March,
+      the southern summer, that kiln is full with its own decking and
+      cladding. For those months it buys kiln slots from Tostara Wood
+      Modification, an independent plant at Conciaro east of Ferrano,
+      where the town once put its tanneries downwind, under a season
+      agreement whose slots carry the plant's job numbers. The plant
+      modifies wood in two steam kilns for Urvanian timber merchants
+      and, in their busy months, for sawmills across the border. For the
+      February delivery to Valdara the sawmill orders one job, 96
+      bundles of slats from its own kiln-dried ash blanks, which it
+      supplies free of charge and sends across the border in two loads
+      of its timber truck; Bayvarra records them as a permanent export
+      for processing, and the plant, which holds an authorisation for
+      inward processing, enters them under it. The plant modifies them
+      in two kiln charges, planes, end-seals and bundles them, reports
+      what it holds for the sawmill and when the second charge is ready,
+      and keeps the bundles until the sawmill calls them off. The
+      sawmill names the plant in its quotation to Valdara, because
+      Valdara's approval of a supplier of a type-tested part covers
+      whoever does such a process on it. It sells the slats to Valdara
+      while they are still under the procedure, books Trasvia from the
+      plant to the factory and calls the job off with a pick-up release,
+      against which the plant loads the truck and sends Valdara the
+      despatch advice for the sawmill. Valdara releases the slats into
+      free circulation that morning, with the duty and the import VAT
+      assessed on the blanks as they were entered. The plant invoices
+      the processing and the storage in ferra, a service to a customer
+      established abroad and so outside Urvania's VAT, and the sawmill
+      pays within the discount period from its lume account; its bank
+      changes the money.
     </para>
     <para>
       The vehicles on the map are these legs: one truck, train, barge,

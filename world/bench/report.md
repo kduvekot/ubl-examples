@@ -55,7 +55,7 @@ The sawmill truck is unchanged: 21.02 t against 24.7 t; 14 floor positions, two 
 | 03-world.md, 'The park bench' and the Valdara story | 'cast and galvanised steel side frames', Valdara 'makes its own steel' | 'ductile cast iron side frames, galvanised and powder-coated'; Valdara makes iron from Serravona ore and casts it in its own foundry |
 | decisions: D20 parts and parcels, O66 truck, O119 woods | 10.0 kg frames, 1.0 kg bolts, 23.0 kg bundle; 21.6 t of slats at 4.5 kg; oak now, ash from May | the figures of this report; 21.0 t per sawmill truck; one wood (thermally modified ash, 45 mm) |
 | maintenance text | 'tighten the slat bolts and touch up the coating once a year' | 'once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits' |
-| datasheet VI-DS-B180 | – | 'The slats are left untreated and turn silver-grey; only the end grain is sealed at the sawmill.' |
+| datasheet VI-DS-B180 | – | 'The slats are left untreated and turn silver-grey; only the end grain is sealed before delivery.' |
 | items.json, dimensions | LENGTH 1,800 'Over the armrests' | LENGTH 1,800 'Over the slats' and a second length 1,660 'Over the armrests' |
 | items.json, spare frame `hs` | 7325.99 | 9401.99 (part of a seat); national tariff line to match |
 
@@ -116,7 +116,7 @@ Render colours are approximations: Ferro grey as RAL 7011 (about #555D61), Moss 
 | Section, depth factor | W = 32,062 mm³, I = 721,406 mm⁴, k_h = 1.27 | |
 | **Slat mass** | **4.24 kg** (modelled with holes and chamfers) | |
 
-**Supply:** sawn, kiln-dried, thermally modified at about 212 °C and planed by Marrowdale Sawmill in its own thermal modification kiln; sold as finished modified slats. There is no separate modification plant: Marrowdale saws and kiln-dries the ash, modifies it at about 212 °C in its own thermal modification kiln, planes it and delivers the finished slat to Valdara (owner's decision).
+**Supply:** sawn, kiln-dried, thermally modified at about 212 °C and planed by Marrowdale Sawmill in its own thermal modification kiln; sold as finished modified slats. Marrowdale saws and kiln-dries the ash, modifies it at about 212 °C in its own thermal modification kiln, planes it and delivers the finished slat to Valdara (owner's decision). *Note (O150, O197, 2026-11-20):* in its summer season, October to March, when its own kiln is full, the sawmill has the slats modified, planed and end-sealed under contract at Tostara Wood Modification, Conciaro; the February delivery of the examples is such a job.
 
 **Proof plan (owner's decision):** because thermally modified timber is not strength-graded and Eurocode 5 does not cover it, the slat is proved by a **type test** of the bench under UR-SF-0450 (450 kg over the seat, one hour, no lasting deformation) and by **yearly samples** from production; the ash is graded LS13 before modification. The model's assumed design value gives a utilisation of 0.64 (0.74 if the modification costs 30 % of the graded strength), so the test is expected to pass with margin.
 
