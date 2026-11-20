@@ -59,6 +59,12 @@ The main points:
    O155, D37's hub by O214, D34's "new wood" by O149; also ore's 180 km against 159 km, the mast stowage
    against O210). The site follows the later decisions. (SR-09, E-12.)
 
+## The principle that governs the answers
+
+**Two layers (owner, 2026-11-20, SR-09):** decisions, reviews and story lines are the internal workshop; the site
+shows the world as fact. Several later groups follow from it: SR-07 (no internal numbers), SR-08 (no staging
+markers), SR-11 (gaps are a project artifact), SR-12 (no per-flow status or planned flows in the world).
+
 ## Grouped findings
 
 Severity of a group is the highest of its parts. Kind: wrong (today) · stale (against a decision) ·
@@ -72,9 +78,9 @@ irrelevant · structure · process.
 | SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | open |
 | SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | open |
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | open |
-| SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | open |
+| SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | decided (by SR-09) |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | open |
-| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | open |
+| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | decided |
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | open |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | open |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | open |
@@ -153,7 +159,9 @@ irrelevant · structure · process.
 - **Parts:** C-02, C-10, A-10.
 
 ### SR-07 · Internal references in reader texts
-- **Status:** open
+- **Status:** decided 2026-11-20 by the two-layer principle (SR-09): all D/O/MO/Q/ID-Q/C numbers and review-finding
+  IDs leave the published texts; traceability goes into code comments or unprinted keys; the build check of SR-09
+  point 3 keeps them out. The note's unpublished repository paths (B-16) are part of SR-23.
 - **What:** reasons cite about 1,900 D-, 332 O-, 570 Q/ID-Q-numbers, about 250 review-finding IDs and 237
   worklist causes (513 review IDs on 125 pages); party pages and map cards print "(decision D37)", "(D30, O105)",
   "(O226, O50)" on 43 pages; none resolves on the site; tender/38 cites a finding of the removed tender/34;
@@ -169,7 +177,23 @@ irrelevant · structure · process.
 - **Parts:** C-05.
 
 ### SR-09 · Process: how an explanation stays current
-- **Status:** open
+- **Status:** decided 2026-11-20 (owner). **The principle: two layers.** Decisions, choices, reviews and story
+  lines are internal (the workshop); they exist to make a coherent, plausible and believable world. The site
+  shows the world as fact; there is no need for the outside world to know why a decision was made, just as the
+  reasons behind a real company's choices, or why a town exists or moved, are not known outside (owner).
+  Recorded as a general rule in `analysis/codelist-decisions.md` and in `CLAUDE.md`. What follows:
+  1. the published source is the world data (`world/*.json`, the scenarios' reasons, the note's world
+     chapter), written in-world, present tense, complete on its own; the decisions file is internal and nothing
+     published depends on it or refers to it;
+  2. O112 reads the published story and the XML against each other for coherence, using the decisions to see
+     that nothing was left behind; it is recorded for every remaining flow and is part of "flow done" for each
+     new flow (D47, D48, O137); the lagging story lines are brought into line as O197 requires (E-12);
+  3. a build check fails on D/O/MO/Q/ID-Q/C numbers and review-finding IDs in published text, and warns on
+     change words ("no longer", "now instead", "was moved", "removed", "proposed");
+  4. traceability to a decision is kept internally: a code comment or an unprinted key (`"source": "D28"`);
+  5. key facts of each flow as assertions in the style of `ORE_ARRIVES`; counts and figures in hand texts
+     (map cards, note figures, specification members) computed from the data where possible;
+  6. specifications stay at version 1.0 (Q-D-03): in-world there is no history of changes to version.
 - **What:** four hand-kept copies of each flow's story (E-08); 34 story assertions in the scenarios are the only
   automated tie; the O112 read-through is recorded for road, furniture, retail, cotton, sea and contest only.
   The story lines themselves lag their "Overtaken" notes (E-12; also D32/O155, D37/O214, D34/O149 from part F).
@@ -332,13 +356,13 @@ Each question is given in full, with options and the reviewer's recommendation, 
 | Q-C-01 | Readable names for party pages? | B now (hide "#n"), A (name slugs) with the encyclopaedia | SR-16 | open |
 | Q-C-02 | Drop the "proposed / new" marking? | A on the site | SR-08 | open |
 | Q-C-03 | How much master data on a party page? | A: the O88 "about itself" record, no personal data of persons | SR-15 | open |
-| Q-C-04 | Where do D/O references live? | A: a separate, unprinted key; flow by flow with O112 | SR-07 | open |
+| Q-C-04 | Where do D/O references live? | A: a separate, unprinted key; flow by flow with O112 | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** out of published text, into comments or an unprinted key |
 | Q-C-05 | Is Urvania still inland? | A: a coast without a deep-water port | SR-17 | open |
 | Q-D-01 | Do transaction specifications state rules? | A: generated sections from the examples, hand rules only where a decision makes one | SR-20 | open |
 | Q-D-02 | Which national levels does a cross-border public invoice claim? | A: chain both, `XU:invoice` then `XB:public-billing` | SR-18 | open |
-| Q-D-03 | New version of a specification when a decision changes it? | A: keep 1.0 until a first release | SR-09 | open |
+| Q-D-03 | New version of a specification when a decision changes it? | A: keep 1.0 until a first release | SR-09 | **decided 2026-11-20 (owner): A**; in-world there is no change history |
 | Q-D-04 | National specifications for the new flows? | decide with O138; B unless a real rule exists | SR-20 | open |
-| Q-E-01 | How do decision and review references appear to readers? | B: link D/ID-Q/O to the decisions, strip review and cause IDs | SR-07 | open |
+| Q-E-01 | How do decision and review references appear to readers? | B: link D/ID-Q/O to the decisions, strip review and cause IDs | SR-07 | **decided 2026-11-20 (owner) by the two-layer principle (SR-09):** not B; no reference of any kind in published text |
 | Q-E-02 | Show review and implementation status per flow? | A: a status line in the data plus a paragraph on examples.html | SR-12 | open |
 | Q-E-03 | Announce the planned flows? | A: titles only, no numbers | SR-12 | open |
 | Q-E-04 | How to show removed numbers? | A: a muted row with the removal reason | SR-11 | open |
