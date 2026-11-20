@@ -35,9 +35,10 @@
       <listitem>
         <para>
           <emphasis role="strong">The scenario of the flow.</emphasis>
-          Document numbers, dates, quantities and the references between
-          documents are what a flow adds; each carries its own reason,
-          in business terms.
+          Dates, quantities and the references between documents are
+          what a flow adds; document numbers come from each issuer's own
+          numbering, in the order of issue. Each value carries its own
+          reason, in business terms.
         </para>
       </listitem>
       <listitem>

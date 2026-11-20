@@ -18,9 +18,10 @@ which:
   receives it, and which other parties it names, at which place, come from
   the flow of documents, so the parties always sit where the business puts
   them.
-- **The scenario of the flow.** Document numbers, dates, quantities and the
-  references between documents are what a flow adds; each carries its own
-  reason, in business terms.
+- **The scenario of the flow.** Dates, quantities and the references between
+  documents are what a flow adds; document numbers come from each issuer's own
+  numbering, in the order of issue. Each value carries its own reason, in
+  business terms.
 - **Code lists.** Coded values come from the UBL default code lists or the
   world's own lists, and the reason names the list and the meaning of the
   code.
