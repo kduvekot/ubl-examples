@@ -150,10 +150,10 @@
             <SimpleValue>Wood</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Stuknaz</SimpleValue>
+            <SimpleValue>Wood</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Fifake</SimpleValue>
+            <SimpleValue>Wood</SimpleValue>
          </Value>
          <Value ColumnRef="description">
             <SimpleValue>The wood an item is made of.</SimpleValue>

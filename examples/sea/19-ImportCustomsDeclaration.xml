@@ -368,10 +368,10 @@
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:NatureCode listID="WCO HS 2022 Sections">XV</cbc:NatureCode>
+          <cbc:NatureCode listID="WCO HS 2022 Sections">XX</cbc:NatureCode>
           <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
-          <cbc:CommodityCode listID="WCO HS 2022">732599</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">42999</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">940199</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38160</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:ClassifiedTaxCategory>
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>

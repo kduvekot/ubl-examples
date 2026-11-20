@@ -214,7 +214,7 @@
       </cac:AdditionalItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
-        <cbc:DocumentDescription>Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed at the sawmill. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:DocumentDescription>
+        <cbc:DocumentDescription>Revised: the slats are left untreated and turn silver-grey; only the end grain is sealed before delivery. Maintenance once a year: tighten the slat bolts, touch up the frame coating, clean the slats and check them for splits.</cbc:DocumentDescription>
       </cac:ItemSpecificationDocumentReference>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
@@ -241,7 +241,7 @@
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Slat finish</cbc:Name>
-        <cbc:Value>Untreated, turning silver-grey; end grain sealed at the sawmill</cbc:Value>
+        <cbc:Value>Untreated, turning silver-grey; end grain sealed before delivery</cbc:Value>
       </cac:AdditionalItemProperty>
       <cac:AdditionalItemProperty>
         <cbc:Name>Seats</cbc:Name>

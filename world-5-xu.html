@@ -240,11 +240,11 @@ company number <code>10014</code> and the company's own reference)</td>
 </tr>
 <tr>
 <td>Customs tariff (HS)</td>
-<td><code>732599</code>; origin Urvania</td>
+<td><code>940199</code>; origin Urvania</td>
 </tr>
 <tr>
 <td>Product classification (UN CPC Ver.2.1)</td>
-<td><code>42999</code></td>
+<td><code>38160</code></td>
 </tr>
 <tr>
 <td>Weight per unit</td>
@@ -1179,16 +1179,24 @@ slats for the benches and timber for furniture (Bayvarra → Urvania, and
 at home)</h2>
 <p>Marrowdale Sawmill in Upland State makes Valdara's bench slats to
 Valdara's drawing: it saws and kiln-dries ash from the managed forest,
-modifies it at about 212 °C in a thermal modification kiln of its own,
-planes it to 1800 × 95 × 45 mm and sells the slats by the bundle of 50.
-Valdara asks for a quotation, which the sawmill gives under Valdara's
-purchasing terms, for the modified ash with kiln-dried oak of the same
-size as a priced alternative, and orders 96 bundles of the ash delivered
-at its factory (DAP), so the sawmill books the truck across the border:
+modifies it at about 212 °C, planes it to 1800 × 95 × 45 mm and sells
+the slats by the bundle of 50. It modifies the ash in a thermal
+modification kiln of its own; in the southern summer, when that kiln is
+full with its own decking and cladding, it has the slats modified under
+contract at Tostara Wood Modification in Conciaro, near Ferrano, and
+names that processor to Valdara, whose approval of the supplier covers
+it. Valdara asks for a quotation, which the sawmill gives under
+Valdara's purchasing terms, for the modified ash with kiln-dried oak of
+the same size as a priced alternative, and orders 96 bundles of the ash
+delivered at its factory (DAP). The February delivery is modified at
+Conciaro, so the sawmill books the truck from the plant to the factory:
 4,800 slats on 24 heat-treated pallets, about 21.0 t, a quarter's supply
-for 960 benches. The furniture maker buys timber at home; selling for
-manufacture, against the furniture maker's exemption certificate, the
-sawmill charges no sales tax and says why.</p>
+for 960 benches, which the plant despatches for the sawmill. The slats
+are sold while they are still under inward processing in Urvania;
+Valdara releases them into free circulation and pays Urvania's import
+VAT. The furniture maker buys timber at home; selling for manufacture,
+against the furniture maker's exemption certificate, the sawmill charges
+no sales tax and says why.</p>
 <p><strong>Sends</strong></p>
 <ul>
 <li><p><a
@@ -1210,10 +1218,10 @@ href="example-wood-03-Order.html">See the example document</a>.</p>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
 Customs Declaration</strong></a> to <a href="world-19-xu.html">Customs
-Administration of Urvania</a>: The manufacturer declares the import into
-Urvania, where import VAT is due. <a
-href="example-wood-07-ImportCustomsDeclaration.html">See the example
-document</a>.</p>
+Administration of Urvania</a>: The manufacturer releases the slats from
+inward processing into free circulation in Urvania and pays the import
+VAT. <a href="example-wood-07-ImportCustomsDeclaration.html">See the
+example document</a>.</p>
 <p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
 <p>Also mentions: <a href="world-36-xb.html">Marrowdale Sawmill</a> as
 <code>ConsignorParty</code>.</p></li>
@@ -1236,20 +1244,27 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUOTATION-SCHEMA
 from <a href="world-36-xb.html">Marrowdale Sawmill</a>: The sawmill
 quotes per bundle of 50 slats of thermally modified ash, with kiln-dried
 oak as a priced alternative, delivered at the factory, under the buyer's
-purchasing terms. <a href="example-wood-02-Quotation.html">See the
-example document</a>.</p>
-<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+purchasing terms, and names the plant that modifies this delivery for
+it. <a href="example-wood-02-Quotation.html">See the example
+document</a>.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-59-xu.html">Tostara Wood
+Modification</a> as
+<code>SellerSupplierParty/Party/ServiceProviderParty/Party</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
-Advice</strong></a> from <a href="world-36-xb.html">Marrowdale
-Sawmill</a>: The sawmill announces the 96 bundles on their 24 pallets,
-with the lot, so the factory can trace the wood of every bench. <a
+Advice</strong></a> from <a href="world-59-xu.html">Tostara Wood
+Modification</a>: The modification plant despatches the 96 bundles for
+the sawmill, which sold them: it announces them on their 24 pallets with
+the lot of each kiln charge, so the factory can trace the wood of every
+bench, and records the pick-up release they left under. <a
 href="example-wood-06-DespatchAdvice.html">See the example
 document</a>.</p>
 <p>In it as <code>DeliveryCustomerParty</code>,
 <code>BuyerCustomerParty</code>.</p>
-<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
-<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<p>Also mentions: <a href="world-36-xb.html">Marrowdale Sawmill</a> as
+<code>SellerSupplierParty</code>; <a href="world-13-xu.html">Trasvia
+Haulage</a> as <code>Shipment/Consignment/CarrierParty</code>.</p></li>
 <li><p><a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
 from <a href="world-36-xb.html">Marrowdale Sawmill</a>: Slats and
@@ -1268,23 +1283,49 @@ href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUT
 Execution Plan Request</strong></a> from <a
 href="world-36-xb.html">Marrowdale Sawmill</a> to <a
 href="world-13-xu.html">Trasvia Haulage</a>: Under DAP the sawmill is
-the transport user; it books the road carrier across the border. <a
+the transport user; it books the road carrier from the modification
+plant, where its slats are stored, to the factory. <a
 href="example-wood-04-TransportExecutionPlanRequest.html">See the
 example document</a>.</p>
 <p>In it as <code>Consignment/ConsigneeParty</code> (The Party who
-receives the goods).</p></li>
+receives the goods).</p>
+<p>Also mentions: <a href="world-59-xu.html">Tostara Wood
+Modification</a> as <code>Consignment/ConsignorParty</code>.</p></li>
+</ul>
+<h2
+id="modification-bench-slats-modified-under-contract-bayvarra--urvania">Modification:
+bench slats modified under contract (Bayvarra → Urvania)</h2>
+<p>From October to March, the southern summer, Marrowdale Sawmill's
+thermal modification kiln is full with its own decking and cladding, so
+it buys kiln slots for the park-bench slats from Tostara Wood
+Modification at Conciaro, east of Ferrano, under a season agreement that
+gives each slot a job number in advance. For the February delivery to
+Valdara it orders the modification, planing, end sealing and bundling of
+96 bundles and sends its own kiln-dried ash blanks, 4,800 of 1,830 × 101
+× 51 mm, across the border in two loads of its timber truck. The blanks
+remain the sawmill's, and the sawmill has no Urvanian VAT number, so
+they do not enter free circulation: the plant holds an authorisation for
+inward processing and enters them under it, and Urvania's import VAT
+waits until the finished slats are released. Bayvarra records the blanks
+as a permanent export for processing. The plant reports what it holds
+for the sawmill and when the second charge is ready, stores the bundles
+until the sawmill calls them off, and hands them to the carrier the
+sawmill books, against the sawmill's pick-up release. It invoices the
+processing in ferra, a service to a customer established abroad and so
+outside Urvania's VAT, and the sawmill pays within the discount
+period.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
 <li><p><a
-href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
-Customs Declaration</strong></a> from <a
-href="world-36-xb.html">Marrowdale Sawmill</a> to <a
-href="world-19-xb.html">Customs and Border Service of Bayvarra</a>: The
-slats leave Bayvarra; the sawmill declares the export at the land
-border. <a href="example-wood-05-ExportCustomsDeclaration.html">See the
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-CHANGE-SCHEMA"><strong>Order
+Change</strong></a> from <a href="world-36-xb.html">Marrowdale
+Sawmill</a> to <a href="world-59-xu.html">Tostara Wood Modification</a>:
+The sawmill calls off the finished job for its buyer: where it goes, the
+carrier it booked, and the release number the plant hands the goods
+against. <a href="example-modification-07-OrderChange.html">See the
 example document</a>.</p>
-<p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
-who receives the goods).</p>
-<p>Also mentions: <a href="world-13-xu.html">Trasvia Haulage</a> as
-<code>CustomsDeclaration/Shipment/Consignment/CarrierParty</code>.</p></li>
+<p>In it as <code>Delivery/DeliveryParty</code> (The Party who receives
+the goods).</p></li>
 </ul>
 <h2 id="packaging-for-the-benches-clothing-for-the-store">Packaging for
 the benches, clothing for the store</h2>
@@ -1382,6 +1423,8 @@ Urvania</li>
 <li><a href="world-7-xu.html">Rinova Recovery</a>, Urvania</li>
 <li><a href="world-33-xu.html">Ferrano Energy</a>, Urvania</li>
 <li><a href="world-36-xb.html">Marrowdale Sawmill</a>, Bayvarra</li>
+<li><a href="world-59-xu.html">Tostara Wood Modification</a>,
+Urvania</li>
 <li><a href="world-41-xb.html">Rivermouth Packaging</a>, Bayvarra</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
@@ -1392,6 +1435,6 @@ river down to Lumeport. Raw materials, manufacturing and power.</p>
 model of the documents and their party elements.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c53f7f53e1a9d4b11a825c3d4d74c1be8f9dbe23"><code>c53f7f5</code></a> of 2026-11-20 14:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0b098db214202dfe79eb0aabf1242d508d4a24b3"><code>0b098db</code></a> of 2026-11-20 14:23 UTC</p></div></footer>
 </body>
 </html>

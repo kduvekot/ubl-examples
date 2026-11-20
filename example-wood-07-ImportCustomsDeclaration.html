@@ -18,7 +18,7 @@ Administration of Urvania · The UBL World</title>
 id="import-customs-declaration-valdara-industries-to-customs-administration-of-urvania">Import
 Customs Declaration: Valdara Industries to Customs Administration of
 Urvania</h1>
-<p><em>Document 8 of 11 in the flow <a
+<p><em>Document 5 of 10 in the flow <a
 href="examples.html#flow-wood">Wood: slats for the benches and timber
 for furniture (Bayvarra → Urvania, and at home)</a> · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA">Import
@@ -28,12 +28,12 @@ href="world-19-xu.html">Customs Administration of Urvania</a>, under the
 Trade Accord's transaction <a
 href="world-spec-transaction-import-customs-declaration.html">Import
 customs declaration</a>.</p>
-<p><a href="example-wood-05-ExportCustomsDeclaration.html">← Export
-Customs Declaration</a> · <a href="examples.html#flow-wood">all
-documents of the flow</a> · <a href="example-wood-10-Order.html">Order
-→</a></p>
-<p>The manufacturer declares the import into Urvania, where import VAT
-is due.</p>
+<p><a href="example-wood-04-TransportExecutionPlanRequest.html">←
+Transport Execution Plan Request</a> · <a
+href="examples.html#flow-wood">all documents of the flow</a> · <a
+href="example-wood-06-DespatchAdvice.html">Despatch Advice →</a></p>
+<p>The manufacturer releases the slats from inward processing into free
+circulation in Urvania and pays the import VAT.</p>
 <p><a href="examples/wood/07-ImportCustomsDeclaration.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -59,17 +59,18 @@ ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>WOOD-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>VI-IM-26-0634</strong><br />
+<li><code>ID</code> = <strong>VI-IM-26-0633</strong><br />
 The importer's declaration number.</li>
 <li><code>UUID</code> =
 <strong>5121b08c-34cb-5860-af6c-8ad49382d537</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
-<li><code>IssueDate</code> = <strong>2026-02-27</strong><br />
-The manufacturer declares the import into Urvania.</li>
-<li><code>IssueTime</code> = <strong>11:05:00-01:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time, with its offset from UTC.</li>
+<li><code>IssueDate</code> = <strong>2026-02-26</strong><br />
+The manufacturer releases the slats from inward processing before they
+leave the plant.</li>
+<li><code>IssueTime</code> = <strong>08:15:00-01:00</strong><br />
+Early, so that the slats are released before Trasvia loads them; in the
+issuer's local time, with its offset from UTC.</li>
 <li><code>TypeCode</code> = <strong>IMPORT</strong> (listID
 <code>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</code>)<br />
 An import declaration. The code is from the Trade Accord's customs
@@ -84,17 +85,23 @@ circulation.</li>
 <code>urn:ubl-examples:world:codelist:NatureOfTransactionCode</code>)<br />
 The goods were bought. The code is from the Trade Accord's nature of
 transaction list: PURCHASE = Outright purchase or sale.</li>
-<li><code>Note</code> = <strong>Sarhek murdrir: valnir skul Accord
-dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul
-4,632,000 tezhul, 926,400 tezhul, zhan hir drek dizzan; drek stazstan
+<li><code>Note</code> = <strong>Kedan mir sakrek matir. Hir drek sisir
+muztek drek murdrir stan drek balstir munran vanbir raz datrir trindir
+rek drek valnir dek kildrek zatrir dagan karul drek trelhek (darhir
+mazan skul HS 4407.95, tubek rek 13 stan 20 January): sarhek murdrir,
+valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul haskek
+garsul munran skul 2,424,000 tezhul, 484,800 tezhul; drek stazstan
 serdaz skukstek trensek trek nakskek trikrul.</strong> (languageID
 <code>qau</code>)<br />
 The note in Urvanian, the sender's language: What is due at import, by
 the importing country's rule.</li>
-<li><code>Note</code> = <strong>No duty: goods of Accord origin. Import
-value added tax: 20 % of the customs value of 4,632,000 ferra, 926,400
-ferra, paid at the border; the importer deducts it again in its
-return.</strong> (languageID <code>en-XU</code>)<br />
+<li><code>Note</code> = <strong>Released from inward processing. At the
+importer's request the duty and the import value added tax are assessed
+on the goods as they were placed under the procedure (ash blanks of HS
+4407.95, entered on 13 and 20 January): no duty, goods of Accord origin.
+Import value added tax: 20 % of their customs value of 2,424,000 ferra,
+484,800 ferra; the importer deducts it again in its return.</strong>
+(languageID <code>en-XU</code>)<br />
 The same note in English, the working language between the countries:
 What is due at import, by the importing country's rule.</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
@@ -524,27 +531,32 @@ Administration of Urvania</a> is named in.</p>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>MS-SH-26-0632</strong><br />
+<li><code>ID</code> = <strong>TWM-SH-26-0631</strong><br />
 The shipment declared.</li>
 <li><code>TotalTransportHandlingUnitQuantity</code> =
 <strong>24</strong> (unitCode <code>EA</code>)<br />
 The pallets the goods travel on.</li>
+<li><code>DeclaredCustomsValueAmount</code> = <strong>2424000</strong>
+(currencyID <code>XUF</code>)<br />
+The total customs value of the two goods items: the same tariff
+subheading, the same procedure and the same origin, from two
+entries.</li>
 <li><code>GoodsItem/ID</code> = <strong>1</strong><br />
-The goods item number.</li>
+The goods item of the entry TWM-IM-26-0413: kiln charge 1, from the
+first load of blanks.</li>
 <li><code>GoodsItem/Description</code> = <strong>Bench slat 1800, bundle
 of 50</strong><br />
 What the goods are, in words.</li>
 <li><code>GoodsItem/DeclaredCustomsValueAmount</code> =
-<strong>4632000</strong> (currencyID <code>XUF</code>)<br />
-Urvania values the goods with freight and insurance to its border: the
-goods at 4,608,000 XUF, with the export pallets the buyer pays for, part
-of the price paid (24,000 XUF), shared over the goods items by their
-value.</li>
-<li><code>GoodsItem/GrossWeightMeasure</code> = <strong>21024</strong>
+<strong>1212000</strong> (currencyID <code>XUF</code>)<br />
+At the importer's request the customs value of the blanks as they were
+entered under TWM-IM-26-0413: their value with the carriage to the
+border, on the day the entry was accepted.</li>
+<li><code>GoodsItem/GrossWeightMeasure</code> = <strong>10512</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods of this item, in their parcels and with
 the pallets they travel on.</li>
-<li><code>GoodsItem/Quantity</code> = <strong>96</strong> (unitCode
+<li><code>GoodsItem/Quantity</code> = <strong>48</strong> (unitCode
 <code>EA</code>)<br />
 The quantity declared.</li>
 <li><code>GoodsItem/PreferenceCriterionCode</code> = <strong>P</strong>
@@ -606,34 +618,112 @@ UN/EDIFACT 5153 code VAT: value added tax. The code is from the world's
 copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added
 tax. An identifier that holds a code names the code's list in its
 schemeID.</li>
-<li><code>ShipmentStage/TransportModeCode</code> = <strong>3</strong>
+<li><code>GoodsItem/ID</code> = <strong>2</strong><br />
+The goods item of the entry TWM-IM-26-0414: kiln charge 2, from the
+second load of blanks.</li>
+<li><code>GoodsItem/Description</code> = <strong>Bench slat 1800, bundle
+of 50</strong><br />
+What the goods are, in words.</li>
+<li><code>GoodsItem/DeclaredCustomsValueAmount</code> =
+<strong>1212000</strong> (currencyID <code>XUF</code>)<br />
+At the importer's request the customs value of the blanks as they were
+entered under TWM-IM-26-0414: their value with the carriage to the
+border, on the day the entry was accepted.</li>
+<li><code>GoodsItem/GrossWeightMeasure</code> = <strong>10512</strong>
+(unitCode <code>KGM</code>)<br />
+The gross weight of the goods of this item, in their parcels and with
+the pallets they travel on.</li>
+<li><code>GoodsItem/Quantity</code> = <strong>48</strong> (unitCode
+<code>EA</code>)<br />
+The quantity declared.</li>
+<li><code>GoodsItem/PreferenceCriterionCode</code> = <strong>P</strong>
 (listID
-<code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
-The goods cross the border by road. The code is from UBL's default
-Transport mode (UNECE Recommendation 19) list: 3 = Road transport.</li>
+<code>urn:ubl-examples:world:codelist:PreferenceCriterionCode</code>)<br />
+The goods are of XB origin under the Trade Accord, by this criterion:
+the preference claimed, free of duty. The code is from the Trade
+Accord's preference criterion list: P = Wholly obtained.</li>
+<li><code>GoodsItem/Item/Description</code> = <strong>Bundle of 50 bench
+slats of thermally modified ash, the sawmill's slat MS-SL-1800
+(Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten
+high, strapped.</strong><br />
+The seller's description.</li>
+<li><code>GoodsItem/Item/Name</code> = <strong>Bench slat 1800, bundle
+of 50</strong><br />
+The item's short name.</li>
+<li><code>GoodsItem/Item/OriginCountry/IdentificationCode</code> =
+<strong>XB</strong> (listID <code>ISO 3166</code>)<br />
+Where the item was produced; as Marrowdale Sawmill describes the item.
+The code is from the world's copy of UBL's Country identification (ISO
+3166) list: XB = Bayvarra.</li>
+<li><code>GoodsItem/Item/CommodityClassification/NatureCode</code> =
+<strong>XX</strong> (listID <code>WCO HS 2022 Sections</code>)<br />
+The section of the Harmonized System the goods fall in, the highest
+level of the World Customs Organization's classification. The code is
+from the world's copy of Harmonized System 2022, sections: XX =
+Miscellaneous manufactured articles.</li>
+<li><code>GoodsItem/Item/CommodityClassification/CargoTypeCode</code> =
+<strong>GEN</strong> (listID
+<code>urn:ubl-examples:world:codelist:CargoTypeCode</code>)<br />
+The kind of cargo: bulk, or general cargo in packages. The code is from
+the Trade Accord's cargo type list: GEN = General cargo.</li>
+<li><code>GoodsItem/Item/CommodityClassification/CommodityCode</code> =
+<strong>940191</strong> (listID <code>WCO HS 2022</code>)<br />
+The Harmonized System subheading of the World Customs Organization, six
+digits, for customs and trade statistics; as Marrowdale Sawmill
+describes the item. The code is from the world's copy of Harmonized
+Commodity Description and Coding System, 2022 edition (subheadings):
+940191 = Parts of seats, of wood.</li>
+<li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
+= <strong>38160</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
+What the item is, as a subclass of the UN Central Product Classification
+(CPC), the trade classification for goods and services; as Marrowdale
+Sawmill describes the item. The code is from the world's copy of UN
+Central Product Classification, Version 2.1: 38160 = Parts of
+furniture.</li>
+<li><code>GoodsItem/Item/ClassifiedTaxCategory/ID</code> =
+<strong>S</strong> (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
+Urvania's value added tax at import, at the standard rate. The code is
+from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S
+= Standard rate. An identifier that holds a code names the code's list
+in its schemeID.</li>
+<li><code>GoodsItem/Item/ClassifiedTaxCategory/Percent</code> =
+<strong>20</strong><br />
+The standard rate.</li>
+<li><code>GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID</code> =
+<strong>VAT</strong> (schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
+UN/EDIFACT 5153 code VAT: value added tax. The code is from the world's
+copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added
+tax. An identifier that holds a code names the code's list in its
+schemeID.</li>
+</ul>
+<h3 id="previous-customs-declaration">Previous Customs Declaration</h3>
+<p>Inside <code>PreviousCustomsDeclaration</code>:</p>
+<ul>
+<li><code>ID</code> = <strong>TWM-IM-26-0413</strong><br />
+The entry into inward processing of the first load of blanks, which this
+release discharges.</li>
+<li><code>FunctionCode</code> = <strong>IMPORT</strong> (listID
+<code>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</code>)<br />
+The kind of the previous declaration. The code is from the Trade
+Accord's customs declaration type list: IMPORT = Import
+declaration.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>MS-EX-26-0630</strong><br />
-The export declaration of the goods in the country of departure, for
-information.</li>
+<li><code>ID</code> = <strong>TWM-IM-26-0414</strong><br />
+The entry into inward processing of the second load of blanks, a
+previous customs declaration of the goods beside the one above, which
+this release discharges too.</li>
 <li><code>DocumentTypeCode</code> =
-<strong>ExportCustomsDeclaration</strong> (listID
+<strong>ImportCustomsDeclaration</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: MS-EX-26-0630 is the example wood/05,
-a ExportCustomsDeclaration; a generic reference names the UBL document
-type. The code is from the Trade Accord's UBL document type list:
-ExportCustomsDeclaration = Export Customs Declaration.</li>
-<li><code>ID</code> = <strong>MS-INV-26-0635</strong><br />
-The commercial invoice the customs value rests on; its statement on
-origin is the proof of origin the preference claim refers to.</li>
-<li><code>DocumentTypeCode</code> = <strong>Invoice</strong> (listID
-<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: MS-INV-26-0635 is the example wood/08,
-a Invoice; a generic reference names the UBL document type. The code is
-from the Trade Accord's UBL document type list: Invoice.</li>
+The kind of document referred to, the modification plant's entry into
+inward processing of the second load of ash blanks, on 20 January, a
+document outside the examples (cited). The code is from the Trade
+Accord's UBL document type list: ImportCustomsDeclaration = Import
+Customs Declaration.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -658,15 +748,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:import-customs-declaration:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:customs:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;WOOD-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-IM-26-0634&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;VI-IM-26-0633&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;5121b08c-34cb-5860-af6c-8ad49382d537&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-27&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:05:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-26&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:15:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode&quot;</span>&gt;IMPORT&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SubTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode&quot;</span>&gt;FREECIRC&lt;/<span class="kw">cbc:SubTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NatureOfTransactionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NatureOfTransactionCode&quot;</span>&gt;PURCHASE&lt;/<span class="kw">cbc:NatureOfTransactionCode</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 4,632,000 tezhul, 926,400 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 4,632,000 ferra, 926,400 ferra, paid at the border; the importer deducts it again in its return.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Kedan mir sakrek matir. Hir drek sisir muztek drek murdrir stan drek balstir munran vanbir raz datrir trindir rek drek valnir dek kildrek zatrir dagan karul drek trelhek (darhir mazan skul HS 4407.95, tubek rek 13 stan 20 January): sarhek murdrir, valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul haskek garsul munran skul 2,424,000 tezhul, 484,800 tezhul; drek stazstan serdaz skukstek trensek trek nakskek trikrul.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Released from inward processing. At the importer&#39;s request the duty and the import value added tax are assessed on the goods as they were placed under the procedure (ash blanks of HS 4407.95, entered on 13 and 20 January): no duty, goods of Accord origin. Import value added tax: 20 % of their customs value of 2,424,000 ferra, 484,800 ferra; the importer deducts it again in its return.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:JurisdictionRegionAddress</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Country</span>&gt;</span>
@@ -816,67 +906,93 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CustomsParty</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;MS-SH-26-0632&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TWM-SH-26-0631&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;24&lt;/<span class="kw">cbc:TotalTransportHandlingUnitQuantity</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;4632000&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;21024&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;P&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 bench slats of thermally modified ash, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XX&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;940191&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38160&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;20&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TransportModeCode</span> <span class="ot">listID=</span><span class="st">&quot;UNECE Recommendation 19 - Codes for Modes of Transport&quot;</span>&gt;3&lt;/<span class="kw">cbc:TransportModeCode</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;MS-EX-26-0630&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ExportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;MS-INV-26-0635&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-SIG-IM-wood&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ImportCustomsDeclaration</span>&gt;</span></code></pre></div>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;2424000&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;1212000&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;10512&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;48&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;P&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 bench slats of thermally modified ash, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XX&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;940191&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38160&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;20&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;1212000&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;10512&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;48&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PreferenceCriterionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PreferenceCriterionCode&quot;</span>&gt;P&lt;/<span class="kw">cbc:PreferenceCriterionCode</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 bench slats of thermally modified ash, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NatureCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022 Sections&quot;</span>&gt;XX&lt;/<span class="kw">cbc:NatureCode</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CargoTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CargoTypeCode&quot;</span>&gt;GEN&lt;/<span class="kw">cbc:CargoTypeCode</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;940191&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38160&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;S&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Percent</span>&gt;20&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;VAT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PreviousCustomsDeclaration</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TWM-IM-26-0413&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FunctionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode&quot;</span>&gt;IMPORT&lt;/<span class="kw">cbc:FunctionCode</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PreviousCustomsDeclaration</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TWM-IM-26-0414&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ImportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-SIG-IM-wood&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ImportCustomsDeclaration</span>&gt;</span></code></pre></div>
 <hr />
-<p><a href="example-wood-05-ExportCustomsDeclaration.html">← Export
-Customs Declaration</a> · <a href="examples.html#flow-wood">all
-documents of the flow</a> · <a href="example-wood-10-Order.html">Order
-→</a></p>
+<p><a href="example-wood-04-TransportExecutionPlanRequest.html">←
+Transport Execution Plan Request</a> · <a
+href="examples.html#flow-wood">all documents of the flow</a> · <a
+href="example-wood-06-DespatchAdvice.html">Despatch Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c53f7f53e1a9d4b11a825c3d4d74c1be8f9dbe23"><code>c53f7f5</code></a> of 2026-11-20 14:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0b098db214202dfe79eb0aabf1242d508d4a24b3"><code>0b098db</code></a> of 2026-11-20 14:23 UTC</p></div></footer>
 </body>
 </html>

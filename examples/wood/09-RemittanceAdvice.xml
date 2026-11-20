@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-RM-26-0636</cbc:ID>
+  <cbc:ID>VI-RM-26-0635</cbc:ID>
   <cbc:UUID>e5f65c03-a244-5c3b-a933-778dccb8be58</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>14:22:00-01:00</cbc:IssueTime>
@@ -14,7 +14,7 @@
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">46320.00</cbc:TotalPaymentAmount>
   <cbc:PaymentOrderReference>VI-PAY-26-0625</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>
+  <cbc:InvoicingPartyReference>RF13MSINV260634</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -104,7 +104,7 @@
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:InstructionID>VI-PAY-26-0625</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF83MSINV260635</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF13MSINV260634</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
@@ -187,10 +187,10 @@
     <cbc:DebitLineAmount currencyID="XBL">46320.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF83MSINV260635</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF13MSINV260634</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>MS-INV-26-0635</cbc:ID>
+        <cbc:ID>MS-INV-26-0634</cbc:ID>
         <cbc:IssueDate>2026-02-26</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

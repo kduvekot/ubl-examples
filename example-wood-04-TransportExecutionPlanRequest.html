@@ -17,7 +17,7 @@ Haulage · The UBL World</title>
 <h1
 id="transport-execution-plan-request-marrowdale-sawmill-to-trasvia-haulage">Transport
 Execution Plan Request: Marrowdale Sawmill to Trasvia Haulage</h1>
-<p><em>Document 4 of 11 in the flow <a
+<p><em>Document 4 of 10 in the flow <a
 href="examples.html#flow-wood">Wood: slats for the benches and timber
 for furniture (Bayvarra → Urvania, and at home)</a> · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-EXECUTION-PLAN-REQUEST-SCHEMA">Transport
@@ -29,9 +29,11 @@ href="world-spec-transaction-transport-execution-plan-request.html">Transport
 execution plan request</a>.</p>
 <p><a href="example-wood-03-Order.html">← Order</a> · <a
 href="examples.html#flow-wood">all documents of the flow</a> · <a
-href="example-wood-06-DespatchAdvice.html">Despatch Advice →</a></p>
+href="example-wood-07-ImportCustomsDeclaration.html">Import Customs
+Declaration →</a></p>
 <p>Under DAP the sawmill is the transport user; it books the road
-carrier across the border.</p>
+carrier from the modification plant, where its slats are stored, to the
+factory.</p>
 <p><a href="examples/wood/04-TransportExecutionPlanRequest.xml">The XML
 file</a> is valid against the UBL 2.5 schemas and the world's code
 lists. Below, every value with its place in the document and the reason
@@ -70,8 +72,8 @@ Under DAP the sawmill books the truck across the border.</li>
 <li><code>IssueTime</code> = <strong>16:19:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time, with its offset from UTC.</li>
-<li><code>Note</code> = <strong>The slats across the border to the bench
-factory.</strong><br />
+<li><code>Note</code> = <strong>The finished slats from the modification
+plant to the bench factory, called off by the sawmill.</strong><br />
 The transport asked for.</li>
 <li><code>TransportUserRemarks</code> = <strong>Please confirm by
 return.</strong><br />
@@ -171,18 +173,15 @@ list. The code is from the world's copy of UBL's Country identification
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Contact/Name</code> = <strong>Transport
-planning</strong><br />
-The party's transport planning desk: the desk for its role in this
-document (it books or uses the transport).</li>
-<li><code>Contact/JobTitle</code> = <strong>Logistics
-planner</strong><br />
+<li><code>Contact/Name</code> = <strong>Sales office</strong><br />
+The party's main desk, which handles this document.</li>
+<li><code>Contact/JobTitle</code> = <strong>Sales
+coordinator</strong><br />
 The job of the person who answers at the desk.</li>
-<li><code>Contact/Department</code> = <strong>Logistics</strong><br />
+<li><code>Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 7121 338
 173</strong><br />
-The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
@@ -192,7 +191,7 @@ Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
-href="mailto:logistics@marrowdalesawmill.example">logistics@marrowdalesawmill.example</a></strong><br />
+href="mailto:sales@marrowdalesawmill.example">sales@marrowdalesawmill.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
 anyone.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
@@ -407,8 +406,8 @@ Delivered within three days.</li>
 <h3 id="from-location">From Location</h3>
 <p>Inside <code>FromLocation</code>:</p>
 <ul>
-<li><code>Name</code> = <strong>Marrowdale Sawmill yard,
-Marrowdale</strong><br />
+<li><code>Name</code> = <strong>Tostara Wood Modification yard,
+Conciaro</strong><br />
 Where the goods are taken over.</li>
 </ul>
 <h3 id="to-location">To Location</h3>
@@ -573,17 +572,124 @@ When the desk can be reached.</li>
 Industries</a> is named in.</p>
 </details>
 
+<details>
+<summary>The party's own data in `ConsignorParty`, as Tostara Wood Modification gives it (22 values)</summary>
+
 <ul>
 <li><code>ConsignorParty/PartyIdentification/ID</code> =
-<strong>20412329</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-The same party as at SenderParty, where its full details are given; only
-its identifier and name are repeated.</li>
-<li><code>ConsignorParty/PartyName/Name</code> = <strong>Marrowdale
-Sawmill</strong><br />
-The same party as at SenderParty, where its full details are given; only
-its identifier and name are repeated.</li>
+<strong>XU-R-106192</strong> (schemeID
+<code>urn:ubl-examples:world:XU:register</code>)<br />
+The party's preferred identifier: its number in the Commercial register
+of Urvania. Later mentions of the same party in this document repeat
+only this identifier and the name.</li>
+<li><code>ConsignorParty/AdditionalPartyIdentification/ID</code> =
+<strong>XU-TR-106192</strong> (schemeID
+<code>urn:ubl-examples:world:XU:customs-trader</code>)<br />
+A further identifier: the party's customs trader number, because it
+imports or exports (XU-TR- and 6 digits).</li>
+<li><code>ConsignorParty/PartyName/Name</code> = <strong>Tostara Wood
+Modification</strong><br />
+The trading name.</li>
+<li><code>ConsignorParty/PostalAddress/ID</code> =
+<strong>4160205830117402</strong> (schemeID
+<code>urn:ubl-examples:world:XU:address-register</code>)<br />
+The address's number in the national address register of Urvania (16
+digits: the four-digit code of the municipality, 20 for an address, and
+a ten-digit serial number).</li>
+<li><code>ConsignorParty/PostalAddress/AddressTypeCode</code> =
+<strong>BUSINESS</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
+The kind of address. The code is from the Trade Accord's address type
+list: BUSINESS = Business address.</li>
+<li><code>ConsignorParty/PostalAddress/AddressFormatCode</code> =
+<strong>XU</strong> (listID
+<code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
+<li><code>ConsignorParty/PostalAddress/StreetName</code> = <strong>Bek
+Stuzman Tuntrir</strong> (languageID <code>qau</code>)<br />
+The street's name in Urvanian: Urvania is officially bilingual, and
+street names are given in both languages .</li>
+<li><code>ConsignorParty/PostalAddress/StreetName</code> = <strong>Via
+delle Concerie</strong> (languageID <code>en-XU</code>)<br />
+The street's name in English, the country's other official language; the
+Italian names the British kept are part of English now.</li>
+<li><code>ConsignorParty/PostalAddress/BuildingNumber</code> =
+<strong>9</strong><br />
+Building number of the postal address.</li>
+<li><code>ConsignorParty/PostalAddress/CityName</code> =
+<strong>Zhildir</strong> (languageID <code>qau</code>)<br />
+The place's Urvanian name, as the map gives it. The town or locality
+nearest to the party's place on the map, in its own country and
+state.</li>
+<li><code>ConsignorParty/PostalAddress/CityName</code> =
+<strong>Conciaro</strong> (languageID <code>en-XU</code>)<br />
+The place's English name, the Italian one. The town or locality nearest
+to the party's place on the map, in its own country and state.</li>
+<li><code>ConsignorParty/PostalAddress/PostalZone</code> =
+<strong>4190</strong><br />
+Postal code in Urvania's format (4 digits).</li>
+<li><code>ConsignorParty/PostalAddress/CountrySubentity</code> =
+<strong>Province of Ferrano</strong><br />
+The province, part of an address in Urvania: a subdivision of the
+country.</li>
+<li><code>ConsignorParty/PostalAddress/TimezoneOffset</code> =
+<strong>-01:00</strong><br />
+The offset from UTC of Urvanian Time, Urvania's legal time, all year:
+there is no summer time.</li>
+<li><code>ConsignorParty/PostalAddress/Country/IdentificationCode</code>
+= <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
+Urvania: a user-assigned ISO 3166-1 code, in the world's country code
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
+<li><code>ConsignorParty/PostalAddress/Country/Name</code> =
+<strong>Urvania</strong><br />
+The country's name, for readers of the address.</li>
+<li><code>ConsignorParty/Contact/Name</code> = <strong>Despatch
+desk</strong><br />
+The party's despatch desk: the desk for its role in this document (it
+sends the goods off).</li>
+<li><code>ConsignorParty/Contact/JobTitle</code> = <strong>Despatch
+coordinator</strong><br />
+The job of the person who answers at the desk.</li>
+<li><code>ConsignorParty/Contact/Department</code> =
+<strong>Yard</strong><br />
+The department the desk belongs to.</li>
+<li><code>ConsignorParty/Contact/Telephone</code> = <strong>+999 1 041
+573 2290</strong><br />
+The party's switchboard, which puts the caller through to the desk.
+Telephone under +999, a country code the ITU reserves for a future
+global service (ITU-T E.164), so the number reaches no one; then the
+country digit and a number in Urvania's own plan: Open numbering, kept
+from Italian times: the area code starts with 0 and stays in the number,
+also from abroad; the longer the area code, the shorter the number:
+Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
+Mobiles start with 3 and have 10 digits.</li>
+<li><code>ConsignorParty/Contact/ElectronicMail</code> = <strong><a
+href="mailto:despatch@tostara.example">despatch@tostara.example</a></strong><br />
+E-mail under the reserved .example domain (RFC 2606), so it cannot reach
+anyone.</li>
+<li><code>ConsignorParty/Contact/Note</code> = <strong>Weekdays
+07:00–16:00</strong><br />
+When the desk can be reached.</li>
 </ul>
+<p>The same in every document <a href="world-59-xu.html">Tostara Wood
+Modification</a> is named in.</p>
+</details>
+
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&#39;1.0&#39;</span> <span class="ot">encoding=</span><span class="st">&#39;UTF-8&#39;</span><span class="fu">?&gt;</span></span>
@@ -597,7 +703,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;b76f67b2-bdec-5954-8847-a49b1f0dd043&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-23&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;16:19:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The slats across the border to the bench factory.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The finished slats from the modification plant to the bench factory, called off by the sawmill.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransportUserRemarks</span>&gt;Please confirm by return.&lt;/<span class="kw">cbc:TransportUserRemarks</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SenderParty</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -631,11 +737,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Transport planning&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Logistics planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Logistics&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Sales office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Sales coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 338 173&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;logistics@marrowdalesawmill.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;sales@marrowdalesawmill.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -721,7 +827,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-01&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ServiceEndTimePeriod</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:FromLocation</span>&gt;</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale Sawmill yard, Marrowdale&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Tostara Wood Modification yard, Conciaro&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:FromLocation</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ToLocation</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -780,20 +886,49 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-106192&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Marrowdale Sawmill&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlanRequest</span>&gt;</span></code></pre></div>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:customs-trader&quot;</span>&gt;XU-TR-106192&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Tostara Wood Modification&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:address-register&quot;</span>&gt;4160205830117402&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XU&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Bek Stuzman Tuntrir&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Via delle Concerie&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;9&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Zhildir&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Conciaro&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PostalZone</span>&gt;4190&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Province of Ferrano&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Urvania&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Despatch desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Despatch coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Yard&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 573 2290&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;despatch@tostara.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 07:00–16:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">TransportExecutionPlanRequest</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-wood-03-Order.html">← Order</a> · <a
 href="examples.html#flow-wood">all documents of the flow</a> · <a
-href="example-wood-06-DespatchAdvice.html">Despatch Advice →</a></p>
+href="example-wood-07-ImportCustomsDeclaration.html">Import Customs
+Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c53f7f53e1a9d4b11a825c3d4d74c1be8f9dbe23"><code>c53f7f5</code></a> of 2026-11-20 14:05 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0b098db214202dfe79eb0aabf1242d508d4a24b3"><code>0b098db</code></a> of 2026-11-20 14:23 UTC</p></div></footer>
 </body>
 </html>

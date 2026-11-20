@@ -202,14 +202,6 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>42999</SimpleValue>
-         </Value>
-         <Value ColumnRef="name">
-            <SimpleValue>Metal goods n.e.c.</SimpleValue>
-         </Value>
-      </Row>
-      <Row>
-         <Value ColumnRef="code">
             <SimpleValue>46420</SimpleValue>
          </Value>
          <Value ColumnRef="name">
