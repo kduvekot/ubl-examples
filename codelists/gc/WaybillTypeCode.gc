@@ -71,7 +71,7 @@
             <SimpleValue>Kepisu lutatehi tamasu ( Accord's lelahe lelova CIM)</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>A consignment note for the international carriage of goods by rail between the Accord's members, under the Trade Accord's uniform rules for it, which are modelled on the CIM, the Uniform Rules concerning the Contract of International Carriage of Goods by Rail (COTIF Appendix B); like the CIM they also cover a carriage by road within one member state that supplements the rail carriage under the same contract (UN/EDIFACT 1001: 720; D37).</SimpleValue>
+            <SimpleValue>A consignment note for the international carriage of goods by rail between the Accord's members, under the Trade Accord's uniform rules for it, which are modelled on the CIM, the Uniform Rules concerning the Contract of International Carriage of Goods by Rail (COTIF Appendix B); like the CIM they also cover a carriage by road within one member state that supplements the rail carriage under the same contract (UN/EDIFACT 1001: 720).</SimpleValue>
          </Value>
       </Row>
       <Row>
