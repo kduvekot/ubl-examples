@@ -66,6 +66,12 @@ NETWORK = [
      {"mode": "road", "layer": "transport", "label": "Ferrano up the valley to Serravona and across the river to the mine (domestic XU)"}),
     # Ferrano's river bridge: the road south across the river to the farms (a main road: the town's bridge)
     ("road-farm", "main", ["t:Ferrano", "s:77,128"]),
+    # Lumeport's civic street (O244): Civic Square, from the main roads' end across the port railway over Government
+    # Hill and round its east flank to the insurer's door, one street for the civic bodies on the hill (2-xb, 21-xb,
+    # 24-xb, 28-xb, 29-xb, 11-xb, 48-xb) in place of their separate access roads; the Department of Agriculture
+    # (57-xb) stands beside it on the east flank
+    ("civic", "minor", ["s:137,126", "s:141,126", "s:141,127", "p:29-xb"],
+     {"mode": "road", "layer": "network", "class": "minor", "label": "Civic Square, the street over Government Hill in Lumeport"}),
     # the minor roads: from Larkmouth north-west over the dry east to Gullhaven on the north coast (the settlers'
     # road to the north coast, and the gas plant's); on Lisavu the port through its customs post to the town
     ("road-north", "minor", ["t:Larkmouth", "t:Gullhaven"],
@@ -291,6 +297,13 @@ def lay_villages(world, terrain, land, routes, log=print, cls="minor", skip=froz
 
     out = []
 
+    def climbs_over(path):
+        """A road that climbs more than REFIT_CLIMB_M above the higher of its two ends (the rule of refit's
+        reasonable, owner 2026-11-19, MO002 option c; O244: kept on every lay, so that a full relay does not lay a
+        mountain road to a cove that a refit would refuse): such a village is reached by a track or by sea."""
+        hs = [land.hc[i][j] for i, j in path]
+        return max(hs) > max(hs[0], hs[-1]) + REFIT_CLIMB_M
+
     def link(v):
         """Join village v to the roads: True if done (or beside a road already), None if no way was found."""
         c = tuple(v["c"])
@@ -306,6 +319,8 @@ def lay_villages(world, terrain, land, routes, log=print, cls="minor", skip=froz
             if not goals or not starts:
                 continue
             got = routing.route(land, built, cls, sorted(starts), goals, box=box, avoid=vsq | (near_struct - goals))
+            if got and climbs_over(got[0]):
+                got = None                                 # over a mountain to a village: no builder's road (MO002 c)
             if got:
                 break
         else:
