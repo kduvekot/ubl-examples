@@ -10,8 +10,10 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 
 - ~~Lisavu's status: whether it was ever under British rule, how it governs itself, and what its Island Day (7 July, self-government) marks.~~ **Filled 2026-11-20 (OW003):** a protected state of Britain from 1884, never a colony; fully self-governing since 7 July 1962 (Island Day); cotton estates from the 1860s, its own Bank of Selanu from 1878. How it governs itself today: see the forms of government below.
 - ~~How and when Bayvarra became an independent federation (its Federation Day marks the states forming the federation).~~ **Filled 2026-11-20 (OW004):** Upland a colony of its own in 1858; the two colonies federated on 16 October 1899 as a dominion under the Crown; fully sovereign by the early 1930s.
-- The form of government of each country: head of state, parliament.
-- When the Lisavans first settled the island.
+- The form of government of each country: head of state, parliament. *Set aside by the owner (2026-11-20) for later, with the historical governments.*
+- ~~When the Lisavans first settled the island.~~ **Filled 2026-11-20 (OW005):** a landing by canoe at Natahoma about 2,000 years ago; the coasts settled in the centuries after; one line of rulers at Selanu by about the 14th century.
+- The rulers' old meeting ground in Selanu: what it is, what it looks like, its Lisavan name (from the lexicon tool).
+- When the first European ships called at Lisavu, before the cotton estates.
 - The exact years of the first landing at Larkmouth, the Sardinian treaty with the Urvanian rulers, the boundary convention, and the move of Bayvarra's capital from Larkmouth to Lumeport.
 - The years of the Trade Accord's later protocols: procurement rules, the payment link and card schemes, electronic business documents.
 - The name of the main river and of the plateau rivers.

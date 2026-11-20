@@ -16195,7 +16195,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The Lisavan village on the bay gave the town its name. In the 19th century the English settlers built Port Wrenfield on the wharf north of the village, with its street of stores and its customs house, and offices, churches and houses rose on the slope behind the wharf. The Lumeport Agreement of 1974 brought the warehouses, brokers and trades of the Agreement Quarter."
+      "text": "The Lisavan village on the bay gave the town its name; by about the 14th century it was the seat of the rulers of the whole island. In the 19th century the English settlers built Port Wrenfield on the wharf north of the village, with its street of stores and its customs house, and offices, churches and houses rose on the slope behind the wharf. The Lumeport Agreement of 1974 brought the warehouses, brokers and trades of the Agreement Quarter."
      }
     ]
    }
@@ -16863,7 +16863,8 @@
    ],
    "band": "large village",
    "built_km": 1.33,
-   "farming": "fishing"
+   "farming": "fishing",
+   "wiki": {"short": "Fishing village on the north coast of Lisavu, the oldest settlement of the island", "lead": "**Natahoma** is a fishing village on the north coast of [[Lisavu]], with about {people} people, in the most sheltered bay of that coast. By the Lisavans' tradition the first canoes landed here, and its village sites, about 2,000 years old, are the oldest on the island.", "sections": [{"title": "Geography", "text": "The village lies at the head of the bay, where a stream comes in. Its Lisavan name means anchorage."}, {"title": "History", "text": "The Lisavans' tradition tells of ancestors who came over the sea by canoe and landed in this bay. From here villages spread along the island's sheltered coasts in the centuries after."}, {"title": "Economy", "text": "Natahoma lives from fishing, its gardens and the building of canoes, a craft the village has kept."}]}
   },
   {
    "name": "Lintwell",
