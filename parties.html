@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Parties · UBL Example Documents</title>
-<link rel="stylesheet" href="site.css?v=322eab78c8">
+<title>Parties · The UBL World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="site.css?v=df783bed5b">
 </head>
 <body>
-<header class="site-header"><div class="bar"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg><span>The UBL World</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="world.html">World</a></li><li><a href="examples.html">Trade</a></li><li><a href="parties.html" aria-current="page">Parties</a></li><li><a href="world-specifications.html">Rules</a></li><li><a href="about.html">About</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html" title="The UBL World: home">UBL <span>World</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="world.html">World</a></li><li><a href="examples.html">Trade</a></li><li><a href="parties.html" aria-current="page">Parties</a></li><li><a href="world-specifications.html">Rules</a></li><li><a href="about.html">About</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
 <div class="layout">
 <main class="prose">
 <h1 id="parties">Parties</h1>
@@ -31,105 +34,105 @@ town.</p>
 <td><a href="world-8-xu.html">Castrano Logistics</a></td>
 <td>Seller's Warehouse (3PL)</td>
 <td>Conciaro</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-33-xu.html">Ferrano Energy</a></td>
 <td>Energy Retailer</td>
 <td>Ferrano</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-44-xu.html">Ferrano Grid</a></td>
 <td>Grid Operator</td>
 <td>Ferrano</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-43-xu.html">Montebrio Power</a></td>
 <td>Power Station</td>
 <td>Serravona</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-7-xu.html">Rinova Recovery</a></td>
 <td>Waste Processor</td>
 <td>Ferrano</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-4-xu.html">Serravona Mining</a></td>
 <td>Raw Material Supplier</td>
 <td>Fucinalta</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-5-xu.html">Valdara Industries</a></td>
 <td>Manufacturer</td>
 <td>Ferrano</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-18-xu.html">Ferrano Intermodal Hub</a></td>
 <td>Rail Hub / Intermodal Terminal</td>
 <td>Ferrano</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-14-xu.html">Ferrano Rail Cargo</a></td>
 <td>Rail Carrier</td>
 <td>Serravona</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-15-xu.html">Fiumella Barges</a></td>
 <td>Inland Waterway Carrier</td>
 <td>Ferrano</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-13-xu.html">Trasvia Haulage</a></td>
 <td>Road Carrier</td>
 <td>Ferrano</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-31-xu.html">Codana Identification Agency</a></td>
 <td>Identifier Issuing Agency</td>
 <td>Ferrano</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-19-xu.html">Customs Administration of
 Urvania</a></td>
 <td>Customs (XU)</td>
 <td>Valico Euridice</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-46-xu.html">Environment Agency of Urvania</a></td>
 <td>Environment Agency (XU)</td>
 <td>Ferrano</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-20-xu.html">Ferrano Chamber of Commerce</a></td>
 <td>Chamber of Commerce (XU)</td>
 <td>Ferrano</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-47-xu.html">Rail Infrastructure Agency of
 Urvania</a></td>
 <td>Rail Infrastructure Manager (XU)</td>
 <td>Ferrano</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-23-xu.html">Crevalto Bank</a></td>
 <td>Seller's Bank</td>
 <td>Ferrano</td>
-<td>Finance</td>
+<td><span class="kind kind-finance">Finance</span></td>
 </tr>
 </tbody>
 </table>
@@ -148,153 +151,153 @@ Urvania</a></td>
 <td><a href="world-37-xb.html">Brackenmere Furniture</a></td>
 <td>Furniture Maker</td>
 <td>Marrowdale</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-26-xb.html">Brightmarket Stores</a></td>
 <td>Retailer</td>
 <td>Lumeport</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-34-xb.html">Coastal State Water Company</a></td>
 <td>Water Utility</td>
 <td>Lumeport</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-42-xb.html">Kelpstone Gas</a></td>
 <td>Gas Producer</td>
 <td>Gullhaven</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-40-xb.html">Lumeport Textile Mill</a></td>
 <td>Textile Mill</td>
 <td>Lumeport</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-6-xb.html">Lumeway Distribution</a></td>
 <td>Distributor</td>
 <td>Marrowdale</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-36-xb.html">Marrowdale Sawmill</a></td>
 <td>Sawmill</td>
 <td>Marrowdale</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-49-xb.html">Quillmoor Pharma Distribution</a></td>
 <td>Pharmaceutical Wholesaler</td>
 <td>Lumeport</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-41-xb.html">Rivermouth Packaging</a></td>
 <td>Packaging Maker</td>
 <td>Lumeport</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-c-xb.html">Robin Ashdale</a></td>
 <td>Consumer</td>
 <td>Lumeport</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-10-xb.html">Bayforth Forwarding</a></td>
 <td>Freight Forwarder</td>
 <td>Lumeport</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-52-xb.html">Gullhaven Tank Haulage</a></td>
 <td>Tank Haulier</td>
 <td>Gullhaven</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-17-xb.html">Lumeport Airport Cargo Terminal</a></td>
 <td>Airport (XB)</td>
 <td>Lumeport</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-16-xb.html">Port of Lumeport</a></td>
 <td>Seaport (XB)</td>
 <td>Lumeport</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-11-xb.html">Tidewell Ocean Lines</a></td>
 <td>Ocean Carrier</td>
 <td>Lumeport</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-21-xb.html">Bayvarra Information Service</a></td>
 <td>Government Information Service</td>
 <td>Lumeport</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-19-xb.html">Customs and Border Service of
 Bayvarra</a></td>
 <td>Customs (XB)</td>
 <td>Euridice Crossing</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-32-xb.html">Lumeport Trade Accord Council</a></td>
 <td>Digital Agreement Governor</td>
 <td>Lumeport</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-25-xb.html">Bank of Lumeport</a></td>
 <td>Bank / Guarantor</td>
 <td>Lumeport</td>
-<td>Finance</td>
+<td><span class="kind kind-finance">Finance</span></td>
 </tr>
 <tr>
 <td><a href="world-24-xb.html">Harbourline Factoring</a></td>
 <td>Factor</td>
 <td>Lumeport</td>
-<td>Finance</td>
+<td><span class="kind kind-finance">Finance</span></td>
 </tr>
 <tr>
 <td><a href="world-29-xb.html">Wavesure Cargo Insurance</a></td>
 <td>Insurer</td>
 <td>Lumeport</td>
-<td>Finance</td>
+<td><span class="kind kind-finance">Finance</span></td>
 </tr>
 <tr>
 <td><a href="world-48-xb.html">Fernhollow Studio</a></td>
 <td>Design Studio</td>
 <td>Lumeport</td>
-<td>Public procurement</td>
+<td><span class="kind kind-procurement">Public procurement</span></td>
 </tr>
 <tr>
 <td><a href="world-2-xb.html">Lumeport Public Works Department</a></td>
 <td>Contracting Authority</td>
 <td>Lumeport</td>
-<td>Public procurement</td>
+<td><span class="kind kind-procurement">Public procurement</span></td>
 </tr>
 <tr>
 <td><a href="world-28-xb.html">Procurement Review Board of
 Bayvarra</a></td>
 <td>Review Body</td>
 <td>Lumeport</td>
-<td>Public procurement</td>
+<td><span class="kind kind-procurement">Public procurement</span></td>
 </tr>
 <tr>
 <td><a href="world-27-xb.html">Saltmere Engineering</a></td>
 <td>Consortium Partner</td>
 <td>Marrowdale</td>
-<td>Public procurement</td>
+<td><span class="kind kind-procurement">Public procurement</span></td>
 </tr>
 </tbody>
 </table>
@@ -313,98 +316,98 @@ Bayvarra</a></td>
 <td><a href="world-38-xl.html">Lisavu Cotton Farm</a></td>
 <td>Cotton Farm</td>
 <td>Lintwell</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-9-xl.html">Nalevi Warehousing</a></td>
 <td>Buyer's Warehouse (3PL)</td>
 <td>Selanu</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-39-xl.html">Selanu Cotton Ginnery</a></td>
 <td>Cotton Ginnery</td>
 <td>Bollworth</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-35-xl.html">Selanu Telecom</a></td>
 <td>Telecom Utility</td>
 <td>Selanu</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-1-xl.html">Velumi Trading</a></td>
 <td>Commercial Buyer</td>
 <td>Selanu</td>
-<td>Commerce</td>
+<td><span class="kind kind-commerce">Commerce</span></td>
 </tr>
 <tr>
 <td><a href="world-12-xl.html">Kelaro Air Cargo</a></td>
 <td>Air Carrier</td>
 <td>Lintwell</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-16-xl.html">Port of Selanu</a></td>
 <td>Seaport (XL)</td>
 <td>Selanu</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-17-xl.html">Selanu Airport Cargo</a></td>
 <td>Airport (XL)</td>
 <td>Lintwell</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-3-xl.html">Tevaro Customs Brokers</a></td>
 <td>Customs Declarant / Broker</td>
 <td>Selanu</td>
-<td>Logistics</td>
+<td><span class="kind kind-logistics">Logistics</span></td>
 </tr>
 <tr>
 <td><a href="world-45-xl.html">Department of Agriculture of
 Lisavu</a></td>
 <td>Department of Agriculture (XL)</td>
 <td>Selanu</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-19-xl.html">Island Customs Service</a></td>
 <td>Customs (XL)</td>
 <td>Selanu</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-30-xl.html">Maritime Administration of
 Lisavu</a></td>
 <td>Maritime Administration</td>
 <td>Selanu</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-20-xl.html">Selanu Chamber of Commerce</a></td>
 <td>Chamber of Commerce (XL)</td>
 <td>Selanu</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-50-xl.html">Selanu General Hospital</a></td>
 <td>Hospital (XL)</td>
 <td>Selanu</td>
-<td>Government</td>
+<td><span class="kind kind-government">Government</span></td>
 </tr>
 <tr>
 <td><a href="world-22-xl.html">Bank of Selanu</a></td>
 <td>Buyer's Bank</td>
 <td>Selanu</td>
-<td>Finance</td>
+<td><span class="kind kind-finance">Finance</span></td>
 </tr>
 </tbody>
 </table>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/78a77416e1cf0d9665aba2bd87aad7143106018e"><code>78a7741</code></a> of 2026-11-20 09:59 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/90925da27f8b7e6731d595aacb55bcebfebe64ed"><code>90925da</code></a> of 2026-11-20 10:29 UTC</p></div></footer>
 </body>
 </html>
