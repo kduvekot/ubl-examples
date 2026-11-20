@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:call-for-tenders:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0635</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0540</cbc:ID>
   <cbc:UUID>14a2c6de-5d51-5968-b1ad-5cfe506bac85</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
   <cbc:Note>The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained. Version 2: the site plan revision B replaces revision A, and the design lead may also be a registered industrial designer, as the corrigendum says.</cbc:Note>
@@ -17,7 +17,7 @@
     <cbc:DocumentType>Design brief</cbc:DocumentType>
     <cac:Attachment>
       <cac:ExternalReference>
-        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/brief</cbc:URI>
+        <cbc:URI>https://tenders.lumeport.example/PWD/2026/PROM-DC/brief</cbc:URI>
       </cac:ExternalReference>
     </cac:Attachment>
   </cac:TechnicalDocumentReference>
@@ -28,7 +28,7 @@
     <cbc:DocumentDescription>Revision B replaces revision A: the sea wall is 420 m long, not 240 m.</cbc:DocumentDescription>
     <cac:Attachment>
       <cac:ExternalReference>
-        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-b</cbc:URI>
+        <cbc:URI>https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-b</cbc:URI>
       </cac:ExternalReference>
     </cac:Attachment>
   </cac:ProvidedDocumentReference>
@@ -230,10 +230,10 @@
       <cbc:EndDate>2026-04-30</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+      <cbc:ID>PWD/2026/0223</cbc:ID>
     </cac:NoticeDocumentReference>
     <cac:NoticeDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+      <cbc:ID>PWD/2026/0530</cbc:ID>
       <cbc:VersionID>2</cbc:VersionID>
     </cac:NoticeDocumentReference>
     <cac:ProcessJustification>

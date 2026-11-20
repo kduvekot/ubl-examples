@@ -15,10 +15,10 @@ The air waybill for the cargo-aircraft-only flight on 4 June, with the dangerous
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MAST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **KXL-WB-26-0717**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0128**  
+  The collaboration this document belongs to: the forwarding by air Saltmere gives Bayforth Forwarding. Saltmere Engineering started it and gave it this identifier, which every document of it repeats.
+- `ID` = **KXL-00696942**  
   The consignment note number.
 - `UUID` = **bf007d9d-013c-5ef5-8c7c-b450b24811d3**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -36,7 +36,7 @@ The air waybill for the cargo-aircraft-only flight on 4 June, with the dangerous
   The carriage in words.
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.**  
   The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed.
-- `ShippingOrderID` = **SE-FI-26-0714**  
+- `ShippingOrderID` = **26-0076**  
   The forwarding instructions the carriage is booked under.
 - `WaybillTypeCode` = **AWB** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
   The convention the document follows. The code is from the Trade Accord's waybill type list: AWB = Air waybill.
@@ -233,9 +233,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SE-SH-26-0715**  
+- `ID` = **26-0130**  
   The shipment as the despatching party numbered it.
-- `Consignment/ID` = **SE-CS-26-0716**  
+- `Consignment/ID` = **26-0129**  
   The consignment of the transport booking.
 - `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight.
@@ -653,7 +653,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **KXL-SIG-KXL-WB-26-0717**  
+- `ID` = **KXL-SIG-KXL-00696942**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -668,8 +668,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KXL-WB-26-0717</cbc:ID>
+  <cbc:ProfileExecutionID>26-0128</cbc:ProfileExecutionID>
+  <cbc:ID>KXL-00696942</cbc:ID>
   <cbc:UUID>bf007d9d-013c-5ef5-8c7c-b450b24811d3</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -678,7 +678,7 @@ Inside `Signature`:
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>A cargo-aircraft-only flight to the island on the airline's freighter.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
-  <cbc:ShippingOrderID>SE-FI-26-0714</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>26-0076</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">AWB</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
@@ -822,9 +822,9 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SE-SH-26-0715</cbc:ID>
+    <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:ID>26-0129</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
@@ -1201,7 +1201,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>KXL-SIG-KXL-WB-26-0717</cbc:ID>
+    <cbc:ID>KXL-SIG-KXL-00696942</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

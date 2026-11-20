@@ -15,10 +15,8 @@ The goods travel under the Accord's common transit from Urvania's office of depa
 - `CustomizationID` = **urn:ubl-examples:world:trns:transit-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transit customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-TD-26-0331**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **7800004369**  
   The transit declaration number.
 - `UUID` = **39a0d3b7-c2fe-5e50-8ee2-54287be65033**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -245,11 +243,11 @@ Inside `NotifierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0332**  
+- `ID` = **7400043689**  
   The shipment under transit.
 - `GrossWeightMeasure` = **18177.6** (unitCode `KGM`)  
   The gross weights of the transport equipment with the goods in it (9088.8 + 9088.8 kg): a shipment's gross weight includes the equipment.
-- `Consignment/ID` = **VI-CS-26-0327**  
+- `Consignment/ID` = **7300043586**  
   The consignment on the train.
 - `Consignment/GrossWeightMeasure` = **10377.6** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight under transit.
@@ -301,7 +299,7 @@ Inside `Shipment`:
   The train number; the fleet of Ferrano Rail Cargo.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044175** (schemeID `ISO6346`)  
   The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **7300043586**  
   The consignment the container carries.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
@@ -323,7 +321,7 @@ Inside `Shipment`:
   And put on by the shipper when it packed the container.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044180** (schemeID `ISO6346`)  
   The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **7300043586**  
   The consignment the container carries.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
@@ -476,11 +474,11 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **FRC-TEP-26-0328**  
+- `ID` = **9500055446**  
   The transport plan.
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FRC-TEP-26-0328 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
-- `ID` = **VI-CD-26-0330E**  
+  The kind of document referred to: 9500055446 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
+- `ID` = **7600008738**  
   The export declaration lodged in Urvania at the office of departure, which the transit continues; a document outside the examples.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to, Valdara's export declaration lodged in Urvania at the office of departure of the rail transit, a document outside the examples (cited). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
@@ -504,8 +502,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transit-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-TD-26-0331</cbc:ID>
+  <cbc:ID>7800004369</cbc:ID>
   <cbc:UUID>39a0d3b7-c2fe-5e50-8ee2-54287be65033</cbc:UUID>
   <cbc:IssueDate>2026-04-13</cbc:IssueDate>
   <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
@@ -667,10 +664,10 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:NotifierParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0332</cbc:ID>
+    <cbc:ID>7400043689</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ID>7300043586</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -714,7 +711,7 @@ Inside `Signature`:
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
-          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:ReferencedConsignmentID>7300043586</cbc:ReferencedConsignmentID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
           <cbc:SizeTypeCode listID="ISO 6346">45G1</cbc:SizeTypeCode>
           <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
@@ -731,7 +728,7 @@ Inside `Signature`:
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
-          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:ReferencedConsignmentID>7300043586</cbc:ReferencedConsignmentID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
           <cbc:SizeTypeCode listID="ISO 6346">45G1</cbc:SizeTypeCode>
           <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
@@ -866,11 +863,11 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:ID>9500055446</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-CD-26-0330E</cbc:ID>
+    <cbc:ID>7600008738</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

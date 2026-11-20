@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-INV-26-0637</cbc:ID>
+  <cbc:ProfileExecutionID>26-0167</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-INV-26-0282</cbc:ID>
   <cbc:UUID>6aa25014-301c-5e58-b842-6b77c0387ed1</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>09:54:00-01:00</cbc:IssueTime>
@@ -16,7 +16,7 @@
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>BF-PO-26-0636</cbc:ID>
+    <cbc:ID>26-0168</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>UL-STT-EX-2024-0377</cbc:ID>
@@ -196,15 +196,15 @@
     <cbc:PaymentDueDate>2026-04-09</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF29MSINV260637</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF29MSINV260637</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF21MDSINV260282</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF21MDSINV260282</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB78BLUM38712004398618</cbc:ID>
       <cbc:Name>Marrowdale Sawmill Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice MS-INV-26-0637</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice MDS-INV-26-0282</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -279,7 +279,7 @@
       <cbc:Description>Sawn oak boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
       <cbc:Name>Oak timber</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-TB-OAK</cbc:ID>
+        <cbc:ID>MDS-TB-OAK</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -305,7 +305,7 @@
       <cbc:Description>Sawn ash boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
       <cbc:Name>Ash timber</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-TB-ASH</cbc:ID>
+        <cbc:ID>MDS-TB-ASH</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

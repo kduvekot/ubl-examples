@@ -15,10 +15,10 @@ To plan production, the furniture maker asks the store for sales and stock data 
 - `CustomizationID` = **urn:ubl-examples:world:trns:item-information-request:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Item information request". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **FURNITURE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0569**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900334966**  
+  The collaboration this document belongs to: the store's request for a quotation of the Marrow line. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0011**  
   The sender's number for its info request.
 - `UUID` = **4b68042b-1268-52c4-acf1-bb66f788d32b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -42,10 +42,10 @@ Inside `Period`:
 
 Inside `DocumentReference`:
 
-- `ID` = **BF-DOC-26-0568**  
+- `ID` = **26-0080**  
   The quotation of the line.
 - `DocumentTypeCode` = **Quotation** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-DOC-26-0568 is the example furniture/02, a Quotation; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Quotation.
+  The kind of document referred to: 26-0080 is the example furniture/02, a Quotation; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Quotation.
 
 ### Signature
 
@@ -206,7 +206,7 @@ Inside `ItemInformationRequestLine`:
   The seller's description.
 - `SalesItem/Item/Name` = **Elderwick Marrow bench, oak**  
   The item's short name.
-- `SalesItem/Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+- `SalesItem/Item/SellersItemIdentification/ID` = **BKM-MRW-B14**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `SalesItem/Item/SellersItemIdentification/ExtendedID` = **OAK**  
   The variant of the item: the wood, added to the item number.
@@ -224,7 +224,7 @@ Inside `ItemInformationRequestLine`:
   The seller's description.
 - `SalesItem/Item/Name` = **Elderwick Marrow bench, ash**  
   The item's short name.
-- `SalesItem/Item/SellersItemIdentification/ID` = **BF-MRW-B14**  
+- `SalesItem/Item/SellersItemIdentification/ID` = **BKM-MRW-B14**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `SalesItem/Item/SellersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
@@ -242,7 +242,7 @@ Inside `ItemInformationRequestLine`:
   The seller's description.
 - `SalesItem/Item/Name` = **Elderwick Marrow chair, oak**  
   The item's short name.
-- `SalesItem/Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+- `SalesItem/Item/SellersItemIdentification/ID` = **BKM-MRW-C**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `SalesItem/Item/SellersItemIdentification/ExtendedID` = **OAK**  
   The variant of the item: the wood, added to the item number.
@@ -260,7 +260,7 @@ Inside `ItemInformationRequestLine`:
   The seller's description.
 - `SalesItem/Item/Name` = **Elderwick Marrow chair, ash**  
   The item's short name.
-- `SalesItem/Item/SellersItemIdentification/ID` = **BF-MRW-C**  
+- `SalesItem/Item/SellersItemIdentification/ID` = **BKM-MRW-C**  
   The seller's own item number; as Brackenmere Furniture describes the item.
 - `SalesItem/Item/SellersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
@@ -281,8 +281,8 @@ Inside `ItemInformationRequestLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:item-information-request:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0569</cbc:ID>
+  <cbc:ProfileExecutionID>9900334966</cbc:ProfileExecutionID>
+  <cbc:ID>26-0011</cbc:ID>
   <cbc:UUID>4b68042b-1268-52c4-acf1-bb66f788d32b</cbc:UUID>
   <cbc:IssueDate>2026-03-12</cbc:IssueDate>
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
@@ -292,7 +292,7 @@ Inside `ItemInformationRequestLine`:
     <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:Period>
   <cac:DocumentReference>
-    <cbc:ID>BF-DOC-26-0568</cbc:ID>
+    <cbc:ID>26-0080</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Quotation</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -426,7 +426,7 @@ Inside `ItemInformationRequestLine`:
         <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -445,7 +445,7 @@ Inside `ItemInformationRequestLine`:
         <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -464,7 +464,7 @@ Inside `ItemInformationRequestLine`:
         <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -483,7 +483,7 @@ Inside `ItemInformationRequestLine`:
         <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
         <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>

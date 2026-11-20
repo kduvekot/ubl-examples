@@ -15,10 +15,10 @@ The telecom company orders back-up power and safety equipment for its mast. Carr
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MAST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **ST-PO-26-0713**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **STL-TX-26-124393**  
+  The collaboration this document belongs to: Selanu Telecom's order of a mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+- `ID` = **STL-PO-26-0374**  
   The buyer's order number.
 - `UUID` = **b63839e1-7b35-5e81-a17d-ef60734d2fe6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -274,8 +274,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-PO-26-0713</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-124393</cbc:ProfileExecutionID>
+  <cbc:ID>STL-PO-26-0374</cbc:ID>
   <cbc:UUID>b63839e1-7b35-5e81-a17d-ef60734d2fe6</cbc:UUID>
   <cbc:IssueDate>2026-06-01</cbc:IssueDate>
   <cbc:IssueTime>08:15:00+00:00</cbc:IssueTime>

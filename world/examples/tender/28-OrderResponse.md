@@ -15,12 +15,12 @@ The manufacturer accepts the change and confirms the charge.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-OR-26-0216**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/0566**  
+  The collaboration this document belongs to: the department's first call-off under the contract. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **1100043392**  
   The seller's number for its response.
-- `SalesOrderID` = **VI-SO-26-0058**  
+- `SalesOrderID` = **1000002170**  
   The manufacturer's sales order for the call-off, given in its answer: the seller's number appears first in the seller's own document.
 - `UUID` = **f49b1a90-ec03-58ab-b40d-fe1765db668c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,14 +39,14 @@ The manufacturer accepts the change and confirms the charge.
 
 Inside `OrderReference`:
 
-- `ID` = **LPWD-PO-26-0214**  
+- `ID` = **PWD/2026/0567**  
   The order this response answers.
 
 ### Order Change Document Reference
 
 Inside `OrderChangeDocumentReference`:
 
-- `ID` = **LPWD-OC-26-0215**  
+- `ID` = **PWD/2026/0571**  
   The change accepted.
 
 ### Seller Supplier Party
@@ -216,9 +216,9 @@ Inside `LegalMonetaryTotal`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-OR-26-0216</cbc:ID>
-  <cbc:SalesOrderID>VI-SO-26-0058</cbc:SalesOrderID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>1100043392</cbc:ID>
+  <cbc:SalesOrderID>1000002170</cbc:SalesOrderID>
   <cbc:UUID>f49b1a90-ec03-58ab-b40d-fe1765db668c</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>16:15:00-01:00</cbc:IssueTime>
@@ -226,10 +226,10 @@ Inside `LegalMonetaryTotal`:
   <cbc:Note>Accepted: moss green, at the quoted charge; delivery on 31 March, installation by Saltmere Engineering from 1 April, completed by 7 April.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
+    <cbc:ID>PWD/2026/0567</cbc:ID>
   </cac:OrderReference>
   <cac:OrderChangeDocumentReference>
-    <cbc:ID>LPWD-OC-26-0215</cbc:ID>
+    <cbc:ID>PWD/2026/0571</cbc:ID>
   </cac:OrderChangeDocumentReference>
   <cac:SellerSupplierParty>
     <cac:Party>

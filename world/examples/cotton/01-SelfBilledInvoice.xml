@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:self-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-SBI-26-0191</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-SBI-26-0024</cbc:ID>
   <cbc:UUID>5ceb591c-0271-54b9-ac09-ed5298739803</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
   <cbc:IssueTime>09:45:00+00:00</cbc:IssueTime>
@@ -220,15 +220,15 @@
     <cbc:PaymentDueDate>2026-01-13</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF61SCGSBI260191</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF61SCGSBI260191</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF11SCGSBI260024</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF11SCGSBI260024</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL67BSEL0020004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0191</cbc:PaymentNote>
+      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0024</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
         <cbc:Name>Market branch</cbc:Name>

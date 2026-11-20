@@ -3,9 +3,9 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0139</cbc:ID>
-  <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2501</cbc:ProfileExecutionID>
+  <cbc:ID>TWLU000033415</cbc:ID>
+  <cbc:CarrierAssignedID>1200033394</cbc:CarrierAssignedID>
   <cbc:UUID>aa5970ad-efd9-5660-a1d7-8a2f0bf2de7b</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>10:54:00-01:00</cbc:IssueTime>
@@ -13,7 +13,7 @@
   <cbc:Description>Shipped on board.</cbc:Description>
   <cbc:Note>Freight prepaid.</cbc:Note>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>BYF-FI-26-1501</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:OtherInstruction>Three originals issued.</cbc:OtherInstruction>
   <cac:ConsignorParty>
@@ -141,14 +141,14 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ID>LMW-SH-26-1001</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
-      <cbc:FreightForwarderAssignedID>BF-SH-26-0418</cbc:FreightForwarderAssignedID>
+      <cbc:ID>LMW-CS-26-1001</cbc:ID>
+      <cbc:CarrierAssignedID>1200033394</cbc:CarrierAssignedID>
+      <cbc:FreightForwarderAssignedID>BYF-SH-26-0418</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
       <cbc:TotalInvoiceAmount currencyID="XBL">54896.00</cbc:TotalInvoiceAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">54896.00</cbc:DeclaredCustomsValueAmount>
@@ -736,7 +736,7 @@
             <cbc:WeighingDate>2026-05-12</cbc:WeighingDate>
             <cbc:WeighingTime>15:30:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
-            <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
+            <cbc:WeighingDeviceID>LMW-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
             <cbc:GrossMassMeasure unitCode="KGM">9545.8</cbc:GrossMassMeasure>
             <cac:WeighingParty>
@@ -789,11 +789,11 @@
         </cac:Address>
       </cac:LastExitPortLocation>
       <cac:DocumentReference>
-        <cbc:ID>LD-PL-26-0134</cbc:ID>
+        <cbc:ID>LMW-PKL-26-0051</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">PackingList</cbc:DocumentTypeCode>
       </cac:DocumentReference>
       <cac:InsurancePolicy>
-        <cbc:ID>WS-CP-26-4471</cbc:ID>
+        <cbc:ID>WVS-CP-26-4471</cbc:ID>
         <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
         <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
@@ -856,7 +856,7 @@
           </cac:PartyName>
         </cac:BeneficiaryParty>
         <cac:PolicyDocumentReference>
-          <cbc:ID>WS-CERT-26-0884</cbc:ID>
+          <cbc:ID>WVS-CERT-26-0884</cbc:ID>
           <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
         </cac:PolicyDocumentReference>
       </cac:InsurancePolicy>
@@ -887,7 +887,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>BF-FI-26-0137</cbc:ID>
+    <cbc:ID>BYF-FI-26-1501</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

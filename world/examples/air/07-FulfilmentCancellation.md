@@ -15,10 +15,10 @@ The cargo missed the afternoon flight of 13 May; the despatch advice, which name
 - `CustomizationID` = **urn:ubl-examples:world:trns:fulfilment-cancellation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Fulfilment cancellation". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **AIR-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0328**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-FCN-26-0051**  
   The sender's number for this document.
 - `UUID` = **4068fe1a-3095-5164-a12c-994c102fc830**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -35,16 +35,16 @@ The cargo missed the afternoon flight of 13 May; the despatch advice, which name
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **LD-DA-26-0327**  
+- `ID` = **LMW-DA-26-1017**  
   The despatch advice cancelled.
 
 ### Order Reference
 
 Inside `OrderReference`:
 
-- `ID` = **VT-OC-26-0320**  
+- `ID` = **26-0065**  
   The order change of the frames.
-- `SalesOrderID` = **LD-SO-26-0123**  
+- `SalesOrderID` = **LMW-SO-26-0049**  
   The distributor's sales order.
 - `UUID` = **8d871217-f7db-5dad-9bd8-24d8c75c812d**  
   Its UUID.
@@ -54,19 +54,19 @@ Inside `OrderReference`:
   Its time, in island time.
 - `OrderTypeCode` = **230** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 230: order change. The code is from the world's copy of UN/EDIFACT 1001 Document name: 230 = Purchase order change request.
-- `DocumentReference/ID` = **VT-PO-26-0127**  
+- `DocumentReference/ID` = **26-0417**  
   The original sea order.
 - `DocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 26-0417 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **LACT-TS-26-0326**  
+- `ID` = **LAC-TS-26-13099**  
   The cargo terminal's status: the cargo accepted after the cut-off, for the next morning's flight.
 - `DocumentTypeCode` = **TransportationStatus** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LACT-TS-26-0326 is the example air/05, a TransportationStatus; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportationStatus = Transportation Status.
+  The kind of document referred to: LAC-TS-26-13099 is the example air/05, a TransportationStatus; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportationStatus = Transportation Status.
 
 ### Signature
 
@@ -247,30 +247,30 @@ Inside `DespatchSupplierParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:fulfilment-cancellation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0328</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-FCN-26-0051</cbc:ID>
   <cbc:UUID>4068fe1a-3095-5164-a12c-994c102fc830</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
   <cbc:IssueTime>19:50:00-01:00</cbc:IssueTime>
   <cbc:Note>A new despatch advice follows this evening.</cbc:Note>
   <cbc:CancellationNote>The cargo reached the cargo terminal after the cut-off for the afternoon flight KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0327</cbc:ID>
+    <cbc:ID>LMW-DA-26-1017</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:OrderReference>
-    <cbc:ID>VT-OC-26-0320</cbc:ID>
-    <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
+    <cbc:ID>26-0065</cbc:ID>
+    <cbc:SalesOrderID>LMW-SO-26-0049</cbc:SalesOrderID>
     <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
     <cbc:IssueDate>2026-05-11</cbc:IssueDate>
     <cbc:IssueTime>07:50:00+00:00</cbc:IssueTime>
     <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">230</cbc:OrderTypeCode>
     <cac:DocumentReference>
-      <cbc:ID>VT-PO-26-0127</cbc:ID>
+      <cbc:ID>26-0417</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LACT-TS-26-0326</cbc:ID>
+    <cbc:ID>LAC-TS-26-13099</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportationStatus</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

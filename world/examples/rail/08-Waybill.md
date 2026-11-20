@@ -15,12 +15,12 @@ The rail consignment note under the Accord's uniform rules, modelled on the CIM,
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FRC-WB-26-0334**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043586**  
+  The collaboration this document belongs to: the rail carriage Valdara books with Ferrano Rail Cargo. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **7200092547**  
   The consignment note number.
-- `CarrierAssignedID` = **FRC-CIM-26-0325**  
+- `CarrierAssignedID` = **8900004628**  
   The carrier's own number for the carriage.
 - `UUID` = **2af02244-330b-5e9f-85c5-1ad7dcce9c43**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -194,11 +194,11 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0332**  
+- `ID` = **7400043689**  
   The shipment as the despatching party numbered it.
 - `GrossWeightMeasure` = **18177.6** (unitCode `KGM`)  
   The gross weights of the transport equipment with the goods in it (9088.8 + 9088.8 kg): a shipment's gross weight includes the equipment.
-- `Consignment/ID` = **VI-CS-26-0327**  
+- `Consignment/ID` = **7300043586**  
   The manufacturer's consignment number.
 - `Consignment/ContractedCarrierAssignedID` = **FRC-CON-2026-005/88**  
   The call-off under the framework contract.
@@ -362,7 +362,7 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044175** (schemeID `ISO6346`)  
   The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **7300043586**  
   The consignment the container carries.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
@@ -522,7 +522,7 @@ Inside `Shipment`:
   The train is expected to leave the hub that morning; the consignment note is made out before it leaves.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchTime` = **06:50:00**  
   Ten to seven.
-- `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **VI-TD-26-0331**  
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **7800004369**  
   The transit declaration the box travels under.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -534,7 +534,7 @@ Inside `Shipment`:
   This box's share of the train's energy, by weight.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044180** (schemeID `ISO6346`)  
   The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **VI-CS-26-0327**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID` = **7300043586**  
   The consignment the container carries.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
   UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
@@ -692,7 +692,7 @@ Inside `Shipment`:
   The train is expected to leave the hub that morning; the consignment note is made out before it leaves.
 - `Consignment/TransportHandlingUnit/TransportEquipment/Despatch/EstimatedDespatchTime` = **06:50:00**  
   Ten to seven.
-- `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **VI-TD-26-0331**  
+- `Consignment/TransportHandlingUnit/CustomsDeclaration/ID` = **7800004369**  
   The transit declaration the box travels under.
 - `Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -735,10 +735,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **FRC-TEP-26-0328**  
+- `ID` = **9500055446**  
   The transport plan under which the carriage is performed.
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FRC-TEP-26-0328 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
+  The kind of document referred to: 9500055446 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 
 ### Document Distribution
 
@@ -773,7 +773,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **FRC-SIG-FRC-WB-26-0334**  
+- `ID` = **FRC-SIG-7200092547**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -788,9 +788,9 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-WB-26-0334</cbc:ID>
-  <cbc:CarrierAssignedID>FRC-CIM-26-0325</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
+  <cbc:ID>7200092547</cbc:ID>
+  <cbc:CarrierAssignedID>8900004628</cbc:CarrierAssignedID>
   <cbc:UUID>2af02244-330b-5e9f-85c5-1ad7dcce9c43</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -917,10 +917,10 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0332</cbc:ID>
+    <cbc:ID>7400043689</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ID>7300043586</cbc:ID>
       <cbc:ContractedCarrierAssignedID>FRC-CON-2026-005/88</cbc:ContractedCarrierAssignedID>
       <cbc:SummaryDescription>192 park benches in two 40-foot containers.</cbc:SummaryDescription>
       <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
@@ -1076,7 +1076,7 @@ Inside `Signature`:
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
-          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:ReferencedConsignmentID>7300043586</cbc:ReferencedConsignmentID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
           <cbc:ProviderTypeCode listID="urn:ubl-examples:world:codelist:EquipmentProviderTypeCode">CARRIER</cbc:ProviderTypeCode>
           <cbc:OwnerTypeCode listID="urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode">CARRIER</cbc:OwnerTypeCode>
@@ -1246,7 +1246,7 @@ Inside `Signature`:
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
-          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cbc:ID>7800004369</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
               <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -1264,7 +1264,7 @@ Inside `Signature`:
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
           <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
-          <cbc:ReferencedConsignmentID>VI-CS-26-0327</cbc:ReferencedConsignmentID>
+          <cbc:ReferencedConsignmentID>7300043586</cbc:ReferencedConsignmentID>
           <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
           <cbc:ProviderTypeCode listID="urn:ubl-examples:world:codelist:EquipmentProviderTypeCode">CARRIER</cbc:ProviderTypeCode>
           <cbc:OwnerTypeCode listID="urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode">CARRIER</cbc:OwnerTypeCode>
@@ -1433,7 +1433,7 @@ Inside `Signature`:
           </cac:Despatch>
         </cac:TransportEquipment>
         <cac:CustomsDeclaration>
-          <cbc:ID>VI-TD-26-0331</cbc:ID>
+          <cbc:ID>7800004369</cbc:ID>
           <cac:IssuerParty>
             <cac:PartyIdentification>
               <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -1481,7 +1481,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:ID>9500055446</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -1513,7 +1513,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>FRC-SIG-FRC-WB-26-0334</cbc:ID>
+    <cbc:ID>FRC-SIG-7200092547</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>

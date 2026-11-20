@@ -15,10 +15,10 @@ The distributor accepts the change: the frames fly on the afternoon flight of 13
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **AIR-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-OR-26-0321**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-OR-26-1009**  
   The seller's number for its response.
 - `UUID` = **bb1366b0-cfa6-5b51-b032-09e912dd0b93**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,21 +43,21 @@ The distributor accepts the change: the frames fly on the afternoon flight of 13
 
 Inside `OrderReference`:
 
-- `ID` = **VT-PO-26-0127**  
+- `ID` = **26-0417**  
   The order that was changed.
 
 ### Order Change Document Reference
 
 Inside `OrderChangeDocumentReference`:
 
-- `ID` = **VT-OC-26-0320**  
+- `ID` = **26-0065**  
   The order change this response answers.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BF-QUOTE-AIR-26-0611**  
+- `ID` = **BYF-QUOTE-AIR-26-0611**  
   The forwarder's quotation for the flight.
 - `DocumentTypeCode` = **361** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Bayforth's quotation for the air freight, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 361 = Price quote.
@@ -227,7 +227,7 @@ Inside `OrderLine`:
   Carriage paid to the airport of Selanu, for this line. The code is from the world's copy of Incoterms 2020: CPT = Carriage Paid To. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/Item/Name` = **Bench side frame casting**  
   Named only.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10443**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's number.
 
 ## The document
@@ -238,8 +238,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-OR-26-0321</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-OR-26-1009</cbc:ID>
   <cbc:UUID>bb1366b0-cfa6-5b51-b032-09e912dd0b93</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
@@ -250,13 +250,13 @@ Inside `OrderLine`:
   <cbc:AccountingCostCode>500</cbc:AccountingCostCode>
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:OrderChangeDocumentReference>
-    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:ID>26-0065</cbc:ID>
   </cac:OrderChangeDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-QUOTE-AIR-26-0611</cbc:ID>
+    <cbc:ID>BYF-QUOTE-AIR-26-0611</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">361</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
@@ -391,7 +391,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
+          <cbc:ID>LMW-10443</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

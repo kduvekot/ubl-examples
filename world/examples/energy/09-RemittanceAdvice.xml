@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MP-RM-26-0161</cbc:ID>
+  <cbc:ProfileExecutionID>9900034209</cbc:ProfileExecutionID>
+  <cbc:ID>2000001887</cbc:ID>
   <cbc:UUID>a612b1d2-c2c5-5799-a3c2-b98476b55f88</cbc:UUID>
   <cbc:IssueDate>2026-06-08</cbc:IssueDate>
   <cbc:IssueTime>16:36:00-01:00</cbc:IssueTime>
@@ -104,7 +104,7 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:PaymentID schemeID="ISO 11649">RF14KGINV260158</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF759000034209</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU720351041700000005021992</cbc:ID>
       <cbc:Name>Montebrio Power SUA</cbc:Name>
@@ -187,7 +187,7 @@
     <cbc:DebitLineAmount currencyID="XUF">132480000</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>KG-INV-26-0158</cbc:ID>
+        <cbc:ID>9000034209</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
@@ -196,7 +196,7 @@
     <cbc:DebitLineAmount currencyID="XUF">1987200</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:ReminderDocumentReference>
-        <cbc:ID>KG-DOC-26-0160</cbc:ID>
+        <cbc:ID>9300003463</cbc:ID>
       </cac:ReminderDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>

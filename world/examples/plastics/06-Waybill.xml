@@ -3,9 +3,9 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FB-WB-26-0890</cbc:ID>
-  <cbc:CarrierAssignedID>FB-CMNI-26-0882</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>26-0425</cbc:ProfileExecutionID>
+  <cbc:ID>26-0181</cbc:ID>
+  <cbc:CarrierAssignedID>26-0022</cbc:CarrierAssignedID>
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -132,9 +132,9 @@
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>RR-SH-26-0889</cbc:ID>
+    <cbc:ID>26-0451</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>RR-CS-26-0885</cbc:ID>
+      <cbc:ID>26-0426</cbc:ID>
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
@@ -280,7 +280,7 @@
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cac:OrderReference>
-          <cbc:ID>RP-PO-26-0882</cbc:ID>
+          <cbc:ID>26-0339</cbc:ID>
         </cac:OrderReference>
       </cac:OrderLineReference>
       <cac:OriginAddress>
@@ -324,7 +324,7 @@
         </cac:MeasurementDimension>
       </cac:ContainingPackage>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>FB-TEP-26-0886</cbc:ID>
+        <cbc:ID>26-0104</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
       </cac:ShipmentDocumentReference>
       <cac:EnergyConsumptionAllocation>
@@ -338,7 +338,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FB-TEP-26-0886</cbc:ID>
+    <cbc:ID>26-0104</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -357,7 +357,7 @@
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>FB-SIG-FB-WB-26-0890</cbc:ID>
+    <cbc:ID>FB-SIG-26-0181</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>

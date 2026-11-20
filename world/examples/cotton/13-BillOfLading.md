@@ -15,10 +15,10 @@ The bill of lading goes to the forwarder that booked the freight for the mill; t
 - `CustomizationID` = **urn:ubl-examples:world:trns:bill-of-lading:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Bill of lading"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TOL-BL-26-0206**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2410**  
+  The collaboration this document belongs to: the sea carriage of the lint Bayforth books with Tidewell Ocean Lines. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
+- `ID` = **TWLU000033366**  
   The bill of lading number.
 - `UUID` = **9bc6af1f-73d8-5068-ae2b-470a36d51872**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -198,9 +198,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0200**  
+- `ID` = **SCG-SH-26-0218**  
   The shipment carried.
-- `Consignment/ID` = **LTM-CS-26-0201**  
+- `Consignment/ID` = **7300013298**  
   The consignment.
 - `Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the bales.
@@ -333,10 +333,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **LTM-FI-26-0199**  
+- `ID` = **2700007979**  
   The forwarding instructions it was issued on.
 - `DocumentTypeCode` = **ForwardingInstructions** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LTM-FI-26-0199 is the example cotton/09, a ForwardingInstructions; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
+  The kind of document referred to: 2700007979 is the example cotton/09, a ForwardingInstructions; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
 
 ### Document Distribution
 
@@ -382,8 +382,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0206</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2410</cbc:ProfileExecutionID>
+  <cbc:ID>TWLU000033366</cbc:ID>
   <cbc:UUID>9bc6af1f-73d8-5068-ae2b-470a36d51872</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>09:37:00-01:00</cbc:IssueTime>
@@ -510,9 +510,9 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:ID>7300013298</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
@@ -635,7 +635,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>LTM-FI-26-0199</cbc:ID>
+    <cbc:ID>2700007979</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:exception:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-DOC-26-0571</cbc:ID>
+  <cbc:ProfileExecutionID>9900335865</cbc:ProfileExecutionID>
+  <cbc:ID>6900016794</cbc:ID>
   <cbc:UUID>1e9835ca-6098-5efa-a740-4d690200ec9c</cbc:UUID>
   <cbc:IssueDate>2026-03-13</cbc:IssueDate>
   <cbc:IssueTime>09:21:00-01:00</cbc:IssueTime>
@@ -15,7 +15,7 @@
     <cbc:EndDate>2026-08-29</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:DocumentReference>
-    <cbc:ID>BS-DOC-26-0570</cbc:ID>
+    <cbc:ID>6700016794</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TradeItemLocationProfile</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -152,7 +152,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -181,7 +181,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -203,7 +203,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -219,7 +219,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -235,7 +235,7 @@
       <cbc:Description>Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow chair, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ID>BKM-MRW-C</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -251,7 +251,7 @@
       <cbc:Description>Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow chair, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-C</cbc:ID>
+        <cbc:ID>BKM-MRW-C</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>

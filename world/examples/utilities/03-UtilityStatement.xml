@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FE-DOC-26-0315</cbc:ID>
+  <cbc:ProfileExecutionID>9909901005</cbc:ProfileExecutionID>
+  <cbc:ID>9409901530</cbc:ID>
   <cbc:UUID>a67867a6-9a78-55a4-b129-4e9157f53cff</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:10:00-01:00</cbc:IssueTime>
@@ -15,7 +15,7 @@
   <cbc:AccountingCostCode>6300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Energy</cbc:AccountingCost>
   <cac:ParentDocumentReference>
-    <cbc:ID>FE-INV-26-0313</cbc:ID>
+    <cbc:ID>2026/313046</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
@@ -126,12 +126,12 @@
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>FG-CP-4160-E1-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>FGR-CP-4160-E1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Warehouse of Castrano Logistics</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="KWH">19350</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>FG-CP-4160-E1</cbc:ID>
+      <cbc:ID>FGR-CP-4160-E1</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
       <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Commercial</cbc:SubscriberType>
@@ -154,13 +154,13 @@
         </cac:Country>
       </cac:Address>
       <cac:UtilityMeter>
-        <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
+        <cbc:MeterNumber>FGR-E-20523</cbc:MeterNumber>
         <cbc:MeterName>Warehouse meter</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="KWH">19350</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
-          <cbc:ID>FG-E-20523-2603</cbc:ID>
+          <cbc:ID>FGR-E-20523-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
@@ -254,7 +254,7 @@
         </cac:TaxTotal>
         <cac:EnergyWaterSupply>
           <cac:ConsumptionReport>
-            <cbc:ID>FG-CP-4160-E1-2603</cbc:ID>
+            <cbc:ID>FGR-CP-4160-E1-2603</cbc:ID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
             <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
             <cbc:Description>March consumption of Warehouse of Castrano Logistics.</cbc:Description>
@@ -265,7 +265,7 @@
               <cbc:EndDate>2026-03-31</cbc:EndDate>
             </cac:Period>
             <cac:ConsumptionReportReference>
-              <cbc:ConsumptionReportID>FG-CP-4160-E1-2602</cbc:ConsumptionReportID>
+              <cbc:ConsumptionReportID>FGR-CP-4160-E1-2602</cbc:ConsumptionReportID>
               <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
               <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
               <cbc:TotalConsumedQuantity unitCode="KWH">17200</cbc:TotalConsumedQuantity>
@@ -275,7 +275,7 @@
               </cac:Period>
             </cac:ConsumptionReportReference>
             <cac:ConsumptionHistory>
-              <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
+              <cbc:MeterNumber>FGR-E-20523</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">17900</cbc:Quantity>
               <cbc:Amount currencyID="XUF">488670</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -286,7 +286,7 @@
               </cac:Period>
             </cac:ConsumptionHistory>
             <cac:ConsumptionHistory>
-              <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
+              <cbc:MeterNumber>FGR-E-20523</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">16450</cbc:Quantity>
               <cbc:Amount currencyID="XUF">449085</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -313,7 +313,7 @@
           <cac:EnergyWaterConsumptionCorrection>
             <cbc:CorrectionType>Estimate correction</cbc:CorrectionType>
             <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">EST</cbc:CorrectionTypeCode>
-            <cbc:MeterNumber>FG-E-20523</cbc:MeterNumber>
+            <cbc:MeterNumber>FGR-E-20523</cbc:MeterNumber>
             <cbc:Description>February's reading was estimated at 117,250 kWh, as the meter could not be reached; the readings of 31 January and 31 March, split by the warehouse's load profile, put it at 116,500 kWh. February used 16,450 kWh, not the 17,200 kWh billed: the 750 kWh are credited on line 4 of the bill.</cbc:Description>
           </cac:EnergyWaterConsumptionCorrection>
         </cac:EnergyWaterSupply>
@@ -467,7 +467,7 @@
           <cbc:TaxAmount currencyID="XUF">23994</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
-          <cbc:ID>FG-NET-E</cbc:ID>
+          <cbc:ID>FGR-NET-E</cbc:ID>
           <cbc:SubscriberType>Commercial</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
           <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>
@@ -503,7 +503,7 @@
           <cbc:TaxAmount currencyID="XUF">-930</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
-          <cbc:ID>FG-NET-E</cbc:ID>
+          <cbc:ID>FGR-NET-E</cbc:ID>
           <cbc:SubscriberType>Commercial</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">COM</cbc:SubscriberTypeCode>
           <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>

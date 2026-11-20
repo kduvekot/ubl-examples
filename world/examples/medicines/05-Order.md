@@ -15,10 +15,10 @@ The wholesaler calls off the hospital's generator for the week from the maker in
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **QPD-PO-26-0328**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **QLM-TX-26-3960**  
+  The collaboration this document belongs to: Quillmoor's order of a technetium generator from Haarvliet Isotopes. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **QLM-PO-26-3960**  
   The buyer's order number.
 - `UUID` = **60211672-9d33-5e4e-a364-2037c3c12546**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -193,9 +193,9 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `LineItem/Item/BuyersItemIdentification/ID` = **QPD-RAD-0020**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **QLM-RAD-0020**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **HI-TCG-20**  
+- `LineItem/Item/SellersItemIdentification/ID` = **HVI-TCG-20**  
   The seller's own item number; as Haarvliet Isotopes describes the item.
 
 ## The document
@@ -206,8 +206,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-PO-26-0328</cbc:ID>
+  <cbc:ProfileExecutionID>QLM-TX-26-3960</cbc:ProfileExecutionID>
+  <cbc:ID>QLM-PO-26-3960</cbc:ID>
   <cbc:UUID>60211672-9d33-5e4e-a364-2037c3c12546</cbc:UUID>
   <cbc:IssueDate>2026-06-10</cbc:IssueDate>
   <cbc:IssueTime>14:10:00-01:00</cbc:IssueTime>
@@ -333,10 +333,10 @@ Inside `OrderLine`:
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:BuyersItemIdentification>
-          <cbc:ID>QPD-RAD-0020</cbc:ID>
+          <cbc:ID>QLM-RAD-0020</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>HI-TCG-20</cbc:ID>
+          <cbc:ID>HVI-TCG-20</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

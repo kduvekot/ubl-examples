@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:quotation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:sourcing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-DOC-26-0626</cbc:ID>
+  <cbc:ProfileExecutionID>9900042764</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-QT-26-0102</cbc:ID>
   <cbc:UUID>01317a73-7091-58bf-ad79-782d5646840a</cbc:UUID>
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>11:34:00-01:00</cbc:IssueTime>
@@ -15,10 +15,10 @@
     <cbc:EndDate>2026-03-21</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RequestForQuotationDocumentReference>
-    <cbc:ID>VI-DOC-26-0625</cbc:ID>
+    <cbc:ID>6000012829</cbc:ID>
   </cac:RequestForQuotationDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>MS-GTC-2026</cbc:ID>
+    <cbc:ID>MDS-GTC-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>The sawmill's general terms of sale apply only where the buyer's purchasing terms VI-PUR-TERMS-2026, which govern, say nothing.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
@@ -235,7 +235,7 @@
       <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">174</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:DocumentReference>
-      <cbc:ID>MS-SPEC-SL1800</cbc:ID>
+      <cbc:ID>MDS-SPEC-SL1800</cbc:ID>
       <cbc:DocumentType>Product specification</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:LineItem>
@@ -247,12 +247,12 @@
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800-50</cbc:ID>
+          <cbc:ID>MDS-SL-1800-50</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>

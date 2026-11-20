@@ -15,10 +15,8 @@ The export catalogue for the island customer.
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-CAT-26-0124**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ID` = **LMW-CAT-26-0006**  
   The provider's catalogue number.
 - `UUID` = **40262193-531c-5797-8c01-d23252c67188**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -213,7 +211,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-11-01**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LMW-PRL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force. The code is from the Trade Accord's record status list: ORIGINAL = Original.
@@ -265,7 +263,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-11-01**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LMW-PRL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force. The code is from the Trade Accord's record status list: ORIGINAL = Original.
@@ -323,7 +321,7 @@ Inside `CatalogueLine`:
   The model; as Valdara Industries describes the item.
 - `Item/WarrantyInformation` = **Five years on the frame against corrosion.**  
   The maker's warranty.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -343,7 +341,7 @@ Inside `CatalogueLine`:
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
-- `Item/CatalogueItemIdentification/ID` = **LD-CAT-26-0124-1**  
+- `Item/CatalogueItemIdentification/ID` = **LMW-CAT-26-0006-1**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
@@ -355,11 +353,11 @@ Inside `CatalogueLine`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Valdara Industries describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
 - `Item/CommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Valdara Industries describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
-- `Item/TransactionConditions/ID` = **LD-TC-01**  
+- `Item/TransactionConditions/ID` = **LMW-TC-01**  
   The seller's number for these conditions of sale.
 - `Item/TransactionConditions/Description` = **Sold to trade customers only, per pallet of four benches.**  
   The conditions in words.
-- `Item/TransactionConditions/DocumentReference/ID` = **LD-GTC-2026**  
+- `Item/TransactionConditions/DocumentReference/ID` = **LMW-GTC-2026**  
   The seller's general terms of trade.
 - `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
@@ -571,7 +569,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-11-01**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LD-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **LMW-PRL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force. The code is from the Trade Accord's record status list: ORIGINAL = Original.
@@ -597,7 +595,7 @@ Inside `CatalogueLine`:
   The brand the maker sells the item under; as Valdara Industries describes the item.
 - `Item/ModelName` = **Serra 180 side frame**  
   The model; as Valdara Industries describes the item.
-- `Item/SellersItemIdentification/ID` = **LD-10443**  
+- `Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
@@ -609,7 +607,7 @@ Inside `CatalogueLine`:
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 - `Item/StandardItemIdentification/IssuerParty/PartyName/Name` = **Lumeway Distribution**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
-- `Item/CatalogueItemIdentification/ID` = **LD-CAT-26-0124-2**  
+- `Item/CatalogueItemIdentification/ID` = **LMW-CAT-26-0006-2**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
@@ -636,8 +634,7 @@ Inside `CatalogueLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CAT-26-0124</cbc:ID>
+  <cbc:ID>LMW-CAT-26-0006</cbc:ID>
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
@@ -788,7 +785,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
@@ -838,7 +835,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
@@ -886,7 +883,7 @@ Inside `CatalogueLine`:
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -910,7 +907,7 @@ Inside `CatalogueLine`:
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>LD-CAT-26-0124-1</cbc:ID>
+        <cbc:ID>LMW-CAT-26-0006-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
@@ -926,10 +923,10 @@ Inside `CatalogueLine`:
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:TransactionConditions>
-        <cbc:ID>LD-TC-01</cbc:ID>
+        <cbc:ID>LMW-TC-01</cbc:ID>
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
-          <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:ID>LMW-GTC-2026</cbc:ID>
           <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
@@ -1131,7 +1128,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
@@ -1155,7 +1152,7 @@ Inside `CatalogueLine`:
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
@@ -1173,7 +1170,7 @@ Inside `CatalogueLine`:
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>LD-CAT-26-0124-2</cbc:ID>
+        <cbc:ID>LMW-CAT-26-0006-2</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>

@@ -15,10 +15,10 @@ The shop refused a damaged bench in its receipt advice; the distributor credits 
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-CN-26-0238**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339316**  
+  The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-CN-26-0039**  
   The seller's credit note number.
 - `UUID` = **21527992-a284-577e-b410-c834118ac671**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -54,14 +54,14 @@ Inside `DiscrepancyResponse`:
 
 Inside `OrderReference`:
 
-- `ID` = **BS-PO-26-0224**  
+- `ID` = **7100452422**  
   The store's order.
 
 ### Billing Reference
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **LD-INV-26-0237**  
+- `InvoiceDocumentReference/ID` = **LMW-INV-26-0918**  
   The invoice this credit note corrects.
 - `InvoiceDocumentReference/IssueDate` = **2026-04-30**  
   Its issue date.
@@ -70,14 +70,14 @@ Inside `BillingReference`:
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **LD-DA-26-0229**  
+- `ID` = **LMW-DA-26-0911**  
   The despatch advice of the goods.
 
 ### Receipt Document Reference
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **BS-RA-26-0236**  
+- `ID` = **5000339834**  
   The receipt advice that reported the damage.
 
 ### Accounting Supplier Party
@@ -270,7 +270,7 @@ Inside `SellerSupplierParty`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Deducted from the store's payment of invoice LD-INV-26-0237 to Harbourline Factoring, which owns the receivable.**  
+- `Note` = **Deducted from the store's payment of invoice LMW-INV-26-0918 to Harbourline Factoring, which owns the receivable.**  
   How the credit is settled: the store pays the factor the invoice less the credit; the factor is not the credit's payee.
 
 ### Allowance Charge
@@ -364,17 +364,17 @@ Inside `CreditNoteLine`:
   Credited because damaged. The code is from the world's copy of UN/EDIFACT 4465 Adjustment reason description: 17 = Transport damage.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **LD-DA-26-0229**  
+- `DespatchLineReference/DocumentReference/ID` = **LMW-DA-26-0911**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-DA-26-0229 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: LMW-DA-26-0911 is the example retail/12, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `ReceiptLineReference/LineID` = **1**  
   The receipt line that reported it.
-- `ReceiptLineReference/DocumentReference/ID` = **BS-RA-26-0236**  
+- `ReceiptLineReference/DocumentReference/ID` = **5000339834**  
   The receipt advice.
 - `ReceiptLineReference/DocumentReference/DocumentTypeCode` = **ReceiptAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-RA-26-0236 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0237**  
+  The kind of document referred to: 5000339834 is the example retail/17, a ReceiptAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ReceiptAdvice = Receipt Advice.
+- `BillingReference/InvoiceDocumentReference/ID` = **LMW-INV-26-0918**  
   The invoice.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
   The invoice line credited.
@@ -386,7 +386,7 @@ Inside `CreditNoteLine`:
   The seller's description.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -431,8 +431,8 @@ Inside `CreditNoteLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0238</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-CN-26-0039</cbc:ID>
   <cbc:UUID>21527992-a284-577e-b410-c834118ac671</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>13:26:00-01:00</cbc:IssueTime>
@@ -448,19 +448,19 @@ Inside `CreditNoteLine`:
     <cbc:Description>One bench refused at goods-in, damaged in transit.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:ID>7100452422</cbc:ID>
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0237</cbc:ID>
+      <cbc:ID>LMW-INV-26-0918</cbc:ID>
       <cbc:IssueDate>2026-04-30</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LD-DA-26-0229</cbc:ID>
+    <cbc:ID>LMW-DA-26-0911</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>BS-RA-26-0236</cbc:ID>
+    <cbc:ID>5000339834</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -632,7 +632,7 @@ Inside `CreditNoteLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:PaymentTerms>
-    <cbc:Note>Deducted from the store's payment of invoice LD-INV-26-0237 to Harbourline Factoring, which owns the receivable.</cbc:Note>
+    <cbc:Note>Deducted from the store's payment of invoice LMW-INV-26-0918 to Harbourline Factoring, which owns the receivable.</cbc:Note>
   </cac:PaymentTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
@@ -693,20 +693,20 @@ Inside `CreditNoteLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>LD-DA-26-0229</cbc:ID>
+        <cbc:ID>LMW-DA-26-0911</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
     <cac:ReceiptLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>BS-RA-26-0236</cbc:ID>
+        <cbc:ID>5000339834</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ReceiptAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:ReceiptLineReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0237</cbc:ID>
+        <cbc:ID>LMW-INV-26-0918</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
@@ -722,7 +722,7 @@ Inside `CreditNoteLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>

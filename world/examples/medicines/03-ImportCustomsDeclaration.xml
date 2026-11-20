@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-IM-26-0324</cbc:ID>
+  <cbc:ID>QLM-IM-26-0643</cbc:ID>
   <cbc:UUID>288dda29-bba9-5aaa-b84e-c91eac5c3161</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>08:30:00-01:00</cbc:IssueTime>
@@ -142,9 +141,9 @@
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>NB-SH-26-0325</cbc:ID>
+    <cbc:ID>NLB-SH-26-1786</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>NB-CS-26-0326</cbc:ID>
+      <cbc:ID>NLB-CS-26-1786</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">172.8</cbc:GrossWeightMeasure>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -212,7 +211,7 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>NB-INV-26-0321</cbc:ID>
+    <cbc:ID>NLB-INV-26-1731</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

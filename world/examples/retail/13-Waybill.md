@@ -15,12 +15,12 @@ The outgoing consignment note goes to the distributor, who contracted the carria
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-WB-26-0231**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0893**  
+  The collaboration this document belongs to: the carriage Lumeway books with Bayforth Forwarding. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **BYF-WB-26-2276**  
   The consignment note number.
-- `CarrierAssignedID` = **BF-NATROAD-26-0217**  
+- `CarrierAssignedID` = **BYF-CR-26-0114**  
   The carrier's own number for the carriage.
 - `UUID` = **e32f4317-c5ee-5095-aa3a-8afa0c5b9ab2**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -194,9 +194,9 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0230**  
+- `ID` = **LMW-SH-26-0911**  
   The shipment as the despatching party numbered it.
-- `Consignment/ID` = **LD-CS-26-0228**  
+- `Consignment/ID` = **LMW-CS-26-0893**  
   The consignment of the transport booking.
 - `Consignment/GrossWeightMeasure` = **1297.2** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight taken over.
@@ -280,7 +280,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **BF-SIG-BF-WB-26-0231**  
+- `ID` = **BF-SIG-BYF-WB-26-2276**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -295,9 +295,9 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-WB-26-0231</cbc:ID>
-  <cbc:CarrierAssignedID>BF-NATROAD-26-0217</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0893</cbc:ProfileExecutionID>
+  <cbc:ID>BYF-WB-26-2276</cbc:ID>
+  <cbc:CarrierAssignedID>BYF-CR-26-0114</cbc:CarrierAssignedID>
   <cbc:UUID>e32f4317-c5ee-5095-aa3a-8afa0c5b9ab2</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -418,9 +418,9 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0230</cbc:ID>
+    <cbc:ID>LMW-SH-26-0911</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0228</cbc:ID>
+      <cbc:ID>LMW-CS-26-0893</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -490,7 +490,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>BF-SIG-BF-WB-26-0231</cbc:ID>
+    <cbc:ID>BF-SIG-BYF-WB-26-2276</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>

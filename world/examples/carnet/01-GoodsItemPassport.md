@@ -15,10 +15,10 @@ The chamber issues the carnet to the manufacturer, who holds it while the sample
 - `CustomizationID` = **urn:ubl-examples:world:trns:goods-item-passport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Goods item passport". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:temporary-admission:1.0**  
-  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CARNET-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FCC-DOC-26-0724**  
+  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **FCC/2026/3170**  
+  The collaboration this document belongs to: the carnet the Ferrano Chamber of Commerce issues and its proof of re-exportation. Ferrano Chamber of Commerce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **FCC/ATA/2026/0159**  
   The carnet number, given by the chamber.
 - `UUID` = **eba67af9-0d62-5339-b7c5-75faae5007fc**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -331,9 +331,9 @@ Inside `ImportingCustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0725**  
+- `ID` = **7400044378**  
   The samples travelling under the carnet.
-- `Consignment/ID` = **VI-CS-26-0241**  
+- `Consignment/ID` = **7300044378**  
   The consignment of the samples, in Valdara's series of consignment numbers.
 - `Consignment/TransportAdvisorParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -474,7 +474,7 @@ Inside `GoodsItemPassportCounterfoil`:
 
 - `ID` = **EXP-1**  
   The exportation counterfoil (yellow sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples leave Urvania.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
@@ -490,7 +490,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The voucher customs detach and keep.
 - `ID` = **TRA-1**  
   The transit counterfoil (blue sheet), outbound of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
@@ -508,7 +508,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The transit voucher they keep on exit.
 - `ID` = **IMP-1**  
   The importation counterfoil (white sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples arrive on the island.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
@@ -528,7 +528,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The voucher customs detach and keep.
 - `ID` = **REEXP-1**  
   The re-exportation counterfoil (white sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples leave the island.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
@@ -548,7 +548,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The voucher customs detach and keep.
 - `ID` = **TRA-2**  
   The transit counterfoil (blue sheet), homeward of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
@@ -570,7 +570,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The transit voucher they keep on exit.
 - `ID` = **REIMP-1**  
   The re-importation counterfoil (yellow sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples come home to Urvania.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
@@ -589,7 +589,7 @@ Inside `GoodsItemPassportCounterfoil`:
 
 Inside `IssuerEndorsement`:
 
-- `DocumentID` = **FCC-DOC-26-0724**  
+- `DocumentID` = **FCC/ATA/2026/0159**  
   The carnet.
 - `ApprovalStatus` = **Issued**  
   The chamber issued it.
@@ -647,8 +647,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-item-passport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:temporary-admission:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FCC-DOC-26-0724</cbc:ID>
+  <cbc:ProfileExecutionID>FCC/2026/3170</cbc:ProfileExecutionID>
+  <cbc:ID>FCC/ATA/2026/0159</cbc:ID>
   <cbc:UUID>eba67af9-0d62-5339-b7c5-75faae5007fc</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
   <cbc:IssueTime>15:04:00-01:00</cbc:IssueTime>
@@ -883,9 +883,9 @@ Inside `Signature`:
     </cac:PostalAddress>
   </cac:ImportingCustomsParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0725</cbc:ID>
+    <cbc:ID>7400044378</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0241</cbc:ID>
+      <cbc:ID>7300044378</cbc:ID>
       <cac:TransportAdvisorParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -1010,7 +1010,7 @@ Inside `Signature`:
   </cac:Shipment>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>EXP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -1026,7 +1026,7 @@ Inside `Signature`:
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>TRA-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -1045,7 +1045,7 @@ Inside `Signature`:
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples arrive on the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
@@ -1067,7 +1067,7 @@ Inside `Signature`:
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REEXP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
@@ -1089,7 +1089,7 @@ Inside `Signature`:
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>TRA-2</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
@@ -1114,7 +1114,7 @@ Inside `Signature`:
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REIMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples come home to Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -1129,7 +1129,7 @@ Inside `Signature`:
     </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>FCC-DOC-26-0724</cbc:DocumentID>
+    <cbc:DocumentID>FCC/ATA/2026/0159</cbc:DocumentID>
     <cbc:ApprovalStatus>Issued</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">ISSUER</cbc:RoleCode>

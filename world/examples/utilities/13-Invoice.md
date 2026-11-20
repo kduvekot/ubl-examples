@@ -15,10 +15,10 @@ The telecom bill. The island has no sales tax or VAT, and the invoice says that 
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **ST-INV-26-0323**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **STL-TX-26-75183**  
+  The collaboration this document belongs to: Selanu Telecom's bill for March to Velumi. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+- `ID` = **STL-C-1077-2603**  
   The seller's invoice number.
 - `UUID` = **0228817f-8a56-5781-a34c-99eedb2ee7ee**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -58,7 +58,7 @@ Inside `InvoicePeriod`:
 
 Inside `PurchaseReference`:
 
-- `ID` = **ST-C-1077**  
+- `ID` = **STL-C-1077**  
   The customer's contract number with the utility.
 - `Description` = **Supply contract**  
   What the number is.
@@ -223,9 +223,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **CORAL-NET**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF26STINV260323**  
+- `InstructionNote` = **Quote RF76STLC10772603**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF26STINV260323** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF76STLC10772603** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XL18BSEL0010004293889** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -239,7 +239,7 @@ Inside `PaymentMeans`:
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `PayeeFinancialAccount/BlockchainID` = **CORAL-NET-L1**  
   The account holds tokenised coral deposits on the Bank of Selanu's ledger, which Coral net settles on.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice ST-INV-26-0323**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice STL-C-1077-2603**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **001** (schemeID `urn:ubl-examples:world:XL:bank-branch`)  
   The branch that keeps the account, by its national code: the branch number of a Lisavan bank (three digits). The account number holds it.
@@ -339,7 +339,7 @@ Inside `InvoiceLine`:
   6 × 21.18, rounded to the minor unit of the currency.
 - `PaymentPurposeCode` = **PHON** (listID `ISO 20022 ExternalPurpose1Code`)  
   What the payment of this line is for, as an ISO 20022 purpose: a telephone bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: PHON = TelephoneBill.
-- `PurchaseReference/ID` = **ST-L-BUS6**  
+- `PurchaseReference/ID` = **STL-L-BUS6**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Six business lines**  
   Where it is.
@@ -351,7 +351,7 @@ Inside `InvoiceLine`:
   The item's name in Lisavan, the seller's language.
 - `Item/Name` = **Business telephone line** (languageID `en-XL`)  
   The item's name in English, the working language between the countries.
-- `Item/SellersItemIdentification/ID` = **ST-BL**  
+- `Item/SellersItemIdentification/ID` = **STL-BL**  
   The seller's own item number; as Selanu Telecom describes the item.
 - `Price/PriceAmount` = **21.18** (currencyID `XLC`)  
   The seller's price per unit.
@@ -365,7 +365,7 @@ Inside `InvoiceLine`:
   31 × 0.424, rounded to the minor unit of the currency.
 - `PaymentPurposeCode` = **PHON** (listID `ISO 20022 ExternalPurpose1Code`)  
   What the payment of this line is for, as an ISO 20022 purpose: a telephone bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: PHON = TelephoneBill.
-- `PurchaseReference/ID` = **ST-D-0042**  
+- `PurchaseReference/ID` = **STL-D-0042**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Mobile data pool**  
   Where it is.
@@ -377,7 +377,7 @@ Inside `InvoiceLine`:
   The item's name in Lisavan, the seller's language.
 - `Item/Name` = **Mobile data** (languageID `en-XL`)  
   The item's name in English, the working language between the countries.
-- `Item/SellersItemIdentification/ID` = **ST-GB**  
+- `Item/SellersItemIdentification/ID` = **STL-GB**  
   The seller's own item number; as Selanu Telecom describes the item.
 - `Price/PriceAmount` = **0.424** (currencyID `XLC`)  
   The seller's price per unit.
@@ -391,7 +391,7 @@ Inside `InvoiceLine`:
   4 × 1.5, rounded to the minor unit of the currency.
 - `PaymentPurposeCode` = **PHON** (listID `ISO 20022 ExternalPurpose1Code`)  
   What the payment of this line is for, as an ISO 20022 purpose: a telephone bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: PHON = TelephoneBill.
-- `PurchaseReference/ID` = **ST-D-0042**  
+- `PurchaseReference/ID` = **STL-D-0042**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Mobile data pool, roaming in Bayvarra**  
   Where it is.
@@ -403,7 +403,7 @@ Inside `InvoiceLine`:
   The item's name in Lisavan, the seller's language.
 - `Item/Name` = **Mobile data roaming** (languageID `en-XL`)  
   The item's name in English, the working language between the countries.
-- `Item/SellersItemIdentification/ID` = **ST-GB-RX**  
+- `Item/SellersItemIdentification/ID` = **STL-GB-RX**  
   The seller's own item number; as Selanu Telecom describes the item.
 - `Price/PriceAmount` = **1.5** (currencyID `XLC`)  
   The seller's price per unit.
@@ -418,8 +418,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-INV-26-0323</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
+  <cbc:ID>STL-C-1077-2603</cbc:ID>
   <cbc:UUID>0228817f-8a56-5781-a34c-99eedb2ee7ee</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>11:19:00+00:00</cbc:IssueTime>
@@ -437,7 +437,7 @@ Inside `InvoiceLine`:
     <cbc:Description>March 2026</cbc:Description>
   </cac:InvoicePeriod>
   <cac:PurchaseReference>
-    <cbc:ID>ST-C-1077</cbc:ID>
+    <cbc:ID>STL-C-1077</cbc:ID>
     <cbc:Description>Supply contract</cbc:Description>
   </cac:PurchaseReference>
   <cac:AccountingSupplierParty>
@@ -573,8 +573,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF26STINV260323</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF26STINV260323</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF76STLC10772603</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF76STLC10772603</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL18BSEL0010004293889</cbc:ID>
       <cbc:Name>Selanu Telecom Ltd</cbc:Name>
@@ -582,7 +582,7 @@ Inside `InvoiceLine`:
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
       <cbc:BlockchainID>CORAL-NET-L1</cbc:BlockchainID>
-      <cbc:PaymentNote>Invoice ST-INV-26-0323</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice STL-C-1077-2603</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">001</cbc:ID>
         <cbc:Name>Main branch</cbc:Name>
@@ -648,7 +648,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XLC">127.080</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
-      <cbc:ID>ST-L-BUS6</cbc:ID>
+      <cbc:ID>STL-L-BUS6</cbc:ID>
       <cbc:Description>Six business lines</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -657,7 +657,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="qal">Levise nikeile litile</cbc:Name>
       <cbc:Name languageID="en-XL">Business telephone line</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>ST-BL</cbc:ID>
+        <cbc:ID>STL-BL</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
@@ -671,7 +671,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XLC">13.144</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
-      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:ID>STL-D-0042</cbc:ID>
       <cbc:Description>Mobile data pool</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -680,7 +680,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="qal">Livule titefe</cbc:Name>
       <cbc:Name languageID="en-XL">Mobile data</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>ST-GB</cbc:ID>
+        <cbc:ID>STL-GB</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>
@@ -694,7 +694,7 @@ Inside `InvoiceLine`:
     <cbc:LineExtensionAmount currencyID="XLC">6.000</cbc:LineExtensionAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
     <cac:PurchaseReference>
-      <cbc:ID>ST-D-0042</cbc:ID>
+      <cbc:ID>STL-D-0042</cbc:ID>
       <cbc:Description>Mobile data pool, roaming in Bayvarra</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -703,7 +703,7 @@ Inside `InvoiceLine`:
       <cbc:Name languageID="qal">Livule titefe helate</cbc:Name>
       <cbc:Name languageID="en-XL">Mobile data roaming</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>ST-GB-RX</cbc:ID>
+        <cbc:ID>STL-GB-RX</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:Price>

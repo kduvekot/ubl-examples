@@ -15,10 +15,10 @@ The authority checks the tenderer's registration with the business registry.
 - `CustomizationID` = **urn:ubl-examples:world:trns:business-information:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Business information"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BIS-DOC-26-0198**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **BIS/2026/6322**  
   The registry's extract number.
 - `UUID` = **caa9a455-79a7-5aae-9576-1eb0e65da6ee**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -277,6 +277,10 @@ Inside `AdditionalDocumentReference`:
   Its quality certificate, which the register records.
 - `DocumentType` = **Certificate of a quality management system (ISO 9001)**  
   What it is.
+- `ID` = **PWD/2026/PARKS**  
+  The procurement the department asked for the extract for: its file.
+- `DocumentType` = **Procurement file**  
+  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (cited).
 
 ### Business Capability
 
@@ -322,8 +326,8 @@ Inside `NoticeSubType`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:business-information:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BIS-DOC-26-0198</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>BIS/2026/6322</cbc:ID>
   <cbc:UUID>caa9a455-79a7-5aae-9576-1eb0e65da6ee</cbc:UUID>
   <cbc:IssueDate>2026-02-27</cbc:IssueDate>
   <cbc:IssueTime>16:26:00-01:00</cbc:IssueTime>
@@ -521,6 +525,10 @@ Inside `NoticeSubType`:
   <cac:AdditionalDocumentReference>
     <cbc:ID>VI-ISO9001-CERT</cbc:ID>
     <cbc:DocumentType>Certificate of a quality management system (ISO 9001)</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD/2026/PARKS</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
     <cbc:ID>CAP-1</cbc:ID>

@@ -15,10 +15,10 @@ Delivery terms DDP retailer's shop: the order names only where to deliver; trans
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-PO-26-0224**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339316**  
+  The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **7100452422**  
   The buyer's order number.
 - `UUID` = **38f1ecfc-42b0-532a-921c-171e17782563**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -48,17 +48,17 @@ Inside `ValidityPeriod`:
 
 Inside `CatalogueReference`:
 
-- `ID` = **LD-CAT-26-0218**  
+- `ID` = **LMW-CAT-26-0005**  
   The catalogue ordered from.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BS-RE-26-0222**  
+- `ID` = **6500016959**  
   The promotion the benches are ordered for.
 - `DocumentTypeCode` = **RetailEvent** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-RE-26-0222 is the example retail/06, a RetailEvent; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: RetailEvent = Retail Event.
+  The kind of document referred to: 6500016959 is the example retail/06, a RetailEvent; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: RetailEvent = Retail Event.
 
 ### Signature
 
@@ -77,7 +77,7 @@ Inside `BuyerCustomerParty`:
 
 - `CustomerAssignedAccountID` = **BM-6120**  
   The store's own number for its garden department.
-- `SupplierAssignedAccountID` = **LD-C-0418**  
+- `SupplierAssignedAccountID` = **LMW-C-0418**  
   The distributor's customer number for the store.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; as Brightmarket Stores gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -156,7 +156,7 @@ Inside `SellerSupplierParty`:
 
 - `CustomerAssignedAccountID` = **BM-S-0071**  
   The store's supplier number for the distributor.
-- `AdditionalAccountID` = **LD-XB-01**  
+- `AdditionalAccountID` = **LMW-XB-01**  
   The distributor's sales office.
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; as Lumeway Distribution gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -267,7 +267,7 @@ Inside `PaymentTerms`:
 
 Inside `TransactionConditions`:
 
-- `ID` = **LD-TC-01**  
+- `ID` = **LMW-TC-01**  
   The distributor's conditions of sale.
 - `ActionCode` = **ACCEPTED** (listID `urn:ubl-examples:world:codelist:ConditionsActionCode`)  
   The store accepts them. The code is from the Trade Accord's conditions action list: ACCEPTED = Accepted.
@@ -353,7 +353,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **BM-551210**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -371,7 +371,7 @@ Inside `OrderLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none.
 - `LineItem/Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
-- `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0218**  
+- `LineItem/Item/CatalogueDocumentReference/ID` = **LMW-CAT-26-0005**  
   The catalogue the item was ordered from.
 - `CatalogueLineReference/LineID` = **1**  
   The catalogue line ordered from.
@@ -384,8 +384,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PO-26-0224</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>7100452422</cbc:ID>
   <cbc:UUID>38f1ecfc-42b0-532a-921c-171e17782563</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>08:15:00-01:00</cbc:IssueTime>
@@ -398,10 +398,10 @@ Inside `OrderLine`:
     <cbc:EndDate>2026-04-26</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:CatalogueReference>
-    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:ID>LMW-CAT-26-0005</cbc:ID>
   </cac:CatalogueReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BS-RE-26-0222</cbc:ID>
+    <cbc:ID>6500016959</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">RetailEvent</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
@@ -417,7 +417,7 @@ Inside `OrderLine`:
   </cac:Signature>
   <cac:BuyerCustomerParty>
     <cbc:CustomerAssignedAccountID>BM-6120</cbc:CustomerAssignedAccountID>
-    <cbc:SupplierAssignedAccountID>LD-C-0418</cbc:SupplierAssignedAccountID>
+    <cbc:SupplierAssignedAccountID>LMW-C-0418</cbc:SupplierAssignedAccountID>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -482,7 +482,7 @@ Inside `OrderLine`:
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
     <cbc:CustomerAssignedAccountID>BM-S-0071</cbc:CustomerAssignedAccountID>
-    <cbc:AdditionalAccountID>LD-XB-01</cbc:AdditionalAccountID>
+    <cbc:AdditionalAccountID>LMW-XB-01</cbc:AdditionalAccountID>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -569,7 +569,7 @@ Inside `OrderLine`:
     <cbc:Note>30 days net, as agreed with the distributor.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TransactionConditions>
-    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:ID>LMW-TC-01</cbc:ID>
     <cbc:ActionCode listID="urn:ubl-examples:world:codelist:ConditionsActionCode">ACCEPTED</cbc:ActionCode>
   </cac:TransactionConditions>
   <cac:AllowanceCharge>
@@ -627,7 +627,7 @@ Inside `OrderLine`:
           <cbc:ID>BM-551210</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
           <cbc:ExtendedID>GRY</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -646,7 +646,7 @@ Inside `OrderLine`:
           <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
         </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
-          <cbc:ID>LD-CAT-26-0218</cbc:ID>
+          <cbc:ID>LMW-CAT-26-0005</cbc:ID>
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>

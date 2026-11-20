@@ -15,10 +15,10 @@ The framework contract is ordered from a catalogue: the manufacturer publishes t
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-CAT-26-0213**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **6100000217**  
   The provider's catalogue number.
 - `UUID` = **6ddf87fc-d391-5f9a-8a2e-22b484da6820**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -303,7 +303,7 @@ Inside `CatalogueLine`:
   The barcode the number is printed in on the label: Code 128 carries letters and digits.
 - `Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
   The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
-- `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0213-1**  
+- `Item/CatalogueItemIdentification/ID` = **6100000217-1**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/ItemSpecificationDocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet with drawings and assembly instructions.
@@ -497,7 +497,7 @@ Inside `CatalogueLine`:
   The repair and maintenance manual.
 - `CallForTendersLineReference/LineID` = **1**  
   The line of the call for tenders: 1 the benches, 2 the installation.
-- `CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
+- `CallForTendersDocumentReference/ID` = **PWD/2026/0182**  
   The call for tenders the line was awarded under.
 - `ID` = **2**  
   The line number.
@@ -535,11 +535,11 @@ Inside `CatalogueLine`:
   The item's name in English, the working language between the countries.
 - `Item/SellersItemIdentification/ID` = **VI-INST-B**  
   The seller's own item number; as Valdara Industries describes the item.
-- `Item/CatalogueItemIdentification/ID` = **VI-CAT-26-0213-2**  
+- `Item/CatalogueItemIdentification/ID` = **6100000217-2**  
   The item's place in the catalogue: the catalogue number and the line.
 - `CallForTendersLineReference/LineID` = **2**  
   The line of the call for tenders: 1 the benches, 2 the installation.
-- `CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
+- `CallForTendersDocumentReference/ID` = **PWD/2026/0182**  
   The call for tenders the line was awarded under.
 
 ## The document
@@ -550,8 +550,8 @@ Inside `CatalogueLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CAT-26-0213</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>6100000217</cbc:ID>
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
@@ -767,7 +767,7 @@ Inside `CatalogueLine`:
         <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0213-1</cbc:ID>
+        <cbc:ID>6100000217-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
@@ -947,7 +947,7 @@ Inside `CatalogueLine`:
       <cbc:LineID>1</cbc:LineID>
     </cac:CallForTendersLineReference>
     <cac:CallForTendersDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+      <cbc:ID>PWD/2026/0182</cbc:ID>
     </cac:CallForTendersDocumentReference>
   </cac:CatalogueLine>
   <cac:CatalogueLine>
@@ -987,14 +987,14 @@ Inside `CatalogueLine`:
         <cbc:ID>VI-INST-B</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0213-2</cbc:ID>
+        <cbc:ID>6100000217-2</cbc:ID>
       </cac:CatalogueItemIdentification>
     </cac:Item>
     <cac:CallForTendersLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:CallForTendersLineReference>
     <cac:CallForTendersDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+      <cbc:ID>PWD/2026/0182</cbc:ID>
     </cac:CallForTendersDocumentReference>
   </cac:CatalogueLine>
 </Catalogue>

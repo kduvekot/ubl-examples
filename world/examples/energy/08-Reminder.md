@@ -15,10 +15,10 @@ The power station has not paid by the due date. The gas producer reminds it in f
 - `CustomizationID` = **urn:ubl-examples:world:trns:reminder:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Reminder". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ENERGY-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **KG-DOC-26-0160**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900034209**  
+  The collaboration this document belongs to: Kelpstone's gas bill for April to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
+- `ID` = **9300003463**  
   The reminder number.
 - `UUID` = **154cfeb8-3d00-5879-95d5-6ed226239c26**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -308,7 +308,7 @@ Inside `ReminderLine`:
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
 - `ReminderPeriod/StartDate` = **2026-05-06**  
   Overdue since.
-- `BillingReference/InvoiceDocumentReference/ID` = **KG-INV-26-0158**  
+- `BillingReference/InvoiceDocumentReference/ID` = **9000034209**  
   The invoice not paid.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-03**  
   Its issue date.
@@ -326,7 +326,7 @@ Inside `ReminderLine`:
   Overdue from the day after the due date
 - `ReminderPeriod/EndDate` = **2026-06-05**  
   to the reminder: one month.
-- `BillingReference/InvoiceDocumentReference/ID` = **KG-INV-26-0158**  
+- `BillingReference/InvoiceDocumentReference/ID` = **9000034209**  
   The invoice not paid.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-03**  
   Its issue date.
@@ -339,8 +339,8 @@ Inside `ReminderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:reminder:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-DOC-26-0160</cbc:ID>
+  <cbc:ProfileExecutionID>9900034209</cbc:ProfileExecutionID>
+  <cbc:ID>9300003463</cbc:ID>
   <cbc:UUID>154cfeb8-3d00-5879-95d5-6ed226239c26</cbc:UUID>
   <cbc:IssueDate>2026-06-05</cbc:IssueDate>
   <cbc:IssueTime>09:46:00-01:00</cbc:IssueTime>
@@ -566,7 +566,7 @@ Inside `ReminderLine`:
     </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>KG-INV-26-0158</cbc:ID>
+        <cbc:ID>9000034209</cbc:ID>
         <cbc:IssueDate>2026-04-03</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
@@ -583,7 +583,7 @@ Inside `ReminderLine`:
     </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>KG-INV-26-0158</cbc:ID>
+        <cbc:ID>9000034209</cbc:ID>
         <cbc:IssueDate>2026-04-03</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

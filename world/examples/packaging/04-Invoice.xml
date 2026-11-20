@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RP-INV-26-0524</cbc:ID>
+  <cbc:ProfileExecutionID>9900013319</cbc:ProfileExecutionID>
+  <cbc:ID>26-0396</cbc:ID>
   <cbc:UUID>fbaa64ee-50ae-575a-92d4-0d0537b86349</cbc:UUID>
   <cbc:IssueDate>2026-05-01</cbc:IssueDate>
   <cbc:IssueTime>08:11:00-01:00</cbc:IssueTime>
@@ -16,7 +16,7 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LTM-PO-26-0523</cbc:ID>
+    <cbc:ID>4500013319</cbc:ID>
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -231,15 +231,15 @@
     <cbc:PaymentDueDate>2026-06-01</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF72RPINV260524</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF72RPINV260524</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF66260396</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF66260396</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB96BLUM38020504712805</cbc:ID>
       <cbc:Name>Rivermouth Packaging Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice RP-INV-26-0524</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 26-0396</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>

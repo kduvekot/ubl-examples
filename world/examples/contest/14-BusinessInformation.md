@@ -15,10 +15,10 @@ Version 2 of the registry's extract, after the furniture maker filed its account
 - `CustomizationID` = **urn:ubl-examples:world:trns:business-information:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Business information"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CONTEST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BIS-DOC-26-0639**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PROM-DC**  
+  The collaboration this document belongs to: the department's design contest for the promenade bench. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **BIS/2026/13629**  
   The registry's extract number, the same in both versions.
 - `UUID` = **eea77e46-a3cb-562f-bc68-ee6a72dde8c6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -240,6 +240,15 @@ Inside `BusinessParty`:
 - `ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Brackenmere Furniture gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
+### Additional Document Reference
+
+Inside `AdditionalDocumentReference`:
+
+- `ID` = **PWD/2026/PROM-DC**  
+  The contest the department asked for the extract for: its file.
+- `DocumentType` = **Procurement file**  
+  What it is.
+
 ### Business Capability
 
 Inside `BusinessCapability`:
@@ -266,8 +275,8 @@ Inside `NoticeSubType`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:business-information:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BIS-DOC-26-0639</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>BIS/2026/13629</cbc:ID>
   <cbc:UUID>eea77e46-a3cb-562f-bc68-ee6a72dde8c6</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>09:33:00-01:00</cbc:IssueTime>
@@ -438,6 +447,10 @@ Inside `NoticeSubType`:
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:BusinessParty>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD/2026/PROM-DC</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
     <cbc:Description>Furniture of wood and steel, designed and made in its own workshop: the yearly production value of 2025, from the accounts filed for that year.</cbc:Description>

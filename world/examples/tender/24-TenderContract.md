@@ -15,14 +15,14 @@ After the standstill period the authority and the manufacturer conclude the cont
 - `CustomizationID` = **urn:ubl-examples:world:trns:tender-contract:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tender contract"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0211**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0541**  
   The sender's number for this document.
 - `UUID` = **14fc43bd-7919-515f-82c7-a02bb3605891**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-20**  
   Concluded on Friday 20 March, the day after the standstill period ended.
@@ -39,10 +39,10 @@ After the standstill period the authority and the manufacturer conclude the cont
 
 Inside `PreviousDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0209**  
+- `ID` = **PWD/2026/0463**  
   The award notification.
 - `DocumentTypeCode` = **AwardedNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0209 is the example tender/22, a AwardedNotification; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: AwardedNotification = Awarded Notification.
+  The kind of document referred to: PWD/2026/0463 is the example tender/22, a AwardedNotification; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: AwardedNotification = Awarded Notification.
 
 ### Contract Document Reference
 
@@ -255,7 +255,7 @@ Inside `TenderingTerms`:
   5 % of the contract value of 124,080.00 lume.
 - `RequiredFinancialGuarantee/AmountRate` = **5**  
   Five per cent of the contract value.
-- `CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
+- `CallForTendersDocumentReference/ID` = **PWD/2026/0182**  
   The call for tenders, the procurement documents the contract was tendered under.
 - `WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
@@ -286,7 +286,7 @@ Inside `TenderingTerms`:
 
 Inside `TenderingProcess`:
 
-- `ID` = **PWD-2026-PARKS-P**  
+- `ID` = **PWD/2026/PARKS-P**  
   The procedure.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   Open. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
@@ -313,7 +313,7 @@ Inside `ProcurementProjectLot`:
 
 Inside `TenderResult`:
 
-- `AwardID` = **PWD-2026-PARKS-AWARD-1**  
+- `AwardID` = **PWD/2026/PARKS-AWARD-1**  
   The award decision.
 - `TenderResultCode` = **AWARDED** (listID `urn:ubl-examples:world:codelist:TenderResultCode`)  
   The contract is awarded. The code is from the Trade Accord's tender result list: AWARDED = Awarded.
@@ -337,7 +337,7 @@ Inside `TenderResult`:
   Both through the platform.
 - `ReceivedForeignTenderQuantity` = **1** (unitCode `EA`)  
   The manufacturer is established in Urvania.
-- `Contract/ID` = **PWD-2026-PARKS**  
+- `Contract/ID` = **PWD/2026/PARKS**  
   The framework contract.
 - `Contract/ContractTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
   A framework contract. The code is from the Trade Accord's contract type list: FRAMEWORK = Framework agreement.
@@ -398,17 +398,17 @@ Inside `TenderResult`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender-contract:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0211</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0541</cbc:ID>
   <cbc:UUID>14fc43bd-7919-515f-82c7-a02bb3605891</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>17:24:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The framework contract, signed by both parties.</cbc:Note>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cac:PreviousDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0209</cbc:ID>
+    <cbc:ID>PWD/2026/0463</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">AwardedNotification</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractDocumentReference>
@@ -592,7 +592,7 @@ Inside `TenderResult`:
       <cbc:AmountRate>5</cbc:AmountRate>
     </cac:RequiredFinancialGuarantee>
     <cac:CallForTendersDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+      <cbc:ID>PWD/2026/0182</cbc:ID>
     </cac:CallForTendersDocumentReference>
     <cac:WarrantyValidityPeriod>
       <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
@@ -618,7 +618,7 @@ Inside `TenderResult`:
     </cac:PostAwardProcess>
   </cac:TenderingTerms>
   <cac:TenderingProcess>
-    <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS-P</cbc:ID>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
@@ -632,7 +632,7 @@ Inside `TenderResult`:
     <cbc:ID>LOT-2</cbc:ID>
   </cac:ProcurementProjectLot>
   <cac:TenderResult>
-    <cbc:AwardID>PWD-2026-PARKS-AWARD-1</cbc:AwardID>
+    <cbc:AwardID>PWD/2026/PARKS-AWARD-1</cbc:AwardID>
     <cbc:TenderResultCode listID="urn:ubl-examples:world:codelist:TenderResultCode">AWARDED</cbc:TenderResultCode>
     <cbc:Description>Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.</cbc:Description>
     <cbc:AdvertisementAmount currencyID="XBL">320.00</cbc:AdvertisementAmount>
@@ -645,7 +645,7 @@ Inside `TenderResult`:
     <cbc:ReceivedElectronicTenderQuantity unitCode="EA">2</cbc:ReceivedElectronicTenderQuantity>
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
-      <cbc:ID>PWD-2026-PARKS</cbc:ID>
+      <cbc:ID>PWD/2026/PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
         <cbc:StartDate>2026-03-20</cbc:StartDate>

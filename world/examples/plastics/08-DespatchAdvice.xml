@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-DA-26-0892</cbc:ID>
+  <cbc:ProfileExecutionID>26-0338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0452</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:57:00-01:00</cbc:IssueTime>
@@ -12,10 +12,10 @@
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>RP-PO-26-0882</cbc:ID>
+    <cbc:ID>26-0339</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FB-WB-26-0890</cbc:ID>
+    <cbc:ID>26-0181</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:DespatchSupplierParty>
@@ -127,9 +127,9 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>RR-SH-26-0889</cbc:ID>
+    <cbc:ID>26-0451</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>RR-CS-26-0885</cbc:ID>
+      <cbc:ID>26-0426</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>

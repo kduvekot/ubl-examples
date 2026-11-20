@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:business-card:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0123</cbc:ID>
+  <cbc:ID>LMW-BC-26-0048</cbc:ID>
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>16:39:00-01:00</cbc:IssueTime>
@@ -127,7 +126,7 @@
     </cac:ElectronicAddress>
   </cac:BusinessParty>
   <cac:BrochureDocumentReference>
-    <cbc:ID>LD-BROCHURE-2026</cbc:ID>
+    <cbc:ID>LMW-BROCHURE-2026</cbc:ID>
     <cac:Attachment>
       <cac:ExternalReference>
         <cbc:URI>https://www.lumeway.example/brochure-2026.pdf</cbc:URI>
@@ -136,7 +135,7 @@
     </cac:Attachment>
   </cac:BrochureDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LD-REG-XB</cbc:ID>
+    <cbc:ID>LMW-REG-XB</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
@@ -146,7 +145,7 @@
     <cbc:ValueAmount currencyID="XBL">105336.00</cbc:ValueAmount>
     <cbc:ValueQuantity unitCode="EA">264</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
-      <cbc:ID>LD-COUNT-26-04</cbc:ID>
+      <cbc:ID>LMW-COUNT-26-04</cbc:ID>
       <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">STOCKCOUNT</cbc:EvidenceTypeCode>
       <cbc:Name>Stock count of 30 April 2026</cbc:Name>
       <cbc:Description>The distributor's own count of its warehouse at the end of April; it counts its stock at the end of every month.</cbc:Description>

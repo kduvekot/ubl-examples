@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-FI-26-0329</cbc:ID>
+  <cbc:ID>QLM-FI-26-2388</cbc:ID>
   <cbc:UUID>9c9dac7e-9d28-5eec-bf12-be960571ab4f</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>09:20:00-01:00</cbc:IssueTime>
@@ -95,9 +94,9 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>QPD-SH-26-0323</cbc:ID>
+    <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>QPD-CS-26-0330</cbc:ID>
+      <cbc:ID>QLM-CS-26-3980</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
@@ -140,7 +139,7 @@
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
       <cac:TransportHandlingUnit>
-        <cbc:ID>QPD-TC-1</cbc:ID>
+        <cbc:ID>QLM-TC-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo terminal.</cbc:HandlingInstructions>
         <cac:MinimumTemperature>
@@ -152,78 +151,78 @@
           <cbc:Measure unitCode="CEL">8</cbc:Measure>
         </cac:MaximumTemperature>
         <cac:Package>
-          <cbc:ID>QPD-CT-1</cbc:ID>
+          <cbc:ID>QLM-CT-1</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-2</cbc:ID>
+          <cbc:ID>QLM-CT-2</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-3</cbc:ID>
+          <cbc:ID>QLM-CT-3</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-4</cbc:ID>
+          <cbc:ID>QLM-CT-4</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-5</cbc:ID>
+          <cbc:ID>QLM-CT-5</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-6</cbc:ID>
+          <cbc:ID>QLM-CT-6</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-7</cbc:ID>
+          <cbc:ID>QLM-CT-7</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-8</cbc:ID>
+          <cbc:ID>QLM-CT-8</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-9</cbc:ID>
+          <cbc:ID>QLM-CT-9</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-10</cbc:ID>
+          <cbc:ID>QLM-CT-10</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-11</cbc:ID>
+          <cbc:ID>QLM-CT-11</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-12</cbc:ID>
+          <cbc:ID>QLM-CT-12</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-13</cbc:ID>
+          <cbc:ID>QLM-CT-13</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-14</cbc:ID>
+          <cbc:ID>QLM-CT-14</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>QPD-BX-1</cbc:ID>
+        <cbc:ID>QLM-BX-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Frozen vaccine on 6 kg of dry ice: keep the box upright and its vent clear; do not put it in the active container.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
@@ -236,13 +235,13 @@
           <cbc:Measure unitCode="CEL">-15</cbc:Measure>
         </cac:MaximumTemperature>
         <cac:Package>
-          <cbc:ID>QPD-BX-1</cbc:ID>
+          <cbc:ID>QLM-BX-1</cbc:ID>
           <cbc:Quantity unitCode="EA">40</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>QPD-RA-1</cbc:ID>
+        <cbc:ID>QLM-RA-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Radioactive, Category III-YELLOW, transport index 1.5: stow in the aft hold, away from the crew and from the frozen vaccine's box.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
@@ -250,7 +249,7 @@
           <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
         </cac:HazardousGoodsTransit>
         <cac:Package>
-          <cbc:ID>QPD-RA-1</cbc:ID>
+          <cbc:ID>QLM-RA-1</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
           <cac:MeasurementDimension>
@@ -336,7 +335,7 @@
       <cac:Item>
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cac:HazardousItem>
-          <cbc:ID>QPD-RAD-0020-DG</cbc:ID>
+          <cbc:ID>QLM-RAD-0020-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
           <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
@@ -376,11 +375,11 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>SGH-PO-26-0327</cbc:ID>
+    <cbc:ID>SGH/2026/1100</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>QPD-DGD-26-0615</cbc:ID>
+    <cbc:ID>QLM-DGD-26-0615</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">890</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

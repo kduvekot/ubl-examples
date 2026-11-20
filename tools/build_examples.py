@@ -1162,7 +1162,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                                           f"{PARTY[maker['seller']]['identity']['name']}: the "
                                                           "reseller sells the maker's item on.")}
     # a variant of the maker's item: its item number, with the variant added. A reseller that numbers the model
-    # once (Lumeway's LD-10442 for the bench in any colour) adds the variant to its own number; one that gives each
+    # once (Lumeway's LMW-10442 for the bench in any colour) adds the variant to its own number; one that gives each
     # variant a number of its own (variant_numbers: the store's BM-551005 for the oak bench, O155) needs no
     # variant on it, and the variant goes with the maker's number
     if maker.get("version"):      # the version of the maker's part, on the maker's number (O216)
@@ -2960,6 +2960,16 @@ def doc_types():
     return DOC_TYPES
 
 
+def cited_entry(rid):
+    """The entry of world/documents.json cited for a document outside the examples: under its ID, or, for one
+    its issuer numbers, under its name (examples_kit.cited_number)."""
+    import examples_kit
+    if rid in WORLD["cited"] and "issuer" not in WORLD["cited"][rid] and "number" not in WORLD["cited"][rid]:
+        return WORLD["cited"][rid]
+    name = examples_kit.CITED_NAMES.get(rid)
+    return WORLD["cited"][name] if name else None
+
+
 def type_references(content, where):
     """Give every untyped reference in a generic element the type of the example it points to (worklist C06)."""
     if isinstance(content, list):
@@ -2975,7 +2985,7 @@ def type_references(content, where):
                     continue
                 rid = ref.get("ID").value if isinstance(ref.get("ID"), V) else None
                 hit = doc_types().get(rid)
-                cited = WORLD["cited"].get(rid)
+                cited = cited_entry(rid)
                 if hit:
                     ref["DocumentTypeCode"] = V(hit[2], f"The kind of document referred to: {rid} is the example "
                                                         f"{hit[0]}/{hit[1]:02d}, a {hit[2]}; a generic reference names "
@@ -3679,7 +3689,7 @@ def check_reference_targets(root, where):
         rid = e.findtext(f"{{{NS_CBC}}}ID")
         if not name.endswith("Reference") or rid is None or not reference_kind(name):
             continue
-        if rid not in doc_types() and rid not in WORLD["cited"] and rid not in REFERENCE_WAITS:
+        if rid not in doc_types() and not cited_entry(rid) and rid not in REFERENCE_WAITS:
             UNRESOLVED.append((where, name, rid))
 
 
@@ -3740,6 +3750,143 @@ def check_party_knowledge():
                 out.append(f"{pid}: another document gives {path} = {value!r}, the party itself {sorted(own[path])}")
     return out
 
+
+# ---------------------------------------------------------------- numbering and collaborations (C74, C75, C76)
+BUILT = {}          # (flow, file number) -> (world document, root, issue moment) of every example built in this run
+
+
+def collaborations():
+    """Every collaboration of the world (world/documents.json flows[].collaborations, D26, O77), each with the
+    examples it holds as (flow, file number)."""
+    out = []
+    for fl in WORLD["flows"]:
+        for c in fl.get("collaborations", []):
+            out.append({**c, "docs": [(r.split("/")[0], int(r.split("/")[1])) for r in c["documents"]]})
+    return out
+
+
+def collaboration_of(flow_id, n):
+    return next((c for c in collaborations() if (flow_id, n) in c["docs"]), None)
+
+
+def collaboration_id(c):
+    """The identifier of a collaboration (D26): given by the party that starts it, in its own numbering; a
+    procurement keeps its file number."""
+    import examples_kit
+    if c.get("id"):
+        return c["id"]
+    first = c["docs"][0]
+    return examples_kit.COLLABORATIONS.number(f"{first[0]}-{first[1]:02d}", c["starter"], "ProfileExecution")
+
+
+def as_instant(m, pid):
+    """An issue moment as an aware datetime: a day without a time counts at noon in the issuer's local time."""
+    if m[1] is not None:
+        return m[1]
+    tz = WORLD["countries"].get(PARTY[pid]["c"], {}).get("timezone", "+00:00")
+    return datetime.datetime.fromisoformat(f"{m[0].isoformat()}T12:00:00{tz}")
+
+
+def first_pass_numbers():
+    """After the first pass: the issuers' numbers (D24) of every number the flows gave, each placed at the moment
+    it is first issued: the issue moment of the example that carries it as its own ID, else that of the earliest
+    example that quotes it."""
+    import examples_kit
+    texts = []
+    for (flow_id, n), (doc, root, here) in BUILT.items():
+        if here:
+            words = {t for e in root.iter() if isinstance(e.tag, str) for t in [e.text or ""] + list(e.attrib.values())}
+            texts.append((as_instant(here, doc["from"]), "\n".join(words)))
+    registrations = []
+    for (flow_id, key), r in examples_kit.REGISTRY.items():
+        own = [as_instant(m, r["sender"]) for f, x, m in ISSUED.get(r["provisional"], []) if m]
+        pattern = re.compile(r"(?<![A-Za-z0-9])" + re.escape(r["provisional"]) + r"(?![0-9])")
+        quoted = [when for when, text in texts if pattern.search(text)]
+        if not own and not quoted:          # given, then not used: placed at the start of its flow
+            own = [as_instant((r["start"], None), r["sender"])]
+        registrations.append((flow_id, key, r["sender"], r["kind"], min(own or quoted), r["fixed"]))
+    return examples_kit.numbering(registrations)
+
+
+def check_numbering():
+    """Stage 7 (C74, C75, C76): document numbers rise per issuer and kind with the issue moment; one code per
+    company; documents that share a ProfileExecutionID share the parties and refer to each other."""
+    import examples_kit
+    out = []
+    codes = {}
+    for pid, p in PARTY.items():                    # one code per company, unique in the world (D25)
+        n = p["numbering"]
+        if n.get("series_of"):
+            if n.get("code") != PARTY[n["series_of"]]["numbering"]["code"]:
+                out.append(f"{pid}: a branch numbers in the series of {n['series_of']} and has its code")
+            continue
+        if n.get("code"):
+            if n["code"] in codes:
+                out.append(f"code {n['code']} is held by {codes[n['code']]} and {pid}")
+            codes[n["code"]] = pid
+    series = {}
+    for (flow_id, n), (doc, root, here) in BUILT.items():
+        doc_id = root.findtext(f"{{{NS_CBC}}}ID")
+        where = f"{flow_id}/{xmlname(n, doc)}"
+        info = examples_kit.NUMBER_INFO.get(doc_id)
+        if not info:
+            out.append(f"{where}: its number {doc_id} is not one its issuer gave (examples_kit numbering)")
+            continue
+        owner, kind = info[0], info[1]
+        if kind == "account":                       # a utility bill: the customer's account and the period
+            continue
+        if examples_kit.numbering_owner(doc["from"]) != owner and doc["doc"] not in ("Order",):
+            out.append(f"{where}: numbered by {owner}, issued by {doc['from']}")
+        fmt = examples_kit.series_of(owner, info[2])[1]
+        if fmt == "code" and not doc_id.startswith(PARTY[owner]["numbering"]["code"] + "-"):
+            out.append(f"{where}: {doc_id} does not carry its issuer's code")
+        if here:
+            series.setdefault((owner, kind), {}).setdefault(doc_id, (as_instant(here, doc["from"]), fmt, where))
+    for (owner, kind), docs in sorted(series.items()):      # the same number twice is one document's versions
+        seq = sorted(docs.items(), key=lambda x: x[1][0])
+        for (a, (ma, fmt, wa)), (b, (mb, _, wb)) in zip(seq, seq[1:]):
+            same_run = fmt in examples_kit.RUNNING or ma.year == mb.year
+            if same_run and examples_kit.number_value(owner, kind, fmt, b) <= examples_kit.number_value(owner, kind,
+                                                                                                         fmt, a):
+                out.append(f"{owner} {kind}: {wb} ({b}) is issued after {wa} ({a}) with a number that is not higher")
+    ids = {}
+    for (flow_id, n), (doc, root, here) in BUILT.items():
+        pe = root.findtext(f"{{{NS_CBC}}}ProfileExecutionID")
+        c = collaboration_of(flow_id, n)
+        if pe:
+            ids.setdefault(pe, []).append((flow_id, n))
+        own = {b[0] for b in MODEL["abies"][doc["doc"]]["bbies"]}
+        if c and "ProfileExecutionID" in own and pe != collaboration_id(c):
+            out.append(f"{flow_id}/{xmlname(n, doc)}: not the identifier of its collaboration")
+        if not c and pe:
+            out.append(f"{flow_id}/{xmlname(n, doc)}: a ProfileExecutionID outside a collaboration")
+    for c in collaborations():
+        built = [x for x in c["docs"] if x in BUILT]
+        if len(c["docs"]) < 2:
+            out.append(f"collaboration {c['what']}: a collaboration has at least two documents")
+        if c["starter"] not in c["parties"]:
+            out.append(f"collaboration {c['what']}: started by a party outside it")
+        for x in built:                             # the documents share the parties (D26)
+            doc = BUILT[x][0]
+            if doc["from"] not in c["parties"] or doc["to"] not in c["parties"]:
+                out.append(f"{x[0]}/{xmlname(x[1], doc)}: between parties outside its collaboration {c['what']}")
+        refs = {}                                   # ... and refer to each other: each cites or is cited by another
+        for x in built:
+            root = BUILT[x][1]
+            refs[x] = {e.text for e in root.iter(f"{{{NS_CBC}}}*") if e.text and
+                       etree.QName(e).localname.endswith("ID") and etree.QName(e).localname != "ProfileExecutionID"}
+        own_ids = {x: BUILT[x][1].findtext(f"{{{NS_CBC}}}ID") for x in built}
+        shared = set(examples_kit.NUMBER_INFO) | ({c["id"]} if c.get("id") else set())   # a procurement's file
+        for x in built:
+            linked = any(own_ids[y] in refs[x] or own_ids[x] in refs[y] or
+                         (refs[x] & refs[y] & shared) - {own_ids[x], own_ids[y]}
+                         for y in built if y != x)
+            if not linked and len(built) > 1:
+                out.append(f"{x[0]}/{xmlname(x[1], BUILT[x][0])}: refers to no other document of its collaboration "
+                           f"{c['what']}, and none refers to it")
+    return out
+
+
 def xmlname(n, doc):
     return f"{n:02d}-{doc['doc']}.xml"
 
@@ -3797,10 +3944,12 @@ def main(flow_id, check=False):
             prof = world_specs.profile(doc)
             header["ProfileID"] = V(world_specs.urn("profile", prof), "The Trade Accord's process profile the document "
                                     f"belongs to: {world_specs.load()['profiles'][prof]['name'].lower()}, a generic, "
-                                    "versioned profile, not the flow; the run of the process is the ProfileExecutionID.")
-        if "ProfileExecutionID" in own:
-            header["ProfileExecutionID"] = V(f"{flow_id.upper()}-2026-01", "This run of the process: the same in "
-                                                                          "every document of the flow.")
+                                    "versioned profile, not the flow.")
+        coll = collaboration_of(flow_id, n)
+        if "ProfileExecutionID" in own and coll:      # one per collaboration, none outside one (D26, C76)
+            header["ProfileExecutionID"] = V(collaboration_id(coll), "The collaboration this document belongs to: "
+                                             f"{coll['what']}. {PARTY[coll['starter']]['identity']['name']} started "
+                                             "it and gave it this identifier, which every document of it repeats.")
         if "IssueTime" in own and "IssueTime" not in content:
             minutes = 8 * 60 + zlib.crc32(f"{flow_id}:{n}".encode()) % 600
             header["IssueTime"] = V(f"{minutes // 60:02d}:{minutes % 60:02d}:00", "The time the sender's system "
@@ -3829,6 +3978,7 @@ def main(flow_id, check=False):
                     raise SystemExit(f"world/examples/{flow_id}/{xmlname(n, doc)}: issued {here[1] or here[0]}, after "
                                      f"{where}, which cites it at {m[1] or m[0]}")  # C72
             ISSUED.setdefault(doc_id, []).append((flow_id, xmlname(n, doc), here))
+        BUILT[(flow_id, n)] = (doc, root, here)
         check_issue_order(flow_id, xmlname(n, doc), root, doc, asked)
         check_reference_targets(root, f"{flow_id}/{xmlname(n, doc)}")
         if here and (flow_id, xmlname(n, doc)) not in ISSUE_ORDER_WAITS:
@@ -3862,6 +4012,8 @@ def main(flow_id, check=False):
         check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}",
                             PARTY.get(payee_of(root, doc), {}).get("c"))
         check_due_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        if FIRST_PASS:
+            continue
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
                  xmlname(n, doc).replace(".xml", ".md"): page(n, doc, root, reasons, flow).encode("utf-8")}
         for name, data in files.items():
@@ -3874,6 +4026,8 @@ def main(flow_id, check=False):
                     f.write(data)
         if not check:
             print(f"world/examples/{flow_id}/{xmlname(n, doc)}: {len(reasons)} values")
+    if FIRST_PASS:
+        return True
     check_reference_uuids(flow_id, roots)
     check_air_uld_ids(flow_id, roots)
     check_party_profiles(flow_id, roots, docs)
@@ -3900,8 +4054,34 @@ FLOWS_WITH_EXAMPLES = ["ore", "road", "rail", "plastics", "retail", "sea", "air"
                        "reefer"]
 
 
+FIRST_PASS = False      # True in the first pass, which only finds out when each number is first issued (D24)
+
+
+def numbers_from_first_pass():
+    """Run the first pass over all flows in a process of its own and return the issuers' numbers it found."""
+    import subprocess
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, "numbers.json")
+        r = subprocess.run([sys.executable, os.path.abspath(__file__), "--first-pass", path])
+        if r.returncode:
+            raise SystemExit("the first pass of the numbering failed")
+        return {(f, k): v for f, k, v in json.load(open(path, encoding="utf-8"))}
+
+
 if __name__ == "__main__":
     import build_examples        # run through the module, so the scenarios share its classes
+    import examples_kit
+    if sys.argv[1:2] == ["--first-pass"]:
+        import contextlib
+        build_examples.FIRST_PASS = True
+        with contextlib.redirect_stdout(open(os.devnull, "w")):
+            for f in FLOWS_WITH_EXAMPLES:
+                build_examples.main(f, check=True)
+        table = build_examples.first_pass_numbers()
+        json.dump(sorted([f, k, v] for (f, k), v in table.items()), open(sys.argv[2], "w", encoding="utf-8"))
+        sys.exit(0)
+    examples_kit.use_numbers(numbers_from_first_pass())
     args = [a for a in sys.argv[1:] if a != "--check"]
     ok = all([build_examples.main(f, check="--check" in sys.argv) for f in (args or FLOWS_WITH_EXAMPLES)])
     import examples_scenarios
@@ -3912,6 +4092,9 @@ if __name__ == "__main__":
     if not args:
         for problem in build_examples.check_party_knowledge():
             print(f"party table: {problem}", file=sys.stderr)  # O90
+            ok = False
+        for problem in build_examples.check_numbering():
+            print(f"numbering: {problem}", file=sys.stderr)  # C74, C75, C76
             ok = False
     for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
         print(f"note: {note}", file=sys.stderr)

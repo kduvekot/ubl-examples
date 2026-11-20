@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FDAB-GC-26-0558</cbc:ID>
+  <cbc:ID>FDAB/2026/7266</cbc:ID>
   <cbc:UUID>616346e3-707a-5e63-8f7d-13691b27093e</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
@@ -197,7 +196,7 @@
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
@@ -275,7 +274,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:Attestation>
-    <cbc:ID>FDA-ATT-26-0218</cbc:ID>
+    <cbc:ID>FDAB/2026/7265</cbc:ID>
     <cbc:Name>Freedom from quarantine pests</cbc:Name>
     <cbc:Description>Sampled at the packhouse and found free of codling moth and fire blight.</cbc:Description>
     <cbc:Note>Two per cent of the cartons sampled: 23 of 1,120.</cbc:Note>
@@ -306,7 +305,7 @@
     </cac:AttestationLine>
   </cac:Attestation>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

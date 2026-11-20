@@ -15,10 +15,10 @@ The wholesaler orders its vaccines and insulin for the southern winter from the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **QPD-PO-26-0320**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **QLM-TX-26-2699**  
+  The collaboration this document belongs to: Quillmoor's order of a biological medicine from Nilavar Biologics. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **QLM-PO-26-2699**  
   The buyer's order number.
 - `UUID` = **237fea2b-a4ab-5769-b113-06c84ecff8e4**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -193,9 +193,9 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Influenza vaccine, inactivated, 10 prefilled syringes**  
   The item's short name.
-- `LineItem/Item/BuyersItemIdentification/ID` = **QPD-VAC-1102**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **QLM-VAC-1102**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **NB-FLU-S26-10**  
+- `LineItem/Item/SellersItemIdentification/ID` = **NLB-FLU-S26-10**  
   The seller's own item number; as Nilavar Biologics describes the item.
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own.
@@ -211,9 +211,9 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Insulin human, 100 IU/ml, vial of 10 ml**  
   The item's short name.
-- `LineItem/Item/BuyersItemIdentification/ID` = **QPD-INS-0310**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **QLM-INS-0310**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **NB-INS-R100-10**  
+- `LineItem/Item/SellersItemIdentification/ID` = **NLB-INS-R100-10**  
   The seller's own item number; as Nilavar Biologics describes the item.
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own.
@@ -229,9 +229,9 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Varicella vaccine, live, frozen, single dose**  
   The item's short name.
-- `LineItem/Item/BuyersItemIdentification/ID` = **QPD-VAC-2410**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **QLM-VAC-2410**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **NB-VZV-1**  
+- `LineItem/Item/SellersItemIdentification/ID` = **NLB-VZV-1**  
   The seller's own item number; as Nilavar Biologics describes the item.
 
 ## The document
@@ -242,8 +242,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-PO-26-0320</cbc:ID>
+  <cbc:ProfileExecutionID>QLM-TX-26-2699</cbc:ProfileExecutionID>
+  <cbc:ID>QLM-PO-26-2699</cbc:ID>
   <cbc:UUID>237fea2b-a4ab-5769-b113-06c84ecff8e4</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>10:20:00-01:00</cbc:IssueTime>
@@ -369,10 +369,10 @@ Inside `OrderLine`:
         <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
         <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>QPD-VAC-1102</cbc:ID>
+          <cbc:ID>QLM-VAC-1102</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>NB-FLU-S26-10</cbc:ID>
+          <cbc:ID>NLB-FLU-S26-10</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -390,10 +390,10 @@ Inside `OrderLine`:
         <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
         <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>QPD-INS-0310</cbc:ID>
+          <cbc:ID>QLM-INS-0310</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>NB-INS-R100-10</cbc:ID>
+          <cbc:ID>NLB-INS-R100-10</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -411,10 +411,10 @@ Inside `OrderLine`:
         <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
         <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>QPD-VAC-2410</cbc:ID>
+          <cbc:ID>QLM-VAC-2410</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>NB-VZV-1</cbc:ID>
+          <cbc:ID>NLB-VZV-1</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

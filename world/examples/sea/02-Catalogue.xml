@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CAT-26-0124</cbc:ID>
+  <cbc:ID>LMW-CAT-26-0006</cbc:ID>
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
@@ -155,7 +154,7 @@
           <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
@@ -205,7 +204,7 @@
           <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
@@ -253,7 +252,7 @@
       <cbc:ModelName>Serra 180</cbc:ModelName>
       <cbc:WarrantyInformation>Five years on the frame against corrosion.</cbc:WarrantyInformation>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -277,7 +276,7 @@
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>LD-CAT-26-0124-1</cbc:ID>
+        <cbc:ID>LMW-CAT-26-0006-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
@@ -293,10 +292,10 @@
         <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">38111</cbc:ItemClassificationCode>
       </cac:CommodityClassification>
       <cac:TransactionConditions>
-        <cbc:ID>LD-TC-01</cbc:ID>
+        <cbc:ID>LMW-TC-01</cbc:ID>
         <cbc:Description>Sold to trade customers only, per pallet of four benches.</cbc:Description>
         <cac:DocumentReference>
-          <cbc:ID>LD-GTC-2026</cbc:ID>
+          <cbc:ID>LMW-GTC-2026</cbc:ID>
           <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:TransactionConditions>
@@ -498,7 +497,7 @@
           <cbc:EndDate>2026-11-01</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>LD-PL-2026</cbc:ID>
+          <cbc:ID>LMW-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
         <cac:AlternativeCurrencyPrice>
@@ -522,7 +521,7 @@
       <cbc:BrandName>Valdara</cbc:BrandName>
       <cbc:ModelName>Serra 180 side frame</cbc:ModelName>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
@@ -540,7 +539,7 @@
         </cac:IssuerParty>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>LD-CAT-26-0124-2</cbc:ID>
+        <cbc:ID>LMW-CAT-26-0006-2</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:AdditionalItemIdentification>
         <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>

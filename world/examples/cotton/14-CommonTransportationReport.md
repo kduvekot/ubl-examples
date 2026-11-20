@@ -15,10 +15,8 @@ Before entering Lumeport the carrier reports its second feeder to the port. The 
 - `CustomizationID` = **urn:ubl-examples:world:trns:common-transportation-report:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Common transportation report"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TOL-CTR-26-0207**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **8600033374**  
   The carrier's report number.
 - `UUID` = **149f7421-1d43-5c08-9504-00a7ea0b615b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -183,7 +181,7 @@ Inside `ReceiverParty`:
 
 Inside `Shipment`:
 
-- `ID` = **TOL-SH-26-0208**  
+- `ID` = **7400667463**  
   The carrier's shipment number for the voyage's cargo.
 - `ShipmentStage/ID` = **1**  
   The sea leg from Selanu to Lumeport.
@@ -281,8 +279,7 @@ Inside `TransportMeans`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:common-transportation-report:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-CTR-26-0207</cbc:ID>
+  <cbc:ID>8600033374</cbc:ID>
   <cbc:UUID>149f7421-1d43-5c08-9504-00a7ea0b615b</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>11:22:00-01:00</cbc:IssueTime>
@@ -401,7 +398,7 @@ Inside `TransportMeans`:
     </cac:PartyName>
   </cac:ReceiverParty>
   <cac:Shipment>
-    <cbc:ID>TOL-SH-26-0208</cbc:ID>
+    <cbc:ID>7400667463</cbc:ID>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
       <cac:ReportingPerson>

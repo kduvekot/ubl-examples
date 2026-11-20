@@ -15,10 +15,8 @@ The retail company declares its own consignment of March's gas, 2,400 MWh fed in
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ENERGY-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FE-IM-26-0162**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **7700000100**  
   The importer's declaration number.
 - `UUID` = **6f5bbc45-66a5-54dd-8521-41f56edc1895**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -211,9 +209,9 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **KG-SH-26-0154**  
+- `ID` = **7400034203**  
   The shipment of the export declaration: March's gas through the pipeline, of which this declaration covers one consignment.
-- `Consignment/ID` = **KG-CS-26-0156**  
+- `Consignment/ID` = **7300034204**  
   The importer's consignment, as the export declaration names it.
 - `Consignment/GrossWeightMeasure` = **180000** (unitCode `KGM`)  
   The weight of the gas declared.
@@ -280,7 +278,7 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KG-EX-26-0152**  
+- `ID` = **7600006841**  
   The export declaration of the shipment, which names this consignment.
 - `IssueDate` = **2026-04-02**  
   Lodged the same day in Bayvarra.
@@ -295,8 +293,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FE-IM-26-0162</cbc:ID>
+  <cbc:ID>7700000100</cbc:ID>
   <cbc:UUID>6f5bbc45-66a5-54dd-8521-41f56edc1895</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
@@ -445,9 +442,9 @@ Inside `AdditionalDocumentReference`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>KG-SH-26-0154</cbc:ID>
+    <cbc:ID>7400034203</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>KG-CS-26-0156</cbc:ID>
+      <cbc:ID>7300034204</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">180000</cbc:GrossWeightMeasure>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -503,7 +500,7 @@ Inside `AdditionalDocumentReference`:
     </cac:FirstArrivalPortLocation>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KG-EX-26-0152</cbc:ID>
+    <cbc:ID>7600006841</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>

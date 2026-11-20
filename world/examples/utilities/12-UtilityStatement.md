@@ -15,10 +15,10 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
 - `CustomizationID` = **urn:ubl-examples:world:trns:utility-statement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **ST-DOC-26-0324**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **STL-TX-26-75183**  
+  The collaboration this document belongs to: Selanu Telecom's bill for March to Velumi. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+- `ID` = **STL-UST-26-75398**  
   The utility's statement number.
 - `UUID` = **7b60d4fc-8fd7-5124-9e01-cfc520caed86**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,16 +43,16 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
 
 Inside `ParentDocumentReference`:
 
-- `ID` = **ST-INV-26-0323**  
+- `ID` = **STL-C-1077-2603**  
   The invoice this statement supplements: a utility statement adds the consumption behind the bill.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: ST-INV-26-0323 is the example utilities/13, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: STL-C-1077-2603 is the example utilities/13, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **ST-TARIFF-2026**  
+- `ID` = **STL-TARIFF-2026**  
   The utility's tariff sheet for 2026.
 - `DocumentTypeCode` = **TARIFF** (listID `urn:ubl-examples:world:codelist:DocumentTypeCode`)  
   What the document is. The code is from the Trade Accord's document type list: TARIFF = Tariff.
@@ -170,17 +170,17 @@ Inside `SubscriberParty`:
 
 Inside `SubscriberConsumption`:
 
-- `ConsumptionID` = **ST-1077-2603**  
+- `ConsumptionID` = **STL-1077-2603**  
   The telecom consumption of March.
 - `SpecificationTypeCode` = **DETAILED** (listID `urn:ubl-examples:world:codelist:SpecificationTypeCode`)  
   With the calls. The code is from the Trade Accord's specification type list: DETAILED = Detailed.
 - `TotalMeteredQuantity` = **35** (unitCode `E34`)  
   The data beyond the subscriptions.
-- `UtilityConsumptionPoint/ID` = **ST-CP-1077**  
+- `UtilityConsumptionPoint/ID` = **STL-CP-1077**  
   The company's connection.
 - `UtilityConsumptionPoint/Description` = **Office of Velumi Trading, Selanu**  
   Where.
-- `UtilityConsumptionPoint/SubscriberID` = **ST-CU-20418**  
+- `UtilityConsumptionPoint/SubscriberID` = **STL-CU-20418**  
   The subscriber's customer number with the telecom company; the contract number stays in the contract.
 - `UtilityConsumptionPoint/SubscriberType` = **Business**  
   The name of code BUS in the Trade Accord's subscriber type list.
@@ -236,7 +236,7 @@ Inside `SubscriberConsumption`:
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1850**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 1 of the six of subscription STL-L-BUS6, with calls on the island included.**  
   The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
@@ -308,7 +308,7 @@ Inside `SubscriberConsumption`:
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1851**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 2 of the six of subscription STL-L-BUS6, with calls on the island included.**  
   The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
@@ -362,7 +362,7 @@ Inside `SubscriberConsumption`:
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1852**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 3 of the six of subscription STL-L-BUS6, with calls on the island included.**  
   The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
@@ -386,7 +386,7 @@ Inside `SubscriberConsumption`:
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1853**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 4 of the six of subscription STL-L-BUS6, with calls on the island included.**  
   The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
@@ -410,7 +410,7 @@ Inside `SubscriberConsumption`:
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1854**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 5 of the six of subscription STL-L-BUS6, with calls on the island included.**  
   The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
@@ -434,7 +434,7 @@ Inside `SubscriberConsumption`:
   A business line.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1855**  
   The line's number; +999 is reserved, no real country's code.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 6 of the six of subscription STL-L-BUS6, with calls on the island included.**  
   The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
@@ -458,7 +458,7 @@ Inside `SubscriberConsumption`:
   The data pool, a line of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1856**  
   The data pool's own number, which the phones of the six lines share.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Mobile data pool STL-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.**  
   What it is, as the invoice lines name it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **19.144** (currencyID `XLC`)  
   The data at the data tariff and the roaming at the roaming tariff.
@@ -521,8 +521,8 @@ Inside `SubscriberConsumption`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-DOC-26-0324</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
+  <cbc:ID>STL-UST-26-75398</cbc:ID>
   <cbc:UUID>7b60d4fc-8fd7-5124-9e01-cfc520caed86</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:37:00+00:00</cbc:IssueTime>
@@ -533,11 +533,11 @@ Inside `SubscriberConsumption`:
   <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
   <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
   <cac:ParentDocumentReference>
-    <cbc:ID>ST-INV-26-0323</cbc:ID>
+    <cbc:ID>STL-C-1077-2603</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>ST-TARIFF-2026</cbc:ID>
+    <cbc:ID>STL-TARIFF-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">TARIFF</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
@@ -624,13 +624,13 @@ Inside `SubscriberConsumption`:
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>ST-1077-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>STL-1077-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:TotalMeteredQuantity unitCode="E34">35</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>ST-CP-1077</cbc:ID>
+      <cbc:ID>STL-CP-1077</cbc:ID>
       <cbc:Description>Office of Velumi Trading, Selanu</cbc:Description>
-      <cbc:SubscriberID>ST-CU-20418</cbc:SubscriberID>
+      <cbc:SubscriberID>STL-CU-20418</cbc:SubscriberID>
       <cbc:SubscriberType>Business</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">BUS</cbc:SubscriberTypeCode>
       <cac:Address>
@@ -670,7 +670,7 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>1</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1850</cbc:PhoneNumber>
-          <cbc:Description>Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 1 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -722,7 +722,7 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>2</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1851</cbc:PhoneNumber>
-          <cbc:Description>Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 2 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -759,7 +759,7 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>3</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1852</cbc:PhoneNumber>
-          <cbc:Description>Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 3 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -775,7 +775,7 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>4</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1853</cbc:PhoneNumber>
-          <cbc:Description>Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 4 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -791,7 +791,7 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>5</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1854</cbc:PhoneNumber>
-          <cbc:Description>Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 5 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -807,7 +807,7 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>6</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1855</cbc:PhoneNumber>
-          <cbc:Description>Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 6 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -823,7 +823,7 @@ Inside `SubscriberConsumption`:
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>7</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1856</cbc:PhoneNumber>
-          <cbc:Description>Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.</cbc:Description>
+          <cbc:Description>Mobile data pool STL-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">19.144</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">19.144</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>

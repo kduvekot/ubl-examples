@@ -15,10 +15,10 @@ The distributor instructs its forwarder: book the sea freight to the island and 
 - `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-FI-26-0131**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-1001**  
+  The collaboration this document belongs to: the forwarding Lumeway gives Bayforth Forwarding. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-FI-26-0601**  
   The distributor's instruction number.
 - `UUID` = **abba32c6-9aed-5cc2-bf33-cf2d04aecd2b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -155,9 +155,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0132**  
+- `ID` = **LMW-SH-26-1001**  
   The shipment to be booked.
-- `Consignment/ID` = **LD-CS-26-0133**  
+- `Consignment/ID` = **LMW-CS-26-1001**  
   The distributor's consignment number.
 - `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the goods.
@@ -298,10 +298,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **VT-PO-26-0127**  
+- `ID` = **26-0417**  
   The order the goods are for.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VT-PO-26-0127 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 26-0417 is the example sea/05, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -322,8 +322,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-FI-26-0131</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-1001</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-FI-26-0601</cbc:ID>
   <cbc:UUID>abba32c6-9aed-5cc2-bf33-cf2d04aecd2b</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>08:40:00-01:00</cbc:IssueTime>
@@ -419,9 +419,9 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ID>LMW-SH-26-1001</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:ID>LMW-CS-26-1001</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cbc:ForwarderServiceInstructions>Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.</cbc:ForwarderServiceInstructions>
       <cbc:SpecialInstructions>Load the castings last, behind the doors.</cbc:SpecialInstructions>
@@ -552,7 +552,7 @@ Inside `Signature`:
     </cac:InsurancePolicy>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

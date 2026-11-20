@@ -15,10 +15,10 @@ The manufacturer tells the mine which invoices the transfer pays. Both companies
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ORE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-RM-26-0313**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900042994**  
+  The collaboration this document belongs to: Valdara's monthly ore call-off from Serravona Mining, from the order to the payment. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2000017448**  
   The payer's remittance number.
 - `UUID` = **c1cdbf15-9eb1-59b6-abc7-b3a50c56fdb2**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -38,9 +38,9 @@ The manufacturer tells the mine which invoices the transfer pays. Both companies
   No credits taken.
 - `TotalPaymentAmount` = **17037943** (currencyID `XUF`)  
   The amount transferred: the payable amount of the invoice.
-- `PaymentOrderReference` = **VI-PAY-26-0304**  
+- `PaymentOrderReference` = **1500002181**  
   The payment order the payer gave its bank.
-- `InvoicingPartyReference` = **RF73SMINV260312**  
+- `InvoicingPartyReference` = **RF3220260080**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
   The invoice paid.
@@ -161,9 +161,9 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **VI-PAY-26-0304**  
+- `InstructionID` = **1500002181**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF73SMINV260312** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF3220260080** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XU790351041600000000209458** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -270,9 +270,9 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code SUPP: payment to a supplier. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: SUPP = SupplierPayment.
-- `InvoicingPartyReference` = **RF73SMINV260312**  
+- `InvoicingPartyReference` = **RF3220260080**  
   The reference the invoicing party asked to quote.
-- `BillingReference/InvoiceDocumentReference/ID` = **SM-INV-26-0312**  
+- `BillingReference/InvoiceDocumentReference/ID` = **2026/0080**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-03-11**  
   Its issue date, so the reference is unambiguous.
@@ -285,8 +285,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-RM-26-0313</cbc:ID>
+  <cbc:ProfileExecutionID>9900042994</cbc:ProfileExecutionID>
+  <cbc:ID>2000017448</cbc:ID>
   <cbc:UUID>c1cdbf15-9eb1-59b6-abc7-b3a50c56fdb2</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>12:10:00-01:00</cbc:IssueTime>
@@ -296,8 +296,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XUF">17037943</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">17037943</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>VI-PAY-26-0304</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF73SMINV260312</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>1500002181</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF3220260080</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -389,8 +389,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>VI-PAY-26-0304</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF73SMINV260312</cbc:PaymentID>
+    <cbc:InstructionID>1500002181</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF3220260080</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
@@ -475,10 +475,10 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XUF">17037943</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF73SMINV260312</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF3220260080</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>SM-INV-26-0312</cbc:ID>
+        <cbc:ID>2026/0080</cbc:ID>
         <cbc:IssueDate>2026-03-11</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

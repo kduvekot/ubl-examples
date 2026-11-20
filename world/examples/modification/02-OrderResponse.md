@@ -15,10 +15,10 @@ The plant accepts the job and plans its two kiln charges.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MODIFICATION-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TWM-OR-26-0407**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **MDS-TX-26-0047**  
+  The collaboration this document belongs to: the sawmill's order of thermal modification from Tostara. Marrowdale Sawmill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0014**  
   The seller's number for its response.
 - `SalesOrderID` = **TWM-J-2526-014**  
   The plant's job number, as the order quotes it.
@@ -37,7 +37,7 @@ The plant accepts the job and plans its two kiln charges.
 
 Inside `OrderReference`:
 
-- `ID` = **MS-PO-26-0406**  
+- `ID` = **MDS-PO-26-0047**  
   The order this response answers.
 
 ### Seller Supplier Party
@@ -160,8 +160,8 @@ Inside `BuyerCustomerParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TWM-OR-26-0407</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>26-0014</cbc:ID>
   <cbc:SalesOrderID>TWM-J-2526-014</cbc:SalesOrderID>
   <cbc:UUID>0ab1a768-2c83-5403-88ae-6a18d76ba5e5</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
@@ -169,7 +169,7 @@ Inside `BuyerCustomerParty`:
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cbc:Note>Job accepted. Kiln charges: 14 to 19 January (first load) and 21 to 26 January (second load); planing, sealing and bundling after each; the job is ready in store on 4 February.</cbc:Note>
   <cac:OrderReference>
-    <cbc:ID>MS-PO-26-0406</cbc:ID>
+    <cbc:ID>MDS-PO-26-0047</cbc:ID>
   </cac:OrderReference>
   <cac:SellerSupplierParty>
     <cac:Party>

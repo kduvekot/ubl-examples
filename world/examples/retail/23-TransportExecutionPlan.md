@@ -15,10 +15,10 @@ The carrier confirms the distributor's booking: loading on 29 April and the deli
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-execution-plan:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-TEP-26-0233**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0893**  
+  The collaboration this document belongs to: the carriage Lumeway books with Bayforth Forwarding. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **BYF-TEP-26-1340**  
   The carrier's number for the agreed plan.
 - `VersionID` = **1**  
   The first version of the plan.
@@ -201,14 +201,14 @@ Inside `Signature`:
 
 Inside `TransportExecutionPlanRequestDocumentReference`:
 
-- `ID` = **LD-TR-26-0227**  
+- `ID` = **LMW-TR-26-0536**  
   The request this plan answers.
 
 ### Transport Contract
 
 Inside `TransportContract`:
 
-- `ID` = **LD-BF-FW-2026**  
+- `ID` = **LMW-BYF-FW-2026**  
   The framework agreement.
 - `ContractType` = **Framework transport agreement**  
   Its kind.
@@ -304,7 +304,7 @@ Inside `TransportExecutionTerms`:
 
 Inside `Consignment`:
 
-- `ID` = **LD-CS-26-0228**  
+- `ID` = **LMW-CS-26-0893**  
   The consignment of the request.
 - `SummaryDescription` = **24 × Park bench Serra 180**  
   What is to be carried, in a few words.
@@ -371,8 +371,8 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-TEP-26-0233</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0893</cbc:ProfileExecutionID>
+  <cbc:ID>BYF-TEP-26-1340</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>34de1c5a-0a12-56eb-ae1f-1025193cb28e</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
@@ -507,10 +507,10 @@ Inside `Consignment`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:TransportExecutionPlanRequestDocumentReference>
-    <cbc:ID>LD-TR-26-0227</cbc:ID>
+    <cbc:ID>LMW-TR-26-0536</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
-    <cbc:ID>LD-BF-FW-2026</cbc:ID>
+    <cbc:ID>LMW-BYF-FW-2026</cbc:ID>
     <cbc:ContractType>Framework transport agreement</cbc:ContractType>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseRequiredPeriod>
@@ -559,7 +559,7 @@ Inside `Consignment`:
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0228</cbc:ID>
+    <cbc:ID>LMW-CS-26-0893</cbc:ID>
     <cbc:SummaryDescription>24 × Park bench Serra 180</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>

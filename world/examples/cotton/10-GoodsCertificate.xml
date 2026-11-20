@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>DAL-GC-26-0202</cbc:ID>
+  <cbc:ID>DAL/2026/0309</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>14:43:00+00:00</cbc:IssueTime>
@@ -171,9 +170,9 @@
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:ID>7300013298</cbc:ID>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -208,7 +207,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:Attestation>
-    <cbc:ID>DAL-ATT-26-0042</cbc:ID>
+    <cbc:ID>DAL/2026/0308</cbc:ID>
     <cbc:Name>Freedom from pests</cbc:Name>
     <cbc:Description>Sampled and found free of boll weevil and pink bollworm.</cbc:Description>
     <cbc:Note>10 bales sampled out of 27.</cbc:Note>
@@ -270,7 +269,7 @@
     </cac:SubGoodsProcessing>
   </cac:GoodsProcessing>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LTM-PO-26-0198</cbc:ID>
+    <cbc:ID>4500013293</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

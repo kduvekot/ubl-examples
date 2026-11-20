@@ -15,10 +15,10 @@ The distributor asks the ocean carrier for its sailings to the island.
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-service-description:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport service description"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0129**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0979**  
+  The collaboration this document belongs to: Lumeway's request for Tidewell's description of its sea service. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-TDR-26-0049**  
   The sender's number for this document.
 - `UUID` = **85aef8c8-1b9f-512f-8ae1-044576d7ea15**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -180,8 +180,8 @@ Inside `TransportationService`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-service-description:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0129</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0979</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-TDR-26-0049</cbc:ID>
   <cbc:UUID>85aef8c8-1b9f-512f-8ae1-044576d7ea15</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>14:00:00-01:00</cbc:IssueTime>

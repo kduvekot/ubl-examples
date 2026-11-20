@@ -15,12 +15,12 @@ The distributor accepts and confirms the sailing it plans to use.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-OR-26-0128**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-OR-26-0978**  
   The seller's number for its response.
-- `SalesOrderID` = **LD-SO-26-0123**  
+- `SalesOrderID` = **LMW-SO-26-0049**  
   The distributor's own sales order number.
 - `UUID` = **df6ccf81-d94b-523e-8f0a-e86231966bf9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -51,14 +51,14 @@ The distributor accepts and confirms the sailing it plans to use.
 
 Inside `OrderReference`:
 
-- `ID` = **VT-PO-26-0127**  
+- `ID` = **26-0417**  
   The order this response answers.
 
 ### Originator Document Reference
 
 Inside `OriginatorDocumentReference`:
 
-- `ID` = **PS-REQ-26-0031**  
+- `ID` = **POS-REQ-26-0031**  
   The Port of Selanu's request to the trader, which the order's port line follows.
 - `DocumentType` = **Request**  
   The kind of document referred to, the Port of Selanu's request to the trader, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -224,9 +224,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF41LDSO260123**  
+- `InstructionNote` = **Quote RF15LMWSO260049**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF41LDSO260123** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF15LMWSO260049** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -242,7 +242,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Deposit on sales order LD-SO-26-0123**  
+- `PayeeFinancialAccount/PaymentNote` = **Deposit on sales order LMW-SO-26-0049**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **387120** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -302,7 +302,7 @@ Inside `PaymentTerms`:
 
 Inside `TransactionConditions`:
 
-- `ID` = **LD-TC-01**  
+- `ID` = **LMW-TC-01**  
   The distributor's conditions of sale.
 - `Description` = **Sold to trade customers only.**  
   The condition.
@@ -350,7 +350,7 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number, as in the order.
-- `LineItem/SalesOrderID` = **LD-SO-26-0123/1**  
+- `LineItem/SalesOrderID` = **LMW-SO-26-0049/1**  
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
@@ -386,7 +386,7 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Name` = **Park bench Serra 180**  
   Named only: described in full in the order.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's number.
 - `LineItem/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
@@ -398,7 +398,7 @@ Inside `OrderLine`:
   The order line answered.
 - `LineItem/ID` = **2**  
   The line number, as in the order.
-- `LineItem/SalesOrderID` = **LD-SO-26-0123/2**  
+- `LineItem/SalesOrderID` = **LMW-SO-26-0049/2**  
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
@@ -426,7 +426,7 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Name` = **Park bench Serra 180**  
   Named only: described in full in the order.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's number.
 - `LineItem/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
@@ -438,7 +438,7 @@ Inside `OrderLine`:
   The order line answered.
 - `LineItem/ID` = **3**  
   The line number, as in the order.
-- `LineItem/SalesOrderID` = **LD-SO-26-0123/3**  
+- `LineItem/SalesOrderID` = **LMW-SO-26-0049/3**  
   The distributor's line in its sales order.
 - `LineItem/Note` = **Confirmed as ordered.**  
   The line's status in words.
@@ -466,7 +466,7 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Name` = **Bench side frame casting**  
   Named only: described in full in the order.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10443**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's number.
 - `LineItem/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
@@ -485,9 +485,9 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-OR-26-0128</cbc:ID>
-  <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-OR-26-0978</cbc:ID>
+  <cbc:SalesOrderID>LMW-SO-26-0049</cbc:SalesOrderID>
   <cbc:UUID>df6ccf81-d94b-523e-8f0a-e86231966bf9</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>09:30:00-01:00</cbc:IssueTime>
@@ -501,10 +501,10 @@ Inside `OrderLine`:
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
-    <cbc:ID>PS-REQ-26-0031</cbc:ID>
+    <cbc:ID>POS-REQ-26-0031</cbc:ID>
     <cbc:DocumentType>Request</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:SellerSupplierParty>
@@ -636,8 +636,8 @@ Inside `OrderLine`:
     <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF41LDSO260123</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF41LDSO260123</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF15LMWSO260049</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF15LMWSO260049</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB19BLUM38712001466206</cbc:ID>
@@ -646,7 +646,7 @@ Inside `OrderLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Deposit on sales order LD-SO-26-0123</cbc:PaymentNote>
+      <cbc:PaymentNote>Deposit on sales order LMW-SO-26-0049</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -692,7 +692,7 @@ Inside `OrderLine`:
     <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
   <cac:TransactionConditions>
-    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:ID>LMW-TC-01</cbc:ID>
     <cbc:Description>Sold to trade customers only.</cbc:Description>
   </cac:TransactionConditions>
   <cac:DestinationCountry>
@@ -721,7 +721,7 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
+      <cbc:SalesOrderID>LMW-SO-26-0049/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
@@ -759,7 +759,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
       <cac:WarrantyValidityPeriod>
@@ -781,7 +781,7 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:SalesOrderID>LMW-SO-26-0049/2</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">4160.00</cbc:LineExtensionAmount>
@@ -803,7 +803,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
       <cac:WarrantyValidityPeriod>
@@ -825,7 +825,7 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/3</cbc:SalesOrderID>
+      <cbc:SalesOrderID>LMW-SO-26-0049/3</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">816.00</cbc:LineExtensionAmount>
@@ -847,7 +847,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
+          <cbc:ID>LMW-10443</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
       <cac:WarrantyValidityPeriod>

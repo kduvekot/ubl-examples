@@ -3,9 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0562</cbc:ID>
-  <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
+  <cbc:ID>TWLU000033272</cbc:ID>
+  <cbc:CarrierAssignedID>1200033272</cbc:CarrierAssignedID>
   <cbc:UUID>6caa8b1e-206e-5ffe-a3bd-08fde43f6728</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:30:00-01:00</cbc:IssueTime>
@@ -134,15 +133,15 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">26528</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0557</cbc:ID>
-      <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
-      <cbc:FreightForwarderAssignedID>BF-SH-26-0391</cbc:FreightForwarderAssignedID>
+      <cbc:ID>HRW-CS-26-0730</cbc:ID>
+      <cbc:CarrierAssignedID>1200033272</cbc:CarrierAssignedID>
+      <cbc:FreightForwarderAssignedID>BYF-SH-26-0391</cbc:FreightForwarderAssignedID>
       <cbc:TariffDescription>Fresh fruit, chilled, in a reefer</cbc:TariffDescription>
       <cbc:TariffCode>TWL-T-0812</cbc:TariffCode>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
@@ -527,7 +526,7 @@
             <cbc:WeighingDate>2026-04-22</cbc:WeighingDate>
             <cbc:WeighingTime>11:30:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
-            <cbc:WeighingDeviceID>HFC-SCALE-02</cbc:WeighingDeviceID>
+            <cbc:WeighingDeviceID>HRW-SCALE-02</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Pallet scale</cbc:WeighingDeviceType>
             <cbc:GrossMassMeasure unitCode="KGM">26528</cbc:GrossMassMeasure>
             <cac:WeighingParty>

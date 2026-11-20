@@ -15,10 +15,10 @@ The distributor, as transport user, books the truck: collection at the seller's 
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-execution-plan-request:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan request". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-TR-26-0151**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0580**  
+  The collaboration this document belongs to: the road carriage Lumeway books with Trasvia Haulage. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-TR-26-0348**  
   The transport user's request number.
 - `VersionID` = **1**  
   The first version of the request.
@@ -176,7 +176,7 @@ Inside `BillToParty`:
 
 Inside `TransportContract`:
 
-- `ID` = **LD-TH-FW-2026**  
+- `ID` = **LMW-TH-FW-2026**  
   The framework agreement with the carrier.
 
 ### Transport Service Provider Response Deadline Period
@@ -233,7 +233,7 @@ Inside `ToLocation`:
 
 Inside `Consignment`:
 
-- `ID` = **LD-CS-26-0152**  
+- `ID` = **LMW-CS-26-0580**  
   The distributor's consignment number, from its booking.
 - `SummaryDescription` = **Park benches and spare side frames on 25 pallets.**  
   The goods in a few words, as on the consignment note.
@@ -332,8 +332,8 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-TR-26-0151</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0580</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-TR-26-0348</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
@@ -450,7 +450,7 @@ Inside `Consignment`:
     </cac:PartyName>
   </cac:BillToParty>
   <cac:TransportContract>
-    <cbc:ID>LD-TH-FW-2026</cbc:ID>
+    <cbc:ID>LMW-TH-FW-2026</cbc:ID>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseDeadlinePeriod>
     <cbc:EndDate>2026-03-18</cbc:EndDate>
@@ -479,7 +479,7 @@ Inside `Consignment`:
     <cbc:Name>Lumeway distribution centre, goods-in, Marrowdale</cbc:Name>
   </cac:ToLocation>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0152</cbc:ID>
+    <cbc:ID>LMW-CS-26-0580</cbc:ID>
     <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
     <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>

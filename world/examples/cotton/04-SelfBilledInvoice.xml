@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:self-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-SBI-26-0194</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-SBI-26-0190</cbc:ID>
   <cbc:UUID>6d8069bb-fe8b-5c9f-bd12-45c38c2363b6</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>15:50:00+00:00</cbc:IssueTime>
@@ -26,7 +26,7 @@
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
-      <cbc:ID>SCG-SBI-26-0191</cbc:ID>
+      <cbc:ID>SCG-SBI-26-0024</cbc:ID>
       <cbc:IssueDate>2026-01-13</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
@@ -34,7 +34,7 @@
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>LCF-DN-26-0193</cbc:ID>
+    <cbc:ID>1/2026</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
@@ -260,15 +260,15 @@
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF77SCGSBI260194</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF77SCGSBI260194</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF88SCGSBI260190</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF88SCGSBI260190</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL67BSEL0020004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0194</cbc:PaymentNote>
+      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0190</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
         <cbc:Name>Market branch</cbc:Name>
@@ -403,7 +403,7 @@
         <cbc:LineID>1</cbc:LineID>
         <cbc:UUID>6d32dd14-dac3-5c83-91e2-8c40cef6875b</cbc:UUID>
         <cac:DocumentReference>
-          <cbc:ID>LCF-DN-26-0193</cbc:ID>
+          <cbc:ID>1/2026</cbc:ID>
           <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DeliveryNote</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DeliveryNoteLineReference>

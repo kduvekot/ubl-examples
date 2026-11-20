@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waste-movement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:waste-shipment:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-DOC-26-0207</cbc:ID>
+  <cbc:ProfileExecutionID>9900043338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0021</cbc:ID>
   <cbc:UUID>dbd3deda-0d71-53e4-9a07-a1f9d4add949</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>11:45:00-01:00</cbc:IssueTime>
@@ -173,10 +173,10 @@
     </cac:PartyName>
   </cac:WasteProducerParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0208</cbc:ID>
+    <cbc:ID>7400043504</cbc:ID>
     <cbc:NetWeightMeasure unitCode="KGM">22900</cbc:NetWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0209</cbc:ID>
+      <cbc:ID>7300043504</cbc:ID>
       <cbc:TotalPackagesQuantity>54</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -297,11 +297,11 @@
     </cac:Delivery>
   </cac:Shipment>
   <cac:WasteNotificationDocumentReference>
-    <cbc:ID>VI-DOC-26-0204</cbc:ID>
+    <cbc:ID>5700002167</cbc:ID>
     <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   </cac:WasteNotificationDocumentReference>
   <cac:WeightStatementDocumentReference>
-    <cbc:ID>RR-WS-26-0210</cbc:ID>
+    <cbc:ID>26-0019</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   </cac:WeightStatementDocumentReference>
   <cac:DocumentReference>
@@ -318,7 +318,7 @@
     </cac:IssuerParty>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>RR-REC-26-0412</cbc:ID>
+    <cbc:ID>26-0020</cbc:ID>
     <cbc:DocumentType>Certificate of recovery</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TH-TS-26-0160</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0580</cbc:ProfileExecutionID>
+  <cbc:ID>26-1695</cbc:ID>
   <cbc:UUID>bef60481-e21d-568c-918b-caeb273b9ce0</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>10:55:00-01:00</cbc:IssueTime>
@@ -15,7 +15,7 @@
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">PROGRESS</cbc:TransportationStatusTypeCode>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0152</cbc:ID>
+    <cbc:ID>LMW-CS-26-0580</cbc:ID>
     <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
     <cac:Status>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">INTRANSIT</cbc:ConditionCode>
@@ -146,7 +146,7 @@
     <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
     <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
     <cac:ReportedShipment>
-      <cbc:ID>CL-SH-26-0154</cbc:ID>
+      <cbc:ID>CAS-SH-26-1291</cbc:ID>
     </cac:ReportedShipment>
     <cac:CurrentStatus>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">ONTIME</cbc:ConditionCode>
@@ -207,7 +207,7 @@
     </cac:Period>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>TH-WB-26-0159</cbc:ID>
+    <cbc:ID>26-0560</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

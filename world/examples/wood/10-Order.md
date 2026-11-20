@@ -15,10 +15,10 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WOOD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-PO-26-0636**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0167**  
+  The collaboration this document belongs to: Brackenmere's order of slats from Marrowdale Sawmill. Brackenmere Furniture started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0168**  
   The buyer's order number.
 - `UUID` = **8e01f6c6-41e2-54ce-8e02-1e6edf7207ba**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -224,7 +224,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Oak timber**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **MS-TB-OAK**  
+- `LineItem/Item/SellersItemIdentification/ID` = **MDS-TB-OAK**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own.
@@ -240,7 +240,7 @@ Inside `OrderLine`:
   The seller's description.
 - `LineItem/Item/Name` = **Ash timber**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **MS-TB-ASH**  
+- `LineItem/Item/SellersItemIdentification/ID` = **MDS-TB-ASH**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 
 ## The document
@@ -251,8 +251,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-PO-26-0636</cbc:ID>
+  <cbc:ProfileExecutionID>26-0167</cbc:ProfileExecutionID>
+  <cbc:ID>26-0168</cbc:ID>
   <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>16:20:00-01:00</cbc:IssueTime>
@@ -405,7 +405,7 @@ Inside `OrderLine`:
         <cbc:Description>Sawn oak boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
         <cbc:Name>Oak timber</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-TB-OAK</cbc:ID>
+          <cbc:ID>MDS-TB-OAK</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -423,7 +423,7 @@ Inside `OrderLine`:
         <cbc:Description>Sawn ash boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
         <cbc:Name>Ash timber</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-TB-ASH</cbc:ID>
+          <cbc:ID>MDS-TB-ASH</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

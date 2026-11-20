@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-OR-26-0554</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>HRW-OR-26-0674</cbc:ID>
   <cbc:UUID>ccc57df8-55d8-508d-b264-68902a934a06</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
@@ -17,7 +17,7 @@
     <cbc:EndTime>12:00:00</cbc:EndTime>
   </cac:ValidityPeriod>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:SellerSupplierParty>
     <cac:Party>
@@ -152,7 +152,7 @@
       <cac:Item>
         <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-GAL100</cbc:ID>
+          <cbc:ID>HRW-GAL100</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -173,7 +173,7 @@
       <cac:Item>
         <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-GSM100</cbc:ID>
+          <cbc:ID>HRW-GSM100</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -194,7 +194,7 @@
       <cac:Item>
         <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-PKT080</cbc:ID>
+          <cbc:ID>HRW-PKT080</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

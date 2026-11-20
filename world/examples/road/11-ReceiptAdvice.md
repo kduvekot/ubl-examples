@@ -15,10 +15,10 @@ The distributor confirms what arrived to the party that despatched it, the 3PL, 
 - `CustomizationID` = **urn:ubl-examples:world:trns:receipt-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Receipt advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-RA-26-0162**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0573**  
+  The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-RA-26-0642**  
   The receiving party's number.
 - `UUID` = **496ff071-d380-5baa-87d1-43a590437ea5**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,24 +39,24 @@ The distributor confirms what arrived to the party that despatched it, the 3PL, 
 
 Inside `OrderReference`:
 
-- `ID` = **LD-PO-26-0149**  
+- `ID` = **LMW-PO-26-0573**  
   The order the goods were delivered for.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **CL-DA-26-0153**  
+- `ID` = **CAS-DA-26-1342**  
   The despatch advice this receipt answers.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TH-WB-26-0159**  
+- `ID` = **26-0560**  
   The consignment note signed on delivery, the consignee's proof of receipt: a transport document, not a delivery note.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TH-WB-26-0159 is the example road/08, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: 26-0560 is the example road/08, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Delivery Customer Party
 
@@ -244,7 +244,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **CL-SH-26-0154**  
+- `ID` = **CAS-SH-26-1291**  
   The shipment received.
 - `Delivery/ActualDeliveryDate` = **2026-03-25**  
   Unloaded at dock 4.
@@ -273,10 +273,10 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+- `DespatchLineReference/DocumentReference/ID` = **CAS-DA-26-1342**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: CAS-DA-26-1342 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language.
 - `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XB`)  
@@ -285,7 +285,7 @@ Inside `ReceiptLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Park bench Serra 180** (languageID `en-XB`)  
   The item's name in English, the working language between the countries.
-- `Item/BuyersItemIdentification/ID` = **LD-10442**  
+- `Item/BuyersItemIdentification/ID` = **LMW-10442**  
   The buyer's own item number: it resells this item under its own number.
 - `Item/SellersItemIdentification/ID` = **VI-B180**  
   The seller's own item number; as Valdara Industries describes the item.
@@ -305,7 +305,7 @@ Inside `ReceiptLine`:
   The barcode the number is printed in on the label: Code 128 carries letters and digits.
 - `Item/StandardItemIdentification/IssuerScopeID` = **KXU10014**  
   The scope within which Valdara Industries gives its item numbers: its company prefix, the issuing agency code KXU and its Codana company number; what follows is the company's own reference.
-- `Shipment/ID` = **CL-SH-26-0154**  
+- `Shipment/ID` = **CAS-SH-26-1291**  
   The shipment received.
 - `ID` = **2**  
   The line number.
@@ -323,10 +323,10 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **2**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0153**  
+- `DespatchLineReference/DocumentReference/ID` = **CAS-DA-26-1342**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: CL-DA-26-0153 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: CAS-DA-26-1342 is the example road/04, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Zudrir drir manskan gan drek Serra nanskir, zhukvan stezir gek, vazzhan stan krarhir-trunnir.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language.
 - `Item/Description` = **Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.** (languageID `en-XB`)  
@@ -335,7 +335,7 @@ Inside `ReceiptLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Bench side frame casting** (languageID `en-XB`)  
   The item's name in English, the working language between the countries.
-- `Item/BuyersItemIdentification/ID` = **LD-10443**  
+- `Item/BuyersItemIdentification/ID` = **LMW-10443**  
   The buyer's own item number: it resells this item under its own number.
 - `Item/SellersItemIdentification/ID` = **VI-C180**  
   The seller's own item number; as Valdara Industries describes the item.
@@ -352,8 +352,8 @@ Inside `ReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-RA-26-0162</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-RA-26-0642</cbc:ID>
   <cbc:UUID>496ff071-d380-5baa-87d1-43a590437ea5</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>15:40:00-01:00</cbc:IssueTime>
@@ -362,13 +362,13 @@ Inside `ReceiptLine`:
   <cbc:Note>Counted and checked at goods-in: one bench short of a parcel, one frame carton over.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>LD-PO-26-0149</cbc:ID>
+    <cbc:ID>LMW-PO-26-0573</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>CL-DA-26-0153</cbc:ID>
+    <cbc:ID>CAS-DA-26-1342</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TH-WB-26-0159</cbc:ID>
+    <cbc:ID>26-0560</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:DeliveryCustomerParty>
@@ -519,7 +519,7 @@ Inside `ReceiptLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-03-25</cbc:ActualDeliveryDate>
       <cbc:ActualDeliveryTime>09:40:00</cbc:ActualDeliveryTime>
@@ -539,7 +539,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>CL-DA-26-0153</cbc:ID>
+        <cbc:ID>CAS-DA-26-1342</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -549,7 +549,7 @@ Inside `ReceiptLine`:
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
       <cac:BuyersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
@@ -568,7 +568,7 @@ Inside `ReceiptLine`:
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0154</cbc:ID>
+      <cbc:ID>CAS-SH-26-1291</cbc:ID>
     </cac:Shipment>
   </cac:ReceiptLine>
   <cac:ReceiptLine>
@@ -584,7 +584,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>CL-DA-26-0153</cbc:ID>
+        <cbc:ID>CAS-DA-26-1342</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -594,7 +594,7 @@ Inside `ReceiptLine`:
       <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
       <cbc:Name languageID="en-XB">Bench side frame casting</cbc:Name>
       <cac:BuyersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>

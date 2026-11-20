@@ -15,10 +15,8 @@ The blanks leave Bayvarra for processing abroad and do not come back; the sawmil
 - `CustomizationID` = **urn:ubl-examples:world:trns:export-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MODIFICATION-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MS-EX-26-0411**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **MDS-EX-26-0011**  
   The exporter's reference.
 - `UUID` = **4d67eaa6-485a-5476-8073-40cb5dfb6b74**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -100,7 +98,7 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **MS-CD-26-0412**  
+- `ID` = **MDS-CD-26-0011**  
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
@@ -110,11 +108,11 @@ Inside `CustomsDeclaration`:
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Shipment/ID` = **MS-SH-26-0409**  
+- `Shipment/ID` = **MDS-SH-26-0051**  
   The shipment declared.
 - `Shipment/TotalTransportHandlingUnitQuantity` = **12** (unitCode `EA`)  
   The pallets the goods travel on.
-- `Shipment/Consignment/ID` = **MS-CS-26-0410**  
+- `Shipment/Consignment/ID` = **MDS-CS-26-0051**  
   The consignment carried.
 - `Shipment/Consignment/GrossWeightMeasure` = **14448** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight leaving the country.
@@ -132,7 +130,7 @@ Inside `CustomsDeclaration`:
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **2400** (unitCode `EA`)  
   The quantity declared.
-- `Shipment/GoodsItem/Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.**  
+- `Shipment/GoodsItem/Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.**  
   The seller's description.
 - `Shipment/GoodsItem/Item/Name` = **Ash blank 1830, kiln dried**  
   The item's short name.
@@ -234,11 +232,11 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XB:3071845926** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Customs and Border Service of Bayvarra gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `AdditionalDocumentReference/ID` = **MS-PO-26-0406**  
+- `AdditionalDocumentReference/ID` = **MDS-PO-26-0047**  
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: MS-PO-26-0406 is the example modification/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
-- `AdditionalDocumentReference/ID` = **MS-PF-26-0113**  
+  The kind of document referred to: MDS-PO-26-0047 is the example modification/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **MDS-PF-26-0113**  
   The sawmill's pro forma invoice: the value of the blanks, there being no sale.
 - `AdditionalDocumentReference/DocumentTypeCode` = **325** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 325: proforma invoice. The code is from the world's copy of UN/EDIFACT 1001 Document name: 325 = Proforma invoice.
@@ -262,8 +260,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-EX-26-0411</cbc:ID>
+  <cbc:ID>MDS-EX-26-0011</cbc:ID>
   <cbc:UUID>4d67eaa6-485a-5476-8073-40cb5dfb6b74</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
   <cbc:IssueTime>07:00:00-01:00</cbc:IssueTime>
@@ -320,7 +317,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>MS-CD-26-0412</cbc:ID>
+    <cbc:ID>MDS-CD-26-0011</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-01-13</cbc:StartDate>
@@ -332,10 +329,10 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>MS-SH-26-0409</cbc:ID>
+      <cbc:ID>MDS-SH-26-0051</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">12</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
-        <cbc:ID>MS-CS-26-0410</cbc:ID>
+        <cbc:ID>MDS-CS-26-0051</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
         <cac:CarrierParty>
           <cac:PartyIdentification>
@@ -353,7 +350,7 @@ Inside `Signature`:
         <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">2400</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.</cbc:Description>
+          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
           <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
           <cac:OriginCountry>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -450,11 +447,11 @@ Inside `Signature`:
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>MS-PO-26-0406</cbc:ID>
+      <cbc:ID>MDS-PO-26-0047</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>MS-PF-26-0113</cbc:ID>
+      <cbc:ID>MDS-PF-26-0113</cbc:ID>
       <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">325</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>

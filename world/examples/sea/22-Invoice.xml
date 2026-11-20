@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-INV-26-0147</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-INV-26-1025</cbc:ID>
   <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>12:32:00-01:00</cbc:IssueTime>
@@ -18,10 +18,10 @@
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:ID>TWLU000033415</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -208,8 +208,8 @@
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
-    <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF20LDINV260147</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF21LMWINV261025</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF21LMWINV261025</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cbc:ServiceLevelCode listID="ISO 20022 ExternalServiceLevel1Code">NURG</cbc:ServiceLevelCode>
     <cac:PayeeFinancialAccount>
@@ -218,7 +218,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-INV-26-0147</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice LMW-INV-26-1025</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -260,7 +260,7 @@
         <cbc:ID>HF-FA-2026-007</cbc:ID>
       </cac:ContractDocumentReference>
       <cac:DocumentReference>
-        <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+        <cbc:ID>26-0030</cbc:ID>
         <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:FinancingParty>
@@ -303,7 +303,7 @@
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:ID>DEPOSIT</cbc:ID>
-    <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
+    <cbc:PrepaidPaymentReferenceID>26-0024</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
     <cbc:PaymentPercent>18.22</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
@@ -319,7 +319,7 @@
     <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
     <cbc:PenaltyAmount currencyID="XBL">673.44</cbc:PenaltyAmount>
     <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
-    <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF21LMWINV261025</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-06-30</cbc:StartDate>
     </cac:PenaltyPeriod>
@@ -341,11 +341,11 @@
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
-    <cbc:ID>VT-DEP-26-0412</cbc:ID>
+    <cbc:ID>26-0024</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
     <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
     <cbc:PaidDate>2026-05-08</cbc:PaidDate>
-    <cbc:InstructionID>VT-PAY-26-0077</cbc:InstructionID>
+    <cbc:InstructionID>26-0023</cbc:InstructionID>
   </cac:PrepaidPayment>
   <cac:PaymentAlternativeExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
@@ -405,7 +405,7 @@
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -450,7 +450,7 @@
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -495,7 +495,7 @@
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>

@@ -15,10 +15,10 @@ Bales of grade cotton. Delivery terms FOB the island port: the mill arranges the
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LTM-PO-26-0198**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900013293**  
+  The collaboration this document belongs to: the textile mill's order of cotton lint from the ginnery. Lumeport Textile Mill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **4500013293**  
   The buyer's order number.
 - `UUID` = **4aa8f3b8-9dcb-52c6-849d-e415d93f4130**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -214,7 +214,7 @@ Inside `OrderLine`:
   The item's name in Lisavan, the seller's language.
 - `LineItem/Item/Name` = **Cotton lint, compressed bale** (languageID `en-XB`)  
   The item's name in English, the working language between the countries.
-- `LineItem/Item/BuyersItemIdentification/ID` = **LT-RAW-COT**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **LTM-RAW-COT**  
   The number the buyer keeps for this item in its own system.
 - `LineItem/Item/SellersItemIdentification/ID` = **SCG-LINT**  
   The seller's own item number; as Selanu Cotton Ginnery describes the item.
@@ -247,8 +247,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-PO-26-0198</cbc:ID>
+  <cbc:ProfileExecutionID>9900013293</cbc:ProfileExecutionID>
+  <cbc:ID>4500013293</cbc:ID>
   <cbc:UUID>4aa8f3b8-9dcb-52c6-849d-e415d93f4130</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>10:37:00-01:00</cbc:IssueTime>
@@ -392,7 +392,7 @@ Inside `OrderLine`:
         <cbc:Name languageID="qal">Tekapa suhema, lafatite senehu</cbc:Name>
         <cbc:Name languageID="en-XB">Cotton lint, compressed bale</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>LT-RAW-COT</cbc:ID>
+          <cbc:ID>LTM-RAW-COT</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>SCG-LINT</cbc:ID>

@@ -15,10 +15,10 @@ The sawmill orders the processing of one job under the season agreement: 96 bund
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MODIFICATION-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MS-PO-26-0406**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **MDS-TX-26-0047**  
+  The collaboration this document belongs to: the sawmill's order of thermal modification from Tostara. Marrowdale Sawmill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **MDS-PO-26-0047**  
   The sawmill's order number.
 - `SalesOrderID` = **TWM-J-2526-014**  
   The plant's job number for this order: the season agreement's kiln slots were each given a job number by the plant when they were allotted, before any order, and the order fills the slot it quotes.
@@ -202,7 +202,7 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Note` = **96 bundles of 50 slats, Valdara's slat MS-SL-1800 to drawing VI-DS-SL1800.**  
+- `LineItem/Note` = **96 bundles of 50 slats, Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.**  
   The output the job is to give.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
   The bundles to be made: the 4,800 blanks give 4,800 slats.
@@ -228,11 +228,11 @@ Inside `OrderLine`:
   Why the line has no price.
 - `LineItem/SubLineItem/Quantity` = **4800** (unitCode `EA`)  
   The blanks that make the 96 bundles, one slat from each.
-- `LineItem/SubLineItem/Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.**  
+- `LineItem/SubLineItem/Item/Description` = **Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.**  
   The seller's description.
 - `LineItem/SubLineItem/Item/Name` = **Ash blank 1830, kiln dried**  
   The item's short name.
-- `LineItem/SubLineItem/Item/SellersItemIdentification/ID` = **MS-BL-1830**  
+- `LineItem/SubLineItem/Item/SellersItemIdentification/ID` = **MDS-BL-1830**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 
 ## The document
@@ -243,8 +243,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-PO-26-0406</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-PO-26-0047</cbc:ID>
   <cbc:SalesOrderID>TWM-J-2526-014</cbc:SalesOrderID>
   <cbc:UUID>d47b6f28-2a6c-5241-91f4-d182ad307e94</cbc:UUID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
@@ -370,7 +370,7 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>96 bundles of 50 slats, Valdara's slat MS-SL-1800 to drawing VI-DS-SL1800.</cbc:Note>
+      <cbc:Note>96 bundles of 50 slats, Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">1272000</cbc:LineExtensionAmount>
       <cac:Price>
@@ -391,10 +391,10 @@ Inside `OrderLine`:
         <cbc:Note>Supplied by the customer, free of charge: the sawmill's own kiln-dried ash, which stays its property.</cbc:Note>
         <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.</cbc:Description>
+          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
           <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>MS-BL-1830</cbc:ID>
+            <cbc:ID>MDS-BL-1830</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:SubLineItem>

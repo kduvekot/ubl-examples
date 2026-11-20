@@ -15,10 +15,10 @@ The department wants the benches of this release in the harbour park's moss gree
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-change:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order change". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-OC-26-0215**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/0566**  
+  The collaboration this document belongs to: the department's first call-off under the contract. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0571**  
   The department's number for the change.
 - `UUID` = **8e684e84-32af-5f74-a455-5a17c1622f8a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -44,14 +44,14 @@ Inside `ValidityPeriod`:
 
 Inside `OrderReference`:
 
-- `ID` = **LPWD-PO-26-0214**  
+- `ID` = **PWD/2026/0567**  
   The call-off order changed.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **VI-CAT-26-0213**  
+- `ID` = **6100000217**  
   The catalogue that quotes the special colour charge.
 - `DocumentTypeCode` = **Catalogue** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document. The code is from the Trade Accord's UBL document type list: Catalogue.
@@ -276,8 +276,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-change:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-OC-26-0215</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0571</cbc:ID>
   <cbc:UUID>8e684e84-32af-5f74-a455-5a17c1622f8a</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>08:06:00-01:00</cbc:IssueTime>
@@ -288,10 +288,10 @@ Inside `OrderLine`:
     <cbc:EndDate>2026-03-26</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
+    <cbc:ID>PWD/2026/0567</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-CAT-26-0213</cbc:ID>
+    <cbc:ID>6100000217</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Catalogue</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>

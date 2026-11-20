@@ -15,10 +15,10 @@ The retailer reports its stock per item, so the distributor can replenish.
 - `CustomizationID` = **urn:ubl-examples:world:trns:inventory-report:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Inventory report"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:collaboration:1.0**  
-  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-IR-26-0223**  
+  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339162**  
+  The collaboration this document belongs to: the store's forecast, promotion and stock report for Lumeway. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **4900033927**  
   The store's inventory report number.
 - `UUID` = **fad19e90-681e-50c2-8501-5068414c15a8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -44,10 +44,10 @@ Inside `InventoryPeriod`:
 
 Inside `DocumentReference`:
 
-- `ID` = **BS-FC-26-0221**  
+- `ID` = **6300016959**  
   The forecast the stock is compared with.
 - `DocumentTypeCode` = **Forecast** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BS-FC-26-0221 is the example retail/05, a Forecast; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Forecast.
+  The kind of document referred to: 6300016959 is the example retail/05, a Forecast; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Forecast.
 
 ### Signature
 
@@ -205,7 +205,7 @@ Inside `InventoryReportLine`:
   The seller's description.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -236,8 +236,8 @@ Inside `InventoryReportLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:inventory-report:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-IR-26-0223</cbc:ID>
+  <cbc:ProfileExecutionID>9900339162</cbc:ProfileExecutionID>
+  <cbc:ID>4900033927</cbc:ID>
   <cbc:UUID>fad19e90-681e-50c2-8501-5068414c15a8</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>17:43:00-01:00</cbc:IssueTime>
@@ -248,7 +248,7 @@ Inside `InventoryReportLine`:
     <cbc:EndDate>2026-04-23</cbc:EndDate>
   </cac:InventoryPeriod>
   <cac:DocumentReference>
-    <cbc:ID>BS-FC-26-0221</cbc:ID>
+    <cbc:ID>6300016959</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Forecast</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -374,7 +374,7 @@ Inside `InventoryReportLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>

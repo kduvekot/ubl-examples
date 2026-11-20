@@ -15,10 +15,10 @@ The cooperative accepts the order on a condition: its stored pears are running s
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFG-OR-26-0554**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0214**  
+  The collaboration this document belongs to: Hafefo's order of fruit from Harrowmead Fruit Growers. Hafefo Fresh Produce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **HRW-OR-26-0674**  
   The seller's number for its response.
 - `UUID` = **ccc57df8-55d8-508d-b264-68902a934a06**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -48,7 +48,7 @@ Inside `ValidityPeriod`:
 
 Inside `OrderReference`:
 
-- `ID` = **HFP-PO-26-0553**  
+- `ID` = **26-0215**  
   The order this response answers.
 
 ### Seller Supplier Party
@@ -222,7 +222,7 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Name` = **Apples Gala, carton 18 kg, count 100**  
   Named only: described in full in the order.
-- `LineItem/Item/SellersItemIdentification/ID` = **HFC-GAL100**  
+- `LineItem/Item/SellersItemIdentification/ID` = **HRW-GAL100**  
   The seller's number.
 - `OrderLineReference/LineID` = **1**  
   The order line answered.
@@ -240,7 +240,7 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Name` = **Apples Granny Smith, carton 18 kg, count 100**  
   Named only: described in full in the order.
-- `LineItem/Item/SellersItemIdentification/ID` = **HFC-GSM100**  
+- `LineItem/Item/SellersItemIdentification/ID` = **HRW-GSM100**  
   The seller's number.
 - `OrderLineReference/LineID` = **2**  
   The order line answered.
@@ -258,7 +258,7 @@ Inside `OrderLine`:
   The price is per one unit.
 - `LineItem/Item/Name` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   Named only: described in full in the order.
-- `LineItem/Item/SellersItemIdentification/ID` = **HFC-PKT080**  
+- `LineItem/Item/SellersItemIdentification/ID` = **HRW-PKT080**  
   The seller's number.
 - `OrderLineReference/LineID` = **3**  
   The order line answered.
@@ -271,8 +271,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-OR-26-0554</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>HRW-OR-26-0674</cbc:ID>
   <cbc:UUID>ccc57df8-55d8-508d-b264-68902a934a06</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
@@ -285,7 +285,7 @@ Inside `OrderLine`:
     <cbc:EndTime>12:00:00</cbc:EndTime>
   </cac:ValidityPeriod>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:SellerSupplierParty>
     <cac:Party>
@@ -420,7 +420,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-GAL100</cbc:ID>
+          <cbc:ID>HRW-GAL100</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -441,7 +441,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-GSM100</cbc:ID>
+          <cbc:ID>HRW-GSM100</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -462,7 +462,7 @@ Inside `OrderLine`:
       <cac:Item>
         <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>HFC-PKT080</cbc:ID>
+          <cbc:ID>HRW-PKT080</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

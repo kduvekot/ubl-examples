@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CAT-26-0213</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>6100000217</cbc:ID>
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
@@ -220,7 +220,7 @@
         <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0213-1</cbc:ID>
+        <cbc:ID>6100000217-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
@@ -400,7 +400,7 @@
       <cbc:LineID>1</cbc:LineID>
     </cac:CallForTendersLineReference>
     <cac:CallForTendersDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+      <cbc:ID>PWD/2026/0182</cbc:ID>
     </cac:CallForTendersDocumentReference>
   </cac:CatalogueLine>
   <cac:CatalogueLine>
@@ -440,14 +440,14 @@
         <cbc:ID>VI-INST-B</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0213-2</cbc:ID>
+        <cbc:ID>6100000217-2</cbc:ID>
       </cac:CatalogueItemIdentification>
     </cac:Item>
     <cac:CallForTendersLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:CallForTendersLineReference>
     <cac:CallForTendersDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+      <cbc:ID>PWD/2026/0182</cbc:ID>
     </cac:CallForTendersDocumentReference>
   </cac:CatalogueLine>
 </Catalogue>

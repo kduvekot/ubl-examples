@@ -15,10 +15,10 @@ Slats to the manufacturer's own drawing, of thermally modified ash: it asks the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:request-for-quotation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Request for quotation". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:sourcing:1.0**  
-  The Trade Accord's process profile the document belongs to: sourcing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WOOD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-DOC-26-0625**  
+  The Trade Accord's process profile the document belongs to: sourcing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900042764**  
+  The collaboration this document belongs to: Valdara's purchase of slats from Marrowdale Sawmill. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **6000012829**  
   The buyer's request number.
 - `UUID` = **60bedaa8-3e5b-540b-b932-135490f03c25**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -226,7 +226,7 @@ Inside `RequestForQuotationLine`:
   The line number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
   96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a bench, a quarter's supply.
-- `LineItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `LineItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `LineItem/Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -234,7 +234,7 @@ Inside `RequestForQuotationLine`:
   The units in one pack: 50 in a bundle; as Marrowdale Sawmill describes the item.
 - `LineItem/Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+- `LineItem/Item/SellersItemIdentification/ID` = **MDS-SL-1800-50**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 
 ## The document
@@ -245,8 +245,8 @@ Inside `RequestForQuotationLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:request-for-quotation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:sourcing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0625</cbc:ID>
+  <cbc:ProfileExecutionID>9900042764</cbc:ProfileExecutionID>
+  <cbc:ID>6000012829</cbc:ID>
   <cbc:UUID>60bedaa8-3e5b-540b-b932-135490f03c25</cbc:UUID>
   <cbc:IssueDate>2026-02-16</cbc:IssueDate>
   <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
@@ -390,12 +390,12 @@ Inside `RequestForQuotationLine`:
       <cbc:ID>1</cbc:ID>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
         <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-SL-1800-50</cbc:ID>
+          <cbc:ID>MDS-SL-1800-50</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

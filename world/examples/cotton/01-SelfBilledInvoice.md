@@ -15,10 +15,10 @@ Before the harvest the ginnery advances the farm a quarter of the value of its e
 - `CustomizationID` = **urn:ubl-examples:world:trns:self-billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Self-billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCG-SBI-26-0191**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **SCG-TX-26-0024**  
+  The collaboration this document belongs to: the ginnery's purchase of the farm's seed cotton. Selanu Cotton Ginnery started it and gave it this identifier, which every document of it repeats.
+- `ID` = **SCG-SBI-26-0024**  
   The number the customer gives the self-billed document, under the self-billing agreement.
 - `UUID` = **5ceb591c-0271-54b9-ac09-ed5298739803**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -292,9 +292,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **CORAL-NET**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF61SCGSBI260191**  
+- `InstructionNote` = **Quote RF11SCGSBI260024**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF61SCGSBI260191** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF11SCGSBI260024** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XL67BSEL0020004817534** (schemeID `urn:ubl-examples:world:account`)  
   The supplier's account, where the customer pays what it billed itself. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -306,7 +306,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PayeeFinancialAccount/PaymentNote` = **Self-billed invoice SCG-SBI-26-0191**  
+- `PayeeFinancialAccount/PaymentNote` = **Self-billed invoice SCG-SBI-26-0024**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **002** (schemeID `urn:ubl-examples:world:XL:bank-branch`)  
   The branch that keeps the account, by its national code: the branch number of a Lisavan bank (three digits). The account number holds it.
@@ -394,8 +394,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:self-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-SBI-26-0191</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-SBI-26-0024</cbc:ID>
   <cbc:UUID>5ceb591c-0271-54b9-ac09-ed5298739803</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
   <cbc:IssueTime>09:45:00+00:00</cbc:IssueTime>
@@ -611,15 +611,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-01-13</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF61SCGSBI260191</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF61SCGSBI260191</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF11SCGSBI260024</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF11SCGSBI260024</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL67BSEL0020004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0191</cbc:PaymentNote>
+      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0024</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
         <cbc:Name>Market branch</cbc:Name>

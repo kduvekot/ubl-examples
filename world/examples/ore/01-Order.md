@@ -15,10 +15,10 @@ Monthly ore call-off. Delivery terms FCA mine: the buyer books the train, so the
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ORE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-PO-26-0304**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900042994**  
+  The collaboration this document belongs to: Valdara's monthly ore call-off from Serravona Mining, from the order to the payment. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **4500042994**  
   The buyer's order number.
 - `UUID` = **f7a41c69-f150-5204-9582-ff383282ea1c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -325,8 +325,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-PO-26-0304</cbc:ID>
+  <cbc:ProfileExecutionID>9900042994</cbc:ProfileExecutionID>
+  <cbc:ID>4500042994</cbc:ID>
   <cbc:UUID>f7a41c69-f150-5204-9582-ff383282ea1c</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>11:10:00-01:00</cbc:IssueTime>

@@ -15,10 +15,8 @@ The distributor introduces itself to the new island customer.
 - `CustomizationID` = **urn:ubl-examples:world:trns:business-card:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Business card". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:onboarding:1.0**  
-  The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0123**  
+  The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow.
+- `ID` = **LMW-BC-26-0048**  
   The sender's number for this document.
 - `UUID` = **da594e74-bfa8-5df5-ab8d-930b60c73ea9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -179,7 +177,7 @@ Inside `BusinessParty`:
 
 Inside `BrochureDocumentReference`:
 
-- `ID` = **LD-BROCHURE-2026**  
+- `ID` = **LMW-BROCHURE-2026**  
   The distributor's brochure.
 - `Attachment/ExternalReference/URI` = **https://www.lumeway.example/brochure-2026.pdf**  
   Where it is.
@@ -190,7 +188,7 @@ Inside `BrochureDocumentReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **LD-REG-XB**  
+- `ID` = **LMW-REG-XB**  
   The distributor's registration extract.
 - `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, Lumeway's extract from Bayvarra's business register, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
@@ -209,7 +207,7 @@ Inside `BusinessCapability`:
   The stock's value at cost, 399.00 lume a bench, the price Lumeway paid Valdara.
 - `ValueQuantity` = **264** (unitCode `EA`)  
   Benches in stock, for sale.
-- `SuppliedEvidence/ID` = **LD-COUNT-26-04**  
+- `SuppliedEvidence/ID` = **LMW-COUNT-26-04**  
   The evidence.
 - `SuppliedEvidence/EvidenceTypeCode` = **STOCKCOUNT** (listID `urn:ubl-examples:world:codelist:EvidenceTypeCode`)  
   Lumeway's own count of its stock, not an audit. The code is from the Trade Accord's evidence type list: STOCKCOUNT = Stock count.
@@ -252,8 +250,7 @@ Inside `BusinessCapability`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:business-card:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0123</cbc:ID>
+  <cbc:ID>LMW-BC-26-0048</cbc:ID>
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>16:39:00-01:00</cbc:IssueTime>
@@ -376,7 +373,7 @@ Inside `BusinessCapability`:
     </cac:ElectronicAddress>
   </cac:BusinessParty>
   <cac:BrochureDocumentReference>
-    <cbc:ID>LD-BROCHURE-2026</cbc:ID>
+    <cbc:ID>LMW-BROCHURE-2026</cbc:ID>
     <cac:Attachment>
       <cac:ExternalReference>
         <cbc:URI>https://www.lumeway.example/brochure-2026.pdf</cbc:URI>
@@ -385,7 +382,7 @@ Inside `BusinessCapability`:
     </cac:Attachment>
   </cac:BrochureDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LD-REG-XB</cbc:ID>
+    <cbc:ID>LMW-REG-XB</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">101</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
@@ -395,7 +392,7 @@ Inside `BusinessCapability`:
     <cbc:ValueAmount currencyID="XBL">105336.00</cbc:ValueAmount>
     <cbc:ValueQuantity unitCode="EA">264</cbc:ValueQuantity>
     <cac:SuppliedEvidence>
-      <cbc:ID>LD-COUNT-26-04</cbc:ID>
+      <cbc:ID>LMW-COUNT-26-04</cbc:ID>
       <cbc:EvidenceTypeCode listID="urn:ubl-examples:world:codelist:EvidenceTypeCode">STOCKCOUNT</cbc:EvidenceTypeCode>
       <cbc:Name>Stock count of 30 April 2026</cbc:Name>
       <cbc:Description>The distributor's own count of its warehouse at the end of April; it counts its stock at the end of every month.</cbc:Description>

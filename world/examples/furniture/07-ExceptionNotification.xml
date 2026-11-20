@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:exception:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0573</cbc:ID>
+  <cbc:ProfileExecutionID>9900335865</cbc:ProfileExecutionID>
+  <cbc:ID>26-0031</cbc:ID>
   <cbc:UUID>54a44709-e8a8-5aed-918e-7a7a369c2ad5</cbc:UUID>
   <cbc:IssueDate>2026-06-09</cbc:IssueDate>
   <cbc:IssueTime>17:49:00-01:00</cbc:IssueTime>
@@ -14,11 +14,11 @@
     <cbc:EndDate>2026-06-07</cbc:EndDate>
   </cac:ExceptionObservationPeriod>
   <cac:DocumentReference>
-    <cbc:ID>BS-DOC-26-0571</cbc:ID>
+    <cbc:ID>6900016794</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>BS-DOC-26-0572</cbc:ID>
+    <cbc:ID>5900017153</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProductActivity</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -155,7 +155,7 @@
       <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
-      <cbc:ID>BS-DOC-26-0571</cbc:ID>
+      <cbc:ID>6900016794</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
       <cbc:DocumentDescription>Criterion line 1: slow sales of the oak bench.</cbc:DocumentDescription>
     </cac:DocumentReference>
@@ -163,7 +163,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, oak</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -192,7 +192,7 @@
       <cbc:EndDate>2026-06-07</cbc:EndDate>
     </cac:ExceptionObservationPeriod>
     <cac:DocumentReference>
-      <cbc:ID>BS-DOC-26-0571</cbc:ID>
+      <cbc:ID>6900016794</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionCriteria</cbc:DocumentTypeCode>
       <cbc:DocumentDescription>Criterion line 2: slow sales of the ash bench.</cbc:DocumentDescription>
     </cac:DocumentReference>
@@ -200,7 +200,7 @@
       <cbc:Description>Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.</cbc:Description>
       <cbc:Name>Elderwick Marrow bench, ash</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-MRW-B14</cbc:ID>
+        <cbc:ID>BKM-MRW-B14</cbc:ID>
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>

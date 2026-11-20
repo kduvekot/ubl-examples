@@ -15,10 +15,10 @@ The grid operator reads the factory's gas meter and sends the retail company the
 - `CustomizationID` = **urn:ubl-examples:world:trns:utility-statement:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement"; the community specification "Urvania energy market". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ENERGY-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FG-DOC-26-0149**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **FGR-TX-26-0151**  
+  The collaboration this document belongs to: Ferrano Grid's network bill for April to Ferrano Energy. Ferrano Grid started it and gave it this identifier, which every document of it repeats.
+- `ID` = **FGR-UST-26-2253**  
   The grid operator's metering report.
 - `UUID` = **4dda14a2-d50d-5ef3-84d8-980f6cc7eedb**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,10 +39,10 @@ The grid operator reads the factory's gas meter and sends the retail company the
 
 Inside `ParentDocumentReference`:
 
-- `ID` = **FG-INV-26-0150**  
+- `ID` = **2026/0157**  
   The network invoice this statement supplements: the metering behind the network charge for gas.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FG-INV-26-0150 is the example energy/02, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: 2026/0157 is the example energy/02, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Sender Party
 
@@ -167,7 +167,7 @@ Inside `SubscriberParty`:
 
 Inside `SubscriberConsumption`:
 
-- `ConsumptionID` = **FG-CP-4120-G1-2603**  
+- `ConsumptionID` = **FGR-CP-4120-G1-2603**  
   The consumption of the factory's gas point in March.
 - `SpecificationTypeCode` = **DETAILED** (listID `urn:ubl-examples:world:codelist:SpecificationTypeCode`)  
   With the volume conversion. The code is from the Trade Accord's specification type list: DETAILED = Detailed.
@@ -175,7 +175,7 @@ Inside `SubscriberConsumption`:
   The point.
 - `TotalMeteredQuantity` = **1350** (unitCode `MTQ`)  
   Cubic metres through the meter at line pressure.
-- `UtilityConsumptionPoint/ID` = **FG-CP-4120-G1**  
+- `UtilityConsumptionPoint/ID` = **FGR-CP-4120-G1**  
   The factory's gas connection.
 - `UtilityConsumptionPoint/Description` = **Valdara Industries, gas connection of the coating line**  
   Where.
@@ -211,7 +211,7 @@ Inside `SubscriberConsumption`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **FG-G-20417**  
+- `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **FGR-G-20417**  
   The gas meter.
 - `UtilityConsumptionPoint/UtilityMeter/MeterName` = **Rotary gas meter, coating line**  
   Its name.
@@ -221,7 +221,7 @@ Inside `SubscriberConsumption`:
   No multiplier. The code is from the Trade Accord's meter constant type list: DIRECT = Direct connection.
 - `UtilityConsumptionPoint/UtilityMeter/TotalDeliveredQuantity` = **1350** (unitCode `MTQ`)  
   Through the meter.
-- `UtilityConsumptionPoint/UtilityMeter/MeterReading/ID` = **FG-G-20417-2603**  
+- `UtilityConsumptionPoint/UtilityMeter/MeterReading/ID` = **FGR-G-20417-2603**  
   The reading of March.
 - `UtilityConsumptionPoint/UtilityMeter/MeterReading/PreviousMeterReadingDate` = **2026-02-28**  
   The previous reading.
@@ -243,7 +243,7 @@ Inside `SubscriberConsumption`:
   March.
 - `Consumption/MainPeriod/EndDate` = **2026-03-31**  
   Its end.
-- `Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **FG-CP-4120-G1-2603**  
+- `Consumption/EnergyWaterSupply/ConsumptionReport/ID` = **FGR-CP-4120-G1-2603**  
   The report.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType` = **Monthly consumption**  
   What it is.
@@ -257,7 +257,7 @@ Inside `SubscriberConsumption`:
   The name of code CONV in the Trade Accord's consumption correction type list.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionTypeCode` = **CONV** (listID `urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode`)  
   As a code. The code is from the Trade Accord's consumption correction type list: CONV = Volume conversion.
-- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/MeterNumber` = **FG-G-20417**  
+- `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/MeterNumber` = **FGR-G-20417**  
   The meter.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/GasPressureQuantity` = **4** (unitCode `BAR`)  
   The meter runs at 4 bar above the atmosphere: the gas is compressed, so the volume is corrected for the pressure.
@@ -280,8 +280,8 @@ Inside `SubscriberConsumption`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FG-DOC-26-0149</cbc:ID>
+  <cbc:ProfileExecutionID>FGR-TX-26-0151</cbc:ProfileExecutionID>
+  <cbc:ID>FGR-UST-26-2253</cbc:ID>
   <cbc:UUID>4dda14a2-d50d-5ef3-84d8-980f6cc7eedb</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
@@ -290,7 +290,7 @@ Inside `SubscriberConsumption`:
   <cbc:Note languageID="en-XU">Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
-    <cbc:ID>FG-INV-26-0150</cbc:ID>
+    <cbc:ID>2026/0157</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:SenderParty>
@@ -386,12 +386,12 @@ Inside `SubscriberConsumption`:
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>FG-CP-4120-G1-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>FGR-CP-4120-G1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Gas for the coating ovens of the factory.</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="MTQ">1350</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>FG-CP-4120-G1</cbc:ID>
+      <cbc:ID>FGR-CP-4120-G1</cbc:ID>
       <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
       <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
@@ -414,13 +414,13 @@ Inside `SubscriberConsumption`:
         </cac:Country>
       </cac:Address>
       <cac:UtilityMeter>
-        <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
+        <cbc:MeterNumber>FGR-G-20417</cbc:MeterNumber>
         <cbc:MeterName>Rotary gas meter, coating line</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="MTQ">1350</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
-          <cbc:ID>FG-G-20417-2603</cbc:ID>
+          <cbc:ID>FGR-G-20417-2603</cbc:ID>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
           <cbc:PreviousMeterQuantity unitCode="MTQ">28410</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
@@ -439,7 +439,7 @@ Inside `SubscriberConsumption`:
       </cac:MainPeriod>
       <cac:EnergyWaterSupply>
         <cac:ConsumptionReport>
-          <cbc:ID>FG-CP-4120-G1-2603</cbc:ID>
+          <cbc:ID>FGR-CP-4120-G1-2603</cbc:ID>
           <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
           <cbc:TotalConsumedQuantity unitCode="KWH">61200</cbc:TotalConsumedQuantity>
           <cac:Period>
@@ -450,7 +450,7 @@ Inside `SubscriberConsumption`:
         <cac:EnergyWaterConsumptionCorrection>
           <cbc:CorrectionType>Volume conversion</cbc:CorrectionType>
           <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">CONV</cbc:CorrectionTypeCode>
-          <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
+          <cbc:MeterNumber>FGR-G-20417</cbc:MeterNumber>
           <cbc:GasPressureQuantity unitCode="BAR">4</cbc:GasPressureQuantity>
           <cbc:Description>1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.</cbc:Description>
         </cac:EnergyWaterConsumptionCorrection>

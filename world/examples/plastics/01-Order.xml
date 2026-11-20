@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RP-PO-26-0882</cbc:ID>
+  <cbc:ProfileExecutionID>26-0338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0339</cbc:ID>
   <cbc:UUID>e1c2a8ee-2c1f-527d-b914-49514b59c8d9</cbc:UUID>
   <cbc:IssueDate>2026-04-13</cbc:IssueDate>
   <cbc:IssueTime>16:17:00-01:00</cbc:IssueTime>

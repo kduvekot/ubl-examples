@@ -15,10 +15,10 @@ Demand for clothing is up; the mill revises its forecast upwards.
 - `CustomizationID` = **urn:ubl-examples:world:trns:forecast:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forecast". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:collaboration:1.0**  
-  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LTM-FR-26-0197**  
+  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900012942**  
+  The collaboration this document belongs to: the textile mill's forecast of its cotton needs for the ginnery. Lumeport Textile Mill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **6400000665**  
   The revision's number.
 - `UUID` = **1680348b-7683-52e2-b21d-f88ff92b0f43**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -48,10 +48,10 @@ Inside `ForecastPeriod`:
 
 Inside `OriginalDocumentReference`:
 
-- `ID` = **LTM-FC-26-0192**  
+- `ID` = **6300000648**  
   The forecast revised.
 - `DocumentTypeCode` = **Forecast** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LTM-FC-26-0192 is the example cotton/02, a Forecast; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Forecast.
+  The kind of document referred to: 6300000648 is the example cotton/02, a Forecast; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Forecast.
 
 ### Signature
 
@@ -231,8 +231,8 @@ Inside `ForecastRevisionLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forecast:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-FR-26-0197</cbc:ID>
+  <cbc:ProfileExecutionID>9900012942</cbc:ProfileExecutionID>
+  <cbc:ID>6400000665</cbc:ID>
   <cbc:UUID>1680348b-7683-52e2-b21d-f88ff92b0f43</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:08:00-01:00</cbc:IssueTime>
@@ -245,7 +245,7 @@ Inside `ForecastRevisionLine`:
     <cbc:EndDate>2026-07-31</cbc:EndDate>
   </cac:ForecastPeriod>
   <cac:OriginalDocumentReference>
-    <cbc:ID>LTM-FC-26-0192</cbc:ID>
+    <cbc:ID>6300000648</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Forecast</cbc:DocumentTypeCode>
   </cac:OriginalDocumentReference>
   <cac:Signature>

@@ -15,10 +15,10 @@ The distributor's system confirms the invoice was received and accepted.
 - `CustomizationID` = **urn:ubl-examples:world:trns:invoice-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Invoice response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0167**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0573**  
+  The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-ARS-26-0033**  
   The sender's number for this document.
 - `UUID` = **cd4b74a4-2123-5d02-8f6a-c5422a5e7d12**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -114,10 +114,10 @@ Inside `DocumentResponse`:
   The invoice matched order and receipt. The code is from the Trade Accord's status condition list: MATCHED = Matched.
 - `Response/Status/Description` = **Three-way match passed.**  
   In words.
-- `DocumentReference/ID` = **VI-INV-26-0166**  
+- `DocumentReference/ID` = **2026/1409**  
   The invoice responded to.
 - `DocumentReference/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VI-INV-26-0166 is the example road/15, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: 2026/1409 is the example road/15, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 - `LineResponse/LineReference/LineID` = **2**  
   The invoice line of the side frames.
 - `LineResponse/Response/ReferenceID` = **2**  
@@ -135,8 +135,8 @@ Inside `DocumentResponse`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0167</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-ARS-26-0033</cbc:ID>
   <cbc:UUID>cd4b74a4-2123-5d02-8f6a-c5422a5e7d12</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>14:13:00-01:00</cbc:IssueTime>
@@ -214,7 +214,7 @@ Inside `DocumentResponse`:
       </cac:Status>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID>VI-INV-26-0166</cbc:ID>
+      <cbc:ID>2026/1409</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:LineResponse>

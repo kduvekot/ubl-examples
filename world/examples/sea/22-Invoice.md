@@ -15,10 +15,10 @@ The goods at their CIF prices, which hold the sea freight and the insurance; the
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-INV-26-0147**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-INV-26-1025**  
   The seller's invoice number.
 - `UUID` = **6043e69c-9119-593c-8528-d6120d07241e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -49,17 +49,17 @@ The goods at their CIF prices, which hold the sea freight and the insurance; the
 
 Inside `OrderReference`:
 
-- `ID` = **VT-PO-26-0127**  
+- `ID` = **26-0417**  
   The buyer's order.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TOL-BL-26-0139**  
+- `ID` = **TWLU000033415**  
   The bill of lading of the shipment on board, which dates the delivery.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TOL-BL-26-0139 is the example sea/14, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+  The kind of document referred to: TWLU000033415 is the example sea/14, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
 
 ### Accounting Supplier Party
 
@@ -274,9 +274,9 @@ Inside `PaymentMeans`:
   The payment system the transfer runs over: the trade accord's link between the countries.
 - `PaymentPlatformID` = **HF-COLLECT**  
   The factor's collection platform the payment is matched on.
-- `InstructionNote` = **Quote RF20LDINV260147**  
+- `InstructionNote` = **Quote RF21LMWINV261025**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF20LDINV260147** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF21LMWINV261025** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -292,7 +292,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice LD-INV-26-0147**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice LMW-INV-26-1025**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380205** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -334,7 +334,7 @@ Inside `PaymentMeans`:
   The receivable was sold to the factor. The code is from the Trade Accord's trade financing instrument list: FACTORING = Factoring.
 - `TradeFinancing/ContractDocumentReference/ID` = **HF-FA-2026-007**  
   The factoring agreement.
-- `TradeFinancing/DocumentReference/ID` = **HF-ASSIGN-26-0091**  
+- `TradeFinancing/DocumentReference/ID` = **26-0030**  
   The notice of assignment.
 - `TradeFinancing/DocumentReference/DocumentType` = **Notice of assignment**  
   The kind of document referred to, Harbourline's notice of the assigned receivable, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -373,7 +373,7 @@ Inside `PaymentTerms`:
 
 - `ID` = **DEPOSIT**  
   The deposit, the first instalment.
-- `PrepaidPaymentReferenceID` = **VT-DEP-26-0412**  
+- `PrepaidPaymentReferenceID` = **26-0024**  
   The deposit payment, already received.
 - `ReferenceEventCode` = **8** (listID `UN/EDIFACT EDED 2475`)  
   Due when the order is accepted. The code is from the world's copy of UN/EDIFACT 2475 Event time reference: 8 = Date of confirmation of order received.
@@ -401,7 +401,7 @@ Inside `PaymentTerms`:
   The surcharge for the first month late, on the balance.
 - `InstallmentDueDate` = **2026-06-29**  
   45 days after the goods were shipped. The count ends on Sunday 28 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 29 June.
-- `InvoicingPartyReference` = **RF20LDINV260147**  
+- `InvoicingPartyReference` = **RF21LMWINV261025**  
   The reference to quote with the payment.
 - `PenaltyPeriod/StartDate` = **2026-06-30**  
   From the day after the due date, with no end: the surcharge runs per month for as long as the amount is late.
@@ -430,7 +430,7 @@ Inside `PaymentTerms`:
 
 Inside `PrepaidPayment`:
 
-- `ID` = **VT-DEP-26-0412**  
+- `ID` = **26-0024**  
   The buyer's payment of the deposit.
 - `PaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit asked for in the order response.
@@ -438,7 +438,7 @@ Inside `PrepaidPayment`:
   Credited to the distributor's account.
 - `PaidDate` = **2026-05-08**  
   Paid by the buyer the day after the order was accepted.
-- `InstructionID` = **VT-PAY-26-0077**  
+- `InstructionID` = **26-0023**  
   The buyer's payment order.
 
 ### Payment Alternative Exchange Rate
@@ -518,7 +518,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -564,7 +564,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Park bench Serra 180**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -610,7 +610,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Bench side frame casting**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10443**  
+- `Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
@@ -645,8 +645,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-INV-26-0147</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-INV-26-1025</cbc:ID>
   <cbc:UUID>6043e69c-9119-593c-8528-d6120d07241e</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>12:32:00-01:00</cbc:IssueTime>
@@ -660,10 +660,10 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:ID>TWLU000033415</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -850,8 +850,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
     <cbc:PaymentPlatformID>HF-COLLECT</cbc:PaymentPlatformID>
-    <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF20LDINV260147</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF21LMWINV261025</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF21LMWINV261025</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cbc:ServiceLevelCode listID="ISO 20022 ExternalServiceLevel1Code">NURG</cbc:ServiceLevelCode>
     <cac:PayeeFinancialAccount>
@@ -860,7 +860,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice LD-INV-26-0147</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice LMW-INV-26-1025</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -902,7 +902,7 @@ Inside `InvoiceLine`:
         <cbc:ID>HF-FA-2026-007</cbc:ID>
       </cac:ContractDocumentReference>
       <cac:DocumentReference>
-        <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+        <cbc:ID>26-0030</cbc:ID>
         <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:FinancingParty>
@@ -945,7 +945,7 @@ Inside `InvoiceLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:ID>DEPOSIT</cbc:ID>
-    <cbc:PrepaidPaymentReferenceID>VT-DEP-26-0412</cbc:PrepaidPaymentReferenceID>
+    <cbc:PrepaidPaymentReferenceID>26-0024</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
     <cbc:PaymentPercent>18.22</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
@@ -961,7 +961,7 @@ Inside `InvoiceLine`:
     <cbc:Amount currencyID="XBL">44896.00</cbc:Amount>
     <cbc:PenaltyAmount currencyID="XBL">673.44</cbc:PenaltyAmount>
     <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
-    <cbc:InvoicingPartyReference>RF20LDINV260147</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF21LMWINV261025</cbc:InvoicingPartyReference>
     <cac:PenaltyPeriod>
       <cbc:StartDate>2026-06-30</cbc:StartDate>
     </cac:PenaltyPeriod>
@@ -983,11 +983,11 @@ Inside `InvoiceLine`:
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
-    <cbc:ID>VT-DEP-26-0412</cbc:ID>
+    <cbc:ID>26-0024</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
     <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
     <cbc:PaidDate>2026-05-08</cbc:PaidDate>
-    <cbc:InstructionID>VT-PAY-26-0077</cbc:InstructionID>
+    <cbc:InstructionID>26-0023</cbc:InstructionID>
   </cac:PrepaidPayment>
   <cac:PaymentAlternativeExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
@@ -1047,7 +1047,7 @@ Inside `InvoiceLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -1092,7 +1092,7 @@ Inside `InvoiceLine`:
       <cbc:Description>The manufacturer's Serra bench, from the distributor's stock.</cbc:Description>
       <cbc:Name>Park bench Serra 180</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -1137,7 +1137,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>

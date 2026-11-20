@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-PO-26-0406</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-PO-26-0047</cbc:ID>
   <cbc:SalesOrderID>TWM-J-2526-014</cbc:SalesOrderID>
   <cbc:UUID>d47b6f28-2a6c-5241-91f4-d182ad307e94</cbc:UUID>
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
@@ -130,7 +130,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>96 bundles of 50 slats, Valdara's slat MS-SL-1800 to drawing VI-DS-SL1800.</cbc:Note>
+      <cbc:Note>96 bundles of 50 slats, Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">1272000</cbc:LineExtensionAmount>
       <cac:Price>
@@ -151,10 +151,10 @@
         <cbc:Note>Supplied by the customer, free of charge: the sawmill's own kiln-dried ash, which stays its property.</cbc:Note>
         <cbc:Quantity unitCode="EA">4800</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.</cbc:Description>
+          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
           <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>MS-BL-1830</cbc:ID>
+            <cbc:ID>MDS-BL-1830</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:SubLineItem>

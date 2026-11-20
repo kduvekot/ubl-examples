@@ -15,10 +15,10 @@ The shop's water consumption, read from its meter, with the water company's wate
 - `CustomizationID` = **urn:ubl-examples:world:trns:utility-statement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **CSWC-DOC-26-0318**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924050955**  
+  The collaboration this document belongs to: the water company's bill for March to the store. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **9424051757**  
   The utility's statement number.
 - `UUID` = **7bdfb021-49a1-5341-b641-0343b4c0240e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -41,16 +41,16 @@ The shop's water consumption, read from its meter, with the water company's wate
 
 Inside `ParentDocumentReference`:
 
-- `ID` = **CSWC-INV-26-0317**  
+- `ID` = **CSW-C-260118-2603**  
   The invoice this statement supplements: a utility statement adds the consumption behind the bill.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: CSWC-INV-26-0317 is the example utilities/06, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: CSW-C-260118-2603 is the example utilities/06, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **CSWC-TARIFF-2026**  
+- `ID` = **CSW-TARIFF-2026**  
   The utility's tariff sheet for 2026.
 - `DocumentTypeCode` = **TARIFF** (listID `urn:ubl-examples:world:codelist:DocumentTypeCode`)  
   What the document is. The code is from the Trade Accord's document type list: TARIFF = Tariff.
@@ -491,8 +491,8 @@ Inside `SubscriberConsumption`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CSWC-DOC-26-0318</cbc:ID>
+  <cbc:ProfileExecutionID>9924050955</cbc:ProfileExecutionID>
+  <cbc:ID>9424051757</cbc:ID>
   <cbc:UUID>7bdfb021-49a1-5341-b641-0343b4c0240e</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>11:55:00-01:00</cbc:IssueTime>
@@ -502,11 +502,11 @@ Inside `SubscriberConsumption`:
   <cbc:AccountingCostCode>8100</cbc:AccountingCostCode>
   <cbc:AccountingCost>Store energy and water</cbc:AccountingCost>
   <cac:ParentDocumentReference>
-    <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+    <cbc:ID>CSW-C-260118-2603</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>CSWC-TARIFF-2026</cbc:ID>
+    <cbc:ID>CSW-TARIFF-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">TARIFF</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>

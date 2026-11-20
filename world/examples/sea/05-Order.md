@@ -15,10 +15,10 @@ The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for 
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VT-PO-26-0127**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0417**  
   The buyer's order number.
 - `UUID` = **96cdcd1a-b60b-535b-b857-023213a9b16e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,7 +43,7 @@ The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for 
 
 Inside `OriginatorDocumentReference`:
 
-- `ID` = **PS-REQ-26-0031**  
+- `ID` = **POS-REQ-26-0031**  
   The Port of Selanu's request to the trader, which the order's port line follows.
 - `DocumentType` = **Request**  
   The kind of document referred to, the Port of Selanu's request to the trader, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -377,7 +377,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **VT-PB-180**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -395,7 +395,7 @@ Inside `OrderLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none.
 - `LineItem/Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
-- `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0124**  
+- `LineItem/Item/CatalogueDocumentReference/ID` = **LMW-CAT-26-0006**  
   The catalogue the item was ordered from.
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own.
@@ -417,7 +417,7 @@ Inside `OrderLine`:
   The item's short name.
 - `LineItem/Item/BuyersItemIdentification/ID` = **VT-PB-180**  
   The buyer's own item number: it resells this item under its own number.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `LineItem/Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -435,7 +435,7 @@ Inside `OrderLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none.
 - `LineItem/Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
-- `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0124**  
+- `LineItem/Item/CatalogueDocumentReference/ID` = **LMW-CAT-26-0006**  
   The catalogue the item was ordered from.
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own.
@@ -455,7 +455,7 @@ Inside `OrderLine`:
   The item is ordered from the seller's catalogue, which the order cites.
 - `LineItem/Item/Name` = **Bench side frame casting**  
   The item's short name.
-- `LineItem/Item/SellersItemIdentification/ID` = **LD-10443**  
+- `LineItem/Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
@@ -465,7 +465,7 @@ Inside `OrderLine`:
   The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none.
 - `LineItem/Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
-- `LineItem/Item/CatalogueDocumentReference/ID` = **LD-CAT-26-0124**  
+- `LineItem/Item/CatalogueDocumentReference/ID` = **LMW-CAT-26-0006**  
   The catalogue the item was ordered from.
 
 ## The document
@@ -476,8 +476,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VT-PO-26-0127</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>26-0417</cbc:ID>
   <cbc:UUID>96cdcd1a-b60b-535b-b857-023213a9b16e</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
   <cbc:IssueTime>11:10:00+00:00</cbc:IssueTime>
@@ -488,7 +488,7 @@ Inside `OrderLine`:
   <cbc:AccountingCost>Stock for municipal projects</cbc:AccountingCost>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OriginatorDocumentReference>
-    <cbc:ID>PS-REQ-26-0031</cbc:ID>
+    <cbc:ID>POS-REQ-26-0031</cbc:ID>
     <cbc:DocumentType>Request</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:BuyerCustomerParty>
@@ -768,7 +768,7 @@ Inside `OrderLine`:
           <cbc:ID>VT-PB-180</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
           <cbc:ExtendedID>GRY</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -787,7 +787,7 @@ Inside `OrderLine`:
           <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
         </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
-          <cbc:ID>LD-CAT-26-0124</cbc:ID>
+          <cbc:ID>LMW-CAT-26-0006</cbc:ID>
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>
@@ -810,7 +810,7 @@ Inside `OrderLine`:
           <cbc:ID>VT-PB-180</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
           <cbc:ExtendedID>GRY</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -829,7 +829,7 @@ Inside `OrderLine`:
           <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
         </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
-          <cbc:ID>LD-CAT-26-0124</cbc:ID>
+          <cbc:ID>LMW-CAT-26-0006</cbc:ID>
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>
@@ -849,7 +849,7 @@ Inside `OrderLine`:
         <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
+          <cbc:ID>LMW-10443</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:ManufacturersItemIdentification>
           <cbc:ID>VI-C180</cbc:ID>
@@ -862,7 +862,7 @@ Inside `OrderLine`:
           <cbc:ID schemeID="ISO 15459-6">KXU10014C180</cbc:ID>
         </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
-          <cbc:ID>LD-CAT-26-0124</cbc:ID>
+          <cbc:ID>LMW-CAT-26-0006</cbc:ID>
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>

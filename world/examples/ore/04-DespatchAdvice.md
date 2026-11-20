@@ -15,10 +15,10 @@ The mine announces what was loaded into which wagons, so the factory can plan th
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ORE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SM-DA-26-0308**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900042994**  
+  The collaboration this document belongs to: Valdara's monthly ore call-off from Serravona Mining, from the order to the payment. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **8000004875**  
   The despatching party's number.
 - `UUID` = **e3281a6d-51f4-5981-b7f0-b43b6a9cf2da**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,7 +39,7 @@ The mine announces what was loaded into which wagons, so the factory can plan th
 
 Inside `OrderReference`:
 
-- `ID` = **VI-PO-26-0304**  
+- `ID` = **4500042994**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -194,9 +194,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SM-SH-26-0309**  
+- `ID` = **7400004875**  
   The despatching party's shipment number.
-- `Consignment/ID` = **VI-CS-26-0306**  
+- `Consignment/ID` = **7300043010**  
   The buyer's consignment, quoted back.
 - `Consignment/GrossWeightMeasure` = **1788400** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. Weighed on the weighbridge at loading: 30 wagons.
@@ -282,8 +282,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SM-DA-26-0308</cbc:ID>
+  <cbc:ProfileExecutionID>9900042994</cbc:ProfileExecutionID>
+  <cbc:ID>8000004875</cbc:ID>
   <cbc:UUID>e3281a6d-51f4-5981-b7f0-b43b6a9cf2da</cbc:UUID>
   <cbc:IssueDate>2026-03-10</cbc:IssueDate>
   <cbc:IssueTime>10:20:00-01:00</cbc:IssueTime>
@@ -292,7 +292,7 @@ Inside `DespatchLine`:
   <cbc:Note languageID="en-XU">Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>VI-PO-26-0304</cbc:ID>
+    <cbc:ID>4500042994</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -417,9 +417,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>SM-SH-26-0309</cbc:ID>
+    <cbc:ID>7400004875</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0306</cbc:ID>
+      <cbc:ID>7300043010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1788400</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>

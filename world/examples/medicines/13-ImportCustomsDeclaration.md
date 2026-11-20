@@ -15,10 +15,8 @@ The customs broker, as the hospital's direct representative, declares the import
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TCB-IM-26-0339**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **26-1361**  
   The customs broker's number of the declaration.
 - `UUID` = **8f2e6a5d-e54e-599b-97f3-65f0e0767e2a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -232,7 +230,7 @@ Inside `NotifierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **QPD-SH-26-0323**  
+- `ID` = **QLM-SH-26-3980**  
   The shipment declared.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -372,7 +370,7 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Haarvliet Isotopes describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 284443 = Radioactive elements, isotopes and compounds; other alloys, dispersions (including cermets), ceramic products and mixtures containing these elements, isotopes or compounds.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **33690** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Haarvliet Isotopes describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 33690 = Other radioactive elements and isotopes and compounds; alloys, dispersions, ceramic products and mixtures containing these elements, isotopes or compounds; radioactive residues.
-- `GoodsItem/Item/HazardousItem/ID` = **HI-TCG-20-DG**  
+- `GoodsItem/Item/HazardousItem/ID` = **HVI-TCG-20-DG**  
   The seller's dangerous goods record of the item.
 - `GoodsItem/Item/HazardousItem/PlacardNotation` = **7**  
   The class shown on the hazard label of the packages.
@@ -423,14 +421,14 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KXL-WB-26-0337**  
+- `ID` = **KXL-00698121**  
   The air waybill of the goods.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: KXL-WB-26-0337 is the example medicines/11, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
-- `ID` = **QPD-INV-26-0340**  
+  The kind of document referred to: KXL-00698121 is the example medicines/11, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+- `ID` = **QLM-INV-26-4080**  
   The commercial invoice the customs value rests on.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: QPD-INV-26-0340 is the example medicines/14, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: QLM-INV-26-4080 is the example medicines/14, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -440,8 +438,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TCB-IM-26-0339</cbc:ID>
+  <cbc:ID>26-1361</cbc:ID>
   <cbc:UUID>8f2e6a5d-e54e-599b-97f3-65f0e0767e2a</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
@@ -612,7 +609,7 @@ Inside `AdditionalDocumentReference`:
     </cac:ElectronicAddress>
   </cac:NotifierParty>
   <cac:Shipment>
-    <cbc:ID>QPD-SH-26-0323</cbc:ID>
+    <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Description>
@@ -725,7 +722,7 @@ Inside `AdditionalDocumentReference`:
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">33690</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
-          <cbc:ID>HI-TCG-20-DG</cbc:ID>
+          <cbc:ID>HVI-TCG-20-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
           <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
@@ -761,11 +758,11 @@ Inside `AdditionalDocumentReference`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KXL-WB-26-0337</cbc:ID>
+    <cbc:ID>KXL-00698121</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>QPD-INV-26-0340</cbc:ID>
+    <cbc:ID>QLM-INV-26-4080</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

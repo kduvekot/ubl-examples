@@ -4,8 +4,9 @@ A flow's scenario (tools/examples_scenarios.py) gives its timeline, its deal
 (items and quantities) and, per document, what is particular to it. This kit
 turns that into document content with a reason for every value:
 
-  * document numbers, derived from the sender (its initials), a code for the
-    document type, the year and a sequence of the flow;
+  * document numbers, in each issuer's own numbering (world/parties.json
+    numbering): per issuer and kind of document, rising with the issue moment
+    across all flows (numbering(), fed by the first pass of build_examples);
   * dates, from the flow's start date and the day of each document;
   * lines and amounts, from the deal and the items layer, rounded to the
     minor unit of the currency;
@@ -13,6 +14,8 @@ turns that into document content with a reason for every value:
     who pays which tax at which rate, and why not where no tax applies.
 """
 import datetime
+import math
+import re
 import zlib
 from decimal import Decimal
 
@@ -20,25 +23,182 @@ import codelists
 import world_ids
 from build_examples import ITEM, PARTY, WORLD, V, Detail, account, amount, item, money, price, qty
 
-CODES = {"Order": "PO", "OrderResponse": "OR", "OrderChange": "OC", "Invoice": "INV", "CreditNote": "CN",
-         "DespatchAdvice": "DA", "ReceiptAdvice": "RA", "RemittanceAdvice": "RM",
-         "TransportExecutionPlanRequest": "TR", "TransportExecutionPlan": "TEP", "Waybill": "WB",
-         "TransportationStatus": "TS", "ExportCustomsDeclaration": "EX", "ImportCustomsDeclaration": "IM",
-         "CertificateOfOrigin": "CO", "Shipment": "SH", "Consignment": "CS", "CustomsDeclaration": "CD",
-         "Application": "AP", "TransitCustomsDeclaration": "TD", "Catalogue": "CAT", "Forecast": "FC",
-         "RetailEvent": "RE", "InventoryReport": "IR", "PurchaseReceipt": "PR", "DigitalAgreement": "DAG",
-         "DigitalCapability": "DCP", "ForwardingInstructions": "FI", "PackingList": "PL", "BillOfLading": "BL",
-         "Manifest": "MF", "CommonTransportationReport": "CTR", "Statement": "ST", "DeliveryNote": "DN",
-         "SelfBilledInvoice": "SBI", "SelfBilledCreditNote": "SBC", "ForecastRevision": "FR", "GoodsCertificate": "GC",
-         "WeightStatement": "WS"}
+# The kind of document in the number of a company whose numbering has a code (D24, D25): one code per kind
+CODES = {"Order": "PO", "OrderResponse": "OR", "OrderChange": "OC", "OrderCancellation": "OX", "Invoice": "INV",
+         "CreditNote": "CN", "DebitNote": "DBN", "DespatchAdvice": "DA", "ReceiptAdvice": "RA",
+         "RemittanceAdvice": "RM", "Reminder": "REM", "Statement": "ST", "TransportExecutionPlanRequest": "TR",
+         "TransportExecutionPlan": "TEP", "Waybill": "WB", "TransportationStatus": "TS",
+         "TransportationStatusRequest": "TSR", "TransportServiceDescriptionRequest": "TDR",
+         "TransportServiceDescription": "TSD", "TransportProgressStatusRequest": "TPR",
+         "TransportProgressStatus": "TPS", "GoodsItemItinerary": "GII", "ExportCustomsDeclaration": "EX",
+         "ImportCustomsDeclaration": "IM", "TransitCustomsDeclaration": "TD", "CustomsDeclaration": "CD",
+         "CertificateOfOrigin": "CO", "Application": "AP", "Shipment": "SH", "Consignment": "CS", "Catalogue": "CAT",
+         "CatalogueRequest": "CRQ", "CataloguePricingUpdate": "CPU", "CatalogueItemSpecificationUpdate": "CIS",
+         "CatalogueDeletion": "CDL", "Forecast": "FC", "ForecastRevision": "FR", "RetailEvent": "RE",
+         "InventoryReport": "IR", "PurchaseReceipt": "PR", "DigitalAgreement": "DAG", "DigitalCapability": "DCP",
+         "BusinessCard": "BC", "ForwardingInstructions": "FI", "PackingList": "PKL", "BillOfLading": "BL",
+         "Manifest": "MF", "CommonTransportationReport": "CTR", "DeliveryNote": "DN", "SelfBilledInvoice": "SBI",
+         "SelfBilledCreditNote": "SBC", "GoodsCertificate": "GC", "WeightStatement": "WS",
+         "FulfilmentCancellation": "FCN", "ApplicationResponse": "ARS", "DocumentStatusRequest": "DSR",
+         "DocumentStatus": "DST", "InvoiceStatusRequest": "ISR", "InvoiceStatusResponse": "ISP",
+         "UtilityStatement": "UST", "RequestForQuotation": "RFQ", "Quotation": "QT", "ItemInformationRequest": "IIR",
+         "TradeItemLocationProfile": "TIL", "ExceptionCriteria": "EXC", "ProductActivity": "PA",
+         "ExceptionNotification": "EXN", "InstructionForReturns": "IFR", "WorkReport": "WR",
+         "PriorInformationNotice": "PIN", "ContractNotice": "CNT", "CallForTenders": "CFT",
+         "ExpressionOfInterestRequest": "EOI", "ExpressionOfInterestResponse": "EOR",
+         "QualificationApplicationRequest": "QAQ", "QualificationApplicationResponse": "QAR",
+         "ProcurementStatusRequest": "PSQ", "ProcurementStatus": "PST", "UnsubscribeFromProcedureRequest": "UFQ",
+         "UnsubscribeFromProcedureResponse": "UFR", "TenderReceipt": "TRC", "Tender": "TND", "TenderWithdrawal": "TWD",
+         "TendererQualification": "TQ", "TendererQualificationResponse": "TQR", "ContractAwardNotice": "CAN",
+         "AwardedNotification": "AWN", "UnawardedNotification": "UAN", "TenderContract": "TC",
+         "BusinessInformation": "BI", "GuaranteeCertificate": "GTC", "GoodsItemPassport": "GIP",
+         "ProofOfReexportationRequest": "PRQ", "ProofOfReexportationReminder": "PRR", "ProofOfReexportation": "POR",
+         "WasteNotification": "WN", "WasteMovement": "WM", "ProfileExecution": "TX", "WebOrder": "WO",
+         "SalesOrder": "SO", "PaymentOrder": "PAY", "Carriage": "CR", "Job": "JOB", "Booking": "BK", "Payment": "PMT",
+         "Attestation": "ATT", "DeliveryOrder": "DEL", "ImmobilisationCertificate": "IMM", "FuelRecord": "FUE",
+         "Photograph": "PH", "Checklist": "CHK", "AssignmentNotice": "ASN", "Receipt": "RCP", "Claim": "CLM",
+         "CustomsRecord": "REC", "CustomsNotice": "NOT", "BudgetCommitment": "BCM", "WeighbridgeTicket": "WBT",
+         "RecoveryCertificate": "RCT", "DamageReport": "DMG", "PaymentAuthorisation": "PAU", "ClassingReport": "CLS"}
 
 
 def initials(pid):
-    """The prefix of a party's document numbers: its initials, or an airline's ICAO-style designator."""
+    """The prefix of a party's signature identifiers until the signatures stage (D6; D25: they then take the
+    company's one code). Every other identifier a party gives uses code()."""
     if PARTY[pid]["identity"].get("airline_icao"):
         return PARTY[pid]["identity"]["airline_icao"]
     words = [w for w in PARTY[pid]["identity"]["name"].replace("'", "").split() if w.lower() not in ("of", "and", "the")]
     return "".join(w[0] for w in words)[:4].upper()
+
+
+def code(pid):
+    """A company's one code (D25, world/parties.json numbering.code): chosen by the company and unique in the
+    world; in its document numbers where its style has a prefix, and in the identifiers it gives that are not
+    document numbers."""
+    return PARTY[pid]["numbering"]["code"]
+
+
+# ---------------------------------------------------------------- document numbers (D24, D25, C74, C75)
+# Two passes (tools/build_examples.py): the first builds every flow with provisional numbers and records, for each
+# number a flow gives, its issuer, its kind and the moment it is first issued; numbering() turns that into the
+# issuers' own numbers, which the second pass uses.
+REGISTRY = {}           # first pass: (flow, key) -> {"sender", "kind", "provisional"}
+NUMBER_TABLE = None     # second pass: (flow, key) -> the issuer's number
+NUMBER_INFO = {}        # second pass: number -> (issuer whose series it is in, series, kind, flow, key)
+STATUTORY_KINDS = ("Invoice", "CreditNote")   # numbered within the year by Urvania's rules for value added tax
+RUNNING = ("range", "awb", "bl")              # styles that run on from year to year; the others restart each year
+
+
+def numbering_owner(pid):
+    """The party whose series a party's numbers are in: itself, or the company it is a branch of."""
+    return PARTY[pid]["numbering"].get("series_of", pid)
+
+
+def series_of(sender, kind):
+    """(series, format) of the numbers a party gives a kind of document (D24, D25); the series is (owner, kind)."""
+    owner = numbering_owner(sender)
+    n = PARTY[owner]["numbering"]
+    if n["style"] == "none":
+        raise SystemExit(f"{sender} numbers no documents: whoever runs the system gives the number (D25)")
+    if PARTY[owner]["c"] == "XU" and kind in STATUTORY_KINDS:
+        return (owner, "statutory"), "statutory"
+    if n["style"] == "file" and kind not in n.get("kinds", {}):    # a public body's register of its files
+        return (owner, "register"), "file"
+    return (owner, kind), n.get("formats", {}).get(kind, n["style"])
+
+
+def yearly_volume(owner, kind, fmt):
+    """How many numbers of the series the issuer gives in a year (world/parties.json numbering)."""
+    rules, n = WORLD["numbering"], PARTY[owner]["numbering"]
+    if fmt == "file" and kind not in n.get("kinds", {}):
+        return n["volume"]                  # the files a public body registers in a year
+    kinds = STATUTORY_KINDS if fmt == "statutory" else (kind,)
+    return sum(n.get("volumes", {}).get(k, n["volume"] * rules["factors"].get(k, rules["default_factor"]))
+               for k in kinds)
+
+
+def format_number(owner, kind, fmt, k, year):
+    """The k-th number of a series, in the issuer's style."""
+    n = PARTY[owner]["numbering"]
+    if fmt == "statutory":
+        return f"{year}/{k:04d}"
+    if fmt == "code":
+        return f"{n['code']}-{CODES[kind]}-{year % 100:02d}-{k:04d}"
+    if fmt == "year":
+        return f"{k}/{year}" if n.get("format") == "n/yyyy" else f"{year % 100:02d}-{k:04d}"
+    if fmt == "file":
+        kc = n.get("kinds", {}).get(kind)
+        return f"{n['code']}/{kc}/{year}/{k:04d}" if kc else f"{n['code']}/{year}/{k:04d}"
+    if fmt == "range":
+        lead = n.get("ranges", {}).get(kind) or WORLD["numbering"]["range_leads"].get(kind)
+        if not lead:
+            raise SystemExit(f"{owner}: no number range for {kind} (world/parties.json numbering.range_leads)")
+        return f"{lead}{k:0{10 - len(lead)}d}"
+    if fmt == "awb":            # the airline's designator, a seven-digit serial and its check digit (modulo 7)
+        return f"{n['code']}-{k:07d}{k % 7}"
+    if fmt == "bl":             # the shipping line's code and a running number
+        return f"{n['line_code']}{k:09d}"
+    raise SystemExit(f"{owner}: unknown numbering style {fmt}")
+
+
+def number_value(owner, kind, fmt, number):
+    """The running value of a number of a series, for the check that numbers rise (check_numbering)."""
+    digits = re.findall(r"\d+", number)
+    if fmt == "awb":
+        return int(digits[-1][:-1])
+    if fmt == "year" and PARTY[owner]["numbering"].get("format") == "n/yyyy":
+        return int(digits[0])
+    return int(digits[-1])
+
+
+def numbering(registrations):
+    """The issuers' numbers (D24). registrations: [(flow, key, sender, kind, moment, fixed)], the moment an aware datetime,
+    when the number is first issued; fixed a number of its own form, or None. A number follows from its moment and the issuer's yearly volume of the kind:
+    the k-th of the year, or since the issuer's system started for a running range; a later number of a series is
+    always higher than an earlier one, and no number is given twice in the world. Returns {(flow, key): number}."""
+    table, used, last = {}, set(), {}
+    for flow_id, key, sender, kind, when, fixed in sorted(registrations, key=lambda r: (r[4], r[0], r[1])):
+        if fixed:                       # a number of its own form (a utility bill: the account and the period)
+            if fixed in used:
+                raise SystemExit(f"{flow_id} {key}: the number {fixed} is given twice")
+            table[(flow_id, key)] = fixed
+            used.add(fixed)
+            continue
+        series, fmt = series_of(sender, kind)
+        owner, year = series[0], when.year
+        start = datetime.datetime(year, 1, 1, tzinfo=when.tzinfo)
+        days = (datetime.datetime(year + 1, 1, 1, tzinfo=when.tzinfo) - start).days
+        frac = (when - start).total_seconds() / 86400 / days
+        run = (series, 0 if fmt in RUNNING else year)
+        if fmt in RUNNING:
+            frac += year - PARTY[owner]["numbering"].get("since", year)
+        k = max(math.floor(yearly_volume(owner, kind, fmt) * frac) + 1, last.get(run, 0) + 1)
+        while format_number(owner, kind, fmt, k, year) in used:
+            k += 1
+        last[run] = k
+        table[(flow_id, key)] = format_number(owner, kind, fmt, k, year)
+        used.add(table[(flow_id, key)])
+    return table
+
+
+CITED_NAMES = {}        # second pass: the number of a document outside the examples -> its name in documents.json cited
+
+
+def use_numbers(table):
+    """Second pass: every flow gives the issuers' numbers of the first pass; a document outside the examples
+    (world/documents.json cited) that an issuer numbers is found under its number."""
+    global NUMBER_TABLE
+    NUMBER_TABLE = table
+    for name, e in WORLD["cited"].items():
+        key = tuple(e["number"]) if "number" in e else ("cited", name) if "issuer" in e else None
+        if key in table:
+            CITED_NAMES[table[key]] = name
+
+
+def cited_number(name):
+    """The number of a document outside the examples that its issuer numbers (world/documents.json cited, with
+    its issuer and kind): placed in the issuer's series at the moment the first example quotes it."""
+    e = WORLD["cited"][name]
+    return CITED.number(name, e["issuer"], e["kind"])
 
 
 class Flow:
@@ -46,19 +206,36 @@ class Flow:
     def __init__(self, flow_id, start, deal=None, buyer=None):
         self.id, self.start, self.deal = flow_id, datetime.date.fromisoformat(start), deal or []
         self.buyer = buyer         # the buyer of the deal, where the seller has a price of its own for it (D14)
-        self.base = 100 + zlib.crc32(flow_id.encode()) % 800      # a stable sequence per flow
+        self.base = 100 + zlib.crc32(flow_id.encode()) % 800      # a stable range per flow (castings; first pass)
         self.numbers = {}          # document numbers, and amounts and dates other documents refer to
-        self.count = 0             # the sequence counts document numbers only
+        self.count = 0             # the first pass counts its provisional numbers
 
-    def number(self, key, sender, doc_type):
-        """The document number of a document, the same wherever the document is referred to."""
+    def number(self, key, sender, doc_type, fixed=None):
+        """The number a party gives a document (or a shipment, a consignment, a collaboration), the same wherever
+        it is referred to: the issuer's own number, from the first pass (D24). fixed: a number whose form its trade
+        sets, such as a utility bill's customer account and period (D25)."""
         if key not in self.numbers:
-            self.numbers[key] = f"{initials(sender)}-{CODES.get(doc_type, 'DOC')}-26-{self.base + self.count:04d}"
-            self.count += 1
+            if doc_type not in CODES:
+                raise SystemExit(f"{self.id} {key}: no kind code for {doc_type} (tools/examples_kit.py CODES)")
+            if NUMBER_TABLE is None:        # first pass: a provisional number, unique in the run
+                self.numbers[key] = f"{initials(sender)}-{CODES[doc_type]}-{self.id.upper()}-{self.count:04d}"
+                self.count += 1
+                REGISTRY[(self.id, key)] = {"sender": sender, "kind": doc_type, "provisional": self.numbers[key],
+                                            "start": self.start, "fixed": fixed}
+            else:
+                if (self.id, key) not in NUMBER_TABLE:
+                    raise SystemExit(f"{self.id} {key}: a number the first pass did not give")
+                self.numbers[key] = NUMBER_TABLE[(self.id, key)]
+                series = (numbering_owner(sender), "account") if fixed else series_of(sender, doc_type)[0]
+                NUMBER_INFO[self.numbers[key]] = (series[0], series[1], doc_type, self.id, key)
         return self.numbers[key]
 
     def date(self, day):
         return (self.start + datetime.timedelta(days=day)).isoformat()
+
+
+COLLABORATIONS = Flow("collaborations", "2026-01-01")   # the identifiers of the collaborations (D26)
+CITED = Flow("cited", "2026-01-01")     # the numbers of documents outside the examples (cited_number)
 
 
 # ---------------------------------------------------------------- taxes, by the rules of the seller's country
@@ -451,7 +628,9 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
     base = sum(r[2] for r in rows)
     tax, total = tax_total(rows, cur)
     out = {
-        "ID": V(flow.number(key, buyer, "Order"), "The buyer's order number."),
+        "ID": V(flow.number(key, buyer, "Order"), "The buyer's order number.") if PARTY[buyer]["numbering"]["style"] != "none"
+        else V(flow.number(key, seller, "WebOrder"), "The shop's number for the order: the shopper orders in the "
+                                                     "shop's webshop, whose system gives the number."),
         "IssueDate": V(flow.date(day), why_date),
         "OrderTypeCode": V("220", "UN/EDIFACT 1001 code 220: order."),
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency, in which the seller's prices are"
@@ -887,14 +1066,15 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
     if credit:
         paid -= credit[2]
     out = {
-        "ID": V(flow.number("remittance", payer, "RemittanceAdvice"), "The payer's remittance number."),
+        "ID": V(flow.number("remittance" if key == "invoice" else f"remittance-{key}", payer,
+                                "RemittanceAdvice"), "The payer's remittance number."),
         "IssueDate": V(flow.date(day), why),
         "DocumentCurrencyCode": currency_line(cur, "the currency of the invoice paid"),
         "Note": V("Payment of the invoice below.", "What the advice is for."),
         "TotalDebitAmount": amount(total, cur, "The invoices paid."),
         "TotalCreditAmount": amount(total - paid, cur, "Credits taken: the settlement discount." if discount else
                                     "The credit note deducted." if credit else "No credits taken."),
-        "PaymentOrderReference": V(f"{initials(payer)}-PAY-26-{flow.base:04d}", "The payment order the payer gave "
+        "PaymentOrderReference": V(flow.number(f"payment-{key}", payer, "PaymentOrder"), "The payment order the payer gave "
                                                                                 "its bank."),
         "InvoicingPartyReference": V(rf_reference(flow.numbers[key]), "The reference the invoicing party asked to "
                                                                       "quote."),
@@ -906,7 +1086,7 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
                                      "The amount transferred: the payable amount of the invoice."),
         "PaymentMeans": {
             "PaymentMeansCode": V("30", "UN/EDIFACT 4461 code 30: credit transfer.", listID="UN/EDIFACT EDED 4461"),
-            "InstructionID": V(f"{initials(payer)}-PAY-26-{flow.base:04d}", "The payer's own number for the payment "
+            "InstructionID": V(flow.number(f"payment-{key}", payer, "PaymentOrder"), "The payer's own number for the payment "
                                                                             "order it gave its bank."),
             "PaymentID": V(rf_reference(flow.numbers[key]), "The creditor reference from the invoice, quoted so the "
                                                            "payee can match the payment automatically."),
@@ -1046,7 +1226,7 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
             "Note": V(leg["why"], "The transport asked for."),
             "TransportUserRemarks": V("Please confirm by return.", "The user's remark."),
             "BillToParty": party_short(doc["from"]),
-            "TransportContract": {"ID": V(f"{initials(doc['from'])}-{initials(doc['to'])}-FW-2026", "The framework "
+            "TransportContract": {"ID": V(f"{code(doc['from'])}-{code(doc['to'])}-FW-2026", "The framework "
                                                                                                   "agreement with "
                                                                                                   "the carrier.")},
             "TransportServiceProviderResponseDeadlinePeriod": {"EndDate": V(flow.date(day + 1), "An answer is "
@@ -1078,7 +1258,7 @@ def tep(flow, n, doc, day, why, start_day, weight):
             "BillToParty": party_short(doc["to"]),
             "Signature": {"ID": V(f"{initials(doc['from'])}-SIG-{flow.base}", "The carrier's seal on the plan."),
                           "SignatoryParty": party_short(doc["from"])},
-            "TransportContract": {"ID": V(f"{initials(doc['to'])}-{initials(doc['from'])}-FW-2026", "The framework "
+            "TransportContract": {"ID": V(f"{code(doc['to'])}-{code(doc['from'])}-FW-2026", "The framework "
                                                                                                   "agreement."),
                                   "ContractType": V("Framework transport agreement", "Its kind.")},
             "TransportUserResponseRequiredPeriod": {"EndDate": V(flow.date(day + 1), "The user may object until "
@@ -1143,7 +1323,7 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
     kind, kind_name = waybill_kind(flow, carrier)
     number = flow.number("waybill", doc["from"], "Waybill")
     flow.numbers[f"waybill-day-{carrier}"] = day          # a freight term may count from it (PLAN_PAYMENT)
-    flow.numbers["carrier-ref"] = f"{initials(carrier)}-{kind}-26-{flow.base:04d}"   # quoted in later documents
+    flow.numbers["carrier-ref"] = flow.number(f"carrier-ref-{carrier}", carrier, "Carriage")  # quoted later
     out = {"ID": V(number, "The consignment note number."),
            "CarrierAssignedID": V(flow.numbers["carrier-ref"], "The carrier's own number for the carriage."),
            "VersionID": V("1", "The original, not a corrected version."),
@@ -1571,7 +1751,7 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
     p = price_block(iid, buyer=buyer)
     p["ValidityPeriod"] = {"StartDate": V(flow.date(day), "The price applies from the catalogue's issue date."),
                            "EndDate": V(flow.date(day + validity_days), "And until the catalogue ends.")}
-    p["PriceList"] = {"ID": V(f"{initials(doc['from'])}-PL-{flow.date(day)[:4]}",
+    p["PriceList"] = {"ID": V(f"{code(doc['from'])}-PRL-{flow.date(day)[:4]}",
                               "The seller's price list this price is taken from."),
                       "StatusCode": V("ORIGINAL", "The first issue of the price list: UBL names original, copy, "
                                                   "revision or cancellation here, not whether the list is in force"
@@ -2157,4 +2337,4 @@ def unit_id(owner, flow, k, what="The number on the pallet label"):
                  f"structure of ISO/IEC 15459, which {name} gives every unit it makes up: the Codana Identification "
                  "Agency's issuing agency code KXU, its company number, a serial number and a check digit. The bar "
                  "code on the label adds the data identifier J, which the document leaves out.", schemeID="ISO 15459")
-    return V(f"{initials(owner)}-{flow.date(0)[2:4]}-{k:03d}", f"{what}: {name}'s own number for the unit.")
+    return V(f"{code(owner)}-{flow.date(0)[2:4]}-{k:03d}", f"{what}: {name}'s own number for the unit.")

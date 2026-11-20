@@ -3,9 +3,9 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-OR-26-0128</cbc:ID>
-  <cbc:SalesOrderID>LD-SO-26-0123</cbc:SalesOrderID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-OR-26-0978</cbc:ID>
+  <cbc:SalesOrderID>LMW-SO-26-0049</cbc:SalesOrderID>
   <cbc:UUID>df6ccf81-d94b-523e-8f0a-e86231966bf9</cbc:UUID>
   <cbc:IssueDate>2026-05-08</cbc:IssueDate>
   <cbc:IssueTime>09:30:00-01:00</cbc:IssueTime>
@@ -19,10 +19,10 @@
   <cbc:CustomerReference>Harbour parks Selanu</cbc:CustomerReference>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:OriginatorDocumentReference>
-    <cbc:ID>PS-REQ-26-0031</cbc:ID>
+    <cbc:ID>POS-REQ-26-0031</cbc:ID>
     <cbc:DocumentType>Request</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:SellerSupplierParty>
@@ -154,8 +154,8 @@
     <cbc:PaymentDueDate>2026-05-11</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF41LDSO260123</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF41LDSO260123</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF15LMWSO260049</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF15LMWSO260049</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB19BLUM38712001466206</cbc:ID>
@@ -164,7 +164,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Deposit on sales order LD-SO-26-0123</cbc:PaymentNote>
+      <cbc:PaymentNote>Deposit on sales order LMW-SO-26-0049</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -210,7 +210,7 @@
     <cbc:InstallmentDueDate>2026-06-29</cbc:InstallmentDueDate>
   </cac:PaymentTerms>
   <cac:TransactionConditions>
-    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:ID>LMW-TC-01</cbc:ID>
     <cbc:Description>Sold to trade customers only.</cbc:Description>
   </cac:TransactionConditions>
   <cac:DestinationCountry>
@@ -239,7 +239,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/1</cbc:SalesOrderID>
+      <cbc:SalesOrderID>LMW-SO-26-0049/1</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">49920.00</cbc:LineExtensionAmount>
@@ -277,7 +277,7 @@
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
       <cac:WarrantyValidityPeriod>
@@ -299,7 +299,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>2</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/2</cbc:SalesOrderID>
+      <cbc:SalesOrderID>LMW-SO-26-0049/2</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">8</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">4160.00</cbc:LineExtensionAmount>
@@ -321,7 +321,7 @@
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
       <cac:WarrantyValidityPeriod>
@@ -343,7 +343,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>3</cbc:ID>
-      <cbc:SalesOrderID>LD-SO-26-0123/3</cbc:SalesOrderID>
+      <cbc:SalesOrderID>LMW-SO-26-0049/3</cbc:SalesOrderID>
       <cbc:Note>Confirmed as ordered.</cbc:Note>
       <cbc:Quantity unitCode="EA">12</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XBL">816.00</cbc:LineExtensionAmount>
@@ -365,7 +365,7 @@
       <cac:Item>
         <cbc:Name>Bench side frame casting</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
+          <cbc:ID>LMW-10443</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
       <cac:WarrantyValidityPeriod>

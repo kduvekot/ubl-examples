@@ -15,10 +15,10 @@ The island's cargo terminal reports the consignment arrived, with the temperatur
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SAC-TS-26-0338**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-3169**  
+  The collaboration this document belongs to: the air carriage Bayforth books with Kelaro Air Cargo. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
+- `ID` = **POS-TS-26-10880**  
   The sender's status report number.
 - `UUID` = **295bfd9c-1615-5072-97e3-c923aa2471ed**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,7 +32,7 @@ The island's cargo terminal reports the consignment arrived, with the temperatur
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
-- `ShippingOrderID` = **QPD-FI-26-0329**  
+- `ShippingOrderID` = **QLM-FI-26-2388**  
   The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
   What the receiver should do, with the slot it is about.
@@ -43,7 +43,7 @@ The island's cargo terminal reports the consignment arrived, with the temperatur
 
 Inside `Consignment`:
 
-- `ID` = **QPD-CS-26-0330**  
+- `ID` = **QLM-CS-26-3980**  
   The consignment the report is about.
 - `ConsigneeParty/PartyIdentification/ID` = **GOV-317** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   The party's preferred identifier: its number in the Government list of public bodies of Lisavu; as Selanu General Hospital gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -239,10 +239,10 @@ Inside `TransportEvent`:
 
 Inside `DocumentReference`:
 
-- `ID` = **KXL-WB-26-0337**  
+- `ID` = **KXL-00698121**  
   The transport document of the consignment.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: KXL-WB-26-0337 is the example medicines/11, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: KXL-00698121 is the example medicines/11, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Signature
 
@@ -347,19 +347,19 @@ Inside `StatusPeriod`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SAC-TS-26-0338</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-3169</cbc:ProfileExecutionID>
+  <cbc:ID>POS-TS-26-10880</cbc:ID>
   <cbc:UUID>295bfd9c-1615-5072-97e3-c923aa2471ed</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>11:05:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Consignment arrived on KXL207; the cold chain held at 2 to 8 °C.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>QPD-FI-26-0329</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>QLM-FI-26-2388</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>QPD-CS-26-0330</cbc:ID>
+    <cbc:ID>QLM-CS-26-3980</cbc:ID>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
@@ -519,7 +519,7 @@ Inside `StatusPeriod`:
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KXL-WB-26-0337</cbc:ID>
+    <cbc:ID>KXL-00698121</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

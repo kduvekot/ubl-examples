@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>ST-DOC-26-0324</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
+  <cbc:ID>STL-UST-26-75398</cbc:ID>
   <cbc:UUID>7b60d4fc-8fd7-5124-9e01-cfc520caed86</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:37:00+00:00</cbc:IssueTime>
@@ -15,11 +15,11 @@
   <cbc:AccountingCostCode>700</cbc:AccountingCostCode>
   <cbc:AccountingCost>Telephone and data</cbc:AccountingCost>
   <cac:ParentDocumentReference>
-    <cbc:ID>ST-INV-26-0323</cbc:ID>
+    <cbc:ID>STL-C-1077-2603</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>ST-TARIFF-2026</cbc:ID>
+    <cbc:ID>STL-TARIFF-2026</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:DocumentTypeCode">TARIFF</cbc:DocumentTypeCode>
     <cbc:DocumentDescription>Prices per unit and the terms of supply.</cbc:DocumentDescription>
   </cac:AdditionalDocumentReference>
@@ -106,13 +106,13 @@
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>ST-1077-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>STL-1077-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:TotalMeteredQuantity unitCode="E34">35</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>ST-CP-1077</cbc:ID>
+      <cbc:ID>STL-CP-1077</cbc:ID>
       <cbc:Description>Office of Velumi Trading, Selanu</cbc:Description>
-      <cbc:SubscriberID>ST-CU-20418</cbc:SubscriberID>
+      <cbc:SubscriberID>STL-CU-20418</cbc:SubscriberID>
       <cbc:SubscriberType>Business</cbc:SubscriberType>
       <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">BUS</cbc:SubscriberTypeCode>
       <cac:Address>
@@ -152,7 +152,7 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>1</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1850</cbc:PhoneNumber>
-          <cbc:Description>Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 1 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -204,7 +204,7 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>2</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1851</cbc:PhoneNumber>
-          <cbc:Description>Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 2 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -241,7 +241,7 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>3</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1852</cbc:PhoneNumber>
-          <cbc:Description>Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 3 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -257,7 +257,7 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>4</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1853</cbc:PhoneNumber>
-          <cbc:Description>Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 4 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -273,7 +273,7 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>5</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1854</cbc:PhoneNumber>
-          <cbc:Description>Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 5 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -289,7 +289,7 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>6</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1855</cbc:PhoneNumber>
-          <cbc:Description>Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.</cbc:Description>
+          <cbc:Description>Business line 6 of the six of subscription STL-L-BUS6, with calls on the island included.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">21.180</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">21.180</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>
@@ -305,7 +305,7 @@
         <cac:TelecommunicationsSupplyLine>
           <cbc:ID>7</cbc:ID>
           <cbc:PhoneNumber>+999 3 721 1856</cbc:PhoneNumber>
-          <cbc:Description>Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.</cbc:Description>
+          <cbc:Description>Mobile data pool STL-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.</cbc:Description>
           <cbc:LineExtensionAmount currencyID="XLC">19.144</cbc:LineExtensionAmount>
           <cbc:TaxInclusiveLineExtensionAmount currencyID="XLC">19.144</cbc:TaxInclusiveLineExtensionAmount>
           <cac:TelecommunicationsService>

@@ -15,10 +15,8 @@ The manufacturer releases the slats from inward processing into free circulation
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WOOD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-IM-26-0633**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **7700008586**  
   The importer's declaration number.
 - `UUID` = **5121b08c-34cb-5860-af6c-8ad49382d537**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -226,25 +224,25 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **TWM-SH-26-0631**  
+- `ID` = **26-0062**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **24** (unitCode `EA`)  
   The pallets the goods travel on.
 - `DeclaredCustomsValueAmount` = **2424000** (currencyID `XUF`)  
   The total customs value of the two goods items: the same tariff subheading, the same procedure and the same origin, from two entries.
 - `GoodsItem/ID` = **1**  
-  The goods item of the entry TWM-IM-26-0413: kiln charge 1, from the first load of blanks.
+  The goods item of the entry 26-0003: kiln charge 1, from the first load of blanks.
 - `GoodsItem/Description` = **Bench slat 1800, bundle of 50**  
   What the goods are, in words.
 - `GoodsItem/DeclaredCustomsValueAmount` = **1212000** (currencyID `XUF`)  
-  At the importer's request the customs value of the blanks as they were entered under TWM-IM-26-0413: their value with the carriage to the border, on the day the entry was accepted.
+  At the importer's request the customs value of the blanks as they were entered under 26-0003: their value with the carriage to the border, on the day the entry was accepted.
 - `GoodsItem/GrossWeightMeasure` = **10512** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **48** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty. The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
-- `GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `GoodsItem/Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
@@ -265,18 +263,18 @@ Inside `Shipment`:
 - `GoodsItem/Item/ClassifiedTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code VAT: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/ID` = **2**  
-  The goods item of the entry TWM-IM-26-0414: kiln charge 2, from the second load of blanks.
+  The goods item of the entry 26-0013: kiln charge 2, from the second load of blanks.
 - `GoodsItem/Description` = **Bench slat 1800, bundle of 50**  
   What the goods are, in words.
 - `GoodsItem/DeclaredCustomsValueAmount` = **1212000** (currencyID `XUF`)  
-  At the importer's request the customs value of the blanks as they were entered under TWM-IM-26-0414: their value with the carriage to the border, on the day the entry was accepted.
+  At the importer's request the customs value of the blanks as they were entered under 26-0013: their value with the carriage to the border, on the day the entry was accepted.
 - `GoodsItem/GrossWeightMeasure` = **10512** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `GoodsItem/Quantity` = **48** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty. The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
-- `GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `GoodsItem/Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `GoodsItem/Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
@@ -301,7 +299,7 @@ Inside `Shipment`:
 
 Inside `PreviousCustomsDeclaration`:
 
-- `ID` = **TWM-IM-26-0413**  
+- `ID` = **26-0003**  
   The entry into inward processing of the first load of blanks, which this release discharges.
 - `FunctionCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   The kind of the previous declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
@@ -310,7 +308,7 @@ Inside `PreviousCustomsDeclaration`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TWM-IM-26-0414**  
+- `ID` = **26-0013**  
   The entry into inward processing of the second load of blanks, a previous customs declaration of the goods beside the one above, which this release discharges too.
 - `DocumentTypeCode` = **ImportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to, the modification plant's entry into inward processing of the second load of ash blanks, on 20 January, a document outside the examples (cited). The code is from the Trade Accord's UBL document type list: ImportCustomsDeclaration = Import Customs Declaration.
@@ -334,8 +332,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-IM-26-0633</cbc:ID>
+  <cbc:ID>7700008586</cbc:ID>
   <cbc:UUID>5121b08c-34cb-5860-af6c-8ad49382d537</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:IssueTime>08:15:00-01:00</cbc:IssueTime>
@@ -493,7 +490,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>TWM-SH-26-0631</cbc:ID>
+    <cbc:ID>26-0062</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">24</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:DeclaredCustomsValueAmount currencyID="XUF">2424000</cbc:DeclaredCustomsValueAmount>
     <cac:GoodsItem>
@@ -504,7 +501,7 @@ Inside `Signature`:
       <cbc:Quantity unitCode="EA">48</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
-        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -532,7 +529,7 @@ Inside `Signature`:
       <cbc:Quantity unitCode="EA">48</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
-        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+        <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
         <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -554,11 +551,11 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:PreviousCustomsDeclaration>
-    <cbc:ID>TWM-IM-26-0413</cbc:ID>
+    <cbc:ID>26-0003</cbc:ID>
     <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:FunctionCode>
   </cac:PreviousCustomsDeclaration>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TWM-IM-26-0414</cbc:ID>
+    <cbc:ID>26-0013</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ImportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

@@ -15,10 +15,10 @@ The rail carrier confirms the train, the wagons and the schedule; this is the ag
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-execution-plan:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ORE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FRC-TEP-26-0307**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043010**  
+  The collaboration this document belongs to: the ore train Valdara books with Ferrano Rail Cargo, from its request to the carrier's invoice. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **9500054926**  
   The carrier's number for the agreed plan.
 - `VersionID` = **1**  
   The first version of the plan.
@@ -197,14 +197,14 @@ Inside `Signature`:
 
 Inside `TransportExecutionPlanRequestDocumentReference`:
 
-- `ID` = **VI-TR-26-0305**  
+- `ID` = **7000025806**  
   The request this plan answers.
 
 ### Transport Execution Plan Document Reference
 
 Inside `TransportExecutionPlanDocumentReference`:
 
-- `ID` = **FRC-TEP-26-0001**  
+- `ID` = **9500054909**  
   The standing plan this plan updates (not shown).
 
 ### Transport Service Description Document Reference
@@ -367,7 +367,7 @@ Inside `TransportExecutionTerms`:
 
 Inside `Consignment`:
 
-- `ID` = **VI-CS-26-0306**  
+- `ID` = **7300043010**  
   The consignment of the request.
 - `SummaryDescription` = **One train of 30 wagons, about 1,800 t of lump iron ore.**  
   What is to be carried, before the wagons are loaded and weighed.
@@ -432,8 +432,8 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-TEP-26-0307</cbc:ID>
+  <cbc:ProfileExecutionID>9900043010</cbc:ProfileExecutionID>
+  <cbc:ID>9500054926</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>c8bf0a9d-d411-54f7-aeb2-97d4e2a86a5c</cbc:UUID>
   <cbc:IssueDate>2026-03-04</cbc:IssueDate>
@@ -566,10 +566,10 @@ Inside `Consignment`:
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:TransportExecutionPlanRequestDocumentReference>
-    <cbc:ID>VI-TR-26-0305</cbc:ID>
+    <cbc:ID>7000025806</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportExecutionPlanDocumentReference>
-    <cbc:ID>FRC-TEP-26-0001</cbc:ID>
+    <cbc:ID>9500054909</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:TransportServiceDescriptionDocumentReference>
     <cbc:ID>FRC-TSD-26</cbc:ID>
@@ -683,7 +683,7 @@ Inside `Consignment`:
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>
-    <cbc:ID>VI-CS-26-0306</cbc:ID>
+    <cbc:ID>7300043010</cbc:ID>
     <cbc:SummaryDescription>One train of 30 wagons, about 1,800 t of lump iron ore.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">1800000</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>

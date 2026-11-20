@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-RA-26-0224</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0702</cbc:ID>
   <cbc:UUID>7b7a0126-4c5e-5e7b-b42d-9f93027b3319</cbc:UUID>
   <cbc:IssueDate>2026-04-13</cbc:IssueDate>
   <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
@@ -13,10 +13,10 @@
   <cbc:Note>Release 1 accepted: 39 benches installed and accepted; one bench, damaged during installation on 2 April, rejected, with no replacement in this release. The 30 days of payment run from today.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
+    <cbc:ID>PWD/2026/0567</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>CL-DA-26-0217</cbc:ID>
+    <cbc:ID>CAS-DA-26-1459</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
@@ -138,7 +138,7 @@
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>CL-DA-26-0217</cbc:ID>
+        <cbc:ID>CAS-DA-26-1459</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>

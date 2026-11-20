@@ -15,10 +15,10 @@ Under the self-billing agreement the ginnery writes the farm's invoice from the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:self-billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Self-billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCG-SBI-26-0194**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **SCG-TX-26-0024**  
+  The collaboration this document belongs to: the ginnery's purchase of the farm's seed cotton. Selanu Cotton Ginnery started it and gave it this identifier, which every document of it repeats.
+- `ID` = **SCG-SBI-26-0190**  
   The number the customer gives the self-billed document, under the self-billing agreement.
 - `UUID` = **6d8069bb-fe8b-5c9f-bd12-45c38c2363b6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -65,7 +65,7 @@ Inside `OrderReference`:
 
 Inside `BillingReference`:
 
-- `SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0191**  
+- `SelfBilledInvoiceDocumentReference/ID` = **SCG-SBI-26-0024**  
   The prepayment self-billed invoice of the season advance, deducted here as the prepaid amount.
 - `SelfBilledInvoiceDocumentReference/IssueDate` = **2026-01-13**  
   Its issue date.
@@ -81,7 +81,7 @@ Inside `ContractDocumentReference`:
 
 Inside `DeliveryNoteDocumentReference`:
 
-- `ID` = **LCF-DN-26-0193**  
+- `ID` = **1/2026**  
   The farm's delivery note.
 
 ### Additional Document Reference
@@ -369,9 +369,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **CORAL-NET**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF77SCGSBI260194**  
+- `InstructionNote` = **Quote RF88SCGSBI260190**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF77SCGSBI260194** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF88SCGSBI260190** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XL67BSEL0020004817534** (schemeID `urn:ubl-examples:world:account`)  
   The supplier's account, where the customer pays what it billed itself. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -383,7 +383,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
-- `PayeeFinancialAccount/PaymentNote` = **Self-billed invoice SCG-SBI-26-0194**  
+- `PayeeFinancialAccount/PaymentNote` = **Self-billed invoice SCG-SBI-26-0190**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **002** (schemeID `urn:ubl-examples:world:XL:bank-branch`)  
   The branch that keeps the account, by its national code: the branch number of a Lisavan bank (three digits). The account number holds it.
@@ -580,10 +580,10 @@ Inside `InvoiceLine`:
   The line of the delivery note the invoice line bills.
 - `Delivery/DeliveryNoteLineReference/UUID` = **6d32dd14-dac3-5c83-91e2-8c40cef6875b**  
   A universally unique identifier of the line, derived from the document and the line number.
-- `Delivery/DeliveryNoteLineReference/DocumentReference/ID` = **LCF-DN-26-0193**  
+- `Delivery/DeliveryNoteLineReference/DocumentReference/ID` = **1/2026**  
   The farm's delivery note.
 - `Delivery/DeliveryNoteLineReference/DocumentReference/DocumentTypeCode` = **DeliveryNote** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LCF-DN-26-0193 is the example cotton/03, a DeliveryNote; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DeliveryNote = Delivery Note.
+  The kind of document referred to: 1/2026 is the example cotton/03, a DeliveryNote; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DeliveryNote = Delivery Note.
 - `Item/Description` = **Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language.
 - `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.** (languageID `en-XL`)  
@@ -607,8 +607,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:self-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-SBI-26-0194</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-SBI-26-0190</cbc:ID>
   <cbc:UUID>6d8069bb-fe8b-5c9f-bd12-45c38c2363b6</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>15:50:00+00:00</cbc:IssueTime>
@@ -630,7 +630,7 @@ Inside `InvoiceLine`:
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:SelfBilledInvoiceDocumentReference>
-      <cbc:ID>SCG-SBI-26-0191</cbc:ID>
+      <cbc:ID>SCG-SBI-26-0024</cbc:ID>
       <cbc:IssueDate>2026-01-13</cbc:IssueDate>
     </cac:SelfBilledInvoiceDocumentReference>
   </cac:BillingReference>
@@ -638,7 +638,7 @@ Inside `InvoiceLine`:
     <cbc:ID>SCG-SEASON-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:DeliveryNoteDocumentReference>
-    <cbc:ID>LCF-DN-26-0193</cbc:ID>
+    <cbc:ID>1/2026</cbc:ID>
   </cac:DeliveryNoteDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>SCG-WB-26-0311</cbc:ID>
@@ -864,15 +864,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>CORAL-NET</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF77SCGSBI260194</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF77SCGSBI260194</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF88SCGSBI260190</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF88SCGSBI260190</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL67BSEL0020004817534</cbc:ID>
       <cbc:Name>Lisavu Cotton Farm</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
-      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0194</cbc:PaymentNote>
+      <cbc:PaymentNote>Self-billed invoice SCG-SBI-26-0190</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">002</cbc:ID>
         <cbc:Name>Market branch</cbc:Name>
@@ -1007,7 +1007,7 @@ Inside `InvoiceLine`:
         <cbc:LineID>1</cbc:LineID>
         <cbc:UUID>6d32dd14-dac3-5c83-91e2-8c40cef6875b</cbc:UUID>
         <cac:DocumentReference>
-          <cbc:ID>LCF-DN-26-0193</cbc:ID>
+          <cbc:ID>1/2026</cbc:ID>
           <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DeliveryNote</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DeliveryNoteLineReference>

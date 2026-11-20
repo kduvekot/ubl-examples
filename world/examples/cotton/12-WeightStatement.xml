@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:weight-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-WS-26-0205</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2410</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-WS-26-0013</cbc:ID>
   <cbc:UUID>43b82e91-f4de-52c1-ac47-945443cd1b55</cbc:UUID>
   <cbc:IssueDate>2026-05-06</cbc:IssueDate>
   <cbc:IssueTime>15:19:00+00:00</cbc:IssueTime>
@@ -117,7 +117,7 @@
     </cac:PartyName>
   </cac:ShipperParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:TransportHandlingUnit>
       <cbc:TotalPackageQuantity unitCode="EA">27</cbc:TotalPackageQuantity>
       <cac:TransportEquipment>

@@ -15,14 +15,14 @@ The design team led by the furniture maker, with the engineering firm as its oth
 - `CustomizationID` = **urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Qualification application"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CONTEST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0637**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PROM-DC**  
+  The collaboration this document belongs to: the department's design contest for the promenade bench. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0012**  
   The team's number for its self-declaration.
 - `UUID` = **35171fc0-4519-5c02-859e-8042cad33c54**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PROM-DC**  
+- `ContractFolderID` = **PWD/2026/PROM-DC**  
   The department's file number for the contest, the same on every document of it.
 - `ContractName` = **Design of the harbour promenade bench**  
   The contest.
@@ -313,10 +313,10 @@ Inside `TenderingCriterionResponse`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0636**  
+- `ID` = **PWD/2026/0539**  
   The request this self-declaration answers.
 - `DocumentTypeCode` = **QualificationApplicationRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0636 is the example contest/05, a QualificationApplicationRequest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: QualificationApplicationRequest = Qualification Application Request.
+  The kind of document referred to: PWD/2026/0539 is the example contest/05, a QualificationApplicationRequest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: QualificationApplicationRequest = Qualification Application Request.
 - `VersionID` = **1**  
   The version of the request answered.
 
@@ -341,10 +341,10 @@ Inside `Evidence`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0637</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>26-0012</cbc:ID>
   <cbc:UUID>35171fc0-4519-5c02-859e-8042cad33c54</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:ContractName>Design of the harbour promenade bench</cbc:ContractName>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
   <cbc:IssueTime>08:04:00-01:00</cbc:IssueTime>
@@ -592,7 +592,7 @@ Inside `Evidence`:
     </cac:ResponseValue>
   </cac:TenderingCriterionResponse>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0636</cbc:ID>
+    <cbc:ID>PWD/2026/0539</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationRequest</cbc:DocumentTypeCode>
     <cbc:VersionID>1</cbc:VersionID>
   </cac:AdditionalDocumentReference>

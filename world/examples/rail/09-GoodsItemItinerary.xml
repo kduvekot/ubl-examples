@@ -3,15 +3,15 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-item-itinerary:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-DOC-26-0335</cbc:ID>
+  <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
+  <cbc:ID>8300004628</cbc:ID>
   <cbc:UUID>e53fe159-3e7a-5848-95d5-9dad68594dd0</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Drek sulraz skul drek kan trunskir.</cbc:Note>
   <cbc:Note languageID="en-XU">The itinerary of the two containers.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+  <cbc:TransportExecutionPlanReferenceID>9500055446</cbc:TransportExecutionPlanReferenceID>
   <cac:Signature>
     <cbc:ID>FRC-SIG-GII</cbc:ID>
     <cac:SignatoryParty>
@@ -105,7 +105,7 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:ReferencedConsignment>
-    <cbc:ID>VI-CS-26-0327</cbc:ID>
+    <cbc:ID>7300043586</cbc:ID>
   </cac:ReferencedConsignment>
   <cac:ReferencedTransportEquipment>
     <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
@@ -121,7 +121,7 @@
   </cac:ReferencedGoodsItem>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+    <cbc:TransportExecutionPlanReferenceID>9500055446</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">CARRHAUL</cbc:TransportServiceCode>
     </cac:TransportationService>
@@ -134,7 +134,7 @@
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
     <cac:ReferencedConsignment>
-      <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ID>7300043586</cbc:ID>
     </cac:ReferencedConsignment>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
@@ -143,7 +143,7 @@
   </cac:TransportationSegment>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-    <cbc:TransportExecutionPlanReferenceID>FRC-TEP-26-0328</cbc:TransportExecutionPlanReferenceID>
+    <cbc:TransportExecutionPlanReferenceID>9500055446</cbc:TransportExecutionPlanReferenceID>
     <cac:TransportationService>
       <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">RAILCONT</cbc:TransportServiceCode>
     </cac:TransportationService>
@@ -156,7 +156,7 @@
       </cac:PartyName>
     </cac:TransportServiceProviderParty>
     <cac:ReferencedConsignment>
-      <cbc:ID>VI-CS-26-0327</cbc:ID>
+      <cbc:ID>7300043586</cbc:ID>
     </cac:ReferencedConsignment>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>

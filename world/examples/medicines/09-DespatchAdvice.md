@@ -15,10 +15,10 @@ The wholesaler announces the goods to the hospital pharmacy with the lots and th
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **QPD-DA-26-0335**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **SGH/2026/1099**  
+  The collaboration this document belongs to: the hospital's order of medicines from Quillmoor. Selanu General Hospital started it and gave it this identifier, which every document of it repeats.
+- `ID` = **QLM-DA-26-4074**  
   The despatching party's number.
 - `UUID` = **db7de944-bab2-50cb-b191-099b052b0ddb**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ The wholesaler announces the goods to the hospital pharmacy with the lots and th
 
 Inside `OrderReference`:
 
-- `ID` = **SGH-PO-26-0327**  
+- `ID` = **SGH/2026/1100**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -166,9 +166,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **QPD-SH-26-0323**  
+- `ID` = **QLM-SH-26-3980**  
   The despatching party's shipment number.
-- `Consignment/ID` = **QPD-CS-26-0330**  
+- `Consignment/ID` = **QLM-CS-26-3980**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **91.6** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods with their packaging.
@@ -233,11 +233,11 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Influenza vaccine, inactivated, 10 prefilled syringes**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **QPD-VAC-1102**  
+- `Item/SellersItemIdentification/ID` = **QLM-VAC-1102**  
   The seller's own item number; as Quillmoor Pharma Distribution describes the item.
-- `Item/ManufacturersItemIdentification/ID` = **NB-FLU-S26-10**  
+- `Item/ManufacturersItemIdentification/ID` = **NLB-FLU-S26-10**  
   The item number of the maker, Nilavar Biologics: the reseller sells the maker's item on.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **NB-FLU26S-0412**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **NLB-FLU26S-0412**  
   The maker's lot, as its certificate of release names it; a recall names the lot.
 - `Item/ItemInstance/LotIdentification/ExpiryDate` = **2027-02-28**  
   The southern hemisphere formula of 2026 is used up by the next winter: the lot expires at the end of February 2027.
@@ -253,11 +253,11 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Insulin human, 100 IU/ml, vial of 10 ml**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **QPD-INS-0310**  
+- `Item/SellersItemIdentification/ID` = **QLM-INS-0310**  
   The seller's own item number; as Quillmoor Pharma Distribution describes the item.
-- `Item/ManufacturersItemIdentification/ID` = **NB-INS-R100-10**  
+- `Item/ManufacturersItemIdentification/ID` = **NLB-INS-R100-10**  
   The item number of the maker, Nilavar Biologics: the reseller sells the maker's item on.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **NB-INS-2603-118**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **NLB-INS-2603-118**  
   The maker's lot, as its certificate of release names it; a recall names the lot.
 - `Item/ItemInstance/LotIdentification/ExpiryDate` = **2028-02-29**  
   Unopened at 2 to 8 °C, human insulin keeps for two years: the lot of March 2026 expires at the end of February 2028.
@@ -273,11 +273,11 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Varicella vaccine, live, frozen, single dose**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **QPD-VAC-2410**  
+- `Item/SellersItemIdentification/ID` = **QLM-VAC-2410**  
   The seller's own item number; as Quillmoor Pharma Distribution describes the item.
-- `Item/ManufacturersItemIdentification/ID` = **NB-VZV-1**  
+- `Item/ManufacturersItemIdentification/ID` = **NLB-VZV-1**  
   The item number of the maker, Nilavar Biologics: the reseller sells the maker's item on.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **NB-VZV-2602-031**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **NLB-VZV-2602-031**  
   The maker's lot, as its certificate of release names it; a recall names the lot.
 - `Item/ItemInstance/LotIdentification/ExpiryDate` = **2027-08-31**  
   A frozen live vaccine keeps 18 months at -15 °C or colder: the lot of February 2026 expires at the end of August 2027.
@@ -295,11 +295,11 @@ Inside `DespatchLine`:
   The item's short name.
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
-- `Item/SellersItemIdentification/ID` = **QPD-RAD-0020**  
+- `Item/SellersItemIdentification/ID` = **QLM-RAD-0020**  
   The seller's own item number; as Quillmoor Pharma Distribution describes the item.
-- `Item/ManufacturersItemIdentification/ID` = **HI-TCG-20**  
+- `Item/ManufacturersItemIdentification/ID` = **HVI-TCG-20**  
   The item number of the maker, Haarvliet Isotopes: the reseller sells the maker's item on.
-- `Item/HazardousItem/ID` = **HI-TCG-20-DG**  
+- `Item/HazardousItem/ID` = **HVI-TCG-20-DG**  
   The seller's dangerous goods record of the item.
 - `Item/HazardousItem/AdditionalInformation` = **Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h**  
   What the shipper adds about handling.
@@ -325,7 +325,7 @@ Inside `DespatchLine`:
   The physical and chemical form: not special form, so the A2 value applies.
 - `Item/HazardousItem/RadioactiveMaterial/TransportIndexNumeric` = **1.5**  
   The transport index of the package: the highest dose rate at 1 m in mSv/h times 100, rounded up to the first decimal (IAEA SSR-6 para 523); above 1, so the package carries the Category III-YELLOW label (para 529, the higher category winning over the surface rate).
-- `Item/ItemInstance/SerialID` = **HI-TCG20-26-0137**  
+- `Item/ItemInstance/SerialID` = **HVI-TCG20-26-0137**  
   The generator's serial number, from its maker: each generator is traced from its filling to its return.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Nominal activity**  
   The generator's size: its Mo-99 at the reference time, the figure the item is sold by.
@@ -344,8 +344,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-DA-26-0335</cbc:ID>
+  <cbc:ProfileExecutionID>SGH/2026/1099</cbc:ProfileExecutionID>
+  <cbc:ID>QLM-DA-26-4074</cbc:ID>
   <cbc:UUID>db7de944-bab2-50cb-b191-099b052b0ddb</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>05:10:00-01:00</cbc:IssueTime>
@@ -353,7 +353,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>SGH-PO-26-0327</cbc:ID>
+    <cbc:ID>SGH/2026/1100</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -459,9 +459,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>QPD-SH-26-0323</cbc:ID>
+    <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>QPD-CS-26-0330</cbc:ID>
+      <cbc:ID>QLM-CS-26-3980</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">91.6</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -516,14 +516,14 @@ Inside `DespatchLine`:
       <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-VAC-1102</cbc:ID>
+        <cbc:ID>QLM-VAC-1102</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>NB-FLU-S26-10</cbc:ID>
+        <cbc:ID>NLB-FLU-S26-10</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:ItemInstance>
         <cac:LotIdentification>
-          <cbc:LotNumberID>NB-FLU26S-0412</cbc:LotNumberID>
+          <cbc:LotNumberID>NLB-FLU26S-0412</cbc:LotNumberID>
           <cbc:ExpiryDate>2027-02-28</cbc:ExpiryDate>
         </cac:LotIdentification>
       </cac:ItemInstance>
@@ -540,14 +540,14 @@ Inside `DespatchLine`:
       <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-INS-0310</cbc:ID>
+        <cbc:ID>QLM-INS-0310</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>NB-INS-R100-10</cbc:ID>
+        <cbc:ID>NLB-INS-R100-10</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:ItemInstance>
         <cac:LotIdentification>
-          <cbc:LotNumberID>NB-INS-2603-118</cbc:LotNumberID>
+          <cbc:LotNumberID>NLB-INS-2603-118</cbc:LotNumberID>
           <cbc:ExpiryDate>2028-02-29</cbc:ExpiryDate>
         </cac:LotIdentification>
       </cac:ItemInstance>
@@ -564,14 +564,14 @@ Inside `DespatchLine`:
       <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
       <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-VAC-2410</cbc:ID>
+        <cbc:ID>QLM-VAC-2410</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>NB-VZV-1</cbc:ID>
+        <cbc:ID>NLB-VZV-1</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:ItemInstance>
         <cac:LotIdentification>
-          <cbc:LotNumberID>NB-VZV-2602-031</cbc:LotNumberID>
+          <cbc:LotNumberID>NLB-VZV-2602-031</cbc:LotNumberID>
           <cbc:ExpiryDate>2027-08-31</cbc:ExpiryDate>
         </cac:LotIdentification>
       </cac:ItemInstance>
@@ -589,13 +589,13 @@ Inside `DespatchLine`:
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-RAD-0020</cbc:ID>
+        <cbc:ID>QLM-RAD-0020</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>HI-TCG-20</cbc:ID>
+        <cbc:ID>HVI-TCG-20</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:HazardousItem>
-        <cbc:ID>HI-TCG-20-DG</cbc:ID>
+        <cbc:ID>HVI-TCG-20-DG</cbc:ID>
         <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
         <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
@@ -612,7 +612,7 @@ Inside `DespatchLine`:
         </cac:RadioactiveMaterial>
       </cac:HazardousItem>
       <cac:ItemInstance>
-        <cbc:SerialID>HI-TCG20-26-0137</cbc:SerialID>
+        <cbc:SerialID>HVI-TCG20-26-0137</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Nominal activity</cbc:Name>
           <cbc:ValueQuantity unitCode="GBQ">20</cbc:ValueQuantity>

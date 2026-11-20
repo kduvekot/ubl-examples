@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FB-TEP-26-0886</cbc:ID>
+  <cbc:ProfileExecutionID>26-0425</cbc:ProfileExecutionID>
+  <cbc:ID>26-0104</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>32791589-65d7-5d36-bda8-9b68dad29bdd</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>
@@ -136,7 +136,7 @@
     </cac:SignatoryParty>
   </cac:Signature>
   <cac:TransportExecutionPlanRequestDocumentReference>
-    <cbc:ID>RR-TR-26-0884</cbc:ID>
+    <cbc:ID>26-0255</cbc:ID>
   </cac:TransportExecutionPlanRequestDocumentReference>
   <cac:TransportContract>
     <cbc:ID>RR-FB-FW-2026</cbc:ID>
@@ -203,7 +203,7 @@
     </cac:ServiceChargePaymentTerms>
   </cac:TransportExecutionTerms>
   <cac:Consignment>
-    <cbc:ID>RR-CS-26-0885</cbc:ID>
+    <cbc:ID>26-0426</cbc:ID>
     <cbc:SummaryDescription>120 t of Recycled PE granulate</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>

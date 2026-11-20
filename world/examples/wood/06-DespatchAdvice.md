@@ -15,10 +15,10 @@ The modification plant despatches the 96 bundles for the sawmill, which sold the
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WOOD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TWM-DA-26-0630**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900042764**  
+  The collaboration this document belongs to: Valdara's purchase of slats from Marrowdale Sawmill. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0063**  
   The despatching party's number.
 - `UUID` = **c6cf9b25-d967-5e95-a336-9d69bd3f509d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,7 +39,7 @@ The modification plant despatches the 96 bundles for the sawmill, which sold the
 
 Inside `OrderReference`:
 
-- `ID` = **VI-PO-26-0627**  
+- `ID` = **4500042882**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -208,11 +208,11 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **TWM-SH-26-0631**  
+- `ID` = **26-0062**  
   The despatching party's shipment number.
-- `Consignment/ID` = **MS-CS-26-0629**  
+- `Consignment/ID` = **MDS-CS-26-0221**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/ConsignorAssignedID` = **TWM-CS-26-0632**  
+- `Consignment/ConsignorAssignedID` = **26-0064**  
   The plant's own number for the consignment, on its loading list and gate pass; the consignment's ID above is the sawmill's, which booked the transport.
 - `Consignment/GrossWeightMeasure` = **21024** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the bundles with their pallets.
@@ -264,7 +264,7 @@ Inside `Shipment`:
   The same day.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-02-26**  
   The goods left on the day of this advice.
-- `Delivery/Despatch/ReleaseID` = **MS-REL-26-0212**  
+- `Delivery/Despatch/ReleaseID` = **MDS-REL-26-0212**  
   The sawmill's pick-up release the goods left under: the plant handed them only to the driver who quoted it, for they are the sawmill's.
 - `TransportHandlingUnit/ID` = **TWM-26-001**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
@@ -1041,13 +1041,13 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **The bundles of kiln charge 1, from the first load of blanks, lot MS-L26-0119.**  
+- `Note` = **The bundles of kiln charge 1, from the first load of blanks, lot MDS-L26-0119.**  
   The line as the order put it.
 - `DeliveredQuantity` = **48** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
-- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -1055,11 +1055,11 @@ Inside `DespatchLine`:
   The units in one pack: 50 in a bundle; as Marrowdale Sawmill describes the item.
 - `Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+- `Item/SellersItemIdentification/ID` = **MDS-SL-1800-50**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 - `Item/ItemInstance/ManufactureDate` = **2026-01-19**  
   The day kiln charge 1 came out of the plant's kiln.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **MS-L26-0119**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **MDS-L26-0119**  
   The sawmill's lot of the slats, one per kiln charge: a recall names the lot.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Kiln charge**  
   A fact about this lot: the charge of the plant's kiln it was modified in.
@@ -1067,13 +1067,13 @@ Inside `DespatchLine`:
   The plant's number of the charge.
 - `ID` = **2**  
   The line number.
-- `Note` = **The bundles of kiln charge 2, from the second load of blanks, lot MS-L26-0126.**  
+- `Note` = **The bundles of kiln charge 2, from the second load of blanks, lot MDS-L26-0126.**  
   The line as the order put it.
 - `DeliveredQuantity` = **48** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
-- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -1081,11 +1081,11 @@ Inside `DespatchLine`:
   The units in one pack: 50 in a bundle; as Marrowdale Sawmill describes the item.
 - `Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+- `Item/SellersItemIdentification/ID` = **MDS-SL-1800-50**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 - `Item/ItemInstance/ManufactureDate` = **2026-01-26**  
   The day kiln charge 2 came out of the plant's kiln.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **MS-L26-0126**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **MDS-L26-0126**  
   The sawmill's lot of the slats, one per kiln charge: a recall names the lot.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Kiln charge**  
   A fact about this lot: the charge of the plant's kiln it was modified in.
@@ -1100,8 +1100,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TWM-DA-26-0630</cbc:ID>
+  <cbc:ProfileExecutionID>9900042764</cbc:ProfileExecutionID>
+  <cbc:ID>26-0063</cbc:ID>
   <cbc:UUID>c6cf9b25-d967-5e95-a336-9d69bd3f509d</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>
   <cbc:IssueTime>09:30:00-01:00</cbc:IssueTime>
@@ -1110,7 +1110,7 @@ Inside `DespatchLine`:
   <cbc:Note languageID="en-XU">Despatched for Marrowdale Sawmill, the seller, from its job at our plant. Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>VI-PO-26-0627</cbc:ID>
+    <cbc:ID>4500042882</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -1242,10 +1242,10 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>TWM-SH-26-0631</cbc:ID>
+    <cbc:ID>26-0062</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>MS-CS-26-0629</cbc:ID>
-      <cbc:ConsignorAssignedID>TWM-CS-26-0632</cbc:ConsignorAssignedID>
+      <cbc:ID>MDS-CS-26-0221</cbc:ID>
+      <cbc:ConsignorAssignedID>26-0064</cbc:ConsignorAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">21024</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -1288,7 +1288,7 @@ Inside `DespatchLine`:
       </cac:EstimatedDeliveryPeriod>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-02-26</cbc:ActualDespatchDate>
-        <cbc:ReleaseID>MS-REL-26-0212</cbc:ReleaseID>
+        <cbc:ReleaseID>MDS-REL-26-0212</cbc:ReleaseID>
       </cac:Despatch>
     </cac:Delivery>
     <cac:TransportHandlingUnit>
@@ -1966,23 +1966,23 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>The bundles of kiln charge 1, from the first load of blanks, lot MS-L26-0119.</cbc:Note>
+    <cbc:Note>The bundles of kiln charge 1, from the first load of blanks, lot MDS-L26-0119.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">48</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
       <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
       <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
       <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-SL-1800-50</cbc:ID>
+        <cbc:ID>MDS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-01-19</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>MS-L26-0119</cbc:LotNumberID>
+          <cbc:LotNumberID>MDS-L26-0119</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Kiln charge</cbc:Name>
             <cbc:Value>TWM-K1-26-03</cbc:Value>
@@ -1993,23 +1993,23 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>The bundles of kiln charge 2, from the second load of blanks, lot MS-L26-0126.</cbc:Note>
+    <cbc:Note>The bundles of kiln charge 2, from the second load of blanks, lot MDS-L26-0126.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">48</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
       <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
       <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
       <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-SL-1800-50</cbc:ID>
+        <cbc:ID>MDS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-01-26</cbc:ManufactureDate>
         <cac:LotIdentification>
-          <cbc:LotNumberID>MS-L26-0126</cbc:LotNumberID>
+          <cbc:LotNumberID>MDS-L26-0126</cbc:LotNumberID>
           <cac:AdditionalItemProperty>
             <cbc:Name>Kiln charge</cbc:Name>
             <cbc:Value>TWM-K1-26-04</cbc:Value>

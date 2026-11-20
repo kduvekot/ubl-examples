@@ -15,10 +15,8 @@ A consumer buys in the shop and gets a receipt.
 - `CustomizationID` = **urn:ubl-examples:world:trns:purchase-receipt:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Purchase receipt". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:retail-sale:1.0**  
-  The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-PR-26-0240**  
+  The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow.
+- `ID` = **3102316131**  
   The till's receipt number.
 - `UUID` = **bcdeb9a7-e515-519a-b488-de52151e844f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -52,7 +50,7 @@ Inside `PurchaseReference`:
 
 Inside `SalesDocumentReference`:
 
-- `ID` = **BM-DEL-26-0515-07**  
+- `ID` = **1300017053**  
   The store's home delivery order, booked with the sale on 15 May.
 - `DocumentType` = **Home delivery order**  
   What the document is: the store's own delivery booking, outside the examples.
@@ -512,8 +510,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PR-26-0240</cbc:ID>
+  <cbc:ID>3102316131</cbc:ID>
   <cbc:UUID>bcdeb9a7-e515-519a-b488-de52151e844f</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
@@ -528,7 +525,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:Description>Loyalty card</cbc:Description>
   </cac:PurchaseReference>
   <cac:SalesDocumentReference>
-    <cbc:ID>BM-DEL-26-0515-07</cbc:ID>
+    <cbc:ID>1300017053</cbc:ID>
     <cbc:DocumentType>Home delivery order</cbc:DocumentType>
   </cac:SalesDocumentReference>
   <cac:AdditionalDocumentReference>

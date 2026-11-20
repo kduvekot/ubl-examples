@@ -15,10 +15,10 @@ The shop pays its water bill and says which invoice the transfer settles.
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-RM-26-0316**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9924050955**  
+  The collaboration this document belongs to: the water company's bill for March to the store. Coastal State Water Company started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2000135608**  
   The payer's remittance number.
 - `UUID` = **3fcf184b-537e-5b27-9779-6c4b95b64a32**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -36,9 +36,9 @@ The shop pays its water bill and says which invoice the transfer settles.
   No credits taken.
 - `TotalPaymentAmount` = **238.22** (currencyID `XBL`)  
   The amount transferred: the payable amount of the invoice.
-- `PaymentOrderReference` = **BS-PAY-26-0313**  
+- `PaymentOrderReference` = **1500016951**  
   The payment order the payer gave its bank.
-- `InvoicingPartyReference` = **RF03CSWCINV260317**  
+- `InvoicingPartyReference` = **RF47CSWC2601182603**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
   The invoice paid.
@@ -56,14 +56,14 @@ Inside `InvoicePeriod`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **CSWC-INV-26-0317**  
+- `InvoiceDocumentReference/ID` = **CSW-C-260118-2603**  
   The invoice this payment settles.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **BS-BANK-26-04**  
+- `ID` = **BM-BANK-26-04**  
   The payer's bank statement line.
 - `DocumentType` = **Bank statement**  
   The kind of document referred to, the payer's bank statement line, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -195,9 +195,9 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **BS-PAY-26-0313**  
+- `InstructionID` = **1500016951**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF03CSWCINV260317** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF47CSWC2601182603** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XB48BLUM38010001570935** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -296,13 +296,13 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **WTER** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code WTER: a water bill. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: WTER = WaterBill.
-- `InvoicingPartyReference` = **RF03CSWCINV260317**  
+- `InvoicingPartyReference` = **RF47CSWC2601182603**  
   The reference the invoicing party asked to quote.
 - `InvoicePeriod/StartDate` = **2026-03-01**  
   March.
 - `InvoicePeriod/EndDate` = **2026-03-31**  
   Its end.
-- `BillingReference/InvoiceDocumentReference/ID` = **CSWC-INV-26-0317**  
+- `BillingReference/InvoiceDocumentReference/ID` = **CSW-C-260118-2603**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-02**  
   Its issue date, so the reference is unambiguous.
@@ -315,8 +315,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-RM-26-0316</cbc:ID>
+  <cbc:ProfileExecutionID>9924050955</cbc:ProfileExecutionID>
+  <cbc:ID>2000135608</cbc:ID>
   <cbc:UUID>3fcf184b-537e-5b27-9779-6c4b95b64a32</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:11:00-01:00</cbc:IssueTime>
@@ -325,8 +325,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XBL">238.22</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">238.22</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>BS-PAY-26-0313</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF03CSWCINV260317</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>1500016951</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF47CSWC2601182603</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -334,11 +334,11 @@ Inside `RemittanceAdviceLine`:
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+      <cbc:ID>CSW-C-260118-2603</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BS-BANK-26-04</cbc:ID>
+    <cbc:ID>BM-BANK-26-04</cbc:ID>
     <cbc:DocumentType>Bank statement</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
@@ -442,8 +442,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>BS-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF03CSWCINV260317</cbc:PaymentID>
+    <cbc:InstructionID>1500016951</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF47CSWC2601182603</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB48BLUM38010001570935</cbc:ID>
       <cbc:Name>Brightmarket Stores Corp</cbc:Name>
@@ -524,14 +524,14 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XBL">238.22</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">WTER</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF03CSWCINV260317</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF47CSWC2601182603</cbc:InvoicingPartyReference>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
     </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>CSWC-INV-26-0317</cbc:ID>
+        <cbc:ID>CSW-C-260118-2603</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

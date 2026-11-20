@@ -15,10 +15,10 @@ The goods qualify for preferential duty in Bayvarra; the manufacturer applies to
 - `CustomizationID` = **urn:ubl-examples:world:trns:certificate-of-origin:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Certificate of origin". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **VI-AP-26-0158**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043291**  
+  The collaboration this document belongs to: the certificate of origin Valdara applies for at the Ferrano Chamber of Commerce. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **6800002165**  
   The exporter's number for its application.
 - `UUID` = **a46337e2-176c-5866-9871-158007b21756**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -217,17 +217,17 @@ Inside `EndorserParty`:
 
 Inside `CertificateOfOriginApplication`:
 
-- `ReferenceID` = **VI-AP-26-0158**  
+- `ReferenceID` = **6800002165**  
   The exporter's reference for its application.
 - `CertificateType` = **Preferential**  
   The goods qualify for the preferential duty rate in Bayvarra; the importer needs this certificate to claim it.
 - `ApplicationStatusCode` = **SUBMITTED** (listID `urn:ubl-examples:world:codelist:ApplicationStatusCode`)  
   The exporter submits the application. The code is from the Trade Accord's application status list: SUBMITTED = Submitted.
-- `OriginalJobID` = **FCC-JOB-26-0418**  
+- `OriginalJobID` = **FCC/2026/1722**  
   The job number the chamber's e-certificate system gave the application when it was lodged, by which it tracks amendments; not the buyer's order.
 - `Remarks` = **Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and making of the benches in Urvania give origin.**  
   Why the goods are of Urvanian origin.
-- `Shipment/ID` = **CL-SH-26-0154**  
+- `Shipment/ID` = **CAS-SH-26-1291**  
   The shipment the certificate covers.
 - `Shipment/GoodsItem/ID` = **1**  
   The goods item number.
@@ -427,10 +427,10 @@ Inside `CertificateOfOriginApplication`:
   A party referred to from another party's details: its identifier and name are enough.
 - `DocumentDistribution/Party/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `SupportingDocumentReference/ID` = **LD-PO-26-0149**  
+- `SupportingDocumentReference/ID` = **LMW-PO-26-0573**  
   The commercial document behind the goods.
 - `SupportingDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-PO-26-0149 is the example road/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: LMW-PO-26-0573 is the example road/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 - `Signature/ID` = **VI-SIG-COA**  
   The sender's electronic seal.
 - `Signature/SignatoryParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -442,7 +442,7 @@ Inside `CertificateOfOriginApplication`:
 
 Inside `IssuerEndorsement`:
 
-- `DocumentID` = **FCC-JOB-26-0418-E1**  
+- `DocumentID` = **FCC/2026/1722-E1**  
   The identifier of this endorsement: the first of the chamber's job.
 - `ApprovalStatus` = **Pending**  
   Not yet endorsed: the application is with the chamber.
@@ -467,8 +467,8 @@ Inside `IssuerEndorsement`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:certificate-of-origin:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-AP-26-0158</cbc:ID>
+  <cbc:ProfileExecutionID>9900043291</cbc:ProfileExecutionID>
+  <cbc:ID>6800002165</cbc:ID>
   <cbc:UUID>a46337e2-176c-5866-9871-158007b21756</cbc:UUID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>12:39:00-01:00</cbc:IssueTime>
@@ -620,13 +620,13 @@ Inside `IssuerEndorsement`:
     </cac:SignatoryContact>
   </cac:EndorserParty>
   <cac:CertificateOfOriginApplication>
-    <cbc:ReferenceID>VI-AP-26-0158</cbc:ReferenceID>
+    <cbc:ReferenceID>6800002165</cbc:ReferenceID>
     <cbc:CertificateType>Preferential</cbc:CertificateType>
     <cbc:ApplicationStatusCode listID="urn:ubl-examples:world:codelist:ApplicationStatusCode">SUBMITTED</cbc:ApplicationStatusCode>
-    <cbc:OriginalJobID>FCC-JOB-26-0418</cbc:OriginalJobID>
+    <cbc:OriginalJobID>FCC/2026/1722</cbc:OriginalJobID>
     <cbc:Remarks>Side frames cast in Urvania from Urvanian ore and slats of Bayvarran hardwood; the casting, finishing and making of the benches in Urvania give origin.</cbc:Remarks>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0154</cbc:ID>
+      <cbc:ID>CAS-SH-26-1291</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Park bench Serra 180</cbc:Description>
@@ -828,7 +828,7 @@ Inside `IssuerEndorsement`:
       </cac:Party>
     </cac:DocumentDistribution>
     <cac:SupportingDocumentReference>
-      <cbc:ID>LD-PO-26-0149</cbc:ID>
+      <cbc:ID>LMW-PO-26-0573</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:SupportingDocumentReference>
     <cac:Signature>
@@ -844,7 +844,7 @@ Inside `IssuerEndorsement`:
     </cac:Signature>
   </cac:CertificateOfOriginApplication>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>FCC-JOB-26-0418-E1</cbc:DocumentID>
+    <cbc:DocumentID>FCC/2026/1722-E1</cbc:DocumentID>
     <cbc:ApprovalStatus>Pending</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">CHAMBER</cbc:RoleCode>

@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-EX-26-0203</cbc:ID>
+  <cbc:ID>SCG-EX-26-0049</cbc:ID>
   <cbc:UUID>f5f1bfda-9201-580a-8a6a-bce4e1381b33</cbc:UUID>
   <cbc:IssueDate>2026-05-06</cbc:IssueDate>
   <cbc:IssueTime>13:33:00+00:00</cbc:IssueTime>
@@ -60,7 +59,7 @@
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>SCG-CD-26-0204</cbc:ID>
+    <cbc:ID>SCG-CD-26-0049</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-06</cbc:StartDate>
@@ -72,9 +71,9 @@
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>SCG-SH-26-0200</cbc:ID>
+      <cbc:ID>SCG-SH-26-0218</cbc:ID>
       <cac:Consignment>
-        <cbc:ID>LTM-CS-26-0201</cbc:ID>
+        <cbc:ID>7300013298</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       </cac:Consignment>
@@ -195,11 +194,11 @@
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>LTM-PO-26-0198</cbc:ID>
+      <cbc:ID>4500013293</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>DAL-GC-26-0202</cbc:ID>
+      <cbc:ID>DAL/2026/0309</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>

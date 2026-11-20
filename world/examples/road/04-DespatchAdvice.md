@@ -15,10 +15,10 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **CL-DA-26-0153**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0573**  
+  The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **CAS-DA-26-1342**  
   The despatching party's number.
 - `UUID` = **50f13b62-45d2-51db-aea9-a8873a59c837**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ The 3PL picks and loads the goods for the manufacturer and announces the despatc
 
 Inside `OrderReference`:
 
-- `ID` = **LD-PO-26-0149**  
+- `ID` = **LMW-PO-26-0573**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -220,9 +220,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **CL-SH-26-0154**  
+- `ID` = **CAS-SH-26-1291**  
   The despatching party's shipment number.
-- `Consignment/ID` = **LD-CS-26-0152**  
+- `Consignment/ID` = **LMW-CS-26-0580**  
   The distributor's consignment for the truck.
 - `Consignment/GrossWeightMeasure` = **5363.4** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight loaded, packaging included.
@@ -268,7 +268,7 @@ Inside `Shipment`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; as Trasvia Haulage gives it.
-- `Delivery/Despatch/ID` = **CL-OUT-26-0871**  
+- `Delivery/Despatch/ID` = **CAS-OUT-26-0871**  
   The 3PL's outbound number.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-03-23**  
   Loaded and gone.
@@ -295,7 +295,7 @@ Inside `DespatchLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Park bench Serra 180** (languageID `en-XU`)  
   The item's name in English, the working language between the countries.
-- `Item/BuyersItemIdentification/ID` = **LD-10442**  
+- `Item/BuyersItemIdentification/ID` = **LMW-10442**  
   The buyer's own item number: it resells this item under its own number.
 - `Item/SellersItemIdentification/ID` = **VI-B180**  
   The seller's own item number; as Valdara Industries describes the item.
@@ -339,7 +339,7 @@ Inside `DespatchLine`:
   The item's name in Urvanian, the seller's language.
 - `Item/Name` = **Bench side frame casting** (languageID `en-XU`)  
   The item's name in English, the working language between the countries.
-- `Item/BuyersItemIdentification/ID` = **LD-10443**  
+- `Item/BuyersItemIdentification/ID` = **LMW-10443**  
   The buyer's own item number: it resells this item under its own number.
 - `Item/SellersItemIdentification/ID` = **VI-C180**  
   The seller's own item number; as Valdara Industries describes the item.
@@ -500,8 +500,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CL-DA-26-0153</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>CAS-DA-26-1342</cbc:ID>
   <cbc:UUID>50f13b62-45d2-51db-aea9-a8873a59c837</cbc:UUID>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>15:15:00-01:00</cbc:IssueTime>
@@ -509,7 +509,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>LD-PO-26-0149</cbc:ID>
+    <cbc:ID>LMW-PO-26-0573</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -654,9 +654,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0152</cbc:ID>
+      <cbc:ID>LMW-CS-26-0580</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -694,7 +694,7 @@ Inside `DespatchLine`:
     </cac:Consignment>
     <cac:Delivery>
       <cac:Despatch>
-        <cbc:ID>CL-OUT-26-0871</cbc:ID>
+        <cbc:ID>CAS-OUT-26-0871</cbc:ID>
         <cbc:ActualDespatchDate>2026-03-23</cbc:ActualDespatchDate>
         <cbc:ActualDespatchTime>15:05:00</cbc:ActualDespatchTime>
       </cac:Despatch>
@@ -713,7 +713,7 @@ Inside `DespatchLine`:
       <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
       <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
       <cac:BuyersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-B180</cbc:ID>
@@ -755,7 +755,7 @@ Inside `DespatchLine`:
       <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
       <cbc:Name languageID="en-XU">Bench side frame casting</cbc:Name>
       <cac:BuyersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>

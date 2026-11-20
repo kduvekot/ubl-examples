@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:prior-information-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0223</cbc:ID>
   <cbc:UUID>cea49fdc-39bf-59d9-892a-5dd52ae66dc9</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>11:17:00-01:00</cbc:IssueTime>
   <cbc:Note>Advance notice of the design contest for the harbour promenade bench. Version 2: on 18 February the city council raised the prize fund from 12,000 to 14,000 lume and the first prize from 6,000 to 8,000 lume, and with them the estimate from 52,000 to 54,000 lume; the contest notice moves to 19 March.</cbc:Note>

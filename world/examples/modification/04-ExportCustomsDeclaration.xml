@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-EX-26-0411</cbc:ID>
+  <cbc:ID>MDS-EX-26-0011</cbc:ID>
   <cbc:UUID>4d67eaa6-485a-5476-8073-40cb5dfb6b74</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
   <cbc:IssueTime>07:00:00-01:00</cbc:IssueTime>
@@ -61,7 +60,7 @@
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>MS-CD-26-0412</cbc:ID>
+    <cbc:ID>MDS-CD-26-0011</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-01-13</cbc:StartDate>
@@ -73,10 +72,10 @@
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>MS-SH-26-0409</cbc:ID>
+      <cbc:ID>MDS-SH-26-0051</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">12</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
-        <cbc:ID>MS-CS-26-0410</cbc:ID>
+        <cbc:ID>MDS-CS-26-0051</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
         <cac:CarrierParty>
           <cac:PartyIdentification>
@@ -94,7 +93,7 @@
         <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">2400</cbc:Quantity>
         <cac:Item>
-          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.</cbc:Description>
+          <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
           <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
           <cac:OriginCountry>
             <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
@@ -191,11 +190,11 @@
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>MS-PO-26-0406</cbc:ID>
+      <cbc:ID>MDS-PO-26-0047</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>MS-PF-26-0113</cbc:ID>
+      <cbc:ID>MDS-PF-26-0113</cbc:ID>
       <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">325</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>

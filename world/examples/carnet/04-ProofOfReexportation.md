@@ -15,10 +15,10 @@ Urvania's chamber proves the samples were re-exported, with the stamped re-expor
 - `CustomizationID` = **urn:ubl-examples:world:trns:proof-of-reexportation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Proof of re-exportation". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:temporary-admission:1.0**  
-  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CARNET-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FCC-DOC-26-0728**  
+  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **FCC/2026/3170**  
+  The collaboration this document belongs to: the carnet the Ferrano Chamber of Commerce issues and its proof of re-exportation. Ferrano Chamber of Commerce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **FCC/ATA/2026/0263**  
   The sender's number for this document.
 - `UUID` = **a5be84f0-33dc-58b3-97e4-10dea98880ab**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -186,7 +186,7 @@ Inside `GoodsItemPassportCounterfoil`:
 
 - `ID` = **IMP-1**  
   The importation counterfoil (white sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `FinalReexportationDate` = **2026-06-30**  
   The limit the island's customs set on the importation counterfoil, shorter than the carnet's year: a short fair admission.
@@ -204,7 +204,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ImportationDocumentReference/ID` = **XL-CUS-ATA-26-0049**  
+- `ImportationDocumentReference/ID` = **XL-CUS/2026/12905**  
   The island's customs' registration of the importation, noted with the stamp.
 - `ImportationDocumentReference/IssueDate` = **2026-06-02**  
   The day customs stamped the counterfoil.
@@ -212,7 +212,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The kind of customs record, in words.
 - `ID` = **REEXP-1**  
   The re-exportation counterfoil (white sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **Stamped at Selanu airport on 9 June; its voucher did not reach the importation office's records.**  
   What went wrong: the voucher, not the stamp.
@@ -228,13 +228,13 @@ Inside `GoodsItemPassportCounterfoil`:
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ImportationDocumentReference/ID` = **XL-CUS-ATA-26-0049**  
+- `ImportationDocumentReference/ID` = **XL-CUS/2026/12905**  
   The importation the re-exportation discharges.
 - `ImportationDocumentReference/IssueDate` = **2026-06-02**  
   The day customs stamped the counterfoil.
 - `ImportationDocumentReference/DocumentType` = **Importation registration**  
   The kind of customs record, in words.
-- `ReexportationDocumentReference/ID` = **XL-CUS-ATA-26-0053**  
+- `ReexportationDocumentReference/ID` = **XL-CUS/2026/13127**  
   The island's customs' registration of the re-exportation.
 - `ReexportationDocumentReference/IssueDate` = **2026-06-09**  
   The day customs stamped the counterfoil.
@@ -244,7 +244,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The voucher that went astray.
 - `ID` = **REIMP-1**  
   The re-importation counterfoil (yellow sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `Note` = **Stamped at Valico Euridice on 10 June.**  
   The samples came home.
@@ -256,13 +256,13 @@ Inside `GoodsItemPassportCounterfoil`:
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ExportationDocumentReference/ID` = **XU-CUS-EXP-26-0031**  
+- `ExportationDocumentReference/ID` = **XU-CUS/2026/39379**  
   The exportation the samples came back from, as the re-importation counterfoil states it.
 - `ExportationDocumentReference/IssueDate` = **2026-06-01**  
   The day customs stamped the counterfoil.
 - `ExportationDocumentReference/DocumentType` = **Exportation registration**  
   The kind of customs record, in words.
-- `ReimportationDocumentReference/ID` = **XU-CUS-REIMP-26-0044**  
+- `ReimportationDocumentReference/ID` = **XU-CUS/2026/39380**  
   Urvania's customs' record of the re-importation, the same number as in the evidence.
 - `ReimportationDocumentReference/IssueDate` = **2026-06-10**  
   The day customs stamped the counterfoil.
@@ -289,7 +289,7 @@ Inside `ReexportationEvidence`:
   A party referred to from another party's details: its identifier and name are enough.
 - `EvidenceIssuingParty/PartyName/Name` = **Customs Administration of Urvania**  
   A party referred to from another party's details: its identifier and name are enough.
-- `DocumentReference/ID` = **XU-CUS-REIMP-26-0044**  
+- `DocumentReference/ID` = **XU-CUS/2026/39380**  
   Urvania's customs' record of the re-importation.
 - `DocumentReference/IssueDate` = **2026-06-10**  
   The day of the re-importation.
@@ -311,14 +311,14 @@ Inside `GoodsItemPassportAttachment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **SCC-DOC-26-0726**  
+- `ID` = **SCC/ATA/2026/0084**  
   The request this proof answers.
 - `DocumentTypeCode` = **ProofOfReexportationRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: SCC-DOC-26-0726 is the example carnet/02, a ProofOfReexportationRequest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ProofOfReexportationRequest = Proof Of Reexportation Request.
-- `ID` = **SCC-DOC-26-0727**  
+  The kind of document referred to: SCC/ATA/2026/0084 is the example carnet/02, a ProofOfReexportationRequest; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ProofOfReexportationRequest = Proof Of Reexportation Request.
+- `ID` = **SCC/ATA/2026/0097**  
   And its reminder.
 - `DocumentTypeCode` = **ProofOfReexportationReminder** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: SCC-DOC-26-0727 is the example carnet/03, a ProofOfReexportationReminder; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ProofOfReexportationReminder = Proof Of Reexportation Reminder.
+  The kind of document referred to: SCC/ATA/2026/0097 is the example carnet/03, a ProofOfReexportationReminder; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ProofOfReexportationReminder = Proof Of Reexportation Reminder.
 
 ### Signature
 
@@ -339,8 +339,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:proof-of-reexportation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:temporary-admission:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FCC-DOC-26-0728</cbc:ID>
+  <cbc:ProfileExecutionID>FCC/2026/3170</cbc:ProfileExecutionID>
+  <cbc:ID>FCC/ATA/2026/0263</cbc:ID>
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
   <cbc:IssueTime>13:19:00-01:00</cbc:IssueTime>
@@ -459,7 +459,7 @@ Inside `Signature`:
   </cac:ExportingGuarantorParty>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
     <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
     <cac:CustomsOfficeLocation>
@@ -477,14 +477,14 @@ Inside `Signature`:
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
     <cac:ImportationDocumentReference>
-      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:ID>XL-CUS/2026/12905</cbc:ID>
       <cbc:IssueDate>2026-06-02</cbc:IssueDate>
       <cbc:DocumentType>Importation registration</cbc:DocumentType>
     </cac:ImportationDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REEXP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>Stamped at Selanu airport on 9 June; its voucher did not reach the importation office's records.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
@@ -501,12 +501,12 @@ Inside `Signature`:
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
     <cac:ImportationDocumentReference>
-      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:ID>XL-CUS/2026/12905</cbc:ID>
       <cbc:IssueDate>2026-06-02</cbc:IssueDate>
       <cbc:DocumentType>Importation registration</cbc:DocumentType>
     </cac:ImportationDocumentReference>
     <cac:ReexportationDocumentReference>
-      <cbc:ID>XL-CUS-ATA-26-0053</cbc:ID>
+      <cbc:ID>XL-CUS/2026/13127</cbc:ID>
       <cbc:IssueDate>2026-06-09</cbc:IssueDate>
       <cbc:DocumentType>Re-exportation registration</cbc:DocumentType>
     </cac:ReexportationDocumentReference>
@@ -516,7 +516,7 @@ Inside `Signature`:
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REIMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>Stamped at Valico Euridice on 10 June.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -527,12 +527,12 @@ Inside `Signature`:
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
     <cac:ExportationDocumentReference>
-      <cbc:ID>XU-CUS-EXP-26-0031</cbc:ID>
+      <cbc:ID>XU-CUS/2026/39379</cbc:ID>
       <cbc:IssueDate>2026-06-01</cbc:IssueDate>
       <cbc:DocumentType>Exportation registration</cbc:DocumentType>
     </cac:ExportationDocumentReference>
     <cac:ReimportationDocumentReference>
-      <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+      <cbc:ID>XU-CUS/2026/39380</cbc:ID>
       <cbc:IssueDate>2026-06-10</cbc:IssueDate>
       <cbc:DocumentType>Re-importation record</cbc:DocumentType>
     </cac:ReimportationDocumentReference>
@@ -561,7 +561,7 @@ Inside `Signature`:
       </cac:PartyName>
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
-      <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+      <cbc:ID>XU-CUS/2026/39380</cbc:ID>
       <cbc:IssueDate>2026-06-10</cbc:IssueDate>
       <cbc:DocumentType>Re-importation record</cbc:DocumentType>
     </cac:DocumentReference>
@@ -574,11 +574,11 @@ Inside `Signature`:
     </cac:ExternalReference>
   </cac:GoodsItemPassportAttachment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCC-DOC-26-0726</cbc:ID>
+    <cbc:ID>SCC/ATA/2026/0084</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProofOfReexportationRequest</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCC-DOC-26-0727</cbc:ID>
+    <cbc:ID>SCC/ATA/2026/0097</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProofOfReexportationReminder</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

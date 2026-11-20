@@ -15,10 +15,8 @@ Before the packaging maker orders, Rinova sends it the product information of it
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RR-CAT-26-0896**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ID` = **26-0002**  
   The provider's catalogue number.
 - `UUID` = **c8939b73-1616-5856-9d43-118e4ddb2b7e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -215,7 +213,7 @@ Inside `CatalogueLine`:
   The price applies from the catalogue's issue date.
 - `RequiredItemLocationQuantity/Price/ValidityPeriod/EndDate` = **2026-06-30**  
   And until the catalogue ends.
-- `RequiredItemLocationQuantity/Price/PriceList/ID` = **RR-PL-2026**  
+- `RequiredItemLocationQuantity/Price/PriceList/ID` = **RR-PRL-2026**  
   The seller's price list this price is taken from.
 - `RequiredItemLocationQuantity/Price/PriceList/StatusCode` = **ORIGINAL** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The first issue of the price list: UBL names original, copy, revision or cancellation here, not whether the list is in force. The code is from the Trade Accord's record status list: ORIGINAL = Original.
@@ -241,7 +239,7 @@ Inside `CatalogueLine`:
   The seller's own item number; as Rinova Recovery describes the item.
 - `Item/StandardItemIdentification/ID` = **KXU13362PER1** (schemeID `ISO 15459-6`)  
   The item's number in its globally unique form under ISO/IEC 15459, which Rinova Recovery gives it: the issuing agency code KXU of the Codana Identification Agency, the company number Codana gave Rinova Recovery and the company's own reference for the item, without a check character. Codana gives a company its number; the company numbers its own items; as Rinova Recovery describes the item.
-- `Item/CatalogueItemIdentification/ID` = **RR-CAT-26-0896-1**  
+- `Item/CatalogueItemIdentification/ID` = **26-0002-1**  
   The item's place in the catalogue: the catalogue number and the line.
 - `Item/OriginCountry/IdentificationCode` = **XU** (listID `ISO 3166`)  
   Where the item was produced; as Rinova Recovery describes the item. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
@@ -278,8 +276,7 @@ Inside `CatalogueLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-CAT-26-0896</cbc:ID>
+  <cbc:ID>26-0002</cbc:ID>
   <cbc:UUID>c8939b73-1616-5856-9d43-118e4ddb2b7e</cbc:UUID>
   <cbc:Name>Recycled PE granulate, second quarter 2026</cbc:Name>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
@@ -433,7 +430,7 @@ Inside `CatalogueLine`:
           <cbc:EndDate>2026-06-30</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>RR-PL-2026</cbc:ID>
+          <cbc:ID>RR-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
@@ -459,7 +456,7 @@ Inside `CatalogueLine`:
         <cbc:ID schemeID="ISO 15459-6">KXU13362PER1</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>RR-CAT-26-0896-1</cbc:ID>
+        <cbc:ID>26-0002-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

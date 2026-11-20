@@ -15,10 +15,10 @@ Rinova's weighbridge ticket of the load: the truck weighed full on arrival and e
 - `CustomizationID` = **urn:ubl-examples:world:trns:weight-statement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Weight statement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **WASTE-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RR-WS-26-0210**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900043338**  
+  The collaboration this document belongs to: the movement of Valdara's waste to Rinova Recovery. Valdara Industries started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0019**  
   The weighbridge ticket number.
 - `UUID` = **389662b4-907e-55fc-9944-1cf97ccc36c8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -152,11 +152,11 @@ Inside `WeighingParty`:
 
 Inside `Shipment`:
 
-- `ID` = **VI-SH-26-0208**  
+- `ID` = **7400043504**  
   The load weighed.
 - `NetWeightMeasure` = **22900** (unitCode `KGM`)  
   The waste: the truck full less the truck empty, 38,200 kg − 15,300 kg.
-- `Consignment/ID` = **VI-CS-26-0209**  
+- `Consignment/ID` = **7300043504**  
   The consignment weighed.
 - `Consignment/TotalPackagesQuantity` = **54**  
   54 bales on the truck, in two layers.
@@ -219,8 +219,8 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:weight-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-WS-26-0210</cbc:ID>
+  <cbc:ProfileExecutionID>9900043338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0019</cbc:ID>
   <cbc:UUID>389662b4-907e-55fc-9944-1cf97ccc36c8</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>10:50:00-01:00</cbc:IssueTime>
@@ -318,10 +318,10 @@ Inside `Shipment`:
     </cac:PartyName>
   </cac:WeighingParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0208</cbc:ID>
+    <cbc:ID>7400043504</cbc:ID>
     <cbc:NetWeightMeasure unitCode="KGM">22900</cbc:NetWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0209</cbc:ID>
+      <cbc:ID>7300043504</cbc:ID>
       <cbc:TotalPackagesQuantity>54</cbc:TotalPackagesQuantity>
     </cac:Consignment>
     <cac:GoodsItem>

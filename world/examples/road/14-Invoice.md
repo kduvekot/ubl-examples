@@ -15,10 +15,10 @@ The carrier invoices the transport to the party that booked it; under FCA that i
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the national specification "Invoice rules of Urvania". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TH-INV-26-0165**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0580**  
+  The collaboration this document belongs to: the road carriage Lumeway books with Trasvia Haulage. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2026/0595**  
   The seller's invoice number.
 - `UUID` = **0ebe57d8-9974-5b0d-ae09-b3535008cb63**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -47,10 +47,10 @@ The carrier invoices the transport to the party that booked it; under FCA that i
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TH-WB-26-0159**  
+- `ID` = **26-0560**  
   The consignment note of the carriage invoiced.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TH-WB-26-0159 is the example road/08, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: 26-0560 is the example road/08, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Accounting Supplier Party
 
@@ -240,7 +240,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `Shipment/Consignment/ID` = **LD-CS-26-0152**  
+- `Shipment/Consignment/ID` = **LMW-CS-26-0580**  
   The consignment carried, as the distributor numbered it when booking the truck.
 - `Shipment/Consignment/ActualDeliveryTransportEvent/OccurrenceDate` = **2026-03-25**  
   Delivered at dock 4: the carriage invoiced is complete.
@@ -254,7 +254,7 @@ Inside `Delivery`:
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Shipment/Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
   The same party as at AccountingSupplierParty/Party, where its full details are given; only its identifier and name are repeated.
-- `FuelConsumption/ID` = **TH-FC-26-0159**  
+- `FuelConsumption/ID` = **26-0029**  
   The fuel of this delivery, stated with the freight for the consignee's report of its transport emissions.
 - `FuelConsumption/FuelTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:FuelTypeCode`)  
   The truck runs on diesel. The code is from the Trade Accord's fuel type list: DIESEL = Diesel.
@@ -277,9 +277,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF49THINV260165**  
+- `InstructionNote` = **Quote RF9520260595**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF49THINV260165** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF9520260595** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -293,7 +293,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice TH-INV-26-0165**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice 2026/0595**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41600** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
   The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
@@ -436,8 +436,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TH-INV-26-0165</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0580</cbc:ProfileExecutionID>
+  <cbc:ID>2026/0595</cbc:ID>
   <cbc:UUID>0ebe57d8-9974-5b0d-ae09-b3535008cb63</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>11:07:00-01:00</cbc:IssueTime>
@@ -450,7 +450,7 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TH-WB-26-0159</cbc:ID>
+    <cbc:ID>26-0560</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -620,7 +620,7 @@ Inside `InvoiceLine`:
   <cac:Delivery>
     <cac:Shipment>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0152</cbc:ID>
+        <cbc:ID>LMW-CS-26-0580</cbc:ID>
         <cac:ActualDeliveryTransportEvent>
           <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>09:40:00</cbc:OccurrenceTime>
@@ -640,7 +640,7 @@ Inside `InvoiceLine`:
       </cac:Consignment>
     </cac:Shipment>
     <cac:FuelConsumption>
-      <cbc:ID>TH-FC-26-0159</cbc:ID>
+      <cbc:ID>26-0029</cbc:ID>
       <cbc:FuelTypeCode listID="urn:ubl-examples:world:codelist:FuelTypeCode">DIESEL</cbc:FuelTypeCode>
       <cbc:FuelConsumptionMeasure unitCode="LTR">57</cbc:FuelConsumptionMeasure>
     </cac:FuelConsumption>
@@ -652,8 +652,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-24</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF49THINV260165</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF49THINV260165</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF9520260595</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF9520260595</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU320351041600000000628374</cbc:ID>
@@ -661,7 +661,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice TH-INV-26-0165</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/0595</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>

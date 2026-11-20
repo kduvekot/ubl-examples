@@ -15,14 +15,14 @@ The furniture maker retrieves the contest documents: the brief, the site plan an
 - `CustomizationID` = **urn:ubl-examples:world:trns:call-for-tenders:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Call for tenders"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CONTEST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0635**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PROM-DC**  
+  The collaboration this document belongs to: the department's design contest for the promenade bench. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0540**  
   The number of the contest documents.
 - `UUID` = **d94848cd-0c23-5c8c-b1c5-a395fecf418d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `ContractFolderID` = **PWD-2026-PROM-DC**  
+- `ContractFolderID` = **PWD/2026/PROM-DC**  
   The department's file number for the contest, the same on every document of it.
 - `IssueDate` = **2026-03-20**  
   Retrieved by the furniture maker the day after the notice.
@@ -41,7 +41,7 @@ Inside `TechnicalDocumentReference`:
   The design brief.
 - `DocumentType` = **Design brief**  
   What it is.
-- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD-2026-PROM-DC/brief**  
+- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD/2026/PROM-DC/brief**  
   Where it is obtained: the contest's page on the department's platform.
 
 ### Provided Document Reference
@@ -54,7 +54,7 @@ Inside `ProvidedDocumentReference`:
   What it is.
 - `VersionID` = **A**  
   Its revision, so the change between the versions can be read.
-- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-a**  
+- `Attachment/ExternalReference/URI` = **https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-a**  
   Where it is obtained.
 
 ### Contracting Party
@@ -308,9 +308,9 @@ Inside `TenderingProcess`:
   At noon.
 - `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-17**  
   Requests to participate by then.
-- `NoticeDocumentReference/ID` = **LPWD-DOC-26-0633**  
+- `NoticeDocumentReference/ID` = **PWD/2026/0223**  
   The prior information notice of the contest.
-- `NoticeDocumentReference/ID` = **LPWD-DOC-26-0634**  
+- `NoticeDocumentReference/ID` = **PWD/2026/0530**  
   The contest notice the documents belong to.
 - `NoticeDocumentReference/VersionID` = **1**  
   The version of the notice they go with.
@@ -358,10 +358,10 @@ Inside `ProcurementProject`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:call-for-tenders:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0635</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0540</cbc:ID>
   <cbc:UUID>d94848cd-0c23-5c8c-b1c5-a395fecf418d</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>16:56:00-01:00</cbc:IssueTime>
   <cbc:Note>The brief, the site plan and the rules of the contest. The contest documents are available to everyone on the department's platform from the contest notice; this is the set Brackenmere Furniture obtained.</cbc:Note>
@@ -371,7 +371,7 @@ Inside `ProcurementProject`:
     <cbc:DocumentType>Design brief</cbc:DocumentType>
     <cac:Attachment>
       <cac:ExternalReference>
-        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/brief</cbc:URI>
+        <cbc:URI>https://tenders.lumeport.example/PWD/2026/PROM-DC/brief</cbc:URI>
       </cac:ExternalReference>
     </cac:Attachment>
   </cac:TechnicalDocumentReference>
@@ -381,7 +381,7 @@ Inside `ProcurementProject`:
     <cbc:VersionID>A</cbc:VersionID>
     <cac:Attachment>
       <cac:ExternalReference>
-        <cbc:URI>https://tenders.lumeport.example/PWD-2026-PROM-DC/site-plan-a</cbc:URI>
+        <cbc:URI>https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-a</cbc:URI>
       </cac:ExternalReference>
     </cac:Attachment>
   </cac:ProvidedDocumentReference>
@@ -583,10 +583,10 @@ Inside `ProcurementProject`:
       <cbc:EndDate>2026-04-17</cbc:EndDate>
     </cac:ParticipationRequestReceptionPeriod>
     <cac:NoticeDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0633</cbc:ID>
+      <cbc:ID>PWD/2026/0223</cbc:ID>
     </cac:NoticeDocumentReference>
     <cac:NoticeDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+      <cbc:ID>PWD/2026/0530</cbc:ID>
       <cbc:VersionID>1</cbc:VersionID>
     </cac:NoticeDocumentReference>
     <cac:ProcessJustification>

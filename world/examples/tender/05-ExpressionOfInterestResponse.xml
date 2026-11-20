@@ -3,17 +3,17 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:expression-of-interest:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0191</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0222</cbc:ID>
   <cbc:UUID>3ad290e2-059a-5871-b575-922bf8b45c86</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-02</cbc:IssueDate>
   <cbc:IssueTime>08:35:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:TenderLanguageLocaleCode listID="ISO 639">en</cbc:TenderLanguageLocaleCode>
   <cbc:Note>Registered: the sawmill receives every change to the documents.</cbc:Note>
   <cac:ExpressionOfInterestDocumentReference>
-    <cbc:ID>MS-DOC-26-0190</cbc:ID>
+    <cbc:ID>MDS-EOI-26-0007</cbc:ID>
   </cac:ExpressionOfInterestDocumentReference>
   <cac:Signature>
     <cbc:ID>PWD-SIG-EOIR</cbc:ID>

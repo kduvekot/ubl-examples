@@ -15,10 +15,10 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the national specification "Invoice rules of Urvania". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
-  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **UTILITIES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FE-INV-26-0313**  
+  The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9909901005**  
+  The collaboration this document belongs to: Ferrano Energy's bill for March to Valdara. Ferrano Energy started it and gave it this identifier, which every document of it repeats.
+- `ID` = **2026/313046**  
   The seller's invoice number.
 - `UUID` = **47af4407-c4e0-59f4-b15c-7ba55c57e130**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -60,7 +60,7 @@ Inside `InvoicePeriod`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **FE-INV-26-0211**  
+- `InvoiceDocumentReference/ID` = **2026/313045**  
   February's bill, with an estimated reading of the warehouse meter.
 - `InvoiceDocumentReference/IssueDate` = **2026-03-01**  
   Its issue date.
@@ -262,9 +262,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **FERRA-RTGS**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF58FEINV260313**  
+- `InstructionNote` = **Quote RF192026313046**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF58FEINV260313** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF192026313046** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XU080351041600000004084431** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -276,7 +276,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice FE-INV-26-0313**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice 2026/313046**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41600** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
   The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
@@ -478,7 +478,7 @@ Inside `InvoiceLine`:
   A monthly bill. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
-- `PurchaseReference/ID` = **FG-E-20388**  
+- `PurchaseReference/ID` = **FGR-E-20388**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Factory, main connection**  
   Where it is.
@@ -524,7 +524,7 @@ Inside `InvoiceLine`:
   A monthly bill. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
-- `PurchaseReference/ID` = **FG-E-20523**  
+- `PurchaseReference/ID` = **FGR-E-20523**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Warehouse of Castrano Logistics**  
   Where it is.
@@ -576,7 +576,7 @@ Inside `InvoiceLine`:
   A monthly bill. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **March 2026**  
   The period in words.
-- `PurchaseReference/ID` = **FG-G-20417**  
+- `PurchaseReference/ID` = **FGR-G-20417**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Factory, gas of the coating line**  
   Where it is.
@@ -622,7 +622,7 @@ Inside `InvoiceLine`:
   A month's consumption. The code is from the Trade Accord's period description list: MONTH = Calendar month.
 - `InvoicePeriod/Description` = **February 2026**  
   The period in words.
-- `PurchaseReference/ID` = **FG-E-20523**  
+- `PurchaseReference/ID` = **FGR-E-20523**  
   The meter or subscription the line is for.
 - `PurchaseReference/Description` = **Warehouse of Castrano Logistics**  
   Where it is.
@@ -665,8 +665,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FE-INV-26-0313</cbc:ID>
+  <cbc:ProfileExecutionID>9909901005</cbc:ProfileExecutionID>
+  <cbc:ID>2026/313046</cbc:ID>
   <cbc:UUID>47af4407-c4e0-59f4-b15c-7ba55c57e130</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>13:20:00-01:00</cbc:IssueTime>
@@ -686,7 +686,7 @@ Inside `InvoiceLine`:
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>FE-INV-26-0211</cbc:ID>
+      <cbc:ID>2026/313045</cbc:ID>
       <cbc:IssueDate>2026-03-01</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
     <cac:BillingReferenceLine>
@@ -853,15 +853,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF58FEINV260313</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF58FEINV260313</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF192026313046</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF192026313046</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU080351041600000004084431</cbc:ID>
       <cbc:Name>Ferrano Energy SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice FE-INV-26-0313</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/313046</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>
@@ -1012,7 +1012,7 @@ Inside `InvoiceLine`:
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-E-20388</cbc:ID>
+      <cbc:ID>FGR-E-20388</cbc:ID>
       <cbc:Description>Factory, main connection</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -1051,7 +1051,7 @@ Inside `InvoiceLine`:
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-E-20523</cbc:ID>
+      <cbc:ID>FGR-E-20523</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
     </cac:PurchaseReference>
     <cac:Delivery>
@@ -1103,7 +1103,7 @@ Inside `InvoiceLine`:
       <cbc:Description>March 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-G-20417</cbc:ID>
+      <cbc:ID>FGR-G-20417</cbc:ID>
       <cbc:Description>Factory, gas of the coating line</cbc:Description>
     </cac:PurchaseReference>
     <cac:Item>
@@ -1142,7 +1142,7 @@ Inside `InvoiceLine`:
       <cbc:Description>February 2026</cbc:Description>
     </cac:InvoicePeriod>
     <cac:PurchaseReference>
-      <cbc:ID>FG-E-20523</cbc:ID>
+      <cbc:ID>FGR-E-20523</cbc:ID>
       <cbc:Description>Warehouse of Castrano Logistics</cbc:Description>
     </cac:PurchaseReference>
     <cac:Delivery>

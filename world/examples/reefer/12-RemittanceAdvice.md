@@ -15,10 +15,10 @@ The wholesaler pays the cooperative's invoice in lume on its due date, from its 
 - `CustomizationID` = **urn:ubl-examples:world:trns:remittance-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Remittance advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFP-RM-26-0567**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0214**  
+  The collaboration this document belongs to: Hafefo's order of fruit from Harrowmead Fruit Growers. Hafefo Fresh Produce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0127**  
   The payer's remittance number.
 - `UUID` = **242b5d0f-ba11-554c-bd7e-b29ddfca488d**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -36,9 +36,9 @@ The wholesaler pays the cooperative's invoice in lume on its due date, from its 
   No credits taken.
 - `TotalPaymentAmount` = **28868.00** (currencyID `XBL`)  
   The amount transferred: the payable amount of the invoice.
-- `PaymentOrderReference` = **HFP-PAY-26-0553**  
+- `PaymentOrderReference` = **26-0026**  
   The payment order the payer gave its bank.
-- `InvoicingPartyReference` = **RF77HFGINV260563**  
+- `InvoicingPartyReference` = **RF88HRWINV260772**  
   The reference the invoicing party asked to quote.
 - `LineCountNumeric` = **1**  
   The invoice paid.
@@ -153,9 +153,9 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **HFP-PAY-26-0553**  
+- `InstructionID` = **26-0026**  
   The payer's own number for the payment order it gave its bank.
-- `PaymentID` = **RF77HFGINV260563** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF88HRWINV260772** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayerFinancialAccount/ID` = **XL21BSEL0010008247361** (schemeID `urn:ubl-examples:world:account`)  
   The account the payer pays from. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -254,9 +254,9 @@ Inside `RemittanceAdviceLine`:
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **GDDS** (listID `ISO 20022 ExternalPurpose1Code`)  
   ISO 20022 purpose code GDDS: purchase of goods. The code is from the world's copy of ISO 20022 ExternalPurpose1Code: GDDS = PurchaseSaleOfGoods.
-- `InvoicingPartyReference` = **RF77HFGINV260563**  
+- `InvoicingPartyReference` = **RF88HRWINV260772**  
   The reference the invoicing party asked to quote.
-- `BillingReference/InvoiceDocumentReference/ID` = **HFG-INV-26-0563**  
+- `BillingReference/InvoiceDocumentReference/ID` = **HRW-INV-26-0772**  
   The invoice this payment settles.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-04-23**  
   Its issue date, so the reference is unambiguous.
@@ -269,8 +269,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-RM-26-0567</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>26-0127</cbc:ID>
   <cbc:UUID>242b5d0f-ba11-554c-bd7e-b29ddfca488d</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
   <cbc:IssueTime>09:20:00+00:00</cbc:IssueTime>
@@ -279,8 +279,8 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XBL">28868.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">28868.00</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>HFP-PAY-26-0553</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF77HFGINV260563</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>26-0026</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF88HRWINV260772</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -367,8 +367,8 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>HFP-PAY-26-0553</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF77HFGINV260563</cbc:PaymentID>
+    <cbc:InstructionID>26-0026</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF88HRWINV260772</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL21BSEL0010008247361</cbc:ID>
       <cbc:Name>Hafefo Fresh Produce Ltd</cbc:Name>
@@ -449,10 +449,10 @@ Inside `RemittanceAdviceLine`:
     <cbc:DebitLineAmount currencyID="XBL">28868.00</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF77HFGINV260563</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF88HRWINV260772</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>HFG-INV-26-0563</cbc:ID>
+        <cbc:ID>HRW-INV-26-0772</cbc:ID>
         <cbc:IssueDate>2026-04-23</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

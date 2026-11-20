@@ -15,12 +15,12 @@ The inland waterway consignment note, issued to the shipper.
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **FB-WB-26-0890**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0425**  
+  The collaboration this document belongs to: the barge carriage Rinova books with Fiumella Barges. Rinova Recovery started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0181**  
   The consignment note number.
-- `CarrierAssignedID` = **FB-CMNI-26-0882**  
+- `CarrierAssignedID` = **26-0022**  
   The carrier's own number for the carriage.
 - `UUID` = **0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -194,9 +194,9 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **RR-SH-26-0889**  
+- `ID` = **26-0451**  
   The shipment as the despatching party numbered it.
-- `Consignment/ID` = **RR-CS-26-0885**  
+- `Consignment/ID` = **26-0426**  
   The seller's consignment number.
 - `Consignment/CarrierAssignedID` = **FB4-26-031/2**  
   The barge operator's number: the second lot of the voyage.
@@ -364,7 +364,7 @@ Inside `Shipment`:
   The lot on the bags' labels, the seller's lot number, as in its despatch advice.
 - `GoodsItem/OrderLineReference/LineID` = **1**  
   The order line.
-- `GoodsItem/OrderLineReference/OrderReference/ID` = **RP-PO-26-0882**  
+- `GoodsItem/OrderLineReference/OrderReference/ID` = **26-0339**  
   The buyer's order.
 - `GoodsItem/OriginAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
@@ -418,10 +418,10 @@ Inside `Shipment`:
   The height of one filled bag. The code is from the Trade Accord's dimension attribute list: HEIGHT = Height. An identifier that holds a code names the code's list in its schemeID.
 - `GoodsItem/ContainingPackage/MeasurementDimension/Measure` = **1300** (unitCode `MMT`)  
   In millimetres.
-- `GoodsItem/ShipmentDocumentReference/ID` = **FB-TEP-26-0886**  
+- `GoodsItem/ShipmentDocumentReference/ID` = **26-0104**  
   The transport plan of the sailing.
 - `GoodsItem/ShipmentDocumentReference/DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FB-TEP-26-0886 is the example plastics/04, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
+  The kind of document referred to: 26-0104 is the example plastics/04, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 - `GoodsItem/EnergyConsumptionAllocation/EnergySourceTypeCode` = **DIESEL** (listID `urn:ubl-examples:world:codelist:EnergySourceCode`)  
   The barge's engine fuel. The code is from the Trade Accord's energy source list: DIESEL = Diesel.
 - `GoodsItem/EnergyConsumptionAllocation/AllocatedEnergyMeasure` = **5400** (unitCode `KWH`)  
@@ -435,10 +435,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **FB-TEP-26-0886**  
+- `ID` = **26-0104**  
   The transport plan under which the carriage is performed.
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FB-TEP-26-0886 is the example plastics/04, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
+  The kind of document referred to: 26-0104 is the example plastics/04, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 
 ### Document Distribution
 
@@ -463,7 +463,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **FB-SIG-FB-WB-26-0890**  
+- `ID` = **FB-SIG-26-0181**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **XU-R-104959** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -478,9 +478,9 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FB-WB-26-0890</cbc:ID>
-  <cbc:CarrierAssignedID>FB-CMNI-26-0882</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>26-0425</cbc:ProfileExecutionID>
+  <cbc:ID>26-0181</cbc:ID>
+  <cbc:CarrierAssignedID>26-0022</cbc:CarrierAssignedID>
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -607,9 +607,9 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>RR-SH-26-0889</cbc:ID>
+    <cbc:ID>26-0451</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>RR-CS-26-0885</cbc:ID>
+      <cbc:ID>26-0426</cbc:ID>
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity>120</cbc:TotalPackagesQuantity>
@@ -755,7 +755,7 @@ Inside `Signature`:
       <cac:OrderLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cac:OrderReference>
-          <cbc:ID>RP-PO-26-0882</cbc:ID>
+          <cbc:ID>26-0339</cbc:ID>
         </cac:OrderReference>
       </cac:OrderLineReference>
       <cac:OriginAddress>
@@ -799,7 +799,7 @@ Inside `Signature`:
         </cac:MeasurementDimension>
       </cac:ContainingPackage>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>FB-TEP-26-0886</cbc:ID>
+        <cbc:ID>26-0104</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
       </cac:ShipmentDocumentReference>
       <cac:EnergyConsumptionAllocation>
@@ -813,7 +813,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>FB-TEP-26-0886</cbc:ID>
+    <cbc:ID>26-0104</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -832,7 +832,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>FB-SIG-FB-WB-26-0890</cbc:ID>
+    <cbc:ID>FB-SIG-26-0181</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104959</cbc:ID>

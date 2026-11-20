@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-EX-26-0135</cbc:ID>
+  <cbc:ID>BYF-EX-26-0505</cbc:ID>
   <cbc:UUID>4b360143-92f4-557a-aac2-22d33c03e880</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>14:25:00-01:00</cbc:IssueTime>
@@ -45,7 +44,7 @@
     </cac:PostalAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>BF-CD-26-0136</cbc:ID>
+    <cbc:ID>BYF-CD-26-0505</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-12</cbc:StartDate>
@@ -57,11 +56,11 @@
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>LD-SH-26-0132</cbc:ID>
+      <cbc:ID>LMW-SH-26-1001</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
       <cbc:FreeOnBoardValueAmount currencyID="XBL">51813.15</cbc:FreeOnBoardValueAmount>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0133</cbc:ID>
+        <cbc:ID>LMW-CS-26-1001</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">324</cbc:TotalPackagesQuantity>
         <cac:OfficeOfExitLocation>
@@ -374,15 +373,15 @@
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:PreviousCustomsDeclaration>
-      <cbc:ID>LD-IM-26-0340</cbc:ID>
+      <cbc:ID>LMW-IM-26-0161</cbc:ID>
       <cbc:FunctionCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:FunctionCode>
     </cac:PreviousCustomsDeclaration>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>VT-PO-26-0127</cbc:ID>
+      <cbc:ID>26-0417</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>LD-IM-26-0161</cbc:ID>
+      <cbc:ID>LMW-IM-26-0127</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ImportCustomsDeclaration</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>

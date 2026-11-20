@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>LPG-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-INV-26-0900</cbc:ID>
+  <cbc:ProfileExecutionID>9924528384</cbc:ProfileExecutionID>
+  <cbc:ID>9000034662</cbc:ID>
   <cbc:UUID>8498ff7e-c47a-5cc6-967c-bd8b3852ae06</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>11:16:00-01:00</cbc:IssueTime>
@@ -14,13 +14,13 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>CSWC-PO-26-0895</cbc:ID>
+    <cbc:ID>4500028302</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>KG-DA-26-0896</cbc:ID>
+    <cbc:ID>8000034654</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KG-WB-26-0610-03</cbc:ID>
+    <cbc:ID>1700001734</cbc:ID>
     <cbc:IssueDate>2026-06-10</cbc:IssueDate>
     <cbc:DocumentType>Weighbridge ticket</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
@@ -174,15 +174,15 @@
     <cbc:PaymentDueDate>2026-07-13</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF59KGINV260900</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF59KGINV260900</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF669000034662</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF669000034662</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB45BLUM38522004817534</cbc:ID>
       <cbc:Name>Kelpstone Gas Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice KG-INV-26-0900</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 9000034662</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">385220</cbc:ID>
         <cbc:Name>Gullhaven branch</cbc:Name>

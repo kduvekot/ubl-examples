@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-RM-26-0316</cbc:ID>
+  <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
+  <cbc:ID>26-0144</cbc:ID>
   <cbc:UUID>bcb6eadf-33b2-550e-b57c-1a63cfc06bfc</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
@@ -14,8 +14,8 @@
   <cbc:TotalDebitAmount currencyID="XLC">139.870</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XLC">0.000</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XLC">139.870</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>VT-PAY-26-0313</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>26-0018</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF76STLC10772603</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:InvoicePeriod>
     <cbc:StartDate>2026-03-01</cbc:StartDate>
@@ -23,7 +23,7 @@
   </cac:InvoicePeriod>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>ST-INV-26-0323</cbc:ID>
+      <cbc:ID>STL-C-1077-2603</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
@@ -121,8 +121,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>VT-PAY-26-0313</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF26STINV260323</cbc:PaymentID>
+    <cbc:InstructionID>26-0018</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF76STLC10772603</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL40BSEL0010003665515</cbc:ID>
       <cbc:Name>Velumi Trading Ltd</cbc:Name>
@@ -204,14 +204,14 @@
     <cbc:DebitLineAmount currencyID="XLC">139.870</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XLC">0.000</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">PHON</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF26STINV260323</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF76STLC10772603</cbc:InvoicingPartyReference>
     <cac:InvoicePeriod>
       <cbc:StartDate>2026-03-01</cbc:StartDate>
       <cbc:EndDate>2026-03-31</cbc:EndDate>
     </cac:InvoicePeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>ST-INV-26-0323</cbc:ID>
+        <cbc:ID>STL-C-1077-2603</cbc:ID>
         <cbc:IssueDate>2026-04-02</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

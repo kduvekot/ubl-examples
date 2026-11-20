@@ -496,7 +496,7 @@ CARRIAGE_PAID = {"CPT", "CIP", "CFR", "CIF", "DAP", "DPU", "DDP"}   # Incoterms 
 
 def variants_of_one_model(a, b):
     """Two variants of one model (the bench in Ferro grey and in moss green, D28 point 8) share the maker's item
-    number; the variant is told apart by its extended ID (ExtendedID, as Lumeway's LD-10442 is for any colour)."""
+    number; the variant is told apart by its extended ID (ExtendedID, as Lumeway's LMW-10442 is for any colour)."""
     va, vb = a.get("variant", {}), b.get("variant", {})
     return (a.get("sellers_id") == b.get("sellers_id") and va.get("extended") and vb.get("extended")
             and va.get("extended") != vb.get("extended") and va.get("what") == vb.get("what"))

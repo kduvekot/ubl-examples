@@ -15,10 +15,10 @@ The distributor announces the delivery and the truck that brings it.
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DA-26-0229**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900339316**  
+  The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-DA-26-0911**  
   The despatching party's number.
 - `UUID` = **4b7e9055-23cd-5fbb-b498-b08f07b17c6e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ The distributor announces the delivery and the truck that brings it.
 
 Inside `OrderReference`:
 
-- `ID` = **BS-PO-26-0224**  
+- `ID` = **7100452422**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -178,9 +178,9 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0230**  
+- `ID` = **LMW-SH-26-0911**  
   The despatching party's shipment number.
-- `Consignment/ID` = **LD-CS-26-0228**  
+- `Consignment/ID` = **LMW-CS-26-0893**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **1297.2** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight loaded.
@@ -268,7 +268,7 @@ Inside `Shipment`:
   The order line the benches belong to.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
   The item, named only: it is described in full on despatch line 1.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's item number.
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
@@ -354,7 +354,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
-- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BYF-WB-26-2276**  
   The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
@@ -376,7 +376,7 @@ Inside `Shipment`:
   The order line the benches belong to.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
   The item, named only: it is described in full on despatch line 1.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's item number.
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
@@ -462,7 +462,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
-- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BYF-WB-26-2276**  
   The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
@@ -484,7 +484,7 @@ Inside `Shipment`:
   The order line the benches belong to.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
   The item, named only: it is described in full on despatch line 1.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's item number.
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
@@ -570,7 +570,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
-- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BYF-WB-26-2276**  
   The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
@@ -592,7 +592,7 @@ Inside `Shipment`:
   The order line the benches belong to.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
   The item, named only: it is described in full on despatch line 1.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's item number.
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
@@ -678,7 +678,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
-- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BYF-WB-26-2276**  
   The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
@@ -700,7 +700,7 @@ Inside `Shipment`:
   The order line the benches belong to.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
   The item, named only: it is described in full on despatch line 1.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's item number.
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
@@ -786,7 +786,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
-- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BYF-WB-26-2276**  
   The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
@@ -808,7 +808,7 @@ Inside `Shipment`:
   The order line the benches belong to.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/Item/Name` = **Park bench Serra 180**  
   The item, named only: it is described in full on despatch line 1.
-- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LD-10442**  
+- `TransportHandlingUnit/HandlingUnitDespatchLine/Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's item number.
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
@@ -894,7 +894,7 @@ Inside `Shipment`:
   The pallet goes back: the truck takes the store's empty pallets back to the distribution centre.
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
-- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
+- `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BYF-WB-26-2276**  
   The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
@@ -917,7 +917,7 @@ Inside `DespatchLine`:
   The item's short name.
 - `Item/BuyersItemIdentification/ID` = **BM-551210**  
   The buyer's own item number: it resells this item under its own number.
-- `Item/SellersItemIdentification/ID` = **LD-10442**  
+- `Item/SellersItemIdentification/ID` = **LMW-10442**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
@@ -952,8 +952,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DA-26-0229</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-DA-26-0911</cbc:ID>
   <cbc:UUID>4b7e9055-23cd-5fbb-b498-b08f07b17c6e</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
   <cbc:IssueTime>15:34:00-01:00</cbc:IssueTime>
@@ -961,7 +961,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0224</cbc:ID>
+    <cbc:ID>7100452422</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -1077,9 +1077,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0230</cbc:ID>
+    <cbc:ID>LMW-SH-26-0911</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0228</cbc:ID>
+      <cbc:ID>LMW-CS-26-0893</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">1297.2</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -1156,7 +1156,7 @@ Inside `DespatchLine`:
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -1235,7 +1235,7 @@ Inside `DespatchLine`:
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -1254,7 +1254,7 @@ Inside `DespatchLine`:
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -1333,7 +1333,7 @@ Inside `DespatchLine`:
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -1352,7 +1352,7 @@ Inside `DespatchLine`:
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -1431,7 +1431,7 @@ Inside `DespatchLine`:
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -1450,7 +1450,7 @@ Inside `DespatchLine`:
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -1529,7 +1529,7 @@ Inside `DespatchLine`:
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -1548,7 +1548,7 @@ Inside `DespatchLine`:
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -1627,7 +1627,7 @@ Inside `DespatchLine`:
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -1646,7 +1646,7 @@ Inside `DespatchLine`:
         <cac:Item>
           <cbc:Name>Park bench Serra 180</cbc:Name>
           <cac:SellersItemIdentification>
-            <cbc:ID>LD-10442</cbc:ID>
+            <cbc:ID>LMW-10442</cbc:ID>
           </cac:SellersItemIdentification>
         </cac:Item>
       </cac:HandlingUnitDespatchLine>
@@ -1725,7 +1725,7 @@ Inside `DespatchLine`:
         <cbc:Description>Returnable pallet of the distributor's pool, 1850 x 700 mm</cbc:Description>
       </cac:TransportEquipment>
       <cac:ShipmentDocumentReference>
-        <cbc:ID>BF-WB-26-0231</cbc:ID>
+        <cbc:ID>BYF-WB-26-2276</cbc:ID>
         <cbc:DocumentType>Consignment note</cbc:DocumentType>
       </cac:ShipmentDocumentReference>
     </cac:TransportHandlingUnit>
@@ -1744,7 +1744,7 @@ Inside `DespatchLine`:
         <cbc:ID>BM-551210</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10442</cbc:ID>
+        <cbc:ID>LMW-10442</cbc:ID>
         <cbc:ExtendedID>GRY</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>

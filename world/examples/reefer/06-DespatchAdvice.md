@@ -15,10 +15,10 @@ The cooperative tells the wholesaler what is in the reefer: the pallets, their v
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFG-DA-26-0561**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0214**  
+  The collaboration this document belongs to: Hafefo's order of fruit from Harrowmead Fruit Growers. Hafefo Fresh Produce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **HRW-DA-26-0764**  
   The despatching party's number.
 - `UUID` = **7eceb0f7-f3b3-5179-a5b6-4ef73e60462c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -37,7 +37,7 @@ The cooperative tells the wholesaler what is in the reefer: the pallets, their v
 
 Inside `OrderReference`:
 
-- `ID` = **HFP-PO-26-0553**  
+- `ID` = **26-0215**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -148,9 +148,9 @@ Inside `DeliveryCustomerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0556**  
+- `ID` = **HRW-SH-26-0730**  
   The despatching party's shipment number.
-- `Consignment/ID` = **HFG-CS-26-0557**  
+- `Consignment/ID` = **HRW-CS-26-0730**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **21728** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the fruit on its pallets.
@@ -423,7 +423,7 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Apples Gala, carton 18 kg, count 100**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-GAL100**  
+- `Item/SellersItemIdentification/ID` = **HRW-GAL100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430001014** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -441,7 +441,7 @@ Inside `DespatchLine`:
   How many cartons of the line are of this lot.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **224**  
   Counted at packing.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0401**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **HRW-L26-0401**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `Item/ItemInstance/ManufactureDate` = **2026-04-20**  
   Packed on that day, from the cold store or the orchard straight into cartons.
@@ -457,7 +457,7 @@ Inside `DespatchLine`:
   How many cartons of the line are of this lot.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **224**  
   Counted at packing.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0402**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **HRW-L26-0402**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `Item/ItemInstance/ManufactureDate` = **2026-04-20**  
   Packed on that day, from the cold store or the orchard straight into cartons.
@@ -473,7 +473,7 @@ Inside `DespatchLine`:
   How many cartons of the line are of this lot.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **224**  
   Counted at packing.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0403**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **HRW-L26-0403**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `ID` = **2**  
   The line number.
@@ -487,7 +487,7 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Apples Granny Smith, carton 18 kg, count 100**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-GSM100**  
+- `Item/SellersItemIdentification/ID` = **HRW-GSM100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430001021** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -505,7 +505,7 @@ Inside `DespatchLine`:
   How many cartons of the line are of this lot.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **168**  
   Counted at packing.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0431**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **HRW-L26-0431**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `Item/ItemInstance/ManufactureDate` = **2026-04-21**  
   Packed on that day, from the cold store or the orchard straight into cartons.
@@ -521,7 +521,7 @@ Inside `DespatchLine`:
   How many cartons of the line are of this lot.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **112**  
   Counted at packing.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0432**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **HRW-L26-0432**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `ID` = **3**  
   The line number.
@@ -535,7 +535,7 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-PKT080**  
+- `Item/SellersItemIdentification/ID` = **HRW-PKT080**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430002011** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -553,7 +553,7 @@ Inside `DespatchLine`:
   How many cartons of the line are of this lot.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **168**  
   Counted at packing.
-- `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0451**  
+- `Item/ItemInstance/LotIdentification/LotNumberID` = **HRW-L26-0451**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 
 ## The document
@@ -564,8 +564,8 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-DA-26-0561</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>HRW-DA-26-0764</cbc:ID>
   <cbc:UUID>7eceb0f7-f3b3-5179-a5b6-4ef73e60462c</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>12:05:00-01:00</cbc:IssueTime>
@@ -573,7 +573,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -659,9 +659,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:ID>HRW-SH-26-0730</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0557</cbc:ID>
+      <cbc:ID>HRW-CS-26-0730</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -866,7 +866,7 @@ Inside `DespatchLine`:
       <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GAL100</cbc:ID>
+        <cbc:ID>HRW-GAL100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001014</cbc:ID>
@@ -886,7 +886,7 @@ Inside `DespatchLine`:
           <cbc:Value>224</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0401</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0401</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:ItemInstance>
@@ -904,7 +904,7 @@ Inside `DespatchLine`:
           <cbc:Value>224</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0402</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0402</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:ItemInstance>
@@ -922,7 +922,7 @@ Inside `DespatchLine`:
           <cbc:Value>224</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0403</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0403</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
@@ -938,7 +938,7 @@ Inside `DespatchLine`:
       <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
       <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GSM100</cbc:ID>
+        <cbc:ID>HRW-GSM100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001021</cbc:ID>
@@ -958,7 +958,7 @@ Inside `DespatchLine`:
           <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0431</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0431</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
       <cac:ItemInstance>
@@ -976,7 +976,7 @@ Inside `DespatchLine`:
           <cbc:Value>112</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0432</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0432</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
@@ -992,7 +992,7 @@ Inside `DespatchLine`:
       <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-PKT080</cbc:ID>
+        <cbc:ID>HRW-PKT080</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430002011</cbc:ID>
@@ -1012,7 +1012,7 @@ Inside `DespatchLine`:
           <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
-          <cbc:LotNumberID>HFC-L26-0451</cbc:LotNumberID>
+          <cbc:LotNumberID>HRW-L26-0451</cbc:LotNumberID>
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>

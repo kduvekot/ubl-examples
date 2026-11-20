@@ -15,10 +15,8 @@ The wholesaler declares the vaccines and the insulin for import at Lumeport airp
 - `CustomizationID` = **urn:ubl-examples:world:trns:import-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **QPD-IM-26-0324**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **QLM-IM-26-0643**  
   The importer's declaration number.
 - `UUID` = **288dda29-bba9-5aaa-b84e-c91eac5c3161**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -197,9 +195,9 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **NB-SH-26-0325**  
+- `ID` = **NLB-SH-26-1786**  
   The maker's shipment, as its invoice numbers it.
-- `Consignment/ID` = **NB-CS-26-0326**  
+- `Consignment/ID` = **NLB-CS-26-1786**  
   The consignment declared, as the maker booked it.
 - `Consignment/GrossWeightMeasure` = **172.8** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving.
@@ -282,10 +280,10 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **NB-INV-26-0321**  
+- `ID` = **NLB-INV-26-1731**  
   The maker's commercial invoice the customs value rests on.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: NB-INV-26-0321 is the example medicines/02, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: NLB-INV-26-1731 is the example medicines/02, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -295,8 +293,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-IM-26-0324</cbc:ID>
+  <cbc:ID>QLM-IM-26-0643</cbc:ID>
   <cbc:UUID>288dda29-bba9-5aaa-b84e-c91eac5c3161</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>08:30:00-01:00</cbc:IssueTime>
@@ -434,9 +431,9 @@ Inside `AdditionalDocumentReference`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>NB-SH-26-0325</cbc:ID>
+    <cbc:ID>NLB-SH-26-1786</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>NB-CS-26-0326</cbc:ID>
+      <cbc:ID>NLB-CS-26-1786</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">172.8</cbc:GrossWeightMeasure>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -504,7 +501,7 @@ Inside `AdditionalDocumentReference`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>NB-INV-26-0321</cbc:ID>
+    <cbc:ID>NLB-INV-26-1731</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

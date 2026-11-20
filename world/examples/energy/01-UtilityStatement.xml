@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0#compliant#urn:ubl-examples:world:community:energy-xu:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FG-DOC-26-0149</cbc:ID>
+  <cbc:ProfileExecutionID>FGR-TX-26-0151</cbc:ProfileExecutionID>
+  <cbc:ID>FGR-UST-26-2253</cbc:ID>
   <cbc:UUID>4dda14a2-d50d-5ef3-84d8-980f6cc7eedb</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
@@ -13,7 +13,7 @@
   <cbc:Note languageID="en-XU">Metered consumption for the retail company's billing; the grid operator owns and reads the meter.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cac:ParentDocumentReference>
-    <cbc:ID>FG-INV-26-0150</cbc:ID>
+    <cbc:ID>2026/0157</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:SenderParty>
@@ -109,12 +109,12 @@
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>FG-CP-4120-G1-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>FGR-CP-4120-G1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Gas for the coating ovens of the factory.</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="MTQ">1350</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>FG-CP-4120-G1</cbc:ID>
+      <cbc:ID>FGR-CP-4120-G1</cbc:ID>
       <cbc:Description>Valdara Industries, gas connection of the coating line</cbc:Description>
       <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
@@ -137,13 +137,13 @@
         </cac:Country>
       </cac:Address>
       <cac:UtilityMeter>
-        <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
+        <cbc:MeterNumber>FGR-G-20417</cbc:MeterNumber>
         <cbc:MeterName>Rotary gas meter, coating line</cbc:MeterName>
         <cbc:MeterConstant>1</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">DIRECT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="MTQ">1350</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
-          <cbc:ID>FG-G-20417-2603</cbc:ID>
+          <cbc:ID>FGR-G-20417-2603</cbc:ID>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
           <cbc:PreviousMeterQuantity unitCode="MTQ">28410</cbc:PreviousMeterQuantity>
           <cbc:LatestMeterReadingDate>2026-03-31</cbc:LatestMeterReadingDate>
@@ -162,7 +162,7 @@
       </cac:MainPeriod>
       <cac:EnergyWaterSupply>
         <cac:ConsumptionReport>
-          <cbc:ID>FG-CP-4120-G1-2603</cbc:ID>
+          <cbc:ID>FGR-CP-4120-G1-2603</cbc:ID>
           <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
           <cbc:TotalConsumedQuantity unitCode="KWH">61200</cbc:TotalConsumedQuantity>
           <cac:Period>
@@ -173,7 +173,7 @@
         <cac:EnergyWaterConsumptionCorrection>
           <cbc:CorrectionType>Volume conversion</cbc:CorrectionType>
           <cbc:CorrectionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionCorrectionTypeCode">CONV</cbc:CorrectionTypeCode>
-          <cbc:MeterNumber>FG-G-20417</cbc:MeterNumber>
+          <cbc:MeterNumber>FGR-G-20417</cbc:MeterNumber>
           <cbc:GasPressureQuantity unitCode="BAR">4</cbc:GasPressureQuantity>
           <cbc:Description>1350 m³ at line pressure × 4.9477 (pressure) = 6679 m³ at standard conditions, × 9.163 kWh/m³ (calorific value of March) = 61200 kWh.</cbc:Description>
         </cac:EnergyWaterConsumptionCorrection>

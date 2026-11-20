@@ -15,10 +15,8 @@ Lisavu's plant protection organisation under the IPPC, the Plant Protection Serv
 - `CustomizationID` = **urn:ubl-examples:world:trns:goods-certificate:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Goods certificate". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **DAL-GC-26-0202**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **DAL/2026/0309**  
   The Plant Protection Service's certificate number.
 - `UUID` = **78516adf-5718-5e78-bd9d-8e44536e335b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -240,9 +238,9 @@ Inside `ApplicantParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SCG-SH-26-0200**  
+- `ID` = **SCG-SH-26-0218**  
   The shipment certified.
-- `Consignment/ID` = **LTM-CS-26-0201**  
+- `Consignment/ID` = **7300013298**  
   The consignment, as the mill's forwarding instructions number it.
 - `Consignment/TotalPackagesQuantity` = **27** (unitCode `EA`)  
   The bales the certificate covers: a plant health certificate states the number of packages.
@@ -283,7 +281,7 @@ Inside `Shipment`:
 
 Inside `Attestation`:
 
-- `ID` = **DAL-ATT-26-0042**  
+- `ID` = **DAL/2026/0308**  
   The inspector's attestation.
 - `Name` = **Freedom from pests**  
   What is attested.
@@ -349,10 +347,10 @@ Inside `GoodsProcessing`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **LTM-PO-26-0198**  
+- `ID` = **4500013293**  
   The mill's order.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 4500013293 is the example cotton/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -373,8 +371,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>DAL-GC-26-0202</cbc:ID>
+  <cbc:ID>DAL/2026/0309</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>14:43:00+00:00</cbc:IssueTime>
@@ -541,9 +538,9 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>SCG-SH-26-0200</cbc:ID>
+    <cbc:ID>SCG-SH-26-0218</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0201</cbc:ID>
+      <cbc:ID>7300013298</cbc:ID>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
     </cac:Consignment>
     <cac:GoodsItem>
@@ -578,7 +575,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:Attestation>
-    <cbc:ID>DAL-ATT-26-0042</cbc:ID>
+    <cbc:ID>DAL/2026/0308</cbc:ID>
     <cbc:Name>Freedom from pests</cbc:Name>
     <cbc:Description>Sampled and found free of boll weevil and pink bollworm.</cbc:Description>
     <cbc:Note>10 bales sampled out of 27.</cbc:Note>
@@ -640,7 +637,7 @@ Inside `Signature`:
     </cac:SubGoodsProcessing>
   </cac:GoodsProcessing>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LTM-PO-26-0198</cbc:ID>
+    <cbc:ID>4500013293</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

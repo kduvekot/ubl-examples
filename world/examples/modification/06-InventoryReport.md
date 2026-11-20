@@ -15,10 +15,10 @@ The plant reports the sawmill's goods in its store: the first charge ready, the 
 - `CustomizationID` = **urn:ubl-examples:world:trns:inventory-report:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Inventory report". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:collaboration:1.0**  
-  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MODIFICATION-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TWM-IR-26-0415**  
+  The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **MDS-TX-26-0047**  
+  The collaboration this document belongs to: the sawmill's order of thermal modification from Tostara. Marrowdale Sawmill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0004**  
   The plant's stock report number.
 - `UUID` = **3b5324eb-8267-5d6b-baac-5d4d633644b7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -42,10 +42,10 @@ Inside `InventoryPeriod`:
 
 Inside `DocumentReference`:
 
-- `ID` = **MS-PO-26-0406**  
+- `ID` = **MDS-PO-26-0047**  
   The sawmill's order for the job.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: MS-PO-26-0406 is the example modification/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: MDS-PO-26-0047 is the example modification/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Retailer Customer Party
 
@@ -168,13 +168,13 @@ Inside `InventoryReportLine`:
 
 - `ID` = **1**  
   Kiln charge 1, from the first load of blanks.
-- `Note` = **Kiln charge 1, from the first load of blanks, lot MS-L26-0119: modified, planed, sealed and bundled.**  
+- `Note` = **Kiln charge 1, from the first load of blanks, lot MDS-L26-0119: modified, planed, sealed and bundled.**  
   What the line holds.
 - `Quantity` = **48** (unitCode `EA`)  
   The bundles of the charge.
 - `AvailabilityStatusCode` = **AVAILABLE** (listID `urn:ubl-examples:world:codelist:AvailabilityStatusCode`)  
   Finished and in store: available now, so no date. The code is from the Trade Accord's availability status list: AVAILABLE = Available.
-- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -182,19 +182,19 @@ Inside `InventoryReportLine`:
   The units in one pack: 50 in a bundle; as Marrowdale Sawmill describes the item.
 - `Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+- `Item/SellersItemIdentification/ID` = **MDS-SL-1800-50**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 - `InventoryLocation/Name` = **Store bay 3, Tostara Wood Modification, Conciaro**  
   Where the sawmill's bundles stand, kept apart as its goods.
 - `ID` = **2**  
   Kiln charge 2, from the second load of blanks.
-- `Note` = **Kiln charge 2, from the second load of blanks, lot MS-L26-0126: modified; still being planed and sealed.**  
+- `Note` = **Kiln charge 2, from the second load of blanks, lot MDS-L26-0126: modified; still being planed and sealed.**  
   What the line holds.
 - `Quantity` = **48** (unitCode `EA`)  
   The bundles of the charge.
 - `AvailabilityDate` = **2026-02-04**  
   Available from Wednesday 4 February, when its planing, sealing and bundling are finished.
-- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
+- `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
   The seller's description.
 - `Item/PackQuantity` = **1** (unitCode `EA`)  
   One pack of this item.
@@ -202,7 +202,7 @@ Inside `InventoryReportLine`:
   The units in one pack: 50 in a bundle; as Marrowdale Sawmill describes the item.
 - `Item/Name` = **Bench slat 1800, bundle of 50**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **MS-SL-1800-50**  
+- `Item/SellersItemIdentification/ID` = **MDS-SL-1800-50**  
   The seller's own item number; as Marrowdale Sawmill describes the item.
 - `InventoryLocation/Name` = **Planing hall, Tostara Wood Modification, Conciaro**  
   Where the slats are now.
@@ -215,8 +215,8 @@ Inside `InventoryReportLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:inventory-report:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TWM-IR-26-0415</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>26-0004</cbc:ID>
   <cbc:UUID>3b5324eb-8267-5d6b-baac-5d4d633644b7</cbc:UUID>
   <cbc:IssueDate>2026-01-30</cbc:IssueDate>
   <cbc:IssueTime>14:00:00-01:00</cbc:IssueTime>
@@ -226,7 +226,7 @@ Inside `InventoryReportLine`:
     <cbc:EndDate>2026-01-30</cbc:EndDate>
   </cac:InventoryPeriod>
   <cac:DocumentReference>
-    <cbc:ID>MS-PO-26-0406</cbc:ID>
+    <cbc:ID>MDS-PO-26-0047</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:RetailerCustomerParty>
@@ -321,16 +321,16 @@ Inside `InventoryReportLine`:
   </cac:SellerSupplierParty>
   <cac:InventoryReportLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Kiln charge 1, from the first load of blanks, lot MS-L26-0119: modified, planed, sealed and bundled.</cbc:Note>
+    <cbc:Note>Kiln charge 1, from the first load of blanks, lot MDS-L26-0119: modified, planed, sealed and bundled.</cbc:Note>
     <cbc:Quantity unitCode="EA">48</cbc:Quantity>
     <cbc:AvailabilityStatusCode listID="urn:ubl-examples:world:codelist:AvailabilityStatusCode">AVAILABLE</cbc:AvailabilityStatusCode>
     <cac:Item>
-      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
       <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
       <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
       <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-SL-1800-50</cbc:ID>
+        <cbc:ID>MDS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:InventoryLocation>
@@ -339,16 +339,16 @@ Inside `InventoryReportLine`:
   </cac:InventoryReportLine>
   <cac:InventoryReportLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Kiln charge 2, from the second load of blanks, lot MS-L26-0126: modified; still being planed and sealed.</cbc:Note>
+    <cbc:Note>Kiln charge 2, from the second load of blanks, lot MDS-L26-0126: modified; still being planed and sealed.</cbc:Note>
     <cbc:Quantity unitCode="EA">48</cbc:Quantity>
     <cbc:AvailabilityDate>2026-02-04</cbc:AvailabilityDate>
     <cac:Item>
-      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
+      <cbc:Description>Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.</cbc:Description>
       <cbc:PackQuantity unitCode="EA">1</cbc:PackQuantity>
       <cbc:PackSizeNumeric>50</cbc:PackSizeNumeric>
       <cbc:Name>Bench slat 1800, bundle of 50</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>MS-SL-1800-50</cbc:ID>
+        <cbc:ID>MDS-SL-1800-50</cbc:ID>
       </cac:SellersItemIdentification>
     </cac:Item>
     <cac:InventoryLocation>

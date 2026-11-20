@@ -15,10 +15,10 @@ The engineering firm instructs the forwarder, with the shipper's declaration of 
 - `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MAST-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SE-FI-26-0714**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0128**  
+  The collaboration this document belongs to: the forwarding by air Saltmere gives Bayforth Forwarding. Saltmere Engineering started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0076**  
   The instruction number.
 - `UUID` = **a587c22d-2b9a-58c7-a95e-3c142f8b615c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -137,9 +137,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **SE-SH-26-0715**  
+- `ID` = **26-0130**  
   The shipment.
-- `Consignment/ID` = **SE-CS-26-0716**  
+- `Consignment/ID` = **26-0129**  
   The consignment.
 - `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight.
@@ -458,8 +458,8 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SE-FI-26-0714</cbc:ID>
+  <cbc:ProfileExecutionID>26-0128</cbc:ProfileExecutionID>
+  <cbc:ID>26-0076</cbc:ID>
   <cbc:UUID>a587c22d-2b9a-58c7-a95e-3c142f8b615c</cbc:UUID>
   <cbc:IssueDate>2026-06-03</cbc:IssueDate>
   <cbc:IssueTime>11:57:00-01:00</cbc:IssueTime>
@@ -542,9 +542,9 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SE-SH-26-0715</cbc:ID>
+    <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:ID>26-0129</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>

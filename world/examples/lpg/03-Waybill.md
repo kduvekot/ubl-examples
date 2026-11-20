@@ -15,12 +15,10 @@ The haulier's consignment note under Bayvarra's road carriage law, with the dang
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **LPG-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **GTH-WB-26-0899**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **26-0791**  
   The consignment note number.
-- `CarrierAssignedID` = **GTH-NATROAD-26-0895**  
+- `CarrierAssignedID` = **26-0040**  
   The carrier's own number for the carriage.
 - `UUID` = **1bcd7f24-a71e-5869-ae2d-2b2aab46d19b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -202,11 +200,11 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **KG-SH-26-0897**  
+- `ID` = **7400034654**  
   The shipment as the despatching party numbered it.
 - `GrossWeightMeasure` = **29880** (unitCode `KGM`)  
   The goods (20180 kg) and the tare of the transport equipment (9700 kg): a shipment's gross weight includes the equipment.
-- `Consignment/ID` = **KG-CS-26-0898**  
+- `Consignment/ID` = **7300034654**  
   The consignment of the transport booking.
 - `Consignment/GrossWeightMeasure` = **20180** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The propane, net, from the plant's weighbridge.
@@ -414,7 +412,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **GTH-SIG-GTH-WB-26-0899**  
+- `ID` = **GTH-SIG-26-0791**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **20413151** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -429,9 +427,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>LPG-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>GTH-WB-26-0899</cbc:ID>
-  <cbc:CarrierAssignedID>GTH-NATROAD-26-0895</cbc:CarrierAssignedID>
+  <cbc:ID>26-0791</cbc:ID>
+  <cbc:CarrierAssignedID>26-0040</cbc:CarrierAssignedID>
   <cbc:UUID>1bcd7f24-a71e-5869-ae2d-2b2aab46d19b</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -560,10 +557,10 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>KG-SH-26-0897</cbc:ID>
+    <cbc:ID>7400034654</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">29880</cbc:GrossWeightMeasure>
     <cac:Consignment>
-      <cbc:ID>KG-CS-26-0898</cbc:ID>
+      <cbc:ID>7300034654</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">20180</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
@@ -743,7 +740,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>GTH-SIG-GTH-WB-26-0899</cbc:ID>
+    <cbc:ID>GTH-SIG-26-0791</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413151</cbc:ID>

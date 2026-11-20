@@ -15,10 +15,10 @@ The factor, who now owns the receivables, sends the statement of account on beha
 - `CustomizationID` = **urn:ubl-examples:world:trns:statement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Statement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HF-ST-26-0150**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0668**  
+  The collaboration this document belongs to: Harbourline's collection of the receivable it bought. Harbourline Factoring started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-1335**  
   The factor's statement number.
 - `UUID` = **16a04e73-7f53-554f-be69-453ee6e81d9c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -219,9 +219,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF20LDINV260147**  
+- `InstructionNote` = **Quote RF21LMWINV261025**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF20LDINV260147** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF21LMWINV261025** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -235,7 +235,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Statement LD-INV-26-0147**  
+- `PayeeFinancialAccount/PaymentNote` = **Statement LMW-INV-26-1025**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380205** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -315,11 +315,11 @@ Inside `StatementLine`:
   A party referred to from another party's details: its identifier and name are enough.
 - `PayeeParty/PartyName/Name` = **Harbourline Factoring**  
   A party referred to from another party's details: its identifier and name are enough.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `BillingReference/InvoiceDocumentReference/ID` = **LMW-INV-26-1025**  
   The distributor's invoice, which the factor bought.
 - `BillingReference/InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date.
-- `DocumentReference/ID` = **HF-ASSIGN-26-0091**  
+- `DocumentReference/ID` = **26-0030**  
   The notice of assignment of the invoice to the factor.
 - `DocumentReference/DocumentType` = **Notice of assignment**  
   The kind of document referred to, Harbourline's notice of the assigned receivable, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -335,7 +335,7 @@ Inside `StatementLine`:
   Open after the deposit: what the buyer still owes.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Paid by credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `CollectedPayment/ID` = **VT-DEP-26-0412**  
+- `CollectedPayment/ID` = **26-0024**  
   The deposit payment.
 - `CollectedPayment/PaidAmount` = **10000.00** (currencyID `XBL`)  
   Paid.
@@ -352,8 +352,8 @@ Inside `StatementLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HF-ST-26-0150</cbc:ID>
+  <cbc:ProfileExecutionID>26-0668</cbc:ProfileExecutionID>
+  <cbc:ID>26-1335</cbc:ID>
   <cbc:UUID>16a04e73-7f53-554f-be69-453ee6e81d9c</cbc:UUID>
   <cbc:IssueDate>2026-06-12</cbc:IssueDate>
   <cbc:IssueTime>08:43:00-01:00</cbc:IssueTime>
@@ -502,8 +502,8 @@ Inside `StatementLine`:
     <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF20LDINV260147</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF20LDINV260147</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF21LMWINV261025</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF21LMWINV261025</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB51BLUM38020502304038</cbc:ID>
@@ -511,7 +511,7 @@ Inside `StatementLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Statement LD-INV-26-0147</cbc:PaymentNote>
+      <cbc:PaymentNote>Statement LMW-INV-26-1025</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -599,12 +599,12 @@ Inside `StatementLine`:
     </cac:PayeeParty>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LMW-INV-26-1025</cbc:ID>
         <cbc:IssueDate>2026-05-14</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
     <cac:DocumentReference>
-      <cbc:ID>HF-ASSIGN-26-0091</cbc:ID>
+      <cbc:ID>26-0030</cbc:ID>
       <cbc:DocumentType>Notice of assignment</cbc:DocumentType>
     </cac:DocumentReference>
   </cac:StatementLine>
@@ -618,7 +618,7 @@ Inside `StatementLine`:
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
     <cac:CollectedPayment>
-      <cbc:ID>VT-DEP-26-0412</cbc:ID>
+      <cbc:ID>26-0024</cbc:ID>
       <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
       <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
       <cbc:PaidDate>2026-05-08</cbc:PaidDate>

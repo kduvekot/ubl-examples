@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forecast:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-FC-26-0192</cbc:ID>
+  <cbc:ProfileExecutionID>9900012942</cbc:ProfileExecutionID>
+  <cbc:ID>6300000648</cbc:ID>
   <cbc:UUID>6810795c-6edd-5653-82dc-04180619e221</cbc:UUID>
   <cbc:IssueDate>2026-02-02</cbc:IssueDate>
   <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>

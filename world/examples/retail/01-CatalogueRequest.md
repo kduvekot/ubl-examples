@@ -15,10 +15,10 @@ To set up the range of its home and garden department, which reopens on 11 May a
 - `CustomizationID` = **urn:ubl-examples:world:trns:catalogue-request:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue request"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
-  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-DOC-26-0217**  
+  The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900338989**  
+  The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
+- `ID` = **6200003390**  
   The sender's number for this document.
 - `UUID` = **5e45c6c8-ba0a-5689-b0f9-f653754fd6b8**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -235,7 +235,7 @@ Inside `ContractorCustomerParty`:
 
 Inside `ReferencedContract`:
 
-- `ID` = **LD-BM-SUPPLY-2026**  
+- `ID` = **LMW-BM-SUPPLY-2026**  
   The supply agreement.
 
 ### Trading Terms
@@ -338,8 +338,8 @@ Inside `CatalogueRequestLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue-request:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-DOC-26-0217</cbc:ID>
+  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ID>6200003390</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
   <cbc:Name>Request for Lumeway's catalogue for the home and garden department</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
@@ -509,7 +509,7 @@ Inside `CatalogueRequestLine`:
     </cac:Party>
   </cac:ContractorCustomerParty>
   <cac:ReferencedContract>
-    <cbc:ID>LD-BM-SUPPLY-2026</cbc:ID>
+    <cbc:ID>LMW-BM-SUPPLY-2026</cbc:ID>
   </cac:ReferencedContract>
   <cac:TradingTerms>
     <cbc:Information>Delivered duty paid to the store.</cbc:Information>

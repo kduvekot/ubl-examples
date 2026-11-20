@@ -15,16 +15,16 @@ The furniture maker tenders wooden benches.
 - `CustomizationID` = **urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tender"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
-  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0204**  
+  The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/PARKS**  
+  The collaboration this document belongs to: the department's procurement of park benches. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0008**  
   The furniture maker's number for this tender.
 - `UUID` = **21770882-3c11-5392-aed3-5bd95b4c3cc7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `TenderTypeCode` = **COMBINED** (listID `urn:ubl-examples:world:codelist:TenderTypeCode`)  
   Technical and financial in one. The code is from the Trade Accord's tender type list: COMBINED = Technical and financial together.
-- `ContractFolderID` = **PWD-2026-PARKS**  
+- `ContractFolderID` = **PWD/2026/PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-02-20**  
   Submitted before the deadline, on Friday 20 February.
@@ -46,18 +46,18 @@ Inside `ValidityPeriod`:
 
 Inside `CallForTenderDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0189**  
+- `ID` = **PWD/2026/0182**  
   The call for tenders, by its ID (17#F1, 19#F4).
 
 ### Document Reference
 
 Inside `DocumentReference`:
 
-- `ID` = **BF-DS-PARK**  
+- `ID` = **BKM-DS-PARK**  
   The datasheet.
 - `DocumentType` = **Product data sheet**  
   The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (cited).
-- `ID` = **BL-DOC-26-0200**  
+- `ID` = **3900039355**  
   The certificate of the tender guarantee that covers this tender (17#F12).
 - `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document. The code is from the Trade Accord's UBL document type list: GuaranteeCertificate = Guarantee Certificate.
@@ -178,7 +178,7 @@ Inside `TendererParty`:
 
 Inside `TendererQualificationDocumentReference`:
 
-- `ID` = **BF-DOC-26-0193**  
+- `ID` = **26-0006**  
   The furniture maker's response to the qualification questionnaire, which qualifies it.
 - `DocumentTypeCode` = **QualificationApplicationResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document: the response to the qualification questionnaire, the furniture maker's qualification. The code is from the Trade Accord's UBL document type list: QualificationApplicationResponse = Qualification Application Response.
@@ -270,7 +270,7 @@ Inside `TenderedProject`:
   Lot 1.
 - `ProcurementProjectLot/ID` = **LOT-2**  
   Lot 2.
-- `EvidenceDocumentReference/ID` = **BF-REF-2025**  
+- `EvidenceDocumentReference/ID` = **BKM-REF-2025**  
   The tenderer's own reference letters.
 - `EvidenceDocumentReference/DocumentType` = **Reference letters**  
   The kind of document referred to, Brackenmere's reference letters from customers for its park furniture of 2025, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -306,7 +306,7 @@ Inside `TenderedProject`:
   The warranty on the bench, as the quality criterion's answer gives it (19#F3).
 - `TenderLine/PackLevelCode` = **PALLET** (listID `urn:ubl-examples:world:codelist:PackLevelCode`)  
   The pack level. The code is from the Trade Accord's pack level list: PALLET = Pallet.
-- `TenderLine/DocumentReference/ID` = **BF-DS-PARK**  
+- `TenderLine/DocumentReference/ID` = **BKM-DS-PARK**  
   The datasheet.
 - `TenderLine/DocumentReference/DocumentType` = **Product data sheet**  
   The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -332,7 +332,7 @@ Inside `TenderedProject`:
   Included.
 - `TenderLine/CallForTendersLineReference/LineID` = **1**  
   The line of the call for tenders.
-- `TenderLine/CallForTendersDocumentReference/ID` = **LPWD-DOC-26-0189**  
+- `TenderLine/CallForTendersDocumentReference/ID` = **PWD/2026/0182**  
   The call for tenders.
 - `TenderLine/ID` = **2**  
   The installation.
@@ -385,11 +385,11 @@ Inside `TenderedProject`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0204</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>26-0008</cbc:ID>
   <cbc:UUID>21770882-3c11-5392-aed3-5bd95b4c3cc7</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cbc:IssueTime>16:37:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -398,14 +398,14 @@ Inside `TenderedProject`:
     <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
   </cac:ValidityPeriod>
   <cac:CallForTenderDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+    <cbc:ID>PWD/2026/0182</cbc:ID>
   </cac:CallForTenderDocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>BF-DS-PARK</cbc:ID>
+    <cbc:ID>BKM-DS-PARK</cbc:ID>
     <cbc:DocumentType>Product data sheet</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>BL-DOC-26-0200</cbc:ID>
+    <cbc:ID>3900039355</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GuaranteeCertificate</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>
@@ -506,7 +506,7 @@ Inside `TenderedProject`:
     </cac:ElectronicAddress>
   </cac:TendererParty>
   <cac:TendererQualificationDocumentReference>
-    <cbc:ID>BF-DOC-26-0193</cbc:ID>
+    <cbc:ID>26-0006</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationResponse</cbc:DocumentTypeCode>
   </cac:TendererQualificationDocumentReference>
   <cac:ContractingParty>
@@ -576,7 +576,7 @@ Inside `TenderedProject`:
       <cbc:ID>LOT-2</cbc:ID>
     </cac:ProcurementProjectLot>
     <cac:EvidenceDocumentReference>
-      <cbc:ID>BF-REF-2025</cbc:ID>
+      <cbc:ID>BKM-REF-2025</cbc:ID>
       <cbc:DocumentType>Reference letters</cbc:DocumentType>
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>
@@ -601,7 +601,7 @@ Inside `TenderedProject`:
       <cbc:WarrantyInformation>Six years on the frame and the slats.</cbc:WarrantyInformation>
       <cbc:PackLevelCode listID="urn:ubl-examples:world:codelist:PackLevelCode">PALLET</cbc:PackLevelCode>
       <cac:DocumentReference>
-        <cbc:ID>BF-DS-PARK</cbc:ID>
+        <cbc:ID>BKM-DS-PARK</cbc:ID>
         <cbc:DocumentType>Product data sheet</cbc:DocumentType>
       </cac:DocumentReference>
       <cac:Item>
@@ -636,7 +636,7 @@ Inside `TenderedProject`:
         <cbc:LineID>1</cbc:LineID>
       </cac:CallForTendersLineReference>
       <cac:CallForTendersDocumentReference>
-        <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+        <cbc:ID>PWD/2026/0182</cbc:ID>
       </cac:CallForTendersDocumentReference>
     </cac:TenderLine>
     <cac:TenderLine>

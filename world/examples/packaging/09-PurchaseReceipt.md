@@ -15,10 +15,8 @@ The island trader's buyer, in Lumeport on business, buys shirts for the trader's
 - `CustomizationID` = **urn:ubl-examples:world:trns:purchase-receipt:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Purchase receipt". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:retail-sale:1.0**  
-  The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PACKAGING-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BS-PR-26-0531**  
+  The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow.
+- `ID` = **3102514042**  
   The till's receipt number.
 - `UUID` = **0a1ab530-6d49-5174-913f-d50624881433**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -318,7 +316,7 @@ Inside `PurchaseReceiptLine`:
   The brand the maker sells the item under; as Lumeport Textile Mill describes the item.
 - `Item/SellersItemIdentification/ID` = **BM-778120**  
   The seller's own item number; as Brightmarket Stores describes the item.
-- `Item/ManufacturersItemIdentification/ID` = **LT-SH-01**  
+- `Item/ManufacturersItemIdentification/ID` = **LTM-SH-01**  
   The item number of the maker, Lumeport Textile Mill: the reseller sells the maker's item on.
 - `Item/StandardItemIdentification/ID` = **9524010000016** (schemeID `GS1 GTIN`)  
   The GTIN Lumeport Textile Mill gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Lumeport is Lumeport Textile Mill's.
@@ -335,8 +333,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PR-26-0531</cbc:ID>
+  <cbc:ID>3102514042</cbc:ID>
   <cbc:UUID>0a1ab530-6d49-5174-913f-d50624881433</cbc:UUID>
   <cbc:IssueDate>2026-05-23</cbc:IssueDate>
   <cbc:IssueTime>12:20:00-01:00</cbc:IssueTime>
@@ -555,7 +552,7 @@ Inside `PurchaseReceiptLine`:
         <cbc:ID>BM-778120</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>LT-SH-01</cbc:ID>
+        <cbc:ID>LTM-SH-01</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9524010000016</cbc:ID>

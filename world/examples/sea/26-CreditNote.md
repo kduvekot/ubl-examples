@@ -15,10 +15,10 @@ One side frame arrived in a crushed carton, cracked, and a pallet's illegible he
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-CN-26-0151**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-CN-26-0051**  
   The seller's credit note number.
 - `UUID` = **2d2cd2d8-031b-5aba-b59f-4e3ba799184e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -54,14 +54,14 @@ Inside `DiscrepancyResponse`:
 
 Inside `OrderReference`:
 
-- `ID` = **VT-PO-26-0127**  
+- `ID` = **26-0417**  
   The buyer's order.
 
 ### Billing Reference
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `InvoiceDocumentReference/ID` = **LMW-INV-26-1025**  
   The invoice of the frames.
 - `InvoiceDocumentReference/IssueDate` = **2026-05-14**  
   Its issue date.
@@ -70,21 +70,21 @@ Inside `BillingReference`:
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **NW-RA-26-0146**  
+- `ID` = **26-0766**  
   The 3PL's receipt advice reporting it.
 
 ### Statement Document Reference
 
 Inside `StatementDocumentReference`:
 
-- `ID` = **HF-ST-26-0150**  
+- `ID` = **26-1335**  
   The factor's statement the invoice is on.
 
 ### Originator Document Reference
 
 Inside `OriginatorDocumentReference`:
 
-- `ID` = **VT-CLAIM-26-0019**  
+- `ID` = **26-0034**  
   The buyer's claim.
 - `DocumentType` = **Claim**  
   The kind of document referred to, Velumi's claim, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -271,7 +271,7 @@ Inside `DeliveryTerms`:
 
 Inside `PaymentTerms`:
 
-- `Note` = **Deducted from the payment of invoice LD-INV-26-0147 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.**  
+- `Note` = **Deducted from the payment of invoice LMW-INV-26-1025 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.**  
   With whom the credit is settled: the buyer pays the factor the balance less the credit, as its remittance advice shows.
 
 ### Tax Total
@@ -320,7 +320,7 @@ Inside `CreditNoteLine`:
   The frame that arrived cracked.
 - `LineExtensionAmount` = **68.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `BillingReference/InvoiceDocumentReference/ID` = **LMW-INV-26-1025**  
   The invoice of the frames.
 - `BillingReference/BillingReferenceLine/ID` = **3**  
   The invoice line of the frames this line credits.
@@ -328,7 +328,7 @@ Inside `CreditNoteLine`:
   The seller's description.
 - `Item/Name` = **Bench side frame casting**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-10443**  
+- `Item/SellersItemIdentification/ID` = **LMW-10443**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/ManufacturersItemIdentification/ID` = **VI-C180**  
   The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
@@ -362,11 +362,11 @@ Inside `CreditNoteLine`:
   The customs inspection and the day of storage at Selanu.
 - `LineExtensionAmount` = **128.13** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
-- `BillingReference/InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `BillingReference/InvoiceDocumentReference/ID` = **LMW-INV-26-1025**  
   The invoice of the benches on the pallet.
 - `BillingReference/BillingReferenceLine/ID` = **1**  
   The invoice line of the port's benches, whose pallet carried the illegible mark.
-- `DocumentReference/ID` = **XL-CUS-RCPT-26-0517**  
+- `DocumentReference/ID` = **XL-CUS/2026/9066**  
   The customs receipt for the inspection fee the buyer paid, the evidence of its outlay.
 - `DocumentReference/DocumentTypeCode` = **917** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, the island customs' receipt for the inspection fee, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 917 = Receipt (Customs).
@@ -374,7 +374,7 @@ Inside `CreditNoteLine`:
   The seller's description.
 - `Item/Name` = **Customs inspection and storage at Selanu, passed on**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **LD-CLAIM-INSP**  
+- `Item/SellersItemIdentification/ID` = **LMW-CLAIM-INSP**  
   The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
@@ -401,8 +401,8 @@ Inside `CreditNoteLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0151</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-CN-26-0051</cbc:ID>
   <cbc:UUID>2d2cd2d8-031b-5aba-b59f-4e3ba799184e</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:49:00-01:00</cbc:IssueTime>
@@ -418,22 +418,22 @@ Inside `CreditNoteLine`:
     <cbc:Description>One side frame cracked; a pallet's heat-treatment mark illegible, so customs inspected the container.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:ID>LMW-INV-26-1025</cbc:ID>
       <cbc:IssueDate>2026-05-14</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>NW-RA-26-0146</cbc:ID>
+    <cbc:ID>26-0766</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:StatementDocumentReference>
-    <cbc:ID>HF-ST-26-0150</cbc:ID>
+    <cbc:ID>26-1335</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
-    <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
+    <cbc:ID>26-0034</cbc:ID>
     <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:BuyerAssignedReference>
@@ -583,7 +583,7 @@ Inside `CreditNoteLine`:
     <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
   </cac:DeliveryTerms>
   <cac:PaymentTerms>
-    <cbc:Note>Deducted from the payment of invoice LD-INV-26-0147 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.</cbc:Note>
+    <cbc:Note>Deducted from the payment of invoice LMW-INV-26-1025 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -614,7 +614,7 @@ Inside `CreditNoteLine`:
     <cbc:LineExtensionAmount currencyID="XBL">68.00</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LMW-INV-26-1025</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>3</cbc:ID>
@@ -624,7 +624,7 @@ Inside `CreditNoteLine`:
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
@@ -659,21 +659,21 @@ Inside `CreditNoteLine`:
     <cbc:LineExtensionAmount currencyID="XBL">128.13</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LMW-INV-26-1025</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
     <cac:DocumentReference>
-      <cbc:ID>XL-CUS-RCPT-26-0517</cbc:ID>
+      <cbc:ID>XL-CUS/2026/9066</cbc:ID>
       <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">917</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service.</cbc:Description>
       <cbc:Name>Customs inspection and storage at Selanu, passed on</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-CLAIM-INSP</cbc:ID>
+        <cbc:ID>LMW-CLAIM-INSP</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

@@ -15,10 +15,10 @@ The fruit at its CIP prices, which hold the reefer's carriage and the insurance,
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **REEFER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **HFG-INV-26-0563**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0214**  
+  The collaboration this document belongs to: Hafefo's order of fruit from Harrowmead Fruit Growers. Hafefo Fresh Produce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **HRW-INV-26-0772**  
   The seller's invoice number.
 - `UUID` = **a86e8dbc-bc58-5c1e-babe-987e7bb907a6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -43,14 +43,14 @@ The fruit at its CIP prices, which hold the reefer's carriage and the insurance,
 
 Inside `OrderReference`:
 
-- `ID` = **HFP-PO-26-0553**  
+- `ID` = **26-0215**  
   The wholesaler's order.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **HFG-DA-26-0561**  
+- `ID` = **HRW-DA-26-0764**  
   The despatch advice.
 
 ### Accounting Supplier Party
@@ -238,9 +238,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF77HFGINV260563**  
+- `InstructionNote` = **Quote RF88HRWINV260772**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF77HFGINV260563** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF88HRWINV260772** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -254,7 +254,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice HFG-INV-26-0563**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice HRW-INV-26-0772**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **387120** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -360,7 +360,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Apples Gala, carton 18 kg, count 100**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-GAL100**  
+- `Item/SellersItemIdentification/ID` = **HRW-GAL100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430001014** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -392,7 +392,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Apples Granny Smith, carton 18 kg, count 100**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-GSM100**  
+- `Item/SellersItemIdentification/ID` = **HRW-GSM100**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430001021** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -424,7 +424,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **HFC-PKT080**  
+- `Item/SellersItemIdentification/ID` = **HRW-PKT080**  
   The seller's own item number; as Harrowmead Fruit Growers describes the item.
 - `Item/StandardItemIdentification/ID` = **9527430002011** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
@@ -453,8 +453,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-INV-26-0563</cbc:ID>
+  <cbc:ProfileExecutionID>26-0214</cbc:ProfileExecutionID>
+  <cbc:ID>HRW-INV-26-0772</cbc:ID>
   <cbc:UUID>a86e8dbc-bc58-5c1e-babe-987e7bb907a6</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>15:30:00-01:00</cbc:IssueTime>
@@ -465,10 +465,10 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>HFP-PO-26-0553</cbc:ID>
+    <cbc:ID>26-0215</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0561</cbc:ID>
+    <cbc:ID>HRW-DA-26-0764</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -629,8 +629,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF77HFGINV260563</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF77HFGINV260563</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF88HRWINV260772</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF88HRWINV260772</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM38712006153948</cbc:ID>
@@ -638,7 +638,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice HFG-INV-26-0563</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice HRW-INV-26-0772</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -716,7 +716,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GAL100</cbc:ID>
+        <cbc:ID>HRW-GAL100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001014</cbc:ID>
@@ -748,7 +748,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
       <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-GSM100</cbc:ID>
+        <cbc:ID>HRW-GSM100</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430001021</cbc:ID>
@@ -780,7 +780,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
       <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>HFC-PKT080</cbc:ID>
+        <cbc:ID>HRW-PKT080</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9527430002011</cbc:ID>

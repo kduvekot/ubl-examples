@@ -15,10 +15,10 @@ The department accepts the release: 39 benches and their installation, one bench
 - `CustomizationID` = **urn:ubl-examples:world:trns:receipt-advice:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Receipt advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
-  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **TENDER-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-RA-26-0224**  
+  The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **PWD/2026/0566**  
+  The collaboration this document belongs to: the department's first call-off under the contract. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0702**  
   The department's number for the acceptance.
 - `UUID` = **7b7a0126-4c5e-5e7b-b42d-9f93027b3319**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,14 +39,14 @@ The department accepts the release: 39 benches and their installation, one bench
 
 Inside `OrderReference`:
 
-- `ID` = **LPWD-PO-26-0214**  
+- `ID` = **PWD/2026/0567**  
   The call-off accepted.
 
 ### Despatch Document Reference
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **CL-DA-26-0217**  
+- `ID` = **CAS-DA-26-1459**  
   The despatch advice of the benches.
 
 ### Additional Document Reference
@@ -207,10 +207,10 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **CL-DA-26-0217**  
+- `DespatchLineReference/DocumentReference/ID` = **CAS-DA-26-1459**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: CL-DA-26-0217 is the example tender/29, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: CAS-DA-26-1459 is the example tender/29, a DespatchAdvice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek trek skan sakmul (RAL 6005), sir galtan maksul, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language.
 - `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron in moss green (RAL 6005), a special colour, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XB`)  
@@ -268,8 +268,8 @@ Inside `ReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-RA-26-0224</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0702</cbc:ID>
   <cbc:UUID>7b7a0126-4c5e-5e7b-b42d-9f93027b3319</cbc:UUID>
   <cbc:IssueDate>2026-04-13</cbc:IssueDate>
   <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
@@ -278,10 +278,10 @@ Inside `ReceiptLine`:
   <cbc:Note>Release 1 accepted: 39 benches installed and accepted; one bench, damaged during installation on 2 April, rejected, with no replacement in this release. The 30 days of payment run from today.</cbc:Note>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
+    <cbc:ID>PWD/2026/0567</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>CL-DA-26-0217</cbc:ID>
+    <cbc:ID>CAS-DA-26-1459</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
@@ -403,7 +403,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>CL-DA-26-0217</cbc:ID>
+        <cbc:ID>CAS-DA-26-1459</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>

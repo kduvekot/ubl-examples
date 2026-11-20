@@ -15,10 +15,10 @@ The sawmill calls off the finished job for its buyer: where it goes, the carrier
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-change:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order change". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MODIFICATION-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **MS-OC-26-0416**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **MDS-TX-26-0047**  
+  The collaboration this document belongs to: the sawmill's order of thermal modification from Tostara. Marrowdale Sawmill started it and gave it this identifier, which every document of it repeats.
+- `ID` = **MDS-OC-26-0034**  
   The sawmill's number for the change.
 - `SalesOrderID` = **TWM-J-2526-014**  
   The plant's job number of the order changed, which the plant files the call-off under.
@@ -39,7 +39,7 @@ The sawmill calls off the finished job for its buyer: where it goes, the carrier
 
 Inside `OrderReference`:
 
-- `ID` = **MS-PO-26-0406**  
+- `ID` = **MDS-PO-26-0047**  
   The order the call-off changes.
 
 ### Buyer Customer Party
@@ -202,7 +202,7 @@ Inside `Delivery`:
   When the desk can be reached; as Valdara Industries gives it.
 - `Despatch/RequestedDespatchDate` = **2026-02-26**  
   The day Trasvia collects the bundles.
-- `Despatch/ReleaseID` = **MS-REL-26-0212**  
+- `Despatch/ReleaseID` = **MDS-REL-26-0212**  
   The sawmill's pick-up release: the plant hands the goods only to the driver who quotes this number, for they are the sawmill's.
 - `Despatch/Instructions` = **Load onto Trasvia Haulage's truck against the release number; send the despatch advice to Valdara Industries on our behalf.**  
   What the plant is to do.
@@ -243,8 +243,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-change:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-OC-26-0416</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-OC-26-0034</cbc:ID>
   <cbc:SalesOrderID>TWM-J-2526-014</cbc:SalesOrderID>
   <cbc:UUID>0381b870-e45a-5a0f-b99c-320a8aa5f632</cbc:UUID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
@@ -253,7 +253,7 @@ Inside `OrderLine`:
   <cbc:Note>Call-off of job TWM-J-2526-014: all 96 bundles for Valdara Industries, Ferrano, collected by Trasvia Haulage on Thursday 26 February.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>MS-PO-26-0406</cbc:ID>
+    <cbc:ID>MDS-PO-26-0047</cbc:ID>
   </cac:OrderReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
@@ -380,7 +380,7 @@ Inside `OrderLine`:
     </cac:DeliveryParty>
     <cac:Despatch>
       <cbc:RequestedDespatchDate>2026-02-26</cbc:RequestedDespatchDate>
-      <cbc:ReleaseID>MS-REL-26-0212</cbc:ReleaseID>
+      <cbc:ReleaseID>MDS-REL-26-0212</cbc:ReleaseID>
       <cbc:Instructions>Load onto Trasvia Haulage's truck against the release number; send the despatch advice to Valdara Industries on our behalf.</cbc:Instructions>
     </cac:Despatch>
   </cac:Delivery>

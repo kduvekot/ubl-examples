@@ -15,10 +15,10 @@ The distributor asks its forwarder to book the frames on the afternoon flight of
 - `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **AIR-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-FI-26-0322**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-1010**  
+  The collaboration this document belongs to: the forwarding by air Lumeway gives Bayforth Forwarding. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-FI-26-0606**  
   The instruction number.
 - `UUID` = **8a0ceec7-aa03-5c38-8c5d-9f93d07709aa**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -153,9 +153,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0323**  
+- `ID` = **LMW-SH-26-1010**  
   The shipment to be booked.
-- `Consignment/ID` = **LD-CS-26-0324**  
+- `Consignment/ID` = **LMW-CS-26-1010**  
   The distributor's consignment number.
 - `Consignment/GrossWeightMeasure` = **104.6** (unitCode `KGM`)  
   The eight frame cartons and the skid of 7.0 kg they are strapped to.
@@ -235,9 +235,9 @@ Inside `Shipment`:
   The skid the cartons are strapped to: the unit's SSCC, which Lumeway Distribution gives every logistic unit it makes up, under its GS1 company prefix (952, reserved for examples), with the check digit.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **SI** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code SI: skid. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: SI = Skid.
-- `Consignment/TransportHandlingUnit/ReferencedShipment/ID` = **LD-SH-26-0323**  
+- `Consignment/TransportHandlingUnit/ReferencedShipment/ID` = **LMW-SH-26-1010**  
   The distributor's shipment on the skid.
-- `Consignment/TransportHandlingUnit/Package/ID` = **LD-AIR-BOX**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **LMW-AIR-BOX**  
   The eight frame cartons as one package entry with their number: inner packages on the skid have a local identifier, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **8** (unitCode `EA`)  
   Eight side frames, one to a carton.
@@ -265,7 +265,7 @@ Inside `Shipment`:
   At Selanu airport on the evening of 13 May, by KXL209.
 - `Consignment/TransportHandlingUnit/Package/Delivery/RequestedDeliveryPeriod/EndDate` = **2026-05-14**  
   At the latest the next day, before the ship arrives.
-- `Consignment/TransportHandlingUnit/Package/Pickup/ID` = **BF-PU-26-0611**  
+- `Consignment/TransportHandlingUnit/Package/Pickup/ID` = **BYF-PU-26-0611**  
   The forwarder's pick-up order.
 - `Consignment/TransportHandlingUnit/Package/Pickup/EarliestPickupDate` = **2026-05-13**  
   Valdara casts the frames on 12 May and packs them on 13 May; Trasvia brings them to the distributor's dispatch area that morning.
@@ -296,10 +296,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **VT-OC-26-0320**  
+- `ID` = **26-0065**  
   The order the goods are for.
 - `DocumentTypeCode` = **OrderChange** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: VT-OC-26-0320 is the example air/01, a OrderChange; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
+  The kind of document referred to: 26-0065 is the example air/01, a OrderChange; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: OrderChange = Order Change.
 
 ### Signature
 
@@ -320,8 +320,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>AIR-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-FI-26-0322</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-1010</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-FI-26-0606</cbc:ID>
   <cbc:UUID>8a0ceec7-aa03-5c38-8c5d-9f93d07709aa</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>13:44:00-01:00</cbc:IssueTime>
@@ -416,9 +416,9 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0323</cbc:ID>
+    <cbc:ID>LMW-SH-26-1010</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0324</cbc:ID>
+      <cbc:ID>LMW-CS-26-1010</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">104.6</cbc:GrossWeightMeasure>
       <cbc:NetNetWeightMeasure unitCode="KGM">88.8</cbc:NetNetWeightMeasure>
       <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
@@ -488,10 +488,10 @@ Inside `Signature`:
         <cbc:ID schemeID="GS1 SSCC">095206100003729347</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">SI</cbc:TransportHandlingUnitTypeCode>
         <cac:ReferencedShipment>
-          <cbc:ID>LD-SH-26-0323</cbc:ID>
+          <cbc:ID>LMW-SH-26-1010</cbc:ID>
         </cac:ReferencedShipment>
         <cac:Package>
-          <cbc:ID>LD-AIR-BOX</cbc:ID>
+          <cbc:ID>LMW-AIR-BOX</cbc:ID>
           <cbc:Quantity unitCode="EA">8</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
           <cac:GoodsItem>
@@ -520,7 +520,7 @@ Inside `Signature`:
             </cac:RequestedDeliveryPeriod>
           </cac:Delivery>
           <cac:Pickup>
-            <cbc:ID>BF-PU-26-0611</cbc:ID>
+            <cbc:ID>BYF-PU-26-0611</cbc:ID>
             <cbc:EarliestPickupDate>2026-05-13</cbc:EarliestPickupDate>
             <cac:PickupParty>
               <cac:PartyIdentification>
@@ -555,7 +555,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-OC-26-0320</cbc:ID>
+    <cbc:ID>26-0065</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderChange</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

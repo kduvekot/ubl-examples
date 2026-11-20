@@ -15,10 +15,10 @@ The distributor asks whether its invoice has been accepted for payment.
 - `CustomizationID` = **urn:ubl-examples:world:trns:invoice-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Invoice status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0148**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0416**  
+  The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-ISR-26-0048**  
   The distributor's request number.
 - `UUID` = **6d87ab88-a921-5dfb-90cb-d87a8fcb59ec**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -90,7 +90,7 @@ Inside `ReceiverParty`:
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **LD-INV-26-0147**  
+- `InvoiceDocumentReference/ID` = **LMW-INV-26-1025**  
   The invoice asked about.
 
 ## The document
@@ -101,8 +101,8 @@ Inside `BillingReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0148</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-ISR-26-0048</cbc:ID>
   <cbc:UUID>6d87ab88-a921-5dfb-90cb-d87a8fcb59ec</cbc:UUID>
   <cbc:RequestDate>2026-05-29</cbc:RequestDate>
   <cbc:RequestTime>10:00:00</cbc:RequestTime>
@@ -160,7 +160,7 @@ Inside `BillingReference`:
   </cac:ReceiverParty>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:ID>LMW-INV-26-1025</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
 </InvoiceStatusRequest>

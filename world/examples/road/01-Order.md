@@ -15,10 +15,10 @@ Delivery terms FCA seller's warehouse: the order names the warehouse where the g
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **ROAD-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-PO-26-0149**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0573**  
+  The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-PO-26-0573**  
   The buyer's order number.
 - `UUID` = **11bf9fcc-6e93-50a2-b153-b55eaa5940e4**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -159,7 +159,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ID` = **LD-DL-26-0412**  
+- `ID` = **LMW-DL-26-0412**  
   The distributor's number for this delivery.
 - `Quantity` = **108** (unitCode `EA`)  
   All 108 pieces in one delivery.
@@ -403,7 +403,7 @@ Inside `OrderLine`:
   The item's name in Urvanian, the seller's language.
 - `LineItem/Item/Name` = **Park bench Serra 180** (languageID `en-XB`)  
   The item's name in English, the working language between the countries.
-- `LineItem/Item/BuyersItemIdentification/ID` = **LD-10442**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **LMW-10442**  
   The buyer's own item number: it resells this item under its own number.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-B180**  
   The seller's own item number; as Valdara Industries describes the item.
@@ -441,7 +441,7 @@ Inside `OrderLine`:
   The item's name in Urvanian, the seller's language.
 - `LineItem/Item/Name` = **Bench side frame casting** (languageID `en-XB`)  
   The item's name in English, the working language between the countries.
-- `LineItem/Item/BuyersItemIdentification/ID` = **LD-10443**  
+- `LineItem/Item/BuyersItemIdentification/ID` = **LMW-10443**  
   The buyer's own item number: it resells this item under its own number.
 - `LineItem/Item/SellersItemIdentification/ID` = **VI-C180**  
   The seller's own item number; as Valdara Industries describes the item.
@@ -456,8 +456,8 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-PO-26-0149</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-PO-26-0573</cbc:ID>
   <cbc:UUID>11bf9fcc-6e93-50a2-b153-b55eaa5940e4</cbc:UUID>
   <cbc:IssueDate>2026-03-16</cbc:IssueDate>
   <cbc:IssueTime>14:36:00-01:00</cbc:IssueTime>
@@ -561,7 +561,7 @@ Inside `OrderLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ID>LD-DL-26-0412</cbc:ID>
+    <cbc:ID>LMW-DL-26-0412</cbc:ID>
     <cbc:Quantity unitCode="EA">108</cbc:Quantity>
     <cbc:MinimumQuantity unitCode="EA">108</cbc:MinimumQuantity>
     <cbc:MaximumQuantity unitCode="EA">108</cbc:MaximumQuantity>
@@ -748,7 +748,7 @@ Inside `OrderLine`:
         <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
         <cbc:Name languageID="en-XB">Park bench Serra 180</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>VI-B180</cbc:ID>
@@ -783,7 +783,7 @@ Inside `OrderLine`:
         <cbc:Name languageID="qau">Nanskir drir manskan telstir</cbc:Name>
         <cbc:Name languageID="en-XB">Bench side frame casting</cbc:Name>
         <cac:BuyersItemIdentification>
-          <cbc:ID>LD-10443</cbc:ID>
+          <cbc:ID>LMW-10443</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
           <cbc:ID>VI-C180</cbc:ID>

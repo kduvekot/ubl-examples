@@ -15,10 +15,10 @@ The waste processor confirms the lot and the loading date.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order response". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
-  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **PLASTICS-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **RR-OR-26-0883**  
+  The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0338**  
+  The collaboration this document belongs to: Rivermouth's order of granulate from Rinova Recovery. Rivermouth Packaging started it and gave it this identifier, which every document of it repeats.
+- `ID` = **26-0427**  
   The seller's number for its response.
 - `UUID` = **d96e3f6a-2649-56f7-9849-4bc3034c1d57**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -33,7 +33,7 @@ The waste processor confirms the lot and the loading date.
 
 Inside `OrderReference`:
 
-- `ID` = **RP-PO-26-0882**  
+- `ID` = **26-0339**  
   The order this response answers.
 
 ### Seller Supplier Party
@@ -160,14 +160,14 @@ Inside `BuyerCustomerParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-OR-26-0883</cbc:ID>
+  <cbc:ProfileExecutionID>26-0338</cbc:ProfileExecutionID>
+  <cbc:ID>26-0427</cbc:ID>
   <cbc:UUID>d96e3f6a-2649-56f7-9849-4bc3034c1d57</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>15:39:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:OrderResponseCode>
   <cac:OrderReference>
-    <cbc:ID>RP-PO-26-0882</cbc:ID>
+    <cbc:ID>26-0339</cbc:ID>
   </cac:OrderReference>
   <cac:SellerSupplierParty>
     <cac:Party>

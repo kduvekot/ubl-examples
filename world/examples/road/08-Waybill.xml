@@ -3,9 +3,9 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TH-WB-26-0159</cbc:ID>
-  <cbc:CarrierAssignedID>TH-CMR-26-0149</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0580</cbc:ProfileExecutionID>
+  <cbc:ID>26-0560</cbc:ID>
+  <cbc:CarrierAssignedID>26-0028</cbc:CarrierAssignedID>
   <cbc:UUID>4891662e-273a-5190-9aa7-edb87e35d8b5</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -164,7 +164,7 @@
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">KEEPDRY</cbc:HandlingCode>
     <cbc:Information>Park benches, knocked down, and spare side frames, for resale.</cbc:Information>
     <cbc:GrossWeightMeasure unitCode="KGM">12863.4</cbc:GrossWeightMeasure>
@@ -174,9 +174,9 @@
     <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0152</cbc:ID>
+      <cbc:ID>LMW-CS-26-0580</cbc:ID>
       <cbc:CarrierAssignedID>TH-26-04471</cbc:CarrierAssignedID>
-      <cbc:ConsigneeAssignedID>LD-GI-0412</cbc:ConsigneeAssignedID>
+      <cbc:ConsigneeAssignedID>LMW-GI-0412</cbc:ConsigneeAssignedID>
       <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
       <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
       <cbc:NetWeightMeasure unitCode="KGM">4366.8</cbc:NetWeightMeasure>
@@ -191,7 +191,7 @@
       <cbc:HaulageInstructions>Wait at the warehouse until customs has released the export declaration.</cbc:HaulageInstructions>
       <cbc:TotalPackagesQuantity unitCode="EA">300</cbc:TotalPackagesQuantity>
       <cac:CustomsDeclaration>
-        <cbc:ID>VI-CD-26-0156</cbc:ID>
+        <cbc:ID>7500008669</cbc:ID>
         <cac:IssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
@@ -2910,7 +2910,7 @@
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>TH-SIG-TH-WB-26-0159</cbc:ID>
+    <cbc:ID>TH-SIG-26-0560</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104822</cbc:ID>

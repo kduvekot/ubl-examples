@@ -15,10 +15,8 @@ The wholesaler asks its forwarder to book the Monday morning flight: the cold ch
 - `CustomizationID` = **urn:ubl-examples:world:trns:forwarding-instructions:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **MEDICINES-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **QPD-FI-26-0329**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ID` = **QLM-FI-26-2388**  
   The instruction number.
 - `UUID` = **9c9dac7e-9d28-5eec-bf12-be960571ab4f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -145,9 +143,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **QPD-SH-26-0323**  
+- `ID` = **QLM-SH-26-3980**  
   The shipment.
-- `Consignment/ID` = **QPD-CS-26-0330**  
+- `Consignment/ID` = **QLM-CS-26-3980**  
   The consignment.
 - `Consignment/GrossWeightMeasure` = **101.1** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packages, with the dry ice and its box.
@@ -195,7 +193,7 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/HazardousItemNotificationParty/PartyName/Name` = **Quillmoor Pharma Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/TransportHandlingUnit/ID` = **QPD-TC-1**  
+- `Consignment/TransportHandlingUnit/ID` = **QLM-TC-1**  
   The cold-chain consignment as one handling unit, the wholesaler's own number: the forwarder books the airline's active container for it.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: the cartons, which the airline loads into its container. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
@@ -209,91 +207,91 @@ Inside `Shipment`:
   Nor rise above 8 °C. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MaximumTemperature/Measure` = **8** (unitCode `CEL`)  
   In degrees Celsius.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-1**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-1**  
   Shipper carton 1: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-2**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-2**  
   Shipper carton 2: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-3**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-3**  
   Shipper carton 3: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-4**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-4**  
   Shipper carton 4: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-5**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-5**  
   Shipper carton 5: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-6**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-6**  
   Shipper carton 6: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-7**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-7**  
   Shipper carton 7: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-8**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-8**  
   Shipper carton 8: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-9**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-9**  
   Shipper carton 9: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-10**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-10**  
   Shipper carton 10: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **30** (unitCode `EA`)  
   Thirty packs of the influenza vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-11**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-11**  
   Shipper carton 11: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **60** (unitCode `EA`)  
   Sixty vials of insulin.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-12**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-12**  
   Shipper carton 12: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **60** (unitCode `EA`)  
   Sixty vials of insulin.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-13**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-13**  
   Shipper carton 13: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **60** (unitCode `EA`)  
   Sixty vials of insulin.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-CT-14**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-CT-14**  
   Shipper carton 14: the wholesaler numbers its cartons for tracing, its own number, without a scheme.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **60** (unitCode `EA`)  
   Sixty vials of insulin.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code CT: carton. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
-- `Consignment/TransportHandlingUnit/ID` = **QPD-BX-1**  
+- `Consignment/TransportHandlingUnit/ID` = **QLM-BX-1**  
   The insulated box of the frozen vaccine, the wholesaler's own number.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
@@ -309,13 +307,13 @@ Inside `Shipment`:
   And at -15 °C or colder. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/TransportHandlingUnit/MaximumTemperature/Measure` = **-15** (unitCode `CEL`)  
   In degrees Celsius.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-BX-1**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-BX-1**  
   The box itself.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **40** (unitCode `EA`)  
   Forty vials of the varicella vaccine.
 - `Consignment/TransportHandlingUnit/Package/PackagingTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BX: box. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
-- `Consignment/TransportHandlingUnit/ID` = **QPD-RA-1**  
+- `Consignment/TransportHandlingUnit/ID` = **QLM-RA-1**  
   The generator's Type A package, the wholesaler's own number.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **BX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BX: box, the outer package. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BX = Box.
@@ -325,7 +323,7 @@ Inside `Shipment`:
   Radioactive material of class 7.
 - `Consignment/TransportHandlingUnit/HazardousGoodsTransit/HazardousRegulationCode` = **ICA** (listID `UN/EDIFACT EDED 8273`)  
   Air: the IATA Dangerous Goods Regulations. The code is from the world's copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA ICAO.
-- `Consignment/TransportHandlingUnit/Package/ID` = **QPD-RA-1**  
+- `Consignment/TransportHandlingUnit/Package/ID` = **QLM-RA-1**  
   The package itself.
 - `Consignment/TransportHandlingUnit/Package/Quantity` = **1** (unitCode `EA`)  
   One generator.
@@ -417,7 +415,7 @@ Inside `Shipment`:
   How much is carried.
 - `GoodsItem/Item/Name` = **Technetium-99m generator, 20 GBq**  
   The goods, named.
-- `GoodsItem/Item/HazardousItem/ID` = **QPD-RAD-0020-DG**  
+- `GoodsItem/Item/HazardousItem/ID` = **QLM-RAD-0020-DG**  
   The wholesaler's dangerous goods record of the generator.
 - `GoodsItem/Item/HazardousItem/PlacardNotation` = **7**  
   The class shown on the hazard label of the packages.
@@ -468,11 +466,11 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **SGH-PO-26-0327**  
+- `ID` = **SGH/2026/1100**  
   The hospital's order the goods are for.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: SGH-PO-26-0327 is the example medicines/04, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
-- `ID` = **QPD-DGD-26-0615**  
+  The kind of document referred to: SGH/2026/1100 is the example medicines/04, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+- `ID` = **QLM-DGD-26-0615**  
   The shipper's declaration for dangerous goods of the generator, a declaration of its own: radioactive material may not share one with other dangerous goods, and the dry ice needs none, only its entry on the air waybill (resting on secondary sources). It goes with the package, signed when the generator's activity is measured on Monday.
 - `DocumentTypeCode` = **890** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to, the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 890 = Dangerous goods declaration.
@@ -496,8 +494,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-FI-26-0329</cbc:ID>
+  <cbc:ID>QLM-FI-26-2388</cbc:ID>
   <cbc:UUID>9c9dac7e-9d28-5eec-bf12-be960571ab4f</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>
   <cbc:IssueTime>09:20:00-01:00</cbc:IssueTime>
@@ -588,9 +585,9 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>QPD-SH-26-0323</cbc:ID>
+    <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>QPD-CS-26-0330</cbc:ID>
+      <cbc:ID>QLM-CS-26-3980</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
@@ -633,7 +630,7 @@ Inside `Signature`:
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
       <cac:TransportHandlingUnit>
-        <cbc:ID>QPD-TC-1</cbc:ID>
+        <cbc:ID>QLM-TC-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo terminal.</cbc:HandlingInstructions>
         <cac:MinimumTemperature>
@@ -645,78 +642,78 @@ Inside `Signature`:
           <cbc:Measure unitCode="CEL">8</cbc:Measure>
         </cac:MaximumTemperature>
         <cac:Package>
-          <cbc:ID>QPD-CT-1</cbc:ID>
+          <cbc:ID>QLM-CT-1</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-2</cbc:ID>
+          <cbc:ID>QLM-CT-2</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-3</cbc:ID>
+          <cbc:ID>QLM-CT-3</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-4</cbc:ID>
+          <cbc:ID>QLM-CT-4</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-5</cbc:ID>
+          <cbc:ID>QLM-CT-5</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-6</cbc:ID>
+          <cbc:ID>QLM-CT-6</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-7</cbc:ID>
+          <cbc:ID>QLM-CT-7</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-8</cbc:ID>
+          <cbc:ID>QLM-CT-8</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-9</cbc:ID>
+          <cbc:ID>QLM-CT-9</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-10</cbc:ID>
+          <cbc:ID>QLM-CT-10</cbc:ID>
           <cbc:Quantity unitCode="EA">30</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-11</cbc:ID>
+          <cbc:ID>QLM-CT-11</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-12</cbc:ID>
+          <cbc:ID>QLM-CT-12</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-13</cbc:ID>
+          <cbc:ID>QLM-CT-13</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
         <cac:Package>
-          <cbc:ID>QPD-CT-14</cbc:ID>
+          <cbc:ID>QLM-CT-14</cbc:ID>
           <cbc:Quantity unitCode="EA">60</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>QPD-BX-1</cbc:ID>
+        <cbc:ID>QLM-BX-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Frozen vaccine on 6 kg of dry ice: keep the box upright and its vent clear; do not put it in the active container.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
@@ -729,13 +726,13 @@ Inside `Signature`:
           <cbc:Measure unitCode="CEL">-15</cbc:Measure>
         </cac:MaximumTemperature>
         <cac:Package>
-          <cbc:ID>QPD-BX-1</cbc:ID>
+          <cbc:ID>QLM-BX-1</cbc:ID>
           <cbc:Quantity unitCode="EA">40</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
         </cac:Package>
       </cac:TransportHandlingUnit>
       <cac:TransportHandlingUnit>
-        <cbc:ID>QPD-RA-1</cbc:ID>
+        <cbc:ID>QLM-RA-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Radioactive, Category III-YELLOW, transport index 1.5: stow in the aft hold, away from the crew and from the frozen vaccine's box.</cbc:HandlingInstructions>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
@@ -743,7 +740,7 @@ Inside `Signature`:
           <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
         </cac:HazardousGoodsTransit>
         <cac:Package>
-          <cbc:ID>QPD-RA-1</cbc:ID>
+          <cbc:ID>QLM-RA-1</cbc:ID>
           <cbc:Quantity unitCode="EA">1</cbc:Quantity>
           <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
           <cac:MeasurementDimension>
@@ -829,7 +826,7 @@ Inside `Signature`:
       <cac:Item>
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cac:HazardousItem>
-          <cbc:ID>QPD-RAD-0020-DG</cbc:ID>
+          <cbc:ID>QLM-RAD-0020-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
           <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
@@ -869,11 +866,11 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>SGH-PO-26-0327</cbc:ID>
+    <cbc:ID>SGH/2026/1100</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentReference>
-    <cbc:ID>QPD-DGD-26-0615</cbc:ID>
+    <cbc:ID>QLM-DGD-26-0615</cbc:ID>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">890</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

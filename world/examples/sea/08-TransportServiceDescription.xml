@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-service-description:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-DOC-26-0130</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0979</cbc:ProfileExecutionID>
+  <cbc:ID>8700033381</cbc:ID>
   <cbc:UUID>bee924a8-76e1-5c8f-be45-927bde1567a4</cbc:UUID>
   <cbc:IssueDate>2026-05-09</cbc:IssueDate>
   <cbc:IssueTime>12:03:00-01:00</cbc:IssueTime>
@@ -111,7 +111,7 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportServiceDescriptionRequestDocumentReference>
-    <cbc:ID>LD-DOC-26-0129</cbc:ID>
+    <cbc:ID>LMW-TDR-26-0049</cbc:ID>
   </cac:TransportServiceDescriptionRequestDocumentReference>
   <cac:TransportServiceProviderParty>
     <cac:PartyIdentification>

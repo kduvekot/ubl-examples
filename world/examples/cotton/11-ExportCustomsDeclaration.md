@@ -15,10 +15,8 @@ The island's export: the ginnery declares the bales to customs.
 - `CustomizationID` = **urn:ubl-examples:world:trns:export-customs-declaration:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
-  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **COTTON-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCG-EX-26-0203**  
+  The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ID` = **SCG-EX-26-0049**  
   The exporter's reference.
 - `UUID` = **f5f1bfda-9201-580a-8a6a-bce4e1381b33**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -98,7 +96,7 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **SCG-CD-26-0204**  
+- `ID` = **SCG-CD-26-0049**  
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
@@ -108,9 +106,9 @@ Inside `CustomsDeclaration`:
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
-- `Shipment/ID` = **SCG-SH-26-0200**  
+- `Shipment/ID` = **SCG-SH-26-0218**  
   The shipment declared.
-- `Shipment/Consignment/ID` = **LTM-CS-26-0201**  
+- `Shipment/Consignment/ID` = **7300013298**  
   The consignment carried.
 - `Shipment/Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight leaving the country.
@@ -238,14 +236,14 @@ Inside `CustomsDeclaration`:
   The network in which the address is registered: the world's own exchange network.
 - `CustomsParty/ElectronicAddress/ElectronicAddressID` = **XL:GOV-118** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Government list of public bodies of Lisavu; as Island Customs Service gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `AdditionalDocumentReference/ID` = **LTM-PO-26-0198**  
+- `AdditionalDocumentReference/ID` = **4500013293**  
   The order behind the export.
 - `AdditionalDocumentReference/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LTM-PO-26-0198 is the example cotton/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
-- `AdditionalDocumentReference/ID` = **DAL-GC-26-0202**  
+  The kind of document referred to: 4500013293 is the example cotton/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+- `AdditionalDocumentReference/ID` = **DAL/2026/0309**  
   The phytosanitary certificate of the bales, presented with the export of plant products: the Plant Protection Service's certificate goes with the goods from export onward.
 - `AdditionalDocumentReference/DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: DAL-GC-26-0202 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
+  The kind of document referred to: DAL/2026/0309 is the example cotton/10, a GoodsCertificate; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
 
 ### Signature
 
@@ -266,8 +264,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-EX-26-0203</cbc:ID>
+  <cbc:ID>SCG-EX-26-0049</cbc:ID>
   <cbc:UUID>f5f1bfda-9201-580a-8a6a-bce4e1381b33</cbc:UUID>
   <cbc:IssueDate>2026-05-06</cbc:IssueDate>
   <cbc:IssueTime>13:33:00+00:00</cbc:IssueTime>
@@ -323,7 +320,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>SCG-CD-26-0204</cbc:ID>
+    <cbc:ID>SCG-CD-26-0049</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-06</cbc:StartDate>
@@ -335,9 +332,9 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>SCG-SH-26-0200</cbc:ID>
+      <cbc:ID>SCG-SH-26-0218</cbc:ID>
       <cac:Consignment>
-        <cbc:ID>LTM-CS-26-0201</cbc:ID>
+        <cbc:ID>7300013298</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       </cac:Consignment>
@@ -458,11 +455,11 @@ Inside `Signature`:
       </cac:ElectronicAddress>
     </cac:CustomsParty>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>LTM-PO-26-0198</cbc:ID>
+      <cbc:ID>4500013293</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
     <cac:AdditionalDocumentReference>
-      <cbc:ID>DAL-GC-26-0202</cbc:ID>
+      <cbc:ID>DAL/2026/0309</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
     </cac:AdditionalDocumentReference>
   </cac:CustomsDeclaration>

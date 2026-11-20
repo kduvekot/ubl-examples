@@ -15,12 +15,12 @@ The negotiable bill of lading, issued to the forwarder that gave the instruction
 - `CustomizationID` = **urn:ubl-examples:world:trns:bill-of-lading:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Bill of lading"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **TOL-BL-26-0139**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2501**  
+  The collaboration this document belongs to: the sea carriage Bayforth books with Tidewell Ocean Lines. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
+- `ID` = **TWLU000033415**  
   The bill of lading number.
-- `CarrierAssignedID` = **TWL-BK-26-55710**  
+- `CarrierAssignedID` = **1200033394**  
   The booking the bill of lading is issued under.
 - `UUID` = **aa5970ad-efd9-5660-a1d7-8a2f0bf2de7b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -36,7 +36,7 @@ The negotiable bill of lading, issued to the forwarder that gave the instruction
   Who has paid the freight.
 - `DocumentStatusCode` = **Confirmed** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
   Issued. The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
-- `ShippingOrderID` = **BF-FI-26-0137**  
+- `ShippingOrderID` = **BYF-FI-26-1501**  
   The forwarder's booking with the carrier.
 - `ToOrderIndicator` = **true**  
   Made out to order: the buyer can transfer it by endorsement.
@@ -214,7 +214,7 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **LD-SH-26-0132**  
+- `ID` = **LMW-SH-26-1001**  
   The shipment carried.
 - `GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
   The goods (5795.8 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment.
@@ -222,11 +222,11 @@ Inside `Shipment`:
   Benches and side frames.
 - `ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment.
-- `Consignment/ID` = **LD-CS-26-0133**  
+- `Consignment/ID` = **LMW-CS-26-1001**  
   The distributor's consignment number.
-- `Consignment/CarrierAssignedID` = **TWL-BK-26-55710**  
+- `Consignment/CarrierAssignedID` = **1200033394**  
   The carrier's booking number.
-- `Consignment/FreightForwarderAssignedID` = **BF-SH-26-0418**  
+- `Consignment/FreightForwarderAssignedID` = **BYF-SH-26-0418**  
   The forwarder's own file number for the consignment, not the distributor's instructions.
 - `Consignment/BrokerAssignedID` = **TCB-26-0331**  
   The customs broker's file in Selanu.
@@ -920,7 +920,7 @@ Inside `Shipment`:
   After closing the doors.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode` = **SM2** (listID `IMO SOLAS`)  
   SOLAS method 2: the cargo and packing weighed and added to the tare. The code is from UBL's default Weighing method (IMO SOLAS) list: SM2 = SOLAS verification method 2.
-- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID` = **LD-SCALE-03**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID` = **LMW-SCALE-03**  
   The scale of the warehouse.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType` = **Platform scale**  
   Its kind.
@@ -954,11 +954,11 @@ Inside `Shipment`:
   The last port in Bayvarra.
 - `Consignment/LastExitPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Consignment/DocumentReference/ID` = **LD-PL-26-0134**  
+- `Consignment/DocumentReference/ID` = **LMW-PKL-26-0051**  
   The packing list of the container.
 - `Consignment/DocumentReference/DocumentTypeCode` = **PackingList** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LD-PL-26-0134 is the example sea/10, a PackingList; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: PackingList = Packing List.
-- `Consignment/InsurancePolicy/ID` = **WS-CP-26-4471**  
+  The kind of document referred to: LMW-PKL-26-0051 is the example sea/10, a PackingList; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: PackingList = Packing List.
+- `Consignment/InsurancePolicy/ID` = **WVS-CP-26-4471**  
   The cargo policy of the insurer.
 - `Consignment/InsurancePolicy/InsuranceTypeCode` = **ALLRISKS** (listID `urn:ubl-examples:world:codelist:InsuranceCoverCode`)  
   Cover against all risks. The code is from the Trade Accord's insurance cover list: ALLRISKS = All risks.
@@ -1022,7 +1022,7 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/InsurancePolicy/BeneficiaryParty/PartyName/Name` = **Velumi Trading**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/InsurancePolicy/PolicyDocumentReference/ID` = **WS-CERT-26-0884**  
+- `Consignment/InsurancePolicy/PolicyDocumentReference/ID` = **WVS-CERT-26-0884**  
   The insurance certificate that goes with the documents.
 - `Consignment/InsurancePolicy/PolicyDocumentReference/DocumentType` = **Insurance certificate**  
   What the document is: the certificate of the shipment under the policy, not the policy itself.
@@ -1055,10 +1055,10 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **BF-FI-26-0137**  
+- `ID` = **BYF-FI-26-1501**  
   The forwarding instructions it was issued on.
 - `DocumentTypeCode` = **ForwardingInstructions** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-FI-26-0137 is the example sea/12, a ForwardingInstructions; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
+  The kind of document referred to: BYF-FI-26-1501 is the example sea/12, a ForwardingInstructions; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ForwardingInstructions = Forwarding Instructions.
 
 ### Document Distribution
 
@@ -1104,9 +1104,9 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0139</cbc:ID>
-  <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2501</cbc:ProfileExecutionID>
+  <cbc:ID>TWLU000033415</cbc:ID>
+  <cbc:CarrierAssignedID>1200033394</cbc:CarrierAssignedID>
   <cbc:UUID>aa5970ad-efd9-5660-a1d7-8a2f0bf2de7b</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
   <cbc:IssueTime>10:54:00-01:00</cbc:IssueTime>
@@ -1114,7 +1114,7 @@ Inside `Signature`:
   <cbc:Description>Shipped on board.</cbc:Description>
   <cbc:Note>Freight prepaid.</cbc:Note>
   <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>BYF-FI-26-1501</cbc:ShippingOrderID>
   <cbc:ToOrderIndicator>true</cbc:ToOrderIndicator>
   <cbc:OtherInstruction>Three originals issued.</cbc:OtherInstruction>
   <cac:ConsignorParty>
@@ -1242,14 +1242,14 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ID>LMW-SH-26-1001</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">2</cbc:TotalGoodsItemQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0133</cbc:ID>
-      <cbc:CarrierAssignedID>TWL-BK-26-55710</cbc:CarrierAssignedID>
-      <cbc:FreightForwarderAssignedID>BF-SH-26-0418</cbc:FreightForwarderAssignedID>
+      <cbc:ID>LMW-CS-26-1001</cbc:ID>
+      <cbc:CarrierAssignedID>1200033394</cbc:CarrierAssignedID>
+      <cbc:FreightForwarderAssignedID>BYF-SH-26-0418</cbc:FreightForwarderAssignedID>
       <cbc:BrokerAssignedID>TCB-26-0331</cbc:BrokerAssignedID>
       <cbc:TotalInvoiceAmount currencyID="XBL">54896.00</cbc:TotalInvoiceAmount>
       <cbc:DeclaredCustomsValueAmount currencyID="XBL">54896.00</cbc:DeclaredCustomsValueAmount>
@@ -1837,7 +1837,7 @@ Inside `Signature`:
             <cbc:WeighingDate>2026-05-12</cbc:WeighingDate>
             <cbc:WeighingTime>15:30:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
-            <cbc:WeighingDeviceID>LD-SCALE-03</cbc:WeighingDeviceID>
+            <cbc:WeighingDeviceID>LMW-SCALE-03</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Platform scale</cbc:WeighingDeviceType>
             <cbc:GrossMassMeasure unitCode="KGM">9545.8</cbc:GrossMassMeasure>
             <cac:WeighingParty>
@@ -1890,11 +1890,11 @@ Inside `Signature`:
         </cac:Address>
       </cac:LastExitPortLocation>
       <cac:DocumentReference>
-        <cbc:ID>LD-PL-26-0134</cbc:ID>
+        <cbc:ID>LMW-PKL-26-0051</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">PackingList</cbc:DocumentTypeCode>
       </cac:DocumentReference>
       <cac:InsurancePolicy>
-        <cbc:ID>WS-CP-26-4471</cbc:ID>
+        <cbc:ID>WVS-CP-26-4471</cbc:ID>
         <cbc:InsuranceTypeCode listID="urn:ubl-examples:world:codelist:InsuranceCoverCode">ALLRISKS</cbc:InsuranceTypeCode>
         <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>
         <cbc:DeductibleAmount currencyID="XBL">250.00</cbc:DeductibleAmount>
@@ -1957,7 +1957,7 @@ Inside `Signature`:
           </cac:PartyName>
         </cac:BeneficiaryParty>
         <cac:PolicyDocumentReference>
-          <cbc:ID>WS-CERT-26-0884</cbc:ID>
+          <cbc:ID>WVS-CERT-26-0884</cbc:ID>
           <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
         </cac:PolicyDocumentReference>
       </cac:InsurancePolicy>
@@ -1988,7 +1988,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>BF-FI-26-0137</cbc:ID>
+    <cbc:ID>BYF-FI-26-1501</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ForwardingInstructions</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

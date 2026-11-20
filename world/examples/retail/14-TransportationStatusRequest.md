@@ -15,12 +15,12 @@ The distributor, as transport user, asks the carrier for the truck's arrival tim
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
-  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **RETAIL-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **LD-DOC-26-0232**  
+  The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0893**  
+  The collaboration this document belongs to: the carriage Lumeway books with Bayforth Forwarding. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **LMW-TSR-26-0046**  
   The sender's number for this document.
-- `CarrierAssignedID` = **BF-NATROAD-26-0217**  
+- `CarrierAssignedID` = **BYF-CR-26-0114**  
   The carrier's own number for the carriage, as its consignment note gives it.
 - `UUID` = **05570b50-9875-5f68-94e9-eb597fa0f1b7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -155,14 +155,14 @@ Inside `ReceiverParty`:
 
 Inside `TransportExecutionPlanDocumentReference`:
 
-- `ID` = **BF-TEP-26-0233**  
+- `ID` = **BYF-TEP-26-1340**  
   The forwarder's confirmation of the booking: its transport execution plan, retail/23.
 
 ### Consignment
 
 Inside `Consignment`:
 
-- `ID` = **LD-CS-26-0228**  
+- `ID` = **LMW-CS-26-0893**  
   The consignment asked about.
 
 ### Signature
@@ -202,9 +202,9 @@ Inside `RequestedStatusPeriod`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0232</cbc:ID>
-  <cbc:CarrierAssignedID>BF-NATROAD-26-0217</cbc:CarrierAssignedID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0893</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-TSR-26-0046</cbc:ID>
+  <cbc:CarrierAssignedID>BYF-CR-26-0114</cbc:CarrierAssignedID>
   <cbc:UUID>05570b50-9875-5f68-94e9-eb597fa0f1b7</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>09:20:00-01:00</cbc:IssueTime>
@@ -297,10 +297,10 @@ Inside `RequestedStatusPeriod`:
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportExecutionPlanDocumentReference>
-    <cbc:ID>BF-TEP-26-0233</cbc:ID>
+    <cbc:ID>BYF-TEP-26-1340</cbc:ID>
   </cac:TransportExecutionPlanDocumentReference>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0228</cbc:ID>
+    <cbc:ID>LMW-CS-26-0893</cbc:ID>
   </cac:Consignment>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-TSR</cbc:ID>

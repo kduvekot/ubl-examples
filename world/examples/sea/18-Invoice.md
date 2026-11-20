@@ -15,10 +15,10 @@ The forwarder invoices what it arranged for the distributor: its truck to the po
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
-  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **SEA-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **BF-INV-26-0143**  
+  The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-1001**  
+  The collaboration this document belongs to: the forwarding Lumeway gives Bayforth Forwarding. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
+- `ID` = **BYF-INV-26-2656**  
   The seller's invoice number.
 - `UUID` = **8b53f8b3-acd3-5160-a62d-977fb95b3f8f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -45,17 +45,17 @@ The forwarder invoices what it arranged for the distributor: its truck to the po
 
 Inside `OrderReference`:
 
-- `ID` = **LD-FI-26-0131**  
+- `ID` = **LMW-FI-26-0601**  
   The distributor's forwarding instructions, the order the forwarder's services follow.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TOL-BL-26-0139**  
+- `ID` = **TWLU000033415**  
   The bill of lading.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TOL-BL-26-0139 is the example sea/14, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+  The kind of document referred to: TWLU000033415 is the example sea/14, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
 
 ### Accounting Supplier Party
 
@@ -243,7 +243,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `Shipment/Consignment/ID` = **LD-CS-26-0133**  
+- `Shipment/Consignment/ID` = **LMW-CS-26-1001**  
   The consignment shipped.
 - `Shipment/Consignment/CarrierParty/PartyIdentification/ID` = **20411918** (schemeID `urn:ubl-examples:world:XB:register`)  
   The party's preferred identifier: its number in the Federal business register of Bayvarra; as Tidewell Ocean Lines gives it. Later mentions of the same party in this document repeat only this identifier and the name.
@@ -280,9 +280,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF98BFINV260143**  
+- `InstructionNote` = **Quote RF36BYFINV262656**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF98BFINV260143** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF36BYFINV262656** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XB40BLUM38020502618225** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -294,7 +294,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice BF-INV-26-0143**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice BYF-INV-26-2656**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380205** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -398,7 +398,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Container haulage to the port, 40-foot**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-HAUL40**  
+- `Item/SellersItemIdentification/ID` = **BYF-HAUL40**  
   The seller's own item number; as Bayforth Forwarding describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   Bayvarra's sales tax is charged only on sales to final consumers; a service to a business is exempt (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -426,7 +426,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Sea freight, 40-foot container**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-SEA40**  
+- `Item/SellersItemIdentification/ID` = **BYF-SEA40**  
   The seller's own item number; as Bayforth Forwarding describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   Bayvarra's sales tax is charged only on sales to final consumers; a service to a business is exempt (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -450,15 +450,15 @@ Inside `InvoiceLine`:
   One export declaration.
 - `LineExtensionAmount` = **85.00** (currencyID `XBL`)  
   1 × 85.0, rounded to the minor unit of the currency.
-- `DocumentReference/ID` = **BF-EX-26-0135**  
+- `DocumentReference/ID` = **BYF-EX-26-0505**  
   The export declaration the forwarder lodged as customs agent.
 - `DocumentReference/DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-EX-26-0135 is the example sea/11, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+  The kind of document referred to: BYF-EX-26-0505 is the example sea/11, a ExportCustomsDeclaration; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 - `Item/Description` = **Preparing and lodging one export declaration as customs agent.**  
   The seller's description.
 - `Item/Name` = **Export customs clearance**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-CLR**  
+- `Item/SellersItemIdentification/ID` = **BYF-CLR**  
   The seller's own item number; as Bayforth Forwarding describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   Bayvarra's sales tax is charged only on sales to final consumers; a service to a business is exempt (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -484,7 +484,7 @@ Inside `InvoiceLine`:
   Insurance of this shipment.
 - `LineExtensionAmount` = **132.85** (currencyID `XBL`)  
   1 × 132.85, rounded to the minor unit of the currency.
-- `DocumentReference/ID` = **WS-CERT-26-0884**  
+- `DocumentReference/ID` = **WVS-CERT-26-0884**  
   The insurance certificate of the shipment, which states the insured value.
 - `DocumentReference/DocumentType` = **Insurance certificate**  
   The kind of document referred to, Wavesure's insurance certificate of the sea shipment, with its insured value, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -492,7 +492,7 @@ Inside `InvoiceLine`:
   The seller's description.
 - `Item/Name` = **Cargo insurance**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **BF-INS**  
+- `Item/SellersItemIdentification/ID` = **BYF-INS**  
   The seller's own item number; as Bayforth Forwarding describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
   Bayvarra's sales tax is charged only on sales to final consumers; a service to a business is exempt (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
@@ -519,8 +519,8 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-INV-26-0143</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-1001</cbc:ProfileExecutionID>
+  <cbc:ID>BYF-INV-26-2656</cbc:ID>
   <cbc:UUID>8b53f8b3-acd3-5160-a62d-977fb95b3f8f</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
   <cbc:IssueTime>11:33:00-01:00</cbc:IssueTime>
@@ -532,10 +532,10 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LD-FI-26-0131</cbc:ID>
+    <cbc:ID>LMW-FI-26-0601</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:ID>TWLU000033415</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -704,7 +704,7 @@ Inside `InvoiceLine`:
   <cac:Delivery>
     <cac:Shipment>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0133</cbc:ID>
+        <cbc:ID>LMW-CS-26-1001</cbc:ID>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
@@ -738,15 +738,15 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-06-18</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF98BFINV260143</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF98BFINV260143</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF36BYFINV262656</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF36BYFINV262656</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB40BLUM38020502618225</cbc:ID>
       <cbc:Name>Bayforth Forwarding Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BF-INV-26-0143</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BYF-INV-26-2656</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -821,7 +821,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Merchant haulage of one 40-foot container by the forwarder's truck: the empty container from the quay to the shipper and the packed container to the quay.</cbc:Description>
       <cbc:Name>Container haulage to the port, 40-foot</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-HAUL40</cbc:ID>
+        <cbc:ID>BYF-HAUL40</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -847,7 +847,7 @@ Inside `InvoiceLine`:
       <cbc:Description>Port-to-port sea freight for one 40-foot container, booked with the ocean carrier.</cbc:Description>
       <cbc:Name>Sea freight, 40-foot container</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-SEA40</cbc:ID>
+        <cbc:ID>BYF-SEA40</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -870,14 +870,14 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>BF-EX-26-0135</cbc:ID>
+      <cbc:ID>BYF-EX-26-0505</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Preparing and lodging one export declaration as customs agent.</cbc:Description>
       <cbc:Name>Export customs clearance</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-CLR</cbc:ID>
+        <cbc:ID>BYF-CLR</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -901,14 +901,14 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">132.85</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>WS-CERT-26-0884</cbc:ID>
+      <cbc:ID>WVS-CERT-26-0884</cbc:ID>
       <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.</cbc:Description>
       <cbc:Name>Cargo insurance</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-INS</cbc:ID>
+        <cbc:ID>BYF-INS</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

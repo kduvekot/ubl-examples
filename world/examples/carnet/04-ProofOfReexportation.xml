@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:proof-of-reexportation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:temporary-admission:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FCC-DOC-26-0728</cbc:ID>
+  <cbc:ProfileExecutionID>FCC/2026/3170</cbc:ProfileExecutionID>
+  <cbc:ID>FCC/ATA/2026/0263</cbc:ID>
   <cbc:UUID>a5be84f0-33dc-58b3-97e4-10dea98880ab</cbc:UUID>
   <cbc:IssueDate>2026-08-28</cbc:IssueDate>
   <cbc:IssueTime>13:19:00-01:00</cbc:IssueTime>
@@ -123,7 +123,7 @@
   </cac:ExportingGuarantorParty>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
     <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
     <cac:CustomsOfficeLocation>
@@ -141,14 +141,14 @@
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
     <cac:ImportationDocumentReference>
-      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:ID>XL-CUS/2026/12905</cbc:ID>
       <cbc:IssueDate>2026-06-02</cbc:IssueDate>
       <cbc:DocumentType>Importation registration</cbc:DocumentType>
     </cac:ImportationDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REEXP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>Stamped at Selanu airport on 9 June; its voucher did not reach the importation office's records.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
@@ -165,12 +165,12 @@
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
     <cac:ImportationDocumentReference>
-      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:ID>XL-CUS/2026/12905</cbc:ID>
       <cbc:IssueDate>2026-06-02</cbc:IssueDate>
       <cbc:DocumentType>Importation registration</cbc:DocumentType>
     </cac:ImportationDocumentReference>
     <cac:ReexportationDocumentReference>
-      <cbc:ID>XL-CUS-ATA-26-0053</cbc:ID>
+      <cbc:ID>XL-CUS/2026/13127</cbc:ID>
       <cbc:IssueDate>2026-06-09</cbc:IssueDate>
       <cbc:DocumentType>Re-exportation registration</cbc:DocumentType>
     </cac:ReexportationDocumentReference>
@@ -180,7 +180,7 @@
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REIMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>Stamped at Valico Euridice on 10 June.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -191,12 +191,12 @@
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
     <cac:ExportationDocumentReference>
-      <cbc:ID>XU-CUS-EXP-26-0031</cbc:ID>
+      <cbc:ID>XU-CUS/2026/39379</cbc:ID>
       <cbc:IssueDate>2026-06-01</cbc:IssueDate>
       <cbc:DocumentType>Exportation registration</cbc:DocumentType>
     </cac:ExportationDocumentReference>
     <cac:ReimportationDocumentReference>
-      <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+      <cbc:ID>XU-CUS/2026/39380</cbc:ID>
       <cbc:IssueDate>2026-06-10</cbc:IssueDate>
       <cbc:DocumentType>Re-importation record</cbc:DocumentType>
     </cac:ReimportationDocumentReference>
@@ -225,7 +225,7 @@
       </cac:PartyName>
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
-      <cbc:ID>XU-CUS-REIMP-26-0044</cbc:ID>
+      <cbc:ID>XU-CUS/2026/39380</cbc:ID>
       <cbc:IssueDate>2026-06-10</cbc:IssueDate>
       <cbc:DocumentType>Re-importation record</cbc:DocumentType>
     </cac:DocumentReference>
@@ -238,11 +238,11 @@
     </cac:ExternalReference>
   </cac:GoodsItemPassportAttachment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCC-DOC-26-0726</cbc:ID>
+    <cbc:ID>SCC/ATA/2026/0084</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProofOfReexportationRequest</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>SCC-DOC-26-0727</cbc:ID>
+    <cbc:ID>SCC/ATA/2026/0097</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ProofOfReexportationReminder</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

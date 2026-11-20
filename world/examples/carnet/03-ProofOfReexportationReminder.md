@@ -15,10 +15,10 @@ No answer after a month: a reminder.
 - `CustomizationID` = **urn:ubl-examples:world:trns:proof-of-reexportation:1.0**  
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Proof of re-exportation". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:temporary-admission:1.0**  
-  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
-- `ProfileExecutionID` = **CARNET-2026-01**  
-  This run of the process: the same in every document of the flow.
-- `ID` = **SCC-DOC-26-0727**  
+  The Trade Accord's process profile the document belongs to: temporary admission, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **FCC/2026/3170**  
+  The collaboration this document belongs to: the carnet the Ferrano Chamber of Commerce issues and its proof of re-exportation. Ferrano Chamber of Commerce started it and gave it this identifier, which every document of it repeats.
+- `ID` = **SCC/ATA/2026/0097**  
   The sender's number for this document.
 - `UUID` = **e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -32,14 +32,14 @@ No answer after a month: a reminder.
   What happens otherwise.
 - `VersionID` = **1**  
   The first reminder.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the samples travelled under.
 
 ### Proof of Reexportation Request Document Reference
 
 Inside `ProofOfReexportationRequestDocumentReference`:
 
-- `ID` = **SCC-DOC-26-0726**  
+- `ID` = **SCC/ATA/2026/0084**  
   The request unanswered.
 
 ### Importing Guarantor Party
@@ -189,7 +189,7 @@ Inside `ImportingCustomsParty`:
 
 Inside `IssuerEndorsement`:
 
-- `DocumentID` = **SCC-DOC-26-0727**  
+- `DocumentID` = **SCC/ATA/2026/0097**  
   The reminder the chamber endorses, as the guaranteeing association whose guarantee is at stake.
 - `ApprovalStatus` = **Endorsed**  
   The status of the endorsement itself; the request's open state is in the note.
@@ -221,7 +221,7 @@ Inside `GoodsItemPassportCounterfoil`:
 
 - `ID` = **IMP-1**  
   The importation counterfoil (white sheet) of the carnet.
-- `GoodsItemPassportID` = **FCC-DOC-26-0724**  
+- `GoodsItemPassportID` = **FCC/ATA/2026/0159**  
   The carnet the counterfoil belongs to.
 - `FinalReexportationDate` = **2026-06-30**  
   The limit the island's customs set on the importation counterfoil, shorter than the carnet's year: a short fair admission.
@@ -239,7 +239,7 @@ Inside `GoodsItemPassportCounterfoil`:
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
   Two.
-- `ImportationDocumentReference/ID` = **XL-CUS-ATA-26-0049**  
+- `ImportationDocumentReference/ID` = **XL-CUS/2026/12905**  
   The island's customs' registration of the importation, noted with the stamp.
 - `ImportationDocumentReference/IssueDate` = **2026-06-02**  
   The day customs stamped the counterfoil.
@@ -250,7 +250,7 @@ Inside `GoodsItemPassportCounterfoil`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **XL-CUS-ATA-26-0071**  
+- `ID` = **XL-CUS/2026/11199**  
   The customs' notice.
 - `DocumentType` = **Customs notice**  
   The kind of document referred to, the island customs' notice to the chamber, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -274,17 +274,17 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:proof-of-reexportation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:temporary-admission:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCC-DOC-26-0727</cbc:ID>
+  <cbc:ProfileExecutionID>FCC/2026/3170</cbc:ProfileExecutionID>
+  <cbc:ID>SCC/ATA/2026/0097</cbc:ID>
   <cbc:UUID>e53b1117-a5c9-5bbc-827c-2dd70a8dbfe4</cbc:UUID>
   <cbc:IssueDate>2026-08-24</cbc:IssueDate>
   <cbc:IssueTime>12:04:00+00:00</cbc:IssueTime>
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:CustomsProcedureCode">2000</cbc:ProcedureCode>
   <cbc:Note>Without proof within 30 days, the island's import consumption tax on the samples and the carnet surcharge will be claimed from the guarantee.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
-  <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+  <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
   <cac:ProofOfReexportationRequestDocumentReference>
-    <cbc:ID>SCC-DOC-26-0726</cbc:ID>
+    <cbc:ID>SCC/ATA/2026/0084</cbc:ID>
   </cac:ProofOfReexportationRequestDocumentReference>
   <cac:ImportingGuarantorParty>
     <cac:PartyIdentification>
@@ -395,7 +395,7 @@ Inside `Signature`:
     </cac:PostalAddress>
   </cac:ImportingCustomsParty>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>SCC-DOC-26-0727</cbc:DocumentID>
+    <cbc:DocumentID>SCC/ATA/2026/0097</cbc:DocumentID>
     <cbc:ApprovalStatus>Endorsed</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">GUARANTOR</cbc:RoleCode>
@@ -420,7 +420,7 @@ Inside `Signature`:
   </cac:PaymentTerms>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
     <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
     <cac:CustomsOfficeLocation>
@@ -438,13 +438,13 @@ Inside `Signature`:
       <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     </cac:GoodsItem>
     <cac:ImportationDocumentReference>
-      <cbc:ID>XL-CUS-ATA-26-0049</cbc:ID>
+      <cbc:ID>XL-CUS/2026/12905</cbc:ID>
       <cbc:IssueDate>2026-06-02</cbc:IssueDate>
       <cbc:DocumentType>Importation registration</cbc:DocumentType>
     </cac:ImportationDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>XL-CUS-ATA-26-0071</cbc:ID>
+    <cbc:ID>XL-CUS/2026/11199</cbc:ID>
     <cbc:DocumentType>Customs notice</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

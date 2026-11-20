@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SCG-RM-26-0196</cbc:ID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0024</cbc:ProfileExecutionID>
+  <cbc:ID>SCG-RM-26-0082</cbc:ID>
   <cbc:UUID>f198db4b-7402-5c2b-b4c8-d6f8869c6440</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
   <cbc:IssueTime>13:06:00+00:00</cbc:IssueTime>
@@ -101,7 +101,7 @@
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentDueDate>2026-04-17</cbc:PaymentDueDate>
-    <cbc:PaymentID schemeID="ISO 11649">RF77SCGSBI260194</cbc:PaymentID>
+    <cbc:PaymentID schemeID="ISO 11649">RF88SCGSBI260190</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL31BSEL0020004922263</cbc:ID>
       <cbc:Name>Selanu Cotton Ginnery Ltd</cbc:Name>
@@ -182,7 +182,7 @@
     <cbc:DebitLineAmount currencyID="XLC">4595.600</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledInvoiceDocumentReference>
-        <cbc:ID>SCG-SBI-26-0194</cbc:ID>
+        <cbc:ID>SCG-SBI-26-0190</cbc:ID>
       </cac:SelfBilledInvoiceDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
@@ -191,7 +191,7 @@
     <cbc:CreditLineAmount currencyID="XLC">37.075</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:SelfBilledCreditNoteDocumentReference>
-        <cbc:ID>SCG-SBC-26-0195</cbc:ID>
+        <cbc:ID>SCG-SBC-26-0009</cbc:ID>
       </cac:SelfBilledCreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:RemittanceAdviceLine>
