@@ -91,7 +91,7 @@ irrelevant · structure · process.
 | SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | partly solved |
 | SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
 | SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | solved |
-| SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | partly solved |
+| SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | solved |
 | SR-21 | Method note: date, state and checks out of date | medium | B-01, B-02, B-09, B-10, B-11, B-13, B-14 | Q-B-03 | deferred |
 | SR-22 | Method note: statements that contradict the world or a decision | medium | B-07, B-08, B-12 | | deferred |
 | SR-23 | Method note: order, weight, unpublished paths and references | medium | B-15, B-16, B-17 | Q-B-01, Q-B-02 | deferred (Q-B-01 solved) |
@@ -393,7 +393,9 @@ irrelevant · structure · process.
   Urvanian invoice and procurement community texts; D-08's proposed paragraph on the relation to real specifications
   is dropped. Still to clean, with SR-07: about 13 example pages whose reasons name EN 16931 or the EU
   (`tools/examples_scenarios.py`, `tools/examples_kit.py`, `world/documents.json`, `world/countries.json`,
-  `world/items.json`). Open: D-10 (stored title case, community pages without owner).
+  `world/items.json`) — done with SR-07. D-10 **solved 2026-11-20**: document type names in sentences ("the Bill of
+  Lading"), UBL's own flawed definitions marked [sic], the index tables sorted by name, owner and version on the
+  community pages.
 - **What:** 54 of 70 transaction pages only repeat the UBL definition; no page states roles, rules, code lists or
   identifier schemes; the relation to EN 16931 and Peppol is unexplained and the URN prefix not marked invented;
   the self-billing page does not mention the Invoice + 389 deviation; stored title case ("Bill Of Lading"),

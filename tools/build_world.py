@@ -500,7 +500,7 @@ idx = ["# Rules of the Trade Accord", "",
        "the document belongs to.", ""]
 for level, title in LEVELS.items():
     idx += [f"## {title}", "", "| Specification | Identifier | Document types |", "|---|---|---|"]
-    for u, (lv, key, spec) in specs.items():
+    for u, (lv, key, spec) in sorted(specs.items(), key=lambda kv: kv[1][2]["name"].lower()):   # by name
         if lv != level:
             continue
         kinds = ", ".join(spec.get("documents", [])) or "every document type the members exchange"
@@ -525,6 +525,7 @@ for level, title in LEVELS.items():
                 applies = "to the documents of these types that a member sends or receives: every party of its procedures"
             lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + f". It applies {applies}"
                       + ", chained after the transaction and any national specification.", ""]
+            lines += [f"Owner: {world_specs.load()['owner']['community']}. Version {world_specs.load()['version']}.", ""]
         else:
             owner = world_specs.load()["owner"][level]
             lines += [f"Owner: {owner}. Version {world_specs.load()['version']}.", ""]
