@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-INV-26-0225</cbc:ID>
+  <cbc:ID>VI-INV-26-0226</cbc:ID>
   <cbc:UUID>28c4a000-2423-538c-8cc0-b619932179bd</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:04:00-01:00</cbc:IssueTime>
@@ -19,10 +19,10 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
+    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
   </cac:OrderReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>LPWD-RA-26-0223</cbc:ID>
+    <cbc:ID>LPWD-RA-26-0224</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:ContractDocumentReference>
     <cbc:ID>PWD-CONTRACT-2026-PARKS</cbc:ID>
@@ -239,15 +239,15 @@
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF37VIINV260225</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF37VIINV260225</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF10VIINV260226</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF10VIINV260226</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB13BLUM38010005341179</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice VI-INV-26-0225</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice VI-INV-26-0226</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
         <cbc:Name>Main branch, Exchange Street</cbc:Name>

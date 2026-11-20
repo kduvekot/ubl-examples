@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CAT-26-0212</cbc:ID>
+  <cbc:ID>VI-CAT-26-0213</cbc:ID>
   <cbc:UUID>6ddf87fc-d391-5f9a-8a2e-22b484da6820</cbc:UUID>
   <cbc:Name>Valdara Industries catalogue</cbc:Name>
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
@@ -220,7 +220,7 @@
         <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0212-1</cbc:ID>
+        <cbc:ID>VI-CAT-26-0213-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:ItemSpecificationDocumentReference>
         <cbc:ID>VI-DS-B180</cbc:ID>
@@ -440,7 +440,7 @@
         <cbc:ID>VI-INST-B</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>VI-CAT-26-0212-2</cbc:ID>
+        <cbc:ID>VI-CAT-26-0213-2</cbc:ID>
       </cac:CatalogueItemIdentification>
     </cac:Item>
     <cac:CallForTendersLineReference>

@@ -17,9 +17,9 @@ Lumeport Public Works Department to Valdara Industries</h1>
 <p><em>Example 26 of the flow "A public tender (Bayvarra)" · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA">Order
 in the UBL 2.5 specification</a></em></p>
-<p>The first call-off under the awarded contract. Delivery terms DAP the
-authority's site: the manufacturer delivers, by the road carrier it
-chooses.</p>
+<p>The first call-off under the awarded contract: 40 benches and their
+40 installations. Delivery terms DAP the authority's site: the
+manufacturer delivers, by the road carrier it chooses.</p>
 <p><a href="examples/tender/26-Order.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -45,7 +45,7 @@ ProfileExecutionID.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>TENDER-2026-01</strong><br />
 This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>LPWD-PO-26-0213</strong><br />
+<li><code>ID</code> = <strong>LPWD-PO-26-0214</strong><br />
 The buyer's order number.</li>
 <li><code>UUID</code> =
 <strong>9865133f-cea3-538c-ba26-54de8100727c</strong><br />
@@ -627,7 +627,7 @@ The scope within which Valdara Industries gives its item numbers: its
 company prefix, the issuing agency code KXU and its Codana company
 number; what follows is the company's own reference.</li>
 <li><code>LineItem/Item/CatalogueDocumentReference/ID</code> =
-<strong>VI-CAT-26-0212</strong><br />
+<strong>VI-CAT-26-0213</strong><br />
 The catalogue the item was ordered from.</li>
 <li><code>LineItem/ID</code> = <strong>2</strong><br />
 The line number: a line added by a change keeps a number of its own
@@ -680,7 +680,7 @@ item bench-installation of Valdara Industries (world/items.json).</li>
 The seller's own item number; item bench-installation of Valdara
 Industries (world/items.json).</li>
 <li><code>LineItem/Item/CatalogueDocumentReference/ID</code> =
-<strong>VI-CAT-26-0212</strong><br />
+<strong>VI-CAT-26-0213</strong><br />
 The catalogue the item was ordered from.</li>
 </ul>
 <h2 id="the-document">The document</h2>
@@ -691,7 +691,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:order:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:ordering:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;TENDER-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-PO-26-0213&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-PO-26-0214&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;9865133f-cea3-538c-ba26-54de8100727c&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:40:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -894,7 +894,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CatalogueDocumentReference</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-CAT-26-0212&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-CAT-26-0213&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CatalogueDocumentReference</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
@@ -924,7 +924,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-INST-B&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CatalogueDocumentReference</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-CAT-26-0212&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-CAT-26-0213&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CatalogueDocumentReference</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
@@ -932,6 +932,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Order</span>&gt;</span></code></pre></div>
 </main>
 </div>
-<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/1d99a45a420fbe2bbc699267bdd70c27f338bcf1"><code>1d99a45</code></a> of 2026-11-20 08:42 UTC</p></div></footer>
+<footer class="site-footer"><div><p>Work in progress. Not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845.</p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d0dda09dbaf8e4c271b10b48a95f82c6f12d9cbe"><code>d0dda09</code></a> of 2026-11-20 09:27 UTC</p></div></footer>
 </body>
 </html>
