@@ -778,8 +778,8 @@ The meter.</li>
 = <strong>17900</strong> (unitCode <code>KWH</code>)<br />
 The month's consumption.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount</code>
-= <strong>488670</strong> (currencyID <code>XUF</code>)<br />
-What it cost at the tariff of the bill, without tax.</li>
+= <strong>377690</strong> (currencyID <code>XUF</code>)<br />
+What it cost at the supplier's own tariff, without tax.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode</code>
 = <strong>NORMAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code>)<br />
@@ -802,8 +802,8 @@ The meter.</li>
 = <strong>16450</strong> (unitCode <code>KWH</code>)<br />
 The month's consumption.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount</code>
-= <strong>449085</strong> (currencyID <code>XUF</code>)<br />
-What it cost at the tariff of the bill, without tax.</li>
+= <strong>347095</strong> (currencyID <code>XUF</code>)<br />
+What it cost at the supplier's own tariff, without tax.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode</code>
 = <strong>NORMAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:ConsumptionLevelCode</code>)<br />
@@ -841,9 +841,9 @@ Urvania's energy tax. The code is from the world's copy of UN/EDIFACT
 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that
 holds a code names the code's list in its schemeID.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount</code>
-= <strong>488670</strong> (currencyID <code>XUF</code>)<br />
-The average amount of the last three months at the tariff of the bill,
-without tax.</li>
+= <strong>377690</strong> (currencyID <code>XUF</code>)<br />
+The average amount of the last three months at the supplier's own
+tariff, without tax.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/Description</code>
 = <strong>The average over the last three months is 17,900
 kWh.</strong><br />
@@ -1572,7 +1572,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;FGR-E-20523&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;17900&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;488670&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;377690&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevel</span>&gt;Normal&lt;/<span class="kw">cbc:ConsumptionLevel</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Period</span>&gt;</span>
@@ -1583,7 +1583,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;FGR-E-20523&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;16450&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;449085&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;347095&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevel</span>&gt;Normal&lt;/<span class="kw">cbc:ConsumptionLevel</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Description</span>&gt;Corrected from the estimate of 17,200 kWh.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -1602,7 +1602,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:EnergyTaxReport</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ConsumptionAverage</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AverageAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;488670&lt;/<span class="kw">cbc:AverageAmount</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AverageAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;377690&lt;/<span class="kw">cbc:AverageAmount</span>&gt;</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;The average over the last three months is 17,900 kWh.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ConsumptionAverage</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:EnergyWaterConsumptionCorrection</span>&gt;</span>
@@ -1831,6 +1831,6 @@ href="example-utilities-12-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

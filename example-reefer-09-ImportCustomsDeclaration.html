@@ -55,7 +55,7 @@ declaration". Each has a public description on the world's pages.</li>
 class="emoji" data-emoji="customs">🛃</span>1.0</strong><br />
 The Trade Accord's process profile the document belongs to: customs, a
 generic, versioned profile, not the flow.</li>
-<li><code>ProfileExecutionID</code> = <strong>26-0250</strong><br />
+<li><code>ProfileExecutionID</code> = <strong>26-0249</strong><br />
 The collaboration this document belongs to: Hafefo's import declaration
 of the fruit, lodged before arrival, to its release at discharge. Hafefo
 Fresh Produce started it and gave it this identifier, which every
@@ -69,9 +69,9 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-24</strong><br />
 Lodged on Friday 24 April, while the reefer is at sea, so that the fruit
 can be released when it is discharged.</li>
-<li><code>IssueTime</code> = <strong>17:32:00+00:00</strong><br />
-The time the sender's system issued the document, in the sender's local
-time, with its offset from UTC.</li>
+<li><code>IssueTime</code> = <strong>11:32:00+00:00</strong><br />
+In the wholesaler's working hours, while the reefer is at sea; in the
+issuer's local time, with its offset from UTC.</li>
 <li><code>TypeCode</code> = <strong>IMPORT</strong> (listID
 <code>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</code>)<br />
 An import declaration. The code is from the Trade Accord's customs
@@ -823,11 +823,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:import-customs-declaration:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:customs:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;26-0250&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;26-0249&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;26-0050&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;04b3c1d3-d600-57c6-b790-ffbf27e1ac34&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:32:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:32:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode&quot;</span>&gt;IMPORT&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SubTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode&quot;</span>&gt;FREECIRC&lt;/<span class="kw">cbc:SubTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:NatureOfTransactionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:NatureOfTransactionCode&quot;</span>&gt;PURCHASE&lt;/<span class="kw">cbc:NatureOfTransactionCode</span>&gt;</span>
@@ -1113,6 +1113,6 @@ href="example-reefer-10-TransportationStatus.html">Transportation Status
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

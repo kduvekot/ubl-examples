@@ -31,8 +31,7 @@ href="world-spec-transaction-catalogue.html">Catalogue</a>.</p>
 information of its granulate for the quarter: the item, its price, and
 what makes it recycled granulate, the recycled-content certificate of
 the accredited certification body that audits Rinova's plant and the
-item's recycled content of 100 %. It is numbered after the flow's other
-documents although it comes first in time.</p>
+item's recycled content of 100 %.</p>
 <p><a href="examples/plastics/12-Catalogue.xml">The XML file</a> is
 valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -582,27 +581,27 @@ The name of code RECYCLED in the Trade Accord's certificate type
 list.</li>
 <li><code>Item/EnvironmentalCertificate/Remarks</code> = <strong>100 %
 recycled content: polyethylene recovered from sorted production waste.
-The plant's traceability and recycled content audited under the
-certification body's recycled-content scheme, which follows EN
-15343:2007.</strong><br />
+The plant's traceability and recycled content audited under the Lumeport
+Trade Accord's rules for tracing recycled content; the certificate is
+the Accord's recycled-content certificate.</strong><br />
 What the certificate states.</li>
 <li><code>Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID</code>
 = <strong>XU-R-106192</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
 An accredited certification body in Ferrano (a private company): it
 audits recycling plants for the traceability and the recycled content of
-what they make, under a recycled-content scheme that follows EN
-15343:2007, as industry schemes such as RecyClass do, and issues their
-recycled-content certificates; it audits Rinova Recovery's plant every
+what they make, under the Lumeport Trade Accord's rules for tracing
+recycled content, and issues the Accord's recycled-content certificates
+to the plants that meet them; it audits Rinova Recovery's plant every
 year. Referenced only, as the issuer of Rinova's certificate. Its
 identifier and name are enough (referenced).</li>
 <li><code>Item/EnvironmentalCertificate/IssuerParty/PartyName/Name</code>
 = <strong>Certovira Certification</strong><br />
 An accredited certification body in Ferrano (a private company): it
 audits recycling plants for the traceability and the recycled content of
-what they make, under a recycled-content scheme that follows EN
-15343:2007, as industry schemes such as RecyClass do, and issues their
-recycled-content certificates; it audits Rinova Recovery's plant every
+what they make, under the Lumeport Trade Accord's rules for tracing
+recycled content, and issues the Accord's recycled-content certificates
+to the plants that meet them; it audits Rinova Recovery's plant every
 year. Referenced only, as the issuer of Rinova's certificate. Its
 identifier and name are enough (referenced).</li>
 <li><code>Item/CircularityProfile/CircularityTypeCode</code> =
@@ -820,7 +819,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;CVC-RC-26-0118&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificateTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CertificateTypeCode&quot;</span>&gt;RECYCLED&lt;/<span class="kw">cbc:CertificateTypeCode</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CertificateType</span>&gt;Recycled content&lt;/<span class="kw">cbc:CertificateType</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Remarks</span>&gt;100 % recycled content: polyethylene recovered from sorted production waste. The plant&#39;s traceability and recycled content audited under the certification body&#39;s recycled-content scheme, which follows EN 15343:2007.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Remarks</span>&gt;100 % recycled content: polyethylene recovered from sorted production waste. The plant&#39;s traceability and recycled content audited under the Lumeport Trade Accord&#39;s rules for tracing recycled content; the certificate is the Accord&#39;s recycled-content certificate.&lt;/<span class="kw">cbc:Remarks</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-106192&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -842,6 +841,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <a href="example-plastics-01-Order.html">Order →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

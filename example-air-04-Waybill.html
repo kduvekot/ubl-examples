@@ -545,8 +545,8 @@ transport equipment, as a consignment's weight is defined. The gross
 weight of the cargo: the eight frame cartons and their skid.</li>
 <li><code>Consignment/ChargeableWeightMeasure</code> =
 <strong>105</strong> (unitCode <code>KGM</code>)<br />
-The gross weight of 97.6 kg, rounded up to the next half kilogram: it is
-higher than the volume weight, 0.52 m³ at 167 kg per m³.</li>
+The gross weight of 104.6 kg, rounded up to the next half kilogram: it
+is higher than the volume weight, 0.52 m³ at 167 kg per m³.</li>
 <li><code>Consignment/GrossVolumeMeasure</code> = <strong>0.52</strong>
 (unitCode <code>MTQ</code>)<br />
 The stack of eight frame cartons of 790 x 680 x 100 mm on its skid of
@@ -918,29 +918,29 @@ goods, as the convention prescribes. The code is from the Trade Accord's
 distribution type list: ORIGINALHANDED = Original, handed over.</li>
 </ul>
 <details>
-<summary>The party's own data in `Party`, as Lumeport Airport Cargo Terminal gives it (4 values)</summary>
+<summary>The party's own data in `Party`, as Lumeway Distribution gives it (4 values)</summary>
 
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
-<strong>20412055</strong> (schemeID
+<strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Party/PartyName/Name</code> = <strong>Lumeport Airport Cargo
-Terminal</strong><br />
+<li><code>Party/PartyName/Name</code> = <strong>Lumeway
+Distribution</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Party/PartyIdentification/ID</code> = <strong>IC41174</strong>
+<li><code>Party/PartyIdentification/ID</code> = <strong>IC41859</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Party/PartyName/Name</code> = <strong>Selanu Airport
-Cargo</strong><br />
+<li><code>Party/PartyName/Name</code> = <strong>Velumi
+Trading</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 </ul>
-<p>The same in every document <a href="world-17-xb.html">Lumeport
-Airport Cargo Terminal</a> is named in.</p>
+<p>The same in every document <a href="world-6-xb.html">Lumeway
+Distribution</a> is named in.</p>
 </details>
 
 <ul>
@@ -1303,10 +1303,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALHANDED&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
 <span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412055&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Airport Cargo Terminal&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
@@ -1317,10 +1317,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span>&gt;Original, with the goods: the consignee&#39;s original&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
 <span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41174&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Selanu Airport Cargo&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
@@ -1343,6 +1343,6 @@ href="example-air-09-TransportationStatus.html">Transportation Status
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

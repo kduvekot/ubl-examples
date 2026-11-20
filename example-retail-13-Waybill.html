@@ -85,11 +85,11 @@ The carriage in words.</li>
 <li><code>Note</code> = <strong>Three originals: the consignor's, handed
 over when the carrier took over the goods; the consignee's, with the
 goods; the carrier's, kept by the carrier.</strong><br />
-The originals the convention prescribes, as the distribution below lists
-them; the carrier's own is not distributed.</li>
+The originals the law prescribes, as the distribution below lists them;
+the carrier's own is not distributed.</li>
 <li><code>WaybillTypeCode</code> = <strong>NATROAD</strong> (listID
 <code>urn:ubl-examples:world:codelist:WaybillTypeCode</code>)<br />
-The convention the document follows. The code is from the Trade Accord's
+The law the document follows. The code is from the Trade Accord's
 waybill type list: NATROAD = Domestic road consignment note.</li>
 <li><code>ConsolidatedIndicator</code> = <strong>false</strong><br />
 One consignment, not a consolidation.</li>
@@ -571,6 +571,47 @@ Other seats, with metal frames: other.</li>
 <h3 id="document-distribution">Document Distribution</h3>
 <p>Inside <code>DocumentDistribution</code>:</p>
 <ul>
+<li><code>ID</code> = <strong>1</strong><br />
+The original for the consignor.</li>
+<li><code>DocumentTypeCode</code> = <strong>Waybill</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document distributed: this waybill. The code is from the Trade
+Accord's UBL document type list: Waybill.</li>
+<li><code>DistributionTypeCode</code> = <strong>ORIGINALHANDED</strong>
+(listID
+<code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
+The consignor's original, handed over when the carrier took over the
+goods, as the law prescribes. The code is from the Trade Accord's
+distribution type list: ORIGINALHANDED = Original, handed over.</li>
+</ul>
+<details>
+<summary>The party's own data in `Party`, as Lumeway Distribution gives it (4 values)</summary>
+
+<ul>
+<li><code>Party/PartyIdentification/ID</code> =
+<strong>20410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>Party/PartyName/Name</code> = <strong>Lumeway
+Distribution</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>Party/PartyIdentification/ID</code> =
+<strong>20410411</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>Party/PartyName/Name</code> = <strong>Brightmarket
+Stores</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+</ul>
+<p>The same in every document <a href="world-6-xb.html">Lumeway
+Distribution</a> is named in.</p>
+</details>
+
+<ul>
 <li><code>ID</code> = <strong>2</strong><br />
 The original for the consignee.</li>
 <li><code>DocumentTypeCode</code> = <strong>Waybill</strong> (listID
@@ -581,23 +622,13 @@ Accord's UBL document type list: Waybill.</li>
 <strong>ORIGINALWITHGOODS</strong> (listID
 <code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
 One of the three originals travels with the goods to the consignee, as
-the convention prescribes. The code is from the Trade Accord's
-distribution type list: ORIGINALWITHGOODS = Original, with the
-goods.</li>
+the law prescribes. The code is from the Trade Accord's distribution
+type list: ORIGINALWITHGOODS = Original, with the goods.</li>
 <li><code>DistributionType</code> = <strong>Original, with the goods:
 the consignee's original</strong><br />
 The name of code ORIGINALWITHGOODS in the Trade Accord's distribution
 type list, followed by the detail of this case: the original the
 consignee signs on delivery.</li>
-<li><code>Party/PartyIdentification/ID</code> =
-<strong>20410411</strong> (schemeID
-<code>urn:ubl-examples:world:XB:register</code>)<br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
-<li><code>Party/PartyName/Name</code> = <strong>Brightmarket
-Stores</strong><br />
-A party referred to from another party's details: its identifier and
-name are enough.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -802,37 +833,50 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALWITHGOODS&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span>&gt;Original, with the goods: the consignee&#39;s original&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-SIG-BYF-WB-26-2276&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayforth Forwarding&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALHANDED&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALWITHGOODS&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span>&gt;Original, with the goods: the consignee&#39;s original&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Brightmarket Stores&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-SIG-BYF-WB-26-2276&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayforth Forwarding&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-retail-10-DocumentStatus.html">← Document Status</a>
 · <a href="examples.html#flow-retail">all documents of the flow</a> · <a
 href="example-retail-12-DespatchAdvice.html">Despatch Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

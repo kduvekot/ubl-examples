@@ -605,7 +605,7 @@ happened.</li>
 The project's identifier.</li>
 <li><code>Name</code> = <strong>Park benches for the parks renewal
 programme</strong><br />
-The project's name, the same in every document (08#F6).</li>
+The project's name, the same in every document.</li>
 <li><code>Description</code> = <strong>240 park benches with galvanised
 metal frames and hardwood slats over two years, delivered with their
 ground anchors and anchored.</strong><br />
@@ -648,8 +648,9 @@ requirement.</li>
 <strong>124800.00</strong> (currencyID <code>XBL</code>)<br />
 The estimated value.</li>
 <li><code>RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount</code>
-= <strong>124800.00</strong> (currencyID <code>XBL</code>)<br />
-The framework's estimate.</li>
+= <strong>187200.00</strong> (currencyID <code>XBL</code>)<br />
+The framework's estimate with the renewal year: 360 benches at the
+estimate.</li>
 <li><code>RequestedTenderTotal/TotalAmount</code> =
 <strong>124800.00</strong> (currencyID <code>XBL</code>)<br />
 The budget: the estimate.</li>
@@ -660,12 +661,14 @@ Without tax: a public body pays no sales tax.</li>
 <strong>62400.00</strong> (currencyID <code>XBL</code>)<br />
 At least half will be called off.</li>
 <li><code>RequestedTenderTotal/MaximumAmount</code> =
-<strong>149760.00</strong> (currencyID <code>XBL</code>)<br />
-At most 20 % more.</li>
+<strong>212160.00</strong> (currencyID <code>XBL</code>)<br />
+At most: the quantity option up to 288 and the renewal year, 408 benches
+at the estimate.</li>
 <li><code>RequestedTenderTotal/MonetaryScope</code> = <strong>Two years
 of releases, without tax: a two-year commitment of the 2026 budget,
-estimated at 500 lume a bench and 20 lume an
-installation.</strong><br />
+estimated at 500 lume a bench and 20 lume an installation; the
+framework's estimate and the maximum include the renewal
+year.</strong><br />
 What the amount covers, and that the department made the estimate before
 the tenders.</li>
 <li><code>RequestedTenderTotal/AverageSubsequentContractAmount</code> =
@@ -720,11 +723,11 @@ The city.</li>
 Bayvarra. The code is from the world's copy of UBL's Country
 identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PlannedPeriod/StartDate</code> =
-<strong>2026-03-23</strong><br />
-From the first release.</li>
+<strong>2026-03-20</strong><br />
+From the contract's signature, planned for 20 March.</li>
 <li><code>PlannedPeriod/EndDate</code> =
-<strong>2028-03-22</strong><br />
-For two years.</li>
+<strong>2028-03-19</strong><br />
+For two years, to the end of the contract.</li>
 <li><code>ContractExtension/OptionsDescription</code> = <strong>One
 extension of a year with 120 more benches and their
 installation.</strong><br />
@@ -736,7 +739,7 @@ At most one.</li>
 <strong>true</strong><br />
 The contract may be renewed.</li>
 <li><code>ContractExtension/OptionValidityPeriod/EndDate</code> =
-<strong>2028-03-22</strong><br />
+<strong>2028-03-19</strong><br />
 Decided before it ends.</li>
 <li><code>ContractExtension/Renewal/Amount</code> =
 <strong>62400.00</strong> (currencyID <code>XBL</code>)<br />
@@ -786,11 +789,11 @@ no list has an exact code for it (cited).</li>
 <strong>2026-04-02</strong><br />
 Releases from.</li>
 <li><code>RequestForTenderLine/DeliveryPeriod/EndDate</code> =
-<strong>2028-03-22</strong><br />
+<strong>2028-03-19</strong><br />
 To.</li>
 <li><code>RequestForTenderLine/RequiredItemLocationQuantity/LeadTimeMeasure</code>
-= <strong>10</strong> (unitCode <code>DAY</code>)<br />
-Ten days per release.</li>
+= <strong>14</strong> (unitCode <code>DAY</code>)<br />
+At most fourteen days per release.</li>
 <li><code>RequestForTenderLine/WarrantyValidityPeriod/DurationMeasure</code>
 = <strong>5</strong> (unitCode <code>ANN</code>)<br />
 Five years.</li>
@@ -1170,12 +1173,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ProcurementAdditionalType</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestedTenderTotal</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124800.00&lt;/<span class="kw">cbc:EstimatedOverallContractAmount</span>&gt;</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallFrameworkContractsAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124800.00&lt;/<span class="kw">cbc:EstimatedOverallFrameworkContractsAmount</span>&gt;</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedOverallFrameworkContractsAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;187200.00&lt;/<span class="kw">cbc:EstimatedOverallFrameworkContractsAmount</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;124800.00&lt;/<span class="kw">cbc:TotalAmount</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxIncludedIndicator</span>&gt;false&lt;/<span class="kw">cbc:TaxIncludedIndicator</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MinimumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;62400.00&lt;/<span class="kw">cbc:MinimumAmount</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;149760.00&lt;/<span class="kw">cbc:MaximumAmount</span>&gt;</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MonetaryScope</span>&gt;Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.&lt;/<span class="kw">cbc:MonetaryScope</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;212160.00&lt;/<span class="kw">cbc:MaximumAmount</span>&gt;</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MonetaryScope</span>&gt;Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation; the framework&#39;s estimate and the maximum include the renewal year.&lt;/<span class="kw">cbc:MonetaryScope</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AverageSubsequentContractAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;20800.00&lt;/<span class="kw">cbc:AverageSubsequentContractAmount</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ApplicableTaxCategory</span>&gt;</span>
 <span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1203,15 +1206,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
 <span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RealizedLocation</span>&gt;</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PlannedPeriod</span>&gt;</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-23&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2028-03-22&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-20&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EndDate</span>&gt;2028-03-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PlannedPeriod</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractExtension</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:OptionsDescription</span>&gt;One extension of a year with 120 more benches and their installation.&lt;/<span class="kw">cbc:OptionsDescription</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:MaximumNumberNumeric</span>&gt;1&lt;/<span class="kw">cbc:MaximumNumberNumeric</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:RenewalsIndicator</span>&gt;true&lt;/<span class="kw">cbc:RenewalsIndicator</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:OptionValidityPeriod</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2028-03-22&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2028-03-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OptionValidityPeriod</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Renewal</span>&gt;</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;62400.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
@@ -1237,10 +1240,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DeliveryPeriod</span>&gt;</span>
 <span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2028-03-22&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2028-03-19&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DeliveryPeriod</span>&gt;</span>
 <span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LeadTimeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;10&lt;/<span class="kw">cbc:LeadTimeMeasure</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LeadTimeMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;14&lt;/<span class="kw">cbc:LeadTimeMeasure</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:RequiredItemLocationQuantity</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:WarrantyValidityPeriod</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;5&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
@@ -1345,6 +1348,6 @@ href="examples.html#flow-tender">all documents of the flow</a> · <a
 href="example-tender-26-Order.html">Order →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

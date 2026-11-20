@@ -404,7 +404,7 @@ shown).</li>
 2026 provides one train a month of 30 wagons, about 1,800 t; this
 request books March's train, for this month's call-off of 1,800 t, in
 the loading window of 10 to 13 March.</strong><br />
-How this request updates the standing plan (F5).</li>
+How this request updates the standing plan.</li>
 </ul>
 <h3 id="transport-service-description-document-reference">Transport
 Service Description Document Reference</h3>
@@ -418,13 +418,15 @@ Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>SM-ASSAY-26-11</strong><br />
-The assay of the ore lot.</li>
+The assay of the previous train, the latest analysis of the ore the
+carrier plans the wagons for.</li>
 <li><code>DocumentTypeCode</code> = <strong>1</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
-The kind of document referred to, Serravona Mining's assay of the ore
-lot, a document outside the examples (cited). The code is from the
-world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of
-analysis.</li>
+The kind of document referred to, Serravona Mining's assay certificate
+of the sample taken when February's ore train was loaded, the latest
+analysis of the ore before March's train, a document outside the
+examples (cited). The code is from the world's copy of UN/EDIFACT 1001
+Document name: 1 = Certificate of analysis.</li>
 </ul>
 <h3 id="transport-contract">Transport Contract</h3>
 <p>Inside <code>TransportContract</code>:</p>
@@ -475,7 +477,8 @@ The day the goods should be collected.</li>
 <p>Inside <code>ServiceEndTimePeriod</code>:</p>
 <ul>
 <li><code>EndDate</code> = <strong>2026-03-13</strong><br />
-Delivered within three days.</li>
+The end of the service window, three days after its start: the goods are
+delivered by then.</li>
 </ul>
 <h3 id="from-location">From Location</h3>
 <p>Inside <code>FromLocation</code>:</p>
@@ -916,6 +919,6 @@ href="example-ore-03-TransportExecutionPlan.html">Transport Execution
 Plan →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

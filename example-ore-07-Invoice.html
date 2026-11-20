@@ -577,13 +577,14 @@ details are given; only its identifier and name are repeated.</li>
 <ul>
 <li><code>ActualDeliveryDate</code> = <strong>2026-03-10</strong><br />
 The day the goods billed were delivered.</li>
-<li><code>DeliveryLocation/ID</code> = <strong>XUFER</strong> (schemeID
+<li><code>DeliveryLocation/ID</code> = <strong>XUFNT</strong> (schemeID
 <code>UN/LOCODE</code>)<br />
 The place's code in the form of a UN/LOCODE, with the world's country
 code.</li>
-<li><code>DeliveryLocation/Name</code> = <strong>Valdara Industries
-works, Ferrano</strong><br />
-Where the goods billed are delivered.</li>
+<li><code>DeliveryLocation/Name</code> = <strong>Fucinalta mine
+siding</strong><br />
+Where the goods billed are delivered: under the terms FCA, where the
+buyer's carrier takes them over.</li>
 <li><code>DeliveryLocation/Address/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 The country the place is in. The code is from the world's copy of UBL's
@@ -847,7 +848,7 @@ quantity.</li>
 <li><code>LineExtensionAmount</code> = <strong>14198286</strong>
 (currencyID <code>XUF</code>)<br />
 1788.4 × the price = 14414504, less the 1.5 % moisture deduction under
-the moisture clause of supply agreement sm-vi-sa-2026: 7.5 % moisture
+the moisture clause of supply agreement SM-VI-SA-2026: 7.5 % moisture
 measured at loading, above the 6 % agreed.</li>
 <li><code>TaxInclusiveLineExtensionAmount</code> =
 <strong>17037943</strong> (currencyID <code>XUF</code>)<br />
@@ -1148,8 +1149,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Delivery</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ActualDeliveryDate</span>&gt;2026-03-10&lt;/<span class="kw">cbc:ActualDeliveryDate</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DeliveryLocation</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFER&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries works, Ferrano&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XUFNT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Fucinalta mine siding&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XU&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
@@ -1303,6 +1304,6 @@ href="examples.html#flow-ore">all documents of the flow</a> · <a
 href="example-ore-06-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

@@ -30,7 +30,7 @@ href="world-spec-transaction-billing.html">Billing</a>.</p>
 · <a href="example-utilities-13-Invoice.html">Invoice →</a></p>
 <p>The water bill for the shop. Water is exempt from the state sales
 tax, and the invoice says so with the exemption reason: leaving the tax
-out would say nothing (IND6).</p>
+out would say nothing.</p>
 <p><a href="examples/utilities/06-Invoice.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -62,7 +62,8 @@ The seller's invoice number.</li>
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-02</strong><br />
-The monthly bill, issued on the first day of the next month.</li>
+The monthly bill, issued on the second working day of the next
+month.</li>
 <li><code>IssueTime</code> = <strong>09:13:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time, with its offset from UTC.</li>
@@ -78,8 +79,8 @@ invoice.</li>
 The lume, the seller's currency; it has two decimals. The code is from
 the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.</li>
 <li><code>AccountingCostCode</code> = <strong>8100</strong><br />
-The buyer's cost centre, quoted in its order, so the invoice is booked
-without asking.</li>
+The buyer's cost centre, quoted in its contract or booking, so the
+invoice is booked without asking.</li>
 <li><code>AccountingCost</code> = <strong>Store energy and
 water</strong><br />
 The cost centre in words.</li>
@@ -715,10 +716,9 @@ UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
 from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
 STT = State/provincial sales tax. An identifier that holds a code names
 the code's list in its schemeID.</li>
-<li><code>TaxSubtotal/TaxableAmount</code> = <strong>0.00</strong>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>36.12</strong>
 (currencyID <code>XBL</code>)<br />
-The lines of this category plus the document's charges less its
-allowances of the category.</li>
+The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 0 % of the taxable amount, rounded to the minor unit of the
@@ -1186,7 +1186,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;36.12&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;O&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1287,6 +1287,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 · <a href="example-utilities-13-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

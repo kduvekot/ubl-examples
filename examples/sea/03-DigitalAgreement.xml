@@ -227,7 +227,7 @@
     <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
     <cbc:VersionID>2.0</cbc:VersionID>
     <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-    <cbc:DocumentDescription>The Trade Accord Council's requirements for the certification of access points on the trade accord's network.</cbc:DocumentDescription>
+    <cbc:DocumentDescription>The Trade Accord Council's requirements for the certification of access points on the Trade Accord's network.</cbc:DocumentDescription>
     <cac:Attachment>
       <cac:ExternalReference>
         <cbc:URI>https://www.tradeaccord.example/network/ap-requirements-2.0.pdf</cbc:URI>

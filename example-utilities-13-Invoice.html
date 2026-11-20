@@ -28,8 +28,8 @@ href="world-spec-transaction-billing.html">Billing</a>.</p>
 href="examples.html#flow-utilities">all documents of the flow</a> · <a
 href="example-utilities-05-UtilityStatement.html">Utility Statement
 →</a></p>
-<p>The telecom bill. The island has no sales tax or VAT, and the invoice
-says that no tax applies rather than leaving it out.</p>
+<p>The telecom bill. The island has no sales tax or VAT, so no tax is
+due and the bill has no tax section.</p>
 <p><a href="examples/utilities/13-Invoice.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -62,7 +62,8 @@ The seller's invoice number.</li>
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-02</strong><br />
-The monthly bill, issued on the first day of the next month.</li>
+The monthly bill, issued on the second working day of the next
+month.</li>
 <li><code>IssueTime</code> = <strong>11:19:00+00:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time, with its offset from UTC.</li>
@@ -79,8 +80,8 @@ The coral, the seller's currency; it has three decimals. The code is
 from the world's copy of UBL's Currency (ISO 4217) list: XLC =
 Coral.</li>
 <li><code>AccountingCostCode</code> = <strong>700</strong><br />
-The buyer's cost centre, quoted in its order, so the invoice is booked
-without asking.</li>
+The buyer's cost centre, quoted in its contract or booking, so the
+invoice is booked without asking.</li>
 <li><code>AccountingCost</code> = <strong>Telephone and
 data</strong><br />
 The cost centre in words.</li>
@@ -1110,6 +1111,6 @@ href="example-utilities-05-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

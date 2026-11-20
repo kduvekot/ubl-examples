@@ -68,9 +68,8 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-20</strong><br />
 Declared the day the barge is loaded.</li>
 <li><code>IssueTime</code> = <strong>12:40:00-01:00</strong><br />
-Before the bags are loaded, so that customs releases them before the
-barge leaves (timelines#F6); in the issuer's local time, with its offset
-from UTC.</li>
+While the bags are loaded, so that customs releases them before the
+barge leaves; in the issuer's local time, with its offset from UTC.</li>
 <li><code>ExportTypeCode</code> = <strong>PERMANENT</strong> (listID
 <code>urn:ubl-examples:world:codelist:ExportTypeCode</code>)<br />
 A permanent export: the goods are sold abroad. The code is from the
@@ -358,11 +357,11 @@ The goods item number.</li>
 granulate</strong><br />
 What the goods are, in words.</li>
 <li><code>Shipment/GoodsItem/DeclaredCustomsValueAmount</code> =
-<strong>9804600</strong> (currencyID <code>XUF</code>)<br />
-Urvania values the goods with freight and insurance to its border: the
-goods at 9,984,000 XUF, with less the river freight after loading, which
-the seller distinguished from the price (179,400 ferra) (-179,400 XUF),
-shared over the goods items by their value.</li>
+<strong>9984000</strong> (currencyID <code>XUF</code>)<br />
+The value of the granulate in ferra: Urvania values goods with freight
+and insurance to its border, and the invoice has one price, which
+includes the barge to the river quay, with no freight distinguished from
+it: the whole price is the value.</li>
 <li><code>Shipment/GoodsItem/GrossWeightMeasure</code> =
 <strong>120480</strong> (unitCode <code>KGM</code>)<br />
 The gross weight of the goods of this item, with their packaging.</li>
@@ -810,7 +809,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Recycled PE granulate&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;9804600&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;9984000&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;120480&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;TNE&quot;</span>&gt;120&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
@@ -940,6 +939,6 @@ of the flow</a> · <a href="example-plastics-06-Waybill.html">Waybill
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

@@ -215,8 +215,8 @@ with 7.</li>
 href="mailto:dispatch@quillmoor.example">dispatch@quillmoor.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
 anyone.</li>
-<li><code>Party/Contact/Note</code> = <strong>Weekdays
-07:00–19:00</strong><br />
+<li><code>Party/Contact/Note</code> = <strong>Every day, around the
+clock</strong><br />
 When the desk can be reached.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
@@ -384,11 +384,12 @@ The despatching party's shipment number.</li>
 <li><code>Consignment/ID</code> = <strong>QLM-CS-26-3980</strong><br />
 The consignment the goods travel in, as numbered when the transport was
 booked.</li>
-<li><code>Consignment/GrossWeightMeasure</code> = <strong>91.6</strong>
+<li><code>Consignment/GrossWeightMeasure</code> = <strong>101.1</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
 transport equipment, as a consignment's weight is defined. The goods
-with their packaging.</li>
+with their packaging, with the dry ice and the frozen vaccine's box, as
+on the air waybill.</li>
 <li><code>Consignment/CarrierParty/PartyIdentification/ID</code> =
 <strong>IC41311</strong> (schemeID
 <code>urn:ubl-examples:world:XL:register</code>)<br />
@@ -508,7 +509,7 @@ The goods left on the day of this advice.</li>
 <li><code>ID</code> = <strong>1</strong><br />
 The line number.</li>
 <li><code>Note</code> = <strong>3,000 doses, ten to a pack, for the
-island's winter influenza campaign, which starts in the last week of
+island's winter influenza campaign, which starts on 22
 June.</strong><br />
 The line as the order put it.</li>
 <li><code>DeliveredQuantity</code> = <strong>300</strong> (unitCode
@@ -783,7 +784,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 6047 1582&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;dispatch@quillmoor.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 07:00–19:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
@@ -852,7 +853,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;QLM-SH-26-3980&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;QLM-CS-26-3980&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;91.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;101.1&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -897,7 +898,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;3,000 doses, ten to a pack, for the island&#39;s winter influenza campaign, which starts in the last week of June.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;3,000 doses, ten to a pack, for the island&#39;s winter influenza campaign, which starts on 22 June.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;300&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
@@ -1023,6 +1024,6 @@ href="example-medicines-10-TransportationStatus.html">Transportation
 Status →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

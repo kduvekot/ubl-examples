@@ -18,7 +18,9 @@
 <span class="kind kind-logistics">Logistics</span></em></p>
 <p>Books the transport, consolidates shipments and prepares the export
 documents; arranges cargo insurance; runs its own trucks within
-Bayvarra, to the port, the airport and the store.</p>
+Bayvarra, to the port, the airport and the store; acts as tax
+representative in Bayvarra for foreign suppliers, accounting for the tax
+withheld on their services.</p>
 <h2 id="identity">Identity</h2>
 <table>
 <tbody>
@@ -221,7 +223,7 @@ forwarding instructions, packing lists and manifests to combine
 shipments, book carriers and arrange insurance, keeping one consignment
 reference across all of them.</p>
 <p>In this world it sends 10 and receives 19 documents, and is named in
-4 documents between other parties. They are listed per flow below.</p>
+5 documents between other parties. They are listed per flow below.</p>
 <h2
 id="distributor-to-retailer-delivered-duty-paid-domestic-bayvarra">Distributor
 to retailer, delivered duty paid (domestic, Bayvarra)</h2>
@@ -525,6 +527,33 @@ document</a>.</p>
 <code>Consignment/CarrierParty</code>; <a href="world-1-xl.html">Velumi
 Trading</a> as <code>Consignment/ConsigneeParty</code>.</p></li>
 </ul>
+<h2 id="a-public-tender-bayvarra">A public tender (Bayvarra)</h2>
+<p>The contracting authority buys park benches for the city's parks
+under procurement law, in two lots: the benches and their installation.
+The notices are published through the government information service;
+the manufacturer tenders alone, with an engineering firm as its
+subcontractor for the installation, backed by a bank guarantee; a
+furniture maker tenders wooden benches, backed by pledged government
+bonds. After an electronic auction and the award the authority orders
+the first release under the framework contract; the manufacturer
+delivers and invoices the benches, the subcontractor installs them, the
+authority accepts the release, and the installation is invoiced once
+accepted.</p>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-5-xu.html">Valdara Industries</a> to <a
+href="world-2-xb.html">Lumeport Public Works Department</a>: The
+manufacturer invoices the 39 installations once they are done and
+accepted, as a service supplied outside Urvania; the department
+withholds Bayvarra's 10 %. <a href="example-tender-39-Invoice.html">See
+the example document</a>.</p>
+<p>In it as <code>TaxRepresentativeParty</code> (The Party authorized to
+act as the Tax Representative for this Invoice).</p>
+<p>Also mentions: <a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
 <h2
 id="cotton-from-the-islands-farms-to-the-textile-mill-lisavu--bayvarra">Cotton:
 from the island's farms to the textile mill (Lisavu → Bayvarra)</h2>
@@ -780,7 +809,8 @@ General Hospital</a> as
 <p><code>ReceiverParty</code> <code>TransportServiceProviderParty</code>
 <code>CarrierParty</code> <code>SenderParty</code>
 <code>AccountingSupplierParty</code> <code>SellerSupplierParty</code>
-<code>FreightForwarderParty</code> <code>CustomsAgentParty</code></p>
+<code>FreightForwarderParty</code> <code>CustomsAgentParty</code>
+<code>TaxRepresentativeParty</code></p>
 <h2 id="trading-partners-in-the-world">Trading partners in the
 world</h2>
 <p>The parties it exchanges documents with:</p>
@@ -808,6 +838,6 @@ the seaport and the airport hub of Lumeport.</p>
 model of the documents and their party elements.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

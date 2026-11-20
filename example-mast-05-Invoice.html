@@ -50,9 +50,10 @@ The Trade Accord's process profile the document belongs to: billing, a
 generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
 <strong>STL-TX-26-124393</strong><br />
-The collaboration this document belongs to: Selanu Telecom's order of a
-mast from Saltmere Engineering. Selanu Telecom started it and gave it
-this identifier, which every document of it repeats.</li>
+The collaboration this document belongs to: Selanu Telecom's order of
+back-up batteries, smoke detectors and coating stripper for its mast
+from Saltmere Engineering. Selanu Telecom started it and gave it this
+identifier, which every document of it repeats.</li>
 <li><code>ID</code> = <strong>26-0132</strong><br />
 The seller's invoice number.</li>
 <li><code>UUID</code> =
@@ -74,12 +75,13 @@ Monday 6 July.</li>
 A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the
 world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial
 invoice.</li>
-<li><code>Note</code> = <strong>The exporter of the goods covered by
-this document declares that these goods are of Bayvarran preferential
-origin under the Trade Accord (criterion S).</strong><br />
-The exporter's statement on origin: the proof of origin the buyer's
-import declaration refers to, to claim the Trade Accord's
-preference.</li>
+<li><code>Note</code> = <strong>Carriage paid to the mast site: the
+prices include the carriage by air and road. The exporter of the goods
+covered by this document declares that these goods are of Bayvarran
+preferential origin under the Trade Accord (criterion S).</strong><br />
+Why the invoice has no separate freight line. The exporter's statement
+on origin: the proof of origin the buyer's import declaration refers to,
+to claim the Trade Accord's preference.</li>
 <li><code>DocumentCurrencyCode</code> = <strong>XBL</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
 The lume, the seller's currency; it has two decimals. The code is from
@@ -475,7 +477,7 @@ site on Mast Hill</strong><br />
 Where the goods billed are delivered.</li>
 <li><code>Despatch/ActualDespatchDate</code> =
 <strong>2026-06-04</strong><br />
-The invoice is issued on despatch: the day the goods left.</li>
+The day the goods billed left, before they are delivered.</li>
 </ul>
 <h3 id="payment-means">Payment Means</h3>
 <p>Inside <code>PaymentMeans</code>:</p>
@@ -499,7 +501,7 @@ How the payment system clears and settles the transfer, as an ISO 20022
 clearing channel. The code is from the world's copy of ISO 20022
 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.</li>
 <li><code>PaymentRailID</code> = <strong>TRADE-ACCORD-PAY</strong><br />
-The payment system the transfer runs over: the trade accord's link
+The payment system the transfer runs over: the Trade Accord's link
 between the countries.</li>
 <li><code>InstructionNote</code> = <strong>Quote
 RF16260132</strong><br />
@@ -906,7 +908,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:34:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-07-06&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Carriage paid to the mast site: the prices include the carriage by air and road. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;3&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DefaultLanguageCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:DefaultLanguageCode</span>&gt;</span>
@@ -1243,6 +1245,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="examples.html#flow-mast">all documents of the flow</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

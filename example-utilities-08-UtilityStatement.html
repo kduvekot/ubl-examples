@@ -360,13 +360,14 @@ only its identifier and name are repeated.</li>
 The year's estimate of water; the heat's estimate is with its
 subscription: UBL gives an on-account payment one quantity.</li>
 <li><code>Note</code> = <strong>The one monthly direct debit for water,
-levy and heat from April 2026: 91 lume, a twelfth of the year's estimate
-rounded up to a whole lume; it was 84 lume.</strong><br />
+levy and heat from April 2026: 94 lume, a twelfth of the year's estimate
+with the sales tax on the heat, rounded up to a whole lume; it was 84
+lume.</strong><br />
 What the household pays from now on.</li>
 <li><code>PaymentTerms/Note</code> = <strong>Collected by direct debit
 on the first working day of each month.</strong><br />
 How it is paid.</li>
-<li><code>PaymentTerms/Amount</code> = <strong>91.00</strong>
+<li><code>PaymentTerms/Amount</code> = <strong>94.00</strong>
 (currencyID <code>XBL</code>)<br />
 The monthly payment on account.</li>
 <li><code>PaymentTerms/ValidityPeriod/StartDate</code> =
@@ -1132,9 +1133,9 @@ use.</li>
 planned for district heat in the next account year.</strong><br />
 What the schedule is.</li>
 <li><code>OnAccountPayment/PaymentTerms/Amount</code> =
-<strong>50.88</strong> (currencyID <code>XBL</code>)<br />
-A twelfth of the estimate's cost of district heat, part of the monthly
-direct debit.</li>
+<strong>54.18</strong> (currencyID <code>XBL</code>)<br />
+A twelfth of the estimate's cost of district heat with the 6.500 % sales
+tax, part of the monthly direct debit.</li>
 <li><code>OnAccountPayment/PaymentTerms/ValidityPeriod/StartDate</code>
 = <strong>2026-04-01</strong><br />
 From April.</li>
@@ -1380,10 +1381,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberParty</span>&gt;</span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:MainOnAccountPayment</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:EstimatedConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MTQ&quot;</span>&gt;170&lt;/<span class="kw">cbc:EstimatedConsumedQuantity</span>&gt;</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;The one monthly direct debit for water, levy and heat from April 2026: 91 lume, a twelfth of the year&#39;s estimate rounded up to a whole lume; it was 84 lume.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;The one monthly direct debit for water, levy and heat from April 2026: 94 lume, a twelfth of the year&#39;s estimate with the sales tax on the heat, rounded up to a whole lume; it was 84 lume.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Collected by direct debit on the first working day of each month.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;91.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;94.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:EndDate</span>&gt;2027-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
@@ -1716,7 +1717,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:EstimatedConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;MWH&quot;</span>&gt;6.6&lt;/<span class="kw">cbc:EstimatedConsumedQuantity</span>&gt;</span>
 <span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;The payments on account planned for district heat in the next account year.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;50.88&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54.18&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:StartDate</span>&gt;2026-04-01&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
 <span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:EndDate</span>&gt;2027-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
@@ -1794,6 +1795,6 @@ href="example-utilities-03-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

@@ -201,7 +201,7 @@
         <cbc:ID>CVC-RC-26-0118</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">RECYCLED</cbc:CertificateTypeCode>
         <cbc:CertificateType>Recycled content</cbc:CertificateType>
-        <cbc:Remarks>100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the certification body's recycled-content scheme, which follows EN 15343:2007.</cbc:Remarks>
+        <cbc:Remarks>100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the Lumeport Trade Accord's rules for tracing recycled content; the certificate is the Accord's recycled-content certificate.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106192</cbc:ID>

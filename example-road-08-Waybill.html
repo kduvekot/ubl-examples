@@ -7849,15 +7849,53 @@ Accord's UBL document type list: Waybill.</li>
 The consignor's original, handed over when the carrier took over the
 goods, as the convention prescribes. The code is from the Trade Accord's
 distribution type list: ORIGINALHANDED = Original, handed over.</li>
+</ul>
+<details>
+<summary>The party's own data in `Party`, as Valdara Industries gives it (4 values)</summary>
+
+<ul>
 <li><code>Party/PartyIdentification/ID</code> =
-<strong>XU-R-104411</strong> (schemeID
+<strong>XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Party/PartyName/Name</code> = <strong>Castrano
-Logistics</strong><br />
+<li><code>Party/PartyName/Name</code> = <strong>Valdara
+Industries</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
+<li><code>Party/PartyIdentification/ID</code> =
+<strong>20410274</strong> (schemeID
+<code>urn:ubl-examples:world:XB:register</code>)<br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+<li><code>Party/PartyName/Name</code> = <strong>Lumeway
+Distribution</strong><br />
+A party referred to from another party's details: its identifier and
+name are enough.</li>
+</ul>
+<p>The same in every document <a href="world-5-xu.html">Valdara
+Industries</a> is named in.</p>
+</details>
+
+<ul>
+<li><code>ID</code> = <strong>2</strong><br />
+The original for the consignee.</li>
+<li><code>DocumentTypeCode</code> = <strong>Waybill</strong> (listID
+<code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
+The document distributed: this waybill. The code is from the Trade
+Accord's UBL document type list: Waybill.</li>
+<li><code>DistributionTypeCode</code> =
+<strong>ORIGINALWITHGOODS</strong> (listID
+<code>urn:ubl-examples:world:codelist:DistributionTypeCode</code>)<br />
+One of the three originals travels with the goods to the consignee, as
+the convention prescribes. The code is from the Trade Accord's
+distribution type list: ORIGINALWITHGOODS = Original, with the
+goods.</li>
+<li><code>DistributionType</code> = <strong>Original, with the goods:
+the consignee's original</strong><br />
+The name of code ORIGINALWITHGOODS in the Trade Accord's distribution
+type list, followed by the detail of this case: the original the
+consignee signs on delivery.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -10780,31 +10818,45 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-2902"><a href="#cb1-2902" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALHANDED&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
 <span id="cb1-2903"><a href="#cb1-2903" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-2904"><a href="#cb1-2904" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-2905"><a href="#cb1-2905" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-2905"><a href="#cb1-2905" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-2906"><a href="#cb1-2906" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-2907"><a href="#cb1-2907" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-2908"><a href="#cb1-2908" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Castrano Logistics&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-2908"><a href="#cb1-2908" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Valdara Industries&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-2909"><a href="#cb1-2909" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-2910"><a href="#cb1-2910" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-2911"><a href="#cb1-2911" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
-<span id="cb1-2912"><a href="#cb1-2912" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-2913"><a href="#cb1-2913" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TH-SIG-26-0560&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-2914"><a href="#cb1-2914" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-2915"><a href="#cb1-2915" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-2916"><a href="#cb1-2916" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-2917"><a href="#cb1-2917" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-2918"><a href="#cb1-2918" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-2919"><a href="#cb1-2919" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-2920"><a href="#cb1-2920" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-2921"><a href="#cb1-2921" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-2922"><a href="#cb1-2922" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-2923"><a href="#cb1-2923" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
+<span id="cb1-2912"><a href="#cb1-2912" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-2913"><a href="#cb1-2913" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-2914"><a href="#cb1-2914" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-2915"><a href="#cb1-2915" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALWITHGOODS&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
+<span id="cb1-2916"><a href="#cb1-2916" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span>&gt;Original, with the goods: the consignee&#39;s original&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
+<span id="cb1-2917"><a href="#cb1-2917" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-2918"><a href="#cb1-2918" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-2919"><a href="#cb1-2919" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-2920"><a href="#cb1-2920" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-2921"><a href="#cb1-2921" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-2922"><a href="#cb1-2922" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-2923"><a href="#cb1-2923" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-2924"><a href="#cb1-2924" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
+<span id="cb1-2925"><a href="#cb1-2925" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
+<span id="cb1-2926"><a href="#cb1-2926" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-2927"><a href="#cb1-2927" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TH-SIG-26-0560&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-2928"><a href="#cb1-2928" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-2929"><a href="#cb1-2929" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-2930"><a href="#cb1-2930" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-2931"><a href="#cb1-2931" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-2932"><a href="#cb1-2932" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-2933"><a href="#cb1-2933" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Trasvia Haulage&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-2934"><a href="#cb1-2934" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-2935"><a href="#cb1-2935" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-2936"><a href="#cb1-2936" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-2937"><a href="#cb1-2937" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Waybill</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-road-04-DespatchAdvice.html">← Despatch Advice</a> ·
 <a href="examples.html#flow-road">all documents of the flow</a> · <a
 href="example-road-15-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

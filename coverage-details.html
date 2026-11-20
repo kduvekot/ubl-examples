@@ -23,7 +23,7 @@ missing elements</a>
 id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
-<li><a href="#extend-497" id="toc-extend-497">extend (497)</a></li>
+<li><a href="#extend-498" id="toc-extend-498">extend (498)</a></li>
 <li><a href="#add-structure-42" id="toc-add-structure-42">add structure
 (42)</a></li>
 </ul></li>
@@ -41,7 +41,7 @@ missing elements</a>
 id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
-<li><a href="#extend-497" id="toc-extend-497">extend (497)</a></li>
+<li><a href="#extend-498" id="toc-extend-498">extend (498)</a></li>
 <li><a href="#add-structure-42" id="toc-add-structure-42">add structure
 (42)</a></li>
 </ul></li>
@@ -54,7 +54,7 @@ missing elements</h1>
 <p><a href="coverage.html">The summary</a></p>
 <h2 id="missing-elements-per-placement">Missing elements per
 placement</h2>
-<h3 id="extend-497">extend (497)</h3>
+<h3 id="extend-498">extend (498)</h3>
 <details><summary><b>rail-12-DebitNote.xml</b> — 56 elements</summary>
 
 <table>
@@ -1563,6 +1563,96 @@ regulation concerning the carriage of dangerous goods (true) or not
 </table>
 </details>
 
+<details><summary><b>road-03-TransportExecutionPlanRequest.xml</b> — 11 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Consignment</td>
+<td>ChildConsignment</td>
+<td>0..n</td>
+<td>One of the child consignments of which a consolidated consignment is
+composed.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>ChildConsignmentQuantity</td>
+<td>0..1</td>
+<td>The quantity of (consolidated) child consignments</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>ConsolidatedShipment</td>
+<td>0..n</td>
+<td>A consolidated shipment (a shipment created by an act of
+consolidation).</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>DeclaredStatisticsValueAmount</td>
+<td>0..1</td>
+<td>The value, declared for statistical purposes, of those goods in this
+consignment that have the same statistical heading.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>FinalDeliveryTransportationService</td>
+<td>0..1</td>
+<td>The service for delivery to the consignee under the transport
+contract for this consignment.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>MortgageHolderParty</td>
+<td>0..1</td>
+<td>The Party who holds the mortgage for this Consignment.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>OfficeOfSubSequentiallyEntryLocation</td>
+<td>0..1</td>
+<td>A location that is involved in the subsequent entry of goods in a
+consignment. This could mean a customs office or facility where goods
+are processed after their initial entry point, possibly for further
+clearance, inspection, or transit.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>PerformingCarrierAssignedID</td>
+<td>0..1</td>
+<td>An identifier for this consignment, assigned by the performing
+carrier.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>PerformingCarrierParty</td>
+<td>0..1</td>
+<td>The Party who performs the carriage of this Consignment.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>SequenceID</td>
+<td>0..1</td>
+<td>A sequence identifier for this consignment.</td>
+</tr>
+<tr>
+<td>Consignment</td>
+<td>SubstituteCarrierParty</td>
+<td>0..1</td>
+<td>The Party who subtitutes the carrier of this Consignment.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
 <details><summary><b>retail-08-Order.xml</b> — 10 elements</summary>
 
 <table>
@@ -1643,89 +1733,6 @@ currency.</td>
 <td>0..1</td>
 <td>Text describing the supplier's ability to send invoice data via a
 purchase card provider (e.g., VISA, MasterCard, American Express).</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>road-03-TransportExecutionPlanRequest.xml</b> — 10 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Consignment</td>
-<td>ChildConsignment</td>
-<td>0..n</td>
-<td>One of the child consignments of which a consolidated consignment is
-composed.</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>ChildConsignmentQuantity</td>
-<td>0..1</td>
-<td>The quantity of (consolidated) child consignments</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>ConsolidatedShipment</td>
-<td>0..n</td>
-<td>A consolidated shipment (a shipment created by an act of
-consolidation).</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>FinalDeliveryTransportationService</td>
-<td>0..1</td>
-<td>The service for delivery to the consignee under the transport
-contract for this consignment.</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>MortgageHolderParty</td>
-<td>0..1</td>
-<td>The Party who holds the mortgage for this Consignment.</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>OfficeOfSubSequentiallyEntryLocation</td>
-<td>0..1</td>
-<td>A location that is involved in the subsequent entry of goods in a
-consignment. This could mean a customs office or facility where goods
-are processed after their initial entry point, possibly for further
-clearance, inspection, or transit.</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>PerformingCarrierAssignedID</td>
-<td>0..1</td>
-<td>An identifier for this consignment, assigned by the performing
-carrier.</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>PerformingCarrierParty</td>
-<td>0..1</td>
-<td>The Party who performs the carriage of this Consignment.</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>SequenceID</td>
-<td>0..1</td>
-<td>A sequence identifier for this consignment.</td>
-</tr>
-<tr>
-<td>Consignment</td>
-<td>SubstituteCarrierParty</td>
-<td>0..1</td>
-<td>The Party who subtitutes the carrier of this Consignment.</td>
 </tr>
 </tbody>
 </table>
@@ -5385,6 +5392,6 @@ to provide the same content in multiple natural languages).</td>
 </details>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

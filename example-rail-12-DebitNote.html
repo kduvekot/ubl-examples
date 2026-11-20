@@ -55,7 +55,7 @@ generic, versioned profile, not the flow.</li>
 The collaboration this document belongs to: the rail carriage Valdara
 books with Ferrano Rail Cargo. Valdara Industries started it and gave it
 this identifier, which every document of it repeats.</li>
-<li><code>ID</code> = <strong>9200001856</strong><br />
+<li><code>ID</code> = <strong>2026/2888</strong><br />
 The supplier's number for its debit note.</li>
 <li><code>UUID</code> =
 <strong>1e867854-a460-5582-9079-e2bbf3a5623f</strong><br />
@@ -69,14 +69,14 @@ time, with its offset from UTC.</li>
 <li><code>DueDate</code> = <strong>2026-05-14</strong><br />
 As the payment terms below count it: 30 days net from the consignment
 note.</li>
-<li><code>Note</code> = <strong>Titran FRXU1044180 kagaz dagan hir
-Lumeway's nintrek rek 15 April stan kedan krehan rek 22 April: nudrir
+<li><code>Note</code> = <strong>Titran FRXU1044180 kagaz dagan hir drek
+nintrek skul Lumeway rek 15 April stan kedan krehan rek 22 April: nudrir
 baz 16 April krir 20 April, gunnek gan 2 titran drirgir.</strong>
 (languageID <code>qau</code>)<br />
 The note in Urvanian, the sender's language: Why more is due: the
 contract's rule, applied after the invoice was issued.</li>
-<li><code>Note</code> = <strong>Container FRXU1044180 was placed at
-Lumeway's siding on 15 April and released empty on 22 April: free time
+<li><code>Note</code> = <strong>Container FRXU1044180 was placed at the
+siding of Lumeway on 15 April and released empty on 22 April: free time
 16 April to 20 April, demurrage for 2 container days.</strong>
 (languageID <code>en-XU</code>)<br />
 The same note in English, the working language between the countries:
@@ -523,9 +523,9 @@ ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.</li>
 <li><code>PaymentRailID</code> = <strong>FERRA-RTGS</strong><br />
 The payment system the transfer runs over: the domestic clearing.</li>
 <li><code>InstructionNote</code> = <strong>Quote
-RF159200001856</strong><br />
+RF7020262888</strong><br />
 What the payer writes in the transfer.</li>
-<li><code>PaymentID</code> = <strong>RF159200001856</strong> (schemeID
+<li><code>PaymentID</code> = <strong>RF7020262888</strong> (schemeID
 <code>ISO 11649</code>)<br />
 The structured creditor reference of ISO 11649 to quote with the
 payment, made from the invoice number with its check digits. The
@@ -559,7 +559,7 @@ The account is kept in the currency of the bank's country. The code is
 from the world's copy of UBL's Currency (ISO 4217) list: XUF =
 Ferra.</li>
 <li><code>PayeeFinancialAccount/PaymentNote</code> = <strong>Debit note
-9200001856</strong><br />
+2026/2888</strong><br />
 What the payer is asked to quote with the transfer, so the payment is
 matched.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/ID</code> =
@@ -755,8 +755,8 @@ What the customer owes.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 The demurrage on the second box.</li>
-<li><code>Note</code> = <strong>Container FRXU1044180 was placed at
-Lumeway's siding on 15 April and released empty on 22 April: free time
+<li><code>Note</code> = <strong>Container FRXU1044180 was placed at the
+siding of Lumeway on 15 April and released empty on 22 April: free time
 16 April to 20 April, demurrage for 2 container days.</strong><br />
 The days charged, and why.</li>
 <li><code>DebitedQuantity</code> = <strong>2</strong> (unitCode
@@ -831,13 +831,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:billing:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;9900043586&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;9200001856&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;2026/2888&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;1e867854-a460-5582-9079-e2bbf3a5623f&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-23&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:48:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Titran FRXU1044180 kagaz dagan hir Lumeway&#39;s nintrek rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Container FRXU1044180 was placed at Lumeway&#39;s siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Titran FRXU1044180 kagaz dagan hir drek nintrek skul Lumeway rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DebitNoteTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;383&lt;/<span class="kw">cbc:DebitNoteTypeCode</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-23&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
@@ -995,15 +995,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTGS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;FERRA-RTGS&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF159200001856&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF159200001856&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF7020262888&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF7020262888&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XU920351041700000000523645&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Ferrano Rail Cargo SRU&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Debit note 9200001856&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Debit note 2026/2888&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:bank-branch&quot;</span>&gt;03510-41700&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Serravona branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1073,7 +1073,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:LegalMonetaryTotal</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DebitNoteLine</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Container FRXU1044180 was placed at Lumeway&#39;s siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;2&lt;/<span class="kw">cbc:DebitedQuantity</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;15000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:InvoicePeriod</span>&gt;</span>
@@ -1111,6 +1111,6 @@ href="examples.html#flow-rail">all documents of the flow</a> · <a
 href="example-rail-13-DebitNote.html">Debit Note →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

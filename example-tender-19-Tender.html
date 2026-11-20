@@ -96,7 +96,7 @@ Reference</h3>
 <p>Inside <code>CallForTenderDocumentReference</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>PWD/2026/0182</strong><br />
-The call for tenders, by its ID (17#F1, 19#F4).</li>
+The call for tenders, by its ID.</li>
 </ul>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
@@ -108,9 +108,8 @@ sheet</strong><br />
 The kind of document referred to, Brackenmere's data sheet of its park
 bench, a document outside the examples, in words: no list has an exact
 code for it (cited).</li>
-<li><code>ID</code> = <strong>3900039355</strong><br />
-The certificate of the tender guarantee that covers this tender
-(17#F12).</li>
+<li><code>ID</code> = <strong>3900039354</strong><br />
+The certificate of the tender guarantee that covers this tender.</li>
 <li><code>DocumentTypeCode</code> =
 <strong>GuaranteeCertificate</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
@@ -649,8 +648,8 @@ A release of at least 10.</li>
 At most what its workshop makes in a fortnight.</li>
 <li><code>TenderLine/WarrantyInformation</code> = <strong>Six years on
 the frame and the slats.</strong><br />
-The warranty on the bench, as the quality criterion's answer gives it
-(19#F3).</li>
+The warranty on the bench, as the quality criterion's answer gives
+it.</li>
 <li><code>TenderLine/PackLevelCode</code> = <strong>PALLET</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:PackLevelCode</code>)<br />
@@ -742,7 +741,8 @@ The response to the quality criterion.</li>
 <strong>AC-2</strong><br />
 Quality.</li>
 <li><code>AwardingCriterionResponse/AwardingCriterionDescription</code>
-= <strong>Durability and warranty of the coating.</strong><br />
+= <strong>Durability and warranty of the coating, and the lead time per
+release.</strong><br />
 The criterion.</li>
 <li><code>AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID</code>
 = <strong>ACR-2.1</strong><br />
@@ -765,6 +765,18 @@ The offer.</li>
 <li><code>AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Quantity</code>
 = <strong>6</strong> (unitCode <code>ANN</code>)<br />
 The years of warranty offered.</li>
+<li><code>AwardingCriterionResponse/SubordinateAwardingCriterionResponse/ID</code>
+= <strong>ACR-2.3</strong><br />
+Lead time.</li>
+<li><code>AwardingCriterionResponse/SubordinateAwardingCriterionResponse/AwardingCriterionID</code>
+= <strong>AC-2.3</strong><br />
+Its criterion.</li>
+<li><code>AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Description</code>
+= <strong>14 days per release.</strong><br />
+The offer, as the tender line gives it.</li>
+<li><code>AwardingCriterionResponse/SubordinateAwardingCriterionResponse/Quantity</code>
+= <strong>14</strong> (unitCode <code>DAY</code>)<br />
+The days from an order to its delivery.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -793,7 +805,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Product data sheet&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3900039355&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;3900039354&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;GuaranteeCertificate&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
@@ -1064,7 +1076,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ACR-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionDescription</span>&gt;Durability and warranty of the coating.&lt;/<span class="kw">cbc:AwardingCriterionDescription</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AwardingCriterionDescription</span>&gt;Durability and warranty of the coating, and the lead time per release.&lt;/<span class="kw">cbc:AwardingCriterionDescription</span>&gt;</span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ACR-2.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2.1&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
@@ -1076,9 +1088,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Six years on the frame and the slats.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;6&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderedProject</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Tender</span>&gt;</span></code></pre></div>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;ACR-2.3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AwardingCriterionID</span>&gt;AC-2.3&lt;/<span class="kw">cbc:AwardingCriterionID</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;14 days per release.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;DAY&quot;</span>&gt;14&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubordinateAwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AwardingCriterionResponse</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderedProject</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Tender</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-tender-18-TenderWithdrawal.html">← Tender
 Withdrawal</a> · <a href="examples.html#flow-tender">all documents of
@@ -1087,6 +1105,6 @@ href="example-tender-11-UnsubscribeFromProcedureResponse.html">Unsubscribe
 From Procedure Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

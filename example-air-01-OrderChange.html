@@ -543,30 +543,31 @@ identification (ISO 3166) list: XL = Lisavu.</li>
 The sum of the tax of all categories.</li>
 <li><code>TaxSubtotal/TaxableAmount</code> = <strong>512.00</strong>
 (currencyID <code>XBL</code>)<br />
-The change; no tax on an export.</li>
+The change; no tax, the goods crossing Bayvarra in transit.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 0 % of the taxable amount, rounded to the minor unit of the
 currency.</li>
 <li><code>TaxSubtotal/TaxCategory/ID</code> = <strong>G</strong>
 (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
-An export from Bayvarra: the state sales tax is not charged (category
-G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or
-fee category: G = Free export item, tax not charged. An identifier that
-holds a code names the code's list in its schemeID.</li>
+Goods sent to a buyer outside Bayvarra, which cross Bayvarra in transit
+and never enter its free circulation: the state sales tax is not charged
+(category G). The code is from the world's copy of UN/EDIFACT 5305 Duty
+or tax or fee category: G = Free export item, tax not charged. An
+identifier that holds a code names the code's list in its schemeID.</li>
 <li><code>TaxSubtotal/TaxCategory/Percent</code> =
 <strong>0</strong><br />
 No tax is charged in this category.</li>
 <li><code>TaxSubtotal/TaxCategory/TaxExemptionReasonCode</code> =
-<strong>EXP</strong> (listID
+<strong>TRANSIT</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode</code>)<br />
 The exemption reason as a code of Bayvarra's national list, the list of
 the seller's country. The code is from Bayvarra's national sales tax
-exemption reason list: EXP = Export outside Bayvarra.</li>
+exemption reason list: TRANSIT = Goods in transit through Bayvarra.</li>
 <li><code>TaxSubtotal/TaxCategory/TaxExemptionReason</code> =
-<strong>Export outside Bayvarra</strong><br />
-The name of code EXP in Bayvarra's national sales tax exemption reason
-list.</li>
+<strong>Goods in transit through Bayvarra</strong><br />
+The name of code TRANSIT in Bayvarra's national sales tax exemption
+reason list.</li>
 <li><code>TaxSubtotal/TaxCategory/TaxScheme/ID</code> =
 <strong>STT</strong> (schemeID <code>UN/EDIFACT EDED 5153</code>)<br />
 UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is
@@ -583,8 +584,9 @@ The change: the eight frames added; the sea order's lines are
 unchanged.</li>
 <li><code>PayableAmount</code> = <strong>512.00</strong> (currencyID
 <code>XBL</code>)<br />
-What the change adds to the goods of the order: no tax on an export; the
-air freight comes on top, on the invoice, at cost.</li>
+What the change adds to the goods of the order: no tax, the goods
+crossing Bayvarra in transit; the air freight comes on top, on the
+invoice, at cost.</li>
 </ul>
 <h3 id="order-line">Order Line</h3>
 <p>Inside <code>OrderLine</code>:</p>
@@ -862,8 +864,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Percent</span>&gt;0&lt;/<span class="kw">cbc:Percent</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;EXP&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Export outside Bayvarra&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode&quot;</span>&gt;TRANSIT&lt;/<span class="kw">cbc:TaxExemptionReasonCode</span>&gt;</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxExemptionReason</span>&gt;Goods in transit through Bayvarra&lt;/<span class="kw">cbc:TaxExemptionReason</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5153&quot;</span>&gt;STT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -921,6 +923,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-air-02-OrderResponse.html">Order Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

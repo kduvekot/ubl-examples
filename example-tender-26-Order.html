@@ -93,8 +93,8 @@ The number of order lines.</li>
 <p>Inside <code>Contract</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>PWD-CONTRACT-2026-PARKS</strong><br />
-The framework contract the release is ordered under, by its own number
-(32#F19).</li>
+The framework contract the release is ordered under, by its own
+number.</li>
 </ul>
 <h3 id="project-reference">Project Reference</h3>
 <p>Inside <code>ProjectReference</code>:</p>
@@ -369,7 +369,7 @@ UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default
 Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.</li>
 <li><code>Party/Contact/OtherCommunication/Value</code> = <strong>+999 1
 351 400 5258</strong><br />
-The sales desk's mobile number, also under the reserved +999.</li>
+The desk's mobile number, also under the reserved +999.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -426,10 +426,9 @@ Where the delivery terms place the handover of the goods.</li>
 <li><code>TaxAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
 The sum of the tax of all categories.</li>
-<li><code>TaxSubtotal/TaxableAmount</code> = <strong>0.00</strong>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>19960.00</strong>
 (currencyID <code>XBL</code>)<br />
-The lines of this category plus the document's charges less its
-allowances of the category.</li>
+The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 0 % of the taxable amount, rounded to the minor unit of the
@@ -460,10 +459,9 @@ UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is
 from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
 VAT = Value added tax. An identifier that holds a code names the code's
 list in its schemeID.</li>
-<li><code>TaxSubtotal/TaxableAmount</code> = <strong>0.00</strong>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>720.00</strong>
 (currencyID <code>XBL</code>)<br />
-The lines of this category plus the document's charges less its
-allowances of the category.</li>
+The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 0 % of the taxable amount, rounded to the minor unit of the
@@ -785,7 +783,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;19960.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -798,7 +796,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;720.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;O&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -888,6 +886,6 @@ flow</a> · <a href="example-tender-27-OrderChange.html">Order Change
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

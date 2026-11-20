@@ -54,7 +54,7 @@ generic, versioned profile, not the flow.</li>
 The collaboration this document belongs to: Lumeway's order of the rail
 delivery from Valdara. Lumeway Distribution started it and gave it this
 identifier, which every document of it repeats.</li>
-<li><code>ID</code> = <strong>9200000878</strong><br />
+<li><code>ID</code> = <strong>2026/1939</strong><br />
 The supplier's number for its debit note.</li>
 <li><code>UUID</code> =
 <strong>6b1333eb-a95b-5a28-9c76-1522ab34fd75</strong><br />
@@ -68,8 +68,8 @@ time, with its offset from UTC.</li>
 <li><code>DueDate</code> = <strong>2026-05-25</strong><br />
 As the payment terms below count it: 30 days net; 2 % discount when paid
 within 10 days.</li>
-<li><code>Note</code> = <strong>Container FRXU1044180 was placed at
-Lumeway's siding on 15 April and released empty on 22 April: free time
+<li><code>Note</code> = <strong>Container FRXU1044180 was placed at the
+siding of Lumeway on 15 April and released empty on 22 April: free time
 16 April to 20 April, demurrage for 2 container days. The siding's
 fork-lift was in repair, so Lumeway could unload the second container
 only on 22 April.</strong><br />
@@ -130,12 +130,12 @@ The consignment note under which the box was carried and placed.</li>
 The kind of document referred to: 7200092547 is the example rail/08, a
 Waybill; a generic reference names the UBL document type. The code is
 from the Trade Accord's UBL document type list: Waybill.</li>
-<li><code>ID</code> = <strong>9200001856</strong><br />
+<li><code>ID</code> = <strong>2026/2888</strong><br />
 Ferrano Rail Cargo's debit note for the same days, which Valdara passes
 on.</li>
 <li><code>DocumentTypeCode</code> = <strong>DebitNote</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: 9200001856 is the example rail/12, a
+The kind of document referred to: 2026/2888 is the example rail/12, a
 DebitNote; a generic reference names the UBL document type. The code is
 from the Trade Accord's UBL document type list: DebitNote = Debit
 Note.</li>
@@ -544,12 +544,12 @@ How the payment system clears and settles the transfer, as an ISO 20022
 clearing channel. The code is from the world's copy of ISO 20022
 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.</li>
 <li><code>PaymentRailID</code> = <strong>TRADE-ACCORD-PAY</strong><br />
-The payment system the transfer runs over: the trade accord's link
+The payment system the transfer runs over: the Trade Accord's link
 between the countries.</li>
 <li><code>InstructionNote</code> = <strong>Quote
-RF379200000878</strong><br />
+RF8520261939</strong><br />
 What the payer writes in the transfer.</li>
-<li><code>PaymentID</code> = <strong>RF379200000878</strong> (schemeID
+<li><code>PaymentID</code> = <strong>RF8520261939</strong> (schemeID
 <code>ISO 11649</code>)<br />
 The structured creditor reference of ISO 11649 to quote with the
 payment, made from the invoice number with its check digits. The
@@ -587,7 +587,7 @@ The account is kept in the currency of the bank's country. The code is
 from the world's copy of UBL's Currency (ISO 4217) list: XUF =
 Ferra.</li>
 <li><code>PayeeFinancialAccount/PaymentNote</code> = <strong>Debit note
-9200000878</strong><br />
+2026/1939</strong><br />
 What the payer is asked to quote with the transfer, so the payment is
 matched.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/ID</code> =
@@ -863,12 +863,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:billing:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;LMW-TX-26-0734&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;9200000878&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;2026/1939&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;6b1333eb-a95b-5a28-9c76-1522ab34fd75&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:26:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-05-25&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Container FRXU1044180 was placed at Lumeway&#39;s siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding&#39;s fork-lift was in repair, so Lumeway could unload the second container only on 22 April.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding&#39;s fork-lift was in repair, so Lumeway could unload the second container only on 22 April.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DebitNoteTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;383&lt;/<span class="kw">cbc:DebitNoteTypeCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TaxPointDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:TaxPointDate</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
@@ -893,7 +893,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Waybill&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;9200001856&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2026/2888&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;DebitNote&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
@@ -1037,8 +1037,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-25&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTNS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;TRADE-ACCORD-PAY&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF379200000878&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF379200000878&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF8520261939&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF8520261939&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeBearerCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ChargeBearerType1Code&quot;</span>&gt;SHAR&lt;/<span class="kw">cbc:ChargeBearerCode</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XU790351041600000000209458&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1046,7 +1046,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XUF&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Debit note 9200000878&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Debit note 2026/1939&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:bank-branch&quot;</span>&gt;03510-41600&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Ferrano main branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1158,6 +1158,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="examples.html#flow-rail">all documents of the flow</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>

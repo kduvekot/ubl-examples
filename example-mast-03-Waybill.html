@@ -512,10 +512,10 @@ The shipment as the despatching party numbered it.</li>
 <li><code>Consignment/ID</code> = <strong>26-0129</strong><br />
 The consignment of the transport booking.</li>
 <li><code>Consignment/GrossWeightMeasure</code> =
-<strong>333.75</strong> (unitCode <code>KGM</code>)<br />
+<strong>358.75</strong> (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
-transport equipment, as a consignment's weight is defined. The gross
-weight.</li>
+transport equipment, as a consignment's weight is defined. The goods in
+their packages, with the 25 kg pallet of the battery crates.</li>
 <li><code>Consignment/HazardousRiskIndicator</code> =
 <strong>true</strong><br />
 The consignment holds dangerous goods.</li>
@@ -794,8 +794,8 @@ no approval is needed.</li>
 The modules alone.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/NetVolumeMeasure</code>
 = <strong>0.24</strong> (unitCode <code>MTQ</code>)<br />
-The modules' volume: the same cells as the six larger packs first
-planned.</li>
+The modules' own volume, without their crates: twelve modules of 0.02
+m³.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity</code>
 = <strong>12</strong> (unitCode <code>EA</code>)<br />
 As ordered.</li>
@@ -1357,29 +1357,29 @@ goods, as the convention prescribes. The code is from the Trade Accord's
 distribution type list: ORIGINALHANDED = Original, handed over.</li>
 </ul>
 <details>
-<summary>The party's own data in `Party`, as Lumeport Airport Cargo Terminal gives it (4 values)</summary>
+<summary>The party's own data in `Party`, as Saltmere Engineering gives it (4 values)</summary>
 
 <ul>
 <li><code>Party/PartyIdentification/ID</code> =
-<strong>20412055</strong> (schemeID
+<strong>20410685</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Party/PartyName/Name</code> = <strong>Lumeport Airport Cargo
-Terminal</strong><br />
+<li><code>Party/PartyName/Name</code> = <strong>Saltmere
+Engineering</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Party/PartyIdentification/ID</code> = <strong>IC41174</strong>
+<li><code>Party/PartyIdentification/ID</code> = <strong>IC42407</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Party/PartyName/Name</code> = <strong>Selanu Airport
-Cargo</strong><br />
+<li><code>Party/PartyName/Name</code> = <strong>Selanu
+Telecom</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 </ul>
-<p>The same in every document <a href="world-17-xb.html">Lumeport
-Airport Cargo Terminal</a> is named in.</p>
+<p>The same in every document <a href="world-27-xb.html">Saltmere
+Engineering</a> is named in.</p>
 </details>
 
 <ul>
@@ -1581,7 +1581,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;26-0130&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;26-0129&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;333.75&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;358.75&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1935,10 +1935,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DistributionTypeCode&quot;</span>&gt;ORIGINALHANDED&lt;/<span class="kw">cbc:DistributionTypeCode</span>&gt;</span>
 <span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412055&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410685&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeport Airport Cargo Terminal&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Saltmere Engineering&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
@@ -1949,10 +1949,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DistributionType</span>&gt;Original, with the goods: the consignee&#39;s original&lt;/<span class="kw">cbc:DistributionType</span>&gt;</span>
 <span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41174&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC42407&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Selanu Airport Cargo&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Selanu Telecom&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
@@ -1974,6 +1974,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-mast-05-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6910a88ecc4fb1ed13563a69af9daf9820fd1d07"><code>6910a88</code></a> of 2026-11-20 23:28 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/b94d672a92f3e6b5769096fe4bf91ec542f6208f"><code>b94d672</code></a> of 2026-11-20 23:35 UTC</p></div></footer>
 </body>
 </html>
