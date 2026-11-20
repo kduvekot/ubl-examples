@@ -64,7 +64,7 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 The month's gas.</li>
 <li><code>IssueTime</code> = <strong>11:25:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC.</li>
+time, with its offset from UTC.</li>
 <li><code>DueDate</code> = <strong>2026-05-05</strong><br />
 As the payment terms below count it: 30 days net; 1.5 % surcharge per
 month late. The count ends on Sunday 3 May, no business day in Bayvarra,
@@ -175,17 +175,17 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Shoreline
 Road</strong><br />
-Street of the postal address. as Kelpstone Gas gives it.</li>
+Street of the postal address. As Kelpstone Gas gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>2</strong><br />
-Building number of the postal address. as Kelpstone Gas gives it.</li>
+Building number of the postal address. As Kelpstone Gas gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Gullhaven</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. as Kelpstone Gas gives it.</li>
+country and state. As Kelpstone Gas gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>90540</strong><br />
-Postal code in Bayvarra's format (5 digits). as Kelpstone Gas gives
+Postal code in Bayvarra's format (5 digits). As Kelpstone Gas gives
 it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Northern
 Territory</strong><br />
@@ -194,7 +194,7 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-NT</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. as
+The state or territory as a code of Bayvarra's address scheme. As
 Kelpstone Gas gives it. The code is from Bayvarra's national state or
 territory list: XB-NT = Northern Territory.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
@@ -213,8 +213,7 @@ The country's name, for readers of the address.</li>
 treatment plant on the north coast; the platform of the offshore field
 lies about 80 kilometres out.</strong><br />
 Where the party actually operates, apart from its postal address. The
-distance is the length of the map's route gas-field, rounded to 10
-km.</li>
+distance is measured along the route on the map, rounded to 10 km.</li>
 <li><code>Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode</code>
 = <strong>4326</strong> (listID <code>EPSG</code>)<br />
 The World Geodetic System 1984, as used by satellite navigation. The
@@ -346,7 +345,7 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. as Kelpstone Gas gives it.</li>
+with 7. As Kelpstone Gas gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:receivables@kelpstone.example">receivables@kelpstone.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
@@ -426,25 +425,25 @@ Italian names the British kept are part of English now; as Montebrio
 Power gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>44</strong><br />
-Building number of the postal address. as Montebrio Power gives it.</li>
+Building number of the postal address. As Montebrio Power gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Drinzul</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. as Montebrio Power gives it.</li>
+state. As Montebrio Power gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Serravona</strong> (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. as Montebrio Power gives it.</li>
+state. As Montebrio Power gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>4310</strong><br />
-Postal code in Urvania's format (4 digits). as Montebrio Power gives
+Postal code in Urvania's format (4 digits). As Montebrio Power gives
 it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Province
 of Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country. as Montebrio Power gives it.</li>
+country. As Montebrio Power gives it.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
@@ -487,7 +486,7 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. as Montebrio Power gives
+Mobiles start with 3 and have 10 digits. As Montebrio Power gives
 it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:payables@montebrio.example">payables@montebrio.example</a></strong><br />
@@ -648,18 +647,18 @@ lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Exchange Street</strong><br />
-Street of the postal address. as Bank of Lumeport gives it.</li>
+Street of the postal address. As Bank of Lumeport gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber</code>
 = <strong>48</strong><br />
-Building number of the postal address. as Bank of Lumeport gives
+Building number of the postal address. As Bank of Lumeport gives
 it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
 = <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. as Bank of Lumeport gives it.</li>
+country and state. As Bank of Lumeport gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone</code>
 = <strong>38523</strong><br />
-Postal code in Bayvarra's format (5 digits). as Bank of Lumeport gives
+Postal code in Bayvarra's format (5 digits). As Bank of Lumeport gives
 it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
@@ -668,7 +667,7 @@ list.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode</code>
 = <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme. as Bank
+The state or territory as a code of Bayvarra's address scheme. As Bank
 of Lumeport gives it. The code is from Bayvarra's national state or
 territory list: XB-CO = Coastal State.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode</code>
@@ -1198,6 +1197,6 @@ documents of the flow</a> · <a
 href="example-energy-07-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c2d0dfa08523bde0803da2edf69da945398f2da9"><code>c2d0dfa</code></a> of 2026-11-20 12:17 UTC</p></div></footer>
 </body>
 </html>
