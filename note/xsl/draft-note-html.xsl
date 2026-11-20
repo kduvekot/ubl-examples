@@ -58,7 +58,7 @@
        below it stays as it is (the note has its own table of contents). -->
   <xsl:template name="user.header.content">
     <div class="site-bar">
-      <a href="../index.html">&#8592; UBL Example Documents</a>
+      <a href="../index.html">&#8592; The UBL World</a>
     </div>
   </xsl:template>
 

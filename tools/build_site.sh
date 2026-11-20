@@ -49,7 +49,6 @@ BUILT_DATE=$(TZ=UTC git log -1 --format=%cd --date=format-local:'%Y-%m-%d %H:%M 
 
 # Header, the same on every page; $2 is the page it is shown on
 NAV_ITEMS="world.html|World examples.html|Trade parties.html|Parties world-specifications.html|Rules about.html|About"
-LOGO='<svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="17" height="21" rx="3" class="l1"/><rect x="8" y="3" width="17" height="21" rx="3" class="l2"/><rect x="13" y="8" width="16" height="21" rx="3" class="l3"/><path d="M17 15h8M17 19h8M17 23h5" class="l4"/></svg>'
 CODE_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>'
 nav() { # root-prefix, current-page
   section=$2
@@ -61,7 +60,7 @@ nav() { # root-prefix, current-page
     coverage*.html|releases.html|history.html) section=about.html ;;    # the project's pages belong to About
   esac
   printf '<header class="site-header"><div class="bar">'
-  printf '<a class="brand" href="%sindex.html">%s<span>The UBL World</span></a>' "$1" "$LOGO"
+  printf '<a class="brand" href="%sindex.html" title="The UBL World: home">UBL <span>World</span></a>' "$1"
   printf '<input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label>'
   printf '<nav class="site-nav" aria-label="Site"><ul>'
   for item in $NAV_ITEMS; do

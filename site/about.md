@@ -18,10 +18,6 @@ every document that carries it. Every build checks the documents against the UBL
 world's code lists, and checks the world itself: the transport legs run on the map's routes, the
 calendar and the issue order of the documents hold, and amounts, quantities and stock add up.
 
-The principles, the world and the checks are described in the note
-[UBL example documents: method and rationale](note/ubl-examples-method.html), a draft written in
-the OASIS layout.
-
 ## How much of UBL 2.5 it covers
 
 [Element coverage](coverage.html) counts the endorsed elements of UBL 2.5 that the documents use,
@@ -33,6 +29,11 @@ real business situation in the world, never as a filler, so some stay out on pur
 Next to the world, the repository holds the sample documents the OASIS UBL Technical Committee
 published with each release of UBL, with their history reconstructed one document per commit:
 [the releases and their changes](releases.html) and [how the history was built](history.html).
+
+## The method note
+
+A longer description of the principles, the world and the checks, written in the layout of an OASIS
+note: [UBL example documents: method and rationale](note/ubl-examples-method.html) (a draft).
 
 ## Status
 

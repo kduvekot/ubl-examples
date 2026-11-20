@@ -235,7 +235,8 @@ for p in world["parties"]:
     c = world["countries"][p["c"]]
     v = view[p["id"]]
     lines = [f"# {label(p)}", ""]
-    meta = f"*#{p['n']} {p['name']} · {c['name']} ({p['c']}) · {CATEGORY[p['cat']]}*"
+    meta = (f"*#{p['n']} {p['name']} · {c['name']} ({p['c']}) · "
+            f"<span class=\"kind kind-{p['cat']}\">{CATEGORY[p['cat']]}</span>*")
     lines += [meta, "", p["what"], ""] + identity(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
     lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
@@ -267,7 +268,8 @@ for cc, c in world["countries"].items():
         continue
     pt += [f"## {c['name']}", "", "| Party | Role | Town | Kind |", "|---|---|---|---|"]
     for p in sorted(ps, key=lambda p: (list(CATEGORY).index(p["cat"]), label(p))):
-        pt.append(f"| [{label(p)}](world-{p['id']}.html) | {p['name']} | {TOWN(p)} | {CATEGORY[p['cat']]} |")
+        pt.append(f"| [{label(p)}](world-{p['id']}.html) | {p['name']} | {TOWN(p)} | "
+                  f"<span class=\"kind kind-{p['cat']}\">{CATEGORY[p['cat']]}</span> |")
     pt.append("")
 open(os.path.join(mddir, "parties.md"), "w", encoding="utf-8").write("\n".join(pt))
 
