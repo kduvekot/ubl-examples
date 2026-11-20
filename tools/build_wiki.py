@@ -132,6 +132,38 @@ def lies(text):
     return "It lies " + t[0].lower() + t[1:] if t and t.split()[0] in ("Where", "On", "In", "At", "By", "Near", "Between", "Beside", "Above", "Below") else t
 
 
+PEOPLE = {"Urvanian": "Urvanians", "Lisavan": "Lisavans", "British": "the British", "Italian": "Italians",
+          "Sardinian": "Sardinians", "Tuscan": "Tuscans"}
+
+
+MORE = {"the station 19th century": "its station dates from the 19th century",
+        "the village after it": "the village grew up after it",
+        "the Urvanian hamlet older": "the Urvanian hamlet is older",
+        "named under Italian rule": "it was named under Italian rule",
+        "the harbour light Italian, 1890s": "the harbour light was built under Italian rule in the 1890s"}
+
+
+def founded(text):
+    """'Urvanian, before 1600; named under Italian rule' as a sentence: 'It was founded by Urvanians before 1600; …'."""
+    who, _, rest = text.partition(", ")
+    when, sep, more = rest.partition("; ")
+    when, paren, note = when.partition(" (")
+    if when == "old":
+        when = "long before the settlers came"
+    elif m := re.match(r"(\w+) to (\w+ century)(.*)", when):
+        when = f"in the {m[1]} or {m[2]}{m[3]}"
+    elif m := re.match(r"(\d\w+) to (\d\w+)$", when):
+        when = f"between the {m[1]} and the {m[2]}"
+    elif re.match(r"\d|late |early ", when):
+        when = "in the " + when
+    out = f"It was founded by {PEOPLE.get(who, who)} {when}"
+    if paren:
+        out += " (" + note
+    if sep:
+        out += "; " + MORE.get(more, more)
+    return out + "."
+
+
 for title, a in articles.items():
     if a["kind"] in ("village", "locality") and not a["wiki"].get("lead"):
         d = a["data"]
@@ -141,8 +173,7 @@ for title, a in articles.items():
                          "lead": f"**{title}** is a {BAND.get(d.get('band'), 'village')} in [[{cname}]], with about {n0(d['people'])} people.",
                          "sections": [x for x in (
                              {"title": "Geography", "text": lies(d["why"])} if d.get("why") else None,
-                             {"title": "History", "text": f"It was founded by {d['founded'].replace(', ', ' in the ', 1)}."
-                              if d.get("founded") and ", " in d["founded"] else d.get("founded", "")} if d.get("founded") else None,
+                             {"title": "History", "text": founded(d["founded"])} if d.get("founded") else None,
                              {"title": "Economy", "text": f"It lives from {d['lives_on'][0].lower()}{d['lives_on'][1:]}"}
                              if d.get("lives_on") else None) if x]}
         else:
@@ -184,6 +215,8 @@ def values(a):
                 "currency_code": d["currency"]["code"], "code": a["key"]}
     if a["kind"] == "town":
         return {"population": n0(d["population"]), "built_km": d["built_km"], "country": countries[d["country"]]["name"]}
+    if a["kind"] == "village":
+        return {"people": n0(d["people"])}
     if a["kind"] == "party":
         lg = d["identity"].get("legal", {})
         return {"founded_year": lg.get("founded", "")[:4], "employees": n0(lg.get("headcount", 0)),
