@@ -213,6 +213,10 @@
      "Export outside Bayvarra",
      "Goods or services sent to a buyer outside Bayvarra."
     ],
+    "TRANSIT": [
+     "Goods in transit through Bayvarra",
+     "Goods that cross Bayvarra in transit, sent to a buyer outside it: they never enter Bayvarra's free circulation, so the state sales tax is not charged."
+    ],
     "WATER": [
      "Drinking water",
      "Drinking water supplied through the mains is exempt."

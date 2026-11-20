@@ -14898,8 +14898,13 @@ def air_transit_tax(node):
             node["ID"] = V("G", "Goods sent to a buyer outside Bayvarra, which cross Bayvarra in transit and never "
                                 "enter its free circulation: the state sales tax is not charged (category G).",
                            **node["ID"].attrs)
-            # the TaxExemptionReason text is the code's name in Bayvarra's list (the build sets it from the code),
-            # "Export outside Bayvarra": a different name or code for this case waits for the owner
+            # its own code in Bayvarra's list (owner, 2026-11-20, O266 b): TRANSIT, "Goods in transit through Bayvarra"
+            node["TaxExemptionReasonCode"] = V("TRANSIT", code.why, **code.attrs)
+            if "TaxExemptionReason" in node:
+                node["TaxExemptionReason"] = V("Goods in transit through Bayvarra", node["TaxExemptionReason"].why
+                                               if hasattr(node["TaxExemptionReason"], "why") else
+                                               "Why no tax is charged, stated rather than left out.",
+                                               **getattr(node["TaxExemptionReason"], "attrs", {}))
         for v in node.values():
             air_transit_tax(v)
 
