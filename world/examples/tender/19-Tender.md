@@ -18,7 +18,7 @@ The furniture maker submits its corrected tender.
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-DOC-26-0206**  
+- `ID` = **BF-DOC-26-0207**  
   The furniture maker's number for this tender.
 - `UUID` = **249604e4-e246-5420-b1d3-0a791c02cd40**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -386,7 +386,7 @@ Inside `TenderedProject`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0206</cbc:ID>
+  <cbc:ID>BF-DOC-26-0207</cbc:ID>
   <cbc:UUID>249604e4-e246-5420-b1d3-0a791c02cd40</cbc:UUID>
   <cbc:TenderTypeCode listID="urn:ubl-examples:world:codelist:TenderTypeCode">COMBINED</cbc:TenderTypeCode>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>

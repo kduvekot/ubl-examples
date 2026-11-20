@@ -2,7 +2,7 @@
 
 *Example 10 of the flow "A design contest for the promenade bench (Bayvarra)" · [Qualification Application Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-QUALIFICATION-APPLICATION-REQUEST-SCHEMA)*
 
-Version 2 of the self-declaration request: the design lead may also be an industrial designer.
+Version 2 of the self-declaration request, on the exclusion grounds and the qualification: the design lead may also be an industrial designer.
 
 [The XML file](10-QualificationApplicationRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

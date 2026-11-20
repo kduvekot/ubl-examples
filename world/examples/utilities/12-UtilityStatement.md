@@ -497,7 +497,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/RoamingPartnerName` = **Lumeport mobile network**  
   The network used in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **4** (unitCode `E34`)  
-  Gigabytes used at the trade fair in Lumeport, 16 to 18 March, part of the pool's 35 GB (utilities/12#F1).
+  Gigabytes used on a business trip to Lumeport, 16 to 18 March, part of the pool's 35 GB.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **6.000** (currencyID `XLC`)  
   At the roaming tariff: the Trade Accord has no roaming rule, so roaming is charged.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **1.5** (currencyID `XLC`)  

@@ -18,7 +18,7 @@ After the standstill period the authority and the manufacturer conclude the cont
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **LPWD-DOC-26-0210**  
+- `ID` = **LPWD-DOC-26-0211**  
   The sender's number for this document.
 - `UUID` = **14fc43bd-7919-515f-82c7-a02bb3605891**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -39,10 +39,10 @@ After the standstill period the authority and the manufacturer conclude the cont
 
 Inside `PreviousDocumentReference`:
 
-- `ID` = **LPWD-DOC-26-0208**  
+- `ID` = **LPWD-DOC-26-0209**  
   The award notification.
 - `DocumentTypeCode` = **AwardedNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0208 is the example tender/22, a AwardedNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: AwardedNotification = Awarded Notification.
+  The kind of document referred to: LPWD-DOC-26-0209 is the example tender/22, a AwardedNotification; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: AwardedNotification = Awarded Notification.
 
 ### Contract Document Reference
 
@@ -399,7 +399,7 @@ Inside `TenderResult`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender-contract:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0210</cbc:ID>
+  <cbc:ID>LPWD-DOC-26-0211</cbc:ID>
   <cbc:UUID>14fc43bd-7919-515f-82c7-a02bb3605891</cbc:UUID>
   <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
@@ -408,7 +408,7 @@ Inside `TenderResult`:
   <cbc:Note>The framework contract, signed by both parties.</cbc:Note>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cac:PreviousDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0208</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0209</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">AwardedNotification</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractDocumentReference>

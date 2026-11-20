@@ -23,7 +23,7 @@ Delivery terms DAP distributor's siding: no carrier in the order, because the se
 - `UUID` = **e3c80bc4-b2b9-5396-a910-bff342f77805**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-06**  
-  Full container loads for the summer season.
+  Full container loads to rebuild stock before winter.
 - `IssueTime` = **16:18:00-01:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  

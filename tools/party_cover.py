@@ -37,7 +37,7 @@ TYPES = {
     "AUTHORITY":  ("Contracting authority", "2"),
     "OPERATOR":   ("Economic operator (tenderer)", "5"),
     "OPERATOR2":  ("Second economic operator (consortium partner, subcontractor)", "-"),
-    "REVIEW":     ("Review body (procurement appeals and mediation)", "-"),
+    "REVIEW":     ("Review body (procurement appeals)", "-"),
     "PUBLIC":     ("Public information service (publication office, business registry)", "21"),
     "GOVERNMENT": ("Other government authority (flag state, certifying ministry)", "-"),
     "FORWARDER":  ("Freight forwarder / logistics operator", "10"),

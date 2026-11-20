@@ -347,7 +347,7 @@ def road(n, doc):
     f = ROAD
     weight = kit.gross_weight(f, "ordered")
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 0, "The distributor orders for its spring stock.",
+        return kit.order(f, n, doc, 0, "The distributor orders for its autumn stock.",
                          "Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the "
                          "order names the warehouse where the goods are collected and the carrier that collects them "
                          "(UBL rule IND6: the delivery terms are stated, not implied).",
@@ -1124,7 +1124,7 @@ def rail(n, doc):
     f = RAIL
     w = kit.gross_weight(f, "ordered")
     if doc["doc"] == "Order":
-        return kit.order(f, n, doc, 0, "Full container loads for the summer season.",
+        return kit.order(f, n, doc, 0, "Full container loads to rebuild stock before winter.",
                          "Delivered at place, the distributor's rail siding: the seller arranges and pays the carriage, "
                          "so the order names no carrier (UBL rule IND6: the terms say who transports, not a missing "
                          "carrier).", "Rail siding of Lumeway Distribution, Marrowdale")
@@ -3526,7 +3526,7 @@ def tender(n, doc):
                          "call-offs.", "What the authority buys."),
         "RequestedTenderTotal": {"EstimatedOverallContractAmount": amount(120000, "XBL", "The authority's estimate of "
                                                                                          "the contract value, in lume.")}}}
-    appeal_why = "The independent review body for appeals and mediation in public procurement."
+    appeal_why = "The independent review body for appeals in public procurement."
     if doc["doc"] == "PriorInformationNotice":
         return {"ID": V(f.number("pin", doc["from"], "PriorInformationNotice"), "The notice number."),
                 "IssueDate": V(f.date(0), "Published early in the year, before the call for competition."),
@@ -4821,9 +4821,9 @@ def telecom_consumption(f, sup, key, customer):
                                                                    "mobile data on a network in Bayvarra."),
                        "TelecommunicationsServiceCategoryCode": V("ROAM", "As a code."),
                        "RoamingPartnerName": V("Lumeport mobile network", "The network used in Bayvarra."),
-                       "Quantity": qty(TEL_DATA["roaming"], "E34", "Gigabytes used at the trade fair in Lumeport, "
-                                                                   "16 to 18 March, part of the pool's "
-                                                                   f"{gb} GB (utilities/12#F1)."),
+                       "Quantity": qty(TEL_DATA["roaming"], "E34", "Gigabytes used on a business trip to "
+                                                                   "Lumeport, 16 to 18 March, part of the "
+                                                                   f"pool's {gb} GB."),
                        "CallExtensionAmount": amount(roam_amt, cur, "At the roaming tariff: the Trade Accord has no "
                                                                     "roaming rule, so roaming is charged."),
                        "Price": {"PriceAmount": price(roam_item["price"]["amount"], cur, "The roaming tariff per "
@@ -5680,6 +5680,14 @@ def tender(n, doc):
         return {**head(f, "unsubscribe", doc, 39, "The sawmill decides before the deadline, on a Friday (tender/10#F4)."), **folder}
     if d == "UnsubscribeFromProcedureResponse":
         return {**head(f, "unsubscribe-response", doc, 42, "The authority confirms on the next working day."), **folder}
+    if d == "TenderReceipt" and doc["to"] == "37-xb":      # the furniture maker's first tender, later withdrawn
+        return {**head(f, "tender-receipt-37-1", doc, 39, "Sent on receipt of the tender, on Friday 20 February."),
+                **folder,
+                "RegisteredDate": V(f.date(39), "The day the tender was registered, before the deadline."),
+                "RegisteredTime": V("16:37:00", "The time the platform registered the tender, the moment it was "
+                                                "submitted, which proves it was on time."),
+                "IssueTime": V("16:38:00", "The platform's automatic receipt, a minute after the registration."),
+                "TenderDocumentReference": {"ID": V(f.numbers["tender-37-1"], "The tender received.")}}
     if d == "TenderReceipt":
         return {**head(f, "tender-receipt", doc, 43, "Sent on receipt of the tender."), **folder,
                 "RegisteredDate": V(f.date(43), "The day the tender was registered, before the deadline."),
@@ -5848,7 +5856,7 @@ def sea(n, doc):
                 "BillingReference": {"InvoiceDocumentReference": {"ID": V(f.numbers["invoice"], "The invoice asked "
                                                                                                 "about.")}}}
     if d == "InvoiceStatusResponse":
-        return {**head(f, "invoice-status", doc, 26, "Answered the next day."),
+        return {**head(f, "invoice-status", doc, 28, "Answered on the next working day, Monday 1 June."),
                 "DocumentResponse": response("AP", "UN/EDIFACT 4343 code AP: accepted; the invoice is scheduled for "
                                                    "payment.", f.numbers["invoice"], "The invoice the status is about.")}
     return _sea(n, doc)
@@ -10381,8 +10389,9 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     return {"ContractName": contract_name(), "Note": V("The price per bench was entered wrongly; a corrected tender "
                                                        "follows.", "Why it is withdrawn."),
-            "TenderNotificationDocumentReference": {"ID": V("PWD-RCPT-BF-1", "The receipt the platform issued for "
-                                                                             "the tender withdrawn (not shown).")},
+            "TenderNotificationDocumentReference": {"ID": V(f.number("tender-receipt-37-1", PWD, "TenderReceipt"),
+                                                            "The receipt the platform issued for the tender "
+                                                            "withdrawn.")},
             "Signature": seal(RUNNER_UP, "BF-SIG-WD")}
 
 
@@ -12262,7 +12271,7 @@ def packaging_complete(n, doc):
         total = base + tax
         rule = kit.tax_rule("26-xb", "c-xb", "shirt-r")
         out = {"ID": V(f.number("receipt-visitor", doc["from"], "PurchaseReceipt"), "The till's receipt number."),
-               "IssueDate": V(f.date(26), "During the trade fair in Lumeport."),
+               "IssueDate": V(f.date(26), "On a business visit to Lumeport, before the fair in Selanu."),
                "Note": V("Paid in coral: the card's currency was chosen at the till.", "Printed on the receipt."),
                "DocumentCurrencyCode": kit.currency_line("XLC", "the currency the customer chose to pay in"),
                "PricingExchangeRate": {"SourceCurrencyCode": V("XBL", "The shelf prices are in lume."),

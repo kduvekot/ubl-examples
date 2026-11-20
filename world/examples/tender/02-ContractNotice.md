@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "A public tender (Bayvarra)" · [Contract Notice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CONTRACT-NOTICE-SCHEMA)*
 
-The call for competition is published; it names the review body for appeals and mediation.
+The call for competition is published; it names the review body for appeals.
 
 [The XML file](02-ContractNotice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

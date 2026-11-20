@@ -2,7 +2,7 @@
 
 *Example 9 of the flow "Packaging for the benches, clothing for the store" · [Purchase Receipt in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-PURCHASE-RECEIPT-SCHEMA)*
 
-The island trader's buyer, in Lumeport for the trade fair, buys shirts for the stand team and pays in coral with the island card: the till converts at the counter.
+The island trader's buyer, in Lumeport on business, buys shirts for the trader's team at the Selanu chamber's trade fair in early June and pays in coral with the island card: the till converts at the counter.
 
 [The XML file](09-PurchaseReceipt.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,7 +23,7 @@ The island trader's buyer, in Lumeport for the trade fair, buys shirts for the s
 - `UUID` = **0a1ab530-6d49-5174-913f-d50624881433**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-23**  
-  During the trade fair in Lumeport.
+  On a business visit to Lumeport, before the fair in Selanu.
 - `IssueTime` = **12:20:00-01:00**  
   Printed at the till; in the issuer's local time, with its offset from UTC (D27).
 - `TransactionDate` = **2026-05-23**  
