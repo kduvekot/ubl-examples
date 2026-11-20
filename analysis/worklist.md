@@ -104,7 +104,7 @@ After decisions D1 to D27: **28 causes (942 findings) are decided** (26 decision
 | C64 | Industry classes that leave out what the party does | master data | 9 | 9 | 2 | 0/0/9 | decided: D8 | world/parties.json | ready |
 | C65 | Bale weight of about 227 kg as `PackSizeNumeric` | master data | 7 | 7 | 1 | 0/0/7 | decided: D12 | world/items.json | ready |
 | C66 | Debit notes with accounting supplier and customer reversed | master data | 5 | 5 | 3 | 5/0/0 | decided: D9 | world/documents.json | ready (D28, D30, D32 decided) |
-| C67 | Side frame classified HS 7325.99 instead of a part of a seat | master data | 5 | 5 | 2 | 0/4/1 | decided: D13 | world/items.json | waits: O27 |
+| C67 | Side frame classified HS 7325.99 instead of a part of a seat | master data | 5 | 5 | 2 | 0/4/1 | decided: D13 | world/items.json | fixed 2026-11-20 |
 | C68 | Valdara's distributor price equals its public contract price; Lumeway's revised frame price is below cost | master data | 1 | 1 | 0 | 0/0/1 | decided: D14 | world/items.json | ready |
 | C69 | The bench as shipped: pallets that do not fit, and a bench lighter than its parts | cross-flow story | 7 | 6 | 3 | 1/3/3 | decided: D20 | world/items.json, tools/examples_kit.py | ready |
 | C70 | One melt, one coating batch and one manufacture time for every casting and lot | cross-flow story | 6 | 4 | 2 | 3/0/3 | none | world/items.json, tools/examples_kit.py | ready 4 of 6; D39 2 |
@@ -1239,6 +1239,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - Note: The conflict with P5 is settled: P5 is revised (D13).
 - State: waits for O27 (the legal notes to Section XV and Note 1(d) to Chapter 94 are read against the official text before the change).
+- **Fixed (2026-11-20, commit 0b098db21, after O27 was confirmed):** the frame VI-C180 is HS 9401.99, CPC 38160, national tariff XU 9401.99.90 in every document; 7325.99, its national lines and CPC 42999 left the lists (O246 point 4). The HS reasoning list (O31) remains a stage 7 check.
 - Findings: retail: 02#F24; sea: 02#F11, 05#F7, 10#F6, 11#F5
 
 ### C68 · Valdara's distributor price equals its public contract price; Lumeway's revised frame price is below cost

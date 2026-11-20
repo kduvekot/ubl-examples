@@ -615,7 +615,7 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `GoodsItem/MeasurementDimension` | 0..n | plastics/06-Waybill | | | open |
 | `GoodsItem/ReturnableQuantity` | 0..1 | plastics/06-Waybill | | | open |
 | `GoodsItem/ValueAmount` | 0..1 | plastics/06-Waybill | the amount the island's import consumption tax of 10 % is assessed on, the landed value of a goods item in an import declaration into Lisavu (D18; "the amount on which a duty, tax, or fee will be assessed") | sea | candidate |
-| `ItemInstance/BestBeforeDate` | 0..1 | plastics/08-DespatchAdvice | fresh food with a best-before date, such as the reefer's apples (O137, still to design) | reefer | open |
+| `ItemInstance/BestBeforeDate` | 0..1 | plastics/08-DespatchAdvice |  |  | open |
 
 > C89, D43: the sawmill sells the bundle of 50 slats as its item, so quotation, order and invoice are in bundles and no price converts a piece price into a pack (02#F13, 03#F10, 08#F14); the quotation's main line is oak with ash as the priced alternative, and the 35 mm substitute goes (02#F16).
 
