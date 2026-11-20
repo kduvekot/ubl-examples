@@ -6121,7 +6121,8 @@ def furniture(n, doc):
                         "store should do: the maker's own van brings the goods, so no consignment note travels with "
                         "them.")
         out["IssueTime"] = V("07:30:00", "When the loaded van left the workshop, before the goods-in opens at the "
-                                         "store, about 80 km away.")
+                                         f"store, about {wmap.nearest(wmap.leg_km('furniture', '37-xb', '26-xb'), 10)} km "
+                                         "away.")
         for ln in out["DespatchLine"]:   # the store's planning notes of the order are not the maker's to repeat
             ln.pop("Note", None)
         sh = out["Shipment"]
@@ -12704,7 +12705,10 @@ def energy(n, doc):
         # each buyer declares its own consignment of the export's shipment (D44 point 1, energy/05#F1, 07#F1)
         pid, mwh, key, part = next(b for b in GAS_BUYERS if b[0] == doc["from"])
         own = "power" if pid == "43-xu" else "retail"
-        out = kit.import_declaration(f, n, doc, 1, "The monthly declaration of the gas received in March.",
+        # lodged the day after the export, once the producer's invoice with the statement on origin is in, so the
+        # preference claim rests on it (O49, O78)
+        out = kit.import_declaration(f, n, doc, 2, "The monthly declaration of the gas received in March, lodged "
+                                                   "once the producer's invoice with its statement on origin is in.",
                                      "The customs value in ferra.",
                                      deal=[{"item": "natural-gas", "ordered": mwh, "why": part}])
         if own == "retail":     # the second import of the flow: the retail company's own number
@@ -12723,7 +12727,7 @@ def energy(n, doc):
                                                           "station, just before the border, measures it.")
         out["AdditionalDocumentReference"] = {
             "ID": V(f.numbers["export"], "The export declaration of the shipment, which names this consignment."),
-            "IssueDate": V(f.date(1), "Lodged the same day in Bayvarra."),
+            "IssueDate": V(f.date(1), "Lodged the day before in Bayvarra."),
             "DocumentTypeCode": V("ExportCustomsDeclaration", "An export declaration: the other country's, so not a "
                                                               "previous declaration of this customs.")}  # O145
         return out

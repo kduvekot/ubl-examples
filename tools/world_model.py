@@ -593,11 +593,13 @@ def build(world):
             if e & cells:
                 edges.discard(e)
 
-    # keep, per town, only the street network around its centre
+    # keep, per town, only the street network around its centre; a square a road route runs over stays, whichever
+    # piece it lies in (O136)
+    routed = {q for _, m, path in laid if m == "road" for q in path if q in road}
     comps, _ = components()
     for tw in world.get("towns", []):
         best = max(comps, key=lambda c: len(c & tw["streets"]))
-        drop({q for q in tw["streets"] if q not in best})
+        drop({q for q in tw["streets"] if q not in best and q not in routed})
 
     # landmasses: land and river together (bridges cross the river), the sea separates them
     mass = {}
@@ -1355,6 +1357,13 @@ def build(world):
     for q in road:
         if len(adj[q]) <= 1 and not leads_somewhere(q):
             problems.append(f"road at {q} is a dead end that leads nowhere")
+    # every square a road route runs over is still a road (a building the route ends or passes at aside, O136)
+    for name, mode, path in laid:
+        if mode == "road":
+            for q in path:
+                p = owner.get(q)
+                if q not in road and not (p and p.get("on") != "road"):
+                    problems.append(f"road route '{name}' runs over {q}, which is no longer a road")
     for i in range(W):
         for j in range(H):
             t = T[i][j]

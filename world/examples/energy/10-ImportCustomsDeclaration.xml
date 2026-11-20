@@ -3,11 +3,11 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9909901473</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9909904601</cbc:ProfileExecutionID>
   <cbc:ID>7700000100</cbc:ID>
   <cbc:UUID>6f5bbc45-66a5-54dd-8521-41f56edc1895</cbc:UUID>
-  <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
+  <cbc:IssueDate>2026-04-03</cbc:IssueDate>
+  <cbc:IssueTime>15:35:00-01:00</cbc:IssueTime>
   <cbc:Note languageID="qau">Sarhek murdrir: valnir skul Accord dranan. Balstir munran vanbir raz: 20 % skul drek garsul munran skul 8,640,000 tezhul, 1,728,000 tezhul, zhan hir drek dizzan; drek stazstan serdaz skukstek trensek trek nakskek trikrul.</cbc:Note>
   <cbc:Note languageID="en-XU">No duty: goods of Accord origin. Import value added tax: 20 % of the customs value of 8,640,000 ferra, 1,728,000 ferra, paid at the border; the importer deducts it again in its return.</cbc:Note>
   <cac:ImporterParty>
@@ -214,5 +214,9 @@
     <cbc:ID>7600006841</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>9000034210</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>
