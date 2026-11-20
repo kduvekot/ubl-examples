@@ -491,9 +491,10 @@ Port Wrenfield is still the official English name of the island's capital
 and stands in every address, the Lisavan name first, but it is fading from
 use: in speech and in writing, also in English, the town is Selanu, whoever
 writes. Proper names such as the port's and the bank's keep "Selanu", and
-the name lives on in the port quarter, Port Wrenfield. Using
-the Lisavan names for places is a trait of Lisavan English, as the Italian
-names are of Urvanian English. Urvania works the other way round: English
+the name lives on in the port quarter, Port Wrenfield. Apart
+from the capital, English text, Lisavan English included, uses the island's
+English place names (Lintwell, Bollworth); the Lisavan name is each place's
+second name and stands in Lisavan text. Urvania works the other way round: English
 text uses the inherited Italian name (Ferrano, Serravona) and Urvanian text
 the Urvanian one (Ruldraz, Drinzul).
 
