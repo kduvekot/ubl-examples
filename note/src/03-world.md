@@ -1203,12 +1203,22 @@ every five years, against how the three economies have developed: an
 adjustable peg, as the Bretton Woods system was. The last review, on
 1 January 2022, left them unchanged; the next is on 1 January 2027. Through
 2026 every exchange rate in the examples is the parity. There is still a
-daily official rate, the noon fixing of the Lumeport Exchange, which does not
-change between reviews, and the Accord's size classes give their turnover
+daily official rate, the noon fixing of the Lumeport Exchange, which between
+the three currencies does not change between reviews, and the Accord's size classes give their turnover
 limits in all three currencies at the parities. Currency risk is real across
 a review: anything agreed now and paid after 1 January 2027 may be paid at
 another rate, and a forward exchange contract protects a long commitment
 across the review date.
+
+Against currencies outside the Accord the lume floats. Its value is a basket
+of fixed amounts of five currencies, like the IMF's SDR: the Swiss franc, the
+Canadian dollar, the Australian dollar, the Norwegian krone and the Mexican
+peso, weighted 30, 25, 15, 15 and 15 % when the basket was set, on
+2 January 2026, at 1.20 lume to the euro. Every working day at noon the
+Lumeport Exchange publishes its fixing of the lume against eight currencies:
+the euro, the US dollar, the yen, the Indian rupee, the pound sterling, the
+yuan, the rand and the real. The ferra's and the coral's rates against them
+follow from the parities, which stay fixed inside the Accord.
 
 A party keeps its account at a bank of its own country, with one exception.
 For its framework contract with the Lumeport Public Works Department Valdara

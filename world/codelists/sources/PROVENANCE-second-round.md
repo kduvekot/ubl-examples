@@ -253,3 +253,19 @@ f57d777ee2a0c604c60686a11a7897f2144b35568f4c13c13bd3f248ac46ead3  ./eurlex-low/C
 ```
 
 What was read: the entries 15 01 01 to 15 01 09 (chapter 15 01, packaging), with their names, and the list's rules for choosing an entry (the section "List of waste" before the index: first the chapters 01 to 12 or 17 to 20 for the source of the waste, then 13 to 15, then 16, then the 99 code). `tools/codelists.py` reads the list's table from the file (format `eurlex-low`) and stops the build when an entry of `XU:Waste` differs from it. The waste flow's code 150102 "plastic packaging" was chosen by those rules: Valdara's polyethylene film is the stretch film of the deliveries it receives and of its own pallets; the chapters of its activity (08 coatings, 11 coating of metals, 12 shaping of metals and plastics) have no entry for packaging film (12 01 05 "plastics shavings and turnings" is waste of machining plastics), so the rules send it to chapter 15.
+
+---
+
+## Added 2026-11-20: the ECB euro foreign exchange reference rates (O231)
+
+For the Lumeport Exchange's daily noon fixing of the lume against currencies outside the Accord (decision O231): `tools/fx_fixing.py` values the lume's basket (Swiss franc, Canadian dollar, Australian dollar, Norwegian krone, Mexican peso) and quotes it against eight currencies from the ECB's daily euro reference rates, shifted by 1,820 days (260 weeks). Accessed on **2026-11-20**. The ECB's reference rates are published for information and may be reused with the source acknowledged.
+
+| Directory | Source | Version |
+|---|---|---|
+| ecb-eurofxref/ | https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip (European Central Bank, euro foreign exchange reference rates, the complete history since 1999 as CSV): the zip, SHA-256 `b1c3afd354115a48ce46089ea67623cf3297d321e3c4ebe0638e4a214813f25d`, holds `eurofxref-hist.csv`, SHA-256 `1635732dc4c4fd999105ed755906aa53ce4acc1c6a765f22d04786d441e8c239` | HTTP Last-Modified 19 Nov 2026 14:56:30 GMT (latest rate 2026-11-19) |
+
+Only an extract is kept, to keep the repository small: `eurofxref-hist-2020-2023.csv`, the columns Date, CHF, CAD, AUD, NOK, MXN, USD, JPY, INR, GBP, CNY, ZAR and BRL (units per 1 EUR, values unchanged) of every ECB working day from 2020-01-02 to 2023-12-29 (1,027 days), sorted by date. The world's fixings (2026-01-01 to 2027-12-31) use the rates of 2021-01-07 to 2023-01-06 and, on a day without a rate, the previous one. The extract was cut with Python (`csv`, run with `-I`); nothing else was changed.
+
+```
+4da29371e5b036f49c27153dbfc51e32c0374b8bc9b02132d8b9f97715d9a8fa  ./ecb-eurofxref/eurofxref-hist-2020-2023.csv
+```
