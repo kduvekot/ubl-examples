@@ -3670,7 +3670,7 @@
     "language": "en",
     "legal": {
      "form": "LTD",
-     "founded": "1965-07-01",
+     "founded": "1878-07-01",
      "headcount": 760,
      "turnover": {
       "amount": "163000000.000",
@@ -3704,8 +3704,12 @@
    },
    "wiki": {
     "short": "Bank in Selanu, Lisavu",
-    "lead": "**Bank of Selanu** is the bank of [[Lisavu]], at Reef House on Reef Street in [[Selanu]]. Founded in {founded_year}, it holds the accounts of the island's buyers, producers, carriers and brokers and makes and receives their payments; it employs about {employees} people.",
+    "lead": "**Bank of Selanu** is the bank of [[Lisavu]], at Reef House on Reef Street in [[Selanu]]. Founded in {founded_year} by the island's own leaders, it holds the accounts of the island's buyers, producers, carriers and brokers and makes and receives their payments; it employs about {employees} people.",
     "sections": [
+     {
+      "title": "History",
+      "text": "The Lisavan rulers founded the bank in 1878 together with the cotton estates and the merchants of [[Selanu]], to finance the crop and the island's trade overseas: they meant to handle that trade themselves. It kept its place when the island came under British protection in 1884, and it has been the island's own bank ever since, through full self-government in 1962 and the Lumeport Agreement with [[Bayvarra]] in 1974, which tied the coral to the lume."
+     },
      {
       "title": "Operations",
       "text": "It has a main branch and a market branch in Selanu. Its customers include [[Velumi Trading]], [[Selanu Cotton Ginnery]], [[Lisavu Cotton Farm]], [[Selanu Telecom]], [[Tevaro Customs Brokers]], [[Nalevi Warehousing]] and [[Hafefo Fresh Produce]]. The island's clearing, Coral net, settles tokenised deposits on the bank's ledger. Payments to and from the mainland run over the Trade Accord's payment link; when an island customer pays in lume, the bank changes its coral at the fixed parity. One of the payments that brings money to the island is the [[Lumeport Textile Mill]]'s payment for the ginnery's cotton. The island's banks run the Coralcard, the debit card in coral."
@@ -4872,7 +4876,7 @@
     "sections": [
      {
       "title": "Operations",
-      "text": "The farm grows cotton on the plain where the island's rain shadow keeps the land dry and sunny. After the harvest, from March to May, it delivers its seed cotton to [[Selanu Cotton Ginnery]], which weighs and grades it and writes the farm's invoices itself."
+      "text": "The farm grows cotton on the plain where the island's rain shadow keeps the land dry and sunny, land that has grown cotton since the estates of the 1860s. After the harvest, from March to May, it delivers its seed cotton to [[Selanu Cotton Ginnery]], which weighs and grades it and settles each delivery for the farm itself."
      }
     ]
    }
@@ -4994,7 +4998,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The ginnery was founded in 1936, when cotton was already the island's old export, grown on the estates that English settlers laid out on the plain in the 19th century. Since the Lumeport Agreement of 1974 the island's cotton enters [[Bayvarra]] free of duty."
+      "text": "The ginnery was founded in 1936, when cotton was already the island's old export, grown on the estates that English settlers laid out on the plain in the 1860s. It took over the ginning from the estates' own gins and buys from the estates and the island's small farms alike. Since the Lumeport Agreement of 1974 the island's cotton enters [[Bayvarra]] free of duty."
      },
      {
       "title": "Operations",

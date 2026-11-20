@@ -8,7 +8,7 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 
 ## The world
 
-- Lisavu's status: whether it was ever under British rule, how it governs itself, and what its Island Day (7 July, self-government) marks.
+- ~~Lisavu's status: whether it was ever under British rule, how it governs itself, and what its Island Day (7 July, self-government) marks.~~ **Filled 2026-11-20 (OW003):** a protected state of Britain from 1884, never a colony; fully self-governing since 7 July 1962 (Island Day); cotton estates from the 1860s, its own Bank of Selanu from 1878. How it governs itself today: see the forms of government below.
 - How and when Bayvarra became an independent federation (its Federation Day marks the states forming the federation).
 - The form of government of each country: head of state, parliament.
 - When the Lisavans first settled the island.
