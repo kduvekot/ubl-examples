@@ -2,7 +2,7 @@
 
 *Example 3 of the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
-The manufacturer accepts the quotation and orders. Delivery terms DAP factory: the sawmill delivers and the manufacturer clears the import.
+The manufacturer accepts the quotation and orders. Delivery terms DAP factory: the sawmill delivers from its stock in Urvania, a domestic sale that carries Urvania's VAT.
 
 [The XML file](03-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -170,7 +170,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
-  Delivered at place, the factory: the sawmill delivers; the manufacturer clears the import. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
+  Delivered at place, the factory: the sawmill delivers from its stock in Urvania, where the slats are already in free circulation. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `DeliveryLocation/Description` = **Valdara Industries, goods-in, Ferrano**  
@@ -188,33 +188,29 @@ Inside `AllowanceCharge`:
   The 96 bundles travel four to a pallet, on 24 heat-treated pallets that stay with the buyer, as the quotation offered.
 - `Amount` = **240.00** (currencyID `XBL`)  
   24 pallets at 10.00 lume.
-- `TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  The goods are in Urvania when they are sold and delivered, so the sale is outside the scope of Bayvarra's state sales tax (category O, without a rate). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxCategory/TaxExemptionReasonCode` = **OUTSIDE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: OUTSIDE = Goods outside Bayvarra.
-- `TaxCategory/TaxExemptionReason` = **Goods outside Bayvarra**  
-  The name of code OUTSIDE in Bayvarra's national sales tax exemption reason list.
-- `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: the seller sells and delivers the goods from its stock in Urvania, released into free circulation there before they are delivered, so Urvania's value added tax applies at the standard rate, charged under the seller's own Urvanian VAT number (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/Percent` = **20**  
+  The rate for this category.
+- `TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Tax Total
 
 Inside `TaxTotal`:
 
-- `TaxAmount` = **0.00** (currencyID `XBL`)  
+- `TaxAmount` = **9264.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **46320.00** (currencyID `XBL`)  
-  The lines of this category plus the document's charges less its allowances of the category.
-- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  The goods are in Urvania when they are sold and delivered, so the sale is outside the scope of Bayvarra's state sales tax (category O, without a rate). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **OUTSIDE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: OUTSIDE = Goods outside Bayvarra.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Goods outside Bayvarra**  
-  The name of code OUTSIDE in Bayvarra's national sales tax exemption reason list.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+  The sum of the line amounts in this tax category.
+- `TaxSubtotal/TaxAmount` = **9264.00** (currencyID `XBL`)  
+  20 % of the taxable amount, rounded to the minor unit of the currency.
+- `TaxSubtotal/TaxCategory/ID` = **S** (schemeID `UN/EDIFACT EDED 5305`)  
+  A domestic supply in Urvania: the seller sells and delivers the goods from its stock in Urvania, released into free circulation there before they are delivered, so Urvania's value added tax applies at the standard rate, charged under the seller's own Urvanian VAT number (category S). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: S = Standard rate. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/Percent` = **20**  
+  The rate for this category.
+- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Anticipated Monetary Total
 
@@ -224,8 +220,8 @@ Inside `AnticipatedMonetaryTotal`:
   The sum of the line amounts.
 - `ChargeTotalAmount` = **240.00** (currencyID `XBL`)  
   The pallets, as quoted.
-- `PayableAmount` = **46320.00** (currencyID `XBL`)  
-  The slats and the pallets.
+- `PayableAmount` = **55584.00** (currencyID `XBL`)  
+  The slats and the pallets with Urvania's value added tax, as quoted.
 
 ### Order Line
 
@@ -385,25 +381,23 @@ Inside `OrderLine`:
     <cbc:AllowanceChargeReason>Pallets</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
     <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+      <cbc:Percent>20</cbc:Percent>
       <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="XBL">9264.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cbc:TaxAmount currencyID="XBL">9264.00</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">OUTSIDE</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Goods outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">S</cbc:ID>
+        <cbc:Percent>20</cbc:Percent>
         <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
@@ -411,7 +405,7 @@ Inside `OrderLine`:
   <cac:AnticipatedMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="XBL">46080.00</cbc:LineExtensionAmount>
     <cbc:ChargeTotalAmount currencyID="XBL">240.00</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="XBL">46320.00</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="XBL">55584.00</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   <cac:OrderLine>
     <cac:LineItem>

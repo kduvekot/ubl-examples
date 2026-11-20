@@ -332,7 +332,6 @@
     ],
     "exemption_codes": {
      "Export outside Bayvarra": "EXP",
-     "Goods outside Bayvarra": "OUTSIDE",
      "Drinking water": "WATER",
      "Sale to a public body": "PUBLIC",
      "Service to a business": "SVCB2B",
