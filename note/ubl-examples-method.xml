@@ -3982,13 +3982,6 @@
     </listitem>
     <listitem>
       <para>
-        <emphasis role="strong">Global Test Data:</emphasis> safe
-        example identifiers per country,
-        <ulink url="https://sipico.github.io/global-test-data/">https://sipico.github.io/global-test-data/</ulink>.
-      </para>
-    </listitem>
-    <listitem>
-      <para>
         <emphasis role="strong">ISO 3166-1:</emphasis> <emphasis>Codes
         for the representation of names of countries and their
         subdivisions — Part 1: Country code</emphasis>, including the
