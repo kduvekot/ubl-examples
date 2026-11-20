@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: entity size. The Trade Accord's size classes of enterprises, in the style of the EU definition of SMEs: an enterprise is in the smallest class whose limits it keeps, both for its headcount (annual work units) and its yearly turnover. The turnover limits are given in all three currencies, in their minor units, at the world's reference rates (1 lume = 100 ferra = 0.4 coral). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: entity size. The Trade Accord's size classes of enterprises: an enterprise is in the smallest class whose limits it keeps, both for its headcount (annual work units) and its yearly turnover. The turnover limits are given in all three currencies, in their minor units, at the world's reference rates (1 lume = 100 ferra = 0.4 coral). Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>EntitySizeCode</ShortName>

@@ -156,7 +156,7 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `EUR`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  Goods exported outside the European Union are zero-rated under Dutch VAT (Article 146 of the VAT Directive 2006/112/EC): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+  Goods exported outside the European Union are zero-rated under Dutch VAT: no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside the European Union**  

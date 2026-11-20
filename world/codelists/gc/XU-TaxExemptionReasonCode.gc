@@ -61,7 +61,7 @@
             <SimpleValue>Vekrir zurhul treskek Urvania</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax (decision D17, which widened "a service to a business established outside Urvania").</SimpleValue>
+            <SimpleValue>A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax.</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -75,7 +75,7 @@
             <SimpleValue>Drutraz skul valnir gazvan mir Urvania</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The carriage of goods directly linked to their export from Urvania (or their import into it) is exempt, with the right to deduct the tax on its costs, as in most VAT systems (in the EU, Article 146(1)(e) of Directive 2006/112/EC; decision D41).</SimpleValue>
+            <SimpleValue>The carriage of goods directly linked to their export from Urvania (or their import into it) is exempt, with the right to deduct the tax on its costs, as in most value added tax systems.</SimpleValue>
          </Value>
       </Row>
       <Row>
