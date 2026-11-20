@@ -699,7 +699,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `Consignment/SubstituteCarrierParty` | 0..1 | air/04-Waybill | a carrier that performs the carriage in place of the contracting carrier, such as an airline's road feeder service; none decided | | open |
 | `Delivery/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
 | `OrderChange/DeliveryTerms` | 0..1 | air/01-OrderChange | | | open |
-| `OrderResponse/ValidityPeriod` | 0..1 | air/02-OrderResponse | a conditional acceptance whose terms lapse at a stated time | | open |
 ### G3: ore, rail (2026-11-19)
 
 Stage 6, building group G3 (C81, C90).
@@ -1093,18 +1092,19 @@ Elements that were in this register and are covered again, with the example that
 | `CircularityProfile/CircularityTypeCode` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
 | `CircularityProfile/RecycledContentPercent` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
 | `Item/EnvironmentalCertificate` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
-| `TransportEquipment/ServiceAllowanceCharge` | reefer/06-BillOfLading | the carrier's charge for reefer power and monitoring at Selanu after discharge, a day, collect from the consignee (O137) | 2026-11-20 |
-| `ImportCustomsDeclaration/ValidityPeriod` | reefer/08-ImportCustomsDeclaration | the wholesaler's import declaration lodged before the reefer arrives, so that the fruit is released on discharge; it lapses if the goods are not presented within 30 days (O137; also O150's candidate) | 2026-11-20 |
-| `GoodsItem/MaximumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the warmest, 1 °C (O137) | 2026-11-20 |
-| `GoodsItem/MinimumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the coldest the fruit may be carried at, 0 °C (O137) | 2026-11-20 |
-| `GoodsItem/Temperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading, reefer/10-ReceiptAdvice | the set point 0.5 °C the fruit is carried at, and the pulp temperature the wholesaler measures at unloading (O137) | 2026-11-20 |
-| `TransportEquipment/AirFlowPercent` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the reefer's fresh-air vent, open 15 %: apples and pears breathe, and fresh air carries off their carbon dioxide and ethylene (O137, O205) | 2026-11-20 |
-| `TransportEquipment/HumanFoodApprovedIndicator` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the reefer approved for food, for unpacked fruit in open trays (O137) | 2026-11-20 |
-| `TransportEquipment/HumidityPercent` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the reefer set to hold about 90 % relative humidity, so that the fruit does not shrivel (O137) | 2026-11-20 |
-| `TransportEquipment/MaximumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the highest, 1 °C: warmer, the fruit ripens on the way (O137; D47 may add its own) | 2026-11-20 |
-| `TransportEquipment/MinimumTemperature` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading | the lowest air temperature the reefer may reach, 0 °C: colder, the fruit begins to freeze (O137; the medicines flow's case, D47, may add its own) | 2026-11-20 |
-| `TransportEquipment/RefrigerationOnIndicator` | reefer/02-ForwardingInstructions, reefer/06-BillOfLading, reefer/09-TransportationStatus | the reefer's refrigeration running from pre-cooling to the cold store, and again on the port's power at Selanu (O137; D47 may add its own) | 2026-11-20 |
-| `TransportEquipment/StorageLocation` | reefer/09-TransportationStatus | the power point in the Port of Selanu's reefer rack where the reefer stands from discharge until it is collected (O137) | 2026-11-20 |
-| `Condition/MaximumMeasure` | reefer/09-TransportationStatus | the highest, while the reefer was off power between the quay and the ship (O137) | 2026-11-20 |
-| `Condition/Measure` | reefer/09-TransportationStatus | the average supply-air temperature of the reefer over the voyage, from the carrier's reefer monitoring, in its status on discharge (O137) | 2026-11-20 |
-| `Condition/MinimumMeasure` | reefer/09-TransportationStatus | the lowest supply-air reading of the voyage (O137) | 2026-11-20 |
+| `TransportEquipment/ServiceAllowanceCharge` | reefer/07-BillOfLading | the carrier's charge for reefer power and monitoring at Selanu after discharge, a day, collect from the consignee (O137) | 2026-11-20 |
+| `ImportCustomsDeclaration/ValidityPeriod` | reefer/09-ImportCustomsDeclaration | the wholesaler's import declaration lodged before the reefer arrives, so that the fruit is released on discharge; it lapses if the goods are not presented within 30 days (O137; also O150's candidate) | 2026-11-20 |
+| `GoodsItem/MaximumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the warmest, 1 °C (O137) | 2026-11-20 |
+| `GoodsItem/MinimumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the coldest the fruit may be carried at, 0 °C (O137) | 2026-11-20 |
+| `GoodsItem/Temperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/11-ReceiptAdvice | the set point 0.5 °C the fruit is carried at, and the pulp temperature the wholesaler measures at unloading (O137) | 2026-11-20 |
+| `TransportEquipment/AirFlowPercent` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer's fresh-air vent, open 15 %: apples and pears breathe, and fresh air carries off their carbon dioxide and ethylene (O137, O205) | 2026-11-20 |
+| `TransportEquipment/HumanFoodApprovedIndicator` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer approved for food, for unpacked fruit in open trays (O137) | 2026-11-20 |
+| `TransportEquipment/HumidityPercent` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer set to hold about 90 % relative humidity, so that the fruit does not shrivel (O137) | 2026-11-20 |
+| `TransportEquipment/MaximumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the highest, 1 °C: warmer, the fruit ripens on the way (O137; D47 may add its own) | 2026-11-20 |
+| `TransportEquipment/MinimumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the lowest air temperature the reefer may reach, 0 °C: colder, the fruit begins to freeze (O137; the medicines flow's case, D47, may add its own) | 2026-11-20 |
+| `TransportEquipment/RefrigerationOnIndicator` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/10-TransportationStatus | the reefer's refrigeration running from pre-cooling to the cold store, and again on the port's power at Selanu (O137; D47 may add its own) | 2026-11-20 |
+| `TransportEquipment/StorageLocation` | reefer/10-TransportationStatus | the power point in the Port of Selanu's reefer rack where the reefer stands from discharge until it is collected (O137) | 2026-11-20 |
+| `Condition/MaximumMeasure` | reefer/10-TransportationStatus | the highest, while the reefer was off power between the quay and the ship (O137) | 2026-11-20 |
+| `Condition/Measure` | reefer/10-TransportationStatus | the average supply-air temperature of the reefer over the voyage, from the carrier's reefer monitoring, in its status on discharge (O137) | 2026-11-20 |
+| `Condition/MinimumMeasure` | reefer/10-TransportationStatus | the lowest supply-air reading of the voyage (O137) | 2026-11-20 |
+| `OrderResponse/ValidityPeriod` | reefer/02-OrderResponse | the cooperative's conditional acceptance of the wholesaler's order, three pallets of pears instead of four and a fifth of Granny Smith, open until Friday 17 April at noon, its cut-off for booking the reefer on the Thursday's ship (O236) | 2026-11-20 |

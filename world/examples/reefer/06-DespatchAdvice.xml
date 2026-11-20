@@ -4,8 +4,8 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-DA-26-0560</cbc:ID>
-  <cbc:UUID>f20ac700-f004-551d-94a6-fbb9ba2f561d</cbc:UUID>
+  <cbc:ID>HFG-DA-26-0561</cbc:ID>
+  <cbc:UUID>7eceb0f7-f3b3-5179-a5b6-4ef73e60462c</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>12:05:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
@@ -98,9 +98,9 @@
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0556</cbc:ID>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -296,7 +296,7 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Twelve pallets of 56 cartons: Gala, the island's everyday apple, from the cooperative's cold store.</cbc:Note>
+    <cbc:Note>Twelve pallets of 56 cartons of Gala, from the cooperative's cold store, as ordered.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">672</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -368,8 +368,8 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Four pallets of 56 cartons: Granny Smith, picked this month, for the shops and for the hotels' and the hospital's kitchens.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">224</cbc:DeliveredQuantity>
+    <cbc:Note>Five pallets of 56 cartons of Granny Smith, picked this month: one more than ordered, in place of a pallet of pears, as the order response offered.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">280</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -394,7 +394,7 @@
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Cartons</cbc:Name>
-          <cbc:Value>112</cbc:Value>
+          <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
           <cbc:LotNumberID>HFC-L26-0431</cbc:LotNumberID>
@@ -422,8 +422,8 @@
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>Four pallets of 56 cartons: Packham's Triumph pears, from the cooperative's cold store.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">224</cbc:DeliveredQuantity>
+    <cbc:Note>Three pallets of 56 cartons of Packham's Triumph from the cooperative's cold store: one fewer than ordered, its stored pears running short, as the order response offered.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">168</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
@@ -448,7 +448,7 @@
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Cartons</cbc:Name>
-          <cbc:Value>224</cbc:Value>
+          <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
           <cbc:LotNumberID>HFC-L26-0451</cbc:LotNumberID>

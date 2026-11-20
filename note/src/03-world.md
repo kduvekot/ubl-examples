@@ -1607,7 +1607,11 @@ Granny Smith picked that month, 1,120 cartons of 18 kg on 20 pallets, all
 graded Class I under the Trade Accord's marketing standard for fresh fruit,
 which follows the UNECE standards for apples and pears; each carton is marked
 with its class and its count, and whole fresh fruit carries no best-before
-date. It buys
+date. The cooperative's stored pears are running short, so it accepts the
+order on a condition, three pallets of pears instead of four and a fifth of
+Granny Smith in their place, open until the Friday noon before the sailing,
+when it must book the reefer; the wholesaler agrees and takes the changed mix.
+It buys
 carriage and insurance paid to the port of Selanu (CIP), the term the ICC
 advises for goods in containers, with the cover on all risks that perishable
 fruit needs: the cooperative books the reefer through its forwarder, which has

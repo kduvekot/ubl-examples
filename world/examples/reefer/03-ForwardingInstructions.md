@@ -1,10 +1,10 @@
 # Forwarding Instructions: Harrowmead Fruit Growers to Bayforth Forwarding
 
-*Example 2 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
+*Example 3 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Forwarding Instructions in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA)*
 
 The cooperative instructs its forwarder: book a reefer on the sailing, with its settings for the fruit, bring it pre-cooled to the packhouse and back to the port, declare the export and insure the cargo (CIP obliges the seller to insure).
 
-[The XML file](02-ForwardingInstructions.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](03-ForwardingInstructions.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,14 +18,14 @@ The cooperative instructs its forwarder: book a reefer on the sailing, with its 
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **HFG-FI-26-0554**  
+- `ID` = **HFG-FI-26-0555**  
   The cooperative's instruction number.
-- `UUID` = **dfd9428d-d416-5644-94ad-a60cf64f2bde**  
+- `UUID` = **65afde09-59f1-5b61-bf17-600334916da7**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-04-14**  
-  The cooperative books the reefer on Tuesday 14 April, after Upland State Day on the Monday, nine days before the sailing.
-- `IssueTime` = **12:36:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+- `IssueDate` = **2026-04-17**  
+  The cooperative books the reefer on Friday 17 April, before its noon cut-off for the next Thursday's ship, the wholesaler having agreed to the changed mix of the order response.
+- `IssueTime` = **10:40:00-01:00**  
+  In the morning, before the cut-off at noon; in the issuer's local time, with its offset from UTC (D27).
 
 ### Consignor Party
 
@@ -141,9 +141,9 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0555**  
+- `ID` = **HFG-SH-26-0556**  
   The shipment to be booked.
-- `Consignment/ID` = **HFG-CS-26-0556**  
+- `Consignment/ID` = **HFG-CS-26-0557**  
   The cooperative's consignment number.
 - `Consignment/GrossWeightMeasure` = **21728** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the fruit on its pallets.
@@ -267,7 +267,7 @@ Inside `Shipment`:
   The highest: warmer, it ripens on the way.
 - `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance on Institute Cargo Clauses (A), all risks, including loss from a breakdown of the refrigeration**  
   The cover Incoterms 2020 CIP asks of the seller, and the risk that matters for fruit.
-- `InsurancePolicy/InsuredValueAmount` = **31908.80** (currencyID `XBL`)  
+- `InsurancePolicy/InsuredValueAmount` = **31754.80** (currencyID `XBL`)  
   CIP requires insurance of at least 110 % of the value: the fruit at its CIP prices plus 10 %.
 
 ## The document
@@ -279,10 +279,10 @@ Inside `Shipment`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-FI-26-0554</cbc:ID>
-  <cbc:UUID>dfd9428d-d416-5644-94ad-a60cf64f2bde</cbc:UUID>
-  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>12:36:00-01:00</cbc:IssueTime>
+  <cbc:ID>HFG-FI-26-0555</cbc:ID>
+  <cbc:UUID>65afde09-59f1-5b61-bf17-600334916da7</cbc:UUID>
+  <cbc:IssueDate>2026-04-17</cbc:IssueDate>
+  <cbc:IssueTime>10:40:00-01:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
@@ -368,9 +368,9 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0556</cbc:ID>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cbc:ForwarderServiceInstructions>Book a 40-foot reefer on Tidewell's sailing of 23 April to Selanu; have it pre-trip inspected and pre-cooled; bring it to our packhouse on 22 April and back to the port on a generator set; declare the export and insure the fruit.</cbc:ForwarderServiceInstructions>
       <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
@@ -496,7 +496,7 @@ Inside `Shipment`:
     </cac:TransportHandlingUnit>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance on Institute Cargo Clauses (A), all risks, including loss from a breakdown of the refrigeration</cbc:InsuranceTypeDescription>
-      <cbc:InsuredValueAmount currencyID="XBL">31908.80</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">31754.80</cbc:InsuredValueAmount>
     </cac:InsurancePolicy>
   </cac:Shipment>
 </ForwardingInstructions>

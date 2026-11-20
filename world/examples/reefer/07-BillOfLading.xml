@@ -4,9 +4,9 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0561</cbc:ID>
+  <cbc:ID>TOL-BL-26-0562</cbc:ID>
   <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
-  <cbc:UUID>daac5c36-3a0b-530b-a79f-54d146c68b7f</cbc:UUID>
+  <cbc:UUID>6caa8b1e-206e-5ffe-a3bd-08fde43f6728</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:30:00-01:00</cbc:IssueTime>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
@@ -134,13 +134,13 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">26528</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0556</cbc:ID>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
       <cbc:FreightForwarderAssignedID>BF-SH-26-0391</cbc:FreightForwarderAssignedID>
       <cbc:TariffDescription>Fresh fruit, chilled, in a reefer</cbc:TariffDescription>

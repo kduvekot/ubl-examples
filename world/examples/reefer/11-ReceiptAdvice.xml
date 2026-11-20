@@ -4,19 +4,19 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-RA-26-0565</cbc:ID>
-  <cbc:UUID>30621924-6b29-5770-be3a-64c11c0fdefe</cbc:UUID>
+  <cbc:ID>HFP-RA-26-0566</cbc:ID>
+  <cbc:UUID>9f7f7391-8c4f-53d4-8fbc-38ab9c087873</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
-  <cbc:IssueTime>09:41:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>14:27:00+00:00</cbc:IssueTime>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">ACCEPTED</cbc:DeliveryAcceptanceCode>
-  <cbc:Note>Unloaded at our cold store and counted; the reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.</cbc:Note>
+  <cbc:Note>Unloaded at our cold store and counted, the mix of your order response: five pallets of Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>HFP-PO-26-0553</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0560</cbc:ID>
+    <cbc:ID>HFG-DA-26-0561</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
@@ -117,7 +117,7 @@
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0560</cbc:ID>
+        <cbc:ID>HFG-DA-26-0561</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -132,7 +132,7 @@
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -145,7 +145,7 @@
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">224</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">280</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-04-27</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -153,7 +153,7 @@
     <cac:DespatchLineReference>
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0560</cbc:ID>
+        <cbc:ID>HFG-DA-26-0561</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -168,7 +168,7 @@
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -181,7 +181,7 @@
   <cac:ReceiptLine>
     <cbc:ID>3</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">224</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">168</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-04-27</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
@@ -189,7 +189,7 @@
     <cac:DespatchLineReference>
       <cbc:LineID>3</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0560</cbc:ID>
+        <cbc:ID>HFG-DA-26-0561</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -204,7 +204,7 @@
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>

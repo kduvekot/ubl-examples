@@ -12987,15 +12987,25 @@ SCENARIOS["cotton"] = _with_enrichment("cotton", cotton_complete)
 # names (as Lisavu's Department of Agriculture does for the cotton, O170). Tidewell's Thursday sailing carries it at
 # 0.5 °C; at Selanu it waits on the port's power until Nalevi takes it to the wholesaler's cold store, where it is
 # unloaded and its temperature log read. Food pays the island's import consumption tax like any import (owner).
+# the order (01): four pallets each of Granny Smith and pears; the cooperative's conditional acceptance (02) swaps a
+# pallet of pears, its stored pears running short, for a fifth of Granny Smith, which the wholesaler accepts by
+# taking the fruit and paying for it (O236): the flow's deal is the changed mix, the order has its own
+RF_ORDER_DEAL = [
+    {"item": "apples-gala", "ordered": 672, "why": "Twelve pallets of 56 cartons: Gala, the island's everyday apple."},
+    {"item": "apples-granny", "ordered": 224, "why": "Four pallets of 56 cartons: Granny Smith, for the shops and "
+                                                     "for the hotels' and the hospital's kitchens."},
+    {"item": "pears-packham", "ordered": 224, "why": "Four pallets of 56 cartons: Packham's Triumph pears."}]
 REEFER = kit.Flow("reefer", "2026-04-08", [
-    {"item": "apples-gala", "ordered": 672, "why": "Twelve pallets of 56 cartons: Gala, the island's everyday apple, "
-                                                   "from the cooperative's cold store."},
-    {"item": "apples-granny", "ordered": 224, "why": "Four pallets of 56 cartons: Granny Smith, picked this month, "
-                                                     "for the shops and for the hotels' and the hospital's kitchens."},
-    {"item": "pears-packham", "ordered": 224, "why": "Four pallets of 56 cartons: Packham's Triumph pears, from the "
-                                                     "cooperative's cold store."}],
+    {"item": "apples-gala", "ordered": 672, "why": "Twelve pallets of 56 cartons of Gala, from the cooperative's "
+                                                   "cold store, as ordered."},
+    {"item": "apples-granny", "ordered": 280, "why": "Five pallets of 56 cartons of Granny Smith, picked this month: "
+                                                     "one more than ordered, in place of a pallet of pears, as the "
+                                                     "order response offered."},
+    {"item": "pears-packham", "ordered": 168, "why": "Three pallets of 56 cartons of Packham's Triumph from the "
+                                                     "cooperative's cold store: one fewer than ordered, its stored "
+                                                     "pears running short, as the order response offered."}],
     buyer="56-xl")
-RF_DAY = {"order": 0, "instructions": 6, "phyto": 13, "export": 13, "load": 14, "sail": 15, "import": 16,
+RF_DAY = {"order": 0, "response": 1, "offer_ends": 9, "instructions": 9, "phyto": 13, "export": 13, "load": 14, "sail": 15, "import": 16,
           "berth": 18, "receipt": 19}
 RF_CONTAINER = kit.container_number("TWL", 531604)    # Tidewell's own reefer (ISO 6346, with check digit)
 RF_TARE = 4800                                         # a 40-foot high-cube reefer's own weight, on its door
@@ -13151,6 +13161,57 @@ def rf_goods_item(f, with_set_point=True):
     return out
 
 
+def rf_order_response(f, n, doc):
+    """The cooperative's conditional acceptance: the changed mix, open until Friday noon (O236)."""
+    out = kit.order_response(f, n, doc, RF_DAY["response"], "The cooperative answers the next morning, once it has "
+                                                            "checked its cold store.")
+    seller, buyer = doc["from"], doc["to"]
+    rows = kit.lines(f, seller, buyer, "XBL")
+    base = sum(r[2] for r in rows)
+    tax, total = kit.tax_total(rows, "XBL")
+    asked = {x["item"]: Decimal(str(x["ordered"])) for x in RF_ORDER_DEAL}
+    out.update({
+        "IssueTime": V("09:15:00", "In the morning, after the cold store's stock count."),
+        "OrderResponseCode": V("CA", "UN/EDIFACT 4343 code CA: conditionally accepted. The cooperative accepts the "
+                                     "order with a change to two of its lines, on condition that the wholesaler "
+                                     "agrees before the offer lapses."),
+        "Note": V("Accepted with a change: our stored Packham's pears are running short, so we offer three pallets of "
+                  "pears instead of four and a fifth pallet of Granny Smith in their place, at the same prices. The "
+                  "offer stands until Friday 17 April at noon, when we must book the reefer for Thursday's ship.",
+                  "The response in words: what changes, and why."),
+        "DocumentCurrencyCode": kit.currency_line("XBL", "the cooperative's currency, as in the order"),
+        "LineCountNumeric": V(str(len(rows)), "The number of lines."),
+        "ValidityPeriod": {"EndDate": V(f.date(RF_DAY["offer_ends"]), "The changed mix is offered until Friday 17 "
+                                                                      "April, ..."),
+                           "EndTime": V("12:00:00", "... at noon: the cooperative's cut-off for booking the reefer "
+                                                    "on the sailing of Thursday 23 April; after it the offer lapses "
+                                                    "and the fruit would go on a later ship.")},
+        "SellerSupplierParty": {"Party": party(seller, short=True)},
+        "BuyerCustomerParty": {"Party": party(buyer, short=True)},
+        "DeliveryTerms": {"ID": V("CIP", "Incoterms 2020, as ordered.", schemeID="INCOTERMS"),
+                          "DeliveryLocation": kit.place("XLSEL", "The named place of destination.")},
+        "TaxTotal": total,
+        "LegalMonetaryTotal": {"LineExtensionAmount": amount(base, "XBL", "The sum of the lines, with the changed "
+                                                                          "mix."),
+                               "PayableAmount": amount(base + tax, "XBL", "The fruit at its CIP prices, the changed "
+                                                                          "mix: what the invoice will bill.")},
+        "OrderLine": [{"LineItem": {
+            "ID": V(str(i), "The line number, as in the order."),
+            "Note": V("Confirmed as ordered." if q == asked[d_["item"]] else
+                      f"Changed: {int(q):,} cartons instead of the {int(asked[d_['item']]):,} ordered.",
+                      "The line's answer in words."),
+            "Quantity": qty(q, ITEM[d_["item"]]["unit"], "The quantity the cooperative confirms." if q ==
+                            asked[d_["item"]] else "The quantity the cooperative offers in place of the one "
+                                                   "ordered."),
+            "LineExtensionAmount": amount(amt, "XBL", "Quantity times price."),
+            "Price": kit.price_block(d_["item"], "XBL", buyer),
+            "Item": {"Name": V(ITEM[d_["item"]]["name"], "Named only: described in full in the order."),
+                     "SellersItemIdentification": {"ID": V(ITEM[d_["item"]]["sellers_id"], "The seller's number.")}}},
+            "OrderLineReference": {"LineID": V(str(i), "The order line answered.")}}
+            for i, (d_, q, amt, rule) in enumerate(rows, 1)]})
+    return out
+
+
 def reefer(n, doc):
     f, d = REEFER, doc["doc"]
     if d == "Order":
@@ -13165,13 +13226,17 @@ def reefer(n, doc):
                               "StartDate": V(f.date(RF_DAY["berth"]), "On Tidewell's sailing of Thursday 23 April, "
                                                                        "which is at Selanu on the Sunday."),
                               "EndDate": V(f.date(RF_DAY["berth"]), "The same day: the shops restock on the "
-                                                                     "Monday.")}}})
+                                                                     "Monday.")}}}, deal=RF_ORDER_DEAL)
+    if d == "OrderResponse":
+        return rf_order_response(f, n, doc)
     if d == "ForwardingInstructions":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The cooperative's "
                                                                                        "instruction number."),
-                "IssueDate": V(f.date(RF_DAY["instructions"]), "The cooperative books the reefer on Tuesday 14 "
-                                                               "April, after Upland State Day on the Monday, nine "
-                                                               "days before the sailing."),
+                "IssueDate": V(f.date(RF_DAY["instructions"]), "The cooperative books the reefer on Friday 17 "
+                                                               "April, before its noon cut-off for the next "
+                                                               "Thursday's ship, the wholesaler having agreed to the "
+                                                               "changed mix of the order response."),
+                "IssueTime": V("10:40:00", "In the morning, before the cut-off at noon."),
                 "Shipment": {
                     "ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
                     "GrossWeightMeasure": qty(RF_GROSS, "KGM", "The gross weight of the fruit on its pallets."),
@@ -13370,9 +13435,10 @@ def reefer(n, doc):
     if d == "ReceiptAdvice":
         out = kit.receipt_advice(f, n, doc, RF_DAY["receipt"], "The wholesaler confirms what it unloaded on the "
                                  "Monday morning.")
-        out["Note"] = V("Unloaded at our cold store and counted; the reefer's log read at the door: the supply air "
-                        "stayed between 0.2 and 0.9 °C from loading to unloading.", "How the fruit was received, "
-                        "and the cold chain as the log shows it.")
+        out["Note"] = V("Unloaded at our cold store and counted, the mix of your order response: five pallets of "
+                        "Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed "
+                        "between 0.2 and 0.9 °C from loading to unloading.", "How the fruit was received: the "
+                        "wholesaler takes the changed mix it agreed to, and the cold chain as the log shows it.")
         for d_, line in zip(f.deal, out["ReceiptLine"]):
             line["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment the fruit came in."),
                                 "GoodsItem": {"ID": V("1", "The fruit of this line."),

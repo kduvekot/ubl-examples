@@ -1,10 +1,10 @@
 # Bill of Lading: Tidewell Ocean Lines to Bayforth Forwarding
 
-*Example 6 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Bill of Lading in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA)*
+*Example 7 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Bill of Lading in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA)*
 
 The bill of lading of the reefer, issued to the forwarder that booked it, with the reefer's settings as the carrier is to keep them.
 
-[The XML file](06-BillOfLading.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](07-BillOfLading.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,11 +18,11 @@ The bill of lading of the reefer, issued to the forwarder that booked it, with t
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **TOL-BL-26-0561**  
+- `ID` = **TOL-BL-26-0562**  
   The bill of lading number.
 - `CarrierAssignedID` = **TWL-BK-26-55194**  
   The booking the bill of lading is issued under.
-- `UUID` = **daac5c36-3a0b-530b-a79f-54d146c68b7f**  
+- `UUID` = **6caa8b1e-206e-5ffe-a3bd-08fde43f6728**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-23**  
   Issued when the reefer is shipped on board.
@@ -200,7 +200,7 @@ Inside `FreightForwarderParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0555**  
+- `ID` = **HFG-SH-26-0556**  
   The shipment carried.
 - `GrossWeightMeasure` = **26528** (unitCode `KGM`)  
   The goods (21728 kg) and the tare of the transport equipment (4800 kg): a shipment's gross weight includes the equipment (worklist C15).
@@ -210,7 +210,7 @@ Inside `Shipment`:
   The pallets in the reefer.
 - `ConsignmentQuantity` = **1** (unitCode `EA`)  
   One consignment.
-- `Consignment/ID` = **HFG-CS-26-0556**  
+- `Consignment/ID` = **HFG-CS-26-0557**  
   The cooperative's consignment.
 - `Consignment/CarrierAssignedID` = **TWL-BK-26-55194**  
   The carrier's booking number.
@@ -734,9 +734,9 @@ Inside `Shipment`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-BL-26-0561</cbc:ID>
+  <cbc:ID>TOL-BL-26-0562</cbc:ID>
   <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
-  <cbc:UUID>daac5c36-3a0b-530b-a79f-54d146c68b7f</cbc:UUID>
+  <cbc:UUID>6caa8b1e-206e-5ffe-a3bd-08fde43f6728</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:30:00-01:00</cbc:IssueTime>
   <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
@@ -864,13 +864,13 @@ Inside `Shipment`:
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">26528</cbc:GrossWeightMeasure>
     <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0556</cbc:ID>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
       <cbc:FreightForwarderAssignedID>BF-SH-26-0391</cbc:FreightForwarderAssignedID>
       <cbc:TariffDescription>Fresh fruit, chilled, in a reefer</cbc:TariffDescription>

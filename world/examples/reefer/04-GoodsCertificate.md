@@ -1,10 +1,10 @@
 # Goods Certificate: Federal Department of Agriculture of Bayvarra to Harrowmead Fruit Growers
 
-*Example 3 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Goods Certificate in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA)*
+*Example 4 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Goods Certificate in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA)*
 
 Bayvarra's plant protection organisation under the IPPC, the Plant Health Service of the federal Department of Agriculture, inspects the fruit at the packhouse and certifies it free of the pests the island names, at the cooperative's application.
 
-[The XML file](03-GoodsCertificate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](04-GoodsCertificate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,9 +18,9 @@ Bayvarra's plant protection organisation under the IPPC, the Plant Health Servic
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **FDAB-GC-26-0557**  
+- `ID` = **FDAB-GC-26-0558**  
   The Plant Health Service's certificate number.
-- `UUID` = **7df1606f-7643-54f2-b3b1-f70df9df27de**  
+- `UUID` = **616346e3-707a-5e63-8f7d-13691b27093e**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-21**  
   Issued after the inspection at the packhouse on Tuesday 21 April, the day before loading, at the cooperative's application.
@@ -242,7 +242,7 @@ Inside `ApplicantParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0555**  
+- `ID` = **HFG-SH-26-0556**  
   The shipment certified.
 - `GoodsItem/ID` = **1**  
   The goods item number.
@@ -274,9 +274,9 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Apples Granny Smith, carton 18 kg, count 100**  
   What the goods are, in words.
-- `GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **5432** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **224** (unitCode `EA`)  
+- `GoodsItem/Quantity` = **280** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.**  
   The seller's description; item apples-granny of Harrowmead Fruit Growers (world/items.json).
@@ -300,9 +300,9 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   What the goods are, in words.
-- `GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **3259.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **224** (unitCode `EA`)  
+- `GoodsItem/Quantity` = **168** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/Item/Description` = **Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.**  
   The seller's description; item pears-packham of Harrowmead Fruit Growers (world/items.json).
@@ -387,8 +387,8 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FDAB-GC-26-0557</cbc:ID>
-  <cbc:UUID>7df1606f-7643-54f2-b3b1-f70df9df27de</cbc:UUID>
+  <cbc:ID>FDAB-GC-26-0558</cbc:ID>
+  <cbc:UUID>616346e3-707a-5e63-8f7d-13691b27093e</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
@@ -555,7 +555,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
@@ -584,8 +584,8 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">280</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
         <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
@@ -609,8 +609,8 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">168</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
         <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>

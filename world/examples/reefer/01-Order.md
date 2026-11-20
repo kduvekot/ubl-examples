@@ -200,7 +200,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **1**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **672** (unitCode `EA`)  
-  Twelve pallets of 56 cartons: Gala, the island's everyday apple, from the cooperative's cold store.
+  Twelve pallets of 56 cartons: Gala, the island's everyday apple.
 - `LineItem/LineExtensionAmount` = **17472.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **26** (currencyID `XBL`)  
@@ -218,7 +218,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **224** (unitCode `EA`)  
-  Four pallets of 56 cartons: Granny Smith, picked this month, for the shops and for the hotels' and the hospital's kitchens.
+  Four pallets of 56 cartons: Granny Smith, for the shops and for the hotels' and the hospital's kitchens.
 - `LineItem/LineExtensionAmount` = **5488.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **24.5** (currencyID `XBL`)  
@@ -236,7 +236,7 @@ Inside `OrderLine`:
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own (worklist C34).
 - `LineItem/Quantity` = **224** (unitCode `EA`)  
-  Four pallets of 56 cartons: Packham's Triumph pears, from the cooperative's cold store.
+  Four pallets of 56 cartons: Packham's Triumph pears.
 - `LineItem/LineExtensionAmount` = **6048.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **27** (currencyID `XBL`)  

@@ -1,10 +1,10 @@
 # Receipt Advice: Hafefo Fresh Produce to Harrowmead Fruit Growers
 
-*Example 10 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Receipt Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA)*
+*Example 11 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Receipt Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA)*
 
 The wholesaler confirms what it unloaded at its cold store, with the temperatures read from the reefer's log and measured in the fruit.
 
-[The XML file](10-ReceiptAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](11-ReceiptAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,20 +18,20 @@ The wholesaler confirms what it unloaded at its cold store, with the temperature
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **HFP-RA-26-0565**  
+- `ID` = **HFP-RA-26-0566**  
   The receiving party's number.
-- `UUID` = **30621924-6b29-5770-be3a-64c11c0fdefe**  
+- `UUID` = **9f7f7391-8c4f-53d4-8fbc-38ab9c087873**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-27**  
   The wholesaler confirms what it unloaded on the Monday morning.
-- `IssueTime` = **09:41:00+00:00**  
+- `IssueTime` = **14:27:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `ReceiptAdviceTypeCode` = **Actual** (listID `urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode`)  
   UBL's receipt advice type code: the goods actually received. The code is from the world's copy of UBL's Receipt advice type list, with a listID: Actual = An arrival that has passed goods inspection and is accepted (or not)..
 - `DeliveryAcceptanceCode` = **ACCEPTED** (listID `urn:ubl-examples:world:codelist:DeliveryAcceptanceCode`)  
   All goods accepted. The code is from the Trade Accord's delivery acceptance list: ACCEPTED = All accepted.
-- `Note` = **Unloaded at our cold store and counted; the reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.**  
-  How the fruit was received, and the cold chain as the log shows it.
+- `Note` = **Unloaded at our cold store and counted, the mix of your order response: five pallets of Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.**  
+  How the fruit was received: the wholesaler takes the changed mix it agreed to, and the cold chain as the log shows it.
 - `LineCountNumeric` = **3**  
   The number of lines.
 
@@ -46,7 +46,7 @@ Inside `OrderReference`:
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **HFG-DA-26-0560**  
+- `ID` = **HFG-DA-26-0561**  
   The despatch advice this receipt answers.
 
 ### Delivery Customer Party
@@ -175,10 +175,10 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **1**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0560**  
+- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0561**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-DA-26-0560 is the example reefer/05, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: HFG-DA-26-0561 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.**  
   The seller's description; item apples-gala of Harrowmead Fruit Growers (world/items.json).
 - `Item/Name` = **Apples Gala, carton 18 kg, count 100**  
@@ -187,7 +187,7 @@ Inside `ReceiptLine`:
   The seller's own item number; item apples-gala of Harrowmead Fruit Growers (world/items.json).
 - `Item/StandardItemIdentification/ID` = **9527430001014** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers' (world/items.json).
-- `Shipment/ID` = **HFG-SH-26-0555**  
+- `Shipment/ID` = **HFG-SH-26-0556**  
   The shipment the fruit came in.
 - `Shipment/GoodsItem/ID` = **1**  
   The fruit of this line.
@@ -199,7 +199,7 @@ Inside `ReceiptLine`:
   The line number.
 - `Note` = **Received as despatched.**  
   The line in words.
-- `ReceivedQuantity` = **224** (unitCode `EA`)  
+- `ReceivedQuantity` = **280** (unitCode `EA`)  
   Counted at the goods-in and found as announced.
 - `ReceivedDate` = **2026-04-27**  
   Unloaded.
@@ -207,10 +207,10 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **2**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0560**  
+- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0561**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-DA-26-0560 is the example reefer/05, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: HFG-DA-26-0561 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.**  
   The seller's description; item apples-granny of Harrowmead Fruit Growers (world/items.json).
 - `Item/Name` = **Apples Granny Smith, carton 18 kg, count 100**  
@@ -219,7 +219,7 @@ Inside `ReceiptLine`:
   The seller's own item number; item apples-granny of Harrowmead Fruit Growers (world/items.json).
 - `Item/StandardItemIdentification/ID` = **9527430001021** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers' (world/items.json).
-- `Shipment/ID` = **HFG-SH-26-0555**  
+- `Shipment/ID` = **HFG-SH-26-0556**  
   The shipment the fruit came in.
 - `Shipment/GoodsItem/ID` = **1**  
   The fruit of this line.
@@ -231,7 +231,7 @@ Inside `ReceiptLine`:
   The line number.
 - `Note` = **Received as despatched.**  
   The line in words.
-- `ReceivedQuantity` = **224** (unitCode `EA`)  
+- `ReceivedQuantity` = **168** (unitCode `EA`)  
   Counted at the goods-in and found as announced.
 - `ReceivedDate` = **2026-04-27**  
   Unloaded.
@@ -239,10 +239,10 @@ Inside `ReceiptLine`:
   The order line.
 - `DespatchLineReference/LineID` = **3**  
   The despatch line.
-- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0560**  
+- `DespatchLineReference/DocumentReference/ID` = **HFG-DA-26-0561**  
   The despatch advice.
 - `DespatchLineReference/DocumentReference/DocumentTypeCode` = **DespatchAdvice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-DA-26-0560 is the example reefer/05, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
+  The kind of document referred to: HFG-DA-26-0561 is the example reefer/06, a DespatchAdvice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: DespatchAdvice = Despatch Advice.
 - `Item/Description` = **Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.**  
   The seller's description; item pears-packham of Harrowmead Fruit Growers (world/items.json).
 - `Item/Name` = **Pears Packham's Triumph, carton 18 kg, count 80**  
@@ -251,7 +251,7 @@ Inside `ReceiptLine`:
   The seller's own item number; item pears-packham of Harrowmead Fruit Growers (world/items.json).
 - `Item/StandardItemIdentification/ID` = **9527430002011** (schemeID `GS1 GTIN`)  
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers' (world/items.json).
-- `Shipment/ID` = **HFG-SH-26-0555**  
+- `Shipment/ID` = **HFG-SH-26-0556**  
   The shipment the fruit came in.
 - `Shipment/GoodsItem/ID` = **1**  
   The fruit of this line.
@@ -269,19 +269,19 @@ Inside `ReceiptLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-RA-26-0565</cbc:ID>
-  <cbc:UUID>30621924-6b29-5770-be3a-64c11c0fdefe</cbc:UUID>
+  <cbc:ID>HFP-RA-26-0566</cbc:ID>
+  <cbc:UUID>9f7f7391-8c4f-53d4-8fbc-38ab9c087873</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
-  <cbc:IssueTime>09:41:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>14:27:00+00:00</cbc:IssueTime>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">ACCEPTED</cbc:DeliveryAcceptanceCode>
-  <cbc:Note>Unloaded at our cold store and counted; the reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.</cbc:Note>
+  <cbc:Note>Unloaded at our cold store and counted, the mix of your order response: five pallets of Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.</cbc:Note>
   <cbc:LineCountNumeric>3</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>HFP-PO-26-0553</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0560</cbc:ID>
+    <cbc:ID>HFG-DA-26-0561</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:DeliveryCustomerParty>
     <cac:Party>
@@ -382,7 +382,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0560</cbc:ID>
+        <cbc:ID>HFG-DA-26-0561</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -397,7 +397,7 @@ Inside `ReceiptLine`:
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -410,7 +410,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>2</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">224</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">280</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-04-27</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
@@ -418,7 +418,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>2</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0560</cbc:ID>
+        <cbc:ID>HFG-DA-26-0561</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -433,7 +433,7 @@ Inside `ReceiptLine`:
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>
@@ -446,7 +446,7 @@ Inside `ReceiptLine`:
   <cac:ReceiptLine>
     <cbc:ID>3</cbc:ID>
     <cbc:Note>Received as despatched.</cbc:Note>
-    <cbc:ReceivedQuantity unitCode="EA">224</cbc:ReceivedQuantity>
+    <cbc:ReceivedQuantity unitCode="EA">168</cbc:ReceivedQuantity>
     <cbc:ReceivedDate>2026-04-27</cbc:ReceivedDate>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
@@ -454,7 +454,7 @@ Inside `ReceiptLine`:
     <cac:DespatchLineReference>
       <cbc:LineID>3</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>HFG-DA-26-0560</cbc:ID>
+        <cbc:ID>HFG-DA-26-0561</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:DespatchLineReference>
@@ -469,7 +469,7 @@ Inside `ReceiptLine`:
       </cac:StandardItemIdentification>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cac:Temperature>

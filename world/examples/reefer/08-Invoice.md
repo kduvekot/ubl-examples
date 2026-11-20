@@ -1,10 +1,10 @@
 # Invoice: Harrowmead Fruit Growers to Hafefo Fresh Produce
 
-*Example 7 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
+*Example 8 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Invoice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA)*
 
 The fruit at its CIP prices, which hold the reefer's carriage and the insurance, invoiced on shipment.
 
-[The XML file](07-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](08-Invoice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,9 +18,9 @@ The fruit at its CIP prices, which hold the reefer's carriage and the insurance,
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **HFG-INV-26-0562**  
+- `ID` = **HFG-INV-26-0563**  
   The seller's invoice number.
-- `UUID` = **561543ba-1bf6-532a-a5f0-41421d417a5b**  
+- `UUID` = **a86e8dbc-bc58-5c1e-babe-987e7bb907a6**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-23**  
   Issued on shipment, when the reefer is on board.
@@ -50,7 +50,7 @@ Inside `OrderReference`:
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **HFG-DA-26-0560**  
+- `ID` = **HFG-DA-26-0561**  
   The despatch advice.
 
 ### Accounting Supplier Party
@@ -238,9 +238,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
   The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF07HFGINV260562**  
+- `InstructionNote` = **Quote RF77HFGINV260563**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF07HFGINV260562** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF77HFGINV260563** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -254,7 +254,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Invoice HFG-INV-26-0562**  
+- `PayeeFinancialAccount/PaymentNote` = **Invoice HFG-INV-26-0563**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **387120** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -301,7 +301,7 @@ Inside `PaymentTerms`:
   Bayvarran practice: a surcharge per month of late payment, no discount.
 - `PenaltySurchargePercent` = **1.5**  
   The surcharge per month of late payment.
-- `PenaltyAmount` = **435.12** (currencyID `XBL`)  
+- `PenaltyAmount` = **433.02** (currencyID `XBL`)  
   The surcharge for each month late.
 - `PaymentTermsDetailsURI` = **https://www.harrowmeadfruit.example/terms**  
   The seller's general terms of payment.
@@ -316,7 +316,7 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **29008.00** (currencyID `XBL`)  
+- `TaxSubtotal/TaxableAmount` = **28868.00** (currencyID `XBL`)  
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
@@ -335,13 +335,13 @@ Inside `TaxTotal`:
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **29008.00** (currencyID `XBL`)  
+- `LineExtensionAmount` = **28868.00** (currencyID `XBL`)  
   The sum of the line amounts.
-- `TaxExclusiveAmount` = **29008.00** (currencyID `XBL`)  
+- `TaxExclusiveAmount` = **28868.00** (currencyID `XBL`)  
   The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **29008.00** (currencyID `XBL`)  
+- `TaxInclusiveAmount` = **28868.00** (currencyID `XBL`)  
   The total without tax plus the tax.
-- `PayableAmount` = **29008.00** (currencyID `XBL`)  
+- `PayableAmount` = **28868.00** (currencyID `XBL`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
 ### Invoice Line
@@ -382,10 +382,10 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **2**  
   The line number.
-- `InvoicedQuantity` = **224** (unitCode `EA`)  
+- `InvoicedQuantity` = **280** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **5488.00** (currencyID `XBL`)  
-  224 × 24.5, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **6860.00** (currencyID `XBL`)  
+  280 × 24.5, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **2**  
   The order line this invoice line bills.
 - `Item/Description` = **Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.**  
@@ -414,10 +414,10 @@ Inside `InvoiceLine`:
   The price is per one unit.
 - `ID` = **3**  
   The line number.
-- `InvoicedQuantity` = **224** (unitCode `EA`)  
+- `InvoicedQuantity` = **168** (unitCode `EA`)  
   The quantity delivered.
-- `LineExtensionAmount` = **6048.00** (currencyID `XBL`)  
-  224 × 27.0, rounded to the minor unit of the currency.
+- `LineExtensionAmount` = **4536.00** (currencyID `XBL`)  
+  168 × 27.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **3**  
   The order line this invoice line bills.
 - `Item/Description` = **Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.**  
@@ -454,8 +454,8 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-INV-26-0562</cbc:ID>
-  <cbc:UUID>561543ba-1bf6-532a-a5f0-41421d417a5b</cbc:UUID>
+  <cbc:ID>HFG-INV-26-0563</cbc:ID>
+  <cbc:UUID>a86e8dbc-bc58-5c1e-babe-987e7bb907a6</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>15:30:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-25</cbc:DueDate>
@@ -468,7 +468,7 @@ Inside `InvoiceLine`:
     <cbc:ID>HFP-PO-26-0553</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0560</cbc:ID>
+    <cbc:ID>HFG-DA-26-0561</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -629,8 +629,8 @@ Inside `InvoiceLine`:
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF07HFGINV260562</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF07HFGINV260562</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF77HFGINV260563</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF77HFGINV260563</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM38712006153948</cbc:ID>
@@ -638,7 +638,7 @@ Inside `InvoiceLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice HFG-INV-26-0562</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice HFG-INV-26-0563</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -676,7 +676,7 @@ Inside `InvoiceLine`:
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">435.12</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">433.02</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.harrowmeadfruit.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -686,7 +686,7 @@ Inside `InvoiceLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">29008.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">28868.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -700,10 +700,10 @@ Inside `InvoiceLine`:
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">29008.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">29008.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">29008.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">29008.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">28868.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">28868.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">28868.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">28868.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -739,8 +739,8 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">224</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">5488.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">280</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">6860.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -771,8 +771,8 @@ Inside `InvoiceLine`:
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">224</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">6048.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">168</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">4536.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>

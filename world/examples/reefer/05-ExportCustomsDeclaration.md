@@ -1,10 +1,10 @@
 # Export Customs Declaration: Bayforth Forwarding to Customs and Border Service of Bayvarra
 
-*Example 4 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Export Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA)*
+*Example 5 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Export Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
 The forwarder, as customs agent, declares the export for the cooperative at the seaport.
 
-[The XML file](04-ExportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](05-ExportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,9 +18,9 @@ The forwarder, as customs agent, declares the export for the cooperative at the 
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **BF-EX-26-0558**  
+- `ID` = **BF-EX-26-0559**  
   The exporter's reference.
-- `UUID` = **ed456ea3-b479-54fe-b85f-7d25be06338a**  
+- `UUID` = **ca2e9f0b-93b7-590c-8f63-af6616df28de**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-21**  
   The forwarder, as customs agent, declares the export the afternoon before loading, once the certificate is issued.
@@ -76,7 +76,7 @@ Inside `ExporterParty`:
 
 Inside `CustomsDeclaration`:
 
-- `ID` = **BF-CD-26-0559**  
+- `ID` = **BF-CD-26-0560**  
   The declaration as lodged with the customs of the exporting country.
 - `FunctionCode` = **9** (listID `UN/EDIFACT EDED 1225`)  
   An original declaration, not an amendment. The code is from the world's copy of UN/EDIFACT 1225 Message function: 9 = Original.
@@ -86,11 +86,11 @@ Inside `CustomsDeclaration`:
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Shipment/ID` = **HFG-SH-26-0555**  
+- `Shipment/ID` = **HFG-SH-26-0556**  
   The shipment declared.
 - `Shipment/TotalTransportHandlingUnitQuantity` = **20** (unitCode `EA`)  
   The pallets the goods travel on.
-- `Shipment/Consignment/ID` = **HFG-CS-26-0556**  
+- `Shipment/Consignment/ID` = **HFG-CS-26-0557**  
   The consignment carried.
 - `Shipment/Consignment/GrossWeightMeasure` = **21728** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight leaving the country.
@@ -104,8 +104,8 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Apples Gala, carton 18 kg, count 100**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **14538.60** (currencyID `XBL`)  
-  Bayvarra values the goods as they left the exporting country (D16): the goods at 17,472.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIP price holds (-4,870.20 XBL), shared over the goods items by their value.
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **14524.58** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 17,472.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIP price holds (-4,869.86 XBL), shared over the goods items by their value.
 - `Shipment/GoodsItem/GrossWeightMeasure` = **13036.8** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
 - `Shipment/GoodsItem/Quantity` = **672** (unitCode `EA`)  
@@ -132,11 +132,11 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Apples Granny Smith, carton 18 kg, count 100**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **4566.61** (currencyID `XBL`)  
-  Bayvarra values the goods as they left the exporting country (D16): the goods at 5,488.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIP price holds (-4,870.20 XBL), shared over the goods items by their value.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **5702.76** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 6,860.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIP price holds (-4,869.86 XBL), shared over the goods items by their value.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **5432** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `Shipment/GoodsItem/Quantity` = **224** (unitCode `EA`)  
+- `Shipment/GoodsItem/Quantity` = **280** (unitCode `EA`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.**  
   The seller's description; item apples-granny of Harrowmead Fruit Growers (world/items.json).
@@ -160,11 +160,11 @@ Inside `CustomsDeclaration`:
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   What the goods are, in words.
-- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **5032.59** (currencyID `XBL`)  
-  Bayvarra values the goods as they left the exporting country (D16): the goods at 6,048.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIP price holds (-4,870.20 XBL), shared over the goods items by their value.
-- `Shipment/GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
+- `Shipment/GoodsItem/DeclaredCustomsValueAmount` = **3770.80** (currencyID `XBL`)  
+  Bayvarra values the goods as they left the exporting country (D16): the goods at 4,536.00 XBL, with less the sea freight and the cargo insurance to the island, which the CIP price holds (-4,869.86 XBL), shared over the goods items by their value.
+- `Shipment/GoodsItem/GrossWeightMeasure` = **3259.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `Shipment/GoodsItem/Quantity` = **224** (unitCode `EA`)  
+- `Shipment/GoodsItem/Quantity` = **168** (unitCode `EA`)  
   The quantity declared.
 - `Shipment/GoodsItem/Item/Description` = **Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.**  
   The seller's description; item pears-packham of Harrowmead Fruit Growers (world/items.json).
@@ -393,8 +393,8 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-EX-26-0558</cbc:ID>
-  <cbc:UUID>ed456ea3-b479-54fe-b85f-7d25be06338a</cbc:UUID>
+  <cbc:ID>BF-EX-26-0559</cbc:ID>
+  <cbc:UUID>ca2e9f0b-93b7-590c-8f63-af6616df28de</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>14:20:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
@@ -432,7 +432,7 @@ Inside `Signature`:
     </cac:PostalAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>BF-CD-26-0559</cbc:ID>
+    <cbc:ID>BF-CD-26-0560</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-04-21</cbc:StartDate>
@@ -444,10 +444,10 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
-        <cbc:ID>HFG-CS-26-0556</cbc:ID>
+        <cbc:ID>HFG-CS-26-0557</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">1120</cbc:TotalPackagesQuantity>
         <cac:OfficeOfExitLocation>
@@ -460,7 +460,7 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">14538.60</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">14524.58</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">13036.8</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">672</cbc:Quantity>
         <cac:Item>
@@ -486,9 +486,9 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">4566.61</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">5702.76</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">280</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
           <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
@@ -512,9 +512,9 @@ Inside `Signature`:
       <cac:GoodsItem>
         <cbc:ID>3</cbc:ID>
         <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">5032.59</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">3770.80</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">168</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
           <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>

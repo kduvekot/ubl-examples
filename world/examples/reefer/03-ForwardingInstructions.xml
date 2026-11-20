@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-FI-26-0554</cbc:ID>
-  <cbc:UUID>dfd9428d-d416-5644-94ad-a60cf64f2bde</cbc:UUID>
-  <cbc:IssueDate>2026-04-14</cbc:IssueDate>
-  <cbc:IssueTime>12:36:00-01:00</cbc:IssueTime>
+  <cbc:ID>HFG-FI-26-0555</cbc:ID>
+  <cbc:UUID>65afde09-59f1-5b61-bf17-600334916da7</cbc:UUID>
+  <cbc:IssueDate>2026-04-17</cbc:IssueDate>
+  <cbc:IssueTime>10:40:00-01:00</cbc:IssueTime>
   <cac:ConsignorParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
@@ -93,9 +93,9 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0556</cbc:ID>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cbc:ForwarderServiceInstructions>Book a 40-foot reefer on Tidewell's sailing of 23 April to Selanu; have it pre-trip inspected and pre-cooled; bring it to our packhouse on 22 April and back to the port on a generator set; declare the export and insure the fruit.</cbc:ForwarderServiceInstructions>
       <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
@@ -221,7 +221,7 @@
     </cac:TransportHandlingUnit>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance on Institute Cargo Clauses (A), all risks, including loss from a breakdown of the refrigeration</cbc:InsuranceTypeDescription>
-      <cbc:InsuredValueAmount currencyID="XBL">31908.80</cbc:InsuredValueAmount>
+      <cbc:InsuredValueAmount currencyID="XBL">31754.80</cbc:InsuredValueAmount>
     </cac:InsurancePolicy>
   </cac:Shipment>
 </ForwardingInstructions>

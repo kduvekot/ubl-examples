@@ -1,10 +1,10 @@
 # Despatch Advice: Harrowmead Fruit Growers to Hafefo Fresh Produce
 
-*Example 5 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Despatch Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA)*
+*Example 6 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Despatch Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA)*
 
 The cooperative tells the wholesaler what is in the reefer: the pallets, their varieties, grower lots and packing dates.
 
-[The XML file](05-DespatchAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](06-DespatchAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,9 +18,9 @@ The cooperative tells the wholesaler what is in the reefer: the pallets, their v
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **HFG-DA-26-0560**  
+- `ID` = **HFG-DA-26-0561**  
   The despatching party's number.
-- `UUID` = **f20ac700-f004-551d-94a6-fbb9ba2f561d**  
+- `UUID` = **7eceb0f7-f3b3-5179-a5b6-4ef73e60462c**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-22**  
   Sent when the reefer leaves the packhouse for the port.
@@ -148,9 +148,9 @@ Inside `DeliveryCustomerParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0555**  
+- `ID` = **HFG-SH-26-0556**  
   The despatching party's shipment number.
-- `Consignment/ID` = **HFG-CS-26-0556**  
+- `Consignment/ID` = **HFG-CS-26-0557**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **21728** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight of the fruit on its pallets.
@@ -413,7 +413,7 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **Twelve pallets of 56 cartons: Gala, the island's everyday apple, from the cooperative's cold store.**  
+- `Note` = **Twelve pallets of 56 cartons of Gala, from the cooperative's cold store, as ordered.**  
   The line as the order put it.
 - `DeliveredQuantity` = **672** (unitCode `EA`)  
   What was despatched.
@@ -477,9 +477,9 @@ Inside `DespatchLine`:
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `ID` = **2**  
   The line number.
-- `Note` = **Four pallets of 56 cartons: Granny Smith, picked this month, for the shops and for the hotels' and the hospital's kitchens.**  
+- `Note` = **Five pallets of 56 cartons of Granny Smith, picked this month: one more than ordered, in place of a pallet of pears, as the order response offered.**  
   The line as the order put it.
-- `DeliveredQuantity` = **224** (unitCode `EA`)  
+- `DeliveredQuantity` = **280** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **2**  
   The order line this line fulfils.
@@ -503,7 +503,7 @@ Inside `DespatchLine`:
   The member number in the cooperative's register.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Cartons**  
   How many cartons of the line are of this lot.
-- `Item/ItemInstance/AdditionalItemProperty/Value` = **112**  
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **168**  
   Counted at packing.
 - `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0431**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
@@ -525,9 +525,9 @@ Inside `DespatchLine`:
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
 - `ID` = **3**  
   The line number.
-- `Note` = **Four pallets of 56 cartons: Packham's Triumph pears, from the cooperative's cold store.**  
+- `Note` = **Three pallets of 56 cartons of Packham's Triumph from the cooperative's cold store: one fewer than ordered, its stored pears running short, as the order response offered.**  
   The line as the order put it.
-- `DeliveredQuantity` = **224** (unitCode `EA`)  
+- `DeliveredQuantity` = **168** (unitCode `EA`)  
   What was despatched.
 - `OrderLineReference/LineID` = **3**  
   The order line this line fulfils.
@@ -551,7 +551,7 @@ Inside `DespatchLine`:
   The member number in the cooperative's register.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Cartons**  
   How many cartons of the line are of this lot.
-- `Item/ItemInstance/AdditionalItemProperty/Value` = **224**  
+- `Item/ItemInstance/AdditionalItemProperty/Value` = **168**  
   Counted at packing.
 - `Item/ItemInstance/LotIdentification/LotNumberID` = **HFC-L26-0451**  
   The packhouse's lot: one grower's fruit of one variety and size, packed in one run.
@@ -565,8 +565,8 @@ Inside `DespatchLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-DA-26-0560</cbc:ID>
-  <cbc:UUID>f20ac700-f004-551d-94a6-fbb9ba2f561d</cbc:UUID>
+  <cbc:ID>HFG-DA-26-0561</cbc:ID>
+  <cbc:UUID>7eceb0f7-f3b3-5179-a5b6-4ef73e60462c</cbc:UUID>
   <cbc:IssueDate>2026-04-22</cbc:IssueDate>
   <cbc:IssueTime>12:05:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
@@ -659,9 +659,9 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>HFG-CS-26-0556</cbc:ID>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -857,7 +857,7 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Twelve pallets of 56 cartons: Gala, the island's everyday apple, from the cooperative's cold store.</cbc:Note>
+    <cbc:Note>Twelve pallets of 56 cartons of Gala, from the cooperative's cold store, as ordered.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">672</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
@@ -929,8 +929,8 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Four pallets of 56 cartons: Granny Smith, picked this month, for the shops and for the hotels' and the hospital's kitchens.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">224</cbc:DeliveredQuantity>
+    <cbc:Note>Five pallets of 56 cartons of Granny Smith, picked this month: one more than ordered, in place of a pallet of pears, as the order response offered.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">280</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -955,7 +955,7 @@ Inside `DespatchLine`:
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Cartons</cbc:Name>
-          <cbc:Value>112</cbc:Value>
+          <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
           <cbc:LotNumberID>HFC-L26-0431</cbc:LotNumberID>
@@ -983,8 +983,8 @@ Inside `DespatchLine`:
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>Four pallets of 56 cartons: Packham's Triumph pears, from the cooperative's cold store.</cbc:Note>
-    <cbc:DeliveredQuantity unitCode="EA">224</cbc:DeliveredQuantity>
+    <cbc:Note>Three pallets of 56 cartons of Packham's Triumph from the cooperative's cold store: one fewer than ordered, its stored pears running short, as the order response offered.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">168</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
@@ -1009,7 +1009,7 @@ Inside `DespatchLine`:
         </cac:AdditionalItemProperty>
         <cac:AdditionalItemProperty>
           <cbc:Name>Cartons</cbc:Name>
-          <cbc:Value>224</cbc:Value>
+          <cbc:Value>168</cbc:Value>
         </cac:AdditionalItemProperty>
         <cac:LotIdentification>
           <cbc:LotNumberID>HFC-L26-0451</cbc:LotNumberID>

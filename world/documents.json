@@ -4345,6 +4345,17 @@
   },
   {
    "flow": "reefer",
+   "doc": "OrderResponse",
+   "from": "55-xb",
+   "to": "56-xl",
+   "why": "The cooperative accepts the order on a condition: its stored pears are running short, so it offers three pallets of pears instead of four and a fifth pallet of Granny Smith in their place, the offer open until Friday noon, its cut-off for booking the reefer on the next Thursday's ship.",
+   "parties": {
+    "SellerSupplierParty": "55-xb",
+    "BuyerCustomerParty": "56-xl"
+   }
+  },
+  {
+   "flow": "reefer",
    "doc": "ForwardingInstructions",
    "from": "55-xb",
    "to": "10-xb",

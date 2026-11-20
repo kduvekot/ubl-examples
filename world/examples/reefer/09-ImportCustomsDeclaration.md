@@ -1,10 +1,10 @@
 # Import Customs Declaration: Hafefo Fresh Produce to Island Customs Service
 
-*Example 8 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
+*Example 9 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Import Customs Declaration in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA)*
 
 The wholesaler lodges its import declaration before the ship arrives, so that the fruit is released when the reefer is discharged; the import consumption tax applies to food as to every import.
 
-[The XML file](08-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
+[The XML file](09-ImportCustomsDeclaration.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
 ## Values and their reasons
 
@@ -18,13 +18,13 @@ The wholesaler lodges its import declaration before the ship arrives, so that th
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **REEFER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **HFP-IM-26-0563**  
+- `ID` = **HFP-IM-26-0564**  
   The importer's declaration number.
-- `UUID` = **752fb373-c0fa-5883-badb-37fb100b9930**  
+- `UUID` = **04b3c1d3-d600-57c6-b790-ffbf27e1ac34**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-24**  
   Lodged on Friday 24 April, while the reefer is at sea, so that the fruit can be released when it is discharged.
-- `IssueTime` = **09:06:00+00:00**  
+- `IssueTime` = **17:32:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   An import declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
@@ -32,9 +32,9 @@ The wholesaler lodges its import declaration before the ship arrives, so that th
   For release into free circulation. The code is from the Trade Accord's customs declaration subtype list: FREECIRC = Release for free circulation.
 - `NatureOfTransactionCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:NatureOfTransactionCode`)  
   The goods were bought. The code is from the Trade Accord's nature of transaction list: PURCHASE = Outright purchase or sale.
-- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,603.200 venamo, 1,160.320 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.** (languageID `qal`)  
+- `Note` = **Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,547.200 venamo, 1,154.720 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.** (languageID `qal`)  
   The note in Lisavan, the sender's language (world/countries.json): What is due at import, by the importing country's rule (D18).
-- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,603.200 coral, 1,160.320 coral. Food pays it too: the island taxes imported food to encourage its own farms.** (languageID `en-XL`)  
+- `Note` = **No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,547.200 coral, 1,154.720 coral. Food pays it too: the island taxes imported food to encourage its own farms.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule (D18).
 - `VersionID` = **1**  
   The first version.
@@ -213,7 +213,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **HFG-SH-26-0555**  
+- `ID` = **HFG-SH-26-0556**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **20** (unitCode `EA`)  
   The pallets the goods travel on.
@@ -259,11 +259,11 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Apples Granny Smith, carton 18 kg, count 100**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **2195.200** (currencyID `XLC`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **2744.000** (currencyID `XLC`)  
   The customs value in coral: the fruit's landed value in lume, its CIP price, at the world's reference rate (1 lume = 0.4 coral).
-- `GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **5432** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **224** (unitCode `EA`)  
+- `GoodsItem/Quantity` = **280** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
@@ -297,11 +297,11 @@ Inside `Shipment`:
   The goods item number.
 - `GoodsItem/Description` = **Pears Packham's Triumph, carton 18 kg, count 80**  
   What the goods are, in words.
-- `GoodsItem/DeclaredCustomsValueAmount` = **2419.200** (currencyID `XLC`)  
+- `GoodsItem/DeclaredCustomsValueAmount` = **1814.400** (currencyID `XLC`)  
   The customs value in coral: the fruit's landed value in lume, its CIP price, at the world's reference rate (1 lume = 0.4 coral).
-- `GoodsItem/GrossWeightMeasure` = **4345.6** (unitCode `KGM`)  
+- `GoodsItem/GrossWeightMeasure` = **3259.2** (unitCode `KGM`)  
   The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **224** (unitCode `EA`)  
+- `GoodsItem/Quantity` = **168** (unitCode `EA`)  
   The quantity declared.
 - `GoodsItem/PreferenceCriterionCode` = **P** (listID `urn:ubl-examples:world:codelist:PreferenceCriterionCode`)  
   The goods are of XB origin under the Trade Accord, by this criterion: the preference claimed, free of duty (D18). The code is from the Trade Accord's preference criterion list: P = Wholly obtained.
@@ -338,22 +338,22 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **TOL-BL-26-0561**  
+- `ID` = **TOL-BL-26-0562**  
   The bill of lading of the reefer.
 - `DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: TOL-BL-26-0561 is the example reefer/06, a BillOfLading; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
-- `ID` = **FDAB-GC-26-0557**  
+  The kind of document referred to: TOL-BL-26-0562 is the example reefer/07, a BillOfLading; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `ID` = **FDAB-GC-26-0558**  
   The phytosanitary certificate made out for the island, on which the release of the fruit under its plant health rules depends.
 - `DocumentTypeCode` = **GoodsCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: FDAB-GC-26-0557 is the example reefer/03, a GoodsCertificate; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
-- `ID` = **BF-EX-26-0558**  
+  The kind of document referred to: FDAB-GC-26-0558 is the example reefer/04, a GoodsCertificate; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: GoodsCertificate = Goods Certificate.
+- `ID` = **BF-EX-26-0559**  
   The export declaration of the goods in the country of departure, for information.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: BF-EX-26-0558 is the example reefer/04, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
-- `ID` = **HFG-INV-26-0562**  
+  The kind of document referred to: BF-EX-26-0559 is the example reefer/05, a ExportCustomsDeclaration; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+- `ID` = **HFG-INV-26-0563**  
   The commercial invoice the customs value rests on; its statement on origin is the proof of origin the preference claim refers to (D18).
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: HFG-INV-26-0562 is the example reefer/07, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: HFG-INV-26-0563 is the example reefer/08, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Signature
 
@@ -375,15 +375,15 @@ Inside `Signature`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-IM-26-0563</cbc:ID>
-  <cbc:UUID>752fb373-c0fa-5883-badb-37fb100b9930</cbc:UUID>
+  <cbc:ID>HFP-IM-26-0564</cbc:ID>
+  <cbc:UUID>04b3c1d3-d600-57c6-b790-ffbf27e1ac34</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
-  <cbc:IssueTime>09:06:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>17:32:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,603.200 venamo, 1,160.320 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,603.200 coral, 1,160.320 coral. Food pays it too: the island taxes imported food to encourage its own farms.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,547.200 venamo, 1,154.720 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,547.200 coral, 1,154.720 coral. Food pays it too: the island taxes imported food to encourage its own farms.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-24</cbc:StartDate>
@@ -518,7 +518,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -558,9 +558,9 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">2195.200</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">2744.000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">280</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
@@ -593,9 +593,9 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">2419.200</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">1814.400</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">168</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
@@ -630,19 +630,19 @@ Inside `Signature`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0561</cbc:ID>
+    <cbc:ID>TOL-BL-26-0562</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FDAB-GC-26-0557</cbc:ID>
+    <cbc:ID>FDAB-GC-26-0558</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-EX-26-0558</cbc:ID>
+    <cbc:ID>BF-EX-26-0559</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HFG-INV-26-0562</cbc:ID>
+    <cbc:ID>HFG-INV-26-0563</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

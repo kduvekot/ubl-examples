@@ -4,15 +4,15 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFP-IM-26-0563</cbc:ID>
-  <cbc:UUID>752fb373-c0fa-5883-badb-37fb100b9930</cbc:UUID>
+  <cbc:ID>HFP-IM-26-0564</cbc:ID>
+  <cbc:UUID>04b3c1d3-d600-57c6-b790-ffbf27e1ac34</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
-  <cbc:IssueTime>09:06:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>17:32:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>
-  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,603.200 venamo, 1,160.320 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,603.200 coral, 1,160.320 coral. Food pays it too: the island taxes imported food to encourage its own farms.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape mutaki Accord lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki 11,547.200 venamo, 1,154.720 venamo. Lavamu tilasi letasi famima: tivufo tiava limana lavamu vevisi metolike pehaka tavase tokita.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods of Accord origin. Import consumption tax: 10 % of the landed value of 11,547.200 coral, 1,154.720 coral. Food pays it too: the island taxes imported food to encourage its own farms.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:ValidityPeriod>
     <cbc:StartDate>2026-04-24</cbc:StartDate>
@@ -147,7 +147,7 @@
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -187,9 +187,9 @@
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">2195.200</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">2744.000</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">280</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
@@ -222,9 +222,9 @@
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-      <cbc:DeclaredCustomsValueAmount currencyID="XLC">2419.200</cbc:DeclaredCustomsValueAmount>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:DeclaredCustomsValueAmount currencyID="XLC">1814.400</cbc:DeclaredCustomsValueAmount>
+      <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">168</cbc:Quantity>
       <cbc:PreferenceCriterionCode listID="urn:ubl-examples:world:codelist:PreferenceCriterionCode">P</cbc:PreferenceCriterionCode>
       <cac:Item>
         <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
@@ -259,19 +259,19 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0561</cbc:ID>
+    <cbc:ID>TOL-BL-26-0562</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FDAB-GC-26-0557</cbc:ID>
+    <cbc:ID>FDAB-GC-26-0558</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">GoodsCertificate</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-EX-26-0558</cbc:ID>
+    <cbc:ID>BF-EX-26-0559</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>HFG-INV-26-0562</cbc:ID>
+    <cbc:ID>HFG-INV-26-0563</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

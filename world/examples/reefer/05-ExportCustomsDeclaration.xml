@@ -4,8 +4,8 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-EX-26-0558</cbc:ID>
-  <cbc:UUID>ed456ea3-b479-54fe-b85f-7d25be06338a</cbc:UUID>
+  <cbc:ID>BF-EX-26-0559</cbc:ID>
+  <cbc:UUID>ca2e9f0b-93b7-590c-8f63-af6616df28de</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>14:20:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
@@ -43,7 +43,7 @@
     </cac:PostalAddress>
   </cac:ExporterParty>
   <cac:CustomsDeclaration>
-    <cbc:ID>BF-CD-26-0559</cbc:ID>
+    <cbc:ID>BF-CD-26-0560</cbc:ID>
     <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-04-21</cbc:StartDate>
@@ -55,10 +55,10 @@
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>HFG-SH-26-0555</cbc:ID>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
-        <cbc:ID>HFG-CS-26-0556</cbc:ID>
+        <cbc:ID>HFG-CS-26-0557</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">1120</cbc:TotalPackagesQuantity>
         <cac:OfficeOfExitLocation>
@@ -71,7 +71,7 @@
       <cac:GoodsItem>
         <cbc:ID>1</cbc:ID>
         <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">14538.60</cbc:DeclaredCustomsValueAmount>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">14524.58</cbc:DeclaredCustomsValueAmount>
         <cbc:GrossWeightMeasure unitCode="KGM">13036.8</cbc:GrossWeightMeasure>
         <cbc:Quantity unitCode="EA">672</cbc:Quantity>
         <cac:Item>
@@ -97,9 +97,9 @@
       <cac:GoodsItem>
         <cbc:ID>2</cbc:ID>
         <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">4566.61</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">5702.76</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">280</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
           <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
@@ -123,9 +123,9 @@
       <cac:GoodsItem>
         <cbc:ID>3</cbc:ID>
         <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-        <cbc:DeclaredCustomsValueAmount currencyID="XBL">5032.59</cbc:DeclaredCustomsValueAmount>
-        <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-        <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">3770.80</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">168</cbc:Quantity>
         <cac:Item>
           <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
           <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>

@@ -4,8 +4,8 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FDAB-GC-26-0557</cbc:ID>
-  <cbc:UUID>7df1606f-7643-54f2-b3b1-f70df9df27de</cbc:UUID>
+  <cbc:ID>FDAB-GC-26-0558</cbc:ID>
+  <cbc:UUID>616346e3-707a-5e63-8f7d-13691b27093e</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:GoodsCertificateTypeCode">PHYTO</cbc:TypeCode>
@@ -172,7 +172,7 @@
     </cac:PartyName>
   </cac:ApplicantParty>
   <cac:Shipment>
-    <cbc:ID>HFG-SH-26-0555</cbc:ID>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
@@ -201,8 +201,8 @@
     <cac:GoodsItem>
       <cbc:ID>2</cbc:ID>
       <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">280</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
         <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
@@ -226,8 +226,8 @@
     <cac:GoodsItem>
       <cbc:ID>3</cbc:ID>
       <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">4345.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">224</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">168</cbc:Quantity>
       <cac:Item>
         <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
         <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>

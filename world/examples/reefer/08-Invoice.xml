@@ -4,8 +4,8 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>HFG-INV-26-0562</cbc:ID>
-  <cbc:UUID>561543ba-1bf6-532a-a5f0-41421d417a5b</cbc:UUID>
+  <cbc:ID>HFG-INV-26-0563</cbc:ID>
+  <cbc:UUID>a86e8dbc-bc58-5c1e-babe-987e7bb907a6</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>15:30:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-25</cbc:DueDate>
@@ -18,7 +18,7 @@
     <cbc:ID>HFP-PO-26-0553</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>HFG-DA-26-0560</cbc:ID>
+    <cbc:ID>HFG-DA-26-0561</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -179,8 +179,8 @@
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF07HFGINV260562</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF07HFGINV260562</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF77HFGINV260563</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF77HFGINV260563</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM38712006153948</cbc:ID>
@@ -188,7 +188,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice HFG-INV-26-0562</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice HFG-INV-26-0563</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
         <cbc:Name>Marrowdale branch</cbc:Name>
@@ -226,7 +226,7 @@
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
     <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">435.12</cbc:PenaltyAmount>
+    <cbc:PenaltyAmount currencyID="XBL">433.02</cbc:PenaltyAmount>
     <cbc:PaymentTermsDetailsURI>https://www.harrowmeadfruit.example/terms</cbc:PaymentTermsDetailsURI>
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cac:PenaltyPeriod>
@@ -236,7 +236,7 @@
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">29008.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">28868.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -250,10 +250,10 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">29008.00</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">29008.00</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">29008.00</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="XBL">29008.00</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">28868.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">28868.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">28868.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="XBL">28868.00</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
@@ -289,8 +289,8 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">224</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">5488.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">280</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">6860.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>2</cbc:LineID>
     </cac:OrderLineReference>
@@ -321,8 +321,8 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">224</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="XBL">6048.00</cbc:LineExtensionAmount>
+    <cbc:InvoicedQuantity unitCode="EA">168</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="XBL">4536.00</cbc:LineExtensionAmount>
     <cac:OrderLineReference>
       <cbc:LineID>3</cbc:LineID>
     </cac:OrderLineReference>
