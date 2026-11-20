@@ -23,7 +23,7 @@ The recovery facility invoices the collection and recovery of the load by its ne
 - `UUID` = **24a1c5fe-6940-5f16-8f48-486333315def**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-06**  
-  Issued on the next working day after the load.
+  Issued on Monday 6 April, after the load of Thursday 2 April.
 - `IssueTime` = **12:44:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-05-06**  
@@ -35,7 +35,7 @@ The recovery facility invoices the collection and recovery of the load by its ne
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **6400**  
-  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+  The buyer's cost centre, quoted in its contract or booking, so the invoice is booked without asking.
 - `AccountingCost` = **Waste disposal and other services**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  

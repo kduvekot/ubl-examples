@@ -8,6 +8,12 @@ analysis/codelist-decisions.md): no internal references in what a reader sees. S
   * repository paths: world/items.json, tools/build_examples.py;
   * names of real specifications the world does not follow: EN 16931, Peppol, XRechnung;
   * the project's own notes: code-list decisions (P-SB), any mention of "the (UBL|OASIS) TC";
+  * finding IDs in any form: "(timelines#F6)", "#F12" with any prefix, a bare "(F7)", "UBL rule IND6", "(IND5)";
+  * European standards and law the world does not follow (owner, O265: what is globally accepted as the norm stays,
+    such as ISO, GS1, the GHG Protocol, SOLAS, Basel, Montreal, CMNI, CIM/COTIF, IAEA, IPPC/ISPM, UNECE FFV, WTO
+    and PCI DSS): "EN nnnn" standard numbers except EN_ALLOWED, RecyClass, the European List of Waste, VATEX,
+    "EU" and "European Union"; these may stand on the pages of the one party abroad in the EU (EU_PARTY) and of
+    the documents it issues or receives, which follow or quote its own country's rules;
 
 and warns on words that tell the project's history ("no longer", "was moved", "proposed addition").
 
@@ -27,7 +33,12 @@ from html.parser import HTMLParser
 FAIL = re.compile(r"(?<![\w`/=-])(?:D\d{1,2}(?: point \d+)?|O\d{1,3}|MO\d{3}|OW\d{3}|ID-Q\d+)\b(?![\w-])"
                   r"|\bworklist C\d+|\(C\d{2,3}\)|\b[a-z]+/\d{2}#F\d+"
                   r"|\b(?:world|tools|analysis)/[\w/-]+\.(?:json|py|md)\b|\bEN 16931\b|\bPeppol\b|\bXRechnung\b"
-                  r"|\bdecision P-[A-Z0-9]+\b|\bP-SB\b|\bthe (?:OASIS )?(?:UBL )?TC\b")
+                  r"|\bdecision P-[A-Z0-9]+\b|\bP-SB\b|\bthe (?:OASIS )?(?:UBL )?TC\b"
+                  r"|#F\d+\b|\(F\d{1,3}\)|\bIND\d+\b")
+EN_STANDARD = re.compile(r"\bEN \d{3,5}(?:-\d+)*\b")
+EN_ALLOWED = {"EN 15804"}                            # environmental product declarations: kept (owner, O265)
+EUROPEAN = re.compile(r"\bRecyClass\b|\bEuropean List of Waste\b|\bVATEX\b|\bEU\b|\bEuropean Union\b")
+EU_PARTY = "51-nl"                                   # Haarvliet Isotopes, in the Netherlands
 EU_LAW = re.compile(r"\bEU\b|\bEuropean Union\b|\bDirective\b")
 OWN_LISTS = ("regional", "XU", "XB", "XL")          # the scopes of the world's own lists in world/codelists/lists.json
 WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b", re.I)
@@ -39,23 +50,40 @@ class Text(HTMLParser):
     """The visible text of a page, without code, preformatted text, scripts and styles."""
     def __init__(self):
         super().__init__()
-        self.depth, self.parts = 0, []
+        self.depth, self.parts, self.title, self.in_h1 = 0, [], "", False
 
     def handle_starttag(self, tag, attrs):
         if tag in ("code", "pre", "script", "style"):
             self.depth += 1
+        if tag == "h1" and not self.title:
+            self.in_h1 = True
 
     def handle_endtag(self, tag):
         if tag in ("code", "pre", "script", "style") and self.depth:
             self.depth -= 1
+        if tag == "h1":
+            self.in_h1 = False
 
     def handle_data(self, data):
         if not self.depth:
             self.parts.append(data)
+            if self.in_h1:
+                self.title += data
+
+
+def european(text, exempt):
+    """The hits of the European standards and law in a text; the EU party's own pages may name its law."""
+    hits = [m for m in EN_STANDARD.finditer(text) if m.group(0) not in EN_ALLOWED]
+    return hits + ([] if exempt else list(EUROPEAN.finditer(text)))
 
 
 def main(site):
     fails, warns = [], []
+    root = os.path.join(os.path.dirname(__file__), "..", "world")
+    parties = json.load(open(os.path.join(root, "parties.json"), encoding="utf-8"))
+    eu = next(p for p in parties["parties"] + parties.get("abroad", []) if p["id"] == EU_PARTY)
+    name = re.escape(eu['identity']['name'])
+    eu_issues = re.compile(rf"^\s*\w[\w ]*: (?:{name} to |.* to {name}\b)")   # a page of a document from or to it
     for dirpath, dirs, files in os.walk(site):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
         for f in sorted(files):
@@ -64,7 +92,8 @@ def main(site):
             p = Text()
             p.feed(open(os.path.join(dirpath, f), encoding="utf-8").read())
             text = " ".join(p.parts)
-            for m in FAIL.finditer(text):
+            exempt = f == f"world-{EU_PARTY}.html" or bool(eu_issues.match(" ".join(p.title.split())))
+            for m in list(FAIL.finditer(text)) + european(text, exempt):
                 fails.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
             for m in WARN.finditer(text):
                 warns.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
@@ -77,8 +106,10 @@ def main(site):
         for code, v in (cl.get("codes") or {}).items():
             texts += [(f"code {code}", t) for t in (v if isinstance(v, list) else [v]) if isinstance(t, str)]
         for what, t in texts:
-            for rule in (FAIL, EU_LAW):
+            for rule in (FAIL, EU_LAW, EUROPEAN, EN_STANDARD):
                 for m in rule.finditer(t):
+                    if rule is EN_STANDARD and m.group(0) in EN_ALLOWED:
+                        continue
                     if rule is FAIL and "Basel" in t[max(0, m.start() - 60):m.end()]:
                         continue                      # the Basel Convention's own operation codes D1 to D15
                     fails.append(f"code list {key}, {what}: …{t[max(0, m.start() - 50):m.end() + 10].strip()}…")

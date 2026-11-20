@@ -249,7 +249,7 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
 - `InstructionNote` = **Quote RF96LMWINV261033**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF96LMWINV261033** (schemeID `ISO 11649`)  
@@ -337,13 +337,13 @@ Inside `AllowanceCharge`:
 - `Amount` = **714.00** (currencyID `XBL`)  
   The forwarder's invoice of the flight, in full.
 - `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+  Goods sent to a buyer outside Bayvarra, which cross Bayvarra in transit and never enter its free circulation: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
-- `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
-  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `TaxCategory/TaxExemptionReasonCode` = **TRANSIT** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: TRANSIT = Goods in transit through Bayvarra.
+- `TaxCategory/TaxExemptionReason` = **Goods in transit through Bayvarra**  
+  The name of code TRANSIT in Bayvarra's national sales tax exemption reason list.
 - `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -358,13 +358,13 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+  Goods sent to a buyer outside Bayvarra, which cross Bayvarra in transit and never enter its free circulation: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
-  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **TRANSIT** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: TRANSIT = Goods in transit through Bayvarra.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Goods in transit through Bayvarra**  
+  The name of code TRANSIT in Bayvarra's national sales tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -410,13 +410,13 @@ Inside `InvoiceLine`:
 - `Item/AdditionalItemIdentification/ID` = **KXU10014C180** (schemeID `ISO 15459-6`)  
   The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+  Goods sent to a buyer outside Bayvarra, which cross Bayvarra in transit and never enter its free circulation: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
-- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
-  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **TRANSIT** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: TRANSIT = Goods in transit through Bayvarra.
+- `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Goods in transit through Bayvarra**  
+  The name of code TRANSIT in Bayvarra's national sales tax exemption reason list.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
@@ -681,8 +681,8 @@ Inside `InvoiceLine`:
     <cac:TaxCategory>
       <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">TRANSIT</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Goods in transit through Bayvarra</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
       </cac:TaxScheme>
@@ -696,8 +696,8 @@ Inside `InvoiceLine`:
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">TRANSIT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Goods in transit through Bayvarra</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>
@@ -737,8 +737,8 @@ Inside `InvoiceLine`:
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">TRANSIT</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Goods in transit through Bayvarra</cbc:TaxExemptionReason>
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>

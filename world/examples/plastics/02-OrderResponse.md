@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Recycled plastic granulate by river barge (Urvania → Bayvarra)" · [Order Response in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA)*
 
-The waste processor confirms the lot and the loading date.
+The waste processor accepts the order as placed.
 
 [The XML file](02-OrderResponse.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

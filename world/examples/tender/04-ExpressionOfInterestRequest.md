@@ -2,7 +2,7 @@
 
 *Example 4 of the flow "A public tender (Bayvarra)" · [Expression of Interest Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPRESSION-OF-INTEREST-REQUEST-SCHEMA)*
 
-The sawmill registers its interest, to receive the documents of the procedure.
+The sawmill registers its interest, to receive the documents of the procedure: it considers a tender for lot 1 with a bench maker.
 
 [The XML file](04-ExpressionOfInterestRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

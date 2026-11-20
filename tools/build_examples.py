@@ -109,7 +109,7 @@ ROLE_DESK = {
     "AccountingSupplierParty": "receivables", "PayeeParty": "receivables", "AccountingCustomerParty": "payables",
     "DeliveryParty": "goods_in", "DeliveryCustomerParty": "goods_in", "ConsigneeParty": "goods_in",
     "NotifyParty": "goods_in", "DespatchSupplierParty": "despatch", "DespatchParty": "despatch",
-    "ConsignorParty": "despatch", "ShipperParty": "despatch",
+    "ConsignorParty": "despatch", "ShipperParty": "despatch", "NotifierParty": "despatch",
     "ExporterParty": "customs", "ImporterParty": "customs", "TransitExporterParty": "customs",
     "CustomsAgentParty": "customs", "HolderParty": "customs", "RepresentativeParty": "customs",
     "CarrierParty": "operations", "TransportServiceProviderParty": "operations", "FreightForwarderParty": "operations",
@@ -186,6 +186,11 @@ def _desk_for(doc, path, pid):
         return None
     other = doc.get("to") if pid == doc.get("from") else doc.get("from")
     if kind in TRANSPORT_DOCS:
+        flow_carriers = {leg.get("carrier") for fl in WORLD["flows"] if fl["id"] == doc["flow"]
+                         for leg in fl.get("legs", [])}
+        if pid in CARRIERS and pid not in flow_carriers:   # a carrier elsewhere, here the shipper (lpg/03: the
+            consignor = doc.get("parties", {}).get("ConsignorParty")      # gas company sends propane by road)
+            return "despatch" if pid == consignor else "logistics"
         return "operations" if pid in CARRIERS or PARTY[pid]["kind"] in ("port", "airport", "terminal") \
             else "logistics"
     if kind in BILLING_DOCS:
@@ -349,7 +354,7 @@ def party(pid, short=False, desk=None, lang=None, tax_country=None):
             contact["Note"] = V(ct["hours"], f"When the desk can be reached; {src}.")
         if ct.get("mobile"):
             contact["OtherCommunication"] = {"ChannelCode": V("AL", "UN/EDIFACT 3155 code AL: cellular phone."),
-                                             "Value": V(ct["mobile"], "The sales desk's mobile number, also under the "
+                                             "Value": V(ct["mobile"], "The desk's mobile number, also under the "
                                                                       "reserved +999.")}
         out["Contact"] = contact
     if idn.get("person_name"):
@@ -928,8 +933,8 @@ def item_property(pr, src):
         out["ImportanceCode"] = V(pr["importance"], "How much the property matters in describing the item.")
     if pr.get("list"):
         out["ListValue"] = V(pr["list"][0], "The property's value, taken from the maker's list of values ("
-                                            f"{', '.join(pr['list'])}; {src}). One ListValue only: UBL rule IND7 "
-                                            "allows a second one only in another language.")
+                                            f"{', '.join(pr['list'])}; {src}). One ListValue only: a second one "
+                                            "may stand only in another language.")  # UBL IND7
     if pr.get("usable"):
         n_, unit, why = pr["usable"]
         out["UsabilityPeriod"] = {"DurationMeasure": V(n_, why, unitCode=unit)}
@@ -1161,7 +1166,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if maker.get("keywords"):
         out["Keyword"] = V(", ".join(maker["keywords"]), "The search string buyers find the item by, the maker's "
                                                           f"keywords in one element; {msrc}. A second Keyword would "
-                                                          "have to be in another language (UBL rule IND7).")
+                                                          "have to be in another language.")  # UBL IND7
     bowner = PARTY[maker["brand_owner"]]["identity"]["name"] if maker.get("brand_owner") else None
     if maker.get("brand") and bowner:      # a private label: the brand is the owner's, the maker makes it (D7)
         out["BrandName"] = V(maker["brand"], f"The brand the item is sold under: {maker['brand']}, the own label of "
@@ -2058,8 +2063,8 @@ def _line_amounts(node, out):
             pct = cat.get("Percent").value if isinstance(cat, dict) and isinstance(cat.get("Percent"), V) else "0"
             out.append((cid, Decimal(pct), Decimal(node["LineExtensionAmount"].value)))
             return
-        for k, v in node.items():         # a levy collected for someone else is no part of the supply
-            if k not in ("AllowanceCharge", "TaxTotal", "CollectionInvoiceLine", "CollectionCreditNoteLine"):
+        for k, v in node.items():         # a levy collected for someone else counts in its own category (O)
+            if k not in ("AllowanceCharge", "TaxTotal"):    # utilities/06, 09, 11 (read-through 2026-11-20)
                 _line_amounts(v, out)
 
 
@@ -2080,6 +2085,8 @@ def tax_arithmetic(content, where):
     if len(subs) == 1:                        # a line without a category belongs to the document's only one
         only = subs[0]["TaxCategory"]["ID"].value
         lines = [(c or only, p, a) for c, p, a in lines]
+    elif any(c is None for c, _, _ in lines):   # lines without a category, several categories: the generator's
+        return                                  # subtotals stand (tender/26: the order lines carry no category)
     cats = {x[0] for x in lines}
     for ac in acs:
         if "TaxCategory" not in ac and len(cats) == 1 and len(subs) == 1:
@@ -2324,8 +2331,8 @@ VALUATION = {   # flow -> what the declarations add to or take from the goods li
     "modification": [("XU", Decimal("600.00"), "XBL", "the carriage to the border on the sawmill's own truck, at "
                                                        "its cost as the sawmill reckons it")],
     "tender": [("all", Decimal("200.00"), "XBL", "the special colour, part of the price paid")],
-    "plastics": [("all", Decimal("-1794.00"), "XBL", "less the river freight after loading, which the seller "
-                                                     "distinguished from the price (179,400 ferra)")],
+    # plastics: none (owner, 2026-11-20, as O46 for the tender): the invoice has one CPT price with the barge in it
+    # and no freight distinguished from it, so both countries value the whole price (plastics/05, 09)
     # the CIF price holds the sea freight and the insurance (D30 point 1): it is Lisavu's landed value as it stands,
     # and Bayvarra's value at export is the price less them, which the seller's forwarder bills it (sea/18)
     "sea": [("XB", lambda: -(__import__("examples_scenarios").SEA_FREIGHT
@@ -2440,14 +2447,14 @@ def import_from_abroad(content, doc, c, country, goods):
                                                   "vaccines supplied to a public hospital.",  # O201
                                             listID=codelists.NATIONAL.format("XL", "TaxExemptionReason")),
                 "TaxExemptionReason": V("Medicines and vaccines for a public hospital", "Why no tax is charged, "
-                                        "stated rather than left out (UBL rule IND6)."),
+                                        "stated rather than left out."),  # UBL IND6
                 "TaxScheme": {"ID": V("IMP", "The island's import consumption tax, as the world codes it."),
                               "TaxTypeCode": V("CONSUMPTION", "A tax on consumption, charged at import.")}}
     origins = sorted({kit_maker(ITEM_BY_NAME[g["Description"].value])["origin"] for g in goods})
     names = " and ".join(ABROAD_COUNTRY[o].get("in_text", ABROAD_COUNTRY[o]["name"]) for o in origins)
     if c == "XL":
         text = (f"No duty: goods made in {names}, outside the Accord, but medicines and radioactive isotopes for "
-                "medicine are free of duty in Lisavu's tariff. Import consumption tax: exempt, medicines and vaccines "
+                "medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines "
                 "supplied to a public hospital.")
     else:
         text = (f"No duty: goods made in {names}, outside the Accord, but medicines and radioactive isotopes for "
@@ -2653,6 +2660,28 @@ NOT_THEIR_PARTIES = {   # documents whose subject is not the order: its originat
     "FulfilmentCancellation", "Statement", "RemittanceAdvice"}
 
 
+def cash_sale_accounts(content, doc):
+    """A sale paid in cash names no bank account of the consumer: the receipt has nothing to do with it (owner, O269;
+    read-through packaging, O86)."""
+    pm = content.get("PaymentMeans")
+    pms = pm if isinstance(pm, list) else [pm] if isinstance(pm, dict) else []
+    if doc["doc"] != "PurchaseReceipt" or not pms or any(
+            not isinstance(p.get("PaymentMeansCode"), V) or p["PaymentMeansCode"].value != "10" for p in pms):
+        return
+
+    def walk(node):
+        if isinstance(node, list):
+            for x in node:
+                walk(x)
+        elif isinstance(node, dict):
+            person = node.get("Person")
+            if isinstance(person, dict):
+                person.pop("FinancialAccount", None)
+            for v in node.values():
+                walk(v)
+    walk(content)
+
+
 def redundant_roles(content, doc):
     """Drop every party role that only names a party the document already gives in a role that covers it (worklist
     C08): originator and beneficiary equal to the buyer or contracting party, the customer equal to the receiver, the
@@ -2697,7 +2726,10 @@ def redundant_roles(content, doc):
                 else ("ReceiverParty",)                        # forwarding instructions go to the forwarder
             addressees = {here[r][0] for r in roles if r in here}
             dd = node["DocumentDistribution"]
-            keep = [x for x in (dd if isinstance(dd, list) else [dd]) if _party_key(x) not in addressees]
+            # a copy to the receiver says nothing; an original on paper is handed over all the same (lpg/03, ore/05)
+            keep = [x for x in (dd if isinstance(dd, list) else [dd]) if _party_key(x) not in addressees
+                    or (isinstance(x.get("DistributionTypeCode"), V)
+                        and x["DistributionTypeCode"].value.startswith("ORIGINAL"))]
             if keep:
                 node["DocumentDistribution"] = keep if isinstance(dd, list) else keep[0]
             else:
@@ -3955,6 +3987,7 @@ def main(flow_id, check=False):
         content = place_parties(doc, content)
         item_profiles(content, doc)
         redundant_roles(content, doc)
+        cash_sale_accounts(content, doc)
         untaxed_sales(content, doc)
         declaration_invoices(content, doc)
         customs_values(content, doc)

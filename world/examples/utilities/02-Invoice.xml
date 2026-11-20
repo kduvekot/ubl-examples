@@ -238,7 +238,6 @@
     <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>21 days net from the bill.</cbc:Note>
-    <cbc:SettlementDiscountAmount currencyID="XUF">301923</cbc:SettlementDiscountAmount>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>

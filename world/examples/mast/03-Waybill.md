@@ -237,8 +237,8 @@ Inside `Shipment`:
   The shipment as the despatching party numbered it.
 - `Consignment/ID` = **26-0129**  
   The consignment of the transport booking.
-- `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight.
+- `Consignment/GrossWeightMeasure` = **358.75** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packages, with the 25 kg pallet of the battery crates.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment holds dangerous goods.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
@@ -362,7 +362,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/NetWeightMeasure` = **288** (unitCode `KGM`)  
   The modules alone.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/NetVolumeMeasure` = **0.24** (unitCode `MTQ`)  
-  The modules' volume: the same cells as the six larger packs first planned.
+  The modules' own volume, without their crates: twelve modules of 0.02 m³.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/Quantity` = **12** (unitCode `EA`)  
   As ordered.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -632,9 +632,9 @@ Inside `DocumentDistribution`:
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
 - `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
   The consignor's original, handed over when the carrier took over the goods, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
-- `Party/PartyIdentification/ID` = **20412055** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Lumeport Airport Cargo Terminal**  
+- `Party/PartyName/Name` = **Saltmere Engineering**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The original for the consignee.
@@ -644,9 +644,9 @@ Inside `DocumentDistribution`:
   One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
 - `DistributionType` = **Original, with the goods: the consignee's original**  
   The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery.
-- `Party/PartyIdentification/ID` = **IC41174** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Party/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Selanu Airport Cargo**  
+- `Party/PartyName/Name` = **Selanu Telecom**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
@@ -825,7 +825,7 @@ Inside `Signature`:
     <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
       <cbc:ID>26-0129</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">358.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -1179,10 +1179,10 @@ Inside `Signature`:
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410685</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+        <cbc:Name>Saltmere Engineering</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>
@@ -1193,10 +1193,10 @@ Inside `Signature`:
     <cbc:DistributionType>Original, with the goods: the consignee's original</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Selanu Airport Cargo</cbc:Name>
+        <cbc:Name>Selanu Telecom</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

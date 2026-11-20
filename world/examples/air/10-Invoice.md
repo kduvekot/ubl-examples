@@ -33,7 +33,7 @@ The forwarder invoices the airport-to-airport air freight at the chargeable weig
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **4600**  
-  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+  The buyer's cost centre, quoted in its contract or booking, so the invoice is booked without asking.
 - `AccountingCost` = **Freight and forwarding**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
@@ -374,7 +374,7 @@ Inside `InvoiceLine`:
 - `ID` = **1**  
   The line number.
 - `InvoicedQuantity` = **105** (unitCode `KGM`)  
-  The chargeable weight of the air waybill: the gross weight of the frame cartons, rounded up to the next half kilogram.
+  The chargeable weight of the air waybill: the gross weight of the frame cartons and their skid, rounded up to the next half kilogram.
 - `LineExtensionAmount` = **714.00** (currencyID `XBL`)  
   105 × 6.8, rounded to the minor unit of the currency.
 - `Item/Description` = **Airport-to-airport air freight per kilogram chargeable weight.**  

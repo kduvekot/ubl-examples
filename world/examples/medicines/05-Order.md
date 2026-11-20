@@ -85,7 +85,7 @@ Inside `BuyerCustomerParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Quillmoor Pharma Distribution gives it.
 - `Party/Contact/ElectronicMail` = **purchasing@quillmoor.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Quillmoor Pharma Distribution gives it.
-- `Party/Contact/Note` = **Weekdays 07:00–19:00**  
+- `Party/Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -160,7 +160,7 @@ Inside `TaxTotal`:
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
 - `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside the European Union**  
-  Why no tax is charged, stated rather than left out (UBL rule IND6).
+  Why no tax is charged, stated rather than left out.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -253,7 +253,7 @@ Inside `OrderLine`:
         <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

@@ -16,7 +16,7 @@ The wholesaler lodges its import declaration before the ship arrives, so that th
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **26-0250**  
+- `ProfileExecutionID` = **26-0249**  
   The collaboration this document belongs to: Hafefo's import declaration of the fruit, lodged before arrival, to its release at discharge. Hafefo Fresh Produce started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0050**  
   The importer's declaration number.
@@ -24,8 +24,8 @@ The wholesaler lodges its import declaration before the ship arrives, so that th
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-24**  
   Lodged on Friday 24 April, while the reefer is at sea, so that the fruit can be released when it is discharged.
-- `IssueTime` = **17:32:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
+- `IssueTime` = **11:32:00+00:00**  
+  In the wholesaler's working hours, while the reefer is at sea; in the issuer's local time, with its offset from UTC.
 - `TypeCode` = **IMPORT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  
   An import declaration. The code is from the Trade Accord's customs declaration type list: IMPORT = Import declaration.
 - `SubTypeCode` = **FREECIRC** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode`)  
@@ -374,11 +374,11 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>26-0250</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>26-0249</cbc:ProfileExecutionID>
   <cbc:ID>26-0050</cbc:ID>
   <cbc:UUID>04b3c1d3-d600-57c6-b790-ffbf27e1ac34</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
-  <cbc:IssueTime>17:32:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>11:32:00+00:00</cbc:IssueTime>
   <cbc:TypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode">IMPORT</cbc:TypeCode>
   <cbc:SubTypeCode listID="urn:ubl-examples:world:codelist:CustomsDeclarationSubTypeCode">FREECIRC</cbc:SubTypeCode>
   <cbc:NatureOfTransactionCode listID="urn:ubl-examples:world:codelist:NatureOfTransactionCode">PURCHASE</cbc:NatureOfTransactionCode>

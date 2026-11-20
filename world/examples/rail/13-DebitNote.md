@@ -18,7 +18,7 @@ Under DAP the buyer bears the costs of a delay in unloading, so Valdara passes t
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **LMW-TX-26-0734**  
   The collaboration this document belongs to: Lumeway's order of the rail delivery from Valdara. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
-- `ID` = **9200000878**  
+- `ID` = **2026/1939**  
   The supplier's number for its debit note.
 - `UUID` = **6b1333eb-a95b-5a28-9c76-1522ab34fd75**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -28,7 +28,7 @@ Under DAP the buyer bears the costs of a delay in unloading, so Valdara passes t
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-05-25**  
   As the payment terms below count it: 30 days net; 2 % discount when paid within 10 days.
-- `Note` = **Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.**  
+- `Note` = **Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.**  
   Why more is due: the contract's rule, applied after the invoice was issued.
 - `DebitNoteTypeCode` = **383** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 383: debit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 383 = Debit note.
@@ -77,10 +77,10 @@ Inside `AdditionalDocumentReference`:
   The consignment note under which the box was carried and placed.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: 7200092547 is the example rail/08, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
-- `ID` = **9200001856**  
+- `ID` = **2026/2888**  
   Ferrano Rail Cargo's debit note for the same days, which Valdara passes on.
 - `DocumentTypeCode` = **DebitNote** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: 9200001856 is the example rail/12, a DebitNote; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DebitNote = Debit Note.
+  The kind of document referred to: 2026/2888 is the example rail/12, a DebitNote; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DebitNote = Debit Note.
 
 ### Accounting Supplier Party
 
@@ -255,10 +255,10 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
-- `InstructionNote` = **Quote RF379200000878**  
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
+- `InstructionNote` = **Quote RF8520261939**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF379200000878** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF8520261939** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `ChargeBearerCode` = **SHAR** (listID `ISO 20022 ChargeBearerType1Code`)  
   ISO 20022 SHAR: each side pays its own bank's charges. The code is from the world's copy of ISO 20022 ChargeBearerType1Code: SHAR = Shared.
@@ -272,7 +272,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/PaymentNote` = **Debit note 9200000878**  
+- `PayeeFinancialAccount/PaymentNote` = **Debit note 2026/1939**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41600** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
   The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
@@ -418,12 +418,12 @@ Inside `DebitNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>LMW-TX-26-0734</cbc:ProfileExecutionID>
-  <cbc:ID>9200000878</cbc:ID>
+  <cbc:ID>2026/1939</cbc:ID>
   <cbc:UUID>6b1333eb-a95b-5a28-9c76-1522ab34fd75</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>09:26:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-25</cbc:DueDate>
-  <cbc:Note>Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.</cbc:Note>
+  <cbc:Note>Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-04-24</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -448,7 +448,7 @@ Inside `DebitNoteLine`:
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>9200001856</cbc:ID>
+    <cbc:ID>2026/2888</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DebitNote</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -592,8 +592,8 @@ Inside `DebitNoteLine`:
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF379200000878</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF379200000878</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF8520261939</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF8520261939</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
@@ -601,7 +601,7 @@ Inside `DebitNoteLine`:
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Debit note 9200000878</cbc:PaymentNote>
+      <cbc:PaymentNote>Debit note 2026/1939</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>

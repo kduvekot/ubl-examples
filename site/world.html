@@ -1562,7 +1562,19 @@ function drawRoutes(g, vis, level) {
     if (t.abut) for (const d of dirs) if (tiles[i + d[0]]?.[j + d[1]]?.tunnel) portal(g, i, j, d);
     DECK = null; }
 }
-function rotate(step) { rot = (rot + step + 4) % 4; drawWorld(); computeLand(); measureRoutes(); fit(); redraw();
+// the original tile position (fractional) under a point of the view (CSS pixels): the flat isometric inverse, corrected
+// for the ground's height in a few steps
+function screenTile(sx, sy) { const wx = (sx - view.x) / view.s, wy = (sy - view.y) / view.s; let i = W / 2, j = H / 2;
+  for (let k = 0; k < 5; k++) { const h = heightAt(Math.max(0, Math.min(W - 1, i)), Math.max(0, Math.min(H - 1, j))) * HU;
+    const d = (wx - OX) * 2 / TW, e = (wy - OY + h) * 2 / TH, a = (d + e) / 2, b = (e - d) / 2;
+    [i, j] = rot === 0 ? [a, b] : rot === 1 ? [b, H - 1 - a] : rot === 2 ? [W - 1 - a, H - 1 - b] : [W - 1 - b, a]; }
+  return [i, j]; }
+// rotate the world a quarter turn about a point of the view (CSS pixels; the middle of the view when not given): the
+// tile under it stays under it, and the zoom stays as it is
+function rotate(step, px, py) { const r = cv.getBoundingClientRect(); px ??= r.width / 2; py ??= r.height / 2;
+  const [ti, tj] = screenTile(px, py);
+  rot = (rot + step + 4) % 4; drawWorld(); computeLand(); measureRoutes();
+  const [wx, wy] = tileWorld(ti, tj); view.x = px - wx * view.s; view.y = py - wy * view.s; redraw();
   document.getElementById("compass").textContent = ["N", "E", "S", "W"][rot]; }
 OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();
 function along(r, f) { let d = f * r.L; for (const [a, b, l, hid] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0]), hid]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], Math.atan2(s[1][1] - s[0][1], s[1][0] - s[0][0]), s[3]]; }
@@ -1769,11 +1781,15 @@ document.getElementById("grid").onclick = e => { showGrid = !showGrid; e.current
 document.getElementById("rot-left").onclick = () => rotate(-1);
 document.getElementById("rot-right").onclick = () => rotate(1);
 window.addEventListener("keydown", e => { if (e.target.closest("input, textarea")) return;
-  if (e.key === "q" || e.key === "Q") rotate(-1); else if (e.key === "e" || e.key === "E") rotate(1);
+  if (e.key === "q" || e.key === "Q") rotate(-1, ...(pointerAt || [])); else if (e.key === "e" || e.key === "E") rotate(1, ...(pointerAt || []));
   else if (e.key === "+" || e.key === "=") document.getElementById("zoom-in").click(); else if (e.key === "-") document.getElementById("zoom-out").click(); });
 cv.addEventListener("wheel", e => { e.preventDefault(); const r = cv.getBoundingClientRect(); zoomAt(e.deltaY < 0 ? 1.12 : .89, e.clientX - r.left, e.clientY - r.top); }, { passive: false });
 const pointers = new Map(); let moved = 0, pinch = 0;
 cv.addEventListener("pointerdown", e => { cv.setPointerCapture(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]); moved = 0; cv.classList.add("dragging"); });
+// where the mouse is over the map (CSS pixels), for rotating with the keys about the tile under it
+let pointerAt = null;
+cv.addEventListener("pointermove", e => { if (e.pointerType !== "touch") { const r = cv.getBoundingClientRect(); pointerAt = [e.clientX - r.left, e.clientY - r.top]; } });
+cv.addEventListener("pointerleave", () => { pointerAt = null; });
 cv.addEventListener("pointermove", e => { if (pointers.size || e.pointerType === "touch") return;   // a sign's name when pointed at
   const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
   const h = P.find(p => p._sx != null && p._rect && x >= p._rect[0] && x <= p._rect[2] && y >= p._rect[1] && y <= p._rect[3]) || null;

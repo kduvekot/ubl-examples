@@ -90,7 +90,7 @@ Inside `DespatchSupplierParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Quillmoor Pharma Distribution gives it.
 - `Party/Contact/ElectronicMail` = **dispatch@quillmoor.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Quillmoor Pharma Distribution gives it.
-- `Party/Contact/Note` = **Weekdays 07:00–19:00**  
+- `Party/Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -170,8 +170,8 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **QLM-CS-26-3980**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **91.6** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods with their packaging.
+- `Consignment/GrossWeightMeasure` = **101.1** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods with their packaging, with the dry ice and the frozen vaccine's box, as on the air waybill.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Kelaro Air Cargo gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
@@ -223,7 +223,7 @@ Inside `DespatchLine`:
 
 - `ID` = **1**  
   The line number.
-- `Note` = **3,000 doses, ten to a pack, for the island's winter influenza campaign, which starts in the last week of June.**  
+- `Note` = **3,000 doses, ten to a pack, for the island's winter influenza campaign, which starts on 22 June.**  
   The line as the order put it.
 - `DeliveredQuantity` = **300** (unitCode `EA`)  
   What was despatched.
@@ -393,7 +393,7 @@ Inside `DespatchLine`:
         <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>dispatch@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+        <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -462,7 +462,7 @@ Inside `DespatchLine`:
     <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">91.6</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -507,7 +507,7 @@ Inside `DespatchLine`:
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>3,000 doses, ten to a pack, for the island's winter influenza campaign, which starts in the last week of June.</cbc:Note>
+    <cbc:Note>3,000 doses, ten to a pack, for the island's winter influenza campaign, which starts on 22 June.</cbc:Note>
     <cbc:DeliveredQuantity unitCode="EA">300</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>

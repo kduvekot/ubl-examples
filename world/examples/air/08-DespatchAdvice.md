@@ -319,7 +319,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03190**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -331,7 +331,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03191**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -343,7 +343,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03192**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -355,7 +355,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03193**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -367,7 +367,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03194**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -379,7 +379,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03195**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -391,7 +391,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03196**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  
@@ -403,7 +403,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/ManufactureDate` = **2026-05-12**  
   The day the casting was poured and inspected.
 - `Item/ItemInstance/ManufactureTime` = **14:15:00-01:00**  
-  The time the day's melt was poured: an extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
+  The time the day's melt was poured: poured in the afternoon, from the day's melt: the order came on the morning of 11 May and the moulds were made that day and the next; in the issuer's local time, with its offset from UTC.
 - `Item/ItemInstance/SerialID` = **VI-SF-03197**  
   The serial number cast into the frame; every casting is traceable to its melt, and the numbers rise with the day of casting.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Melt number**  

@@ -194,7 +194,7 @@
    "id": "rail-x",
    "mode": "rail",
    "layer": "transport",
-   "label": "Containers from Ferrano past the border hub to the distributor's siding",
+   "label": "Containers from the Ferrano hub across the border to the distributor's siding",
    "pts": [
     [
      80,

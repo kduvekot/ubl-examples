@@ -207,13 +207,7 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-      <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
-      <cac:Address>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
+      <cbc:Name>Rivermouth Packaging works, Lumeport</cbc:Name>
     </cac:DeliveryLocation>
   </cac:Delivery>
   <cac:PaymentMeans>

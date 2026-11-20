@@ -17,7 +17,7 @@ The telecom company orders back-up power and safety equipment for its mast. Carr
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **STL-TX-26-124393**  
-  The collaboration this document belongs to: Selanu Telecom's order of a mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Selanu Telecom's order of back-up batteries, smoke detectors and coating stripper for its mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
 - `ID` = **STL-PO-26-0374**  
   The buyer's order number.
 - `UUID` = **b63839e1-7b35-5e81-a17d-ef60734d2fe6**  

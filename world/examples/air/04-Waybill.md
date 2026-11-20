@@ -252,7 +252,7 @@ Inside `Shipment`:
 - `Consignment/GrossWeightMeasure` = **104.6** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the cargo: the eight frame cartons and their skid.
 - `Consignment/ChargeableWeightMeasure` = **105** (unitCode `KGM`)  
-  The gross weight of 97.6 kg, rounded up to the next half kilogram: it is higher than the volume weight, 0.52 m³ at 167 kg per m³.
+  The gross weight of 104.6 kg, rounded up to the next half kilogram: it is higher than the volume weight, 0.52 m³ at 167 kg per m³.
 - `Consignment/GrossVolumeMeasure` = **0.52** (unitCode `MTQ`)  
   The stack of eight frame cartons of 790 x 680 x 100 mm on its skid of 800 x 700 mm.
 - `Consignment/SpecialServiceInstructions` = **Priority handling at Selanu: the customer is waiting.**  
@@ -415,9 +415,9 @@ Inside `DocumentDistribution`:
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
 - `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
   The consignor's original, handed over when the carrier took over the goods, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
-- `Party/PartyIdentification/ID` = **20412055** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Lumeport Airport Cargo Terminal**  
+- `Party/PartyName/Name` = **Lumeway Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The original for the consignee.
@@ -427,9 +427,9 @@ Inside `DocumentDistribution`:
   One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
 - `DistributionType` = **Original, with the goods: the consignee's original**  
   The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery.
-- `Party/PartyIdentification/ID` = **IC41174** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Party/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Selanu Airport Cargo**  
+- `Party/PartyName/Name` = **Velumi Trading**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
@@ -769,10 +769,10 @@ Inside `Signature`:
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>
@@ -783,10 +783,10 @@ Inside `Signature`:
     <cbc:DistributionType>Original, with the goods: the consignee's original</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Selanu Airport Cargo</cbc:Name>
+        <cbc:Name>Velumi Trading</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

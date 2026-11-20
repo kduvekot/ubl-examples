@@ -27,7 +27,7 @@ The store sets the replenishment policy per item and store: each piece in each w
 - `IssueTime` = **08:23:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **The store holds the stock of the line in its Lumeport store, for the home and garden department, its only stock point for the line, and orders on the maker's proposals.**  
-  Who does what, and for which location (F9).
+  Who does what, and for which location.
 - `ProfileStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:ProfileStatusCode`)  
   In force. The code is from the Trade Accord's profile status list: ACTIVE = Active.
 

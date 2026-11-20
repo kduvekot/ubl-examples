@@ -429,7 +429,7 @@ Inside `Shipment`:
 - `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/EnvironmentalEmissionTypeCode` = **CO2E** (listID `urn:ubl-examples:world:codelist:EmissionTypeCode`)  
   Greenhouse gases as CO2 equivalent. The code is from the Trade Accord's emission type list: CO2E = Greenhouse gases as CO2 equivalent.
 - `GoodsItem/EnergyConsumptionAllocation/EnvironmentalEmission/ValueMeasure` = **1447** (unitCode `KGM`)  
-  Tank to wheel: the 5,400 kWh of diesel allocated to the goods times 0.268 kg CO2e per kWh, about 2.67 kg per litre of diesel of about 10 kWh, the order of the default factor for diesel in EN 16258.
+  Tank to wheel: the 5,400 kWh of diesel allocated to the goods times 0.268 kg CO2e per kWh, about 2.67 kg per litre of diesel of about 10 kWh, the order of the diesel factor used in calculations under ISO 14083.
 
 ### Document Reference
 
@@ -444,6 +444,16 @@ Inside `DocumentReference`:
 
 Inside `DocumentDistribution`:
 
+- `ID` = **1**  
+  The original for the consignor.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The consignor's original, handed over when the carrier took over the goods, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
+- `Party/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Rinova Recovery**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The original for the consignee.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -816,6 +826,19 @@ Inside `Signature`:
     <cbc:ID>26-0104</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:DocumentReference>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104548</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Rinova Recovery</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
   <cac:DocumentDistribution>
     <cbc:ID>2</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>

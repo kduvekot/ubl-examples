@@ -37,9 +37,9 @@ The outgoing consignment note goes to the distributor, who contracted the carria
 - `Description` = **The forwarder's truck from the distribution centre to the store.**  
   The carriage in words.
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.**  
-  The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed.
+  The originals the law prescribes, as the distribution below lists them; the carrier's own is not distributed.
 - `WaybillTypeCode` = **NATROAD** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
-  The convention the document follows. The code is from the Trade Accord's waybill type list: NATROAD = Domestic road consignment note.
+  The law the document follows. The code is from the Trade Accord's waybill type list: NATROAD = Domestic road consignment note.
 - `ConsolidatedIndicator` = **false**  
   One consignment, not a consolidation.
 - `OtherInstruction` = **Deliver against signature of the consignee.**  
@@ -263,12 +263,22 @@ Inside `Shipment`:
 
 Inside `DocumentDistribution`:
 
+- `ID` = **1**  
+  The original for the consignor.
+- `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
+- `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
+  The consignor's original, handed over when the carrier took over the goods, as the law prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
+- `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `Party/PartyName/Name` = **Lumeway Distribution**  
+  A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The original for the consignee.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
 - `DistributionTypeCode` = **ORIGINALWITHGOODS** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
-  One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
+  One of the three originals travels with the goods to the consignee, as the law prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
 - `DistributionType` = **Original, with the goods: the consignee's original**  
   The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery.
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -475,6 +485,19 @@ Inside `Signature`:
       </cac:Item>
     </cac:GoodsItem>
   </cac:Shipment>
+  <cac:DocumentDistribution>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
+    <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:DocumentDistribution>
   <cac:DocumentDistribution>
     <cbc:ID>2</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>

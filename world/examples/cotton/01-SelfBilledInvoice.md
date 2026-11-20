@@ -382,7 +382,7 @@ Inside `InvoiceLine`:
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
   The seller's own item number; as Lisavu Cotton Farm describes the item.
 - `Price/PriceAmount` = **0.33** (currencyID `XLC`)  
-  The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram.
+  The season agreement's price of seed cotton, from the Trade Accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram.
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
   The price is per one unit.
 

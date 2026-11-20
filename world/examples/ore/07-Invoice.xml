@@ -198,8 +198,8 @@
   <cac:Delivery>
     <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-      <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+      <cbc:Name>Fucinalta mine siding</cbc:Name>
       <cac:Address>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

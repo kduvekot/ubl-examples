@@ -207,7 +207,7 @@ Inside `ServiceStartTimePeriod`:
 Inside `ServiceEndTimePeriod`:
 
 - `EndDate` = **2026-03-26**  
-  Delivered within three days.
+  The end of the service window, three days after its start: the goods are delivered by then.
 
 ### From Location
 

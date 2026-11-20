@@ -28,7 +28,7 @@ The chamber, the body Urvania authorises under the Trade Accord to issue proofs 
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Description` = **Certificate of origin for park benches and castings made in Urvania.**  
   What the document is for.
-- `Note` = **Preferential origin under the trade accord.**  
+- `Note` = **Preferential origin under the Trade Accord.**  
   What the certificate is for.
 - `VersionID` = **1**  
   The first version of the certificate.
@@ -481,7 +481,7 @@ Inside `IssuerEndorsement`:
   <cbc:IssueDate>2026-03-23</cbc:IssueDate>
   <cbc:IssueTime>08:41:00-01:00</cbc:IssueTime>
   <cbc:Description>Certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note>Preferential origin under the trade accord.</cbc:Note>
+  <cbc:Note>Preferential origin under the Trade Accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>FCC-SIG-CO-07</cbc:ID>

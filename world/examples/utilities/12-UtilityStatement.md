@@ -241,7 +241,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-1**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -288,7 +288,7 @@ Inside `SubscriberConsumption`:
   An allowance.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
   The reason for the allowance as a code of UN/EDIFACT 5189. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Calls to the trade accord countries are included in the subscription**  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Calls to the Trade Accord countries are included in the subscription**  
   Why the service costs nothing.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.450** (currencyID `XLC`)  
   The whole charge of the call: 0.050 set-up and 12 minutes at 0.200.
@@ -313,7 +313,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-2**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -367,7 +367,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-3**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -391,7 +391,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-4**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -415,7 +415,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-5**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -439,7 +439,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (F6).
+  No tax on the island; the bundle discount is given once, on the whole supply.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-6**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
@@ -704,7 +704,7 @@ Inside `SubscriberConsumption`:
             <cac:AllowanceCharge>
               <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
               <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 5189">64</cbc:AllowanceChargeReasonCode>
-              <cbc:AllowanceChargeReason>Calls to the trade accord countries are included in the subscription</cbc:AllowanceChargeReason>
+              <cbc:AllowanceChargeReason>Calls to the Trade Accord countries are included in the subscription</cbc:AllowanceChargeReason>
               <cbc:Amount currencyID="XLC">2.450</cbc:Amount>
             </cac:AllowanceCharge>
             <cac:CallDuty>

@@ -234,7 +234,7 @@ Inside `Delivery`:
 - `DeliveryLocation/Name` = **River quay of Rivermouth Packaging, Lumeport**  
   Where the goods billed are delivered.
 - `Despatch/ActualDespatchDate` = **2026-04-20**  
-  The invoice is issued on despatch: the day the goods left.
+  The day the goods billed left, before they are delivered.
 
 ### Payment Means
 
@@ -251,7 +251,7 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
 - `InstructionNote` = **Quote RF9120260473**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF9120260473** (schemeID `ISO 11649`)  

@@ -30,7 +30,7 @@ The furniture maker is told that the contract went to another tenderer.
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `ContractName` = **Park benches for the parks renewal programme**  
   The name of the contract the procedure is for.
-- `Note` = **Your tender ranked second. It was lower in price, but the warranty offered scored lower on quality.**  
+- `Note` = **Your tender ranked second. It was lower in price, but the warranty and the lead time offered scored lower on quality.**  
   Why it lost.
 
 ### Signature
@@ -291,7 +291,7 @@ Inside `AppealTerms`:
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>10:15:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
-  <cbc:Note>Your tender ranked second. It was lower in price, but the warranty offered scored lower on quality.</cbc:Note>
+  <cbc:Note>Your tender ranked second. It was lower in price, but the warranty and the lead time offered scored lower on quality.</cbc:Note>
   <cac:Signature>
     <cbc:ID>PWD-SIG-UNAWD</cbc:ID>
     <cac:SignatoryParty>

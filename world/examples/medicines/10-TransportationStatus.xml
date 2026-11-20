@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>05:40:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
-  <cbc:Description>Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.</cbc:Description>
+  <cbc:Description>Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>QLM-FI-26-2388</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
@@ -120,13 +120,13 @@
     <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
     <cbc:OccurrenceTime>05:30:00-01:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
-    <cbc:Description>Consignment accepted for KXL207: the active container at 4.8 °C, the dry-ice box and the Type A package checked.</cbc:Description>
+    <cbc:Description>Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.</cbc:Description>
     <cac:CurrentStatus>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
-      <cbc:Description>Active container closed and running, at 4.8 °C against its set point of 5 °C; the generator's dose rate checked against its label.</cbc:Description>
+      <cbc:Description>Active container closed and running, at 5.6 °C against its set point of 5 °C; the generator's dose rate checked against its label.</cbc:Description>
       <cac:Condition>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-        <cbc:Measure unitCode="CEL">4.8</cbc:Measure>
+        <cbc:Measure unitCode="CEL">5.6</cbc:Measure>
       </cac:Condition>
     </cac:CurrentStatus>
     <cac:Location>

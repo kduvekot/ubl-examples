@@ -97,7 +97,7 @@ Inside `SenderParty`:
 - `Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
-  The sales desk's mobile number, also under the reserved +999.
+  The desk's mobile number, also under the reserved +999.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -317,7 +317,7 @@ Inside `Shipment`:
 - `GoodsItem/Item/Description` = **Used polyethylene stretch film and film offcuts, baled**  
   The waste, in words.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **150102** (listID `urn:ubl-examples:world:XU:codelist:WasteCode`)  
-  The waste by its entry in Urvania's waste list, numbered after the European List of Waste: the film comes from the packaging of the parts and materials the factory receives and from the wrapping of its own pallets, and no chapter for the factory's activity (metal working and coating, chapters 08, 11 and 12) has an entry for packaging, so the list's rule sends it to chapter 15: 15 01 02 plastic packaging. The code is from Urvania's national waste list list: 150102 = Plastic packaging.
+  The waste by its entry in Urvania's waste list: the film comes from the packaging of the parts and materials the factory receives and from the wrapping of its own pallets, and no chapter for the factory's activity (metal working and coating, chapters 08, 11 and 12) has an entry for packaging, so the list's rule sends it to chapter 15: 15 01 02 plastic packaging. The code is from Urvania's national waste list list: 150102 = Plastic packaging.
 - `GoodsItem/ContainingPackage/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BL: bale, compressed. Loose film would fill the trailer long before its payload; pressed into bales of about 1.2 × 0.8 × 1.0 m and 425 kg, two layers high, a load reaches the weight limit first. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
 - `GoodsItem/ContainingPackage/PackingMaterial` = **Steel baling wire**  

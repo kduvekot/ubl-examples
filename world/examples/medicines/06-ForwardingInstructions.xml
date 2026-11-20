@@ -50,7 +50,7 @@
       <cbc:Department>Warehouse</cbc:Department>
       <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@quillmoor.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

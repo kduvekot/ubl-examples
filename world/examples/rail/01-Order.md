@@ -149,7 +149,7 @@ Inside `SellerSupplierParty`:
 - `Party/Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Party/Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
-  The sales desk's mobile number, also under the reserved +999.
+  The desk's mobile number, also under the reserved +999.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -173,7 +173,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **DAP** (schemeID `INCOTERMS`)  
-  Delivered at place, the distributor's rail siding: the seller arranges and pays the carriage, so the order names no carrier (UBL rule IND6: the terms say who transports, not a missing carrier). The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
+  Delivered at place, the distributor's rail siding: the seller arranges and pays the carriage, so the order names no carrier: the terms say who transports, not a missing carrier. The code is from the world's copy of Incoterms 2020: DAP = Delivered at Place. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **9520610900015** (schemeID `GS1 GLN`)  
   The place's identifier, as the world gives it wherever the place appears (a GLN).
 - `DeliveryLocation/Description` = **Rail siding of Lumeway Distribution, Marrowdale**  

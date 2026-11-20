@@ -23,7 +23,7 @@ The goods travel under the Accord's common transit from Urvania's office of depa
 - `UUID` = **39a0d3b7-c2fe-5e50-8ee2-54287be65033**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-13**  
-  Lodged at the office of departure the evening before the train leaves, once the sealed boxes are at the hub.
+  Lodged at the office of departure the afternoon before the train leaves, once the sealed boxes are at the hub.
 - `IssueTime` = **16:45:00-01:00**  
   After the second box came in at the hub, and before the consignment note, which cites it; in the issuer's local time, with its offset from UTC.
 - `TypeCode` = **TRANSIT** (listID `urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode`)  

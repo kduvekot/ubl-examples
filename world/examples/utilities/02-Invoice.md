@@ -23,7 +23,7 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
 - `UUID` = **47af4407-c4e0-59f4-b15c-7ba55c57e130**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
-  The monthly bill, issued on the first day of the next month.
+  The monthly bill, issued on the second working day of the next month.
 - `IssueTime` = **13:20:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-04-23**  
@@ -35,7 +35,7 @@ The electricity bill, with Urvania's VAT; it refers to the utility statement for
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the seller's currency; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **6300**  
-  The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
+  The buyer's cost centre, quoted in its contract or booking, so the invoice is booked without asking.
 - `AccountingCost` = **Energy**  
   The cost centre in words.
 - `LineCountNumeric` = **4**  
@@ -325,8 +325,6 @@ Inside `PaymentTerms`:
   The payment means these terms apply to: the credit transfer below.
 - `Note` = **21 days net from the bill.**  
   The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day.
-- `SettlementDiscountAmount` = **301923** (currencyID `XUF`)  
-  The 2 % discount on the amount payable, if paid in time.
 - `PaymentDueDate` = **2026-04-23**  
   The day the amount is due, as the terms count it.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
@@ -900,7 +898,6 @@ Inside `InvoiceLine`:
     <cbc:ID>TA-UTIL</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>21 days net from the bill.</cbc:Note>
-    <cbc:SettlementDiscountAmount currencyID="XUF">301923</cbc:SettlementDiscountAmount>
     <cbc:PaymentDueDate>2026-04-23</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>

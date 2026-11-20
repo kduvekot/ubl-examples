@@ -549,7 +549,7 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
   The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
 - `Item/ClassifiedTaxCategory/TaxExemptionReason` = **Sale for resale or manufacture: supplied free with goods for resale**  
-  The name of code RESALE in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why no tax is charged: the code's meaning and the detail of this supply (UBL rule IND6).
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list, followed by the detail of this case: why no tax is charged: the code's meaning and the detail of this supply.
 - `Item/ClassifiedTaxCategory/SupplyTypeCode` = **GOODS** (listID `urn:ubl-examples:world:codelist:SupplyTypeCode`)  
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  

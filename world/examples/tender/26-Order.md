@@ -44,7 +44,7 @@ The first call-off under the awarded contract: 40 benches and their 40 installat
 Inside `Contract`:
 
 - `ID` = **PWD-CONTRACT-2026-PARKS**  
-  The framework contract the release is ordered under, by its own number (32#F19).
+  The framework contract the release is ordered under, by its own number.
 
 ### Project Reference
 
@@ -167,7 +167,7 @@ Inside `SellerSupplierParty`:
 - `Party/Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Party/Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
-  The sales desk's mobile number, also under the reserved +999.
+  The desk's mobile number, also under the reserved +999.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -203,8 +203,8 @@ Inside `TaxTotal`:
 
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
-- `TaxSubtotal/TaxableAmount` = **0.00** (currencyID `XBL`)  
-  The lines of this category plus the document's charges less its allowances of the category.
+- `TaxSubtotal/TaxableAmount` = **19960.00** (currencyID `XBL`)  
+  The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -217,8 +217,8 @@ Inside `TaxTotal`:
   The name of code EXP in Urvania's national value added tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxableAmount` = **0.00** (currencyID `XBL`)  
-  The lines of this category plus the document's charges less its allowances of the category.
+- `TaxSubtotal/TaxableAmount` = **720.00** (currencyID `XBL`)  
+  The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -456,7 +456,7 @@ Inside `OrderLine`:
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">19960.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -469,7 +469,7 @@ Inside `OrderLine`:
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">0.00</cbc:TaxableAmount>
+      <cbc:TaxableAmount currencyID="XBL">720.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
