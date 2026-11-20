@@ -30,7 +30,7 @@ The sawmill orders the processing of one job under the season agreement: 96 bund
   In the morning; in the issuer's local time, with its offset from UTC.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
-- `Note` = **Job for Valdara's park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.**  
+- `Note` = **Job for our season stock of park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.**  
   What is ordered, in a few words, and how the material comes.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The ferra, the plant's currency, in which the season agreement prices; it has no minor unit. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
@@ -157,7 +157,7 @@ Inside `SellerSupplierParty`:
 Inside `Delivery`:
 
 - `LatestDeliveryDate` = **2026-02-06**  
-  The bundles are to be ready in the plant's store by Friday 6 February, in time for the delivery to Valdara from 26 February.
+  The bundles are to be ready in the plant's store by Friday 6 February, the end of the slot the order fills, so that the sawmill has the slats in stock for the orders of the coming quarter.
 
 ### Delivery Terms
 
@@ -202,8 +202,8 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Note` = **96 bundles of 50 slats, Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.**  
-  The output the job is to give.
+- `LineItem/Note` = **96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.**  
+  The output the job is to give: the sawmill's own slat, by its number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
   The bundles to be made: the 4,800 blanks give 4,800 slats.
 - `LineItem/LineExtensionAmount` = **1272000** (currencyID `XUF`)  
@@ -250,7 +250,7 @@ Inside `OrderLine`:
   <cbc:IssueDate>2026-01-12</cbc:IssueDate>
   <cbc:IssueTime>09:20:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
-  <cbc:Note>Job for Valdara's park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.</cbc:Note>
+  <cbc:Note>Job for our season stock of park-bench slats: modify, plane, seal the end grain and bundle our blanks; hold the bundles in your store until we call them off. The blanks come on our truck on 13 and 20 January, 2,400 each time.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:Contract>
@@ -370,7 +370,7 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>96 bundles of 50 slats, Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.</cbc:Note>
+      <cbc:Note>96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">1272000</cbc:LineExtensionAmount>
       <cac:Price>

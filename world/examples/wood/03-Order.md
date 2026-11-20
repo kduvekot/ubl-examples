@@ -182,20 +182,20 @@ Inside `AllowanceCharge`:
 
 - `ChargeIndicator` = **true**  
   A charge.
-- `AllowanceChargeReasonCode` = **ACH** (listID `UN/EDIFACT EDED 7161`)  
-  The reason for the charge as a code of UN/EDIFACT 7161: the pallets are heat-treated. The code is from the world's copy of UN/EDIFACT 7161 Special service description: ACH = Heat treatment.
-- `AllowanceChargeReason` = **Heat-treated export pallets**  
-  The 96 bundles travel four to a pallet, on 24 pallets treated to ISPM 15, as the quotation offered for the export.
+- `AllowanceChargeReasonCode` = **PC** (listID `UN/EDIFACT EDED 7161`)  
+  The reason for the charge as a code of UN/EDIFACT 7161: packing, the pallets the bundles are loaded on. The code is from the world's copy of UN/EDIFACT 7161 Special service description: PC = Packing.
+- `AllowanceChargeReason` = **Pallets**  
+  The 96 bundles travel four to a pallet, on 24 heat-treated pallets that stay with the buyer, as the quotation offered.
 - `Amount` = **240.00** (currencyID `XBL`)  
   24 pallets at 10.00 lume.
-- `TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
-- `TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
-  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `TaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
 - `TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -209,14 +209,14 @@ Inside `TaxTotal`:
   The lines of this category plus the document's charges less its allowances of the category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  An export from Bayvarra: the state sales tax is not charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a business that resells or processes the goods is exempt from the state sales tax, which is charged only on the sale to the final consumer (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
   No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: EXP = Export outside Bayvarra.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export outside Bayvarra**  
-  The name of code EXP in Bayvarra's national sales tax exemption reason list.
+- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **RESALE** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: RESALE = Sale for resale or manufacture.
+- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Sale for resale or manufacture**  
+  The name of code RESALE in Bayvarra's national sales tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
@@ -227,7 +227,7 @@ Inside `AnticipatedMonetaryTotal`:
 - `LineExtensionAmount` = **46080.00** (currencyID `XBL`)  
   The sum of the line amounts.
 - `ChargeTotalAmount` = **240.00** (currencyID `XBL`)  
-  The export pallets, as quoted.
+  The pallets, as quoted.
 - `PayableAmount` = **46320.00** (currencyID `XBL`)  
   The slats and the pallets.
 
@@ -385,14 +385,14 @@ Inside `OrderLine`:
   </cac:DeliveryTerms>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">ACH</cbc:AllowanceChargeReasonCode>
-    <cbc:AllowanceChargeReason>Heat-treated export pallets</cbc:AllowanceChargeReason>
+    <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">PC</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Pallets</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="XBL">240.00</cbc:Amount>
     <cac:TaxCategory>
-      <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+      <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
       <cbc:Percent>0</cbc:Percent>
-      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-      <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+      <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+      <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
       <cac:TaxScheme>
         <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
       </cac:TaxScheme>
@@ -404,10 +404,10 @@ Inside `OrderLine`:
       <cbc:TaxableAmount currencyID="XBL">46320.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
         <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Export outside Bayvarra</cbc:TaxExemptionReason>
+        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">RESALE</cbc:TaxExemptionReasonCode>
+        <cbc:TaxExemptionReason>Sale for resale or manufacture</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         </cac:TaxScheme>

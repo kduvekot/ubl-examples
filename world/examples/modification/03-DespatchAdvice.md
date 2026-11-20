@@ -24,8 +24,8 @@ The sawmill announces the first load of blanks on its own truck, with the lot, s
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-01-13**  
   The day the first load leaves the sawmill.
-- `IssueTime` = **06:45:00-01:00**  
-  When the truck is loaded, before it leaves for the border; in the issuer's local time, with its offset from UTC.
+- `IssueTime` = **08:10:00-01:00**  
+  Sent by the dispatch office when it opens at 08:00, the truck loaded and waiting to leave for the border; in the issuer's local time, with its offset from UTC.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the blanks on arrival and keep them apart as our goods; report any damage to our dispatch office.**  
@@ -200,7 +200,7 @@ Inside `DespatchLine`:
   <cbc:ID>MDS-DA-26-0051</cbc:ID>
   <cbc:UUID>c628c022-ea94-5fd7-82ae-452c5dbc3366</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
-  <cbc:IssueTime>06:45:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>08:10:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the blanks on arrival and keep them apart as our goods; report any damage to our dispatch office.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

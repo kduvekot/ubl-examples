@@ -276,6 +276,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 001 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -293,11 +295,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-002**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -308,6 +328,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 002 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -325,11 +347,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-003**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -340,6 +380,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 003 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -357,11 +399,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-004**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -372,6 +432,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 004 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -389,11 +451,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-005**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -404,6 +484,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 005 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -421,11 +503,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-006**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -436,6 +536,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 006 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -453,11 +555,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-007**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -468,6 +588,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 007 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -485,11 +607,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-008**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -500,6 +640,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 008 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -517,11 +659,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-009**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -532,6 +692,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 009 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -549,11 +711,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-010**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -564,6 +744,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 010 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -581,11 +763,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-011**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -596,6 +796,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 011 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -613,11 +815,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-012**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -628,6 +848,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0119 / 012 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -645,11 +867,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-013**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -660,6 +900,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 013 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -677,11 +919,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-014**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -692,6 +952,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 014 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -709,11 +971,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-015**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -724,6 +1004,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 015 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -741,11 +1023,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-016**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -756,6 +1056,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 016 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -773,11 +1075,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-017**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -788,6 +1108,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 017 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -805,11 +1127,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-018**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -820,6 +1160,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 018 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -837,11 +1179,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-019**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -852,6 +1212,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 019 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -869,11 +1231,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-020**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -884,6 +1264,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 020 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -901,11 +1283,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-021**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -916,6 +1316,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 021 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -933,11 +1335,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-022**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -948,6 +1368,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 022 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -965,11 +1387,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-023**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -980,6 +1420,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 023 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -997,11 +1439,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 - `TransportHandlingUnit/ID` = **TWM-26-024**  
   The number on the pallet label: Tostara Wood Modification's own number for the unit.
 - `TransportHandlingUnit/TransportHandlingUnitTypeCode` = **PX** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -1012,6 +1472,8 @@ Inside `Shipment`:
   The handling, in words, with the world's rule for manual handling.
 - `TransportHandlingUnit/TotalPackageQuantity` = **4** (unitCode `EA`)  
   4 bundles on each pallet, two by two.
+- `TransportHandlingUnit/ShippingMarks` = **VALDARA FERRANO / LOT MDS-L26-0126 / 024 of 024**  
+  The marks on the pallet's label: the consignee, the lot of the kiln charge whose bundles it carries, and the pallet's place in the count.
 - `TransportHandlingUnit/MeasurementDimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The loaded pallet's footprint. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **1850** (unitCode `MMT`)  
@@ -1029,11 +1491,29 @@ Inside `Shipment`:
 - `TransportHandlingUnit/MeasurementDimension/Measure` = **876** (unitCode `KGM`)  
   Four bundles of 212.5 kg and the pallet's own 26 kg.
 - `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
-  50 slats in a bundle.
+  The 50 slats in this bundle.
 - `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
 - `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
-  What holds a bundle together.
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
+- `TransportHandlingUnit/Package/Quantity` = **50** (unitCode `EA`)  
+  The 50 slats in this bundle.
+- `TransportHandlingUnit/Package/PackagingTypeCode` = **BE** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
+  UN/ECE Recommendation 21 code BE: bundle. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BE = Bundle.
+- `TransportHandlingUnit/Package/PackingMaterial` = **Steel straps**  
+  What holds the bundle together.
 
 ### Despatch Line
 
@@ -1297,6 +1777,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 001 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1313,6 +1794,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1325,6 +1821,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 002 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1341,6 +1838,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1353,6 +1865,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 003 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1369,6 +1882,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1381,6 +1909,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 004 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1397,6 +1926,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1409,6 +1953,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 005 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1425,6 +1970,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1437,6 +1997,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 006 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1453,6 +2014,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1465,6 +2041,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 007 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1481,6 +2058,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1493,6 +2085,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 008 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1509,6 +2102,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1521,6 +2129,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 009 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1537,6 +2146,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1549,6 +2173,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 010 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1565,6 +2190,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1577,6 +2217,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 011 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1593,6 +2234,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1605,6 +2261,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0119 / 012 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1621,6 +2278,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1633,6 +2305,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 013 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1649,6 +2322,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1661,6 +2349,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 014 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1677,6 +2366,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1689,6 +2393,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 015 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1705,6 +2410,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1717,6 +2437,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 016 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1733,6 +2454,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1745,6 +2481,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 017 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1761,6 +2498,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1773,6 +2525,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 018 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1789,6 +2542,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1801,6 +2569,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 019 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1817,6 +2586,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1829,6 +2613,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 020 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1845,6 +2630,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1857,6 +2657,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 021 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1873,6 +2674,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1885,6 +2701,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 022 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1901,6 +2718,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
@@ -1913,6 +2745,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 023 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1934,6 +2767,21 @@ Inside `DespatchLine`:
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
         <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
       </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
     </cac:TransportHandlingUnit>
     <cac:TransportHandlingUnit>
       <cbc:ID>TWM-26-024</cbc:ID>
@@ -1941,6 +2789,7 @@ Inside `DespatchLine`:
       <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">STACK2</cbc:HandlingCode>
       <cbc:HandlingInstructions>Fork-lift only. May be stacked two high. A bundle of 212.5 kg is lifted by machine, never by hand.</cbc:HandlingInstructions>
       <cbc:TotalPackageQuantity unitCode="EA">4</cbc:TotalPackageQuantity>
+      <cbc:ShippingMarks>VALDARA FERRANO / LOT MDS-L26-0126 / 024 of 024</cbc:ShippingMarks>
       <cac:MeasurementDimension>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
         <cbc:Measure unitCode="MMT">1850</cbc:Measure>
@@ -1957,6 +2806,21 @@ Inside `DespatchLine`:
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">GROSSWEIGHT</cbc:AttributeID>
         <cbc:Measure unitCode="KGM">876</cbc:Measure>
       </cac:MeasurementDimension>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
+      <cac:Package>
+        <cbc:Quantity unitCode="EA">50</cbc:Quantity>
+        <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>
+        <cbc:PackingMaterial>Steel straps</cbc:PackingMaterial>
+      </cac:Package>
       <cac:Package>
         <cbc:Quantity unitCode="EA">50</cbc:Quantity>
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BE</cbc:PackagingTypeCode>

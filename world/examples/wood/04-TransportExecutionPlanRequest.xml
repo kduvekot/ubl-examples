@@ -129,7 +129,7 @@
     <cbc:StartDate>2026-02-26</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-03-01</cbc:EndDate>
+    <cbc:EndDate>2026-02-26</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:Name>Tostara Wood Modification yard, Conciaro</cbc:Name>

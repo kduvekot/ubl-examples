@@ -2292,7 +2292,7 @@ def world_rate(a, b):
 
 VALUATION = {   # flow -> what the declarations add to or take from the goods lines, by D16 and WTO Articles 1 and 8
     # the wood flow's only declaration is the release from inward processing (wood/07), valued on the blanks as they
-    # were entered (O150, O251); the export pallets of the sale are no part of that value
+    # were entered (O150, O251); the pallets of the sale are no part of that value
     # the blanks have no sale: the value the sawmill puts on them, with the carriage to the border on its own truck
     "modification": [("XU", Decimal("600.00"), "XBL", "the carriage to the border on the sawmill's own truck, at "
                                                        "its cost as the sawmill reckons it")],

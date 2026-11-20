@@ -6,7 +6,7 @@
   <cbc:ID>MDS-EX-26-0011</cbc:ID>
   <cbc:UUID>4d67eaa6-485a-5476-8073-40cb5dfb6b74</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
-  <cbc:IssueTime>07:00:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">PROCESSING</cbc:ExportReasonCode>
   <cbc:Note>Declared electronically before the goods leave.</cbc:Note>

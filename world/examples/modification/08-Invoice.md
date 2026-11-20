@@ -406,12 +406,12 @@ Inside `InvoiceLine`:
 - `ID` = **2**  
   The line number.
 - `InvoicedQuantity` = **4** (unitCode `WEE`)  
-  The weeks begun from the week the second charge was finished, 2 February, to the call-off on 26 February.
+  The weeks begun from the week the second charge was ready in store (Wednesday 4 February, in the week of Monday 2 February) to the week the bundles left the plant (Thursday 26 February): four weeks.
 - `LineExtensionAmount` = **23040** (currencyID `XUF`)  
   4 × 5760, rounded to the minor unit of the currency.
-- `Item/Description` = **Murkrir skul drek vikkaz hendrul valnir trek sir sakdir zaman skul 24 stuzzhek tilkrek zahek kildrek datrir silgir nek, ginek tul trukrek mir drek tul drek deznek zhaznir vatir dir hendrul.** (languageID `qau`)  
+- `Item/Description` = **Murkrir skul drek vikkaz hendrul valnir trek sir sakdir zaman skul 24 stuzzhek tilkrek zahek kildrek datrir silgir nek, ginek tul trukrek mir drek tul drek deznek zhaznir vatir dir skuznir trek ruvaz, skanzan, zhukmul stan zhukan, krir drek tul drek valnir krukek.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language.
-- `Item/Description` = **Storage of the customer's finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job's last charge is finished.** (languageID `en-XU`)  
+- `Item/Description` = **Storage of the customer's finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job's last charge is ready in store, planed, sealed and bundled, to the week the goods leave.** (languageID `en-XU`)  
   The seller's description in English, the working language between the countries.
 - `Item/Name` = **Murkrir skul sir hendrul gakek, zaman skul 24 nilnul** (languageID `qau`)  
   The item's name in Urvanian, the seller's language.
@@ -743,8 +743,8 @@ Inside `InvoiceLine`:
     <cbc:InvoicedQuantity unitCode="WEE">4</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">23040</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description languageID="qau">Murkrir skul drek vikkaz hendrul valnir trek sir sakdir zaman skul 24 stuzzhek tilkrek zahek kildrek datrir silgir nek, ginek tul trukrek mir drek tul drek deznek zhaznir vatir dir hendrul.</cbc:Description>
-      <cbc:Description languageID="en-XU">Storage of the customer's finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job's last charge is finished.</cbc:Description>
+      <cbc:Description languageID="qau">Murkrir skul drek vikkaz hendrul valnir trek sir sakdir zaman skul 24 stuzzhek tilkrek zahek kildrek datrir silgir nek, ginek tul trukrek mir drek tul drek deznek zhaznir vatir dir skuznir trek ruvaz, skanzan, zhukmul stan zhukan, krir drek tul drek valnir krukek.</cbc:Description>
+      <cbc:Description languageID="en-XU">Storage of the customer's finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job's last charge is ready in store, planed, sealed and bundled, to the week the goods leave.</cbc:Description>
       <cbc:Name languageID="qau">Murkrir skul sir hendrul gakek, zaman skul 24 nilnul</cbc:Name>
       <cbc:Name languageID="en-XU">Storage of a finished job, bay of 24 pallets</cbc:Name>
       <cac:SellersItemIdentification>

@@ -253,6 +253,13 @@ def free_with_name(it):
     return ITEM[it["free_with"][0]]["name"].split(",")[0]
 
 
+# sales across a border whose goods the sale does not export: (seller, buyer, item). The goods are already in the
+# buyer's country when they are sold, so the seller's country taxes the sale by its rules for a sale at home, and the
+# invoice states no origin. The sawmill sells its slats to Valdara from its stock at the modification plant in Urvania
+# (O255 points 2 and 3).
+NOT_EXPORTED = {("36-xb", "5-xu", "slat-bundle-1800")}
+
+
 def tax_rule(seller, buyer, iid):
     """The tax category of a supply: (code, percent, scheme, reason, exemption reason or None).
 
@@ -282,7 +289,7 @@ def tax_rule(seller, buyer, iid):
         return ("O", 0, scheme, "A service supplied outside Urvania, to a customer established abroad, is outside the "
                                 "scope of Urvania's value added tax (category O).", "Service supplied outside Urvania")
     if s["c"] == "XB":
-        if b["c"] != "XB":
+        if b["c"] != "XB" and (seller, buyer, iid) not in NOT_EXPORTED:
             return ("G", 0, scheme, "An export from Bayvarra: the state sales tax is not charged (category G).",
                     "Export outside Bayvarra")
         if is_person(buyer) and it["id"] != "water":
@@ -1216,9 +1223,11 @@ def tep_terms(flow, user, provider, days):
                                                                              "the goods arrive.")}}
 
 
-def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
+def tep_request(flow, n, doc, day, why, start_day, weight, why_weight, same_day=False):
     leg, places = leg_places(flow, doc["to"])
     mode = leg["mode"]
+    end = (V(flow.date(start_day), "Delivered the day it is collected: a short run.") if same_day else
+           V(flow.date(start_day + 3), "Delivered within three days."))
     return {"ID": V(flow.number("tep-request", doc["from"], "TransportExecutionPlanRequest"),
                     "The transport user's request number."),
             "VersionID": V("1", "The first version of the request."),
@@ -1234,7 +1243,7 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight):
                                                                                                  "next day.")},
             "MainTransportationService": main_service(flow, doc["to"]),
             "ServiceStartTimePeriod": {"StartDate": V(flow.date(start_day), "The day the goods should be collected.")},
-            "ServiceEndTimePeriod": {"EndDate": V(flow.date(start_day + 3), "Delivered within three days.")},
+            "ServiceEndTimePeriod": {"EndDate": end},
             **places,
             "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
                                     "The transport user's number for this consignment, quoted along the chain."),
@@ -1424,6 +1433,8 @@ def origin_statement(flow, seller, buyer, iids):
     origin an import declaration refers to where no certificate of origin is issued (D18, O49), worded as the
     origin declarations of the EU's preferential arrangements."""
     if PARTY[seller]["c"] == PARTY[buyer]["c"]:
+        return None
+    if any((seller, buyer, i) in NOT_EXPORTED for i in iids):     # the sale takes nothing across a border
         return None
     if any(d["doc"] == "CertificateOfOrigin" for d in WORLD["documents"] if d["flow"] == flow.id):
         return None

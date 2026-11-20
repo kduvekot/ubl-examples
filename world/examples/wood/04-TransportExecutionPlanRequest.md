@@ -23,7 +23,7 @@ Under DAP the sawmill is the transport user; it books the road carrier from the 
 - `UUID` = **b76f67b2-bdec-5954-8847-a49b1f0dd043**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-02-23**  
-  Under DAP the sawmill books the truck across the border.
+  Under DAP the sawmill books the truck from the modification plant, where its slats are stored, to the factory.
 - `IssueTime` = **16:19:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **The finished slats from the modification plant to the bench factory, called off by the sawmill.**  
@@ -200,8 +200,8 @@ Inside `ServiceStartTimePeriod`:
 
 Inside `ServiceEndTimePeriod`:
 
-- `EndDate` = **2026-03-01**  
-  Delivered within three days.
+- `EndDate` = **2026-02-26**  
+  Delivered the day it is collected: a short run.
 
 ### From Location
 
@@ -462,7 +462,7 @@ Inside `Consignment`:
     <cbc:StartDate>2026-02-26</cbc:StartDate>
   </cac:ServiceStartTimePeriod>
   <cac:ServiceEndTimePeriod>
-    <cbc:EndDate>2026-03-01</cbc:EndDate>
+    <cbc:EndDate>2026-02-26</cbc:EndDate>
   </cac:ServiceEndTimePeriod>
   <cac:FromLocation>
     <cbc:Name>Tostara Wood Modification yard, Conciaro</cbc:Name>

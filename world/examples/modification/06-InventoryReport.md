@@ -26,8 +26,8 @@ The plant reports the sawmill's goods in its store: the first charge ready, the 
   The plant's stock report to the owners of the goods it holds, each Friday.
 - `IssueTime` = **14:00:00-01:00**  
   After the week's count, in the afternoon; in the issuer's local time, with its offset from UTC.
-- `Note` = **Job TWM-J-2526-014. Both loads of blanks are processed; no blank is left unprocessed.**  
-  What the report covers, and that the material is used up.
+- `Note` = **Job TWM-J-2526-014. Both loads of blanks are modified, and no blank is left over; the first charge is in store, the second is being planed and sealed.**  
+  What the report covers: every blank has been through the kiln, and how far each charge is.
 
 ### Inventory Period
 
@@ -220,7 +220,7 @@ Inside `InventoryReportLine`:
   <cbc:UUID>3b5324eb-8267-5d6b-baac-5d4d633644b7</cbc:UUID>
   <cbc:IssueDate>2026-01-30</cbc:IssueDate>
   <cbc:IssueTime>14:00:00-01:00</cbc:IssueTime>
-  <cbc:Note>Job TWM-J-2526-014. Both loads of blanks are processed; no blank is left unprocessed.</cbc:Note>
+  <cbc:Note>Job TWM-J-2526-014. Both loads of blanks are modified, and no blank is left over; the first charge is in store, the second is being planed and sealed.</cbc:Note>
   <cac:InventoryPeriod>
     <cbc:StartDate>2026-01-26</cbc:StartDate>
     <cbc:EndDate>2026-01-30</cbc:EndDate>

@@ -3851,7 +3851,23 @@
      "kind": "road",
      "name": "Delivery van",
      "plate": "BV MD 3701",
-     "type": "341"
+     "type": "341",
+     "tare_kg": {
+      "van": 2150
+     },
+     "max_gross_kg": 3500
+    },
+    {
+     "id": "T-1",
+     "kind": "road",
+     "name": "Flatbed truck with loader crane",
+     "plate": "BV MD 3702",
+     "type": "3131",
+     "tare_kg": {
+      "truck": 12400
+     },
+     "max_gross_kg": 26000,
+     "description": "A three-axle flatbed truck with a loader crane behind the cab, which lifts packs of sawn timber onto the bed at the sawmill's yard and off it at the workshop."
     }
    ],
    "numbering": {

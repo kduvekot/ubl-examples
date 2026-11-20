@@ -7,7 +7,7 @@
   <cbc:ID>MDS-DA-26-0051</cbc:ID>
   <cbc:UUID>c628c022-ea94-5fd7-82ae-452c5dbc3366</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
-  <cbc:IssueTime>06:45:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>08:10:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the blanks on arrival and keep them apart as our goods; report any damage to our dispatch office.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

@@ -964,7 +964,7 @@
   {
    "id": "wood",
    "title": "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)",
-   "text": "Marrowdale Sawmill in Upland State makes Valdara's bench slats to Valdara's drawing: it saws and kiln-dries ash from the managed forest, modifies it at about 212 °C, planes it to 1800 × 95 × 45 mm and sells the slats by the bundle of 50. It modifies the ash in a thermal modification kiln of its own; in the southern summer, when that kiln is full with its own decking and cladding, it has the slats modified under contract at Tostara Wood Modification in Conciaro, near Ferrano, and names that processor to Valdara, whose approval of the supplier covers it. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for the modified ash with kiln-dried oak of the same size as a priced alternative, and orders 96 bundles of the ash delivered at its factory (DAP). The February delivery is modified at Conciaro, so the sawmill books the truck from the plant to the factory: 4,800 slats on 24 heat-treated pallets, about 21.0 t, a quarter's supply for 960 benches, which the plant despatches for the sawmill. The slats are sold while they are still under inward processing in Urvania; Valdara releases them into free circulation and pays Urvania's import VAT. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why.",
+   "text": "Marrowdale Sawmill in Upland State makes Valdara's bench slats to Valdara's drawing: it saws and kiln-dries ash from the managed forest, modifies it at about 212 °C, planes it to 1800 × 95 × 45 mm and sells the slats by the bundle of 50. It modifies the ash in a thermal modification kiln of its own; in the southern summer, when that kiln is full with its own decking and cladding, it has the slats modified under contract at Tostara Wood Modification in Conciaro, near Ferrano, and names that processor to Valdara, whose approval of the supplier covers it. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for the modified ash with kiln-dried oak of the same size as a priced alternative, and orders 96 bundles of the ash delivered at its factory (DAP). The sawmill fills the February delivery from the season stock of slats it had modified at Conciaro in January and keeps in the plant's store, so it books the truck from the plant to the factory: 4,800 slats on 24 heat-treated pallets, about 21.0 t, a quarter's supply for 960 benches, which the plant despatches for the sawmill. The slats are sold while they are still under inward processing in Urvania, so nothing crosses a border with the sale: Bayvarra's sales tax treats it as a sale for manufacture, exempt, and Valdara releases the slats into free circulation and pays Urvania's import VAT. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why.",
    "legs": [
     {
      "mode": "road",
@@ -986,7 +986,7 @@
      "from": "36-xb",
      "to": "37-xb",
      "carrier": "37-xb",
-     "why": "The furniture maker collects the timber at the sawmill's yard with its own van.",
+     "why": "The furniture maker collects the timber at the sawmill's yard with its own crane truck.",
      "from_place": {
       "name": "Marrowdale Sawmill yard, Marrowdale"
      },
@@ -1033,7 +1033,7 @@
   {
    "id": "modification",
    "title": "Modification: bench slats modified under contract (Bayvarra → Urvania)",
-   "text": "From October to March, the southern summer, Marrowdale Sawmill's thermal modification kiln is full with its own decking and cladding, so it buys kiln slots for the park-bench slats from Tostara Wood Modification at Conciaro, east of Ferrano, under a season agreement that gives each slot a job number in advance. For the February delivery to Valdara it orders the modification, planing, end sealing and bundling of 96 bundles and sends its own kiln-dried ash blanks, 4,800 of 1,830 × 101 × 51 mm, across the border in two loads of its timber truck. The blanks remain the sawmill's, and the sawmill has no Urvanian VAT number, so they do not enter free circulation: the plant holds an authorisation for inward processing and enters them under it, and Urvania's import VAT waits until the finished slats are released. Bayvarra records the blanks as a permanent export for processing. The plant reports what it holds for the sawmill and when the second charge is ready, stores the bundles until the sawmill calls them off, and hands them to the carrier the sawmill books, against the sawmill's pick-up release. It invoices the processing in ferra, a service to a customer established abroad and so outside Urvania's VAT, and the sawmill pays within the discount period.",
+   "text": "From October to March, the southern summer, Marrowdale Sawmill's thermal modification kiln is full with its own decking and cladding, so it buys kiln slots for the park-bench slats from Tostara Wood Modification at Conciaro, east of Ferrano, under a season agreement that gives each slot a job number in advance. In January it orders one job for its season stock of park-bench slats, the standing product it sells to Valdara each quarter: the modification, planing, end sealing and bundling of 96 bundles. It sends its own kiln-dried ash blanks, 4,800 of 1,830 × 101 × 51 mm, across the border in two loads of its timber truck. The blanks remain the sawmill's, and the sawmill has no Urvanian VAT number, so they do not enter free circulation: the plant holds an authorisation for inward processing and enters them under it, and Urvania's import VAT waits until the finished slats are released. Bayvarra records the blanks as a permanent export for processing. The plant reports what it holds for the sawmill and when the second charge is ready, stores the bundles until the sawmill calls them off, and hands them to the carrier the sawmill books, against the sawmill's pick-up release. It invoices the processing in ferra, a service to a customer established abroad and so outside Urvania's VAT, and the sawmill pays within the discount period.",
    "legs": [
     {
      "mode": "road",
@@ -4256,7 +4256,7 @@
    "doc": "Invoice",
    "from": "36-xb",
    "to": "5-xu",
-   "why": "Slats and delivery. An export from Bayvarra: no sales tax, with the exemption stated.",
+   "why": "Slats and pallets, sold from the sawmill's stock at the plant in Urvania: a sale for manufacture, exempt from Bayvarra's sales tax, with the exemption stated.",
    "parties": {
     "AccountingSupplierParty": "36-xb",
     "AccountingCustomerParty": "5-xu",
@@ -4283,7 +4283,7 @@
    "doc": "Order",
    "from": "37-xb",
    "to": "36-xb",
-   "why": "Timber for furniture, collected with the furniture maker's own van at the sawmill. Delivery terms EXW sawmill.",
+   "why": "Timber for furniture, collected with the furniture maker's own crane truck at the sawmill. Delivery terms EXW sawmill.",
    "parties": {
     "BuyerCustomerParty": "37-xb",
     "SellerSupplierParty": "36-xb",

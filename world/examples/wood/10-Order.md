@@ -2,7 +2,7 @@
 
 *Example 10 of the flow "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)" · [Order in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA)*
 
-Timber for furniture, collected with the furniture maker's own van at the sawmill. Delivery terms EXW sawmill.
+Timber for furniture, collected with the furniture maker's own crane truck at the sawmill. Delivery terms EXW sawmill.
 
 [The XML file](10-Order.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -23,7 +23,7 @@ Timber for furniture, collected with the furniture maker's own van at the sawmil
 - `UUID` = **8e01f6c6-41e2-54ce-8e02-1e6edf7207ba**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-09**  
-  The furniture maker orders timber, collected with its own van; ordered on the Monday.
+  The furniture maker orders timber, collected with its own truck; ordered on the Monday.
 - `IssueTime` = **16:20:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  

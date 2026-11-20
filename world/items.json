@@ -2877,7 +2877,7 @@
     "why": "The season agreement's price: 24 pallet places at 240 ferra a week."
    },
    "sellers_id": "TWM-ST-B24",
-   "description": "Storage of the customer's finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job's last charge is finished.",
+   "description": "Storage of the customer's finished goods in a covered bay of 24 pallet places until they are called off, per week begun from the week the job's last charge is ready in store, planed, sealed and bundled, to the week the goods leave.",
    "purchase": "services"
   }
  ],

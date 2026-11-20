@@ -22,10 +22,10 @@ The blanks leave Bayvarra for processing abroad and do not come back; the sawmil
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-01-13**  
   Declared the morning the first load leaves for the border.
-- `IssueTime` = **07:00:00-01:00**  
-  While the loaded truck waits at the sawmill for customs to release the export; in the issuer's local time, with its offset from UTC.
+- `IssueTime` = **08:20:00-01:00**  
+  Lodged by the customs desk soon after it opens, while the loaded truck waits at the sawmill for customs to release the export; in the issuer's local time, with its offset from UTC.
 - `ExportTypeCode` = **PERMANENT** (listID `urn:ubl-examples:world:codelist:ExportTypeCode`)  
-  A permanent export: the goods are sold abroad. The code is from the Trade Accord's export type list: PERMANENT = Permanent export.
+  A permanent export: the blanks do not come back to Bayvarra, for the slats made from them are sold in Urvania. The code is from the Trade Accord's export type list: PERMANENT = Permanent export.
 - `ExportReasonCode` = **PROCESSING** (listID `urn:ubl-examples:world:codelist:ExportReasonCode`)  
   The blanks go abroad to be processed under contract for their owner, and do not come back: the finished slats are sold in Urvania. The code is from the Trade Accord's export reason list: PROCESSING = Processing abroad.
 - `Note` = **Declared electronically before the goods leave.**  
@@ -263,7 +263,7 @@ Inside `Signature`:
   <cbc:ID>MDS-EX-26-0011</cbc:ID>
   <cbc:UUID>4d67eaa6-485a-5476-8073-40cb5dfb6b74</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
-  <cbc:IssueTime>07:00:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>08:20:00-01:00</cbc:IssueTime>
   <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
   <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">PROCESSING</cbc:ExportReasonCode>
   <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
