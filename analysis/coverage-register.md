@@ -1027,22 +1027,18 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 
 ### Stage 5, C74, C75, C76: numbering and collaborations (2026-11-20)
 
-Coverage 4623 → 4613, 10 elements.
+Coverage 4623 → 4613, 10 elements; all 10 won back the same day (4613 → 4623), when every document got the collaboration it is exchanged in (O260): see "Won back".
 
 > D26, O77: `ProfileExecutionID` identifies one collaboration (one run of a process between the same parties, whose documents refer to each other), given by the party that starts it; a document that belongs to no collaboration with others carries none. The collaborations of each flow are listed in `world/documents.json` (`flows[].collaborations`); the build checks them (`check_numbering()` in `tools/build_examples.py`). Every customs declaration, goods certificate, ship's manifest and port report of the examples stands alone (the authority's answer is not an example), as do the shop's till receipts and the sea flow's business card, digital agreement and capability statement, which refer to no other document: their `ProfileExecutionID` goes.
 
+### O262: the tax currency and rate only on documents that charge VAT (2026-11-20, owner)
+
+> The tender flow's call-off order (tender/26) charges no tax (category G) but stated the manufacturer's tax currency and the lume-to-ferra tax exchange rate; the owner decided that these belong only on documents on which VAT is actually charged (invoices, credit notes, self-billed invoices and credit notes, debit notes, a receipt that charges the tax), not on quotations and orders.
+
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `BusinessCard/ProfileExecutionID` | 0..1 | sea/01-BusinessCard | a business card sent within a collaboration that its other documents cite, such as a new contact introduced during an order cycle | O77 | candidate |
-| `CommonTransportationReport/ProfileExecutionID` | 0..1 | cotton/14-CommonTransportationReport, sea/16-CommonTransportationReport | a port call whose report and the authority's answer (an application response) are both examples | O77 | candidate |
-| `DigitalAgreement/ProfileExecutionID` | 0..1 | sea/03-DigitalAgreement | an onboarding in which the capability statement or the first order cites the digital agreement | O77 | candidate |
-| `DigitalCapability/ProfileExecutionID` | 0..1 | sea/04-DigitalCapability | an onboarding in which the capability statement answers the digital agreement it cites | O77 | candidate |
-| `ExportCustomsDeclaration/ProfileExecutionID` | 0..1 | cotton/11, energy/04, modification/04, plastics/05, reefer/05, road/05, sea/11, tender/30 (ExportCustomsDeclaration) | a declaration with the customs' answer (acceptance or release, an application response) as an example: a declarant–customs collaboration | O77, O76 | candidate |
-| `GoodsCertificate/ProfileExecutionID` | 0..1 | cotton/10-GoodsCertificate, reefer/04-GoodsCertificate | a certificate whose application (or the inspection request) is an example | O77 | candidate |
-| `ImportCustomsDeclaration/ProfileExecutionID` | 0..1 | cotton/15, energy/05, energy/10, medicines/03, medicines/08, medicines/13, modification/05, plastics/09, rail/14, reefer/09, road/10, sea/19, tender/31, wood/07 (ImportCustomsDeclaration) | a declaration with the customs' answer as an example, or the monthly gas declarations of one importer under one authorisation | O77, O76 | candidate |
-| `Manifest/ProfileExecutionID` | 0..1 | sea/15-Manifest | the ship's arrival in Selanu with the authority's answer to its manifest as an example | O77 | candidate |
-| `PurchaseReceipt/ProfileExecutionID` | 0..1 | packaging/08, packaging/09, retail/21, sea/29 (PurchaseReceipt) | the web order of retail/22 collected and paid in the shop, so that the order and the till receipt are one collaboration | O77 | candidate |
-| `TransitCustomsDeclaration/ProfileExecutionID` | 0..1 | rail/06-TransitCustomsDeclaration | a transit declaration with the office of destination's arrival notice as an example | O77 | candidate |
+| `Order/TaxCurrencyCode` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
+| `Order/TaxExchangeRate` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
 
 ## Left out on purpose
 
@@ -1127,3 +1123,13 @@ Elements that were in this register and are covered again, with the example that
 | `ServiceProviderParty/ServiceType` | wood/02-Quotation | the plant's work in words: modification, planing, end-grain sealing, storage and despatch (O150 row 16) | 2026-11-20 |
 | `ServiceProviderParty/SellerContact` | wood/02-Quotation | the plant's despatch desk, which Valdara's goods-in deals with on the delivery day (O150 row 17) | 2026-11-20 |
 | `OrderChange/DeliveryTerms` | modification/07-OrderChange | the call-off changes the processing order's ex works to free carrier at the plant's dock, loaded onto Trasvia's trailer, at the sawmill's risk from loading (O150 row 18) | 2026-11-20 |
+| `BusinessCard/ProfileExecutionID` | sea/01-BusinessCard | Lumeway's onboarding of Velumi as a new island customer, a collaboration of the business card, the digital agreement and the capability statement, started by Lumeway (O260) | 2026-11-20 |
+| `CommonTransportationReport/ProfileExecutionID` | cotton/14-CommonTransportationReport, sea/16-CommonTransportationReport | each port call's report is a collaboration of the carrier with the port or the maritime administration, started by the carrier, whose other step is the authority's clearance to enter (a cited document, O260) | 2026-11-20 |
+| `DigitalAgreement/ProfileExecutionID` | sea/03-DigitalAgreement | the onboarding collaboration of sea/01 (O260) | 2026-11-20 |
+| `DigitalCapability/ProfileExecutionID` | sea/04-DigitalCapability | the onboarding collaboration of sea/01; the agreement's governor answers in it (O260) | 2026-11-20 |
+| `ExportCustomsDeclaration/ProfileExecutionID` | cotton/11, energy/04, modification/04, plastics/05, reefer/05, road/05, sea/11, tender/30 (ExportCustomsDeclaration) | each declaration is a collaboration of the declarant with customs, started by the declarant in its own numbering, whose other step is customs' release (a cited document); it does not carry the trade's identifier (O260) | 2026-11-20 |
+| `GoodsCertificate/ProfileExecutionID` | cotton/10-GoodsCertificate, reefer/04-GoodsCertificate | the application for the certificate and its issue, started by the applicant (the ginnery; the cooperative, whose forwarder lodges the application); the application is a cited document (O260) | 2026-11-20 |
+| `ImportCustomsDeclaration/ProfileExecutionID` | cotton/15, energy/05, energy/10, medicines/03, medicines/08, medicines/13, modification/05, plastics/09, rail/14, reefer/09, road/10, sea/19, tender/31, wood/07 (ImportCustomsDeclaration) | as for the export declarations: the declarant's collaboration with customs, to the release (O260) | 2026-11-20 |
+| `Manifest/ProfileExecutionID` | sea/15-Manifest | the carrier's collaboration with the island's customs, to the customs' acceptance of the manifest (a cited document, O260) | 2026-11-20 |
+| `PurchaseReceipt/ProfileExecutionID` | packaging/08, packaging/09, retail/21, sea/29 (PurchaseReceipt) | each sale at the till is a collaboration of its own, started by the shop: the receipt is the whole exchange, with the home delivery order booked with the sale in retail/21 (O260) | 2026-11-20 |
+| `TransitCustomsDeclaration/ProfileExecutionID` | rail/06-TransitCustomsDeclaration | the holder's collaboration with the office of departure, to the release for transit (a cited document, O260) | 2026-11-20 |

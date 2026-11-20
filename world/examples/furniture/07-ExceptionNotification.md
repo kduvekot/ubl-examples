@@ -18,7 +18,7 @@ Sales of the Marrow bench run below the agreed threshold, so the furniture maker
   The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **9900335865**  
   The collaboration this document belongs to: the store's replenishment of the Marrow line by Brackenmere. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
-- `ID` = **26-0031**  
+- `ID` = **26-0032**  
   The sender's number for its exception.
 - `UUID` = **54a44709-e8a8-5aed-918e-7a7a369c2ad5**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -298,7 +298,7 @@ Inside `ExceptionNotificationLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:exception:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>9900335865</cbc:ProfileExecutionID>
-  <cbc:ID>26-0031</cbc:ID>
+  <cbc:ID>26-0032</cbc:ID>
   <cbc:UUID>54a44709-e8a8-5aed-918e-7a7a369c2ad5</cbc:UUID>
   <cbc:IssueDate>2026-06-09</cbc:IssueDate>
   <cbc:IssueTime>17:49:00-01:00</cbc:IssueTime>

@@ -3836,7 +3836,9 @@ def first_pass_numbers():
 
 def check_numbering():
     """Stage 7 (C74, C75, C76): document numbers rise per issuer and kind with the issue moment; one code per
-    company; documents that share a ProfileExecutionID share the parties and refer to each other."""
+    company; every document belongs to a collaboration (O260), which holds two documents or more, examples or
+    documents outside them (cited), unless its one document is the whole exchange; documents that share a
+    ProfileExecutionID share the parties and refer to each other, except the onboarding's."""
     import examples_kit
     out = []
     codes = {}
@@ -3886,10 +3888,20 @@ def check_numbering():
             out.append(f"{flow_id}/{xmlname(n, doc)}: not the identifier of its collaboration")
         if not c and pe:
             out.append(f"{flow_id}/{xmlname(n, doc)}: a ProfileExecutionID outside a collaboration")
+    covered = {x for c in collaborations() for x in c["docs"]}
+    for x, (doc, root, here) in BUILT.items():      # every document is exchanged in a collaboration (O260)
+        if x not in covered:
+            out.append(f"{x[0]}/{xmlname(x[1], doc)}: in no collaboration (world/documents.json collaborations)")
     for c in collaborations():
         built = [x for x in c["docs"] if x in BUILT]
-        if len(c["docs"]) < 2:
-            out.append(f"collaboration {c['what']}: a collaboration has at least two documents")
+        for name in c.get("cited", []):             # its steps outside the examples (O260)
+            if name not in WORLD["cited"]:
+                out.append(f"collaboration {c['what']}: its step {name} is not a cited document")
+        if len(c["docs"]) + len(c.get("cited", [])) < 2 and not c.get("one_message"):
+            out.append(f"collaboration {c['what']}: a collaboration has at least two documents, examples or cited "
+                       "ones, unless its one document is the whole exchange (one_message)")
+        if c.get("one_message") and (len(c["docs"]) > 1 or c.get("cited")):
+            out.append(f"collaboration {c['what']}: one_message with more than one document")
         if c["starter"] not in c["parties"]:
             out.append(f"collaboration {c['what']}: started by a party outside it")
         for x in built:                             # the documents share the parties (D26)
@@ -3904,6 +3916,9 @@ def check_numbering():
         own_ids = {x: BUILT[x][1].findtext(f"{{{NS_CBC}}}ID") for x in built}
         shared = set(examples_kit.NUMBER_INFO) | ({c["id"]} if c.get("id") else set())   # a procurement's file
         for x in built:
+            if world_specs.profile(BUILT[x][0]) == "onboarding":
+                continue            # a business card, an agreement, a capability statement: they present the partners
+                #                     and the processes they agree and refer to no transaction (O260)
             linked = any(own_ids[y] in refs[x] or own_ids[x] in refs[y] or
                          (refs[x] & refs[y] & shared) - {own_ids[x], own_ids[y]}
                          for y in built if y != x)
@@ -3972,10 +3987,12 @@ def main(flow_id, check=False):
                                     f"belongs to: {world_specs.load()['profiles'][prof]['name'].lower()}, a generic, "
                                     "versioned profile, not the flow.")
         coll = collaboration_of(flow_id, n)
-        if "ProfileExecutionID" in own and coll:      # one per collaboration, none outside one (D26, C76)
+        if "ProfileExecutionID" in own and coll:      # one per collaboration, each document in one (D26, C76, O260)
             header["ProfileExecutionID"] = V(collaboration_id(coll), "The collaboration this document belongs to: "
                                              f"{coll['what']}. {PARTY[coll['starter']]['identity']['name']} started "
-                                             "it and gave it this identifier, which every document of it repeats.")
+                                             "it and gave it this identifier" +
+                                             (": the document is the whole exchange." if coll.get("one_message") else
+                                              ", which every document of it repeats."))
         if "IssueTime" in own and "IssueTime" not in content:
             minutes = 8 * 60 + zlib.crc32(f"{flow_id}:{n}".encode()) % 600
             header["IssueTime"] = V(f"{minutes // 60:02d}:{minutes % 60:02d}:00", "The time the sender's system "

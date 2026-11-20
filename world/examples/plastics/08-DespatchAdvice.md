@@ -18,7 +18,7 @@ The waste processor announces the lot loaded on the barge.
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **26-0338**  
   The collaboration this document belongs to: Rivermouth's order of granulate from Rinova Recovery. Rivermouth Packaging started it and gave it this identifier, which every document of it repeats.
-- `ID` = **26-0452**  
+- `ID` = **26-0453**  
   The despatching party's number.
 - `UUID` = **908c065b-6da7-5dbc-bc84-ae4eb333a8dd**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -181,7 +181,7 @@ Inside `SellerSupplierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **26-0451**  
+- `ID` = **26-0452**  
   The despatching party's shipment number.
 - `Consignment/ID` = **26-0426**  
   The consignment the goods travel in, as numbered when the transport was booked.
@@ -280,7 +280,7 @@ Inside `DespatchLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>26-0338</cbc:ProfileExecutionID>
-  <cbc:ID>26-0452</cbc:ID>
+  <cbc:ID>26-0453</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
   <cbc:IssueTime>17:57:00-01:00</cbc:IssueTime>
@@ -403,7 +403,7 @@ Inside `DespatchLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>26-0451</cbc:ID>
+    <cbc:ID>26-0452</cbc:ID>
     <cac:Consignment>
       <cbc:ID>26-0426</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>

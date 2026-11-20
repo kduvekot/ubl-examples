@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0051</cbc:ProfileExecutionID>
   <cbc:ID>MDS-EX-26-0011</cbc:ID>
   <cbc:UUID>4d67eaa6-485a-5476-8073-40cb5dfb6b74</cbc:UUID>
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>

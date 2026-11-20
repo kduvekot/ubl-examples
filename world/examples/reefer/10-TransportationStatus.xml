@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2160</cbc:ProfileExecutionID>
   <cbc:ID>8101997393</cbc:ID>
   <cbc:UUID>8a5ddf6d-b855-5fa3-9a91-f88a50a3daf6</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>

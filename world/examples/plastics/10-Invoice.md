@@ -56,7 +56,7 @@ Inside `OrderReference`:
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **26-0452**  
+- `ID` = **26-0453**  
   The despatch advice.
 
 ### Accounting Supplier Party
@@ -437,7 +437,7 @@ Inside `InvoiceLine`:
     <cbc:ID>26-0339</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>26-0452</cbc:ID>
+    <cbc:ID>26-0453</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

@@ -16,6 +16,8 @@ The wholesaler declares the vaccines and the insulin for import at Lumeport airp
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **QLM-TX-26-3215**  
+  The collaboration this document belongs to: Quillmoor's import declaration of the vaccines and the insulin at Lumeport airport, to their release for free circulation. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
 - `ID` = **QLM-IM-26-0643**  
   The importer's declaration number.
 - `UUID` = **288dda29-bba9-5aaa-b84e-c91eac5c3161**  
@@ -293,6 +295,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>QLM-TX-26-3215</cbc:ProfileExecutionID>
   <cbc:ID>QLM-IM-26-0643</cbc:ID>
   <cbc:UUID>288dda29-bba9-5aaa-b84e-c91eac5c3161</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>

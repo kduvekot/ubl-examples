@@ -84,7 +84,7 @@ Inside `StatementDocumentReference`:
 
 Inside `OriginatorDocumentReference`:
 
-- `ID` = **26-0034**  
+- `ID` = **26-0035**  
   The buyer's claim.
 - `DocumentType` = **Claim**  
   The kind of document referred to, Velumi's claim, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -433,7 +433,7 @@ Inside `CreditNoteLine`:
     <cbc:ID>26-1335</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
-    <cbc:ID>26-0034</cbc:ID>
+    <cbc:ID>26-0035</cbc:ID>
     <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:BuyerAssignedReference>

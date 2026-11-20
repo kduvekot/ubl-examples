@@ -16,7 +16,9 @@ Under DAP the buyer clears the import, so the contracting authority declares the
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
-- `ID` = **PWD/2026/0613**  
+- `ProfileExecutionID` = **PWD/2026/0613**  
+  The collaboration this document belongs to: the department's import declaration of its first call-off, to its release for free circulation. Lumeport Public Works Department started it and gave it this identifier, which every document of it repeats.
+- `ID` = **PWD/2026/0614**  
   The importer's declaration number.
 - `UUID` = **9512bc8d-ad4b-596c-8121-05e7cc1d6a81**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -389,7 +391,8 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ID>PWD/2026/0613</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0613</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0614</cbc:ID>
   <cbc:UUID>9512bc8d-ad4b-596c-8121-05e7cc1d6a81</cbc:UUID>
   <cbc:IssueDate>2026-03-31</cbc:IssueDate>
   <cbc:IssueTime>11:14:00-01:00</cbc:IssueTime>

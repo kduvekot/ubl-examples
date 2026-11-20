@@ -16,6 +16,8 @@ The granulate leaves Urvania; the waste processor declares the export.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0451**  
+  The collaboration this document belongs to: Rinova's export declaration of the granulate, to its release for export. Rinova Recovery started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0091**  
   The exporter's reference.
 - `UUID` = **9d7cd654-55a1-5b6b-af72-1c8f54670605**  
@@ -112,7 +114,7 @@ Inside `CustomsDeclaration`:
   The goods must leave within 90 days.
 - `ApplicableTerritoryAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The customs territory the goods leave. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
-- `Shipment/ID` = **26-0451**  
+- `Shipment/ID` = **26-0452**  
   The shipment declared.
 - `Shipment/Consignment/ID` = **26-0426**  
   The consignment carried.
@@ -292,6 +294,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>26-0451</cbc:ProfileExecutionID>
   <cbc:ID>26-0091</cbc:ID>
   <cbc:UUID>9d7cd654-55a1-5b6b-af72-1c8f54670605</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
@@ -365,7 +368,7 @@ Inside `Signature`:
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>26-0451</cbc:ID>
+      <cbc:ID>26-0452</cbc:ID>
       <cac:Consignment>
         <cbc:ID>26-0426</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>

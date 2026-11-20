@@ -16,6 +16,8 @@ Under DAP the sawmill is the transport user; it books the road carrier from the 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport execution plan request". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **MDS-TX-26-0221**  
+  The collaboration this document belongs to: the road carriage of the slats the sawmill books with Trasvia Haulage. Marrowdale Sawmill started it and gave it this identifier, which every document of it repeats.
 - `ID` = **MDS-TR-26-0133**  
   The transport user's request number.
 - `VersionID` = **1**  
@@ -336,6 +338,7 @@ Inside `Consignment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0221</cbc:ProfileExecutionID>
   <cbc:ID>MDS-TR-26-0133</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>b76f67b2-bdec-5954-8847-a49b1f0dd043</cbc:UUID>

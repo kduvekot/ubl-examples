@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>QLM-TX-26-3980</cbc:ProfileExecutionID>
   <cbc:ID>QLM-FI-26-2388</cbc:ID>
   <cbc:UUID>9c9dac7e-9d28-5eec-bf12-be960571ab4f</cbc:UUID>
   <cbc:IssueDate>2026-06-11</cbc:IssueDate>

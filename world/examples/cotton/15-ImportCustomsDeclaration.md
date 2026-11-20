@@ -16,6 +16,8 @@ The mill declares the bales in Bayvarra.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900013373**  
+  The collaboration this document belongs to: the textile mill's import declaration of the bales, to their release for free circulation. Lumeport Textile Mill started it and gave it this identifier, which every document of it repeats.
 - `ID` = **7700002675**  
   The importer's declaration number.
 - `UUID` = **e09b21a0-357c-579c-b883-6abdf4d32750**  
@@ -307,6 +309,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900013373</cbc:ProfileExecutionID>
   <cbc:ID>7700002675</cbc:ID>
   <cbc:UUID>e09b21a0-357c-579c-b883-6abdf4d32750</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>

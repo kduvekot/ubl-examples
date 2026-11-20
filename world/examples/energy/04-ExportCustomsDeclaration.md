@@ -16,6 +16,8 @@ The gas producer declares March's gas leaving Bayvarra by pipeline, in one month
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900034203**  
+  The collaboration this document belongs to: Kelpstone's monthly export declaration of March's gas by pipeline, to its release for export. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
 - `ID` = **7600006841**  
   The exporter's reference.
 - `UUID` = **ea7c1231-2189-5410-b62d-f96106f6767f**  
@@ -343,6 +345,7 @@ Inside `CustomsDeclaration`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900034203</cbc:ProfileExecutionID>
   <cbc:ID>7600006841</cbc:ID>
   <cbc:UUID>ea7c1231-2189-5410-b62d-f96106f6767f</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>

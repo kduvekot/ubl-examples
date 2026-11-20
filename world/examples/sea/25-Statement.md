@@ -335,7 +335,7 @@ Inside `StatementLine`:
   Open after the deposit: what the buyer still owes.
 - `PaymentMeans/PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   Paid by credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `CollectedPayment/ID` = **26-0024**  
+- `CollectedPayment/ID` = **26-0025**  
   The deposit payment.
 - `CollectedPayment/PaidAmount` = **10000.00** (currencyID `XBL`)  
   Paid.
@@ -618,7 +618,7 @@ Inside `StatementLine`:
       <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     </cac:PaymentMeans>
     <cac:CollectedPayment>
-      <cbc:ID>26-0024</cbc:ID>
+      <cbc:ID>26-0025</cbc:ID>
       <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
       <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
       <cbc:PaidDate>2026-05-08</cbc:PaidDate>

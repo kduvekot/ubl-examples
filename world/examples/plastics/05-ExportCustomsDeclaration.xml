@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>26-0451</cbc:ProfileExecutionID>
   <cbc:ID>26-0091</cbc:ID>
   <cbc:UUID>9d7cd654-55a1-5b6b-af72-1c8f54670605</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
@@ -76,7 +77,7 @@
       </cac:Country>
     </cac:ApplicableTerritoryAddress>
     <cac:Shipment>
-      <cbc:ID>26-0451</cbc:ID>
+      <cbc:ID>26-0452</cbc:ID>
       <cac:Consignment>
         <cbc:ID>26-0426</cbc:ID>
         <cbc:GrossWeightMeasure unitCode="KGM">120480</cbc:GrossWeightMeasure>

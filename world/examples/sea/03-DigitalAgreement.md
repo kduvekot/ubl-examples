@@ -16,6 +16,8 @@ Before trading, the two parties join the multilateral digital agreement that fix
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Digital agreement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:onboarding:1.0**  
   The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0956**  
+  The collaboration this document belongs to: Lumeway's onboarding of Velumi Trading as a new island customer: its business card, the digital agreement they join and the capability statement of the agreement's governor. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-DAG-26-0048**  
   The agreement's number.
 - `UUID` = **1992d68e-5c04-58e5-9789-3ddfb5e9b203**  
@@ -702,6 +704,7 @@ Inside `DigitalProcess`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:digital-agreement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0956</cbc:ProfileExecutionID>
   <cbc:ID>LMW-DAG-26-0048</cbc:ID>
   <cbc:UUID>1992d68e-5c04-58e5-9789-3ddfb5e9b203</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>

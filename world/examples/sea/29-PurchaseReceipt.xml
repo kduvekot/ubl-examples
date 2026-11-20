@@ -3,7 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
-  <cbc:ID>26-0033</cbc:ID>
+  <cbc:ProfileExecutionID>26-0538</cbc:ProfileExecutionID>
+  <cbc:ID>26-0034</cbc:ID>
   <cbc:UUID>464955fd-c2fe-5d30-a020-fe67a7fc3e92</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>10:25:00+00:00</cbc:IssueTime>

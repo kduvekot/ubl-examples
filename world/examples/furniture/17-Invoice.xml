@@ -19,7 +19,7 @@
     <cbc:ID>PWD/2026/0621</cbc:ID>
   </cac:OrderReference>
   <cac:WorkReportDocumentReference>
-    <cbc:ID>26-0017</cbc:ID>
+    <cbc:ID>26-0018</cbc:ID>
   </cac:WorkReportDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD/2026/0619</cbc:ID>
@@ -346,7 +346,7 @@
     <cac:WorkReportLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>26-0017</cbc:ID>
+        <cbc:ID>26-0018</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WorkReport</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:WorkReportLineReference>

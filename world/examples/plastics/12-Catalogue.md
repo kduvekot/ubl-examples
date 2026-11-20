@@ -16,6 +16,8 @@ Before the packaging maker orders, Rinova sends it the product information of it
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **26-0373**  
+  The collaboration this document belongs to: Rinova's product information of the quarter for Rivermouth. Rinova Recovery started it and gave it this identifier: the document is the whole exchange.
 - `ID` = **26-0002**  
   The provider's catalogue number.
 - `UUID` = **c8939b73-1616-5856-9d43-118e4ddb2b7e**  
@@ -276,6 +278,7 @@ Inside `CatalogueLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>26-0373</cbc:ProfileExecutionID>
   <cbc:ID>26-0002</cbc:ID>
   <cbc:UUID>c8939b73-1616-5856-9d43-118e4ddb2b7e</cbc:UUID>
   <cbc:Name>Recycled PE granulate, second quarter 2026</cbc:Name>

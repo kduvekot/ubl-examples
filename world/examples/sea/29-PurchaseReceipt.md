@@ -16,7 +16,9 @@ Velumi Trading sells two of the imported benches in its shop in Selanu to the co
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Purchase receipt". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:retail-sale:1.0**  
   The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow.
-- `ID` = **26-0033**  
+- `ProfileExecutionID` = **26-0538**  
+  The collaboration this document belongs to: Velumi's sale of two benches at its shop's till to the cotton farm. Velumi Trading started it and gave it this identifier: the document is the whole exchange.
+- `ID` = **26-0034**  
   The till's receipt number.
 - `UUID` = **464955fd-c2fe-5d30-a020-fe67a7fc3e92**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -305,7 +307,8 @@ Inside `PurchaseReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
-  <cbc:ID>26-0033</cbc:ID>
+  <cbc:ProfileExecutionID>26-0538</cbc:ProfileExecutionID>
+  <cbc:ID>26-0034</cbc:ID>
   <cbc:UUID>464955fd-c2fe-5d30-a020-fe67a7fc3e92</cbc:UUID>
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>10:25:00+00:00</cbc:IssueTime>

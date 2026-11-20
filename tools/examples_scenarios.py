@@ -11945,11 +11945,8 @@ def n_of(kind):
 SCENARIOS["tender"] = _with_enrichment("tender", tender_calloff)
 
 
-@enrich("tender", "Order")
-def _(f, n, doc, out):
-    return {"TaxCurrencyCode": V("XUF", "The manufacturer accounts its value added tax in ferra."),
-            "TaxExchangeRate": {**TO_FERRA(f.date(70)), "TargetCurrencyCode": V("XUF", "The tax currency.")}}
-    # no payment exchange rate: the department pays in lume, the order's currency (O226)
+# the call-off order states no tax currency or tax exchange rate: no tax is charged on an order (O262); the invoice
+# states them. No payment exchange rate either: the department pays in lume, the order's currency (O226).
 
 
 # --- Coverage completion, batch F: self-billing on the island ---------------------------------------------------
