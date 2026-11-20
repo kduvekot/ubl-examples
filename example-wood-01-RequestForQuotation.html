@@ -29,8 +29,8 @@ href="world-spec-transaction-request-for-quotation.html">Request for
 quotation</a>.</p>
 <p><a href="examples.html#flow-wood">all documents of the flow</a> · <a
 href="example-wood-02-Quotation.html">Quotation →</a></p>
-<p>Slats to the manufacturer's own dimensions and wood species: it asks
-the sawmill to quote before ordering.</p>
+<p>Slats to the manufacturer's own drawing, of thermally modified ash:
+it asks the sawmill to quote before ordering.</p>
 <p><a href="examples/wood/01-RequestForQuotation.xml">The XML file</a>
 is valid against the UBL 2.5 schemas and the world's code lists. Below,
 every value with its place in the document and the reason for it.</p>
@@ -69,8 +69,9 @@ The time of the request; quotations refer to it; in the issuer's local
 time, with its offset from UTC (D27).</li>
 <li><code>SubmissionDueDate</code> = <strong>2026-02-21</strong><br />
 Quotations are wanted within five days.</li>
-<li><code>Note</code> = <strong>Slats to our drawing
-VI-DS-SL1800.</strong><br />
+<li><code>Note</code> = <strong>Slats of thermally modified ash to our
+drawing VI-DS-SL1800; kiln-dried oak of the same size is acceptable as
+an alternative if quoted.</strong><br />
 What is asked.</li>
 <li><code>PricingCurrencyCode</code> = <strong>XBL</strong> (listID
 <code>ISO 4217 Alpha</code>)<br />
@@ -407,7 +408,7 @@ Where the slats are wanted.</li>
 From the end of the second week.</li>
 <li><code>RequestedDeliveryPeriod/EndDate</code> =
 <strong>2026-03-06</strong><br />
-Within about a week (wood/04#F1).</li>
+Within about a week.</li>
 </ul>
 <h3 id="delivery-terms">Delivery Terms</h3>
 <p>Inside <code>DeliveryTerms</code>:</p>
@@ -440,8 +441,8 @@ The line's number in the request.</li>
 <li><code>UUID</code> =
 <strong>69477890-8e3a-52ba-acae-4da29ea0b964</strong><br />
 The line's UUID.</li>
-<li><code>Note</code> = <strong>Kiln-dried hardwood, planed on four
-sides.</strong><br />
+<li><code>Note</code> = <strong>Thermally modified ash, planed on four
+sides, as drawn.</strong><br />
 The requirement.</li>
 <li><code>OptionalLineItemIndicator</code> =
 <strong>false</strong><br />
@@ -463,12 +464,12 @@ name: 174 = Drawing.</li>
 The line number.</li>
 <li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
-96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five
-a bench, a quarter's supply (D43).</li>
-<li><code>LineItem/Item/Description</code> = <strong>Bundle of 50
-hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part
-VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five
-across and ten high, strapped.</strong><br />
+96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a
+bench, a quarter's supply.</li>
+<li><code>LineItem/Item/Description</code> = <strong>Bundle of 50 bench
+slats of thermally modified ash, the sawmill's slat MS-SL-1800
+(Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten
+high, strapped.</strong><br />
 The seller's description; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/PackQuantity</code> = <strong>1</strong>
@@ -500,7 +501,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-16&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;10:00:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SubmissionDueDate</span>&gt;2026-02-21&lt;/<span class="kw">cbc:SubmissionDueDate</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Slats to our drawing VI-DS-SL1800.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Slats of thermally modified ash to our drawing VI-DS-SL1800; kiln-dried oak of the same size is acceptable as an alternative if quoted.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PricingCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:PricingCurrencyCode</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RequestedValidityPeriod</span>&gt;</span>
@@ -628,7 +629,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RequestForQuotationLine</span>&gt;</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:UUID</span>&gt;69477890-8e3a-52ba-acae-4da29ea0b964&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Kiln-dried hardwood, planed on four sides.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Thermally modified ash, planed on four sides, as drawn.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OptionalLineItemIndicator</span>&gt;false&lt;/<span class="kw">cbc:OptionalLineItemIndicator</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PrivacyCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PrivacyCode&quot;</span>&gt;CONFIDENTIAL&lt;/<span class="kw">cbc:PrivacyCode</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
@@ -639,7 +640,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 hardwood bench slats, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 bench slats of thermally modified ash, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;50&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -655,6 +656,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-wood-02-Quotation.html">Quotation →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e2b497e0c51ba379ff2af0bc455fe794e141e568"><code>e2b497e</code></a> of 2026-11-20 11:08 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
 </body>
 </html>

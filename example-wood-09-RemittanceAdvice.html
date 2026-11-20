@@ -74,13 +74,13 @@ What the advice is for.</li>
 The lume, the currency of the invoice paid; it has two decimals. The
 code is from the world's copy of UBL's Currency (ISO 4217) list: XBL =
 Lume.</li>
-<li><code>TotalDebitAmount</code> = <strong>34800.00</strong>
+<li><code>TotalDebitAmount</code> = <strong>46320.00</strong>
 (currencyID <code>XBL</code>)<br />
 The invoices paid.</li>
 <li><code>TotalCreditAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
 No credits taken.</li>
-<li><code>TotalPaymentAmount</code> = <strong>34800.00</strong>
+<li><code>TotalPaymentAmount</code> = <strong>46320.00</strong>
 (currencyID <code>XBL</code>)<br />
 The amount transferred: the payable amount of the invoice.</li>
 <li><code>PaymentOrderReference</code> =
@@ -634,7 +634,7 @@ of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 One invoice paid.</li>
-<li><code>DebitLineAmount</code> = <strong>34800.00</strong> (currencyID
+<li><code>DebitLineAmount</code> = <strong>46320.00</strong> (currencyID
 <code>XBL</code>)<br />
 The amount of the invoice this payment settles: the whole payable
 amount. Paid invoices are debits on a remittance advice, as in the OASIS
@@ -671,9 +671,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;14:22:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Payment of the invoice below.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34800.00&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46320.00&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34800.00&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46320.00&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PaymentOrderReference</span>&gt;VI-PAY-26-0625&lt;/<span class="kw">cbc:PaymentOrderReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF83MSINV260635&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
@@ -845,7 +845,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:RemittanceAdviceLine</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34800.00&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DebitLineAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46320.00&lt;/<span class="kw">cbc:DebitLineAmount</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BalanceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:BalanceAmount</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPurposeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalPurpose1Code&quot;</span>&gt;SUPP&lt;/<span class="kw">cbc:PaymentPurposeCode</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF83MSINV260635&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
@@ -862,6 +862,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="examples.html#flow-wood">all documents of the flow</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e2b497e0c51ba379ff2af0bc455fe794e141e568"><code>e2b497e</code></a> of 2026-11-20 11:08 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
 </body>
 </html>

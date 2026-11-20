@@ -28,9 +28,9 @@ href="world-spec-transaction-quotation.html">Quotation</a>.</p>
 <p><a href="example-wood-01-RequestForQuotation.html">← Request For
 Quotation</a> · <a href="examples.html#flow-wood">all documents of the
 flow</a> · <a href="example-wood-03-Order.html">Order →</a></p>
-<p>The sawmill quotes per bundle of 50 slats, in oak with ash as an
-alternative, delivered at the factory, under the buyer's purchasing
-terms.</p>
+<p>The sawmill quotes per bundle of 50 slats of thermally modified ash,
+with kiln-dried oak as a priced alternative, delivered at the factory,
+under the buyer's purchasing terms.</p>
 <p><a href="examples/wood/02-Quotation.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -94,8 +94,8 @@ Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>MS-GTC-2026</strong><br />
-The sawmill's general terms of sale, subsidiary to the buyer's terms
-(D43).</li>
+The sawmill's general terms of sale, subsidiary to the buyer's
+terms.</li>
 <li><code>DocumentTypeCode</code> = <strong>774</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
 The kind of document referred to, Marrowdale Sawmill's general terms of
@@ -111,7 +111,7 @@ Which terms govern.</li>
 <p>Inside <code>Contract</code>:</p>
 <ul>
 <li><code>ID</code> = <strong>VI-PUR-TERMS-2026</strong><br />
-The buyer's purchasing terms, which govern the quotation (D43).</li>
+The buyer's purchasing terms, which govern the quotation.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -452,7 +452,7 @@ By credit transfer. The code is from UBL's default Payment means
 <li><code>Description</code> = <strong>Priced per bundle of 50 slats;
 the smallest order is one truck: 96 bundles on 24
 pallets.</strong><br />
-The conditions (D43).</li>
+The conditions.</li>
 </ul>
 <h3 id="allowance-charge">Allowance Charge</h3>
 <p>Inside <code>AllowanceCharge</code>:</p>
@@ -510,7 +510,7 @@ identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>TaxAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
 The sum of the tax of all categories.</li>
-<li><code>TaxSubtotal/TaxableAmount</code> = <strong>34800.00</strong>
+<li><code>TaxSubtotal/TaxableAmount</code> = <strong>46320.00</strong>
 (currencyID <code>XBL</code>)<br />
 The sum of the line amounts in this tax category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
@@ -546,13 +546,13 @@ the code's list in its schemeID.</li>
 <h3 id="quoted-monetary-total">Quoted Monetary Total</h3>
 <p>Inside <code>QuotedMonetaryTotal</code>:</p>
 <ul>
-<li><code>LineExtensionAmount</code> = <strong>34560.00</strong>
+<li><code>LineExtensionAmount</code> = <strong>46080.00</strong>
 (currencyID <code>XBL</code>)<br />
 The sum of the quoted lines.</li>
 <li><code>ChargeTotalAmount</code> = <strong>240.00</strong> (currencyID
 <code>XBL</code>)<br />
 The export pallets.</li>
-<li><code>PayableAmount</code> = <strong>34800.00</strong> (currencyID
+<li><code>PayableAmount</code> = <strong>46320.00</strong> (currencyID
 <code>XBL</code>)<br />
 The slats and the pallets; no tax on an export.</li>
 </ul>
@@ -561,17 +561,18 @@ The slats and the pallets; no tax on an export.</li>
 <ul>
 <li><code>ID</code> = <strong>1</strong><br />
 The quotation line.</li>
-<li><code>Note</code> = <strong>Oak, as drawn, in bundles of 50; the
-same bundle in ash is offered below.</strong><br />
+<li><code>Note</code> = <strong>Thermally modified ash, as drawn, in
+bundles of 50; the same bundle in kiln-dried oak is offered
+below.</strong><br />
 What is quoted.</li>
 <li><code>Quantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
 The bundles quoted: 4,800 slats, one truck.</li>
-<li><code>LineExtensionAmount</code> = <strong>34560.00</strong>
+<li><code>LineExtensionAmount</code> = <strong>46080.00</strong>
 (currencyID <code>XBL</code>)<br />
 The quoted amount.</li>
 <li><code>TaxInclusiveLineExtensionAmount</code> =
-<strong>34560.00</strong> (currencyID <code>XBL</code>)<br />
+<strong>46080.00</strong> (currencyID <code>XBL</code>)<br />
 No tax on an export.</li>
 <li><code>TotalTaxAmount</code> = <strong>0.00</strong> (currencyID
 <code>XBL</code>)<br />
@@ -580,7 +581,7 @@ No tax on an export.</li>
 The line of the request.</li>
 <li><code>DocumentReference/ID</code> =
 <strong>VI-DS-SL1800</strong><br />
-The buyer's drawing the slat is quoted to (D43).</li>
+The buyer's drawing the slat is quoted to.</li>
 <li><code>DocumentReference/DocumentTypeCode</code> =
 <strong>174</strong> (listID <code>UN/EDIFACT EDED 1001</code>)<br />
 The kind of document referred to, Valdara's drawing of the bench slat, a
@@ -590,7 +591,7 @@ name: 174 = Drawing.</li>
 <li><code>DocumentReference/ID</code> =
 <strong>MS-SPEC-SL1800</strong><br />
 The sawmill's own specification of the slat, derived from the buyer's
-drawing (D43).</li>
+drawing.</li>
 <li><code>DocumentReference/DocumentType</code> = <strong>Product
 specification</strong><br />
 The kind of document referred to, Marrowdale Sawmill's specification of
@@ -600,21 +601,21 @@ exact code for it (world/documents.json, cited; decision Q29).</li>
 The line number.</li>
 <li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
-96 bundles of 50 oak slats, 4,800 slats: enough for 960 benches at five
-a bench, a quarter's supply (D43).</li>
+96 bundles of 50 slats, 4,800 slats: enough for 960 benches at five a
+bench, a quarter's supply.</li>
 <li><code>LineItem/LineExtensionAmount</code> =
-<strong>34560.00</strong> (currencyID <code>XBL</code>)<br />
+<strong>46080.00</strong> (currencyID <code>XBL</code>)<br />
 Quantity times the quoted price.</li>
-<li><code>LineItem/Price/PriceAmount</code> = <strong>360</strong>
+<li><code>LineItem/Price/PriceAmount</code> = <strong>480</strong>
 (currencyID <code>XBL</code>)<br />
 The seller's price per unit (world/items.json).</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
-<li><code>LineItem/Item/Description</code> = <strong>Bundle of 50
-hardwood bench slats, the sawmill's slat MS-SL-1800 (Valdara's part
-VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five
-across and ten high, strapped.</strong><br />
+<li><code>LineItem/Item/Description</code> = <strong>Bundle of 50 bench
+slats of thermally modified ash, the sawmill's slat MS-SL-1800
+(Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten
+high, strapped.</strong><br />
 The seller's description; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/PackQuantity</code> = <strong>1</strong>
@@ -638,21 +639,19 @@ Where the item was produced; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json). The code is from the world's copy of UBL's Country
 identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>LineItem/Item/CommodityClassification/CommodityCode</code> =
-<strong>440799</strong> (listID <code>WCO HS 2022</code>)<br />
+<strong>940191</strong> (listID <code>WCO HS 2022</code>)<br />
 The Harmonized System subheading of the World Customs Organization, six
 digits, for customs and trade statistics; item slat-bundle-1800 of
 Marrowdale Sawmill (world/items.json). The code is from the world's copy
 of Harmonized Commodity Description and Coding System, 2022 edition
-(subheadings): 440799 = Wood sawn or chipped lengthwise, of a thickness
-exceeding 6 mm: other.</li>
+(subheadings): 940191 = Parts of seats, of wood.</li>
 <li><code>LineItem/Item/CommodityClassification/ItemClassificationCode</code>
-= <strong>31102</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
+= <strong>38160</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 What the item is, as a subclass of the UN Central Product Classification
 (CPC), the trade classification for goods and services; item
 slat-bundle-1800 of Marrowdale Sawmill (world/items.json). The code is
 from the world's copy of UN Central Product Classification, Version 2.1:
-31102 = Wood, sawn or chipped lengthwise, sliced or peeled, of a
-thickness exceeding 6 mm, of non-coniferous wood .</li>
+38160 = Parts of furniture.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/ID</code> =
 <strong>MC</strong><br />
 The maker's identifier for the property.</li>
@@ -668,7 +667,7 @@ property name list: MC = Moisture content.</li>
 <strong>Oven-dry method on samples from each kiln charge</strong><br />
 How the value is tested.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/ValueQuantity</code> =
-<strong>12</strong> (unitCode <code>P1</code>)<br />
+<strong>5</strong> (unitCode <code>P1</code>)<br />
 Its measured value; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/AdditionalItemProperty/ValueQualifier</code> =
@@ -691,10 +690,10 @@ The group's name.</li>
 How much the group matters. The code is from the Trade Accord's property
 importance list: MANDATORY = Mandatory.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MinimumValue</code>
-= <strong>10</strong><br />
+= <strong>4</strong><br />
 The lowest value accepted.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/ItemPropertyRange/MaximumValue</code>
-= <strong>14</strong><br />
+= <strong>7</strong><br />
 The highest value accepted.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/StandardPropertyIdentification/ID</code>
 = <strong>UR-WD-0012</strong> (schemeID
@@ -720,7 +719,7 @@ name are enough.</li>
 = <strong>Moisture at the core</strong><br />
 Measured at the centre of the slat.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/SubItemProperty/ValueQuantity</code>
-= <strong>13</strong> (unitCode <code>P1</code>)<br />
+= <strong>6</strong> (unitCode <code>P1</code>)<br />
 Its measured value; item slat-bundle-1800 of Marrowdale Sawmill
 (world/items.json).</li>
 <li><code>LineItem/Item/AdditionalItemProperty/Name</code> =
@@ -733,13 +732,13 @@ The dimension the tolerance is for. The code is from the Trade Accord's
 dimension attribute list: THICKNESS = Thickness. An identifier that
 holds a code names the code's list in its schemeID.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/RangeDimension/Measure</code>
-= <strong>38</strong> (unitCode <code>MMT</code>)<br />
+= <strong>45</strong> (unitCode <code>MMT</code>)<br />
 Its nominal size.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/RangeDimension/MinimumMeasure</code>
-= <strong>37.5</strong> (unitCode <code>MMT</code>)<br />
+= <strong>44.5</strong> (unitCode <code>MMT</code>)<br />
 The smallest size accepted.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/RangeDimension/MaximumMeasure</code>
-= <strong>38.5</strong> (unitCode <code>MMT</code>)<br />
+= <strong>45.5</strong> (unitCode <code>MMT</code>)<br />
 The largest size accepted.</li>
 <li><code>LineItem/Item/AdditionalItemProperty/Name</code> =
 <strong>Surface</strong><br />
@@ -827,27 +826,28 @@ Where it is measured.</li>
 Which dimension. The code is from the Trade Accord's dimension attribute
 list: HEIGHT = Height. An identifier that holds a code names the code's
 list in its schemeID.</li>
-<li><code>LineItem/Item/Dimension/Measure</code> = <strong>380</strong>
+<li><code>LineItem/Item/Dimension/Measure</code> = <strong>450</strong>
 (unitCode <code>MMT</code>)<br />
 Its size.</li>
 <li><code>LineItem/Item/Dimension/Description</code> = <strong>The
-bundle: ten slats of 38 mm stacked</strong><br />
+bundle: ten slats of 45 mm stacked</strong><br />
 Where it is measured.</li>
 <li><code>AlternativeLineItem/ID</code> = <strong>1-A</strong><br />
-The other species the request allowed (D43).</li>
+The other wood the request allowed.</li>
 <li><code>AlternativeLineItem/Quantity</code> = <strong>96</strong>
 (unitCode <code>EA</code>)<br />
 The same quantity.</li>
 <li><code>AlternativeLineItem/Price/PriceAmount</code> =
-<strong>330</strong> (currencyID <code>XBL</code>)<br />
-The price of a bundle in ash, below oak's.</li>
+<strong>520</strong> (currencyID <code>XBL</code>)<br />
+The price of a bundle in oak, 10.40 lume a slat, above the modified
+ash's.</li>
 <li><code>AlternativeLineItem/Price/BaseQuantity</code> =
 <strong>1</strong> (unitCode <code>EA</code>)<br />
 Per bundle.</li>
 <li><code>AlternativeLineItem/Item/Name</code> = <strong>Bench slat
-1800, bundle of 50, ash</strong><br />
-The same bundle in ash, which the sawmill can saw from its next
-felling.</li>
+1800, bundle of 50, oak</strong><br />
+The same bundle in kiln-dried oak, 45 mm, untreated: oak is durable
+outdoors without modification.</li>
 <li><code>RequestLineReference/LineID</code> = <strong>1</strong><br />
 The request line answered.</li>
 </ul>
@@ -1017,7 +1017,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:TaxSubtotal</span>&gt;</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34800.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46320.00&lt;/<span class="kw">cbc:TaxableAmount</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TaxCategory</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1031,16 +1031,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:TaxSubtotal</span>&gt;</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:QuotedMonetaryTotal</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34560.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46080.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ChargeTotalAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;240.00&lt;/<span class="kw">cbc:ChargeTotalAmount</span>&gt;</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34800.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PayableAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46320.00&lt;/<span class="kw">cbc:PayableAmount</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:QuotedMonetaryTotal</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:QuotationLine</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Oak, as drawn, in bundles of 50; the same bundle in ash is offered below.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Thermally modified ash, as drawn, in bundles of 50; the same bundle in kiln-dried oak is offered below.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34560.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34560.00&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46080.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46080.00&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalTaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TotalTaxAmount</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:RequestForQuotationLineID</span>&gt;1&lt;/<span class="kw">cbc:RequestForQuotationLineID</span>&gt;</span>
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
@@ -1054,13 +1054,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;34560.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;46080.00&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;360&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;480&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 hardwood bench slats, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800): oak, sawn to 1800 × 95 × 38 mm, planed, kiln dried; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Bundle of 50 bench slats of thermally modified ash, the sawmill&#39;s slat MS-SL-1800 (Valdara&#39;s part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:PackQuantity</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PackSizeNumeric</span>&gt;50&lt;/<span class="kw">cbc:PackSizeNumeric</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1071,15 +1071,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
 <span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:OriginCountry</span>&gt;</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;440799&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;31102&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;940191&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ItemClassificationCode</span> <span class="ot">listID=</span><span class="st">&quot;UN CPC Ver.2.1&quot;</span>&gt;38160&lt;/<span class="kw">cbc:ItemClassificationCode</span>&gt;</span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;MC&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Moisture content&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:NameCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ItemPropertyNameCode&quot;</span>&gt;MC&lt;/<span class="kw">cbc:NameCode</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TestMethod</span>&gt;Oven-dry method on samples from each kiln charge&lt;/<span class="kw">cbc:TestMethod</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;12&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;5&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQualifier</span>&gt;Average of the kiln charge&lt;/<span class="kw">cbc:ValueQualifier</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ImportanceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PropertyImportanceCode&quot;</span>&gt;MANDATORY&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
@@ -1088,8 +1088,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ImportanceCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:PropertyImportanceCode&quot;</span>&gt;MANDATORY&lt;/<span class="kw">cbc:ImportanceCode</span>&gt;</span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ItemPropertyGroup</span>&gt;</span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ItemPropertyRange</span>&gt;</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MinimumValue</span>&gt;10&lt;/<span class="kw">cbc:MinimumValue</span>&gt;</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MaximumValue</span>&gt;14&lt;/<span class="kw">cbc:MaximumValue</span>&gt;</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MinimumValue</span>&gt;4&lt;/<span class="kw">cbc:MinimumValue</span>&gt;</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MaximumValue</span>&gt;7&lt;/<span class="kw">cbc:MaximumValue</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ItemPropertyRange</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:StandardPropertyIdentification</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:property&quot;</span>&gt;UR-WD-0012&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1105,16 +1105,16 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:StandardPropertyIdentification</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SubItemProperty</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Moisture at the core&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;13&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;P1&quot;</span>&gt;6&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SubItemProperty</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Thickness tolerance&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:RangeDimension</span>&gt;</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;THICKNESS&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;38&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MinimumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;37.5&lt;/<span class="kw">cbc:MinimumMeasure</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MaximumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;38.5&lt;/<span class="kw">cbc:MaximumMeasure</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;45&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MinimumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;44.5&lt;/<span class="kw">cbc:MinimumMeasure</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MaximumMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;45.5&lt;/<span class="kw">cbc:MaximumMeasure</span>&gt;</span>
 <span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:RangeDimension</span>&gt;</span>
 <span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
 <span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
@@ -1150,8 +1150,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Dimension</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DimensionAttributeCode&quot;</span>&gt;HEIGHT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;380&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;The bundle: ten slats of 38 mm stacked&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;MMT&quot;</span>&gt;450&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;The bundle: ten slats of 45 mm stacked&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Dimension</span>&gt;</span>
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:LineItem</span>&gt;</span>
@@ -1159,11 +1159,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1-A&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;330&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PriceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;520&lt;/<span class="kw">cbc:PriceAmount</span>&gt;</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BaseQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:BaseQuantity</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Price</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50, ash&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bench slat 1800, bundle of 50, oak&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AlternativeLineItem</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:RequestLineReference</span>&gt;</span>
@@ -1177,6 +1177,6 @@ Quotation</a> · <a href="examples.html#flow-wood">all documents of the
 flow</a> · <a href="example-wood-03-Order.html">Order →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e2b497e0c51ba379ff2af0bc455fe794e141e568"><code>e2b497e</code></a> of 2026-11-20 11:08 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/394f4dd31a263cbe66392d65357203b5040ec270"><code>394f4dd</code></a> of 2026-11-20 11:14 UTC</p></div></footer>
 </body>
 </html>
