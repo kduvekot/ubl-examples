@@ -66,7 +66,7 @@ irrelevant · structure · process.
 
 | SR | Cause | Sev. | Parts | Questions | Status |
 |---|---|---|---|---|---|
-| SR-01 | Headline figures and coverage page describe only the OASIS samples | high | A-01, A-03, A-05, A-11 | Q-A-01 | open |
+| SR-01 | Headline figures and coverage page describe only the OASIS samples | high | A-01, A-03, A-05, A-11 | Q-A-01 | decided |
 | SR-02 | Site structure: missing landing cards, nav labels, specifications and code lists unreachable | medium | A-02, A-04, A-06, A-07, A-08, D-09, E-03 | Q-A-02 | open |
 | SR-03 | Pages outside the site frame | low | A-10, B-18 | | open |
 | SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | open |
@@ -92,7 +92,15 @@ irrelevant · structure · process.
 | SR-24 | Reason texts: repeated boilerplate and concatenation artifacts | medium | E-05, E-06, F-10 | | open |
 
 ### SR-01 · Headline figures and coverage page describe only the OASIS samples
-- **Status:** open
+- **Status:** decided 2026-11-20 (owner, Q-A-01): **A, the world examples only.** The site no longer points
+  to the OASIS samples for its figures: "ours are more complete and better" (owner). What follows:
+  - the landing figures and the coverage page are about the world examples (4571/5160 endorsed elements,
+    93/93 endorsed document types at the time of the review), with no OASIS baseline beside them;
+  - the figures are computed by the build (from `tools/coverage_world.sh` and the model), not scraped from
+    prose; the build fails when a figure cannot be computed (removes A-05);
+  - the coverage register is published, with the elements left out on purpose and why;
+  - the "initial analysis" of the OASIS samples (`analysis/element-coverage*.md`) leaves the site; whether the
+    OASIS history pages (Releases, History) stay is part of SR-02 (Q-A-02).
 - **What:** the landing tiles ("55 / 101 document types", "27% of UBL 2.5 elements used", "36 UBL releases",
   "76 OASIS example files") are scraped by `sed` from the hand-written `analysis/element-coverage.md`
   (OASIS samples, counted against 5,443 elements including deprecated ones); "36 releases" counts
@@ -315,7 +323,7 @@ Each question is given in full, with options and the reviewer's recommendation, 
 
 | Q | Question | Recommendation | SR | Status |
 |---|---|---|---|---|
-| Q-A-01 | Headline figures and coverage page about the world examples, OASIS as a labelled baseline? | A: world first | SR-01 | open |
+| Q-A-01 | Headline figures and coverage page about the world examples, OASIS as a labelled baseline? | A: world first | SR-01 | **decided 2026-11-20 (owner): A, without the OASIS baseline** (see SR-01) |
 | Q-A-02 | Specifications and code lists as sections, with a code-list index? | B: one "Reference" nav item; Releases + History merged into "OASIS samples" | SR-02 | open |
 | Q-B-01 | Keep the Global Test Data reference? | B: as related work, with one sentence on why invented countries | SR-23 | open |
 | Q-B-02 | Backstory in the method note? | A now (method first, backstory in an annex), B later (to the encyclopaedia) | SR-23 | open |
