@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: life cycle stage. A stage of a product's life, as the UBL definition names them; each description gives the matching modules of EN 15804. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: life cycle stage. A stage of a product's life, as the UBL definition names them; each description gives the matching modules of EN 15804. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>LifecycleStageCode</ShortName>

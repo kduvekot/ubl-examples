@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: inhalation toxicity zone. The hazard zone of goods toxic by inhalation, modelled on the four zones of the US Hazardous Materials Regulations (49 CFR 173.116 and 173.133), with a code for goods that are not toxic by inhalation. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: inhalation toxicity zone. The hazard zone of goods toxic by inhalation, modelled on the four zones of the US Hazardous Materials Regulations (49 CFR 173.116 and 173.133), with a code for goods that are not toxic by inhalation. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>InhalationToxicityZoneCode</ShortName>

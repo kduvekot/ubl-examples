@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: customs procedure. The customs procedures of the Trade Accord's common customs data model. A code is the requested procedure (two digits) followed by the previous procedure (two digits, 00 if there was none). The Accord is a free trade area, not a customs union: the procedures are common, the tariffs national. Requested and previous procedures: 10 release for free circulation, 20 temporary admission, 30 export, 35 re-export, 40 transit, 50 customs warehousing, 00 no previous procedure. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: customs procedure. The customs procedures of the Trade Accord's common customs data model. A code is the requested procedure (two digits) followed by the previous procedure (two digits, 00 if there was none). The Accord is a free trade area, not a customs union: the procedures are common, the tariffs national. Requested and previous procedures: 10 release for free circulation, 20 temporary admission, 30 export, 35 re-export, 40 transit, 50 customs warehousing, 00 no previous procedure. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>CustomsProcedureCode</ShortName>

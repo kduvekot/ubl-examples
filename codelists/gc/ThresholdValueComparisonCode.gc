@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: threshold value comparison. How a value is compared with the threshold of an exception criterion: the two values UBL's definition of ThresholdValueComparisonCode allows. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: threshold value comparison. How a value is compared with the threshold of an exception criterion: the two values UBL's definition of ThresholdValueComparisonCode allows. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ThresholdValueComparisonCode</ShortName>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: import consumption tax exemption reason. Why goods imported into Lisavu carry no import consumption tax. The tax falls on every import whatever its origin; its exemptions are few and named here. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: import consumption tax exemption reason. Why goods imported into Lisavu carry no import consumption tax. The tax falls on every import whatever its origin; its exemptions are few and named here. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>TaxExemptionReasonCode</ShortName>

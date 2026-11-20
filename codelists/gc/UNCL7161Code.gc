@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of UN/EDIFACT 7161 Special service description: the codes the world uses, and others of the same list. Built from world/codelists/sources/peppol/UNCL7161.xml (D.16B with later additions (OpenPeppol peppol-bis-invoice-3 via poacc-upgrade-3, commit c3bd29f)). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of UN/EDIFACT 7161 Special service description, version D.16B: the codes the world uses, and others of the same list, as its agency publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>UNCL7161Code</ShortName>
       <LongName xml:lang="en">UN/EDIFACT 7161 Special service description (UBL example world)</LongName>
       <LongName Identifier="listID">UN/EDIFACT EDED 7161</LongName>
-      <Version>D.16B (OpenPeppol)</Version>
+      <Version>D.16B</Version>
       <CanonicalUri>urn:ubl-examples:world:codelist:copy:UNCL7161Code</CanonicalUri>
-      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL7161Code:D.16B (OpenPeppol)</CanonicalVersionUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:copy:UNCL7161Code:D.16B</CanonicalVersionUri>
       <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/UNCL7161Code.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">UN/CEFACT</LongName>

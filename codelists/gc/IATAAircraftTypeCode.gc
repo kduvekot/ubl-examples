@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of IATA SSIM aircraft type codes: the codes the world uses, and others of the same list. Built from world/codelists/sources/optd/optd_aircraft.csv (OpenTravelData optd_aircraft.csv, commit cfc7b82). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of IATA SSIM aircraft type codes, version IATA SSIM Appendix A, as OpenTravelData gives it: the codes the world uses, and others of the same list, as its agency publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>IATAAircraftTypeCode</ShortName>

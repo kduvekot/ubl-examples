@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: ubl document type. The document types of UBL 2.5 by their names, for a generic reference to a UBL document whose type the reference element does not say. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: ubl document type. The document types of UBL 2.5 by their names, for a generic reference to a UBL document whose type the reference element does not say. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>UBLDocumentTypeCode</ShortName>

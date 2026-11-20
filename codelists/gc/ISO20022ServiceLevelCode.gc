@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of ISO 20022 ExternalServiceLevel1Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026), world/codelists/sources/iso20022/2Q2026_externalcodesets_v3.json; names from the XLSX of the same release); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of ISO 20022 ExternalServiceLevel1Code: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISO 20022 External Code Sets, 2Q2026 (publication date 28 Aug 2026)); the codes and names are as the standard publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ISO20022ServiceLevelCode</ShortName>

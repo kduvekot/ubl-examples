@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: multiple tenders. Whether a tenderer may submit more than one tender (eForms tenders: multiple tenders). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: multiple tenders. Whether a tenderer may submit more than one tender (eForms tenders: multiple tenders). -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>MultipleTendersCode</ShortName>

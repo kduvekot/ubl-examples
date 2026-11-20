@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A world copy of International Standard Industrial Classification of All Economic Activities, Revision 4: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISIC Rev.4, United Nations Statistical Papers Series M No. 4/Rev.4 (2008)); the codes and names are as the standard publishes them. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A world copy of International Standard Industrial Classification of All Economic Activities, Revision 4: the codes the world uses, and others of the same list. No machine-readable copy of the source could be kept (ISIC Rev.4, United Nations Statistical Papers Series M No. 4/Rev.4 (2008)); the codes and names are as the standard publishes them. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>ISICRev4Code</ShortName>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: catalogue line action. What the receiver does with a catalogue line to synchronize its copy, as UBL recommends (add, update, delete). Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: catalogue line action. What the receiver does with a catalogue line to synchronize its copy, as UBL recommends (add, update, delete). -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
       <ShortName>CatalogueLineActionCode</ShortName>
