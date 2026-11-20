@@ -446,6 +446,44 @@ for path in sorted(glob.glob(os.path.join(root, "world", "examples", "*", "*.xml
             used.setdefault(part, []).append((flow, name))
 
 
+DOC_OF = {(d["flow"], f"{d['nn']:02d}-{d['doc']}"): d for d in world["documents"]}
+
+
+def example_label(flow, name):
+    d = DOC_OF[(flow, name)]
+    return (f"[{world_docs.words(d['doc'])}, {label(parties[d['from']]) if d['from'] in parties else d['from']} to "
+            f"{label(parties[d['to']]) if d['to'] in parties else d['to']}](example-{flow}-{name}.html)")
+
+
+def transaction_detail(ex):
+    """What the examples of a transaction show: who sends it to whom, the code lists and identifier schemes its
+    documents use. Made from the examples at every build."""
+    pairs, lists, schemes = {}, {}, {}
+    for flow, name in ex:
+        d = DOC_OF[(flow, name)]
+        role = lambda pid: parties[pid]["name"] if pid in parties else "a party outside the world"
+        pairs.setdefault((role(d["from"]), role(d["to"])), []).append((flow, name))
+        root_el = etree.parse(os.path.join(root, "world", "examples", flow, name + ".xml")).getroot()
+        for e in root_el.iter():
+            if not isinstance(e.tag, str):
+                continue
+            local = etree.QName(e).localname
+            if e.get("listID"):
+                lists.setdefault(e.get("listID"), set()).add(local)
+            if e.get("schemeID"):
+                schemes.setdefault(e.get("schemeID"), set()).add(local)
+    out = ["## Who sends it to whom", "", "| From | To | Examples |", "|---|---|---:|"]
+    out += [f"| {a} | {b} | {len(v)} |" for (a, b), v in sorted(pairs.items())] + [""]
+    if lists:
+        out += ["## Code lists its documents use", "", "Each list is published on [the code lists page](world-codelists.html).",
+                "", "| List (listID) | In the elements |", "|---|---|"]
+        out += [f"| `{k}` | {', '.join(f'`{x}`' for x in sorted(v))} |" for k, v in sorted(lists.items())] + [""]
+    if schemes:
+        out += ["## Identifier schemes its documents use", "", "| Scheme (schemeID) | In the elements |", "|---|---|"]
+        out += [f"| `{k}` | {', '.join(f'`{x}`' for x in sorted(v))} |" for k, v in sorted(schemes.items())] + [""]
+    return out
+
+
 def spec_page(level, key):
     return f"world-spec-{level}-{key.replace(':', '-')}"
 
@@ -455,10 +493,9 @@ idx = ["# Rules of the Trade Accord", "",
        "How the documents of the world are made: the specifications they claim, below, and "
        "[the code lists](world-codelists.html) their codes come from.", "",
        "Every document of the world says which specifications it follows. `CustomizationID` names the transaction "
-       "specification at up to three levels, chained with `#compliant#`, as EN 16931, Peppol and XRechnung do: the "
-       "Trade Accord's transaction, a national specification built on it, and a community's specification. "
-       "`ProfileID` names the Accord's process profile the document belongs to. These are the specifications of the "
-       "world; the world claims no compliance with real ones such as EN 16931.", ""]
+       "specification at up to three levels, chained with `#compliant#`: the Trade Accord's transaction, a national "
+       "specification built on it, and a community's specification. `ProfileID` names the Accord's process profile "
+       "the document belongs to.", ""]
 for level, title in LEVELS.items():
     idx += [f"## {title}", "", "| Specification | Identifier | Document types |", "|---|---|---|"]
     for u, (lv, key, spec) in specs.items():
@@ -491,8 +528,10 @@ for level, title in LEVELS.items():
             lines += [f"Owner: {owner}. Version {world_specs.load()['version']}.", ""]
         lines += [f"Document types: {kinds}.", ""]
         ex = used.get(u, [])
+        if level == "transaction" and ex:
+            lines += transaction_detail(ex)
         if ex:
-            lines += ["Examples that claim it:", ""] + [f"- [{f} {n}](example-{f}-{n}.html)" for f, n in ex] + [""]
+            lines += ["## Examples that claim it", ""] + [f"- {example_label(f, n)}" for f, n in ex] + [""]
         open(os.path.join(mddir, spec_page(lv, key) + ".md"), "w", encoding="utf-8").write("\n".join(lines))
     idx.append("")
 open(os.path.join(mddir, "world-specifications.md"), "w", encoding="utf-8").write("\n".join(idx))
