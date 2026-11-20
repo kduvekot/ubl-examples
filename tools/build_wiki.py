@@ -154,6 +154,8 @@ def founded(text):
         when = f"in the {m[1]} or {m[2]}{m[3]}"
     elif m := re.match(r"(\d\w+) to (\d\w+)$", when):
         when = f"between the {m[1]} and the {m[2]}"
+    elif re.match(r"\d{4}\b", when):
+        when = "in " + when
     elif re.match(r"\d|late |early ", when):
         when = "in the " + when
     out = f"It was founded by {PEOPLE.get(who, who)} {when}"

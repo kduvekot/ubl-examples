@@ -14,7 +14,7 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 - ~~When the Lisavans first settled the island.~~ **Filled 2026-11-20 (OW005):** a landing by canoe at Natahoma about 2,000 years ago; the coasts settled in the centuries after; one line of rulers at Selanu by about the 14th century.
 - The rulers' old meeting ground in Selanu: what it is, what it looks like, its Lisavan name (from the lexicon tool).
 - When the first European ships called at Lisavu, before the cotton estates.
-- The exact years of the first landing at Larkmouth, the Sardinian treaty with the Urvanian rulers, the boundary convention, and the move of Bayvarra's capital from Larkmouth to Lumeport.
+- ~~The exact years of the first landing at Larkmouth, the Sardinian treaty with the Urvanian rulers, the boundary convention, and the move of Bayvarra's capital from Larkmouth to Lumeport.~~ **Filled 2026-11-20 (OW006):** the landing on 16 February 1824, the treaty in 1840, the annexation on 29 November 1841, the fort in 1842, the capital moved in 1852, the convention in 1857, Upland on 12 April 1858.
 - The years of the Trade Accord's later protocols: procurement rules, the payment link and card schemes, electronic business documents.
 - The name of the main river and of the plateau rivers.
 
