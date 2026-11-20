@@ -927,7 +927,7 @@ function office3(g, p, col, glass) {
   windowsOn(g, F, fc, 4, 2, H - 2, official ? glass : "rgba(60,110,160,.9)", floors);
   for (const f2 of fc) if (f2.k === 0) { onFace(g, F, f2.a, f2.b, .4, .6, 0, 4.5, "#4a3a2c"); poly(g, [F(.36, .22, 5), F(.64, .22, 5), F(.64, .12, 5), F(.36, .12, 5)], shade(col, -.2)); }
   if (official) { const [x, y] = F(.72, .72, H); flag(g, x, y, col); } else box3(g, F, .4, .45, .6, .62, H, H + 3, "#9aa3ab", "#7d868e"); }
-// a quarter: wings of one style (pale stone, slate roofs, two storeys of windows) round a paved court that opens on
+// a quarter: wings of one style (pale stone, slate roofs, three storeys of windows) round a paved court that opens on
 // the street, gate piers and a flagpole at the opening; the occupied wings carry their body's colour under the eaves
 // and a door to the court, the others are drawn as part of the block, ready for more occupants. The wings in order
 // (WING_BOX, u along the front to the right, v from the front to the back): the back wing's two halves, then the side
@@ -935,16 +935,16 @@ function office3(g, p, col, glass) {
 const WING_BOX = [[.06, .72, .5, .94], [.5, .72, .94, .94], [.06, .41, .28, .72], [.72, .41, .94, .72], [.06, .1, .28, .41], [.72, .1, .94, .41]];
 const quarterFrame = q => buildingFrame({ at: q.at, size: [1, 1] }, .04, q.open);
 function wingAnchor(p) { const w = WING.get(p.id); if (!w) return null; const [u0, v0, u1, v1] = WING_BOX[w.k];
-  return quarterFrame(w.q)((u0 + u1) / 2, (v0 + v1) / 2, 24); }
+  return quarterFrame(w.q)((u0 + u1) / 2, (v0 + v1) / 2, 28); }
 function quarter3(g, q, glass) {
-  const F = quarterFrame(q), H = 13, wall = "#ebe4d2", roof = "#5f6b74", court = "#d9d1bd";
+  const F = quarterFrame(q), H = 19, wall = "#ebe4d2", roof = "#5f6b74", court = "#d9d1bd";
   poly(g, [F(.02, 0), F(.98, 0), F(.98, .98), F(.02, .98)], "#cbc3ae");                    // the plinth of the block
   poly(g, [F(.28, 0), F(.72, 0), F(.72, .72), F(.28, .72)], court);                         // the court and its forecourt
   poly(g, [F(.46, 0), F(.54, 0), F(.54, .5), F(.46, .5)], shade(court, -.08));             // the walk to the flagpole
   const parts = WING_BOX.slice(0, Math.max(q.room, 4)).map((b, k) => { const [u0, v0, u1, v1] = b, p = byId[q.wings[k]];
     return { u: (u0 + u1) / 2, v: (v0 + v1) / 2, draw: () => { const along = u1 - u0 >= v1 - v0;
       const fc = box3(g, F, u0, v0, u1, v1, 0, H, wall, null);
-      windowsOn(g, F, fc, 7, 2, H - 2.5, glass, 2);
+      windowsOn(g, F, fc, 7, 2, H - 2.5, glass, 3);
       if (p) { const col = css(CAT[p.cat]) || "#888"; for (const f2 of fc) onFace(g, F, f2.a, f2.b, 0, 1, H - 1.6, H, col);
         const cf = fc.find(f2 => (f2.a[0] + f2.b[0]) / 2 > .27 && (f2.a[0] + f2.b[0]) / 2 < .73 && (f2.a[1] + f2.b[1]) / 2 < .73);   // towards the court
         if (cf) onFace(g, F, cf.a, cf.b, .42, .58, 0, 4.5, "#4a3a2c"); }
