@@ -1036,6 +1036,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Depends on / blocks: none
 - State: waits for O46 (D16: the WTO Valuation Agreement, Articles 1 and 8, is to be read before implementation).
 - Fixed in part (2026-11-17, stage 2, after O46): each declaration values the goods on its country's basis (`VALUATION`, `customs_values()` in `tools/build_examples.py`): wood/05 and 07 include the pallets (34,800.00 lume, 3,480,000 ferra), tender/30 and 31 the colour (2,016,000 ferra, 20,160.00 lume), plastics/05 and 09 leave out the river freight (9,804,600 ferra, 98,046.00 lume), sea/19 adds freight and insurance to the island (21,511.200 coral, the bill of lading's value); the phytosanitary certificate cotton/10 no longer carries a customs value or the classing certificate. road/10, cotton/15 and energy/05 stand. tender/31's deduction of the carriage after the border and rail/06 wait for the distances of the place list (O91).
+- **Fixed (2026-11-20, O46 decided by the owner):** tender/31 keeps the whole delivered price, since its carriage after the border is not distinguished from the price (WTO Valuation Agreement art. 1 and 8); rail/06 states a transit guarantee value, not a customs value. Nothing is left.
 - Findings: cotton: 10#F9, 15#F4; plastics: 05#F10, 09#F6; rail: 06#F17; sea: 14#F3, 19#F6; tender: 30#F4, 31#F6; wood: 05#F3, 07#F4; consistency: conditions#F5
 
 ### C53 · Documents dated at the weekend against a Monday-to-Friday week
