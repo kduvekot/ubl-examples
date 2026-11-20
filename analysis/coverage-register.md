@@ -1031,6 +1031,15 @@ Coverage 4623 → 4613, 10 elements; all 10 won back the same day (4613 → 4623
 
 > D26, O77: `ProfileExecutionID` identifies one collaboration (one run of a process between the same parties, whose documents refer to each other), given by the party that starts it; a document that belongs to no collaboration with others carries none. The collaborations of each flow are listed in `world/documents.json` (`flows[].collaborations`); the build checks them (`check_numbering()` in `tools/build_examples.py`). Every customs declaration, goods certificate, ship's manifest and port report of the examples stands alone (the authority's answer is not an example), as do the shop's till receipts and the sea flow's business card, digital agreement and capability statement, which refer to no other document: their `ProfileExecutionID` goes.
 
+### O262: the tax currency and rate only on documents that charge VAT (2026-11-20, owner)
+
+> The tender flow's call-off order (tender/26) charges no tax (category G) but stated the manufacturer's tax currency and the lume-to-ferra tax exchange rate; the owner decided that these belong only on documents on which VAT is actually charged (invoices, credit notes, self-billed invoices and credit notes, debit notes, a receipt that charges the tax), not on quotations and orders.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Order/TaxCurrencyCode` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
+| `Order/TaxExchangeRate` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).
