@@ -70,7 +70,6 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `GoodsItem/InsurancePolicy` | 0..n | sea/19-ImportCustomsDeclaration |  |  | open |
 | `InsurancePolicy/ExcessAmount` | 0..1 | sea/14-BillOfLading |  |  | open |
 | `Shipment/FreightAllowanceCharge` | 0..n | sea/11-ExportCustomsDeclaration |  |  | open |
-| `Shipment/InsuranceValueAmount` | 0..1 | sea/11-ExportCustomsDeclaration |  |  | open |
 | `ShipmentStage/FreightAllowanceCharge` | 0..n | sea/14-BillOfLading |  |  | open |
 | `Statement/AllowanceCharge` | 0..n | sea/25-Statement | a charge of the factor's own in its statement, such as a factoring fee, if the factoring agreement gives one | sea | open |
 | `StatementLine/AllowanceCharge` | 0..n | sea/25-Statement |  |  | open |
@@ -153,7 +152,6 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Attachment/FileName` | 0..1 | sea/03-DigitalAgreement |  |  | open |
 | `DocumentReference/XPath` | 0..n | sea/03-DigitalAgreement |  |  | open |
 | `ExternalReference/CharacterSetCode` | 0..1 | sea/03-DigitalAgreement |  |  | open |
 
@@ -419,7 +417,6 @@ Coverage 5049 → 4996 (commit 1bf967d6), 53 elements.
 | `StatementLine/BeneficiaryParty` | 0..n | sea/25-Statement | | | open |
 | `StatementLine/OriginatorCustomerParty` | 0..1 | sea/25-Statement | | | open |
 | `StatementLine/SellerSupplierParty` | 0..1 | sea/25-Statement | | | open |
-| `Temperature/MeasureCode` | 0..1 | mast/02-ForwardingInstructions, plastics/09-ImportCustomsDeclaration | | | open |
 | `Tender/BeneficiaryParty` | 0..n | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
 | `Tender/OriginatorCustomerParty` | 0..1 | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
 | `TenderLine/ReplacementRelatedItem` | 0..n | tender/15-Tender, tender/17-Tender, tender/19-Tender | | | open |
@@ -550,9 +547,6 @@ Coverage 4954 → 4951 (commit baad0535), 3 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `EmissionCalculationMethod/FullnessIndicationCode` | 0..1 | retail/02-Catalogue, retail/04-CatalogueItemSpecificationUpdate, sea/02-Catalogue … | | | open |
-| `EnvironmentalEmission/ValueBaseMeasure` | 0..1 | retail/02-Catalogue, retail/04-CatalogueItemSpecificationUpdate, sea/02-Catalogue … | | | open |
-| `EnvironmentalEmission/ValueFactorNumeric` | 0..1 | retail/02-Catalogue, retail/04-CatalogueItemSpecificationUpdate, sea/02-Catalogue … | | | open |
 
 ### C70: one melt per casting day, one coating batch per lot, from the production record
 
@@ -572,7 +566,6 @@ Coverage 4950 → 4947 (commit 964ca3d7), 3 elements.
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `GoodsCertificate/FreightForwarderParty` | 0..1 | cotton/10-GoodsCertificate | | | open |
 | `GoodsCertificate/LegalAuthorityParty` | 0..1 | cotton/10-GoodsCertificate | | | open |
 | `GoodsCertificate/PreviousDocumentReference` | 0..1 | cotton/10-GoodsCertificate | | | open |
 
@@ -633,7 +626,6 @@ Stage 6, building group G1 (C77, C87, C88, C89).
 | `GoodsItem/ReturnableQuantity` | 0..1 | plastics/06-Waybill | | | open |
 | `GoodsItem/ValueAmount` | 0..1 | plastics/06-Waybill | the amount the island's import consumption tax of 10 % is assessed on, the landed value of a goods item in an import declaration into Lisavu (D18; "the amount on which a duty, tax, or fee will be assessed") | sea | candidate |
 | `ItemInstance/BestBeforeDate` | 0..1 | plastics/08-DespatchAdvice | fresh food with a best-before date, such as the reefer's apples (O137, still to design) | reefer | open |
-| `LotIdentification/ExpiryDate` | 0..1 | plastics/08-DespatchAdvice | a lot of vaccines or medicines with its expiry date in the medicines flow's despatch advice (D47) | medicines | candidate |
 
 > C89, D43: the sawmill sells the bundle of 50 slats as its item, so quotation, order and invoice are in bundles and no price converts a piece price into a pack (02#F13, 03#F10, 08#F14); the quotation's main line is oak with ash as the priced alternative, and the 35 mm substitute goes (02#F16).
 
@@ -650,7 +642,6 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Attachment/EmbeddedDocument` | 0..1 | carnet/04-ProofOfReexportation | a clear-text document attached as such, such as the temperature logger's readings of the vaccine container as a CSV in the medicines flow's status or receipt (D47) | medicines | candidate |
 | `Consignment/OfficeOfSubSequentiallyEntryLocation` | 0..1 | carnet/01-GoodsItemPassport | the containers of the rail flow enter Bayvarra at the rail border station and are cleared at Bayvarra customs' inland office at Marrowdale, a facility where goods are processed after their initial entry point (D37, rail/14) | rail | candidate |
 | `Person/MiddleName` | 0..1 | carnet/01-GoodsItemPassport | | | open |
 | `Person/NameSuffix` | 0..1 | carnet/01-GoodsItemPassport | | | open |
@@ -663,11 +654,8 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `DeliveryUnit/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
 | `HazardousItem/EmergencyProceduresCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the Trade Accord's emergency card for the propane's class (TEC2), the instructions in writing the road tanker carries, as the secondary hazard already uses it (D48) | lpg | candidate |
 | `HazardousItem/EmergencyTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a self-reactive substance or organic peroxide whose control and emergency temperatures the rules set; the world has none (O126) | | open |
-| `HazardousItem/LowerOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
 | `HazardousItem/MaritimePollutantCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | | | open |
 | `HazardousItem/PlacardEndorsement` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | an endorsement a rule asks for on the papers; none in the world so far (O126) | | open |
-| `HazardousItem/TunnelRestrictionCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | the propane road tanker's tunnel restriction code, a carriage by road alone (D48) | lpg | candidate |
-| `HazardousItem/UpperOrangeHazardPlacardID` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the propane road tanker's orange plates, 23 over 1965 (D48, O126) | lpg | agreed |
 | `ItemLocationQuantity/HazardousRiskIndicator` | 0..1 | mast/05-Invoice | | | open |
 | `RadioactiveIsotope/ActivityLevelMeasure` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | only under `ApplicableRadioactiveIsotope`, for fissile contents, which the world does not have (O126, O127) | | open |
 | `RadioactiveIsotope/Name` | 1 | mast/02-ForwardingInstructions, mast/03-Waybill, mast/04-DespatchAdvice | as above (O127) | | open |
@@ -681,12 +669,9 @@ Stage 6, building group G2 (C78 with C57's carnet/03#F1, F2; C79, C80; C85, C86)
 | `HazardousGoodsTransit/InhalationToxicityZoneCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | a gas or liquid toxic by inhalation; the world has none | | open |
 | `HazardousGoodsTransit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `HazardousGoodsTransit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
-| `HazardousGoodsTransit/TransportEmergencyCardCode` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the Trade Accord's emergency card for class 2 on the propane road tanker (D48) | lpg | candidate |
 | `HazardousItem/AdditionalTemperature` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `TransportEquipment/AnimalFoodApprovedIndicator` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
 | `TransportEquipment/HazardousGoodsTransit` | 0..n | mast/02-ForwardingInstructions, mast/03-Waybill | | | open |
-| `TransportHandlingUnit/MaximumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 8 °C (D47, O124) | medicines | agreed |
-| `TransportHandlingUnit/MinimumTemperature` | 0..1 | mast/02-ForwardingInstructions, mast/03-Waybill | the vaccines' handling unit, 2 °C (D47, O124) | medicines | agreed |
 
 > C85, C86, D39: the urgent frames fly on a direct air waybill, one small consignment on a named flight, so the consolidation, the house consignment and its sequence number go (air/04#F2, F7); the forwarder trucks the skid to the terminal itself and Nalevi collects it at Selanu, so no substitute carrier (04#F6); CPT is stated once, on the order change's air line, so neither the order change nor its delivery carries delivery terms (01#F5); the acceptance is unconditional, so it has no validity period (02#F4).
 
@@ -780,7 +765,6 @@ Stage 6, building group G5 (C100, C101, C102; D35).
 | `Delivery/MaximumDeliveryUnit` | 0..1 | road/01-Order | | | open |
 | `DocumentResponse/IssuerParty` | 0..1 | road/16-ApplicationResponse | | | open |
 | `DocumentResponse/RecipientParty` | 0..1 | road/16-ApplicationResponse | | | open |
-| `Status/IndicationIndicator` | 0..1 | road/09-TransportationStatus | in the same status of the medicines flow, whether the temperature stayed within 2–8 °C for the whole carriage, stated as what the indicator means (D47) | medicines | candidate |
 
 > C101, D35 point 2: the chamber certifies and is the only endorser; the embassy endorsement by the Trade Accord Council goes, since a certificate between Accord members needs no legalisation (07#F10), and so does the insurer's endorsement (06#F3, 07#F9); the application is a first one and names no previous job (06#F17, 07#F18).
 
@@ -1054,8 +1038,6 @@ Stage 6, building group G4 (C82, C91, C92, C93, C95, C50's levy findings).
 
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
-| `Invoice/PaymentCurrencyCode` | 0..1 | tender/32-Invoice, tender/39-Invoice | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
-| `Invoice/PaymentExchangeRate` | 0..1 | tender/32-Invoice, tender/39-Invoice | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 | `Order/PaymentExchangeRate` | 0..1 | tender/26-Order | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 | `Reminder/PaymentCurrencyCode` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
 | `Reminder/PaymentExchangeRate` | 0..1 | tender/35-Reminder | a trade outside the Accord at a floating rate (O51, where O96 places `ForeignExchangeContract`): a document in the contract's currency whose payment is asked in another currency at the day's rate, which the parities of the Accord never make necessary | O51 | candidate |
@@ -1069,7 +1051,6 @@ Never covered; added only through a real business situation in the world (`CLAUD
 | `ContractExtension/MinimumNumberNumeric` | 0..1 | never covered |  |  | left out |
 | `Manifest/DeclaredCarriageValueAmount` | 0..1 | never covered |  |  | left out |
 | `RadioactiveMaterial/FissileCriticalitySafetyIndexNumeric` | 0..1 | never covered |  |  | left out |
-| `RadioactiveMaterial/TransportIndexNumeric` | 0..1 | never covered | the technetium generator of the medicines flow (D47) | medicines | agreed |
 | `ShipmentStage/TransshipPortLocation` | 0..1 | never covered |  |  | left out |
 | `SubcontractTerms/MinimumPercent` | 0..1 | never covered |  |  | left out |
 
@@ -1079,6 +1060,32 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `HazardousItem/UpperOrangeHazardPlacardID` | lpg/03-Waybill | the propane road tanker's orange plates, 23 over 1965: the upper half, the hazard identification number 23 (gas, flammable), on the tank's loaded hazardous item in the haulier's consignment note (D48, O126) | 2026-11-20 |
+| `HazardousItem/LowerOrangeHazardPlacardID` | lpg/03-Waybill | the lower half of the tanker's orange plates, the UN number 1965 (D48, O126) | 2026-11-20 |
+| `HazardousItem/TunnelRestrictionCode` | lpg/03-Waybill | the propane's tunnel restriction code B/D (ADR 2025), a carriage by road alone, which the consignment note must give for the tank (D48) | 2026-11-20 |
+| `HazardousGoodsTransit/TransportEmergencyCardCode` | lpg/03-Waybill | the Trade Accord's emergency card for class 2 (TEC2), the instructions in writing the tanker's crew carries, on the road transit of the loaded propane; HazardousItem/EmergencyProceduresCode stays open (owner, 2026-11-20) | 2026-11-20 |
+| `EmissionCalculationMethod/FullnessIndicationCode` | lpg/03-Waybill | the tanker's CO2e for the water company's greenhouse-gas report: the loaded run Gullhaven to Lumeport, UN/EDIFACT 8169 code 5 full, and the empty run back, code 4 empty (owner, 2026-11-20; list UNCL8169) | 2026-11-20 |
+| `EnvironmentalEmission/ValueFactorNumeric` | lpg/03-Waybill | each run's CO2e is its diesel times the tank-to-wheel factor 0.268 kg CO2e per kWh (D41's factor): the factor | 2026-11-20 |
+| `EnvironmentalEmission/ValueBaseMeasure` | lpg/03-Waybill | and the base: the kWh of diesel each run used, from the haulier's fuel records (1,700 kWh loaded, 1,240 kWh empty) | 2026-11-20 |
+| `Attachment/EmbeddedDocument` | medicines/12-TransportationStatus | the active container's logger readings, a comma-separated text of 25 readings from its closing at the wholesaler to its opening at Selanu's cargo terminal, attached to the arrival status so the hospital pharmacy keeps them with its stock records (D47) | 2026-11-20 |
+| `Attachment/FileName` | medicines/12-TransportationStatus | the name of the logger's file attached to the arrival status (D47) | 2026-11-20 |
+| `Condition/MaximumMeasure` | medicines/12-TransportationStatus, reefer/10-TransportationStatus | the highest temperature the active container logged on the way to the island, inside 2 to 8 °C (D47); and the highest, while the reefer was off power between the quay and the ship (O137) | 2026-11-20 |
+| `Condition/Measure` | medicines/10-TransportationStatus, medicines/12-TransportationStatus, reefer/10-TransportationStatus | the container's temperature read at acceptance at Lumeport's cargo terminal, and when it was opened at Selanu (D47); and the average supply-air temperature of the reefer over the voyage, from the carrier's reefer monitoring, in its status on discharge (O137) | 2026-11-20 |
+| `Condition/MinimumMeasure` | medicines/12-TransportationStatus, reefer/10-TransportationStatus | the lowest temperature the active container logged on the way (D47); and the lowest supply-air reading of the voyage (O137) | 2026-11-20 |
+| `GoodsItem/MaximumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the highest temperature each cold-chain goods item may reach: 8 °C for the vaccine and the insulin, -15 °C for the frozen vaccine (D47, O124); and the warmest, 1 °C (O137) | 2026-11-20 |
+| `GoodsItem/MinimumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the lowest: 2 °C, and -50 °C for the frozen vaccine (D47, O124); and the coldest the fruit may be carried at, 0 °C (O137) | 2026-11-20 |
+| `GoodsItem/Temperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/11-ReceiptAdvice | the vaccine's and the insulin's carriage temperature, the set point of 5 °C (D47, O124); and the set point 0.5 °C the fruit is carried at, and the pulp temperature the wholesaler measures at unloading (O137) | 2026-11-20 |
+| `Invoice/PaymentCurrencyCode` | medicines/02-Invoice | the Indian maker invoices in rupees and asks payment in euro, the currency the wholesaler pays its suppliers abroad in (O229; a trade outside the Accord, O51) | 2026-11-20 |
+| `Invoice/PaymentExchangeRate` | medicines/02-Invoice | the ECB's euro reference rate of the invoice date, 110.938 rupees per euro, by which the rupee amount is paid in euro (O229, O51) | 2026-11-20 |
+| `LotIdentification/ExpiryDate` | medicines/09-DespatchAdvice | the expiry dates of the makers' lots of the influenza and varicella vaccines and of the insulin, which the hospital pharmacy checks on receipt (D47) | 2026-11-20 |
+| `RadioactiveMaterial/TransportIndexNumeric` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the technetium generator's Type A package, transport index 1.5, Category III-YELLOW (D47, O202) | 2026-11-20 |
+| `Status/IndicationIndicator` | medicines/12-TransportationStatus | whether the temperature stayed within 2 to 8 °C for the whole carriage, which the hospital needs to accept the goods (D47) | 2026-11-20 |
+| `Temperature/MeasureCode` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the set point of the cold-chain goods as the target of their range (TARGET, D47) | 2026-11-20 |
+| `TransportEquipment/MaximumTemperature` | medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the airline's active RKN container's upper limit, 8 °C (D47, O124); and the highest, 1 °C: warmer, the fruit ripens on the way (O137) | 2026-11-20 |
+| `TransportEquipment/MinimumTemperature` | medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading | its lower limit, 2 °C (D47, O124); and the lowest air temperature the reefer may reach, 0 °C: colder, the fruit begins to freeze (O137) | 2026-11-20 |
+| `TransportEquipment/RefrigerationOnIndicator` | medicines/11-Waybill, reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/10-TransportationStatus | the active container switched on, holding its set point on its batteries (D47, O124); and the reefer's refrigeration running from pre-cooling to the cold store, and again on the port's power at Selanu (O137) | 2026-11-20 |
+| `TransportHandlingUnit/MaximumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | the cold-chain handling unit at 8 °C at most, the frozen vaccine's box at -15 °C (D47, O124) | 2026-11-20 |
+| `TransportHandlingUnit/MinimumTemperature` | medicines/06-ForwardingInstructions, medicines/11-Waybill | at 2 °C at least, the frozen vaccine's box at -50 °C (D47, O124) | 2026-11-20 |
 | `Order/OriginatorDocumentReference` | sea/05-Order | the Port of Selanu's request to the trader, which the order's port line follows (G8, O172) | 2026-11-19 |
 | `RemittanceAdviceLine/DocumentReference` | tender/36-RemittanceAdvice | the department's deduction of the penalty for late completion under clause PEN-1 of the framework contract, which the remittance line cites as the document it is based on (D28 point 9, D9: the penalty is not a debit note) | 2026-11-19 |
 | `QualificationResolution/ExclusionReason` | contest/18-TendererQualificationResponse | Fernhollow Studio, a small design studio of Lumeport, asks to take part in the design contest and is excluded at the selection for social security contributions of 3,860 lume due and unpaid, above the minor amounts; the department tells it why and how to appeal (O102, D29 point 6) | 2026-11-19 |
@@ -1094,17 +1101,10 @@ Elements that were in this register and are covered again, with the example that
 | `Item/EnvironmentalCertificate` | plastics/12-Catalogue | Rinova's product information for its granulate to Rivermouth: the recycled-content certificate of the accredited certification body Certovira Certification, and the recycled content of 100 % (D41, O193) | 2026-11-19 |
 | `TransportEquipment/ServiceAllowanceCharge` | reefer/07-BillOfLading | the carrier's charge for reefer power and monitoring at Selanu after discharge, a day, collect from the consignee (O137) | 2026-11-20 |
 | `ImportCustomsDeclaration/ValidityPeriod` | reefer/09-ImportCustomsDeclaration | the wholesaler's import declaration lodged before the reefer arrives, so that the fruit is released on discharge; it lapses if the goods are not presented within 30 days (O137; also O150's candidate) | 2026-11-20 |
-| `GoodsItem/MaximumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the warmest, 1 °C (O137) | 2026-11-20 |
-| `GoodsItem/MinimumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the coldest the fruit may be carried at, 0 °C (O137) | 2026-11-20 |
-| `GoodsItem/Temperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/11-ReceiptAdvice | the set point 0.5 °C the fruit is carried at, and the pulp temperature the wholesaler measures at unloading (O137) | 2026-11-20 |
 | `TransportEquipment/AirFlowPercent` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer's fresh-air vent, open 15 %: apples and pears breathe, and fresh air carries off their carbon dioxide and ethylene (O137, O205) | 2026-11-20 |
 | `TransportEquipment/HumanFoodApprovedIndicator` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer approved for food, for unpacked fruit in open trays (O137) | 2026-11-20 |
 | `TransportEquipment/HumidityPercent` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the reefer set to hold about 90 % relative humidity, so that the fruit does not shrivel (O137) | 2026-11-20 |
-| `TransportEquipment/MaximumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the highest, 1 °C: warmer, the fruit ripens on the way (O137; D47 may add its own) | 2026-11-20 |
-| `TransportEquipment/MinimumTemperature` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading | the lowest air temperature the reefer may reach, 0 °C: colder, the fruit begins to freeze (O137; the medicines flow's case, D47, may add its own) | 2026-11-20 |
-| `TransportEquipment/RefrigerationOnIndicator` | reefer/03-ForwardingInstructions, reefer/07-BillOfLading, reefer/10-TransportationStatus | the reefer's refrigeration running from pre-cooling to the cold store, and again on the port's power at Selanu (O137; D47 may add its own) | 2026-11-20 |
 | `TransportEquipment/StorageLocation` | reefer/10-TransportationStatus | the power point in the Port of Selanu's reefer rack where the reefer stands from discharge until it is collected (O137) | 2026-11-20 |
-| `Condition/MaximumMeasure` | reefer/10-TransportationStatus | the highest, while the reefer was off power between the quay and the ship (O137) | 2026-11-20 |
-| `Condition/Measure` | reefer/10-TransportationStatus | the average supply-air temperature of the reefer over the voyage, from the carrier's reefer monitoring, in its status on discharge (O137) | 2026-11-20 |
-| `Condition/MinimumMeasure` | reefer/10-TransportationStatus | the lowest supply-air reading of the voyage (O137) | 2026-11-20 |
 | `OrderResponse/ValidityPeriod` | reefer/02-OrderResponse | the cooperative's conditional acceptance of the wholesaler's order, three pallets of pears instead of four and a fifth of Granny Smith, open until Friday 17 April at noon, its cut-off for booking the reefer on the Thursday's ship (O236) | 2026-11-20 |
+| `Shipment/InsuranceValueAmount` | reefer/03-ForwardingInstructions | the cooperative instructs its forwarder to insure the reefer's fruit for 110 % of its CIP value, the least cover Incoterms 2020 CIP asks of the seller (O239) | 2026-11-20 |
+| `GoodsCertificate/FreightForwarderParty` | reefer/04-GoodsCertificate | Bayforth, the cooperative's forwarder, applies for the phytosanitary certificate on the cooperative's behalf and collects it with the export papers (O239) | 2026-11-20 |

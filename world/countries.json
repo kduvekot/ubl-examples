@@ -303,7 +303,7 @@
     "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Two decimals, the most common case."
    },
    "tax": {
-    "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the sale to the final consumer. Sales to businesses that resell, exports and sales to public bodies are exempt, and the invoice says so.",
+    "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the final use. A sale for resale or manufacture (goods sold on as they are, or that become part of the product sold, the packaging that goes to the customer included), exports, sales to public bodies and services to a business are exempt, and the invoice says so; what a business uses up or keeps (fuel and energy it burns, consumables, tools, machines, vehicles, buildings) is taxed as a retail sale, at the rate of the state where it is delivered (O204).",
     "schemes": [
      {
       "id": "STT",
@@ -315,9 +315,10 @@
        "Northern Territory": 4.0
       },
       "exempt": [
-       "sale for resale",
+       "sale for resale or manufacture",
        "export",
-       "sale to a public body"
+       "sale to a public body",
+       "service to a business"
       ]
      }
     ],
@@ -330,6 +331,15 @@
      "Collected for a public body, outside the scope of the state sales tax": "LEVY"
     },
     "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (world/codelists/lists.json, XB:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
+    "duty_free": {
+     "chapters": [
+      "30"
+     ],
+     "subheadings": [
+      "284443"
+     ],
+     "note": "Bayvarra's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin, as most countries apply under the WTO's zero-for-zero agreement on pharmaceutical products (O229)."
+    },
     "withholding": {
      "percent": "10",
      "on": "services by businesses not established in Bayvarra, paid by a public body",
@@ -537,6 +547,11 @@
      "name": "register of bonded warehouse licences of Bayvarra's customs",
      "pattern": "^XB-BOND-LIC-\\d{4}$",
      "format": "XB-BOND-LIC- and a four-digit number"
+    },
+    "dangerous-goods-carrier": {
+     "name": "register of carriers of dangerous goods by road of Bayvarra",
+     "pattern": "^XB-DGC-\\d{4}-\\d{4}$",
+     "format": "XB-DGC-, the year of issue and a four-digit number"
     }
    },
    "legal_time": "Bayvarran Time",
@@ -602,6 +617,19 @@
       "levied_on": "import, customs value plus duty"
      }
     ],
+    "exemption_codes": {
+     "Medicines and vaccines for a public hospital": "MEDHOSP"
+    },
+    "exemption_codes_note": "The exemption reasons of the import consumption tax as codes of Lisavu's national list (world/codelists/lists.json, XL:TaxExemptionReason): medicines and vaccines supplied to a public hospital (O201).",
+    "duty_free": {
+     "chapters": [
+      "30"
+     ],
+     "subheadings": [
+      "284443"
+     ],
+     "note": "Lisavu's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin: an island that cannot make them keeps them cheap, as most countries do for medicines, many under the WTO's zero-for-zero agreement on pharmaceutical products (D47)."
+    },
     "withholding": {
      "on": "the price of farm produce bought from farmers, by the buyer",
      "tiers": [
@@ -806,7 +834,7 @@
   "XBL/XLC": 0.4,
   "XUF/XLC": 0.004
  },
- "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral.",
+ "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral. Against currencies outside the Accord the lume floats: the Lumeport Exchange's daily fixing (O231, tools/fx_fixing.py, world/fx-fixings.json).",
  "geography": {
   "km_per_tile": 3.5,
   "mainland": {
@@ -2009,7 +2037,9 @@
     "weeks": "zakdrir",
     "coating": "stirvan",
     "ten": "drarbir",
-    "tendered": "skilhan"
+    "tendered": "skilhan",
+    "chilled": "trerir",
+    "frozen": "gatrek"
    }
   },
   "qal": {
@@ -3155,7 +3185,19 @@
     "encourage": "metolike",
     "food": "lavamu",
     "pays": "tilasi",
-    "taxes": "tiava"
+    "taxes": "tiava",
+    "hospital": "pateta",
+    "medicines": "lifanaha",
+    "vaccines": "hatoki",
+    "are": "piseki",
+    "but": "sekila",
+    "exempt": "talapa",
+    "isotopes": "nualo",
+    "made": "nalana",
+    "medicine": "sahona",
+    "radioactive": "hakasute",
+    "chilled": "hinola",
+    "frozen": "konoti"
    }
   },
   "en": {
@@ -3326,6 +3368,42 @@
    ],
    "name": "every day",
    "note": "Ports, carriers, terminals, border customs and the operations of utilities; they work through the public holidays (D27)."
+  }
+ },
+ "abroad_countries": {
+  "note": "Real countries outside the world that the world trades with (O229, partly answering O51): only what the documents need. They are not countries of the world: no map, no registers, no tax of the world.",
+  "NL": {
+   "name": "Netherlands",
+   "in_text": "the Netherlands",
+   "currency": {
+    "code": "EUR",
+    "name": "Euro",
+    "minor_units": 2
+   },
+   "timezone": "+02:00",
+   "legal_time": "Central European Summer Time",
+   "tax": {
+    "id": "VAT",
+    "name": "Value added tax",
+    "export": "Goods exported outside the European Union are zero-rated under Dutch VAT (Article 146 of the VAT Directive 2006/112/EC): no tax is charged (category G).",
+    "reason": "Export outside the European Union"
+   }
+  },
+  "IN": {
+   "name": "India",
+   "currency": {
+    "code": "INR",
+    "name": "Indian rupee",
+    "minor_units": 2
+   },
+   "timezone": "+05:30",
+   "legal_time": "Indian Standard Time",
+   "tax": {
+    "id": "GST",
+    "name": "Goods and services tax",
+    "export": "An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G).",
+    "reason": "Zero-rated export supply"
+   }
   }
  }
 }

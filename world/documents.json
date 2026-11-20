@@ -909,6 +909,110 @@
      }
     }
    ]
+  },
+  {
+   "id": "lpg",
+   "title": "Propane by road tanker to Lumeport's district heating (dangerous goods, domestic, Bayvarra)",
+   "text": "Kelpstone Gas separates propane from its field's gas at the Gullhaven plant and sells it by road tanker. In winter the Coastal State Water Company, which runs Lumeport's district heating, burns propane in its peak boilers and orders a tanker load when its storage runs low. Kelpstone has it carried by Gullhaven Tank Haulage, licensed to carry dangerous goods in tanks: about 20 t of propane, UN 1965, class 2.1, in a tank semi-trailer that weighs about 17 t with its tractor, so within the Accord's 40 t; the tank shows the class 2.1 placard and orange plates with 23 over 1965. The tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, pumps the propane into the water company's storage and returns empty the next day. The propane is burned, not resold, so Bayvarra's sales tax applies to the sale (D48, O204).",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "42-xb",
+     "to": "34-xb",
+     "carrier": "52-xb",
+     "why": "The tanker carries the propane from the gas plant to the water company's peak boilers in Lumeport.",
+     "from_place": {
+      "name": "Kelpstone Gas plant, Gullhaven, LPG loading bay"
+     },
+     "to_place": {
+      "name": "Coastal State Water Company, district heating plant, Reservoir Road, Lumeport"
+     },
+     "transit_days": 0
+    }
+   ]
+  },
+  {
+   "id": "medicines",
+   "title": "Medicines and a technetium generator for the island's hospital, by air (cold chain and radioactive material)",
+   "text": "Selanu General Hospital orders the vaccines for the island's winter influenza campaign, insulin, a frozen varicella vaccine and its weekly technetium-99m generator from a pharmaceutical wholesaler in Lumeport, carriage paid to Selanu airport. The forwarder books the morning flight of Monday 15 June: the vaccines and the insulin fly at 2 to 8 °C in the airline's active temperature-controlled container, the frozen vaccine in an insulated box on dry ice, and the generator, a Type A package of radioactive material with a Yellow label, under a shipper's declaration of its own, in the aft hold. The wholesaler's own van brings the generator to the cargo terminal at 05:30. On the island the customs broker declares the import for the hospital, free of duty and exempt from the import consumption tax, and the hospital pharmacy's van fetches the goods.",
+   "legs": [
+    {
+     "mode": "road",
+     "from": "49-xb",
+     "to": "17-xb",
+     "carrier": "10-xb",
+     "why": "The forwarder's truck collects the loaded active container and the dry-ice box at the wholesaler's cold rooms before dawn and brings them to the cargo terminal.",
+     "from_place": {
+      "name": "Quillmoor Pharma Distribution, Airport Road warehouse"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     }
+    },
+    {
+     "mode": "road",
+     "from": "49-xb",
+     "to": "17-xb",
+     "carrier": "49-xb",
+     "why": "The wholesaler's own van, with a driver trained for class 7, brings the generator to the cargo terminal itself (O202 choice 4).",
+     "from_place": {
+      "name": "Quillmoor Pharma Distribution, Airport Road warehouse"
+     },
+     "to_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     }
+    },
+    {
+     "mode": "air",
+     "from": "17-xb",
+     "to": "17-xl",
+     "carrier": "12-xl",
+     "why": "The morning flight KXL207 of Monday 15 June on the airline's freighter.",
+     "load": {
+      "ulds": [
+       {
+        "id": "RKN20871K0",
+        "type": "RKN",
+        "position": "MD-4",
+        "items": [
+         "flu-vaccine-b",
+         "insulin-vial-b"
+        ],
+        "why": "The vaccines and the insulin in the airline's active temperature-controlled LD3 container, set to 5 °C, on its position on the main deck."
+       }
+      ],
+      "bulk": [
+       "varicella-vaccine-b",
+       "tc-generator-b"
+      ]
+     },
+     "from_place": {
+      "name": "Lumeport airport, cargo terminal",
+      "locode": "XBLMA"
+     },
+     "to_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "transit_days": 0
+    },
+    {
+     "mode": "road",
+     "from": "17-xl",
+     "to": "50-xl",
+     "carrier": "50-xl",
+     "why": "The hospital pharmacy's van fetches the goods once the broker has cleared them.",
+     "from_place": {
+      "name": "Selanu airport, cargo terminal",
+      "locode": "XLSLA"
+     },
+     "to_place": {
+      "name": "Selanu General Hospital, pharmacy"
+     }
+    }
+   ]
   }
  ],
  "documents": [
@@ -1167,7 +1271,7 @@
    "doc": "ReceiptAdvice",
    "from": "6-xb",
    "to": "8-xu",
-   "why": "The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller.",
+   "why": "The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller, and reports one bench short of a parcel and a frame carton over.",
    "parties": {
     "DeliveryCustomerParty": "6-xb",
     "DespatchSupplierParty": "8-xu",
@@ -2246,7 +2350,7 @@
    "doc": "ContractNotice",
    "from": "2-xb",
    "to": "21-xb",
-   "why": "The call for competition is published; it names the review body for appeals and mediation.",
+   "why": "The call for competition is published; it names the review body for appeals.",
    "parties": {
     "ContractingParty": "2-xb",
     "ReceiverParty": "21-xb",
@@ -2370,7 +2474,7 @@
    "doc": "TendererQualification",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The manufacturer declares its qualifications and those of its consortium partner.",
+   "why": "The manufacturer declares its qualifications and those of its subcontractor.",
    "parties": {
     "ContractingParty": "2-xb",
     "TendererPartyQualification/MainQualifyingParty": "5-xu",
@@ -2394,7 +2498,7 @@
    "doc": "Tender",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The tender, with the consortium partner as subcontractor.",
+   "why": "The tender, naming the subcontractor that installs the benches.",
    "parties": {
     "TendererParty": "5-xu",
     "SubcontractorParty": "27-xb",
@@ -2450,7 +2554,7 @@
    "doc": "TendererQualificationResponse",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The manufacturer and its consortium partner are admitted to the evaluation.",
+   "why": "The manufacturer is admitted to the evaluation, with its subcontractor.",
    "parties": {
     "SenderParty": "2-xb",
     "ReceiverParty": "5-xu"
@@ -2521,7 +2625,7 @@
    "doc": "Order",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The first call-off under the awarded contract. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.",
+   "why": "The first call-off under the awarded contract: 40 benches and their 40 installations. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.",
    "parties": {
     "BuyerCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
@@ -3799,7 +3903,7 @@
    "doc": "PurchaseReceipt",
    "from": "26-xb",
    "to": "1-xl",
-   "why": "The island trader's buyer, in Lumeport for the trade fair, buys shirts for the stand team and pays in coral with the island card: the till converts at the counter.",
+   "why": "The island trader's buyer, in Lumeport on business, buys shirts for the trader's team at the Selanu chamber's trade fair in early June and pays in coral with the island card: the till converts at the counter.",
    "parties": {
     "AccountingSupplierParty": "26-xb",
     "AccountingCustomerParty": "1-xl"
@@ -3980,6 +4084,17 @@
    }
   },
   {
+   "flow": "tender",
+   "doc": "TenderReceipt",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "The authority acknowledges the furniture maker's first tender, with the time it was registered.",
+   "parties": {
+    "SenderParty": "2-xb",
+    "ReceiverParty": "37-xb"
+   }
+  },
+  {
    "flow": "contest",
    "doc": "PriorInformationNotice",
    "from": "2-xb",
@@ -4030,7 +4145,7 @@
    "doc": "QualificationApplicationRequest",
    "from": "2-xb",
    "to": "37-xb",
-   "why": "The authority asks for the self-declaration on the design lead's professional qualification.",
+   "why": "The authority asks for the self-declaration on the exclusion grounds and on the design lead's professional qualification.",
    "parties": {
     "ContractingParty": "2-xb",
     "EconomicOperatorParty": "37-xb"
@@ -4091,7 +4206,7 @@
    "doc": "QualificationApplicationRequest",
    "from": "2-xb",
    "to": "37-xb",
-   "why": "Version 2 of the self-declaration request: the design lead may also be an industrial designer.",
+   "why": "Version 2 of the self-declaration request, on the exclusion grounds and the qualification: the design lead may also be an industrial designer.",
    "parties": {
     "ContractingParty": "2-xb",
     "EconomicOperatorParty": "37-xb"
@@ -4371,12 +4486,13 @@
    "doc": "GoodsCertificate",
    "from": "57-xb",
    "to": "55-xb",
-   "why": "Bayvarra's plant protection organisation under the IPPC, the Plant Health Service of the federal Department of Agriculture, inspects the fruit at the packhouse and certifies it free of the pests the island names, at the cooperative's application.",
+   "why": "Bayvarra's plant protection organisation under the IPPC, the Plant Health Service of the federal Department of Agriculture, inspects the fruit at the packhouse and certifies it free of the pests the island names; the cooperative's forwarder applies for the certificate on its behalf and collects it with the export papers.",
    "parties": {
     "IssuerParty": "57-xb",
     "ApplicantParty": "55-xb",
     "ExporterParty": "55-xb",
-    "ImporterParty": "56-xl"
+    "ImporterParty": "56-xl",
+    "FreightForwarderParty": "10-xb"
    }
   },
   {
@@ -4466,6 +4582,249 @@
    "parties": {
     "DeliveryCustomerParty": "56-xl",
     "DespatchSupplierParty": "55-xb"
+   }
+  },
+  {
+   "flow": "lpg",
+   "doc": "Order",
+   "from": "34-xb",
+   "to": "42-xb",
+   "why": "The water company orders a tanker load of propane for the peak boilers of its district heating, delivered into its storage tank in Lumeport.",
+   "parties": {
+    "BuyerCustomerParty": "34-xb",
+    "SellerSupplierParty": "42-xb"
+   },
+   "values": {
+    "DeliveryTerms/ID": "DPU"
+   }
+  },
+  {
+   "flow": "lpg",
+   "doc": "DespatchAdvice",
+   "from": "42-xb",
+   "to": "34-xb",
+   "why": "Kelpstone announces the load as weighed at its plant, with the propane's dangerous goods data for the receiver.",
+   "parties": {
+    "DespatchSupplierParty": "42-xb",
+    "DeliveryCustomerParty": "34-xb",
+    "Shipment/Consignment/CarrierParty": "52-xb"
+   }
+  },
+  {
+   "flow": "lpg",
+   "doc": "Waybill",
+   "from": "52-xb",
+   "to": "42-xb",
+   "why": "The haulier's consignment note under Bayvarra's road carriage law, with the dangerous goods as loaded in the tank: the orange plates 23 over 1965, the placard and the tunnel restriction.",
+   "parties": {
+    "SenderParty": "52-xb",
+    "ReceiverParty": "42-xb",
+    "CarrierParty": "52-xb",
+    "ConsignorParty": "42-xb",
+    "Shipment/Consignment/ConsigneeParty": "34-xb"
+   }
+  },
+  {
+   "flow": "lpg",
+   "doc": "Invoice",
+   "from": "42-xb",
+   "to": "34-xb",
+   "why": "The propane delivered, by the weighbridge's net weight, with Coastal State's sales tax: the water company burns it in its boilers, so the sale is not one for resale (O204).",
+   "parties": {
+    "AccountingSupplierParty": "42-xb",
+    "AccountingCustomerParty": "34-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Order",
+   "from": "49-xb",
+   "to": "58-in",
+   "why": "The wholesaler orders its vaccines and insulin for the southern winter from the maker in India, carriage paid to Lumeport airport, in rupees (O229).",
+   "parties": {
+    "BuyerCustomerParty": "49-xb",
+    "SellerSupplierParty": "58-in"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Invoice",
+   "from": "58-in",
+   "to": "49-xb",
+   "why": "The Indian maker invoices the vaccines and the insulin in rupees when they leave Hyderabad; an export, zero-rated in India.",
+   "parties": {
+    "AccountingSupplierParty": "58-in",
+    "AccountingCustomerParty": "49-xb",
+    "SellerSupplierParty": "58-in",
+    "BuyerCustomerParty": "49-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ImportCustomsDeclaration",
+   "from": "49-xb",
+   "to": "19-xb",
+   "why": "The wholesaler declares the vaccines and the insulin for import at Lumeport airport: goods from outside the Accord under Bayvarra's own tariff, which charges no duty on medicines.",
+   "parties": {
+    "ImporterParty": "49-xb",
+    "ConsignorParty": "58-in",
+    "ConsigneeParty": "49-xb",
+    "CustomsParty": "19-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Order",
+   "from": "50-xl",
+   "to": "49-xb",
+   "why": "The hospital pharmacy orders the vaccines for the winter campaign, insulin, a frozen vaccine and the next week's technetium generator, carriage paid to Selanu airport.",
+   "parties": {
+    "BuyerCustomerParty": "50-xl",
+    "SellerSupplierParty": "49-xb",
+    "Delivery/DeliveryParty": "50-xl"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Order",
+   "from": "49-xb",
+   "to": "51-nl",
+   "why": "The wholesaler calls off the hospital's generator for the week from the maker in the Netherlands, under its standing order, carriage paid to Lumeport airport, in euro (O229).",
+   "parties": {
+    "BuyerCustomerParty": "49-xb",
+    "SellerSupplierParty": "51-nl"
+   },
+   "values": {
+    "DeliveryTerms/ID": "CPT"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ForwardingInstructions",
+   "from": "49-xb",
+   "to": "10-xb",
+   "why": "The wholesaler asks its forwarder to book the Monday morning flight: the cold chain goods in the airline's active container, the frozen vaccine on dry ice, and the generator under the shipper's declaration of its own.",
+   "parties": {
+    "ConsignorParty": "49-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "50-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Invoice",
+   "from": "51-nl",
+   "to": "49-xb",
+   "why": "The Dutch maker invoices the generator in euro when it leaves for Amsterdam airport; an export, zero-rated in the Netherlands.",
+   "parties": {
+    "AccountingSupplierParty": "51-nl",
+    "AccountingCustomerParty": "49-xb",
+    "SellerSupplierParty": "51-nl",
+    "BuyerCustomerParty": "49-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ImportCustomsDeclaration",
+   "from": "49-xb",
+   "to": "19-xb",
+   "why": "The wholesaler declares the generator for import at Lumeport airport on the Sunday evening it arrives: no duty on radioactive isotopes for medicine.",
+   "parties": {
+    "ImporterParty": "49-xb",
+    "ConsignorParty": "51-nl",
+    "ConsigneeParty": "49-xb",
+    "CustomsParty": "19-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "DespatchAdvice",
+   "from": "49-xb",
+   "to": "50-xl",
+   "why": "The wholesaler announces the goods to the hospital pharmacy with the lots and their expiry dates and the generator's serial number and reference time.",
+   "parties": {
+    "DespatchSupplierParty": "49-xb",
+    "DeliveryCustomerParty": "50-xl",
+    "BuyerCustomerParty": "50-xl",
+    "SellerSupplierParty": "49-xb",
+    "Shipment/Consignment/CarrierParty": "12-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "TransportationStatus",
+   "from": "17-xb",
+   "to": "12-xl",
+   "why": "The cargo terminal reports the consignment accepted for KXL207, with the active container's temperature checked at acceptance.",
+   "parties": {
+    "SenderParty": "17-xb",
+    "ReceiverParty": "12-xl",
+    "Consignment/CarrierParty": "12-xl",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xb"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "Waybill",
+   "from": "12-xl",
+   "to": "10-xb",
+   "why": "The air waybill for KXL207: the active container with its set temperature, the dry ice and the Type A package with its transport index.",
+   "parties": {
+    "SenderParty": "12-xl",
+    "ReceiverParty": "10-xb",
+    "CarrierParty": "12-xl",
+    "ConsignorParty": "49-xb",
+    "FreightForwarderParty": "10-xb",
+    "Shipment/Consignment/ConsigneeParty": "50-xl",
+    "Shipment/Consignment/NotifyParty": "3-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "TransportationStatus",
+   "from": "17-xl",
+   "to": "10-xb",
+   "why": "The island's cargo terminal reports the consignment arrived, with the temperatures the active container logged on the way and the logger's readings attached.",
+   "parties": {
+    "SenderParty": "17-xl",
+    "ReceiverParty": "10-xb",
+    "Consignment/CarrierParty": "12-xl",
+    "Consignment/ConsigneeParty": "50-xl",
+    "Consignment/MainCarriageShipmentStage/TerminalOperatorParty": "17-xl"
+   }
+  },
+  {
+   "flow": "medicines",
+   "doc": "ImportCustomsDeclaration",
+   "from": "3-xl",
+   "to": "19-xl",
+   "why": "The customs broker, as the hospital's direct representative, declares the import at Selanu airport in the hospital's name: no duty on medicines, and the exemption from the import consumption tax for medicines supplied to a public hospital (O201, O203).",
+   "parties": {
+    "ImporterParty": "50-xl",
+    "ConsignorParty": "49-xb",
+    "ConsigneeParty": "50-xl",
+    "CustomsParty": "19-xl",
+    "NotifierParty": "3-xl"
+   },
+   "sends_for": "ImporterParty"
+  },
+  {
+   "flow": "medicines",
+   "doc": "Invoice",
+   "from": "49-xb",
+   "to": "50-xl",
+   "why": "The wholesaler invoices the goods, carriage paid to Selanu airport; an export, so no sales tax.",
+   "parties": {
+    "AccountingSupplierParty": "49-xb",
+    "AccountingCustomerParty": "50-xl",
+    "SellerSupplierParty": "49-xb",
+    "BuyerCustomerParty": "50-xl"
    }
   }
  ],
@@ -4781,6 +5140,14 @@
   "XU-CUS-REIMP-26-0044": {
    "what": "Urvanian customs' record of the re-importation",
    "type": "Re-importation record"
+  },
+  "KG-WB-26-0610-03": {
+   "what": "Kelpstone's weighbridge ticket of the tanker, weighed empty and full at the plant",
+   "type": "Weighbridge ticket"
+  },
+  "QPD-DGD-26-0615": {
+   "what": "the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own (O202 choice 5)",
+   "type_code": "890"
   }
  }
 }

@@ -94,6 +94,7 @@
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:InsuranceValueAmount currencyID="XBL">31754.80</cbc:InsuranceValueAmount>
     <cac:Consignment>
       <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>

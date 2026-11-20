@@ -18,7 +18,7 @@ Both invoices of the release are past due; the manufacturer reminds the departme
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-DOC-26-0226**  
+- `ID` = **VI-DOC-26-0227**  
   The manufacturer's reminder number.
 - `UUID` = **7f55c2fd-1414-5794-ab15-9ef94a32da95**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -305,7 +305,7 @@ Inside `ReminderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **20160.00** (currencyID `XBL`)  
   Its payable amount.
-- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0222**  
+- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0223**  
   The invoice.
 - `ID` = **2**  
   The installation invoice.
@@ -315,7 +315,7 @@ Inside `ReminderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **631.80** (currencyID `XBL`)  
   Its payable amount.
-- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0225**  
+- `BillingReference/InvoiceDocumentReference/ID` = **VI-INV-26-0226**  
   The invoice.
 - `ID` = **3**  
   The credit note.
@@ -325,7 +325,7 @@ Inside `ReminderLine`:
   A universally unique identifier of the line, derived from the document and the line number.
 - `CreditLineAmount` = **504.00** (currencyID `XBL`)  
   Deducted.
-- `BillingReference/CreditNoteDocumentReference/ID` = **VI-CN-26-0224**  
+- `BillingReference/CreditNoteDocumentReference/ID` = **VI-CN-26-0225**  
   The credit note.
 
 ## The document
@@ -337,7 +337,7 @@ Inside `ReminderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:reminder:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-DOC-26-0226</cbc:ID>
+  <cbc:ID>VI-DOC-26-0227</cbc:ID>
   <cbc:UUID>7f55c2fd-1414-5794-ab15-9ef94a32da95</cbc:UUID>
   <cbc:IssueDate>2026-05-20</cbc:IssueDate>
   <cbc:IssueTime>15:23:00-01:00</cbc:IssueTime>
@@ -553,7 +553,7 @@ Inside `ReminderLine`:
     <cbc:DebitLineAmount currencyID="XBL">20160.00</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0222</cbc:ID>
+        <cbc:ID>VI-INV-26-0223</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
@@ -564,7 +564,7 @@ Inside `ReminderLine`:
     <cbc:DebitLineAmount currencyID="XBL">631.80</cbc:DebitLineAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>VI-INV-26-0225</cbc:ID>
+        <cbc:ID>VI-INV-26-0226</cbc:ID>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>
@@ -575,7 +575,7 @@ Inside `ReminderLine`:
     <cbc:CreditLineAmount currencyID="XBL">504.00</cbc:CreditLineAmount>
     <cac:BillingReference>
       <cac:CreditNoteDocumentReference>
-        <cbc:ID>VI-CN-26-0224</cbc:ID>
+        <cbc:ID>VI-CN-26-0225</cbc:ID>
       </cac:CreditNoteDocumentReference>
     </cac:BillingReference>
   </cac:ReminderLine>

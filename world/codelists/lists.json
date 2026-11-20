@@ -247,6 +247,17 @@
     ]
    }
   },
+  "XL:TaxExemptionReason": {
+   "scope": "XL",
+   "name": "Import consumption tax exemption reason",
+   "description": "Why goods imported into Lisavu carry no import consumption tax. The tax falls on every import whatever its origin (D18); its exemptions are few and named here.",
+   "codes": {
+    "MEDHOSP": [
+     "Medicines and vaccines for a public hospital",
+     "Medicines and vaccines supplied to a public hospital of Lisavu are exempt from the import consumption tax of 10 %, and so is their import for that supply; the general rule of D18 is unchanged for everything else (O201). The real parallel is Sweden's VAT law, Mervärdesskattelag (2023:200) chapter 10 § 13, which exempts deliveries of medicines to hospitals and their import in connection with such a delivery."
+    ]
+   }
+  },
   "XU:TaxExemptionReason": {
    "scope": "XU",
    "name": "Value added tax exemption reason",
@@ -949,6 +960,7 @@
     "774": "",
     "856": "",
     "861": "",
+    "890": "",
     "917": ""
    }
   },
@@ -974,7 +986,8 @@
     "33": "",
     "2302": "",
     "815": "",
-    "71": ""
+    "71": "",
+    "3113": ""
    }
   },
   "IATAAircraftType": {
@@ -1571,7 +1584,7 @@
   "TemperatureQualifier": {
    "scope": "regional",
    "name": "Temperature qualifier",
-   "description": "What a temperature stands for.",
+   "description": "What a temperature stands for, or, where no figure is given, the class of temperature asked for.",
    "codes": {
     "TARGET": [
      "Target",
@@ -1584,6 +1597,14 @@
     "MAX": [
      "Maximum",
      "The highest temperature allowed."
+    ],
+    "CHILLED": [
+     "Chilled",
+     "Kept cold above freezing, at the set point the goods need, about 0 to 5 °C for fresh fruit and vegetables: a class, not a figure."
+    ],
+    "FROZEN": [
+     "Frozen",
+     "Kept frozen, at or below -18 °C: a class, not a figure."
     ]
    }
   },
@@ -2219,6 +2240,18 @@
     "1950": [
      "Aerosols",
      "Class 2."
+    ],
+    "1965": [
+     "Hydrocarbon gas mixture, liquefied, n.o.s.",
+     "Class 2.1."
+    ],
+    "2915": [
+     "Radioactive material, Type A package, non-special form, non fissile or fissile-excepted",
+     "Class 7."
+    ],
+    "1845": [
+     "Carbon dioxide, solid (dry ice)",
+     "Class 9."
     ]
    },
    "entries_note": "classes: the class or division of each UN entry, subsidiary: its subsidiary hazard; both from the Dangerous Goods List (column 3 and 4), as BAM DGG-Info gives it. The build checks that every dangerous goods item has the class and proper shipping name of its UN number.",
@@ -2230,7 +2263,10 @@
     "2920": "8",
     "1202": "3",
     "1203": "3",
-    "1950": "2"
+    "1950": "2",
+    "1965": "2.1",
+    "2915": "7",
+    "1845": "9"
    },
    "subsidiary": {
     "2920": "3"
@@ -2418,12 +2454,24 @@
      "Substances - Toxic and/or Corrosive (Combustible)",
      ""
     ],
+    "120": [
+     "Gases - Inert (Including Refrigerated Liquids)",
+     ""
+    ],
     "161": [
      "Radioactive Materials (Low Level Radiation)",
      ""
     ],
+    "163": [
+     "Radioactive Materials (Low to High Level Radiation)",
+     ""
+    ],
     "171": [
      "Substances (Low to Moderate Hazard)",
+     ""
+    ],
+    "115": [
+     "Gases - Flammable (Including Refrigerated Liquids)",
      ""
     ]
    }
@@ -2582,6 +2630,10 @@
     "PI855": [
      "Packing instruction 855",
      "Corrosive liquids of packing group II, on cargo aircraft only."
+    ],
+    "PI954": [
+     "Packing instruction 954",
+     "Dry ice (UN 1845), on its own or as a refrigerant of other goods, in a package that lets the carbon dioxide escape."
     ],
     "PI965IA": [
      "Packing instruction 965, section IA",
@@ -7095,8 +7147,11 @@
     "27180": "",
     "28232": "",
     "31102": "",
+    "33690": "",
     "34710": "",
     "35110": "",
+    "35260": "",
+    "35270": "",
     "36330": "",
     "36410": "",
     "381": "",
@@ -7133,8 +7188,24 @@
      "Iron ores and concentrates, non-agglomerated",
      ""
     ],
+    "271112": [
+     "Petroleum gases and other gaseous hydrocarbons; liquefied, propane",
+     ""
+    ],
     "271121": [
      "Natural gas, in gaseous state",
+     ""
+    ],
+    "284443": [
+     "Radioactive elements, isotopes and compounds; other alloys, dispersions (including cermets), ceramic products and mixtures containing these elements, isotopes or compounds",
+     ""
+    ],
+    "300241": [
+     "Vaccines, toxins, cultures of micro-organisms (excluding yeasts) and similar products; for human medicine",
+     ""
+    ],
+    "300431": [
+     "Medicaments; containing insulin, for therapeutic or prophylactic uses, packaged for retail sale",
      ""
     ],
     "321000": [
@@ -7688,6 +7759,20 @@
      "The English of Lisavu, beside Lisavan: it uses the Lisavan names of places (Selanu rather than the official Port Wrenfield) in running text."
     ]
    }
+  },
+  "UNCL8169": {
+   "scope": "external",
+   "name": "UN/EDIFACT 8169 Full or empty indicator",
+   "listID": "UN/EDIFACT EDED 8169",
+   "agency": "UN/CEFACT",
+   "version": "D22A",
+   "reference": "UN/EDIFACT data element 8169 Full or empty indicator code, as UN/CEFACT's vocabulary gives it (TransportEquipmentFullnessCodeList); used where an emission is calculated for a run of transport equipment that is full, partly full or empty (decision D48, O138).",
+   "source": {
+    "format": "cefact",
+    "file": "uncefact/transportequipmentfullnesscodelist.json",
+    "version": "D22A (UN/CEFACT vocabulary-outputs, commit 51768f9)"
+   },
+   "codes": "all"
   }
  },
  "bindings": [
@@ -7848,6 +7933,7 @@
    "element": "TaxExemptionReasonCode",
    "list": [
     "XB:TaxExemptionReason",
+    "XL:TaxExemptionReason",
     "XU:TaxExemptionReason"
    ],
    "text": "TaxExemptionReason"
@@ -8153,6 +8239,13 @@
    "list": "LoadType",
    "parents": [
     "TransportEquipment"
+   ]
+  },
+  {
+   "element": "FullnessIndicationCode",
+   "list": "UNCL8169",
+   "parents": [
+    "EmissionCalculationMethod"
    ]
   },
   {

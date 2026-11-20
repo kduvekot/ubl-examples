@@ -143,6 +143,8 @@ Inside `Shipment`:
 
 - `ID` = **HFG-SH-26-0556**  
   The shipment to be booked.
+- `InsuranceValueAmount` = **31754.80** (currencyID `XBL`)  
+  The value the forwarder is to insure the shipment for: 110 % of the fruit's CIP value, the least cover Incoterms 2020 CIP asks of the seller.
 - `Consignment/ID` = **HFG-CS-26-0557**  
   The cooperative's consignment number.
 - `Consignment/GrossWeightMeasure` = **21728** (unitCode `KGM`)  
@@ -369,6 +371,7 @@ Inside `Shipment`:
   </cac:FreightForwarderParty>
   <cac:Shipment>
     <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:InsuranceValueAmount currencyID="XBL">31754.80</cbc:InsuranceValueAmount>
     <cac:Consignment>
       <cbc:ID>HFG-CS-26-0557</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>

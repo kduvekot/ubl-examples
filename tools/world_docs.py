@@ -146,7 +146,7 @@ BUYER_DEBIT_NOTES = set()   # furniture/14 (D32), sea/28 (D30) and tender/34 (D2
 def check(world, model):
     problems = []
     legacy_seen = set()
-    parties = {p["id"] for p in world["parties"]}
+    parties = {p["id"] for p in world["parties"] + world.get("abroad", [])}
     flows = {f["id"] for f in world["flows"]}
     used = set()
     for n, d in enumerate(world["documents"], 1):
@@ -213,7 +213,7 @@ def check(world, model):
 def views(world, model):
     """Per party: the documents it sends, receives and is mentioned in, and its trading partners."""
     out = {p["id"]: {"sends": [], "receives": [], "mentioned": [], "partners": [], "elements": []}
-           for p in world["parties"]}
+           for p in world["parties"] + world.get("abroad", [])}
     for d in world["documents"]:
         for pid in {d["from"], d["to"]} | {v for x in d["parties"].values() for v in ids(x)}:
             v = out[pid]

@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>QPD-DA-26-0335</cbc:ID>
+  <cbc:UUID>db7de944-bab2-50cb-b191-099b052b0ddb</cbc:UUID>
+  <cbc:IssueDate>2026-06-15</cbc:IssueDate>
+  <cbc:IssueTime>05:10:00-01:00</cbc:IssueTime>
+  <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
+  <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
+  <cac:OrderReference>
+    <cbc:ID>SGH-PO-26-0327</cbc:ID>
+  </cac:OrderReference>
+  <cac:DespatchSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9524910900003</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-718264</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Airport Road</cbc:StreetName>
+        <cbc:BuildingNumber>40</cbc:BuildingNumber>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38528</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Dispatch office</cbc:Name>
+        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
+        <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
+        <cbc:ElectronicMail>dispatch@quillmoor.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20413425</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
+  <cac:DeliveryCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu General Hospital</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">52968014</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
+        <cbc:BuildingNumber>81</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Pharmacy goods-in</cbc:Name>
+        <cbc:JobTitle>Pharmacy technician</cbc:JobTitle>
+        <cbc:Department>Pharmacy</cbc:Department>
+        <cbc:Telephone>+999 3 726 8840</cbc:Telephone>
+        <cbc:ElectronicMail>pharmacy-goodsin@selanu-hospital.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:30–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:GOV-317</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:DeliveryCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Selanu General Hospital</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>QPD-SH-26-0323</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>QPD-CS-26-0330</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">91.6</cbc:GrossWeightMeasure>
+      <cac:CarrierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Kelaro Air Cargo</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">58930746</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+          <cbc:StreetName languageID="qal">Lupela Natii</cbc:StreetName>
+          <cbc:StreetName languageID="en-XL">Airfield Road</cbc:StreetName>
+          <cbc:BuildingNumber>46</cbc:BuildingNumber>
+          <cbc:CityName languageID="qal">Kefalasa</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Lintwell</cbc:CityName>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            <cbc:Name>Lisavu</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+          <cbc:Name>Cargo operations</cbc:Name>
+          <cbc:JobTitle>Load controller</cbc:JobTitle>
+          <cbc:Department>Operations</cbc:Department>
+          <cbc:Telephone>+999 3 721 1044</cbc:Telephone>
+          <cbc:ElectronicMail>cargoops@kelaro.example</cbc:ElectronicMail>
+          <cbc:Note>Every day 06:00–22:00</cbc:Note>
+        </cac:Contact>
+      </cac:CarrierParty>
+    </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2026-06-15</cbc:StartDate>
+        <cbc:EndDate>2026-06-15</cbc:EndDate>
+      </cac:EstimatedDeliveryPeriod>
+      <cac:Despatch>
+        <cbc:ActualDespatchDate>2026-06-15</cbc:ActualDespatchDate>
+      </cac:Despatch>
+    </cac:Delivery>
+  </cac:Shipment>
+  <cac:DespatchLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Note>3,000 doses, ten to a pack, for the island's winter influenza campaign, which starts in the last week of June.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">300</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
+      <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-VAC-1102</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>NB-FLU-S26-10</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:ItemInstance>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>NB-FLU26S-0412</cbc:LotNumberID>
+          <cbc:ExpiryDate>2027-02-28</cbc:ExpiryDate>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>The hospital pharmacy's insulin for the next two months, for its wards and its outpatients.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">240</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>2</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
+      <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-INS-0310</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>NB-INS-R100-10</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:ItemInstance>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>NB-INS-2603-118</cbc:LotNumberID>
+          <cbc:ExpiryDate>2028-02-29</cbc:ExpiryDate>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:Note>Forty doses for the children's vaccination programme of July.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">40</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>3</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
+      <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-VAC-2410</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>NB-VZV-1</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:ItemInstance>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>NB-VZV-2602-031</cbc:LotNumberID>
+          <cbc:ExpiryDate>2027-08-31</cbc:ExpiryDate>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>4</cbc:ID>
+    <cbc:Note>Next week's generator for the nuclear medicine unit: the one in use is spent by Sunday.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">1</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>4</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
+      <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cac:SellersItemIdentification>
+        <cbc:ID>QPD-RAD-0020</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ManufacturersItemIdentification>
+        <cbc:ID>HI-TCG-20</cbc:ID>
+      </cac:ManufacturersItemIdentification>
+      <cac:HazardousItem>
+        <cbc:ID>HI-TCG-20-DG</cbc:ID>
+        <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
+        <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
+        <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
+        <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
+        <cbc:MedicalFirstAidGuideCode listID="ERG 2024">163</cbc:MedicalFirstAidGuideCode>
+        <cbc:ProperShippingName>Radioactive material, Type A package, non-special form, non fissile or fissile-excepted</cbc:ProperShippingName>
+        <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
+        <cbc:MarkingID>UN2915</cbc:MarkingID>
+        <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
+        <cac:RadioactiveMaterial>
+          <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)</cbc:Name>
+          <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
+          <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
+        </cac:RadioactiveMaterial>
+      </cac:HazardousItem>
+      <cac:ItemInstance>
+        <cbc:SerialID>HI-TCG20-26-0137</cbc:SerialID>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Nominal activity</cbc:Name>
+          <cbc:ValueQuantity unitCode="GBQ">20</cbc:ValueQuantity>
+        </cac:AdditionalItemProperty>
+        <cac:AdditionalItemProperty>
+          <cbc:Name>Reference time</cbc:Name>
+          <cbc:Value>2026-06-21T12:00:00+00:00</cbc:Value>
+        </cac:AdditionalItemProperty>
+      </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+</DespatchAdvice>

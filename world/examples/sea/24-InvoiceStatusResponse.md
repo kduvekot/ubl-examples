@@ -22,8 +22,8 @@ The buyer answers: accepted and scheduled for payment.
   The sender's number for this document.
 - `UUID` = **46a32b33-e5ba-5fe5-96d0-d30eada68245**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
-- `IssueDate` = **2026-05-30**  
-  Answered the next day.
+- `IssueDate` = **2026-06-01**  
+  Answered on the next working day, Monday 1 June.
 - `IssueTime` = **13:49:00+00:00**  
   The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
 - `Note` = **Approved; the balance will be paid to the factor.**  
@@ -116,7 +116,7 @@ Inside `DocumentResponse`:
   <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
   <cbc:ID>VT-DOC-26-0149</cbc:ID>
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
-  <cbc:IssueDate>2026-05-30</cbc:IssueDate>
+  <cbc:IssueDate>2026-06-01</cbc:IssueDate>
   <cbc:IssueTime>13:49:00+00:00</cbc:IssueTime>
   <cbc:Note>Approved; the balance will be paid to the factor.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>

@@ -120,5 +120,38 @@
             <SimpleValue>Class 2.</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1965</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Hydrocarbon gas mixture, liquefied, n.o.s.</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 2.1.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>2915</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Radioactive material, Type A package, non-special form, non fissile or fissile-excepted</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 7.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1845</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Carbon dioxide, solid (dry ice)</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>Class 9.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

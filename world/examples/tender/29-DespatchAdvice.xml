@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>CL-DA-26-0216</cbc:ID>
+  <cbc:ID>CL-DA-26-0217</cbc:ID>
   <cbc:UUID>3a152d4a-6fec-5156-a6be-f2f8f81077e0</cbc:UUID>
   <cbc:IssueDate>2026-03-30</cbc:IssueDate>
   <cbc:IssueTime>17:37:00-01:00</cbc:IssueTime>
@@ -14,7 +14,7 @@
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0213</cbc:ID>
+    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
   </cac:OrderReference>
   <cac:ProjectReference>
     <cbc:ID>PARKS-26</cbc:ID>
@@ -169,9 +169,9 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0217</cbc:ID>
+    <cbc:ID>CL-SH-26-0218</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>CL-CS-26-0218</cbc:ID>
+      <cbc:ID>CL-CS-26-0219</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">2162</cbc:GrossWeightMeasure>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">10</cbc:TotalTransportHandlingUnitQuantity>
       <cac:CarrierParty>
@@ -264,7 +264,7 @@
       </cac:ItemInstance>
     </cac:Item>
     <cac:Shipment>
-      <cbc:ID>CL-SH-26-0217</cbc:ID>
+      <cbc:ID>CL-SH-26-0218</cbc:ID>
     </cac:Shipment>
     <cac:SubDespatchLine>
       <cbc:ID>1.1</cbc:ID>

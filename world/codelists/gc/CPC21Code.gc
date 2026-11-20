@@ -98,6 +98,14 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>33690</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other radioactive elements and isotopes and compounds; alloys, dispersions, ceramic products and mixtures containing these elements, isotopes or compounds; radioactive residues</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>34710</SimpleValue>
          </Value>
          <Value ColumnRef="name">
@@ -110,6 +118,22 @@
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Paints and varnishes and related products</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>35260</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Medicaments, for therapeutic or prophylactic uses</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>35270</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Other pharmaceutical products</SimpleValue>
          </Value>
       </Row>
       <Row>

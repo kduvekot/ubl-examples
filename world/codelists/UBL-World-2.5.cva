@@ -28,6 +28,7 @@
       <ValueList xml:id="UNCL5189" uri="gc/UNCL5189Code.gc" />
       <ValueList xml:id="UNCL7161" uri="gc/UNCL7161Code.gc" />
       <ValueList xml:id="XB-TaxExemptionReason" uri="gc/XB-TaxExemptionReasonCode.gc" />
+      <ValueList xml:id="XL-TaxExemptionReason" uri="gc/XL-TaxExemptionReasonCode.gc" />
       <ValueList xml:id="XU-TaxExemptionReason" uri="gc/XU-TaxExemptionReasonCode.gc" />
       <ValueList xml:id="TaxLevel" uri="gc/TaxLevelCode.gc" />
       <ValueList xml:id="TaxType" uri="gc/TaxTypeCode.gc" />
@@ -316,6 +317,7 @@
       <ValueList xml:id="OtherAttribute" uri="gc/OtherAttributeCode.gc" />
       <ValueList xml:id="CardScheme" uri="gc/CardSchemeCode.gc" />
       <ValueList xml:id="Locale" uri="gc/LocaleCode.gc" />
+      <ValueList xml:id="UNCL8169" uri="gc/UNCL8169Code.gc" />
    </ValueLists>
    <InstanceMetadataSets>
       <InstanceMetadataSet xml:id="code">
@@ -340,6 +342,7 @@
       <Context address="*[local-name()='RequestedArrivalEvent']/cbc:TypeCode" values="TransportEventType" metadata="code" />
       <Context address="*[local-name()='TransportServiceDescription']/cbc:ResponseCode" values="ServiceOfferResponse" metadata="code" />
       <Context address="*[local-name()='TransportEquipment']/cbc:FullnessIndicationCode" values="LoadType" metadata="code" />
+      <Context address="*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode" values="UNCL8169" metadata="code" />
       <Context address="*[local-name()='CrewMemberPerson']/cbc:RoleCode | *[local-name()='CrewPerson']/cbc:RoleCode | *[local-name()='MasterPerson']/cbc:RoleCode | *[local-name()='PassengerPerson']/cbc:RoleCode | *[local-name()='Person']/cbc:RoleCode | *[local-name()='ReportingPerson']/cbc:RoleCode | *[local-name()='ResponsibleOfficerPerson']/cbc:RoleCode | *[local-name()='SecurityOfficerPerson']/cbc:RoleCode | *[local-name()='ShipsSurgeonPerson']/cbc:RoleCode" values="ShipPersonRole" metadata="code" />
       <Context address="*[local-name()='MaritimeWaste']/cbc:WasteTypeCode" values="ShipWasteType" metadata="code" />
       <Context address="*[local-name()='SecondaryHazard']/cbc:EmergencyProceduresCode" values="TransportEmergencyCard" metadata="code" />
@@ -415,7 +418,7 @@
       <Context address="cbc:ReceiptAdviceTypeCode" values="ReceiptAdviceType" metadata="code" />
       <Context address="cbc:PackagingTypeCode" values="PackagingType" metadata="code" />
       <Context address="cbc:TransportHandlingUnitTypeCode" values="PackagingType" metadata="code" />
-      <Context address="cbc:TaxExemptionReasonCode" values="XB-TaxExemptionReason XU-TaxExemptionReason" metadata="code" />
+      <Context address="cbc:TaxExemptionReasonCode" values="XB-TaxExemptionReason XL-TaxExemptionReason XU-TaxExemptionReason" metadata="code" />
       <Context address="cbc:TaxLevelCode" values="TaxLevel" metadata="code" />
       <Context address="cbc:TaxTypeCode" values="TaxType" metadata="code" />
       <Context address="cbc:SupplyTypeCode" values="SupplyType" metadata="code" />

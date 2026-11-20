@@ -20,7 +20,7 @@
     "CreditNote",
     "DebitNote"
    ],
-   "purpose": "The supplier bills the customer, corrects a bill with a credit note, and the customer claims a debit with a debit note."
+   "purpose": "The supplier bills the customer, corrects a bill with a credit note, and charges an amount it billed too little with a debit note."
   },
   "self-billing": {
    "name": "Self-billing",
@@ -62,7 +62,7 @@
     "TransportProgressStatusRequest",
     "TransportProgressStatus"
    ],
-   "purpose": "A party asks for the progress of a transport, and the carrier answers."
+   "purpose": "A party in the transport asks the operator of the infrastructure or the service for the progress of a transport, and the operator answers."
   },
   "transportation-status": {
    "name": "Transportation status",
@@ -70,7 +70,7 @@
     "TransportationStatusRequest",
     "TransportationStatus"
    ],
-   "purpose": "A party asks for, or the carrier reports, the status of a consignment."
+   "purpose": "A party asks for the status of a consignment, or a party in the transport chain reports it: a carrier, a port, an airport, a terminal or a forwarder."
   },
   "transport-service-description": {
    "name": "Transport service description",
@@ -539,7 +539,7 @@
    "when": {
     "buyer_public": "XB"
    },
-   "purpose": "Bayvarra's rules for invoices to its public bodies: the exemption from the state sales tax, the withholding of 10 % of the price of a service by a business not established in Bayvarra, and the supplier's tax representative. A public body's own rules come first: an invoice to it follows them whatever the seller's country, as a national rule for public buyers does."
+   "purpose": "Bayvarra's rules for every invoice to one of its public bodies, whatever the seller's country: the withholding of 10 % of the price of a service supplied by a business not established in Bayvarra, which the public body pays to the state, and the supplier's tax representative in Bayvarra. The tax on the invoice is the seller's own: a Bayvarran supplier applies the state sales tax's exemption for public bodies, a foreign supplier its own country's treatment."
   },
   "XU:invoice": {
    "name": "Invoice rules of Urvania",
@@ -552,7 +552,7 @@
    "when": {
     "seller_country": "XU"
    },
-   "purpose": "Urvania's rules for the invoices of its value added tax, modelled on the EU VAT directive: the seller's VAT number, the tax category and rate per line, the 2 % cash discount for payment within ten days, statutory interest on late payment, and the bilingual notes of an Urvanian sender."
+   "purpose": "Urvania's rules for the invoices of its value added tax, modelled on the EU VAT directive: the seller's VAT number, the tax category and rate per line, and the bilingual notes of an Urvanian sender. An invoice to a public body of Bayvarra claims that country's rules for public buyers instead; its tax is still Urvania's."
   }
  },
  "communities": {
@@ -592,8 +592,9 @@
     "ExportCustomsDeclaration",
     "ImportCustomsDeclaration"
    ],
-   "when": "flow_and_documents",
-   "purpose": "The port, its customs, the shipping lines and the forwarders of Lumeport exchange the documents of sea transport and of customs through the port in one way: the port's code UN/LOCODE XBLMP, ISO 6346 container numbers, and the declarations the port's customs office needs before the ship arrives."
+   "when": "in_port",
+   "purpose": "The port, its customs, the shipping lines and the forwarders of Lumeport exchange the documents of sea transport and of customs through the port in one way: the port's code UN/LOCODE XBLMP, ISO 6346 container numbers, and the declarations the port's customs office needs before the ship arrives.",
+   "country": "XB"
   },
   "energy-xu": {
    "name": "Urvania energy market",
@@ -610,10 +611,6 @@
    "members": [
     "2-xb",
     "28-xb"
-   ],
-   "flows": [
-    "tender",
-    "contest"
    ],
    "documents": [
     "PriorInformationNotice",
@@ -639,7 +636,7 @@
     "UnawardedNotification",
     "TenderContract"
    ],
-   "when": "flow_and_documents",
+   "when": "with_member",
    "purpose": "The contracting authorities of Bayvarra and the economic operators that take part in their procedures exchange the documents of a procurement procedure under the Accord's procurement rules, which are modelled on the EU's: the procedure's folder number, lots, criteria and the code lists modelled on eForms and the ESPD."
   }
  },

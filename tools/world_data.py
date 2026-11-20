@@ -33,6 +33,28 @@ def load():
     return world
 
 
+def exchange_rate(rates, a, b, date=None):
+    """Units of b for one unit of a: between the Accord's currencies the fixed parities (countries.json
+    exchange_rates, O2), a pair as given or its inverse; against a currency outside the Accord the lume floats,
+    and the rate is the Lumeport Exchange's noon fixing of `date` (tools/fx_fixing.py, O231), through the lume."""
+    from decimal import Decimal
+    if a == b:
+        return Decimal(1)
+    if f"{a}/{b}" in rates:
+        return Decimal(str(rates[f"{a}/{b}"]))
+    if f"{b}/{a}" in rates:
+        return 1 / Decimal(str(rates[f"{b}/{a}"]))
+    if date is None:
+        raise KeyError(f"no fixed exchange rate {a}/{b}: a currency outside the Accord needs the date of its "
+                       "fixing (O231)")
+    import fx_fixing
+
+    def lume(x):
+        r = fx_fixing.rate(x, date)
+        return Decimal(r.numerator) / Decimal(r.denominator)
+    return lume(a) / lume(b)
+
+
 def number_documents(world):
     """Each document's example number within its flow ("nn"), in the order of documents.json. A document the
     owner removed stays in documents.json with "removed" (the reason): it keeps its number, which is never used
@@ -145,7 +167,7 @@ PROPER = None
 UNIT_SYMBOLS = {"mm", "cm", "m", "km", "kg", "t", "kWh", "MWh", "GB"}     # SI and common unit symbols
 COMMON_NAME_WORDS = set("""Accord Administration Agency Air Airport Bank Barges Board Border Brokers Cargo Chamber Coastal
 Commerce Company Cotton Council Customs Department Distribution Energy Engineering Factoring Farm Forwarding Furniture
-Gas Ginnery Grid Haulage Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime
+Gas General Ginnery Grid Haulage Hospital Hub Identification Industries Information Insurance Intermodal Island Lines Logistics Maritime
 Mill Mining Ocean Packaging Port Power Procurement Public Rail Recovery Review Sawmill Service State Stores Telecom
 Terminal Textile Trade Trading Warehousing Water Works Coral Lume Ferra English Fresh Produce Fruit Growers Growers'
 Cooperative Federal Agriculture""".split())   # ordinary words in names

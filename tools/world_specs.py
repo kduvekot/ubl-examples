@@ -60,9 +60,12 @@ def transaction(doc):
 
 def national(doc, world):
     """The national specification that applies to the document, or None."""
-    party = {p["id"]: p for p in world["parties"]}
+    party = {p["id"]: p for p in world["parties"] + world.get("abroad", [])}
     roles = _parties(doc)
-    for key, spec in load()["national"].items():
+    # A public buyer's rules come first: an invoice to a public body claims that country's rules for public buyers,
+    # whatever the seller's country; the tax in the document is still the seller's own.
+    specs = sorted(load()["national"].items(), key=lambda kv: "buyer_public" not in kv[1]["when"])
+    for key, spec in specs:
         if doc["doc"] not in spec["documents"]:
             continue
         w = spec["when"]
@@ -76,12 +79,26 @@ def national(doc, world):
     return None
 
 
+def _country(pid):
+    return pid.rsplit("-", 1)[1].upper()
+
+
 def community(doc):
-    """The community specification the document follows, or None."""
+    """The community specification the document follows, or None.
+
+    between_members: every document the members exchange among themselves;
+    in_port:         a document of the listed types in the listed flows, between two parties in the community's
+                     country, one of them a member: what passes through the port;
+    with_member:     a document of the listed types that a member sends or receives."""
+    ends = (doc["from"], doc["to"])
     for key, spec in load()["communities"].items():
-        if spec["when"] == "between_members" and doc["from"] in spec["members"] and doc["to"] in spec["members"]:
+        member = any(p in spec["members"] for p in ends)
+        if spec["when"] == "between_members" and all(p in spec["members"] for p in ends):
             return key
-        if spec["when"] == "flow_and_documents" and doc["flow"] in spec["flows"] and doc["doc"] in spec["documents"]:
+        if spec["when"] == "in_port" and doc["flow"] in spec["flows"] and doc["doc"] in spec["documents"] and member and \
+                all(_country(p) == spec["country"] for p in ends):
+            return key
+        if spec["when"] == "with_member" and doc["doc"] in spec["documents"] and member:
             return key
     return None
 

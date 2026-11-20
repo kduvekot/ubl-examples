@@ -2,7 +2,7 @@
 
 *Example 15 of the flow "A public tender (Bayvarra)" · [Tender in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDER-SCHEMA)*
 
-The tender, with the consortium partner as subcontractor.
+The tender, naming the subcontractor that installs the benches.
 
 [The XML file](15-Tender.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

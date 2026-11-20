@@ -275,3 +275,61 @@ What was read:
 - **1169/2011, Annex X, point 1(d):** "an indication of the date of minimum durability shall not be required for: — fresh fruit and vegetables, including potatoes, which have not been peeled, cut or similarly treated".
 
 Not read: the UNECE texts of FFV-50 and FFV-51 (unece.org answers automated requests with 403), and the Codex General Standard for the Labelling of Prepackaged Foods, CXS 1-1985 (the FAO workspace returns a login page instead of the PDF). The world cites the EU texts it read; the UNECE and Codex parallels are named, not quoted.
+
+## Medicines flow (D47, 2026-11-20): UN 2915, UN 1845, ERG guides 163 and 120
+
+Accessed on **2026-11-20** for the new flow "medicines" (D47, O202): the technetium generator (UN 2915) and the dry ice of the frozen vaccine's box (UN 1845).
+
+| Directory | Source | Version |
+|---|---|---|
+| erg2024/ | https://cameochemicals.noaa.gov/erg_guides/en/Guide_163.pdf and Guide_120.pdf (NOAA CAMEO Chemicals, US government work, as the other guides above) | ERG 2024 (each PDF footer: "ERG 2024") |
+| (noaa unna, not copied) | https://cameochemicals.noaa.gov/unna/2915 and …/unna/1845 (NOAA CAMEO Chemicals): the ERG 2024 material names and guide, and the Hazmat Table (49 CFR 172.101) entry with proper shipping name and class | ERG 2024; CAMEO Chemicals version 3.1.0 rev 1 |
+
+```
+2e69b41aaaf36dea43bb7ac2530e65302a41a7714abec6105218985a23202e61  ./erg2024/Guide_163.pdf
+1996d4feffc0bd2afce8afb67f47051a82fa9ef153a3f7f692ff4e6dd442dec5  ./erg2024/Guide_120.pdf
+0f65bace22ab77c943a33602ea9bc5ca6e378f5a9d8fe457133dc63bdb0b1247  unna/2915 (HTML page as read)
+3a18937901ba1a3bb92072f58fa270b7015e5ad789f5fde51ccf9444960243ea  unna/1845 (HTML page as read)
+```
+
+What was read:
+- UN 2915: ERG 2024 material name "Radioactive material, Type A package, non-special form, non fissile or fissile-excepted", Response Guide 163 "Radioactive Materials (Low to High Level Radiation)"; Hazmat Table: hazard class 7, label 7. The Model Regulations' entry has the same name and class (the US table follows it for this entry); **BAM was not read for these two entries**, so the UN Model Regulations names rest on the US table and the ERG.
+- UN 1845: ERG 2024 material names "Carbon dioxide, solid" and "Dry ice", Response Guide 120 "Gases - Inert (Including Refrigerated Liquids)"; Hazmat Table: "Carbon dioxide, solid or Dry ice", class 9, no label. The world's list gives the Model Regulations' form "Carbon dioxide, solid (dry ice)"; the build compares names without the bracket.
+
+---
+
+## Added 2026-11-20: the ECB euro foreign exchange reference rates (O231)
+
+For the Lumeport Exchange's daily noon fixing of the lume against currencies outside the Accord (decision O231): `tools/fx_fixing.py` values the lume's basket (Swiss franc, Canadian dollar, Australian dollar, Norwegian krone, Mexican peso) and quotes it against eight currencies from the ECB's daily euro reference rates, shifted by 1,820 days (260 weeks). Accessed on **2026-11-20**. The ECB's reference rates are published for information and may be reused with the source acknowledged.
+
+| Directory | Source | Version |
+|---|---|---|
+| ecb-eurofxref/ | https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip (European Central Bank, euro foreign exchange reference rates, the complete history since 1999 as CSV): the zip, SHA-256 `b1c3afd354115a48ce46089ea67623cf3297d321e3c4ebe0638e4a214813f25d`, holds `eurofxref-hist.csv`, SHA-256 `1635732dc4c4fd999105ed755906aa53ce4acc1c6a765f22d04786d441e8c239` | HTTP Last-Modified 19 Nov 2026 14:56:30 GMT (latest rate 2026-11-19) |
+
+Only an extract is kept, to keep the repository small: `eurofxref-hist-2020-2023.csv`, the columns Date, CHF, CAD, AUD, NOK, MXN, USD, JPY, INR, GBP, CNY, ZAR and BRL (units per 1 EUR, values unchanged) of every ECB working day from 2020-01-02 to 2023-12-29 (1,027 days), sorted by date. The world's fixings (2026-01-01 to 2027-12-31) use the rates of 2021-01-07 to 2023-01-06 and, on a day without a rate, the previous one. The extract was cut with Python (`csv`, run with `-I`); nothing else was changed.
+
+```
+4da29371e5b036f49c27153dbfc51e32c0374b8bc9b02132d8b9f97715d9a8fa  ./ecb-eurofxref/eurofxref-hist-2020-2023.csv
+```
+
+## Added 2026-11-20: propane by road tanker (D48, stage 6 group G10)
+
+For the lpg flow's propane (UN 1965) and the tanker's emission figures. Accessed on **2026-11-20**.
+
+| Directory | Source | Version |
+|---|---|---|
+| uncefact/ | https://github.com/uncefact/vocabulary-outputs `_data/transportequipmentfullnesscodelist.json` (UN/CEFACT, "TransportEquipmentFullnessCodeList": the codes of UN/EDIFACT data element 8169 Full or empty indicator, 1 to 13, e.g. "4" "Empty", "5" "Full", "8" "Full, single consignment"), for the world list `UNCL8169` | commit 51768f9c41be13673bc6d555c8c21c79d9e481a0 (2024-07-29), the same commit as the other files of `sources/uncefact/` |
+| erg2024/ | https://cameochemicals.noaa.gov/erg_guides/en/Guide_115.pdf (NOAA CAMEO Chemicals; US government work). UN-to-guide mapping from https://cameochemicals.noaa.gov/unna/1965: "Material Names Hydrocarbon gas mixture, liquefied, n.o.s. Response Guide 115 … Gases - Flammable (Including Refrigerated Liquids)", "Emergency Response Guidebook (ERG, 2024)"; its Hazmat Table (49 CFR 172.101) row: "UN Hydrocarbon gas mixture, liquefied, n.o.s. 2.1 … 2.1 - Flammable gas" | ERG 2024 (PDF title "GUIDE 115 Gases - Flammable (Including Refrigerated Liquids)") |
+| (bam, not copied) | BAM DGG-Info, UN 1965 "Kohlenwasserstoffgas, Gemisch C, verflüssigt" (BAM-Nr. 456): ADR 2025 https://www.dgg.bam.de/dgginfo/detailinfo/adr/sp5n6sn3 and UN Rec. https://www.dgg.bam.de/dgginfo/detailinfo/un/sp5n6sn3 (reached through the search form, which needs its session) | "Detailinfo ADR 2025"; "Detailinfo UN Rec. 23rd rev. ed." |
+
+```
+d958b8b224039d2367a4db41d2c31754f2ef5bd463ceda2c4d2ce7a40bd55e6e  ./uncefact/transportequipmentfullnesscodelist.json
+fb57468c3b3a632a2e7a19da5cf52c5427ba8a6e8ba7377dd394e1aad560666e  ./erg2024/Guide_115.pdf
+```
+
+What was read on BAM's pages for UN 1965, mixture C:
+
+- UN Rec. 23rd rev. ed.: "UN-Nr.: 1965 Klasse: 2.1"; "Klasse 2.1 Flammable gases"; "Namen für die Beförderungspapiere … HYDROCARBON GAS MIXTURE, LIQUEFIED, N.O.S. (Mixture C)"; "Vorschriften-Namen … HYDROCARBON GAS MIXTURE, LIQUEFIED, N.O.S."; special provision 274 (the proper shipping name supplemented with the technical name).
+- ADR 2025: "Klassifizierungscode 2F Verflüssigtes Gas, entzündbar"; "Beförderungskategorie 2"; "Gefahrnummer 23 entzündbares Gas"; "Gefahrzettel 2.1"; "Tunnelbeschränkungscode B/D: Beförderungen in Tanks: Durchfahrt verboten durch Tunnel der Kategorien B, C, D und E. Sonstige Beförderungen: Durchfahrt verboten durch Tunnel der Kategorien D und E."; for tanks "Großzettel / Kennzeichen 2.1" and "Orangefarbene Tafel Gefahrnummer 23 entzündbares Gas UN-Nummer 1965"; "Tankcodierung PxBN(M)"; the table of special provision 274/ADR 2.2.2.3 names mixture C "Gemisch C" oder "Propan", with the footnote "Bei Beförderungen in Tanks dürfen die Handelsnamen "Butan" und "Propan" nur als Zusatz verwendet werden."
+
+What `world/codelists/lists.json` takes from them: UN 1965 with its name and class 2.1 in `UNModelRegsUN`; guide 115 in `ERG2024`; the list `UNCL8169`, bound to `EmissionCalculationMethod/FullnessIndicationCode`; Recommendation 28 code 3113 "Lorry, articulated with tank" (from `rec28/Rec28_Rev4.2e_2018.csv`, already kept) in `UNECERec28`. The orange plate numbers 23 over 1965 and the tunnel code B/D of the examples are the ADR values above; the technical name is "Mixture C", with "propane" only as the trade name beside it.

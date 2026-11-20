@@ -161,6 +161,16 @@
    ]
   },
   {
+   "element": "FullnessIndicationCode",
+   "address": "*[local-name()='EmissionCalculationMethod']/cbc:FullnessIndicationCode",
+   "lists": [
+    "UNCL8169"
+   ],
+   "parents": [
+    "EmissionCalculationMethod"
+   ]
+  },
+  {
    "element": "RoleCode",
    "address": "*[local-name()='CrewMemberPerson']/cbc:RoleCode | *[local-name()='CrewPerson']/cbc:RoleCode | *[local-name()='MasterPerson']/cbc:RoleCode | *[local-name()='PassengerPerson']/cbc:RoleCode | *[local-name()='Person']/cbc:RoleCode | *[local-name()='ReportingPerson']/cbc:RoleCode | *[local-name()='ResponsibleOfficerPerson']/cbc:RoleCode | *[local-name()='SecurityOfficerPerson']/cbc:RoleCode | *[local-name()='ShipsSurgeonPerson']/cbc:RoleCode",
    "lists": [
@@ -884,6 +894,7 @@
    "address": "cbc:TaxExemptionReasonCode",
    "lists": [
     "XB:TaxExemptionReason",
+    "XL:TaxExemptionReason",
     "XU:TaxExemptionReason"
    ]
   },
@@ -5038,6 +5049,15 @@
     "CHARITY"
    ]
   },
+  "XL:TaxExemptionReason": {
+   "listID": "urn:ubl-examples:world:XL:codelist:TaxExemptionReasonCode",
+   "scope": "XL",
+   "name": "Import consumption tax exemption reason",
+   "location": "world/codelists/gc/XL-TaxExemptionReasonCode.gc",
+   "codes": [
+    "MEDHOSP"
+   ]
+  },
   "XU:TaxExemptionReason": {
    "listID": "urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode",
    "scope": "XU",
@@ -5402,6 +5422,7 @@
     "774",
     "856",
     "861",
+    "890",
     "917"
    ]
   },
@@ -5420,7 +5441,8 @@
     "33",
     "2302",
     "815",
-    "71"
+    "71",
+    "3113"
    ]
   },
   "IATAAircraftType": {
@@ -5715,7 +5737,9 @@
    "codes": [
     "TARGET",
     "MIN",
-    "MAX"
+    "MAX",
+    "CHILLED",
+    "FROZEN"
    ]
   },
   "CargoType": {
@@ -6024,7 +6048,10 @@
     "2920",
     "1202",
     "1203",
-    "1950"
+    "1950",
+    "1965",
+    "2915",
+    "1845"
    ]
   },
   "UNModelRegsClass": {
@@ -6130,8 +6157,11 @@
     "132",
     "147",
     "153",
+    "120",
     "161",
-    "171"
+    "163",
+    "171",
+    "115"
    ]
   },
   "ADRTunnel": {
@@ -6208,6 +6238,7 @@
    "location": "world/codelists/gc/PackingInstructionCode.gc",
    "codes": [
     "PI855",
+    "PI954",
     "PI965IA",
     "PI965IB",
     "PI966",
@@ -8477,8 +8508,11 @@
     "27180",
     "28232",
     "31102",
+    "33690",
     "34710",
     "35110",
+    "35260",
+    "35270",
     "36330",
     "36410",
     "381",
@@ -8504,7 +8538,11 @@
     "080810",
     "080830",
     "260111",
+    "271112",
     "271121",
+    "284443",
+    "300241",
+    "300431",
     "321000",
     "381400",
     "390110",
@@ -8808,6 +8846,27 @@
     "en-XU",
     "en-XB",
     "en-XL"
+   ]
+  },
+  "UNCL8169": {
+   "listID": "UN/EDIFACT EDED 8169",
+   "scope": "external",
+   "name": "UN/EDIFACT 8169 Full or empty indicator",
+   "location": "world/codelists/gc/UNCL8169Code.gc",
+   "codes": [
+    "1",
+    "10",
+    "11",
+    "12",
+    "13",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
    ]
   }
  }

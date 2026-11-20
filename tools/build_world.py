@@ -160,7 +160,13 @@ def identity(p):
     rows.append((f"In {c['name']}", f"Currency: {cur['name']} (`{cur['code']}`). Taxes: {c['tax']['summary']}"))
     return ["## Identity", "", "| | |", "|---|---|"] + [f"| {k} | {v} |" for k, v in rows] + [""]
 
+ABROAD = {p["id"]: p for p in world.get("abroad", [])}     # makers outside the world (O229): no page, no map
+
+
 def link(pid):
+    if pid in ABROAD:
+        p = ABROAD[pid]
+        return f"{label(p)} ({world['abroad_countries'][p['c']]['name']}, outside the world)"
     return f"[{label(parties[pid])}](world-{pid}.html)"
 
 flows = {f["id"]: f for f in world["flows"]}
@@ -242,7 +248,7 @@ for p in world["parties"]:
     if v["partners"]:
         lines += ["## Trading partners in the world", "",
                   "The parties it exchanges documents with:", ""]
-        lines += [f"- {link(q)}, {world['countries'][parties[q]['c']]['name']}" for q in v["partners"]] + [""]
+        lines += [f"- {link(q)}" + ("" if q in ABROAD else f", {world['countries'][parties[q]['c']]['name']}") for q in v["partners"]] + [""]
     lines += ["## In the world", "",
               f"[See {p['name']} on the map](world.html#{p['id']}) · "
               f"{c['name']}: {c['note']}", "",
@@ -315,9 +321,14 @@ for level, title in LEVELS.items():
                          else "to a public body of " + world['countries'][spec['country']]['name'])
                       + ", on top of the Trade Accord's transaction, and is chained after it.", ""]
         elif level == "community":
-            lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + ". It applies "
-                      + ("to the documents the members exchange among themselves" if spec["when"] == "between_members"
-                         else f"to the documents of these types in the flows {', '.join(spec['flows'])}")
+            if spec["when"] == "between_members":
+                applies = "to the documents the members exchange among themselves"
+            elif spec["when"] == "in_port":
+                applies = (f"to the documents of these types in the flows {', '.join(spec['flows'])} that pass through "
+                           f"the port: exchanged in {world['countries'][spec['country']]['name']}, with a member taking part")
+            else:
+                applies = "to the documents of these types that a member sends or receives: every party of its procedures"
+            lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + f". It applies {applies}"
                       + ", chained after the transaction and any national specification.", ""]
         else:
             owner = world_specs.load()["owner"][level]

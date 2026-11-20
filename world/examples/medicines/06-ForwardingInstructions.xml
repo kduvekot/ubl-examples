@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>QPD-FI-26-0329</cbc:ID>
+  <cbc:UUID>9c9dac7e-9d28-5eec-bf12-be960571ab4f</cbc:UUID>
+  <cbc:IssueDate>2026-06-11</cbc:IssueDate>
+  <cbc:IssueTime>09:20:00-01:00</cbc:IssueTime>
+  <cbc:Name>Forwarding instructions</cbc:Name>
+  <cbc:Note>Please book KXL207 of Monday 15 June with the airline's active container at 5 °C; collect the container and the dry-ice box at our cold rooms at 04:15. Our van brings the generator to the cargo terminal by 05:30 with its shipper's declaration.</cbc:Note>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9524910900003</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-413425</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-718264</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Airport Road</cbc:StreetName>
+      <cbc:BuildingNumber>40</cbc:BuildingNumber>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38528</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+      <cbc:Department>Warehouse</cbc:Department>
+      <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
+      <cbc:ElectronicMail>dispatch@quillmoor.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20413425</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ConsignorParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Dockside Way</cbc:StreetName>
+      <cbc:BuildingNumber>4</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38525</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
+      <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:FreightForwarderParty>
+  <cac:Shipment>
+    <cbc:ID>QPD-SH-26-0323</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>QPD-CS-26-0330</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
+      <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cac:ConsigneeParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Selanu General Hospital</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">52968014</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+          <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+          <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
+          <cbc:BuildingNumber>81</cbc:BuildingNumber>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            <cbc:Name>Lisavu</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+          <cbc:Name>Pharmacy goods-in</cbc:Name>
+          <cbc:JobTitle>Pharmacy technician</cbc:JobTitle>
+          <cbc:Department>Pharmacy</cbc:Department>
+          <cbc:Telephone>+999 3 726 8840</cbc:Telephone>
+          <cbc:ElectronicMail>pharmacy-goodsin@selanu-hospital.example</cbc:ElectronicMail>
+          <cbc:Note>Weekdays 07:30–17:00</cbc:Note>
+        </cac:Contact>
+      </cac:ConsigneeParty>
+      <cac:HazardousItemNotificationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+        </cac:PartyName>
+      </cac:HazardousItemNotificationParty>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>QPD-TC-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingInstructions>Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo terminal.</cbc:HandlingInstructions>
+        <cac:MinimumTemperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+          <cbc:Measure unitCode="CEL">2</cbc:Measure>
+        </cac:MinimumTemperature>
+        <cac:MaximumTemperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+          <cbc:Measure unitCode="CEL">8</cbc:Measure>
+        </cac:MaximumTemperature>
+        <cac:Package>
+          <cbc:ID>QPD-CT-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-2</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-3</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-4</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-5</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-6</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-7</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-8</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-9</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-10</cbc:ID>
+          <cbc:Quantity unitCode="EA">30</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-11</cbc:ID>
+          <cbc:Quantity unitCode="EA">60</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-12</cbc:ID>
+          <cbc:Quantity unitCode="EA">60</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-13</cbc:ID>
+          <cbc:Quantity unitCode="EA">60</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+        <cac:Package>
+          <cbc:ID>QPD-CT-14</cbc:ID>
+          <cbc:Quantity unitCode="EA">60</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:PackagingTypeCode>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>QPD-BX-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingInstructions>Frozen vaccine on 6 kg of dry ice: keep the box upright and its vent clear; do not put it in the active container.</cbc:HandlingInstructions>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        <cac:MinimumTemperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+          <cbc:Measure unitCode="CEL">-50</cbc:Measure>
+        </cac:MinimumTemperature>
+        <cac:MaximumTemperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+          <cbc:Measure unitCode="CEL">-15</cbc:Measure>
+        </cac:MaximumTemperature>
+        <cac:Package>
+          <cbc:ID>QPD-BX-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+      <cac:TransportHandlingUnit>
+        <cbc:ID>QPD-RA-1</cbc:ID>
+        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:TransportHandlingUnitTypeCode>
+        <cbc:HandlingInstructions>Radioactive, Category III-YELLOW, transport index 1.5: stow in the aft hold, away from the crew and from the frozen vaccine's box.</cbc:HandlingInstructions>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        <cac:HazardousGoodsTransit>
+          <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+        </cac:HazardousGoodsTransit>
+        <cac:Package>
+          <cbc:ID>QPD-RA-1</cbc:ID>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BX</cbc:PackagingTypeCode>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LENGTH</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">400</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">DEPTH</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+          </cac:MeasurementDimension>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">HEIGHT</cbc:AttributeID>
+            <cbc:Measure unitCode="MMT">300</cbc:Measure>
+          </cac:MeasurementDimension>
+        </cac:Package>
+      </cac:TransportHandlingUnit>
+    </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">60</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">300</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
+      </cac:Item>
+      <cac:Temperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">5</cbc:Measure>
+        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
+      </cac:Temperature>
+      <cac:MinimumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">2</cbc:Measure>
+      </cac:MinimumTemperature>
+      <cac:MaximumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">8</cbc:Measure>
+      </cac:MaximumTemperature>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">12</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">240</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
+      </cac:Item>
+      <cac:Temperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">5</cbc:Measure>
+        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
+      </cac:Temperature>
+      <cac:MinimumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">2</cbc:Measure>
+      </cac:MinimumTemperature>
+      <cac:MaximumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">8</cbc:Measure>
+      </cac:MaximumTemperature>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Description>Varicella vaccine, live, frozen, single dose</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">1.6</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">40</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
+      </cac:Item>
+      <cac:MinimumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">-50</cbc:Measure>
+      </cac:MinimumTemperature>
+      <cac:MaximumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">-15</cbc:Measure>
+      </cac:MaximumTemperature>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>4</cbc:ID>
+      <cbc:Description>Technetium-99m generator, 20 GBq</cbc:Description>
+      <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
+        <cac:HazardousItem>
+          <cbc:ID>QPD-RAD-0020-DG</cbc:ID>
+          <cbc:PlacardNotation>7</cbc:PlacardNotation>
+          <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
+          <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
+          <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">163</cbc:MedicalFirstAidGuideCode>
+          <cbc:ProperShippingName>Radioactive material, Type A package, non-special form, non fissile or fissile-excepted</cbc:ProperShippingName>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">7</cbc:HazardousCategoryCode>
+          <cbc:MarkingID>UN2915</cbc:MarkingID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
+          <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cac:ContactParty>
+            <cac:PartyIdentification>
+              <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+              <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+            </cac:PartyName>
+            <cac:Contact>
+              <cbc:Name>Dangerous goods emergency line</cbc:Name>
+              <cbc:Telephone>+999 2 38 6047 1590</cbc:Telephone>
+              <cbc:Note>Every day, around the clock</cbc:Note>
+            </cac:Contact>
+          </cac:ContactParty>
+          <cac:HazardousGoodsTransit>
+            <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+            <cbc:TransportAuthorizationCode listID="urn:ubl-examples:world:codelist:TransportAuthorizationCode">PCA</cbc:TransportAuthorizationCode>
+          </cac:HazardousGoodsTransit>
+          <cac:RadioactiveMaterial>
+            <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)</cbc:Name>
+            <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
+            <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
+          </cac:RadioactiveMaterial>
+        </cac:HazardousItem>
+      </cac:Item>
+    </cac:GoodsItem>
+  </cac:Shipment>
+  <cac:DocumentReference>
+    <cbc:ID>SGH-PO-26-0327</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+  </cac:DocumentReference>
+  <cac:DocumentReference>
+    <cbc:ID>QPD-DGD-26-0615</cbc:ID>
+    <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">890</cbc:DocumentTypeCode>
+  </cac:DocumentReference>
+  <cac:Signature>
+    <cbc:ID>QPD-SIG-FI-26</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+</ForwardingInstructions>
