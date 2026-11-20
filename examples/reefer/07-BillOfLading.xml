@@ -1,0 +1,603 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BillOfLading xmlns="urn:oasis:names:specification:ubl:schema:xsd:BillOfLading-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:bill-of-lading:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>TOL-BL-26-0562</cbc:ID>
+  <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
+  <cbc:UUID>6caa8b1e-206e-5ffe-a3bd-08fde43f6728</cbc:UUID>
+  <cbc:IssueDate>2026-04-23</cbc:IssueDate>
+  <cbc:IssueTime>14:30:00-01:00</cbc:IssueTime>
+  <cbc:ToOrderIndicator>false</cbc:ToOrderIndicator>
+  <cbc:OtherInstruction>Express release: no original issued; the reefer is released at Selanu to the consignee named.</cbc:OtherInstruction>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9527430900003</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-415873</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-418726</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Orchard Road</cbc:StreetName>
+      <cbc:BuildingNumber>3</cbc:BuildingNumber>
+      <cbc:CityName>Harrowmead</cbc:CityName>
+      <cbc:PostalZone>71640</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+      <cbc:Department>Packhouse</cbc:Department>
+      <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
+      <cbc:ElectronicMail>dispatch@harrowmeadfruit.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
+    </cac:Contact>
+  </cac:ConsignorParty>
+  <cac:CarrierParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-547539</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Harbour Road</cbc:StreetName>
+      <cbc:BuildingNumber>18</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38527</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Bookings</cbc:Name>
+      <cbc:JobTitle>Booking agent</cbc:JobTitle>
+      <cbc:Department>Bookings</cbc:Department>
+      <cbc:Telephone>+999 2 38 2058 7929</cbc:Telephone>
+      <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
+      <cbc:Note>Every day 06:00–22:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:CarrierParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Dockside Way</cbc:StreetName>
+      <cbc:BuildingNumber>4</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38525</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
+      <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:FreightForwarderParty>
+  <cac:Shipment>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:GrossWeightMeasure unitCode="KGM">26528</cbc:GrossWeightMeasure>
+    <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
+    <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
+    <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
+    <cac:Consignment>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
+      <cbc:CarrierAssignedID>TWL-BK-26-55194</cbc:CarrierAssignedID>
+      <cbc:FreightForwarderAssignedID>BF-SH-26-0391</cbc:FreightForwarderAssignedID>
+      <cbc:TariffDescription>Fresh fruit, chilled, in a reefer</cbc:TariffDescription>
+      <cbc:TariffCode>TWL-T-0812</cbc:TariffCode>
+      <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
+      <cbc:HandlingCode listID="urn:ubl-examples:world:codelist:HandlingInstructionCode">POWER</cbc:HandlingCode>
+      <cbc:HandlingInstructions>Keep plugged in; check the reefer every watch.</cbc:HandlingInstructions>
+      <cbc:Information>Shipped on board in apparent good order and condition, refrigeration running at the set point.</cbc:Information>
+      <cac:ConsigneeParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:AdditionalPartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-043529</cbc:ID>
+        </cac:AdditionalPartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40618392</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+          <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+          <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+          <cbc:BuildingNumber>58</cbc:BuildingNumber>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            <cbc:Name>Lisavu</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+          <cbc:Name>Cold store</cbc:Name>
+          <cbc:JobTitle>Cold store supervisor</cbc:JobTitle>
+          <cbc:Department>Cold store</cbc:Department>
+          <cbc:Telephone>+999 3 726 8104</cbc:Telephone>
+          <cbc:ElectronicMail>coldstore@hafefo.example</cbc:ElectronicMail>
+          <cbc:Note>Monday to Saturday 05:00–14:00</cbc:Note>
+        </cac:Contact>
+      </cac:ConsigneeParty>
+      <cac:OriginalDespatchParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+        </cac:PartyName>
+      </cac:OriginalDespatchParty>
+      <cac:FinalDeliveryParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+        </cac:PartyName>
+      </cac:FinalDeliveryParty>
+      <cac:OriginalDepartureCountry>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:OriginalDepartureCountry>
+      <cac:FinalDestinationCountry>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+      </cac:FinalDestinationCountry>
+      <cac:DeliveryTerms>
+        <cbc:ID schemeID="INCOTERMS">CIP</cbc:ID>
+        <cbc:LossRisk>Risk passes when the reefer is handed to the carrier at Lumeport.</cbc:LossRisk>
+        <cac:DeliveryLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:DeliveryLocation>
+      </cac:DeliveryTerms>
+      <cac:CollectPaymentTerms>
+        <cbc:Note>Reefer power and monitoring at Selanu after discharge collect from the consignee.</cbc:Note>
+      </cac:CollectPaymentTerms>
+      <cac:PrepaidPaymentTerms>
+        <cbc:Note>Ocean freight and bunker surcharge prepaid by the shipper.</cbc:Note>
+      </cac:PrepaidPaymentTerms>
+      <cac:FreightAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Ocean freight, 40-foot reefer</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">4400.00</cbc:Amount>
+      </cac:FreightAllowanceCharge>
+      <cac:ExtraAllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Bunker surcharge</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">400.00</cbc:Amount>
+      </cac:ExtraAllowanceCharge>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TH-26-17E</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
+          <cbc:TradeServiceCode>TWL-ISL</cbc:TradeServiceCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+            <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+            <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
+            <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+            <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20117</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:AcceptanceTransportEvent>
+          <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>17:40:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:AcceptanceTransportEvent>
+      </cac:MainCarriageShipmentStage>
+      <cac:PreCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Bayforth Forwarding</cbc:Name>
+          </cac:PartyName>
+        </cac:CarrierParty>
+        <cac:TransportMeans>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">37</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2208</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV CH 0436</cbc:TrailerLicensePlateID>
+          </cac:RoadTransport>
+        </cac:TransportMeans>
+        <cac:DropoffTransportEvent>
+          <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>17:40:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:DropoffTransportEvent>
+      </cac:PreCarriageShipmentStage>
+      <cac:OnCarriageShipmentStage>
+        <cbc:ID>3</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:OnCarriageIndicator>true</cbc:OnCarriageIndicator>
+        <cac:CarrierParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41722</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Nalevi Warehousing</cbc:Name>
+          </cac:PartyName>
+        </cac:CarrierParty>
+        <cac:ReceiptTransportEvent>
+          <cbc:OccurrenceDate>2026-04-27</cbc:OccurrenceDate>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:Name>Hafefo Fresh Produce, cold store, Selanu</cbc:Name>
+          </cac:Location>
+        </cac:ReceiptTransportEvent>
+      </cac:OnCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">TWLU5316047</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode listID="ISO 6346">45R1</cbc:SizeTypeCode>
+          <cbc:FullnessIndicationCode listID="urn:ubl-examples:world:codelist:LoadTypeCode">FCL</cbc:FullnessIndicationCode>
+          <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
+          <cbc:AirFlowPercent>15</cbc:AirFlowPercent>
+          <cbc:HumidityPercent>90</cbc:HumidityPercent>
+          <cbc:HumanFoodApprovedIndicator>true</cbc:HumanFoodApprovedIndicator>
+          <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+          <cbc:GrossWeightMeasure unitCode="KGM">26528</cbc:GrossWeightMeasure>
+          <cbc:TareWeightMeasure unitCode="KGM">4800</cbc:TareWeightMeasure>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>TWL-S-0884517</cbc:ID>
+            <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">CARRIER</cbc:SealIssuerTypeCode>
+            <cbc:SealingPartyType>Shipper</cbc:SealingPartyType>
+          </cac:TransportEquipmentSeal>
+          <cac:MinimumTemperature>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">0</cbc:Measure>
+          </cac:MinimumTemperature>
+          <cac:MaximumTemperature>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">1</cbc:Measure>
+          </cac:MaximumTemperature>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653010</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 001 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653010</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653027</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 002 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653027</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653034</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 003 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653034</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653041</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 004 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653041</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653058</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 005 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653058</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653065</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 006 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653065</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653072</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 007 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653072</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653089</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 008 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653089</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653096</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 009 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653096</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653102</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 010 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653102</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653119</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 011 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653119</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653126</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 012 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653126</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653133</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 013 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653133</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653140</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 014 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653140</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653157</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 015 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653157</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653164</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 016 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653164</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653171</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 017 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653171</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653188</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 018 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653188</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653195</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 019 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653195</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:PackagedTransportHandlingUnit>
+            <cbc:ID schemeID="GS1 SSCC">095274300005653201</cbc:ID>
+            <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
+            <cbc:TotalPackageQuantity unitCode="EA">56</cbc:TotalPackageQuantity>
+            <cbc:ShippingMarks>HAFEFO SELANU / 020 of 020</cbc:ShippingMarks>
+            <cbc:TraceID>095274300005653201</cbc:TraceID>
+          </cac:PackagedTransportHandlingUnit>
+          <cac:ServiceAllowanceCharge>
+            <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">ABK</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>Reefer power and monitoring at Selanu after discharge, a day</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="XBL">45.00</cbc:Amount>
+          </cac:ServiceAllowanceCharge>
+          <cac:VerifiedGrossMass>
+            <cbc:ID>VGM-26-0422</cbc:ID>
+            <cbc:WeighingDate>2026-04-22</cbc:WeighingDate>
+            <cbc:WeighingTime>11:30:00</cbc:WeighingTime>
+            <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
+            <cbc:WeighingDeviceID>HFC-SCALE-02</cbc:WeighingDeviceID>
+            <cbc:WeighingDeviceType>Pallet scale</cbc:WeighingDeviceType>
+            <cbc:GrossMassMeasure unitCode="KGM">26528</cbc:GrossMassMeasure>
+            <cac:WeighingParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+              </cac:PartyName>
+            </cac:WeighingParty>
+            <cac:ShipperParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+              </cac:PartyName>
+            </cac:ShipperParty>
+            <cac:ResponsibleParty>
+              <cac:PartyIdentification>
+                <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+              </cac:PartyIdentification>
+              <cac:PartyName>
+                <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+              </cac:PartyName>
+            </cac:ResponsibleParty>
+            <cac:DocumentReference>
+              <cbc:ID>VGM-26-0422</cbc:ID>
+              <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">749</cbc:DocumentTypeCode>
+            </cac:DocumentReference>
+          </cac:VerifiedGrossMass>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+    </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Fresh apples and pears in cartons, on 20 pallets</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
+      <cac:Temperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
+      </cac:Temperature>
+      <cac:ContainedGoodsItem>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Description>Fresh apples</cbc:Description>
+        <cac:Item>
+          <cbc:Name>Fresh apples</cbc:Name>
+          <cac:CommodityClassification>
+            <cbc:CommodityCode listID="WCO HS 2022">080810</cbc:CommodityCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:ContainedGoodsItem>
+      <cac:ContainedGoodsItem>
+        <cbc:ID>1.2</cbc:ID>
+        <cbc:Description>Fresh pears</cbc:Description>
+        <cac:Item>
+          <cbc:Name>Fresh pears</cbc:Name>
+          <cac:CommodityClassification>
+            <cbc:CommodityCode listID="WCO HS 2022">080830</cbc:CommodityCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:ContainedGoodsItem>
+      <cac:MinimumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">0</cbc:Measure>
+      </cac:MinimumTemperature>
+      <cac:MaximumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">1</cbc:Measure>
+      </cac:MaximumTemperature>
+    </cac:GoodsItem>
+  </cac:Shipment>
+</BillOfLading>

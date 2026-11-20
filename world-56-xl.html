@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hafefo Fresh Produce · The UBL World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="site.css?v=df783bed5b">
+</head>
+<body>
+<header class="site-header"><div class="bar"><a class="brand" href="index.html" title="The UBL World: home">UBL <span>World</span></a><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-burger" title="Menu"><span></span><span class="visually-hidden">Menu</span></label><nav class="site-nav" aria-label="Site"><ul><li><a href="world.html">World</a></li><li><a href="examples.html">Trade</a></li><li><a href="parties.html" aria-current="page">Parties</a></li><li><a href="world-specifications.html">Rules</a></li><li><a href="about.html">About</a></li></ul></nav><a class="source" href="https://github.com/kduvekot/ubl-examples"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Source</span></a></div></header>
+<div class="layout">
+<main class="prose">
+<h1 id="hafefo-fresh-produce">Hafefo Fresh Produce</h1>
+<p><em>#56 Fresh Produce Wholesaler · Lisavu (XL) ·
+<span class="kind kind-commerce">Commerce</span></em></p>
+<p>Imports fruit and vegetables the island does not grow or not in the
+season, keeps them in its own cold store by the port and supplies the
+island's shops, hotels and the hospital's kitchen.</p>
+<h2 id="identity">Identity</h2>
+<table>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Hafefo Fresh Produce</td>
+</tr>
+<tr>
+<td>Registry number</td>
+<td><code>IC43529</code> (Island companies register)</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>58 Wharf Road<br>Selanu<br>Lisavu</td>
+</tr>
+<tr>
+<td>Electronic address</td>
+<td><code>XL:IC43529</code></td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Purchasing, <code>purchasing@hafefo.example</code></td>
+</tr>
+<tr>
+<td>Account</td>
+<td><code>XL21BSEL0010008247361</code> at <a
+href="world-22-xl.html">Bank of Selanu</a></td>
+</tr>
+<tr>
+<td>In Lisavu</td>
+<td>Currency: Coral (<code>XLC</code>). Taxes: An island without a
+general sales tax or VAT: the state is financed by customs duty and an
+import consumption tax, both collected by customs at import. Domestic
+sales carry no tax, and the invoice says so.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-ubl-helps">How UBL helps</h2>
+<p>A fresh-produce importer must know what is on its way and in what
+state it arrives. UBL brings it the supplier's despatch advice with the
+lots, the carrier's reefer data and its own receipt advice with the
+temperatures read at unloading, so a claim on a lot that arrived too
+warm rests on the documents.</p>
+<p>In this world it sends 4 and receives 4 documents, and is named in 4
+documents between other parties. They are listed per flow below.</p>
+<h2
+id="apples-and-pears-in-a-reefer-container-by-sea-bayvarra--island-lisavu">Apples
+and pears in a reefer container by sea (Bayvarra → island Lisavu)</h2>
+<p>In the southern autumn the island's fresh-produce wholesaler buys a
+40-foot reefer of apples and pears from the fruit growers' cooperative
+at Harrowmead, carriage and insurance paid to the Port of Selanu (CIP):
+the cooperative books the reefer through its forwarder, which brings it
+pre-cooled to the packhouse and trucks it back to Lumeport on a
+generator; the plant health service of Bayvarra's Department of
+Agriculture certifies the fruit free of the pests the island names. The
+reefer sails at 0.5 °C and 90 % humidity, its fresh-air vent set for
+fruit that breathes, on Tidewell's weekly service; at Selanu it waits on
+the port's power until the wholesaler's carrier takes it to the cold
+store, where it is unloaded and its temperature log read. Food pays the
+island's import consumption tax like every import: the island taxes
+imported food to encourage its own farms.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-SCHEMA"><strong>Order</strong></a>
+to <a href="world-55-xb.html">Harrowmead Fruit Growers</a>: The
+wholesaler orders one reefer of apples and pears for the island's shops,
+hotels and hospital kitchen in the autumn season, carriage and insurance
+paid to the Port of Selanu: the cooperative books and insures the
+reefer. <a href="example-reefer-01-Order.html">See the example
+document</a>.</p>
+<p>In it as <code>BuyerCustomerParty</code>,
+<code>Delivery/DeliveryParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-IMPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Import
+Customs Declaration</strong></a> to <a href="world-19-xl.html">Island
+Customs Service</a>: The wholesaler lodges its import declaration before
+the ship arrives, so that the fruit is released when the reefer is
+discharged; the import consumption tax applies to food as to every
+import. <a href="example-reefer-09-ImportCustomsDeclaration.html">See
+the example document</a>.</p>
+<p>In it as <code>ImporterParty</code>, <code>ConsigneeParty</code>.</p>
+<p>Also mentions: <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a> as <code>ConsignorParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA"><strong>Receipt
+Advice</strong></a> to <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a>: The wholesaler confirms what it unloaded at its cold store,
+with the temperatures read from the reefer's log and measured in the
+fruit. <a href="example-reefer-11-ReceiptAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>DeliveryCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-REMITTANCE-ADVICE-SCHEMA"><strong>Remittance
+Advice</strong></a> to <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a>: The wholesaler pays the cooperative's invoice in lume on
+its due date, from its account at the island's bank, and tells the
+cooperative which invoice it pays. <a
+href="example-reefer-12-RemittanceAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-22-xl.html">Bank of Selanu</a> as
+<code>PaymentMeans/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>;
+<a href="world-25-xb.html">Bank of Lumeport</a> as
+<code>PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution</code>.</p></li>
+</ul>
+<p><strong>Receives</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-ORDER-RESPONSE-SCHEMA"><strong>Order
+Response</strong></a> from <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a>: The cooperative accepts the order on a condition: its
+stored pears are running short, so it offers three pallets of pears
+instead of four and a fifth pallet of Granny Smith in their place, the
+offer open until Friday noon, its cut-off for booking the reefer on the
+next Thursday's ship. <a href="example-reefer-02-OrderResponse.html">See
+the example document</a>.</p>
+<p>In it as <code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a>: The cooperative tells the wholesaler what is in the reefer:
+the pallets, their varieties, grower lots and packing dates. <a
+href="example-reefer-06-DespatchAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>DeliveryCustomerParty</code>.</p>
+<p>Also mentions: <a href="world-11-xb.html">Tidewell Ocean Lines</a> as
+<code>Shipment/Consignment/CarrierParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-INVOICE-SCHEMA"><strong>Invoice</strong></a>
+from <a href="world-55-xb.html">Harrowmead Fruit Growers</a>: The fruit
+at its CIP prices, which hold the reefer's carriage and the insurance,
+invoiced on shipment. <a href="example-reefer-08-Invoice.html">See the
+example document</a>.</p>
+<p>In it as <code>AccountingCustomerParty</code>,
+<code>BuyerCustomerParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
+Status</strong></a> from <a href="world-11-xb.html">Tidewell Ocean
+Lines</a>: The carrier reports the reefer discharged at Selanu and on
+the port's power, with the temperatures its monitoring recorded at sea.
+<a href="example-reefer-10-TransportationStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>ReceiverParty</code>,
+<code>Consignment/ConsigneeParty</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-FORWARDING-INSTRUCTIONS-SCHEMA"><strong>Forwarding
+Instructions</strong></a> from <a href="world-55-xb.html">Harrowmead
+Fruit Growers</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>:
+The cooperative instructs its forwarder: book a reefer on the sailing,
+with its settings for the fruit, bring it pre-cooled to the packhouse
+and back to the port, declare the export and insure the cargo (CIP
+obliges the seller to insure). <a
+href="example-reefer-03-ForwardingInstructions.html">See the example
+document</a>.</p>
+<p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
+who receives the goods).</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA"><strong>Goods
+Certificate</strong></a> from <a href="world-57-xb.html">Federal
+Department of Agriculture of Bayvarra</a> to <a
+href="world-55-xb.html">Harrowmead Fruit Growers</a>: Bayvarra's plant
+protection organisation under the IPPC, the Plant Health Service of the
+federal Department of Agriculture, inspects the fruit at the packhouse
+and certifies it free of the pests the island names; the cooperative's
+forwarder applies for the certificate on its behalf and collects it with
+the export papers. <a href="example-reefer-04-GoodsCertificate.html">See
+the example document</a>.</p>
+<p>In it as <code>ImporterParty</code> (The Party who imports the goods,
+or on whose behalf the goods are being imported).</p>
+<p>Also mentions: <a href="world-10-xb.html">Bayforth Forwarding</a> as
+<code>FreightForwarderParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-EXPORT-CUSTOMS-DECLARATION-SCHEMA"><strong>Export
+Customs Declaration</strong></a> from <a
+href="world-10-xb.html">Bayforth Forwarding</a> to <a
+href="world-19-xb.html">Customs and Border Service of Bayvarra</a>: The
+forwarder, as customs agent, declares the export for the cooperative at
+the seaport. <a
+href="example-reefer-05-ExportCustomsDeclaration.html">See the example
+document</a>.</p>
+<p>In it as <code>CustomsDeclaration/ConsigneeParty</code> (The Party
+who receives the goods).</p>
+<p>Also mentions: <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a> as <code>ExporterParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA"><strong>Bill
+of Lading</strong></a> from <a href="world-11-xb.html">Tidewell Ocean
+Lines</a> to <a href="world-10-xb.html">Bayforth Forwarding</a>: The
+bill of lading of the reefer, issued to the forwarder that booked it,
+with the reefer's settings as the carrier is to keep them. <a
+href="example-reefer-07-BillOfLading.html">See the example
+document</a>.</p>
+<p>In it as <code>Shipment/Consignment/ConsigneeParty</code> (The Party
+who receives the goods).</p>
+<p>Also mentions: <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a> as <code>ConsignorParty</code>.</p></li>
+</ul>
+<h2 id="ubl-party-elements">UBL party elements</h2>
+<p>The party elements in which this party appears:</p>
+<p><code>BuyerCustomerParty</code> <code>DeliveryParty</code>
+<code>ConsigneeParty</code> <code>ImporterParty</code>
+<code>DeliveryCustomerParty</code> <code>AccountingCustomerParty</code>
+<code>ReceiverParty</code></p>
+<h2 id="trading-partners-in-the-world">Trading partners in the
+world</h2>
+<p>The parties it exchanges documents with:</p>
+<ul>
+<li><a href="world-55-xb.html">Harrowmead Fruit Growers</a>,
+Bayvarra</li>
+<li><a href="world-19-xl.html">Island Customs Service</a>, Lisavu</li>
+<li><a href="world-11-xb.html">Tidewell Ocean Lines</a>, Bayvarra</li>
+</ul>
+<h2 id="in-the-world">In the world</h2>
+<p><a href="world.html#56-xl">See Fresh Produce Wholesaler on the
+map</a> · Lisavu: Island. The overseas buyer, reached by sea and
+air.</p>
+<p><em>Who sends and who receives each document type follows the UBL 2.5
+semantic model (the SenderParty and ReceiverParty elements and the
+definitions of the documents and their party elements), completed by the
+party role table of the UBL specification where the model does not say
+it. Every place named in a document is checked against the UBL 2.5
+structure.</em></p>
+</main>
+</div>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/992e98a5ad40b7e58f45322364449bbd748b9f2f"><code>992e98a</code></a> of 2026-11-20 10:34 UTC</p></div></footer>
+</body>
+</html>

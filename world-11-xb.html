@@ -65,7 +65,7 @@ rate of the state where it is delivered (O204).</td>
 represents the goods at sea. With UBL that document, the vessel reports
 and the status updates share the same consignment and container
 references as the forwarder's booking.</p>
-<p>In this world it sends 6 and receives 3 documents, and is named in 5
+<p>In this world it sends 8 and receives 3 documents, and is named in 6
 documents between other parties. They are listed per flow below.</p>
 <h2
 id="overseas-by-container-ship-cost-insurance-and-freight-bayvarra--island-lisavu">Overseas
@@ -263,6 +263,59 @@ href="example-cotton-17-Invoice.html">See the example document</a>.</p>
 Party who provides the transport of goods between named
 points).</p></li>
 </ul>
+<h2
+id="apples-and-pears-in-a-reefer-container-by-sea-bayvarra--island-lisavu">Apples
+and pears in a reefer container by sea (Bayvarra → island Lisavu)</h2>
+<p>In the southern autumn the island's fresh-produce wholesaler buys a
+40-foot reefer of apples and pears from the fruit growers' cooperative
+at Harrowmead, carriage and insurance paid to the Port of Selanu (CIP):
+the cooperative books the reefer through its forwarder, which brings it
+pre-cooled to the packhouse and trucks it back to Lumeport on a
+generator; the plant health service of Bayvarra's Department of
+Agriculture certifies the fruit free of the pests the island names. The
+reefer sails at 0.5 °C and 90 % humidity, its fresh-air vent set for
+fruit that breathes, on Tidewell's weekly service; at Selanu it waits on
+the port's power until the wholesaler's carrier takes it to the cold
+store, where it is unloaded and its temperature log read. Food pays the
+island's import consumption tax like every import: the island taxes
+imported food to encourage its own farms.</p>
+<p><strong>Sends</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-BILL-OF-LADING-SCHEMA"><strong>Bill
+of Lading</strong></a> to <a href="world-10-xb.html">Bayforth
+Forwarding</a>: The bill of lading of the reefer, issued to the
+forwarder that booked it, with the reefer's settings as the carrier is
+to keep them. <a href="example-reefer-07-BillOfLading.html">See the
+example document</a>.</p>
+<p>In it as <code>CarrierParty</code>.</p>
+<p>Also mentions: <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a> as <code>ConsignorParty</code>; <a
+href="world-56-xl.html">Hafefo Fresh Produce</a> as
+<code>Shipment/Consignment/ConsigneeParty</code>.</p></li>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORTATION-STATUS-SCHEMA"><strong>Transportation
+Status</strong></a> to <a href="world-56-xl.html">Hafefo Fresh
+Produce</a>: The carrier reports the reefer discharged at Selanu and on
+the port's power, with the temperatures its monitoring recorded at sea.
+<a href="example-reefer-10-TransportationStatus.html">See the example
+document</a>.</p>
+<p>In it as <code>SenderParty</code>,
+<code>Consignment/CarrierParty</code>.</p></li>
+</ul>
+<p><strong>Is named in documents between others</strong></p>
+<ul>
+<li><p><a
+href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-DESPATCH-ADVICE-SCHEMA"><strong>Despatch
+Advice</strong></a> from <a href="world-55-xb.html">Harrowmead Fruit
+Growers</a> to <a href="world-56-xl.html">Hafefo Fresh Produce</a>: The
+cooperative tells the wholesaler what is in the reefer: the pallets,
+their varieties, grower lots and packing dates. <a
+href="example-reefer-06-DespatchAdvice.html">See the example
+document</a>.</p>
+<p>In it as <code>Shipment/Consignment/CarrierParty</code> (The Party
+who provides the transport of goods between named points).</p></li>
+</ul>
 <h2 id="ubl-party-elements">UBL party elements</h2>
 <p>The party elements in which this party appears:</p>
 <p><code>ReceiverParty</code> <code>SenderParty</code>
@@ -280,6 +333,7 @@ world</h2>
 Lisavu</li>
 <li><a href="world-39-xl.html">Selanu Cotton Ginnery</a>, Lisavu</li>
 <li><a href="world-16-xb.html">Port of Lumeport</a>, Bayvarra</li>
+<li><a href="world-56-xl.html">Hafefo Fresh Produce</a>, Lisavu</li>
 </ul>
 <h2 id="in-the-world">In the world</h2>
 <p><a href="world.html#11-xb">See Ocean Carrier on the map</a> ·
@@ -293,6 +347,6 @@ it. Every place named in a document is checked against the UBL 2.5
 structure.</em></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/90925da27f8b7e6731d595aacb55bcebfebe64ed"><code>90925da</code></a> of 2026-11-20 10:29 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/992e98a5ad40b7e58f45322364449bbd748b9f2f"><code>992e98a</code></a> of 2026-11-20 10:34 UTC</p></div></footer>
 </body>
 </html>

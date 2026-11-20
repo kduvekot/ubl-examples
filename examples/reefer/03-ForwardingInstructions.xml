@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ForwardingInstructions xmlns="urn:oasis:names:specification:ubl:schema:xsd:ForwardingInstructions-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>HFG-FI-26-0555</cbc:ID>
+  <cbc:UUID>65afde09-59f1-5b61-bf17-600334916da7</cbc:UUID>
+  <cbc:IssueDate>2026-04-17</cbc:IssueDate>
+  <cbc:IssueTime>10:40:00-01:00</cbc:IssueTime>
+  <cac:ConsignorParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9527430900003</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-415873</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+    </cac:PartyName>
+    <cac:Language>
+      <cbc:ID schemeID="ISO 639">en</cbc:ID>
+      <cbc:Name>English</cbc:Name>
+      <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+    </cac:Language>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-418726</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Orchard Road</cbc:StreetName>
+      <cbc:BuildingNumber>3</cbc:BuildingNumber>
+      <cbc:CityName>Harrowmead</cbc:CityName>
+      <cbc:PostalZone>71640</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+      <cbc:Department>Packhouse</cbc:Department>
+      <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
+      <cbc:ElectronicMail>dispatch@harrowmeadfruit.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20415873</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:ConsignorParty>
+  <cac:FreightForwarderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Bayforth Forwarding</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Dockside Way</cbc:StreetName>
+      <cbc:BuildingNumber>4</cbc:BuildingNumber>
+      <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+      <cbc:CityName>Lumeport</cbc:CityName>
+      <cbc:PostalZone>38525</cbc:PostalZone>
+      <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact>
+      <cbc:Name>Export desk</cbc:Name>
+      <cbc:JobTitle>Export coordinator</cbc:JobTitle>
+      <cbc:Department>Export</cbc:Department>
+      <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
+      <cbc:ElectronicMail>export@bayforth.example</cbc:ElectronicMail>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+    </cac:Contact>
+    <cac:ElectronicAddress>
+      <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+      <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+    </cac:ElectronicAddress>
+  </cac:FreightForwarderParty>
+  <cac:Shipment>
+    <cbc:ID>HFG-SH-26-0556</cbc:ID>
+    <cbc:InsuranceValueAmount currencyID="XBL">31754.80</cbc:InsuranceValueAmount>
+    <cac:Consignment>
+      <cbc:ID>HFG-CS-26-0557</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
+      <cbc:ForwarderServiceInstructions>Book a 40-foot reefer on Tidewell's sailing of 23 April to Selanu; have it pre-trip inspected and pre-cooled; bring it to our packhouse on 22 April and back to the port on a generator set; declare the export and insure the fruit.</cbc:ForwarderServiceInstructions>
+      <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
+      <cac:ConsigneeParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:AdditionalPartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-043529</cbc:ID>
+        </cac:AdditionalPartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40618392</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+          <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+          <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+          <cbc:BuildingNumber>58</cbc:BuildingNumber>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+          <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            <cbc:Name>Lisavu</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+          <cbc:Name>Cold store</cbc:Name>
+          <cbc:JobTitle>Cold store supervisor</cbc:JobTitle>
+          <cbc:Department>Cold store</cbc:Department>
+          <cbc:Telephone>+999 3 726 8104</cbc:Telephone>
+          <cbc:ElectronicMail>coldstore@hafefo.example</cbc:ElectronicMail>
+          <cbc:Note>Monday to Saturday 05:00–14:00</cbc:Note>
+        </cac:Contact>
+      </cac:ConsigneeParty>
+      <cac:ExporterParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+        </cac:PartyName>
+      </cac:ExporterParty>
+      <cac:ImporterParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+        </cac:PartyName>
+      </cac:ImporterParty>
+      <cac:InsuranceParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+        </cac:PartyName>
+      </cac:InsuranceParty>
+      <cac:OriginalDespatchTransportationService>
+        <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
+        <cbc:Name>Reefer truck from Harrowmead to the port of Lumeport</cbc:Name>
+      </cac:OriginalDespatchTransportationService>
+    </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Fresh apples and pears in cartons, on 20 pallets</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
+      <cac:Temperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
+      </cac:Temperature>
+      <cac:ContainedGoodsItem>
+        <cbc:ID>1.1</cbc:ID>
+        <cbc:Description>Fresh apples</cbc:Description>
+        <cac:Item>
+          <cbc:Name>Fresh apples</cbc:Name>
+          <cac:CommodityClassification>
+            <cbc:CommodityCode listID="WCO HS 2022">080810</cbc:CommodityCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:ContainedGoodsItem>
+      <cac:ContainedGoodsItem>
+        <cbc:ID>1.2</cbc:ID>
+        <cbc:Description>Fresh pears</cbc:Description>
+        <cac:Item>
+          <cbc:Name>Fresh pears</cbc:Name>
+          <cac:CommodityClassification>
+            <cbc:CommodityCode listID="WCO HS 2022">080830</cbc:CommodityCode>
+          </cac:CommodityClassification>
+        </cac:Item>
+      </cac:ContainedGoodsItem>
+      <cac:MinimumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">0</cbc:Measure>
+      </cac:MinimumTemperature>
+      <cac:MaximumTemperature>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:Measure unitCode="CEL">1</cbc:Measure>
+      </cac:MaximumTemperature>
+    </cac:GoodsItem>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+        <cbc:SizeTypeCode listID="ISO 6346">45R1</cbc:SizeTypeCode>
+        <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
+        <cbc:AirFlowPercent>15</cbc:AirFlowPercent>
+        <cbc:HumidityPercent>90</cbc:HumidityPercent>
+        <cbc:HumanFoodApprovedIndicator>true</cbc:HumanFoodApprovedIndicator>
+        <cbc:RefrigeratedIndicator>true</cbc:RefrigeratedIndicator>
+        <cac:MinimumTemperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+          <cbc:Measure unitCode="CEL">0</cbc:Measure>
+        </cac:MinimumTemperature>
+        <cac:MaximumTemperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+          <cbc:Measure unitCode="CEL">1</cbc:Measure>
+        </cac:MaximumTemperature>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+    <cac:InsurancePolicy>
+      <cbc:InsuranceTypeDescription>Cargo insurance on Institute Cargo Clauses (A), all risks, including loss from a breakdown of the refrigeration</cbc:InsuranceTypeDescription>
+      <cbc:InsuredValueAmount currencyID="XBL">31754.80</cbc:InsuredValueAmount>
+    </cac:InsurancePolicy>
+  </cac:Shipment>
+</ForwardingInstructions>

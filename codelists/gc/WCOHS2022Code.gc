@@ -34,6 +34,22 @@
    <SimpleCodeList>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>080810</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Apples, fresh</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>080830</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pears, fresh</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>260111</SimpleValue>
          </Value>
          <Value ColumnRef="name">

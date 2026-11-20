@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- A code list of the UBL example world: temperature qualifier. What a temperature stands for. Made by tools/build_codelists.py from world/codelists/lists.json. -->
+<!-- A code list of the UBL example world: temperature class. The class of temperature goods are to be kept or carried at, where a document asks for the class and gives no figure: the carrier or the warehouse sets the figure the goods need within the class. Made by tools/build_codelists.py from world/codelists/lists.json. -->
 <gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
    <Identification>
-      <ShortName>TemperatureQualifierCode</ShortName>
-      <LongName xml:lang="en">Temperature qualifier (UBL example world)</LongName>
-      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TemperatureQualifierCode</LongName>
+      <ShortName>TemperatureClassCode</ShortName>
+      <LongName xml:lang="en">Temperature class (UBL example world)</LongName>
+      <LongName Identifier="listID">urn:ubl-examples:world:codelist:TemperatureClassCode</LongName>
       <Version>1.0</Version>
-      <CanonicalUri>urn:ubl-examples:world:codelist:TemperatureQualifierCode</CanonicalUri>
-      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TemperatureQualifierCode:1.0</CanonicalVersionUri>
-      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TemperatureQualifierCode.gc</LocationUri>
+      <CanonicalUri>urn:ubl-examples:world:codelist:TemperatureClassCode</CanonicalUri>
+      <CanonicalVersionUri>urn:ubl-examples:world:codelist:TemperatureClassCode:1.0</CanonicalVersionUri>
+      <LocationUri>https://kduvekot.github.io/ubl-examples/codelists/gc/TemperatureClassCode.gc</LocationUri>
       <Agency>
          <LongName xml:lang="en">Lumeport Trade Accord</LongName>
       </Agency>
@@ -42,53 +42,53 @@
    <SimpleCodeList>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>TARGET</SimpleValue>
+            <SimpleValue>CHILLED</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Target</SimpleValue>
+            <SimpleValue>Chilled</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Hirkrul</SimpleValue>
+            <SimpleValue>Trerir</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Kekolo</SimpleValue>
+            <SimpleValue>Hinola</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The temperature to keep.</SimpleValue>
+            <SimpleValue>Kept cold above freezing, at about 0 to 5 °C, as fresh fruit, vegetables, meat and dairy products are.</SimpleValue>
          </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>MIN</SimpleValue>
+            <SimpleValue>FROZEN</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Minimum</SimpleValue>
+            <SimpleValue>Frozen</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Skaztran</SimpleValue>
+            <SimpleValue>Gatrek</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Tetufu</SimpleValue>
+            <SimpleValue>Konoti</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The lowest temperature allowed.</SimpleValue>
+            <SimpleValue>Kept frozen, at -18 °C or colder.</SimpleValue>
          </Value>
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>MAX</SimpleValue>
+            <SimpleValue>AMBIENT</SimpleValue>
          </Value>
          <Value ColumnRef="name">
-            <SimpleValue>Maximum</SimpleValue>
+            <SimpleValue>Ambient</SimpleValue>
          </Value>
          <Value ColumnRef="name-qau">
-            <SimpleValue>Zhaltraz</SimpleValue>
+            <SimpleValue>Kulhek</SimpleValue>
          </Value>
          <Value ColumnRef="name-qal">
-            <SimpleValue>Mateta</SimpleValue>
+            <SimpleValue>Venalo</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>The highest temperature allowed.</SimpleValue>
+            <SimpleValue>Not temperature-controlled: kept at the temperature of its surroundings, protected from frost and heat.</SimpleValue>
          </Value>
       </Row>
    </SimpleCodeList>
