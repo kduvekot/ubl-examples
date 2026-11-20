@@ -131,8 +131,8 @@ Inside `Consignment`:
   The sea leg, stage 2 as on the bill of lading.
 - `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceDate` = **2026-05-17**  
   The container came off the ship.
-- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **11:20:00**  
-  The local time.
+- `MainCarriageShipmentStage/DischargeTransportEvent/OccurrenceTime` = **11:20:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **true**  
   Whether the event has taken place (true) or is still to come (false).
 - `MainCarriageShipmentStage/DischargeTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
@@ -211,8 +211,8 @@ Inside `Consignment`:
   The party's electronic address in that network: its country code and its number in the Island companies register; as Port of Selanu gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-05-17**  
   The ship berthed at Selanu: its pilot boarded at first light; it had been off the port, under way, since the evening.
-- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **06:30:00**  
-  The local time.
+- `MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **06:30:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/Name` = **Port of Selanu**  
@@ -229,8 +229,8 @@ Inside `Consignment`:
   The container.
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceDate` = **2026-05-17**  
   The container held from 12:00 at the plant health check of its pallets: the hold is the container's, not the ship's.
-- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **12:00:00**  
-  The local time.
+- `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/OccurrenceTime` = **12:00:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/Description` = **Held for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark is illegible, so customs inspects the container tomorrow, 18 May.**  
   What happened, in words.
 - `TransportHandlingUnit/TransportEquipment/QuarantineTransportEvent/CompletionIndicator` = **false**  
@@ -243,8 +243,8 @@ Inside `Consignment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceDate` = **2026-05-17**  
   Stacked in the import yard.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime` = **11:40:00**  
-  The local time.
+- `TransportHandlingUnit/TransportEquipment/TransportEvent/OccurrenceTime` = **11:40:00+00:00**  
+  The local time of Lisavu, where it happens, with its offset from UTC.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/TransportEventTypeCode` = **STORAGE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: STORAGE = Stored.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
@@ -465,7 +465,7 @@ Inside `StatusPeriod`:
       <cbc:ID>2</cbc:ID>
       <cac:DischargeTransportEvent>
         <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>11:20:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>11:20:00+00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
@@ -533,7 +533,7 @@ Inside `StatusPeriod`:
       </cac:TerminalOperatorParty>
       <cac:ActualArrivalTransportEvent>
         <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>06:30:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>06:30:00+00:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -555,7 +555,7 @@ Inside `StatusPeriod`:
         <cbc:ID schemeID="ISO6346">TWLU4120872</cbc:ID>
         <cac:QuarantineTransportEvent>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>12:00:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>12:00:00+00:00</cbc:OccurrenceTime>
           <cbc:Description>Held for a check of the pallets: wooden pallets must carry the heat-treatment mark, and one mark is illegible, so customs inspects the container tomorrow, 18 May.</cbc:Description>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
@@ -570,7 +570,7 @@ Inside `StatusPeriod`:
         </cac:QuarantineTransportEvent>
         <cac:TransportEvent>
           <cbc:OccurrenceDate>2026-05-17</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>11:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>11:40:00+00:00</cbc:OccurrenceTime>
           <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>

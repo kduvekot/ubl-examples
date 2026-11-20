@@ -275,7 +275,21 @@ Inside `TenderedProject`:
 - `EvidenceDocumentReference/DocumentType` = **Reference letters**  
   The kind of document referred to, Brackenmere's reference letters from customers for its park furniture of 2025, a document outside the examples, in words: no list has an exact code for it (cited).
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  No tax for a public body.
+  No tax: the department, a public body, buys exempt from the state sales tax.
+- `TaxTotal/TaxSubtotal/TaxableAmount` = **116640.00** (currencyID `XBL`)  
+  Both lots, the whole tendered amount.
+- `TaxTotal/TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
+  Nothing at a rate of 0 %.
+- `TaxTotal/TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
+  A sale to a public body is exempt from the state sales tax (category E). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: E = Exempt from tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxTotal/TaxSubtotal/TaxCategory/Percent` = **0**  
+  No tax is charged in this category.
+- `TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **PUBLIC** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
+  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: PUBLIC = Public body.
+- `TaxTotal/TaxSubtotal/TaxCategory/TaxExemptionReason` = **Public body**  
+  The name of code PUBLIC in Bayvarra's national sales tax exemption reason list.
+- `TaxTotal/TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `LegalMonetaryTotal/LineExtensionAmount` = **116640.00** (currencyID `XBL`)  
   Both lots.
 - `LegalMonetaryTotal/PayableAmount` = **116640.00** (currencyID `XBL`)  
@@ -581,6 +595,19 @@ Inside `TenderedProject`:
     </cac:EvidenceDocumentReference>
     <cac:TaxTotal>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="XBL">116640.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
+          <cbc:Percent>0</cbc:Percent>
+          <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">PUBLIC</cbc:TaxExemptionReasonCode>
+          <cbc:TaxExemptionReason>Public body</cbc:TaxExemptionReason>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
     </cac:TaxTotal>
     <cac:LegalMonetaryTotal>
       <cbc:LineExtensionAmount currencyID="XBL">116640.00</cbc:LineExtensionAmount>

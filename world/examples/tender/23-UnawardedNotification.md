@@ -190,8 +190,8 @@ Inside `TenderResult`:
   Why it won.
 - `AwardDate` = **2026-03-09**  
   The day the contract was awarded to another tenderer.
-- `AwardTime` = **09:30:00**  
-  The time of the decision, before the tenderers are told.
+- `AwardTime` = **09:30:00-01:00**  
+  The time of the decision, before the tenderers are told; in the issuer's local time, with its offset from UTC.
 - `Contract/ID` = **PWD/2026/PARKS**  
   The framework contract.
 - `Contract/ContractTypeCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
@@ -403,7 +403,7 @@ Inside `AppealTerms`:
     <cbc:TenderResultCode listID="urn:ubl-examples:world:codelist:TenderResultCode">AWARDED</cbc:TenderResultCode>
     <cbc:Description>Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.</cbc:Description>
     <cbc:AwardDate>2026-03-09</cbc:AwardDate>
-    <cbc:AwardTime>09:30:00</cbc:AwardTime>
+    <cbc:AwardTime>09:30:00-01:00</cbc:AwardTime>
     <cac:Contract>
       <cbc:ID>PWD/2026/PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>

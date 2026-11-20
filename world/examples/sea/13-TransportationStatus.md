@@ -163,8 +163,8 @@ Inside `Consignment`:
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Port of Lumeport gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
   The ship sailed.
-- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **18:10:00**  
-  The local time.
+- `MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **18:10:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
@@ -404,7 +404,7 @@ Inside `StatusPeriod`:
       </cac:TerminalOperatorParty>
       <cac:ActualDepartureTransportEvent>
         <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-        <cbc:OccurrenceTime>18:10:00</cbc:OccurrenceTime>
+        <cbc:OccurrenceTime>18:10:00-01:00</cbc:OccurrenceTime>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
           <cbc:Name>Port of Lumeport</cbc:Name>

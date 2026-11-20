@@ -347,8 +347,8 @@ Inside `Shipment`:
   The family name.
 - `Delivery/ActualDeliveryDate` = **2026-04-02**  
   The load arrived at the recovery plant.
-- `Delivery/ActualDeliveryTime` = **10:05:00**  
-  Trasvia's truck at the weighbridge.
+- `Delivery/ActualDeliveryTime` = **10:05:00-01:00**  
+  Trasvia's truck at the weighbridge; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Delivery/DeliveryLocation/Name` = **Rinova Recovery plant, Ferrano**  
@@ -357,8 +357,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Delivery/Despatch/ActualDespatchDate` = **2026-04-02**  
   Loaded at the factory the same morning.
-- `Delivery/Despatch/ActualDespatchTime` = **09:35:00**  
-  The truck left the factory; the two sites are a few kilometres apart in Ferrano.
+- `Delivery/Despatch/ActualDespatchTime` = **09:35:00-01:00**  
+  The truck left the factory; the two sites are a few kilometres apart in Ferrano; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Delivery/Despatch/DespatchLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Delivery/Despatch/DespatchLocation/Name` = **Valdara Industries works, Ferrano**  
@@ -696,7 +696,7 @@ Inside `DocumentDistribution`:
     </cac:ShipmentStage>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-04-02</cbc:ActualDeliveryDate>
-      <cbc:ActualDeliveryTime>10:05:00</cbc:ActualDeliveryTime>
+      <cbc:ActualDeliveryTime>10:05:00-01:00</cbc:ActualDeliveryTime>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Rinova Recovery plant, Ferrano</cbc:Name>
@@ -708,7 +708,7 @@ Inside `DocumentDistribution`:
       </cac:DeliveryLocation>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-04-02</cbc:ActualDespatchDate>
-        <cbc:ActualDespatchTime>09:35:00</cbc:ActualDespatchTime>
+        <cbc:ActualDespatchTime>09:35:00-01:00</cbc:ActualDespatchTime>
         <cac:DespatchLocation>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>

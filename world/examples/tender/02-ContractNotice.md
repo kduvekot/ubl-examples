@@ -266,6 +266,10 @@ Inside `TenderingTerms`:
   Bayvarra's public procurement act.
 - `FiscalLegislationDocumentReference/ID` = **XB-STT-ACT**  
   The state sales tax acts.
+- `FiscalLegislationDocumentReference/ID` = **XB-WHT-ACT**  
+  Bayvarra's act on the tax withheld at source, which a public body applies to the services of a business not established in Bayvarra.
+- `FiscalLegislationDocumentReference/DocumentDescription` = **Tenders are priced without tax. For services performed by a tenderer established outside Bayvarra, the department withholds 10 % of the price of those services as tax at source and pays it to the state for the supplier; such a tenderer appoints a tax representative in Bayvarra.**  
+  What the department withholds from a tenderer's price under the act: tenders are priced without tax, and a tenderer from abroad knows what it will be paid.
 - `EnvironmentalLegislationDocumentReference/ID` = **XB-ENV-2021**  
   The environmental act.
 - `EmploymentLegislationDocumentReference/ID` = **XB-LAB-2018**  
@@ -551,8 +555,8 @@ Inside `TenderingProcess`:
   Until the day before the deadline.
 - `TenderSubmissionDeadlinePeriod/EndDate` = **2026-02-25**  
   Wednesday 25 February.
-- `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
-  At noon.
+- `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00-01:00**  
+  At noon; in the issuer's local time, with its offset from UTC.
 - `AdditionalInformationRequestPeriod/EndDate` = **2026-02-18**  
   Questions by then, a week before the deadline.
 - `NoticeDocumentReference/ID` = **PWD/2026/0080**  
@@ -569,8 +573,8 @@ Inside `TenderingProcess`:
   The opening of the tenders.
 - `OpenTenderEvent/OccurrenceDate` = **2026-02-26**  
   Thursday 26 February, the day after the deadline.
-- `OpenTenderEvent/OccurrenceTime` = **10:00:00**  
-  In the morning.
+- `OpenTenderEvent/OccurrenceTime` = **10:00:00-01:00**  
+  In the morning; in the issuer's local time, with its offset from UTC.
 - `OpenTenderEvent/TypeCode` = **OPENING** (listID `urn:ubl-examples:world:codelist:TenderEventTypeCode`)  
   A tender opening. The code is from the Trade Accord's tender event type list: OPENING = Opening of tenders.
 - `OpenTenderEvent/Description` = **Electronic opening; tenderers may follow it online.**  
@@ -1173,6 +1177,10 @@ Inside `ProcurementProjectLot`:
     <cac:FiscalLegislationDocumentReference>
       <cbc:ID>XB-STT-ACT</cbc:ID>
     </cac:FiscalLegislationDocumentReference>
+    <cac:FiscalLegislationDocumentReference>
+      <cbc:ID>XB-WHT-ACT</cbc:ID>
+      <cbc:DocumentDescription>Tenders are priced without tax. For services performed by a tenderer established outside Bayvarra, the department withholds 10 % of the price of those services as tax at source and pays it to the state for the supplier; such a tenderer appoints a tax representative in Bayvarra.</cbc:DocumentDescription>
+    </cac:FiscalLegislationDocumentReference>
     <cac:EnvironmentalLegislationDocumentReference>
       <cbc:ID>XB-ENV-2021</cbc:ID>
     </cac:EnvironmentalLegislationDocumentReference>
@@ -1420,7 +1428,7 @@ Inside `ProcurementProjectLot`:
     </cac:DocumentAvailabilityPeriod>
     <cac:TenderSubmissionDeadlinePeriod>
       <cbc:EndDate>2026-02-25</cbc:EndDate>
-      <cbc:EndTime>12:00:00</cbc:EndTime>
+      <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:AdditionalInformationRequestPeriod>
       <cbc:EndDate>2026-02-18</cbc:EndDate>
@@ -1439,7 +1447,7 @@ Inside `ProcurementProjectLot`:
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00-01:00</cbc:OccurrenceTime>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TenderEventTypeCode">OPENING</cbc:TypeCode>
       <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>

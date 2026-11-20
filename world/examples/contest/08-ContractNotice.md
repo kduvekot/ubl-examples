@@ -284,8 +284,8 @@ Inside `TenderingProcess`:
   Requests and designs through the department's platform. The code is from the Trade Accord's submission method list: ELECTRONIC = Electronic.
 - `TenderSubmissionDeadlinePeriod/EndDate` = **2026-06-12**  
   Designs by then.
-- `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00**  
-  At noon.
+- `TenderSubmissionDeadlinePeriod/EndTime` = **12:00:00-01:00**  
+  At noon; in the issuer's local time, with its offset from UTC.
 - `ParticipationRequestReceptionPeriod/EndDate` = **2026-04-30**  
   Requests to participate by then: Thursday 30 April, later than the Friday 17 April of version 1, to give time for the corrected site plan.
 - `NoticeDocumentReference/ID` = **PWD/2026/0223**  
@@ -534,7 +534,7 @@ Inside `ProcurementProject`:
     <cbc:SubmissionMethodCode listID="urn:ubl-examples:world:codelist:SubmissionMethodCode">ELECTRONIC</cbc:SubmissionMethodCode>
     <cac:TenderSubmissionDeadlinePeriod>
       <cbc:EndDate>2026-06-12</cbc:EndDate>
-      <cbc:EndTime>12:00:00</cbc:EndTime>
+      <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
     </cac:TenderSubmissionDeadlinePeriod>
     <cac:ParticipationRequestReceptionPeriod>
       <cbc:EndDate>2026-04-30</cbc:EndDate>

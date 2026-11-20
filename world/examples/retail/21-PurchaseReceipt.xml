@@ -9,9 +9,9 @@
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
-  <cbc:TransactionTime>11:42:00</cbc:TransactionTime>
+  <cbc:TransactionTime>11:42:00-01:00</cbc:TransactionTime>
   <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
-  <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
+  <cbc:PurchaseTime>11:42:00-01:00</cbc:PurchaseTime>
   <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:PurchaseReference>
@@ -223,8 +223,8 @@
     </cac:DeliveryAddress>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-05-16</cbc:StartDate>
-      <cbc:StartTime>09:00:00</cbc:StartTime>
-      <cbc:EndTime>12:00:00</cbc:EndTime>
+      <cbc:StartTime>09:00:00-01:00</cbc:StartTime>
+      <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
     </cac:RequestedDeliveryPeriod>
     <cac:CarrierParty>
       <cac:PartyIdentification>
@@ -239,7 +239,7 @@
     <cbc:ID>BM-G2-26-0515-0047</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">744.54</cbc:PaidAmount>
     <cbc:PaidDate>2026-05-15</cbc:PaidDate>
-    <cbc:PaidTime>11:42:00</cbc:PaidTime>
+    <cbc:PaidTime>11:42:00-01:00</cbc:PaidTime>
     <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
     <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
     <cbc:TransactionID>TX-26-0515-773104</cbc:TransactionID>

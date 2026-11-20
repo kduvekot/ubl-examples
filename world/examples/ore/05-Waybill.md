@@ -256,8 +256,8 @@ Inside `Shipment`:
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 260111 = Iron ores and concentrates, non-agglomerated.
 - `Delivery/ActualDeliveryDate` = **2026-03-10**  
   The train arrived the same day, the first day of the window.
-- `Delivery/ActualDeliveryTime` = **14:18:00**  
-  It left the mine siding at 10:05 and ran 159 km on the line past Ferrano at about 40 km/h, then shunted into the factory's siding.
+- `Delivery/ActualDeliveryTime` = **14:18:00-01:00**  
+  It left the mine siding at 10:05 and ran 159 km on the line past Ferrano at about 40 km/h, then shunted into the factory's siding; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Delivery/DeliveryLocation/Name` = **Valdara Industries works siding, Ferrano**  
@@ -489,7 +489,7 @@ Inside `Signature`:
     </cac:GoodsItem>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-03-10</cbc:ActualDeliveryDate>
-      <cbc:ActualDeliveryTime>14:18:00</cbc:ActualDeliveryTime>
+      <cbc:ActualDeliveryTime>14:18:00-01:00</cbc:ActualDeliveryTime>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>

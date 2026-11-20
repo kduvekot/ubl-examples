@@ -3518,7 +3518,10 @@ def check_calendar(flow_id, roots, docs):
 
 
 def issue_time_offset(content, doc):
-    """The issue time is the issuer's local time, written with its offset from UTC (D27)."""
+    """The issue time is the issuer's local time, written with its offset from UTC (D27); every other time carries
+    the offset of the place where it happens (O78, examples_kit.time_offsets)."""
+    import examples_kit
+    examples_kit.time_offsets(content, doc["from"])
     t = content.get("IssueTime")
     if isinstance(t, V) and re.fullmatch(r"\d\d:\d\d:\d\d", str(t.value)):
         tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
@@ -3526,6 +3529,16 @@ def issue_time_offset(content, doc):
         why = (why.replace("in the sender's local time", "in the sender's local time, with its offset from UTC")
                if "local time" in why else f"{why}; in the issuer's local time, with its offset from UTC")
         content["IssueTime"] = V(f"{t.value}{tz}", why + ".", **t.attrs)  # D27
+
+
+def check_time_offsets(root, where):
+    """O78: every time in a document carries its offset from UTC: the issue time the issuer's, an event's time the
+    offset of the place where it happens (examples_kit.time_offsets)."""
+    for e in root.iter(f"{{{NS_CBC}}}*"):
+        if etree.QName(e).localname.endswith("Time") and e.text and \
+                not re.fullmatch(r"\d\d:\d\d:\d\d(\.\d+)?(Z|[+-]\d\d:\d\d)", e.text.strip()):
+            raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} "
+                             f"{e.text} has no offset from UTC")  # D27, O78
 
 
 # ---------------------------------------------------------------- issue times follow what a document reports (C72)
@@ -4039,6 +4052,7 @@ def main(flow_id, check=False):
         check_dangerous_goods(root, f"{flow_id} {n} {doc['doc']}")
         check_classifications(root, f"{flow_id} {n} {doc['doc']}")
         check_formats(root, f"{flow_id} {n} {doc['doc']}")
+        check_time_offsets(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
         check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")

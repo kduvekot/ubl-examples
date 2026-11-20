@@ -271,7 +271,7 @@
     </cac:ShipmentStage>
     <cac:Delivery>
       <cbc:ActualDeliveryDate>2026-04-02</cbc:ActualDeliveryDate>
-      <cbc:ActualDeliveryTime>10:05:00</cbc:ActualDeliveryTime>
+      <cbc:ActualDeliveryTime>10:05:00-01:00</cbc:ActualDeliveryTime>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Rinova Recovery plant, Ferrano</cbc:Name>
@@ -283,7 +283,7 @@
       </cac:DeliveryLocation>
       <cac:Despatch>
         <cbc:ActualDespatchDate>2026-04-02</cbc:ActualDespatchDate>
-        <cbc:ActualDespatchTime>09:35:00</cbc:ActualDespatchTime>
+        <cbc:ActualDespatchTime>09:35:00-01:00</cbc:ActualDespatchTime>
         <cac:DespatchLocation>
           <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
           <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>

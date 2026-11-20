@@ -234,7 +234,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03190</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03190</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -244,7 +244,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03191</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03191</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -254,7 +254,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03192</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03192</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -264,7 +264,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03193</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03193</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -274,7 +274,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03194</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03194</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -284,7 +284,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03195</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03195</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -294,7 +294,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03196</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03196</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>
@@ -304,7 +304,7 @@
       <cac:ItemInstance>
         <cbc:ProductTraceID>VI-TR-03197</cbc:ProductTraceID>
         <cbc:ManufactureDate>2026-05-12</cbc:ManufactureDate>
-        <cbc:ManufactureTime>14:15:00</cbc:ManufactureTime>
+        <cbc:ManufactureTime>14:15:00-01:00</cbc:ManufactureTime>
         <cbc:SerialID>VI-SF-03197</cbc:SerialID>
         <cac:AdditionalItemProperty>
           <cbc:Name>Melt number</cbc:Name>

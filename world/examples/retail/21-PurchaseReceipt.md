@@ -28,12 +28,12 @@ A consumer buys in the shop and gets a receipt.
   Printed at the till; in the issuer's local time, with its offset from UTC.
 - `TransactionDate` = **2026-05-15**  
   The day of the sale.
-- `TransactionTime` = **11:42:00**  
-  The time of the sale.
+- `TransactionTime` = **11:42:00-01:00**  
+  The time of the sale; in the issuer's local time, with its offset from UTC.
 - `PurchaseDate` = **2026-05-15**  
   The day the customer bought.
-- `PurchaseTime` = **11:42:00**  
-  And when.
+- `PurchaseTime` = **11:42:00-01:00**  
+  And when; in the issuer's local time, with its offset from UTC.
 - `Note` = **Home delivery booked for Saturday.**  
   Printed on the receipt.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -315,10 +315,10 @@ Inside `Delivery`:
   The country's name, for readers of the address.
 - `RequestedDeliveryPeriod/StartDate` = **2026-05-16**  
   Saturday, the day the note names: the store delivers Monday to Saturday.
-- `RequestedDeliveryPeriod/StartTime` = **09:00:00**  
-  Morning.
-- `RequestedDeliveryPeriod/EndTime` = **12:00:00**  
-  Until noon.
+- `RequestedDeliveryPeriod/StartTime` = **09:00:00-01:00**  
+  Morning; in the local time of Bayvarra, where it happens, with its offset from UTC.
+- `RequestedDeliveryPeriod/EndTime` = **12:00:00-01:00**  
+  Until noon; in the local time of Bayvarra, where it happens, with its offset from UTC.
 - `CarrierParty/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `CarrierParty/PartyName/Name` = **Brightmarket Stores**  
@@ -334,8 +334,8 @@ Inside `Payment`:
   Paid by card.
 - `PaidDate` = **2026-05-15**  
   Paid at the till.
-- `PaidTime` = **11:42:00**  
-  At the time of the sale.
+- `PaidTime` = **11:42:00-01:00**  
+  At the time of the sale; in the issuer's local time, with its offset from UTC.
 - `MerchantID` = **LUMECARD-M-0026118**  
   The store's merchant number with the card scheme.
 - `AuthorizationID` = **A71520**  
@@ -518,9 +518,9 @@ Inside `PurchaseReceiptLine`:
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>11:42:00-01:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-05-15</cbc:TransactionDate>
-  <cbc:TransactionTime>11:42:00</cbc:TransactionTime>
+  <cbc:TransactionTime>11:42:00-01:00</cbc:TransactionTime>
   <cbc:PurchaseDate>2026-05-15</cbc:PurchaseDate>
-  <cbc:PurchaseTime>11:42:00</cbc:PurchaseTime>
+  <cbc:PurchaseTime>11:42:00-01:00</cbc:PurchaseTime>
   <cbc:Note>Home delivery booked for Saturday.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:PurchaseReference>
@@ -732,8 +732,8 @@ Inside `PurchaseReceiptLine`:
     </cac:DeliveryAddress>
     <cac:RequestedDeliveryPeriod>
       <cbc:StartDate>2026-05-16</cbc:StartDate>
-      <cbc:StartTime>09:00:00</cbc:StartTime>
-      <cbc:EndTime>12:00:00</cbc:EndTime>
+      <cbc:StartTime>09:00:00-01:00</cbc:StartTime>
+      <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
     </cac:RequestedDeliveryPeriod>
     <cac:CarrierParty>
       <cac:PartyIdentification>
@@ -748,7 +748,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:ID>BM-G2-26-0515-0047</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">744.54</cbc:PaidAmount>
     <cbc:PaidDate>2026-05-15</cbc:PaidDate>
-    <cbc:PaidTime>11:42:00</cbc:PaidTime>
+    <cbc:PaidTime>11:42:00-01:00</cbc:PaidTime>
     <cbc:MerchantID>LUMECARD-M-0026118</cbc:MerchantID>
     <cbc:AuthorizationID>A71520</cbc:AuthorizationID>
     <cbc:TransactionID>TX-26-0515-773104</cbc:TransactionID>

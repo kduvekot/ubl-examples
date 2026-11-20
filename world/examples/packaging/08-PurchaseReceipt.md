@@ -28,12 +28,12 @@ The consumer buys a shirt; the receipt shows the state sales tax, the only point
   Printed at the till; in the issuer's local time, with its offset from UTC.
 - `TransactionDate` = **2026-05-22**  
   The day of the sale.
-- `TransactionTime` = **16:05:00**  
-  The time of the sale.
+- `TransactionTime` = **16:05:00-01:00**  
+  The time of the sale; in the issuer's local time, with its offset from UTC.
 - `PurchaseDate` = **2026-05-22**  
   The day the customer bought.
-- `PurchaseTime` = **16:05:00**  
-  And when.
+- `PurchaseTime` = **16:05:00-01:00**  
+  And when; in the issuer's local time, with its offset from UTC.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the shop; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 
@@ -255,8 +255,8 @@ Inside `Payment`:
   The change given.
 - `PaidDate` = **2026-05-22**  
   At the till.
-- `PaidTime` = **16:05:00**  
-  At the time of the sale.
+- `PaidTime` = **16:05:00-01:00**  
+  At the time of the sale; in the issuer's local time, with its offset from UTC.
 
 ### Payment Means
 
@@ -358,9 +358,9 @@ Inside `PurchaseReceiptLine`:
   <cbc:IssueDate>2026-05-22</cbc:IssueDate>
   <cbc:IssueTime>16:05:00-01:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-05-22</cbc:TransactionDate>
-  <cbc:TransactionTime>16:05:00</cbc:TransactionTime>
+  <cbc:TransactionTime>16:05:00-01:00</cbc:TransactionTime>
   <cbc:PurchaseDate>2026-05-22</cbc:PurchaseDate>
-  <cbc:PurchaseTime>16:05:00</cbc:PurchaseTime>
+  <cbc:PurchaseTime>16:05:00-01:00</cbc:PurchaseTime>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -533,7 +533,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:PaidCashAmount currencyID="XBL">70.00</cbc:PaidCashAmount>
     <cbc:CashChangeAmount currencyID="XBL">11.55</cbc:CashChangeAmount>
     <cbc:PaidDate>2026-05-22</cbc:PaidDate>
-    <cbc:PaidTime>16:05:00</cbc:PaidTime>
+    <cbc:PaidTime>16:05:00-01:00</cbc:PaidTime>
   </cac:Payment>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">10</cbc:PaymentMeansCode>

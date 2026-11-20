@@ -147,7 +147,7 @@
     </cac:DeliveryParty>
     <cac:Despatch>
       <cbc:RequestedDespatchDate>2026-03-23</cbc:RequestedDespatchDate>
-      <cbc:RequestedDespatchTime>14:00:00</cbc:RequestedDespatchTime>
+      <cbc:RequestedDespatchTime>14:00:00-01:00</cbc:RequestedDespatchTime>
       <cbc:Instructions>Have the export declaration ready when the truck arrives.</cbc:Instructions>
       <cac:DespatchAddress>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -244,8 +244,8 @@
       </cac:Contact>
       <cac:RequestedDespatchPeriod>
         <cbc:StartDate>2026-03-23</cbc:StartDate>
-        <cbc:StartTime>13:00:00</cbc:StartTime>
-        <cbc:EndTime>17:00:00</cbc:EndTime>
+        <cbc:StartTime>13:00:00-01:00</cbc:StartTime>
+        <cbc:EndTime>17:00:00-01:00</cbc:EndTime>
       </cac:RequestedDespatchPeriod>
     </cac:Despatch>
     <cac:MinimumDeliveryUnit>

@@ -9,9 +9,9 @@
   <cbc:IssueDate>2026-05-23</cbc:IssueDate>
   <cbc:IssueTime>12:20:00-01:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-05-23</cbc:TransactionDate>
-  <cbc:TransactionTime>12:20:00</cbc:TransactionTime>
+  <cbc:TransactionTime>12:20:00-01:00</cbc:TransactionTime>
   <cbc:PurchaseDate>2026-05-23</cbc:PurchaseDate>
-  <cbc:PurchaseTime>12:20:00</cbc:PurchaseTime>
+  <cbc:PurchaseTime>12:20:00-01:00</cbc:PurchaseTime>
   <cbc:Note>Paid in coral: the card's currency was chosen at the till.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
   <cac:AccountingSupplierParty>

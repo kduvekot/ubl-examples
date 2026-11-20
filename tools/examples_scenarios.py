@@ -8231,7 +8231,8 @@ def _(f, n, doc, out):
                                       "OccurrenceDate": V(f.date(SEA_ARRIVES), "The morning after the ship comes off "
                                                                                "the port: Selanu's pilots take "
                                                                                "ships in by daylight only."),
-                                      "OccurrenceTime": V("06:00:00", "At first light, in island time."),
+                                      "OccurrenceTime": V("06:00:00+00:00", "At first light, in island time, with its offset "
+                                                                             "from UTC."),  # O78: the buoy has no code
                                       "TypeCode": V("ARRIVAL", "An arrival."),
                                       "Description": V("Pilot on board at the fairway buoy.", "What is asked."),
                                       "CompletionIndicator": V("false", "Not yet."),
@@ -9456,6 +9457,15 @@ def tendering_process(f, held=False):
                                   "Description": V("Framework with one supplier.", "In words.")}}
 
 
+def withholding_terms():
+    """The call's statement of Bayvarra's withholding (O97, D17), from the rule in world/countries.json, the same rule
+    the installation invoice applies."""
+    wh = WORLD["countries"]["XB"]["tax"]["withholding"]
+    return (f"Tenders are priced without tax. For services performed by a tenderer established outside Bayvarra, "
+            f"the department withholds {wh['percent']} % of the price of those services as tax at source and pays it "
+            "to the state for the supplier; such a tenderer appoints a tax representative in Bayvarra.")
+
+
 def tendering_terms(f, call=False):
     """The tendering terms of the notices, the call and the contract. Only the contract cites the call for tenders,
     by its own ID: the notices are issued before it, and the call does not cite itself (tender/02#F3, 03#F3, 24#F2,
@@ -9494,7 +9504,13 @@ def tendering_terms(f, call=False):
             "RequiredFinancialGuarantee": [TENDER_GUARANTEE(f), PERFORMANCE_GUARANTEE()],
             "ProcurementLegislationDocumentReference": {"ID": V("XB-PPA-2019", "Bayvarra's public procurement "
                                                                                "act.")},
-            "FiscalLegislationDocumentReference": {"ID": V("XB-STT-ACT", "The state sales tax acts.")},
+            "FiscalLegislationDocumentReference": [
+                {"ID": V("XB-STT-ACT", "The state sales tax acts.")},
+                {"ID": V("XB-WHT-ACT", "Bayvarra's act on the tax withheld at source, which a public body applies "
+                                       "to the services of a business not established in Bayvarra."),
+                 "DocumentDescription": V(withholding_terms(), "What the department withholds from a tenderer's "
+                                          "price under the act: tenders are priced without tax, and a tenderer from "
+                                          "abroad knows what it will be paid.")}],  # O97, D17
             "EnvironmentalLegislationDocumentReference": {"ID": V("XB-ENV-2021", "The environmental act.")},
             "EmploymentLegislationDocumentReference": {"ID": V("XB-LAB-2018", "The labour act.")},
             "ContractualDocumentReference": {"ID": V("PWD-CONTRACT-DRAFT", "The draft framework contract.")},
@@ -9894,7 +9910,12 @@ def _(f, n, doc, out):
                 "ProcurementProjectLot": [{"ID": V("LOT-1", "Lot 1.")}, {"ID": V("LOT-2", "Lot 2.")}],
                 "EvidenceDocumentReference": {"ID": V("VI-REF-2025" if winner else "BKM-REF-2025",
                                                       "The tenderer's own reference letters.")},
-                "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax for a public body.")},
+                "TaxTotal": {"TaxAmount": amount(0, "XBL", "No tax: the department, a public body, buys exempt from "
+                                                           "the state sales tax."),
+                             "TaxSubtotal": {   # the notices' tax category, stated (O97, C24)
+                                 "TaxableAmount": amount(b + i, "XBL", "Both lots, the whole tendered amount."),
+                                 "TaxAmount": amount(0, "XBL", "Nothing at a rate of 0 %."),
+                                 "TaxCategory": kit.tax_category(kit.tax_rule("6-xb", PWD, "bench-serra-b"))}},
                 "LegalMonetaryTotal": {"LineExtensionAmount": amount(b + i, "XBL", "Both lots."),
                                        "PayableAmount": amount(b + i, "XBL", "The tender's total.")},
                 "TenderLine": lines,

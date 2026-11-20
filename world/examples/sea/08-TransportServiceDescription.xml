@@ -136,7 +136,7 @@
     <cbc:TransportationServiceDescription>A weekly feeder sailing from Lumeport to Selanu, about 48 hours at sea.</cbc:TransportationServiceDescription>
     <cbc:TransportationServiceDetailsURI>https://www.tidewell.example/services/island</cbc:TransportationServiceDetailsURI>
     <cbc:NominationDate>2026-05-12</cbc:NominationDate>
-    <cbc:NominationTime>12:00:00</cbc:NominationTime>
+    <cbc:NominationTime>12:00:00-01:00</cbc:NominationTime>
     <cbc:Name>Weekly container liner service Lumeport–Selanu</cbc:Name>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cac:TransportEquipment>
@@ -185,7 +185,7 @@
     </cac:ShipmentStage>
     <cac:TransportEvent>
       <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
       <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DEPARTURE</cbc:TransportEventTypeCode>
       <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
       <cac:Location>

@@ -7,7 +7,7 @@
   <cbc:ID>LMW-ISR-26-0048</cbc:ID>
   <cbc:UUID>6d87ab88-a921-5dfb-90cb-d87a8fcb59ec</cbc:UUID>
   <cbc:RequestDate>2026-05-29</cbc:RequestDate>
-  <cbc:RequestTime>10:00:00</cbc:RequestTime>
+  <cbc:RequestTime>10:00:00-01:00</cbc:RequestTime>
   <cbc:Note>Has the invoice been approved?</cbc:Note>
   <cac:Signature>
     <cbc:ID>LD-SIG-26-ISR</cbc:ID>

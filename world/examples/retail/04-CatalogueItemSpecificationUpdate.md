@@ -30,8 +30,8 @@ Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's re
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `RevisionDate` = **2026-05-21**  
   The day of the change.
-- `RevisionTime` = **08:30:00**  
-  When the change was made, before the update was sent.
+- `RevisionTime` = **08:30:00-01:00**  
+  When the change was made, before the update was sent; in the issuer's local time, with its offset from UTC.
 - `Note` = **A revision of Lumeway's catalogue for the Lumeport store.**  
   Which catalogue.
 - `Description` = **Revised datasheet of the Serra 180: slat finish and maintenance**  
@@ -60,12 +60,12 @@ Inside `RelatedCatalogueReference`:
   The catalogue's UUID, as stated in the catalogue.
 - `IssueDate` = **2026-04-20**  
   Its issue date.
-- `IssueTime` = **09:00:00**  
-  And time, as the catalogue states it.
+- `IssueTime` = **09:00:00-01:00**  
+  And time, as the catalogue states it; in the issuer's local time, with its offset from UTC.
 - `RevisionDate` = **2026-05-20**  
   Revised by the price update of the side frame.
-- `RevisionTime` = **13:00:00**  
-  At that time.
+- `RevisionTime` = **13:00:00-01:00**  
+  At that time; in the issuer's local time, with its offset from UTC.
 - `Note` = **Lumeway's catalogue for the Lumeport store, 2026.**  
   Which catalogue: one Lumeway issued for the store's reopened home and garden department.
 - `Description` = **Benches and spare parts for resale.**  
@@ -522,7 +522,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:IssueDate>2026-05-21</cbc:IssueDate>
   <cbc:IssueTime>09:01:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
-  <cbc:RevisionTime>08:30:00</cbc:RevisionTime>
+  <cbc:RevisionTime>08:30:00-01:00</cbc:RevisionTime>
   <cbc:Note>A revision of Lumeway's catalogue for the Lumeport store.</cbc:Note>
   <cbc:Description>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Description>
   <cbc:VersionID>1.2</cbc:VersionID>
@@ -535,9 +535,9 @@ Inside `CatalogueItemSpecificationUpdateLine`:
     <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-    <cbc:IssueTime>09:00:00</cbc:IssueTime>
+    <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
-    <cbc:RevisionTime>13:00:00</cbc:RevisionTime>
+    <cbc:RevisionTime>13:00:00-01:00</cbc:RevisionTime>
     <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.1</cbc:VersionID>

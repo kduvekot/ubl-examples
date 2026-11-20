@@ -360,8 +360,8 @@ Inside `Shipment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceDate` = **2026-04-22**  
   The terminal accepted the reefer.
-- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceTime` = **17:40:00**  
-  The local time.
+- `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/OccurrenceTime` = **17:40:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/AcceptanceTransportEvent/Location/Name` = **Port of Lumeport**  
@@ -390,8 +390,8 @@ Inside `Shipment`:
   The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceDate` = **2026-04-22**  
   The reefer was dropped at the container quay and plugged in, after 261 km from the packhouse on the truck's generator set.
-- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **17:40:00**  
-  The local time.
+- `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/OccurrenceTime` = **17:40:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/PreCarriageShipmentStage/DropoffTransportEvent/Location/Name` = **Port of Lumeport**  
@@ -662,8 +662,8 @@ Inside `Shipment`:
   The shipper's weight declaration.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDate` = **2026-04-22**  
   Weighed when packed.
-- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **11:30:00**  
-  After the doors were closed.
+- `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingTime` = **11:30:00-01:00**  
+  After the doors were closed; in the issuer's local time, with its offset from UTC.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingMethodCode` = **SM2** (listID `IMO SOLAS`)  
   SOLAS method 2: the cargo and packing weighed and added to the tare. The code is from UBL's default Weighing method (IMO SOLAS) list: SM2 = SOLAS verification method 2.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID` = **HRW-SCALE-02**  
@@ -1011,7 +1011,7 @@ Inside `Shipment`:
         </cac:UnloadingPortLocation>
         <cac:AcceptanceTransportEvent>
           <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>17:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>17:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -1046,7 +1046,7 @@ Inside `Shipment`:
         </cac:TransportMeans>
         <cac:DropoffTransportEvent>
           <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
-          <cbc:OccurrenceTime>17:40:00</cbc:OccurrenceTime>
+          <cbc:OccurrenceTime>17:40:00-01:00</cbc:OccurrenceTime>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
             <cbc:Name>Port of Lumeport</cbc:Name>
@@ -1253,7 +1253,7 @@ Inside `Shipment`:
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0422</cbc:ID>
             <cbc:WeighingDate>2026-04-22</cbc:WeighingDate>
-            <cbc:WeighingTime>11:30:00</cbc:WeighingTime>
+            <cbc:WeighingTime>11:30:00-01:00</cbc:WeighingTime>
             <cbc:WeighingMethodCode listID="IMO SOLAS">SM2</cbc:WeighingMethodCode>
             <cbc:WeighingDeviceID>HRW-SCALE-02</cbc:WeighingDeviceID>
             <cbc:WeighingDeviceType>Pallet scale</cbc:WeighingDeviceType>

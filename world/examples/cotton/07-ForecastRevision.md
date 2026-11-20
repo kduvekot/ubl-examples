@@ -202,8 +202,8 @@ Inside `ForecastRevisionLine`:
   The forecast line revised.
 - `SourceForecastIssueDate` = **2026-02-02**  
   The issue date of the forecast revised.
-- `SourceForecastIssueTime` = **09:00:00**  
-  Its issue time.
+- `SourceForecastIssueTime` = **09:00:00-01:00**  
+  Its issue time; in the issuer's local time, with its offset from UTC.
 - `AdjustmentReasonCode` = **DEMAND** (listID `urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode`)  
   Higher demand. The code is from the Trade Accord's forecast adjustment reason list: DEMAND = Demand change.
 - `ForecastPeriod/StartDate` = **2026-04-01**  
@@ -365,7 +365,7 @@ Inside `ForecastRevisionLine`:
     <cbc:Description>More bales over the season.</cbc:Description>
     <cbc:RevisedForecastLineID>1</cbc:RevisedForecastLineID>
     <cbc:SourceForecastIssueDate>2026-02-02</cbc:SourceForecastIssueDate>
-    <cbc:SourceForecastIssueTime>09:00:00</cbc:SourceForecastIssueTime>
+    <cbc:SourceForecastIssueTime>09:00:00-01:00</cbc:SourceForecastIssueTime>
     <cbc:AdjustmentReasonCode listID="urn:ubl-examples:world:codelist:ForecastAdjustmentReasonCode">DEMAND</cbc:AdjustmentReasonCode>
     <cac:ForecastPeriod>
       <cbc:StartDate>2026-04-01</cbc:StartDate>

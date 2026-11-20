@@ -86,8 +86,8 @@ Inside `ImporterParty`:
   The number of the power of attorney the buyer gave its customs broker.
 - `PowerOfAttorney/IssueDate` = **2026-01-05**  
   Given at the start of the year, for all of the year's imports.
-- `PowerOfAttorney/IssueTime` = **11:00:00**  
-  Signed in the morning.
+- `PowerOfAttorney/IssueTime` = **11:00:00+00:00**  
+  Signed in the morning; in the local time of Lisavu, where it happens, with its offset from UTC.
 - `PowerOfAttorney/Description` = **Lodging import declarations and paying duties and taxes on behalf of Velumi Trading.**  
   What the broker may do for the buyer.
 - `PowerOfAttorney/NotaryParty/PartyIdentification/ID` = **GOV-243** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
@@ -581,7 +581,7 @@ Inside `Signature`:
     <cac:PowerOfAttorney>
       <cbc:ID>POA-TT-2026-014</cbc:ID>
       <cbc:IssueDate>2026-01-05</cbc:IssueDate>
-      <cbc:IssueTime>11:00:00</cbc:IssueTime>
+      <cbc:IssueTime>11:00:00+00:00</cbc:IssueTime>
       <cbc:Description>Lodging import declarations and paying duties and taxes on behalf of Velumi Trading.</cbc:Description>
       <cac:NotaryParty>
         <cac:PartyIdentification>

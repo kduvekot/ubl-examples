@@ -207,8 +207,8 @@ Inside `Delivery`:
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `Despatch/RequestedDespatchDate` = **2026-03-23**  
   The day the buyer's truck will collect.
-- `Despatch/RequestedDespatchTime` = **14:00:00**  
-  In the afternoon.
+- `Despatch/RequestedDespatchTime` = **14:00:00-01:00**  
+  In the afternoon; in the local time of Urvania, where it happens, with its offset from UTC.
 - `Despatch/Instructions` = **Have the export declaration ready when the truck arrives.**  
   What the seller must do for the collection.
 - `Despatch/DespatchAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
@@ -331,10 +331,10 @@ Inside `Delivery`:
   The office's number.
 - `Despatch/RequestedDespatchPeriod/StartDate` = **2026-03-23**  
   The collection day.
-- `Despatch/RequestedDespatchPeriod/StartTime` = **13:00:00**  
-  From one.
-- `Despatch/RequestedDespatchPeriod/EndTime` = **17:00:00**  
-  Until five.
+- `Despatch/RequestedDespatchPeriod/StartTime` = **13:00:00-01:00**  
+  From one; in the local time of Urvania, where it happens, with its offset from UTC.
+- `Despatch/RequestedDespatchPeriod/EndTime` = **17:00:00-01:00**  
+  Until five; in the local time of Urvania, where it happens, with its offset from UTC.
 - `MinimumDeliveryUnit/BatchQuantity` = **4** (unitCode `EA`)  
   Benches come in pallets of four.
 - `MinimumDeliveryUnit/ConsumerUnitQuantity` = **1** (unitCode `EA`)  
@@ -600,7 +600,7 @@ Inside `OrderLine`:
     </cac:DeliveryParty>
     <cac:Despatch>
       <cbc:RequestedDespatchDate>2026-03-23</cbc:RequestedDespatchDate>
-      <cbc:RequestedDespatchTime>14:00:00</cbc:RequestedDespatchTime>
+      <cbc:RequestedDespatchTime>14:00:00-01:00</cbc:RequestedDespatchTime>
       <cbc:Instructions>Have the export declaration ready when the truck arrives.</cbc:Instructions>
       <cac:DespatchAddress>
         <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
@@ -697,8 +697,8 @@ Inside `OrderLine`:
       </cac:Contact>
       <cac:RequestedDespatchPeriod>
         <cbc:StartDate>2026-03-23</cbc:StartDate>
-        <cbc:StartTime>13:00:00</cbc:StartTime>
-        <cbc:EndTime>17:00:00</cbc:EndTime>
+        <cbc:StartTime>13:00:00-01:00</cbc:StartTime>
+        <cbc:EndTime>17:00:00-01:00</cbc:EndTime>
       </cac:RequestedDespatchPeriod>
     </cac:Despatch>
     <cac:MinimumDeliveryUnit>

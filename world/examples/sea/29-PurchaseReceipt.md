@@ -28,8 +28,8 @@ Velumi Trading sells two of the imported benches in its shop in Selanu to the co
   Printed at the till; in the issuer's local time, with its offset from UTC.
 - `TransactionDate` = **2026-06-13**  
   The day of the sale.
-- `TransactionTime` = **10:25:00**  
-  The time of the sale.
+- `TransactionTime` = **10:25:00+00:00**  
+  The time of the sale; in the issuer's local time, with its offset from UTC.
 - `Note` = **Loletali ninote nipive tofuta pehaka tavase vaputa.** (languageID `qal`)  
   The note in Lisavan, the sender's language: Printed on the receipt.
 - `Note` = **Collected by the farm with its own trailer.** (languageID `en-XL`)  
@@ -203,8 +203,8 @@ Inside `Payment`:
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 - `PaidDate` = **2026-06-13**  
   Paid at the till.
-- `PaidTime` = **10:25:00**  
-  At the time of the sale.
+- `PaidTime` = **10:25:00+00:00**  
+  At the time of the sale; in the issuer's local time, with its offset from UTC.
 - `MerchantID` = **CORALCARD-M-0001859**  
   The shop's merchant number with the card scheme.
 - `AuthorizationID` = **C30417**  
@@ -313,7 +313,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:IssueDate>2026-06-13</cbc:IssueDate>
   <cbc:IssueTime>10:25:00+00:00</cbc:IssueTime>
   <cbc:TransactionDate>2026-06-13</cbc:TransactionDate>
-  <cbc:TransactionTime>10:25:00</cbc:TransactionTime>
+  <cbc:TransactionTime>10:25:00+00:00</cbc:TransactionTime>
   <cbc:Note languageID="qal">Loletali ninote nipive tofuta pehaka tavase vaputa.</cbc:Note>
   <cbc:Note languageID="en-XL">Collected by the farm with its own trailer.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XLC</cbc:DocumentCurrencyCode>
@@ -443,7 +443,7 @@ Inside `PurchaseReceiptLine`:
     <cbc:ID>VT-T1-26-0613-0012</cbc:ID>
     <cbc:PaidAmount currencyID="XLC">750.000</cbc:PaidAmount>
     <cbc:PaidDate>2026-06-13</cbc:PaidDate>
-    <cbc:PaidTime>10:25:00</cbc:PaidTime>
+    <cbc:PaidTime>10:25:00+00:00</cbc:PaidTime>
     <cbc:MerchantID>CORALCARD-M-0001859</cbc:MerchantID>
     <cbc:AuthorizationID>C30417</cbc:AuthorizationID>
     <cbc:PaymentTerminalID>PT-T1</cbc:PaymentTerminalID>

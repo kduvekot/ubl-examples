@@ -251,8 +251,8 @@ Inside `Consignment`:
   The pallets to collect: 24 of benches and one of frame cartons.
 - `RequestedPickupTransportEvent/OccurrenceDate` = **2026-03-23**  
   The day the goods are ready.
-- `RequestedPickupTransportEvent/OccurrenceTime` = **14:00:00**  
-  The local time.
+- `RequestedPickupTransportEvent/OccurrenceTime` = **14:00:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
 - `RequestedPickupTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `RequestedPickupTransportEvent/Location/Name` = **Ferrano**  
@@ -261,8 +261,8 @@ Inside `Consignment`:
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `RequestedDeliveryTransportEvent/OccurrenceDate` = **2026-03-25**  
   By the end of the distributor's goods-in slot, 09:00 to 10:00.
-- `RequestedDeliveryTransportEvent/OccurrenceTime` = **10:00:00**  
-  The local time.
+- `RequestedDeliveryTransportEvent/OccurrenceTime` = **10:00:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
 - `RequestedDeliveryTransportEvent/Location/ID` = **XBMRW** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `RequestedDeliveryTransportEvent/Location/Name` = **Marrowdale**  
@@ -489,7 +489,7 @@ Inside `Consignment`:
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">25</cbc:TotalTransportHandlingUnitQuantity>
     <cac:RequestedPickupTransportEvent>
       <cbc:OccurrenceDate>2026-03-23</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>14:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>14:00:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano</cbc:Name>
@@ -502,7 +502,7 @@ Inside `Consignment`:
     </cac:RequestedPickupTransportEvent>
     <cac:RequestedDeliveryTransportEvent>
       <cbc:OccurrenceDate>2026-03-25</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XBMRW</cbc:ID>
         <cbc:Name>Marrowdale</cbc:Name>

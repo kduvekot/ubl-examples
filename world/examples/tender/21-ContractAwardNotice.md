@@ -253,8 +253,8 @@ Inside `TenderingProcess`:
   The opening of the tenders.
 - `OpenTenderEvent/OccurrenceDate` = **2026-02-26**  
   Thursday 26 February, the day after the deadline.
-- `OpenTenderEvent/OccurrenceTime` = **10:00:00**  
-  In the morning.
+- `OpenTenderEvent/OccurrenceTime` = **10:00:00-01:00**  
+  In the morning; in the issuer's local time, with its offset from UTC.
 - `OpenTenderEvent/TypeCode` = **OPENING** (listID `urn:ubl-examples:world:codelist:TenderEventTypeCode`)  
   A tender opening. The code is from the Trade Accord's tender event type list: OPENING = Opening of tenders.
 - `OpenTenderEvent/Description` = **Electronic opening; tenderers may follow it online.**  
@@ -432,8 +432,8 @@ Inside `TenderResult`:
   What the winner pays for publishing the notice, below the maximum of 500 lume.
 - `AwardDate` = **2026-03-09**  
   The day the authority decided the award.
-- `AwardTime` = **09:30:00**  
-  The time of the decision, before the tenderers are told.
+- `AwardTime` = **09:30:00-01:00**  
+  The time of the decision, before the tenderers are told; in the issuer's local time, with its offset from UTC.
 - `ReceivedTenderQuantity` = **2** (unitCode `EA`)  
   Two tenders: the furniture maker's first tender was withdrawn and replaced.
 - `LowerTenderAmount` = **117360.00** (currencyID `XBL`)  
@@ -656,7 +656,7 @@ Inside `TenderResult`:
     <cac:OpenTenderEvent>
       <cbc:IdentificationID>OPEN-1</cbc:IdentificationID>
       <cbc:OccurrenceDate>2026-02-26</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>10:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>10:00:00-01:00</cbc:OccurrenceTime>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:TenderEventTypeCode">OPENING</cbc:TypeCode>
       <cbc:Description>Electronic opening; tenderers may follow it online.</cbc:Description>
       <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
@@ -805,7 +805,7 @@ Inside `TenderResult`:
     <cbc:Description>Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.</cbc:Description>
     <cbc:AdvertisementAmount currencyID="XBL">320.00</cbc:AdvertisementAmount>
     <cbc:AwardDate>2026-03-09</cbc:AwardDate>
-    <cbc:AwardTime>09:30:00</cbc:AwardTime>
+    <cbc:AwardTime>09:30:00-01:00</cbc:AwardTime>
     <cbc:ReceivedTenderQuantity unitCode="EA">2</cbc:ReceivedTenderQuantity>
     <cbc:LowerTenderAmount currencyID="XBL">117360.00</cbc:LowerTenderAmount>
     <cbc:HigherTenderAmount currencyID="XBL">124080.00</cbc:HigherTenderAmount>

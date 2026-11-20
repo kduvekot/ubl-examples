@@ -47,8 +47,8 @@ Inside `Signature`:
   How.
 - `ValidationDate` = **2026-05-05**  
   Verified by the council's validation service before the document was issued, after the terms it binds were verified.
-- `ValidationTime` = **12:40:00**  
-  At that time.
+- `ValidationTime` = **12:40:00-01:00**  
+  At that time; in the issuer's local time, with its offset from UTC.
 - `ValidatorID` = **LTAC-VALIDATOR**  
   The trade accord council's validation service.
 - `CanonicalizationMethod` = **http://www.w3.org/2006/12/xml-c14n11**  
@@ -273,8 +273,8 @@ Inside `RequiredCertificationDocumentReference`:
   Its UUID.
 - `IssueDate` = **2026-01-02**  
   The council published version 2.0 at the start of the year.
-- `IssueTime` = **12:00:00**  
-  And time.
+- `IssueTime` = **12:00:00-01:00**  
+  And time; in the issuer's local time, with its offset from UTC.
 - `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document. The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `ReferencedDocumentInternalAddress` = **section-2**  
@@ -297,8 +297,8 @@ Inside `RequiredCertificationDocumentReference`:
   SHA-256.
 - `Attachment/ExternalReference/ExpiryDate` = **2027-05-05**  
   The link works as long as the reference is valid.
-- `Attachment/ExternalReference/ExpiryTime` = **23:59:00**  
-  Until the end of that day.
+- `Attachment/ExternalReference/ExpiryTime` = **23:59:00-01:00**  
+  Until the end of that day; in the issuer's local time, with its offset from UTC.
 - `Attachment/ExternalReference/MimeCode` = **application/pdf** (listID `IANA Media Types`)  
   A PDF. The code is from UBL's default Media type (IANA) list: application/pdf.
 - `Attachment/ExternalReference/FormatCode` = **fmt/480** (listID `PRONOM`)  
@@ -319,8 +319,8 @@ Inside `RequiredCertificationDocumentReference`:
   The document's signature is valid. The code is from the Trade Accord's validation result list: VALID = Valid.
 - `ResultOfVerification/ValidationDate` = **2026-05-05**  
   Checked.
-- `ResultOfVerification/ValidationTime` = **12:05:00**  
-  At that time.
+- `ResultOfVerification/ValidationTime` = **12:05:00-01:00**  
+  At that time; in the issuer's local time, with its offset from UTC.
 - `ResultOfVerification/ValidateProcess` = **Signature and hash check**  
   What was checked.
 - `ResultOfVerification/ValidateTool` = **Accord validator**  
@@ -378,14 +378,14 @@ Inside `DigitalAgreementTerms`:
   No document may be lost.
 - `ServiceLevelAgreement/MeanTimeToRecoverDurationMeasure` = **2** (unitCode `HUR`)  
   Back in two hours on average.
-- `ServiceLevelAgreement/ServiceAvailabilityPeriod/StartTime` = **07:00:00**  
-  Support from seven.
-- `ServiceLevelAgreement/ServiceAvailabilityPeriod/EndTime` = **19:00:00**  
-  Until seven.
-- `ServiceLevelAgreement/ServiceMaintenancePeriod/StartTime` = **02:00:00**  
-  Maintenance at night.
-- `ServiceLevelAgreement/ServiceMaintenancePeriod/EndTime` = **04:00:00**  
-  Until four.
+- `ServiceLevelAgreement/ServiceAvailabilityPeriod/StartTime` = **07:00:00-01:00**  
+  Support from seven; in the issuer's local time, with its offset from UTC.
+- `ServiceLevelAgreement/ServiceAvailabilityPeriod/EndTime` = **19:00:00-01:00**  
+  Until seven; in the issuer's local time, with its offset from UTC.
+- `ServiceLevelAgreement/ServiceMaintenancePeriod/StartTime` = **02:00:00-01:00**  
+  Maintenance at night; in the issuer's local time, with its offset from UTC.
+- `ServiceLevelAgreement/ServiceMaintenancePeriod/EndTime` = **04:00:00-01:00**  
+  Until four; in the issuer's local time, with its offset from UTC.
 
 ### Digital Process
 
@@ -718,7 +718,7 @@ Inside `DigitalProcess`:
     <cbc:ReasonCode listID="urn:ubl-examples:world:codelist:SignatureReasonCode">APPROVAL</cbc:ReasonCode>
     <cbc:Note>Signed with the company's seal certificate.</cbc:Note>
     <cbc:ValidationDate>2026-05-05</cbc:ValidationDate>
-    <cbc:ValidationTime>12:40:00</cbc:ValidationTime>
+    <cbc:ValidationTime>12:40:00-01:00</cbc:ValidationTime>
     <cbc:ValidatorID>LTAC-VALIDATOR</cbc:ValidatorID>
     <cbc:CanonicalizationMethod>http://www.w3.org/2006/12/xml-c14n11</cbc:CanonicalizationMethod>
     <cbc:SignatureMethod>http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</cbc:SignatureMethod>
@@ -921,7 +921,7 @@ Inside `DigitalProcess`:
     <cbc:ID>LTAC-AP-REQ-2.0</cbc:ID>
     <cbc:UUID>dc787c2a-3f1a-547c-a3f0-172d3721bfb5</cbc:UUID>
     <cbc:IssueDate>2026-01-02</cbc:IssueDate>
-    <cbc:IssueTime>12:00:00</cbc:IssueTime>
+    <cbc:IssueTime>12:00:00-01:00</cbc:IssueTime>
     <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">774</cbc:DocumentTypeCode>
     <cbc:ReferencedDocumentInternalAddress>section-2</cbc:ReferencedDocumentInternalAddress>
     <cbc:LanguageID>en</cbc:LanguageID>
@@ -935,7 +935,7 @@ Inside `DigitalProcess`:
         <cbc:DocumentHash>9f2c4e1ab37d5c8e0f6a2b4d8c1e3f5a7b9d0c2e4f6a8b1c3d5e7f9a0b2c4d6e</cbc:DocumentHash>
         <cbc:HashAlgorithmMethod>http://www.w3.org/2001/04/xmlenc#sha256</cbc:HashAlgorithmMethod>
         <cbc:ExpiryDate>2027-05-05</cbc:ExpiryDate>
-        <cbc:ExpiryTime>23:59:00</cbc:ExpiryTime>
+        <cbc:ExpiryTime>23:59:00-01:00</cbc:ExpiryTime>
         <cbc:MimeCode listID="IANA Media Types">application/pdf</cbc:MimeCode>
         <cbc:FormatCode listID="PRONOM">fmt/480</cbc:FormatCode>
         <cbc:EncodingCode listID="RFC 2045 Content-Transfer-Encoding">binary</cbc:EncodingCode>
@@ -951,7 +951,7 @@ Inside `DigitalProcess`:
       <cbc:ValidatorID>LTAC-VALIDATOR</cbc:ValidatorID>
       <cbc:ValidationResultCode listID="urn:ubl-examples:world:codelist:ValidationResultCode">VALID</cbc:ValidationResultCode>
       <cbc:ValidationDate>2026-05-05</cbc:ValidationDate>
-      <cbc:ValidationTime>12:05:00</cbc:ValidationTime>
+      <cbc:ValidationTime>12:05:00-01:00</cbc:ValidationTime>
       <cbc:ValidateProcess>Signature and hash check</cbc:ValidateProcess>
       <cbc:ValidateTool>Accord validator</cbc:ValidateTool>
       <cbc:ValidateToolVersion>3.2</cbc:ValidateToolVersion>
@@ -993,12 +993,12 @@ Inside `DigitalProcess`:
       <cbc:MaximumDataLossDurationMeasure unitCode="HUR">0</cbc:MaximumDataLossDurationMeasure>
       <cbc:MeanTimeToRecoverDurationMeasure unitCode="HUR">2</cbc:MeanTimeToRecoverDurationMeasure>
       <cac:ServiceAvailabilityPeriod>
-        <cbc:StartTime>07:00:00</cbc:StartTime>
-        <cbc:EndTime>19:00:00</cbc:EndTime>
+        <cbc:StartTime>07:00:00-01:00</cbc:StartTime>
+        <cbc:EndTime>19:00:00-01:00</cbc:EndTime>
       </cac:ServiceAvailabilityPeriod>
       <cac:ServiceMaintenancePeriod>
-        <cbc:StartTime>02:00:00</cbc:StartTime>
-        <cbc:EndTime>04:00:00</cbc:EndTime>
+        <cbc:StartTime>02:00:00-01:00</cbc:StartTime>
+        <cbc:EndTime>04:00:00-01:00</cbc:EndTime>
       </cac:ServiceMaintenancePeriod>
     </cac:ServiceLevelAgreement>
   </cac:DigitalAgreementTerms>

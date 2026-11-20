@@ -55,7 +55,7 @@
     <cac:PowerOfAttorney>
       <cbc:ID>POA-TT-2026-014</cbc:ID>
       <cbc:IssueDate>2026-01-05</cbc:IssueDate>
-      <cbc:IssueTime>11:00:00</cbc:IssueTime>
+      <cbc:IssueTime>11:00:00+00:00</cbc:IssueTime>
       <cbc:Description>Lodging import declarations and paying duties and taxes on behalf of Velumi Trading.</cbc:Description>
       <cac:NotaryParty>
         <cac:PartyIdentification>

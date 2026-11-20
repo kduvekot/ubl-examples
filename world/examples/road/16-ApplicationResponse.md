@@ -28,8 +28,8 @@ The distributor's system confirms the invoice was received and accepted.
   Issued a few minutes after the last thing of its day that it reports, cites or answers, in the sender's local time, with its offset from UTC.
 - `ResponseDate` = **2026-03-26**  
   The day the invoice was matched against order and receipt.
-- `ResponseTime` = **14:05:00**  
-  In the afternoon run of the invoice matching, after the corrected receipt advice of 10:48.
+- `ResponseTime` = **14:05:00-01:00**  
+  In the afternoon run of the invoice matching, after the corrected receipt advice of 10:48; in the issuer's local time, with its offset from UTC.
 - `Note` = **Accepted for payment; line 2 matched the substituted casting.**  
   The result.
 - `VersionID` = **1**  
@@ -108,8 +108,8 @@ Inside `DocumentResponse`:
   UN/EDIFACT 4343 code AP: the invoice is accepted. The code is from the world's copy of UN/EDIFACT 4343 Response type: AP = Accepted.
 - `Response/EffectiveDate` = **2026-03-26**  
   Effective at once.
-- `Response/EffectiveTime` = **14:05:00**  
-  When matched.
+- `Response/EffectiveTime` = **14:05:00-01:00**  
+  When matched; in the issuer's local time, with its offset from UTC.
 - `Response/Status/ConditionCode` = **MATCHED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
   The invoice matched order and receipt. The code is from the Trade Accord's status condition list: MATCHED = Matched.
 - `Response/Status/Description` = **Three-way match passed.**  
@@ -141,7 +141,7 @@ Inside `DocumentResponse`:
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>14:13:00-01:00</cbc:IssueTime>
   <cbc:ResponseDate>2026-03-26</cbc:ResponseDate>
-  <cbc:ResponseTime>14:05:00</cbc:ResponseTime>
+  <cbc:ResponseTime>14:05:00-01:00</cbc:ResponseTime>
   <cbc:Note>Accepted for payment; line 2 matched the substituted casting.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
@@ -207,7 +207,7 @@ Inside `DocumentResponse`:
     <cac:Response>
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>
       <cbc:EffectiveDate>2026-03-26</cbc:EffectiveDate>
-      <cbc:EffectiveTime>14:05:00</cbc:EffectiveTime>
+      <cbc:EffectiveTime>14:05:00-01:00</cbc:EffectiveTime>
       <cac:Status>
         <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">MATCHED</cbc:ConditionCode>
         <cbc:Description>Three-way match passed.</cbc:Description>

@@ -180,8 +180,8 @@ Inside `QualificationResolution`:
   The decision.
 - `ResolutionDate` = **2026-03-02**  
   The day of the decision.
-- `ResolutionTime` = **10:00:00**  
-  The time of the decision.
+- `ResolutionTime` = **10:00:00-01:00**  
+  The time of the decision; in the issuer's local time, with its offset from UTC.
 - `ProcurementProjectLot/ID` = **LOT-1**  
   Lot 1.
 - `AdmissionCode` = **ADMITTED** (listID `urn:ubl-examples:world:codelist:QualificationAdmissionCode`)  
@@ -190,8 +190,8 @@ Inside `QualificationResolution`:
   The decision.
 - `ResolutionDate` = **2026-03-02**  
   The day of the decision.
-- `ResolutionTime` = **10:00:00**  
-  The time.
+- `ResolutionTime` = **10:00:00-01:00**  
+  The time; in the issuer's local time, with its offset from UTC.
 - `ProcurementProjectLot/ID` = **LOT-2**  
   Lot 2.
 
@@ -327,7 +327,7 @@ Inside `Signature`:
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
     <cbc:Resolution>Admitted to the evaluation of lot 1.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-02</cbc:ResolutionDate>
-    <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
+    <cbc:ResolutionTime>10:00:00-01:00</cbc:ResolutionTime>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-1</cbc:ID>
     </cac:ProcurementProjectLot>
@@ -336,7 +336,7 @@ Inside `Signature`:
     <cbc:AdmissionCode listID="urn:ubl-examples:world:codelist:QualificationAdmissionCode">ADMITTED</cbc:AdmissionCode>
     <cbc:Resolution>Admitted to the evaluation of lot 2; the installers' qualifications are sufficient.</cbc:Resolution>
     <cbc:ResolutionDate>2026-03-02</cbc:ResolutionDate>
-    <cbc:ResolutionTime>10:00:00</cbc:ResolutionTime>
+    <cbc:ResolutionTime>10:00:00-01:00</cbc:ResolutionTime>
     <cac:ProcurementProjectLot>
       <cbc:ID>LOT-2</cbc:ID>
     </cac:ProcurementProjectLot>

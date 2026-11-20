@@ -259,8 +259,8 @@ Inside `ReceiptLine`:
   Why the quantity differs from the despatch. The code is from the Trade Accord's quantity discrepancy list: DAMAGED = Damaged.
 - `ReceivedDate` = **2026-04-30**  
   Unloaded.
-- `ReceivedTime` = **10:40:00**  
-  Ten minutes after the end of the slot.
+- `ReceivedTime` = **10:40:00-01:00**  
+  Ten minutes after the end of the slot; in the issuer's local time, with its offset from UTC.
 - `TimingComplaintCode` = **LATE** (listID `urn:ubl-examples:world:codelist:TimingComplaintCode`)  
   The truck was late for its slot. The code is from the Trade Accord's timing complaint list: LATE = Late.
 - `TimingComplaint` = **Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 to 10:30; unloading delayed the next truck.**  
@@ -492,7 +492,7 @@ Inside `ReceiptLine`:
     <cbc:RejectActionCode listID="urn:ubl-examples:world:codelist:RejectActionCode">CREDIT</cbc:RejectActionCode>
     <cbc:QuantityDiscrepancyCode listID="urn:ubl-examples:world:codelist:QuantityDiscrepancyCode">DAMAGED</cbc:QuantityDiscrepancyCode>
     <cbc:ReceivedDate>2026-04-30</cbc:ReceivedDate>
-    <cbc:ReceivedTime>10:40:00</cbc:ReceivedTime>
+    <cbc:ReceivedTime>10:40:00-01:00</cbc:ReceivedTime>
     <cbc:TimingComplaintCode listID="urn:ubl-examples:world:codelist:TimingComplaintCode">LATE</cbc:TimingComplaintCode>
     <cbc:TimingComplaint>Arrived at 10:40, ten minutes after the end of the agreed slot of 10:00 to 10:30; unloading delayed the next truck.</cbc:TimingComplaint>
     <cac:OrderLineReference>

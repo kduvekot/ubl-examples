@@ -41,8 +41,8 @@ Inside `TenderSubmissionDeadlinePeriod`:
 
 - `EndDate` = **2026-02-25**  
   The deadline for tenders stands.
-- `EndTime` = **12:00:00**  
-  At noon, as the notice says.
+- `EndTime` = **12:00:00-01:00**  
+  At noon, as the notice says; in the issuer's local time, with its offset from UTC.
 
 ### Procurement Legislation Document Reference
 
@@ -232,7 +232,7 @@ Inside `ProcurementProjectLot`:
   <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   <cac:TenderSubmissionDeadlinePeriod>
     <cbc:EndDate>2026-02-25</cbc:EndDate>
-    <cbc:EndTime>12:00:00</cbc:EndTime>
+    <cbc:EndTime>12:00:00-01:00</cbc:EndTime>
   </cac:TenderSubmissionDeadlinePeriod>
   <cac:ProcurementLegislationDocumentReference>
     <cbc:ID>XB-PPA-2019</cbc:ID>

@@ -116,7 +116,7 @@
   <cac:TransportSchedule>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cbc:ReferenceDate>2026-04-14</cbc:ReferenceDate>
-    <cbc:ReferenceTime>06:45:00</cbc:ReferenceTime>
+    <cbc:ReferenceTime>06:45:00-01:00</cbc:ReferenceTime>
     <cbc:ReliabilityPercent>95</cbc:ReliabilityPercent>
     <cbc:Remarks>Left 7 minutes late, two after the estimate.</cbc:Remarks>
     <cac:StatusLocation>
@@ -130,7 +130,7 @@
     </cac:StatusLocation>
     <cac:ActualArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>05:30:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>05:30:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -143,7 +143,7 @@
     </cac:ActualArrivalTransportEvent>
     <cac:ActualDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>06:52:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>06:52:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -156,7 +156,7 @@
     </cac:ActualDepartureTransportEvent>
     <cac:EstimatedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>06:50:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>06:50:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -169,7 +169,7 @@
     </cac:EstimatedDepartureTransportEvent>
     <cac:PlannedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>06:45:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>06:45:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
         <cbc:Name>Ferrano Intermodal Hub</cbc:Name>
@@ -189,21 +189,21 @@
     </cac:StatusLocation>
     <cac:EstimatedArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>08:08:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>08:08:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
       </cac:Location>
     </cac:EstimatedArrivalTransportEvent>
     <cac:PlannedDepartureTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>13:00:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>13:00:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
       </cac:Location>
     </cac:PlannedDepartureTransportEvent>
     <cac:PlannedArrivalTransportEvent>
       <cbc:OccurrenceDate>2026-04-14</cbc:OccurrenceDate>
-      <cbc:OccurrenceTime>08:01:00</cbc:OccurrenceTime>
+      <cbc:OccurrenceTime>08:01:00-01:00</cbc:OccurrenceTime>
       <cac:Location>
         <cbc:Name>Rail border station Urvania–Bayvarra</cbc:Name>
       </cac:Location>
