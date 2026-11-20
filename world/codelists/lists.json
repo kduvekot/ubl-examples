@@ -1581,25 +1581,6 @@
     ]
    }
   },
-  "TemperatureQualifier": {
-   "scope": "regional",
-   "name": "Temperature qualifier",
-   "description": "What a temperature stands for.",
-   "codes": {
-    "TARGET": [
-     "Target",
-     "The temperature to keep."
-    ],
-    "MIN": [
-     "Minimum",
-     "The lowest temperature allowed."
-    ],
-    "MAX": [
-     "Maximum",
-     "The highest temperature allowed."
-    ]
-   }
-  },
   "TemperatureClass": {
    "scope": "regional",
    "name": "Temperature class",

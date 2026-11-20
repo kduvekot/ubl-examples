@@ -5729,17 +5729,6 @@
     "WEIGHBRIDGE"
    ]
   },
-  "TemperatureQualifier": {
-   "listID": "urn:ubl-examples:world:codelist:TemperatureQualifierCode",
-   "scope": "regional",
-   "name": "Temperature qualifier",
-   "location": "world/codelists/gc/TemperatureQualifierCode.gc",
-   "codes": [
-    "TARGET",
-    "MIN",
-    "MAX"
-   ]
-  },
   "TemperatureClass": {
    "listID": "urn:ubl-examples:world:codelist:TemperatureClassCode",
    "scope": "regional",

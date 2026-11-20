@@ -80,7 +80,6 @@
       <ValueList xml:id="ManifestType" uri="gc/ManifestTypeCode.gc" />
       <ValueList xml:id="WaybillType" uri="gc/WaybillTypeCode.gc" />
       <ValueList xml:id="WeightStatementType" uri="gc/WeightStatementTypeCode.gc" />
-      <ValueList xml:id="TemperatureQualifier" uri="gc/TemperatureQualifierCode.gc" />
       <ValueList xml:id="TemperatureClass" uri="gc/TemperatureClassCode.gc" />
       <ValueList xml:id="CargoType" uri="gc/CargoTypeCode.gc" />
       <ValueList xml:id="EquipmentDisposition" uri="gc/EquipmentDispositionCode.gc" />
