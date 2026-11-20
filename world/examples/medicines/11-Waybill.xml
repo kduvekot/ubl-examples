@@ -450,9 +450,8 @@
         <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">5</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
       </cac:Temperature>
       <cac:MinimumTemperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
@@ -472,9 +471,8 @@
         <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
       </cac:Item>
       <cac:Temperature>
-        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+        <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">SETPOINT</cbc:AttributeID>
         <cbc:Measure unitCode="CEL">5</cbc:Measure>
-        <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureQualifierCode">TARGET</cbc:MeasureCode>
       </cac:Temperature>
       <cac:MinimumTemperature>
         <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>

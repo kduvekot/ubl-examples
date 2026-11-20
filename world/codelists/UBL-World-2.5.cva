@@ -81,6 +81,7 @@
       <ValueList xml:id="WaybillType" uri="gc/WaybillTypeCode.gc" />
       <ValueList xml:id="WeightStatementType" uri="gc/WeightStatementTypeCode.gc" />
       <ValueList xml:id="TemperatureQualifier" uri="gc/TemperatureQualifierCode.gc" />
+      <ValueList xml:id="TemperatureClass" uri="gc/TemperatureClassCode.gc" />
       <ValueList xml:id="CargoType" uri="gc/CargoTypeCode.gc" />
       <ValueList xml:id="EquipmentDisposition" uri="gc/EquipmentDispositionCode.gc" />
       <ValueList xml:id="EquipmentOwnerType" uri="gc/EquipmentOwnerTypeCode.gc" />
@@ -462,7 +463,7 @@
       <Context address="cbc:ManifestTypeCode" values="ManifestType" metadata="code" />
       <Context address="cbc:WaybillTypeCode" values="WaybillType" metadata="code" />
       <Context address="cbc:WeightStatementTypeCode" values="WeightStatementType" metadata="code" />
-      <Context address="cbc:MeasureCode" values="TemperatureQualifier" metadata="code" />
+      <Context address="cbc:MeasureCode" values="TemperatureClass" metadata="code" />
       <Context address="cbc:CargoTypeCode" values="CargoType" metadata="code" />
       <Context address="cbc:DispositionCode" values="EquipmentDisposition" metadata="code" />
       <Context address="cbc:OwnerTypeCode" values="EquipmentOwnerType" metadata="code" />

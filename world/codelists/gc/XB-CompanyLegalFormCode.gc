@@ -62,5 +62,16 @@
             <SimpleValue>Limited liability partnership</SimpleValue>
          </Value>
       </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>COOP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Cooperative society</SimpleValue>
+         </Value>
+         <Value ColumnRef="description">
+            <SimpleValue>A society its members own and use, such as growers who pack and sell their fruit together; abbreviated Co-op in its name.</SimpleValue>
+         </Value>
+      </Row>
    </SimpleCodeList>
 </gc:CodeList>

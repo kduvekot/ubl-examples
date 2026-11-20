@@ -1205,7 +1205,7 @@
    "element": "MeasureCode",
    "address": "cbc:MeasureCode",
    "lists": [
-    "TemperatureQualifier"
+    "TemperatureClass"
    ]
   },
   {
@@ -5586,7 +5586,8 @@
     "FRAGILE",
     "KEEPDRY",
     "DECK",
-    "UNDERDECK"
+    "UNDERDECK",
+    "POWER"
    ]
   },
   "ShippingPriority": {
@@ -5737,6 +5738,17 @@
     "TARGET",
     "MIN",
     "MAX"
+   ]
+  },
+  "TemperatureClass": {
+   "listID": "urn:ubl-examples:world:codelist:TemperatureClassCode",
+   "scope": "regional",
+   "name": "Temperature class",
+   "location": "world/codelists/gc/TemperatureClassCode.gc",
+   "codes": [
+    "CHILLED",
+    "FROZEN",
+    "AMBIENT"
    ]
   },
   "CargoType": {
@@ -8464,7 +8476,8 @@
    "codes": [
     "CORP",
     "LTD",
-    "LLP"
+    "LLP",
+    "COOP"
    ]
   },
   "XL:CompanyLegalForm": {
@@ -8496,6 +8509,8 @@
    "name": "UN Central Product Classification, Version 2.1",
    "location": "world/codelists/gc/CPC21Code.gc",
    "codes": [
+    "01341",
+    "01342",
     "01921",
     "12020",
     "14100",
@@ -8529,6 +8544,8 @@
    "name": "Harmonized Commodity Description and Coding System, 2022 edition (subheadings)",
    "location": "world/codelists/gc/WCOHS2022Code.gc",
    "codes": [
+    "080810",
+    "080830",
     "260111",
     "271112",
     "271121",
@@ -8795,6 +8812,7 @@
    "codes": [
     "STORAGE",
     "TRANSPORT",
+    "SETPOINT",
     "PRODUCT",
     "AMBIENT",
     "FLASHPOINT",

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TransportationStatus xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>TOL-TS-26-0565</cbc:ID>
+  <cbc:UUID>8a5ddf6d-b855-5fa3-9a91-f88a50a3daf6</cbc:UUID>
+  <cbc:IssueDate>2026-04-26</cbc:IssueDate>
+  <cbc:IssueTime>07:45:00-01:00</cbc:IssueTime>
+  <cac:Consignment>
+    <cbc:ID>HFG-CS-26-0557</cbc:ID>
+    <cac:ConsigneeParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-043529</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40618392</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+        <cbc:BuildingNumber>58</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Cold store</cbc:Name>
+        <cbc:JobTitle>Cold store supervisor</cbc:JobTitle>
+        <cbc:Department>Cold store</cbc:Department>
+        <cbc:Telephone>+999 3 726 8104</cbc:Telephone>
+        <cbc:ElectronicMail>coldstore@hafefo.example</cbc:ElectronicMail>
+        <cbc:Note>Monday to Saturday 05:00–14:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC43529</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:ConsigneeParty>
+    <cac:CarrierParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-547539</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Harbour Road</cbc:StreetName>
+        <cbc:BuildingNumber>18</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38527</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Bookings</cbc:Name>
+        <cbc:JobTitle>Booking agent</cbc:JobTitle>
+        <cbc:Department>Bookings</cbc:Department>
+        <cbc:Telephone>+999 2 38 2058 7929</cbc:Telephone>
+        <cbc:ElectronicMail>bookings@tidewell.example</cbc:ElectronicMail>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411918</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:CarrierParty>
+    <cac:MainCarriageShipmentStage>
+      <cbc:ID>2</cbc:ID>
+      <cac:DischargeTransportEvent>
+        <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>08:10:00</cbc:OccurrenceTime>
+        <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:DischargeTransportEvent>
+      <cac:ActualArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>06:40:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualArrivalTransportEvent>
+    </cac:MainCarriageShipmentStage>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:ID schemeID="ISO6346">TWLU5316047</cbc:ID>
+        <cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
+        <cac:StorageLocation>
+          <cbc:ID>XLSEL-RR-07</cbc:ID>
+          <cbc:Name>Reefer rack, power point 7</cbc:Name>
+        </cac:StorageLocation>
+        <cac:TransportEvent>
+          <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>08:25:00</cbc:OccurrenceTime>
+          <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
+          <cac:CurrentStatus>
+            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
+            <cbc:Description>The reefer's own log, read by the carrier's monitoring at sea, over the voyage from loading at Lumeport to discharge.</cbc:Description>
+            <cac:Condition>
+              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+              <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
+              <cbc:Description>Supply air, every hour of the voyage.</cbc:Description>
+              <cbc:MinimumMeasure unitCode="CEL">0.2</cbc:MinimumMeasure>
+              <cbc:MaximumMeasure unitCode="CEL">0.9</cbc:MaximumMeasure>
+            </cac:Condition>
+          </cac:CurrentStatus>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:TransportEvent>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
+  </cac:Consignment>
+  <cac:TransportEvent>
+    <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
+    <cbc:Description>Reefer TWLU5316047 discharged and on the port's power; released by customs.</cbc:Description>
+    <cac:Location>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+    </cac:Location>
+  </cac:TransportEvent>
+  <cac:SenderParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Tidewell Ocean Lines</cbc:Name>
+    </cac:PartyName>
+  </cac:SenderParty>
+  <cac:ReceiverParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+</TransportationStatus>

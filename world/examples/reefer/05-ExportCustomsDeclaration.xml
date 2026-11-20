@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ExportCustomsDeclaration xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExportCustomsDeclaration-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>BF-EX-26-0559</cbc:ID>
+  <cbc:UUID>ca2e9f0b-93b7-590c-8f63-af6616df28de</cbc:UUID>
+  <cbc:IssueDate>2026-04-21</cbc:IssueDate>
+  <cbc:IssueTime>14:20:00-01:00</cbc:IssueTime>
+  <cbc:ExportTypeCode listID="urn:ubl-examples:world:codelist:ExportTypeCode">PERMANENT</cbc:ExportTypeCode>
+  <cbc:ExportReasonCode listID="urn:ubl-examples:world:codelist:ExportReasonCode">SALE</cbc:ExportReasonCode>
+  <cbc:Note>Declared electronically before the goods leave.</cbc:Note>
+  <cbc:VersionID>1</cbc:VersionID>
+  <cac:ExporterParty>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+    </cac:PartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="GS1 GLN">9527430900003</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:AdditionalPartyIdentification>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-trader">XB-TR-415873</cbc:ID>
+    </cac:AdditionalPartyIdentification>
+    <cac:PartyName>
+      <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-418726</cbc:ID>
+      <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+      <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+      <cbc:StreetName>Orchard Road</cbc:StreetName>
+      <cbc:BuildingNumber>3</cbc:BuildingNumber>
+      <cbc:CityName>Harrowmead</cbc:CityName>
+      <cbc:PostalZone>71640</cbc:PostalZone>
+      <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+      <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+      <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        <cbc:Name>Bayvarra</cbc:Name>
+      </cac:Country>
+    </cac:PostalAddress>
+  </cac:ExporterParty>
+  <cac:CustomsDeclaration>
+    <cbc:ID>BF-CD-26-0560</cbc:ID>
+    <cbc:FunctionCode listID="UN/EDIFACT EDED 1225">9</cbc:FunctionCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-04-21</cbc:StartDate>
+      <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+    </cac:ValidityPeriod>
+    <cac:ApplicableTerritoryAddress>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:ApplicableTerritoryAddress>
+    <cac:Shipment>
+      <cbc:ID>HFG-SH-26-0556</cbc:ID>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">20</cbc:TotalTransportHandlingUnitQuantity>
+      <cac:Consignment>
+        <cbc:ID>HFG-CS-26-0557</cbc:ID>
+        <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
+        <cbc:TotalPackagesQuantity unitCode="EA">1120</cbc:TotalPackagesQuantity>
+        <cac:OfficeOfExitLocation>
+          <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+        </cac:OfficeOfExitLocation>
+        <cac:OfficeOfExportLocation>
+          <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+        </cac:OfficeOfExportLocation>
+      </cac:Consignment>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+        <cbc:Description>Apples Gala, carton 18 kg, count 100</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">14524.58</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">13036.8</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">672</cbc:Quantity>
+        <cac:Item>
+          <cbc:Description>Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.</cbc:Description>
+          <cbc:Name>Apples Gala, carton 18 kg, count 100</cbc:Name>
+          <cac:OriginCountry>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:OriginCountry>
+          <cac:CommodityClassification>
+            <cbc:NatureCode listID="WCO HS 2022 Sections">II</cbc:NatureCode>
+            <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+            <cbc:CommodityCode listID="WCO HS 2022">080810</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01341</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+          <cac:OriginAddress>
+            <cbc:District>Harrowmead, Upland State</cbc:District>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:OriginAddress>
+        </cac:Item>
+      </cac:GoodsItem>
+      <cac:GoodsItem>
+        <cbc:ID>2</cbc:ID>
+        <cbc:Description>Apples Granny Smith, carton 18 kg, count 100</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">5702.76</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">5432</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">280</cbc:Quantity>
+        <cac:Item>
+          <cbc:Description>Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.</cbc:Description>
+          <cbc:Name>Apples Granny Smith, carton 18 kg, count 100</cbc:Name>
+          <cac:OriginCountry>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:OriginCountry>
+          <cac:CommodityClassification>
+            <cbc:NatureCode listID="WCO HS 2022 Sections">II</cbc:NatureCode>
+            <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+            <cbc:CommodityCode listID="WCO HS 2022">080810</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01341</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+          <cac:OriginAddress>
+            <cbc:District>Harrowmead, Upland State</cbc:District>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:OriginAddress>
+        </cac:Item>
+      </cac:GoodsItem>
+      <cac:GoodsItem>
+        <cbc:ID>3</cbc:ID>
+        <cbc:Description>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Description>
+        <cbc:DeclaredCustomsValueAmount currencyID="XBL">3770.80</cbc:DeclaredCustomsValueAmount>
+        <cbc:GrossWeightMeasure unitCode="KGM">3259.2</cbc:GrossWeightMeasure>
+        <cbc:Quantity unitCode="EA">168</cbc:Quantity>
+        <cac:Item>
+          <cbc:Description>Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.</cbc:Description>
+          <cbc:Name>Pears Packham's Triumph, carton 18 kg, count 80</cbc:Name>
+          <cac:OriginCountry>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:OriginCountry>
+          <cac:CommodityClassification>
+            <cbc:NatureCode listID="WCO HS 2022 Sections">II</cbc:NatureCode>
+            <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+            <cbc:CommodityCode listID="WCO HS 2022">080830</cbc:CommodityCode>
+            <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">01342</cbc:ItemClassificationCode>
+          </cac:CommodityClassification>
+          <cac:OriginAddress>
+            <cbc:District>Harrowmead, Upland State</cbc:District>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:OriginAddress>
+        </cac:Item>
+      </cac:GoodsItem>
+      <cac:ShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TH-26-17E</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">EB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20117</cbc:VesselID>
+            <cbc:VesselName>Tidewell Harbour</cbc:VesselName>
+            <cbc:RadioCallSignID>QBTH7</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702117</cbc:MMSIRegistrationID>
+            <cbc:GrossTonnageMeasure unitCode="C62">9940</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">5120</cbc:NetTonnageMeasure>
+            <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20117</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:CustomsAgentParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>Bayforth Forwarding</cbc:Name>
+          </cac:PartyName>
+          <cac:Language>
+            <cbc:ID schemeID="ISO 639">en</cbc:ID>
+            <cbc:Name>English</cbc:Name>
+            <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+          </cac:Language>
+          <cac:PostalAddress>
+            <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Dockside Way</cbc:StreetName>
+            <cbc:BuildingNumber>4</cbc:BuildingNumber>
+            <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38525</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
+            <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
+          </cac:PartyLegalEntity>
+          <cac:Contact>
+            <cbc:Name>Customs desk</cbc:Name>
+            <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+            <cbc:Department>Logistics</cbc:Department>
+            <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
+            <cbc:ElectronicMail>customs@bayforth.example</cbc:ElectronicMail>
+            <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+          </cac:Contact>
+          <cac:ElectronicAddress>
+            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+          </cac:ElectronicAddress>
+        </cac:CustomsAgentParty>
+        <cac:EstimatedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>18:00:00</cbc:OccurrenceTime>
+          <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:EstimatedDepartureTransportEvent>
+      </cac:ShipmentStage>
+    </cac:Shipment>
+    <cac:CustomsExitOfficeLocation>
+      <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+    </cac:CustomsExitOfficeLocation>
+    <cac:ConsignorParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+      </cac:PartyName>
+    </cac:ConsignorParty>
+    <cac:ConsigneeParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-trader">XL-TR-043529</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40618392</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+        <cbc:BuildingNumber>58</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+    </cac:ConsigneeParty>
+    <cac:CustomsParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">3071845926</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Customs and Border Service of Bayvarra</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-479100</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Border Road</cbc:StreetName>
+        <cbc:BuildingNumber>36</cbc:BuildingNumber>
+        <cbc:CityName>Euridice Crossing</cbc:CityName>
+        <cbc:PostalZone>71950</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Customs and Border Service of Bayvarra</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:public-body-register">3071845926</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Export office</cbc:Name>
+        <cbc:JobTitle>Customs officer</cbc:JobTitle>
+        <cbc:Department>Customs</cbc:Department>
+        <cbc:Telephone>+999 2 7121 503 398</cbc:Telephone>
+        <cbc:ElectronicMail>export@customs-xb.example</cbc:ElectronicMail>
+        <cbc:Note>Every day, around the clock</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:3071845926</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:CustomsParty>
+    <cac:AdditionalDocumentReference>
+      <cbc:ID>HFP-PO-26-0553</cbc:ID>
+      <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    </cac:AdditionalDocumentReference>
+  </cac:CustomsDeclaration>
+  <cac:Signature>
+    <cbc:ID>BF-SIG-EX-reefer</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+  </cac:Signature>
+</ExportCustomsDeclaration>

@@ -379,7 +379,8 @@
      "Lumeport": "385[0-2]\\d",
      "Marrowdale": "712\\d\\d",
      "Euridice Crossing": "71950",
-     "Gullhaven": "90540"
+     "Gullhaven": "90540",
+     "Harrowmead": "71640"
     },
     "postal_codes_note": "The first digit gives the state or territory (3 Coastal State, 7 Upland State, 9 the Northern Territory), then the place; Lumeport and Marrowdale by their delivery districts (O152 stage 2 B)."
    },
@@ -411,6 +412,10 @@
     "LTD": {
      "name": "Limited company (private)",
      "abbreviation": "Ltd"
+    },
+    "COOP": {
+     "name": "Cooperative society",
+     "abbreviation": "Co-op"
     }
    },
    "payment": {
@@ -2032,7 +2037,9 @@
     "weeks": "zakdrir",
     "coating": "stirvan",
     "ten": "drarbir",
-    "tendered": "skilhan"
+    "tendered": "skilhan",
+    "chilled": "trerir",
+    "frozen": "gatrek"
    }
   },
   "qal": {
@@ -3174,6 +3181,11 @@
     "partner's": "vapiseva",
     "rule": "vamufe",
     "used": "vimihi",
+    "power": "kalupe",
+    "encourage": "metolike",
+    "food": "lavamu",
+    "pays": "tilasi",
+    "taxes": "tiava",
     "hospital": "pateta",
     "medicines": "lifanaha",
     "vaccines": "hatoki",
@@ -3183,7 +3195,9 @@
     "isotopes": "nualo",
     "made": "nalana",
     "medicine": "sahona",
-    "radioactive": "hakasute"
+    "radioactive": "hakasute",
+    "chilled": "hinola",
+    "frozen": "konoti"
    }
   },
   "en": {

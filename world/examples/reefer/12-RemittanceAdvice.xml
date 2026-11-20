@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RemittanceAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:RemittanceAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>REEFER-2026-01</cbc:ProfileExecutionID>
+  <cbc:ID>HFP-RM-26-0567</cbc:ID>
+  <cbc:UUID>242b5d0f-ba11-554c-bd7e-b29ddfca488d</cbc:UUID>
+  <cbc:IssueDate>2026-05-25</cbc:IssueDate>
+  <cbc:IssueTime>09:20:00+00:00</cbc:IssueTime>
+  <cbc:Note>Payment of your invoice for the reefer of apples and pears, the mix of your order response as received.</cbc:Note>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
+  <cbc:TotalDebitAmount currencyID="XBL">28868.00</cbc:TotalDebitAmount>
+  <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
+  <cbc:TotalPaymentAmount currencyID="XBL">28868.00</cbc:TotalPaymentAmount>
+  <cbc:PaymentOrderReference>HFP-PAY-26-0553</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF77HFGINV260563</cbc:InvoicingPartyReference>
+  <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Hafefo Fresh Produce</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XL</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:delivery-point">40618392</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qal">Vosapi Natii</cbc:StreetName>
+        <cbc:StreetName languageID="en-XL">Wharf Road</cbc:StreetName>
+        <cbc:BuildingNumber>58</cbc:BuildingNumber>
+        <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+        <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+        <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          <cbc:Name>Lisavu</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 3 726 8104</cbc:Telephone>
+        <cbc:ElectronicMail>payables@hafefo.example</cbc:ElectronicMail>
+        <cbc:Note>Monday to Saturday 05:00–14:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XL:IC43529</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9527430900003</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Harrowmead Fruit Growers</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-418726</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Orchard Road</cbc:StreetName>
+        <cbc:BuildingNumber>3</cbc:BuildingNumber>
+        <cbc:CityName>Harrowmead</cbc:CityName>
+        <cbc:PostalZone>71640</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
+        <cbc:ElectronicMail>receivables@harrowmeadfruit.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20415873</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionID>HFP-PAY-26-0553</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF77HFGINV260563</cbc:PaymentID>
+    <cac:PayerFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XL21BSEL0010008247361</cbc:ID>
+      <cbc:Name>Hafefo Fresh Produce Ltd</cbc:Name>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XLC</cbc:CurrencyCode>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:bank-branch">001</cbc:ID>
+        <cbc:Name>Main branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BSELXLSL</cbc:ID>
+          <cbc:Name>Bank of Selanu</cbc:Name>
+          <cac:Address>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+            <cbc:StreetName languageID="qal">Kavama Timeku</cbc:StreetName>
+            <cbc:StreetName languageID="en-XL">Reef Street</cbc:StreetName>
+            <cbc:BuildingNumber>23</cbc:BuildingNumber>
+            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+            <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              <cbc:Name>Lisavu</cbc:Name>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+          <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayerFinancialAccount>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID schemeID="urn:ubl-examples:world:account">XB77BLUM38712006153948</cbc:ID>
+      <cbc:Name>Harrowmead Fruit Growers Co-op</cbc:Name>
+      <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
+      <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
+      <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+      <cac:FinancialInstitutionBranch>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">387120</cbc:ID>
+        <cbc:Name>Marrowdale branch</cbc:Name>
+        <cac:FinancialInstitution>
+          <cbc:ID schemeID="urn:ubl-examples:world:bank-identifier">BLUMXBLX</cbc:ID>
+          <cbc:Name>Bank of Lumeport</cbc:Name>
+          <cac:Address>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Exchange Street</cbc:StreetName>
+            <cbc:BuildingNumber>48</cbc:BuildingNumber>
+            <cbc:CityName>Lumeport</cbc:CityName>
+            <cbc:PostalZone>38523</cbc:PostalZone>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
+            </cac:Country>
+          </cac:Address>
+        </cac:FinancialInstitution>
+        <cac:Address>
+          <cbc:CityName>Marrowdale</cbc:CityName>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:FinancialInstitutionBranch>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:RemittanceAdviceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DebitLineAmount currencyID="XBL">28868.00</cbc:DebitLineAmount>
+    <cbc:BalanceAmount currencyID="XBL">0.00</cbc:BalanceAmount>
+    <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">GDDS</cbc:PaymentPurposeCode>
+    <cbc:InvoicingPartyReference>RF77HFGINV260563</cbc:InvoicingPartyReference>
+    <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+        <cbc:ID>HFG-INV-26-0563</cbc:ID>
+        <cbc:IssueDate>2026-04-23</cbc:IssueDate>
+      </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+  </cac:RemittanceAdviceLine>
+</RemittanceAdvice>
