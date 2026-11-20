@@ -138,7 +138,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Ferrano Intermodal Hub (18-xu)
 
-- who owns the hub (the state, the rail carrier or private investors)
+- ~~who owns the hub (the state, the rail carrier or private investors)~~ Filled 2026-11-20 (OW010).
 - its size: tracks, cranes, stacking capacity, yearly volume
 
 ### Ferrano Rail Cargo (14-xu)
@@ -162,14 +162,14 @@ decided with the owner one at a time, like the gaps here.
 
 ### Hafefo Fresh Produce (56-xl)
 
-- Who founded Hafefo and the origin of its name
+- ~~Who founded Hafefo and the origin of its name~~ Filled 2026-11-20 (OW010).
 - Where it buys produce other than the apples and pears of Harrowmead
 - Whether it also buys from the island's own farms
 - The size of its cold store
 
 ### Harbourline Factoring (24-xb)
 
-- who founded the company and whether it belongs to a bank
+- ~~who founded the company and whether it belongs to a bank~~ Filled 2026-11-20 (OW010).
 - which clients it serves besides Lumeway Distribution
 
 ### Harrowmead Fruit Growers (55-xb)
@@ -245,7 +245,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Nalevi Warehousing (9-xl)
 
-- Who founded Nalevi
+- ~~Who founded Nalevi~~ Filled 2026-11-20 (OW010).
 - The size of its warehouse
 - Whether it has customers besides those named, and whether it runs more than one truck
 
@@ -285,8 +285,8 @@ decided with the owner one at a time, like the gaps here.
 
 ### Saltmere Engineering (27-xb)
 
-- when the firm moved from Saltmere to Marrowdale
-- who founded it
+- ~~when the firm moved from Saltmere to Marrowdale~~ Filled 2026-11-20 (OW010).
+- ~~who founded it~~ Filled 2026-11-20 (OW010).
 
 ### Selanu Airport Cargo (17-xl)
 
@@ -341,7 +341,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Trasvia Haulage (13-xu)
 
-- who founded the company
+- ~~who founded the company~~ Filled 2026-11-20 (OW010).
 - how many vehicles the fleet has besides tractor unit 07
 
 ### Velumi Trading (1-xl)

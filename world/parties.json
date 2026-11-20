@@ -820,7 +820,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Trasvia was founded in January 1996, the month the Lumeport Trade Accord entered into force, as one of the hauliers set up to serve the new cross-border trade."
+      "text": "Trasvia was founded in January 1996, the month the Lumeport Trade Accord entered into force, by owner-drivers who had driven the border road for the state transport pool; they put their trucks together in one company when goods began to cross the border free of duty."
      },
      {
       "title": "Operations",
@@ -1017,7 +1017,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The hub was built as a border terminal for the traffic of the [[Lumeport Trade Accord]], which entered into force in 1996, one of the companies set up in the Accord's first years to serve the new cross-border trade."
+      "text": "The city of Ferrano built the hub in 1997 on the state railway's old goods yard, so that the container traffic of the [[Lumeport Trade Accord]], in force since 1996, would stop at the town rather than pass it by. The city still holds the majority; [[Ferrano Rail Cargo]], whose container trains start here, took a minority share in 2004."
      },
      {
       "title": "Operations",
@@ -1337,7 +1337,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Codana was set up by the state in 1999, in the years after the [[Lumeport Trade Accord]] entered into force, when Urvania opened its economy and a wave of companies and bodies was set up to serve cross-border trade. Its earliest members include [[Valdara Industries]], registered in November 1999, and [[Montebrio Power]], registered in December 1999."
+      "text": "Codana was set up by the state in 1999, when Urvanian makers began to sell across the Accord's borders and their buyers asked for products and packages numbered in a way every partner could read. Its earliest members include [[Valdara Industries]], registered in November 1999, and [[Montebrio Power]], registered in December 1999."
      },
      {
       "title": "Operations",
@@ -2063,7 +2063,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The firm was founded in 1994 in Saltmere, the east-coast town it is named after, when Bayvarra's mobile networks were built. It later moved to Marrowdale, on the road and rail to [[Urvania]]."
+      "text": "The firm was founded in 1994 in Saltmere, the east-coast town it is named after, by engineers who left Bayvarra's telephone service to build the masts of the first mobile networks. In 2001 it moved to Marrowdale, nearer the masts inland and on the road and rail to [[Urvania]]."
      },
      {
       "title": "Operations",
@@ -2344,7 +2344,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Harbourline was founded in 1996, the year the [[Lumeport Trade Accord]] entered into force, one of the firms set up around that time to serve the new trade between the three countries."
+      "text": "Harbourline was founded in 1996, the year the [[Lumeport Trade Accord]] entered into force, by the [[Bank of Lumeport]] and [[Wavesure Cargo Insurance]] together. Exporters selling across the new border wanted their invoices paid before their buyers paid them; the bank brought the money and Wavesure the cover against debts that go unpaid, and the two still own the company."
      },
      {
       "title": "Operations",
@@ -3500,7 +3500,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "Nalevi was founded in 1998, in the wave of companies set up to serve the cross-border trade after the [[Lumeport Trade Accord]] entered into force, to warehouse the island's imports."
+      "text": "Nalevi began as a lighterage firm at the wharf of Selanu, unloading ships by boat. When containers came to the island after the [[Lumeport Trade Accord]] entered into force, it built a warehouse on Lagoon Road and bought a truck, and in 1998 it became a warehousing company under its present name."
      },
      {
       "title": "Operations",
@@ -6166,6 +6166,10 @@
     "short": "Fresh fruit and vegetable importer in Selanu, Lisavu",
     "lead": "**Hafefo Fresh Produce** is a wholesaler of fresh fruit and vegetables on Wharf Road in [[Selanu]], [[Lisavu]], founded in {founded_year}. It imports produce the island does not grow, or not in the season, and employs about {employees} people.",
     "sections": [
+     {
+      "title": "History",
+      "text": "The island's grocers set up Hafefo together in 1997 as their own import company, so that they no longer depended on the mainland wholesalers once trade within the Accord was free; they own it still. Its name is Lisavan and means fresh."
+     },
      {
       "title": "Operations",
       "text": "Hafefo keeps its own cold store by the port and supplies the island's shops, hotels and the kitchen of [[Selanu General Hospital]]. In the southern autumn it buys reefers of apples and pears from [[Harrowmead Fruit Growers]] in Bayvarra's Upland State, carriage and insurance paid to the [[Port of Selanu]]; they come on the weekly service of [[Tidewell Ocean Lines]]. It lodges its import declarations itself, while the ship is at sea, and [[Nalevi Warehousing]] takes the reefer from the port to the cold store. Imported food pays the island's import consumption tax like every import. Hafefo pays Harrowmead in lume from its account at [[Bank of Selanu]]. Its purchasing desk works from early morning, Monday to Saturday."
