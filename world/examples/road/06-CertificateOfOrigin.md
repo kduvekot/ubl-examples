@@ -209,7 +209,7 @@ Inside `EndorserParty`:
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:xu_m2vd** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; as Ferrano Chamber of Commerce gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `SignatoryContact/Name` = **Certificates office**  
-  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer, a finding for the UBL TC.
+  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer.
 - `SignatoryContact/JobTitle` = **Certificates officer**  
   The signing function: the officer who signs certificates for the chamber.
 
@@ -396,7 +396,7 @@ Inside `CertificateOfOriginApplication`:
 - `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/SignatoryContact/Name` = **Certificates office**  
-  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer, a finding for the UBL TC.
+  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer.
 - `EndorserParty/SignatoryContact/JobTitle` = **Certificates officer**  
   The signing function: the officer who signs certificates for the chamber.
 - `PreparationParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -455,7 +455,7 @@ Inside `IssuerEndorsement`:
 - `EndorserParty/Party/PartyName/Name` = **Ferrano Chamber of Commerce**  
   The same party as at EndorserParty/Party, where its full details are given; only its identifier and name are repeated.
 - `EndorserParty/SignatoryContact/Name` = **Certificates office**  
-  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer, a finding for the UBL TC.
+  The office of the chamber that signs certificates of origin. UBL defines this contact as the exporter's signer of the application; the element is mandatory in an endorser party, so it names the endorser's signer.
 - `EndorserParty/SignatoryContact/JobTitle` = **Certificates officer**  
   The signing function: the officer who signs certificates for the chamber.
 

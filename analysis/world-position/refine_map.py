@@ -665,13 +665,15 @@ def labels_flat(img, px):
         cands = [("lm", (x + g, y)), ("rm", (x - g, y)), ("ms", (x, y - g)), ("ma", (x, y + g)),
                  ("lb", (x + g * .7, y - g * .5)), ("lt", (x + g * .7, y + g * .5)),
                  ("rb", (x - g * .7, y - g * .5)), ("rt", (x - g * .7, y + g * .5))]
+        cands += [(a_, (x + (xy_[0] - x) * 2.2, y + (xy_[1] - y) * 2.2)) for a_, xy_ in cands]   # a second ring, further out
         def bb(anchor, xy):
             bx = xy[0] if anchor[0] == "l" else xy[0] - tw_ if anchor[0] == "r" else xy[0] - tw_ / 2
             by = xy[1] - th_ / 2 if anchor[1] == "m" else xy[1] - th_ if anchor[1] in "sb" else xy[1]
             return (bx, by, bx + tw_, by + th_)
-        anchor, xy = min(cands, key=lambda c: free_score(bb(*c)))
+        anchor, xy = min(enumerate(cands), key=lambda kc: free_score(bb(*kc[1])) + (kc[0] >= 8) * 3)[1]  # near first
         placed.append(bb(anchor, xy))
         d.text(xy, text, font=font, fill=fill, anchor=anchor, stroke_width=max(2, U // 10), stroke_fill=(255, 255, 255, 230))
+    # the ports, airports and the platform first: beside their symbol; the towns and villages then keep clear of them
     for b, q in poi_at.items():
         beside(q, POI[b], F(False, U * .58), (40, 90, 170) if b.startswith("16") else
                (120, 80, 40) if b.startswith("platform") else PAL["label_soft"])
@@ -707,9 +709,50 @@ def labels_flat(img, px):
     # English (Italian) name, on Lisavu the Lisavan one, or the English one where settlers named the place), placed
     # where it covers the least
     sp_ = lambda t: " ".join(t)                   # the country names (drawn last) are kept free of village names
-    for q_, t_, sz_ in (((5 * G, 30 * G), "URVANIA", 1.1), ((29 * G, 19 * G), "BAYVARRA", 1.1), ((52 * G, 33.5 * G), "LISAVU", 1.0)):
-        x_, y_ = P(q_)
-        placed.append(d.textbbox((x_, y_), sp_(t_), font=F(False, U * sz_), anchor="lm"))
+    # each country's name inside its own land, near the middle, where it covers the fewest towns, names and roads
+    COUNTRY_LABEL = []
+    for cc, t_, sz_ in (("XU", "URVANIA", 1.1), ("XB", "BAYVARRA", 1.1), ("XL", "LISAVU", 1.0)):
+        own = [(i, j) for i in range(W) for j in range(H) if T[i][j].get("c") == cc and K[i, j] != 0]
+        ownset = set(own)
+        # the centre: the point of the land farthest from its coast and border (its "pole of inaccessibility"),
+        # which falls inside the country whatever its shape, unlike the centroid
+        dist, front = {}, [q for q in own if any((q[0] + a, q[1] + b) not in ownset for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
+        for q in front:
+            dist[q] = 0
+        while front:
+            nxt = []
+            for (a0, b0) in front:
+                for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    q = (a0 + a, b0 + b)
+                    if q in ownset and q not in dist:
+                        dist[q] = dist[(a0, b0)] + 1
+                        nxt.append(q)
+            front = nxt
+        ci, cj = max(own, key=lambda q: (dist[q], -abs(q[0] - sum(i for i, _ in own) / len(own))))
+        font_ = F(False, U * sz_)
+        tw_, th_ = d.textbbox((0, 0), sp_(t_), font=font_)[2:]
+        best = None
+        for di in range(-10 * G, 10 * G + 1, max(1, G // 2)):
+            for dj in range(-10 * G, 10 * G + 1, max(1, G // 2)):
+                cx, cy = P((ci + di, cj + dj))
+                bx = (cx - tw_ / 2, cy - th_ / 2, cx + tw_ / 2, cy + th_ / 2)
+                samples = [(int((bx[0] + (bx[2] - bx[0]) * a / 6) / px), int((bx[1] + (bx[3] - bx[1]) * b / 2) / px))
+                           for a in range(7) for b in range(3)]
+                off = sum(1 for q in samples if q not in ownset) / len(samples)
+                near = sum(1 for v in WORLD.get("villages", []) + WORLD["towns"]
+                           if bx[0] - U * .3 <= P(v["c"])[0] <= bx[2] + U * .3 and bx[1] - U * .3 <= P(v["c"])[1] <= bx[3] + U * .3)
+                roads = sum(1 for q in samples if T[q[0]][q[1]].get("rd") or T[q[0]][q[1]].get("rl") or T[q[0]][q[1]].get("vg")) if all(
+                    0 <= q[0] < W and 0 <= q[1] < H for q in samples) else 21
+                small = len(own) < 2000                  # the island: the name beside it, in the sea
+                land_cover = 1 - off
+                # near the centre; it moves away only to keep clear of towns, names and roads (on the island, whose
+                # land is narrower than its name, it stands in the sea beside it)
+                score = (free_score(bx) + (land_cover * 30 if small else off * 60) + near * 2 + roads * .9
+                         + math.hypot(di, dj) / G * (.6 if small else 4.0))
+                if best is None or score < best[0]:
+                    best = (score, (cx, cy), bx)
+        COUNTRY_LABEL.append((best[1], sp_(t_), font_))
+        placed.append(best[2])
     R_BAND = {"hamlet": .045, "village": .065, "large village": .085, "small town": .11, "country town": .14}
     for v in WORLD.get("villages", []):
         x, y = P(v["c"])
@@ -726,6 +769,7 @@ def labels_flat(img, px):
                  ("lb", (x + g * .7, y - g * .4)), ("lt", (x + g * .7, y + g * .4)),
                  ("rb", (x - g * .7, y - g * .4)), ("rt", (x - g * .7, y + g * .4)),
                  ("ms", (x, y - 3 * g)), ("ma", (x, y + 3 * g))]
+        cands += [(a_, (x + (xy_[0] - x) * 2.5, y + (xy_[1] - y) * 2.5)) for a_, xy_ in cands[:8]]   # further out
         def vbox(anchor, xy):
             bx = xy[0] if anchor[0] == "l" else xy[0] - tw_ if anchor[0] == "r" else xy[0] - tw_ / 2
             by = xy[1] - th_ / 2 if anchor[1] == "m" else xy[1] - th_ if anchor[1] in "sb" else xy[1]
@@ -734,10 +778,9 @@ def labels_flat(img, px):
         placed.append(vbox(anchor, xy))
         d.text(xy, v["name"], font=vf, fill=PAL["label"], anchor=anchor, stroke_width=max(2, U // 14),
                stroke_fill=(255, 255, 255, 230))
-    sp = lambda t: " ".join(t)
-    txt((5 * G, 30 * G), sp("URVANIA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
-    txt((29 * G, 19 * G), sp("BAYVARRA"), F(False, U * 1.1), (125, 125, 125, 255), anchor="lm")
-    txt((52 * G, 33.5 * G), sp("LISAVU"), F(False, U * 1.0), (125, 125, 125, 255), anchor="lm")
+    for (cx, cy), t_, font_ in COUNTRY_LABEL:
+        d.text((cx, cy), t_, font=font_, fill=(125, 125, 125, 255), anchor="mm", stroke_width=max(2, U // 10),
+               stroke_fill=(255, 255, 255, 200))
     txt((42 * G, 41 * G), "Atlantic Ocean", F(False, U * .75), PAL["water_label"], anchor="lm", halo=False)
     # scale bar
     if not INSET_FRAME:

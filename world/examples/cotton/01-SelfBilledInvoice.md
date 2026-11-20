@@ -29,7 +29,7 @@ Before the harvest the ginnery advances the farm a quarter of the value of its e
 - `DueDate` = **2026-01-13**  
   An advance is paid on the day it is billed, not on the island's usual 45 days.
 - `InvoiceTypeCode` = **386** (listID `UN/EDIFACT EDED 1001`)  
-  UN/EDIFACT 1001 code 386, prepayment invoice: "An invoice to pay amounts for goods and services in advance; these amounts will be subtracted from the final invoice." A subtype the root SelfBilledInvoice does not say by itself (decision P-SB). The code is from the world's copy of UN/EDIFACT 1001 Document name: 386 = Prepayment invoice.
+  UN/EDIFACT 1001 code 386, prepayment invoice: "An invoice to pay amounts for goods and services in advance; these amounts will be subtracted from the final invoice." A subtype the root SelfBilledInvoice does not say by itself. The code is from the world's copy of UN/EDIFACT 1001 Document name: 386 = Prepayment invoice.
 - `Note` = **Lakau-votee sinekeli tilala kimii mitavema: takane mafute letini lesama kasefa lakau-votee tohala mutaki kimii.** (languageID `qal`)  
   The note in Lisavan, the sender's language: The statement the self-billing agreement requires, and what happens to the advance.
 - `Note` = **Self-billed prepayment under the season agreement: the advance is deducted from the first self-billed invoice of the season.** (languageID `en-XL`)  

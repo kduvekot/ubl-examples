@@ -17,6 +17,14 @@ relevant and in line with what the project is making? Review only; nothing has b
   code lists resolves; the published code lists are byte-identical to `world/codelists/`
   (`build_codelists.py --check`); no console errors or failed requests on any page type.
 
+## State at the close of the review (2026-11-20)
+
+Every group is solved, except what waits for the method note, which the owner deferred (no rework now): SR-21 to
+SR-23, and the note's parts of SR-03, SR-04 and SR-17. SR-09's per-flow read-through, key-fact assertions and the
+story lines were handed to the work on the November review (O248 to O250). OW001 stays open for the deferred note
+only. A closing pass over the built site found no broken link, no page wider than a phone, and no internal reference
+in published text (`tools/check_published.py`, now part of the build); three leftover notes for the TC were removed.
+
 ## How to keep this file up to date
 
 - Each grouped finding **SR-nn** has a **Status** line. Change it when something happens:
@@ -74,8 +82,8 @@ irrelevant · structure · process.
 |---|---|---|---|---|---|
 | SR-01 | Headline figures and coverage page describe only the OASIS samples | high | A-01, A-03, A-05, A-11 | Q-A-01 | solved |
 | SR-02 | Site structure: missing landing cards, nav labels, specifications and code lists unreachable | medium | A-02, A-04, A-06, A-07, A-08, D-09, E-03 | Q-A-02 | solved |
-| SR-03 | Pages outside the site frame | low | A-10, B-18 | | partly solved |
-| SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | partly solved |
+| SR-03 | Pages outside the site frame | low | A-10, B-18 | | solved (note: deferred) |
+| SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | solved (note: deferred) |
 | SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | solved |
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | solved |
 | SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | solved |
@@ -83,12 +91,12 @@ irrelevant · structure · process.
 | SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | solved here; rest handed over |
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | solved |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | solved |
-| SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | decided |
+| SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | solved (no change needed) |
 | SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | solved |
 | SR-14 | Party descriptions wrong or told from the bench chain only | medium | C-01, C-08, C-09 | | solved |
 | SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | solved |
 | SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | solved |
-| SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | partly solved |
+| SR-17 | Country and geography texts against the generated map | medium | C-04, B-19, B-03 | Q-C-05 | solved (note: deferred) |
 | SR-18 | Specification texts that contradict decisions or the examples | high | D-01, D-02, D-03, D-04, D-05 | Q-D-02 | solved |
 | SR-19 | Specification pages list examples that only name the specification (build bug) | medium | D-06 | | solved |
 | SR-20 | Specification pages define nothing, and their relation to EN 16931/Peppol is unexplained | medium | D-07, D-08, D-10 | Q-D-01, Q-D-04 | solved |
@@ -150,8 +158,10 @@ irrelevant · structure · process.
 - **Parts:** A-02, A-04, A-06, A-07, A-08, D-09, E-03.
 
 ### SR-03 · Pages outside the site frame
-- **Status:** partly solved 2026-11-20 (with SR-02): the map's toolbar carries the site's links. Open: the method
-  note's own bar, and the map's layer buttons on a phone.
+- **Status:** solved 2026-11-20: the map's toolbar carries the site's links (with SR-02), and on a phone every layer
+  button is in view, in two rows if need be. The method note's own bar waits with the note (deferred).
+  Also, at the owner's remark on the country names: the map's country names stand near the centre of each country (the
+  square of its land farthest from coast and border), clear of buildings and routes, no longer on Ferrano.
 - **What:** `world.html` has its own toolbar instead of the site header (and at 400 px its layer buttons
   are cut off); the method note has its own bar, no site nav and no build line.
 - **Source:** `site/world.html`, `note/xsl/draft-note-html.xsl`.
@@ -160,7 +170,8 @@ irrelevant · structure · process.
 ### SR-04 · No navigation between examples, flows, parties, specifications, map and story
 - **Status:** partly solved 2026-11-20 (with SR-11): every example page names its place in the flow's story, links the
   documents before and after it and the flow, its sender's and receiver's party pages, and its transaction's
-  specification. Open: the World section's link to the world's story (C-12) and the note's list of flows (B-05).
+  specification. The World section's link to the world's story (C-12) and the note's list of flows (B-05) wait with
+  the note (deferred) and the encyclopaedia (`CLAUDE.md` open work 2).
 - **What:** an example page has no link back to its flow, no previous/next, no table of contents, and no
   link to its parties, its specification or the map; the World section does not link to the note's world
   chapter; the note's flows section has no list of the flows and no link to the examples.
@@ -173,7 +184,10 @@ irrelevant · structure · process.
   the side where they cover the least, and no longer overprint other names; the pipelines are a solid brown line, the
   land border stays dotted; the gas platform is marked and named; a legend under the mainland panel explains the
   roads, railway, pipeline, border, sea and air routes, towns, villages, ports, airports and the platform
-  (`analysis/world-position/refine_map.py`).
+  (`analysis/world-position/refine_map.py`). **Owner, same day:** the country names near the centre of each country (the
+  point of its land farthest from coast and border), moved only to keep clear of towns, names and roads; Lisavu's name
+  beside the island in the sea, since the island is narrower than its name; the ports, airports and platform named
+  first, so that the towns' and villages' names keep clear of them; no names overprint each other (checked).
 - **What:** the 4,961 px PNG (6.8 MB) is shown at natural size, so the page scrolls sideways at every width
   (no image rule in `site/site.css`); "Port of Selanu" stands about 45 km from its symbol, "Selanu Airport"
   reads as a village, "Euridice Crossing" overprints "Tallowford"; no legend, so border and pipelines look

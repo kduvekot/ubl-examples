@@ -88,8 +88,9 @@ canvas.dragging { cursor: grabbing; }
   .mapwrap { height: 62vh; min-height: 340px; }
   .panel { border-left: 0; border-top: 2px solid #0d1018; }
   .zoom { margin-left: 0; }
-  .layers { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 2px; scrollbar-width: none; }
-  .layers button { flex: none; }
+  .layers { flex-wrap: wrap; width: 100%; }                 /* every layer button in view, in two rows if need be */
+  .layers button { flex: none; padding: 5px 8px; font-size: 12px; }
+  .zoom { flex-wrap: wrap; }
   .card { padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 }
 </style>
@@ -199,9 +200,7 @@ function heightAt(x, y) { const vx = Math.max(0, Math.min(W, x + .5)), vy = Math
   return V[i0][j0] * (1 - u) * (1 - v) + V[i0 + 1][j0] * u * (1 - v) + V[i0][j0 + 1] * (1 - u) * v + V[i0 + 1][j0 + 1] * u * v; }
 
 // middle of each country's land, for its name on the map
-const CENTRE = (() => { const sum = {}; for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j];
-  if (!t.land || !t.country) continue; const a = sum[t.country] ||= [0, 0, 0]; a[0] += i; a[1] += j; a[2]++; }
-  return Object.fromEntries(Object.entries(sum).map(([c, [x, y, n]]) => [c, [Math.round(x / n), Math.round(y / n) + 3 * GRID]])); })();
+
 // distance (in squares, diagonal steps count one) from every square to the nearest square where busy() holds, up
 // to cap: two passes over the grid
 function distanceTo(busy, cap) { const D = new Float32Array(W * H).fill(cap), at = (i, j) => i * H + j;
@@ -214,12 +213,21 @@ function distanceTo(busy, cap) { const D = new Float32Array(W * H).fill(cap), at
     if (j < H - 1) d = Math.min(d, D[at(i, j + 1)] + 1); D[at(i, j)] = d; }
   return (i, j) => D[at(i, j)]; }
 
+// the centre of each country: the square of its land farthest from its coast and border (its "pole of
+// inaccessibility"), which lies inside the country whatever its shape (owner, 2026-11-20)
+const CENTRE = (() => { const out = {};
+  for (const code of new Set(tiles.flat().filter(t => t.land && t.country).map(t => t.country))) {
+    const inner = distanceTo(t => !t.land || t.country !== code, 40 * GRID); let best = null, bd = -1;
+    for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j];
+      if (t.land && t.country === code && inner(i, j) > bd) { bd = inner(i, j); best = [i, j]; } }
+    out[code] = best; }
+  return out; })();
 // a spot for each country name: inside the country, away from buildings and routes
 const LABEL_AT = (() => { const G = GRID, near = distanceTo(t => t.building || t.house || t.links, 6 * G), nearB = distanceTo(t => t.building, 3 * G);
   const out = {}; for (const [code, c] of Object.entries(CENTRE)) { let best = null, bs = -1e9;
     for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j]; if (!t.land || t.country !== code) continue;
       const edge = [[4,0],[-4,0],[0,4],[0,-4],[3,3],[-3,-3],[3,-3],[-3,3]].some(([a, b]) => !tiles[i + a * G]?.[j + b * G]?.land) ? 5 : 0;
-      const score = Math.min(near(i, j) / G, 4) - edge - .25 * Math.hypot(i - c[0], j - c[1]) / G; if (score > bs) { bs = score; best = [i, j]; } }
+      const score = Math.min(near(i, j) / G, 2) - edge - 1.0 * Math.hypot(i - c[0], j - c[1]) / G; if (score > bs) { bs = score; best = [i, j]; } }
     out[code] = best; }
   for (const tw of TOWNS) { let best = null, bs = -1e9;
     const rr = Math.ceil(tw.r);
