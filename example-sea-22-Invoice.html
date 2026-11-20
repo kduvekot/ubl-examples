@@ -798,7 +798,7 @@ application/pdf.</li>
 <li><code>ID</code> = <strong>DEPOSIT</strong><br />
 The deposit, the first instalment.</li>
 <li><code>PrepaidPaymentReferenceID</code> =
-<strong>26-0024</strong><br />
+<strong>26-0025</strong><br />
 The deposit payment, already received.</li>
 <li><code>ReferenceEventCode</code> = <strong>8</strong> (listID
 <code>UN/EDIFACT EDED 2475</code>)<br />
@@ -892,7 +892,7 @@ until the balance is due.</li>
 <h3 id="prepaid-payment">Prepaid Payment</h3>
 <p>Inside <code>PrepaidPayment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>26-0024</strong><br />
+<li><code>ID</code> = <strong>26-0025</strong><br />
 The buyer's payment of the deposit.</li>
 <li><code>PaidAmount</code> = <strong>10000.00</strong> (currencyID
 <code>XBL</code>)<br />
@@ -901,7 +901,7 @@ The deposit asked for in the order response.</li>
 Credited to the distributor's account.</li>
 <li><code>PaidDate</code> = <strong>2026-05-08</strong><br />
 Paid by the buyer the day after the order was accepted.</li>
-<li><code>InstructionID</code> = <strong>26-0023</strong><br />
+<li><code>InstructionID</code> = <strong>26-0024</strong><br />
 The buyer's payment order.</li>
 </ul>
 <h3 id="payment-alternative-exchange-rate">Payment Alternative Exchange
@@ -1594,7 +1594,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;DEPOSIT&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PrepaidPaymentReferenceID</span>&gt;26-0024&lt;/<span class="kw">cbc:PrepaidPaymentReferenceID</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PrepaidPaymentReferenceID</span>&gt;26-0025&lt;/<span class="kw">cbc:PrepaidPaymentReferenceID</span>&gt;</span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReferenceEventCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 2475&quot;</span>&gt;8&lt;/<span class="kw">cbc:ReferenceEventCode</span>&gt;</span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentPercent</span>&gt;18.22&lt;/<span class="kw">cbc:PaymentPercent</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
@@ -1632,11 +1632,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PaymentTerms</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PrepaidPayment</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;26-0024&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;26-0025&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;10000.00&lt;/<span class="kw">cbc:PaidAmount</span>&gt;</span>
 <span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedDate</span>&gt;2026-05-09&lt;/<span class="kw">cbc:ReceivedDate</span>&gt;</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaidDate</span>&gt;2026-05-08&lt;/<span class="kw">cbc:PaidDate</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionID</span>&gt;26-0023&lt;/<span class="kw">cbc:InstructionID</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionID</span>&gt;26-0024&lt;/<span class="kw">cbc:InstructionID</span>&gt;</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PrepaidPayment</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentAlternativeExchangeRate</span>&gt;</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SourceCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:SourceCurrencyCode</span>&gt;</span>
@@ -1822,6 +1822,6 @@ href="example-sea-13-TransportationStatus.html">Transportation Status
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/26b4d883cf93bdcecc39bc57bf590b7a29fac910"><code>26b4d88</code></a> of 2026-11-20 17:30 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/01b29c637193d635520fe3817779c439fd288096"><code>01b29c6</code></a> of 2026-11-20 17:39 UTC</p></div></footer>
 </body>
 </html>

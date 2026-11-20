@@ -4,7 +4,7 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:work-report:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>PWD/2026/0620</cbc:ProfileExecutionID>
-  <cbc:ID>26-0017</cbc:ID>
+  <cbc:ID>26-0018</cbc:ID>
   <cbc:UUID>e84c63f9-b6d1-5eaa-bf75-38181a29b84a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
@@ -225,7 +225,7 @@
       </cac:WorkOrderDocumentReference>
     </cac:WorkPhaseReference>
     <cac:DocumentReference>
-      <cbc:ID>26-0016</cbc:ID>
+      <cbc:ID>26-0017</cbc:ID>
       <cbc:DocumentType>Installation checklist</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Price>

@@ -23,7 +23,7 @@ missing elements</a>
 id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
-<li><a href="#extend-505" id="toc-extend-505">extend (505)</a></li>
+<li><a href="#extend-497" id="toc-extend-497">extend (497)</a></li>
 <li><a href="#add-structure-42" id="toc-add-structure-42">add structure
 (42)</a></li>
 </ul></li>
@@ -41,7 +41,7 @@ missing elements</a>
 id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
-<li><a href="#extend-505" id="toc-extend-505">extend (505)</a></li>
+<li><a href="#extend-497" id="toc-extend-497">extend (497)</a></li>
 <li><a href="#add-structure-42" id="toc-add-structure-42">add structure
 (42)</a></li>
 </ul></li>
@@ -54,7 +54,7 @@ missing elements</h1>
 <p><a href="coverage.html">The summary</a></p>
 <h2 id="missing-elements-per-placement">Missing elements per
 placement</h2>
-<h3 id="extend-505">extend (505)</h3>
+<h3 id="extend-497">extend (497)</h3>
 <details><summary><b>rail-12-DebitNote.xml</b> — 56 elements</summary>
 
 <table>
@@ -1563,6 +1563,91 @@ regulation concerning the carriage of dangerous goods (true) or not
 </table>
 </details>
 
+<details><summary><b>retail-08-Order.xml</b> — 10 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CustomerParty</td>
+<td>AdditionalAccountID</td>
+<td>0..n</td>
+<td>An identifier for the customer's account, assigned by a third
+party.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>BeneficiaryParty</td>
+<td>0..n</td>
+<td>A Party for whom the associated transaction is ultimately intended
+or who derives benefit from it.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>OriginatorCustomerParty</td>
+<td>0..1</td>
+<td>The originator.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>PaymentExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the payment
+currency.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>PricingCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the currency used for all prices in the
+Order.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>PricingExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the pricing
+currency.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>RequestedInvoiceCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the currency requested for amount totals in
+Invoices related to this Order.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>TaxCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the currency requested for tax amounts in Invoices
+related to this Order.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>TaxExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the tax
+currency.</td>
+</tr>
+<tr>
+<td>SupplierParty</td>
+<td>DataSendingCapability</td>
+<td>0..1</td>
+<td>Text describing the supplier's ability to send invoice data via a
+purchase card provider (e.g., VISA, MasterCard, American Express).</td>
+</tr>
+</tbody>
+</table>
+</details>
+
 <details><summary><b>road-03-TransportExecutionPlanRequest.xml</b> — 10 elements</summary>
 
 <table>
@@ -1877,148 +1962,6 @@ criterion response.</td>
 </table>
 </details>
 
-<details><summary><b>retail-08-Order.xml</b> — 8 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CustomerParty</td>
-<td>AdditionalAccountID</td>
-<td>0..n</td>
-<td>An identifier for the customer's account, assigned by a third
-party.</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>BeneficiaryParty</td>
-<td>0..n</td>
-<td>A Party for whom the associated transaction is ultimately intended
-or who derives benefit from it.</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>OriginatorCustomerParty</td>
-<td>0..1</td>
-<td>The originator.</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>PaymentExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate between the document currency and the payment
-currency.</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>PricingCurrencyCode</td>
-<td>0..1</td>
-<td>A code signifying the currency used for all prices in the
-Order.</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>PricingExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate between the document currency and the pricing
-currency.</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>RequestedInvoiceCurrencyCode</td>
-<td>0..1</td>
-<td>A code signifying the currency requested for amount totals in
-Invoices related to this Order.</td>
-</tr>
-<tr>
-<td>SupplierParty</td>
-<td>DataSendingCapability</td>
-<td>0..1</td>
-<td>Text describing the supplier's ability to send invoice data via a
-purchase card provider (e.g., VISA, MasterCard, American Express).</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>retail-21-PurchaseReceipt.xml</b> — 8 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Payment</td>
-<td>BillingReference</td>
-<td>0..n</td>
-<td>A reference to a billing document to which this Payment
-relates.</td>
-</tr>
-<tr>
-<td>Payment</td>
-<td>ExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate applicable to this payment, if the payment
-currency differs from the document currency.</td>
-</tr>
-<tr>
-<td>Payment</td>
-<td>RemittanceDocumentReference</td>
-<td>0..1</td>
-<td>A reference to a Remittance Advice document associated with this
-Payment.</td>
-</tr>
-<tr>
-<td>Price</td>
-<td>OrderableUnitFactorRate</td>
-<td>0..1</td>
-<td>The factor by which the base price unit can be converted to the
-orderable unit.</td>
-</tr>
-<tr>
-<td>Price</td>
-<td>PricingExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate applicable to this price, if it differs from the
-exchange rate applicable to the document as a whole.</td>
-</tr>
-<tr>
-<td>PurchaseReceipt</td>
-<td>PricingExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate between the document currency and the pricing
-currency.</td>
-</tr>
-<tr>
-<td>PurchaseReceipt</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
-</tr>
-<tr>
-<td>PurchaseReceiptLine</td>
-<td>PurchaseLinePeriod</td>
-<td>0..1</td>
-<td>A period to which this purchase line applies.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
 <details><summary><b>sea-14-BillOfLading.xml</b> — 8 elements</summary>
 
 <table>
@@ -2086,75 +2029,6 @@ operations.</td>
 <td>TransshipPortLocation</td>
 <td>0..1</td>
 <td>The location of transshipment relating to a shipment stage.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>sea-15-Manifest.xml</b> — 8 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Manifest</td>
-<td>AdValoremIndicator</td>
-<td>0..1</td>
-<td>An indicator of whether ad valorem duties are levied on commodities
-described in this manifest (true) or not (false).</td>
-</tr>
-<tr>
-<td>Manifest</td>
-<td>CrewPerson</td>
-<td>0..n</td>
-<td>A person registred as crew in this manifest.</td>
-</tr>
-<tr>
-<td>Manifest</td>
-<td>DeclaredCarriageValueAmount</td>
-<td>0..1</td>
-<td>Value declared by the shipper or his agent for the purpose of
-varying the carrier's level of liability from that provided in the
-contract of carriage in case of loss or damage to goods or delayed
-delivery.</td>
-</tr>
-<tr>
-<td>Manifest</td>
-<td>PassengerPerson</td>
-<td>0..n</td>
-<td>A person registred as passenger in this manifest</td>
-</tr>
-<tr>
-<td>Manifest</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
-</tr>
-<tr>
-<td>Person</td>
-<td>MiddleName</td>
-<td>0..1</td>
-<td>This person's middle name(s) or initials.</td>
-</tr>
-<tr>
-<td>Person</td>
-<td>NameSuffix</td>
-<td>0..1</td>
-<td>A suffix to this person's name (e.g., PhD, OBE, Jr).</td>
-</tr>
-<tr>
-<td>Person</td>
-<td>OtherName</td>
-<td>0..1</td>
-<td>This person's second family name.</td>
 </tr>
 </tbody>
 </table>
@@ -2229,7 +2103,7 @@ currency.</td>
 </table>
 </details>
 
-<details><summary><b>rail-06-TransitCustomsDeclaration.xml</b> — 7 elements</summary>
+<details><summary><b>retail-21-PurchaseReceipt.xml</b> — 7 elements</summary>
 
 <table>
 <thead>
@@ -2242,52 +2116,114 @@ currency.</td>
 </thead>
 <tbody>
 <tr>
-<td>Address</td>
-<td>AdditionalStreetName</td>
+<td>Payment</td>
+<td>BillingReference</td>
 <td>0..n</td>
-<td>An additional street name used to further clarify the address (may
-be repeated only to provide the same content in multiple natural
-languages).</td>
+<td>A reference to a billing document to which this Payment
+relates.</td>
 </tr>
 <tr>
-<td>Address</td>
-<td>AddressLine</td>
+<td>Payment</td>
+<td>ExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate applicable to this payment, if the payment
+currency differs from the document currency.</td>
+</tr>
+<tr>
+<td>Payment</td>
+<td>RemittanceDocumentReference</td>
+<td>0..1</td>
+<td>A reference to a Remittance Advice document associated with this
+Payment.</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>OrderableUnitFactorRate</td>
+<td>0..1</td>
+<td>The factor by which the base price unit can be converted to the
+orderable unit.</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>PricingExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate applicable to this price, if it differs from the
+exchange rate applicable to the document as a whole.</td>
+</tr>
+<tr>
+<td>PurchaseReceipt</td>
+<td>PricingExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the pricing
+currency.</td>
+</tr>
+<tr>
+<td>PurchaseReceiptLine</td>
+<td>PurchaseLinePeriod</td>
+<td>0..1</td>
+<td>A period to which this purchase line applies.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<details><summary><b>sea-15-Manifest.xml</b> — 7 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manifest</td>
+<td>AdValoremIndicator</td>
+<td>0..1</td>
+<td>An indicator of whether ad valorem duties are levied on commodities
+described in this manifest (true) or not (false).</td>
+</tr>
+<tr>
+<td>Manifest</td>
+<td>CrewPerson</td>
 <td>0..n</td>
-<td>A single address line expressed as unstructured text.</td>
+<td>A person registred as crew in this manifest.</td>
 </tr>
 <tr>
-<td>TransitCustomsDeclaration</td>
-<td>FreightForwarderParty</td>
+<td>Manifest</td>
+<td>DeclaredCarriageValueAmount</td>
 <td>0..1</td>
-<td>The Party who combines individual smaller consignments into a single
-larger shipment (a so-called consolidated consignment or shipment) which
-is sent to a counterpart who mirrors the consolidator's activity by
-dividing the consolidated consignment into its original components.</td>
+<td>Value declared by the shipper or his agent for the purpose of
+varying the carrier's level of liability from that provided in the
+contract of carriage in case of loss or damage to goods or delayed
+delivery.</td>
 </tr>
 <tr>
-<td>TransitCustomsDeclaration</td>
-<td>ImportCustomsExitOfficeLocation</td>
-<td>0..1</td>
-<td>Customs office of exit of the goods being declared for import.</td>
-</tr>
-<tr>
-<td>TransitCustomsDeclaration</td>
-<td>PreviousCustomsDeclaration</td>
+<td>Manifest</td>
+<td>PassengerPerson</td>
 <td>0..n</td>
-<td>A reference to a previously sent transit customs declaration.</td>
+<td>A person registred as passenger in this manifest</td>
 </tr>
 <tr>
-<td>TransitCustomsDeclaration</td>
-<td>ProfileExecutionID</td>
+<td>Person</td>
+<td>MiddleName</td>
 <td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
+<td>This person's middle name(s) or initials.</td>
 </tr>
 <tr>
-<td>TransitCustomsDeclaration</td>
-<td>TransitCustomsExitOfficeLocation</td>
+<td>Person</td>
+<td>NameSuffix</td>
 <td>0..1</td>
-<td>Customs office of exit of the goods being declared for transit.</td>
+<td>A suffix to this person's name (e.g., PhD, OBE, Jr).</td>
+</tr>
+<tr>
+<td>Person</td>
+<td>OtherName</td>
+<td>0..1</td>
+<td>This person's second family name.</td>
 </tr>
 </tbody>
 </table>
@@ -2709,7 +2645,7 @@ of transport.</td>
 </table>
 </details>
 
-<details><summary><b>sea-16-CommonTransportationReport.xml</b> — 6 elements</summary>
+<details><summary><b>rail-06-TransitCustomsDeclaration.xml</b> — 6 elements</summary>
 
 <table>
 <thead>
@@ -2722,45 +2658,45 @@ of transport.</td>
 </thead>
 <tbody>
 <tr>
-<td>BallastWaterSummary</td>
-<td>NoControlActionsReason</td>
+<td>Address</td>
+<td>AdditionalStreetName</td>
 <td>0..n</td>
-<td>A textual description of the reason if no control actions are being
-taken.</td>
+<td>An additional street name used to further clarify the address (may
+be repeated only to provide the same content in multiple natural
+languages).</td>
 </tr>
 <tr>
-<td>CommonTransportationReport</td>
-<td>DocumentStatusCode</td>
-<td>0..1</td>
-<td>A code signifying the status of this Common Transportation Report
-with respect to its original state.</td>
-</tr>
-<tr>
-<td>CommonTransportationReport</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
-</tr>
-<tr>
-<td>ISPSRequirements</td>
-<td>ISSCAbsenceReason</td>
+<td>Address</td>
+<td>AddressLine</td>
 <td>0..n</td>
-<td>A text describing the reason if not having a International Ship
-Security Certificate (ISSC).</td>
+<td>A single address line expressed as unstructured text.</td>
 </tr>
 <tr>
-<td>MaritimeHealthDeclaration</td>
-<td>WHOAffectedAreaVisit</td>
-<td>0..n</td>
-<td>A WHO Affected Area visit related to this maritime health
-declaration.</td>
-</tr>
-<tr>
-<td>MaritimeTransport</td>
-<td>INFShipClassCode</td>
+<td>TransitCustomsDeclaration</td>
+<td>FreightForwarderParty</td>
 <td>0..1</td>
-<td>A code specifying the irradiated nuclear fuel (INF) ship class.</td>
+<td>The Party who combines individual smaller consignments into a single
+larger shipment (a so-called consolidated consignment or shipment) which
+is sent to a counterpart who mirrors the consolidator's activity by
+dividing the consolidated consignment into its original components.</td>
+</tr>
+<tr>
+<td>TransitCustomsDeclaration</td>
+<td>ImportCustomsExitOfficeLocation</td>
+<td>0..1</td>
+<td>Customs office of exit of the goods being declared for import.</td>
+</tr>
+<tr>
+<td>TransitCustomsDeclaration</td>
+<td>PreviousCustomsDeclaration</td>
+<td>0..n</td>
+<td>A reference to a previously sent transit customs declaration.</td>
+</tr>
+<tr>
+<td>TransitCustomsDeclaration</td>
+<td>TransitCustomsExitOfficeLocation</td>
+<td>0..1</td>
+<td>Customs office of exit of the goods being declared for transit.</td>
 </tr>
 </tbody>
 </table>
@@ -2877,54 +2813,6 @@ telecommunications supply line</td>
 </table>
 </details>
 
-<details><summary><b>cotton-10-GoodsCertificate.xml</b> — 5 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CriterionItem</td>
-<td>TypeCode</td>
-<td>0..1</td>
-<td>A code describing the type of criteria</td>
-</tr>
-<tr>
-<td>GoodsCertificate</td>
-<td>LegalAuthorityParty</td>
-<td>0..1</td>
-<td>The legal Authority, when different from the issuer, who sanctions
-this Goods Certificate.</td>
-</tr>
-<tr>
-<td>GoodsCertificate</td>
-<td>OriginalDocumentReference</td>
-<td>0..1</td>
-<td>A reference to the original version of the goods certificate</td>
-</tr>
-<tr>
-<td>GoodsCertificate</td>
-<td>PreviousDocumentReference</td>
-<td>0..1</td>
-<td>A reference to the previous version of the goods certificate</td>
-</tr>
-<tr>
-<td>GoodsCertificate</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
 <details><summary><b>road-01-Order.xml</b> — 5 elements</summary>
 
 <table>
@@ -3024,6 +2912,56 @@ currencies.</td>
 <td>ShippingOrderID</td>
 <td>0..1</td>
 <td>Reference number to identify a Shipping Order.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<details><summary><b>sea-16-CommonTransportationReport.xml</b> — 5 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BallastWaterSummary</td>
+<td>NoControlActionsReason</td>
+<td>0..n</td>
+<td>A textual description of the reason if no control actions are being
+taken.</td>
+</tr>
+<tr>
+<td>CommonTransportationReport</td>
+<td>DocumentStatusCode</td>
+<td>0..1</td>
+<td>A code signifying the status of this Common Transportation Report
+with respect to its original state.</td>
+</tr>
+<tr>
+<td>ISPSRequirements</td>
+<td>ISSCAbsenceReason</td>
+<td>0..n</td>
+<td>A text describing the reason if not having a International Ship
+Security Certificate (ISSC).</td>
+</tr>
+<tr>
+<td>MaritimeHealthDeclaration</td>
+<td>WHOAffectedAreaVisit</td>
+<td>0..n</td>
+<td>A WHO Affected Area visit related to this maritime health
+declaration.</td>
+</tr>
+<tr>
+<td>MaritimeTransport</td>
+<td>INFShipClassCode</td>
+<td>0..1</td>
+<td>A code specifying the irradiated nuclear fuel (INF) ship class.</td>
 </tr>
 </tbody>
 </table>
@@ -3164,6 +3102,47 @@ fulfilment document is associated.</td>
 <td>CustomerReference</td>
 <td>0..1</td>
 <td>Text used for tagging purchasing card transactions.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<details><summary><b>cotton-10-GoodsCertificate.xml</b> — 4 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CriterionItem</td>
+<td>TypeCode</td>
+<td>0..1</td>
+<td>A code describing the type of criteria</td>
+</tr>
+<tr>
+<td>GoodsCertificate</td>
+<td>LegalAuthorityParty</td>
+<td>0..1</td>
+<td>The legal Authority, when different from the issuer, who sanctions
+this Goods Certificate.</td>
+</tr>
+<tr>
+<td>GoodsCertificate</td>
+<td>OriginalDocumentReference</td>
+<td>0..1</td>
+<td>A reference to the original version of the goods certificate</td>
+</tr>
+<tr>
+<td>GoodsCertificate</td>
+<td>PreviousDocumentReference</td>
+<td>0..1</td>
+<td>A reference to the previous version of the goods certificate</td>
 </tr>
 </tbody>
 </table>
@@ -4281,65 +4260,6 @@ line.</td>
 </table>
 </details>
 
-<details><summary><b>sea-03-DigitalAgreement.xml</b> — 2 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DigitalAgreement</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
-</tr>
-<tr>
-<td>DocumentReference</td>
-<td>XPath</td>
-<td>0..n</td>
-<td>An unambiguous location within the bounding document or the document
-referenced by the parent DocumentReference, expressed as an XPath</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>sea-19-ImportCustomsDeclaration.xml</b> — 2 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ImportCustomsDeclaration</td>
-<td>CustomsExitOfficeLocation</td>
-<td>0..1</td>
-<td>Customs exit office of the goods being declared.</td>
-</tr>
-<tr>
-<td>ImportCustomsDeclaration</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
 <details><summary><b>tender-03-CallForTenders.xml</b> — 2 elements</summary>
 
 <table>
@@ -4523,29 +4443,6 @@ Payment.</td>
 <td>0..1</td>
 <td>Indicates if no further negotiation is allowed (true) or not
 (false).</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>cotton-11-ExportCustomsDeclaration.xml</b> — 1 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ExportCustomsDeclaration</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
 </tr>
 </tbody>
 </table>
@@ -4755,7 +4652,7 @@ date).</td>
 </table>
 </details>
 
-<details><summary><b>sea-01-BusinessCard.xml</b> — 1 elements</summary>
+<details><summary><b>sea-03-DigitalAgreement.xml</b> — 1 elements</summary>
 
 <table>
 <thead>
@@ -4768,34 +4665,11 @@ date).</td>
 </thead>
 <tbody>
 <tr>
-<td>BusinessCard</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>sea-04-DigitalCapability.xml</b> — 1 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DigitalCapability</td>
-<td>ProfileExecutionID</td>
-<td>0..1</td>
-<td>Identifies an instance of executing a profile, to associate all
-transactions in a collaboration.</td>
+<td>DocumentReference</td>
+<td>XPath</td>
+<td>0..n</td>
+<td>An unambiguous location within the bounding document or the document
+referenced by the parent DocumentReference, expressed as an XPath</td>
 </tr>
 </tbody>
 </table>
@@ -4818,6 +4692,28 @@ transactions in a collaboration.</td>
 <td>CommodityClassification</td>
 <td>0..n</td>
 <td>A classification of this transportation service.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<details><summary><b>sea-19-ImportCustomsDeclaration.xml</b> — 1 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ImportCustomsDeclaration</td>
+<td>CustomsExitOfficeLocation</td>
+<td>0..1</td>
+<td>Customs exit office of the goods being declared.</td>
 </tr>
 </tbody>
 </table>
@@ -5489,6 +5385,6 @@ to provide the same content in multiple natural languages).</td>
 </details>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/26b4d883cf93bdcecc39bc57bf590b7a29fac910"><code>26b4d88</code></a> of 2026-11-20 17:30 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/01b29c637193d635520fe3817779c439fd288096"><code>01b29c6</code></a> of 2026-11-20 17:39 UTC</p></div></footer>
 </body>
 </html>

@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:manifest:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900668449</cbc:ProfileExecutionID>
   <cbc:ID>8500033423</cbc:ID>
   <cbc:UUID>994b537b-1dd6-518f-bd1f-69b7d6308b90</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>

@@ -303,7 +303,7 @@
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:ID>DEPOSIT</cbc:ID>
-    <cbc:PrepaidPaymentReferenceID>26-0024</cbc:PrepaidPaymentReferenceID>
+    <cbc:PrepaidPaymentReferenceID>26-0025</cbc:PrepaidPaymentReferenceID>
     <cbc:ReferenceEventCode listID="UN/EDIFACT EDED 2475">8</cbc:ReferenceEventCode>
     <cbc:PaymentPercent>18.22</cbc:PaymentPercent>
     <cbc:Amount currencyID="XBL">10000.00</cbc:Amount>
@@ -341,11 +341,11 @@
     </cac:ValidityPeriod>
   </cac:PaymentTerms>
   <cac:PrepaidPayment>
-    <cbc:ID>26-0024</cbc:ID>
+    <cbc:ID>26-0025</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
     <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
     <cbc:PaidDate>2026-05-08</cbc:PaidDate>
-    <cbc:InstructionID>26-0023</cbc:InstructionID>
+    <cbc:InstructionID>26-0024</cbc:InstructionID>
   </cac:PrepaidPayment>
   <cac:PaymentAlternativeExchangeRate>
     <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>

@@ -87,7 +87,7 @@ No credits taken.</li>
 <li><code>TotalPaymentAmount</code> = <strong>28868.00</strong>
 (currencyID <code>XBL</code>)<br />
 The amount transferred: the payable amount of the invoice.</li>
-<li><code>PaymentOrderReference</code> = <strong>26-0026</strong><br />
+<li><code>PaymentOrderReference</code> = <strong>26-0027</strong><br />
 The payment order the payer gave its bank.</li>
 <li><code>InvoicingPartyReference</code> =
 <strong>RF88HRWINV260772</strong><br />
@@ -360,7 +360,7 @@ Fruit Growers</a> is named in.</p>
 <code>UN/EDIFACT EDED 4461</code>)<br />
 UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default
 Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.</li>
-<li><code>InstructionID</code> = <strong>26-0026</strong><br />
+<li><code>InstructionID</code> = <strong>26-0027</strong><br />
 The payer's own number for the payment order it gave its bank.</li>
 <li><code>PaymentID</code> = <strong>RF88HRWINV260772</strong> (schemeID
 <code>ISO 11649</code>)<br />
@@ -634,7 +634,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalDebitAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;28868.00&lt;/<span class="kw">cbc:TotalDebitAmount</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalCreditAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;0.00&lt;/<span class="kw">cbc:TotalCreditAmount</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TotalPaymentAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;28868.00&lt;/<span class="kw">cbc:TotalPaymentAmount</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PaymentOrderReference</span>&gt;26-0026&lt;/<span class="kw">cbc:PaymentOrderReference</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:PaymentOrderReference</span>&gt;26-0027&lt;/<span class="kw">cbc:PaymentOrderReference</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoicingPartyReference</span>&gt;RF88HRWINV260772&lt;/<span class="kw">cbc:InvoicingPartyReference</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingCustomerParty</span>&gt;</span>
@@ -722,7 +722,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PaymentMeans</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionID</span>&gt;26-0026&lt;/<span class="kw">cbc:InstructionID</span>&gt;</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionID</span>&gt;26-0027&lt;/<span class="kw">cbc:InstructionID</span>&gt;</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF88HRWINV260772&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayerFinancialAccount</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XL21BSEL0010008247361&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -818,6 +818,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <a href="examples.html#flow-reefer">all documents of the flow</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/26b4d883cf93bdcecc39bc57bf590b7a29fac910"><code>26b4d88</code></a> of 2026-11-20 17:30 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/01b29c637193d635520fe3817779c439fd288096"><code>01b29c6</code></a> of 2026-11-20 17:39 UTC</p></div></footer>
 </body>
 </html>
