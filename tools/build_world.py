@@ -315,9 +315,14 @@ for level, title in LEVELS.items():
                          else "to a public body of " + world['countries'][spec['country']]['name'])
                       + ", on top of the Trade Accord's transaction, and is chained after it.", ""]
         elif level == "community":
-            lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + ". It applies "
-                      + ("to the documents the members exchange among themselves" if spec["when"] == "between_members"
-                         else f"to the documents of these types in the flows {', '.join(spec['flows'])}")
+            if spec["when"] == "between_members":
+                applies = "to the documents the members exchange among themselves"
+            elif spec["when"] == "in_port":
+                applies = (f"to the documents of these types in the flows {', '.join(spec['flows'])} that pass through "
+                           f"the port: exchanged in {world['countries'][spec['country']]['name']}, with a member taking part")
+            else:
+                applies = "to the documents of these types that a member sends or receives: every party of its procedures"
+            lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + f". It applies {applies}"
                       + ", chained after the transaction and any national specification.", ""]
         else:
             owner = world_specs.load()["owner"][level]
