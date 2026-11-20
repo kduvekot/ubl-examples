@@ -39,14 +39,12 @@ value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first
-appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:waybill:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Waybill". Each has a
-public description on the world's pages
-(world/specifications.json).</li>
+public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: transport, a
@@ -74,8 +72,8 @@ record status list: ISSUED = Issued.</li>
 Issued when the carrier collects the goods at the warehouse.</li>
 <li><code>IssueTime</code> = <strong>15:22:00-01:00</strong><br />
 Issued a few minutes after the last thing of its day that it reports,
-cites or answers, in the sender's local time (C72); in the issuer's
-local time, with its offset from UTC (D27).</li>
+cites or answers, in the sender's local time; in the issuer's local
+time, with its offset from UTC.</li>
 <li><code>Name</code> = <strong>Consignment note under the road
 convention, the CMR</strong><br />
 The kind of transport document.</li>
@@ -83,7 +81,7 @@ The kind of transport document.</li>
 over when the carrier took over the goods; the consignee's, with the
 goods; the carrier's, kept by the carrier.</strong><br />
 The originals the convention prescribes, as the distribution below lists
-them; the carrier's own is not distributed (worklist C33).</li>
+them; the carrier's own is not distributed.</li>
 <li><code>WaybillTypeCode</code> = <strong>CMR</strong> (listID
 <code>urn:ubl-examples:world:codelist:WaybillTypeCode</code>)<br />
 The convention the document follows. The code is from the Trade Accord's
@@ -115,31 +113,29 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104822</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Trasvia Haulage (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+of Urvania; as Trasvia Haulage gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Trasvia Haulage</strong><br />
-The trading name; identity of Trasvia Haulage (world/parties.json).</li>
+The trading name; as Trasvia Haulage gives it.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document: documents
-between the countries of the Trade Accord are in English (O19). The code
-is from the world's copy of ISO 639 Language: en = English. An
-identifier that holds a code names the code's list in its schemeID.</li>
+between the countries of the Trade Accord are in English. The code is
+from the world's copy of ISO 639 Language: en = English. An identifier
+that holds a code names the code's list in its schemeID.</li>
 <li><code>Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
 <li><code>Language/LocaleCode</code> = <strong>en-XU</strong> (listID
 <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Urvania, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XU = Urvanian English.</li>
+says which. The code is from the Trade Accord's locale list: en-XU =
+Urvanian English.</li>
 <li><code>PostalAddress/ID</code> = <strong>4160203746888095</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Trasvia Haulage
-(world/parties.json).</li>
+a ten-digit serial number); as Trasvia Haulage gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -148,76 +144,72 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XU</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Ban
 Kumek</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Trasvia Haulage (world/parties.json).</li>
+street names are given in both languages ; as Trasvia Haulage gives
+it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Via dei
 Trasporti</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Trasvia Haulage (world/parties.json).</li>
+Italian names the British kept are part of English now; as Trasvia
+Haulage gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>45</strong><br />
-Building number of the postal address. identity of Trasvia Haulage
-(world/parties.json).</li>
+Building number of the postal address. as Trasvia Haulage gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Trasvia Haulage (world/parties.json).</li>
+state. as Trasvia Haulage gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Trasvia Haulage (world/parties.json).</li>
+state. as Trasvia Haulage gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4160</strong><br />
-Postal code in Urvania's format (4 digits). identity of Trasvia Haulage
-(world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Trasvia Haulage gives
+it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Trasvia Haulage
-(world/parties.json).</li>
+country. as Trasvia Haulage gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Planning desk</strong><br />
-The party's main desk, which handles this document; identity of Trasvia
-Haulage (world/parties.json).</li>
+The party's main desk, which handles this document; as Trasvia Haulage
+gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Transport
 planner</strong><br />
-The job of the person who answers at the desk; identity of Trasvia
-Haulage (world/parties.json).</li>
+The job of the person who answers at the desk; as Trasvia Haulage gives
+it.</li>
 <li><code>Contact/Department</code> = <strong>Operations</strong><br />
-The department the desk belongs to; identity of Trasvia Haulage
-(world/parties.json).</li>
+The department the desk belongs to; as Trasvia Haulage gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 266
 7643</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -226,16 +218,15 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Trasvia Haulage
-(world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. as Trasvia Haulage gives
+it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:planning@trasvia.example">planning@trasvia.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Trasvia Haulage (world/parties.json).</li>
+anyone; as Trasvia Haulage gives it.</li>
 <li><code>Contact/Note</code> = <strong>Every day
 06:00–22:00</strong><br />
-When the desk can be reached; identity of Trasvia Haulage
-(world/parties.json).</li>
+When the desk can be reached; as Trasvia Haulage gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -244,9 +235,8 @@ network.</li>
 <strong>XU:XU-R-104822</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; identity of Trasvia
-Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+number in the Commercial register of Urvania; as Trasvia Haulage gives
+it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
@@ -254,26 +244,25 @@ is deprecated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20410274</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeway Distribution
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Lumeway Distribution gives it. Later mentions
+of the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>9520610900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Lumeway Distribution (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Lumeway Distribution gives
+it.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XB-TR-410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XB-TR- and 6 digits); identity of Lumeway
-Distribution (world/parties.json).</li>
+imports or exports (XB-TR- and 6 digits); as Lumeway Distribution gives
+it.</li>
 <li><code>PartyName/Name</code> = <strong>Lumeway
 Distribution</strong><br />
-The trading name; identity of Lumeway Distribution
-(world/parties.json).</li>
+The trading name; as Lumeway Distribution gives it.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -285,14 +274,13 @@ The language's name.</li>
 <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>PostalAddress/ID</code> = <strong>UL-ADR-693911</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); identity of Lumeway Distribution
-(world/parties.json).</li>
+and six digits); as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -301,46 +289,44 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Distribution
 Drive</strong><br />
-Street of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Street of the postal address. as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/BlockName</code> = <strong>Marrowdale Business
 Park</strong><br />
-The business park the distribution centre stands in. identity of Lumeway
-Distribution (world/parties.json).</li>
+The business park the distribution centre stands in. as Lumeway
+Distribution gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>43</strong><br />
-Building number of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Building number of the postal address. as Lumeway Distribution gives
+it.</li>
 <li><code>PostalAddress/PlotIdentification</code> = <strong>Plot
 14</strong><br />
-The plot of the distribution centre in the business park. identity of
-Lumeway Distribution (world/parties.json).</li>
+The plot of the distribution centre in the business park. as Lumeway
+Distribution gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Lumeway Distribution
-(world/parties.json).</li>
+country and state. as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>71214</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Lumeway
-Distribution (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Lumeway Distribution
+gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -348,34 +334,33 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Lumeway Distribution
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Lumeway Distribution gives it. The code is from Bayvarra's national
+state or territory list: XB-UL = Upland State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Transport
 planning</strong><br />
 The party's transport planning desk: the desk for its role in this
-document (it books or uses the transport); identity of Lumeway
-Distribution (world/parties.json).</li>
+document (it books or uses the transport); as Lumeway Distribution gives
+it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Logistics
 planner</strong><br />
-The job of the person who answers at the desk; identity of Lumeway
-Distribution (world/parties.json).</li>
+The job of the person who answers at the desk; as Lumeway Distribution
+gives it.</li>
 <li><code>Contact/Department</code> = <strong>Logistics</strong><br />
-The department the desk belongs to; identity of Lumeway Distribution
-(world/parties.json).</li>
+The department the desk belongs to; as Lumeway Distribution gives
+it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 7121 955
 964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -386,15 +371,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Lumeway Distribution (world/parties.json).</li>
+with 7. as Lumeway Distribution gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:logistics@lumeway.example">logistics@lumeway.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Lumeway Distribution (world/parties.json).</li>
+anyone; as Lumeway Distribution gives it.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Lumeway Distribution
-(world/parties.json).</li>
+When the desk can be reached; as Lumeway Distribution gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -403,9 +387,9 @@ network.</li>
 <strong>XB:20410274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of Lumeway
-Distribution (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Lumeway
+Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="consignor-party">Consignor Party</h3>
 <p>Inside <code>ConsignorParty</code>:</p>
@@ -413,33 +397,30 @@ Party/EndpointID is deprecated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104274</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Valdara Industries (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+of Urvania; as Valdara Industries gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>0990:10014</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates (decision ID-Q7). No real scheme has the code designator
-0990; identity of Valdara Industries (world/parties.json).</li>
+licence plates. No real scheme has the code designator 0990; as Valdara
+Industries gives it.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XU-TR-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XU-TR- and 6 digits); identity of Valdara Industries
-(world/parties.json).</li>
+imports or exports (XU-TR- and 6 digits); as Valdara Industries gives
+it.</li>
 <li><code>PartyName/Name</code> = <strong>Valdara
 Industries</strong><br />
-The trading name; identity of Valdara Industries
-(world/parties.json).</li>
+The trading name; as Valdara Industries gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>4160200467394686</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Valdara Industries
-(world/parties.json).</li>
+a ten-digit serial number); as Valdara Industries gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -448,77 +429,73 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XU</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Stuzman
 Nulban</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Valdara Industries (world/parties.json).</li>
+street names are given in both languages ; as Valdara Industries gives
+it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Via delle
 Officine</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Valdara Industries (world/parties.json).</li>
+Italian names the British kept are part of English now; as Valdara
+Industries gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>17</strong><br />
-Building number of the postal address. identity of Valdara Industries
-(world/parties.json).</li>
+Building number of the postal address. as Valdara Industries gives
+it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Valdara Industries (world/parties.json).</li>
+state. as Valdara Industries gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Valdara Industries (world/parties.json).</li>
+state. as Valdara Industries gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4120</strong><br />
-Postal code in Urvania's format (4 digits). identity of Valdara
-Industries (world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Valdara Industries gives
+it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Valdara Industries
-(world/parties.json).</li>
+country. as Valdara Industries gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Dispatch office</strong><br />
 The party's dispatch office desk: the desk for its role in this document
-(it sends the goods off); identity of Valdara Industries
-(world/parties.json).</li>
+(it sends the goods off); as Valdara Industries gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Dispatch
 coordinator</strong><br />
-The job of the person who answers at the desk; identity of Valdara
-Industries (world/parties.json).</li>
+The job of the person who answers at the desk; as Valdara Industries
+gives it.</li>
 <li><code>Contact/Department</code> = <strong>Warehouse</strong><br />
-The department the desk belongs to; identity of Valdara Industries
-(world/parties.json).</li>
+The department the desk belongs to; as Valdara Industries gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 386
 4551</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -528,16 +505,15 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Valdara Industries
-(world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. as Valdara Industries gives
+it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:dispatch@valdara.example">dispatch@valdara.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Valdara Industries (world/parties.json).</li>
+anyone; as Valdara Industries gives it.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Valdara Industries
-(world/parties.json).</li>
+When the desk can be reached; as Valdara Industries gives it.</li>
 </ul>
 <h3 id="carrier-party">Carrier Party</h3>
 <p>Inside <code>CarrierParty</code>:</p>
@@ -566,7 +542,7 @@ What the goods are, for the driver.</li>
 <li><code>GrossWeightMeasure</code> = <strong>12863.4</strong> (unitCode
 <code>KGM</code>)<br />
 The goods (5363.4 kg) and the tare of the transport equipment (7500 kg):
-a shipment's gross weight includes the equipment (worklist C15).</li>
+a shipment's gross weight includes the equipment.</li>
 <li><code>NetNetWeightMeasure</code> = <strong>4366.8</strong> (unitCode
 <code>KGM</code>)<br />
 The goods alone, without any packaging.</li>
@@ -596,8 +572,8 @@ The goods in a few words, as on the consignment note.</li>
 <li><code>Consignment/GrossWeightMeasure</code> =
 <strong>5363.4</strong> (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
-transport equipment, as a consignment's weight is defined (worklist
-C15). The gross weight the carrier takes over.</li>
+transport equipment, as a consignment's weight is defined. The gross
+weight the carrier takes over.</li>
 <li><code>Consignment/NetWeightMeasure</code> = <strong>4366.8</strong>
 (unitCode <code>KGM</code>)<br />
 The weight of the goods without packaging.</li>
@@ -609,7 +585,7 @@ floor.</li>
 <li><code>Consignment/Remarks</code> = <strong>Received in apparent good
 order; trailer doors sealed by the 3PL, seal as recorded.</strong><br />
 The driver's remarks at taking over, as the consignment note asks; the
-seal's number is in the trailer's own seal element (road/08#F26).</li>
+seal's number is in the trailer's own seal element.</li>
 <li><code>Consignment/ContainerizedIndicator</code> =
 <strong>false</strong><br />
 The pallets are loaded on the truck, not in a container.</li>
@@ -636,8 +612,7 @@ declaration.</strong><br />
 What the driver must do before leaving.</li>
 <li><code>Consignment/TotalPackagesQuantity</code> =
 <strong>300</strong> (unitCode <code>EA</code>)<br />
-The parcels: 96 benches in three parcels each and 12 frame cartons
-(D20).</li>
+The parcels: 96 benches in three parcels each and 12 frame cartons.</li>
 <li><code>Consignment/CustomsDeclaration/ID</code> =
 <strong>VI-CD-26-0156</strong><br />
 The export declaration the goods travel under.</li>
@@ -748,7 +723,7 @@ The distributor's goods-in slot.</li>
 <li><code>Consignment/MainCarriageShipmentStage/RequiredDeliveryTime</code>
 = <strong>10:00:00</strong><br />
 By the end of the goods-in slot, 09:00 to 10:00; the latest delivery
-time of the note is the same (road/08#F14).</li>
+time of the note is the same.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransitPeriod/StartDate</code>
 = <strong>2026-03-23</strong><br />
 Collected in the afternoon; the stage has begun when the carrier takes
@@ -771,16 +746,16 @@ is from the Trade Accord's travel direction list: WB = Westbound.</li>
 = <strong>395</strong> (listID
 <code>UNECE Recommendation 28</code>)<br />
 The kind of means of transport: tractor unit 07 with curtain-side
-trailer; the fleet of Trasvia Haulage (world/parties.json). The code is
-from the world's copy of UN/ECE Recommendation 28 Codes for types of
-means of transport: 395 = Truck, with trailer.</li>
+trailer; the fleet of Trasvia Haulage. The code is from the world's copy
+of UN/ECE Recommendation 28 Codes for types of means of transport: 395 =
+Truck, with trailer.</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID</code>
 = <strong>UR 4160 KT</strong> (schemeID
 <code>urn:ubl-examples:world:XU:vehicle-register</code>)<br />
-The registration plate of the truck; the fleet of Trasvia Haulage
-(world/parties.json). The schemeID names the scheme it is from: the
-vehicle register of Urvania (UR, the four-digit number of the
-registering district (4160 Ferrano) and two letters).</li>
+The registration plate of the truck; the fleet of Trasvia Haulage. The
+schemeID names the scheme it is from: the vehicle register of Urvania
+(UR, the four-digit number of the registering district (4160 Ferrano)
+and two letters).</li>
 <li><code>Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID</code>
 = <strong>UR 4160 TR</strong> (schemeID
 <code>urn:ubl-examples:world:XU:vehicle-register</code>)<br />
@@ -868,8 +843,7 @@ length</strong><br />
 The trailer in words.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/TareWeightMeasure</code>
 = <strong>7500</strong> (unitCode <code>KGM</code>)<br />
-The trailer's empty weight, from the carrier's fleet
-(world/parties.json).</li>
+The trailer's empty weight, from the carrier's fleet.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID</code>
 = <strong>XU-CL-77310</strong><br />
 The number of the bolt seal on the trailer doors.</li>
@@ -912,7 +886,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -1043,7 +1017,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1103,7 +1077,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1163,7 +1137,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506029</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -1190,7 +1164,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -1321,7 +1295,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1381,7 +1355,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1441,7 +1415,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506036</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -1468,7 +1442,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -1599,7 +1573,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1659,7 +1633,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1719,7 +1693,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506043</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -1746,7 +1720,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -1877,7 +1851,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1937,7 +1911,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1997,7 +1971,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506050</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -2024,7 +1998,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -2155,7 +2129,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -2215,7 +2189,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -2275,7 +2249,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506067</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -2302,7 +2276,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -2433,7 +2407,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -2493,7 +2467,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -2553,7 +2527,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506074</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -2580,7 +2554,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -2711,7 +2685,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -2771,7 +2745,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -2831,7 +2805,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506081</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -2858,7 +2832,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -2989,7 +2963,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3049,7 +3023,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3109,7 +3083,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506098</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -3136,7 +3110,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -3267,7 +3241,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3327,7 +3301,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3387,7 +3361,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506104</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -3414,7 +3388,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -3545,7 +3519,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3605,7 +3579,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3665,7 +3639,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506111</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -3692,7 +3666,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -3823,7 +3797,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3883,7 +3857,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -3943,7 +3917,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506128</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -3970,7 +3944,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -4101,7 +4075,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -4161,7 +4135,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -4221,7 +4195,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506135</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -4248,7 +4222,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -4379,7 +4353,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -4439,7 +4413,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -4499,7 +4473,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506142</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -4526,7 +4500,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -4657,7 +4631,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -4717,7 +4691,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -4777,7 +4751,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506159</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -4804,7 +4778,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -4935,7 +4909,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -4995,7 +4969,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -5055,7 +5029,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506166</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -5082,7 +5056,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -5213,7 +5187,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -5273,7 +5247,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -5333,7 +5307,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506173</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -5360,7 +5334,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -5491,7 +5465,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -5551,7 +5525,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -5611,7 +5585,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506180</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -5638,7 +5612,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -5769,7 +5743,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -5829,7 +5803,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -5889,7 +5863,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506197</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -5916,7 +5890,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -6047,7 +6021,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -6107,7 +6081,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -6167,7 +6141,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506203</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -6194,7 +6168,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -6325,7 +6299,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -6385,7 +6359,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -6445,7 +6419,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506210</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -6472,7 +6446,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -6603,7 +6577,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -6663,7 +6637,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -6723,7 +6697,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506227</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -6750,7 +6724,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -6881,7 +6855,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -6941,7 +6915,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -7001,7 +6975,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506234</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -7028,7 +7002,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -7159,7 +7133,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -7219,7 +7193,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -7279,7 +7253,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506241</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -7306,7 +7280,7 @@ most two high.</li>
 pallet. Unpacked, a frame carton is a one-person lift; a slat bundle,
 1.81 m long, is carried by two.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -7437,7 +7411,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -7497,7 +7471,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -7557,7 +7531,7 @@ code names the code's list in its schemeID.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/Package/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/ID</code>
 = <strong>KXU105190004506258</strong> (schemeID
 <code>ISO 15459</code>)<br />
@@ -7583,7 +7557,7 @@ stack.</li>
 = <strong>Fork-lift only. Load on top: nothing may be stacked on the
 cartons. Unpacked, each carton is a one-person lift.</strong><br />
 The handling, in words, with the world's rule for manual handling (ISO
-11228-1, D20).</li>
+11228-1).</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/PackagedTransportHandlingUnit/TotalGoodsItemQuantity</code>
 = <strong>1</strong> (unitCode <code>EA</code>)<br />
 One kind of goods on the pallet.</li>
@@ -7707,8 +7681,7 @@ The pieces taken over.</li>
 The goods-in slot cannot move.</li>
 <li><code>Delivery/LatestDeliveryTime</code> =
 <strong>10:00:00</strong><br />
-The end of the slot, the time the delivery is required by
-(road/08#F14).</li>
+The end of the slot, the time the delivery is required by.</li>
 <li><code>Delivery/TrackingID</code> =
 <strong>TH-26-04471</strong><br />
 Track the truck with the carrier's job number.</li>
@@ -7729,64 +7702,61 @@ list: BUSINESS = Business address.</li>
 <li><code>ReturnAddress/AddressFormatCode</code> = <strong>XU</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>ReturnAddress/StreetName</code> = <strong>Bek Han
 Stalvek</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Castrano Logistics (world/parties.json).</li>
+street names are given in both languages ; as Castrano Logistics gives
+it.</li>
 <li><code>ReturnAddress/StreetName</code> = <strong>Via del
 Magazzino</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Castrano Logistics (world/parties.json).</li>
+Italian names the British kept are part of English now; as Castrano
+Logistics gives it.</li>
 <li><code>ReturnAddress/BuildingNumber</code> =
 <strong>24</strong><br />
-Building number of the postal address. identity of Castrano Logistics
-(world/parties.json).</li>
+Building number of the postal address. as Castrano Logistics gives
+it.</li>
 <li><code>ReturnAddress/CityName</code> = <strong>Zhildir</strong>
 (languageID <code>qau</code>)<br />
-The place's Urvanian name, as the map gives it (world/map.json). The
-town or locality nearest to the party's place on the map, in its own
-country and state. identity of Castrano Logistics
-(world/parties.json).</li>
+The place's Urvanian name, as the map gives it. The town or locality
+nearest to the party's place on the map, in its own country and state.
+as Castrano Logistics gives it.</li>
 <li><code>ReturnAddress/CityName</code> = <strong>Conciaro</strong>
 (languageID <code>en-XU</code>)<br />
 The place's English name, the Italian one. The town or locality nearest
-to the party's place on the map, in its own country and state. identity
-of Castrano Logistics (world/parties.json).</li>
+to the party's place on the map, in its own country and state. as
+Castrano Logistics gives it.</li>
 <li><code>ReturnAddress/PostalZone</code> = <strong>4190</strong><br />
-Postal code in Urvania's format (4 digits). identity of Castrano
-Logistics (world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Castrano Logistics gives
+it.</li>
 <li><code>ReturnAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Castrano Logistics
-(world/parties.json).</li>
+country. as Castrano Logistics gives it.</li>
 <li><code>ReturnAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>ReturnAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>ReturnAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
@@ -7798,64 +7768,61 @@ list: BUSINESS = Business address.</li>
 <li><code>OriginAddress/AddressFormatCode</code> = <strong>XU</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>OriginAddress/StreetName</code> = <strong>Bek Han
 Stalvek</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Castrano Logistics (world/parties.json).</li>
+street names are given in both languages ; as Castrano Logistics gives
+it.</li>
 <li><code>OriginAddress/StreetName</code> = <strong>Via del
 Magazzino</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Castrano Logistics (world/parties.json).</li>
+Italian names the British kept are part of English now; as Castrano
+Logistics gives it.</li>
 <li><code>OriginAddress/BuildingNumber</code> =
 <strong>24</strong><br />
-Building number of the postal address. identity of Castrano Logistics
-(world/parties.json).</li>
+Building number of the postal address. as Castrano Logistics gives
+it.</li>
 <li><code>OriginAddress/CityName</code> = <strong>Zhildir</strong>
 (languageID <code>qau</code>)<br />
-The place's Urvanian name, as the map gives it (world/map.json). The
-town or locality nearest to the party's place on the map, in its own
-country and state. identity of Castrano Logistics
-(world/parties.json).</li>
+The place's Urvanian name, as the map gives it. The town or locality
+nearest to the party's place on the map, in its own country and state.
+as Castrano Logistics gives it.</li>
 <li><code>OriginAddress/CityName</code> = <strong>Conciaro</strong>
 (languageID <code>en-XU</code>)<br />
 The place's English name, the Italian one. The town or locality nearest
-to the party's place on the map, in its own country and state. identity
-of Castrano Logistics (world/parties.json).</li>
+to the party's place on the map, in its own country and state. as
+Castrano Logistics gives it.</li>
 <li><code>OriginAddress/PostalZone</code> = <strong>4190</strong><br />
-Postal code in Urvania's format (4 digits). identity of Castrano
-Logistics (world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Castrano Logistics gives
+it.</li>
 <li><code>OriginAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Castrano Logistics
-(world/parties.json).</li>
+country. as Castrano Logistics gives it.</li>
 <li><code>OriginAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>OriginAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>OriginAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
@@ -10835,6 +10802,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-road-15-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

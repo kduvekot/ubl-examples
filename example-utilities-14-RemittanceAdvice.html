@@ -42,14 +42,12 @@ every value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first
-appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:remittance-advice:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Remittance advice".
-Each has a public description on the world's pages
-(world/specifications.json).</li>
+Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:utility-billing:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: utility
@@ -65,14 +63,13 @@ The payer's remittance number.</li>
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-20</strong><br />
-Paid on Monday 20 April, before the due date (D27, D31 point 7).</li>
+Paid on Monday 20 April, before the due date.</li>
 <li><code>IssueTime</code> = <strong>11:40:00+00:00</strong><br />
 The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Note</code> = <strong>Mamohe mutaki tohala titutu.</strong>
 (languageID <code>qal</code>)<br />
-The note in Lisavan, the sender's language (world/countries.json): What
-the advice is for.</li>
+The note in Lisavan, the sender's language: What the advice is for.</li>
 <li><code>Note</code> = <strong>Payment of the invoice below.</strong>
 (languageID <code>en-XL</code>)<br />
 The same note in English, the working language between the countries:
@@ -124,7 +121,7 @@ The payer's bank statement line.</li>
 <li><code>DocumentType</code> = <strong>Bank statement</strong><br />
 The kind of document referred to, the payer's bank statement line, a
 document outside the examples, in words: no list has an exact code for
-it (world/documents.json, cited; decision Q29).</li>
+it (cited).</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -147,27 +144,26 @@ name are enough.</li>
 <li><code>Party/PartyIdentification/ID</code> = <strong>IC41859</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; identity of Velumi Trading (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+register; as Velumi Trading gives it. Later mentions of the same party
+in this document repeat only this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Velumi
 Trading</strong><br />
-The trading name; identity of Velumi Trading (world/parties.json).</li>
+The trading name; as Velumi Trading gives it.</li>
 <li><code>Party/Language/ID</code> = <strong>qal</strong> (schemeID
 <code>ISO 639</code>)<br />
 Lisavan, the language of Lisavu and of the party; the code is from the
 range ISO 639 reserves for local use (qaa–qtz), as the world's languages
-are invented (world/countries.json). The code is from the world's copy
-of ISO 639 Language: qal = Lisavan. An identifier that holds a code
-names the code's list in its schemeID.</li>
+are invented. The code is from the world's copy of ISO 639 Language: qal
+= Lisavan. An identifier that holds a code names the code's list in its
+schemeID.</li>
 <li><code>Party/Language/Name</code> = <strong>Lisavan</strong><br />
 The language's name in English; in the language itself: Lisavuana.</li>
 <li><code>Party/PostalAddress/ID</code> = <strong>40351721</strong>
 (schemeID <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Velumi Trading
-(world/parties.json).</li>
+office numbers every address it delivers to); as Velumi Trading gives
+it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -176,10 +172,10 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XL</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -195,52 +191,48 @@ Address format of Lisavu.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Kavama
 Timeku</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Velumi Trading (world/parties.json).</li>
+names are given in both languages ; as Velumi Trading gives it.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Reef
 Street</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Velumi Trading (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Velumi Trading gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>16</strong><br />
-Building number of the postal address. identity of Velumi Trading
-(world/parties.json).</li>
+Building number of the postal address. as Velumi Trading gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Velumi Trading (world/parties.json).</li>
+as Velumi Trading gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Velumi Trading (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Velumi
+Trading gives it.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Accounts
 payable</strong><br />
 The party's accounts payable desk: the desk for its role in this
-document (it pays); identity of Velumi Trading
-(world/parties.json).</li>
+document (it pays); as Velumi Trading gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Accounts payable
 clerk</strong><br />
-The job of the person who answers at the desk; identity of Velumi
-Trading (world/parties.json).</li>
+The job of the person who answers at the desk; as Velumi Trading gives
+it.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Finance</strong><br />
-The department the desk belongs to; identity of Velumi Trading
-(world/parties.json).</li>
+The department the desk belongs to; as Velumi Trading gives it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 3 729
 5794</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -248,15 +240,14 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. identity of Velumi Trading (world/parties.json).</li>
+ships with 79. as Velumi Trading gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:payables@velumi.example">payables@velumi.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Velumi Trading (world/parties.json).</li>
+anyone; as Velumi Trading gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Monday to Saturday
 09:00–18:00</strong><br />
-When the desk can be reached; identity of Velumi Trading
-(world/parties.json).</li>
+When the desk can be reached; as Velumi Trading gives it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -265,9 +256,8 @@ network.</li>
 <strong>XL:IC41859</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Island companies register; identity of Velumi Trading
-(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Island companies register; as Velumi Trading gives it. UBL
+2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
 <p>Inside <code>AccountingSupplierParty</code>:</p>
@@ -275,18 +265,17 @@ deprecated.</li>
 <li><code>Party/PartyIdentification/ID</code> = <strong>IC42407</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; identity of Selanu Telecom (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+register; as Selanu Telecom gives it. Later mentions of the same party
+in this document repeat only this identifier and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Selanu
 Telecom</strong><br />
-The trading name; identity of Selanu Telecom (world/parties.json).</li>
+The trading name; as Selanu Telecom gives it.</li>
 <li><code>Party/PostalAddress/ID</code> = <strong>34928611</strong>
 (schemeID <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Selanu Telecom
-(world/parties.json).</li>
+office numbers every address it delivers to); as Selanu Telecom gives
+it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -295,10 +284,10 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XL</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -314,50 +303,47 @@ Address format of Lisavu.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Kitata Vekase
 Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Selanu Telecom (world/parties.json).</li>
+names are given in both languages ; as Selanu Telecom gives it.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Mast Hill
 Road</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Selanu Telecom (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Selanu Telecom gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>58</strong><br />
-Building number of the postal address. identity of Selanu Telecom
-(world/parties.json).</li>
+Building number of the postal address. as Selanu Telecom gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Selanu Telecom (world/parties.json).</li>
+as Selanu Telecom gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Selanu Telecom (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Selanu
+Telecom gives it.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Billing</strong><br />
 The party's billing desk: the desk for its role in this document (it is
-owed the payment); identity of Selanu Telecom (world/parties.json).</li>
+owed the payment); as Selanu Telecom gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Billing
 officer</strong><br />
-The job of the person who answers at the desk; identity of Selanu
-Telecom (world/parties.json).</li>
+The job of the person who answers at the desk; as Selanu Telecom gives
+it.</li>
 <li><code>Party/Contact/Department</code> = <strong>Business
 sales</strong><br />
-The department the desk belongs to; identity of Selanu Telecom
-(world/parties.json).</li>
+The department the desk belongs to; as Selanu Telecom gives it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 3 727
 3193</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -365,15 +351,14 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. identity of Selanu Telecom (world/parties.json).</li>
+ships with 79. as Selanu Telecom gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:billing@selanutelecom.example">billing@selanutelecom.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Selanu Telecom (world/parties.json).</li>
+anyone; as Selanu Telecom gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Selanu Telecom
-(world/parties.json).</li>
+When the desk can be reached; as Selanu Telecom gives it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -382,9 +367,8 @@ network.</li>
 <strong>XL:IC42407</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Island companies register; identity of Selanu Telecom
-(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Island companies register; as Selanu Telecom gives it. UBL
+2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="payment-means">Payment Means</h3>
 <p>Inside <code>PaymentMeans</code>:</p>
@@ -442,18 +426,18 @@ The branch's name.</li>
 <code>urn:ubl-examples:world:bank-identifier</code>)<br />
 The bank's identifier in the Trade Accord's payment link, in the
 structure of ISO 9362 (a BIC) with the world's country codes: the bank
-code BSEL, the country XL and the location SL; identity of Bank of
-Selanu (world/parties.json).</li>
+code BSEL, the country XL and the location SL; as Bank of Selanu gives
+it.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name</code>
 = <strong>Bank of Selanu</strong><br />
-The bank; identity of Bank of Selanu (world/parties.json).</li>
+The bank; as Bank of Selanu gives it.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode</code>
 = <strong>XL</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -469,32 +453,30 @@ Address format of Lisavu.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Kavama Timeku</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Bank of Selanu (world/parties.json).</li>
+names are given in both languages ; as Bank of Selanu gives it.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Reef Street</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Bank of Selanu (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Bank of Selanu gives it.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber</code>
 = <strong>23</strong><br />
-Building number of the postal address. identity of Bank of Selanu
-(world/parties.json).</li>
+Building number of the postal address. as Bank of Selanu gives it.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
 = <strong>Selanu</strong> (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Bank of Selanu (world/parties.json).</li>
+as Bank of Selanu gives it.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
 = <strong>Port Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Bank of Selanu (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Bank of
+Selanu gives it.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode</code>
 = <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name</code>
 = <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
@@ -505,8 +487,7 @@ in.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/Address/CityName</code>
 = <strong>Port Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town the
-branch is in.</li>
+official beside the Lisavan one. The town the branch is in.</li>
 <li><code>PayerFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode</code>
 = <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Its country. The code is from the world's copy of UBL's Country
@@ -545,7 +526,7 @@ Coral.</li>
 <li><code>PayeeFinancialAccount/BlockchainID</code> =
 <strong>CORAL-NET-L1</strong><br />
 The account holds tokenised coral deposits on the Bank of Selanu's
-ledger, which Coral net settles on (world/countries.json).</li>
+ledger, which Coral net settles on.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/ID</code> =
 <strong>001</strong> (schemeID
 <code>urn:ubl-examples:world:XL:bank-branch</code>)<br />
@@ -560,18 +541,18 @@ The branch's name.</li>
 <code>urn:ubl-examples:world:bank-identifier</code>)<br />
 The bank's identifier in the Trade Accord's payment link, in the
 structure of ISO 9362 (a BIC) with the world's country codes: the bank
-code BSEL, the country XL and the location SL; identity of Bank of
-Selanu (world/parties.json).</li>
+code BSEL, the country XL and the location SL; as Bank of Selanu gives
+it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name</code>
 = <strong>Bank of Selanu</strong><br />
-The bank; identity of Bank of Selanu (world/parties.json).</li>
+The bank; as Bank of Selanu gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode</code>
 = <strong>XL</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -587,32 +568,30 @@ Address format of Lisavu.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Kavama Timeku</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Bank of Selanu (world/parties.json).</li>
+names are given in both languages ; as Bank of Selanu gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Reef Street</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Bank of Selanu (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Bank of Selanu gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber</code>
 = <strong>23</strong><br />
-Building number of the postal address. identity of Bank of Selanu
-(world/parties.json).</li>
+Building number of the postal address. as Bank of Selanu gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
 = <strong>Selanu</strong> (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Bank of Selanu (world/parties.json).</li>
+as Bank of Selanu gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
 = <strong>Port Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Bank of Selanu (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Bank of
+Selanu gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode</code>
 = <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name</code>
 = <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
@@ -623,8 +602,7 @@ in.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName</code>
 = <strong>Port Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town the
-branch is in.</li>
+official beside the Lisavan one. The town the branch is in.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode</code>
 = <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Its country. The code is from the world's copy of UBL's Country
@@ -897,6 +875,6 @@ href="example-utilities-04-RemittanceAdvice.html">Remittance Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

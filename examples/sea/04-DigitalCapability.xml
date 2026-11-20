@@ -259,7 +259,7 @@
   </cac:DigitalProcess>
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
-    <cbc:Description>Sends invoices, credit notes and invoice status requests, receives the status responses (sea/04#F10).</cbc:Description>
+    <cbc:Description>Sends invoices, credit notes and invoice status requests, receives the status responses.</cbc:Description>
     <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>billing-1</cbc:ID>

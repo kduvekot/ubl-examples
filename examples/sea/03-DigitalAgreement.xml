@@ -455,7 +455,7 @@
   </cac:DigitalProcess>
   <cac:DigitalProcess>
     <cbc:ID>billing</cbc:ID>
-    <cbc:Description>Invoice and credit note from the distributor, its invoice status request and the buyer's response: the billing between the two participants; the factor's statement and the remittance to the factor are no part of it (sea/03#F18).</cbc:Description>
+    <cbc:Description>Invoice and credit note from the distributor, its invoice status request and the buyer's response: the billing between the two participants; the factor's statement and the remittance to the factor are no part of it.</cbc:Description>
     <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
     <cac:DigitalCollaboration>
       <cbc:ID>billing-1</cbc:ID>

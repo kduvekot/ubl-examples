@@ -29,7 +29,7 @@ transaction <a href="world-spec-transaction-order.html">Order</a>.</p>
 · <a href="example-medicines-02-Invoice.html">Invoice →</a></p>
 <p>The wholesaler orders its vaccines and insulin for the southern
 winter from the maker in India, carriage paid to Lumeport airport, in
-rupees (O229).</p>
+rupees.</p>
 <p><a href="examples/medicines/01-Order.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -39,14 +39,13 @@ value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json);
-Party/AdditionalPartyIdentification first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL
+2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:order:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Order". Each has a
-public description on the world's pages
-(world/specifications.json).</li>
+public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:ordering:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: ordering, a
@@ -66,7 +65,7 @@ The wholesaler orders the season's vaccines in April, for the southern
 winter.</li>
 <li><code>IssueTime</code> = <strong>10:20:00-01:00</strong><br />
 During the wholesaler's office hours; in the issuer's local time, with
-its offset from UTC (D27).</li>
+its offset from UTC.</li>
 <li><code>OrderTypeCode</code> = <strong>220</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
 UN/EDIFACT 1001 code 220: order. The code is from the world's copy of
@@ -90,20 +89,19 @@ The number of order lines.</li>
 <strong>20413425</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Quillmoor Pharma Distribution
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Quillmoor Pharma Distribution gives it. Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>9524910900003</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Quillmoor Pharma Distribution (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Quillmoor Pharma Distribution
+gives it.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Quillmoor Pharma
 Distribution</strong><br />
-The trading name; identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+The trading name; as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Party/Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -115,15 +113,15 @@ The language's name.</li>
 (listID <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>LUM-ADR-718264</strong> (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Quillmoor Pharma
-Distribution (world/parties.json).</li>
+state register of Coastal State refers to); as Quillmoor Pharma
+Distribution gives it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -132,39 +130,38 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Airport
 Road</strong><br />
-Street of the postal address. identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+Street of the postal address. as Quillmoor Pharma Distribution gives
+it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>40</strong><br />
-Building number of the postal address. identity of Quillmoor Pharma
-Distribution (world/parties.json).</li>
+Building number of the postal address. as Quillmoor Pharma Distribution
+gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+country and state. as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>38528</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Quillmoor
-Pharma Distribution (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Quillmoor Pharma
+Distribution gives it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -172,33 +169,31 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Quillmoor Pharma Distribution
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Quillmoor Pharma Distribution gives it. The code is from Bayvarra's
+national state or territory list: XB-CO = Coastal State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Purchasing</strong><br />
 The party's purchasing desk: the desk for its role in this document (it
-buys); identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+buys); as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Buyer</strong><br />
-The job of the person who answers at the desk; identity of Quillmoor
-Pharma Distribution (world/parties.json).</li>
+The job of the person who answers at the desk; as Quillmoor Pharma
+Distribution gives it.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Purchasing</strong><br />
-The department the desk belongs to; identity of Quillmoor Pharma
-Distribution (world/parties.json).</li>
+The department the desk belongs to; as Quillmoor Pharma Distribution
+gives it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 6047
 1582</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -209,17 +204,15 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+with 7. as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:purchasing@quillmoor.example">purchasing@quillmoor.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+anyone; as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 07:00–19:00</strong><br />
-When the desk can be reached; identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+When the desk can be reached; as Quillmoor Pharma Distribution gives
+it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -228,20 +221,20 @@ network.</li>
 <strong>XB:20413425</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of
-Quillmoor Pharma Distribution (world/parties.json). UBL 2.5 carries it
-here; Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Quillmoor Pharma
+Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="seller-supplier-party">Seller Supplier Party</h3>
 <p>Inside <code>SellerSupplierParty</code>:</p>
 <ul>
 <li><code>Party/PartyName/Name</code> = <strong>Nilavar
 Biologics</strong><br />
-The trading name; identity of Nilavar Biologics, a maker outside the
-world (world/parties.json, abroad; O229). It carries no identifier of a
-real register: an Indian company number, GSTIN or importer-exporter code
-in the real format could be someone's (O229); the documents identify it
-by its name and address, as a supplier outside the world.</li>
+The trading name; as Nilavar Biologics, a maker outside the three
+countries, gives it. It carries no identifier of a real register: an
+Indian company number, GSTIN or importer-exporter code in the real
+format could be someone's; the documents identify it by its name and
+address, as a supplier outside the world.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -249,61 +242,57 @@ The kind of address. The code is from the Trade Accord's address type
 list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Biotech Park
 Road</strong><br />
-Street of the postal address. identity of Nilavar Biologics
-(world/parties.json, abroad): a fictional address in a real town.</li>
+Street of the postal address. as Nilavar Biologics gives it; the address
+is fictional, in a real town.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>27</strong><br />
-Building number. identity of Nilavar Biologics (world/parties.json,
-abroad): a fictional address in a real town.</li>
+Building number. as Nilavar Biologics gives it; the address is
+fictional, in a real town.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Hyderabad</strong><br />
-The town. identity of Nilavar Biologics (world/parties.json, abroad): a
-fictional address in a real town.</li>
+The town. as Nilavar Biologics gives it; the address is fictional, in a
+real town.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>500078</strong><br />
-Postal code in the format of India. identity of Nilavar Biologics
-(world/parties.json, abroad): a fictional address in a real town.</li>
+Postal code in the format of India. as Nilavar Biologics gives it; the
+address is fictional, in a real town.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> =
 <strong>Telangana</strong><br />
-The state of India, part of an address there. identity of Nilavar
-Biologics (world/parties.json, abroad): a fictional address in a real
-town.</li>
+The state of India, part of an address there. as Nilavar Biologics gives
+it; the address is fictional, in a real town.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>+05:30</strong><br />
 The offset from UTC of Indian Standard Time, the legal time there in
 June.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>IN</strong> (listID <code>ISO 3166</code>)<br />
-India, a real country outside the world (O229). The code is from the
-world's copy of UBL's Country identification (ISO 3166) list: IN =
-India.</li>
+India, a real country outside the world. The code is from the world's
+copy of UBL's Country identification (ISO 3166) list: IN = India.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>India</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Export
 sales</strong><br />
-The party's desk that handles this document; identity of Nilavar
-Biologics, a maker outside the world (world/parties.json, abroad;
-O229).</li>
+The party's desk that handles this document; as Nilavar Biologics, a
+maker outside the three countries, gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Export
 manager</strong><br />
-The job of the person who answers at the desk; identity of Nilavar
-Biologics, a maker outside the world (world/parties.json, abroad;
-O229).</li>
+The job of the person who answers at the desk; as Nilavar Biologics, a
+maker outside the three countries, gives it.</li>
 <li><code>Party/Contact/Department</code> = <strong>International
 sales</strong><br />
-The department the desk belongs to; identity of Nilavar Biologics, a
-maker outside the world (world/parties.json, abroad; O229).</li>
+The department the desk belongs to; as Nilavar Biologics, a maker
+outside the three countries, gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:exports@nilavar-bio.example">exports@nilavar-bio.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
 anyone; no telephone number is given, as one in the real country's plan
-could reach someone; identity of Nilavar Biologics, a maker outside the
-world (world/parties.json, abroad; O229).</li>
+could reach someone; as Nilavar Biologics, a maker outside the three
+countries, gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Monday to Saturday
 09:30–18:00</strong><br />
-When the desk can be reached; identity of Nilavar Biologics, a maker
-outside the world (world/parties.json, abroad; O229).</li>
+When the desk can be reached; as Nilavar Biologics, a maker outside the
+three countries, gives it.</li>
 </ul>
 <h3 id="delivery">Delivery</h3>
 <p>Inside <code>Delivery</code>:</p>
@@ -328,7 +317,7 @@ identifier that holds a code names the code's list in its schemeID.</li>
 <li><code>DeliveryLocation/ID</code> = <strong>XBLMA</strong> (schemeID
 <code>UN/LOCODE</code>)<br />
 The place's identifier, as the world gives it wherever the place appears
-(a code in the form of a UN/LOCODE; worklist C23).</li>
+(a code in the form of a UN/LOCODE).</li>
 <li><code>DeliveryLocation/Description</code> = <strong>Lumeport
 airport, cargo terminal</strong><br />
 Where the delivery terms place the handover of the goods.</li>
@@ -380,8 +369,8 @@ What the buyer expects to pay, tax included.</li>
 <p>Inside <code>OrderLine</code>:</p>
 <ul>
 <li><code>LineItem/ID</code> = <strong>1</strong><br />
-The line number: a line added by a change keeps a number of its own
-(worklist C34).</li>
+The line number: a line added by a change keeps a number of its
+own.</li>
 <li><code>LineItem/Quantity</code> = <strong>600</strong> (unitCode
 <code>EA</code>)<br />
 6,000 doses for the southern winter: the island hospital's 3,000 and the
@@ -391,7 +380,7 @@ pharmacies of Bayvarra.</li>
 Quantity times price, rounded to the minor unit.</li>
 <li><code>LineItem/Price/PriceAmount</code> = <strong>4100</strong>
 (currencyID <code>INR</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
@@ -399,23 +388,21 @@ The price is per one unit.</li>
 vaccine, inactivated split virion, of the southern hemisphere formula
 for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each.
 Store at 2 to 8 °C; do not freeze.</strong><br />
-The seller's description; item flu-vaccine of Nilavar Biologics
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>LineItem/Item/Name</code> = <strong>Influenza vaccine,
 inactivated, 10 prefilled syringes</strong><br />
-The item's short name; item flu-vaccine of Nilavar Biologics
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>LineItem/Item/BuyersItemIdentification/ID</code> =
 <strong>QPD-VAC-1102</strong><br />
-The buyer's own item number: it resells this item as its item
-flu-vaccine-b.</li>
+The buyer's own item number: it resells this item under its own
+number.</li>
 <li><code>LineItem/Item/SellersItemIdentification/ID</code> =
 <strong>NB-FLU-S26-10</strong><br />
-The seller's own item number; item flu-vaccine of Nilavar Biologics
-(world/items.json).</li>
+The seller's own item number; as Nilavar Biologics describes the
+item.</li>
 <li><code>LineItem/ID</code> = <strong>2</strong><br />
-The line number: a line added by a change keeps a number of its own
-(worklist C34).</li>
+The line number: a line added by a change keeps a number of its
+own.</li>
 <li><code>LineItem/Quantity</code> = <strong>960</strong> (unitCode
 <code>EA</code>)<br />
 Four months of insulin for the wholesaler's customers.</li>
@@ -424,30 +411,28 @@ Four months of insulin for the wholesaler's customers.</li>
 Quantity times price, rounded to the minor unit.</li>
 <li><code>LineItem/Price/PriceAmount</code> = <strong>1300</strong>
 (currencyID <code>INR</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
 <li><code>LineItem/Item/Description</code> = <strong>Soluble human
 insulin, 100 international units per ml, in a vial of 10 ml. Store
 unopened at 2 to 8 °C; do not freeze.</strong><br />
-The seller's description; item insulin-vial of Nilavar Biologics
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>LineItem/Item/Name</code> = <strong>Insulin human, 100 IU/ml,
 vial of 10 ml</strong><br />
-The item's short name; item insulin-vial of Nilavar Biologics
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>LineItem/Item/BuyersItemIdentification/ID</code> =
 <strong>QPD-INS-0310</strong><br />
-The buyer's own item number: it resells this item as its item
-insulin-vial-b.</li>
+The buyer's own item number: it resells this item under its own
+number.</li>
 <li><code>LineItem/Item/SellersItemIdentification/ID</code> =
 <strong>NB-INS-R100-10</strong><br />
-The seller's own item number; item insulin-vial of Nilavar Biologics
-(world/items.json).</li>
+The seller's own item number; as Nilavar Biologics describes the
+item.</li>
 <li><code>LineItem/ID</code> = <strong>3</strong><br />
-The line number: a line added by a change keeps a number of its own
-(worklist C34).</li>
+The line number: a line added by a change keeps a number of its
+own.</li>
 <li><code>LineItem/Quantity</code> = <strong>120</strong> (unitCode
 <code>EA</code>)<br />
 The season's varicella vaccine for three hospitals.</li>
@@ -456,27 +441,25 @@ The season's varicella vaccine for three hospitals.</li>
 Quantity times price, rounded to the minor unit.</li>
 <li><code>LineItem/Price/PriceAmount</code> = <strong>2850</strong>
 (currencyID <code>INR</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>LineItem/Price/BaseQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
 <li><code>LineItem/Item/Description</code> = <strong>Live attenuated
 varicella vaccine, freeze-dried, one dose in a vial with its diluent.
 Store frozen at -50 to -15 °C until it is used.</strong><br />
-The seller's description; item varicella-vaccine of Nilavar Biologics
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>LineItem/Item/Name</code> = <strong>Varicella vaccine, live,
 frozen, single dose</strong><br />
-The item's short name; item varicella-vaccine of Nilavar Biologics
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>LineItem/Item/BuyersItemIdentification/ID</code> =
 <strong>QPD-VAC-2410</strong><br />
-The buyer's own item number: it resells this item as its item
-varicella-vaccine-b.</li>
+The buyer's own item number: it resells this item under its own
+number.</li>
 <li><code>LineItem/Item/SellersItemIdentification/ID</code> =
 <strong>NB-VZV-1</strong><br />
-The seller's own item number; item varicella-vaccine of Nilavar
-Biologics (world/items.json).</li>
+The seller's own item number; as Nilavar Biologics describes the
+item.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -668,6 +651,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 · <a href="example-medicines-02-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

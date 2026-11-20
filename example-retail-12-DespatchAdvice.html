@@ -42,14 +42,14 @@ every value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json);
-Party/AdditionalPartyIdentification first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL
+2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:despatch-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Despatch advice"; the
 community specification "Retail community". Each has a public
-description on the world's pages (world/specifications.json).</li>
+description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:despatch-receipt:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: despatch and
@@ -68,8 +68,8 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 The day the truck was loaded at the distribution centre.</li>
 <li><code>IssueTime</code> = <strong>15:34:00-01:00</strong><br />
 When the truck was loaded and the carrier had signed its consignment
-note, on the afternoon before the delivery (retail/12#F4, D34); in the
-issuer's local time, with its offset from UTC (D27).</li>
+note, on the afternoon before the delivery; in the issuer's local time,
+with its offset from UTC.</li>
 <li><code>DespatchAdviceTypeCode</code> = <strong>DELIVERY</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:DespatchAdviceTypeCode</code>)<br />
@@ -78,7 +78,7 @@ Accord's despatch advice type list: DELIVERY = Delivery.</li>
 <li><code>Note</code> = <strong>Please check the goods on arrival and
 report any damage in your receipt advice.</strong><br />
 What the receiver should do; the note names the transport document the
-flow uses (worklist C30).</li>
+flow uses.</li>
 <li><code>LineCountNumeric</code> = <strong>1</strong><br />
 The number of lines.</li>
 </ul>
@@ -95,20 +95,19 @@ The order this despatch fulfils.</li>
 <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeway Distribution
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Lumeway Distribution gives it. Later mentions
+of the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>9520610900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Lumeway Distribution (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Lumeway Distribution gives
+it.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Lumeway
 Distribution</strong><br />
-The trading name; identity of Lumeway Distribution
-(world/parties.json).</li>
+The trading name; as Lumeway Distribution gives it.</li>
 <li><code>Party/Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -120,14 +119,13 @@ The language's name.</li>
 (listID <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>Party/PostalAddress/ID</code> = <strong>UL-ADR-693911</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); identity of Lumeway Distribution
-(world/parties.json).</li>
+and six digits); as Lumeway Distribution gives it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -136,47 +134,45 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Distribution
 Drive</strong><br />
-Street of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Street of the postal address. as Lumeway Distribution gives it.</li>
 <li><code>Party/PostalAddress/BlockName</code> = <strong>Marrowdale
 Business Park</strong><br />
-The business park the distribution centre stands in. identity of Lumeway
-Distribution (world/parties.json).</li>
+The business park the distribution centre stands in. as Lumeway
+Distribution gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>43</strong><br />
-Building number of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Building number of the postal address. as Lumeway Distribution gives
+it.</li>
 <li><code>Party/PostalAddress/PlotIdentification</code> = <strong>Plot
 14</strong><br />
-The plot of the distribution centre in the business park. identity of
-Lumeway Distribution (world/parties.json).</li>
+The plot of the distribution centre in the business park. as Lumeway
+Distribution gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Lumeway Distribution
-(world/parties.json).</li>
+country and state. as Lumeway Distribution gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>71214</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Lumeway
-Distribution (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Lumeway Distribution
+gives it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -184,35 +180,33 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Lumeway Distribution
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Lumeway Distribution gives it. The code is from Bayvarra's national
+state or territory list: XB-UL = Upland State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Dispatch
 office</strong><br />
 The party's dispatch office desk: the desk for its role in this document
-(it sends the goods off); identity of Lumeway Distribution
-(world/parties.json).</li>
+(it sends the goods off); as Lumeway Distribution gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Dispatch
 coordinator</strong><br />
-The job of the person who answers at the desk; identity of Lumeway
-Distribution (world/parties.json).</li>
+The job of the person who answers at the desk; as Lumeway Distribution
+gives it.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Warehouse</strong><br />
-The department the desk belongs to; identity of Lumeway Distribution
-(world/parties.json).</li>
+The department the desk belongs to; as Lumeway Distribution gives
+it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 955
 964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -223,15 +217,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Lumeway Distribution (world/parties.json).</li>
+with 7. as Lumeway Distribution gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:dispatch@lumeway.example">dispatch@lumeway.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Lumeway Distribution (world/parties.json).</li>
+anyone; as Lumeway Distribution gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Lumeway Distribution
-(world/parties.json).</li>
+When the desk can be reached; as Lumeway Distribution gives it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -240,9 +233,9 @@ network.</li>
 <strong>XB:20410274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of Lumeway
-Distribution (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Lumeway
+Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="delivery-customer-party">Delivery Customer Party</h3>
 <p>Inside <code>DeliveryCustomerParty</code>:</p>
@@ -251,31 +244,30 @@ Party/EndpointID is deprecated.</li>
 <strong>20410411</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Brightmarket Stores
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Brightmarket Stores gives it. Later mentions of
+the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>9522610900002</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Brightmarket Stores (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Brightmarket Stores gives
+it.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Brightmarket
 Stores</strong><br />
-The trading name; identity of Brightmarket Stores
-(world/parties.json).</li>
+The trading name; as Brightmarket Stores gives it.</li>
 <li><code>Party/TradePartyName/Name</code> =
 <strong>Brightmarket</strong><br />
-The name the shops trade under, shorter than the company's name;
-identity of Brightmarket Stores (world/parties.json).</li>
+The name the shops trade under, shorter than the company's name; as
+Brightmarket Stores gives it.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>LUM-ADR-579130</strong> (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Brightmarket
-Stores (world/parties.json).</li>
+state register of Coastal State refers to); as Brightmarket Stores gives
+it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -284,44 +276,41 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Market
 Street</strong><br />
-Street of the postal address. identity of Brightmarket Stores
-(world/parties.json).</li>
+Street of the postal address. as Brightmarket Stores gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>50</strong><br />
-Building number of the postal address. identity of Brightmarket Stores
-(world/parties.json).</li>
+Building number of the postal address. as Brightmarket Stores gives
+it.</li>
 <li><code>Party/PostalAddress/CitySubdivisionName</code> = <strong>Old
 Town</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map (world/map.json). identity of Brightmarket Stores
-(world/parties.json).</li>
+the map. as Brightmarket Stores gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Brightmarket Stores
-(world/parties.json).</li>
+country and state. as Brightmarket Stores gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>38515</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Brightmarket
-Stores (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Brightmarket Stores
+gives it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -329,35 +318,33 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Brightmarket Stores
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Brightmarket Stores gives it. The code is from Bayvarra's national state
+or territory list: XB-CO = Coastal State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Goods-in, Lumeport
 store</strong><br />
 The party's goods-in, lumeport store desk: the desk for its role in this
-document (it receives the goods); identity of Brightmarket Stores
-(world/parties.json).</li>
+document (it receives the goods); as Brightmarket Stores gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Goods-in
 supervisor</strong><br />
-The job of the person who answers at the desk; identity of Brightmarket
-Stores (world/parties.json).</li>
+The job of the person who answers at the desk; as Brightmarket Stores
+gives it.</li>
 <li><code>Party/Contact/Department</code> = <strong>Store
 operations</strong><br />
-The department the desk belongs to; identity of Brightmarket Stores
-(world/parties.json).</li>
+The department the desk belongs to; as Brightmarket Stores gives
+it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 4609
 7100</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -368,15 +355,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Brightmarket Stores (world/parties.json).</li>
+with 7. as Brightmarket Stores gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:goodsin@brightmarket.example">goodsin@brightmarket.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Brightmarket Stores (world/parties.json).</li>
+anyone; as Brightmarket Stores gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Monday to Saturday
 09:00–18:00</strong><br />
-When the desk can be reached; identity of Brightmarket Stores
-(world/parties.json).</li>
+When the desk can be reached; as Brightmarket Stores gives it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -385,9 +371,9 @@ network.</li>
 <strong>XB:20410411</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of
-Brightmarket Stores (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Brightmarket
+Stores gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="buyer-customer-party">Buyer Customer Party</h3>
 <p>Inside <code>BuyerCustomerParty</code>:</p>
@@ -426,26 +412,25 @@ booked.</li>
 <li><code>Consignment/GrossWeightMeasure</code> =
 <strong>1297.2</strong> (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
-transport equipment, as a consignment's weight is defined (worklist
-C15). The gross weight loaded.</li>
+transport equipment, as a consignment's weight is defined. The gross
+weight loaded.</li>
 <li><code>Consignment/CarrierParty/PartyIdentification/ID</code> =
 <strong>20411644</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Bayforth Forwarding
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Bayforth Forwarding gives it. Later mentions of
+the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>Consignment/CarrierParty/PartyName/Name</code> =
 <strong>Bayforth Forwarding</strong><br />
-The trading name; identity of Bayforth Forwarding
-(world/parties.json).</li>
+The trading name; as Bayforth Forwarding gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/ID</code> =
 <strong>LUM-ADR-953846</strong> (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Bayforth
-Forwarding (world/parties.json).</li>
+state register of Coastal State refers to); as Bayforth Forwarding gives
+it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/AddressTypeCode</code>
 = <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -454,44 +439,41 @@ list: BUSINESS = Business address.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/AddressFormatCode</code>
 = <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/StreetName</code> =
 <strong>Dockside Way</strong><br />
-Street of the postal address. identity of Bayforth Forwarding
-(world/parties.json).</li>
+Street of the postal address. as Bayforth Forwarding gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/BuildingNumber</code> =
 <strong>4</strong><br />
-Building number of the postal address. identity of Bayforth Forwarding
-(world/parties.json).</li>
+Building number of the postal address. as Bayforth Forwarding gives
+it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/CitySubdivisionName</code>
 = <strong>Dockside</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map (world/map.json). identity of Bayforth Forwarding
-(world/parties.json).</li>
+the map. as Bayforth Forwarding gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Bayforth Forwarding
-(world/parties.json).</li>
+country and state. as Bayforth Forwarding gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/PostalZone</code> =
 <strong>38525</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Bayforth
-Forwarding (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Bayforth Forwarding
+gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -499,34 +481,33 @@ list.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/CountrySubentityCode</code>
 = <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Bayforth Forwarding
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Bayforth Forwarding gives it. The code is from Bayvarra's national state
+or territory list: XB-CO = Coastal State.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Consignment/CarrierParty/Contact/Name</code> =
 <strong>Transport desk</strong><br />
-The party's main desk, which handles this document; identity of Bayforth
-Forwarding (world/parties.json).</li>
+The party's main desk, which handles this document; as Bayforth
+Forwarding gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/JobTitle</code> =
 <strong>Transport planner</strong><br />
-The job of the person who answers at the desk; identity of Bayforth
-Forwarding (world/parties.json).</li>
+The job of the person who answers at the desk; as Bayforth Forwarding
+gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/Department</code> =
 <strong>Transport</strong><br />
-The department the desk belongs to; identity of Bayforth Forwarding
-(world/parties.json).</li>
+The department the desk belongs to; as Bayforth Forwarding gives
+it.</li>
 <li><code>Consignment/CarrierParty/Contact/Telephone</code> =
 <strong>+999 2 38 5155 2404</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -536,16 +517,15 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Bayforth Forwarding (world/parties.json).</li>
+with 7. as Bayforth Forwarding gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/ElectronicMail</code> =
 <strong><a
 href="mailto:transport@bayforth.example">transport@bayforth.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Bayforth Forwarding (world/parties.json).</li>
+anyone; as Bayforth Forwarding gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/Note</code> =
 <strong>Weekdays 08:00–17:00</strong><br />
-When the desk can be reached; identity of Bayforth Forwarding
-(world/parties.json).</li>
+When the desk can be reached; as Bayforth Forwarding gives it.</li>
 <li><code>ShipmentStage/ID</code> = <strong>1</strong><br />
 The one stage: the truck from the distribution centre to the store.</li>
 <li><code>ShipmentStage/TransportModeCode</code> = <strong>3</strong>
@@ -566,16 +546,15 @@ The same, in words.</li>
 <li><code>ShipmentStage/TransportMeans/TransportMeansTypeCode</code> =
 <strong>395</strong> (listID <code>UNECE Recommendation 28</code>)<br />
 The kind of means of transport: truck with curtain-side trailer; the
-fleet of Bayforth Forwarding (world/parties.json). The code is from the
-world's copy of UN/ECE Recommendation 28 Codes for types of means of
-transport: 395 = Truck, with trailer.</li>
+fleet of Bayforth Forwarding. The code is from the world's copy of
+UN/ECE Recommendation 28 Codes for types of means of transport: 395 =
+Truck, with trailer.</li>
 <li><code>ShipmentStage/TransportMeans/RoadTransport/LicensePlateID</code>
 = <strong>BV LP 2203</strong> (schemeID
 <code>urn:ubl-examples:world:XB:vehicle-register</code>)<br />
-The registration plate of the truck; the fleet of Bayforth Forwarding
-(world/parties.json). The schemeID names the scheme it is from: the
-federal vehicle register of Bayvarra (BV, two letters for the series and
-four digits).</li>
+The registration plate of the truck; the fleet of Bayforth Forwarding.
+The schemeID names the scheme it is from: the federal vehicle register
+of Bayvarra (BV, two letters for the series and four digits).</li>
 <li><code>ShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID</code>
 = <strong>BV TR 0817</strong> (schemeID
 <code>urn:ubl-examples:world:XB:vehicle-register</code>)<br />
@@ -627,8 +606,8 @@ The pallet's barcode, scanned at each handover: it carries the same
 number.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/ID</code> =
 <strong>1-1</strong><br />
-The pallet's line: the benches on it, as part {k} of despatch line 1
-(retail/12#F9).</li>
+The pallet's line: the benches on it, as part {k} of despatch line
+1.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 Four benches on the pallet.</li>
@@ -699,7 +678,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -759,7 +738,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -819,7 +798,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>TransportHandlingUnit/TransportEquipment/ID</code> =
 <strong>095206100000122217</strong> (schemeID
 <code>GS1 GRAI</code>)<br />
@@ -840,7 +819,7 @@ sense, which counts pallets with containers and trailers.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/ID</code> =
 <strong>BF-WB-26-0231</strong><br />
 The carrier's consignment note the pallet travels under, issued when the
-truck was loaded (retail/12#F11, D34).</li>
+truck was loaded.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/DocumentType</code>
 = <strong>Consignment note</strong><br />
 What the document is.</li>
@@ -871,8 +850,8 @@ The pallet's barcode, scanned at each handover: it carries the same
 number.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/ID</code> =
 <strong>1-2</strong><br />
-The pallet's line: the benches on it, as part {k} of despatch line 1
-(retail/12#F9).</li>
+The pallet's line: the benches on it, as part {k} of despatch line
+1.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 Four benches on the pallet.</li>
@@ -943,7 +922,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1003,7 +982,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1063,7 +1042,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>TransportHandlingUnit/TransportEquipment/ID</code> =
 <strong>095206100000122234</strong> (schemeID
 <code>GS1 GRAI</code>)<br />
@@ -1084,7 +1063,7 @@ sense, which counts pallets with containers and trailers.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/ID</code> =
 <strong>BF-WB-26-0231</strong><br />
 The carrier's consignment note the pallet travels under, issued when the
-truck was loaded (retail/12#F11, D34).</li>
+truck was loaded.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/DocumentType</code>
 = <strong>Consignment note</strong><br />
 What the document is.</li>
@@ -1115,8 +1094,8 @@ The pallet's barcode, scanned at each handover: it carries the same
 number.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/ID</code> =
 <strong>1-3</strong><br />
-The pallet's line: the benches on it, as part {k} of despatch line 1
-(retail/12#F9).</li>
+The pallet's line: the benches on it, as part {k} of despatch line
+1.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 Four benches on the pallet.</li>
@@ -1187,7 +1166,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1247,7 +1226,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1307,7 +1286,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>TransportHandlingUnit/TransportEquipment/ID</code> =
 <strong>095206100000122251</strong> (schemeID
 <code>GS1 GRAI</code>)<br />
@@ -1328,7 +1307,7 @@ sense, which counts pallets with containers and trailers.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/ID</code> =
 <strong>BF-WB-26-0231</strong><br />
 The carrier's consignment note the pallet travels under, issued when the
-truck was loaded (retail/12#F11, D34).</li>
+truck was loaded.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/DocumentType</code>
 = <strong>Consignment note</strong><br />
 What the document is.</li>
@@ -1359,8 +1338,8 @@ The pallet's barcode, scanned at each handover: it carries the same
 number.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/ID</code> =
 <strong>1-4</strong><br />
-The pallet's line: the benches on it, as part {k} of despatch line 1
-(retail/12#F9).</li>
+The pallet's line: the benches on it, as part {k} of despatch line
+1.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 Four benches on the pallet.</li>
@@ -1431,7 +1410,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1491,7 +1470,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1551,7 +1530,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>TransportHandlingUnit/TransportEquipment/ID</code> =
 <strong>095206100000122268</strong> (schemeID
 <code>GS1 GRAI</code>)<br />
@@ -1572,7 +1551,7 @@ sense, which counts pallets with containers and trailers.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/ID</code> =
 <strong>BF-WB-26-0231</strong><br />
 The carrier's consignment note the pallet travels under, issued when the
-truck was loaded (retail/12#F11, D34).</li>
+truck was loaded.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/DocumentType</code>
 = <strong>Consignment note</strong><br />
 What the document is.</li>
@@ -1603,8 +1582,8 @@ The pallet's barcode, scanned at each handover: it carries the same
 number.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/ID</code> =
 <strong>1-5</strong><br />
-The pallet's line: the benches on it, as part {k} of despatch line 1
-(retail/12#F9).</li>
+The pallet's line: the benches on it, as part {k} of despatch line
+1.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 Four benches on the pallet.</li>
@@ -1675,7 +1654,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1735,7 +1714,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1795,7 +1774,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>TransportHandlingUnit/TransportEquipment/ID</code> =
 <strong>095206100000122285</strong> (schemeID
 <code>GS1 GRAI</code>)<br />
@@ -1816,7 +1795,7 @@ sense, which counts pallets with containers and trailers.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/ID</code> =
 <strong>BF-WB-26-0231</strong><br />
 The carrier's consignment note the pallet travels under, issued when the
-truck was loaded (retail/12#F11, D34).</li>
+truck was loaded.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/DocumentType</code>
 = <strong>Consignment note</strong><br />
 What the document is.</li>
@@ -1847,8 +1826,8 @@ The pallet's barcode, scanned at each handover: it carries the same
 number.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/ID</code> =
 <strong>1-6</strong><br />
-The pallet's line: the benches on it, as part {k} of despatch line 1
-(retail/12#F9).</li>
+The pallet's line: the benches on it, as part {k} of despatch line
+1.</li>
 <li><code>TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 Four benches on the pallet.</li>
@@ -1919,7 +1898,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1979,7 +1958,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -2039,7 +2018,7 @@ code names the code's list in its schemeID.</li>
 <li><code>TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>TransportHandlingUnit/TransportEquipment/ID</code> =
 <strong>095206100000122302</strong> (schemeID
 <code>GS1 GRAI</code>)<br />
@@ -2060,7 +2039,7 @@ sense, which counts pallets with containers and trailers.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/ID</code> =
 <strong>BF-WB-26-0231</strong><br />
 The carrier's consignment note the pallet travels under, issued when the
-truck was loaded (retail/12#F11, D34).</li>
+truck was loaded.</li>
 <li><code>TransportHandlingUnit/ShipmentDocumentReference/DocumentType</code>
 = <strong>Consignment note</strong><br />
 What the document is.</li>
@@ -2080,19 +2059,17 @@ What was despatched.</li>
 The order line this line fulfils.</li>
 <li><code>Item/Description</code> = <strong>The manufacturer's Serra
 bench, from the distributor's stock.</strong><br />
-The seller's description; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>Item/Name</code> = <strong>Park bench Serra 180</strong><br />
-The item's short name; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>Item/BuyersItemIdentification/ID</code> =
 <strong>BM-551210</strong><br />
-The buyer's own item number: it resells this item as its item
-bench-serra-r.</li>
+The buyer's own item number: it resells this item under its own
+number.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>LD-10442</strong><br />
-The seller's own item number; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The seller's own item number; as Lumeway Distribution describes the
+item.</li>
 <li><code>Item/SellersItemIdentification/ExtendedID</code> =
 <strong>GRY</strong><br />
 The variant of the item: the frame colour, added to the item
@@ -2118,22 +2095,21 @@ list: GRY = Grey.</li>
 The variant in words.</li>
 <li><code>Item/ManufacturersItemIdentification/ID</code> =
 <strong>VI-B180</strong><br />
-The item number of the maker, Valdara Industries: the reseller's item is
-resale of item bench-serra.</li>
+The item number of the maker, Valdara Industries: the reseller sells the
+maker's item on.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
 <strong>9520610000012</strong> (schemeID <code>GS1 GTIN</code>)<br />
 The GTIN Lumeway Distribution gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
 the maker numbers its items in another scheme, and GS1 lets a wholesaler
-or importer allocate the GTIN where the brand owner has none
-(world/items.json).</li>
+or importer allocate the GTIN where the brand owner has none.</li>
 <li><code>Item/AdditionalItemIdentification/ID</code> =
 <strong>KXU10014B180</strong> (schemeID <code>ISO 15459-6</code>)<br />
 The maker's number for the item in its globally unique form under
 ISO/IEC 15459 (KXU and the company number Codana gave Valdara
 Industries), which travels along with the GTIN, as an importer may carry
-it; item bench-serra of Valdara Industries (world/items.json).</li>
+it; as Valdara Industries describes the item.</li>
 <li><code>Item/ItemInstance/ManufactureDate</code> =
 <strong>2026-03-20</strong><br />
 The day the lot was produced.</li>
@@ -2148,8 +2124,7 @@ frames went through.</li>
 <li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value</code>
 = <strong>ZN-26-057</strong><br />
 Its batch: each lot has its own, in the coating line's running count of
-the year (the production record, world/items.json goods_chain,
-D21).</li>
+the year (the production record).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -2988,6 +2963,6 @@ href="example-retail-14-TransportationStatusRequest.html">Transportation
 Status Request →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

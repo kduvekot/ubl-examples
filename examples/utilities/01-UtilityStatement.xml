@@ -349,7 +349,7 @@
       </cac:ConsumptionLine>
     </cac:SupplierConsumption>
     <cac:SupplierConsumption>
-      <cbc:Description>Ferrano Grid's network charges, which Ferrano Energy collects with its bill and pays to the grid (energy/02).</cbc:Description>
+      <cbc:Description>Ferrano Grid's network charges, which Ferrano Energy collects with its bill and pays to the grid.</cbc:Description>
       <cac:UtilitySupplierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106055</cbc:ID>

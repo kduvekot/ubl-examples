@@ -43,14 +43,13 @@ for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json);
-Party/AdditionalPartyIdentification first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL
+2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:import-customs-declaration:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Import customs
-declaration". Each has a public description on the world's pages
-(world/specifications.json).</li>
+declaration". Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> = <strong>urn:ubl-examples:world:profile<span
 class="emoji" data-emoji="customs">🛃</span>1.0</strong><br />
 The Trade Accord's process profile the document belongs to: customs, a
@@ -69,7 +68,7 @@ The customs broker declares the import for the buyer, on the first
 working day after the ship berthed.</li>
 <li><code>IssueTime</code> = <strong>09:07:00+00:00</strong><br />
 The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>TypeCode</code> = <strong>IMPORT</strong> (listID
 <code>urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode</code>)<br />
 An import declaration. The code is from the Trade Accord's customs
@@ -88,13 +87,13 @@ transaction list: PURCHASE = Outright purchase or sale.</li>
 lanate. Musaka mofilufo vukape: 10 % mutaki tafone venete mutaki
 21,958.400 venamo, 2,195.840 venamo.</strong> (languageID
 <code>qal</code>)<br />
-The note in Lisavan, the sender's language (world/countries.json): What
-is due at import, by the importing country's rule (D18).</li>
+The note in Lisavan, the sender's language: What is due at import, by
+the importing country's rule.</li>
 <li><code>Note</code> = <strong>No duty: goods of Accord origin. Import
 consumption tax: 10 % of the landed value of 21,958.400 coral, 2,195.840
 coral.</strong> (languageID <code>en-XL</code>)<br />
 The same note in English, the working language between the countries:
-What is due at import, by the importing country's rule (D18).</li>
+What is due at import, by the importing country's rule.</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
 The first version.</li>
 </ul>
@@ -112,23 +111,22 @@ UBL's Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>PartyIdentification/ID</code> = <strong>IC41859</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; identity of Velumi Trading (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+register; as Velumi Trading gives it. Later mentions of the same party
+in this document repeat only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XL-TR-041859</strong> (schemeID
 <code>urn:ubl-examples:world:XL:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XL-TR- and 6 digits); identity of Velumi Trading
-(world/parties.json).</li>
+imports or exports (XL-TR- and 6 digits); as Velumi Trading gives
+it.</li>
 <li><code>PartyName/Name</code> = <strong>Velumi Trading</strong><br />
-The trading name; identity of Velumi Trading (world/parties.json).</li>
+The trading name; as Velumi Trading gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>40351721</strong> (schemeID
 <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Velumi Trading
-(world/parties.json).</li>
+office numbers every address it delivers to); as Velumi Trading gives
+it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -137,10 +135,10 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XL</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -156,36 +154,34 @@ Address format of Lisavu.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Kavama
 Timeku</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Velumi Trading (world/parties.json).</li>
+names are given in both languages ; as Velumi Trading gives it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Reef Street</strong>
 (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Velumi Trading (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Velumi Trading gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>16</strong><br />
-Building number of the postal address. identity of Velumi Trading
-(world/parties.json).</li>
+Building number of the postal address. as Velumi Trading gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Velumi Trading (world/parties.json).</li>
+as Velumi Trading gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Velumi Trading (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Velumi
+Trading gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
@@ -249,32 +245,30 @@ The signed mandate kept by the broker.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20410274</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeway Distribution
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Lumeway Distribution gives it. Later mentions
+of the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>9520610900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Lumeway Distribution (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Lumeway Distribution gives
+it.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XB-TR-410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XB-TR- and 6 digits); identity of Lumeway
-Distribution (world/parties.json).</li>
+imports or exports (XB-TR- and 6 digits); as Lumeway Distribution gives
+it.</li>
 <li><code>PartyName/Name</code> = <strong>Lumeway
 Distribution</strong><br />
-The trading name; identity of Lumeway Distribution
-(world/parties.json).</li>
+The trading name; as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>UL-ADR-693911</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); identity of Lumeway Distribution
-(world/parties.json).</li>
+and six digits); as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -283,46 +277,44 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Distribution
 Drive</strong><br />
-Street of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Street of the postal address. as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/BlockName</code> = <strong>Marrowdale Business
 Park</strong><br />
-The business park the distribution centre stands in. identity of Lumeway
-Distribution (world/parties.json).</li>
+The business park the distribution centre stands in. as Lumeway
+Distribution gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>43</strong><br />
-Building number of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Building number of the postal address. as Lumeway Distribution gives
+it.</li>
 <li><code>PostalAddress/PlotIdentification</code> = <strong>Plot
 14</strong><br />
-The plot of the distribution centre in the business park. identity of
-Lumeway Distribution (world/parties.json).</li>
+The plot of the distribution centre in the business park. as Lumeway
+Distribution gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Lumeway Distribution
-(world/parties.json).</li>
+country and state. as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>71214</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Lumeway
-Distribution (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Lumeway Distribution
+gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -330,19 +322,18 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Lumeway Distribution
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Lumeway Distribution gives it. The code is from Bayvarra's national
+state or territory list: XB-UL = Upland State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -364,20 +355,19 @@ only its identifier and name are repeated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20411644</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Bayforth Forwarding
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Bayforth Forwarding gives it. Later mentions of
+the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>PartyName/Name</code> = <strong>Bayforth
 Forwarding</strong><br />
-The trading name; identity of Bayforth Forwarding
-(world/parties.json).</li>
+The trading name; as Bayforth Forwarding gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>LUM-ADR-953846</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Bayforth
-Forwarding (world/parties.json).</li>
+state register of Coastal State refers to); as Bayforth Forwarding gives
+it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -386,42 +376,39 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Dockside
 Way</strong><br />
-Street of the postal address. identity of Bayforth Forwarding
-(world/parties.json).</li>
+Street of the postal address. as Bayforth Forwarding gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> = <strong>4</strong><br />
-Building number of the postal address. identity of Bayforth Forwarding
-(world/parties.json).</li>
+Building number of the postal address. as Bayforth Forwarding gives
+it.</li>
 <li><code>PostalAddress/CitySubdivisionName</code> =
 <strong>Dockside</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map (world/map.json). identity of Bayforth Forwarding
-(world/parties.json).</li>
+the map. as Bayforth Forwarding gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Bayforth Forwarding
-(world/parties.json).</li>
+country and state. as Bayforth Forwarding gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38525</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Bayforth
-Forwarding (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Bayforth Forwarding
+gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -429,19 +416,18 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Bayforth Forwarding
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Bayforth Forwarding gives it. The code is from Bayvarra's national state
+or territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -453,19 +439,18 @@ The country's name, for readers of the address.</li>
 (schemeID
 <code>urn:ubl-examples:world:XL:public-body-register</code>)<br />
 The party's preferred identifier: its number in the Government list of
-public bodies of Lisavu; identity of Island Customs Service
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+public bodies of Lisavu; as Island Customs Service gives it. Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Island Customs
 Service</strong><br />
-The trading name; identity of Island Customs Service
-(world/parties.json).</li>
+The trading name; as Island Customs Service gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>65334843</strong> (schemeID
 <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Island Customs
-Service (world/parties.json).</li>
+office numbers every address it delivers to); as Island Customs Service
+gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -474,10 +459,10 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XL</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -493,62 +478,61 @@ Address format of Lisavu.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Vosapi
 Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Island Customs Service (world/parties.json).</li>
+names are given in both languages ; as Island Customs Service gives
+it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Wharf Road</strong>
 (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Island Customs Service (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Island Customs Service gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>53</strong><br />
-Building number of the postal address. identity of Island Customs
-Service (world/parties.json).</li>
+Building number of the postal address. as Island Customs Service gives
+it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Island Customs Service (world/parties.json).</li>
+as Island Customs Service gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Island Customs Service (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Island
+Customs Service gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Island
 Customs Service</strong><br />
-The public body's official name; identity of Island Customs Service
-(world/parties.json).</li>
+The public body's official name; as Island Customs Service gives
+it.</li>
 <li><code>PartyLegalEntity/CompanyID</code> = <strong>GOV-118</strong>
 (schemeID
 <code>urn:ubl-examples:world:XL:public-body-register</code>)<br />
 Number in the Government list of public bodies of Lisavu, which gives
 every public body a number of its own (GOV- and 3 digits), derived from
-no other register (O142); identity of Island Customs Service
-(world/parties.json). The schemeID names the scheme it is from: the
-government list of public bodies of Lisavu (GOV- and 3 digits).</li>
+no other register ; as Island Customs Service gives it. The schemeID
+names the scheme it is from: the government list of public bodies of
+Lisavu (GOV- and 3 digits).</li>
 <li><code>Contact/Name</code> = <strong>Import office</strong><br />
 The party's import office desk: the desk for its role in this document
-(an import); identity of Island Customs Service
-(world/parties.json).</li>
+(an import); as Island Customs Service gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Customs
 officer</strong><br />
-The job of the person who answers at the desk; identity of Island
-Customs Service (world/parties.json).</li>
+The job of the person who answers at the desk; as Island Customs Service
+gives it.</li>
 <li><code>Contact/Department</code> = <strong>Customs</strong><br />
-The department the desk belongs to; identity of Island Customs Service
-(world/parties.json).</li>
+The department the desk belongs to; as Island Customs Service gives
+it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 3 728
 6449</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -556,16 +540,14 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. identity of Island Customs Service
-(world/parties.json).</li>
+ships with 79. as Island Customs Service gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:import@customs-xl.example">import@customs-xl.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Island Customs Service (world/parties.json).</li>
+anyone; as Island Customs Service gives it.</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Island Customs Service
-(world/parties.json).</li>
+When the desk can be reached; as Island Customs Service gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -574,9 +556,9 @@ network.</li>
 <strong>XL:GOV-118</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Government list of public bodies of Lisavu; identity of
-Island Customs Service (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Government list of public bodies of Lisavu; as Island
+Customs Service gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="notifier-party">Notifier Party</h3>
 <p>Inside <code>NotifierParty</code>:</p>
@@ -584,28 +566,26 @@ Party/EndpointID is deprecated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>IC41585</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; identity of Tevaro Customs Brokers (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+register; as Tevaro Customs Brokers gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Tevaro Customs
 Brokers</strong><br />
-The trading name; identity of Tevaro Customs Brokers
-(world/parties.json).</li>
+The trading name; as Tevaro Customs Brokers gives it.</li>
 <li><code>Language/ID</code> = <strong>qal</strong> (schemeID
 <code>ISO 639</code>)<br />
 Lisavan, the language of Lisavu and of the party; the code is from the
 range ISO 639 reserves for local use (qaa–qtz), as the world's languages
-are invented (world/countries.json). The code is from the world's copy
-of ISO 639 Language: qal = Lisavan. An identifier that holds a code
-names the code's list in its schemeID.</li>
+are invented. The code is from the world's copy of ISO 639 Language: qal
+= Lisavan. An identifier that holds a code names the code's list in its
+schemeID.</li>
 <li><code>Language/Name</code> = <strong>Lisavan</strong><br />
 The language's name in English; in the language itself: Lisavuana.</li>
 <li><code>PostalAddress/ID</code> = <strong>24307810</strong> (schemeID
 <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Tevaro Customs
-Brokers (world/parties.json).</li>
+office numbers every address it delivers to); as Tevaro Customs Brokers
+gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -614,10 +594,10 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XL</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -633,74 +613,72 @@ Address format of Lisavu.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Vosapi
 Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Tevaro Customs Brokers (world/parties.json).</li>
+names are given in both languages ; as Tevaro Customs Brokers gives
+it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Wharf Road</strong>
 (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Tevaro Customs Brokers (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Tevaro Customs Brokers gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>60</strong><br />
-Building number of the postal address. identity of Tevaro Customs
-Brokers (world/parties.json).</li>
+Building number of the postal address. as Tevaro Customs Brokers gives
+it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Tevaro Customs Brokers (world/parties.json).</li>
+as Tevaro Customs Brokers gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Tevaro Customs Brokers (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Tevaro
+Customs Brokers gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Tevaro
 Customs Brokers Ltd</strong><br />
-The name under which the party is registered, with its legal form;
-identity of Tevaro Customs Brokers (world/parties.json).</li>
+The name under which the party is registered, with its legal form; as
+Tevaro Customs Brokers gives it.</li>
 <li><code>PartyLegalEntity/CompanyID</code> = <strong>IC41585</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
-Number in the Island companies register; identity of Tevaro Customs
-Brokers (world/parties.json). The schemeID names the scheme it is from:
-the Island companies register (IC and 5 digits).</li>
+Number in the Island companies register; as Tevaro Customs Brokers gives
+it. The schemeID names the scheme it is from: the Island companies
+register (IC and 5 digits).</li>
 <li><code>Contact/Name</code> = <strong>Declarations</strong><br />
-The party's main desk, which handles this document; identity of Tevaro
-Customs Brokers (world/parties.json).</li>
+The party's main desk, which handles this document; as Tevaro Customs
+Brokers gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Customs
 declarant</strong><br />
-The job of the person who answers at the desk; identity of Tevaro
-Customs Brokers (world/parties.json).</li>
+The job of the person who answers at the desk; as Tevaro Customs Brokers
+gives it.</li>
 <li><code>Contact/Department</code> = <strong>Customs</strong><br />
-The department the desk belongs to; identity of Tevaro Customs Brokers
-(world/parties.json).</li>
+The department the desk belongs to; as Tevaro Customs Brokers gives
+it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 3 725
 3563</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. identity of Tevaro Customs Brokers
-(world/parties.json).</li>
+ships with 79. as Tevaro Customs Brokers gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:declarations@tevaro.example">declarations@tevaro.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Tevaro Customs Brokers (world/parties.json).</li>
+anyone; as Tevaro Customs Brokers gives it.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Tevaro Customs Brokers
-(world/parties.json).</li>
+When the desk can be reached; as Tevaro Customs Brokers gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -709,9 +687,8 @@ network.</li>
 <strong>XL:IC41585</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Island companies register; identity of Tevaro Customs
-Brokers (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+number in the Island companies register; as Tevaro Customs Brokers gives
+it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
@@ -741,21 +718,19 @@ The quantity declared.</li>
 (listID
 <code>urn:ubl-examples:world:codelist:PreferenceCriterionCode</code>)<br />
 The goods are of XU origin under the Trade Accord, by this criterion:
-the preference claimed, free of duty (D18). The code is from the Trade
+the preference claimed, free of duty. The code is from the Trade
 Accord's preference criterion list: S = Sufficiently processed.</li>
 <li><code>GoodsItem/Item/Description</code> = <strong>The manufacturer's
 Serra bench, from the distributor's stock.</strong><br />
-The seller's description; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>GoodsItem/Item/Name</code> = <strong>Park bench Serra
 180</strong><br />
-The item's short name; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>GoodsItem/Item/OriginCountry/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
-Where the item was produced; item bench-serra of Valdara Industries
-(world/items.json). The code is from the world's copy of UBL's Country
-identification (ISO 3166) list: XU = Urvania.</li>
+Where the item was produced; as Valdara Industries describes the item.
+The code is from the world's copy of UBL's Country identification (ISO
+3166) list: XU = Urvania.</li>
 <li><code>GoodsItem/Item/CommodityClassification/NatureCode</code> =
 <strong>XX</strong> (listID <code>WCO HS 2022 Sections</code>)<br />
 The section of the Harmonized System the goods fall in, the highest
@@ -770,17 +745,17 @@ the Trade Accord's cargo type list: GEN = General cargo.</li>
 <li><code>GoodsItem/Item/CommodityClassification/CommodityCode</code> =
 <strong>940179</strong> (listID <code>WCO HS 2022</code>)<br />
 The Harmonized System subheading of the World Customs Organization, six
-digits, for customs and trade statistics; item bench-serra of Valdara
-Industries (world/items.json). The code is from the world's copy of
-Harmonized Commodity Description and Coding System, 2022 edition
-(subheadings): 940179 = Other seats, with metal frames: other.</li>
+digits, for customs and trade statistics; as Valdara Industries
+describes the item. The code is from the world's copy of Harmonized
+Commodity Description and Coding System, 2022 edition (subheadings):
+940179 = Other seats, with metal frames: other.</li>
 <li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
 = <strong>38111</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 What the item is, as a subclass of the UN Central Product Classification
-(CPC), the trade classification for goods and services; item bench-serra
-of Valdara Industries (world/items.json). The code is from the world's
-copy of UN Central Product Classification, Version 2.1: 38111 = Seats,
-primarily with metal frames.</li>
+(CPC), the trade classification for goods and services; as Valdara
+Industries describes the item. The code is from the world's copy of UN
+Central Product Classification, Version 2.1: 38111 = Seats, primarily
+with metal frames.</li>
 <li><code>GoodsItem/Item/ClassifiedTaxCategory/ID</code> =
 <strong>S</strong> (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 The island's import consumption tax applies. The code is from the
@@ -803,7 +778,7 @@ A tax on consumption, charged at import. The code is from the Trade
 Accord's tax type list: CONSUMPTION = Tax on consumption.</li>
 <li><code>GoodsItem/InvoiceLine/ID</code> = <strong>1</strong><br />
 A line of the seller's invoice for these goods: the benches are on two
-lines, the port's and the buyer's own stock (O172).</li>
+lines, the port's and the buyer's own stock.</li>
 <li><code>GoodsItem/InvoiceLine/InvoicedQuantity</code> =
 <strong>96</strong> (unitCode <code>EA</code>)<br />
 The benches invoiced on the line.</li>
@@ -812,7 +787,7 @@ Serra 180</strong><br />
 Named only: described in full above.</li>
 <li><code>GoodsItem/InvoiceLine/ID</code> = <strong>2</strong><br />
 A line of the seller's invoice for these goods: the benches are on two
-lines, the port's and the buyer's own stock (O172).</li>
+lines, the port's and the buyer's own stock.</li>
 <li><code>GoodsItem/InvoiceLine/InvoicedQuantity</code> =
 <strong>8</strong> (unitCode <code>EA</code>)<br />
 The benches invoiced on the line.</li>
@@ -893,7 +868,7 @@ code names the code's list in its schemeID.</li>
 <li><code>GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure</code>
 = <strong>12.2</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>GoodsItem/ContainingPackage/ContainedPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -953,7 +928,7 @@ code names the code's list in its schemeID.</li>
 <li><code>GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure</code>
 = <strong>13</strong> (unitCode <code>KGM</code>)<br />
 Within the 25 kg one person may lift (ISO 11228-1, the world's handling
-rule, D20).</li>
+rule).</li>
 <li><code>GoodsItem/ContainingPackage/ContainedPackage/ReturnableMaterialIndicator</code>
 = <strong>false</strong><br />
 The parcel's packaging stays with the goods.</li>
@@ -1013,7 +988,7 @@ code names the code's list in its schemeID.</li>
 <li><code>GoodsItem/ContainingPackage/ContainedPackage/MeasurementDimension/Measure</code>
 = <strong>21.8</strong> (unitCode <code>KGM</code>)<br />
 Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the
-world's handling rule, D20).</li>
+world's handling rule).</li>
 <li><code>GoodsItem/ID</code> = <strong>2</strong><br />
 The goods item number.</li>
 <li><code>GoodsItem/Description</code> = <strong>Bench side frame
@@ -1034,21 +1009,19 @@ The quantity declared.</li>
 (listID
 <code>urn:ubl-examples:world:codelist:PreferenceCriterionCode</code>)<br />
 The goods are of XU origin under the Trade Accord, by this criterion:
-the preference claimed, free of duty (D18). The code is from the Trade
+the preference claimed, free of duty. The code is from the Trade
 Accord's preference criterion list: S = Sufficiently processed.</li>
 <li><code>GoodsItem/Item/Description</code> = <strong>Spare side frame
 for the Serra bench.</strong><br />
-The seller's description; item bench-casting-b of Lumeway Distribution
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>GoodsItem/Item/Name</code> = <strong>Bench side frame
 casting</strong><br />
-The item's short name; item bench-casting-b of Lumeway Distribution
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>GoodsItem/Item/OriginCountry/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
-Where the item was produced; item bench-casting of Valdara Industries
-(world/items.json). The code is from the world's copy of UBL's Country
-identification (ISO 3166) list: XU = Urvania.</li>
+Where the item was produced; as Valdara Industries describes the item.
+The code is from the world's copy of UBL's Country identification (ISO
+3166) list: XU = Urvania.</li>
 <li><code>GoodsItem/Item/CommodityClassification/NatureCode</code> =
 <strong>XV</strong> (listID <code>WCO HS 2022 Sections</code>)<br />
 The section of the Harmonized System the goods fall in, the highest
@@ -1063,18 +1036,17 @@ the Trade Accord's cargo type list: GEN = General cargo.</li>
 <li><code>GoodsItem/Item/CommodityClassification/CommodityCode</code> =
 <strong>732599</strong> (listID <code>WCO HS 2022</code>)<br />
 The Harmonized System subheading of the World Customs Organization, six
-digits, for customs and trade statistics; item bench-casting of Valdara
-Industries (world/items.json). The code is from the world's copy of
-Harmonized Commodity Description and Coding System, 2022 edition
-(subheadings): 732599 = Other cast articles of iron or steel:
-other.</li>
+digits, for customs and trade statistics; as Valdara Industries
+describes the item. The code is from the world's copy of Harmonized
+Commodity Description and Coding System, 2022 edition (subheadings):
+732599 = Other cast articles of iron or steel: other.</li>
 <li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
 = <strong>42999</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 What the item is, as a subclass of the UN Central Product Classification
-(CPC), the trade classification for goods and services; item
-bench-casting of Valdara Industries (world/items.json). The code is from
-the world's copy of UN Central Product Classification, Version 2.1:
-42999 = Metal goods n.e.c..</li>
+(CPC), the trade classification for goods and services; as Valdara
+Industries describes the item. The code is from the world's copy of UN
+Central Product Classification, Version 2.1: 42999 = Metal goods
+n.e.c..</li>
 <li><code>GoodsItem/Item/ClassifiedTaxCategory/ID</code> =
 <strong>S</strong> (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 The island's import consumption tax applies. The code is from the
@@ -1138,8 +1110,8 @@ What the packaging is made of.</li>
 <li><code>ShipmentStage/TransportModeCode</code> = <strong>1</strong>
 (listID
 <code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
-The goods cross the border by sea (worklist C12). The code is from UBL's
-default Transport mode (UNECE Recommendation 19) list: 1 = Maritime
+The goods cross the border by sea. The code is from UBL's default
+Transport mode (UNECE Recommendation 19) list: 1 = Maritime
 transport.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
@@ -1152,9 +1124,9 @@ The bill of lading of the goods.</li>
 (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
 The kind of document referred to: TOL-BL-26-0139 is the example sea/14,
-a BillOfLading; a generic reference names the UBL document type
-(decision Q29). The code is from the Trade Accord's UBL document type
-list: BillOfLading = Bill Of Lading.</li>
+a BillOfLading; a generic reference names the UBL document type. The
+code is from the Trade Accord's UBL document type list: BillOfLading =
+Bill Of Lading.</li>
 <li><code>ID</code> = <strong>BF-EX-26-0135</strong><br />
 The export declaration of the goods in the country of departure, for
 information.</li>
@@ -1163,18 +1135,16 @@ information.</li>
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
 The kind of document referred to: BF-EX-26-0135 is the example sea/11, a
 ExportCustomsDeclaration; a generic reference names the UBL document
-type (decision Q29). The code is from the Trade Accord's UBL document
-type list: ExportCustomsDeclaration = Export Customs Declaration.</li>
+type. The code is from the Trade Accord's UBL document type list:
+ExportCustomsDeclaration = Export Customs Declaration.</li>
 <li><code>ID</code> = <strong>LD-INV-26-0147</strong><br />
-The commercial invoice the customs value rests on (worklist C12); its
-statement on origin is the proof of origin the preference claim refers
-to (D18).</li>
+The commercial invoice the customs value rests on; its statement on
+origin is the proof of origin the preference claim refers to.</li>
 <li><code>DocumentTypeCode</code> = <strong>Invoice</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
 The kind of document referred to: LD-INV-26-0147 is the example sea/22,
-a Invoice; a generic reference names the UBL document type (decision
-Q29). The code is from the Trade Accord's UBL document type list:
-Invoice.</li>
+a Invoice; a generic reference names the UBL document type. The code is
+from the Trade Accord's UBL document type list: Invoice.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -1626,6 +1596,6 @@ Status</a> · <a href="examples.html#flow-sea">all documents of the
 flow</a> · <a href="example-sea-18-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

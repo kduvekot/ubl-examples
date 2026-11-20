@@ -42,14 +42,13 @@ every value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json);
-Party/AdditionalPartyIdentification first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL
+2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:despatch-advice:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Despatch advice". Each
-has a public description on the world's pages
-(world/specifications.json).</li>
+has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:despatch-receipt:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: despatch and
@@ -68,7 +67,7 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 The day the 3PL loaded the truck.</li>
 <li><code>IssueTime</code> = <strong>15:15:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>DespatchAdviceTypeCode</code> = <strong>DELIVERY</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:DespatchAdviceTypeCode</code>)<br />
@@ -77,7 +76,7 @@ Accord's despatch advice type list: DELIVERY = Delivery.</li>
 <li><code>Note</code> = <strong>Please check the goods on arrival and
 report any damage in your receipt advice.</strong><br />
 What the receiver should do; the note names the transport document the
-flow uses (worklist C30).</li>
+flow uses.</li>
 <li><code>LineCountNumeric</code> = <strong>2</strong><br />
 The number of lines.</li>
 </ul>
@@ -94,42 +93,39 @@ The order this despatch fulfils.</li>
 <strong>XU-R-104411</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Castrano Logistics (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+of Urvania; as Castrano Logistics gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>0990:10519</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates (decision ID-Q7). No real scheme has the code designator
-0990; identity of Castrano Logistics (world/parties.json).</li>
+licence plates. No real scheme has the code designator 0990; as Castrano
+Logistics gives it.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Castrano
 Logistics</strong><br />
-The trading name; identity of Castrano Logistics
-(world/parties.json).</li>
+The trading name; as Castrano Logistics gives it.</li>
 <li><code>Party/Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document: documents
-between the countries of the Trade Accord are in English (O19). The code
-is from the world's copy of ISO 639 Language: en = English. An
-identifier that holds a code names the code's list in its schemeID.</li>
+between the countries of the Trade Accord are in English. The code is
+from the world's copy of ISO 639 Language: en = English. An identifier
+that holds a code names the code's list in its schemeID.</li>
 <li><code>Party/Language/Name</code> = <strong>English</strong><br />
 The language's name.</li>
 <li><code>Party/Language/LocaleCode</code> = <strong>en-XU</strong>
 (listID <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Urvania, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XU = Urvanian English.</li>
+says which. The code is from the Trade Accord's locale list: en-XU =
+Urvanian English.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>4160203920705699</strong> (schemeID
 <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Castrano Logistics
-(world/parties.json).</li>
+a ten-digit serial number); as Castrano Logistics gives it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -138,81 +134,76 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XU</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Bek Han
 Stalvek</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Castrano Logistics (world/parties.json).</li>
+street names are given in both languages ; as Castrano Logistics gives
+it.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Via del
 Magazzino</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Castrano Logistics (world/parties.json).</li>
+Italian names the British kept are part of English now; as Castrano
+Logistics gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>24</strong><br />
-Building number of the postal address. identity of Castrano Logistics
-(world/parties.json).</li>
+Building number of the postal address. as Castrano Logistics gives
+it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Zhildir</strong>
 (languageID <code>qau</code>)<br />
-The place's Urvanian name, as the map gives it (world/map.json). The
-town or locality nearest to the party's place on the map, in its own
-country and state. identity of Castrano Logistics
-(world/parties.json).</li>
+The place's Urvanian name, as the map gives it. The town or locality
+nearest to the party's place on the map, in its own country and state.
+as Castrano Logistics gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Conciaro</strong> (languageID <code>en-XU</code>)<br />
 The place's English name, the Italian one. The town or locality nearest
-to the party's place on the map, in its own country and state. identity
-of Castrano Logistics (world/parties.json).</li>
+to the party's place on the map, in its own country and state. as
+Castrano Logistics gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>4190</strong><br />
-Postal code in Urvania's format (4 digits). identity of Castrano
-Logistics (world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Castrano Logistics gives
+it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Province
 of Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Castrano Logistics
-(world/parties.json).</li>
+country. as Castrano Logistics gives it.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Loading
 bays</strong><br />
 The party's loading bays desk: the desk for its role in this document
-(it sends the goods off); identity of Castrano Logistics
-(world/parties.json).</li>
+(it sends the goods off); as Castrano Logistics gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Shift
 supervisor</strong><br />
-The job of the person who answers at the desk; identity of Castrano
-Logistics (world/parties.json).</li>
+The job of the person who answers at the desk; as Castrano Logistics
+gives it.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Operations</strong><br />
-The department the desk belongs to; identity of Castrano Logistics
-(world/parties.json).</li>
+The department the desk belongs to; as Castrano Logistics gives it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 1 041 909
 1454</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -222,16 +213,15 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Castrano Logistics
-(world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. as Castrano Logistics gives
+it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:loading@castrano.example">loading@castrano.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Castrano Logistics (world/parties.json).</li>
+anyone; as Castrano Logistics gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day
 06:00–22:00</strong><br />
-When the desk can be reached; identity of Castrano Logistics
-(world/parties.json).</li>
+When the desk can be reached; as Castrano Logistics gives it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -240,9 +230,8 @@ network.</li>
 <strong>XU:XU-R-104411</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; identity of Castrano
-Logistics (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Commercial register of Urvania; as Castrano Logistics
+gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="delivery-customer-party">Delivery Customer Party</h3>
 <p>Inside <code>DeliveryCustomerParty</code>:</p>
@@ -251,26 +240,24 @@ Party/EndpointID is deprecated.</li>
 <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeway Distribution
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Lumeway Distribution gives it. Later mentions
+of the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>9520610900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Lumeway Distribution (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Lumeway Distribution gives
+it.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Lumeway
 Distribution</strong><br />
-The trading name; identity of Lumeway Distribution
-(world/parties.json).</li>
+The trading name; as Lumeway Distribution gives it.</li>
 <li><code>Party/PostalAddress/ID</code> = <strong>UL-ADR-693911</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); identity of Lumeway Distribution
-(world/parties.json).</li>
+and six digits); as Lumeway Distribution gives it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -279,47 +266,45 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Distribution
 Drive</strong><br />
-Street of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Street of the postal address. as Lumeway Distribution gives it.</li>
 <li><code>Party/PostalAddress/BlockName</code> = <strong>Marrowdale
 Business Park</strong><br />
-The business park the distribution centre stands in. identity of Lumeway
-Distribution (world/parties.json).</li>
+The business park the distribution centre stands in. as Lumeway
+Distribution gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>43</strong><br />
-Building number of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Building number of the postal address. as Lumeway Distribution gives
+it.</li>
 <li><code>Party/PostalAddress/PlotIdentification</code> = <strong>Plot
 14</strong><br />
-The plot of the distribution centre in the business park. identity of
-Lumeway Distribution (world/parties.json).</li>
+The plot of the distribution centre in the business park. as Lumeway
+Distribution gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Lumeway Distribution
-(world/parties.json).</li>
+country and state. as Lumeway Distribution gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>71214</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Lumeway
-Distribution (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Lumeway Distribution
+gives it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -327,34 +312,32 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Lumeway Distribution
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Lumeway Distribution gives it. The code is from Bayvarra's national
+state or territory list: XB-UL = Upland State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Goods-in</strong><br />
 The party's goods-in desk: the desk for its role in this document (it
-receives the goods); identity of Lumeway Distribution
-(world/parties.json).</li>
+receives the goods); as Lumeway Distribution gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Goods-in
 supervisor</strong><br />
-The job of the person who answers at the desk; identity of Lumeway
-Distribution (world/parties.json).</li>
+The job of the person who answers at the desk; as Lumeway Distribution
+gives it.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Warehouse</strong><br />
-The department the desk belongs to; identity of Lumeway Distribution
-(world/parties.json).</li>
+The department the desk belongs to; as Lumeway Distribution gives
+it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 955
 964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -365,15 +348,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Lumeway Distribution (world/parties.json).</li>
+with 7. as Lumeway Distribution gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:goodsin@lumeway.example">goodsin@lumeway.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Lumeway Distribution (world/parties.json).</li>
+anyone; as Lumeway Distribution gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Lumeway Distribution
-(world/parties.json).</li>
+When the desk can be reached; as Lumeway Distribution gives it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -382,9 +364,9 @@ network.</li>
 <strong>XB:20410274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of Lumeway
-Distribution (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Lumeway
+Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="buyer-customer-party">Buyer Customer Party</h3>
 <p>Inside <code>BuyerCustomerParty</code>:</p>
@@ -406,28 +388,25 @@ are given; only its identifier and name are repeated.</li>
 <strong>XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Valdara Industries (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+of Urvania; as Valdara Industries gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>Party/AdditionalPartyIdentification/ID</code> =
 <strong>0990:10014</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates (decision ID-Q7). No real scheme has the code designator
-0990; identity of Valdara Industries (world/parties.json).</li>
+licence plates. No real scheme has the code designator 0990; as Valdara
+Industries gives it.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Valdara
 Industries</strong><br />
-The trading name; identity of Valdara Industries
-(world/parties.json).</li>
+The trading name; as Valdara Industries gives it.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>4160200467394686</strong> (schemeID
 <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Valdara Industries
-(world/parties.json).</li>
+a ten-digit serial number); as Valdara Industries gives it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -436,77 +415,74 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XU</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Bek Stuzman
 Nulban</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Valdara Industries (world/parties.json).</li>
+street names are given in both languages ; as Valdara Industries gives
+it.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Via delle
 Officine</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Valdara Industries (world/parties.json).</li>
+Italian names the British kept are part of English now; as Valdara
+Industries gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>17</strong><br />
-Building number of the postal address. identity of Valdara Industries
-(world/parties.json).</li>
+Building number of the postal address. as Valdara Industries gives
+it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Valdara Industries (world/parties.json).</li>
+state. as Valdara Industries gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Valdara Industries (world/parties.json).</li>
+state. as Valdara Industries gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>4120</strong><br />
-Postal code in Urvania's format (4 digits). identity of Valdara
-Industries (world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Valdara Industries gives
+it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Province
 of Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Valdara Industries
-(world/parties.json).</li>
+country. as Valdara Industries gives it.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Contact/Name</code> = <strong>Order desk</strong><br />
-The party's main desk, which handles this document; identity of Valdara
-Industries (world/parties.json).</li>
+The party's main desk, which handles this document; as Valdara
+Industries gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Order
 administrator</strong><br />
-The job of the person who answers at the desk; identity of Valdara
-Industries (world/parties.json).</li>
+The job of the person who answers at the desk; as Valdara Industries
+gives it.</li>
 <li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
-The department the desk belongs to; identity of Valdara Industries
-(world/parties.json).</li>
+The department the desk belongs to; as Valdara Industries gives it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 1 041 386
 4551</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -515,16 +491,15 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Valdara Industries
-(world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. as Valdara Industries gives
+it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:order@valdara.example">order@valdara.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Valdara Industries (world/parties.json).</li>
+anyone; as Valdara Industries gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Valdara Industries
-(world/parties.json).</li>
+When the desk can be reached; as Valdara Industries gives it.</li>
 <li><code>Party/Contact/OtherCommunication/ChannelCode</code> =
 <strong>AL</strong> (listID <code>UN/EDIFACT EDED 3155</code>)<br />
 UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default
@@ -543,25 +518,23 @@ The distributor's consignment for the truck.</li>
 <li><code>Consignment/GrossWeightMeasure</code> =
 <strong>5363.4</strong> (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
-transport equipment, as a consignment's weight is defined (worklist
-C15). The gross weight loaded, packaging included.</li>
+transport equipment, as a consignment's weight is defined. The gross
+weight loaded, packaging included.</li>
 <li><code>Consignment/CarrierParty/PartyIdentification/ID</code> =
 <strong>XU-R-104822</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Trasvia Haulage (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+of Urvania; as Trasvia Haulage gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>Consignment/CarrierParty/PartyName/Name</code> =
 <strong>Trasvia Haulage</strong><br />
-The trading name; identity of Trasvia Haulage (world/parties.json).</li>
+The trading name; as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/ID</code> =
 <strong>4160203746888095</strong> (schemeID
 <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Trasvia Haulage
-(world/parties.json).</li>
+a ten-digit serial number); as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/AddressTypeCode</code>
 = <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -570,79 +543,75 @@ list: BUSINESS = Business address.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/AddressFormatCode</code>
 = <strong>XU</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/StreetName</code> =
 <strong>Bek Ban Kumek</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Trasvia Haulage (world/parties.json).</li>
+street names are given in both languages ; as Trasvia Haulage gives
+it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/StreetName</code> =
 <strong>Via dei Trasporti</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Trasvia Haulage (world/parties.json).</li>
+Italian names the British kept are part of English now; as Trasvia
+Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/BuildingNumber</code> =
 <strong>45</strong><br />
-Building number of the postal address. identity of Trasvia Haulage
-(world/parties.json).</li>
+Building number of the postal address. as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/CityName</code> =
 <strong>Ruldraz</strong> (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Trasvia Haulage (world/parties.json).</li>
+state. as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/CityName</code> =
 <strong>Ferrano</strong> (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Trasvia Haulage (world/parties.json).</li>
+state. as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/PostalZone</code> =
 <strong>4160</strong><br />
-Postal code in Urvania's format (4 digits). identity of Trasvia Haulage
-(world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Trasvia Haulage gives
+it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/CountrySubentity</code>
 = <strong>Province of Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Trasvia Haulage
-(world/parties.json).</li>
+country. as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/Country/IdentificationCode</code>
 = <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>Consignment/CarrierParty/PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Consignment/CarrierParty/Contact/Name</code> =
 <strong>Planning desk</strong><br />
-The party's main desk, which handles this document; identity of Trasvia
-Haulage (world/parties.json).</li>
+The party's main desk, which handles this document; as Trasvia Haulage
+gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/JobTitle</code> =
 <strong>Transport planner</strong><br />
-The job of the person who answers at the desk; identity of Trasvia
-Haulage (world/parties.json).</li>
+The job of the person who answers at the desk; as Trasvia Haulage gives
+it.</li>
 <li><code>Consignment/CarrierParty/Contact/Department</code> =
 <strong>Operations</strong><br />
-The department the desk belongs to; identity of Trasvia Haulage
-(world/parties.json).</li>
+The department the desk belongs to; as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/Telephone</code> =
 <strong>+999 1 041 266 7643</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -651,17 +620,16 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Trasvia Haulage
-(world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. as Trasvia Haulage gives
+it.</li>
 <li><code>Consignment/CarrierParty/Contact/ElectronicMail</code> =
 <strong><a
 href="mailto:planning@trasvia.example">planning@trasvia.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Trasvia Haulage (world/parties.json).</li>
+anyone; as Trasvia Haulage gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/Note</code> = <strong>Every
 day 06:00–22:00</strong><br />
-When the desk can be reached; identity of Trasvia Haulage
-(world/parties.json).</li>
+When the desk can be reached; as Trasvia Haulage gives it.</li>
 <li><code>Delivery/Despatch/ID</code> =
 <strong>CL-OUT-26-0871</strong><br />
 The 3PL's outbound number.</li>
@@ -670,8 +638,7 @@ The 3PL's outbound number.</li>
 Loaded and gone.</li>
 <li><code>Delivery/Despatch/ActualDespatchTime</code> =
 <strong>15:05:00</strong><br />
-The carrier took over the loaded goods: the despatch is the pickup
-(road/04#F1).</li>
+The carrier took over the loaded goods: the despatch is the pickup.</li>
 </ul>
 <h3 id="despatch-line">Despatch Line</h3>
 <p>Inside <code>DespatchLine</code>:</p>
@@ -690,31 +657,28 @@ The order line this line fulfils.</li>
 manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek
 kalnan skul zhaznul dunnir darhir, gan zharsul krir drek
 tarkul.</strong> (languageID <code>qau</code>)<br />
-The seller's description in Urvanian, the seller's language; item
-bench-serra of Valdara Industries (world/items.json).</li>
+The seller's description in Urvanian, the seller's language.</li>
 <li><code>Item/Description</code> = <strong>Park bench, 1800 mm, frame
 of galvanised and powder-coated ductile cast iron, five slats of
 thermally modified ash, for bolting to the ground.</strong> (languageID
 <code>en-XU</code>)<br />
 The seller's description in English, the working language between the
-countries; item bench-serra of Valdara Industries
-(world/items.json).</li>
+countries.</li>
 <li><code>Item/Name</code> = <strong>Haz nanskir Serra 180</strong>
 (languageID <code>qau</code>)<br />
-The item's name in Urvanian, the seller's language; item bench-serra of
-Valdara Industries (world/items.json).</li>
+The item's name in Urvanian, the seller's language.</li>
 <li><code>Item/Name</code> = <strong>Park bench Serra 180</strong>
 (languageID <code>en-XU</code>)<br />
-The item's name in English, the working language between the countries;
-item bench-serra of Valdara Industries (world/items.json).</li>
+The item's name in English, the working language between the
+countries.</li>
 <li><code>Item/BuyersItemIdentification/ID</code> =
 <strong>LD-10442</strong><br />
-The buyer's own item number: it resells this item as its item
-bench-serra-b.</li>
+The buyer's own item number: it resells this item under its own
+number.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>VI-B180</strong><br />
-The seller's own item number; item bench-serra of Valdara Industries
-(world/items.json).</li>
+The seller's own item number; as Valdara Industries describes the
+item.</li>
 <li><code>Item/SellersItemIdentification/ExtendedID</code> =
 <strong>GRY</strong><br />
 The variant of the item: the frame colour, added to the item
@@ -744,8 +708,8 @@ The item's number in its globally unique form under ISO/IEC 15459, which
 Valdara Industries gives it: the issuing agency code KXU of the Codana
 Identification Agency, the company number Codana gave Valdara Industries
 and the company's own reference for the item, without a check character.
-Codana gives a company its number; the company numbers its own items;
-item bench-serra of Valdara Industries (world/items.json).</li>
+Codana gives a company its number; the company numbers its own items; as
+Valdara Industries describes the item.</li>
 <li><code>Item/StandardItemIdentification/BarcodeSymbologyID</code> =
 <strong>Code128</strong><br />
 The barcode the number is printed in on the label: Code 128 carries
@@ -769,8 +733,7 @@ frames went through.</li>
 <li><code>Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value</code>
 = <strong>ZN-26-057</strong><br />
 Its batch: each lot has its own, in the coating line's running count of
-the year (the production record, world/items.json goods_chain,
-D21).</li>
+the year (the production record).</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The line number.</li>
 <li><code>Note</code> = <strong>Spare side frames, for the distributor's
@@ -784,30 +747,27 @@ The order line this line fulfils.</li>
 <li><code>Item/Description</code> = <strong>Zudrir drir manskan gan drek
 Serra nanskir, zhukvan stezir gek, vazzhan stan
 krarhir-trunnir.</strong> (languageID <code>qau</code>)<br />
-The seller's description in Urvanian, the seller's language; item
-bench-casting of Valdara Industries (world/items.json).</li>
+The seller's description in Urvanian, the seller's language.</li>
 <li><code>Item/Description</code> = <strong>Replacement side frame for
 the Serra bench, ductile cast iron, galvanised and
 powder-coated.</strong> (languageID <code>en-XU</code>)<br />
 The seller's description in English, the working language between the
-countries; item bench-casting of Valdara Industries
-(world/items.json).</li>
+countries.</li>
 <li><code>Item/Name</code> = <strong>Nanskir drir manskan
 telstir</strong> (languageID <code>qau</code>)<br />
-The item's name in Urvanian, the seller's language; item bench-casting
-of Valdara Industries (world/items.json).</li>
+The item's name in Urvanian, the seller's language.</li>
 <li><code>Item/Name</code> = <strong>Bench side frame casting</strong>
 (languageID <code>en-XU</code>)<br />
-The item's name in English, the working language between the countries;
-item bench-casting of Valdara Industries (world/items.json).</li>
+The item's name in English, the working language between the
+countries.</li>
 <li><code>Item/BuyersItemIdentification/ID</code> =
 <strong>LD-10443</strong><br />
-The buyer's own item number: it resells this item as its item
-bench-casting-b.</li>
+The buyer's own item number: it resells this item under its own
+number.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>VI-C180</strong><br />
-The seller's own item number; item bench-casting of Valdara Industries
-(world/items.json).</li>
+The seller's own item number; as Valdara Industries describes the
+item.</li>
 <li><code>Item/SellersItemIdentification/ExtendedID</code> =
 <strong>2026</strong><br />
 The 2026 casting with the reinforced foot, which the order response
@@ -818,8 +778,8 @@ The item's number in its globally unique form under ISO/IEC 15459, which
 Valdara Industries gives it: the issuing agency code KXU of the Codana
 Identification Agency, the company number Codana gave Valdara Industries
 and the company's own reference for the item, without a check character.
-Codana gives a company its number; the company numbers its own items;
-item bench-casting of Valdara Industries (world/items.json).</li>
+Codana gives a company its number; the company numbers its own items; as
+Valdara Industries describes the item.</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01490</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -841,7 +801,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01491</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -863,7 +823,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01492</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -885,7 +845,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01493</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -907,7 +867,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01494</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -929,7 +889,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01495</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -951,7 +911,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01496</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -973,7 +933,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01497</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -995,7 +955,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01498</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -1017,7 +977,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01499</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -1039,7 +999,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01500</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -1061,7 +1021,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 <li><code>Item/ItemInstance/ProductTraceID</code> =
 <strong>VI-TR-01501</strong><br />
 The trace code on the casting's label, for the maker's tracing
@@ -1083,7 +1043,7 @@ A fact about this one casting: the melt of iron it was poured from.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Value</code> =
 <strong>M-26-0057</strong><br />
 Its melt: one per casting day, in the foundry's running count of the
-year (the production record, world/items.json goods_chain, D21).</li>
+year (the production record).</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -1486,6 +1446,6 @@ documents of the flow</a> · <a
 href="example-road-08-Waybill.html">Waybill →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

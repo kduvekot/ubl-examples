@@ -45,15 +45,13 @@ for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first
-appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:common-transportation-report:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Common transportation
 report"; the community specification "Lumeport port community". Each has
-a public description on the world's pages
-(world/specifications.json).</li>
+a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: transport, a
@@ -72,7 +70,7 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 Sent the day before the ship enters Lumeport.</li>
 <li><code>IssueTime</code> = <strong>11:22:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>ReportTypeCode</code> = <strong>PREARRIVAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransportReportTypeCode</code>)<br />
 The report before entering the port. The code is from the Trade Accord's
@@ -87,13 +85,12 @@ list.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20411918</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Tidewell Ocean Lines
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Tidewell Ocean Lines gives it. Later mentions
+of the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>PartyName/Name</code> = <strong>Tidewell Ocean
 Lines</strong><br />
-The trading name; identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+The trading name; as Tidewell Ocean Lines gives it.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -105,15 +102,15 @@ The language's name.</li>
 <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>PostalAddress/ID</code> = <strong>LUM-ADR-547539</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Tidewell Ocean
-Lines (world/parties.json).</li>
+state register of Coastal State refers to); as Tidewell Ocean Lines
+gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -122,43 +119,40 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Harbour
 Road</strong><br />
-Street of the postal address. identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+Street of the postal address. as Tidewell Ocean Lines gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>18</strong><br />
-Building number of the postal address. identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+Building number of the postal address. as Tidewell Ocean Lines gives
+it.</li>
 <li><code>PostalAddress/CitySubdivisionName</code> =
 <strong>Dockside</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map (world/map.json). identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+the map. as Tidewell Ocean Lines gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+country and state. as Tidewell Ocean Lines gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38527</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Tidewell Ocean
-Lines (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Tidewell Ocean Lines
+gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -166,31 +160,30 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Tidewell Ocean Lines
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Tidewell Ocean Lines gives it. The code is from Bayvarra's national
+state or territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Bookings</strong><br />
-The party's main desk, which handles this document; identity of Tidewell
-Ocean Lines (world/parties.json).</li>
+The party's main desk, which handles this document; as Tidewell Ocean
+Lines gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Booking agent</strong><br />
-The job of the person who answers at the desk; identity of Tidewell
-Ocean Lines (world/parties.json).</li>
+The job of the person who answers at the desk; as Tidewell Ocean Lines
+gives it.</li>
 <li><code>Contact/Department</code> = <strong>Bookings</strong><br />
-The department the desk belongs to; identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+The department the desk belongs to; as Tidewell Ocean Lines gives
+it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 38 2058
 7929</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -200,15 +193,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Tidewell Ocean Lines (world/parties.json).</li>
+with 7. as Tidewell Ocean Lines gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:bookings@tidewell.example">bookings@tidewell.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Tidewell Ocean Lines (world/parties.json).</li>
+anyone; as Tidewell Ocean Lines gives it.</li>
 <li><code>Contact/Note</code> = <strong>Every day
 06:00–22:00</strong><br />
-When the desk can be reached; identity of Tidewell Ocean Lines
-(world/parties.json).</li>
+When the desk can be reached; as Tidewell Ocean Lines gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -217,9 +209,9 @@ network.</li>
 <strong>XB:20411918</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of
-Tidewell Ocean Lines (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Tidewell Ocean
+Lines gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="authority-party">Authority Party</h3>
 <p>Inside <code>AuthorityParty</code>:</p>
@@ -227,20 +219,19 @@ Party/EndpointID is deprecated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20411781</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Port of Lumeport (world/parties.json).
-Later mentions of the same party in this document repeat only this
-identifier and the name.</li>
+register of Bayvarra; as Port of Lumeport gives it. Later mentions of
+the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>PartyName/Name</code> = <strong>Port of
 Lumeport</strong><br />
-The trading name; identity of Port of Lumeport
-(world/parties.json).</li>
+The trading name; as Port of Lumeport gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>LUM-ADR-030762</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Port of Lumeport
-(world/parties.json).</li>
+state register of Coastal State refers to); as Port of Lumeport gives
+it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -249,43 +240,40 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Harbour
 Road</strong><br />
-Street of the postal address. identity of Port of Lumeport
-(world/parties.json).</li>
+Street of the postal address. as Port of Lumeport gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>11</strong><br />
-Building number of the postal address. identity of Port of Lumeport
-(world/parties.json).</li>
+Building number of the postal address. as Port of Lumeport gives
+it.</li>
 <li><code>PostalAddress/CitySubdivisionName</code> =
 <strong>Dockside</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map (world/map.json). identity of Port of Lumeport
-(world/parties.json).</li>
+the map. as Port of Lumeport gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Port of Lumeport
-(world/parties.json).</li>
+country and state. as Port of Lumeport gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38526</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Port of
-Lumeport (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Port of Lumeport gives
+it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -293,19 +281,18 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Port of Lumeport
-(world/parties.json). The code is from Bayvarra's national state or
+The state or territory as a code of Bayvarra's address scheme. as Port
+of Lumeport gives it. The code is from Bayvarra's national state or
 territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -332,8 +319,7 @@ code is from the world's copy of EPSG Geodetic Parameter Dataset
 <li><code>PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure</code>
 = <strong>31</strong> (unitCode <code>DD</code>)<br />
 Computed from the place on the map; the world lies in an empty part of
-the South Atlantic, so the point is open sea on a real map
-(world/countries.json).</li>
+the South Atlantic, so the point is open sea on a real map.</li>
 <li><code>PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure</code>
 = <strong>6.22</strong> (unitCode <code>D61</code>)<br />
 The minutes of the latitude.</li>
@@ -345,8 +331,7 @@ Latitude direction list, with a listID: South.</li>
 <li><code>PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure</code>
 = <strong>13</strong> (unitCode <code>DD</code>)<br />
 Computed from the place on the map; the world lies in an empty part of
-the South Atlantic, so the point is open sea on a real map
-(world/countries.json).</li>
+the South Atlantic, so the point is open sea on a real map.</li>
 <li><code>PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure</code>
 = <strong>23.07</strong> (unitCode <code>D61</code>)<br />
 The minutes of the longitude.</li>
@@ -356,16 +341,15 @@ The minutes of the longitude.</li>
 West of the Greenwich meridian. The code is from the world's copy of
 UBL's Longitude direction list, with a listID: West.</li>
 <li><code>Contact/Name</code> = <strong>Port control</strong><br />
-The party's main desk, which handles this document; identity of Port of
-Lumeport (world/parties.json).</li>
+The party's main desk, which handles this document; as Port of Lumeport
+gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Duty port
 controller</strong><br />
-The job of the person who answers at the desk; identity of Port of
-Lumeport (world/parties.json).</li>
+The job of the person who answers at the desk; as Port of Lumeport gives
+it.</li>
 <li><code>Contact/Department</code> = <strong>Port
 operations</strong><br />
-The department the desk belongs to; identity of Port of Lumeport
-(world/parties.json).</li>
+The department the desk belongs to; as Port of Lumeport gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 38 8964
 6053</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -375,15 +359,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Port of Lumeport (world/parties.json).</li>
+with 7. as Port of Lumeport gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:port@port-lumeport.example">port@port-lumeport.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Port of Lumeport (world/parties.json).</li>
+anyone; as Port of Lumeport gives it.</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Port of Lumeport
-(world/parties.json).</li>
+When the desk can be reached; as Port of Lumeport gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -392,9 +375,8 @@ network.</li>
 <strong>XB:20411781</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of Port of
-Lumeport (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+number in the Federal business register of Bayvarra; as Port of Lumeport
+gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="sender-party">Sender Party</h3>
 <p>Inside <code>SenderParty</code>:</p>
@@ -446,7 +428,7 @@ Certificate.</li>
 <strong>true</strong><br />
 The ship holds a valid certificate: an interim certificate under ISPS
 Code A/19.4 is valid for its six months, and the ship trades on it as on
-a full one (D33 point 5, cotton/14#F3).</li>
+a full one.</li>
 <li><code>ShipmentStage/ISPSRequirements/ISSCExpiryDate</code> =
 <strong>2026-07-14</strong><br />
 The interim certificate's last day: six months, the most the ISPS Code
@@ -473,14 +455,14 @@ Bayvarra's flag state administration: keeps the register of Bayvarran
 ships and issues their international ship security certificates under
 the ISPS Code. Referenced only, as the issuer of the certificate of
 Tidewell Ocean Lines' ship. Its identifier and name are enough
-(world/parties.json, referenced).</li>
+(referenced).</li>
 <li><code>ShipmentStage/ISPSRequirements/ISSCIssuerParty/PartyName/Name</code>
 = <strong>Maritime Administration of Bayvarra</strong><br />
 Bayvarra's flag state administration: keeps the register of Bayvarran
 ships and issues their international ship security certificates under
 the ISPS Code. Referenced only, as the issuer of the certificate of
 Tidewell Ocean Lines' ship. Its identifier and name are enough
-(world/parties.json, referenced).</li>
+(referenced).</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/ID</code> =
 <strong>MDH-26-0303</strong><br />
 The maritime declaration of health.</li>
@@ -507,8 +489,7 @@ What the port health authority needs to know about the animal.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/ID</code>
 = <strong>SSCEC-XB-2026-0114</strong><br />
 The ship sanitation control exemption certificate: the ship carries it
-instead of a control certificate. Unique only with its issuer (decision
-ID-Q10).</li>
+instead of a control certificate. Unique only with its issuer.</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/IssueDate</code>
 = <strong>2026-01-14</strong><br />
 Issued after the inspection at Lumeport, before the ship's first voyage
@@ -526,20 +507,18 @@ Bayvarra's port health authority at Lumeport, an office of the federal
 health administration, as the Maritime Administration is federal: under
 the International Health Regulations (2005) it inspects ships in the
 port and issues their ship sanitation control and exemption certificates
-(Annex 3) and the medicine chest certificates of Bayvarran ships (D30
-point 8, O103). Referenced only, as the issuer of the certificates of
-Tidewell Ocean Lines' ships. Its identifier and name are enough
-(world/parties.json, referenced).</li>
+(Annex 3) and the medicine chest certificates of Bayvarran ships.
+Referenced only, as the issuer of the certificates of Tidewell Ocean
+Lines' ships. Its identifier and name are enough (referenced).</li>
 <li><code>ShipmentStage/MaritimeHealthDeclaration/ShipSanitationControlExemptionDocumentReference/IssuerParty/PartyName/Name</code>
 = <strong>Port Health Office of Bayvarra, Lumeport</strong><br />
 Bayvarra's port health authority at Lumeport, an office of the federal
 health administration, as the Maritime Administration is federal: under
 the International Health Regulations (2005) it inspects ships in the
 port and issues their ship sanitation control and exemption certificates
-(Annex 3) and the medicine chest certificates of Bayvarran ships (D30
-point 8, O103). Referenced only, as the issuer of the certificates of
-Tidewell Ocean Lines' ships. Its identifier and name are enough
-(world/parties.json, referenced).</li>
+(Annex 3) and the medicine chest certificates of Bayvarran ships.
+Referenced only, as the issuer of the certificates of Tidewell Ocean
+Lines' ships. Its identifier and name are enough (referenced).</li>
 </ul>
 <h3 id="transport-means">Transport Means</h3>
 <p>Inside <code>TransportMeans</code>:</p>
@@ -562,13 +541,12 @@ is from the Trade Accord's travel direction list: WB = Westbound.</li>
 <li><code>TransportMeansTypeCode</code> = <strong>1511</strong> (listID
 <code>UNECE Recommendation 28</code>)<br />
 The kind of means of transport: tidewell Reef; the fleet of Tidewell
-Ocean Lines (world/parties.json). The line's second feeder, bought
-second-hand in December 2025 and moved to Bayvarra's flag on 15 January
-2026. Until the flag state verifies its security system, it sails with
-an interim International Ship Security Certificate (ISPS Code A/19.4).
-The code is from the world's copy of UN/ECE Recommendation 28 Codes for
-types of means of transport: 1511 = Full container ship/cellular
-vessel.</li>
+Ocean Lines. The line's second feeder, bought second-hand in December
+2025 and moved to Bayvarra's flag on 15 January 2026. Until the flag
+state verifies its security system, it sails with an interim
+International Ship Security Certificate (ISPS Code A/19.4). The code is
+from the world's copy of UN/ECE Recommendation 28 Codes for types of
+means of transport: 1511 = Full container ship/cellular vessel.</li>
 <li><code>MaritimeTransport/VesselID</code> =
 <strong>XB-S-20231</strong> (schemeID
 <code>urn:ubl-examples:world:vessel</code>)<br />
@@ -576,13 +554,11 @@ The vessel's number in its country's register of ships; a number of the
 world, not an IMO number.</li>
 <li><code>MaritimeTransport/VesselName</code> = <strong>Tidewell
 Reef</strong><br />
-The vessel's name; the fleet of Tidewell Ocean Lines
-(world/parties.json).</li>
+The vessel's name; the fleet of Tidewell Ocean Lines.</li>
 <li><code>MaritimeTransport/RadioCallSignID</code> =
 <strong>QBTR4</strong><br />
 The radio call sign, in Bayvarra's call sign series QB: no ITU series
-starts with Q, so the sign belongs to no real station
-(world/countries.json).</li>
+starts with Q, so the sign belongs to no real station.</li>
 <li><code>MaritimeTransport/MMSIRegistrationID</code> =
 <strong>298702231</strong><br />
 The Maritime Mobile Service Identity, nine digits: the maritime
@@ -611,7 +587,7 @@ The ship's certificate of registry.</li>
 <li><code>MaritimeTransport/RegistryPortLocation/ID</code> =
 <strong>XBLMP</strong> (schemeID <code>UN/LOCODE</code>)<br />
 The place's identifier, as the world gives it wherever the place appears
-(a code in the form of a UN/LOCODE; worklist C23).</li>
+(a code in the form of a UN/LOCODE).</li>
 <li><code>MaritimeTransport/RegistryPortLocation/Name</code> =
 <strong>Lumeport</strong><br />
 The port the vessel is registered in.</li>
@@ -823,6 +799,6 @@ href="examples.html#flow-cotton">all documents of the flow</a> · <a
 href="example-cotton-17-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

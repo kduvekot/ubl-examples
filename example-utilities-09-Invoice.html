@@ -32,8 +32,7 @@ href="example-utilities-08-UtilityStatement.html">Utility Statement
 <p>The household's settlement bill for the account year: water (exempt),
 the city's levy (outside the tax), district heat and its cooling
 correction (with the state's sales tax), less the twelve payments on
-account; the balance is collected by direct debit 21 days later (D31,
-D23).</p>
+account; the balance is collected by direct debit 21 days later.</p>
 <p><a href="examples/utilities/09-Invoice.xml">The XML file</a> is valid
 against the UBL 2.5 schemas and the world's code lists. Below, every
 value with its place in the document and the reason for it.</p>
@@ -43,14 +42,13 @@ value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json); Invoice/DefaultLanguageCode
-first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Invoice/DefaultLanguageCode first appears in UBL
+2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:billing:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Billing". Each has a
-public description on the world's pages
-(world/specifications.json).</li>
+public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:utility-billing:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: utility
@@ -70,8 +68,7 @@ The settlement bill of the household's account year, issued with the
 annual statement.</li>
 <li><code>IssueTime</code> = <strong>14:51:00-01:00</strong><br />
 Issued a few minutes before the document that cites it, in the sender's
-local time (C72); in the issuer's local time, with its offset from UTC
-(D27).</li>
+local time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>DueDate</code> = <strong>2026-04-23</strong><br />
 As the payment terms below count it: 21 days net from the bill.</li>
 <li><code>InvoiceTypeCode</code> = <strong>380</strong> (listID
@@ -119,13 +116,12 @@ What the number is.</li>
 <strong>20412192</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Coastal State Water Company
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Coastal State Water Company gives it. Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
 <li><code>Party/PartyName/Name</code> = <strong>Coastal State Water
 Company</strong><br />
-The trading name; identity of Coastal State Water Company
-(world/parties.json).</li>
+The trading name; as Coastal State Water Company gives it.</li>
 <li><code>Party/Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -137,15 +133,15 @@ The language's name.</li>
 (listID <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>LUM-ADR-782593</strong> (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Coastal State
-Water Company (world/parties.json).</li>
+state register of Coastal State refers to); as Coastal State Water
+Company gives it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -154,39 +150,38 @@ list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Reservoir
 Road</strong><br />
-Street of the postal address. identity of Coastal State Water Company
-(world/parties.json).</li>
+Street of the postal address. as Coastal State Water Company gives
+it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>51</strong><br />
-Building number of the postal address. identity of Coastal State Water
-Company (world/parties.json).</li>
+Building number of the postal address. as Coastal State Water Company
+gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Coastal State Water Company
-(world/parties.json).</li>
+country and state. as Coastal State Water Company gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>38500</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Coastal State
-Water Company (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Coastal State Water
+Company gives it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -194,35 +189,34 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Coastal State Water Company
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Coastal State Water Company gives it. The code is from Bayvarra's
+national state or territory list: XB-CO = Coastal State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/PartyTaxScheme/RegistrationName</code> = <strong>Coastal
 State Water Company Ltd</strong><br />
-The name under which the party is registered for state sales tax;
-identity of Coastal State Water Company (world/parties.json).</li>
+The name under which the party is registered for state sales tax; as
+Coastal State Water Company gives it.</li>
 <li><code>Party/PartyTaxScheme/CompanyID</code> =
 <strong>CO-1236576</strong> (schemeID
 <code>urn:ubl-examples:world:XB:tax</code>)<br />
 Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
-tax permit of the state or territory)); identity of Coastal State Water
-Company (world/parties.json). The schemeID names the scheme it is from:
-the sales tax permit of a Bayvarran state or territory (the state code
-(UL, CO, NT), a hyphen and 7 digits).</li>
+tax permit of the state or territory)); as Coastal State Water Company
+gives it. The schemeID names the scheme it is from: the sales tax permit
+of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen
+and 7 digits).</li>
 <li><code>Party/PartyTaxScheme/TaxLevelCode</code> =
 <strong>STATE</strong> (listID
 <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
@@ -248,14 +242,14 @@ The country whose tax this is. The code is from the world's copy of
 UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PartyLegalEntity/RegistrationName</code> =
 <strong>Coastal State Water Company Ltd</strong><br />
-The name under which the party is registered, with its legal form;
-identity of Coastal State Water Company (world/parties.json).</li>
+The name under which the party is registered, with its legal form; as
+Coastal State Water Company gives it.</li>
 <li><code>Party/PartyLegalEntity/CompanyID</code> =
 <strong>20412192</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
-Number in the Federal business register of Bayvarra; identity of Coastal
-State Water Company (world/parties.json). The schemeID names the scheme
-it is from: the Federal business register of Bayvarra (8 digits).</li>
+Number in the Federal business register of Bayvarra; as Coastal State
+Water Company gives it. The schemeID names the scheme it is from: the
+Federal business register of Bayvarra (8 digits).</li>
 <li><code>Party/PartyLegalEntity/CompanyLegalFormCode</code> =
 <strong>LTD</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
@@ -277,7 +271,7 @@ The country of registration. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
-The identifier of the register in the world (world/countries.json).</li>
+The identifier of the register in the world.</li>
 <li><code>Party/PartyLegalEntity/CorporateRegistrationScheme/Name</code>
 = <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
@@ -293,16 +287,15 @@ The register covers the whole country. The code is from the world's copy
 of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/Contact/Name</code> = <strong>Billing</strong><br />
 The party's billing desk: the desk for its role in this document (it is
-owed the payment); identity of Coastal State Water Company
-(world/parties.json).</li>
+owed the payment); as Coastal State Water Company gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Billing
 officer</strong><br />
-The job of the person who answers at the desk; identity of Coastal State
-Water Company (world/parties.json).</li>
+The job of the person who answers at the desk; as Coastal State Water
+Company gives it.</li>
 <li><code>Party/Contact/Department</code> = <strong>Customer
 service</strong><br />
-The department the desk belongs to; identity of Coastal State Water
-Company (world/parties.json).</li>
+The department the desk belongs to; as Coastal State Water Company gives
+it.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 9310
 7518</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -313,17 +306,15 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Coastal State Water Company
-(world/parties.json).</li>
+with 7. as Coastal State Water Company gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:billing@coastalwater.example">billing@coastalwater.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Coastal State Water Company
-(world/parties.json).</li>
+anyone; as Coastal State Water Company gives it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Coastal State Water Company
-(world/parties.json).</li>
+When the desk can be reached; as Coastal State Water Company gives
+it.</li>
 <li><code>Party/ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -332,23 +323,23 @@ network.</li>
 <strong>XB:20412192</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of Coastal
-State Water Company (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Coastal State
+Water Company gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="accounting-customer-party">Accounting Customer Party</h3>
 <p>Inside <code>AccountingCustomerParty</code>:</p>
 <ul>
 <li><code>Party/PartyName/Name</code> = <strong>Robin
 Ashdale</strong><br />
-The trading name; identity of Robin Ashdale (world/parties.json).</li>
+The trading name; as Robin Ashdale gives it.</li>
 <li><code>Party/PostalAddress/ID</code> =
 <strong>LUM-ADR-934215</strong> (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Robin Ashdale
-(world/parties.json).</li>
+state register of Coastal State refers to); as Robin Ashdale gives
+it.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>RESIDENTIAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -357,43 +348,40 @@ list: RESIDENTIAL = Residential address.</li>
 <li><code>Party/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>Party/PostalAddress/StreetName</code> = <strong>Gull
 Lane</strong><br />
-Street of the postal address. identity of Robin Ashdale
-(world/parties.json).</li>
+Street of the postal address. as Robin Ashdale gives it.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>57</strong><br />
-Building number of the postal address. identity of Robin Ashdale
-(world/parties.json).</li>
+Building number of the postal address. as Robin Ashdale gives it.</li>
 <li><code>Party/PostalAddress/CitySubdivisionName</code> =
 <strong>Riverside</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map (world/map.json). identity of Robin Ashdale
-(world/parties.json).</li>
+the map. as Robin Ashdale gives it.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Robin Ashdale (world/parties.json).</li>
+country and state. as Robin Ashdale gives it.</li>
 <li><code>Party/PostalAddress/PostalZone</code> =
 <strong>38516</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale
-(world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Robin Ashdale gives
+it.</li>
 <li><code>Party/PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -401,29 +389,26 @@ list.</li>
 <li><code>Party/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Robin Ashdale (world/parties.json).
-The code is from Bayvarra's national state or territory list: XB-CO =
-Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as Robin
+Ashdale gives it. The code is from Bayvarra's national state or
+territory list: XB-CO = Coastal State.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/Person/FirstName</code> = <strong>Robin</strong><br />
-The consumer's first name; identity of Robin Ashdale
-(world/parties.json).</li>
+The consumer's first name; as Robin Ashdale gives it.</li>
 <li><code>Party/Person/FamilyName</code> =
 <strong>Ashdale</strong><br />
-The consumer's family name; identity of Robin Ashdale
-(world/parties.json).</li>
+The consumer's family name; as Robin Ashdale gives it.</li>
 </ul>
 <h3 id="payment-means">Payment Means</h3>
 <p>Inside <code>PaymentMeans</code>:</p>
@@ -482,47 +467,45 @@ The branch's name.</li>
 <code>urn:ubl-examples:world:bank-identifier</code>)<br />
 The bank's identifier in the Trade Accord's payment link, in the
 structure of ISO 9362 (a BIC) with the world's country codes: the bank
-code BLUM, the country XB and the location LX; identity of Bank of
-Lumeport (world/parties.json).</li>
+code BLUM, the country XB and the location LX; as Bank of Lumeport gives
+it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name</code>
 = <strong>Bank of Lumeport</strong><br />
-The bank; identity of Bank of Lumeport (world/parties.json).</li>
+The bank; as Bank of Lumeport gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode</code>
 = <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Exchange Street</strong><br />
-Street of the postal address. identity of Bank of Lumeport
-(world/parties.json).</li>
+Street of the postal address. as Bank of Lumeport gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber</code>
 = <strong>48</strong><br />
-Building number of the postal address. identity of Bank of Lumeport
-(world/parties.json).</li>
+Building number of the postal address. as Bank of Lumeport gives
+it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
 = <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Bank of Lumeport
-(world/parties.json).</li>
+country and state. as Bank of Lumeport gives it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone</code>
 = <strong>38523</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Bank of
-Lumeport (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Bank of Lumeport gives
+it.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -530,15 +513,14 @@ list.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode</code>
 = <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Bank of Lumeport
-(world/parties.json). The code is from Bayvarra's national state or
+The state or territory as a code of Bayvarra's address scheme. as Bank
+of Lumeport gives it. The code is from Bayvarra's national state or
 territory list: XB-CO = Coastal State.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name</code>
 = <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -607,47 +589,45 @@ The branch's name.</li>
 <code>urn:ubl-examples:world:bank-identifier</code>)<br />
 The bank's identifier in the Trade Accord's payment link, in the
 structure of ISO 9362 (a BIC) with the world's country codes: the bank
-code BLUM, the country XB and the location LX; identity of Bank of
-Lumeport (world/parties.json).</li>
+code BLUM, the country XB and the location LX; as Bank of Lumeport gives
+it.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name</code>
 = <strong>Bank of Lumeport</strong><br />
-The bank; identity of Bank of Lumeport (world/parties.json).</li>
+The bank; as Bank of Lumeport gives it.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode</code>
 = <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName</code>
 = <strong>Exchange Street</strong><br />
-Street of the postal address. identity of Bank of Lumeport
-(world/parties.json).</li>
+Street of the postal address. as Bank of Lumeport gives it.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber</code>
 = <strong>48</strong><br />
-Building number of the postal address. identity of Bank of Lumeport
-(world/parties.json).</li>
+Building number of the postal address. as Bank of Lumeport gives
+it.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName</code>
 = <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Bank of Lumeport
-(world/parties.json).</li>
+country and state. as Bank of Lumeport gives it.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/PostalZone</code>
 = <strong>38523</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Bank of
-Lumeport (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Bank of Lumeport gives
+it.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity</code>
 = <strong>Coastal State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -655,15 +635,14 @@ list.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentityCode</code>
 = <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Bank of Lumeport
-(world/parties.json). The code is from Bayvarra's national state or
+The state or territory as a code of Bayvarra's address scheme. as Bank
+of Lumeport gives it. The code is from Bayvarra's national state or
 territory list: XB-CO = Coastal State.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PaymentMandate/PayerFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name</code>
 = <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -707,7 +686,7 @@ The day the amount is due, as the terms count it.</li>
 <li><code>PenaltyInterestRate/InterestRatePercent</code> =
 <strong>7</strong><br />
 The interest on late payment: the statutory rate, as the terms say
-nothing on late payment (D22).</li>
+nothing on late payment.</li>
 <li><code>PenaltyInterestRate/TimeBasisCode</code> =
 <strong>ANN</strong> (listID
 <code>UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade</code>)<br />
@@ -771,7 +750,7 @@ the code's list in its schemeID.</li>
 <li><code>TaxSubtotal/TaxableAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 The lines of this category plus the document's charges less its
-allowances of the category (worklist C24).</li>
+allowances of the category.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 0 % of the taxable amount, rounded to the minor unit of the
@@ -884,16 +863,14 @@ name are enough.</li>
 <li><code>Item/Description</code> = <strong>The city's levy for sewage
 treatment, per cubic metre of water used; collected by the water company
 for the city.</strong><br />
-The seller's description; item sewage-levy of Coastal State Water
-Company (world/items.json).</li>
+The seller's description.</li>
 <li><code>Item/Name</code> = <strong>Sewage levy of the city of
 Lumeport</strong><br />
-The item's short name; item sewage-levy of Coastal State Water Company
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>CSW-LEVY</strong><br />
-The seller's own item number; item sewage-levy of Coastal State Water
-Company (world/items.json).</li>
+The seller's own item number; as Coastal State Water Company describes
+the item.</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>O</strong>
 (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 A public levy the seller collects for Lumeport Public Works Department:
@@ -921,7 +898,7 @@ STT = State/provincial sales tax. An identifier that holds a code names
 the code's list in its schemeID.</li>
 <li><code>Price/PriceAmount</code> = <strong>0.42</strong> (currencyID
 <code>XBL</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
 <code>MTQ</code>)<br />
 The price is per one unit.</li>
@@ -960,15 +937,13 @@ water</strong><br />
 Where it is.</li>
 <li><code>Item/Description</code> = <strong>Drinking water supply, per
 cubic metre.</strong><br />
-The seller's description; item water of Coastal State Water Company
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>Item/Name</code> = <strong>Drinking water</strong><br />
-The item's short name; item water of Coastal State Water Company
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>CW-M3</strong><br />
-The seller's own item number; item water of Coastal State Water Company
-(world/items.json).</li>
+The seller's own item number; as Coastal State Water Company describes
+the item.</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>E</strong>
 (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 Drinking water is exempt from the state sales tax (category E). The code
@@ -1001,7 +976,7 @@ STT = State/provincial sales tax. An identifier that holds a code names
 the code's list in its schemeID.</li>
 <li><code>Price/PriceAmount</code> = <strong>2.35</strong> (currencyID
 <code>XBL</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
 <code>MTQ</code>)<br />
 The price is per one unit.</li>
@@ -1036,15 +1011,13 @@ Where it is.</li>
 <li><code>Item/Description</code> = <strong>Heat from Lumeport's
 district heating network, per megawatt hour at the flat's heat
 meter.</strong><br />
-The seller's description; item district-heat of Coastal State Water
-Company (world/items.json).</li>
+The seller's description.</li>
 <li><code>Item/Name</code> = <strong>District heat</strong><br />
-The item's short name; item district-heat of Coastal State Water Company
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>CSW-HEAT</strong><br />
-The seller's own item number; item district-heat of Coastal State Water
-Company (world/items.json).</li>
+The seller's own item number; as Coastal State Water Company describes
+the item.</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>S</strong>
 (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 A sale to a consumer: the sales tax of Coastal State, where the sale
@@ -1067,7 +1040,7 @@ STT = State/provincial sales tax. An identifier that holds a code names
 the code's list in its schemeID.</li>
 <li><code>Price/PriceAmount</code> = <strong>92.5</strong> (currencyID
 <code>XBL</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>Price/BaseQuantity</code> = <strong>1</strong> (unitCode
 <code>MWH</code>)<br />
 The price is per one unit.</li>
@@ -1103,16 +1076,14 @@ Where it is.</li>
 <li><code>Item/Description</code> = <strong>The charge for return water
 that comes back warmer than the network's standard, per megawatt hour of
 heat and degree short of the standard cooling.</strong><br />
-The seller's description; item heat-cooling-correction of Coastal State
-Water Company (world/items.json).</li>
+The seller's description.</li>
 <li><code>Item/Name</code> = <strong>District heating cooling
 correction</strong><br />
-The item's short name; item heat-cooling-correction of Coastal State
-Water Company (world/items.json).</li>
+The item's short name.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>CSW-COOL</strong><br />
-The seller's own item number; item heat-cooling-correction of Coastal
-State Water Company (world/items.json).</li>
+The seller's own item number; as Coastal State Water Company describes
+the item.</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>S</strong>
 (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 A sale to a consumer: the sales tax of Coastal State, where the sale
@@ -1584,6 +1555,6 @@ href="example-utilities-08-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

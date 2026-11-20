@@ -42,14 +42,12 @@ every value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first
-appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:utility-statement:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Utility statement".
-Each has a public description on the world's pages
-(world/specifications.json).</li>
+Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:utility-billing:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: utility
@@ -68,15 +66,14 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 Issued with the bill for March.</li>
 <li><code>IssueTime</code> = <strong>17:37:00+00:00</strong><br />
 The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>UtilityStatementTypeCode</code> = <strong>TEL</strong> (listID
 <code>urn:ubl-examples:world:codelist:UtilityTypeCode</code>)<br />
 The kind of utility the statement is about. The code is from the Trade
 Accord's utility type list: TEL = Telephone.</li>
 <li><code>Note</code> = <strong>Mikake votetaka hanano mofilufo kisala
 vepili vafosu.</strong> (languageID <code>qal</code>)<br />
-The note in Lisavan, the sender's language (world/countries.json): What
-the statement is.</li>
+The note in Lisavan, the sender's language: What the statement is.</li>
 <li><code>Note</code> = <strong>This statement explains the consumption
 behind your bill.</strong> (languageID <code>en-XL</code>)<br />
 The same note in English, the working language between the countries:
@@ -101,9 +98,9 @@ consumption behind the bill.</li>
 <li><code>DocumentTypeCode</code> = <strong>Invoice</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
 The kind of document referred to: ST-INV-26-0323 is the example
-utilities/13, a Invoice; a generic reference names the UBL document type
-(decision Q29). The code is from the Trade Accord's UBL document type
-list: Invoice.</li>
+utilities/13, a Invoice; a generic reference names the UBL document
+type. The code is from the Trade Accord's UBL document type list:
+Invoice.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
@@ -125,26 +122,25 @@ What it holds.</li>
 <li><code>PartyIdentification/ID</code> = <strong>IC42407</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; identity of Selanu Telecom (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+register; as Selanu Telecom gives it. Later mentions of the same party
+in this document repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Selanu Telecom</strong><br />
-The trading name; identity of Selanu Telecom (world/parties.json).</li>
+The trading name; as Selanu Telecom gives it.</li>
 <li><code>Language/ID</code> = <strong>qal</strong> (schemeID
 <code>ISO 639</code>)<br />
 Lisavan, the language of Lisavu and of the party; the code is from the
 range ISO 639 reserves for local use (qaa–qtz), as the world's languages
-are invented (world/countries.json). The code is from the world's copy
-of ISO 639 Language: qal = Lisavan. An identifier that holds a code
-names the code's list in its schemeID.</li>
+are invented. The code is from the world's copy of ISO 639 Language: qal
+= Lisavan. An identifier that holds a code names the code's list in its
+schemeID.</li>
 <li><code>Language/Name</code> = <strong>Lisavan</strong><br />
 The language's name in English; in the language itself: Lisavuana.</li>
 <li><code>PostalAddress/ID</code> = <strong>34928611</strong> (schemeID
 <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Selanu Telecom
-(world/parties.json).</li>
+office numbers every address it delivers to); as Selanu Telecom gives
+it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -153,10 +149,10 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XL</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -172,50 +168,47 @@ Address format of Lisavu.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Kitata Vekase
 Natii</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Selanu Telecom (world/parties.json).</li>
+names are given in both languages ; as Selanu Telecom gives it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Mast Hill
 Road</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Selanu Telecom (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Selanu Telecom gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>58</strong><br />
-Building number of the postal address. identity of Selanu Telecom
-(world/parties.json).</li>
+Building number of the postal address. as Selanu Telecom gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Selanu Telecom (world/parties.json).</li>
+as Selanu Telecom gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Selanu Telecom (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Selanu
+Telecom gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Billing</strong><br />
 The party's billing desk: the desk for its role in this document (it is
-owed the payment); identity of Selanu Telecom (world/parties.json).</li>
+owed the payment); as Selanu Telecom gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Billing
 officer</strong><br />
-The job of the person who answers at the desk; identity of Selanu
-Telecom (world/parties.json).</li>
+The job of the person who answers at the desk; as Selanu Telecom gives
+it.</li>
 <li><code>Contact/Department</code> = <strong>Business
 sales</strong><br />
-The department the desk belongs to; identity of Selanu Telecom
-(world/parties.json).</li>
+The department the desk belongs to; as Selanu Telecom gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 3 727
 3193</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -223,15 +216,14 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. identity of Selanu Telecom (world/parties.json).</li>
+ships with 79. as Selanu Telecom gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:billing@selanutelecom.example">billing@selanutelecom.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Selanu Telecom (world/parties.json).</li>
+anyone; as Selanu Telecom gives it.</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Selanu Telecom
-(world/parties.json).</li>
+When the desk can be reached; as Selanu Telecom gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -240,9 +232,8 @@ network.</li>
 <strong>XL:IC42407</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Island companies register; identity of Selanu Telecom
-(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Island companies register; as Selanu Telecom gives it. UBL
+2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
@@ -250,17 +241,16 @@ deprecated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>IC41859</strong>
 (schemeID <code>urn:ubl-examples:world:XL:register</code>)<br />
 The party's preferred identifier: its number in the Island companies
-register; identity of Velumi Trading (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+register; as Velumi Trading gives it. Later mentions of the same party
+in this document repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Velumi Trading</strong><br />
-The trading name; identity of Velumi Trading (world/parties.json).</li>
+The trading name; as Velumi Trading gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>40351721</strong> (schemeID
 <code>urn:ubl-examples:world:XL:delivery-point</code>)<br />
 The address's number in the delivery point number of the Lisavu Post
 Office (eight digits: the island has no postal codes, and the post
-office numbers every address it delivers to); identity of Velumi Trading
-(world/parties.json).</li>
+office numbers every address it delivers to); as Velumi Trading gives
+it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -269,10 +259,10 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XL</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -288,50 +278,46 @@ Address format of Lisavu.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Kavama
 Timeku</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Velumi Trading (world/parties.json).</li>
+names are given in both languages ; as Velumi Trading gives it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Reef Street</strong>
 (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Velumi Trading (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Velumi Trading gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>16</strong><br />
-Building number of the postal address. identity of Velumi Trading
-(world/parties.json).</li>
+Building number of the postal address. as Velumi Trading gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Selanu</strong>
 (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Velumi Trading (world/parties.json).</li>
+as Velumi Trading gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Velumi Trading (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Velumi
+Trading gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Accounts payable</strong><br />
 The party's accounts payable desk: the desk for its role in this
-document (it pays); identity of Velumi Trading
-(world/parties.json).</li>
+document (it pays); as Velumi Trading gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Accounts payable
 clerk</strong><br />
-The job of the person who answers at the desk; identity of Velumi
-Trading (world/parties.json).</li>
+The job of the person who answers at the desk; as Velumi Trading gives
+it.</li>
 <li><code>Contact/Department</code> = <strong>Finance</strong><br />
-The department the desk belongs to; identity of Velumi Trading
-(world/parties.json).</li>
+The department the desk belongs to; as Velumi Trading gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 3 729
 5794</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -339,15 +325,14 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
-ships with 79. identity of Velumi Trading (world/parties.json).</li>
+ships with 79. as Velumi Trading gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:payables@velumi.example">payables@velumi.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Velumi Trading (world/parties.json).</li>
+anyone; as Velumi Trading gives it.</li>
 <li><code>Contact/Note</code> = <strong>Monday to Saturday
 09:00–18:00</strong><br />
-When the desk can be reached; identity of Velumi Trading
-(world/parties.json).</li>
+When the desk can be reached; as Velumi Trading gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -356,9 +341,8 @@ network.</li>
 <strong>XL:IC41859</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Island companies register; identity of Velumi Trading
-(world/parties.json). UBL 2.5 carries it here; Party/EndpointID is
-deprecated.</li>
+number in the Island companies register; as Velumi Trading gives it. UBL
+2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="subscriber-party">Subscriber Party</h3>
 <p>Inside <code>SubscriberParty</code>:</p>
@@ -393,7 +377,7 @@ Where.</li>
 <li><code>UtilityConsumptionPoint/SubscriberID</code> =
 <strong>ST-CU-20418</strong><br />
 The subscriber's customer number with the telecom company; the contract
-number stays in the contract (D31 point 5).</li>
+number stays in the contract.</li>
 <li><code>UtilityConsumptionPoint/SubscriberType</code> =
 <strong>Business</strong><br />
 The name of code BUS in the Trade Accord's subscriber type list.</li>
@@ -410,10 +394,10 @@ list: BUSINESS = Business address.</li>
 <li><code>UtilityConsumptionPoint/Address/AddressFormatCode</code> =
 <strong>XL</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Lisavu's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName
+The address follows Lisavu's address format, one line after the other, a
+line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
 PlotIdentification; CitySubdivisionName; Description; District;
 CityName. A line is made of the fields named in it, in that order,
 separated by a space; a field the address does not have is left out, and
@@ -429,36 +413,34 @@ Address format of Lisavu.</li>
 <li><code>UtilityConsumptionPoint/Address/StreetName</code> =
 <strong>Kavama Timeku</strong> (languageID <code>qal</code>)<br />
 The street's name in Lisavan: Lisavu is officially bilingual, and street
-names are given in both languages (world/countries.json); identity of
-Velumi Trading (world/parties.json).</li>
+names are given in both languages ; as Velumi Trading gives it.</li>
 <li><code>UtilityConsumptionPoint/Address/StreetName</code> =
 <strong>Reef Street</strong> (languageID <code>en-XL</code>)<br />
-The street's name in English, the country's other official language;
-identity of Velumi Trading (world/parties.json).</li>
+The street's name in English, the country's other official language; as
+Velumi Trading gives it.</li>
 <li><code>UtilityConsumptionPoint/Address/BuildingNumber</code> =
 <strong>16</strong><br />
-Building number of the postal address. identity of Velumi Trading
-(world/parties.json).</li>
+Building number of the postal address. as Velumi Trading gives it.</li>
 <li><code>UtilityConsumptionPoint/Address/CityName</code> =
 <strong>Selanu</strong> (languageID <code>qal</code>)<br />
 The town's Lisavan name, its name on the island. The town or locality
 nearest to the party's place on the map, in its own country and state.
-identity of Velumi Trading (world/parties.json).</li>
+as Velumi Trading gives it.</li>
 <li><code>UtilityConsumptionPoint/Address/CityName</code> = <strong>Port
 Wrenfield</strong> (languageID <code>en-XL</code>)<br />
 The town's English name, which its English-speaking settlers gave it,
-official beside the Lisavan one (world/countries.json). The town or
-locality nearest to the party's place on the map, in its own country and
-state. identity of Velumi Trading (world/parties.json).</li>
+official beside the Lisavan one. The town or locality nearest to the
+party's place on the map, in its own country and state. as Velumi
+Trading gives it.</li>
 <li><code>UtilityConsumptionPoint/Address/TimezoneOffset</code> =
 <strong>+00:00</strong><br />
 The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there
-is no summer time (D27, world/countries.json).</li>
+is no summer time.</li>
 <li><code>UtilityConsumptionPoint/Address/Country/IdentificationCode</code>
 = <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
 Lisavu: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XL = Lisavu.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XL = Lisavu.</li>
 <li><code>UtilityConsumptionPoint/Address/Country/Name</code> =
 <strong>Lisavu</strong><br />
 The country's name, for readers of the address.</li>
@@ -478,9 +460,9 @@ Its last day.</li>
 An allowance: it lowers the amount.</li>
 <li><code>Consumption/AllowanceCharge/AllowanceChargeReasonCode</code> =
 <strong>95</strong> (listID <code>UN/EDIFACT EDED 5189</code>)<br />
-The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931
-uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance
-or charge identification: 95 = Discount.</li>
+The reason for the allowance as a code of UN/EDIFACT 5189. The code is
+from the world's copy of UN/EDIFACT 5189 Allowance or charge
+identification: 95 = Discount.</li>
 <li><code>Consumption/AllowanceCharge/AllowanceChargeReason</code> =
 <strong>Business bundle discount</strong><br />
 The reason in words.</li>
@@ -520,35 +502,35 @@ The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
 = <strong>Business line 1 of the six of subscription ST-L-BUS6, with
 calls on the island included.</strong><br />
-The subscription, as the invoice line names it (utilities/13#F10).</li>
+The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 The monthly subscription.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 No tax on the island; the bundle discount is given once, on the whole
-supply (utilities/12#F3, F6).</li>
+supply (F6).</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID</code>
 = <strong>S-03-1</strong><br />
 The month's calls on the island, summed: they are included.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate</code>
 = <strong>2026-03-01</strong><br />
 The start of the month the record sums: UBL asks every service record
-for a call date and time, a summary has none of its own (O107).</li>
+for a call date and time, a summary has none of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime</code>
 = <strong>00:00:00</strong><br />
 The month's first minute.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>island</strong><br />
 Calls within the island, not listed (privacy): no number, a word where
-UBL asks for the number called (O107).</li>
+UBL asks for the number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Island calls</strong><br />
 The kind of service.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity</code>
 = <strong>140</strong> (unitCode <code>MIN</code>)<br />
 Minutes called on the island: UBL's quantity is "the number of calls"
-and has no sibling for a duration (O107).</li>
+and has no sibling for a duration.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
 Included in the subscription.</li>
@@ -564,7 +546,7 @@ The time.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = **+999 2 7121 955 *****<br />
 The distributor in Bayvarra, its last digits masked as the privacy code
-says (utilities/12#F2).</li>
+says.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>International: a call to Bayvarra</strong><br />
 The name of code INT in the Trade Accord's telecommunications service
@@ -592,8 +574,8 @@ type list: OUT = Outgoing.</li>
 The set-up charge of a call abroad, the base of every call.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
-The set-up and the twelve minutes, less the allowance: nothing to pay
-(utilities/12#F4).</li>
+The set-up and the twelve minutes, less the allowance: nothing to
+pay.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount</code>
 = <strong>0.2</strong> (currencyID <code>XLC</code>)<br />
 The tariff per minute for calls abroad.</li>
@@ -609,9 +591,9 @@ identification (ISO 3166) list: XB = Bayvarra.</li>
 An allowance.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode</code>
 = <strong>64</strong> (listID <code>UN/EDIFACT EDED 5189</code>)<br />
-The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931
-uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance
-or charge identification: 64 = Special agreement.</li>
+The reason for the allowance as a code of UN/EDIFACT 5189. The code is
+from the world's copy of UN/EDIFACT 5189 Allowance or charge
+identification: 64 = Special agreement.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason</code>
 = <strong>Calls to the trade accord countries are included in the
 subscription</strong><br />
@@ -652,35 +634,35 @@ The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
 = <strong>Business line 2 of the six of subscription ST-L-BUS6, with
 calls on the island included.</strong><br />
-The subscription, as the invoice line names it (utilities/13#F10).</li>
+The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 The monthly subscription.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 No tax on the island; the bundle discount is given once, on the whole
-supply (utilities/12#F3, F6).</li>
+supply (F6).</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID</code>
 = <strong>S-03-2</strong><br />
 The month's calls on the island, summed: they are included.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate</code>
 = <strong>2026-03-01</strong><br />
 The start of the month the record sums: UBL asks every service record
-for a call date and time, a summary has none of its own (O107).</li>
+for a call date and time, a summary has none of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime</code>
 = <strong>00:00:00</strong><br />
 The month's first minute.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>island</strong><br />
 Calls within the island, not listed (privacy): no number, a word where
-UBL asks for the number called (O107).</li>
+UBL asks for the number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Island calls</strong><br />
 The kind of service.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity</code>
 = <strong>165</strong> (unitCode <code>MIN</code>)<br />
 Minutes called on the island: UBL's quantity is "the number of calls"
-and has no sibling for a duration (O107).</li>
+and has no sibling for a duration.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
 Included in the subscription.</li>
@@ -695,7 +677,7 @@ The day.</li>
 At lunch.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>video</strong><br />
-The operator's video service, no number called (O107).</li>
+The operator's video service, no number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Video on demand</strong><br />
 The kind of service.</li>
@@ -710,7 +692,7 @@ Paid per film.</li>
 One film.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
-The film's price less the allowance (utilities/12#F18).</li>
+The film's price less the allowance.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount</code>
 = <strong>2</strong> (currencyID <code>XLC</code>)<br />
 The price of a training film.</li>
@@ -722,9 +704,9 @@ Per film.</li>
 An allowance.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode</code>
 = <strong>64</strong> (listID <code>UN/EDIFACT EDED 5189</code>)<br />
-The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931
-uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance
-or charge identification: 64 = Special agreement.</li>
+The reason for the allowance as a code of UN/EDIFACT 5189. The code is
+from the world's copy of UN/EDIFACT 5189 Allowance or charge
+identification: 64 = Special agreement.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason</code>
 = <strong>Training films are included in the business
 bundle</strong><br />
@@ -741,35 +723,35 @@ The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
 = <strong>Business line 3 of the six of subscription ST-L-BUS6, with
 calls on the island included.</strong><br />
-The subscription, as the invoice line names it (utilities/13#F10).</li>
+The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 The monthly subscription.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 No tax on the island; the bundle discount is given once, on the whole
-supply (utilities/12#F3, F6).</li>
+supply (F6).</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID</code>
 = <strong>S-03-3</strong><br />
 The month's calls on the island, summed: they are included.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate</code>
 = <strong>2026-03-01</strong><br />
 The start of the month the record sums: UBL asks every service record
-for a call date and time, a summary has none of its own (O107).</li>
+for a call date and time, a summary has none of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime</code>
 = <strong>00:00:00</strong><br />
 The month's first minute.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>island</strong><br />
 Calls within the island, not listed (privacy): no number, a word where
-UBL asks for the number called (O107).</li>
+UBL asks for the number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Island calls</strong><br />
 The kind of service.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity</code>
 = <strong>190</strong> (unitCode <code>MIN</code>)<br />
 Minutes called on the island: UBL's quantity is "the number of calls"
-and has no sibling for a duration (O107).</li>
+and has no sibling for a duration.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
 Included in the subscription.</li>
@@ -782,35 +764,35 @@ The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
 = <strong>Business line 4 of the six of subscription ST-L-BUS6, with
 calls on the island included.</strong><br />
-The subscription, as the invoice line names it (utilities/13#F10).</li>
+The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 The monthly subscription.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 No tax on the island; the bundle discount is given once, on the whole
-supply (utilities/12#F3, F6).</li>
+supply (F6).</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID</code>
 = <strong>S-03-4</strong><br />
 The month's calls on the island, summed: they are included.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate</code>
 = <strong>2026-03-01</strong><br />
 The start of the month the record sums: UBL asks every service record
-for a call date and time, a summary has none of its own (O107).</li>
+for a call date and time, a summary has none of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime</code>
 = <strong>00:00:00</strong><br />
 The month's first minute.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>island</strong><br />
 Calls within the island, not listed (privacy): no number, a word where
-UBL asks for the number called (O107).</li>
+UBL asks for the number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Island calls</strong><br />
 The kind of service.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity</code>
 = <strong>215</strong> (unitCode <code>MIN</code>)<br />
 Minutes called on the island: UBL's quantity is "the number of calls"
-and has no sibling for a duration (O107).</li>
+and has no sibling for a duration.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
 Included in the subscription.</li>
@@ -823,35 +805,35 @@ The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
 = <strong>Business line 5 of the six of subscription ST-L-BUS6, with
 calls on the island included.</strong><br />
-The subscription, as the invoice line names it (utilities/13#F10).</li>
+The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 The monthly subscription.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 No tax on the island; the bundle discount is given once, on the whole
-supply (utilities/12#F3, F6).</li>
+supply (F6).</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID</code>
 = <strong>S-03-5</strong><br />
 The month's calls on the island, summed: they are included.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate</code>
 = <strong>2026-03-01</strong><br />
 The start of the month the record sums: UBL asks every service record
-for a call date and time, a summary has none of its own (O107).</li>
+for a call date and time, a summary has none of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime</code>
 = <strong>00:00:00</strong><br />
 The month's first minute.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>island</strong><br />
 Calls within the island, not listed (privacy): no number, a word where
-UBL asks for the number called (O107).</li>
+UBL asks for the number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Island calls</strong><br />
 The kind of service.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity</code>
 = <strong>240</strong> (unitCode <code>MIN</code>)<br />
 Minutes called on the island: UBL's quantity is "the number of calls"
-and has no sibling for a duration (O107).</li>
+and has no sibling for a duration.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
 Included in the subscription.</li>
@@ -864,35 +846,35 @@ The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
 = <strong>Business line 6 of the six of subscription ST-L-BUS6, with
 calls on the island included.</strong><br />
-The subscription, as the invoice line names it (utilities/13#F10).</li>
+The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 The monthly subscription.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount</code>
 = <strong>21.180</strong> (currencyID <code>XLC</code>)<br />
 No tax on the island; the bundle discount is given once, on the whole
-supply (utilities/12#F3, F6).</li>
+supply (F6).</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID</code>
 = <strong>S-03-6</strong><br />
 The month's calls on the island, summed: they are included.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate</code>
 = <strong>2026-03-01</strong><br />
 The start of the month the record sums: UBL asks every service record
-for a call date and time, a summary has none of its own (O107).</li>
+for a call date and time, a summary has none of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime</code>
 = <strong>00:00:00</strong><br />
 The month's first minute.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>island</strong><br />
 Calls within the island, not listed (privacy): no number, a word where
-UBL asks for the number called (O107).</li>
+UBL asks for the number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Island calls</strong><br />
 The kind of service.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity</code>
 = <strong>265</strong> (unitCode <code>MIN</code>)<br />
 Minutes called on the island: UBL's quantity is "the number of calls"
-and has no sibling for a duration (O107).</li>
+and has no sibling for a duration.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>0.000</strong> (currencyID <code>XLC</code>)<br />
 Included in the subscription.</li>
@@ -901,13 +883,13 @@ Included in the subscription.</li>
 The data pool, a line of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber</code>
 = <strong>+999 3 721 1856</strong><br />
-The data pool's own number, which the phones of the six lines share (D31
-point 6, utilities/12#F7).</li>
+The data pool's own number, which the phones of the six lines
+share.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
 = <strong>Mobile data pool ST-D-0042, shared by the six lines: 35 GB
 beyond the subscriptions in March, 4 GB of them roaming in
 Bayvarra.</strong><br />
-What it is, as the invoice lines name it (utilities/13#F10).</li>
+What it is, as the invoice lines name it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
 = <strong>19.144</strong> (currencyID <code>XLC</code>)<br />
 The data at the data tariff and the roaming at the roaming tariff.</li>
@@ -920,19 +902,19 @@ The month's data on the island beyond the subscriptions.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate</code>
 = <strong>2026-03-01</strong><br />
 The start of the month the record sums: UBL asks every service record
-for a call date and time, a summary has none of its own (O107).</li>
+for a call date and time, a summary has none of its own.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime</code>
 = <strong>00:00:00</strong><br />
 The month's first minute.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>data</strong><br />
-Mobile data, no number called (O107).</li>
+Mobile data, no number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Mobile data</strong><br />
 The kind of service.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity</code>
 = <strong>31</strong> (unitCode <code>E34</code>)<br />
-Gigabytes used on the island (O107).</li>
+Gigabytes used on the island.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount</code>
 = <strong>13.144</strong> (currencyID <code>XLC</code>)<br />
 At the data tariff.</li>
@@ -953,7 +935,7 @@ The first day of the trip.</li>
 From the morning.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled</code>
 = <strong>data</strong><br />
-Mobile data, no number called (O107).</li>
+Mobile data, no number called.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory</code>
 = <strong>Roaming: mobile data in Bayvarra</strong><br />
 The name of code ROAM in the Trade Accord's telecommunications service
@@ -1356,6 +1338,6 @@ href="example-utilities-01-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

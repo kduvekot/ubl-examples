@@ -46,14 +46,13 @@ for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json);
-Party/AdditionalPartyIdentification first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL
+2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:import-customs-declaration:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Import customs
-declaration". Each has a public description on the world's pages
-(world/specifications.json).</li>
+declaration". Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> = <strong>urn:ubl-examples:world:profile<span
 class="emoji" data-emoji="customs">🛃</span>1.0</strong><br />
 The Trade Accord's process profile the document belongs to: customs, a
@@ -75,15 +74,15 @@ Sunday evening the generator arrived.</li>
 When the wholesaler lodged the declaration: the generator landed at
 20:15 on the scheduled flight from Amsterdam; the airport's customs
 office works around the clock; in the issuer's local time, with its
-offset from UTC (D27).</li>
+offset from UTC.</li>
 <li><code>Note</code> = <strong>No duty: goods made in the Netherlands,
 outside the Accord, but medicines and radioactive isotopes for medicine
 are free of duty in Bayvarra's tariff. No tax is due at import:
 Bayvarra's sales tax is charged once, at the final retail
 sale.</strong><br />
-What is due at import, by the importing country's rule (D18, O229):
-goods from outside the Accord claim no preference and pay the country's
-own tariff, which charges no duty on them.</li>
+What is due at import, by the importing country's rule: goods from
+outside the Accord claim no preference and pay the country's own tariff,
+which charges no duty on them.</li>
 </ul>
 <h3 id="importer-party">Importer Party</h3>
 <p>Inside <code>ImporterParty</code>:</p>
@@ -91,26 +90,25 @@ own tariff, which charges no duty on them.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20413425</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Quillmoor Pharma Distribution
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Quillmoor Pharma Distribution gives it. Later
+mentions of the same party in this document repeat only this identifier
+and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>9524910900003</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Quillmoor Pharma Distribution (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Quillmoor Pharma Distribution
+gives it.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XB-TR-413425</strong> (schemeID
 <code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XB-TR- and 6 digits); identity of Quillmoor Pharma
-Distribution (world/parties.json).</li>
+imports or exports (XB-TR- and 6 digits); as Quillmoor Pharma
+Distribution gives it.</li>
 <li><code>PartyName/Name</code> = <strong>Quillmoor Pharma
 Distribution</strong><br />
-The trading name; identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+The trading name; as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -122,15 +120,15 @@ The language's name.</li>
 <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>PostalAddress/ID</code> = <strong>LUM-ADR-718264</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Quillmoor Pharma
-Distribution (world/parties.json).</li>
+state register of Coastal State refers to); as Quillmoor Pharma
+Distribution gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -139,38 +137,37 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Airport
 Road</strong><br />
-Street of the postal address. identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+Street of the postal address. as Quillmoor Pharma Distribution gives
+it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>40</strong><br />
-Building number of the postal address. identity of Quillmoor Pharma
-Distribution (world/parties.json).</li>
+Building number of the postal address. as Quillmoor Pharma Distribution
+gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+country and state. as Quillmoor Pharma Distribution gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38528</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Quillmoor
-Pharma Distribution (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Quillmoor Pharma
+Distribution gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -178,34 +175,33 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Quillmoor Pharma Distribution
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Quillmoor Pharma Distribution gives it. The code is from Bayvarra's
+national state or territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>PartyTaxScheme/RegistrationName</code> = <strong>Quillmoor
 Pharma Distribution Ltd</strong><br />
-The name under which the party is registered for state sales tax;
-identity of Quillmoor Pharma Distribution (world/parties.json).</li>
+The name under which the party is registered for state sales tax; as
+Quillmoor Pharma Distribution gives it.</li>
 <li><code>PartyTaxScheme/CompanyID</code> = <strong>CO-1239476</strong>
 (schemeID <code>urn:ubl-examples:world:XB:tax</code>)<br />
 Tax number under Bayvarra's state sales tax (state code (UL Upland
 State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales
-tax permit of the state or territory)); identity of Quillmoor Pharma
-Distribution (world/parties.json). The schemeID names the scheme it is
-from: the sales tax permit of a Bayvarran state or territory (the state
-code (UL, CO, NT), a hyphen and 7 digits).</li>
+tax permit of the state or territory)); as Quillmoor Pharma Distribution
+gives it. The schemeID names the scheme it is from: the sales tax permit
+of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen
+and 7 digits).</li>
 <li><code>PartyTaxScheme/TaxLevelCode</code> = <strong>STATE</strong>
 (listID <code>urn:ubl-examples:world:codelist:TaxLevelCode</code>)<br />
 The level of government that levies the tax: Bayvarra's state sales tax
@@ -230,25 +226,23 @@ The country whose tax this is. The code is from the world's copy of
 UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Quillmoor
 Pharma Distribution Ltd</strong><br />
-The name under which the party is registered, with its legal form;
-identity of Quillmoor Pharma Distribution (world/parties.json).</li>
+The name under which the party is registered, with its legal form; as
+Quillmoor Pharma Distribution gives it.</li>
 <li><code>PartyLegalEntity/CompanyID</code> = <strong>20413425</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
-Number in the Federal business register of Bayvarra; identity of
-Quillmoor Pharma Distribution (world/parties.json). The schemeID names
-the scheme it is from: the Federal business register of Bayvarra (8
-digits).</li>
+Number in the Federal business register of Bayvarra; as Quillmoor Pharma
+Distribution gives it. The schemeID names the scheme it is from: the
+Federal business register of Bayvarra (8 digits).</li>
 <li><code>Contact/Name</code> = <strong>Customs desk</strong><br />
 The party's customs desk: the desk for its role in this document (it
-deals with customs); identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+deals with customs); as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Customs
 specialist</strong><br />
-The job of the person who answers at the desk; identity of Quillmoor
-Pharma Distribution (world/parties.json).</li>
+The job of the person who answers at the desk; as Quillmoor Pharma
+Distribution gives it.</li>
 <li><code>Contact/Department</code> = <strong>Logistics</strong><br />
-The department the desk belongs to; identity of Quillmoor Pharma
-Distribution (world/parties.json).</li>
+The department the desk belongs to; as Quillmoor Pharma Distribution
+gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 38 6047
 1582</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -259,17 +253,15 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+with 7. as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:customs@quillmoor.example">customs@quillmoor.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+anyone; as Quillmoor Pharma Distribution gives it.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 07:00–19:00</strong><br />
-When the desk can be reached; identity of Quillmoor Pharma Distribution
-(world/parties.json).</li>
+When the desk can be reached; as Quillmoor Pharma Distribution gives
+it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -278,20 +270,20 @@ network.</li>
 <strong>XB:20413425</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of
-Quillmoor Pharma Distribution (world/parties.json). UBL 2.5 carries it
-here; Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Quillmoor Pharma
+Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="consignor-party">Consignor Party</h3>
 <p>Inside <code>ConsignorParty</code>:</p>
 <ul>
 <li><code>PartyName/Name</code> = <strong>Haarvliet
 Isotopes</strong><br />
-The trading name; identity of Haarvliet Isotopes, a maker outside the
-world (world/parties.json, abroad; O229). It carries no identifier of a
-real register: a Dutch Chamber of Commerce number or VAT number in the
-real format could be someone's (O229); the documents identify it by its
-name and address, as a supplier outside the world.</li>
+The trading name; as Haarvliet Isotopes, a maker outside the three
+countries, gives it. It carries no identifier of a real register: a
+Dutch Chamber of Commerce number or VAT number in the real format could
+be someone's; the documents identify it by its name and address, as a
+supplier outside the world.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -299,27 +291,27 @@ The kind of address. The code is from the Trade Accord's address type
 list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/StreetName</code> =
 <strong>Isotopenweg</strong><br />
-Street of the postal address. identity of Haarvliet Isotopes
-(world/parties.json, abroad): a fictional address in a real town.</li>
+Street of the postal address. as Haarvliet Isotopes gives it; the
+address is fictional, in a real town.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>14</strong><br />
-Building number. identity of Haarvliet Isotopes (world/parties.json,
-abroad): a fictional address in a real town.</li>
+Building number. as Haarvliet Isotopes gives it; the address is
+fictional, in a real town.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Alkmaar</strong><br />
-The town. identity of Haarvliet Isotopes (world/parties.json, abroad): a
-fictional address in a real town.</li>
+The town. as Haarvliet Isotopes gives it; the address is fictional, in a
+real town.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>1812
 RN</strong><br />
-Postal code in the format of Netherlands. identity of Haarvliet Isotopes
-(world/parties.json, abroad): a fictional address in a real town.</li>
+Postal code in the format of Netherlands. as Haarvliet Isotopes gives
+it; the address is fictional, in a real town.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>+02:00</strong><br />
 The offset from UTC of Central European Summer Time, the legal time
 there in June.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>NL</strong> (listID <code>ISO 3166</code>)<br />
-Netherlands, a real country outside the world (O229). The code is from
-the world's copy of UBL's Country identification (ISO 3166) list: NL =
+Netherlands, a real country outside the world. The code is from the
+world's copy of UBL's Country identification (ISO 3166) list: NL =
 Netherlands (the).</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Netherlands</strong><br />
@@ -344,19 +336,19 @@ only its identifier and name are repeated.</li>
 (schemeID
 <code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 The party's preferred identifier: its number in the Federal list of
-public bodies of Bayvarra; identity of Customs and Border Service of
-Bayvarra (world/parties.json). Later mentions of the same party in this
-document repeat only this identifier and the name.</li>
+public bodies of Bayvarra; as Customs and Border Service of Bayvarra
+gives it. Later mentions of the same party in this document repeat only
+this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Customs and Border Service of
 Bayvarra</strong><br />
-The trading name; identity of Customs and Border Service of Bayvarra
-(world/parties.json).</li>
+The trading name; as Customs and Border Service of Bayvarra gives
+it.</li>
 <li><code>PostalAddress/ID</code> = <strong>UL-ADR-479100</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); identity of Customs and Border Service of Bayvarra
-(world/parties.json).</li>
+and six digits); as Customs and Border Service of Bayvarra gives
+it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -365,38 +357,38 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Border
 Road</strong><br />
-Street of the postal address. identity of Customs and Border Service of
-Bayvarra (world/parties.json).</li>
+Street of the postal address. as Customs and Border Service of Bayvarra
+gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>36</strong><br />
-Building number of the postal address. identity of Customs and Border
-Service of Bayvarra (world/parties.json).</li>
+Building number of the postal address. as Customs and Border Service of
+Bayvarra gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Euridice
 Crossing</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Customs and Border Service of Bayvarra
-(world/parties.json).</li>
+country and state. as Customs and Border Service of Bayvarra gives
+it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>71950</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Customs and
-Border Service of Bayvarra (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Customs and Border
+Service of Bayvarra gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -404,46 +396,44 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Customs and Border Service of
-Bayvarra (world/parties.json). The code is from Bayvarra's national
-state or territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Customs and Border Service of Bayvarra gives it. The code is from
+Bayvarra's national state or territory list: XB-UL = Upland State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Customs and
 Border Service of Bayvarra</strong><br />
-The public body's official name; identity of Customs and Border Service
-of Bayvarra (world/parties.json).</li>
+The public body's official name; as Customs and Border Service of
+Bayvarra gives it.</li>
 <li><code>PartyLegalEntity/CompanyID</code> =
 <strong>3071845926</strong> (schemeID
 <code>urn:ubl-examples:world:XB:public-body-register</code>)<br />
 Number in the Federal list of public bodies of Bayvarra, which gives
 every public body a number of its own (10 digits, the first not 0),
-derived from no other register (O142); identity of Customs and Border
-Service of Bayvarra (world/parties.json). The schemeID names the scheme
-it is from: the federal list of public bodies of Bayvarra (10 digits,
-the first not 0, given by the Bayvarra Information Service).</li>
+derived from no other register ; as Customs and Border Service of
+Bayvarra gives it. The schemeID names the scheme it is from: the federal
+list of public bodies of Bayvarra (10 digits, the first not 0, given by
+the Bayvarra Information Service).</li>
 <li><code>Contact/Name</code> = <strong>Import office</strong><br />
 The party's import office desk: the desk for its role in this document
-(an import); identity of Customs and Border Service of Bayvarra
-(world/parties.json).</li>
+(an import); as Customs and Border Service of Bayvarra gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Customs
 officer</strong><br />
-The job of the person who answers at the desk; identity of Customs and
-Border Service of Bayvarra (world/parties.json).</li>
+The job of the person who answers at the desk; as Customs and Border
+Service of Bayvarra gives it.</li>
 <li><code>Contact/Department</code> = <strong>Customs</strong><br />
-The department the desk belongs to; identity of Customs and Border
-Service of Bayvarra (world/parties.json).</li>
+The department the desk belongs to; as Customs and Border Service of
+Bayvarra gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 7121 503
 398</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -454,17 +444,15 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Customs and Border Service of Bayvarra
-(world/parties.json).</li>
+with 7. as Customs and Border Service of Bayvarra gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:import@customs-xb.example">import@customs-xb.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Customs and Border Service of Bayvarra
-(world/parties.json).</li>
+anyone; as Customs and Border Service of Bayvarra gives it.</li>
 <li><code>Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; identity of Customs and Border Service of
-Bayvarra (world/parties.json).</li>
+When the desk can be reached; as Customs and Border Service of Bayvarra
+gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -473,9 +461,9 @@ network.</li>
 <strong>XB:3071845926</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal list of public bodies of Bayvarra; identity of
-Customs and Border Service of Bayvarra (world/parties.json). UBL 2.5
-carries it here; Party/EndpointID is deprecated.</li>
+number in the Federal list of public bodies of Bayvarra; as Customs and
+Border Service of Bayvarra gives it. UBL 2.5 carries it here;
+Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
@@ -487,8 +475,8 @@ The consignment declared, as the maker booked it.</li>
 <li><code>Consignment/GrossWeightMeasure</code> = <strong>18</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
-transport equipment, as a consignment's weight is defined (worklist
-C15). The gross weight arriving.</li>
+transport equipment, as a consignment's weight is defined. The gross
+weight arriving.</li>
 <li><code>GoodsItem/ID</code> = <strong>1</strong><br />
 The goods item number.</li>
 <li><code>GoodsItem/Description</code> = <strong>Technetium-99m
@@ -497,10 +485,9 @@ What the goods are, in words.</li>
 <li><code>GoodsItem/DeclaredCustomsValueAmount</code> =
 <strong>1187.00</strong> (currencyID <code>XBL</code>)<br />
 The customs value in lume: Bayvarra values goods as they left the
-exporting country (D16); the maker's price is carriage paid to Lumeport
-and shows no freight apart, so the price paid is the value, converted at
-the Lumeport Exchange's fixing of the day the declaration is lodged
-(O231).</li>
+exporting country; the maker's price is carriage paid to Lumeport and
+shows no freight apart, so the price paid is the value, converted at the
+Lumeport Exchange's fixing of the day the declaration is lodged.</li>
 <li><code>GoodsItem/GrossWeightMeasure</code> = <strong>18</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods of this item, with their packaging.</li>
@@ -512,17 +499,15 @@ molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its
 reference time, six days after delivery (European pre-calibration): a
 column of Mo-99 in a shielded housing, from which the hospital elutes
 sodium pertechnetate (Tc-99m) every morning for a week.</strong><br />
-The seller's description; item tc-generator of Haarvliet Isotopes
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>GoodsItem/Item/Name</code> = <strong>Technetium-99m generator,
 20 GBq</strong><br />
-The item's short name; item tc-generator of Haarvliet Isotopes
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>GoodsItem/Item/OriginCountry/IdentificationCode</code> =
 <strong>NL</strong> (listID <code>ISO 3166</code>)<br />
-Where the item was produced; item tc-generator of Haarvliet Isotopes
-(world/items.json). The code is from the world's copy of UBL's Country
-identification (ISO 3166) list: NL = Netherlands (the).</li>
+Where the item was produced; as Haarvliet Isotopes describes the item.
+The code is from the world's copy of UBL's Country identification (ISO
+3166) list: NL = Netherlands (the).</li>
 <li><code>GoodsItem/Item/CommodityClassification/NatureCode</code> =
 <strong>VI</strong> (listID <code>WCO HS 2022 Sections</code>)<br />
 The section of the Harmonized System the goods fall in, the highest
@@ -537,21 +522,21 @@ the Trade Accord's cargo type list: GEN = General cargo.</li>
 <li><code>GoodsItem/Item/CommodityClassification/CommodityCode</code> =
 <strong>284443</strong> (listID <code>WCO HS 2022</code>)<br />
 The Harmonized System subheading of the World Customs Organization, six
-digits, for customs and trade statistics; item tc-generator of Haarvliet
-Isotopes (world/items.json). The code is from the world's copy of
-Harmonized Commodity Description and Coding System, 2022 edition
-(subheadings): 284443 = Radioactive elements, isotopes and compounds;
-other alloys, dispersions (including cermets), ceramic products and
-mixtures containing these elements, isotopes or compounds.</li>
+digits, for customs and trade statistics; as Haarvliet Isotopes
+describes the item. The code is from the world's copy of Harmonized
+Commodity Description and Coding System, 2022 edition (subheadings):
+284443 = Radioactive elements, isotopes and compounds; other alloys,
+dispersions (including cermets), ceramic products and mixtures
+containing these elements, isotopes or compounds.</li>
 <li><code>GoodsItem/Item/CommodityClassification/ItemClassificationCode</code>
 = <strong>33690</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 What the item is, as a subclass of the UN Central Product Classification
-(CPC), the trade classification for goods and services; item
-tc-generator of Haarvliet Isotopes (world/items.json). The code is from
-the world's copy of UN Central Product Classification, Version 2.1:
-33690 = Other radioactive elements and isotopes and compounds; alloys,
-dispersions, ceramic products and mixtures containing these elements,
-isotopes or compounds; radioactive residues.</li>
+(CPC), the trade classification for goods and services; as Haarvliet
+Isotopes describes the item. The code is from the world's copy of UN
+Central Product Classification, Version 2.1: 33690 = Other radioactive
+elements and isotopes and compounds; alloys, dispersions, ceramic
+products and mixtures containing these elements, isotopes or compounds;
+radioactive residues.</li>
 <li><code>GoodsItem/Item/HazardousItem/ID</code> =
 <strong>HI-TCG-20-DG</strong><br />
 The seller's dangerous goods record of the item.</li>
@@ -614,10 +599,10 @@ transport 97 GBq (9.7 × 10^10 Bq)</strong><br />
 The radionuclide and the maximum activity during transport, which the
 transport document must state in becquerels (IAEA SSR-6 para 546): UBL
 has no element for the activity of contents that are not fissile, so the
-name carries it, a finding for the TC (O202 choice 6). The activity is
-the generator's at acceptance at the Lumeport cargo terminal, the
-highest it has on the way, as Mo-99 decays (O202 choice 4); the A2 value
-of Mo-99 allows up to 600 GBq in a Type A package.</li>
+name carries it, a finding for the TC. The activity is the generator's
+at acceptance at the Lumeport cargo terminal, the highest it has on the
+way, as Mo-99 decays; the A2 value of Mo-99 allows up to 600 GBq in a
+Type A package.</li>
 <li><code>GoodsItem/Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription</code>
 = <strong>Non-special form: molybdate adsorbed on an alumina column, in
 its shielded housing.</strong><br />
@@ -628,13 +613,12 @@ applies.</li>
 The transport index of the package: the highest dose rate at 1 m in
 mSv/h times 100, rounded up to the first decimal (IAEA SSR-6 para 523);
 above 1, so the package carries the Category III-YELLOW label (para 529,
-the higher category winning over the surface rate; O202 choice 1).</li>
+the higher category winning over the surface rate).</li>
 <li><code>ShipmentStage/TransportModeCode</code> = <strong>4</strong>
 (listID
 <code>UNECE Recommendation 19 - Codes for Modes of Transport</code>)<br />
-The goods cross the border by air (worklist C12). The code is from UBL's
-default Transport mode (UNECE Recommendation 19) list: 4 = Air
-transport.</li>
+The goods cross the border by air. The code is from UBL's default
+Transport mode (UNECE Recommendation 19) list: 4 = Air transport.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
@@ -645,9 +629,9 @@ The maker's commercial invoice the customs value rests on.</li>
 <li><code>DocumentTypeCode</code> = <strong>Invoice</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
 The kind of document referred to: HI-INV-26-0331 is the example
-medicines/07, a Invoice; a generic reference names the UBL document type
-(decision Q29). The code is from the Trade Accord's UBL document type
-list: Invoice.</li>
+medicines/07, a Invoice; a generic reference names the UBL document
+type. The code is from the Trade Accord's UBL document type list:
+Invoice.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -853,6 +837,6 @@ href="example-medicines-09-DespatchAdvice.html">Despatch Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

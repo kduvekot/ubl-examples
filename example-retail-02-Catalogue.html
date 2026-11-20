@@ -42,14 +42,14 @@ value with its place in the document and the reason for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json);
-Catalogue/ApplicableTerritoryAddress first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Catalogue/ApplicableTerritoryAddress first appears in
+UBL 2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Catalogue"; the
 community specification "Retail community". Each has a public
-description on the world's pages (world/specifications.json).</li>
+description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:catalogue:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: catalogue, a
@@ -76,7 +76,7 @@ department.</li>
 Lumeway's catalogue for the store's reopened department.</li>
 <li><code>IssueTime</code> = <strong>09:00:00-01:00</strong><br />
 Issued in the morning, for the store to set up the range; in the
-issuer's local time, with its offset from UTC (D27).</li>
+issuer's local time, with its offset from UTC.</li>
 <li><code>RevisionDate</code> = <strong>2026-04-20</strong><br />
 Not revised yet: the issue date.</li>
 <li><code>RevisionTime</code> = <strong>09:00:00</strong><br />
@@ -89,7 +89,7 @@ resale.</strong><br />
 What the catalogue holds.</li>
 <li><code>VersionID</code> = <strong>1.0</strong><br />
 The first version: a new catalogue for the store, with no version before
-it (retail/02#F2, D34).</li>
+it.</li>
 <li><code>LineCountNumeric</code> = <strong>2</strong><br />
 Two lines.</li>
 </ul>
@@ -123,9 +123,9 @@ The general terms of trade.</li>
 <li><code>DocumentTypeCode</code> = <strong>774</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
 The kind of document referred to, Lumeway's general terms of trade, a
-document outside the examples (world/documents.json, cited; decision
-Q29). The code is from the world's copy of UN/EDIFACT 1001 Document
-name: 774 = General terms and conditions.</li>
+document outside the examples (cited). The code is from the world's copy
+of UN/EDIFACT 1001 Document name: 774 = General terms and
+conditions.</li>
 </ul>
 <h3 id="applicable-territory-address">Applicable Territory Address</h3>
 <p>Inside <code>ApplicableTerritoryAddress</code>:</p>
@@ -155,32 +155,31 @@ name are enough.</li>
 <ul>
 <li><code>WebsiteURI</code> = <strong><a
 href="https://www.lumeway.example">https://www.lumeway.example</a></strong><br />
-The party's website, under the reserved .example domain (RFC 2606);
-identity of Lumeway Distribution (world/parties.json).</li>
+The party's website, under the reserved .example domain (RFC 2606); as
+Lumeway Distribution gives it.</li>
 <li><code>IndustryClassificationCode</code> = <strong>4649</strong>
 (listID <code>ISIC Rev.4</code>)<br />
 What the party does, as an ISIC Rev. 4 class of the United Nations'
-industry classification; identity of Lumeway Distribution
-(world/parties.json). The code is from the world's copy of International
-Standard Industrial Classification of All Economic Activities, Revision
-4: 4649 = Wholesale of other household goods.</li>
+industry classification; as Lumeway Distribution gives it. The code is
+from the world's copy of International Standard Industrial
+Classification of All Economic Activities, Revision 4: 4649 = Wholesale
+of other household goods.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20410274</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Lumeway Distribution
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Lumeway Distribution gives it. Later mentions
+of the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>9520610900008</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Lumeway Distribution (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Lumeway Distribution gives
+it.</li>
 <li><code>PartyName/Name</code> = <strong>Lumeway
 Distribution</strong><br />
-The trading name; identity of Lumeway Distribution
-(world/parties.json).</li>
+The trading name; as Lumeway Distribution gives it.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -192,14 +191,13 @@ The language's name.</li>
 <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>PostalAddress/ID</code> = <strong>UL-ADR-693911</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:UL:address-register</code>)<br />
 The address's number in the address register of Upland State (UL-ADR-
-and six digits); identity of Lumeway Distribution
-(world/parties.json).</li>
+and six digits); as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -208,46 +206,44 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Distribution
 Drive</strong><br />
-Street of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Street of the postal address. as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/BlockName</code> = <strong>Marrowdale Business
 Park</strong><br />
-The business park the distribution centre stands in. identity of Lumeway
-Distribution (world/parties.json).</li>
+The business park the distribution centre stands in. as Lumeway
+Distribution gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>43</strong><br />
-Building number of the postal address. identity of Lumeway Distribution
-(world/parties.json).</li>
+Building number of the postal address. as Lumeway Distribution gives
+it.</li>
 <li><code>PostalAddress/PlotIdentification</code> = <strong>Plot
 14</strong><br />
-The plot of the distribution centre in the business park. identity of
-Lumeway Distribution (world/parties.json).</li>
+The plot of the distribution centre in the business park. as Lumeway
+Distribution gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Marrowdale</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Lumeway Distribution
-(world/parties.json).</li>
+country and state. as Lumeway Distribution gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>71214</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Lumeway
-Distribution (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Lumeway Distribution
+gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Upland
 State</strong><br />
 The name of code XB-UL in Bayvarra's national state or territory
@@ -255,31 +251,30 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-UL</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Lumeway Distribution
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-UL = Upland State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Lumeway Distribution gives it. The code is from Bayvarra's national
+state or territory list: XB-UL = Upland State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>PartyLegalEntity/RegistrationName</code> = <strong>Lumeway
 Distribution Ltd</strong><br />
-The name under which the party is registered, with its legal form;
-identity of Lumeway Distribution (world/parties.json).</li>
+The name under which the party is registered, with its legal form; as
+Lumeway Distribution gives it.</li>
 <li><code>PartyLegalEntity/CompanyID</code> = <strong>20410274</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
-Number in the Federal business register of Bayvarra; identity of Lumeway
-Distribution (world/parties.json). The schemeID names the scheme it is
-from: the Federal business register of Bayvarra (8 digits).</li>
+Number in the Federal business register of Bayvarra; as Lumeway
+Distribution gives it. The schemeID names the scheme it is from: the
+Federal business register of Bayvarra (8 digits).</li>
 <li><code>PartyLegalEntity/CompanyLegalFormCode</code> =
 <strong>LTD</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
@@ -300,7 +295,7 @@ The country of registration. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/ID</code> =
 <strong>XB:FBR</strong><br />
-The identifier of the register in the world (world/countries.json).</li>
+The identifier of the register in the world.</li>
 <li><code>PartyLegalEntity/CorporateRegistrationScheme/Name</code> =
 <strong>Federal business register of Bayvarra</strong><br />
 The register the company is entered in.</li>
@@ -316,14 +311,14 @@ The register covers the whole country. The code is from the world's copy
 of UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Contact/Name</code> = <strong>Sales office</strong><br />
 The party's sales office desk: the desk for its role in this document
-(it sells); identity of Lumeway Distribution (world/parties.json).</li>
+(it sells); as Lumeway Distribution gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Sales
 coordinator</strong><br />
-The job of the person who answers at the desk; identity of Lumeway
-Distribution (world/parties.json).</li>
+The job of the person who answers at the desk; as Lumeway Distribution
+gives it.</li>
 <li><code>Contact/Department</code> = <strong>Sales</strong><br />
-The department the desk belongs to; identity of Lumeway Distribution
-(world/parties.json).</li>
+The department the desk belongs to; as Lumeway Distribution gives
+it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 7121 955
 964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -334,15 +329,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Lumeway Distribution (world/parties.json).</li>
+with 7. as Lumeway Distribution gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:sales@lumeway.example">sales@lumeway.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Lumeway Distribution (world/parties.json).</li>
+anyone; as Lumeway Distribution gives it.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Lumeway Distribution
-(world/parties.json).</li>
+When the desk can be reached; as Lumeway Distribution gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -351,9 +345,9 @@ network.</li>
 <strong>XB:20410274</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of Lumeway
-Distribution (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Lumeway
+Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
@@ -361,24 +355,23 @@ Party/EndpointID is deprecated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>20410411</strong>
 (schemeID <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Brightmarket Stores
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Brightmarket Stores gives it. Later mentions of
+the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>9522610900002</strong> (schemeID <code>GS1 GLN</code>)<br />
 A further identifier, the party's Global Location Number (the endorsed
 PartyIdentification holds one only): it identifies itself, its items and
 its places the GS1 way, under its company prefix, which starts with 952,
-the prefix GS1 reserves for examples (decision ID-Q7); identity of
-Brightmarket Stores (world/parties.json).</li>
+the prefix GS1 reserves for examples ; as Brightmarket Stores gives
+it.</li>
 <li><code>PartyName/Name</code> = <strong>Brightmarket
 Stores</strong><br />
-The trading name; identity of Brightmarket Stores
-(world/parties.json).</li>
+The trading name; as Brightmarket Stores gives it.</li>
 <li><code>TradePartyName/Name</code> =
 <strong>Brightmarket</strong><br />
-The name the shops trade under, shorter than the company's name;
-identity of Brightmarket Stores (world/parties.json).</li>
+The name the shops trade under, shorter than the company's name; as
+Brightmarket Stores gives it.</li>
 <li><code>Language/ID</code> = <strong>en</strong> (schemeID
 <code>ISO 639</code>)<br />
 English, the language the party writes in this document. The code is
@@ -390,15 +383,15 @@ The language's name.</li>
 <code>urn:ubl-examples:world:codelist:LocaleCode</code>)<br />
 The English the party writes: the variety of Bayvarra, with the country
 as the region; English is used in all three countries, so its locale
-says which (decision D1). The code is from the Trade Accord's locale
-list: en-XB = Bayvarran English.</li>
+says which. The code is from the Trade Accord's locale list: en-XB =
+Bayvarran English.</li>
 <li><code>PostalAddress/ID</code> = <strong>LUM-ADR-579130</strong>
 (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Brightmarket
-Stores (world/parties.json).</li>
+state register of Coastal State refers to); as Brightmarket Stores gives
+it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -407,43 +400,40 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XB</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Market
 Street</strong><br />
-Street of the postal address. identity of Brightmarket Stores
-(world/parties.json).</li>
+Street of the postal address. as Brightmarket Stores gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>50</strong><br />
-Building number of the postal address. identity of Brightmarket Stores
-(world/parties.json).</li>
+Building number of the postal address. as Brightmarket Stores gives
+it.</li>
 <li><code>PostalAddress/CitySubdivisionName</code> = <strong>Old
 Town</strong><br />
 The quarter of Lumeport the party is in: one of the town's districts on
-the map (world/map.json). identity of Brightmarket Stores
-(world/parties.json).</li>
+the map. as Brightmarket Stores gives it.</li>
 <li><code>PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Brightmarket Stores
-(world/parties.json).</li>
+country and state. as Brightmarket Stores gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>38515</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Brightmarket
-Stores (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Brightmarket Stores
+gives it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Coastal
 State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -451,33 +441,32 @@ list.</li>
 <li><code>PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Brightmarket Stores
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Brightmarket Stores gives it. The code is from Bayvarra's national state
+or territory list: XB-CO = Coastal State.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/ID</code> = <strong>BM-CT-01</strong><br />
 The desk's number in the party's own contact list.</li>
 <li><code>Contact/Name</code> = <strong>Buying office</strong><br />
-The party's main desk, which handles this document; identity of
-Brightmarket Stores (world/parties.json).</li>
+The party's main desk, which handles this document; as Brightmarket
+Stores gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Buyer</strong><br />
-The job of the person who answers at the desk; identity of Brightmarket
-Stores (world/parties.json).</li>
+The job of the person who answers at the desk; as Brightmarket Stores
+gives it.</li>
 <li><code>Contact/Department</code> = <strong>Purchasing</strong><br />
-The department the desk belongs to; identity of Brightmarket Stores
-(world/parties.json).</li>
+The department the desk belongs to; as Brightmarket Stores gives
+it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 2 38 4609
 7100</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -487,15 +476,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Brightmarket Stores (world/parties.json).</li>
+with 7. as Brightmarket Stores gives it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:buying@brightmarket.example">buying@brightmarket.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Brightmarket Stores (world/parties.json).</li>
+anyone; as Brightmarket Stores gives it.</li>
 <li><code>Contact/Note</code> = <strong>Monday to Saturday
 09:00–18:00</strong><br />
-When the desk can be reached; identity of Brightmarket Stores
-(world/parties.json).</li>
+When the desk can be reached; as Brightmarket Stores gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -504,9 +492,9 @@ network.</li>
 <strong>XB:20410411</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Federal business register of Bayvarra; identity of
-Brightmarket Stores (world/parties.json). UBL 2.5 carries it here;
-Party/EndpointID is deprecated.</li>
+number in the Federal business register of Bayvarra; as Brightmarket
+Stores gives it. UBL 2.5 carries it here; Party/EndpointID is
+deprecated.</li>
 </ul>
 <h3 id="seller-supplier-party">Seller Supplier Party</h3>
 <p>Inside <code>SellerSupplierParty</code>:</p>
@@ -648,12 +636,11 @@ The bench is sold through retailers.</li>
 <li><code>RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 The market the price is offered for: the buyer's country, whose sales
-the tax category below treats (worklist C25). The code is from the
-world's copy of UBL's Country identification (ISO 3166) list: XB =
-Bayvarra.</li>
+the tax category below treats. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>RequiredItemLocationQuantity/Price/PriceAmount</code> =
 <strong>520</strong> (currencyID <code>XBL</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>RequiredItemLocationQuantity/Price/BaseQuantity</code> =
 <strong>1</strong> (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
@@ -679,9 +666,8 @@ The seller's price list this price is taken from.</li>
 = <strong>ORIGINAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:RecordStatusCode</code>)<br />
 The first issue of the price list: UBL names original, copy, revision or
-cancellation here, not whether the list is in force (worklist C25). The
-code is from the Trade Accord's record status list: ORIGINAL =
-Original.</li>
+cancellation here, not whether the list is in force. The code is from
+the Trade Accord's record status list: ORIGINAL = Original.</li>
 <li><code>RequiredItemLocationQuantity/DeliveryUnit/BatchQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 The benches are delivered per pallet of four.</li>
@@ -738,20 +724,19 @@ The last.</li>
 The days between order and despatch.</li>
 <li><code>RequiredItemLocationQuantity/MinimumQuantity</code> =
 <strong>144</strong> (unitCode <code>EA</code>)<br />
-A full 40-foot container: 36 pallets of four benches in two layers
-(D20); a smaller order does not qualify (worklist C25).</li>
+A full 40-foot container: 36 pallets of four benches in two layers; a
+smaller order does not qualify.</li>
 <li><code>RequiredItemLocationQuantity/TradingRestrictions</code> =
 <strong>Not sold to consumers.</strong><br />
 The bench is sold through retailers.</li>
 <li><code>RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 The market the price is offered for: the buyer's country, whose sales
-the tax category below treats (worklist C25). The code is from the
-world's copy of UBL's Country identification (ISO 3166) list: XB =
-Bayvarra.</li>
+the tax category below treats. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>RequiredItemLocationQuantity/Price/PriceAmount</code> =
 <strong>520</strong> (currencyID <code>XBL</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>RequiredItemLocationQuantity/Price/BaseQuantity</code> =
 <strong>1</strong> (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
@@ -777,9 +762,8 @@ The seller's price list this price is taken from.</li>
 = <strong>ORIGINAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:RecordStatusCode</code>)<br />
 The first issue of the price list: UBL names original, copy, revision or
-cancellation here, not whether the list is in force (worklist C25). The
-code is from the Trade Accord's record status list: ORIGINAL =
-Original.</li>
+cancellation here, not whether the list is in force. The code is from
+the Trade Accord's record status list: ORIGINAL = Original.</li>
 <li><code>RequiredItemLocationQuantity/DeliveryUnit/BatchQuantity</code>
 = <strong>4</strong> (unitCode <code>EA</code>)<br />
 The benches are delivered per pallet of four.</li>
@@ -830,10 +814,9 @@ listID: PX = Pallet.</li>
 A discount.</li>
 <li><code>RequiredItemLocationQuantity/AllowanceCharge/AllowanceChargeReasonCode</code>
 = <strong>95</strong> (listID <code>UN/EDIFACT EDED 5189</code>)<br />
-The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931
-uses it: a discount for the full container. The code is from the world's
-copy of UN/EDIFACT 5189 Allowance or charge identification: 95 =
-Discount.</li>
+The reason for the allowance as a code of UN/EDIFACT 5189: a discount
+for the full container. The code is from the world's copy of UN/EDIFACT
+5189 Allowance or charge identification: 95 = Discount.</li>
 <li><code>RequiredItemLocationQuantity/AllowanceCharge/AllowanceChargeReason</code>
 = <strong>Full container</strong><br />
 The discount for a full container.</li>
@@ -859,42 +842,36 @@ The maker's datasheet.</li>
 sheet</strong><br />
 The kind of document referred to, Valdara's data sheet of the Serra
 bench, a document outside the examples, in words: no list has an exact
-code for it (world/documents.json, cited; decision Q29).</li>
+code for it (cited).</li>
 <li><code>Item/Description</code> = <strong>The manufacturer's Serra
 bench, from the distributor's stock.</strong><br />
-The seller's description; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>Item/Name</code> = <strong>Park bench Serra 180</strong><br />
-The item's short name; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>Item/ItemTypeCode</code> = <strong>PRODUCT</strong> (listID
 <code>urn:ubl-examples:world:codelist:ItemTypeCode</code>)<br />
 A physical product, not a service. The code is from the Trade Accord's
 item type list: PRODUCT = Product.</li>
 <li><code>Item/AdditionalInformation</code> = <strong>Supplied with four
 ground anchors and the bolts to fix them.</strong><br />
-What comes with the item; item bench-serra of Valdara Industries
-(world/items.json).</li>
+What comes with the item.</li>
 <li><code>Item/Keyword</code> = <strong>park bench, street
 furniture</strong><br />
 The search string buyers find the item by, the maker's keywords in one
-element; item bench-serra of Valdara Industries (world/items.json). A
-second Keyword would have to be in another language (UBL rule
-IND7).</li>
+element; as Valdara Industries describes the item. A second Keyword
+would have to be in another language (UBL rule IND7).</li>
 <li><code>Item/BrandName</code> = <strong>Valdara</strong><br />
-The brand the maker sells the item under; item bench-serra of Valdara
-Industries (world/items.json).</li>
+The brand the maker sells the item under; as Valdara Industries
+describes the item.</li>
 <li><code>Item/ModelName</code> = <strong>Serra 180</strong><br />
-The model; item bench-serra of Valdara Industries
-(world/items.json).</li>
+The model; as Valdara Industries describes the item.</li>
 <li><code>Item/WarrantyInformation</code> = <strong>Five years on the
 frame against corrosion.</strong><br />
-The maker's warranty; item bench-serra of Valdara Industries
-(world/items.json).</li>
+The maker's warranty.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>LD-10442</strong><br />
-The seller's own item number; item bench-serra-b of Lumeway Distribution
-(world/items.json).</li>
+The seller's own item number; as Lumeway Distribution describes the
+item.</li>
 <li><code>Item/SellersItemIdentification/ExtendedID</code> =
 <strong>GRY</strong><br />
 The variant of the item: the frame colour, added to the item
@@ -920,16 +897,15 @@ list: GRY = Grey.</li>
 The variant in words.</li>
 <li><code>Item/ManufacturersItemIdentification/ID</code> =
 <strong>VI-B180</strong><br />
-The item number of the maker, Valdara Industries: the reseller's item is
-resale of item bench-serra.</li>
+The item number of the maker, Valdara Industries: the reseller sells the
+maker's item on.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
 <strong>9520610000012</strong> (schemeID <code>GS1 GTIN</code>)<br />
 The GTIN Lumeway Distribution gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
 the maker numbers its items in another scheme, and GS1 lets a wholesaler
-or importer allocate the GTIN where the brand owner has none
-(world/items.json).</li>
+or importer allocate the GTIN where the brand owner has none.</li>
 <li><code>Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID</code>
 = <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -948,29 +924,29 @@ line.</li>
 The maker's number for the item in its globally unique form under
 ISO/IEC 15459 (KXU and the company number Codana gave Valdara
 Industries), which travels along with the GTIN, as an importer may carry
-it; item bench-serra of Valdara Industries (world/items.json).</li>
+it; as Valdara Industries describes the item.</li>
 <li><code>Item/ItemSpecificationDocumentReference/ID</code> =
 <strong>VI-DS-B180</strong><br />
 The maker's datasheet with drawings and assembly instructions.</li>
 <li><code>Item/OriginCountry/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
-Where the item was produced; item bench-serra of Valdara Industries
-(world/items.json). The code is from the world's copy of UBL's Country
-identification (ISO 3166) list: XU = Urvania.</li>
+Where the item was produced; as Valdara Industries describes the item.
+The code is from the world's copy of UBL's Country identification (ISO
+3166) list: XU = Urvania.</li>
 <li><code>Item/CommodityClassification/CommodityCode</code> =
 <strong>940179</strong> (listID <code>WCO HS 2022</code>)<br />
 The Harmonized System subheading of the World Customs Organization, six
-digits, for customs and trade statistics; item bench-serra of Valdara
-Industries (world/items.json). The code is from the world's copy of
-Harmonized Commodity Description and Coding System, 2022 edition
-(subheadings): 940179 = Other seats, with metal frames: other.</li>
+digits, for customs and trade statistics; as Valdara Industries
+describes the item. The code is from the world's copy of Harmonized
+Commodity Description and Coding System, 2022 edition (subheadings):
+940179 = Other seats, with metal frames: other.</li>
 <li><code>Item/CommodityClassification/ItemClassificationCode</code> =
 <strong>38111</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 What the item is, as a subclass of the UN Central Product Classification
-(CPC), the trade classification for goods and services; item bench-serra
-of Valdara Industries (world/items.json). The code is from the world's
-copy of UN Central Product Classification, Version 2.1: 38111 = Seats,
-primarily with metal frames.</li>
+(CPC), the trade classification for goods and services; as Valdara
+Industries describes the item. The code is from the world's copy of UN
+Central Product Classification, Version 2.1: 38111 = Seats, primarily
+with metal frames.</li>
 <li><code>Item/TransactionConditions/ID</code> =
 <strong>LD-TC-01</strong><br />
 The seller's number for these conditions of sale.</li>
@@ -983,31 +959,28 @@ The seller's general terms of trade.</li>
 <li><code>Item/TransactionConditions/DocumentReference/DocumentTypeCode</code>
 = <strong>774</strong> (listID <code>UN/EDIFACT EDED 1001</code>)<br />
 The kind of document referred to, Lumeway's general terms of trade, a
-document outside the examples (world/documents.json, cited; decision
-Q29). The code is from the world's copy of UN/EDIFACT 1001 Document
-name: 774 = General terms and conditions.</li>
+document outside the examples (cited). The code is from the world's copy
+of UN/EDIFACT 1001 Document name: 774 = General terms and
+conditions.</li>
 <li><code>Item/AdditionalItemProperty/Name</code> = <strong>Frame
 material</strong><br />
 A property buyers ask about.</li>
 <li><code>Item/AdditionalItemProperty/Value</code> = <strong>Ductile
 cast iron EN-GJS-400-15, hot-dip galvanised and
 powder-coated</strong><br />
-Its value; item bench-serra of Valdara Industries
-(world/items.json).</li>
+Its value; as Valdara Industries describes the item.</li>
 <li><code>Item/AdditionalItemProperty/Name</code> = <strong>Slat
 wood</strong><br />
 A property buyers ask about.</li>
 <li><code>Item/AdditionalItemProperty/Value</code> = <strong>Thermally
 modified ash</strong><br />
-Its value; item bench-serra of Valdara Industries
-(world/items.json).</li>
+Its value; as Valdara Industries describes the item.</li>
 <li><code>Item/AdditionalItemProperty/Name</code> =
 <strong>Seats</strong><br />
 A property buyers ask about.</li>
 <li><code>Item/AdditionalItemProperty/Value</code> =
 <strong>3</strong><br />
-Its value; item bench-serra of Valdara Industries
-(world/items.json).</li>
+Its value; as Valdara Industries describes the item.</li>
 <li><code>Item/AdditionalItemProperty/ID</code> =
 <strong>COL</strong><br />
 The maker's identifier for the property.</li>
@@ -1022,9 +995,8 @@ the Trade Accord's property importance list: OPTIONAL = Optional.</li>
 <li><code>Item/AdditionalItemProperty/ListValue</code> = <strong>Ferro
 grey</strong><br />
 The property's value, taken from the maker's list of values (Ferro grey,
-Moss green; item bench-serra of Valdara Industries (world/items.json)).
-One ListValue only: UBL rule IND7 allows a second one only in another
-language.</li>
+Moss green; as Valdara Industries describes the item). One ListValue
+only: UBL rule IND7 allows a second one only in another language.</li>
 <li><code>Item/AdditionalItemProperty/ItemPropertyGroup/ID</code> =
 <strong>APP</strong><br />
 The group of properties this one belongs to.</li>
@@ -1054,8 +1026,7 @@ deformation</strong><br />
 How the value is tested.</li>
 <li><code>Item/AdditionalItemProperty/ValueQuantity</code> =
 <strong>450</strong> (unitCode <code>KGM</code>)<br />
-Its measured value; item bench-serra of Valdara Industries
-(world/items.json).</li>
+Its measured value; as Valdara Industries describes the item.</li>
 <li><code>Item/AdditionalItemProperty/ValueQualifier</code> =
 <strong>Distributed over the seat</strong><br />
 What the value stands for.</li>
@@ -1186,16 +1157,16 @@ CO2 equivalent.</li>
 <strong>25</strong> (unitCode <code>KGM</code>)<br />
 The emission of one item in this stage of its life: a figure from the
 maker's footprint study, not an activity times a factor, so no factor
-and base (worklist C09).</li>
+and base.</li>
 <li><code>Item/EnvironmentalEmission/EmissionStandardReference</code> =
 <strong>Greenhouse Gas Protocol Product Standard</strong><br />
 The standard the footprint is calculated by.</li>
 <li><code>Item/EnvironmentalEmission/LifecycleStageCode</code> =
 <strong>SOURCING</strong> (listID
 <code>urn:ubl-examples:world:codelist:LifecycleStageCode</code>)<br />
-The stage of the bench's life the figure covers (D10): the footprint is
-stated stage by stage. The code is from the Trade Accord's life cycle
-stage list: SOURCING = Sourcing.</li>
+The stage of the bench's life the figure covers: the footprint is stated
+stage by stage. The code is from the Trade Accord's life cycle stage
+list: SOURCING = Sourcing.</li>
 <li><code>Item/EnvironmentalEmission/LifecycleStageDescription</code> =
 <strong>Raw material supply and its transport, EN 15804 modules A1 and
 A2: the ore from the mine for the 65 % of the iron made from ore, the
@@ -1241,16 +1212,16 @@ CO2 equivalent.</li>
 <strong>33</strong> (unitCode <code>KGM</code>)<br />
 The emission of one item in this stage of its life: a figure from the
 maker's footprint study, not an activity times a factor, so no factor
-and base (worklist C09).</li>
+and base.</li>
 <li><code>Item/EnvironmentalEmission/EmissionStandardReference</code> =
 <strong>Greenhouse Gas Protocol Product Standard</strong><br />
 The standard the footprint is calculated by.</li>
 <li><code>Item/EnvironmentalEmission/LifecycleStageCode</code> =
 <strong>MANUFACTURING</strong> (listID
 <code>urn:ubl-examples:world:codelist:LifecycleStageCode</code>)<br />
-The stage of the bench's life the figure covers (D10): the footprint is
-stated stage by stage. The code is from the Trade Accord's life cycle
-stage list: MANUFACTURING = Manufacturing.</li>
+The stage of the bench's life the figure covers: the footprint is stated
+stage by stage. The code is from the Trade Accord's life cycle stage
+list: MANUFACTURING = Manufacturing.</li>
 <li><code>Item/EnvironmentalEmission/LifecycleStageDescription</code> =
 <strong>Making the bench, EN 15804 module A3: iron from the Serravona
 ore in Valdara's blast furnace for 65 % of the frames' iron, melting it
@@ -1427,7 +1398,7 @@ Serra 180</strong><br />
 In words.</li>
 <li><code>ReplacedRelatedItem/ID</code> = <strong>VI-C180</strong><br />
 The casting this one replaced, the same part number: Valdara tells its
-versions apart by the year (worklist C44, D35).</li>
+versions apart by the year.</li>
 <li><code>ReplacedRelatedItem/Quantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 One for one.</li>
@@ -1444,12 +1415,11 @@ The smallest quantity the seller accepts on an order.</li>
 <li><code>RequiredItemLocationQuantity/ApplicableTerritoryAddress/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 The market the price is offered for: the buyer's country, whose sales
-the tax category below treats (worklist C25). The code is from the
-world's copy of UBL's Country identification (ISO 3166) list: XB =
-Bayvarra.</li>
+the tax category below treats. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>RequiredItemLocationQuantity/Price/PriceAmount</code> =
 <strong>64</strong> (currencyID <code>XBL</code>)<br />
-The seller's price per unit (world/items.json).</li>
+The seller's price per unit.</li>
 <li><code>RequiredItemLocationQuantity/Price/BaseQuantity</code> =
 <strong>1</strong> (unitCode <code>EA</code>)<br />
 The price is per one unit.</li>
@@ -1475,9 +1445,8 @@ The seller's price list this price is taken from.</li>
 = <strong>ORIGINAL</strong> (listID
 <code>urn:ubl-examples:world:codelist:RecordStatusCode</code>)<br />
 The first issue of the price list: UBL names original, copy, revision or
-cancellation here, not whether the list is in force (worklist C25). The
-code is from the Trade Accord's record status list: ORIGINAL =
-Original.</li>
+cancellation here, not whether the list is in force. The code is from
+the Trade Accord's record status list: ORIGINAL = Original.</li>
 <li><code>RequiredItemLocationQuantity/ApplicableTaxCategory/ID</code> =
 <strong>E</strong> (schemeID <code>UN/EDIFACT EDED 5305</code>)<br />
 A sale to a business that resells or processes the goods is exempt from
@@ -1507,46 +1476,42 @@ STT = State/provincial sales tax. An identifier that holds a code names
 the code's list in its schemeID.</li>
 <li><code>Item/Description</code> = <strong>Spare side frame for the
 Serra bench.</strong><br />
-The seller's description; item bench-casting-b of Lumeway Distribution
-(world/items.json).</li>
+The seller's description.</li>
 <li><code>Item/Name</code> = <strong>Bench side frame
 casting</strong><br />
-The item's short name; item bench-casting-b of Lumeway Distribution
-(world/items.json).</li>
+The item's short name.</li>
 <li><code>Item/ItemTypeCode</code> = <strong>PRODUCT</strong> (listID
 <code>urn:ubl-examples:world:codelist:ItemTypeCode</code>)<br />
 A physical product, not a service. The code is from the Trade Accord's
 item type list: PRODUCT = Product.</li>
 <li><code>Item/BrandName</code> = <strong>Valdara</strong><br />
-The brand the maker sells the item under; item bench-casting of Valdara
-Industries (world/items.json).</li>
+The brand the maker sells the item under; as Valdara Industries
+describes the item.</li>
 <li><code>Item/ModelName</code> = <strong>Serra 180 side
 frame</strong><br />
-The model; item bench-casting of Valdara Industries
-(world/items.json).</li>
+The model; as Valdara Industries describes the item.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
 <strong>LD-10443</strong><br />
-The seller's own item number; item bench-casting-b of Lumeway
-Distribution (world/items.json).</li>
+The seller's own item number; as Lumeway Distribution describes the
+item.</li>
 <li><code>Item/ManufacturersItemIdentification/ID</code> =
 <strong>VI-C180</strong><br />
-The item number of the maker, Valdara Industries: the reseller's item is
-resale of item bench-casting.</li>
+The item number of the maker, Valdara Industries: the reseller sells the
+maker's item on.</li>
 <li><code>Item/ManufacturersItemIdentification/ExtendedID</code> =
 <strong>2026</strong><br />
 The 2026 casting with the reinforced foot, which replaced the 2025
-casting from the order response of the road delivery on (D35 point 3,
-O216): Valdara tells the versions of the same part number apart by the
-casting year, and every frame made since carries it. item bench-casting
-of Valdara Industries (world/items.json).</li>
+casting from the order response of the road delivery on: Valdara tells
+the versions of the same part number apart by the casting year, and
+every frame made since carries it. as Valdara Industries describes the
+item.</li>
 <li><code>Item/StandardItemIdentification/ID</code> =
 <strong>9520610000029</strong> (schemeID <code>GS1 GTIN</code>)<br />
 The GTIN Lumeway Distribution gives the item, under its GS1 company
 prefix, which starts with 952: GS1 reserves that prefix for
 demonstrations and examples, so the number belongs to no real product;
 the maker numbers its items in another scheme, and GS1 lets a wholesaler
-or importer allocate the GTIN where the brand owner has none
-(world/items.json).</li>
+or importer allocate the GTIN where the brand owner has none.</li>
 <li><code>Item/StandardItemIdentification/IssuerParty/PartyIdentification/ID</code>
 = <strong>20410274</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
@@ -1565,27 +1530,26 @@ line.</li>
 The maker's number for the item in its globally unique form under
 ISO/IEC 15459 (KXU and the company number Codana gave Valdara
 Industries), which travels along with the GTIN, as an importer may carry
-it; item bench-casting of Valdara Industries (world/items.json).</li>
+it; as Valdara Industries describes the item.</li>
 <li><code>Item/OriginCountry/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
-Where the item was produced; item bench-casting of Valdara Industries
-(world/items.json). The code is from the world's copy of UBL's Country
-identification (ISO 3166) list: XU = Urvania.</li>
+Where the item was produced; as Valdara Industries describes the item.
+The code is from the world's copy of UBL's Country identification (ISO
+3166) list: XU = Urvania.</li>
 <li><code>Item/CommodityClassification/CommodityCode</code> =
 <strong>732599</strong> (listID <code>WCO HS 2022</code>)<br />
 The Harmonized System subheading of the World Customs Organization, six
-digits, for customs and trade statistics; item bench-casting of Valdara
-Industries (world/items.json). The code is from the world's copy of
-Harmonized Commodity Description and Coding System, 2022 edition
-(subheadings): 732599 = Other cast articles of iron or steel:
-other.</li>
+digits, for customs and trade statistics; as Valdara Industries
+describes the item. The code is from the world's copy of Harmonized
+Commodity Description and Coding System, 2022 edition (subheadings):
+732599 = Other cast articles of iron or steel: other.</li>
 <li><code>Item/CommodityClassification/ItemClassificationCode</code> =
 <strong>42999</strong> (listID <code>UN CPC Ver.2.1</code>)<br />
 What the item is, as a subclass of the UN Central Product Classification
-(CPC), the trade classification for goods and services; item
-bench-casting of Valdara Industries (world/items.json). The code is from
-the world's copy of UN Central Product Classification, Version 2.1:
-42999 = Metal goods n.e.c..</li>
+(CPC), the trade classification for goods and services; as Valdara
+Industries describes the item. The code is from the world's copy of UN
+Central Product Classification, Version 2.1: 42999 = Metal goods
+n.e.c..</li>
 <li><code>Item/ManufacturerParty/PartyIdentification/ID</code> =
 <strong>XU-R-104274</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
@@ -2309,6 +2273,6 @@ flow</a> · <a href="example-retail-06-RetailEvent.html">Retail Event
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>

@@ -42,14 +42,13 @@ for it.</p>
 <li><code>UBLVersionID</code> = <strong>2.5</strong><br />
 The earliest version of UBL 2 that defines every element of the
 document, as UBLVersionID asks: computed from the published models of
-UBL 2.0 to 2.5 (world/ubl-versions.json);
-Party/AdditionalPartyIdentification first appears in UBL 2.5.</li>
+UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL
+2.5.</li>
 <li><code>CustomizationID</code> =
 <strong>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</strong><br />
 The specification the document follows, at each level it claims, chained
 with #compliant#: the Trade Accord's transaction "Transport execution
-plan request". Each has a public description on the world's pages
-(world/specifications.json).</li>
+plan request". Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: transport, a
@@ -70,12 +69,12 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 Under CPT the seller is the transport user and books the barge.</li>
 <li><code>IssueTime</code> = <strong>09:57:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
-time; in the issuer's local time, with its offset from UTC (D27).</li>
+time; in the issuer's local time, with its offset from UTC.</li>
 <li><code>Note</code> = <strong>Drek bikrek mir drek nir nan krir drek
 balman halkan zir drek gakzaz krir drek zulskir nerzhek.</strong>
 (languageID <code>qau</code>)<br />
-The note in Urvanian, the sender's language (world/countries.json): The
-transport asked for.</li>
+The note in Urvanian, the sender's language: The transport asked
+for.</li>
 <li><code>Note</code> = <strong>The barge from the quay next to the
 recovery plant down the river to the packaging maker.</strong>
 (languageID <code>en-XU</code>)<br />
@@ -91,40 +90,38 @@ The user's remark.</li>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104548</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Rinova Recovery (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+of Urvania; as Rinova Recovery gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>0990:13362</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates (decision ID-Q7). No real scheme has the code designator
-0990; identity of Rinova Recovery (world/parties.json).</li>
+licence plates. No real scheme has the code designator 0990; as Rinova
+Recovery gives it.</li>
 <li><code>AdditionalPartyIdentification/ID</code> =
 <strong>XU-TR-104548</strong> (schemeID
 <code>urn:ubl-examples:world:XU:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XU-TR- and 6 digits); identity of Rinova Recovery
-(world/parties.json).</li>
+imports or exports (XU-TR- and 6 digits); as Rinova Recovery gives
+it.</li>
 <li><code>PartyName/Name</code> = <strong>Rinova Recovery</strong><br />
-The trading name; identity of Rinova Recovery (world/parties.json).</li>
+The trading name; as Rinova Recovery gives it.</li>
 <li><code>Language/ID</code> = <strong>qau</strong> (schemeID
 <code>ISO 639</code>)<br />
 Urvanian, the language of Urvania and of the party; the code is from the
 range ISO 639 reserves for local use (qaa–qtz), as the world's languages
-are invented (world/countries.json). The code is from the world's copy
-of ISO 639 Language: qau = Urvanian. An identifier that holds a code
-names the code's list in its schemeID.</li>
+are invented. The code is from the world's copy of ISO 639 Language: qau
+= Urvanian. An identifier that holds a code names the code's list in its
+schemeID.</li>
 <li><code>Language/Name</code> = <strong>Urvanian</strong><br />
 The language's name in English; in the language itself: urvanese.</li>
 <li><code>PostalAddress/ID</code> = <strong>4160202983340277</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Rinova Recovery
-(world/parties.json).</li>
+a ten-digit serial number); as Rinova Recovery gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -133,78 +130,74 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XU</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Bek Han
 Zugaz</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Rinova Recovery (world/parties.json).</li>
+street names are given in both languages ; as Rinova Recovery gives
+it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Via del
 Riciclo</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Rinova Recovery (world/parties.json).</li>
+Italian names the British kept are part of English now; as Rinova
+Recovery gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>31</strong><br />
-Building number of the postal address. identity of Rinova Recovery
-(world/parties.json).</li>
+Building number of the postal address. as Rinova Recovery gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Rinova Recovery (world/parties.json).</li>
+state. as Rinova Recovery gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Rinova Recovery (world/parties.json).</li>
+state. as Rinova Recovery gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4140</strong><br />
-Postal code in Urvania's format (4 digits). identity of Rinova Recovery
-(world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Rinova Recovery gives
+it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Rinova Recovery
-(world/parties.json).</li>
+country. as Rinova Recovery gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Transport
 planning</strong><br />
 The party's transport planning desk: the desk for its role in this
-document (it books or uses the transport); identity of Rinova Recovery
-(world/parties.json).</li>
+document (it books or uses the transport); as Rinova Recovery gives
+it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Logistics
 planner</strong><br />
-The job of the person who answers at the desk; identity of Rinova
-Recovery (world/parties.json).</li>
+The job of the person who answers at the desk; as Rinova Recovery gives
+it.</li>
 <li><code>Contact/Department</code> = <strong>Logistics</strong><br />
-The department the desk belongs to; identity of Rinova Recovery
-(world/parties.json).</li>
+The department the desk belongs to; as Rinova Recovery gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 697
 6856</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -214,16 +207,15 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Rinova Recovery
-(world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. as Rinova Recovery gives
+it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:logistics@rinova.example">logistics@rinova.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Rinova Recovery (world/parties.json).</li>
+anyone; as Rinova Recovery gives it.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Rinova Recovery
-(world/parties.json).</li>
+When the desk can be reached; as Rinova Recovery gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -232,9 +224,8 @@ network.</li>
 <strong>XU:XU-R-104548</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; identity of Rinova
-Recovery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+number in the Commercial register of Urvania; as Rinova Recovery gives
+it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="receiver-party">Receiver Party</h3>
 <p>Inside <code>ReceiverParty</code>:</p>
@@ -242,17 +233,15 @@ is deprecated.</li>
 <li><code>PartyIdentification/ID</code> = <strong>XU-R-104959</strong>
 (schemeID <code>urn:ubl-examples:world:XU:register</code>)<br />
 The party's preferred identifier: its number in the Commercial register
-of Urvania; identity of Fiumella Barges (world/parties.json). Later
-mentions of the same party in this document repeat only this identifier
-and the name.</li>
+of Urvania; as Fiumella Barges gives it. Later mentions of the same
+party in this document repeat only this identifier and the name.</li>
 <li><code>PartyName/Name</code> = <strong>Fiumella Barges</strong><br />
-The trading name; identity of Fiumella Barges (world/parties.json).</li>
+The trading name; as Fiumella Barges gives it.</li>
 <li><code>PostalAddress/ID</code> = <strong>4160204198475331</strong>
 (schemeID <code>urn:ubl-examples:world:XU:address-register</code>)<br />
 The address's number in the national address register of Urvania (16
 digits: the four-digit code of the municipality, 20 for an address, and
-a ten-digit serial number); identity of Fiumella Barges
-(world/parties.json).</li>
+a ten-digit serial number); as Fiumella Barges gives it.</li>
 <li><code>PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -261,76 +250,72 @@ list: BUSINESS = Business address.</li>
 <li><code>PostalAddress/AddressFormatCode</code> = <strong>XU</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Urvania's address format (world/countries.json), one
-line after the other, a line left out when the address has none of its
-fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName;
-Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName
-PlotIdentification; CitySubdivisionName; PostalZone CityName;
-CountrySubentity. A line is made of the fields named in it, in that
-order, separated by a space; a field the address does not have is left
-out, and a line without any field is left out. A field with two language
-versions (street and town names in a bilingual country) gives both on
-the line, the national language first, then ' / ', then English: the
-building number is written once. Fields that are not on a line (ID,
-AddressTypeCode, CountrySubentityCode, TimezoneOffset,
-LocationCoordinate) say something other than where the post goes. The
-country is the last line of a postal address and is not repeated in the
-lines. The code is from the Trade Accord's address format list: XU =
-Address format of Urvania.</li>
+The address follows Urvania's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName
+BuildingNumber; AdditionalStreetName; BlockName PlotIdentification;
+CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is
+made of the fields named in it, in that order, separated by a space; a
+field the address does not have is left out, and a line without any
+field is left out. A field with two language versions (street and town
+names in a bilingual country) gives both on the line, the national
+language first, then ' / ', then English: the building number is written
+once. Fields that are not on a line (ID, AddressTypeCode,
+CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something
+other than where the post goes. The country is the last line of a postal
+address and is not repeated in the lines. The code is from the Trade
+Accord's address format list: XU = Address format of Urvania.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Skikzek Han
 Nestan</strong> (languageID <code>qau</code>)<br />
 The street's name in Urvanian: Urvania is officially bilingual, and
-street names are given in both languages (world/countries.json);
-identity of Fiumella Barges (world/parties.json).</li>
+street names are given in both languages ; as Fiumella Barges gives
+it.</li>
 <li><code>PostalAddress/StreetName</code> = <strong>Banchina del
 Fiume</strong> (languageID <code>en-XU</code>)<br />
 The street's name in English, the country's other official language; the
-Italian names the British kept are part of English now; identity of
-Fiumella Barges (world/parties.json).</li>
+Italian names the British kept are part of English now; as Fiumella
+Barges gives it.</li>
 <li><code>PostalAddress/BuildingNumber</code> =
 <strong>52</strong><br />
-Building number of the postal address. identity of Fiumella Barges
-(world/parties.json).</li>
+Building number of the postal address. as Fiumella Barges gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ruldraz</strong>
 (languageID <code>qau</code>)<br />
 The town's Urvanian name, which its people have always used. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Fiumella Barges (world/parties.json).</li>
+state. as Fiumella Barges gives it.</li>
 <li><code>PostalAddress/CityName</code> = <strong>Ferrano</strong>
 (languageID <code>en-XU</code>)<br />
 The town's English name, inherited from the Italian. The town or
 locality nearest to the party's place on the map, in its own country and
-state. identity of Fiumella Barges (world/parties.json).</li>
+state. as Fiumella Barges gives it.</li>
 <li><code>PostalAddress/PostalZone</code> = <strong>4170</strong><br />
-Postal code in Urvania's format (4 digits). identity of Fiumella Barges
-(world/parties.json).</li>
+Postal code in Urvania's format (4 digits). as Fiumella Barges gives
+it.</li>
 <li><code>PostalAddress/CountrySubentity</code> = <strong>Province of
 Ferrano</strong><br />
 The province, part of an address in Urvania: a subdivision of the
-country (world/countries.json). identity of Fiumella Barges
-(world/parties.json).</li>
+country. as Fiumella Barges gives it.</li>
 <li><code>PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Urvanian Time, Urvania's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>PostalAddress/Country/IdentificationCode</code> =
 <strong>XU</strong> (listID <code>ISO 3166</code>)<br />
 Urvania: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XU = Urvania.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XU = Urvania.</li>
 <li><code>PostalAddress/Country/Name</code> =
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Contact/Name</code> = <strong>Chartering desk</strong><br />
-The party's main desk, which handles this document; identity of Fiumella
-Barges (world/parties.json).</li>
+The party's main desk, which handles this document; as Fiumella Barges
+gives it.</li>
 <li><code>Contact/JobTitle</code> = <strong>Chartering
 manager</strong><br />
-The job of the person who answers at the desk; identity of Fiumella
-Barges (world/parties.json).</li>
+The job of the person who answers at the desk; as Fiumella Barges gives
+it.</li>
 <li><code>Contact/Department</code> = <strong>Operations</strong><br />
-The department the desk belongs to; identity of Fiumella Barges
-(world/parties.json).</li>
+The department the desk belongs to; as Fiumella Barges gives it.</li>
 <li><code>Contact/Telephone</code> = <strong>+999 1 041 672
 6403</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
@@ -339,16 +324,15 @@ country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
 Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. identity of Fiumella Barges
-(world/parties.json).</li>
+Mobiles start with 3 and have 10 digits. as Fiumella Barges gives
+it.</li>
 <li><code>Contact/ElectronicMail</code> = <strong><a
 href="mailto:chartering@fiumella.example">chartering@fiumella.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Fiumella Barges (world/parties.json).</li>
+anyone; as Fiumella Barges gives it.</li>
 <li><code>Contact/Note</code> = <strong>Every day
 06:00–22:00</strong><br />
-When the desk can be reached; identity of Fiumella Barges
-(world/parties.json).</li>
+When the desk can be reached; as Fiumella Barges gives it.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
 The network in which the address is registered: the world's own exchange
@@ -357,9 +341,8 @@ network.</li>
 <strong>XU:XU-R-104959</strong> (schemeID
 <code>urn:ubl-examples:world:endpoint</code>)<br />
 The party's electronic address in that network: its country code and its
-number in the Commercial register of Urvania; identity of Fiumella
-Barges (world/parties.json). UBL 2.5 carries it here; Party/EndpointID
-is deprecated.</li>
+number in the Commercial register of Urvania; as Fiumella Barges gives
+it. UBL 2.5 carries it here; Party/EndpointID is deprecated.</li>
 </ul>
 <h3 id="transport-user-party">Transport User Party</h3>
 <p>Inside <code>TransportUserParty</code>:</p>
@@ -462,7 +445,7 @@ Where the goods are handed over.</li>
 The seller's consignment number.</li>
 <li><code>SummaryDescription</code> = <strong>120 t of Recycled PE
 granulate</strong><br />
-What is to be carried, in a few words (worklist C21).</li>
+What is to be carried, in a few words.</li>
 <li><code>GrossWeightMeasure</code> = <strong>120480</strong> (unitCode
 <code>KGM</code>)<br />
 120 jumbo bags of one tonne, with their bags.</li>
@@ -483,34 +466,33 @@ The number of goods items.</li>
 <strong>20412740</strong> (schemeID
 <code>urn:ubl-examples:world:XB:register</code>)<br />
 The party's preferred identifier: its number in the Federal business
-register of Bayvarra; identity of Rivermouth Packaging
-(world/parties.json). Later mentions of the same party in this document
-repeat only this identifier and the name.</li>
+register of Bayvarra; as Rivermouth Packaging gives it. Later mentions
+of the same party in this document repeat only this identifier and the
+name.</li>
 <li><code>ConsigneeParty/AdditionalPartyIdentification/ID</code> =
 <strong>0990:15128</strong> (schemeID <code>ISO 6523</code>)<br />
 A further identifier (the endorsed PartyIdentification holds one only),
 the party's organisation identifier in the structure of ISO/IEC 6523:
 the international code designator 0990 of the Codana Identification
 Agency and the party's Codana company number, which also starts its
-licence plates (decision ID-Q7). No real scheme has the code designator
-0990; identity of Rivermouth Packaging (world/parties.json).</li>
+licence plates. No real scheme has the code designator 0990; as
+Rivermouth Packaging gives it.</li>
 <li><code>ConsigneeParty/AdditionalPartyIdentification/ID</code> =
 <strong>XB-TR-412740</strong> (schemeID
 <code>urn:ubl-examples:world:XB:customs-trader</code>)<br />
 A further identifier: the party's customs trader number, because it
-imports or exports (XB-TR- and 6 digits); identity of Rivermouth
-Packaging (world/parties.json).</li>
+imports or exports (XB-TR- and 6 digits); as Rivermouth Packaging gives
+it.</li>
 <li><code>ConsigneeParty/PartyName/Name</code> = <strong>Rivermouth
 Packaging</strong><br />
-The trading name; identity of Rivermouth Packaging
-(world/parties.json).</li>
+The trading name; as Rivermouth Packaging gives it.</li>
 <li><code>ConsigneeParty/PostalAddress/ID</code> =
 <strong>LUM-ADR-411619</strong> (schemeID
 <code>urn:ubl-examples:world:XB:lumeport:address-register</code>)<br />
 The address's number in the address register of the City of Lumeport
 (LUM-ADR- and six digits; the city keeps its own register, which the
-state register of Coastal State refers to); identity of Rivermouth
-Packaging (world/parties.json).</li>
+state register of Coastal State refers to); as Rivermouth Packaging
+gives it.</li>
 <li><code>ConsigneeParty/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -519,39 +501,37 @@ list: BUSINESS = Business address.</li>
 <li><code>ConsigneeParty/PostalAddress/AddressFormatCode</code> =
 <strong>XB</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressFormatCode</code>)<br />
-The address follows Bayvarra's address format (world/countries.json),
-one line after the other, a line left out when the address has none of
-its fields: MarkAttention; Department; InhouseMail; Postbox;
-BuildingName; Floor Room; BuildingNumber StreetName;
-AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName;
-CityName CountrySubentity PostalZone. A line is made of the fields named
-in it, in that order, separated by a space; a field the address does not
-have is left out, and a line without any field is left out. A field with
-two language versions (street and town names in a bilingual country)
-gives both on the line, the national language first, then ' / ', then
-English: the building number is written once. Fields that are not on a
-line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset,
+The address follows Bayvarra's address format, one line after the other,
+a line left out when the address has none of its fields: MarkAttention;
+Department; InhouseMail; Postbox; BuildingName; Floor Room;
+BuildingNumber StreetName; AdditionalStreetName; BlockName
+PlotIdentification; CitySubdivisionName; CityName CountrySubentity
+PostalZone. A line is made of the fields named in it, in that order,
+separated by a space; a field the address does not have is left out, and
+a line without any field is left out. A field with two language versions
+(street and town names in a bilingual country) gives both on the line,
+the national language first, then ' / ', then English: the building
+number is written once. Fields that are not on a line (ID,
+AddressTypeCode, CountrySubentityCode, TimezoneOffset,
 LocationCoordinate) say something other than where the post goes. The
 country is the last line of a postal address and is not repeated in the
 lines. The code is from the Trade Accord's address format list: XB =
 Address format of Bayvarra.</li>
 <li><code>ConsigneeParty/PostalAddress/StreetName</code> =
 <strong>Estuary Road</strong><br />
-Street of the postal address. identity of Rivermouth Packaging
-(world/parties.json).</li>
+Street of the postal address. as Rivermouth Packaging gives it.</li>
 <li><code>ConsigneeParty/PostalAddress/BuildingNumber</code> =
 <strong>28</strong><br />
-Building number of the postal address. identity of Rivermouth Packaging
-(world/parties.json).</li>
+Building number of the postal address. as Rivermouth Packaging gives
+it.</li>
 <li><code>ConsigneeParty/PostalAddress/CityName</code> =
 <strong>Lumeport</strong><br />
 The town or locality nearest to the party's place on the map, in its own
-country and state. identity of Rivermouth Packaging
-(world/parties.json).</li>
+country and state. as Rivermouth Packaging gives it.</li>
 <li><code>ConsigneeParty/PostalAddress/PostalZone</code> =
 <strong>38505</strong><br />
-Postal code in Bayvarra's format (5 digits). identity of Rivermouth
-Packaging (world/parties.json).</li>
+Postal code in Bayvarra's format (5 digits). as Rivermouth Packaging
+gives it.</li>
 <li><code>ConsigneeParty/PostalAddress/CountrySubentity</code> =
 <strong>Coastal State</strong><br />
 The name of code XB-CO in Bayvarra's national state or territory
@@ -559,35 +539,33 @@ list.</li>
 <li><code>ConsigneeParty/PostalAddress/CountrySubentityCode</code> =
 <strong>XB-CO</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CountrySubentityCode</code>)<br />
-The state or territory as a code of Bayvarra's address scheme
-(world/countries.json). identity of Rivermouth Packaging
-(world/parties.json). The code is from Bayvarra's national state or
-territory list: XB-CO = Coastal State.</li>
+The state or territory as a code of Bayvarra's address scheme. as
+Rivermouth Packaging gives it. The code is from Bayvarra's national
+state or territory list: XB-CO = Coastal State.</li>
 <li><code>ConsigneeParty/PostalAddress/TimezoneOffset</code> =
 <strong>-01:00</strong><br />
 The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
-there is no summer time (D27, world/countries.json).</li>
+there is no summer time.</li>
 <li><code>ConsigneeParty/PostalAddress/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list (world/codelists). The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
+list. The code is from the world's copy of UBL's Country identification
+(ISO 3166) list: XB = Bayvarra.</li>
 <li><code>ConsigneeParty/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>ConsigneeParty/Contact/Name</code> =
 <strong>Goods-in</strong><br />
 The party's goods-in desk: the desk for its role in this document (it
-receives the goods); identity of Rivermouth Packaging
-(world/parties.json).</li>
+receives the goods); as Rivermouth Packaging gives it.</li>
 <li><code>ConsigneeParty/Contact/JobTitle</code> = <strong>Goods-in
 supervisor</strong><br />
-The job of the person who answers at the desk; identity of Rivermouth
-Packaging (world/parties.json).</li>
+The job of the person who answers at the desk; as Rivermouth Packaging
+gives it.</li>
 <li><code>ConsigneeParty/Contact/Department</code> =
 <strong>Warehouse</strong><br />
-The department the desk belongs to; identity of Rivermouth Packaging
-(world/parties.json).</li>
+The department the desk belongs to; as Rivermouth Packaging gives
+it.</li>
 <li><code>ConsigneeParty/Contact/Telephone</code> = <strong>+999 2 38
 7320 9007</strong><br />
 The party's switchboard, which puts the caller through to the desk.
@@ -598,15 +576,14 @@ numbering: always 10 digits after the country digit; the area code takes
 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. identity of Rivermouth Packaging (world/parties.json).</li>
+with 7. as Rivermouth Packaging gives it.</li>
 <li><code>ConsigneeParty/Contact/ElectronicMail</code> = <strong><a
 href="mailto:goodsin@rivermouth.example">goodsin@rivermouth.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; identity of Rivermouth Packaging (world/parties.json).</li>
+anyone; as Rivermouth Packaging gives it.</li>
 <li><code>ConsigneeParty/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
-When the desk can be reached; identity of Rivermouth Packaging
-(world/parties.json).</li>
+When the desk can be reached; as Rivermouth Packaging gives it.</li>
 <li><code>ConsignorParty/PartyIdentification/ID</code> =
 <strong>XU-R-104548</strong> (schemeID
 <code>urn:ubl-examples:world:XU:register</code>)<br />
@@ -833,6 +810,6 @@ href="examples.html#flow-plastics">all documents of the flow</a> · <a
 href="example-plastics-02-OrderResponse.html">Order Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/72be5b37e7d6616390e15fefdc3b6775c802003d"><code>72be5b3</code></a> of 2026-11-20 11:52 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/470315dffeff56f1a2e59062b167ac7c6a54bf29"><code>470315d</code></a> of 2026-11-20 12:09 UTC</p></div></footer>
 </body>
 </html>
