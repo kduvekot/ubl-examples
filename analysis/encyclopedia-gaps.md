@@ -16,7 +16,7 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 - When the first European ships called at Lisavu, before the cotton estates.
 - ~~The exact years of the first landing at Larkmouth, the Sardinian treaty with the Urvanian rulers, the boundary convention, and the move of Bayvarra's capital from Larkmouth to Lumeport.~~ **Filled 2026-11-20 (OW006):** the landing on 16 February 1824, the treaty in 1840, the annexation on 29 November 1841, the fort in 1842, the capital moved in 1852, the convention in 1857, Upland on 12 April 1858.
 - ~~The years of the Trade Accord's later protocols: procurement rules, the payment link and card schemes, electronic business documents.~~ **Filled 2026-11-20 (OW007):** procurement 1999, payment link and card schemes 2003, electronic business documents 2014.
-- The name of the main river and of the plateau rivers.
+- ~~The name of the main river and of the plateau rivers.~~ **Filled 2026-11-20 (OW008):** 40 rivers named (the Runmek, the Bruna, the Lark, the Tallow, the Marrow …), with an article each and the water map.
 
 ## Taken over from the working session (2026-11-20)
 
