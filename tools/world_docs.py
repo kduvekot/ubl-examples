@@ -213,7 +213,7 @@ def check(world, model):
 def views(world, model):
     """Per party: the documents it sends, receives and is mentioned in, and its trading partners."""
     out = {p["id"]: {"sends": [], "receives": [], "mentioned": [], "partners": [], "elements": []}
-           for p in world["parties"]}
+           for p in world["parties"] + world.get("abroad", [])}
     for d in world["documents"]:
         for pid in {d["from"], d["to"]} | {v for x in d["parties"].values() for v in ids(x)}:
             v = out[pid]
