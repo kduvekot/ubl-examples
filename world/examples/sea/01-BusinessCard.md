@@ -16,6 +16,8 @@ The distributor introduces itself to the new island customer.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Business card". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:onboarding:1.0**  
   The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0956**  
+  The collaboration this document belongs to: Lumeway's onboarding of Velumi Trading as a new island customer: its business card, the digital agreement they join and the capability statement of the agreement's governor. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-BC-26-0048**  
   The sender's number for this document.
 - `UUID` = **da594e74-bfa8-5df5-ab8d-930b60c73ea9**  
@@ -250,6 +252,7 @@ Inside `BusinessCapability`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:business-card:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0956</cbc:ProfileExecutionID>
   <cbc:ID>LMW-BC-26-0048</cbc:ID>
   <cbc:UUID>da594e74-bfa8-5df5-ab8d-930b60c73ea9</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>

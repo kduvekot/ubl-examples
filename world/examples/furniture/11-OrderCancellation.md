@@ -42,10 +42,10 @@ Inside `OrderReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **26-0031**  
+- `ID` = **26-0032**  
   The maker's exception notification that led to it: a document that bears on the cancellation, not one of the originator's.
 - `DocumentTypeCode` = **ExceptionNotification** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: 26-0031 is the example furniture/07, a ExceptionNotification; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExceptionNotification = Exception Notification.
+  The kind of document referred to: 26-0032 is the example furniture/07, a ExceptionNotification; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ExceptionNotification = Exception Notification.
 - `ID` = **5900017153**  
   The sales figures.
 - `DocumentTypeCode` = **ProductActivity** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -202,7 +202,7 @@ Inside `SellerSupplierParty`:
     <cbc:ID>7100456933</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>26-0031</cbc:ID>
+    <cbc:ID>26-0032</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExceptionNotification</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>

@@ -16,6 +16,8 @@ The island's export: the ginnery declares the bales to customs.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **SCG-TX-26-0241**  
+  The collaboration this document belongs to: the ginnery's export declaration of the bales, to their release for export. Selanu Cotton Ginnery started it and gave it this identifier, which every document of it repeats.
 - `ID` = **SCG-EX-26-0049**  
   The exporter's reference.
 - `UUID` = **f5f1bfda-9201-580a-8a6a-bce4e1381b33**  
@@ -264,6 +266,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0241</cbc:ProfileExecutionID>
   <cbc:ID>SCG-EX-26-0049</cbc:ID>
   <cbc:UUID>f5f1bfda-9201-580a-8a6a-bce4e1381b33</cbc:UUID>
   <cbc:IssueDate>2026-05-06</cbc:IssueDate>

@@ -127,6 +127,34 @@
       "road/06",
       "road/07"
      ]
+    },
+    {
+     "what": "Valdara's export declaration of Lumeway's benches at the land border, to their release for export",
+     "starter": "5-xu",
+     "parties": [
+      "19-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "road/05"
+     ],
+     "cited": [
+      "customs-release-road-05"
+     ]
+    },
+    {
+     "what": "Lumeway's import declaration of the benches from Valdara, to their release for free circulation in Bayvarra",
+     "starter": "6-xb",
+     "parties": [
+      "19-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "road/10"
+     ],
+     "cited": [
+      "customs-release-road-10"
+     ]
     }
    ]
   },
@@ -212,6 +240,34 @@
       "rail/04",
       "rail/05"
      ]
+    },
+    {
+     "what": "Valdara's transit declaration of the rail delivery under the Accord's common transit, to its release for transit at the office of departure",
+     "starter": "5-xu",
+     "parties": [
+      "19-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "rail/06"
+     ],
+     "cited": [
+      "customs-release-rail-06"
+     ]
+    },
+    {
+     "what": "Lumeway's import declaration of the rail delivery at the office of destination in Marrowdale, to its release for free circulation",
+     "starter": "6-xb",
+     "parties": [
+      "19-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "rail/14"
+     ],
+     "cited": [
+      "customs-release-rail-14"
+     ]
     }
    ]
   },
@@ -268,6 +324,46 @@
       "plastics/06",
       "plastics/07"
      ]
+    },
+    {
+     "what": "Rinova's export declaration of the granulate, to its release for export",
+     "starter": "7-xu",
+     "parties": [
+      "19-xu",
+      "7-xu"
+     ],
+     "documents": [
+      "plastics/05"
+     ],
+     "cited": [
+      "customs-release-plastics-05"
+     ]
+    },
+    {
+     "what": "Rivermouth's import declaration of the granulate, to its release for free circulation",
+     "starter": "41-xb",
+     "parties": [
+      "19-xb",
+      "41-xb"
+     ],
+     "documents": [
+      "plastics/09"
+     ],
+     "cited": [
+      "customs-release-plastics-09"
+     ]
+    },
+    {
+     "what": "Rinova's product information of the quarter for Rivermouth",
+     "starter": "7-xu",
+     "parties": [
+      "41-xb",
+      "7-xu"
+     ],
+     "documents": [
+      "plastics/12"
+     ],
+     "one_message": "Rinova sends the quarter's product information unasked; Rivermouth orders in a collaboration of its own"
     }
    ]
   },
@@ -365,6 +461,34 @@
       "retail/15",
       "retail/16",
       "retail/23"
+     ]
+    },
+    {
+     "what": "the store's sale of a Marrow bench at the till, with its home delivery",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "c-xb"
+     ],
+     "documents": [
+      "retail/21"
+     ],
+     "cited": [
+      "brightmarket-home-delivery-order"
+     ]
+    },
+    {
+     "what": "the web order of a Marrow set in the store's webshop, to its collection in the store",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "c-xb"
+     ],
+     "documents": [
+      "retail/22"
+     ],
+     "cited": [
+      "brightmarket-web-order-confirmation"
      ]
     }
    ]
@@ -497,6 +621,100 @@
      "documents": [
       "sea/25",
       "sea/27"
+     ]
+    },
+    {
+     "what": "Bayforth's export declaration of Lumeway's benches at the seaport, to their release for export",
+     "starter": "10-xb",
+     "parties": [
+      "10-xb",
+      "19-xb"
+     ],
+     "documents": [
+      "sea/11"
+     ],
+     "cited": [
+      "customs-release-sea-11"
+     ]
+    },
+    {
+     "what": "Tevaro's import declaration of Velumi's benches at Selanu, to their release for free circulation",
+     "starter": "3-xl",
+     "parties": [
+      "19-xl",
+      "3-xl"
+     ],
+     "documents": [
+      "sea/19"
+     ],
+     "cited": [
+      "customs-release-sea-19"
+     ]
+    },
+    {
+     "what": "Lumeway's onboarding of Velumi Trading as a new island customer: its business card, the digital agreement they join and the capability statement of the agreement's governor",
+     "starter": "6-xb",
+     "parties": [
+      "1-xl",
+      "32-xb",
+      "6-xb"
+     ],
+     "documents": [
+      "sea/01",
+      "sea/03",
+      "sea/04"
+     ]
+    },
+    {
+     "what": "Lumeway's export catalogue for Velumi Trading",
+     "starter": "6-xb",
+     "parties": [
+      "1-xl",
+      "6-xb"
+     ],
+     "documents": [
+      "sea/02"
+     ],
+     "one_message": "Lumeway sends its export catalogue to the new customer unasked; Velumi orders from it in a collaboration of its own"
+    },
+    {
+     "what": "Velumi's sale of two benches at its shop's till to the cotton farm",
+     "starter": "1-xl",
+     "parties": [
+      "1-xl",
+      "38-xl"
+     ],
+     "documents": [
+      "sea/29"
+     ],
+     "one_message": "a sale at the till: the receipt is the only document the buyer gets"
+    },
+    {
+     "what": "Tidewell's cargo manifest of the feeder's call at Selanu for the island's customs",
+     "starter": "11-xb",
+     "parties": [
+      "11-xb",
+      "19-xl"
+     ],
+     "documents": [
+      "sea/15"
+     ],
+     "cited": [
+      "island-customs-manifest-acceptance"
+     ]
+    },
+    {
+     "what": "Tidewell's report of the feeder's arrival at Selanu to the maritime administration",
+     "starter": "11-xb",
+     "parties": [
+      "11-xb",
+      "30-xl"
+     ],
+     "documents": [
+      "sea/16"
+     ],
+     "cited": [
+      "lisavu-maritime-entry-clearance"
      ]
     }
    ]
@@ -688,6 +906,34 @@
       "tender/36",
       "tender/38",
       "tender/39"
+     ]
+    },
+    {
+     "what": "Valdara's export declaration of the department's first call-off, to its release for export",
+     "starter": "5-xu",
+     "parties": [
+      "19-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "tender/30"
+     ],
+     "cited": [
+      "customs-release-tender-30"
+     ]
+    },
+    {
+     "what": "the department's import declaration of its first call-off, to its release for free circulation",
+     "starter": "2-xb",
+     "parties": [
+      "19-xb",
+      "2-xb"
+     ],
+     "documents": [
+      "tender/31"
+     ],
+     "cited": [
+      "customs-release-tender-31"
      ]
     }
    ]
@@ -1027,6 +1273,34 @@
       "wood/10",
       "wood/11"
      ]
+    },
+    {
+     "what": "the declaration releasing the slats from inward processing into free circulation in Urvania, to their release",
+     "starter": "5-xu",
+     "parties": [
+      "19-xu",
+      "5-xu"
+     ],
+     "documents": [
+      "wood/07"
+     ],
+     "cited": [
+      "customs-release-wood-07"
+     ]
+    },
+    {
+     "what": "the road carriage of the slats the sawmill books with Trasvia Haulage",
+     "starter": "36-xb",
+     "parties": [
+      "13-xu",
+      "36-xb"
+     ],
+     "documents": [
+      "wood/04"
+     ],
+     "cited": [
+      "trasvia-slat-booking-confirmation"
+     ]
     }
    ]
   },
@@ -1069,6 +1343,34 @@
       "modification/07",
       "modification/08",
       "modification/09"
+     ]
+    },
+    {
+     "what": "the sawmill's export declaration of the ash blanks at the land border, to their release for export",
+     "starter": "36-xb",
+     "parties": [
+      "19-xb",
+      "36-xb"
+     ],
+     "documents": [
+      "modification/04"
+     ],
+     "cited": [
+      "customs-release-modification-04"
+     ]
+    },
+    {
+     "what": "Tostara's declaration entering the first load of ash blanks into inward processing, to their release into the procedure",
+     "starter": "59-xu",
+     "parties": [
+      "19-xu",
+      "59-xu"
+     ],
+     "documents": [
+      "modification/05"
+     ],
+     "cited": [
+      "customs-release-modification-05"
      ]
     }
    ]
@@ -1439,6 +1741,62 @@
       "cotton/12",
       "cotton/13"
      ]
+    },
+    {
+     "what": "the ginnery's export declaration of the bales, to their release for export",
+     "starter": "39-xl",
+     "parties": [
+      "19-xl",
+      "39-xl"
+     ],
+     "documents": [
+      "cotton/11"
+     ],
+     "cited": [
+      "customs-release-cotton-11"
+     ]
+    },
+    {
+     "what": "the textile mill's import declaration of the bales, to their release for free circulation",
+     "starter": "40-xb",
+     "parties": [
+      "19-xb",
+      "40-xb"
+     ],
+     "documents": [
+      "cotton/15"
+     ],
+     "cited": [
+      "customs-release-cotton-15"
+     ]
+    },
+    {
+     "what": "Tidewell's report of the second feeder's arrival at Lumeport to the port",
+     "starter": "11-xb",
+     "parties": [
+      "11-xb",
+      "16-xb"
+     ],
+     "documents": [
+      "cotton/14"
+     ],
+     "cited": [
+      "lumeport-port-entry-clearance"
+     ]
+    },
+    {
+     "what": "the ginnery's application for the phytosanitary certificate of the bales, to its issue",
+     "starter": "39-xl",
+     "parties": [
+      "39-xl",
+      "45-xl"
+     ],
+     "documents": [
+      "cotton/10"
+     ],
+     "cited": [
+      "ginnery-phytosanitary-application"
+     ]
     }
    ]
   },
@@ -1526,6 +1884,30 @@
       "packaging/06",
       "packaging/07"
      ]
+    },
+    {
+     "what": "the store's sale of a shirt at the till",
+     "starter": "26-xb",
+     "parties": [
+      "26-xb",
+      "c-xb"
+     ],
+     "documents": [
+      "packaging/08"
+     ],
+     "one_message": "a sale at the till: the receipt is the only document the buyer gets"
+    },
+    {
+     "what": "the store's sale of shirts at the till to Velumi's buyer",
+     "starter": "26-xb",
+     "parties": [
+      "1-xl",
+      "26-xb"
+     ],
+     "documents": [
+      "packaging/09"
+     ],
+     "one_message": "a sale at the till: the receipt is the only document the buyer gets"
     }
    ]
   },
@@ -1697,6 +2079,76 @@
       "energy/08",
       "energy/09"
      ]
+    },
+    {
+     "what": "Kelpstone's monthly export declaration of March's gas by pipeline, to its release for export",
+     "starter": "42-xb",
+     "parties": [
+      "19-xb",
+      "42-xb"
+     ],
+     "documents": [
+      "energy/04"
+     ],
+     "cited": [
+      "customs-release-energy-04"
+     ]
+    },
+    {
+     "what": "Montebrio Power's import declaration of its consignment of March's gas, to its release for free circulation",
+     "starter": "43-xu",
+     "parties": [
+      "19-xu",
+      "43-xu"
+     ],
+     "documents": [
+      "energy/05"
+     ],
+     "cited": [
+      "customs-release-energy-05"
+     ]
+    },
+    {
+     "what": "Ferrano Energy's import declaration of its consignment of March's gas, to its release for free circulation",
+     "starter": "33-xu",
+     "parties": [
+      "19-xu",
+      "33-xu"
+     ],
+     "documents": [
+      "energy/10"
+     ],
+     "cited": [
+      "customs-release-energy-10"
+     ]
+    },
+    {
+     "what": "Montebrio Power's bill for March's electricity to Ferrano Energy, to its payment",
+     "starter": "43-xu",
+     "parties": [
+      "33-xu",
+      "43-xu"
+     ],
+     "documents": [
+      "energy/03"
+     ],
+     "cited": [
+      "ferrano-energy-payment-montebrio-march"
+     ]
+    },
+    {
+     "what": "Kelpstone's bill for March's gas to Ferrano Energy, to its payment",
+     "starter": "42-xb",
+     "parties": [
+      "33-xu",
+      "42-xb"
+     ],
+     "documents": [
+      "energy/07"
+     ],
+     "cited": [
+      "ferrano-energy-payment-kelpstone-march"
+     ]
     }
    ]
   },
@@ -1767,6 +2219,76 @@
       "reefer/11",
       "reefer/12"
      ]
+    },
+    {
+     "what": "Bayforth's export declaration of the cooperative's fruit at the seaport, to its release for export",
+     "starter": "10-xb",
+     "parties": [
+      "10-xb",
+      "19-xb"
+     ],
+     "documents": [
+      "reefer/05"
+     ],
+     "cited": [
+      "customs-release-reefer-05"
+     ]
+    },
+    {
+     "what": "Hafefo's import declaration of the fruit, lodged before arrival, to its release at discharge",
+     "starter": "56-xl",
+     "parties": [
+      "19-xl",
+      "56-xl"
+     ],
+     "documents": [
+      "reefer/09"
+     ],
+     "cited": [
+      "customs-release-reefer-09"
+     ]
+    },
+    {
+     "what": "the cooperative's application for the phytosanitary certificate of the fruit, lodged by its forwarder, to its issue",
+     "starter": "55-xb",
+     "parties": [
+      "10-xb",
+      "55-xb",
+      "57-xb"
+     ],
+     "documents": [
+      "reefer/04"
+     ],
+     "cited": [
+      "cooperative-phytosanitary-application"
+     ]
+    },
+    {
+     "what": "the forwarding the cooperative gives Bayforth Forwarding",
+     "starter": "55-xb",
+     "parties": [
+      "10-xb",
+      "55-xb"
+     ],
+     "documents": [
+      "reefer/03"
+     ],
+     "cited": [
+      "bayforth-reefer-forwarding-invoice"
+     ]
+    },
+    {
+     "what": "the sea carriage of the reefer Bayforth books with Tidewell Ocean Lines",
+     "starter": "10-xb",
+     "parties": [
+      "10-xb",
+      "11-xb",
+      "56-xl"
+     ],
+     "documents": [
+      "reefer/07",
+      "reefer/10"
+     ]
     }
    ]
   },
@@ -1805,6 +2327,20 @@
       "lpg/01",
       "lpg/02",
       "lpg/04"
+     ]
+    },
+    {
+     "what": "the road carriage of the propane Kelpstone books with Gullhaven Tank Haulage",
+     "starter": "42-xb",
+     "parties": [
+      "42-xb",
+      "52-xb"
+     ],
+     "documents": [
+      "lpg/03"
+     ],
+     "cited": [
+      "kelpstone-tanker-booking"
      ]
     }
    ]
@@ -1945,6 +2481,62 @@
       "medicines/10",
       "medicines/11",
       "medicines/12"
+     ]
+    },
+    {
+     "what": "Quillmoor's import declaration of the vaccines and the insulin at Lumeport airport, to their release for free circulation",
+     "starter": "49-xb",
+     "parties": [
+      "19-xb",
+      "49-xb"
+     ],
+     "documents": [
+      "medicines/03"
+     ],
+     "cited": [
+      "customs-release-medicines-03"
+     ]
+    },
+    {
+     "what": "Quillmoor's import declaration of the technetium generator at Lumeport airport, to its release for free circulation",
+     "starter": "49-xb",
+     "parties": [
+      "19-xb",
+      "49-xb"
+     ],
+     "documents": [
+      "medicines/08"
+     ],
+     "cited": [
+      "customs-release-medicines-08"
+     ]
+    },
+    {
+     "what": "Tevaro's import declaration of the hospital's medicines at Selanu airport, to their release for free circulation",
+     "starter": "3-xl",
+     "parties": [
+      "19-xl",
+      "3-xl"
+     ],
+     "documents": [
+      "medicines/13"
+     ],
+     "cited": [
+      "customs-release-medicines-13"
+     ]
+    },
+    {
+     "what": "the forwarding by air Quillmoor gives Bayforth Forwarding",
+     "starter": "49-xb",
+     "parties": [
+      "10-xb",
+      "49-xb"
+     ],
+     "documents": [
+      "medicines/06"
+     ],
+     "cited": [
+      "bayforth-medicines-forwarding-invoice"
      ]
     }
    ]
@@ -6373,6 +6965,224 @@
    ],
    "what": "the modification plant's entry into inward processing of the second load of ash blanks, on 20 January",
    "type_code": "ImportCustomsDeclaration"
+  },
+  "customs-release-road-05": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release for export of the benches Valdara declared at the land border",
+   "type": "Release for export"
+  },
+  "customs-release-road-10": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for free circulation of the benches Lumeway declared",
+   "type": "Release for free circulation"
+  },
+  "customs-release-rail-06": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release for transit of the rail delivery at the office of departure",
+   "type": "Release for transit"
+  },
+  "customs-release-rail-14": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for free circulation of the rail delivery at Marrowdale",
+   "type": "Release for free circulation"
+  },
+  "customs-release-sea-11": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for export of the benches Bayforth declared at the seaport",
+   "type": "Release for export"
+  },
+  "customs-release-sea-19": {
+   "issuer": "19-xl",
+   "kind": "CustomsNotice",
+   "what": "the island customs' release for free circulation of Velumi's benches",
+   "type": "Release for free circulation"
+  },
+  "customs-release-tender-30": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release for export of the call-off",
+   "type": "Release for export"
+  },
+  "customs-release-tender-31": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for free circulation of the department's call-off",
+   "type": "Release for free circulation"
+  },
+  "customs-release-plastics-05": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release for export of Rinova's granulate",
+   "type": "Release for export"
+  },
+  "customs-release-plastics-09": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for free circulation of the granulate",
+   "type": "Release for free circulation"
+  },
+  "customs-release-wood-07": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release of the slats from inward processing into free circulation",
+   "type": "Release for free circulation"
+  },
+  "customs-release-modification-04": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for export of the sawmill's ash blanks",
+   "type": "Release for export"
+  },
+  "customs-release-modification-05": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release of the first load of ash blanks into inward processing",
+   "type": "Release into inward processing"
+  },
+  "customs-release-cotton-11": {
+   "issuer": "19-xl",
+   "kind": "CustomsNotice",
+   "what": "the island customs' release for export of the ginnery's bales",
+   "type": "Release for export"
+  },
+  "customs-release-cotton-15": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for free circulation of the textile mill's bales",
+   "type": "Release for free circulation"
+  },
+  "customs-release-energy-04": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for export of March's gas",
+   "type": "Release for export"
+  },
+  "customs-release-energy-05": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release for free circulation of Montebrio Power's consignment of March's gas",
+   "type": "Release for free circulation"
+  },
+  "customs-release-energy-10": {
+   "issuer": "19-xu",
+   "kind": "CustomsNotice",
+   "what": "Urvanian customs' release for free circulation of Ferrano Energy's consignment of March's gas",
+   "type": "Release for free circulation"
+  },
+  "customs-release-reefer-05": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for export of the cooperative's fruit",
+   "type": "Release for export"
+  },
+  "customs-release-reefer-09": {
+   "issuer": "19-xl",
+   "kind": "CustomsNotice",
+   "what": "the island customs' release for free circulation of Hafefo's fruit",
+   "type": "Release for free circulation"
+  },
+  "customs-release-medicines-03": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for free circulation of Quillmoor's vaccines and insulin",
+   "type": "Release for free circulation"
+  },
+  "customs-release-medicines-08": {
+   "issuer": "19-xb",
+   "kind": "CustomsNotice",
+   "what": "Bayvarra customs' release for free circulation of Quillmoor's technetium generator",
+   "type": "Release for free circulation"
+  },
+  "customs-release-medicines-13": {
+   "issuer": "19-xl",
+   "kind": "CustomsNotice",
+   "what": "the island customs' release for free circulation of the hospital's medicines",
+   "type": "Release for free circulation"
+  },
+  "brightmarket-home-delivery-order": {
+   "number": [
+    "retail",
+    "home-delivery"
+   ],
+   "what": "the store's home delivery order of the bench, booked with the sale",
+   "type": "Home delivery order"
+  },
+  "brightmarket-web-order-confirmation": {
+   "issuer": "26-xb",
+   "kind": "OrderResponse",
+   "what": "the webshop's confirmation of the web order, once the card payment is authorised and the pieces are reserved for collection",
+   "type": "Order confirmation"
+  },
+  "island-customs-manifest-acceptance": {
+   "issuer": "19-xl",
+   "kind": "ApplicationResponse",
+   "what": "the island customs' acceptance of Tidewell's cargo manifest before the feeder's arrival",
+   "type": "Acceptance of the manifest"
+  },
+  "lisavu-maritime-entry-clearance": {
+   "issuer": "30-xl",
+   "kind": "ApplicationResponse",
+   "what": "the maritime administration's clearance of the feeder to enter Selanu, on Tidewell's report",
+   "type": "Port entry clearance"
+  },
+  "lumeport-port-entry-clearance": {
+   "issuer": "16-xb",
+   "kind": "ApplicationResponse",
+   "what": "the Port of Lumeport's clearance of the second feeder to enter, on Tidewell's report",
+   "type": "Port entry clearance"
+  },
+  "ginnery-phytosanitary-application": {
+   "issuer": "39-xl",
+   "kind": "Application",
+   "what": "the ginnery's application to the Plant Protection Service for the inspection and phytosanitary certificate of the bales",
+   "type": "Application for a phytosanitary certificate"
+  },
+  "cooperative-phytosanitary-application": {
+   "issuer": "10-xb",
+   "kind": "Application",
+   "what": "the application for the inspection and phytosanitary certificate of the fruit, which Bayforth lodged in the cooperative's name",
+   "type": "Application for a phytosanitary certificate"
+  },
+  "trasvia-slat-booking-confirmation": {
+   "issuer": "13-xu",
+   "kind": "TransportExecutionPlan",
+   "what": "Trasvia Haulage's confirmation of the sawmill's booking of the truck from the modification plant to the factory",
+   "type": "Booking confirmation"
+  },
+  "kelpstone-tanker-booking": {
+   "issuer": "42-xb",
+   "kind": "Booking",
+   "what": "Kelpstone's booking of the propane tanker with Gullhaven Tank Haulage",
+   "type": "Transport booking"
+  },
+  "bayforth-reefer-forwarding-invoice": {
+   "issuer": "10-xb",
+   "kind": "Invoice",
+   "what": "Bayforth's invoice to the cooperative for the forwarding of the reefer",
+   "type": "Invoice"
+  },
+  "bayforth-medicines-forwarding-invoice": {
+   "issuer": "10-xb",
+   "kind": "Invoice",
+   "what": "Bayforth's invoice to Quillmoor for the forwarding by air to Selanu",
+   "type": "Invoice"
+  },
+  "ferrano-energy-payment-montebrio-march": {
+   "issuer": "33-xu",
+   "kind": "Payment",
+   "what": "Ferrano Energy's credit transfer paying Montebrio Power's bill for March, quoting its creditor reference",
+   "type": "Credit transfer"
+  },
+  "ferrano-energy-payment-kelpstone-march": {
+   "issuer": "33-xu",
+   "kind": "Payment",
+   "what": "Ferrano Energy's credit transfer paying Kelpstone's bill for March's gas",
+   "type": "Credit transfer"
   }
  }
 }

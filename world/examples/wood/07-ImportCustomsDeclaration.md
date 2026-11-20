@@ -16,6 +16,8 @@ The manufacturer releases the slats from inward processing into free circulation
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900042927**  
+  The collaboration this document belongs to: the declaration releasing the slats from inward processing into free circulation in Urvania, to their release. Valdara Industries started it and gave it this identifier, which every document of it repeats.
 - `ID` = **7700008586**  
   The importer's declaration number.
 - `UUID` = **5121b08c-34cb-5860-af6c-8ad49382d537**  
@@ -332,6 +334,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900042927</cbc:ProfileExecutionID>
   <cbc:ID>7700008586</cbc:ID>
   <cbc:UUID>5121b08c-34cb-5860-af6c-8ad49382d537</cbc:UUID>
   <cbc:IssueDate>2026-02-26</cbc:IssueDate>

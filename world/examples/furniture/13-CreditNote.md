@@ -18,7 +18,7 @@ The returned benches and chairs are credited in full, without a restocking deduc
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **9900336121**  
   The collaboration this document belongs to: the store's first order of the Marrow line, with its return. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
-- `ID` = **26-0035**  
+- `ID` = **26-0036**  
   The seller's credit note number.
 - `UUID` = **3eb03476-6b48-5174-b997-aaed7a5b8b5b**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -63,10 +63,10 @@ Inside `BillingReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **26-0032**  
+- `ID` = **26-0033**  
   The instruction for returns.
 - `DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: 26-0032 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
+  The kind of document referred to: 26-0033 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
 
 ### Accounting Supplier Party
 
@@ -266,7 +266,7 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: MPNS = MassPaymentNetSystem.
 - `PaymentRailID` = **LUMEPAY**  
   The payment system the transfer runs over: the domestic clearing.
-- `PaymentID` = **26-0035**  
+- `PaymentID` = **26-0036**  
   The credit note's number, which the maker quotes with the refund so the store can match it.
 - `PayeeFinancialAccount/ID` = **XB48BLUM38010001570935** (schemeID `urn:ubl-examples:world:account`)  
   The store's account, where the refund goes. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -278,7 +278,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `PayeeFinancialAccount/PaymentNote` = **Credit note 26-0035**  
+- `PayeeFinancialAccount/PaymentNote` = **Credit note 26-0036**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **380100** (schemeID `urn:ubl-examples:world:XB:bank-branch`)  
   The branch that keeps the account, by its national code: the sort code of a Bayvarran bank branch (six digits, British style; the first two name the bank). The account number holds it.
@@ -520,7 +520,7 @@ Inside `CreditNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>9900336121</cbc:ProfileExecutionID>
-  <cbc:ID>26-0035</cbc:ID>
+  <cbc:ID>26-0036</cbc:ID>
   <cbc:UUID>3eb03476-6b48-5174-b997-aaed7a5b8b5b</cbc:UUID>
   <cbc:IssueDate>2026-06-16</cbc:IssueDate>
   <cbc:IssueTime>11:55:00-01:00</cbc:IssueTime>
@@ -542,7 +542,7 @@ Inside `CreditNoteLine`:
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>26-0032</cbc:ID>
+    <cbc:ID>26-0033</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -719,14 +719,14 @@ Inside `CreditNoteLine`:
     <cbc:PaymentDueDate>2026-06-26</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:PaymentID>26-0035</cbc:PaymentID>
+    <cbc:PaymentID>26-0036</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB48BLUM38010001570935</cbc:ID>
       <cbc:Name>Brightmarket Stores Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Credit note 26-0035</cbc:PaymentNote>
+      <cbc:PaymentNote>Credit note 26-0036</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
         <cbc:Name>Main branch, Exchange Street</cbc:Name>

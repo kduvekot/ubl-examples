@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>HRW-TX-26-0730</cbc:ProfileExecutionID>
   <cbc:ID>HRW-FI-26-0438</cbc:ID>
   <cbc:UUID>65afde09-59f1-5b61-bf17-600334916da7</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>

@@ -16,6 +16,8 @@ The carrier reports the reefer discharged at Selanu and on the port's power, wit
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2160**  
+  The collaboration this document belongs to: the sea carriage of the reefer Bayforth books with Tidewell Ocean Lines. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
 - `ID` = **8101997393**  
   The sender's status report number.
 - `UUID` = **8a5ddf6d-b855-5fa3-9a91-f88a50a3daf6**  
@@ -233,6 +235,7 @@ Inside `ReceiverParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2160</cbc:ProfileExecutionID>
   <cbc:ID>8101997393</cbc:ID>
   <cbc:UUID>8a5ddf6d-b855-5fa3-9a91-f88a50a3daf6</cbc:UUID>
   <cbc:IssueDate>2026-04-26</cbc:IssueDate>

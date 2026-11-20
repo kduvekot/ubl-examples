@@ -16,6 +16,8 @@ The gas producer invoices the gas it fed into the grid for the retail company's 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900034210**  
+  The collaboration this document belongs to: Kelpstone's bill for March's gas to Ferrano Energy, to its payment. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
 - `ID` = **9000034210**  
   The seller's invoice number.
 - `UUID` = **1e7ea11c-b11c-5f5d-b9a6-1cc6a2557832**  
@@ -411,6 +413,7 @@ Inside `InvoiceLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900034210</cbc:ProfileExecutionID>
   <cbc:ID>9000034210</cbc:ID>
   <cbc:UUID>1e7ea11c-b11c-5f5d-b9a6-1cc6a2557832</cbc:UUID>
   <cbc:IssueDate>2026-04-03</cbc:IssueDate>

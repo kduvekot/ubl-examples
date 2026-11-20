@@ -36,7 +36,7 @@ The wholesaler pays the cooperative's invoice in lume on its due date, from its 
   No credits taken.
 - `TotalPaymentAmount` = **28868.00** (currencyID `XBL`)  
   The amount transferred: the payable amount of the invoice.
-- `PaymentOrderReference` = **26-0026**  
+- `PaymentOrderReference` = **26-0027**  
   The payment order the payer gave its bank.
 - `InvoicingPartyReference` = **RF88HRWINV260772**  
   The reference the invoicing party asked to quote.
@@ -153,7 +153,7 @@ Inside `PaymentMeans`:
 
 - `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
   UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
-- `InstructionID` = **26-0026**  
+- `InstructionID` = **26-0027**  
   The payer's own number for the payment order it gave its bank.
 - `PaymentID` = **RF88HRWINV260772** (schemeID `ISO 11649`)  
   The creditor reference from the invoice, quoted so the payee can match the payment automatically. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
@@ -279,7 +279,7 @@ Inside `RemittanceAdviceLine`:
   <cbc:TotalDebitAmount currencyID="XBL">28868.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">0.00</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">28868.00</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>26-0026</cbc:PaymentOrderReference>
+  <cbc:PaymentOrderReference>26-0027</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF88HRWINV260772</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
@@ -367,7 +367,7 @@ Inside `RemittanceAdviceLine`:
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>26-0026</cbc:InstructionID>
+    <cbc:InstructionID>26-0027</cbc:InstructionID>
     <cbc:PaymentID schemeID="ISO 11649">RF88HRWINV260772</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL21BSEL0010008247361</cbc:ID>

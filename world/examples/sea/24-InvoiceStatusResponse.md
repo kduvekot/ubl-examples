@@ -18,7 +18,7 @@ The buyer answers: accepted and scheduled for payment.
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **26-0416**  
   The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
-- `ID` = **26-0027**  
+- `ID` = **26-0031**  
   The sender's number for this document.
 - `UUID` = **46a32b33-e5ba-5fe5-96d0-d30eada68245**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -114,7 +114,7 @@ Inside `DocumentResponse`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:invoice-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
-  <cbc:ID>26-0027</cbc:ID>
+  <cbc:ID>26-0031</cbc:ID>
   <cbc:UUID>46a32b33-e5ba-5fe5-96d0-d30eada68245</cbc:UUID>
   <cbc:IssueDate>2026-06-01</cbc:IssueDate>
   <cbc:IssueTime>13:49:00+00:00</cbc:IssueTime>

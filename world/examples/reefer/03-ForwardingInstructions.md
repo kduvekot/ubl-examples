@@ -16,6 +16,8 @@ The cooperative instructs its forwarder: book a reefer on the sailing, with its 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Forwarding instructions". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **HRW-TX-26-0730**  
+  The collaboration this document belongs to: the forwarding the cooperative gives Bayforth Forwarding. Harrowmead Fruit Growers started it and gave it this identifier, which every document of it repeats.
 - `ID` = **HRW-FI-26-0438**  
   The cooperative's instruction number.
 - `UUID` = **65afde09-59f1-5b61-bf17-600334916da7**  
@@ -276,6 +278,7 @@ Inside `Shipment`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>HRW-TX-26-0730</cbc:ProfileExecutionID>
   <cbc:ID>HRW-FI-26-0438</cbc:ID>
   <cbc:UUID>65afde09-59f1-5b61-bf17-600334916da7</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>

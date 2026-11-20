@@ -16,6 +16,8 @@ The haulier's consignment note under Bayvarra's road carriage law, with the dang
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900034654**  
+  The collaboration this document belongs to: the road carriage of the propane Kelpstone books with Gullhaven Tank Haulage. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0791**  
   The consignment note number.
 - `CarrierAssignedID` = **26-0040**  
@@ -427,6 +429,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900034654</cbc:ProfileExecutionID>
   <cbc:ID>26-0791</cbc:ID>
   <cbc:CarrierAssignedID>26-0040</cbc:CarrierAssignedID>
   <cbc:UUID>1bcd7f24-a71e-5869-ae2d-2b2aab46d19b</cbc:UUID>

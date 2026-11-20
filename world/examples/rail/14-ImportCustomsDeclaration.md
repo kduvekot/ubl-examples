@@ -16,6 +16,8 @@ At Bayvarra customs' inland office in Marrowdale, the office of destination of t
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Import customs declaration". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0801**  
+  The collaboration this document belongs to: Lumeway's import declaration of the rail delivery at the office of destination in Marrowdale, to its release for free circulation. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-IM-26-0161**  
   The importer's declaration number.
 - `UUID` = **0ec09a23-6905-502a-9229-510e1e194d59**  
@@ -388,6 +390,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0801</cbc:ProfileExecutionID>
   <cbc:ID>LMW-IM-26-0161</cbc:ID>
   <cbc:UUID>0ec09a23-6905-502a-9229-510e1e194d59</cbc:UUID>
   <cbc:IssueDate>2026-04-15</cbc:IssueDate>

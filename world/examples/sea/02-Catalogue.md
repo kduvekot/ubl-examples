@@ -16,6 +16,8 @@ The export catalogue for the island customer.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **LMW-TX-26-0955**  
+  The collaboration this document belongs to: Lumeway's export catalogue for Velumi Trading. Lumeway Distribution started it and gave it this identifier: the document is the whole exchange.
 - `ID` = **LMW-CAT-26-0006**  
   The provider's catalogue number.
 - `UUID` = **40262193-531c-5797-8c01-d23252c67188**  
@@ -634,6 +636,7 @@ Inside `CatalogueLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0955</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CAT-26-0006</cbc:ID>
   <cbc:UUID>40262193-531c-5797-8c01-d23252c67188</cbc:UUID>
   <cbc:Name>Lumeway Distribution catalogue</cbc:Name>

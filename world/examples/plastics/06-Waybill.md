@@ -20,7 +20,7 @@ The inland waterway consignment note, issued to the shipper.
   The collaboration this document belongs to: the barge carriage Rinova books with Fiumella Barges. Rinova Recovery started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0181**  
   The consignment note number.
-- `CarrierAssignedID` = **26-0022**  
+- `CarrierAssignedID` = **26-0023**  
   The carrier's own number for the carriage.
 - `UUID` = **0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -194,7 +194,7 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **26-0451**  
+- `ID` = **26-0452**  
   The shipment as the despatching party numbered it.
 - `Consignment/ID` = **26-0426**  
   The seller's consignment number.
@@ -480,7 +480,7 @@ Inside `Signature`:
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>26-0425</cbc:ProfileExecutionID>
   <cbc:ID>26-0181</cbc:ID>
-  <cbc:CarrierAssignedID>26-0022</cbc:CarrierAssignedID>
+  <cbc:CarrierAssignedID>26-0023</cbc:CarrierAssignedID>
   <cbc:UUID>0a38e2bd-26a7-55f9-833d-9ab2e55cfd4a</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -607,7 +607,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>26-0451</cbc:ID>
+    <cbc:ID>26-0452</cbc:ID>
     <cac:Consignment>
       <cbc:ID>26-0426</cbc:ID>
       <cbc:CarrierAssignedID>FB4-26-031/2</cbc:CarrierAssignedID>

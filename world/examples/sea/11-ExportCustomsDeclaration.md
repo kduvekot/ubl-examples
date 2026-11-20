@@ -16,6 +16,8 @@ The forwarder, as customs agent, declares the export for the distributor at the 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Export customs declaration"; the community specification "Lumeport port community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **BYF-TX-26-2524**  
+  The collaboration this document belongs to: Bayforth's export declaration of Lumeway's benches at the seaport, to their release for export. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
 - `ID` = **BYF-EX-26-0505**  
   The exporter's reference.
 - `UUID` = **4b360143-92f4-557a-aac2-22d33c03e880**  
@@ -478,6 +480,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:export-customs-declaration:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2524</cbc:ProfileExecutionID>
   <cbc:ID>BYF-EX-26-0505</cbc:ID>
   <cbc:UUID>4b360143-92f4-557a-aac2-22d33c03e880</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>

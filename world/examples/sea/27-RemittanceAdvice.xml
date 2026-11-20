@@ -13,7 +13,7 @@
   <cbc:TotalDebitAmount currencyID="XBL">44896.00</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XBL">196.13</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XBL">44699.87</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>26-0036</cbc:PaymentOrderReference>
+  <cbc:PaymentOrderReference>26-0037</cbc:PaymentOrderReference>
   <cbc:InvoicingPartyReference>RF21LMWINV261025</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
@@ -110,7 +110,7 @@
   </cac:PayeeParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>26-0036</cbc:InstructionID>
+    <cbc:InstructionID>26-0037</cbc:InstructionID>
     <cbc:PaymentID schemeID="ISO 11649">RF21LMWINV261025</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XL40BSEL0010003665515</cbc:ID>

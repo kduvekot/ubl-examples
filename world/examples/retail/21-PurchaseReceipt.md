@@ -16,6 +16,8 @@ A consumer buys in the shop and gets a receipt.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Purchase receipt". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:retail-sale:1.0**  
   The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900341054**  
+  The collaboration this document belongs to: the store's sale of a Marrow bench at the till, with its home delivery. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **3102316131**  
   The till's receipt number.
 - `UUID` = **bcdeb9a7-e515-519a-b488-de52151e844f**  
@@ -510,6 +512,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900341054</cbc:ProfileExecutionID>
   <cbc:ID>3102316131</cbc:ID>
   <cbc:UUID>bcdeb9a7-e515-519a-b488-de52151e844f</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>

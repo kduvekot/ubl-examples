@@ -52,7 +52,7 @@ Inside `OrderReference`:
 
 Inside `WorkReportDocumentReference`:
 
-- `ID` = **26-0017**  
+- `ID` = **26-0018**  
   The approved work report the hours come from.
 
 ### Additional Document Reference
@@ -468,10 +468,10 @@ Inside `InvoiceLine`:
   And was finished.
 - `WorkReportLineReference/LineID` = **1**  
   The line of the approved work report.
-- `WorkReportLineReference/DocumentReference/ID` = **26-0017**  
+- `WorkReportLineReference/DocumentReference/ID` = **26-0018**  
   The work report.
 - `WorkReportLineReference/DocumentReference/DocumentTypeCode` = **WorkReport** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: 26-0017 is the example furniture/16, a WorkReport; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: WorkReport = Work Report.
+  The kind of document referred to: 26-0018 is the example furniture/16, a WorkReport; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: WorkReport = Work Report.
 - `Item/Description` = **Installation of furniture on site, per hour per installer.**  
   The seller's description.
 - `Item/Name` = **Installation work**  
@@ -519,7 +519,7 @@ Inside `InvoiceLine`:
     <cbc:ID>PWD/2026/0621</cbc:ID>
   </cac:OrderReference>
   <cac:WorkReportDocumentReference>
-    <cbc:ID>26-0017</cbc:ID>
+    <cbc:ID>26-0018</cbc:ID>
   </cac:WorkReportDocumentReference>
   <cac:AdditionalDocumentReference>
     <cbc:ID>PWD/2026/0619</cbc:ID>
@@ -846,7 +846,7 @@ Inside `InvoiceLine`:
     <cac:WorkReportLineReference>
       <cbc:LineID>1</cbc:LineID>
       <cac:DocumentReference>
-        <cbc:ID>26-0017</cbc:ID>
+        <cbc:ID>26-0018</cbc:ID>
         <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WorkReport</cbc:DocumentTypeCode>
       </cac:DocumentReference>
     </cac:WorkReportLineReference>

@@ -3,7 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ID>26-1361</cbc:ID>
+  <cbc:ProfileExecutionID>26-1361</cbc:ProfileExecutionID>
+  <cbc:ID>26-1362</cbc:ID>
   <cbc:UUID>8f2e6a5d-e54e-599b-97f3-65f0e0767e2a</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>

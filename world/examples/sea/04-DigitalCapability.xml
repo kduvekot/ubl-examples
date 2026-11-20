@@ -3,6 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:digital-capability:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:onboarding:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0956</cbc:ProfileExecutionID>
   <cbc:ID>LTAC/2026/0205</cbc:ID>
   <cbc:UUID>5754c138-ef9f-5b93-ae9f-9a48fe182097</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>

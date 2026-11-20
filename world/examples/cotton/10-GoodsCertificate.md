@@ -16,6 +16,8 @@ Lisavu's plant protection organisation under the IPPC, the Plant Protection Serv
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Goods certificate". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:customs:1.0**  
   The Trade Accord's process profile the document belongs to: customs, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **SCG-TX-26-0239**  
+  The collaboration this document belongs to: the ginnery's application for the phytosanitary certificate of the bales, to its issue. Selanu Cotton Ginnery started it and gave it this identifier, which every document of it repeats.
 - `ID` = **DAL/2026/0309**  
   The Plant Protection Service's certificate number.
 - `UUID` = **78516adf-5718-5e78-bd9d-8e44536e335b**  
@@ -371,6 +373,7 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-certificate:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>SCG-TX-26-0239</cbc:ProfileExecutionID>
   <cbc:ID>DAL/2026/0309</cbc:ID>
   <cbc:UUID>78516adf-5718-5e78-bd9d-8e44536e335b</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>

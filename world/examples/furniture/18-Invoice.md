@@ -54,10 +54,10 @@ Inside `ContractDocumentReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **26-0032**  
+- `ID` = **26-0033**  
   The maker's instruction for returns, which asked for the pieces back.
 - `DocumentTypeCode` = **InstructionForReturns** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: 26-0032 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
+  The kind of document referred to: 26-0033 is the example furniture/12, a InstructionForReturns; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: InstructionForReturns = Instruction For Returns.
 
 ### Accounting Supplier Party
 
@@ -432,7 +432,7 @@ Inside `InvoiceLine`:
     <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>26-0032</cbc:ID>
+    <cbc:ID>26-0033</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>

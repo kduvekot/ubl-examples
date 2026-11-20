@@ -16,6 +16,8 @@ The island trader's buyer, in Lumeport on business, buys shirts for the trader's
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Purchase receipt". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:retail-sale:1.0**  
   The Trade Accord's process profile the document belongs to: retail sale, a generic, versioned profile, not the flow.
+- `ProfileExecutionID` = **9900341714**  
+  The collaboration this document belongs to: the store's sale of shirts at the till to Velumi's buyer. Brightmarket Stores started it and gave it this identifier: the document is the whole exchange.
 - `ID` = **3102514042**  
   The till's receipt number.
 - `UUID` = **0a1ab530-6d49-5174-913f-d50624881433**  
@@ -333,6 +335,7 @@ Inside `PurchaseReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:purchase-receipt:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:retail-sale:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>9900341714</cbc:ProfileExecutionID>
   <cbc:ID>3102514042</cbc:ID>
   <cbc:UUID>0a1ab530-6d49-5174-913f-d50624881433</cbc:UUID>
   <cbc:IssueDate>2026-05-23</cbc:IssueDate>

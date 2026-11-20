@@ -1426,8 +1426,14 @@ party that starts the collaboration gives it, in its own numbering style (for
 an order-to-invoice cycle the buyer, for a tender the contracting body, whose
 procurement file is such an identifier), and every later document of that
 transaction repeats it, so that a reader can collect the documents of one
-transaction by this element alone. A document that belongs to no
-collaboration with others carries none.
+transaction by this element alone. Every document is exchanged in a
+collaboration and carries its identifier, not that of the trade it serves: a
+customs declaration belongs to the declarant's exchange with customs, which the
+declarant starts and which ends with the release of the goods; a plant health
+certificate to its application and issue, started by the applicant; a carrier's
+manifest or arrival report to its exchange with the authority; a business card,
+a digital agreement and a capability statement to the partners' onboarding; a
+till receipt to the sale at the till, of which it is the only document.
 
 ## The calendar
 
