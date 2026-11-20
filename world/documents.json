@@ -1136,7 +1136,7 @@
    "doc": "ReceiptAdvice",
    "from": "6-xb",
    "to": "8-xu",
-   "why": "The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller.",
+   "why": "The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller, and reports one bench short of a parcel and a frame carton over.",
    "parties": {
     "DeliveryCustomerParty": "6-xb",
     "DespatchSupplierParty": "8-xu",
@@ -2215,7 +2215,7 @@
    "doc": "ContractNotice",
    "from": "2-xb",
    "to": "21-xb",
-   "why": "The call for competition is published; it names the review body for appeals and mediation.",
+   "why": "The call for competition is published; it names the review body for appeals.",
    "parties": {
     "ContractingParty": "2-xb",
     "ReceiverParty": "21-xb",
@@ -2339,7 +2339,7 @@
    "doc": "TendererQualification",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The manufacturer declares its qualifications and those of its consortium partner.",
+   "why": "The manufacturer declares its qualifications and those of its subcontractor.",
    "parties": {
     "ContractingParty": "2-xb",
     "TendererPartyQualification/MainQualifyingParty": "5-xu",
@@ -2363,7 +2363,7 @@
    "doc": "Tender",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The tender, with the consortium partner as subcontractor.",
+   "why": "The tender, naming the subcontractor that installs the benches.",
    "parties": {
     "TendererParty": "5-xu",
     "SubcontractorParty": "27-xb",
@@ -2419,7 +2419,7 @@
    "doc": "TendererQualificationResponse",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The manufacturer and its consortium partner are admitted to the evaluation.",
+   "why": "The manufacturer is admitted to the evaluation, with its subcontractor.",
    "parties": {
     "SenderParty": "2-xb",
     "ReceiverParty": "5-xu"
@@ -2490,7 +2490,7 @@
    "doc": "Order",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The first call-off under the awarded contract. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.",
+   "why": "The first call-off under the awarded contract: 40 benches and their 40 installations. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.",
    "parties": {
     "BuyerCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
@@ -3768,7 +3768,7 @@
    "doc": "PurchaseReceipt",
    "from": "26-xb",
    "to": "1-xl",
-   "why": "The island trader's buyer, in Lumeport for the trade fair, buys shirts for the stand team and pays in coral with the island card: the till converts at the counter.",
+   "why": "The island trader's buyer, in Lumeport on business, buys shirts for the trader's team at the Selanu chamber's trade fair in early June and pays in coral with the island card: the till converts at the counter.",
    "parties": {
     "AccountingSupplierParty": "26-xb",
     "AccountingCustomerParty": "1-xl"
@@ -3949,6 +3949,17 @@
    }
   },
   {
+   "flow": "tender",
+   "doc": "TenderReceipt",
+   "from": "2-xb",
+   "to": "37-xb",
+   "why": "The authority acknowledges the furniture maker's first tender, with the time it was registered.",
+   "parties": {
+    "SenderParty": "2-xb",
+    "ReceiverParty": "37-xb"
+   }
+  },
+  {
    "flow": "contest",
    "doc": "PriorInformationNotice",
    "from": "2-xb",
@@ -3999,7 +4010,7 @@
    "doc": "QualificationApplicationRequest",
    "from": "2-xb",
    "to": "37-xb",
-   "why": "The authority asks for the self-declaration on the design lead's professional qualification.",
+   "why": "The authority asks for the self-declaration on the exclusion grounds and on the design lead's professional qualification.",
    "parties": {
     "ContractingParty": "2-xb",
     "EconomicOperatorParty": "37-xb"
@@ -4060,7 +4071,7 @@
    "doc": "QualificationApplicationRequest",
    "from": "2-xb",
    "to": "37-xb",
-   "why": "Version 2 of the self-declaration request: the design lead may also be an industrial designer.",
+   "why": "Version 2 of the self-declaration request, on the exclusion grounds and the qualification: the design lead may also be an industrial designer.",
    "parties": {
     "ContractingParty": "2-xb",
     "EconomicOperatorParty": "37-xb"

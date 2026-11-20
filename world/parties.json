@@ -1695,7 +1695,7 @@
    "h": 3,
    "kind": "office",
    "proposed": true,
-   "what": "Independent body that handles appeals and mediation in public procurement.",
+   "what": "Independent body that handles appeals in public procurement.",
    "how": "A review body handles appeals against procurement decisions. The tendering documents name it, with the deadlines for an appeal, so every tenderer knows where and when to go.",
    "identity": {
     "name": "Procurement Review Board of Bayvarra",

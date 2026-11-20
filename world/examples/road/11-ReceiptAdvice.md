@@ -2,7 +2,7 @@
 
 *Example 11 of the flow "Finished goods by truck across the land border (Urvania → Bayvarra)" · [Receipt Advice in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-RECEIPT-ADVICE-SCHEMA)*
 
-The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller.
+The distributor confirms what arrived to the party that despatched it, the 3PL, naming the manufacturer as seller, and reports one bench short of a parcel and a frame carton over.
 
 [The XML file](11-ReceiptAdvice.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

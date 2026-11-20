@@ -46,8 +46,8 @@ Inside `TenderDocumentReference`:
 
 Inside `TenderNotificationDocumentReference`:
 
-- `ID` = **PWD-RCPT-BF-1**  
-  The receipt the platform issued for the tender withdrawn (not shown).
+- `ID` = **LPWD-DOC-26-0206**  
+  The receipt the platform issued for the tender withdrawn.
 
 ### Signature
 
@@ -199,7 +199,7 @@ Inside `TendererParty`:
     <cbc:ID>BF-DOC-26-0204</cbc:ID>
   </cac:TenderDocumentReference>
   <cac:TenderNotificationDocumentReference>
-    <cbc:ID>PWD-RCPT-BF-1</cbc:ID>
+    <cbc:ID>LPWD-DOC-26-0206</cbc:ID>
   </cac:TenderNotificationDocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-WD</cbc:ID>

@@ -18,7 +18,7 @@ One bench was damaged during installation and rejected on acceptance; the manufa
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
   This run of the process: the same in every document of the flow.
-- `ID` = **VI-CN-26-0224**  
+- `ID` = **VI-CN-26-0225**  
   The seller's credit note number.
 - `UUID` = **836baac3-c754-5749-8c68-5c404d80fae0**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -47,14 +47,14 @@ One bench was damaged during installation and rejected on acceptance; the manufa
 
 Inside `BillingReference`:
 
-- `InvoiceDocumentReference/ID` = **VI-INV-26-0222**  
+- `InvoiceDocumentReference/ID` = **VI-INV-26-0223**  
   The invoice credited.
 
 ### Receipt Document Reference
 
 Inside `ReceiptDocumentReference`:
 
-- `ID` = **LPWD-RA-26-0223**  
+- `ID` = **LPWD-RA-26-0224**  
   The acceptance that rejected the bench.
 
 ### Accounting Supplier Party
@@ -382,7 +382,7 @@ Inside `CreditNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XB:public-billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-CN-26-0224</cbc:ID>
+  <cbc:ID>VI-CN-26-0225</cbc:ID>
   <cbc:UUID>836baac3-c754-5749-8c68-5c404d80fae0</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>09:10:00-01:00</cbc:IssueTime>
@@ -396,11 +396,11 @@ Inside `CreditNoteLine`:
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>VI-INV-26-0222</cbc:ID>
+      <cbc:ID>VI-INV-26-0223</cbc:ID>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>LPWD-RA-26-0223</cbc:ID>
+    <cbc:ID>LPWD-RA-26-0224</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

@@ -84,7 +84,7 @@ irrelevant · structure · process.
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | open |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | open |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | open |
-| SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | decided |
+| SR-13 | Leads and reasons left behind by a taken flow decision | high | F-01, F-02, F-03, F-04, F-05, F-07, E-11 | | solved |
 | SR-14 | Party descriptions wrong or told from the bench chain only | medium | C-01, C-08, C-09 | | open |
 | SR-15 | A party page is not the party's full self-description (O86) | medium | C-06, C-07 | Q-C-03 | open |
 | SR-16 | Party page naming and template wording | low | C-13, C-14, C-15 | Q-C-01 | open |
@@ -241,6 +241,10 @@ irrelevant · structure · process.
      "(not shown)";
   6. road/11, tender/26, contest/05 and 10: one clause each for the turn of the story;
   7. packaging/09: the trade fair in its place per O133.
+  **Solved 2026-11-20** in the commit "SR-13: …": all seven points; tender/40 built (the department's receipt of
+  Brackenmere's first tender, 20 February 16:38); tender/18 cites it; the numbers of tender/19 onward move up by one.
+  Also brought in line under O133: utilities/12 (the roaming in Lumeport is a business trip, not a fair) and the
+  packaging/09 lead. Left for SR-14: the party role name "Consortium Partner" (27-xb), which the contest still uses.
 - **What:**
   - tender/13, 15, 20: "consortium partner" while the page shows `SOLE` and Saltmere as subcontractor (D28 p.3; `world/documents.json:2321, 2345, 2401`) (high);
   - tender/02: review body "for appeals and mediation" (D28 p.7; also `world/parties.json:1698`, `tools/party_cover.py:40`);

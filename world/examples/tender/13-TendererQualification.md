@@ -2,7 +2,7 @@
 
 *Example 13 of the flow "A public tender (Bayvarra)" · [Tenderer Qualification in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TENDERER-QUALIFICATION-SCHEMA)*
 
-The manufacturer declares its qualifications and those of its consortium partner.
+The manufacturer declares its qualifications and those of its subcontractor.
 
 [The XML file](13-TendererQualification.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
