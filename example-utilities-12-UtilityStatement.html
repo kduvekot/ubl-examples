@@ -51,12 +51,13 @@ Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:utility-billing:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: utility
-billing, a generic, versioned profile, not the flow; the run of the
-process is the ProfileExecutionID.</li>
+billing, a generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>UTILITIES-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>ST-DOC-26-0324</strong><br />
+<strong>STL-TX-26-75183</strong><br />
+The collaboration this document belongs to: Selanu Telecom's bill for
+March to Velumi. Selanu Telecom started it and gave it this identifier,
+which every document of it repeats.</li>
+<li><code>ID</code> = <strong>STL-UST-26-75398</strong><br />
 The utility's statement number.</li>
 <li><code>UUID</code> =
 <strong>7b60d4fc-8fd7-5124-9e01-cfc520caed86</strong><br />
@@ -92,12 +93,12 @@ The cost centre in words.</li>
 <h3 id="parent-document-reference">Parent Document Reference</h3>
 <p>Inside <code>ParentDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>ST-INV-26-0323</strong><br />
+<li><code>ID</code> = <strong>STL-C-1077-2603</strong><br />
 The invoice this statement supplements: a utility statement adds the
 consumption behind the bill.</li>
 <li><code>DocumentTypeCode</code> = <strong>Invoice</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: ST-INV-26-0323 is the example
+The kind of document referred to: STL-C-1077-2603 is the example
 utilities/13, a Invoice; a generic reference names the UBL document
 type. The code is from the Trade Accord's UBL document type list:
 Invoice.</li>
@@ -106,7 +107,7 @@ Invoice.</li>
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>ST-TARIFF-2026</strong><br />
+<li><code>ID</code> = <strong>STL-TARIFF-2026</strong><br />
 The utility's tariff sheet for 2026.</li>
 <li><code>DocumentTypeCode</code> = <strong>TARIFF</strong> (listID
 <code>urn:ubl-examples:world:codelist:DocumentTypeCode</code>)<br />
@@ -366,7 +367,7 @@ only its identifier and name are repeated.</li>
 <h3 id="subscriber-consumption">Subscriber Consumption</h3>
 <p>Inside <code>SubscriberConsumption</code>:</p>
 <ul>
-<li><code>ConsumptionID</code> = <strong>ST-1077-2603</strong><br />
+<li><code>ConsumptionID</code> = <strong>STL-1077-2603</strong><br />
 The telecom consumption of March.</li>
 <li><code>SpecificationTypeCode</code> = <strong>DETAILED</strong>
 (listID
@@ -377,13 +378,13 @@ list: DETAILED = Detailed.</li>
 <code>E34</code>)<br />
 The data beyond the subscriptions.</li>
 <li><code>UtilityConsumptionPoint/ID</code> =
-<strong>ST-CP-1077</strong><br />
+<strong>STL-CP-1077</strong><br />
 The company's connection.</li>
 <li><code>UtilityConsumptionPoint/Description</code> = <strong>Office of
 Velumi Trading, Selanu</strong><br />
 Where.</li>
 <li><code>UtilityConsumptionPoint/SubscriberID</code> =
-<strong>ST-CU-20418</strong><br />
+<strong>STL-CU-20418</strong><br />
 The subscriber's customer number with the telecom company; the contract
 number stays in the contract.</li>
 <li><code>UtilityConsumptionPoint/SubscriberType</code> =
@@ -508,7 +509,7 @@ A business line.</li>
 = <strong>+999 3 721 1850</strong><br />
 The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
-= <strong>Business line 1 of the six of subscription ST-L-BUS6, with
+= <strong>Business line 1 of the six of subscription STL-L-BUS6, with
 calls on the island included.</strong><br />
 The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
@@ -640,7 +641,7 @@ A business line.</li>
 = <strong>+999 3 721 1851</strong><br />
 The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
-= <strong>Business line 2 of the six of subscription ST-L-BUS6, with
+= <strong>Business line 2 of the six of subscription STL-L-BUS6, with
 calls on the island included.</strong><br />
 The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
@@ -729,7 +730,7 @@ A business line.</li>
 = <strong>+999 3 721 1852</strong><br />
 The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
-= <strong>Business line 3 of the six of subscription ST-L-BUS6, with
+= <strong>Business line 3 of the six of subscription STL-L-BUS6, with
 calls on the island included.</strong><br />
 The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
@@ -770,7 +771,7 @@ A business line.</li>
 = <strong>+999 3 721 1853</strong><br />
 The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
-= <strong>Business line 4 of the six of subscription ST-L-BUS6, with
+= <strong>Business line 4 of the six of subscription STL-L-BUS6, with
 calls on the island included.</strong><br />
 The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
@@ -811,7 +812,7 @@ A business line.</li>
 = <strong>+999 3 721 1854</strong><br />
 The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
-= <strong>Business line 5 of the six of subscription ST-L-BUS6, with
+= <strong>Business line 5 of the six of subscription STL-L-BUS6, with
 calls on the island included.</strong><br />
 The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
@@ -852,7 +853,7 @@ A business line.</li>
 = <strong>+999 3 721 1855</strong><br />
 The line's number; +999 is reserved, no real country's code.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
-= <strong>Business line 6 of the six of subscription ST-L-BUS6, with
+= <strong>Business line 6 of the six of subscription STL-L-BUS6, with
 calls on the island included.</strong><br />
 The subscription, as the invoice line names it.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount</code>
@@ -894,7 +895,7 @@ The data pool, a line of its own.</li>
 The data pool's own number, which the phones of the six lines
 share.</li>
 <li><code>Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description</code>
-= <strong>Mobile data pool ST-D-0042, shared by the six lines: 35 GB
+= <strong>Mobile data pool STL-D-0042, shared by the six lines: 35 GB
 beyond the subscriptions in March, 4 GB of them roaming in
 Bayvarra.</strong><br />
 What it is, as the invoice lines name it.</li>
@@ -992,8 +993,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:utility-statement:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:utility-billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;UTILITIES-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;ST-DOC-26-0324&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;STL-TX-26-75183&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;STL-UST-26-75398&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;7b60d4fc-8fd7-5124-9e01-cfc520caed86&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:37:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -1004,11 +1005,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;700&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Telephone and data&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ParentDocumentReference</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;ST-INV-26-0323&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;STL-C-1077-2603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ParentDocumentReference</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;ST-TARIFF-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;STL-TARIFF-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DocumentTypeCode&quot;</span>&gt;TARIFF&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentDescription</span>&gt;Prices per unit and the terms of supply.&lt;/<span class="kw">cbc:DocumentDescription</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
@@ -1095,13 +1096,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberParty</span>&gt;</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SubscriberConsumption</span>&gt;</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsumptionID</span>&gt;ST-1077-2603&lt;/<span class="kw">cbc:ConsumptionID</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsumptionID</span>&gt;STL-1077-2603&lt;/<span class="kw">cbc:ConsumptionID</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SpecificationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SpecificationTypeCode&quot;</span>&gt;DETAILED&lt;/<span class="kw">cbc:SpecificationTypeCode</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalMeteredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;E34&quot;</span>&gt;35&lt;/<span class="kw">cbc:TotalMeteredQuantity</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:UtilityConsumptionPoint</span>&gt;</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;ST-CP-1077&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;STL-CP-1077&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Office of Velumi Trading, Selanu&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberID</span>&gt;ST-CU-20418&lt;/<span class="kw">cbc:SubscriberID</span>&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberID</span>&gt;STL-CU-20418&lt;/<span class="kw">cbc:SubscriberID</span>&gt;</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberType</span>&gt;Business&lt;/<span class="kw">cbc:SubscriberType</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubscriberTypeCode&quot;</span>&gt;BUS&lt;/<span class="kw">cbc:SubscriberTypeCode</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
@@ -1141,7 +1142,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TelecommunicationsSupplyLine</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PhoneNumber</span>&gt;+999 3 721 1850&lt;/<span class="kw">cbc:PhoneNumber</span>&gt;</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 1 of the six of subscription STL-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TelecommunicationsService</span>&gt;</span>
@@ -1193,7 +1194,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TelecommunicationsSupplyLine</span>&gt;</span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PhoneNumber</span>&gt;+999 3 721 1851&lt;/<span class="kw">cbc:PhoneNumber</span>&gt;</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 2 of the six of subscription STL-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TelecommunicationsService</span>&gt;</span>
@@ -1230,7 +1231,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TelecommunicationsSupplyLine</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PhoneNumber</span>&gt;+999 3 721 1852&lt;/<span class="kw">cbc:PhoneNumber</span>&gt;</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 3 of the six of subscription STL-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TelecommunicationsService</span>&gt;</span>
@@ -1246,7 +1247,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TelecommunicationsSupplyLine</span>&gt;</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;4&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PhoneNumber</span>&gt;+999 3 721 1853&lt;/<span class="kw">cbc:PhoneNumber</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 4 of the six of subscription STL-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TelecommunicationsService</span>&gt;</span>
@@ -1262,7 +1263,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TelecommunicationsSupplyLine</span>&gt;</span>
 <span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;5&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PhoneNumber</span>&gt;+999 3 721 1854&lt;/<span class="kw">cbc:PhoneNumber</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 5 of the six of subscription STL-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TelecommunicationsService</span>&gt;</span>
@@ -1278,7 +1279,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TelecommunicationsSupplyLine</span>&gt;</span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;6&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PhoneNumber</span>&gt;+999 3 721 1855&lt;/<span class="kw">cbc:PhoneNumber</span>&gt;</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Business line 6 of the six of subscription STL-L-BUS6, with calls on the island included.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;21.180&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TelecommunicationsService</span>&gt;</span>
@@ -1294,7 +1295,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TelecommunicationsSupplyLine</span>&gt;</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;7&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PhoneNumber</span>&gt;+999 3 721 1856&lt;/<span class="kw">cbc:PhoneNumber</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Mobile data pool STL-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;19.144&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XLC&quot;</span>&gt;19.144&lt;/<span class="kw">cbc:TaxInclusiveLineExtensionAmount</span>&gt;</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TelecommunicationsService</span>&gt;</span>
@@ -1346,6 +1347,6 @@ href="example-utilities-01-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

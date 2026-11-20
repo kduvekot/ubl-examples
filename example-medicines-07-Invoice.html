@@ -53,12 +53,14 @@ public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:billing:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: billing, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
+generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>MEDICINES-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>HI-INV-26-0331</strong><br />
+<strong>QLM-TX-26-3960</strong><br />
+The collaboration this document belongs to: Quillmoor's order of a
+technetium generator from Haarvliet Isotopes. Quillmoor Pharma
+Distribution started it and gave it this identifier, which every
+document of it repeats.</li>
+<li><code>ID</code> = <strong>HVI-INV-26-1344</strong><br />
 The maker's invoice number.</li>
 <li><code>UUID</code> =
 <strong>3cf34a08-9641-59d5-a039-a316fccf582f</strong><br />
@@ -92,7 +94,7 @@ the world's copy of ISO 639 Language: en = English.</li>
 <h3 id="order-reference">Order Reference</h3>
 <p>Inside <code>OrderReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>QPD-PO-26-0328</strong><br />
+<li><code>ID</code> = <strong>QLM-PO-26-3960</strong><br />
 The wholesaler's call-off.</li>
 </ul>
 <h3 id="accounting-supplier-party">Accounting Supplier Party</h3>
@@ -450,7 +452,7 @@ The item's short name.</li>
 <strong>true</strong><br />
 The item is dangerous goods.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
-<strong>HI-TCG-20</strong><br />
+<strong>HVI-TCG-20</strong><br />
 The seller's own item number; as Haarvliet Isotopes describes the
 item.</li>
 <li><code>Item/ClassifiedTaxCategory/ID</code> = <strong>G</strong>
@@ -478,7 +480,7 @@ from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
 VAT = Value added tax. An identifier that holds a code names the code's
 list in its schemeID.</li>
 <li><code>Item/ItemInstance/SerialID</code> =
-<strong>HI-TCG20-26-0137</strong><br />
+<strong>HVI-TCG20-26-0137</strong><br />
 The generator's serial number, from its maker: each generator is traced
 from its filling to its return.</li>
 <li><code>Item/ItemInstance/AdditionalItemProperty/Name</code> =
@@ -510,8 +512,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:billing:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;MEDICINES-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;HI-INV-26-0331&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;QLM-TX-26-3960&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;HVI-INV-26-1344&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;3cf34a08-9641-59d5-a039-a316fccf582f&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-06-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;11:30:00+02:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -521,7 +523,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DefaultLanguageCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 639&quot;</span>&gt;en&lt;/<span class="kw">cbc:DefaultLanguageCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;QPD-PO-26-0328&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;QLM-PO-26-3960&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AccountingSupplierParty</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Party</span>&gt;</span>
@@ -677,7 +679,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Technetium-99m generator, 20 GBq&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;HI-TCG-20&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;HVI-TCG-20&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/EDIFACT EDED 5305&quot;</span>&gt;G&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -689,7 +691,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ClassifiedTaxCategory</span>&gt;</span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SerialID</span>&gt;HI-TCG20-26-0137&lt;/<span class="kw">cbc:SerialID</span>&gt;</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:SerialID</span>&gt;HVI-TCG20-26-0137&lt;/<span class="kw">cbc:SerialID</span>&gt;</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Nominal activity&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ValueQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;GBQ&quot;</span>&gt;20&lt;/<span class="kw">cbc:ValueQuantity</span>&gt;</span>
@@ -714,6 +716,6 @@ href="example-medicines-08-ImportCustomsDeclaration.html">Import Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

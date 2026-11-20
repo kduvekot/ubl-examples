@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:manifest:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>TOL-MF-26-0140</cbc:ID>
+  <cbc:ID>8500033423</cbc:ID>
   <cbc:UUID>994b537b-1dd6-518f-bd1f-69b7d6308b90</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
   <cbc:IssueTime>16:08:00-01:00</cbc:IssueTime>
@@ -165,7 +164,7 @@
     </cac:Contact>
   </cac:ConsigneeParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ID>LMW-SH-26-1001</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
@@ -260,7 +259,7 @@
     </cac:LastExitPortLocation>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:ID>TWLU000033415</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:DocumentDistribution>

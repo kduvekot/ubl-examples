@@ -50,12 +50,13 @@ public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:ordering:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: ordering, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
+generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>MODIFICATION-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>MS-PO-26-0406</strong><br />
+<strong>MDS-TX-26-0047</strong><br />
+The collaboration this document belongs to: the sawmill's order of
+thermal modification from Tostara. Marrowdale Sawmill started it and
+gave it this identifier, which every document of it repeats.</li>
+<li><code>ID</code> = <strong>MDS-PO-26-0047</strong><br />
 The sawmill's order number.</li>
 <li><code>SalesOrderID</code> = <strong>TWM-J-2526-014</strong><br />
 The plant's job number for this order: the season agreement's kiln slots
@@ -427,7 +428,7 @@ What the sawmill expects to pay for the processing.</li>
 <li><code>LineItem/ID</code> = <strong>1</strong><br />
 The line number.</li>
 <li><code>LineItem/Note</code> = <strong>96 bundles of 50 slats,
-Valdara's slat MS-SL-1800 to drawing VI-DS-SL1800.</strong><br />
+Valdara's slat MDS-SL-1800 to drawing VI-DS-SL1800.</strong><br />
 The output the job is to give.</li>
 <li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
 <code>EA</code>)<br />
@@ -480,13 +481,13 @@ Why the line has no price.</li>
 The blanks that make the 96 bundles, one slat from each.</li>
 <li><code>LineItem/SubLineItem/Item/Description</code> = <strong>Sawn
 and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench
-slat MS-SL-1800 before it is modified and planed.</strong><br />
+slat MDS-SL-1800 before it is modified and planed.</strong><br />
 The seller's description.</li>
 <li><code>LineItem/SubLineItem/Item/Name</code> = <strong>Ash blank
 1830, kiln dried</strong><br />
 The item's short name.</li>
 <li><code>LineItem/SubLineItem/Item/SellersItemIdentification/ID</code>
-= <strong>MS-BL-1830</strong><br />
+= <strong>MDS-BL-1830</strong><br />
 The seller's own item number; as Marrowdale Sawmill describes the
 item.</li>
 </ul>
@@ -497,8 +498,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:order:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:ordering:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;MODIFICATION-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;MS-PO-26-0406&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;MDS-TX-26-0047&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;MDS-PO-26-0047&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:SalesOrderID</span>&gt;TWM-J-2526-014&lt;/<span class="kw">cbc:SalesOrderID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;d47b6f28-2a6c-5241-91f4-d182ad307e94&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-12&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
@@ -624,7 +625,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;96 bundles of 50 slats, Valdara&#39;s slat MS-SL-1800 to drawing VI-DS-SL1800.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;96 bundles of 50 slats, Valdara&#39;s slat MDS-SL-1800 to drawing VI-DS-SL1800.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;1272000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
@@ -645,10 +646,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Supplied by the customer, free of charge: the sawmill&#39;s own kiln-dried ash, which stays its property.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;4800&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MS-SL-1800 before it is modified and planed.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Ash blank 1830, kiln dried&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;MS-BL-1830&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;MDS-BL-1830&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubLineItem</span>&gt;</span>
@@ -662,6 +663,6 @@ href="example-modification-03-DespatchAdvice.html">Despatch Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

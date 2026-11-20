@@ -52,11 +52,13 @@ has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:despatch-receipt:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: despatch and
-receipt, a generic, versioned profile, not the flow; the run of the
-process is the ProfileExecutionID.</li>
-<li><code>ProfileExecutionID</code> = <strong>AIR-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>LD-DA-26-0329</strong><br />
+receipt, a generic, versioned profile, not the flow.</li>
+<li><code>ProfileExecutionID</code> = <strong>26-0416</strong><br />
+The collaboration this document belongs to: Velumi's order from Lumeway,
+with its change by air, from the order to the credit note. Velumi
+Trading started it and gave it this identifier, which every document of
+it repeats.</li>
+<li><code>ID</code> = <strong>LMW-DA-26-1020</strong><br />
 A new number: the first despatch advice was cancelled.</li>
 <li><code>UUID</code> =
 <strong>bb530823-20b2-5c84-9178-9f8f4d49f81f</strong><br />
@@ -82,20 +84,19 @@ The number of lines.</li>
 <h3 id="order-reference">Order Reference</h3>
 <p>Inside <code>OrderReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VT-OC-26-0320</strong><br />
+<li><code>ID</code> = <strong>26-0065</strong><br />
 The order this despatch fulfils.</li>
 <li><code>OrderTypeCode</code> = <strong>230</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
 UN/EDIFACT 1001 code 230: the order referred to is an order change. The
 code is from the world's copy of UN/EDIFACT 1001 Document name: 230 =
 Purchase order change request.</li>
-<li><code>DocumentReference/ID</code> =
-<strong>VT-PO-26-0127</strong><br />
+<li><code>DocumentReference/ID</code> = <strong>26-0417</strong><br />
 The sea order the change extends.</li>
 <li><code>DocumentReference/DocumentTypeCode</code> =
 <strong>Order</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: VT-PO-26-0127 is the example sea/05, a
+The kind of document referred to: 26-0417 is the example sea/05, a
 Order; a generic reference names the UBL document type. The code is from
 the Trade Accord's UBL document type list: Order.</li>
 </ul>
@@ -103,13 +104,13 @@ the Trade Accord's UBL document type list: Order.</li>
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LD-DA-26-0327</strong><br />
+<li><code>ID</code> = <strong>LMW-DA-26-1017</strong><br />
 The despatch advice this one replaces.</li>
 <li><code>DocumentTypeCode</code> = <strong>DespatchAdvice</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: LD-DA-26-0327 is the example air/06, a
-DespatchAdvice; a generic reference names the UBL document type. The
+The kind of document referred to: LMW-DA-26-1017 is the example air/06,
+a DespatchAdvice; a generic reference names the UBL document type. The
 code is from the Trade Accord's UBL document type list: DespatchAdvice =
 Despatch Advice.</li>
 <li><code>DocumentDescription</code> = <strong>Replaced: the frames
@@ -495,9 +496,9 @@ are given; only its identifier and name are repeated.</li>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LD-SH-26-0323</strong><br />
+<li><code>ID</code> = <strong>LMW-SH-26-1010</strong><br />
 The despatching party's shipment number.</li>
-<li><code>Consignment/ID</code> = <strong>LD-CS-26-0324</strong><br />
+<li><code>Consignment/ID</code> = <strong>LMW-CS-26-1010</strong><br />
 The consignment the goods travel in, as numbered when the transport was
 booked.</li>
 <li><code>Consignment/GrossWeightMeasure</code> = <strong>104.6</strong>
@@ -678,7 +679,7 @@ The seller's description.</li>
 casting</strong><br />
 The item's short name.</li>
 <li><code>Item/SellersItemIdentification/ID</code> =
-<strong>LD-10443</strong><br />
+<strong>LMW-10443</strong><br />
 The seller's own item number; as Lumeway Distribution describes the
 item.</li>
 <li><code>Item/ManufacturersItemIdentification/ID</code> =
@@ -897,8 +898,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:despatch-advice:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:despatch-receipt:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;AIR-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LD-DA-26-0329&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;26-0416&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LMW-DA-26-1020&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;bb530823-20b2-5c84-9178-9f8f4d49f81f&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;20:05:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -906,15 +907,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please check the goods on arrival and report any damage on the air waybill.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VT-OC-26-0320&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;26-0065&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:OrderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;230&lt;/<span class="kw">cbc:OrderTypeCode</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VT-PO-26-0127&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;26-0417&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-DA-26-0327&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-DA-26-1017&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;DespatchAdvice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentDescription</span>&gt;Replaced: the frames missed KXL209 of 13 May and fly on KXL207 of 14 May.&lt;/<span class="kw">cbc:DocumentDescription</span>&gt;</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
@@ -1047,9 +1048,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-SH-26-0323&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-SH-26-1010&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-CS-26-0324&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LMW-CS-26-1010&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;104.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
@@ -1118,7 +1119,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Spare side frame for the Serra bench.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Bench side frame casting&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-10443&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LMW-10443&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ManufacturersItemIdentification</span>&gt;</span>
 <span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-C180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1219,6 +1220,6 @@ Cancellation</a> · <a href="examples.html#flow-air">all documents of the
 flow</a> · <a href="example-air-04-Waybill.html">Waybill →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

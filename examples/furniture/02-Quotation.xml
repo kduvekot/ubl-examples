@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:quotation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:sourcing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0568</cbc:ID>
+  <cbc:ProfileExecutionID>9900334966</cbc:ProfileExecutionID>
+  <cbc:ID>26-0080</cbc:ID>
   <cbc:UUID>ec533b8c-fd3b-5c84-8198-dd0da43309d9</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
   <cbc:IssueTime>08:58:00-01:00</cbc:IssueTime>
@@ -15,7 +15,7 @@
     <cbc:EndDate>2026-05-05</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:RequestForQuotationDocumentReference>
-    <cbc:ID>BS-DOC-26-0567</cbc:ID>
+    <cbc:ID>6000100490</cbc:ID>
   </cac:RequestForQuotationDocumentReference>
   <cac:Signature>
     <cbc:ID>BF-SIG-26-QT</cbc:ID>
@@ -163,7 +163,7 @@
         <cbc:BrandName>Elderwick</cbc:BrandName>
         <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -219,7 +219,7 @@
         <cbc:BrandName>Elderwick</cbc:BrandName>
         <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-B14</cbc:ID>
+          <cbc:ID>BKM-MRW-B14</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -275,7 +275,7 @@
         <cbc:BrandName>Elderwick</cbc:BrandName>
         <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -327,7 +327,7 @@
         <cbc:BrandName>Elderwick</cbc:BrandName>
         <cbc:ModelName>Marrow</cbc:ModelName>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-C</cbc:ID>
+          <cbc:ID>BKM-MRW-C</cbc:ID>
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
@@ -379,7 +379,7 @@
         <cbc:Name>Elderwick care kit</cbc:Name>
         <cbc:BrandName>Elderwick</cbc:BrandName>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-K</cbc:ID>
+          <cbc:ID>BKM-MRW-K</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9522610000030</cbc:ID>
@@ -418,7 +418,7 @@
         <cbc:Name>Brackenmere seat pad, Marrow chair</cbc:Name>
         <cbc:BrandName>Brackenmere</cbc:BrandName>
         <cac:SellersItemIdentification>
-          <cbc:ID>BF-MRW-P</cbc:ID>
+          <cbc:ID>BKM-MRW-P</cbc:ID>
         </cac:SellersItemIdentification>
         <cac:StandardItemIdentification>
           <cbc:ID schemeID="GS1 GTIN">9523710000036</cbc:ID>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-progress-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RIAU-DOC-26-0330</cbc:ID>
+  <cbc:ProfileExecutionID>9900092547</cbc:ProfileExecutionID>
+  <cbc:ID>RIAU/2026/8490</cbc:ID>
   <cbc:UUID>78d6602f-27f8-5e6a-b8c0-36b493a71754</cbc:UUID>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:55:00-01:00</cbc:IssueTime>
@@ -105,7 +105,7 @@
     </cac:ElectronicAddress>
   </cac:ReceiverParty>
   <cac:TransportProgressStatusRequestDocumentReference>
-    <cbc:ID>FRC-DOC-26-0329</cbc:ID>
+    <cbc:ID>8200004628</cbc:ID>
   </cac:TransportProgressStatusRequestDocumentReference>
   <cac:TransportMeans>
     <cbc:JourneyID>CT 4471</cbc:JourneyID>

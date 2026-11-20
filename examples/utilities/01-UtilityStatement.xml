@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>UTILITIES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FE-DOC-26-0314</cbc:ID>
+  <cbc:ProfileExecutionID>9909901005</cbc:ProfileExecutionID>
+  <cbc:ID>9409901631</cbc:ID>
   <cbc:UUID>939b6614-b83d-522f-883a-72105c1b71f9</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
   <cbc:IssueTime>17:54:00-01:00</cbc:IssueTime>
@@ -15,7 +15,7 @@
   <cbc:AccountingCostCode>6300</cbc:AccountingCostCode>
   <cbc:AccountingCost>Energy</cbc:AccountingCost>
   <cac:ParentDocumentReference>
-    <cbc:ID>FE-INV-26-0313</cbc:ID>
+    <cbc:ID>2026/313046</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:ParentDocumentReference>
   <cac:AdditionalDocumentReference>
@@ -113,12 +113,12 @@
     </cac:PartyName>
   </cac:SubscriberParty>
   <cac:SubscriberConsumption>
-    <cbc:ConsumptionID>FG-CP-4120-E1-2603</cbc:ConsumptionID>
+    <cbc:ConsumptionID>FGR-CP-4120-E1-2603</cbc:ConsumptionID>
     <cbc:SpecificationTypeCode listID="urn:ubl-examples:world:codelist:SpecificationTypeCode">DETAILED</cbc:SpecificationTypeCode>
     <cbc:Note>Factory, main connection at 10 kV</cbc:Note>
     <cbc:TotalMeteredQuantity unitCode="KWH">412800</cbc:TotalMeteredQuantity>
     <cac:UtilityConsumptionPoint>
-      <cbc:ID>FG-CP-4120-E1</cbc:ID>
+      <cbc:ID>FGR-CP-4120-E1</cbc:ID>
       <cbc:Description>Factory, main connection at 10 kV</cbc:Description>
       <cbc:SubscriberID>FE-CU-0381206</cbc:SubscriberID>
       <cbc:SubscriberType>Industrial</cbc:SubscriberType>
@@ -141,13 +141,13 @@
         </cac:Country>
       </cac:Address>
       <cac:UtilityMeter>
-        <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
+        <cbc:MeterNumber>FGR-E-20388</cbc:MeterNumber>
         <cbc:MeterName>Main meter, factory</cbc:MeterName>
         <cbc:MeterConstant>4000</cbc:MeterConstant>
         <cbc:MeterConstantCode listID="urn:ubl-examples:world:codelist:MeterConstantTypeCode">CTVT</cbc:MeterConstantCode>
         <cbc:TotalDeliveredQuantity unitCode="KWH">412800</cbc:TotalDeliveredQuantity>
         <cac:MeterReading>
-          <cbc:ID>FG-E-20388-2603</cbc:ID>
+          <cbc:ID>FGR-E-20388-2603</cbc:ID>
           <cbc:MeterReadingType>Monthly reading</cbc:MeterReadingType>
           <cbc:MeterReadingTypeCode listID="urn:ubl-examples:world:codelist:MeterReadingTypeCode">M</cbc:MeterReadingTypeCode>
           <cbc:PreviousMeterReadingDate>2026-02-28</cbc:PreviousMeterReadingDate>
@@ -239,7 +239,7 @@
         </cac:TaxTotal>
         <cac:EnergyWaterSupply>
           <cac:ConsumptionReport>
-            <cbc:ID>FG-CP-4120-E1-2603</cbc:ID>
+            <cbc:ID>FGR-CP-4120-E1-2603</cbc:ID>
             <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
             <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
             <cbc:Description>March consumption of Factory, main connection at 10 kV.</cbc:Description>
@@ -250,7 +250,7 @@
               <cbc:EndDate>2026-03-31</cbc:EndDate>
             </cac:Period>
             <cac:ConsumptionReportReference>
-              <cbc:ConsumptionReportID>FG-CP-4120-E1-2602</cbc:ConsumptionReportID>
+              <cbc:ConsumptionReportID>FGR-CP-4120-E1-2602</cbc:ConsumptionReportID>
               <cbc:ConsumptionType>Monthly consumption</cbc:ConsumptionType>
               <cbc:ConsumptionTypeCode listID="urn:ubl-examples:world:codelist:ConsumptionTypeCode">MON</cbc:ConsumptionTypeCode>
               <cbc:TotalConsumedQuantity unitCode="KWH">405100</cbc:TotalConsumedQuantity>
@@ -260,7 +260,7 @@
               </cac:Period>
             </cac:ConsumptionReportReference>
             <cac:ConsumptionHistory>
-              <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
+              <cbc:MeterNumber>FGR-E-20388</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
               <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -271,7 +271,7 @@
               </cac:Period>
             </cac:ConsumptionHistory>
             <cac:ConsumptionHistory>
-              <cbc:MeterNumber>FG-E-20388</cbc:MeterNumber>
+              <cbc:MeterNumber>FGR-E-20388</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
               <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
@@ -405,7 +405,7 @@
           <cbc:TaxAmount currencyID="XUF">511872</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:UtilityItem>
-          <cbc:ID>FG-NET-E</cbc:ID>
+          <cbc:ID>FGR-NET-E</cbc:ID>
           <cbc:SubscriberType>Industrial</cbc:SubscriberType>
           <cbc:SubscriberTypeCode listID="urn:ubl-examples:world:codelist:SubscriberTypeCode">IND</cbc:SubscriberTypeCode>
           <cbc:Description languageID="qau">Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.</cbc:Description>

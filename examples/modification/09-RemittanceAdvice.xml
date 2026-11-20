@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-RM-26-0418</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-RM-26-0106</cbc:ID>
   <cbc:UUID>2112e9cd-0a36-5b6b-8cfe-b0aa08cc7966</cbc:UUID>
   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
   <cbc:IssueTime>10:15:00-01:00</cbc:IssueTime>
@@ -13,8 +13,8 @@
   <cbc:TotalDebitAmount currencyID="XUF">1295040</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">25901</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">1269139</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>MS-PAY-26-0406</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF04TWMINV260417</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>MDS-PAY-26-0014</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF4920260065</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -100,8 +100,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>MS-PAY-26-0406</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF04TWMINV260417</cbc:PaymentID>
+    <cbc:InstructionID>MDS-PAY-26-0014</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF4920260065</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB78BLUM38712004398618</cbc:ID>
       <cbc:Name>Marrowdale Sawmill Ltd</cbc:Name>
@@ -186,10 +186,10 @@
     <cbc:CreditLineAmount currencyID="XUF">25901</cbc:CreditLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF04TWMINV260417</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF4920260065</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>TWM-INV-26-0417</cbc:ID>
+        <cbc:ID>2026/0065</cbc:ID>
         <cbc:IssueDate>2026-02-26</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

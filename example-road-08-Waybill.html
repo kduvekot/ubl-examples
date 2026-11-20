@@ -48,15 +48,15 @@ public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: transport, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
+generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>ROAD-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>TH-WB-26-0159</strong><br />
+<strong>LMW-TX-26-0580</strong><br />
+The collaboration this document belongs to: the road carriage Lumeway
+books with Trasvia Haulage. Lumeway Distribution started it and gave it
+this identifier, which every document of it repeats.</li>
+<li><code>ID</code> = <strong>26-0560</strong><br />
 The consignment note number.</li>
-<li><code>CarrierAssignedID</code> =
-<strong>TH-CMR-26-0149</strong><br />
+<li><code>CarrierAssignedID</code> = <strong>26-0028</strong><br />
 The carrier's own number for the carriage.</li>
 <li><code>UUID</code> =
 <strong>4891662e-273a-5190-9aa7-edb87e35d8b5</strong><br />
@@ -525,7 +525,7 @@ its identifier and name are repeated.</li>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>CL-SH-26-0154</strong><br />
+<li><code>ID</code> = <strong>CAS-SH-26-1291</strong><br />
 The shipment as the despatching party numbered it.</li>
 <li><code>HandlingCode</code> = <strong>KEEPDRY</strong> (listID
 <code>urn:ubl-examples:world:codelist:HandlingInstructionCode</code>)<br />
@@ -554,13 +554,13 @@ The whole consignment travels on this truck.</li>
 <li><code>ConsignmentQuantity</code> = <strong>1</strong> (unitCode
 <code>EA</code>)<br />
 One consignment on the truck.</li>
-<li><code>Consignment/ID</code> = <strong>LD-CS-26-0152</strong><br />
+<li><code>Consignment/ID</code> = <strong>LMW-CS-26-0580</strong><br />
 The distributor's consignment number, from its booking.</li>
 <li><code>Consignment/CarrierAssignedID</code> =
 <strong>TH-26-04471</strong><br />
 The carrier's job number.</li>
 <li><code>Consignment/ConsigneeAssignedID</code> =
-<strong>LD-GI-0412</strong><br />
+<strong>LMW-GI-0412</strong><br />
 The distributor's goods-in booking for the slot.</li>
 <li><code>Consignment/SummaryDescription</code> = <strong>Park benches
 and spare side frames on 25 pallets.</strong><br />
@@ -610,7 +610,7 @@ What the driver must do before leaving.</li>
 <strong>300</strong> (unitCode <code>EA</code>)<br />
 The parcels: 96 benches in three parcels each and 12 frame cartons.</li>
 <li><code>Consignment/CustomsDeclaration/ID</code> =
-<strong>VI-CD-26-0156</strong><br />
+<strong>7500008669</strong><br />
 The export declaration the goods travel under.</li>
 <li><code>Consignment/CustomsDeclaration/IssuerParty/PartyIdentification/ID</code>
 = <strong>XU-R-104274</strong> (schemeID
@@ -7855,7 +7855,7 @@ name are enough.</li>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>TH-SIG-TH-WB-26-0159</strong><br />
+<li><code>ID</code> = <strong>TH-SIG-26-0560</strong><br />
 The carrier's signature on taking over the goods.</li>
 <li><code>SignatoryParty/PartyIdentification/ID</code> =
 <strong>XU-R-104822</strong> (schemeID
@@ -7874,9 +7874,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:waybill:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:transport:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;ROAD-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;TH-WB-26-0159&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;TH-CMR-26-0149&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;LMW-TX-26-0580&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;26-0560&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;26-0028&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;4891662e-273a-5190-9aa7-edb87e35d8b5&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:StatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RecordStatusCode&quot;</span>&gt;ISSUED&lt;/<span class="kw">cbc:StatusCode</span>&gt;</span>
@@ -8035,7 +8035,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CL-SH-26-0154&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;CAS-SH-26-1291&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:HandlingCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:HandlingInstructionCode&quot;</span>&gt;KEEPDRY&lt;/<span class="kw">cbc:HandlingCode</span>&gt;</span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Information</span>&gt;Park benches, knocked down, and spare side frames, for resale.&lt;/<span class="kw">cbc:Information</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;12863.4&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
@@ -8045,9 +8045,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SplitConsignmentIndicator</span>&gt;false&lt;/<span class="kw">cbc:SplitConsignmentIndicator</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsignmentQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ConsignmentQuantity</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-CS-26-0152&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LMW-CS-26-0580&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;TH-26-04471&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ConsigneeAssignedID</span>&gt;LD-GI-0412&lt;/<span class="kw">cbc:ConsigneeAssignedID</span>&gt;</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ConsigneeAssignedID</span>&gt;LMW-GI-0412&lt;/<span class="kw">cbc:ConsigneeAssignedID</span>&gt;</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SummaryDescription</span>&gt;Park benches and spare side frames on 25 pallets.&lt;/<span class="kw">cbc:SummaryDescription</span>&gt;</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;5363.4&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:NetWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;4366.8&lt;/<span class="kw">cbc:NetWeightMeasure</span>&gt;</span>
@@ -8062,7 +8062,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HaulageInstructions</span>&gt;Wait at the warehouse until customs has released the export declaration.&lt;/<span class="kw">cbc:HaulageInstructions</span>&gt;</span>
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalPackagesQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;300&lt;/<span class="kw">cbc:TotalPackagesQuantity</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CustomsDeclaration</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-CD-26-0156&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;7500008669&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -10781,7 +10781,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-2910"><a href="#cb1-2910" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-2911"><a href="#cb1-2911" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
 <span id="cb1-2912"><a href="#cb1-2912" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-2913"><a href="#cb1-2913" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TH-SIG-TH-WB-26-0159&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-2913"><a href="#cb1-2913" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;TH-SIG-26-0560&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-2914"><a href="#cb1-2914" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-2915"><a href="#cb1-2915" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-2916"><a href="#cb1-2916" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104822&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -10798,6 +10798,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-road-15-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

@@ -52,12 +52,13 @@ has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:billing:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: billing, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
+generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>COTTON-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>SCG-SBI-26-0194</strong><br />
+<strong>SCG-TX-26-0024</strong><br />
+The collaboration this document belongs to: the ginnery's purchase of
+the farm's seed cotton. Selanu Cotton Ginnery started it and gave it
+this identifier, which every document of it repeats.</li>
+<li><code>ID</code> = <strong>SCG-SBI-26-0190</strong><br />
 The number the customer gives the self-billed document, under the
 self-billing agreement.</li>
 <li><code>UUID</code> =
@@ -129,7 +130,7 @@ The third call-off under the season agreement.</li>
 <p>Inside <code>BillingReference</code>:</p>
 <ul>
 <li><code>SelfBilledInvoiceDocumentReference/ID</code> =
-<strong>SCG-SBI-26-0191</strong><br />
+<strong>SCG-SBI-26-0024</strong><br />
 The prepayment self-billed invoice of the season advance, deducted here
 as the prepaid amount.</li>
 <li><code>SelfBilledInvoiceDocumentReference/IssueDate</code> =
@@ -147,7 +148,7 @@ self-billing.</li>
 Reference</h3>
 <p>Inside <code>DeliveryNoteDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LCF-DN-26-0193</strong><br />
+<li><code>ID</code> = <strong>1/2026</strong><br />
 The farm's delivery note.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
@@ -714,9 +715,9 @@ ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.</li>
 <li><code>PaymentRailID</code> = <strong>CORAL-NET</strong><br />
 The payment system the transfer runs over: the domestic clearing.</li>
 <li><code>InstructionNote</code> = <strong>Quote
-RF77SCGSBI260194</strong><br />
+RF88SCGSBI260190</strong><br />
 What the payer writes in the transfer.</li>
-<li><code>PaymentID</code> = <strong>RF77SCGSBI260194</strong> (schemeID
+<li><code>PaymentID</code> = <strong>RF88SCGSBI260190</strong> (schemeID
 <code>ISO 11649</code>)<br />
 The structured creditor reference of ISO 11649 to quote with the
 payment, made from the invoice number with its check digits. The
@@ -751,7 +752,7 @@ The account is kept in the currency of the bank's country. The code is
 from the world's copy of UBL's Currency (ISO 4217) list: XLC =
 Coral.</li>
 <li><code>PayeeFinancialAccount/PaymentNote</code> = <strong>Self-billed
-invoice SCG-SBI-26-0194</strong><br />
+invoice SCG-SBI-26-0190</strong><br />
 What the payer is asked to quote with the transfer, so the payment is
 matched.</li>
 <li><code>PayeeFinancialAccount/FinancialInstitutionBranch/ID</code> =
@@ -1069,15 +1070,15 @@ The line of the delivery note the invoice line bills.</li>
 A universally unique identifier of the line, derived from the document
 and the line number.</li>
 <li><code>Delivery/DeliveryNoteLineReference/DocumentReference/ID</code>
-= <strong>LCF-DN-26-0193</strong><br />
+= <strong>1/2026</strong><br />
 The farm's delivery note.</li>
 <li><code>Delivery/DeliveryNoteLineReference/DocumentReference/DocumentTypeCode</code>
 = <strong>DeliveryNote</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: LCF-DN-26-0193 is the example
-cotton/03, a DeliveryNote; a generic reference names the UBL document
-type. The code is from the Trade Accord's UBL document type list:
-DeliveryNote = Delivery Note.</li>
+The kind of document referred to: 1/2026 is the example cotton/03, a
+DeliveryNote; a generic reference names the UBL document type. The code
+is from the Trade Accord's UBL document type list: DeliveryNote =
+Delivery Note.</li>
 <li><code>Item/Description</code> = <strong>Tekapa tanema tiloluti,
 hivile nipupe, tasepaha pisosi ninote vaputa.</strong> (languageID
 <code>qal</code>)<br />
@@ -1116,8 +1117,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:self-billing:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;COTTON-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SCG-SBI-26-0194&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;SCG-TX-26-0024&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;SCG-SBI-26-0190&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;6d8069bb-fe8b-5c9f-bd12-45c38c2363b6&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-09&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;15:50:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -1139,7 +1140,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:BillingReference</span>&gt;</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SelfBilledInvoiceDocumentReference</span>&gt;</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;SCG-SBI-26-0191&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;SCG-SBI-26-0024&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SelfBilledInvoiceDocumentReference</span>&gt;</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:BillingReference</span>&gt;</span>
@@ -1147,7 +1148,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-SEASON-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DeliveryNoteDocumentReference</span>&gt;</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LCF-DN-26-0193&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1/2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DeliveryNoteDocumentReference</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;SCG-WB-26-0311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1373,15 +1374,15 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentDueDate</span>&gt;2026-05-25&lt;/<span class="kw">cbc:PaymentDueDate</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentChannelCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ClearingChannel2Code&quot;</span>&gt;RTGS&lt;/<span class="kw">cbc:PaymentChannelCode</span>&gt;</span>
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentRailID</span>&gt;CORAL-NET&lt;/<span class="kw">cbc:PaymentRailID</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF77SCGSBI260194&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF77SCGSBI260194&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:InstructionNote</span>&gt;Quote RF88SCGSBI260190&lt;/<span class="kw">cbc:InstructionNote</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 11649&quot;</span>&gt;RF88SCGSBI260190&lt;/<span class="kw">cbc:PaymentID</span>&gt;</span>
 <span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XL67BSEL0020004817534&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Lisavu Cotton Farm&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
 <span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XLC&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Self-billed invoice SCG-SBI-26-0194&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PaymentNote</span>&gt;Self-billed invoice SCG-SBI-26-0190&lt;/<span class="kw">cbc:PaymentNote</span>&gt;</span>
 <span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:FinancialInstitutionBranch</span>&gt;</span>
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:bank-branch&quot;</span>&gt;002&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Market branch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
@@ -1516,7 +1517,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
 <span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:UUID</span>&gt;6d32dd14-dac3-5c83-91e2-8c40cef6875b&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;LCF-DN-26-0193&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;1/2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;DeliveryNote&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DeliveryNoteLineReference</span>&gt;</span>
@@ -1543,6 +1544,6 @@ href="example-cotton-05-SelfBilledCreditNote.html">Self Billed Credit
 Note →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

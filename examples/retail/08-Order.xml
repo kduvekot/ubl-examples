@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RETAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-PO-26-0224</cbc:ID>
+  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ID>7100452422</cbc:ID>
   <cbc:UUID>38f1ecfc-42b0-532a-921c-171e17782563</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>08:15:00-01:00</cbc:IssueTime>
@@ -17,10 +17,10 @@
     <cbc:EndDate>2026-04-26</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:CatalogueReference>
-    <cbc:ID>LD-CAT-26-0218</cbc:ID>
+    <cbc:ID>LMW-CAT-26-0005</cbc:ID>
   </cac:CatalogueReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BS-RE-26-0222</cbc:ID>
+    <cbc:ID>6500016959</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">RetailEvent</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
@@ -36,7 +36,7 @@
   </cac:Signature>
   <cac:BuyerCustomerParty>
     <cbc:CustomerAssignedAccountID>BM-6120</cbc:CustomerAssignedAccountID>
-    <cbc:SupplierAssignedAccountID>LD-C-0418</cbc:SupplierAssignedAccountID>
+    <cbc:SupplierAssignedAccountID>LMW-C-0418</cbc:SupplierAssignedAccountID>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410411</cbc:ID>
@@ -101,7 +101,7 @@
   </cac:BuyerCustomerParty>
   <cac:SellerSupplierParty>
     <cbc:CustomerAssignedAccountID>BM-S-0071</cbc:CustomerAssignedAccountID>
-    <cbc:AdditionalAccountID>LD-XB-01</cbc:AdditionalAccountID>
+    <cbc:AdditionalAccountID>LMW-XB-01</cbc:AdditionalAccountID>
     <cac:Party>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
@@ -188,7 +188,7 @@
     <cbc:Note>30 days net, as agreed with the distributor.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TransactionConditions>
-    <cbc:ID>LD-TC-01</cbc:ID>
+    <cbc:ID>LMW-TC-01</cbc:ID>
     <cbc:ActionCode listID="urn:ubl-examples:world:codelist:ConditionsActionCode">ACCEPTED</cbc:ActionCode>
   </cac:TransactionConditions>
   <cac:AllowanceCharge>
@@ -246,7 +246,7 @@
           <cbc:ID>BM-551210</cbc:ID>
         </cac:BuyersItemIdentification>
         <cac:SellersItemIdentification>
-          <cbc:ID>LD-10442</cbc:ID>
+          <cbc:ID>LMW-10442</cbc:ID>
           <cbc:ExtendedID>GRY</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
@@ -265,7 +265,7 @@
           <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
         </cac:AdditionalItemIdentification>
         <cac:CatalogueDocumentReference>
-          <cbc:ID>LD-CAT-26-0218</cbc:ID>
+          <cbc:ID>LMW-CAT-26-0005</cbc:ID>
         </cac:CatalogueDocumentReference>
       </cac:Item>
     </cac:LineItem>

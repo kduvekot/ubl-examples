@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WASTE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-INV-26-0211</cbc:ID>
+  <cbc:ProfileExecutionID>9900043338</cbc:ProfileExecutionID>
+  <cbc:ID>2026/0409</cbc:ID>
   <cbc:UUID>24a1c5fe-6940-5f16-8f48-486333315def</cbc:UUID>
   <cbc:IssueDate>2026-04-06</cbc:IssueDate>
   <cbc:IssueTime>12:44:00-01:00</cbc:IssueTime>
@@ -17,12 +17,12 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>RR-DOC-26-0207</cbc:ID>
+    <cbc:ID>26-0021</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WasteMovement</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>RR-WS-26-0210</cbc:ID>
+    <cbc:ID>26-0019</cbc:ID>
     <cbc:IssueDate>2026-04-02</cbc:IssueDate>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">WeightStatement</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
@@ -175,15 +175,15 @@
     <cbc:PaymentDueDate>2026-05-06</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF03RRINV260211</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF03RRINV260211</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF7320260409</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF7320260409</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU700351041620000000418916</cbc:ID>
       <cbc:Name>Rinova Recovery SRU</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice RR-INV-26-0211</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/0409</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41620</cbc:ID>
         <cbc:Name>Ferrano Porta Nord</cbc:Name>

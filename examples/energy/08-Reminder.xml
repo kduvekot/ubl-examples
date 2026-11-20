@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:reminder:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ENERGY-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KG-DOC-26-0160</cbc:ID>
+  <cbc:ProfileExecutionID>9900034209</cbc:ProfileExecutionID>
+  <cbc:ID>9300003463</cbc:ID>
   <cbc:UUID>154cfeb8-3d00-5879-95d5-6ed226239c26</cbc:UUID>
   <cbc:IssueDate>2026-06-05</cbc:IssueDate>
   <cbc:IssueTime>09:46:00-01:00</cbc:IssueTime>
@@ -230,7 +230,7 @@
     </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>KG-INV-26-0158</cbc:ID>
+        <cbc:ID>9000034209</cbc:ID>
         <cbc:IssueDate>2026-04-03</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>
@@ -247,7 +247,7 @@
     </cac:ReminderPeriod>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>KG-INV-26-0158</cbc:ID>
+        <cbc:ID>9000034209</cbc:ID>
         <cbc:IssueDate>2026-04-03</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

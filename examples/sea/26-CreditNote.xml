@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-CN-26-0151</cbc:ID>
+  <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-CN-26-0051</cbc:ID>
   <cbc:UUID>2d2cd2d8-031b-5aba-b59f-4e3ba799184e</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:49:00-01:00</cbc:IssueTime>
@@ -20,22 +20,22 @@
     <cbc:Description>One side frame cracked; a pallet's heat-treatment mark illegible, so customs inspected the container.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>
-      <cbc:ID>LD-INV-26-0147</cbc:ID>
+      <cbc:ID>LMW-INV-26-1025</cbc:ID>
       <cbc:IssueDate>2026-05-14</cbc:IssueDate>
     </cac:InvoiceDocumentReference>
   </cac:BillingReference>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>NW-RA-26-0146</cbc:ID>
+    <cbc:ID>26-0766</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:StatementDocumentReference>
-    <cbc:ID>HF-ST-26-0150</cbc:ID>
+    <cbc:ID>26-1335</cbc:ID>
   </cac:StatementDocumentReference>
   <cac:OriginatorDocumentReference>
-    <cbc:ID>VT-CLAIM-26-0019</cbc:ID>
+    <cbc:ID>26-0034</cbc:ID>
     <cbc:DocumentType>Claim</cbc:DocumentType>
   </cac:OriginatorDocumentReference>
   <cac:BuyerAssignedReference>
@@ -185,7 +185,7 @@
     <cbc:ID schemeID="INCOTERMS">CIF</cbc:ID>
   </cac:DeliveryTerms>
   <cac:PaymentTerms>
-    <cbc:Note>Deducted from the payment of invoice LD-INV-26-0147 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.</cbc:Note>
+    <cbc:Note>Deducted from the payment of invoice LMW-INV-26-1025 to Harbourline Factoring, which holds the receivable under its factoring agreement with the distributor.</cbc:Note>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
@@ -216,7 +216,7 @@
     <cbc:LineExtensionAmount currencyID="XBL">68.00</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LMW-INV-26-1025</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>3</cbc:ID>
@@ -226,7 +226,7 @@
       <cbc:Description>Spare side frame for the Serra bench.</cbc:Description>
       <cbc:Name>Bench side frame casting</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-10443</cbc:ID>
+        <cbc:ID>LMW-10443</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
         <cbc:ID>VI-C180</cbc:ID>
@@ -261,21 +261,21 @@
     <cbc:LineExtensionAmount currencyID="XBL">128.13</cbc:LineExtensionAmount>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>LD-INV-26-0147</cbc:ID>
+        <cbc:ID>LMW-INV-26-1025</cbc:ID>
       </cac:InvoiceDocumentReference>
       <cac:BillingReferenceLine>
         <cbc:ID>1</cbc:ID>
       </cac:BillingReferenceLine>
     </cac:BillingReference>
     <cac:DocumentReference>
-      <cbc:ID>XL-CUS-RCPT-26-0517</cbc:ID>
+      <cbc:ID>XL-CUS/2026/9066</cbc:ID>
       <cbc:DocumentTypeCode listID="UN/EDIFACT EDED 1001">917</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service.</cbc:Description>
       <cbc:Name>Customs inspection and storage at Selanu, passed on</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>LD-CLAIM-INSP</cbc:ID>
+        <cbc:ID>LMW-CLAIM-INSP</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

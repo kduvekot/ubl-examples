@@ -53,12 +53,13 @@ plan". Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: transport, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
+generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>RETAIL-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>BF-TEP-26-0233</strong><br />
+<strong>LMW-TX-26-0893</strong><br />
+The collaboration this document belongs to: the carriage Lumeway books
+with Bayforth Forwarding. Lumeway Distribution started it and gave it
+this identifier, which every document of it repeats.</li>
+<li><code>ID</code> = <strong>BYF-TEP-26-1340</strong><br />
 The carrier's number for the agreed plan.</li>
 <li><code>VersionID</code> = <strong>1</strong><br />
 The first version of the plan.</li>
@@ -431,13 +432,13 @@ Execution Plan Request Document Reference</h3>
 <p>Inside
 <code>TransportExecutionPlanRequestDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LD-TR-26-0227</strong><br />
+<li><code>ID</code> = <strong>LMW-TR-26-0536</strong><br />
 The request this plan answers.</li>
 </ul>
 <h3 id="transport-contract">Transport Contract</h3>
 <p>Inside <code>TransportContract</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LD-BF-FW-2026</strong><br />
+<li><code>ID</code> = <strong>LMW-BYF-FW-2026</strong><br />
 The framework agreement.</li>
 <li><code>ContractType</code> = <strong>Framework transport
 agreement</strong><br />
@@ -548,7 +549,7 @@ framework terms.</li>
 <h3 id="consignment">Consignment</h3>
 <p>Inside <code>Consignment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LD-CS-26-0228</strong><br />
+<li><code>ID</code> = <strong>LMW-CS-26-0893</strong><br />
 The consignment of the request.</li>
 <li><code>SummaryDescription</code> = <strong>24 × Park bench Serra
 180</strong><br />
@@ -703,8 +704,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:transport-execution-plan:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:transport:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;RETAIL-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BF-TEP-26-0233&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;LMW-TX-26-0893&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;BYF-TEP-26-1340&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;34de1c5a-0a12-56eb-ae1f-1025193cb28e&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-27&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
@@ -839,10 +840,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportExecutionPlanRequestDocumentReference</span>&gt;</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-TR-26-0227&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-TR-26-0536&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportExecutionPlanRequestDocumentReference</span>&gt;</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportContract</span>&gt;</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-BF-FW-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-BYF-FW-2026&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ContractType</span>&gt;Framework transport agreement&lt;/<span class="kw">cbc:ContractType</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportContract</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TransportServiceProviderResponseRequiredPeriod</span>&gt;</span>
@@ -891,7 +892,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ServiceChargePaymentTerms</span>&gt;</span>
 <span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TransportExecutionTerms</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-CS-26-0228&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-CS-26-0893&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SummaryDescription</span>&gt;24 × Park bench Serra 180&lt;/<span class="kw">cbc:SummaryDescription</span>&gt;</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;1297.2&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
@@ -952,6 +953,6 @@ href="example-retail-09-DocumentStatusRequest.html">Document Status
 Request →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

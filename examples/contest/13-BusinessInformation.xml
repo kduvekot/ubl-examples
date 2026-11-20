@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:business-information:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BIS-DOC-26-0639</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>BIS/2026/13629</cbc:ID>
   <cbc:UUID>6d9769c2-c04c-5c5f-906c-6e4ef02997da</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
   <cbc:IssueTime>08:38:00-01:00</cbc:IssueTime>
@@ -174,6 +174,10 @@
       <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412466</cbc:ElectronicAddressID>
     </cac:ElectronicAddress>
   </cac:BusinessParty>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>PWD/2026/PROM-DC</cbc:ID>
+    <cbc:DocumentType>Procurement file</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
     <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
     <cbc:Description>Furniture of wood and steel, designed and made in its own workshop: the yearly production value of 2024, from the accounts filed for that year.</cbc:Description>

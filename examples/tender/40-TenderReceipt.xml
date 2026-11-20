@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0206</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0348</cbc:ID>
   <cbc:UUID>f547235b-863f-5f6e-a44c-4bbed7b37910</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-20</cbc:IssueDate>
   <cbc:IssueTime>16:38:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
@@ -14,7 +14,7 @@
   <cbc:RegisteredDate>2026-02-20</cbc:RegisteredDate>
   <cbc:RegisteredTime>16:37:00</cbc:RegisteredTime>
   <cac:TenderDocumentReference>
-    <cbc:ID>BF-DOC-26-0204</cbc:ID>
+    <cbc:ID>26-0008</cbc:ID>
   </cac:TenderDocumentReference>
   <cac:Signature>
     <cbc:ID>PWD-SIG-RCPT</cbc:ID>

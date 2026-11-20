@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-FI-26-0131</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-1001</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-FI-26-0601</cbc:ID>
   <cbc:UUID>abba32c6-9aed-5cc2-bf33-cf2d04aecd2b</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>08:40:00-01:00</cbc:IssueTime>
@@ -100,9 +100,9 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>LD-SH-26-0132</cbc:ID>
+    <cbc:ID>LMW-SH-26-1001</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LD-CS-26-0133</cbc:ID>
+      <cbc:ID>LMW-CS-26-1001</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
       <cbc:ForwarderServiceInstructions>Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.</cbc:ForwarderServiceInstructions>
       <cbc:SpecialInstructions>Load the castings last, behind the doors.</cbc:SpecialInstructions>
@@ -233,7 +233,7 @@
     </cac:InsurancePolicy>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>VT-PO-26-0127</cbc:ID>
+    <cbc:ID>26-0417</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PLASTICS-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>RR-CAT-26-0896</cbc:ID>
+  <cbc:ID>26-0002</cbc:ID>
   <cbc:UUID>c8939b73-1616-5856-9d43-118e4ddb2b7e</cbc:UUID>
   <cbc:Name>Recycled PE granulate, second quarter 2026</cbc:Name>
   <cbc:IssueDate>2026-04-01</cbc:IssueDate>
@@ -158,7 +157,7 @@
           <cbc:EndDate>2026-06-30</cbc:EndDate>
         </cac:ValidityPeriod>
         <cac:PriceList>
-          <cbc:ID>RR-PL-2026</cbc:ID>
+          <cbc:ID>RR-PRL-2026</cbc:ID>
           <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ORIGINAL</cbc:StatusCode>
         </cac:PriceList>
       </cac:Price>
@@ -184,7 +183,7 @@
         <cbc:ID schemeID="ISO 15459-6">KXU13362PER1</cbc:ID>
       </cac:StandardItemIdentification>
       <cac:CatalogueItemIdentification>
-        <cbc:ID>RR-CAT-26-0896-1</cbc:ID>
+        <cbc:ID>26-0002-1</cbc:ID>
       </cac:CatalogueItemIdentification>
       <cac:OriginCountry>
         <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>

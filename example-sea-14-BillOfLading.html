@@ -52,14 +52,15 @@ description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: transport, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
-<li><code>ProfileExecutionID</code> = <strong>SEA-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>TOL-BL-26-0139</strong><br />
+generic, versioned profile, not the flow.</li>
+<li><code>ProfileExecutionID</code> =
+<strong>BYF-TX-26-2501</strong><br />
+The collaboration this document belongs to: the sea carriage Bayforth
+books with Tidewell Ocean Lines. Bayforth Forwarding started it and gave
+it this identifier, which every document of it repeats.</li>
+<li><code>ID</code> = <strong>TWLU000033415</strong><br />
 The bill of lading number.</li>
-<li><code>CarrierAssignedID</code> =
-<strong>TWL-BK-26-55710</strong><br />
+<li><code>CarrierAssignedID</code> = <strong>1200033394</strong><br />
 The booking the bill of lading is issued under.</li>
 <li><code>UUID</code> =
 <strong>aa5970ad-efd9-5660-a1d7-8a2f0bf2de7b</strong><br />
@@ -80,7 +81,7 @@ Who has paid the freight.</li>
 <code>urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode</code>)<br />
 Issued. The code is from the world's copy of UBL's Document status list,
 with a listID: Confirmed = Document has been confirmed.</li>
-<li><code>ShippingOrderID</code> = <strong>BF-FI-26-0137</strong><br />
+<li><code>ShippingOrderID</code> = <strong>BYF-FI-26-1501</strong><br />
 The forwarder's booking with the carrier.</li>
 <li><code>ToOrderIndicator</code> = <strong>true</strong><br />
 Made out to order: the buyer can transfer it by endorsement.</li>
@@ -484,7 +485,7 @@ Forwarding</a> is named in.</p>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LD-SH-26-0132</strong><br />
+<li><code>ID</code> = <strong>LMW-SH-26-1001</strong><br />
 The shipment carried.</li>
 <li><code>GrossWeightMeasure</code> = <strong>9545.8</strong> (unitCode
 <code>KGM</code>)<br />
@@ -496,13 +497,13 @@ Benches and side frames.</li>
 <li><code>ConsignmentQuantity</code> = <strong>1</strong> (unitCode
 <code>EA</code>)<br />
 One consignment.</li>
-<li><code>Consignment/ID</code> = <strong>LD-CS-26-0133</strong><br />
+<li><code>Consignment/ID</code> = <strong>LMW-CS-26-1001</strong><br />
 The distributor's consignment number.</li>
 <li><code>Consignment/CarrierAssignedID</code> =
-<strong>TWL-BK-26-55710</strong><br />
+<strong>1200033394</strong><br />
 The carrier's booking number.</li>
 <li><code>Consignment/FreightForwarderAssignedID</code> =
-<strong>BF-SH-26-0418</strong><br />
+<strong>BYF-SH-26-0418</strong><br />
 The forwarder's own file number for the consignment, not the
 distributor's instructions.</li>
 <li><code>Consignment/BrokerAssignedID</code> =
@@ -2024,7 +2025,7 @@ SOLAS method 2: the cargo and packing weighed and added to the tare. The
 code is from UBL's default Weighing method (IMO SOLAS) list: SM2 = SOLAS
 verification method 2.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceID</code>
-= <strong>LD-SCALE-03</strong><br />
+= <strong>LMW-SCALE-03</strong><br />
 The scale of the warehouse.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDeviceType</code>
 = <strong>Platform scale</strong><br />
@@ -2091,17 +2092,17 @@ The last port in Bayvarra.</li>
 The country the place is in. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Consignment/DocumentReference/ID</code> =
-<strong>LD-PL-26-0134</strong><br />
+<strong>LMW-PKL-26-0051</strong><br />
 The packing list of the container.</li>
 <li><code>Consignment/DocumentReference/DocumentTypeCode</code> =
 <strong>PackingList</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: LD-PL-26-0134 is the example sea/10, a
-PackingList; a generic reference names the UBL document type. The code
+The kind of document referred to: LMW-PKL-26-0051 is the example sea/10,
+a PackingList; a generic reference names the UBL document type. The code
 is from the Trade Accord's UBL document type list: PackingList = Packing
 List.</li>
 <li><code>Consignment/InsurancePolicy/ID</code> =
-<strong>WS-CP-26-4471</strong><br />
+<strong>WVS-CP-26-4471</strong><br />
 The cargo policy of the insurer.</li>
 <li><code>Consignment/InsurancePolicy/InsuranceTypeCode</code> =
 <strong>ALLRISKS</strong> (listID
@@ -2257,7 +2258,7 @@ name are enough.</li>
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>Consignment/InsurancePolicy/PolicyDocumentReference/ID</code>
-= <strong>WS-CERT-26-0884</strong><br />
+= <strong>WVS-CERT-26-0884</strong><br />
 The insurance certificate that goes with the documents.</li>
 <li><code>Consignment/InsurancePolicy/PolicyDocumentReference/DocumentType</code>
 = <strong>Insurance certificate</strong><br />
@@ -2309,14 +2310,14 @@ Parts of seats, other.</li>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>BF-FI-26-0137</strong><br />
+<li><code>ID</code> = <strong>BYF-FI-26-1501</strong><br />
 The forwarding instructions it was issued on.</li>
 <li><code>DocumentTypeCode</code> =
 <strong>ForwardingInstructions</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: BF-FI-26-0137 is the example sea/12, a
-ForwardingInstructions; a generic reference names the UBL document type.
-The code is from the Trade Accord's UBL document type list:
+The kind of document referred to: BYF-FI-26-1501 is the example sea/12,
+a ForwardingInstructions; a generic reference names the UBL document
+type. The code is from the Trade Accord's UBL document type list:
 ForwardingInstructions = Forwarding Instructions.</li>
 </ul>
 <h3 id="document-distribution">Document Distribution</h3>
@@ -2402,9 +2403,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:bill-of-lading:1.0#compliant#urn:ubl-examples:world:community:port-lumeport:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:transport:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;SEA-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;TOL-BL-26-0139&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;TWL-BK-26-55710&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;BYF-TX-26-2501&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;TWLU000033415&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;1200033394&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;aa5970ad-efd9-5660-a1d7-8a2f0bf2de7b&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-14&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;10:54:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -2412,7 +2413,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Shipped on board.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Freight prepaid.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode&quot;</span>&gt;Confirmed&lt;/<span class="kw">cbc:DocumentStatusCode</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ShippingOrderID</span>&gt;BF-FI-26-0137&lt;/<span class="kw">cbc:ShippingOrderID</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ShippingOrderID</span>&gt;BYF-FI-26-1501&lt;/<span class="kw">cbc:ShippingOrderID</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ToOrderIndicator</span>&gt;true&lt;/<span class="kw">cbc:ToOrderIndicator</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OtherInstruction</span>&gt;Three originals issued.&lt;/<span class="kw">cbc:OtherInstruction</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
@@ -2540,14 +2541,14 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:FreightForwarderParty</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LD-SH-26-0132&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-SH-26-1001&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;9545.8&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalGoodsItemQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:TotalGoodsItemQuantity</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsignmentQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ConsignmentQuantity</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LD-CS-26-0133&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;TWL-BK-26-55710&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FreightForwarderAssignedID</span>&gt;BF-SH-26-0418&lt;/<span class="kw">cbc:FreightForwarderAssignedID</span>&gt;</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LMW-CS-26-1001&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;1200033394&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FreightForwarderAssignedID</span>&gt;BYF-SH-26-0418&lt;/<span class="kw">cbc:FreightForwarderAssignedID</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:BrokerAssignedID</span>&gt;TCB-26-0331&lt;/<span class="kw">cbc:BrokerAssignedID</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TotalInvoiceAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54896.00&lt;/<span class="kw">cbc:TotalInvoiceAmount</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DeclaredCustomsValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;54896.00&lt;/<span class="kw">cbc:DeclaredCustomsValueAmount</span>&gt;</span>
@@ -3135,7 +3136,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-736"><a href="#cb1-736" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDate</span>&gt;2026-05-12&lt;/<span class="kw">cbc:WeighingDate</span>&gt;</span>
 <span id="cb1-737"><a href="#cb1-737" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingTime</span>&gt;15:30:00&lt;/<span class="kw">cbc:WeighingTime</span>&gt;</span>
 <span id="cb1-738"><a href="#cb1-738" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO SOLAS&quot;</span>&gt;SM2&lt;/<span class="kw">cbc:WeighingMethodCode</span>&gt;</span>
-<span id="cb1-739"><a href="#cb1-739" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDeviceID</span>&gt;LD-SCALE-03&lt;/<span class="kw">cbc:WeighingDeviceID</span>&gt;</span>
+<span id="cb1-739"><a href="#cb1-739" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDeviceID</span>&gt;LMW-SCALE-03&lt;/<span class="kw">cbc:WeighingDeviceID</span>&gt;</span>
 <span id="cb1-740"><a href="#cb1-740" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDeviceType</span>&gt;Platform scale&lt;/<span class="kw">cbc:WeighingDeviceType</span>&gt;</span>
 <span id="cb1-741"><a href="#cb1-741" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:GrossMassMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;9545.8&lt;/<span class="kw">cbc:GrossMassMeasure</span>&gt;</span>
 <span id="cb1-742"><a href="#cb1-742" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:WeighingParty</span>&gt;</span>
@@ -3188,11 +3189,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Address</span>&gt;</span>
 <span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:LastExitPortLocation</span>&gt;</span>
 <span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LD-PL-26-0134&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LMW-PKL-26-0051&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;PackingList&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:InsurancePolicy</span>&gt;</span>
-<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;WS-CP-26-4471&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;WVS-CP-26-4471&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InsuranceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:InsuranceCoverCode&quot;</span>&gt;ALLRISKS&lt;/<span class="kw">cbc:InsuranceTypeCode</span>&gt;</span>
 <span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:InsuredValueAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;60385.60&lt;/<span class="kw">cbc:InsuredValueAmount</span>&gt;</span>
 <span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:DeductibleAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;250.00&lt;/<span class="kw">cbc:DeductibleAmount</span>&gt;</span>
@@ -3255,7 +3256,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-856"><a href="#cb1-856" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-857"><a href="#cb1-857" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:BeneficiaryParty</span>&gt;</span>
 <span id="cb1-858"><a href="#cb1-858" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PolicyDocumentReference</span>&gt;</span>
-<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;WS-CERT-26-0884&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;WVS-CERT-26-0884&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-860"><a href="#cb1-860" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DocumentType</span>&gt;Insurance certificate&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
 <span id="cb1-861"><a href="#cb1-861" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PolicyDocumentReference</span>&gt;</span>
 <span id="cb1-862"><a href="#cb1-862" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:InsurancePolicy</span>&gt;</span>
@@ -3286,7 +3287,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-887"><a href="#cb1-887" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
 <span id="cb1-888"><a href="#cb1-888" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-889"><a href="#cb1-889" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-FI-26-0137&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BYF-FI-26-1501&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ForwardingInstructions&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
@@ -3333,6 +3334,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-sea-22-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

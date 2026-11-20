@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MEDICINES-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>QPD-INV-26-0340</cbc:ID>
+  <cbc:ProfileExecutionID>SGH/2026/1099</cbc:ProfileExecutionID>
+  <cbc:ID>QLM-INV-26-4080</cbc:ID>
   <cbc:UUID>e1483b1c-e7cd-56da-bc99-5b8f97995a2e</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>10:27:00-01:00</cbc:IssueTime>
@@ -14,10 +14,10 @@
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>SGH-PO-26-0327</cbc:ID>
+    <cbc:ID>SGH/2026/1100</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>QPD-DA-26-0335</cbc:ID>
+    <cbc:ID>QLM-DA-26-4074</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
@@ -188,8 +188,8 @@
     <cbc:PaymentDueDate>2026-07-15</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF75QPDINV260340</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF75QPDINV260340</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF48QLMINV264080</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF48QLMINV264080</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB31BLUM38020504913407</cbc:ID>
@@ -197,7 +197,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice QPD-INV-26-0340</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice QLM-INV-26-4080</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -275,10 +275,10 @@
       <cbc:Description>Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Influenza vaccine, inactivated, 10 prefilled syringes</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-VAC-1102</cbc:ID>
+        <cbc:ID>QLM-VAC-1102</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>NB-FLU-S26-10</cbc:ID>
+        <cbc:ID>NLB-FLU-S26-10</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -307,10 +307,10 @@
       <cbc:Description>Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.</cbc:Description>
       <cbc:Name>Insulin human, 100 IU/ml, vial of 10 ml</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-INS-0310</cbc:ID>
+        <cbc:ID>QLM-INS-0310</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>NB-INS-R100-10</cbc:ID>
+        <cbc:ID>NLB-INS-R100-10</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -339,10 +339,10 @@
       <cbc:Description>Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.</cbc:Description>
       <cbc:Name>Varicella vaccine, live, frozen, single dose</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-VAC-2410</cbc:ID>
+        <cbc:ID>QLM-VAC-2410</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>NB-VZV-1</cbc:ID>
+        <cbc:ID>NLB-VZV-1</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
@@ -372,10 +372,10 @@
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
-        <cbc:ID>QPD-RAD-0020</cbc:ID>
+        <cbc:ID>QLM-RAD-0020</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ManufacturersItemIdentification>
-        <cbc:ID>HI-TCG-20</cbc:ID>
+        <cbc:ID>HVI-TCG-20</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>

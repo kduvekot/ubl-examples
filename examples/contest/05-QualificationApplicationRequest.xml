@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CONTEST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0636</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PROM-DC</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0539</cbc:ID>
   <cbc:UUID>f6307f66-d26b-513d-9a9e-ef6849df15b6</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PROM-DC</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PROM-DC</cbc:ContractFolderID>
   <cbc:ContractName>Design of the harbour promenade bench</cbc:ContractName>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>15:02:00-01:00</cbc:IssueTime>
@@ -220,7 +220,7 @@
     </cac:TenderingCriterionPropertyGroup>
   </cac:TenderingCriterion>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0634</cbc:ID>
+    <cbc:ID>PWD/2026/0530</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ContractNotice</cbc:DocumentTypeCode>
     <cbc:VersionID>1</cbc:VersionID>
   </cac:AdditionalDocumentReference>

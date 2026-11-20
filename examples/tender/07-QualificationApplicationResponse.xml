@@ -3,10 +3,10 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:qualification-application:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-DOC-26-0193</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>26-0006</cbc:ID>
   <cbc:UUID>27b07b57-4421-5730-8be4-08222db0cc1c</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:IssueDate>2026-02-12</cbc:IssueDate>
   <cbc:IssueTime>10:47:00-01:00</cbc:IssueTime>
@@ -156,7 +156,7 @@
     </cac:Party>
   </cac:EconomicOperatorParty>
   <cac:ProcurementProject>
-    <cbc:ID>PWD-2026-PARKS</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS</cbc:ID>
   </cac:ProcurementProject>
   <cac:ProcurementProjectLot>
     <cbc:ID>LOT-1</cbc:ID>
@@ -302,7 +302,7 @@
     </cac:ResponseValue>
   </cac:TenderingCriterionResponse>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0192</cbc:ID>
+    <cbc:ID>PWD/2026/0195</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">QualificationApplicationRequest</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Evidence>
@@ -321,7 +321,7 @@
       </cac:PartyName>
     </cac:EvidenceIssuingParty>
     <cac:DocumentReference>
-      <cbc:ID>BF-ACC-2024</cbc:ID>
+      <cbc:ID>BKM-ACC-2024</cbc:ID>
       <cbc:DocumentType>Annual accounts</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Language>

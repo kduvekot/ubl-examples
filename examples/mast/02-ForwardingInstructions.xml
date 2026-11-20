@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forwarding-instructions:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>SE-FI-26-0714</cbc:ID>
+  <cbc:ProfileExecutionID>26-0128</cbc:ProfileExecutionID>
+  <cbc:ID>26-0076</cbc:ID>
   <cbc:UUID>a587c22d-2b9a-58c7-a95e-3c142f8b615c</cbc:UUID>
   <cbc:IssueDate>2026-06-03</cbc:IssueDate>
   <cbc:IssueTime>11:57:00-01:00</cbc:IssueTime>
@@ -87,9 +87,9 @@
     </cac:ElectronicAddress>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SE-SH-26-0715</cbc:ID>
+    <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:ID>26-0129</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>

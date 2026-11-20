@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>PACKAGING-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-DA-26-0526</cbc:ID>
+  <cbc:ProfileExecutionID>9900340389</cbc:ProfileExecutionID>
+  <cbc:ID>8000013377</cbc:ID>
   <cbc:UUID>c1af718a-512a-5aed-8622-6a31ae7211c9</cbc:UUID>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>11:35:00-01:00</cbc:IssueTime>
@@ -12,7 +12,7 @@
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>BS-PO-26-0525</cbc:ID>
+    <cbc:ID>7100453852</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>
@@ -127,10 +127,10 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Shipment>
-    <cbc:ID>LTM-SH-26-0527</cbc:ID>
+    <cbc:ID>7400013377</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>LTM-CS-26-0528</cbc:ID>
-      <cbc:CarrierAssignedID>BF-NATROAD-26-0521</cbc:CarrierAssignedID>
+      <cbc:ID>7300013377</cbc:ID>
+      <cbc:CarrierAssignedID>BYF-CR-26-0127</cbc:CarrierAssignedID>
       <cbc:GrossWeightMeasure unitCode="KGM">168</cbc:GrossWeightMeasure>
       <cbc:TotalPackagesQuantity unitCode="EA">20</cbc:TotalPackagesQuantity>
       <cac:CarrierParty>
@@ -191,7 +191,7 @@
         <cbc:ID>BM-778120</cbc:ID>
       </cac:BuyersItemIdentification>
       <cac:SellersItemIdentification>
-        <cbc:ID>LT-SH-01</cbc:ID>
+        <cbc:ID>LTM-SH-01</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:StandardItemIdentification>
         <cbc:ID schemeID="GS1 GTIN">9524010000016</cbc:ID>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-INV-26-0143</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-1001</cbc:ProfileExecutionID>
+  <cbc:ID>BYF-INV-26-2656</cbc:ID>
   <cbc:UUID>8b53f8b3-acd3-5160-a62d-977fb95b3f8f</cbc:UUID>
   <cbc:IssueDate>2026-05-19</cbc:IssueDate>
   <cbc:IssueTime>11:33:00-01:00</cbc:IssueTime>
@@ -16,10 +16,10 @@
   <cbc:LineCountNumeric>4</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:OrderReference>
-    <cbc:ID>LD-FI-26-0131</cbc:ID>
+    <cbc:ID>LMW-FI-26-0601</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:ID>TWLU000033415</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -188,7 +188,7 @@
   <cac:Delivery>
     <cac:Shipment>
       <cac:Consignment>
-        <cbc:ID>LD-CS-26-0133</cbc:ID>
+        <cbc:ID>LMW-CS-26-1001</cbc:ID>
         <cac:CarrierParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411918</cbc:ID>
@@ -222,15 +222,15 @@
     <cbc:PaymentDueDate>2026-06-18</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF98BFINV260143</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF98BFINV260143</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF36BYFINV262656</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF36BYFINV262656</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB40BLUM38020502618225</cbc:ID>
       <cbc:Name>Bayforth Forwarding Ltd</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BF-INV-26-0143</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice BYF-INV-26-2656</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380205</cbc:ID>
         <cbc:Name>Harbour branch</cbc:Name>
@@ -305,7 +305,7 @@
       <cbc:Description>Merchant haulage of one 40-foot container by the forwarder's truck: the empty container from the quay to the shipper and the packed container to the quay.</cbc:Description>
       <cbc:Name>Container haulage to the port, 40-foot</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-HAUL40</cbc:ID>
+        <cbc:ID>BYF-HAUL40</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -331,7 +331,7 @@
       <cbc:Description>Port-to-port sea freight for one 40-foot container, booked with the ocean carrier.</cbc:Description>
       <cbc:Name>Sea freight, 40-foot container</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-SEA40</cbc:ID>
+        <cbc:ID>BYF-SEA40</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -354,14 +354,14 @@
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">85.00</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>BF-EX-26-0135</cbc:ID>
+      <cbc:ID>BYF-EX-26-0505</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Preparing and lodging one export declaration as customs agent.</cbc:Description>
       <cbc:Name>Export customs clearance</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-CLR</cbc:ID>
+        <cbc:ID>BYF-CLR</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -385,14 +385,14 @@
     <cbc:InvoicedQuantity unitCode="E48">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="XBL">132.85</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>WS-CERT-26-0884</cbc:ID>
+      <cbc:ID>WVS-CERT-26-0884</cbc:ID>
       <cbc:DocumentType>Insurance certificate</cbc:DocumentType>
     </cac:DocumentReference>
     <cac:Item>
       <cbc:Description>Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.</cbc:Description>
       <cbc:Name>Cargo insurance</cbc:Name>
       <cac:SellersItemIdentification>
-        <cbc:ID>BF-INS</cbc:ID>
+        <cbc:ID>BYF-INS</cbc:ID>
       </cac:SellersItemIdentification>
       <cac:ClassifiedTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>

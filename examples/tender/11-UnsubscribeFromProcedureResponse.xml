@@ -3,15 +3,15 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:unsubscribe-from-procedure:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0197</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0368</cbc:ID>
   <cbc:UUID>eb978360-d34d-5825-a30e-ccb6ce8132f9</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-02-23</cbc:IssueDate>
   <cbc:IssueTime>14:48:00-01:00</cbc:IssueTime>
   <cbc:Note>The sawmill no longer receives the procedure's messages.</cbc:Note>
   <cac:UnsubscribeToProcedureDocumentReference>
-    <cbc:ID>MS-DOC-26-0196</cbc:ID>
+    <cbc:ID>MDS-UFQ-26-0011</cbc:ID>
   </cac:UnsubscribeToProcedureDocumentReference>
   <cac:Signature>
     <cbc:ID>PWD-SIG-UNSR</cbc:ID>

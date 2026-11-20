@@ -53,12 +53,12 @@ Each has a public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:utility-billing:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: utility
-billing, a generic, versioned profile, not the flow; the run of the
-process is the ProfileExecutionID.</li>
-<li><code>ProfileExecutionID</code> =
-<strong>UTILITIES-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>FE-DOC-26-0314</strong><br />
+billing, a generic, versioned profile, not the flow.</li>
+<li><code>ProfileExecutionID</code> = <strong>9909901005</strong><br />
+The collaboration this document belongs to: Ferrano Energy's bill for
+March to Valdara. Ferrano Energy started it and gave it this identifier,
+which every document of it repeats.</li>
+<li><code>ID</code> = <strong>9409901631</strong><br />
 The utility's statement number.</li>
 <li><code>UUID</code> =
 <strong>939b6614-b83d-522f-883a-72105c1b71f9</strong><br />
@@ -94,12 +94,12 @@ The cost centre in words.</li>
 <h3 id="parent-document-reference">Parent Document Reference</h3>
 <p>Inside <code>ParentDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>FE-INV-26-0313</strong><br />
+<li><code>ID</code> = <strong>2026/313046</strong><br />
 The invoice this statement supplements: a utility statement adds the
 consumption behind the bill.</li>
 <li><code>DocumentTypeCode</code> = <strong>Invoice</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: FE-INV-26-0313 is the example
+The kind of document referred to: 2026/313046 is the example
 utilities/02, a Invoice; a generic reference names the UBL document
 type. The code is from the Trade Accord's UBL document type list:
 Invoice.</li>
@@ -391,7 +391,7 @@ only its identifier and name are repeated.</li>
 <p>Inside <code>SubscriberConsumption</code>:</p>
 <ul>
 <li><code>ConsumptionID</code> =
-<strong>FG-CP-4120-E1-2603</strong><br />
+<strong>FGR-CP-4120-E1-2603</strong><br />
 The consumption of the point in March.</li>
 <li><code>SpecificationTypeCode</code> = <strong>DETAILED</strong>
 (listID
@@ -405,7 +405,7 @@ The point.</li>
 (unitCode <code>KWH</code>)<br />
 Metered in March.</li>
 <li><code>UtilityConsumptionPoint/ID</code> =
-<strong>FG-CP-4120-E1</strong><br />
+<strong>FGR-CP-4120-E1</strong><br />
 The connection, numbered by the grid operator, Ferrano Grid, which owns
 and reads the meters; the retail company uses its numbers, its own
 reference being the contract.</li>
@@ -496,7 +496,7 @@ list. The code is from the world's copy of UBL's Country identification
 <strong>Urvania</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterNumber</code> =
-<strong>FG-E-20388</strong><br />
+<strong>FGR-E-20388</strong><br />
 The meter, numbered by the grid operator, Ferrano Grid, which owns and
 reads the meters; the retail company uses its numbers, its own reference
 being the contract.</li>
@@ -516,7 +516,7 @@ transformers.</li>
 = <strong>412800</strong> (unitCode <code>KWH</code>)<br />
 Delivered in March.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/ID</code> =
-<strong>FG-E-20388-2603</strong><br />
+<strong>FGR-E-20388-2603</strong><br />
 The reading of March.</li>
 <li><code>UtilityConsumptionPoint/UtilityMeter/MeterReading/MeterReadingType</code>
 = <strong>Monthly reading</strong><br />
@@ -689,7 +689,7 @@ from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name:
 VAT = Value added tax. An identifier that holds a code names the code's
 list in its schemeID.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ID</code>
-= <strong>FG-CP-4120-E1-2603</strong><br />
+= <strong>FGR-CP-4120-E1-2603</strong><br />
 The consumption report of the point for March.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionType</code>
 = <strong>Monthly consumption</strong><br />
@@ -716,7 +716,7 @@ March.</li>
 = <strong>2026-03-31</strong><br />
 Its last day.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID</code>
-= <strong>FG-CP-4120-E1-2602</strong><br />
+= <strong>FGR-CP-4120-E1-2602</strong><br />
 The report of February.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType</code>
 = <strong>Monthly consumption</strong><br />
@@ -736,7 +736,7 @@ February.</li>
 = <strong>2026-02-28</strong><br />
 Its last day.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber</code>
-= <strong>FG-E-20388</strong><br />
+= <strong>FGR-E-20388</strong><br />
 The meter.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity</code>
 = <strong>398400</strong> (unitCode <code>KWH</code>)<br />
@@ -760,7 +760,7 @@ The month.</li>
 = <strong>2026-01-31</strong><br />
 Its end.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/MeterNumber</code>
-= <strong>FG-E-20388</strong><br />
+= <strong>FGR-E-20388</strong><br />
 The meter.</li>
 <li><code>SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity</code>
 = <strong>405100</strong> (unitCode <code>KWH</code>)<br />
@@ -1002,7 +1002,7 @@ Its last day.</li>
 = <strong>511872</strong> (currencyID <code>XUF</code>)<br />
 20 % of the line.</li>
 <li><code>SupplierConsumption/ConsumptionLine/UtilityItem/ID</code> =
-<strong>FG-NET-E</strong><br />
+<strong>FGR-NET-E</strong><br />
 The supplier's tariff item.</li>
 <li><code>SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType</code>
 = <strong>Industrial</strong><br />
@@ -1067,8 +1067,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:utility-statement:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:utility-billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;UTILITIES-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;FE-DOC-26-0314&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;9909901005&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;9409901631&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;939b6614-b83d-522f-883a-72105c1b71f9&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:54:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
@@ -1079,7 +1079,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;6300&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCost</span>&gt;Energy&lt;/<span class="kw">cbc:AccountingCost</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ParentDocumentReference</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FE-INV-26-0313&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2026/313046&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Invoice&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ParentDocumentReference</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
@@ -1177,12 +1177,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberParty</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:SubscriberConsumption</span>&gt;</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsumptionID</span>&gt;FG-CP-4120-E1-2603&lt;/<span class="kw">cbc:ConsumptionID</span>&gt;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ConsumptionID</span>&gt;FGR-CP-4120-E1-2603&lt;/<span class="kw">cbc:ConsumptionID</span>&gt;</span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:SpecificationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SpecificationTypeCode&quot;</span>&gt;DETAILED&lt;/<span class="kw">cbc:SpecificationTypeCode</span>&gt;</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Factory, main connection at 10 kV&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TotalMeteredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;412800&lt;/<span class="kw">cbc:TotalMeteredQuantity</span>&gt;</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:UtilityConsumptionPoint</span>&gt;</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;FG-CP-4120-E1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;FGR-CP-4120-E1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Factory, main connection at 10 kV&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberID</span>&gt;FE-CU-0381206&lt;/<span class="kw">cbc:SubscriberID</span>&gt;</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SubscriberType</span>&gt;Industrial&lt;/<span class="kw">cbc:SubscriberType</span>&gt;</span>
@@ -1205,13 +1205,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:UtilityMeter</span>&gt;</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeterNumber</span>&gt;FG-E-20388&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeterNumber</span>&gt;FGR-E-20388&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeterName</span>&gt;Main meter, factory&lt;/<span class="kw">cbc:MeterName</span>&gt;</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeterConstant</span>&gt;4000&lt;/<span class="kw">cbc:MeterConstant</span>&gt;</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:MeterConstantCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MeterConstantTypeCode&quot;</span>&gt;CTVT&lt;/<span class="kw">cbc:MeterConstantCode</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TotalDeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;412800&lt;/<span class="kw">cbc:TotalDeliveredQuantity</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:MeterReading</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;FG-E-20388-2603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;FGR-E-20388-2603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MeterReadingType</span>&gt;Monthly reading&lt;/<span class="kw">cbc:MeterReadingType</span>&gt;</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:MeterReadingTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:MeterReadingTypeCode&quot;</span>&gt;M&lt;/<span class="kw">cbc:MeterReadingTypeCode</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PreviousMeterReadingDate</span>&gt;2026-02-28&lt;/<span class="kw">cbc:PreviousMeterReadingDate</span>&gt;</span>
@@ -1303,7 +1303,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:EnergyWaterSupply</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ConsumptionReport</span>&gt;</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;FG-CP-4120-E1-2603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;FGR-CP-4120-E1-2603&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Monthly consumption&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MON&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Description</span>&gt;March consumption of Factory, main connection at 10 kV.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -1314,7 +1314,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:EndDate</span>&gt;2026-03-31&lt;/<span class="kw">cbc:EndDate</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionReportReference</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionReportID</span>&gt;FG-CP-4120-E1-2602&lt;/<span class="kw">cbc:ConsumptionReportID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionReportID</span>&gt;FGR-CP-4120-E1-2602&lt;/<span class="kw">cbc:ConsumptionReportID</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionType</span>&gt;Monthly consumption&lt;/<span class="kw">cbc:ConsumptionType</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionTypeCode&quot;</span>&gt;MON&lt;/<span class="kw">cbc:ConsumptionTypeCode</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:TotalConsumedQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;405100&lt;/<span class="kw">cbc:TotalConsumedQuantity</span>&gt;</span>
@@ -1324,7 +1324,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ConsumptionReportReference</span>&gt;</span>
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;FG-E-20388&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;FGR-E-20388&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
 <span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;398400&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;10876320&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
@@ -1335,7 +1335,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Period</span>&gt;</span>
 <span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
 <span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ConsumptionHistory</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;FG-E-20388&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:MeterNumber</span>&gt;FGR-E-20388&lt;/<span class="kw">cbc:MeterNumber</span>&gt;</span>
 <span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;KWH&quot;</span>&gt;405100&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;11059230&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ConsumptionLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ConsumptionLevelCode&quot;</span>&gt;NORMAL&lt;/<span class="kw">cbc:ConsumptionLevelCode</span>&gt;</span>
@@ -1469,7 +1469,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TaxAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;511872&lt;/<span class="kw">cbc:TaxAmount</span>&gt;</span>
 <span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxTotal</span>&gt;</span>
 <span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:UtilityItem</span>&gt;</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;FG-NET-E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;FGR-NET-E&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberType</span>&gt;Industrial&lt;/<span class="kw">cbc:SubscriberType</span>&gt;</span>
 <span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:SubscriberTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SubscriberTypeCode&quot;</span>&gt;IND&lt;/<span class="kw">cbc:SubscriberTypeCode</span>&gt;</span>
 <span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Krek skul drek zuktrek rirtan gatir, ginek zalhaz bantan kirhan hir drek trekstan.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
@@ -1502,6 +1502,6 @@ href="example-utilities-14-RemittanceAdvice.html">Remittance Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

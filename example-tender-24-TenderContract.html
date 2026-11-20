@@ -51,19 +51,20 @@ public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:tendering:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: tendering, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
+generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>TENDER-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>LPWD-DOC-26-0211</strong><br />
+<strong>PWD/2026/PARKS</strong><br />
+The collaboration this document belongs to: the department's procurement
+of park benches. Lumeport Public Works Department started it and gave it
+this identifier, which every document of it repeats.</li>
+<li><code>ID</code> = <strong>PWD/2026/0541</strong><br />
 The sender's number for this document.</li>
 <li><code>UUID</code> =
 <strong>14fc43bd-7919-515f-82c7-a02bb3605891</strong><br />
 A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>ContractFolderID</code> =
-<strong>PWD-2026-PARKS</strong><br />
+<strong>PWD/2026/PARKS</strong><br />
 The authority's file number for this procurement, the same on every
 document of the procedure.</li>
 <li><code>IssueDate</code> = <strong>2026-03-20</strong><br />
@@ -85,12 +86,12 @@ The rules the contract follows.</li>
 <h3 id="previous-document-reference">Previous Document Reference</h3>
 <p>Inside <code>PreviousDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LPWD-DOC-26-0209</strong><br />
+<li><code>ID</code> = <strong>PWD/2026/0463</strong><br />
 The award notification.</li>
 <li><code>DocumentTypeCode</code> = <strong>AwardedNotification</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: LPWD-DOC-26-0209 is the example
+The kind of document referred to: PWD/2026/0463 is the example
 tender/22, a AwardedNotification; a generic reference names the UBL
 document type. The code is from the Trade Accord's UBL document type
 list: AwardedNotification = Awarded Notification.</li>
@@ -554,7 +555,7 @@ Announced in the notices and the call, carried by the contract.</li>
 <strong>5</strong><br />
 Five per cent of the contract value.</li>
 <li><code>CallForTendersDocumentReference/ID</code> =
-<strong>LPWD-DOC-26-0189</strong><br />
+<strong>PWD/2026/0182</strong><br />
 The call for tenders, the procurement documents the contract was
 tendered under.</li>
 <li><code>WarrantyValidityPeriod/DurationMeasure</code> =
@@ -604,7 +605,7 @@ Paid by transfer.</li>
 <h3 id="tendering-process">Tendering Process</h3>
 <p>Inside <code>TenderingProcess</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>PWD-2026-PARKS-P</strong><br />
+<li><code>ID</code> = <strong>PWD/2026/PARKS-P</strong><br />
 The procedure.</li>
 <li><code>ProcedureCode</code> = <strong>OPEN</strong> (listID
 <code>urn:ubl-examples:world:codelist:ProcurementProcedureCode</code>)<br />
@@ -635,7 +636,7 @@ Lot 2.</li>
 <h3 id="tender-result">Tender Result</h3>
 <p>Inside <code>TenderResult</code>:</p>
 <ul>
-<li><code>AwardID</code> = <strong>PWD-2026-PARKS-AWARD-1</strong><br />
+<li><code>AwardID</code> = <strong>PWD/2026/PARKS-AWARD-1</strong><br />
 The award decision.</li>
 <li><code>TenderResultCode</code> = <strong>AWARDED</strong> (listID
 <code>urn:ubl-examples:world:codelist:TenderResultCode</code>)<br />
@@ -672,7 +673,7 @@ Both through the platform.</li>
 <li><code>ReceivedForeignTenderQuantity</code> = <strong>1</strong>
 (unitCode <code>EA</code>)<br />
 The manufacturer is established in Urvania.</li>
-<li><code>Contract/ID</code> = <strong>PWD-2026-PARKS</strong><br />
+<li><code>Contract/ID</code> = <strong>PWD/2026/PARKS</strong><br />
 The framework contract.</li>
 <li><code>Contract/ContractTypeCode</code> = <strong>FRAMEWORK</strong>
 (listID
@@ -764,17 +765,17 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:tender-contract:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:tendering:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;TENDER-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0211&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;PWD/2026/PARKS&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/0541&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;14fc43bd-7919-515f-82c7-a02bb3605891&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractFolderID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ContractFolderID</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractFolderID</span>&gt;PWD/2026/PARKS&lt;/<span class="kw">cbc:ContractFolderID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-03-20&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:24:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ContractName</span>&gt;Park benches for the parks renewal programme&lt;/<span class="kw">cbc:ContractName</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;The framework contract, signed by both parties.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:RegulatoryDomain</span>&gt;Bayvarra public procurement&lt;/<span class="kw">cbc:RegulatoryDomain</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:PreviousDocumentReference</span>&gt;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0209&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/0463&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;AwardedNotification&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:PreviousDocumentReference</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ContractDocumentReference</span>&gt;</span>
@@ -958,7 +959,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AmountRate</span>&gt;5&lt;/<span class="kw">cbc:AmountRate</span>&gt;</span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:RequiredFinancialGuarantee</span>&gt;</span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CallForTendersDocumentReference</span>&gt;</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LPWD-DOC-26-0189&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/0182&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CallForTendersDocumentReference</span>&gt;</span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:WarrantyValidityPeriod</span>&gt;</span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DurationMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;ANN&quot;</span>&gt;5&lt;/<span class="kw">cbc:DurationMeasure</span>&gt;</span>
@@ -984,7 +985,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PostAwardProcess</span>&gt;</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingTerms</span>&gt;</span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderingProcess</span>&gt;</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS-P&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/PARKS-P&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ProcedureCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ProcurementProcedureCode&quot;</span>&gt;OPEN&lt;/<span class="kw">cbc:ProcedureCode</span>&gt;</span>
 <span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TenderingProcess</span>&gt;</span>
 <span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ProcurementProject</span>&gt;</span>
@@ -998,7 +999,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LOT-2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProcurementProjectLot</span>&gt;</span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:TenderResult</span>&gt;</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardID</span>&gt;PWD-2026-PARKS-AWARD-1&lt;/<span class="kw">cbc:AwardID</span>&gt;</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AwardID</span>&gt;PWD/2026/PARKS-AWARD-1&lt;/<span class="kw">cbc:AwardID</span>&gt;</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:TenderResultCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TenderResultCode&quot;</span>&gt;AWARDED&lt;/<span class="kw">cbc:TenderResultCode</span>&gt;</span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AdvertisementAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;320.00&lt;/<span class="kw">cbc:AdvertisementAmount</span>&gt;</span>
@@ -1011,7 +1012,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedElectronicTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;2&lt;/<span class="kw">cbc:ReceivedElectronicTenderQuantity</span>&gt;</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ReceivedForeignTenderQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;1&lt;/<span class="kw">cbc:ReceivedForeignTenderQuantity</span>&gt;</span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Contract</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD-2026-PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;PWD/2026/PARKS&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractTypeCode&quot;</span>&gt;FRAMEWORK&lt;/<span class="kw">cbc:ContractTypeCode</span>&gt;</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ValidityPeriod</span>&gt;</span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StartDate</span>&gt;2026-03-20&lt;/<span class="kw">cbc:StartDate</span>&gt;</span>
@@ -1077,6 +1078,6 @@ the flow</a> · <a href="example-tender-25-Catalogue.html">Catalogue
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

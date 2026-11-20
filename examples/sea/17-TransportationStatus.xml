@@ -3,19 +3,19 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>SEA-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>PS-TS-26-0142</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2501</cbc:ProfileExecutionID>
+  <cbc:ID>POS-TS-26-8988</cbc:ID>
   <cbc:UUID>1713d8c6-6d60-56cc-af96-b2eb848695b4</cbc:UUID>
   <cbc:IssueDate>2026-05-17</cbc:IssueDate>
   <cbc:IssueTime>16:36:00+00:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:ShippingOrderID>BF-FI-26-0137</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>BYF-FI-26-1501</cbc:ShippingOrderID>
   <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0133</cbc:ID>
+    <cbc:ID>LMW-CS-26-1001</cbc:ID>
     <cac:ConsigneeParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -217,7 +217,7 @@
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>TOL-BL-26-0139</cbc:ID>
+    <cbc:ID>TWLU000033415</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

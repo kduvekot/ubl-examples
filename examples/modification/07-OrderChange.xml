@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-change:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MODIFICATION-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>MS-OC-26-0416</cbc:ID>
+  <cbc:ProfileExecutionID>MDS-TX-26-0047</cbc:ProfileExecutionID>
+  <cbc:ID>MDS-OC-26-0034</cbc:ID>
   <cbc:SalesOrderID>TWM-J-2526-014</cbc:SalesOrderID>
   <cbc:UUID>0381b870-e45a-5a0f-b99c-320a8aa5f632</cbc:UUID>
   <cbc:IssueDate>2026-02-24</cbc:IssueDate>
@@ -13,7 +13,7 @@
   <cbc:Note>Call-off of job TWM-J-2526-014: all 96 bundles for Valdara Industries, Ferrano, collected by Trasvia Haulage on Thursday 26 February.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>MS-PO-26-0406</cbc:ID>
+    <cbc:ID>MDS-PO-26-0047</cbc:ID>
   </cac:OrderReference>
   <cac:BuyerCustomerParty>
     <cac:Party>
@@ -140,7 +140,7 @@
     </cac:DeliveryParty>
     <cac:Despatch>
       <cbc:RequestedDespatchDate>2026-02-26</cbc:RequestedDespatchDate>
-      <cbc:ReleaseID>MS-REL-26-0212</cbc:ReleaseID>
+      <cbc:ReleaseID>MDS-REL-26-0212</cbc:ReleaseID>
       <cbc:Instructions>Load onto Trasvia Haulage's truck against the release number; send the despatch advice to Valdara Industries on our behalf.</cbc:Instructions>
     </cac:Despatch>
   </cac:Delivery>

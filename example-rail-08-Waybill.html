@@ -51,15 +51,14 @@ public description on the world's pages.</li>
 <li><code>ProfileID</code> =
 <strong>urn:ubl-examples:world:profile:transport:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: transport, a
-generic, versioned profile, not the flow; the run of the process is the
-ProfileExecutionID.</li>
-<li><code>ProfileExecutionID</code> =
-<strong>RAIL-2026-01</strong><br />
-This run of the process: the same in every document of the flow.</li>
-<li><code>ID</code> = <strong>FRC-WB-26-0334</strong><br />
+generic, versioned profile, not the flow.</li>
+<li><code>ProfileExecutionID</code> = <strong>9900043586</strong><br />
+The collaboration this document belongs to: the rail carriage Valdara
+books with Ferrano Rail Cargo. Valdara Industries started it and gave it
+this identifier, which every document of it repeats.</li>
+<li><code>ID</code> = <strong>7200092547</strong><br />
 The consignment note number.</li>
-<li><code>CarrierAssignedID</code> =
-<strong>FRC-CIM-26-0325</strong><br />
+<li><code>CarrierAssignedID</code> = <strong>8900004628</strong><br />
 The carrier's own number for the carriage.</li>
 <li><code>UUID</code> =
 <strong>2af02244-330b-5e9f-85c5-1ad7dcce9c43</strong><br />
@@ -425,14 +424,14 @@ its identifier and name are repeated.</li>
 <h3 id="shipment">Shipment</h3>
 <p>Inside <code>Shipment</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>VI-SH-26-0332</strong><br />
+<li><code>ID</code> = <strong>7400043689</strong><br />
 The shipment as the despatching party numbered it.</li>
 <li><code>GrossWeightMeasure</code> = <strong>18177.6</strong> (unitCode
 <code>KGM</code>)<br />
 The gross weights of the transport equipment with the goods in it
 (9088.8 + 9088.8 kg): a shipment's gross weight includes the
 equipment.</li>
-<li><code>Consignment/ID</code> = <strong>VI-CS-26-0327</strong><br />
+<li><code>Consignment/ID</code> = <strong>7300043586</strong><br />
 The manufacturer's consignment number.</li>
 <li><code>Consignment/ContractedCarrierAssignedID</code> =
 <strong>FRC-CON-2026-005/88</strong><br />
@@ -785,7 +784,7 @@ Country identification (ISO 3166) list: XU = Urvania.</li>
 The container's number: owner code, U for a freight container, six
 digits and the ISO 6346 check digit.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID</code>
-= <strong>VI-CS-26-0327</strong><br />
+= <strong>7300043586</strong><br />
 The consignment the container carries.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode</code>
 = <strong>CN</strong> (listID <code>UN/EDIFACT EDED 8053</code>)<br />
@@ -1087,7 +1086,7 @@ note is made out before it leaves.</li>
 = <strong>06:50:00</strong><br />
 Ten to seven.</li>
 <li><code>Consignment/TransportHandlingUnit/CustomsDeclaration/ID</code>
-= <strong>VI-TD-26-0331</strong><br />
+= <strong>7800004369</strong><br />
 The transit declaration the box travels under.</li>
 <li><code>Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID</code>
 = <strong>XU-R-104274</strong> (schemeID
@@ -1111,7 +1110,7 @@ This box's share of the train's energy, by weight.</li>
 The container's number: owner code, U for a freight container, six
 digits and the ISO 6346 check digit.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/ReferencedConsignmentID</code>
-= <strong>VI-CS-26-0327</strong><br />
+= <strong>7300043586</strong><br />
 The consignment the container carries.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode</code>
 = <strong>CN</strong> (listID <code>UN/EDIFACT EDED 8053</code>)<br />
@@ -1408,7 +1407,7 @@ note is made out before it leaves.</li>
 = <strong>06:50:00</strong><br />
 Ten to seven.</li>
 <li><code>Consignment/TransportHandlingUnit/CustomsDeclaration/ID</code>
-= <strong>VI-TD-26-0331</strong><br />
+= <strong>7800004369</strong><br />
 The transit declaration the box travels under.</li>
 <li><code>Consignment/TransportHandlingUnit/CustomsDeclaration/IssuerParty/PartyIdentification/ID</code>
 = <strong>XU-R-104274</strong> (schemeID
@@ -1483,15 +1482,15 @@ Other seats, with metal frames: other.</li>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>FRC-TEP-26-0328</strong><br />
+<li><code>ID</code> = <strong>9500055446</strong><br />
 The transport plan under which the carriage is performed.</li>
 <li><code>DocumentTypeCode</code> =
 <strong>TransportExecutionPlan</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: FRC-TEP-26-0328 is the example
-rail/03, a TransportExecutionPlan; a generic reference names the UBL
-document type. The code is from the Trade Accord's UBL document type
-list: TransportExecutionPlan = Transport Execution Plan.</li>
+The kind of document referred to: 9500055446 is the example rail/03, a
+TransportExecutionPlan; a generic reference names the UBL document type.
+The code is from the Trade Accord's UBL document type list:
+TransportExecutionPlan = Transport Execution Plan.</li>
 </ul>
 <h3 id="document-distribution">Document Distribution</h3>
 <p>Inside <code>DocumentDistribution</code>:</p>
@@ -1564,7 +1563,7 @@ consignee signs on delivery. In English.</li>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>FRC-SIG-FRC-WB-26-0334</strong><br />
+<li><code>ID</code> = <strong>FRC-SIG-7200092547</strong><br />
 The carrier's signature on taking over the goods.</li>
 <li><code>SignatoryParty/PartyIdentification/ID</code> =
 <strong>XU-R-104685</strong> (schemeID
@@ -1583,9 +1582,9 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:waybill:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:transport:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;RAIL-2026-01&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;FRC-WB-26-0334&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;FRC-CIM-26-0325&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;9900043586&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;7200092547&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CarrierAssignedID</span>&gt;8900004628&lt;/<span class="kw">cbc:CarrierAssignedID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;2af02244-330b-5e9f-85c5-1ad7dcce9c43&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:StatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RecordStatusCode&quot;</span>&gt;ISSUED&lt;/<span class="kw">cbc:StatusCode</span>&gt;</span>
@@ -1712,10 +1711,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CarrierParty</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;VI-SH-26-0332&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;7400043689&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;18177.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;VI-CS-26-0327&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;7300043586&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ContractedCarrierAssignedID</span>&gt;FRC-CON-2026-005/88&lt;/<span class="kw">cbc:ContractedCarrierAssignedID</span>&gt;</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SummaryDescription</span>&gt;192 park benches in two 40-foot containers.&lt;/<span class="kw">cbc:SummaryDescription</span>&gt;</span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;10377.6&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
@@ -1871,7 +1870,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportEquipment</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO6346&quot;</span>&gt;FRXU1044175&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReferencedConsignmentID</span>&gt;VI-CS-26-0327&lt;/<span class="kw">cbc:ReferencedConsignmentID</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReferencedConsignmentID</span>&gt;7300043586&lt;/<span class="kw">cbc:ReferencedConsignmentID</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEquipmentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8053&quot;</span>&gt;CN&lt;/<span class="kw">cbc:TransportEquipmentTypeCode</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProviderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EquipmentProviderTypeCode&quot;</span>&gt;CARRIER&lt;/<span class="kw">cbc:ProviderTypeCode</span>&gt;</span>
 <span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OwnerTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode&quot;</span>&gt;CARRIER&lt;/<span class="kw">cbc:OwnerTypeCode</span>&gt;</span>
@@ -2041,7 +2040,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
 <span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CustomsDeclaration</span>&gt;</span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-TD-26-0331&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;7800004369&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -2059,7 +2058,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
 <span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportEquipment</span>&gt;</span>
 <span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO6346&quot;</span>&gt;FRXU1044180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReferencedConsignmentID</span>&gt;VI-CS-26-0327&lt;/<span class="kw">cbc:ReferencedConsignmentID</span>&gt;</span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ReferencedConsignmentID</span>&gt;7300043586&lt;/<span class="kw">cbc:ReferencedConsignmentID</span>&gt;</span>
 <span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEquipmentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8053&quot;</span>&gt;CN&lt;/<span class="kw">cbc:TransportEquipmentTypeCode</span>&gt;</span>
 <span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ProviderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EquipmentProviderTypeCode&quot;</span>&gt;CARRIER&lt;/<span class="kw">cbc:ProviderTypeCode</span>&gt;</span>
 <span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OwnerTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:EquipmentOwnerTypeCode&quot;</span>&gt;CARRIER&lt;/<span class="kw">cbc:OwnerTypeCode</span>&gt;</span>
@@ -2228,7 +2227,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
 <span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
 <span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:CustomsDeclaration</span>&gt;</span>
-<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;VI-TD-26-0331&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span>&gt;7800004369&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
 <span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -2276,7 +2275,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
 <span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-TEP-26-0328&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;9500055446&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;TransportExecutionPlan&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
@@ -2308,7 +2307,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-728"><a href="#cb1-728" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-729"><a href="#cb1-729" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
 <span id="cb1-730"><a href="#cb1-730" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-731"><a href="#cb1-731" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-SIG-FRC-WB-26-0334&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-731"><a href="#cb1-731" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FRC-SIG-7200092547&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-732"><a href="#cb1-732" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-733"><a href="#cb1-733" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-734"><a href="#cb1-734" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XU:register&quot;</span>&gt;XU-R-104685&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -2327,6 +2326,6 @@ href="example-rail-04-TransportProgressStatusRequest.html">Transport
 Progress Status Request →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/50c2bc88f8bc927bbde30646892aa49d621a2c69"><code>50c2bc8</code></a> of 2026-11-20 14:45 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/0fd4a64a42a0e1fa10a724c50ec3dbce459a363f"><code>0fd4a64</code></a> of 2026-11-20 15:29 UTC</p></div></footer>
 </body>
 </html>

@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-change:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-OC-26-0215</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/0566</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0571</cbc:ID>
   <cbc:UUID>8e684e84-32af-5f74-a455-5a17c1622f8a</cbc:UUID>
   <cbc:IssueDate>2026-03-25</cbc:IssueDate>
   <cbc:IssueTime>08:06:00-01:00</cbc:IssueTime>
@@ -15,10 +15,10 @@
     <cbc:EndDate>2026-03-26</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:OrderReference>
-    <cbc:ID>LPWD-PO-26-0214</cbc:ID>
+    <cbc:ID>PWD/2026/0567</cbc:ID>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-CAT-26-0213</cbc:ID>
+    <cbc:ID>6100000217</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Catalogue</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>

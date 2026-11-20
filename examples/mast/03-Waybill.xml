@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>MAST-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>KXL-WB-26-0717</cbc:ID>
+  <cbc:ProfileExecutionID>26-0128</cbc:ProfileExecutionID>
+  <cbc:ID>KXL-00696942</cbc:ID>
   <cbc:UUID>bf007d9d-013c-5ef5-8c7c-b450b24811d3</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
@@ -13,7 +13,7 @@
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>A cargo-aircraft-only flight to the island on the airline's freighter.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
-  <cbc:ShippingOrderID>SE-FI-26-0714</cbc:ShippingOrderID>
+  <cbc:ShippingOrderID>26-0076</cbc:ShippingOrderID>
   <cbc:WaybillTypeCode listID="urn:ubl-examples:world:codelist:WaybillTypeCode">AWB</cbc:WaybillTypeCode>
   <cbc:ConsolidatedIndicator>false</cbc:ConsolidatedIndicator>
   <cbc:OtherInstruction>Deliver against signature of the consignee.</cbc:OtherInstruction>
@@ -157,9 +157,9 @@
     </cac:PartyName>
   </cac:FreightForwarderParty>
   <cac:Shipment>
-    <cbc:ID>SE-SH-26-0715</cbc:ID>
+    <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>SE-CS-26-0716</cbc:ID>
+      <cbc:ID>26-0129</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:ConsigneeParty>
@@ -536,7 +536,7 @@
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>KXL-SIG-KXL-WB-26-0717</cbc:ID>
+    <cbc:ID>KXL-SIG-KXL-00696942</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

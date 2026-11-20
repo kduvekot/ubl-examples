@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:forecast:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>COTTON-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LTM-FR-26-0197</cbc:ID>
+  <cbc:ProfileExecutionID>9900012942</cbc:ProfileExecutionID>
+  <cbc:ID>6400000665</cbc:ID>
   <cbc:UUID>1680348b-7683-52e2-b21d-f88ff92b0f43</cbc:UUID>
   <cbc:IssueDate>2026-04-21</cbc:IssueDate>
   <cbc:IssueTime>11:08:00-01:00</cbc:IssueTime>
@@ -17,7 +17,7 @@
     <cbc:EndDate>2026-07-31</cbc:EndDate>
   </cac:ForecastPeriod>
   <cac:OriginalDocumentReference>
-    <cbc:ID>LTM-FC-26-0192</cbc:ID>
+    <cbc:ID>6300000648</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Forecast</cbc:DocumentTypeCode>
   </cac:OriginalDocumentReference>
   <cac:Signature>

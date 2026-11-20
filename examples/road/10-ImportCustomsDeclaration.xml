@@ -3,8 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:import-customs-declaration:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:customs:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-IM-26-0161</cbc:ID>
+  <cbc:ID>LMW-IM-26-0127</cbc:ID>
   <cbc:UUID>d05f73ca-d179-5742-b609-b8871aacb98b</cbc:UUID>
   <cbc:IssueDate>2026-03-24</cbc:IssueDate>
   <cbc:IssueTime>09:54:00-01:00</cbc:IssueTime>
@@ -166,7 +165,7 @@
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>CL-SH-26-0154</cbc:ID>
+    <cbc:ID>CAS-SH-26-1291</cbc:ID>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
@@ -190,7 +189,7 @@
       <cac:DespatchLineReference>
         <cbc:LineID>1</cbc:LineID>
         <cac:DocumentReference>
-          <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:ID>CAS-DA-26-1342</cbc:ID>
           <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
@@ -293,7 +292,7 @@
       <cac:DespatchLineReference>
         <cbc:LineID>2</cbc:LineID>
         <cac:DocumentReference>
-          <cbc:ID>CL-DA-26-0153</cbc:ID>
+          <cbc:ID>CAS-DA-26-1342</cbc:ID>
           <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DespatchAdvice</cbc:DocumentTypeCode>
         </cac:DocumentReference>
       </cac:DespatchLineReference>
@@ -317,15 +316,15 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FCC-CO-26-0157</cbc:ID>
+    <cbc:ID>FCC/CO/2026/0090</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">CertificateOfOrigin</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-EX-26-0155</cbc:ID>
+    <cbc:ID>7600008669</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">ExportCustomsDeclaration</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>VI-INV-26-0166</cbc:ID>
+    <cbc:ID>2026/1409</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

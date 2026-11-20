@@ -3,18 +3,18 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:fulfilment-cancellation:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-DOC-26-0163</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-FCN-26-0033</cbc:ID>
   <cbc:UUID>83620832-e508-5136-b6f4-e104537c3b80</cbc:UUID>
   <cbc:IssueDate>2026-03-26</cbc:IssueDate>
   <cbc:IssueTime>10:46:00-01:00</cbc:IssueTime>
   <cbc:Note>A corrected receipt advice follows.</cbc:Note>
   <cbc:CancellationNote>The recount read the label of the 13th carton on the pallet of side frames: "Serra 180, parcel 2 of 3", the bench reported short. Neither the shortage nor the carton over existed.</cbc:CancellationNote>
   <cac:ReceiptDocumentReference>
-    <cbc:ID>LD-RA-26-0162</cbc:ID>
+    <cbc:ID>LMW-RA-26-0642</cbc:ID>
   </cac:ReceiptDocumentReference>
   <cac:OrderReference>
-    <cbc:ID>LD-PO-26-0149</cbc:ID>
+    <cbc:ID>LMW-PO-26-0573</cbc:ID>
   </cac:OrderReference>
   <cac:BuyerCustomerParty>
     <cac:Party>

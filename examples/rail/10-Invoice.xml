@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:XU:invoice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>RAIL-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FRC-INV-26-0336</cbc:ID>
+  <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
+  <cbc:ID>2026/2732</cbc:ID>
   <cbc:UUID>f02614a5-c969-547f-8808-35c583fe56d6</cbc:UUID>
   <cbc:IssueDate>2026-04-17</cbc:IssueDate>
   <cbc:IssueTime>12:04:00-01:00</cbc:IssueTime>
@@ -20,11 +20,11 @@
     <cbc:ID>FRC-CON-2026-005</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FRC-TEP-26-0328</cbc:ID>
+    <cbc:ID>9500055446</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportExecutionPlan</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>FRC-WB-26-0334</cbc:ID>
+    <cbc:ID>7200092547</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -188,15 +188,15 @@
     <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF13FRCINV260336</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF13FRCINV260336</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF1420262732</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF1420262732</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU920351041700000000523645</cbc:ID>
       <cbc:Name>Ferrano Rail Cargo SRU</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice FRC-INV-26-0336</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 2026/2732</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41700</cbc:ID>
         <cbc:Name>Serravona branch</cbc:Name>

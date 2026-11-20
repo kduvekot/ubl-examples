@@ -3,17 +3,17 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:tender-contract:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:tendering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>TENDER-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LPWD-DOC-26-0211</cbc:ID>
+  <cbc:ProfileExecutionID>PWD/2026/PARKS</cbc:ProfileExecutionID>
+  <cbc:ID>PWD/2026/0541</cbc:ID>
   <cbc:UUID>14fc43bd-7919-515f-82c7-a02bb3605891</cbc:UUID>
-  <cbc:ContractFolderID>PWD-2026-PARKS</cbc:ContractFolderID>
+  <cbc:ContractFolderID>PWD/2026/PARKS</cbc:ContractFolderID>
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>17:24:00-01:00</cbc:IssueTime>
   <cbc:ContractName>Park benches for the parks renewal programme</cbc:ContractName>
   <cbc:Note>The framework contract, signed by both parties.</cbc:Note>
   <cbc:RegulatoryDomain>Bayvarra public procurement</cbc:RegulatoryDomain>
   <cac:PreviousDocumentReference>
-    <cbc:ID>LPWD-DOC-26-0209</cbc:ID>
+    <cbc:ID>PWD/2026/0463</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">AwardedNotification</cbc:DocumentTypeCode>
   </cac:PreviousDocumentReference>
   <cac:ContractDocumentReference>
@@ -197,7 +197,7 @@
       <cbc:AmountRate>5</cbc:AmountRate>
     </cac:RequiredFinancialGuarantee>
     <cac:CallForTendersDocumentReference>
-      <cbc:ID>LPWD-DOC-26-0189</cbc:ID>
+      <cbc:ID>PWD/2026/0182</cbc:ID>
     </cac:CallForTendersDocumentReference>
     <cac:WarrantyValidityPeriod>
       <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
@@ -223,7 +223,7 @@
     </cac:PostAwardProcess>
   </cac:TenderingTerms>
   <cac:TenderingProcess>
-    <cbc:ID>PWD-2026-PARKS-P</cbc:ID>
+    <cbc:ID>PWD/2026/PARKS-P</cbc:ID>
     <cbc:ProcedureCode listID="urn:ubl-examples:world:codelist:ProcurementProcedureCode">OPEN</cbc:ProcedureCode>
   </cac:TenderingProcess>
   <cac:ProcurementProject>
@@ -237,7 +237,7 @@
     <cbc:ID>LOT-2</cbc:ID>
   </cac:ProcurementProjectLot>
   <cac:TenderResult>
-    <cbc:AwardID>PWD-2026-PARKS-AWARD-1</cbc:AwardID>
+    <cbc:AwardID>PWD/2026/PARKS-AWARD-1</cbc:AwardID>
     <cbc:TenderResultCode listID="urn:ubl-examples:world:codelist:TenderResultCode">AWARDED</cbc:TenderResultCode>
     <cbc:Description>Both lots to Valdara Industries: the best price-quality ratio, with ten years of warranty on the coating.</cbc:Description>
     <cbc:AdvertisementAmount currencyID="XBL">320.00</cbc:AdvertisementAmount>
@@ -250,7 +250,7 @@
     <cbc:ReceivedElectronicTenderQuantity unitCode="EA">2</cbc:ReceivedElectronicTenderQuantity>
     <cbc:ReceivedForeignTenderQuantity unitCode="EA">1</cbc:ReceivedForeignTenderQuantity>
     <cac:Contract>
-      <cbc:ID>PWD-2026-PARKS</cbc:ID>
+      <cbc:ID>PWD/2026/PARKS</cbc:ID>
       <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">FRAMEWORK</cbc:ContractTypeCode>
       <cac:ValidityPeriod>
         <cbc:StartDate>2026-03-20</cbc:StartDate>

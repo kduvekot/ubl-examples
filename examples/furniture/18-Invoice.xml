@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>FURNITURE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BS-INV-26-0584</cbc:ID>
+  <cbc:ProfileExecutionID>9900336121</cbc:ProfileExecutionID>
+  <cbc:ID>9000343787</cbc:ID>
   <cbc:UUID>4f94dfb7-b177-524c-9081-5910fd8cea6d</cbc:UUID>
   <cbc:IssueDate>2026-06-17</cbc:IssueDate>
   <cbc:IssueTime>17:31:00-01:00</cbc:IssueTime>
@@ -20,7 +20,7 @@
     <cbc:ID>BM-OWN-BRAND-2026</cbc:ID>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>BF-DOC-26-0579</cbc:ID>
+    <cbc:ID>26-0032</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">InstructionForReturns</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -204,15 +204,15 @@
     <cbc:PaymentDueDate>2026-07-17</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF32BSINV260584</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF32BSINV260584</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF569000343787</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF569000343787</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB48BLUM38010001570935</cbc:ID>
       <cbc:Name>Brightmarket Stores Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
-      <cbc:PaymentNote>Invoice BS-INV-26-0584</cbc:PaymentNote>
+      <cbc:PaymentNote>Invoice 9000343787</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:bank-branch">380100</cbc:ID>
         <cbc:Name>Main branch, Exchange Street</cbc:Name>

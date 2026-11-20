@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:remittance-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-RM-26-0313</cbc:ID>
+  <cbc:ProfileExecutionID>9900042994</cbc:ProfileExecutionID>
+  <cbc:ID>2000017448</cbc:ID>
   <cbc:UUID>c1cdbf15-9eb1-59b6-abc7-b3a50c56fdb2</cbc:UUID>
   <cbc:IssueDate>2026-04-09</cbc:IssueDate>
   <cbc:IssueTime>12:10:00-01:00</cbc:IssueTime>
@@ -14,8 +14,8 @@
   <cbc:TotalDebitAmount currencyID="XUF">17037943</cbc:TotalDebitAmount>
   <cbc:TotalCreditAmount currencyID="XUF">0</cbc:TotalCreditAmount>
   <cbc:TotalPaymentAmount currencyID="XUF">17037943</cbc:TotalPaymentAmount>
-  <cbc:PaymentOrderReference>VI-PAY-26-0304</cbc:PaymentOrderReference>
-  <cbc:InvoicingPartyReference>RF73SMINV260312</cbc:InvoicingPartyReference>
+  <cbc:PaymentOrderReference>1500002181</cbc:PaymentOrderReference>
+  <cbc:InvoicingPartyReference>RF3220260080</cbc:InvoicingPartyReference>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:AccountingCustomerParty>
     <cac:Party>
@@ -107,8 +107,8 @@
   </cac:AccountingSupplierParty>
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
-    <cbc:InstructionID>VI-PAY-26-0304</cbc:InstructionID>
-    <cbc:PaymentID schemeID="ISO 11649">RF73SMINV260312</cbc:PaymentID>
+    <cbc:InstructionID>1500002181</cbc:InstructionID>
+    <cbc:PaymentID schemeID="ISO 11649">RF3220260080</cbc:PaymentID>
     <cac:PayerFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
       <cbc:Name>Valdara Industries SUA</cbc:Name>
@@ -193,10 +193,10 @@
     <cbc:DebitLineAmount currencyID="XUF">17037943</cbc:DebitLineAmount>
     <cbc:BalanceAmount currencyID="XUF">0</cbc:BalanceAmount>
     <cbc:PaymentPurposeCode listID="ISO 20022 ExternalPurpose1Code">SUPP</cbc:PaymentPurposeCode>
-    <cbc:InvoicingPartyReference>RF73SMINV260312</cbc:InvoicingPartyReference>
+    <cbc:InvoicingPartyReference>RF3220260080</cbc:InvoicingPartyReference>
     <cac:BillingReference>
       <cac:InvoiceDocumentReference>
-        <cbc:ID>SM-INV-26-0312</cbc:ID>
+        <cbc:ID>2026/0080</cbc:ID>
         <cbc:IssueDate>2026-03-11</cbc:IssueDate>
       </cac:InvoiceDocumentReference>
     </cac:BillingReference>

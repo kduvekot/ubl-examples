@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ORE-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>VI-PO-26-0304</cbc:ID>
+  <cbc:ProfileExecutionID>9900042994</cbc:ProfileExecutionID>
+  <cbc:ID>4500042994</cbc:ID>
   <cbc:UUID>f7a41c69-f150-5204-9582-ff383282ea1c</cbc:UUID>
   <cbc:IssueDate>2026-03-02</cbc:IssueDate>
   <cbc:IssueTime>11:10:00-01:00</cbc:IssueTime>

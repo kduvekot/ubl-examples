@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transport-execution-plan-request:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>ROAD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>LD-TR-26-0151</cbc:ID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0580</cbc:ProfileExecutionID>
+  <cbc:ID>LMW-TR-26-0348</cbc:ID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:UUID>4e91bb2e-5fb3-5d9d-97e6-a1657ed1d102</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
@@ -121,7 +121,7 @@
     </cac:PartyName>
   </cac:BillToParty>
   <cac:TransportContract>
-    <cbc:ID>LD-TH-FW-2026</cbc:ID>
+    <cbc:ID>LMW-TH-FW-2026</cbc:ID>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseDeadlinePeriod>
     <cbc:EndDate>2026-03-18</cbc:EndDate>
@@ -150,7 +150,7 @@
     <cbc:Name>Lumeway distribution centre, goods-in, Marrowdale</cbc:Name>
   </cac:ToLocation>
   <cac:Consignment>
-    <cbc:ID>LD-CS-26-0152</cbc:ID>
+    <cbc:ID>LMW-CS-26-0580</cbc:ID>
     <cbc:SummaryDescription>Park benches and spare side frames on 25 pallets.</cbc:SummaryDescription>
     <cbc:GrossWeightMeasure unitCode="KGM">5363.4</cbc:GrossWeightMeasure>
     <cbc:LoadingLengthMeasure unitCode="MTR">9.3</cbc:LoadingLengthMeasure>

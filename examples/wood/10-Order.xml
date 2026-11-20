@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>WOOD-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>BF-PO-26-0636</cbc:ID>
+  <cbc:ProfileExecutionID>26-0167</cbc:ProfileExecutionID>
+  <cbc:ID>26-0168</cbc:ID>
   <cbc:UUID>8e01f6c6-41e2-54ce-8e02-1e6edf7207ba</cbc:UUID>
   <cbc:IssueDate>2026-03-09</cbc:IssueDate>
   <cbc:IssueTime>16:20:00-01:00</cbc:IssueTime>
@@ -157,7 +157,7 @@
         <cbc:Description>Sawn oak boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
         <cbc:Name>Oak timber</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-TB-OAK</cbc:ID>
+          <cbc:ID>MDS-TB-OAK</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>
@@ -175,7 +175,7 @@
         <cbc:Description>Sawn ash boards and beams for furniture, kiln dried, per cubic metre.</cbc:Description>
         <cbc:Name>Ash timber</cbc:Name>
         <cac:SellersItemIdentification>
-          <cbc:ID>MS-TB-ASH</cbc:ID>
+          <cbc:ID>MDS-TB-ASH</cbc:ID>
         </cac:SellersItemIdentification>
       </cac:Item>
     </cac:LineItem>

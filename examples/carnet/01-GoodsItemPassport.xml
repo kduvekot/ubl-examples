@@ -3,8 +3,8 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:goods-item-passport:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:temporary-admission:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>CARNET-2026-01</cbc:ProfileExecutionID>
-  <cbc:ID>FCC-DOC-26-0724</cbc:ID>
+  <cbc:ProfileExecutionID>FCC/2026/3170</cbc:ProfileExecutionID>
+  <cbc:ID>FCC/ATA/2026/0159</cbc:ID>
   <cbc:UUID>eba67af9-0d62-5339-b7c5-75faae5007fc</cbc:UUID>
   <cbc:IssueDate>2026-05-25</cbc:IssueDate>
   <cbc:IssueTime>15:04:00-01:00</cbc:IssueTime>
@@ -239,9 +239,9 @@
     </cac:PostalAddress>
   </cac:ImportingCustomsParty>
   <cac:Shipment>
-    <cbc:ID>VI-SH-26-0725</cbc:ID>
+    <cbc:ID>7400044378</cbc:ID>
     <cac:Consignment>
-      <cbc:ID>VI-CS-26-0241</cbc:ID>
+      <cbc:ID>7300044378</cbc:ID>
       <cac:TransportAdvisorParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
@@ -366,7 +366,7 @@
   </cac:Shipment>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>EXP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -382,7 +382,7 @@
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>TRA-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -401,7 +401,7 @@
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>IMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples arrive on the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
@@ -423,7 +423,7 @@
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REEXP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
@@ -445,7 +445,7 @@
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>TRA-2</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
@@ -470,7 +470,7 @@
   </cac:GoodsItemPassportCounterfoil>
   <cac:GoodsItemPassportCounterfoil>
     <cbc:ID>REIMP-1</cbc:ID>
-    <cbc:GoodsItemPassportID>FCC-DOC-26-0724</cbc:GoodsItemPassportID>
+    <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples come home to Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
@@ -485,7 +485,7 @@
     </cac:VoucherDocumentReference>
   </cac:GoodsItemPassportCounterfoil>
   <cac:IssuerEndorsement>
-    <cbc:DocumentID>FCC-DOC-26-0724</cbc:DocumentID>
+    <cbc:DocumentID>FCC/ATA/2026/0159</cbc:DocumentID>
     <cbc:ApprovalStatus>Issued</cbc:ApprovalStatus>
     <cac:EndorserParty>
       <cbc:RoleCode listID="urn:ubl-examples:world:codelist:EndorserRoleCode">ISSUER</cbc:RoleCode>
