@@ -188,7 +188,7 @@ Inside `TransportExecutionPlanDocumentReference`:
 - `ID` = **9500054909**  
   The standing plan for the ore season, agreed in January (not shown).
 - `DocumentDescription` = **The standing plan for 2026 provides one train a month of 30 wagons, about 1,800 t; this request books March's train, for this month's call-off of 1,800 t, in the loading window of 10 to 13 March.**  
-  How this request updates the standing plan (F5).
+  How this request updates the standing plan.
 
 ### Transport Service Description Document Reference
 
@@ -202,9 +202,9 @@ Inside `TransportServiceDescriptionDocumentReference`:
 Inside `AdditionalDocumentReference`:
 
 - `ID` = **SM-ASSAY-26-11**  
-  The assay of the ore lot.
+  The assay of the previous train, the latest analysis of the ore the carrier plans the wagons for.
 - `DocumentTypeCode` = **1** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Serravona Mining's assay of the ore lot, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
+  The kind of document referred to, Serravona Mining's assay certificate of the sample taken when February's ore train was loaded, the latest analysis of the ore before March's train, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
 
 ### Transport Contract
 
@@ -250,7 +250,7 @@ Inside `ServiceStartTimePeriod`:
 Inside `ServiceEndTimePeriod`:
 
 - `EndDate` = **2026-03-13**  
-  Delivered within three days.
+  The end of the service window, three days after its start: the goods are delivered by then.
 
 ### From Location
 

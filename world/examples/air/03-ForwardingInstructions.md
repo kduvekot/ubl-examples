@@ -167,8 +167,6 @@ Inside `Shipment`:
   One kind of goods.
 - `Consignment/DeclaredForCarriageValueAmount` = **512.00** (currencyID `XBL`)  
   Declared to the airline so its liability covers the value of the frames.
-- `Consignment/DeclaredStatisticsValueAmount` = **512.00** (currencyID `XBL`)  
-  The value for the export statistics.
 - `Consignment/SplitConsignmentIndicator` = **false**  
   All eight cartons on one flight.
 - `Consignment/ConsignmentQuantity` = **1** (unitCode `EA`)  
@@ -424,7 +422,6 @@ Inside `Signature`:
       <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
-      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
       <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
       <cac:ConsigneeParty>

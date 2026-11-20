@@ -181,7 +181,7 @@ Inside `Shipment`:
 - `Consignment/ID` = **7300013377**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/CarrierAssignedID` = **BYF-CR-26-0127**  
-  The carrier's number for the consignment: its consignment note, consignment note under the national road carriage law, which travels with the truck.
+  The carrier's number for the consignment: its consignment note under the national road carriage law, which travels with the truck.
 - `Consignment/GrossWeightMeasure` = **168** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the cartons: the shirts in their bags and the cartons' share.
 - `Consignment/TotalPackagesQuantity` = **20** (unitCode `EA`)  

@@ -24,8 +24,8 @@ The wholesaler confirms what it unloaded at its cold store, with the temperature
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-27**  
   The wholesaler confirms what it unloaded on the Monday morning.
-- `IssueTime` = **14:27:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
+- `IssueTime` = **09:27:00+00:00**  
+  On the Monday morning, once the fruit is counted; in the issuer's local time, with its offset from UTC.
 - `ReceiptAdviceTypeCode` = **Actual** (listID `urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode`)  
   UBL's receipt advice type code: the goods actually received. The code is from the world's copy of UBL's Receipt advice type list, with a listID: Actual = An arrival that has passed goods inspection and is accepted (or not)..
 - `DeliveryAcceptanceCode` = **ACCEPTED** (listID `urn:ubl-examples:world:codelist:DeliveryAcceptanceCode`)  
@@ -272,7 +272,7 @@ Inside `ReceiptLine`:
   <cbc:ID>26-0256</cbc:ID>
   <cbc:UUID>9f7f7391-8c4f-53d4-8fbc-38ab9c087873</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
-  <cbc:IssueTime>14:27:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>09:27:00+00:00</cbc:IssueTime>
   <cbc:ReceiptAdviceTypeCode listID="urn:oasis:names:specification:ubl:codelist:gc:ReceiptAdviceTypeCode">Actual</cbc:ReceiptAdviceTypeCode>
   <cbc:DeliveryAcceptanceCode listID="urn:ubl-examples:world:codelist:DeliveryAcceptanceCode">ACCEPTED</cbc:DeliveryAcceptanceCode>
   <cbc:Note>Unloaded at our cold store and counted, the mix of your order response: five pallets of Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed between 0.2 and 0.9 °C from loading to unloading.</cbc:Note>

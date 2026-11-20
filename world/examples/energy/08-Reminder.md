@@ -17,7 +17,7 @@ The power station has not paid by the due date. The gas producer reminds it in f
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **9900034209**  
-  The collaboration this document belongs to: Kelpstone's gas bill for April to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Kelpstone's gas bill for March to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
 - `ID` = **9300003463**  
   The reminder number.
 - `UUID` = **154cfeb8-3d00-5879-95d5-6ed226239c26**  

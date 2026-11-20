@@ -4,12 +4,12 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>LMW-TX-26-0734</cbc:ProfileExecutionID>
-  <cbc:ID>9200000878</cbc:ID>
+  <cbc:ID>2026/1939</cbc:ID>
   <cbc:UUID>6b1333eb-a95b-5a28-9c76-1522ab34fd75</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
   <cbc:IssueTime>09:26:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-25</cbc:DueDate>
-  <cbc:Note>Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.</cbc:Note>
+  <cbc:Note>Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days. The siding's fork-lift was in repair, so Lumeway could unload the second container only on 22 April.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-04-24</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -34,7 +34,7 @@
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>9200001856</cbc:ID>
+    <cbc:ID>2026/2888</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DebitNote</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
@@ -178,8 +178,8 @@
     <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>TRADE-ACCORD-PAY</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF379200000878</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF379200000878</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF8520261939</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF8520261939</cbc:PaymentID>
     <cbc:ChargeBearerCode listID="ISO 20022 ChargeBearerType1Code">SHAR</cbc:ChargeBearerCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU790351041600000000209458</cbc:ID>
@@ -187,7 +187,7 @@
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Debit note 9200000878</cbc:PaymentNote>
+      <cbc:PaymentNote>Debit note 2026/1939</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41600</cbc:ID>
         <cbc:Name>Ferrano main branch</cbc:Name>

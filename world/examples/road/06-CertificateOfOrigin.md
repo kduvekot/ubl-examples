@@ -28,9 +28,9 @@ The goods qualify for preferential duty in Bayvarra; the manufacturer applies to
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Description` = **Application for a certificate of origin for park benches and castings made in Urvania.**  
   What the document is for.
-- `Note` = **Drakhan dranan karul drek rizir denskek.** (languageID `qau`)  
+- `Note` = **Drakhan dranan karul drek Trade Accord.** (languageID `qau`)  
   The note in Urvanian, the sender's language: What the certificate is for.
-- `Note` = **Preferential origin under the trade accord.** (languageID `en-XU`)  
+- `Note` = **Preferential origin under the Trade Accord.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: What the certificate is for.
 - `VersionID` = **1**  
   The first version of the application.
@@ -473,8 +473,8 @@ Inside `IssuerEndorsement`:
   <cbc:IssueDate>2026-03-20</cbc:IssueDate>
   <cbc:IssueTime>12:39:00-01:00</cbc:IssueTime>
   <cbc:Description>Application for a certificate of origin for park benches and castings made in Urvania.</cbc:Description>
-  <cbc:Note languageID="qau">Drakhan dranan karul drek rizir denskek.</cbc:Note>
-  <cbc:Note languageID="en-XU">Preferential origin under the trade accord.</cbc:Note>
+  <cbc:Note languageID="qau">Drakhan dranan karul drek Trade Accord.</cbc:Note>
+  <cbc:Note languageID="en-XU">Preferential origin under the Trade Accord.</cbc:Note>
   <cbc:VersionID>1</cbc:VersionID>
   <cac:Signature>
     <cbc:ID>VI-SIG-CO-06</cbc:ID>

@@ -267,7 +267,7 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
 - `InstructionNote` = **Quote RF8920261770**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF8920261770** (schemeID `ISO 11649`)  

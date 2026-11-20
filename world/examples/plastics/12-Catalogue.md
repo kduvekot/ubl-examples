@@ -2,7 +2,7 @@
 
 *Example 12 of the flow "Recycled plastic granulate by river barge (Urvania → Bayvarra)" · [Catalogue in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-CATALOGUE-SCHEMA)*
 
-Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 %. It is numbered after the flow's other documents although it comes first in time.
+Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 %.
 
 [The XML file](12-Catalogue.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -259,12 +259,12 @@ Inside `CatalogueLine`:
   The kind of claim, as a code. The code is from the Trade Accord's certificate type list: RECYCLED = Recycled content.
 - `Item/EnvironmentalCertificate/CertificateType` = **Recycled content**  
   The name of code RECYCLED in the Trade Accord's certificate type list.
-- `Item/EnvironmentalCertificate/Remarks` = **100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the certification body's recycled-content scheme, which follows EN 15343:2007.**  
+- `Item/EnvironmentalCertificate/Remarks` = **100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the Lumeport Trade Accord's rules for tracing recycled content; the certificate is the Accord's recycled-content certificate.**  
   What the certificate states.
 - `Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-106192** (schemeID `urn:ubl-examples:world:XU:register`)  
-  An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under a recycled-content scheme that follows EN 15343:2007, as industry schemes such as RecyClass do, and issues their recycled-content certificates; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate. Its identifier and name are enough (referenced).
+  An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under the Lumeport Trade Accord's rules for tracing recycled content, and issues the Accord's recycled-content certificates to the plants that meet them; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate. Its identifier and name are enough (referenced).
 - `Item/EnvironmentalCertificate/IssuerParty/PartyName/Name` = **Certovira Certification**  
-  An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under a recycled-content scheme that follows EN 15343:2007, as industry schemes such as RecyClass do, and issues their recycled-content certificates; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate. Its identifier and name are enough (referenced).
+  An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under the Lumeport Trade Accord's rules for tracing recycled content, and issues the Accord's recycled-content certificates to the plants that meet them; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate. Its identifier and name are enough (referenced).
 - `Item/CircularityProfile/CircularityTypeCode` = **RECYCLED** (listID `urn:ubl-examples:world:codelist:CircularityTypeCode`)  
   The circular strategy behind the item. The code is from the Trade Accord's circularity type list: RECYCLED = Recycled material.
 - `Item/CircularityProfile/RecycledContentPercent` = **100**  
@@ -476,7 +476,7 @@ Inside `CatalogueLine`:
         <cbc:ID>CVC-RC-26-0118</cbc:ID>
         <cbc:CertificateTypeCode listID="urn:ubl-examples:world:codelist:CertificateTypeCode">RECYCLED</cbc:CertificateTypeCode>
         <cbc:CertificateType>Recycled content</cbc:CertificateType>
-        <cbc:Remarks>100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the certification body's recycled-content scheme, which follows EN 15343:2007.</cbc:Remarks>
+        <cbc:Remarks>100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the Lumeport Trade Accord's rules for tracing recycled content; the certificate is the Accord's recycled-content certificate.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>
             <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106192</cbc:ID>

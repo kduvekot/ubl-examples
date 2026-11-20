@@ -262,12 +262,8 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
-- `DeliveryLocation/Name` = **Valdara Industries works, Ferrano**  
-  Where the goods billed are delivered.
-- `DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `DeliveryLocation/Name` = **Rivermouth Packaging works, Lumeport**  
+  Where the goods billed are delivered: under the terms FCA, where the buyer's carrier takes them over.
 
 ### Payment Means
 
@@ -284,7 +280,7 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
 - `InstructionNote` = **Quote RF39260397**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF39260397** (schemeID `ISO 11649`)  
@@ -638,13 +634,7 @@ Inside `InvoiceLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
-      <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
-      <cac:Address>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
+      <cbc:Name>Rivermouth Packaging works, Lumeport</cbc:Name>
     </cac:DeliveryLocation>
   </cac:Delivery>
   <cac:PaymentMeans>

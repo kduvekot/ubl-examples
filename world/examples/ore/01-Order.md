@@ -242,23 +242,13 @@ Inside `Delivery`:
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Rail Cargo gives it.
 - `Despatch/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; as Ferrano Rail Cargo gives it.
-- `Shipment/ID` = **1**  
-  The shipment the order asks for: one reefer.
-- `Shipment/GoodsItem/ID` = **1**  
-  The fruit of the order.
-- `Shipment/GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  What the temperature is of: the air in the cargo space during transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
-- `Shipment/GoodsItem/Temperature/MeasureCode` = **CHILLED** (listID `urn:ubl-examples:world:codelist:TemperatureClassCode`)  
-  The wholesaler asks for the fruit to travel chilled, a class, not a figure: the cooperative and its forwarder set the reefer to the fruit's own set point. The code is from the Trade Accord's temperature class list: CHILLED = Chilled.
-- `Shipment/GoodsItem/Temperature/Description` = **Chilled, not frozen**  
-  In words.
 
 ### Delivery Terms
 
 Inside `DeliveryTerms`:
 
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
-  Free carrier at the mine: the buyer arranges and pays the main transport, so the order names the carrier the buyer has booked. Stated, because leaving it out would carry no meaning (UBL rule IND6). The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
+  Free carrier at the mine: the buyer arranges and pays the main transport, so the order names the carrier the buyer has booked. Stated, because leaving it out would carry no meaning. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **XUFNT** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `DeliveryLocation/Description` = **Fucinalta mine siding**  
@@ -503,17 +493,6 @@ Inside `OrderLine`:
         </cac:Contact>
       </cac:CarrierParty>
     </cac:Despatch>
-    <cac:Shipment>
-      <cbc:ID>1</cbc:ID>
-      <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
-        <cac:Temperature>
-          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-          <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureClassCode">CHILLED</cbc:MeasureCode>
-          <cbc:Description>Chilled, not frozen</cbc:Description>
-        </cac:Temperature>
-      </cac:GoodsItem>
-    </cac:Shipment>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>

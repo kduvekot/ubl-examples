@@ -212,7 +212,7 @@ Inside `ConsignorParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Quillmoor Pharma Distribution gives it.
 - `Contact/ElectronicMail` = **dispatch@quillmoor.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Quillmoor Pharma Distribution gives it.
-- `Contact/Note` = **Weekdays 07:00–19:00**  
+- `Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 
 ### Carrier Party
@@ -719,9 +719,9 @@ Inside `DocumentDistribution`:
   The document distributed: this waybill. The code is from the Trade Accord's UBL document type list: Waybill.
 - `DistributionTypeCode` = **ORIGINALHANDED** (listID `urn:ubl-examples:world:codelist:DistributionTypeCode`)  
   The consignor's original, handed over when the carrier took over the goods, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALHANDED = Original, handed over.
-- `Party/PartyIdentification/ID` = **20412055** (schemeID `urn:ubl-examples:world:XB:register`)  
+- `Party/PartyIdentification/ID` = **20413425** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Lumeport Airport Cargo Terminal**  
+- `Party/PartyName/Name` = **Quillmoor Pharma Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
 - `ID` = **2**  
   The original for the consignee.
@@ -731,9 +731,9 @@ Inside `DocumentDistribution`:
   One of the three originals travels with the goods to the consignee, as the convention prescribes. The code is from the Trade Accord's distribution type list: ORIGINALWITHGOODS = Original, with the goods.
 - `DistributionType` = **Original, with the goods: the consignee's original**  
   The name of code ORIGINALWITHGOODS in the Trade Accord's distribution type list, followed by the detail of this case: the original the consignee signs on delivery.
-- `Party/PartyIdentification/ID` = **IC41174** (schemeID `urn:ubl-examples:world:XL:register`)  
+- `Party/PartyIdentification/ID` = **GOV-317** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   A party referred to from another party's details: its identifier and name are enough.
-- `Party/PartyName/Name` = **Selanu Airport Cargo**  
+- `Party/PartyName/Name` = **Selanu General Hospital**  
   A party referred to from another party's details: its identifier and name are enough.
 
 ### Signature
@@ -895,7 +895,7 @@ Inside `Signature`:
       <cbc:Department>Warehouse</cbc:Department>
       <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
       <cbc:ElectronicMail>dispatch@quillmoor.example</cbc:ElectronicMail>
-      <cbc:Note>Weekdays 07:00–19:00</cbc:Note>
+      <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
   </cac:ConsignorParty>
   <cac:CarrierParty>
@@ -1341,10 +1341,10 @@ Inside `Signature`:
     <cbc:DistributionTypeCode listID="urn:ubl-examples:world:codelist:DistributionTypeCode">ORIGINALHANDED</cbc:DistributionTypeCode>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20412055</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Lumeport Airport Cargo Terminal</cbc:Name>
+        <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>
@@ -1355,10 +1355,10 @@ Inside `Signature`:
     <cbc:DistributionType>Original, with the goods: the consignee's original</cbc:DistributionType>
     <cac:Party>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41174</cbc:ID>
+        <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>Selanu Airport Cargo</cbc:Name>
+        <cbc:Name>Selanu General Hospital</cbc:Name>
       </cac:PartyName>
     </cac:Party>
   </cac:DocumentDistribution>

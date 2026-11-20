@@ -17,7 +17,7 @@ The engineering firm announces the goods to the telecom company.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **STL-TX-26-124393**  
-  The collaboration this document belongs to: Selanu Telecom's order of a mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Selanu Telecom's order of back-up batteries, smoke detectors and coating stripper for its mast from Saltmere Engineering. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
 - `ID` = **26-0131**  
   The despatching party's number.
 - `UUID` = **7619027f-bad8-5009-935f-978a56d56a14**  
@@ -168,8 +168,8 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **26-0129**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight.
+- `Consignment/GrossWeightMeasure` = **358.75** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packages, with the 25 kg pallet of the battery crates.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Kelaro Air Cargo gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
@@ -465,7 +465,7 @@ Inside `DespatchLine`:
     <cbc:ID>26-0130</cbc:ID>
     <cac:Consignment>
       <cbc:ID>26-0129</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">333.75</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">358.75</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

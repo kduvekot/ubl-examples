@@ -191,6 +191,12 @@
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ApplicableTaxCategory>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
+      </cac:AllowanceCharge>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>

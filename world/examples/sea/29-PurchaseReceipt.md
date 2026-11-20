@@ -260,9 +260,9 @@ Inside `PurchaseReceiptLine`:
   Two benches for the pickers' rest place under the trees by the weighing shed.
 - `LineExtensionAmount` = **750.000** (currencyID `XLC`)  
   Quantity times the price paid, before the sales tax.
-- `Item/Description` = **Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.** (languageID `qal`)  
+- `Item/Description` = **Serra hiapi vusase lesama keniti mutaki Velumi Trading, limana lesama Bayvarra, kifupa tivufo vesakehi.** (languageID `qal`)  
   The seller's description in Lisavan, the seller's language.
-- `Item/Description` = **The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.** (languageID `en-XL`)  
+- `Item/Description` = **The Serra park bench from the stock of Velumi Trading, imported from Bayvarra, for island customers.** (languageID `en-XL`)  
   The seller's description in English, the working language between the countries.
 - `Item/Name` = **Hiapi vusase Serra 180** (languageID `qal`)  
   The item's name in Lisavan, the seller's language.
@@ -473,8 +473,8 @@ Inside `PurchaseReceiptLine`:
     <cbc:Quantity unitCode="EA">2</cbc:Quantity>
     <cbc:LineExtensionAmount currencyID="XLC">750.000</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Description languageID="qal">Serra hiapi vusase lesama Velumi Trading's keniti, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
-      <cbc:Description languageID="en-XL">The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.</cbc:Description>
+      <cbc:Description languageID="qal">Serra hiapi vusase lesama keniti mutaki Velumi Trading, limana lesama Bayvarra, kifupa tivufo vesakehi.</cbc:Description>
+      <cbc:Description languageID="en-XL">The Serra park bench from the stock of Velumi Trading, imported from Bayvarra, for island customers.</cbc:Description>
       <cbc:Name languageID="qal">Hiapi vusase Serra 180</cbc:Name>
       <cbc:Name languageID="en-XL">Park bench Serra 180</cbc:Name>
       <cbc:BrandName>Valdara</cbc:BrandName>

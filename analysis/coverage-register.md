@@ -1040,6 +1040,14 @@ Coverage 4623 → 4613, 10 elements; all 10 won back the same day (4613 → 4623
 | `Order/TaxCurrencyCode` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
 | `Order/TaxExchangeRate` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
 
+### Read-throughs of 2026-11-20: the air frames in common transit (D39, owner)
+
+> The air frames cross Bayvarra in the Accord's common transit (D39 point 2): they are neither imported into Bayvarra nor exported from it, and goods in transit are not recorded in trade statistics (owner, 2026-11-20). The forwarding instructions air/03 no longer give an export statistics value. `Shipment/DeclaredStatisticsValueAmount` stays covered by modification/05.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `Consignment/DeclaredStatisticsValueAmount` | 0..1 | air/03-ForwardingInstructions | a consignment that is exported or imported for good, whose forwarding instructions or declaration give the value trade statistics record (a real export, not goods in transit) | missing-elements work | candidate |
+
 ## Left out on purpose
 
 Never covered; added only through a real business situation in the world (`CLAUDE.md`, open work 4).

@@ -61,7 +61,7 @@
      "Service supplied outside Urvania": "SVCABROAD",
      "Transport of goods exported from Urvania": "EXPTRANSPORT"
     },
-    "exemption_codes_note": "The exemption reasons as codes of Urvania's national list (XU:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
+    "exemption_codes_note": "The exemption reasons as codes of Urvania's national list (XU:TaxExemptionReason).",
     "inward_processing": {
      "holder": "A company established in Urvania holds the authorisation; customs names in it the offices that may accept its entries and the period within which the goods must be discharged.",
      "entry": "Goods of a foreign owner are entered for inward processing: no duty and no import VAT is charged while they are worked.",
@@ -269,7 +269,7 @@
     }
    },
    "province": "Province of Ferrano",
-   "company_documents": "Urvania's company law asks every company to state its register, its number in it, its legal form and its registered office on its invoices and business letters; an SUA also states its share capital as paid up, as the last balance sheet shows it (2026-11-17, after Italy's art. 2250 codice civile). Bayvarra and Lisavu follow the model of the EU company-law directive (2017/1132, Art. 26): stating the capital is optional, and their companies do not.",
+   "company_documents": "Urvania's company law asks every company to state its register, its number in it, its legal form and its registered office on its invoices and business letters; an SUA also states its share capital as paid up, as the last balance sheet shows it (2026-11-17, after Italy's art. 2250 codice civile). In Bayvarra and Lisavu stating the capital is optional, and their companies do not.",
    "legal_time": "Urvanian Time",
    "holidays": {
     "rule": "Fixed dates, in the Italian manner; a holiday on a weekend is not made up for.",
@@ -380,7 +380,7 @@
      "Sale for resale or manufacture": "RESALE",
      "Collected for a public body, outside the scope of the state sales tax": "LEVY"
     },
-    "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (XB:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
+    "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (XB:TaxExemptionReason).",
     "duty_free": {
      "chapters": [
       "30"
@@ -809,7 +809,7 @@
      "by": "32-xb",
      "currency": "XBL"
     },
-    "note": "The cotton fund of the Selanu Chamber of Commerce is financed by a levy of 1 % of the value of seed cotton sold, which the farm collects from the gin on the fund's behalf. Seed cotton is priced from the trade accord's lint reference price, published in lume by the Lumeport Trade Accord Council."
+    "note": "The cotton fund of the Selanu Chamber of Commerce is financed by a levy of 1 % of the value of seed cotton sold, which the farm collects from the gin on the fund's behalf. Seed cotton is priced from the Trade Accord's lint reference price, published in lume by the Lumeport Trade Accord Council."
    },
    "phone_plan": {
     "pattern": "^\\+999 3 7\\d{2} \\d{4}$",
@@ -974,7 +974,7 @@
    "MPNS"
   ],
   "charge_bearer": "SHAR",
-  "note": "Payments between the three countries run over the trade accord's link; charges are shared (ISO 20022 SHAR). The link settles in real time on a net basis (RTNS), and a payment the payer marks as not urgent goes in its batch run, a mass payment net system (MPNS)."
+  "note": "Payments between the three countries run over the Trade Accord's link; charges are shared (ISO 20022 SHAR). The link settles in real time on a net basis (RTNS), and a payment the payer marks as not urgent goes in its batch run, a mass payment net system (MPNS)."
  },
  "languages": {
   "qau": {

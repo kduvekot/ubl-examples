@@ -107,7 +107,6 @@
       <cbc:NetVolumeMeasure unitCode="MTQ">0.3</cbc:NetVolumeMeasure>
       <cbc:TotalGoodsItemQuantity unitCode="EA">1</cbc:TotalGoodsItemQuantity>
       <cbc:DeclaredForCarriageValueAmount currencyID="XBL">512.00</cbc:DeclaredForCarriageValueAmount>
-      <cbc:DeclaredStatisticsValueAmount currencyID="XBL">512.00</cbc:DeclaredStatisticsValueAmount>
       <cbc:SplitConsignmentIndicator>false</cbc:SplitConsignmentIndicator>
       <cbc:ConsignmentQuantity unitCode="EA">1</cbc:ConsignmentQuantity>
       <cac:ConsigneeParty>

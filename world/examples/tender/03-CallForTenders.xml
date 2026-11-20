@@ -316,19 +316,25 @@
         <cbc:ID>AC-2</cbc:ID>
         <cbc:AwardingCriterionTypeCode listID="urn:ubl-examples:world:codelist:AwardCriterionTypeCode">QUALITY</cbc:AwardingCriterionTypeCode>
         <cbc:Name>Quality</cbc:Name>
-        <cbc:Description>The durability of the coating or finish (20 points) and the years of warranty offered on it (20 points).</cbc:Description>
+        <cbc:Description>The durability of the coating or finish (15 points), the years of warranty offered on it (15 points) and the lead time per release (10 points): a release delivered in fewer than 14 days scores higher.</cbc:Description>
         <cbc:WeightNumeric>40</cbc:WeightNumeric>
         <cac:SubordinateAwardingCriterion>
           <cbc:ID>AC-2.1</cbc:ID>
           <cbc:Name>Durability of the coating</cbc:Name>
-          <cbc:WeightNumeric>20</cbc:WeightNumeric>
+          <cbc:WeightNumeric>15</cbc:WeightNumeric>
         </cac:SubordinateAwardingCriterion>
         <cac:SubordinateAwardingCriterion>
           <cbc:ID>AC-2.2</cbc:ID>
           <cbc:Name>Years of warranty on the coating</cbc:Name>
-          <cbc:WeightNumeric>20</cbc:WeightNumeric>
+          <cbc:WeightNumeric>15</cbc:WeightNumeric>
           <cbc:MinimumQuantity unitCode="ANN">5</cbc:MinimumQuantity>
           <cbc:MaximumQuantity unitCode="ANN">10</cbc:MaximumQuantity>
+        </cac:SubordinateAwardingCriterion>
+        <cac:SubordinateAwardingCriterion>
+          <cbc:ID>AC-2.3</cbc:ID>
+          <cbc:Name>Lead time per release</cbc:Name>
+          <cbc:WeightNumeric>10</cbc:WeightNumeric>
+          <cbc:MaximumQuantity unitCode="DAY">14</cbc:MaximumQuantity>
         </cac:SubordinateAwardingCriterion>
       </cac:AwardingCriterion>
       <cac:TechnicalCommitteePerson>
@@ -525,12 +531,12 @@
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124800.00</cbc:EstimatedOverallContractAmount>
-      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124800.00</cbc:EstimatedOverallFrameworkContractsAmount>
+      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">187200.00</cbc:EstimatedOverallFrameworkContractsAmount>
       <cbc:TotalAmount currencyID="XBL">124800.00</cbc:TotalAmount>
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
       <cbc:MinimumAmount currencyID="XBL">62400.00</cbc:MinimumAmount>
-      <cbc:MaximumAmount currencyID="XBL">149760.00</cbc:MaximumAmount>
-      <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+      <cbc:MaximumAmount currencyID="XBL">212160.00</cbc:MaximumAmount>
+      <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation; the framework's estimate and the maximum include the renewal year.</cbc:MonetaryScope>
       <cbc:AverageSubsequentContractAmount currencyID="XBL">20800.00</cbc:AverageSubsequentContractAmount>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -558,15 +564,15 @@
       </cac:Address>
     </cac:RealizedLocation>
     <cac:PlannedPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2028-03-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-20</cbc:StartDate>
+      <cbc:EndDate>2028-03-19</cbc:EndDate>
     </cac:PlannedPeriod>
     <cac:ContractExtension>
       <cbc:OptionsDescription>One extension of a year with 120 more benches and their installation.</cbc:OptionsDescription>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>
-        <cbc:EndDate>2028-03-22</cbc:EndDate>
+        <cbc:EndDate>2028-03-19</cbc:EndDate>
       </cac:OptionValidityPeriod>
       <cac:Renewal>
         <cbc:Amount currencyID="XBL">62400.00</cbc:Amount>
@@ -592,10 +598,10 @@
       </cac:DocumentReference>
       <cac:DeliveryPeriod>
         <cbc:StartDate>2026-04-02</cbc:StartDate>
-        <cbc:EndDate>2028-03-22</cbc:EndDate>
+        <cbc:EndDate>2028-03-19</cbc:EndDate>
       </cac:DeliveryPeriod>
       <cac:RequiredItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">10</cbc:LeadTimeMeasure>
+        <cbc:LeadTimeMeasure unitCode="DAY">14</cbc:LeadTimeMeasure>
       </cac:RequiredItemLocationQuantity>
       <cac:WarrantyValidityPeriod>
         <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
@@ -654,12 +660,12 @@
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">120000.00</cbc:EstimatedOverallContractAmount>
-        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">120000.00</cbc:EstimatedOverallFrameworkContractsAmount>
+        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">180000.00</cbc:EstimatedOverallFrameworkContractsAmount>
         <cbc:TotalAmount currencyID="XBL">120000.00</cbc:TotalAmount>
         <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
         <cbc:MinimumAmount currencyID="XBL">60000.00</cbc:MinimumAmount>
-        <cbc:MaximumAmount currencyID="XBL">144000.00</cbc:MaximumAmount>
-        <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+        <cbc:MaximumAmount currencyID="XBL">204000.00</cbc:MaximumAmount>
+        <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation; the framework's estimate and the maximum include the renewal year.</cbc:MonetaryScope>
         <cbc:AverageSubsequentContractAmount currencyID="XBL">20000.00</cbc:AverageSubsequentContractAmount>
         <cac:ApplicableTaxCategory>
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -684,15 +690,15 @@
         </cac:Address>
       </cac:RealizedLocation>
       <cac:PlannedPeriod>
-        <cbc:StartDate>2026-03-23</cbc:StartDate>
-        <cbc:EndDate>2028-03-22</cbc:EndDate>
+        <cbc:StartDate>2026-03-20</cbc:StartDate>
+        <cbc:EndDate>2028-03-19</cbc:EndDate>
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with 120 more benches.</cbc:OptionsDescription>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
-          <cbc:EndDate>2028-03-22</cbc:EndDate>
+          <cbc:EndDate>2028-03-19</cbc:EndDate>
         </cac:OptionValidityPeriod>
         <cac:Renewal>
           <cbc:Amount currencyID="XBL">60000.00</cbc:Amount>
@@ -718,10 +724,10 @@
         </cac:DocumentReference>
         <cac:DeliveryPeriod>
           <cbc:StartDate>2026-04-02</cbc:StartDate>
-          <cbc:EndDate>2028-03-22</cbc:EndDate>
+          <cbc:EndDate>2028-03-19</cbc:EndDate>
         </cac:DeliveryPeriod>
         <cac:RequiredItemLocationQuantity>
-          <cbc:LeadTimeMeasure unitCode="DAY">10</cbc:LeadTimeMeasure>
+          <cbc:LeadTimeMeasure unitCode="DAY">14</cbc:LeadTimeMeasure>
         </cac:RequiredItemLocationQuantity>
         <cac:WarrantyValidityPeriod>
           <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>
@@ -775,12 +781,12 @@
       <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
       <cac:RequestedTenderTotal>
         <cbc:EstimatedOverallContractAmount currencyID="XBL">4800.00</cbc:EstimatedOverallContractAmount>
-        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">4800.00</cbc:EstimatedOverallFrameworkContractsAmount>
+        <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">7200.00</cbc:EstimatedOverallFrameworkContractsAmount>
         <cbc:TotalAmount currencyID="XBL">4800.00</cbc:TotalAmount>
         <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
         <cbc:MinimumAmount currencyID="XBL">2400.00</cbc:MinimumAmount>
-        <cbc:MaximumAmount currencyID="XBL">5760.00</cbc:MaximumAmount>
-        <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+        <cbc:MaximumAmount currencyID="XBL">8160.00</cbc:MaximumAmount>
+        <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation; the framework's estimate and the maximum include the renewal year.</cbc:MonetaryScope>
         <cbc:AverageSubsequentContractAmount currencyID="XBL">800.00</cbc:AverageSubsequentContractAmount>
         <cac:ApplicableTaxCategory>
           <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -805,15 +811,15 @@
         </cac:Address>
       </cac:RealizedLocation>
       <cac:PlannedPeriod>
-        <cbc:StartDate>2026-03-23</cbc:StartDate>
-        <cbc:EndDate>2028-03-22</cbc:EndDate>
+        <cbc:StartDate>2026-03-20</cbc:StartDate>
+        <cbc:EndDate>2028-03-19</cbc:EndDate>
       </cac:PlannedPeriod>
       <cac:ContractExtension>
         <cbc:OptionsDescription>One extension of a year with the installation of 120 more benches.</cbc:OptionsDescription>
         <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
         <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
         <cac:OptionValidityPeriod>
-          <cbc:EndDate>2028-03-22</cbc:EndDate>
+          <cbc:EndDate>2028-03-19</cbc:EndDate>
         </cac:OptionValidityPeriod>
         <cac:Renewal>
           <cbc:Amount currencyID="XBL">2400.00</cbc:Amount>

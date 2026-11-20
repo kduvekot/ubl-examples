@@ -23,7 +23,7 @@ The wholesaler orders one reefer of apples and pears for the island's shops, hot
 - `UUID` = **4b4ea0bd-86a2-58ba-bf56-cedc820b8d74**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-08**  
-  Ordered in the second week of the apple season, when the cooperative's price list for the island came out.
+  Ordered when the cooperative's price list for the island came out, with the Granny Smith harvest under way.
 - `IssueTime` = **13:50:00+00:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
@@ -151,6 +151,16 @@ Inside `Delivery`:
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
 - `DeliveryParty/PartyName/Name` = **Hafefo Fresh Produce**  
   The same party as at BuyerCustomerParty/Party, where its full details are given; only its identifier and name are repeated.
+- `Shipment/ID` = **1**  
+  The shipment the order asks for: one reefer.
+- `Shipment/GoodsItem/ID` = **1**  
+  The fruit of the order.
+- `Shipment/GoodsItem/Temperature/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  What the temperature is of: the air in the cargo space during transport. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
+- `Shipment/GoodsItem/Temperature/MeasureCode` = **CHILLED** (listID `urn:ubl-examples:world:codelist:TemperatureClassCode`)  
+  The wholesaler asks for the fruit to travel chilled, a class, not a figure: the cooperative and its forwarder set the reefer to the fruit's own set point. The code is from the Trade Accord's temperature class list: CHILLED = Chilled.
+- `Shipment/GoodsItem/Temperature/Description` = **Chilled, not frozen**  
+  In words.
 
 ### Delivery Terms
 
@@ -365,6 +375,17 @@ Inside `OrderLine`:
         <cbc:Name>Hafefo Fresh Produce</cbc:Name>
       </cac:PartyName>
     </cac:DeliveryParty>
+    <cac:Shipment>
+      <cbc:ID>1</cbc:ID>
+      <cac:GoodsItem>
+        <cbc:ID>1</cbc:ID>
+        <cac:Temperature>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+          <cbc:MeasureCode listID="urn:ubl-examples:world:codelist:TemperatureClassCode">CHILLED</cbc:MeasureCode>
+          <cbc:Description>Chilled, not frozen</cbc:Description>
+        </cac:Temperature>
+      </cac:GoodsItem>
+    </cac:Shipment>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CIP</cbc:ID>

@@ -169,11 +169,11 @@ Inside `MainOnAccountPayment`:
 
 - `EstimatedConsumedQuantity` = **170** (unitCode `MTQ`)  
   The year's estimate of water; the heat's estimate is with its subscription: UBL gives an on-account payment one quantity.
-- `Note` = **The one monthly direct debit for water, levy and heat from April 2026: 91 lume, a twelfth of the year's estimate rounded up to a whole lume; it was 84 lume.**  
+- `Note` = **The one monthly direct debit for water, levy and heat from April 2026: 94 lume, a twelfth of the year's estimate with the sales tax on the heat, rounded up to a whole lume; it was 84 lume.**  
   What the household pays from now on.
 - `PaymentTerms/Note` = **Collected by direct debit on the first working day of each month.**  
   How it is paid.
-- `PaymentTerms/Amount` = **91.00** (currencyID `XBL`)  
+- `PaymentTerms/Amount` = **94.00** (currencyID `XBL`)  
   The monthly payment on account.
 - `PaymentTerms/ValidityPeriod/StartDate` = **2026-04-01**  
   From April.
@@ -574,8 +574,8 @@ Inside `SubscriberConsumption`:
   The estimate of district heat for April 2026 to March 2027: this year's use.
 - `OnAccountPayment/Note` = **The payments on account planned for district heat in the next account year.**  
   What the schedule is.
-- `OnAccountPayment/PaymentTerms/Amount` = **50.88** (currencyID `XBL`)  
-  A twelfth of the estimate's cost of district heat, part of the monthly direct debit.
+- `OnAccountPayment/PaymentTerms/Amount` = **54.18** (currencyID `XBL`)  
+  A twelfth of the estimate's cost of district heat with the 6.500 % sales tax, part of the monthly direct debit.
 - `OnAccountPayment/PaymentTerms/ValidityPeriod/StartDate` = **2026-04-01**  
   From April.
 - `OnAccountPayment/PaymentTerms/ValidityPeriod/EndDate` = **2027-03-31**  
@@ -763,10 +763,10 @@ Inside `SubscriberConsumption`:
   </cac:SubscriberParty>
   <cac:MainOnAccountPayment>
     <cbc:EstimatedConsumedQuantity unitCode="MTQ">170</cbc:EstimatedConsumedQuantity>
-    <cbc:Note>The one monthly direct debit for water, levy and heat from April 2026: 91 lume, a twelfth of the year's estimate rounded up to a whole lume; it was 84 lume.</cbc:Note>
+    <cbc:Note>The one monthly direct debit for water, levy and heat from April 2026: 94 lume, a twelfth of the year's estimate with the sales tax on the heat, rounded up to a whole lume; it was 84 lume.</cbc:Note>
     <cac:PaymentTerms>
       <cbc:Note>Collected by direct debit on the first working day of each month.</cbc:Note>
-      <cbc:Amount currencyID="XBL">91.00</cbc:Amount>
+      <cbc:Amount currencyID="XBL">94.00</cbc:Amount>
       <cac:ValidityPeriod>
         <cbc:StartDate>2026-04-01</cbc:StartDate>
         <cbc:EndDate>2027-03-31</cbc:EndDate>
@@ -1099,7 +1099,7 @@ Inside `SubscriberConsumption`:
       <cbc:EstimatedConsumedQuantity unitCode="MWH">6.6</cbc:EstimatedConsumedQuantity>
       <cbc:Note>The payments on account planned for district heat in the next account year.</cbc:Note>
       <cac:PaymentTerms>
-        <cbc:Amount currencyID="XBL">50.88</cbc:Amount>
+        <cbc:Amount currencyID="XBL">54.18</cbc:Amount>
         <cac:ValidityPeriod>
           <cbc:StartDate>2026-04-01</cbc:StartDate>
           <cbc:EndDate>2027-03-31</cbc:EndDate>

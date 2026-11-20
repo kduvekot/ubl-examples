@@ -18,7 +18,7 @@ The carrier charges Valdara, the transport user under DAP, the demurrage on the 
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **9900043586**  
   The collaboration this document belongs to: the rail carriage Valdara books with Ferrano Rail Cargo. Valdara Industries started it and gave it this identifier, which every document of it repeats.
-- `ID` = **9200001856**  
+- `ID` = **2026/2888**  
   The supplier's number for its debit note.
 - `UUID` = **1e867854-a460-5582-9079-e2bbf3a5623f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -28,9 +28,9 @@ The carrier charges Valdara, the transport user under DAP, the demurrage on the 
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-05-14**  
   As the payment terms below count it: 30 days net from the consignment note.
-- `Note` = **Titran FRXU1044180 kagaz dagan hir Lumeway's nintrek rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.** (languageID `qau`)  
+- `Note` = **Titran FRXU1044180 kagaz dagan hir drek nintrek skul Lumeway rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.** (languageID `qau`)  
   The note in Urvanian, the sender's language: Why more is due: the contract's rule, applied after the invoice was issued.
-- `Note` = **Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.** (languageID `en-XU`)  
+- `Note` = **Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: Why more is due: the contract's rule, applied after the invoice was issued.
 - `DebitNoteTypeCode` = **383** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 383: debit note. The code is from the world's copy of UN/EDIFACT 1001 Document name: 383 = Debit note.
@@ -244,9 +244,9 @@ Inside `PaymentMeans`:
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **FERRA-RTGS**  
   The payment system the transfer runs over: the domestic clearing.
-- `InstructionNote` = **Quote RF159200001856**  
+- `InstructionNote` = **Quote RF7020262888**  
   What the payer writes in the transfer.
-- `PaymentID` = **RF159200001856** (schemeID `ISO 11649`)  
+- `PaymentID` = **RF7020262888** (schemeID `ISO 11649`)  
   The structured creditor reference of ISO 11649 to quote with the payment, made from the invoice number with its check digits. The schemeID names the scheme it is from: the ISO 11649 structured creditor reference (RF, two check digits (ISO 7064 mod 97-10) and up to 21 letters and digits).
 - `PayeeFinancialAccount/ID` = **XU920351041700000000523645** (schemeID `urn:ubl-examples:world:account`)  
   The account to pay to. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
@@ -258,7 +258,7 @@ Inside `PaymentMeans`:
   The account number has the structure of ISO 13616. The code is from the Trade Accord's account number format list: ISO13616 = Structure of ISO 13616.
 - `PayeeFinancialAccount/CurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
   The account is kept in the currency of the bank's country. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `PayeeFinancialAccount/PaymentNote` = **Debit note 9200001856**  
+- `PayeeFinancialAccount/PaymentNote` = **Debit note 2026/2888**  
   What the payer is asked to quote with the transfer, so the payment is matched.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/ID` = **03510-41700** (schemeID `urn:ubl-examples:world:XU:bank-branch`)  
   The branch that keeps the account, by its national code: the ABI and CAB code of an Urvanian bank branch (the five-digit ABI code of the bank and the five-digit CAB code of the branch, Italian style). The account number holds it.
@@ -356,7 +356,7 @@ Inside `DebitNoteLine`:
 
 - `ID` = **1**  
   The demurrage on the second box.
-- `Note` = **Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.**  
+- `Note` = **Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.**  
   The days charged, and why.
 - `DebitedQuantity` = **2** (unitCode `DAY`)  
   Container days beyond the free time.
@@ -398,13 +398,13 @@ Inside `DebitNoteLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>9900043586</cbc:ProfileExecutionID>
-  <cbc:ID>9200001856</cbc:ID>
+  <cbc:ID>2026/2888</cbc:ID>
   <cbc:UUID>1e867854-a460-5582-9079-e2bbf3a5623f</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:48:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-05-14</cbc:DueDate>
-  <cbc:Note languageID="qau">Titran FRXU1044180 kagaz dagan hir Lumeway's nintrek rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.</cbc:Note>
-  <cbc:Note languageID="en-XU">Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.</cbc:Note>
+  <cbc:Note languageID="qau">Titran FRXU1044180 kagaz dagan hir drek nintrek skul Lumeway rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.</cbc:Note>
+  <cbc:Note languageID="en-XU">Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
   <cbc:TaxPointDate>2026-04-23</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:DocumentCurrencyCode>
@@ -562,15 +562,15 @@ Inside `DebitNoteLine`:
     <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
-    <cbc:InstructionNote>Quote RF159200001856</cbc:InstructionNote>
-    <cbc:PaymentID schemeID="ISO 11649">RF159200001856</cbc:PaymentID>
+    <cbc:InstructionNote>Quote RF7020262888</cbc:InstructionNote>
+    <cbc:PaymentID schemeID="ISO 11649">RF7020262888</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XU920351041700000000523645</cbc:ID>
       <cbc:Name>Ferrano Rail Cargo SRU</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XUF</cbc:CurrencyCode>
-      <cbc:PaymentNote>Debit note 9200001856</cbc:PaymentNote>
+      <cbc:PaymentNote>Debit note 2026/2888</cbc:PaymentNote>
       <cac:FinancialInstitutionBranch>
         <cbc:ID schemeID="urn:ubl-examples:world:XU:bank-branch">03510-41700</cbc:ID>
         <cbc:Name>Serravona branch</cbc:Name>
@@ -640,7 +640,7 @@ Inside `DebitNoteLine`:
   </cac:LegalMonetaryTotal>
   <cac:DebitNoteLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Container FRXU1044180 was placed at Lumeway's siding on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.</cbc:Note>
+    <cbc:Note>Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.</cbc:Note>
     <cbc:DebitedQuantity unitCode="DAY">2</cbc:DebitedQuantity>
     <cbc:LineExtensionAmount currencyID="XUF">15000</cbc:LineExtensionAmount>
     <cac:InvoicePeriod>

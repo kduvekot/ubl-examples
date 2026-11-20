@@ -132,7 +132,7 @@ Inside `ProviderParty`:
 - `Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
-  The sales desk's mobile number, also under the reserved +999.
+  The desk's mobile number, also under the reserved +999.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -263,6 +263,14 @@ Inside `CatalogueLine`:
   The name of code EXP in Urvania's national value added tax exemption reason list.
 - `RequiredItemLocationQuantity/ApplicableTaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
+- `RequiredItemLocationQuantity/AllowanceCharge/ChargeIndicator` = **true**  
+  A charge on the price.
+- `RequiredItemLocationQuantity/AllowanceCharge/AllowanceChargeReasonCode` = **CAT** (listID `UN/EDIFACT EDED 7161`)  
+  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: CAT = Special colour service.
+- `RequiredItemLocationQuantity/AllowanceCharge/AllowanceChargeReason` = **Special colour**  
+  A bench coated in a colour other than Ferro grey, to the buyer's RAL code.
+- `RequiredItemLocationQuantity/AllowanceCharge/Amount` = **5.00** (currencyID `XBL`)  
+  5 lume a bench, on every bench of a release in the special colour.
 - `Item/Description` = **Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.** (languageID `qau`)  
   The seller's description in Urvanian, the seller's language.
 - `Item/Description` = **Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.** (languageID `en-XU`)  
@@ -276,7 +284,7 @@ Inside `CatalogueLine`:
 - `Item/AdditionalInformation` = **Supplied with four ground anchors and the bolts to fix them.** (languageID `en-XU`)  
   What comes with the item in English, the working language between the countries.
 - `Item/Keyword` = **park bench, street furniture**  
-  The search string buyers find the item by, the maker's keywords in one element; as Valdara Industries describes the item. A second Keyword would have to be in another language (UBL rule IND7).
+  The search string buyers find the item by, the maker's keywords in one element; as Valdara Industries describes the item. A second Keyword would have to be in another language.
 - `Item/BrandName` = **Valdara**  
   The brand the maker sells the item under; as Valdara Industries describes the item.
 - `Item/ModelName` = **Serra 180**  
@@ -334,7 +342,7 @@ Inside `CatalogueLine`:
 - `Item/AdditionalItemProperty/ImportanceCode` = **OPTIONAL** (listID `urn:ubl-examples:world:codelist:PropertyImportanceCode`)  
   How much the property matters in describing the item. The code is from the Trade Accord's property importance list: OPTIONAL = Optional.
 - `Item/AdditionalItemProperty/ListValue` = **Ferro grey**  
-  The property's value, taken from the maker's list of values (Ferro grey, Moss green; as Valdara Industries describes the item). One ListValue only: UBL rule IND7 allows a second one only in another language.
+  The property's value, taken from the maker's list of values (Ferro grey, Moss green; as Valdara Industries describes the item). One ListValue only: a second one may stand only in another language.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/ID` = **APP**  
   The group of properties this one belongs to.
 - `Item/AdditionalItemProperty/ItemPropertyGroup/Name` = **Appearance**  
@@ -738,6 +746,12 @@ Inside `CatalogueLine`:
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:ApplicableTaxCategory>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Special colour</cbc:AllowanceChargeReason>
+        <cbc:Amount currencyID="XBL">5.00</cbc:Amount>
+      </cac:AllowanceCharge>
     </cac:RequiredItemLocationQuantity>
     <cac:Item>
       <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>

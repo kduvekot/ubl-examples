@@ -149,7 +149,7 @@ Inside `SellerSupplierParty`:
 - `Party/Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Party/Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
-  The sales desk's mobile number, also under the reserved +999.
+  The desk's mobile number, also under the reserved +999.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
@@ -345,7 +345,7 @@ Inside `Delivery`:
 Inside `DeliveryTerms`:
 
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
-  Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the order names the warehouse where the goods are collected and the carrier that collects them (UBL rule IND6: the delivery terms are stated, not implied). The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
+  Free carrier at the seller's warehouse: the buyer arranges and pays the main transport, so the order names the warehouse where the goods are collected and the carrier that collects them: the delivery terms are stated, not implied. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `DeliveryLocation/Description` = **Castrano Logistics warehouse, Conciaro**  

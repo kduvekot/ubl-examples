@@ -50,7 +50,7 @@ Inside `Signature`:
 - `ValidationTime` = **12:40:00-01:00**  
   At that time; in the issuer's local time, with its offset from UTC.
 - `ValidatorID` = **LTAC-VALIDATOR**  
-  The trade accord council's validation service.
+  The Trade Accord council's validation service.
 - `CanonicalizationMethod` = **http://www.w3.org/2006/12/xml-c14n11**  
   Canonical XML 1.1.
 - `SignatureMethod` = **http://www.w3.org/2001/04/xmldsig-more#rsa-sha256**  
@@ -287,7 +287,7 @@ Inside `RequiredCertificationDocumentReference`:
   The version referred to.
 - `DocumentStatusCode` = **Confirmed** (listID `urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode`)  
   The version in force. The code is from the world's copy of UBL's Document status list, with a listID: Confirmed = Document has been confirmed.
-- `DocumentDescription` = **The Trade Accord Council's requirements for the certification of access points on the trade accord's network.**  
+- `DocumentDescription` = **The Trade Accord Council's requirements for the certification of access points on the Trade Accord's network.**  
   What it is.
 - `Attachment/ExternalReference/URI` = **https://www.tradeaccord.example/network/ap-requirements-2.0.pdf**  
   The full text, on the council's site.
@@ -414,7 +414,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: Order.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -434,7 +434,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.velumi.example/as4**  
   The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
-  The trade accord council's certificate that the distributor's system passed the conformance test.
+  The Trade Accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **LMW-Order-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
@@ -450,7 +450,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: Order.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -486,7 +486,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **OrderResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: OrderResponse = Order Response.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -506,7 +506,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.lumeway.example/as4**  
   The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
-  The trade accord council's certificate that the distributor's system passed the conformance test.
+  The Trade Accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **VT-OrderResponse-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:order-response:1.0**  
@@ -522,7 +522,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **OrderResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: OrderResponse = Order Response.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -566,7 +566,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: Invoice.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -586,7 +586,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.lumeway.example/as4**  
   The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
-  The trade accord council's certificate that the distributor's system passed the conformance test.
+  The Trade Accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **VT-Invoice-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
@@ -602,7 +602,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: Invoice.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -638,7 +638,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **InvoiceStatusResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: InvoiceStatusResponse = Invoice Status Response.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -658,7 +658,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/SendingDigitalService/DigitalDeliveryChannel/DigitalMessageDelivery/EndpointURI` = **https://ap.velumi.example/as4**  
   The access point, under the party's own domain.
 - `DigitalCollaboration/SendingDigitalService/CertificationDocumentReference/ID` = **LTAC-CERT-26-017**  
-  The trade accord council's certificate that the distributor's system passed the conformance test.
+  The Trade Accord council's certificate that the distributor's system passed the conformance test.
 - `DigitalCollaboration/ReceivingDigitalService/ID` = **LMW-InvoiceStatusResponse-IN**  
   The party's service for this document.
 - `DigitalCollaboration/ReceivingDigitalService/CustomizationID` = **urn:ubl-examples:world:trns:invoice-status:1.0**  
@@ -674,7 +674,7 @@ Inside `DigitalProcess`:
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDocumentMetadata/DocumentTypeCode` = **InvoiceStatusResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The document type, as a code. The code is from the Trade Accord's UBL document type list: InvoiceStatusResponse = Invoice Status Response.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/NetworkID` = **ACCORD-NET**  
-  The trade accord's document network.
+  The Trade Accord's document network.
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/ParticipantID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's address on it. The schemeID names the scheme it is from: the electronic address in the Trade Accord's exchange network (the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register).
 - `DigitalCollaboration/ReceivingDigitalService/DigitalDeliveryChannel/TestIndicator` = **false**  
@@ -928,7 +928,7 @@ Inside `DigitalProcess`:
     <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
     <cbc:VersionID>2.0</cbc:VersionID>
     <cbc:DocumentStatusCode listID="urn:oasis:names:specification:ubl:codelist:gc:DocumentStatusCode">Confirmed</cbc:DocumentStatusCode>
-    <cbc:DocumentDescription>The Trade Accord Council's requirements for the certification of access points on the trade accord's network.</cbc:DocumentDescription>
+    <cbc:DocumentDescription>The Trade Accord Council's requirements for the certification of access points on the Trade Accord's network.</cbc:DocumentDescription>
     <cac:Attachment>
       <cac:ExternalReference>
         <cbc:URI>https://www.tradeaccord.example/network/ap-requirements-2.0.pdf</cbc:URI>

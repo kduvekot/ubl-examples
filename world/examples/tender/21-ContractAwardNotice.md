@@ -277,7 +277,7 @@ Inside `ProcurementProject`:
 - `ID` = **PWD/2026/PARKS**  
   The project's identifier.
 - `Name` = **Park benches for the parks renewal programme**  
-  The project's name, the same in every document (08#F6).
+  The project's name, the same in every document.
 - `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.**  
   What is bought; each lot describes its own part.
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
@@ -298,17 +298,17 @@ Inside `ProcurementProject`:
   The name of code SERVICES in the Trade Accord's contract nature list, followed by the detail of this case: what the services are; the environmental aims are in the execution requirement and the tenderer requirement.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **124800.00** (currencyID `XBL`)  
   The estimated value.
-- `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **124800.00** (currencyID `XBL`)  
-  The framework's estimate.
+- `RequestedTenderTotal/EstimatedOverallFrameworkContractsAmount` = **187200.00** (currencyID `XBL`)  
+  The framework's estimate with the renewal year: 360 benches at the estimate.
 - `RequestedTenderTotal/TotalAmount` = **124800.00** (currencyID `XBL`)  
   The budget: the estimate.
 - `RequestedTenderTotal/TaxIncludedIndicator` = **false**  
   Without tax: a public body pays no sales tax.
 - `RequestedTenderTotal/MinimumAmount` = **62400.00** (currencyID `XBL`)  
   At least half will be called off.
-- `RequestedTenderTotal/MaximumAmount` = **149760.00** (currencyID `XBL`)  
-  At most 20 % more.
-- `RequestedTenderTotal/MonetaryScope` = **Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.**  
+- `RequestedTenderTotal/MaximumAmount` = **212160.00** (currencyID `XBL`)  
+  At most: the quantity option up to 288 and the renewal year, 408 benches at the estimate.
+- `RequestedTenderTotal/MonetaryScope` = **Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation; the framework's estimate and the maximum include the renewal year.**  
   What the amount covers, and that the department made the estimate before the tenders.
 - `RequestedTenderTotal/AverageSubsequentContractAmount` = **20800.00** (currencyID `XBL`)  
   Six releases on average.
@@ -332,17 +332,17 @@ Inside `ProcurementProject`:
   The city.
 - `RealizedLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Bayvarra. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `PlannedPeriod/StartDate` = **2026-03-23**  
-  From the first release.
-- `PlannedPeriod/EndDate` = **2028-03-22**  
-  For two years.
+- `PlannedPeriod/StartDate` = **2026-03-20**  
+  From the contract's signature, planned for 20 March.
+- `PlannedPeriod/EndDate` = **2028-03-19**  
+  For two years, to the end of the contract.
 - `ContractExtension/OptionsDescription` = **One extension of a year with 120 more benches and their installation.**  
   The option.
 - `ContractExtension/MaximumNumberNumeric` = **1**  
   At most one.
 - `ContractExtension/RenewalsIndicator` = **true**  
   The contract may be renewed.
-- `ContractExtension/OptionValidityPeriod/EndDate` = **2028-03-22**  
+- `ContractExtension/OptionValidityPeriod/EndDate` = **2028-03-19**  
   Decided before it ends.
 - `ContractExtension/Renewal/Amount` = **62400.00** (currencyID `XBL`)  
   The value of a renewal.
@@ -374,10 +374,10 @@ Inside `ProcurementProject`:
   The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
 - `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
-- `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-22**  
+- `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-19**  
   To.
-- `RequestForTenderLine/RequiredItemLocationQuantity/LeadTimeMeasure` = **10** (unitCode `DAY`)  
-  Ten days per release.
+- `RequestForTenderLine/RequiredItemLocationQuantity/LeadTimeMeasure` = **14** (unitCode `DAY`)  
+  At most fourteen days per release.
 - `RequestForTenderLine/WarrantyValidityPeriod/DurationMeasure` = **5** (unitCode `ANN`)  
   Five years.
 - `RequestForTenderLine/Item/Name` = **Park bench, 1800 mm**  
@@ -688,12 +688,12 @@ Inside `TenderResult`:
     </cac:ProcurementAdditionalType>
     <cac:RequestedTenderTotal>
       <cbc:EstimatedOverallContractAmount currencyID="XBL">124800.00</cbc:EstimatedOverallContractAmount>
-      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">124800.00</cbc:EstimatedOverallFrameworkContractsAmount>
+      <cbc:EstimatedOverallFrameworkContractsAmount currencyID="XBL">187200.00</cbc:EstimatedOverallFrameworkContractsAmount>
       <cbc:TotalAmount currencyID="XBL">124800.00</cbc:TotalAmount>
       <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
       <cbc:MinimumAmount currencyID="XBL">62400.00</cbc:MinimumAmount>
-      <cbc:MaximumAmount currencyID="XBL">149760.00</cbc:MaximumAmount>
-      <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.</cbc:MonetaryScope>
+      <cbc:MaximumAmount currencyID="XBL">212160.00</cbc:MaximumAmount>
+      <cbc:MonetaryScope>Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation; the framework's estimate and the maximum include the renewal year.</cbc:MonetaryScope>
       <cbc:AverageSubsequentContractAmount currencyID="XBL">20800.00</cbc:AverageSubsequentContractAmount>
       <cac:ApplicableTaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">E</cbc:ID>
@@ -721,15 +721,15 @@ Inside `TenderResult`:
       </cac:Address>
     </cac:RealizedLocation>
     <cac:PlannedPeriod>
-      <cbc:StartDate>2026-03-23</cbc:StartDate>
-      <cbc:EndDate>2028-03-22</cbc:EndDate>
+      <cbc:StartDate>2026-03-20</cbc:StartDate>
+      <cbc:EndDate>2028-03-19</cbc:EndDate>
     </cac:PlannedPeriod>
     <cac:ContractExtension>
       <cbc:OptionsDescription>One extension of a year with 120 more benches and their installation.</cbc:OptionsDescription>
       <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
       <cbc:RenewalsIndicator>true</cbc:RenewalsIndicator>
       <cac:OptionValidityPeriod>
-        <cbc:EndDate>2028-03-22</cbc:EndDate>
+        <cbc:EndDate>2028-03-19</cbc:EndDate>
       </cac:OptionValidityPeriod>
       <cac:Renewal>
         <cbc:Amount currencyID="XBL">62400.00</cbc:Amount>
@@ -755,10 +755,10 @@ Inside `TenderResult`:
       </cac:DocumentReference>
       <cac:DeliveryPeriod>
         <cbc:StartDate>2026-04-02</cbc:StartDate>
-        <cbc:EndDate>2028-03-22</cbc:EndDate>
+        <cbc:EndDate>2028-03-19</cbc:EndDate>
       </cac:DeliveryPeriod>
       <cac:RequiredItemLocationQuantity>
-        <cbc:LeadTimeMeasure unitCode="DAY">10</cbc:LeadTimeMeasure>
+        <cbc:LeadTimeMeasure unitCode="DAY">14</cbc:LeadTimeMeasure>
       </cac:RequiredItemLocationQuantity>
       <cac:WarrantyValidityPeriod>
         <cbc:DurationMeasure unitCode="ANN">5</cbc:DurationMeasure>

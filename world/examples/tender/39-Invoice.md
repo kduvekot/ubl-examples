@@ -66,7 +66,7 @@ Inside `ReceiptDocumentReference`:
 Inside `ContractDocumentReference`:
 
 - `ID` = **PWD-CONTRACT-2026-PARKS**  
-  The framework contract the release is ordered under, by its own number (32#F19).
+  The framework contract the release is ordered under, by its own number.
 
 ### Project Reference
 
@@ -289,19 +289,27 @@ Inside `SellerSupplierParty`:
 Inside `TaxRepresentativeParty`:
 
 - `PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  A party referred to from another party's details: its identifier and name are enough.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Bayforth Forwarding gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bayforth Forwarding**  
-  A party referred to from another party's details: its identifier and name are enough.
+  The trading name; as Bayforth Forwarding gives it.
 - `PartyTaxScheme/RegistrationName` = **Bayforth Forwarding Ltd**  
-  The representative's registered name.
+  The name under which the party is registered for state sales tax; as Bayforth Forwarding gives it.
 - `PartyTaxScheme/CompanyID` = **CO-1234932** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  The representative's number with Bayvarra's tax office, under which it accounts for the withholding of the non-resident manufacturer it represents. The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
-- `PartyTaxScheme/TaxScheme/ID` = **OTH** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code OTH: other taxes, the withholding tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: OTH = Other taxes. An identifier that holds a code names the code's list in its schemeID.
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); as Bayforth Forwarding gives it. The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
+- `PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
+  The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
+- `PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
+  UN/EDIFACT 5153 code of Bayvarra's state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `PartyTaxScheme/TaxScheme/Name` = **Withholding tax on payments by public bodies to non-resident businesses**  
   The tax in words: it applies only where a public body pays a business not established in Bayvarra.
 - `PartyTaxScheme/TaxScheme/TaxTypeCode` = **INCOME** (listID `urn:ubl-examples:world:codelist:TaxTypeCode`)  
   A tax on the supplier's income, not on the supply: the public body keeps it back from the payment. The code is from the Trade Accord's tax type list: INCOME = Tax on income.
+- `PartyTaxScheme/TaxScheme/CurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
+  The tax is accounted for in the country's currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
+- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
+  The state or territory whose sales tax the party is registered for.
+- `PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Payment Means
 
@@ -737,10 +745,18 @@ Inside `InvoiceLine`:
     <cac:PartyTaxScheme>
       <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">CO-1234932</cbc:CompanyID>
+      <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
       <cac:TaxScheme>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5153">OTH</cbc:ID>
+        <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
         <cbc:Name>Withholding tax on payments by public bodies to non-resident businesses</cbc:Name>
         <cbc:TaxTypeCode listID="urn:ubl-examples:world:codelist:TaxTypeCode">INCOME</cbc:TaxTypeCode>
+        <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>
+        <cac:JurisdictionRegionAddress>
+          <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:JurisdictionRegionAddress>
       </cac:TaxScheme>
     </cac:PartyTaxScheme>
   </cac:TaxRepresentativeParty>

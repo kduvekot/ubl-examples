@@ -17,7 +17,7 @@ The power station pays the invoice and the surcharge, in ferra.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **9900034209**  
-  The collaboration this document belongs to: Kelpstone's gas bill for April to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Kelpstone's gas bill for March to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
 - `ID` = **2000001887**  
   The power station's number.
 - `UUID` = **a612b1d2-c2c5-5799-a3c2-b98476b55f88**  
@@ -35,7 +35,7 @@ The power station pays the invoice and the surcharge, in ferra.
 - `TotalCreditAmount` = **0** (currencyID `XUF`)  
   No credits.
 - `TotalPaymentAmount` = **134467200** (currencyID `XUF`)  
-  Transferred in ferra over the trade accord's link.
+  Transferred in ferra over the Trade Accord's link.
 - `LineCountNumeric` = **2**  
   The invoice and the surcharge.
 

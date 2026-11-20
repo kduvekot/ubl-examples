@@ -17,7 +17,7 @@ The gas producer invoices March's gas to the power station, in ferra as the supp
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **9900034209**  
-  The collaboration this document belongs to: Kelpstone's gas bill for April to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Kelpstone's gas bill for March to Montebrio Power. Kelpstone Gas started it and gave it this identifier, which every document of it repeats.
 - `ID` = **9000034209**  
   The seller's invoice number.
 - `UUID` = **d1b42d64-46c6-52ed-9dc0-4b66beba491f**  
@@ -256,7 +256,7 @@ Inside `PaymentMeans`:
 - `PaymentChannelCode` = **RTNS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTNS = RealTimeNetSettlementSystem.
 - `PaymentRailID` = **TRADE-ACCORD-PAY**  
-  The payment system the transfer runs over: the trade accord's link between the countries.
+  The payment system the transfer runs over: the Trade Accord's link between the countries.
 - `InstructionNote` = **Quote RF759000034209**  
   What the payer writes in the transfer.
 - `PaymentID` = **RF759000034209** (schemeID `ISO 11649`)  

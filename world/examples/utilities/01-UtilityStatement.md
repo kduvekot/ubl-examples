@@ -356,8 +356,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **398400** (unitCode `KWH`)  
   The month's consumption.
-- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **10876320** (currencyID `XUF`)  
-  What it cost at the tariff of the bill, without tax.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **8406240** (currencyID `XUF`)  
+  What it cost at the supplier's own tariff, without tax.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
   Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -370,8 +370,8 @@ Inside `SubscriberConsumption`:
   The meter.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Quantity` = **405100** (unitCode `KWH`)  
   The month's consumption.
-- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **11059230** (currencyID `XUF`)  
-  What it cost at the tariff of the bill, without tax.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/Amount` = **8547610** (currencyID `XUF`)  
+  What it cost at the supplier's own tariff, without tax.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevelCode` = **NORMAL** (listID `urn:ubl-examples:world:codelist:ConsumptionLevelCode`)  
   Within the usual range. The code is from the Trade Accord's consumption level list: NORMAL = Normal.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionHistory/ConsumptionLevel` = **Normal**  
@@ -388,8 +388,8 @@ Inside `SubscriberConsumption`:
   Due with this bill.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/EnergyTaxReport/TaxScheme/ID` = **EXC** (schemeID `UN/EDIFACT EDED 5153`)  
   Urvania's energy tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: EXC = Excise duty. An identifier that holds a code names the code's list in its schemeID.
-- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount` = **11068330** (currencyID `XUF`)  
-  The average amount of the last three months at the tariff of the bill, without tax.
+- `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/AverageAmount` = **8554643** (currencyID `XUF`)  
+  The average amount of the last three months at the supplier's own tariff, without tax.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionAverage/Description` = **The average over the last three months is 405,433 kWh.**  
   For comparison.
 - `SupplierConsumption/Consumption/LegalMonetaryTotal/LineExtensionAmount` = **8710080** (currencyID `XUF`)  
@@ -794,7 +794,7 @@ Inside `SubscriberConsumption`:
             <cac:ConsumptionHistory>
               <cbc:MeterNumber>FGR-E-20388</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">398400</cbc:Quantity>
-              <cbc:Amount currencyID="XUF">10876320</cbc:Amount>
+              <cbc:Amount currencyID="XUF">8406240</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
               <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
               <cac:Period>
@@ -805,7 +805,7 @@ Inside `SubscriberConsumption`:
             <cac:ConsumptionHistory>
               <cbc:MeterNumber>FGR-E-20388</cbc:MeterNumber>
               <cbc:Quantity unitCode="KWH">405100</cbc:Quantity>
-              <cbc:Amount currencyID="XUF">11059230</cbc:Amount>
+              <cbc:Amount currencyID="XUF">8547610</cbc:Amount>
               <cbc:ConsumptionLevelCode listID="urn:ubl-examples:world:codelist:ConsumptionLevelCode">NORMAL</cbc:ConsumptionLevelCode>
               <cbc:ConsumptionLevel>Normal</cbc:ConsumptionLevel>
               <cac:Period>
@@ -823,7 +823,7 @@ Inside `SubscriberConsumption`:
             </cac:TaxScheme>
           </cac:EnergyTaxReport>
           <cac:ConsumptionAverage>
-            <cbc:AverageAmount currencyID="XUF">11068330</cbc:AverageAmount>
+            <cbc:AverageAmount currencyID="XUF">8554643</cbc:AverageAmount>
             <cbc:Description>The average over the last three months is 405,433 kWh.</cbc:Description>
           </cac:ConsumptionAverage>
         </cac:EnergyWaterSupply>

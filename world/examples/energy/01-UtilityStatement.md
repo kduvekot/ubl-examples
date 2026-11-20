@@ -17,15 +17,15 @@ The grid operator reads the factory's gas meter and sends the retail company the
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
   The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **FGR-TX-26-0151**  
-  The collaboration this document belongs to: Ferrano Grid's network bill for April to Ferrano Energy. Ferrano Grid started it and gave it this identifier, which every document of it repeats.
+  The collaboration this document belongs to: Ferrano Grid's network bill for March to Ferrano Energy. Ferrano Grid started it and gave it this identifier, which every document of it repeats.
 - `ID` = **FGR-UST-26-2253**  
   The grid operator's metering report.
 - `UUID` = **4dda14a2-d50d-5ef3-84d8-980f6cc7eedb**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
-  Sent with the month's network invoice, the morning after the meters were read.
+  Sent with the month's network invoice on Thursday 2 April, once the readings of 31 March are checked.
 - `IssueTime` = **08:20:00-01:00**  
-  Issued in the same billing run as the network invoice it supplements, each citing the other, and before the retail company bills the gas by it (timelines#F8); in the issuer's local time, with its offset from UTC.
+  Issued in the same billing run as the network invoice it supplements, each citing the other, and before the retail company bills the gas by it; in the issuer's local time, with its offset from UTC.
 - `UtilityStatementTypeCode` = **GAS** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of supply. The code is from the Trade Accord's utility type list: GAS = Gas.
 - `Note` = **Bazbaz binmaz gan drek stekraz nalbaz sidir; drek zhek trizhul trul stan huldan drek geltaz.** (languageID `qau`)  
