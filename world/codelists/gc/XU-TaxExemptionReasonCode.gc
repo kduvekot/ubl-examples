@@ -61,7 +61,7 @@
             <SimpleValue>Vekrir zurhul treskek Urvania</SimpleValue>
          </Value>
          <Value ColumnRef="description">
-            <SimpleValue>A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax.</SimpleValue>
+            <SimpleValue>A service supplied outside Urvania, to a customer established abroad or on land abroad: outside the scope of Urvania's value added tax. A registration for value added tax alone, or stock held in another's warehouse, is no establishment: a fixed establishment has its own staff and equipment.</SimpleValue>
          </Value>
       </Row>
       <Row>
