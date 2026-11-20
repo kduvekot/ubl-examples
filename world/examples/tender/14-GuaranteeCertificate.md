@@ -11,9 +11,9 @@ The bank notifies the authority of the bank guarantee it gives for the manufactu
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:guarantee-certificate:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Guarantee certificate"; the community specification "Public procurement community". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Guarantee certificate"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
@@ -27,17 +27,17 @@ The bank notifies the authority of the bank guarantee it gives for the manufactu
 - `IssueDate` = **2026-02-23**  
   Issued the day before the tender, which it secures.
 - `IssueTime` = **08:23:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `GuaranteeTypeCode` = **TENDER** (listID `urn:ubl-examples:world:codelist:GuaranteeTypeCode`)  
   A tender guarantee. The code is from the Trade Accord's financial guarantee type list: TENDER = Tender guarantee.
 - `Purpose` = **Guarantee of Valdara Industries' tender in the bench procedure: a plain bank guarantee of Bank of Lumeport, issued on a counter-guarantee of Crevalto Bank, Valdara's own bank, the usual way for a foreign tenderer to give a guarantee from a bank in the buyer's country.**  
-  Its purpose and how it is given (D28 point 5).
+  Its purpose and how it is given.
 - `LiabilityAmount` = **2500.00** (currencyID `XBL`)  
   The tender guarantee: the fixed 2,500 lume the procurement documents ask.
 - `ConstitutionCode` = **BANKGUAR** (listID `urn:ubl-examples:world:codelist:GuaranteeConstitutionCode`)  
-  A bank guarantee, and nothing else: no securities are pledged (tender/14#F1). The code is from the Trade Accord's guarantee constitution list: BANKGUAR = Bank guarantee.
-- `Note` = **Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then (O176).**  
-  When it ends (tender/14#F7).
+  A bank guarantee, and nothing else: no securities are pledged. The code is from the Trade Accord's guarantee constitution list: BANKGUAR = Bank guarantee.
+- `Note` = **Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then.**  
+  When it ends.
 
 ### Applicable Period
 
@@ -55,7 +55,7 @@ Inside `ApplicableRegulation`:
 - `Name` = **Public Procurement Act, article 61**  
   The rule.
 - `LegalReference` = **XB-PPA-2019 art. 61**  
-  The reference; no ontology URI for an article of the act (tender/14#F8).
+  The reference; no ontology URI for an article of the act.
 
 ### Guarantee Document Reference
 
@@ -80,135 +80,135 @@ Inside `Signature`:
 Inside `GuarantorParty`:
 
 - `PartyIdentification/ID` = **20411370** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bank of Lumeport (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Bank of Lumeport gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bank of Lumeport**  
-  The trading name; identity of Bank of Lumeport (world/parties.json).
+  The trading name; as Bank of Lumeport gives it.
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `PostalAddress/ID` = **LUM-ADR-190996** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Bank of Lumeport (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Bank of Lumeport gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/Floor` = **3**  
-  The floor of the trade services desk in the bank's building. identity of Bank of Lumeport (world/parties.json).
+  The floor of the trade services desk in the bank's building. as Bank of Lumeport gives it.
 - `PostalAddress/Room` = **301**  
-  The room of the trade services desk. identity of Bank of Lumeport (world/parties.json).
+  The room of the trade services desk. as Bank of Lumeport gives it.
 - `PostalAddress/StreetName` = **Exchange Street**  
-  Street of the postal address. identity of Bank of Lumeport (world/parties.json).
+  Street of the postal address. as Bank of Lumeport gives it.
 - `PostalAddress/BuildingName` = **Exchange House**  
-  The bank's building, known by its name. identity of Bank of Lumeport (world/parties.json).
+  The bank's building, known by its name. as Bank of Lumeport gives it.
 - `PostalAddress/BuildingNumber` = **48**  
-  Building number of the postal address. identity of Bank of Lumeport (world/parties.json).
+  Building number of the postal address. as Bank of Lumeport gives it.
 - `PostalAddress/CitySubdivisionName` = **Old Town**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bank of Lumeport (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Bank of Lumeport gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Lumeport (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Lumeport gives it.
 - `PostalAddress/PostalZone` = **38523**  
-  Postal code in Bayvarra's format (5 digits). identity of Bank of Lumeport (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Bank of Lumeport gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bank of Lumeport (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Bank of Lumeport gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Bank of Lumeport Corp**  
-  The name under which the party is registered, with its legal form; identity of Bank of Lumeport (world/parties.json).
+  The name under which the party is registered, with its legal form; as Bank of Lumeport gives it.
 - `PartyLegalEntity/CompanyID` = **20411370** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Bank of Lumeport (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+  Number in the Federal business register of Bayvarra; as Bank of Lumeport gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Contact/Name` = **Trade services**  
-  The party's main desk, which handles this document; identity of Bank of Lumeport (world/parties.json).
+  The party's main desk, which handles this document; as Bank of Lumeport gives it.
 - `Contact/JobTitle` = **Trade services officer**  
-  The job of the person who answers at the desk; identity of Bank of Lumeport (world/parties.json).
+  The job of the person who answers at the desk; as Bank of Lumeport gives it.
 - `Contact/Department` = **Trade services**  
-  The department the desk belongs to; identity of Bank of Lumeport (world/parties.json).
+  The department the desk belongs to; as Bank of Lumeport gives it.
 - `Contact/Telephone` = **+999 2 38 5011 8923**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bank of Lumeport (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Bank of Lumeport gives it.
 - `Contact/ElectronicMail` = **trade@bankoflumeport.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bank of Lumeport (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Bank of Lumeport gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Bank of Lumeport (world/parties.json).
+  When the desk can be reached; as Bank of Lumeport gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20411370** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Bank of Lumeport (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Bank of Lumeport gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Interested Party
 
 Inside `InterestedParty`:
 
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Valdara Industries gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
-  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates. No real scheme has the code designator 0990; as Valdara Industries gives it.
 - `PartyName/Name` = **Valdara Industries**  
-  The trading name; identity of Valdara Industries (world/parties.json).
+  The trading name; as Valdara Industries gives it.
 
 ### Beneficiary Party
 
 Inside `BeneficiaryParty`:
 
 - `PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; as Lumeport Public Works Department gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Lumeport Public Works Department**  
-  The trading name; identity of Lumeport Public Works Department (world/parties.json).
+  The trading name; as Lumeport Public Works Department gives it.
 - `PostalAddress/ID` = **LUM-ADR-000417** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Lumeport Public Works Department (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Lumeport Public Works Department gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Civic Square**  
-  Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+  Street of the postal address. as Lumeport Public Works Department gives it.
 - `PostalAddress/BuildingNumber` = **6**  
-  Building number of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+  Building number of the postal address. as Lumeport Public Works Department gives it.
 - `PostalAddress/InhouseMail` = **Room 2.14**  
-  The internal mail code of the procurement office. identity of Lumeport Public Works Department (world/parties.json).
+  The internal mail code of the procurement office. as Lumeport Public Works Department gives it.
 - `PostalAddress/Department` = **Procurement office**  
-  The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
+  The department the post is for. as Lumeport Public Works Department gives it.
 - `PostalAddress/MarkAttention` = **Head of procurement**  
-  For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
+  For the attention of the head of procurement. as Lumeport Public Works Department gives it.
 - `PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Lumeport Public Works Department gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeport Public Works Department gives it.
 - `PostalAddress/PostalZone` = **38517**  
-  Postal code in Bayvarra's format (5 digits). identity of Lumeport Public Works Department (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Lumeport Public Works Department gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Lumeport Public Works Department gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Procurement office**  
-  The party's main desk, which handles this document; identity of Lumeport Public Works Department (world/parties.json).
+  The party's main desk, which handles this document; as Lumeport Public Works Department gives it.
 - `Contact/JobTitle` = **Procurement officer**  
-  The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
+  The job of the person who answers at the desk; as Lumeport Public Works Department gives it.
 - `Contact/Department` = **Procurement**  
-  The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
+  The department the desk belongs to; as Lumeport Public Works Department gives it.
 - `Contact/Telephone` = **+999 2 38 8235 3927**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeport Public Works Department gives it.
 - `Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeport Public Works Department gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Lumeport Public Works Department (world/parties.json).
+  When the desk can be reached; as Lumeport Public Works Department gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:6250397184** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Lumeport Public Works Department gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 
@@ -228,7 +228,7 @@ Inside `BeneficiaryParty`:
   <cbc:Purpose>Guarantee of Valdara Industries' tender in the bench procedure: a plain bank guarantee of Bank of Lumeport, issued on a counter-guarantee of Crevalto Bank, Valdara's own bank, the usual way for a foreign tenderer to give a guarantee from a bank in the buyer's country.</cbc:Purpose>
   <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>
   <cbc:ConstitutionCode listID="urn:ubl-examples:world:codelist:GuaranteeConstitutionCode">BANKGUAR</cbc:ConstitutionCode>
-  <cbc:Note>Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then (O176).</cbc:Note>
+  <cbc:Note>Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then.</cbc:Note>
   <cac:ApplicablePeriod>
     <cbc:StartDate>2026-02-23</cbc:StartDate>
     <cbc:EndDate>2026-05-26</cbc:EndDate>

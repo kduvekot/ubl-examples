@@ -11,9 +11,9 @@ The furniture maker requests to participate, with the engineering firm as a memb
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:tenderer-qualification:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tenderer qualification"; the community specification "Public procurement community". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Tenderer qualification"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **CONTEST-2026-01**  
@@ -27,9 +27,9 @@ The furniture maker requests to participate, with the engineering firm as a memb
 - `IssueDate` = **2026-04-01**  
   With the request to participate.
 - `IssueTime` = **16:10:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `Note` = **Brackenmere Furniture leads the team; Saltmere's registered architect, Edda Corwin, leads the design; Saltmere Engineering does the structure and the anchoring.**  
-  Who does what, and who provides the design lead (D29 point 2, contest/07#F4).
+  Who does what, and who provides the design lead.
 - `VersionID` = **1**  
   The first version.
 
@@ -42,61 +42,61 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/TendererRoleCode` = **LEAD** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
   The lead member of the group. The code is from the Trade Accord's tenderer role list: LEAD = Consortium lead.
 - `MainQualifyingParty/CompletedTask/Description` = **Seating for the reading garden of Lumeport's central library, for the City of Lumeport, 2024.**  
-  A reference: one of the two the contest notice asks for (contest/07#F1, O195).
+  A reference: one of the two the contest notice asks for.
 - `MainQualifyingParty/CompletedTask/Period/StartDate` = **2024-03-01**  
   From.
 - `MainQualifyingParty/CompletedTask/Period/EndDate` = **2024-09-30**  
   To: completed within the five years asked.
 - `MainQualifyingParty/CompletedTask/Description` = **Promenade benches for Larkmouth's seafront, for Larkmouth town council, 2023.**  
-  A reference: one of the two the contest notice asks for (contest/07#F1, O195).
+  A reference: one of the two the contest notice asks for.
 - `MainQualifyingParty/CompletedTask/Period/StartDate` = **2023-02-01**  
   From.
 - `MainQualifyingParty/CompletedTask/Period/EndDate` = **2023-06-30**  
   To: completed within the five years asked.
 - `MainQualifyingParty/Party/WebsiteURI` = **https://www.brackenmere.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Brackenmere Furniture (world/parties.json).
+  The party's website, under the reserved .example domain (RFC 2606); as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Brackenmere Furniture (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; as Brackenmere Furniture gives it. The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `MainQualifyingParty/Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Brackenmere Furniture gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `MainQualifyingParty/Party/AdditionalPartyIdentification/ID` = **9523710900008** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brackenmere Furniture (world/parties.json).
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples ; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PartyName/Name` = **Brackenmere Furniture**  
-  The trading name; identity of Brackenmere Furniture (world/parties.json).
+  The trading name; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `MainQualifyingParty/Party/Language/Name` = **English**  
   The language's name.
 - `MainQualifyingParty/Party/Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `MainQualifyingParty/Party/PostalAddress/ID` = **UL-ADR-821551** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
-  The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Brackenmere Furniture (world/parties.json).
+  The address's number in the address register of Upland State (UL-ADR- and six digits); as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `MainQualifyingParty/Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `MainQualifyingParty/Party/PostalAddress/StreetName` = **Joiners Row**  
-  Street of the postal address. identity of Brackenmere Furniture (world/parties.json).
+  Street of the postal address. as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PostalAddress/BuildingNumber` = **14**  
-  Building number of the postal address. identity of Brackenmere Furniture (world/parties.json).
+  Building number of the postal address. as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Brackenmere Furniture (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PostalAddress/PostalZone` = **71203**  
-  Postal code in Bayvarra's format (5 digits). identity of Brackenmere Furniture (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `MainQualifyingParty/Party/PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brackenmere Furniture (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. as Brackenmere Furniture gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `MainQualifyingParty/Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `MainQualifyingParty/Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `MainQualifyingParty/Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `MainQualifyingParty/Party/PartyTaxScheme/RegistrationName` = **Brackenmere Furniture Ltd**  
-  The name under which the party is registered for state sales tax; identity of Brackenmere Furniture (world/parties.json).
+  The name under which the party is registered for state sales tax; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PartyTaxScheme/CompanyID` = **UL-1237398** (schemeID `urn:ubl-examples:world:XB:tax`)  
-  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
+  Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); as Brackenmere Furniture gives it. The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
 - `MainQualifyingParty/Party/PartyTaxScheme/TaxLevelCode` = **STATE** (listID `urn:ubl-examples:world:codelist:TaxLevelCode`)  
   The level of government that levies the tax: Bayvarra's state sales tax is levied by the states. The code is from the Trade Accord's tax level list: STATE = Levied by a state or territory.
 - `MainQualifyingParty/Party/PartyTaxScheme/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
@@ -108,17 +108,17 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `MainQualifyingParty/Party/PartyLegalEntity/RegistrationName` = **Brackenmere Furniture Ltd**  
-  The name under which the party is registered, with its legal form; identity of Brackenmere Furniture (world/parties.json).
+  The name under which the party is registered, with its legal form; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PartyLegalEntity/CompanyID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+  Number in the Federal business register of Bayvarra; as Brackenmere Furniture gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `MainQualifyingParty/Party/PartyLegalEntity/RegistrationDate` = **2000-01-12**  
-  The day the company was entered in the register; identity of Brackenmere Furniture (world/parties.json).
+  The day the company was entered in the register; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `MainQualifyingParty/Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)** (languageID `en-XB`)  
   The name of code LTD in Bayvarra's national company legal form list.
 - `MainQualifyingParty/Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 45 persons and its turnover of 6830000.00 XBL in 2025, by the Trade Accord's limits; identity of Brackenmere Furniture (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
+  The size class follows from the company's 45 persons and its turnover of 6830000.00 XBL in 2025, by the Trade Accord's limits; as Brackenmere Furniture gives it. The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `MainQualifyingParty/Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `MainQualifyingParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
@@ -126,7 +126,7 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `MainQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
+  The identifier of the register in the world.
 - `MainQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
 - `MainQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
@@ -134,73 +134,73 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `MainQualifyingParty/Party/Contact/Name` = **Bids office**  
-  The party's bids office desk: the desk for its role in this document (it bids); identity of Brackenmere Furniture (world/parties.json).
+  The party's bids office desk: the desk for its role in this document (it bids); as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/Contact/JobTitle` = **Bid manager**  
-  The job of the person who answers at the desk; identity of Brackenmere Furniture (world/parties.json).
+  The job of the person who answers at the desk; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/Contact/Department` = **Sales**  
-  The department the desk belongs to; identity of Brackenmere Furniture (world/parties.json).
+  The department the desk belongs to; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/Contact/Telephone` = **+999 2 7121 602 606**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brackenmere Furniture (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/Contact/ElectronicMail` = **tenders@brackenmere.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brackenmere Furniture (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Brackenmere Furniture (world/parties.json).
+  When the desk can be reached; as Brackenmere Furniture gives it.
 - `MainQualifyingParty/Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `MainQualifyingParty/Party/ElectronicAddress/ElectronicAddressID` = **XB:20412466** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brackenmere Furniture (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Brackenmere Furniture gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `AdditionalQualifyingParty/ParticipationPercent` = **40**  
   The engineering firm's share.
 - `AdditionalQualifyingParty/TendererRoleCode` = **MEMBER** (listID `urn:ubl-examples:world:codelist:TendererRoleCode`)  
   A member of the group. The code is from the Trade Accord's tenderer role list: MEMBER = Consortium member.
 - `AdditionalQualifyingParty/Party/IndustryClassificationCode` = **4290** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Saltmere Engineering (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4290 = Construction of other civil engineering projects.
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; as Saltmere Engineering gives it. The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4290 = Construction of other civil engineering projects.
 - `AdditionalQualifyingParty/Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Saltmere Engineering gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalQualifyingParty/Party/PartyName/Name` = **Saltmere Engineering**  
-  The trading name; identity of Saltmere Engineering (world/parties.json).
+  The trading name; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `AdditionalQualifyingParty/Party/Language/Name` = **English**  
   The language's name.
 - `AdditionalQualifyingParty/Party/Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `AdditionalQualifyingParty/Party/PostalAddress/ID` = **UL-ADR-587295** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
-  The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Saltmere Engineering (world/parties.json).
+  The address's number in the address register of Upland State (UL-ADR- and six digits); as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `AdditionalQualifyingParty/Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `AdditionalQualifyingParty/Party/PostalAddress/StreetName` = **Foundry Road**  
-  Street of the postal address. identity of Saltmere Engineering (world/parties.json).
+  Street of the postal address. as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/PostalAddress/BuildingNumber` = **13**  
-  Building number of the postal address. identity of Saltmere Engineering (world/parties.json).
+  Building number of the postal address. as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Saltmere Engineering (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/PostalAddress/PostalZone` = **71218**  
-  Postal code in Bayvarra's format (5 digits). identity of Saltmere Engineering (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `AdditionalQualifyingParty/Party/PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Saltmere Engineering (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. as Saltmere Engineering gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `AdditionalQualifyingParty/Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `AdditionalQualifyingParty/Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AdditionalQualifyingParty/Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationName` = **Saltmere Engineering Ltd**  
-  The name under which the party is registered, with its legal form; identity of Saltmere Engineering (world/parties.json).
+  The name under which the party is registered, with its legal form; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+  Number in the Federal business register of Bayvarra; as Saltmere Engineering gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationDate` = **1994-10-03**  
-  The day the company was entered in the register; identity of Saltmere Engineering (world/parties.json).
+  The day the company was entered in the register; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)** (languageID `en-XB`)  
   The name of code LTD in Bayvarra's national company legal form list.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/EntitySizeCode` = **SMALL** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 36 persons and its turnover of 5400000.00 XBL in 2025, by the Trade Accord's limits; identity of Saltmere Engineering (world/parties.json). The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
+  The size class follows from the company's 36 persons and its turnover of 5400000.00 XBL in 2025, by the Trade Accord's limits; as Saltmere Engineering gives it. The code is from the Trade Accord's entity size list: SMALL = Small enterprise.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
@@ -208,7 +208,7 @@ Inside `TendererPartyQualification`:
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
+  The identifier of the register in the world.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
@@ -216,82 +216,82 @@ Inside `TendererPartyQualification`:
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AdditionalQualifyingParty/Party/Contact/Name` = **Bids office**  
-  The party's main desk, which handles this document; identity of Saltmere Engineering (world/parties.json).
+  The party's main desk, which handles this document; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Contact/JobTitle` = **Bid manager**  
-  The job of the person who answers at the desk; identity of Saltmere Engineering (world/parties.json).
+  The job of the person who answers at the desk; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Contact/Department` = **Sales**  
-  The department the desk belongs to; identity of Saltmere Engineering (world/parties.json).
+  The department the desk belongs to; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Contact/Telephone` = **+999 2 7121 930 729**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Saltmere Engineering (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Contact/ElectronicMail` = **bids@saltmere.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Saltmere Engineering (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Saltmere Engineering (world/parties.json).
+  When the desk can be reached; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `AdditionalQualifyingParty/Party/ElectronicAddress/ElectronicAddressID` = **XB:20410685** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Saltmere Engineering gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Contracting Party
 
 Inside `ContractingParty`:
 
 - `Party/PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; as Lumeport Public Works Department gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lumeport Public Works Department**  
-  The trading name; identity of Lumeport Public Works Department (world/parties.json).
+  The trading name; as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/ID` = **LUM-ADR-000417** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Lumeport Public Works Department (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Civic Square**  
-  Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+  Street of the postal address. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/BuildingNumber` = **6**  
-  Building number of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+  Building number of the postal address. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/InhouseMail` = **Room 2.14**  
-  The internal mail code of the procurement office. identity of Lumeport Public Works Department (world/parties.json).
+  The internal mail code of the procurement office. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/Department` = **Procurement office**  
-  The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
+  The department the post is for. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/MarkAttention` = **Head of procurement**  
-  For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
+  For the attention of the head of procurement. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/PostalZone` = **38517**  
-  Postal code in Bayvarra's format (5 digits). identity of Lumeport Public Works Department (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Lumeport Public Works Department gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
-  The public body's official name; identity of Lumeport Public Works Department (world/parties.json).
+  The public body's official name; as Lumeport Public Works Department gives it.
 - `Party/PartyLegalEntity/CompanyID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  Number in the Federal list of public bodies of Bayvarra, which gives every public body a number of its own (10 digits, the first not 0), derived from no other register (O142); identity of Lumeport Public Works Department (world/parties.json). The schemeID names the scheme it is from: the federal list of public bodies of Bayvarra (10 digits, the first not 0, given by the Bayvarra Information Service).
+  Number in the Federal list of public bodies of Bayvarra, which gives every public body a number of its own (10 digits, the first not 0), derived from no other register ; as Lumeport Public Works Department gives it. The schemeID names the scheme it is from: the federal list of public bodies of Bayvarra (10 digits, the first not 0, given by the Bayvarra Information Service).
 - `Party/Contact/Name` = **Procurement office**  
-  The party's main desk, which handles this document; identity of Lumeport Public Works Department (world/parties.json).
+  The party's main desk, which handles this document; as Lumeport Public Works Department gives it.
 - `Party/Contact/JobTitle` = **Procurement officer**  
-  The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
+  The job of the person who answers at the desk; as Lumeport Public Works Department gives it.
 - `Party/Contact/Department` = **Procurement**  
-  The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
+  The department the desk belongs to; as Lumeport Public Works Department gives it.
 - `Party/Contact/Telephone` = **+999 2 38 8235 3927**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeport Public Works Department gives it.
 - `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeport Public Works Department gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Lumeport Public Works Department (world/parties.json).
+  When the desk can be reached; as Lumeport Public Works Department gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:6250397184** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Lumeport Public Works Department gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ## The document
 

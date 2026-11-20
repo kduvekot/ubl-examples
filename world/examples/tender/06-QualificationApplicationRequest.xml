@@ -349,7 +349,7 @@
     <cbc:ID>CR-GROUP</cbc:ID>
     <cbc:CriterionTypeCode listID="urn:ubl-examples:world:codelist:CriterionTypeCode">SUITABILITY</cbc:CriterionTypeCode>
     <cbc:Name>Tendering as a group</cbc:Name>
-    <cbc:Description>A group of tenderers names its members and the share of each (tender/06#F4).</cbc:Description>
+    <cbc:Description>A group of tenderers names its members and the share of each.</cbc:Description>
     <cbc:EvaluationMethodTypeCode listID="urn:ubl-examples:world:codelist:EvaluationMethodCode">PASSFAIL</cbc:EvaluationMethodTypeCode>
     <cac:TenderingCriterionPropertyGroup>
       <cbc:ID>PG-GROUP</cbc:ID>

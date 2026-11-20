@@ -1,5 +1,5 @@
 {
- "description": "The countries of the UBL example world, with their currencies, tax schemes and identifier and address schemes. XU, XB and XL are ISO 3166-1 user-assigned codes; tools/build_codelists.py adds them and the world currencies to copies of the UBL 2.5 default code lists (world/codelists). Tax scheme identifiers are UN/EDIFACT 5153 codes (VAT, STT state/provincial sales tax, CUD customs duty, IMP import tax).",
+ "description": "The countries of the UBL example world, with their currencies, tax schemes and identifier and address schemes. XU, XB and XL are ISO 3166-1 user-assigned codes; tools/build_codelists.py adds them and the world currencies to copies of the UBL 2.5 default code lists. Tax scheme identifiers are UN/EDIFACT 5153 codes (VAT, STT state/provincial sales tax, CUD customs duty, IMP import tax).",
  "countries": {
   "XU": {
    "name": "Urvania",
@@ -51,7 +51,7 @@
      "Service supplied outside Urvania": "SVCABROAD",
      "Transport of goods exported from Urvania": "EXPTRANSPORT"
     },
-    "exemption_codes_note": "The exemption reasons as codes of Urvania's national list (world/codelists/lists.json, XU:TaxExemptionReason); the EU's VATEX list does not apply in the world."
+    "exemption_codes_note": "The exemption reasons as codes of Urvania's national list (XU:TaxExemptionReason); the EU's VATEX list does not apply in the world."
    },
    "registry": {
     "name": "Commercial register of Urvania",
@@ -98,7 +98,7 @@
     "scheme": "XU:IPA",
     "id_format": "xu_ and four lower-case letters or digits",
     "example": "xu_k4r7",
-    "note": "Every body of Urvania's public administration (the customs administration, the chambers of commerce, Codana and the other agencies set up by law) is entered in the index on its accreditation and given a code of its own, on the model of Italy's IPA code: the index assigns the code, and it is derived from no other register, not from the body's tax number (O142)."
+    "note": "Every body of Urvania's public administration (the customs administration, the chambers of commerce, Codana and the other agencies set up by law) is entered in the index on its accreditation and given a code of its own, on the model of Italy's IPA code: the index assigns the code, and it is derived from no other register, not from the body's tax number."
    },
    "customs_trader_format": "XU-TR- and 6 digits",
    "legal_forms": {
@@ -134,7 +134,7 @@
     "statutory_interest": {
      "percent": "8",
      "basis": "ANN",
-     "note": "Urvania's statutory interest on late payment between businesses, which applies wherever the parties agreed nothing on late payment (D22)."
+     "note": "Urvania's statutory interest on late payment between businesses, which applies wherever the parties agreed nothing on late payment."
     }
    },
    "history": "An Italian territory, then under British rule, independent since 1962 as a bilingual country: Urvanian and English are its official languages. Its place and street names are the Italian ones the British kept, now part of English; Urvanian gives every place its own name too, and addresses carry both.",
@@ -142,7 +142,7 @@
     "pattern": "^\\+999 1 (0\\d{2} \\d{3} \\d{4}|0\\d{3} \\d{5}|3\\d{2} \\d{3} \\d{4})$",
     "note": "Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits."
    },
-   "legal_forms_note": "The legal forms of Urvania as codes of its national list (world/codelists/lists.json, XU:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
+   "legal_forms_note": "The legal forms of Urvania as codes of its national list (XU:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
    "identifiers": {
     "register": {
      "name": "Commercial register of Urvania",
@@ -163,7 +163,7 @@
     "public-body-register": {
      "name": "index of public administrations of Urvania",
      "pattern": "^xu_[a-z0-9]{4}$",
-     "format": "xu_ and four lower-case letters or digits, assigned by the index on the body's accreditation; no real IPA code of Italy's index starts with xu_ (world/codelists/sources/ipa/)"
+     "format": "xu_ and four lower-case letters or digits, assigned by the index on the body's accreditation; no real IPA code of Italy's index starts with xu_"
     },
     "property": {
      "name": "property standard of the Codana Identification Agency",
@@ -251,7 +251,7 @@
     }
    },
    "province": "Province of Ferrano",
-   "company_documents": "Urvania's company law asks every company to state its register, its number in it, its legal form and its registered office on its invoices and business letters; an SUA also states its share capital as paid up, as the last balance sheet shows it (decision O147, 2026-11-17, after Italy's art. 2250 codice civile). Bayvarra and Lisavu follow the model of the EU company-law directive (2017/1132, Art. 26): stating the capital is optional, and their companies do not.",
+   "company_documents": "Urvania's company law asks every company to state its register, its number in it, its legal form and its registered office on its invoices and business letters; an SUA also states its share capital as paid up, as the last balance sheet shows it (2026-11-17, after Italy's art. 2250 codice civile). Bayvarra and Lisavu follow the model of the EU company-law directive (2017/1132, Art. 26): stating the capital is optional, and their companies do not.",
    "legal_time": "Urvanian Time",
    "holidays": {
     "rule": "Fixed dates, in the Italian manner; a holiday on a weekend is not made up for.",
@@ -303,7 +303,7 @@
     "note": "ISO 4217 style: the country code and the initial of the currency's name; checked against the current ISO 4217 list. Two decimals, the most common case."
    },
    "tax": {
-    "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the final use. A sale for resale or manufacture (goods sold on as they are, or that become part of the product sold, the packaging that goes to the customer included), exports, sales to public bodies and services to a business are exempt, and the invoice says so; what a business uses up or keeps (fuel and energy it burns, consumables, tools, machines, vehicles, buildings) is taxed as a retail sale, at the rate of the state where it is delivered (O204).",
+    "summary": "A federal country: its states, and the federal territory in the north, levy a retail sales tax, charged once, on the final use. A sale for resale or manufacture (goods sold on as they are, or that become part of the product sold, the packaging that goes to the customer included), exports, sales to public bodies and services to a business are exempt, and the invoice says so; what a business uses up or keeps (fuel and energy it burns, consumables, tools, machines, vehicles, buildings) is taxed as a retail sale, at the rate of the state where it is delivered.",
     "schemes": [
      {
       "id": "STT",
@@ -330,7 +330,7 @@
      "Sale for resale or manufacture": "RESALE",
      "Collected for a public body, outside the scope of the state sales tax": "LEVY"
     },
-    "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (world/codelists/lists.json, XB:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
+    "exemption_codes_note": "The exemption reasons as codes of Bayvarra's national list (XB:TaxExemptionReason); the EU's VATEX list does not apply in the world.",
     "duty_free": {
      "chapters": [
       "30"
@@ -338,7 +338,7 @@
      "subheadings": [
       "284443"
      ],
-     "note": "Bayvarra's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin, as most countries apply under the WTO's zero-for-zero agreement on pharmaceutical products (O229)."
+     "note": "Bayvarra's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin, as most countries apply under the WTO's zero-for-zero agreement on pharmaceutical products."
     },
     "withholding": {
      "percent": "10",
@@ -401,7 +401,7 @@
     "scheme": "XB:FLPB",
     "id_format": "10 digits, the first not 0",
     "example": "3071845926",
-    "note": "The Bayvarra Information Service, which also keeps the federal business register, keeps a separate list of the public bodies of the federation, its states and its cities (the customs and border service, the public works department, the review board, the Trade Accord Council seated in Lumeport, the Service itself); the list gives each body a ten-digit number of its own, derived from no other register (O142)."
+    "note": "The Bayvarra Information Service, which also keeps the federal business register, keeps a separate list of the public bodies of the federation, its states and its cities (the customs and border service, the public works department, the review board, the Trade Accord Council seated in Lumeport, the Service itself); the list gives each body a ten-digit number of its own, derived from no other register."
    },
    "customs_trader_format": "XB-TR- and 6 digits",
    "legal_forms": {
@@ -442,14 +442,14 @@
     "statutory_interest": {
      "percent": "7",
      "basis": "ANN",
-     "note": "Bayvarra's statutory interest on late payment, one federal rate under the federal commercial law, which applies wherever neither a contract nor the seller's terms say anything on late payment (D22, O148)."
+     "note": "Bayvarra's statutory interest on late payment, one federal rate under the federal commercial law, which applies wherever neither a contract nor the seller's terms say anything on late payment."
     }
    },
    "phone_plan": {
     "pattern": "^\\+999 2 (38 \\d{4} \\d{4}|\\d{4} \\d{3} \\d{3}|\\d{5} \\d{5}|7\\d{3} \\d{3} \\d{3})$",
     "note": "British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7."
    },
-   "legal_forms_note": "The legal forms of Bayvarra as codes of its national list (world/codelists/lists.json, XB:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
+   "legal_forms_note": "The legal forms of Bayvarra as codes of its national list (XB:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
    "identifiers": {
     "register": {
      "name": "Federal business register of Bayvarra",
@@ -464,7 +464,7 @@
     "customs-trader": {
      "name": "customs trader number of Bayvarra",
      "pattern": "^XB-TR-\\d{6}$",
-     "format": "XB-TR- and 6 digits, the last six digits of the trader's number in its register: a company's business register number, a public body's number in the federal list of public bodies (O142, O158)"
+     "format": "XB-TR- and 6 digits, the last six digits of the trader's number in its register: a company's business register number, a public body's number in the federal list of public bodies"
     },
     "public-body-register": {
      "name": "federal list of public bodies of Bayvarra",
@@ -620,7 +620,7 @@
     "exemption_codes": {
      "Medicines and vaccines for a public hospital": "MEDHOSP"
     },
-    "exemption_codes_note": "The exemption reasons of the import consumption tax as codes of Lisavu's national list (world/codelists/lists.json, XL:TaxExemptionReason): medicines and vaccines supplied to a public hospital (O201).",
+    "exemption_codes_note": "The exemption reasons of the import consumption tax as codes of Lisavu's national list (XL:TaxExemptionReason): medicines and vaccines supplied to a public hospital.",
     "duty_free": {
      "chapters": [
       "30"
@@ -628,7 +628,7 @@
      "subheadings": [
       "284443"
      ],
-     "note": "Lisavu's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin: an island that cannot make them keeps them cheap, as most countries do for medicines, many under the WTO's zero-for-zero agreement on pharmaceutical products (D47)."
+     "note": "Lisavu's tariff charges no duty on medicines (HS chapter 30) nor on radioactive isotopes and their compounds (HS 2844.43, which holds the technetium generators of nuclear medicine), whatever their origin: an island that cannot make them keeps them cheap, as most countries do for medicines, many under the WTO's zero-for-zero agreement on pharmaceutical products."
     },
     "withholding": {
      "on": "the price of farm produce bought from farmers, by the buyer",
@@ -682,7 +682,7 @@
     "scheme": "XL:GLPB",
     "id_format": "GOV- and 3 digits",
     "example": "GOV-118",
-    "note": "The island's government keeps a short list of its public bodies (the customs service, the chamber of commerce, the maritime administration, the Department of Agriculture) and gives each a number of its own, derived from no other register (O142)."
+    "note": "The island's government keeps a short list of its public bodies (the customs service, the chamber of commerce, the maritime administration, the Department of Agriculture) and gives each a number of its own, derived from no other register."
    },
    "customs_trader_format": "XL-TR- and 6 digits",
    "legal_forms": {
@@ -717,7 +717,7 @@
     "statutory_interest": {
      "percent": "6",
      "basis": "ANN",
-     "note": "Lisavu's statutory interest on late payment, which applies wherever neither a contract nor the seller's terms say anything on late payment (D22, O148)."
+     "note": "Lisavu's statutory interest on late payment, which applies wherever neither a contract nor the seller's terms say anything on late payment."
     }
    },
    "cotton": {
@@ -733,7 +733,7 @@
     "pattern": "^\\+999 3 7\\d{2} \\d{4}$",
     "note": "A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79."
    },
-   "legal_forms_note": "The legal forms of Lisavu as codes of its national list (world/codelists/lists.json, XL:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
+   "legal_forms_note": "The legal forms of Lisavu as codes of its national list (XL:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
    "identifiers": {
     "register": {
      "name": "Island companies register",
@@ -800,7 +800,7 @@
     "scheme": "XL:FR",
     "id_format": "LFR- and 4 digits",
     "example": "LFR-0412",
-    "note": "Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46). The register gives a grower a number of its own, derived from no other register (O142)."
+    "note": "Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date. The register gives a grower a number of its own, derived from no other register."
    },
    "legal_time": "Lisavu Time",
    "holidays": {
@@ -834,7 +834,7 @@
   "XBL/XLC": 0.4,
   "XUF/XLC": 0.004
  },
- "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral. Against currencies outside the Accord the lume floats: the Lumeport Exchange's daily fixing (O231, tools/fx_fixing.py, world/fx-fixings.json).",
+ "exchange_rates_note": "Units of the second currency for one unit of the first, the reference rates of the world's frozen moment: 1 lume = 100 ferra, 1 lume = 0.4 coral. Against currencies outside the Accord the lume floats: the Lumeport Exchange's daily fixing.",
  "geography": {
   "km_per_tile": 3.5,
   "mainland": {
@@ -859,12 +859,12 @@
      "latitude_south": 33.0,
      "longitude_west": 2.65
     },
-    "note": "Lisavu is drawn nearer, as an inset (O92, O151); its squares are placed around its true position on the seamount of the Walvis Ridge (D19)."
+    "note": "Lisavu is drawn nearer, as an inset; its squares are placed around its true position on the seamount of the Walvis Ridge."
    }
   ],
   "timezone": "UTC-1",
-  "note": "The world lies in an empty part of the South Atlantic, on the base of D19, so every coordinate in the examples points to open sea on a real map. A map square is 3.5 km each way, and coordinates keep that scale on both axes: a degree of latitude is 111.0 km, a degree of longitude 111.32 km times the cosine of the latitude of the area's centre. The drawn mainland (columns 11 to 170, rows 38 to 151, with a few islets just beyond; world/terrain.json) is centred on 30.0 degrees South, 15.0 degrees West, the middle of D19's box, and so lies at about 28.2 to 31.8 degrees South and 17.9 to 12.0 degrees West (D19's box of 28.1 to 31.9 South and 17.7 to 12.3 West is not quite 560 by 390 km; the kilometres win). Lisavu is drawn nearer, as an inset: its squares (columns 209 to 240, rows 100 to 123) are placed around its true centre, 33.0 degrees South, 2.65 degrees West.",
-  "telephone_note": "Telephone numbers use +999, a country code that the ITU reserves for a future global service (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country, and each country has its own numbering plan and number length (world/countries.json, phone_plan)."
+  "note": "The world lies in an empty part of the South Atlantic, on the base of D19, so every coordinate in the examples points to open sea on a real map. A map square is 3.5 km each way, and coordinates keep that scale on both axes: a degree of latitude is 111.0 km, a degree of longitude 111.32 km times the cosine of the latitude of the area's centre. The drawn mainland (columns 11 to 170, rows 38 to 151, with a few islets just beyond) is centred on 30.0 degrees South, 15.0 degrees West, the middle of D19's box, and so lies at about 28.2 to 31.8 degrees South and 17.9 to 12.0 degrees West (D19's box of 28.1 to 31.9 South and 17.7 to 12.3 West is not quite 560 by 390 km; the kilometres win). Lisavu is drawn nearer, as an inset: its squares (columns 209 to 240, rows 100 to 123) are placed around its true centre, 33.0 degrees South, 2.65 degrees West.",
+  "telephone_note": "Telephone numbers use +999, a country code that the ITU reserves for a future global service (ITU-T E.164), so no number in the examples can reach anyone; the next digit is the world's country, and each country has its own numbering plan and number length (phone_plan)."
  },
  "payment_cross_border": {
   "system": "TRADE-ACCORD-PAY",
@@ -3211,7 +3211,7 @@
    "name": "electronic address in the Trade Accord's exchange network",
    "issuer": "32-xb",
    "pattern": "^(XU:(XU-R-\\d{6}|xu_[a-z0-9]{4})|XB:(\\d{8}|[1-9]\\d{9})|XL:(IC\\d{5}|GOV-\\d{3}|LFR-\\d{4}))$",
-   "format": "the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register (D5, O142)"
+   "format": "the country code, a colon and the party's number in the register it is entered in: its country's companies register, for a public body its country's register of public bodies, for a grower Lisavu's farm register"
   },
   "urn:ubl-examples:world:account": {
    "name": "account number in the structure of ISO 13616",
@@ -3300,7 +3300,7 @@
    "format": "in the structure of ISO 9362 with the world's country codes: four letters for the bank, the country code, two characters for the location and an optional branch code"
   }
  },
- "identifier_schemes_note": "Identifiers from a scheme name it in schemeID (decisions ID-Q1 to ID-Q4). The Trade Accord's schemes and the real external ones are in identifier_schemes, by schemeID; each country's own are in its identifiers, by kind, with the schemeID urn:ubl-examples:world:<CC>:<kind>; a kind marked scheme false (call signs, MMSIs, driving licences, national ID numbers) has a format the world checks but no schemeID. The ITU call sign series and aircraft nationality marks QU, QB and QL, the MMSI maritime identification digits 297, 298 and 299 and the UIC country codes 46, 47 and 48 are not allocated to any real country (analysis/codelist-decisions.md, Fictional values). tools/world_ids.py checks them.",
+ "identifier_schemes_note": "Identifiers from a scheme name it in schemeID (decisions ID-Q1 to ID-Q4). The Trade Accord's schemes and the real external ones are in identifier_schemes, by schemeID; each country's own are in its identifiers, by kind, with the schemeID urn:ubl-examples:world:<CC>:<kind>; a kind marked scheme false (call signs, MMSIs, driving licences, national ID numbers) has a format the world checks but no schemeID. The ITU call sign series and aircraft nationality marks QU, QB and QL, the MMSI maritime identification digits 297, 298 and 299 and the UIC country codes 46, 47 and 48 are not allocated to any real country (Fictional values). tools/world_ids.py checks them.",
  "card_schemes": {
   "LUMECARD": {
    "country": "XB",
@@ -3319,18 +3319,18 @@
   }
  },
  "card_schemes_note": "Card numbers follow ISO/IEC 7812: the major industry identifier 9 (national assignment) and the ISO 3166 numeric code of the issuer's country (901 Urvania, 902 Bayvarra, 903 Lisavu), then the issuer's two digits, the account and a Luhn check digit. A chip application identifier (ISO/IEC 7816-5) starts with the registered application provider identifier (RID) of the card scheme, from the national registration category D followed by the country code. A receipt shows the card number masked as the merchant's till does, at most the first six and the last four digits (PCI DSS), and never the security code or the card's dates.",
- "documents_between_countries": "Documents between the countries of the Trade Accord (sender and receiver in different countries, wherever the goods go) are in English, in the sender's variety (en-XU, en-XB, en-XL): a party states English with its own country's locale, and notes and code names come in English only. At home an Urvanian or Lisavan party states its own language (qau, qal), and its documents give their notes in both languages. A party's master data (address, legal form) is written as its register writes it, in both official languages of a bilingual country, in every document (decisions O19, D1, D2, 2026-11-17).",
+ "documents_between_countries": "Documents between the countries of the Trade Accord (sender and receiver in different countries, wherever the goods go) are in English, in the sender's variety (en-XU, en-XB, en-XL): a party states English with its own country's locale, and notes and code names come in English only. At home an Urvanian or Lisavan party states its own language (qau, qal), and its documents give their notes in both languages. A party's master data (address, legal form) is written as its register writes it, in both official languages of a bilingual country, in every document (2026-11-17).",
  "payment_terms_accord": {
   "TA-UTIL": {
    "terms": "21 days net from the bill.",
    "due_days": 21,
-   "note": "The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day (decision D23)."
+   "note": "The Trade Accord's term for utility bills (water, energy, telephone), the same in all three countries: due 21 days after the bill; a household with a direct-debit mandate is collected on that day."
   }
  },
- "payment_terms_note": "Which payment terms an invoice applies, in three layers (decision D22): what the parties agreed in a contract or framework agreement; where they agreed nothing, the seller's standard terms (XU-STD, XB-STD, XL-STD); where neither says anything about late payment, the statutory interest of the seller's country, where it has one. A cross-border sale follows the seller's country unless the contract chooses otherwise. Utility bills follow the Trade Accord's own term TA-UTIL (decision D23).",
+ "payment_terms_note": "Which payment terms an invoice applies, in three layers: what the parties agreed in a contract or framework agreement; where they agreed nothing, the seller's standard terms (XU-STD, XB-STD, XL-STD); where neither says anything about late payment, the statutory interest of the seller's country, where it has one. A cross-border sale follows the seller's country unless the contract chooses otherwise. Utility bills follow the Trade Accord's own term TA-UTIL.",
  "road_rules_accord": {
   "max_combination_kg": 40000,
-  "note": "The Trade Accord's road protocol: a tractor unit with its semi-trailer, or a truck with its trailer, may weigh at most 40 tonnes with its load on the roads of all three countries (decision D42, O134). A carrier's fleet gives each vehicle's empty weight, so its payload is what is left to the limit; the build checks that a weighed road load stays within both."
+  "note": "The Trade Accord's road protocol: a tractor unit with its semi-trailer, or a truck with its trailer, may weigh at most 40 tonnes with its load on the roads of all three countries. A carrier's fleet gives each vehicle's empty weight, so its payload is what is left to the limit; the build checks that a weighed road load stays within both."
  },
  "working_weeks": {
   "office": {
@@ -3367,11 +3367,11 @@
     6
    ],
    "name": "every day",
-   "note": "Ports, carriers, terminals, border customs and the operations of utilities; they work through the public holidays (D27)."
+   "note": "Ports, carriers, terminals, border customs and the operations of utilities; they work through the public holidays."
   }
  },
  "abroad_countries": {
-  "note": "Real countries outside the world that the world trades with (O229, partly answering O51): only what the documents need. They are not countries of the world: no map, no registers, no tax of the world.",
+  "note": "Real countries outside the world that the world trades with (partly answering O51): only what the documents need. They are not countries of the world: no map, no registers, no tax of the world.",
   "NL": {
    "name": "Netherlands",
    "in_text": "the Netherlands",

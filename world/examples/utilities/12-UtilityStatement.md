@@ -11,9 +11,9 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:utility-statement:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
   The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **UTILITIES-2026-01**  
@@ -25,11 +25,11 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
 - `IssueTime` = **17:37:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `UtilityStatementTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of utility the statement is about. The code is from the Trade Accord's utility type list: TEL = Telephone.
 - `Note` = **Mikake votetaka hanano mofilufo kisala vepili vafosu.** (languageID `qal`)  
-  The note in Lisavan, the sender's language (world/countries.json): What the statement is.
+  The note in Lisavan, the sender's language: What the statement is.
 - `Note` = **This statement explains the consumption behind your bill.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What the statement is.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -46,7 +46,7 @@ Inside `ParentDocumentReference`:
 - `ID` = **ST-INV-26-0323**  
   The invoice this statement supplements: a utility statement adds the consumption behind the bill.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: ST-INV-26-0323 is the example utilities/13, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: ST-INV-26-0323 is the example utilities/13, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Additional Document Reference
 
@@ -64,98 +64,98 @@ Inside `AdditionalDocumentReference`:
 Inside `SenderParty`:
 
 - `PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Island companies register; as Selanu Telecom gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Selanu Telecom**  
-  The trading name; identity of Selanu Telecom (world/parties.json).
+  The trading name; as Selanu Telecom gives it.
 - `Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `PostalAddress/ID` = **34928611** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Telecom (world/parties.json).
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Selanu Telecom gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PostalAddress/StreetName` = **Kitata Vekase Natii** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Telecom (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Selanu Telecom gives it.
 - `PostalAddress/StreetName` = **Mast Hill Road** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Selanu Telecom (world/parties.json).
+  The street's name in English, the country's other official language; as Selanu Telecom gives it.
 - `PostalAddress/BuildingNumber` = **58**  
-  Building number of the postal address. identity of Selanu Telecom (world/parties.json).
+  Building number of the postal address. as Selanu Telecom gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Telecom gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Telecom gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Billing**  
-  The party's billing desk: the desk for its role in this document (it is owed the payment); identity of Selanu Telecom (world/parties.json).
+  The party's billing desk: the desk for its role in this document (it is owed the payment); as Selanu Telecom gives it.
 - `Contact/JobTitle` = **Billing officer**  
-  The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
+  The job of the person who answers at the desk; as Selanu Telecom gives it.
 - `Contact/Department` = **Business sales**  
-  The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
+  The department the desk belongs to; as Selanu Telecom gives it.
 - `Contact/Telephone` = **+999 3 727 3193**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Selanu Telecom gives it.
 - `Contact/ElectronicMail` = **billing@selanutelecom.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Telecom gives it.
 - `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Selanu Telecom (world/parties.json).
+  When the desk can be reached; as Selanu Telecom gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC42407** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Selanu Telecom (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; as Selanu Telecom gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
 Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Island companies register; as Velumi Trading gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Velumi Trading**  
-  The trading name; identity of Velumi Trading (world/parties.json).
+  The trading name; as Velumi Trading gives it.
 - `PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Velumi Trading (world/parties.json).
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Velumi Trading gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Velumi Trading gives it.
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
+  The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `PostalAddress/BuildingNumber` = **16**  
-  Building number of the postal address. identity of Velumi Trading (world/parties.json).
+  Building number of the postal address. as Velumi Trading gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Accounts payable**  
-  The party's accounts payable desk: the desk for its role in this document (it pays); identity of Velumi Trading (world/parties.json).
+  The party's accounts payable desk: the desk for its role in this document (it pays); as Velumi Trading gives it.
 - `Contact/JobTitle` = **Accounts payable clerk**  
-  The job of the person who answers at the desk; identity of Velumi Trading (world/parties.json).
+  The job of the person who answers at the desk; as Velumi Trading gives it.
 - `Contact/Department` = **Finance**  
-  The department the desk belongs to; identity of Velumi Trading (world/parties.json).
+  The department the desk belongs to; as Velumi Trading gives it.
 - `Contact/Telephone` = **+999 3 729 5794**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Velumi Trading (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Velumi Trading gives it.
 - `Contact/ElectronicMail` = **payables@velumi.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Velumi Trading (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
-  When the desk can be reached; identity of Velumi Trading (world/parties.json).
+  When the desk can be reached; as Velumi Trading gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XL:IC41859** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Velumi Trading (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; as Velumi Trading gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Subscriber Party
 
@@ -181,7 +181,7 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Description` = **Office of Velumi Trading, Selanu**  
   Where.
 - `UtilityConsumptionPoint/SubscriberID` = **ST-CU-20418**  
-  The subscriber's customer number with the telecom company; the contract number stays in the contract (D31 point 5).
+  The subscriber's customer number with the telecom company; the contract number stays in the contract.
 - `UtilityConsumptionPoint/SubscriberType` = **Business**  
   The name of code BUS in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **BUS** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -189,21 +189,21 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Address/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `UtilityConsumptionPoint/Address/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `UtilityConsumptionPoint/Address/StreetName` = **Kavama Timeku** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/StreetName` = **Reef Street** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
+  The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/BuildingNumber` = **16**  
-  Building number of the postal address. identity of Velumi Trading (world/parties.json).
+  Building number of the postal address. as Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
 - `UtilityConsumptionPoint/Address/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `UtilityConsumptionPoint/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Consumption/UtilityStatementTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
@@ -215,7 +215,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/AllowanceCharge/ChargeIndicator` = **false**  
   An allowance: it lowers the amount.
 - `Consumption/AllowanceCharge/AllowanceChargeReasonCode` = **95** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
+  The reason for the allowance as a code of UN/EDIFACT 5189. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 95 = Discount.
 - `Consumption/AllowanceCharge/AllowanceChargeReason` = **Business bundle discount**  
   The reason in words.
 - `Consumption/AllowanceCharge/MultiplierFactorNumeric` = **0.05**  
@@ -237,23 +237,23 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1850**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 1 of the six of subscription ST-L-BUS6, with calls on the island included.**  
-  The subscription, as the invoice line names it (utilities/13#F10).
+  The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
+  No tax on the island; the bundle discount is given once, on the whole supply (F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-1**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
-  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
   The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **140** (unitCode `MIN`)  
-  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **C-0311-01**  
@@ -263,7 +263,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **10:14:00**  
   The time.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 955 *****  
-  The distributor in Bayvarra, its last digits masked as the privacy code says (utilities/12#F2).
+  The distributor in Bayvarra, its last digits masked as the privacy code says.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International: a call to Bayvarra**  
   The name of code INT in the Trade Accord's telecommunications service category list, followed by the detail of this case: the call went to the distributor in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode` = **INT** (listID `urn:ubl-examples:world:codelist:TelecomServiceCategoryCode`)  
@@ -277,7 +277,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallBaseAmount` = **0.050** (currencyID `XLC`)  
   The set-up charge of a call abroad, the base of every call.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
-  The set-up and the twelve minutes, less the allowance: nothing to pay (utilities/12#F4).
+  The set-up and the twelve minutes, less the allowance: nothing to pay.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **0.2** (currencyID `XLC`)  
   The tariff per minute for calls abroad.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/BaseQuantity` = **1** (unitCode `MIN`)  
@@ -287,7 +287,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/ChargeIndicator` = **false**  
   An allowance.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
+  The reason for the allowance as a code of UN/EDIFACT 5189. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Calls to the trade accord countries are included in the subscription**  
   Why the service costs nothing.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.450** (currencyID `XLC`)  
@@ -309,23 +309,23 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1851**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 2 of the six of subscription ST-L-BUS6, with calls on the island included.**  
-  The subscription, as the invoice line names it (utilities/13#F10).
+  The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
+  No tax on the island; the bundle discount is given once, on the whole supply (F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-2**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
-  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
   The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **165** (unitCode `MIN`)  
-  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **V-0320-02**  
@@ -335,7 +335,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **12:30:00**  
   At lunch.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **video**  
-  The operator's video service, no number called (O107).
+  The operator's video service, no number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Video on demand**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/MovieTitle` = **Safe Lifting in the Warehouse**  
@@ -345,7 +345,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **1** (unitCode `EA`)  
   One film.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
-  The film's price less the allowance (utilities/12#F18).
+  The film's price less the allowance.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **2** (currencyID `XLC`)  
   The price of a training film.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -353,7 +353,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/ChargeIndicator` = **false**  
   An allowance.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReasonCode` = **64** (listID `UN/EDIFACT EDED 5189`)  
-  The reason for the allowance as a code of UN/EDIFACT 5189, as EN 16931 uses it. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
+  The reason for the allowance as a code of UN/EDIFACT 5189. The code is from the world's copy of UN/EDIFACT 5189 Allowance or charge identification: 64 = Special agreement.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/AllowanceChargeReason` = **Training films are included in the business bundle**  
   Why the service costs nothing.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/AllowanceCharge/Amount` = **2.000** (currencyID `XLC`)  
@@ -363,23 +363,23 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1852**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 3 of the six of subscription ST-L-BUS6, with calls on the island included.**  
-  The subscription, as the invoice line names it (utilities/13#F10).
+  The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
+  No tax on the island; the bundle discount is given once, on the whole supply (F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-3**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
-  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
   The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **190** (unitCode `MIN`)  
-  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **4**  
@@ -387,23 +387,23 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1853**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 4 of the six of subscription ST-L-BUS6, with calls on the island included.**  
-  The subscription, as the invoice line names it (utilities/13#F10).
+  The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
+  No tax on the island; the bundle discount is given once, on the whole supply (F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-4**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
-  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
   The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **215** (unitCode `MIN`)  
-  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **5**  
@@ -411,23 +411,23 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1854**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 5 of the six of subscription ST-L-BUS6, with calls on the island included.**  
-  The subscription, as the invoice line names it (utilities/13#F10).
+  The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
+  No tax on the island; the bundle discount is given once, on the whole supply (F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-5**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
-  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
   The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **240** (unitCode `MIN`)  
-  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **6**  
@@ -435,31 +435,31 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1855**  
   The line's number; +999 is reserved, no real country's code.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Business line 6 of the six of subscription ST-L-BUS6, with calls on the island included.**  
-  The subscription, as the invoice line names it (utilities/13#F10).
+  The subscription, as the invoice line names it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **21.180** (currencyID `XLC`)  
   The monthly subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **21.180** (currencyID `XLC`)  
-  No tax on the island; the bundle discount is given once, on the whole supply (utilities/12#F3, F6).
+  No tax on the island; the bundle discount is given once, on the whole supply (F6).
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **S-03-6**  
   The month's calls on the island, summed: they are included.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
-  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
   The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **island**  
-  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called (O107).
+  Calls within the island, not listed (privacy): no number, a word where UBL asks for the number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Island calls**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **265** (unitCode `MIN`)  
-  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration (O107).
+  Minutes called on the island: UBL's quantity is "the number of calls" and has no sibling for a duration.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **0.000** (currencyID `XLC`)  
   Included in the subscription.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/ID` = **7**  
   The data pool, a line of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/PhoneNumber` = **+999 3 721 1856**  
-  The data pool's own number, which the phones of the six lines share (D31 point 6, utilities/12#F7).
+  The data pool's own number, which the phones of the six lines share.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/Description` = **Mobile data pool ST-D-0042, shared by the six lines: 35 GB beyond the subscriptions in March, 4 GB of them roaming in Bayvarra.**  
-  What it is, as the invoice lines name it (utilities/13#F10).
+  What it is, as the invoice lines name it.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/LineExtensionAmount` = **19.144** (currencyID `XLC`)  
   The data at the data tariff and the roaming at the roaming tariff.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TaxInclusiveLineExtensionAmount` = **19.144** (currencyID `XLC`)  
@@ -467,15 +467,15 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ID` = **D-03**  
   The month's data on the island beyond the subscriptions.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallDate` = **2026-03-01**  
-  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own (O107).
+  The start of the month the record sums: UBL asks every service record for a call date and time, a summary has none of its own.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **00:00:00**  
   The month's first minute.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
-  Mobile data, no number called (O107).
+  Mobile data, no number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Mobile data**  
   The kind of service.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Quantity` = **31** (unitCode `E34`)  
-  Gigabytes used on the island (O107).
+  Gigabytes used on the island.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallExtensionAmount` = **13.144** (currencyID `XLC`)  
   At the data tariff.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/Price/PriceAmount` = **0.424** (currencyID `XLC`)  
@@ -489,7 +489,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **08:00:00**  
   From the morning.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **data**  
-  Mobile data, no number called (O107).
+  Mobile data, no number called.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **Roaming: mobile data in Bayvarra**  
   The name of code ROAM in the Trade Accord's telecommunications service category list, followed by the detail of this case: the phones used mobile data on a network in Bayvarra.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategoryCode` = **ROAM** (listID `urn:ubl-examples:world:codelist:TelecomServiceCategoryCode`)  

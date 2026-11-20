@@ -11,9 +11,9 @@ The distributor introduces itself to the new island customer.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:business-card:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Business card". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Business card". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:onboarding:1.0**  
   The Trade Accord's process profile the document belongs to: onboarding, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **SEA-2026-01**  
@@ -23,15 +23,15 @@ The distributor introduces itself to the new island customer.
 - `UUID` = **da594e74-bfa8-5df5-ab8d-930b60c73ea9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-05**  
-  Sent before the first offer to the new customer, on Tuesday 5 May, after Bayvarra's Labour Day (D27, D30 point 6).
+  Sent before the first offer to the new customer, on Tuesday 5 May, after Bayvarra's Labour Day.
 - `IssueTime` = **16:39:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `VersionID` = **2**  
   The card as updated this year.
 - `PreviousVersionID` = **1**  
   Last year's card.
 - `BriefDescription` = **Distributor of street and garden furniture for Bayvarra and the islands, with a weekly sailing to Selanu (Port Wrenfield in the island's address register).**  
-  The business in a sentence. The town is Selanu in running text, also in English; Port Wrenfield is its official English name, which addresses carry (decision D3).
+  The business in a sentence. The town is Selanu in running text, also in English; Port Wrenfield is its official English name, which addresses carry.
 
 ### Signature
 
@@ -58,29 +58,29 @@ Inside `SenderParty`:
 Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Velumi Trading (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Island companies register; as Velumi Trading gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Velumi Trading**  
-  The trading name; identity of Velumi Trading (world/parties.json).
+  The trading name; as Velumi Trading gives it.
 - `PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Velumi Trading (world/parties.json).
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Velumi Trading gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PostalAddress/StreetName` = **Kavama Timeku** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Velumi Trading (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Velumi Trading gives it.
 - `PostalAddress/StreetName` = **Reef Street** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Velumi Trading (world/parties.json).
+  The street's name in English, the country's other official language; as Velumi Trading gives it.
 - `PostalAddress/BuildingNumber` = **16**  
-  Building number of the postal address. identity of Velumi Trading (world/parties.json).
+  Building number of the postal address. as Velumi Trading gives it.
 - `PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
 - `PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Velumi Trading (world/parties.json).
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Velumi Trading gives it.
 - `PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 
@@ -89,61 +89,61 @@ Inside `ReceiverParty`:
 Inside `BusinessParty`:
 
 - `WebsiteURI` = **https://www.lumeway.example**  
-  The party's website, under the reserved .example domain (RFC 2606); identity of Lumeway Distribution (world/parties.json).
+  The party's website, under the reserved .example domain (RFC 2606); as Lumeway Distribution gives it.
 - `IndustryClassificationCode` = **4649** (listID `ISIC Rev.4`)  
-  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; identity of Lumeway Distribution (world/parties.json). The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
+  What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; as Lumeway Distribution gives it. The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 4649 = Wholesale of other household goods.
 - `PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Lumeway Distribution gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples ; as Lumeway Distribution gives it.
 - `PartyName/Name` = **Lumeway Distribution**  
-  The trading name; identity of Lumeway Distribution (world/parties.json).
+  The trading name; as Lumeway Distribution gives it.
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `PostalAddress/ID` = **UL-ADR-693911** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
-  The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Lumeway Distribution (world/parties.json).
+  The address's number in the address register of Upland State (UL-ADR- and six digits); as Lumeway Distribution gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Distribution Drive**  
-  Street of the postal address. identity of Lumeway Distribution (world/parties.json).
+  Street of the postal address. as Lumeway Distribution gives it.
 - `PostalAddress/BlockName` = **Marrowdale Business Park**  
-  The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
+  The business park the distribution centre stands in. as Lumeway Distribution gives it.
 - `PostalAddress/BuildingNumber` = **43**  
-  Building number of the postal address. identity of Lumeway Distribution (world/parties.json).
+  Building number of the postal address. as Lumeway Distribution gives it.
 - `PostalAddress/PlotIdentification` = **Plot 14**  
-  The plot of the distribution centre in the business park. identity of Lumeway Distribution (world/parties.json).
+  The plot of the distribution centre in the business park. as Lumeway Distribution gives it.
 - `PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeway Distribution (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeway Distribution gives it.
 - `PostalAddress/PostalZone` = **71214**  
-  Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Lumeway Distribution gives it.
 - `PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. as Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Lumeway Distribution Ltd**  
-  The name under which the party is registered, with its legal form; identity of Lumeway Distribution (world/parties.json).
+  The name under which the party is registered, with its legal form; as Lumeway Distribution gives it.
 - `PartyLegalEntity/CompanyID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+  Number in the Federal business register of Bayvarra; as Lumeway Distribution gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `PartyLegalEntity/RegistrationDate` = **1988-10-03**  
-  The day the company was entered in the register; identity of Lumeway Distribution (world/parties.json).
+  The day the company was entered in the register; as Lumeway Distribution gives it.
 - `PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
 - `PartyLegalEntity/CompanyLegalForm` = **Limited company (private)** (languageID `en-XB`)  
   The name of code LTD in Bayvarra's national company legal form list.
 - `PartyLegalEntity/EntitySizeCode` = **MEDIUM** (listID `urn:ubl-examples:world:codelist:EntitySizeCode`)  
-  The size class follows from the company's 78 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; identity of Lumeway Distribution (world/parties.json). The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
+  The size class follows from the company's 78 persons and its turnover of 33900000.00 XBL in 2025, by the Trade Accord's limits; as Lumeway Distribution gives it. The code is from the Trade Accord's entity size list: MEDIUM = Medium-sized enterprise.
 - `PartyLegalEntity/CompanyLiquidationStatusCode` = **ACTIVE** (listID `urn:ubl-examples:world:codelist:CompanyLiquidationStatusCode`)  
   The register shows the company as active, not in liquidation. The code is from the Trade Accord's company liquidation status list: ACTIVE = Active, not in liquidation.
 - `PartyLegalEntity/RegistrationAddress/CityName` = **Marrowdale**  
@@ -151,7 +151,7 @@ Inside `BusinessParty`:
 - `PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PartyLegalEntity/CorporateRegistrationScheme/ID` = **XB:FBR**  
-  The identifier of the register in the world (world/countries.json).
+  The identifier of the register in the world.
 - `PartyLegalEntity/CorporateRegistrationScheme/Name` = **Federal business register of Bayvarra**  
   The register the company is entered in.
 - `PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
@@ -159,21 +159,21 @@ Inside `BusinessParty`:
 - `PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Contact/Name` = **Sales office**  
-  The party's sales office desk: the desk for its role in this document (it sells); identity of Lumeway Distribution (world/parties.json).
+  The party's sales office desk: the desk for its role in this document (it sells); as Lumeway Distribution gives it.
 - `Contact/JobTitle` = **Sales coordinator**  
-  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
+  The job of the person who answers at the desk; as Lumeway Distribution gives it.
 - `Contact/Department` = **Sales**  
-  The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
+  The department the desk belongs to; as Lumeway Distribution gives it.
 - `Contact/Telephone` = **+999 2 7121 955 964**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeway Distribution gives it.
 - `Contact/ElectronicMail` = **sales@lumeway.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeway Distribution gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+  When the desk can be reached; as Lumeway Distribution gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Lumeway Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Brochure Document Reference
 
@@ -193,7 +193,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **LD-REG-XB**  
   The distributor's registration extract.
 - `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Lumeway's extract from Bayvarra's business register, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
+  The kind of document referred to, Lumeway's extract from Bayvarra's business register, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
 
 ### Business Capability
 
@@ -204,19 +204,19 @@ Inside `BusinessCapability`:
 - `CapabilityTypeCode` = **WAREHOUSING** (listID `urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode`)  
   What it can do. The code is from the Trade Accord's business capability type list: WAREHOUSING = Warehousing.
 - `Description` = **Stock of 264 park benches in Marrowdale, as counted on 30 April.**  
-  In words: the benches for sale in Lumeway's warehouse at its month-end count, from the March road lot and the April rail lots (the goods chain's ledger, D21).
+  In words: the benches for sale in Lumeway's warehouse at its month-end count, from the March road lot and the April rail lots (the goods chain's ledger).
 - `ValueAmount` = **105336.00** (currencyID `XBL`)  
-  The stock's value at cost, 399.00 lume a bench, the price Lumeway paid Valdara (D14).
+  The stock's value at cost, 399.00 lume a bench, the price Lumeway paid Valdara.
 - `ValueQuantity` = **264** (unitCode `EA`)  
   Benches in stock, for sale.
 - `SuppliedEvidence/ID` = **LD-COUNT-26-04**  
   The evidence.
 - `SuppliedEvidence/EvidenceTypeCode` = **STOCKCOUNT** (listID `urn:ubl-examples:world:codelist:EvidenceTypeCode`)  
-  Lumeway's own count of its stock, not an audit (D30 point 7, sea/01#F3). The code is from the Trade Accord's evidence type list: STOCKCOUNT = Stock count.
+  Lumeway's own count of its stock, not an audit. The code is from the Trade Accord's evidence type list: STOCKCOUNT = Stock count.
 - `SuppliedEvidence/Name` = **Stock count of 30 April 2026**  
   Its name.
 - `SuppliedEvidence/Description` = **The distributor's own count of its warehouse at the end of April; it counts its stock at the end of every month.**  
-  What it is, and how often it is made (sea/01#F4).
+  What it is, and how often it is made.
 - `SuppliedEvidence/ConfidentialityLevelCode` = **PUBLIC** (listID `urn:ubl-examples:world:codelist:ConfidentialityLevelCode`)  
   May be shared. The code is from the Trade Accord's confidentiality level list: PUBLIC = Public.
 - `SuppliedEvidence/EvidenceIssuingParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -226,7 +226,7 @@ Inside `BusinessCapability`:
 - `ValidityPeriod/StartDate` = **2026-04-30**  
   From the count of 30 April
 - `ValidityPeriod/EndDate` = **2026-05-31**  
-  to the next, at the end of May (sea/01#F12).
+  to the next, at the end of May.
 - `WebSite/ID` = **WEB-1**  
   The stock page.
 - `WebSite/Name` = **Stock**  

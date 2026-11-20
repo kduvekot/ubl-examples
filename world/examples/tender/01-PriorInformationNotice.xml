@@ -200,7 +200,7 @@
       <cbc:PersonalSituation>The tenderer must not be in any of the exclusion situations of the Public Procurement Act, and declares this in its self-declaration.</cbc:PersonalSituation>
       <cbc:OperatingYearsQuantity unitCode="ANN">3</cbc:OperatingYearsQuantity>
       <cbc:EmployeeQuantity unitCode="IE">10</cbc:EmployeeQuantity>
-      <cbc:Description>Economic and technical capacity; the request is the same for every tenderer, alone or in a group, so it names no role (tender/01#F21).</cbc:Description>
+      <cbc:Description>Economic and technical capacity; the request is the same for every tenderer, alone or in a group, so it names no role.</cbc:Description>
       <cac:RequiredBusinessClassificationScheme>
         <cbc:ID>ISIC4</cbc:ID>
         <cbc:Name>ISIC Rev. 4</cbc:Name>

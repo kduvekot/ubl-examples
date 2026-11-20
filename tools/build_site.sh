@@ -187,5 +187,7 @@ sed -e "/<!--NAV-->/r $OUT/.nav" -e "/<!--NAV-->/d" \
     site/index.html > "$OUT/index.html"
 grep -q '{{' "$OUT/index.html" && { echo "a placeholder of the home page is not filled in" >&2; exit 1; }
 rm "$OUT/.nav" "$OUT/.footer"
+# The published text states the world as fact: no internal references (the two-layer rule)
+python3 tools/check_published.py "$OUT"
 touch "$OUT/.nojekyll"
 echo "site built in $OUT"

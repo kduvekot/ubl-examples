@@ -11,9 +11,9 @@ The haulier's consignment note under Bayvarra's road carriage law, with the dang
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:waybill:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **LPG-2026-01**  
@@ -31,13 +31,13 @@ The haulier's consignment note under Bayvarra's road carriage law, with the dang
 - `IssueDate` = **2026-06-10**  
   Issued at the plant when the haulier took over the loaded tank.
 - `IssueTime` = **06:50:00-01:00**  
-  After the tanker was weighed full; in the issuer's local time, with its offset from UTC (D27).
+  After the tanker was weighed full; in the issuer's local time, with its offset from UTC.
 - `Name` = **Consignment note under the national road carriage law**  
   The kind of transport document.
 - `Description` = **The tanker carries the propane from the gas plant to the water company's peak boilers in Lumeport.**  
   The carriage in words.
 - `Note` = **Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.**  
-  The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed (worklist C33).
+  The originals the convention prescribes, as the distribution below lists them; the carrier's own is not distributed.
 - `WaybillTypeCode` = **NATROAD** (listID `urn:ubl-examples:world:codelist:WaybillTypeCode`)  
   The convention the document follows. The code is from the Trade Accord's waybill type list: NATROAD = Domestic road consignment note.
 - `ConsolidatedIndicator` = **false**  
@@ -57,94 +57,94 @@ Inside `IssueLocation`:
 Inside `SenderParty`:
 
 - `PartyIdentification/ID` = **20413151** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Gullhaven Tank Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Gullhaven Tank Haulage gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Gullhaven Tank Haulage**  
-  The trading name; identity of Gullhaven Tank Haulage (world/parties.json).
+  The trading name; as Gullhaven Tank Haulage gives it.
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `PostalAddress/ID` = **NT-ADR-604219** (schemeID `urn:ubl-examples:world:XB:NT:address-register`)  
-  The address's number in the address register of Northern Territory (NT-ADR- and six digits); identity of Gullhaven Tank Haulage (world/parties.json).
+  The address's number in the address register of Northern Territory (NT-ADR- and six digits); as Gullhaven Tank Haulage gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Harbour Road**  
-  Street of the postal address. identity of Gullhaven Tank Haulage (world/parties.json).
+  Street of the postal address. as Gullhaven Tank Haulage gives it.
 - `PostalAddress/BuildingNumber` = **14**  
-  Building number of the postal address. identity of Gullhaven Tank Haulage (world/parties.json).
+  Building number of the postal address. as Gullhaven Tank Haulage gives it.
 - `PostalAddress/CityName` = **Gullhaven**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Gullhaven Tank Haulage (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Gullhaven Tank Haulage gives it.
 - `PostalAddress/PostalZone` = **90540**  
-  Postal code in Bayvarra's format (5 digits). identity of Gullhaven Tank Haulage (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Gullhaven Tank Haulage gives it.
 - `PostalAddress/CountrySubentity` = **Northern Territory**  
   The name of code XB-NT in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-NT** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Gullhaven Tank Haulage (world/parties.json). The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
+  The state or territory as a code of Bayvarra's address scheme. as Gullhaven Tank Haulage gives it. The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Tanker planning**  
-  The party's main desk, which handles this document; identity of Gullhaven Tank Haulage (world/parties.json).
+  The party's main desk, which handles this document; as Gullhaven Tank Haulage gives it.
 - `Contact/JobTitle` = **Tanker planner**  
-  The job of the person who answers at the desk; identity of Gullhaven Tank Haulage (world/parties.json).
+  The job of the person who answers at the desk; as Gullhaven Tank Haulage gives it.
 - `Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Gullhaven Tank Haulage (world/parties.json).
+  The department the desk belongs to; as Gullhaven Tank Haulage gives it.
 - `Contact/Telephone` = **+999 2 38522 41906**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Gullhaven Tank Haulage (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Gullhaven Tank Haulage gives it.
 - `Contact/ElectronicMail` = **planning@gullhaventank.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Gullhaven Tank Haulage (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Gullhaven Tank Haulage gives it.
 - `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Gullhaven Tank Haulage (world/parties.json).
+  When the desk can be reached; as Gullhaven Tank Haulage gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20413151** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Gullhaven Tank Haulage (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Gullhaven Tank Haulage gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
 Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Kelpstone Gas gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **0990:19676** (schemeID `ISO 6523`)  
-  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Kelpstone Gas (world/parties.json).
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates. No real scheme has the code designator 0990; as Kelpstone Gas gives it.
 - `PartyName/Name` = **Kelpstone Gas**  
-  The trading name; identity of Kelpstone Gas (world/parties.json).
+  The trading name; as Kelpstone Gas gives it.
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `PostalAddress/ID` = **NT-ADR-587853** (schemeID `urn:ubl-examples:world:XB:NT:address-register`)  
-  The address's number in the address register of Northern Territory (NT-ADR- and six digits); identity of Kelpstone Gas (world/parties.json).
+  The address's number in the address register of Northern Territory (NT-ADR- and six digits); as Kelpstone Gas gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Shoreline Road**  
-  Street of the postal address. identity of Kelpstone Gas (world/parties.json).
+  Street of the postal address. as Kelpstone Gas gives it.
 - `PostalAddress/BuildingNumber` = **2**  
-  Building number of the postal address. identity of Kelpstone Gas (world/parties.json).
+  Building number of the postal address. as Kelpstone Gas gives it.
 - `PostalAddress/CityName` = **Gullhaven**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelpstone Gas (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Kelpstone Gas gives it.
 - `PostalAddress/PostalZone` = **90540**  
-  Postal code in Bayvarra's format (5 digits). identity of Kelpstone Gas (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Kelpstone Gas gives it.
 - `PostalAddress/CountrySubentity` = **Northern Territory**  
   The name of code XB-NT in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-NT** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Kelpstone Gas (world/parties.json). The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
+  The state or territory as a code of Bayvarra's address scheme. as Kelpstone Gas gives it. The code is from Bayvarra's national state or territory list: XB-NT = Northern Territory.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `PhysicalLocation/Description` = **Gas treatment plant on the north coast; the platform of the offshore field lies about 80 kilometres out.**  
@@ -152,33 +152,33 @@ Inside `ReceiverParty`:
 - `PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **28** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map.
 - `PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **15.95** (unitCode `D61`)  
   The minutes of the latitude.
 - `PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **15** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map.
 - `PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **33.76** (unitCode `D61`)  
   The minutes of the longitude.
 - `PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Contact/Name` = **Pipeline control**  
-  The party's pipeline control desk: the desk for its role in this document (it carries or handles the goods); identity of Kelpstone Gas (world/parties.json).
+  The party's pipeline control desk: the desk for its role in this document (it carries or handles the goods); as Kelpstone Gas gives it.
 - `Contact/JobTitle` = **Pipeline controller**  
-  The job of the person who answers at the desk; identity of Kelpstone Gas (world/parties.json).
+  The job of the person who answers at the desk; as Kelpstone Gas gives it.
 - `Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Kelpstone Gas (world/parties.json).
+  The department the desk belongs to; as Kelpstone Gas gives it.
 - `Contact/Telephone` = **+999 2 38522 68330**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Kelpstone Gas (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Kelpstone Gas gives it.
 - `Contact/ElectronicMail` = **pipeline@kelpstone.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelpstone Gas (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Kelpstone Gas gives it.
 - `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Kelpstone Gas (world/parties.json).
+  When the desk can be reached; as Kelpstone Gas gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20412877** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Kelpstone Gas (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Kelpstone Gas gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Consignor Party
 
@@ -205,53 +205,53 @@ Inside `Shipment`:
 - `ID` = **KG-SH-26-0897**  
   The shipment as the despatching party numbered it.
 - `GrossWeightMeasure` = **29880** (unitCode `KGM`)  
-  The goods (20180 kg) and the tare of the transport equipment (9700 kg): a shipment's gross weight includes the equipment (worklist C15).
+  The goods (20180 kg) and the tare of the transport equipment (9700 kg): a shipment's gross weight includes the equipment.
 - `Consignment/ID` = **KG-CS-26-0898**  
   The consignment of the transport booking.
 - `Consignment/GrossWeightMeasure` = **20180** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The propane, net, from the plant's weighbridge.
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The propane, net, from the plant's weighbridge.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment is dangerous goods.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Coastal State Water Company gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Coastal State Water Company**  
-  The trading name; identity of Coastal State Water Company (world/parties.json).
+  The trading name; as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/PostalAddress/ID` = **LUM-ADR-782593** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Coastal State Water Company (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Consignment/ConsigneeParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Consignment/ConsigneeParty/PostalAddress/StreetName` = **Reservoir Road**  
-  Street of the postal address. identity of Coastal State Water Company (world/parties.json).
+  Street of the postal address. as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/PostalAddress/BuildingNumber` = **51**  
-  Building number of the postal address. identity of Coastal State Water Company (world/parties.json).
+  Building number of the postal address. as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Coastal State Water Company (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/PostalAddress/PostalZone` = **38500**  
-  Postal code in Bayvarra's format (5 digits). identity of Coastal State Water Company (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Consignment/ConsigneeParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Coastal State Water Company (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Coastal State Water Company gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/ConsigneeParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Consignment/ConsigneeParty/Contact/Name` = **Customer service**  
-  The party's main desk, which handles this document; identity of Coastal State Water Company (world/parties.json).
+  The party's main desk, which handles this document; as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/JobTitle` = **Customer service officer**  
-  The job of the person who answers at the desk; identity of Coastal State Water Company (world/parties.json).
+  The job of the person who answers at the desk; as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/Department` = **Customer service**  
-  The department the desk belongs to; identity of Coastal State Water Company (world/parties.json).
+  The department the desk belongs to; as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/Telephone` = **+999 2 38 9310 7518**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Coastal State Water Company (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/ElectronicMail` = **customer@coastalwater.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Coastal State Water Company (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Coastal State Water Company (world/parties.json).
+  When the desk can be reached; as Coastal State Water Company gives it.
 - `Consignment/MainCarriageShipmentStage/ID` = **1**  
   The one road leg, from the plant to Lumeport.
 - `Consignment/MainCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -263,9 +263,9 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
   The same, in words.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **3113** (listID `UNECE Recommendation 28`)  
-  The kind of means of transport: tractor unit with an LPG tank semi-trailer; the fleet of Gullhaven Tank Haulage (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 3113 = Lorry, articulated with tank.
+  The kind of means of transport: tractor unit with an LPG tank semi-trailer; the fleet of Gullhaven Tank Haulage. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 3113 = Lorry, articulated with tank.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **BV GT 2604** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
-  The registration plate of the truck; the fleet of Gullhaven Tank Haulage (world/parties.json). The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
+  The registration plate of the truck; the fleet of Gullhaven Tank Haulage. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV TK 0419** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
   The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
@@ -277,7 +277,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **TAREWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The same tanker weighed empty before loading. The code is from the Trade Accord's dimension attribute list: TAREWEIGHT = Tare weight. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/Measure` = **17000** (unitCode `KGM`)  
-  The tractor about 7,300 kg and the tank semi-trailer about 9,700 kg (world/parties.json).
+  The tractor about 7,300 kg and the tank semi-trailer about 9,700 kg.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/Description` = **Empty, at 05:40**  
   When it was weighed.
 - `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-06-10**  
@@ -309,7 +309,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/TransportEquipment/Description` = **A pressure tank for liquefied flammable gases, approved for UN 1965; its plate gives 49 m³ and a maximum load of 20,500 kg.**  
   The tank, as its approval plate gives it.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **9700** (unitCode `KGM`)  
-  The tank semi-trailer empty, from the haulier's fleet data (world/parties.json).
+  The tank semi-trailer empty, from the haulier's fleet data.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ID` = **KG-LPG-DG**  
   Kelpstone's dangerous goods record of its propane.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/PlacardNotation` = **2.1**  
@@ -349,7 +349,7 @@ Inside `Shipment`:
 - `Consignment/EnvironmentalEmission/ValueMeasure` = **456** (unitCode `KGM`)  
   1,700 kWh times 0.268 kg CO2e per kWh.
 - `Consignment/EnvironmentalEmission/ValueFactorNumeric` = **0.268**  
-  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the default factor for diesel in EN 16258 (D41).
+  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the default factor for diesel in EN 16258.
 - `Consignment/EnvironmentalEmission/ValueBaseMeasure` = **1700** (unitCode `KWH`)  
   The diesel the run used, 170 litres of about 10 kWh, from the haulier's fuel records: about 33 litres per 100 km for the 515 km of the combination loaded.
 - `Consignment/EnvironmentalEmission/Description` = **The loaded run, Gullhaven to Lumeport.**  
@@ -367,7 +367,7 @@ Inside `Shipment`:
 - `Consignment/EnvironmentalEmission/ValueMeasure` = **332** (unitCode `KGM`)  
   1,240 kWh times 0.268 kg CO2e per kWh.
 - `Consignment/EnvironmentalEmission/ValueFactorNumeric` = **0.268**  
-  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the default factor for diesel in EN 16258 (D41).
+  Tank to wheel, kg CO2e per kWh of diesel: about 2.67 kg per litre of about 10 kWh, the order of the default factor for diesel in EN 16258.
 - `Consignment/EnvironmentalEmission/ValueBaseMeasure` = **1240** (unitCode `KWH`)  
   The diesel the run used, 124 litres of about 10 kWh, from the haulier's fuel records: about 24 litres per 100 km for the 515 km of the tanker empty.
 - `Consignment/EnvironmentalEmission/Description` = **The tanker's empty run back to Gullhaven the next day, counted against this consignment: the Coastal State Water Company's greenhouse-gas report asks its suppliers' carriers for the whole round trip.**  

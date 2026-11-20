@@ -11,9 +11,9 @@ The engineering firm announces the goods to the telecom company.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **MAST-2026-01**  
@@ -25,11 +25,11 @@ The engineering firm announces the goods to the telecom company.
 - `IssueDate` = **2026-06-04**  
   Sent when the goods leave for the airport.
 - `IssueTime` = **09:40:00-01:00**  
-  When the forwarder's truck left Saltmere's works for the airport, about an hour away; in the issuer's local time, with its offset from UTC (D27).
+  When the forwarder's truck left Saltmere's works for the airport, about an hour away; in the issuer's local time, with its offset from UTC.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the air waybill.**  
-  What the receiver should do; the note names the transport document the flow uses (worklist C30).
+  What the receiver should do; the note names the transport document the flow uses.
 - `LineCountNumeric` = **3**  
   The number of lines.
 
@@ -45,102 +45,102 @@ Inside `OrderReference`:
 Inside `DespatchSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **20410685** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Saltmere Engineering gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Saltmere Engineering**  
-  The trading name; identity of Saltmere Engineering (world/parties.json).
+  The trading name; as Saltmere Engineering gives it.
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `Party/PostalAddress/ID` = **UL-ADR-587295** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
-  The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Saltmere Engineering (world/parties.json).
+  The address's number in the address register of Upland State (UL-ADR- and six digits); as Saltmere Engineering gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Foundry Road**  
-  Street of the postal address. identity of Saltmere Engineering (world/parties.json).
+  Street of the postal address. as Saltmere Engineering gives it.
 - `Party/PostalAddress/BuildingNumber` = **13**  
-  Building number of the postal address. identity of Saltmere Engineering (world/parties.json).
+  Building number of the postal address. as Saltmere Engineering gives it.
 - `Party/PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Saltmere Engineering (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Saltmere Engineering gives it.
 - `Party/PostalAddress/PostalZone` = **71218**  
-  Postal code in Bayvarra's format (5 digits). identity of Saltmere Engineering (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Saltmere Engineering gives it.
 - `Party/PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Saltmere Engineering (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. as Saltmere Engineering gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Dispatch office**  
-  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); identity of Saltmere Engineering (world/parties.json).
+  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); as Saltmere Engineering gives it.
 - `Party/Contact/JobTitle` = **Dispatch coordinator**  
-  The job of the person who answers at the desk; identity of Saltmere Engineering (world/parties.json).
+  The job of the person who answers at the desk; as Saltmere Engineering gives it.
 - `Party/Contact/Department` = **Warehouse**  
-  The department the desk belongs to; identity of Saltmere Engineering (world/parties.json).
+  The department the desk belongs to; as Saltmere Engineering gives it.
 - `Party/Contact/Telephone` = **+999 2 7121 930 729**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Saltmere Engineering (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Saltmere Engineering gives it.
 - `Party/Contact/ElectronicMail` = **dispatch@saltmere.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Saltmere Engineering (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Saltmere Engineering gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Saltmere Engineering (world/parties.json).
+  When the desk can be reached; as Saltmere Engineering gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410685** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Saltmere Engineering (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Saltmere Engineering gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Delivery Customer Party
 
 Inside `DeliveryCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **IC42407** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Selanu Telecom (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Island companies register; as Selanu Telecom gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Selanu Telecom**  
-  The trading name; identity of Selanu Telecom (world/parties.json).
+  The trading name; as Selanu Telecom gives it.
 - `Party/PostalAddress/ID` = **34928611** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Telecom (world/parties.json).
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Selanu Telecom gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `Party/PostalAddress/StreetName` = **Kitata Vekase Natii** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Telecom (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Selanu Telecom gives it.
 - `Party/PostalAddress/StreetName` = **Mast Hill Road** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Selanu Telecom (world/parties.json).
+  The street's name in English, the country's other official language; as Selanu Telecom gives it.
 - `Party/PostalAddress/BuildingNumber` = **58**  
-  Building number of the postal address. identity of Selanu Telecom (world/parties.json).
+  Building number of the postal address. as Selanu Telecom gives it.
 - `Party/PostalAddress/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Telecom gives it.
 - `Party/PostalAddress/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Telecom (world/parties.json).
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Telecom gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Network stores**  
-  The party's network stores desk: the desk for its role in this document (it receives the goods); identity of Selanu Telecom (world/parties.json).
+  The party's network stores desk: the desk for its role in this document (it receives the goods); as Selanu Telecom gives it.
 - `Party/Contact/JobTitle` = **Stores supervisor**  
-  The job of the person who answers at the desk; identity of Selanu Telecom (world/parties.json).
+  The job of the person who answers at the desk; as Selanu Telecom gives it.
 - `Party/Contact/Department` = **Network operations**  
-  The department the desk belongs to; identity of Selanu Telecom (world/parties.json).
+  The department the desk belongs to; as Selanu Telecom gives it.
 - `Party/Contact/Telephone` = **+999 3 727 3193**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Telecom (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Selanu Telecom gives it.
 - `Party/Contact/ElectronicMail` = **stores@selanutelecom.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Telecom (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Telecom gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Selanu Telecom (world/parties.json).
+  When the desk can be reached; as Selanu Telecom gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42407** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Selanu Telecom (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; as Selanu Telecom gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -169,45 +169,45 @@ Inside `Shipment`:
 - `Consignment/ID` = **SE-CS-26-0716**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **333.75** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight.
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Kelaro Air Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Island companies register; as Kelaro Air Cargo gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
-  The trading name; identity of Kelaro Air Cargo (world/parties.json).
+  The trading name; as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/ID` = **58930746** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Kelaro Air Cargo (world/parties.json).
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `Consignment/CarrierParty/PostalAddress/StreetName` = **Lupela Natii** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Kelaro Air Cargo (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/StreetName` = **Airfield Road** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Kelaro Air Cargo (world/parties.json).
+  The street's name in English, the country's other official language; as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **46**  
-  Building number of the postal address. identity of Kelaro Air Cargo (world/parties.json).
+  Building number of the postal address. as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Kefalasa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Lintwell** (languageID `en-XL`)  
-  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Kelaro Air Cargo (world/parties.json).
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/CarrierParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Consignment/CarrierParty/Contact/Name` = **Cargo operations**  
-  The party's cargo operations desk: the desk for its role in this document (it carries or handles the goods); identity of Kelaro Air Cargo (world/parties.json).
+  The party's cargo operations desk: the desk for its role in this document (it carries or handles the goods); as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/Contact/JobTitle` = **Load controller**  
-  The job of the person who answers at the desk; identity of Kelaro Air Cargo (world/parties.json).
+  The job of the person who answers at the desk; as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Kelaro Air Cargo (world/parties.json).
+  The department the desk belongs to; as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/Contact/Telephone` = **+999 3 721 1044**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Kelaro Air Cargo (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/Contact/ElectronicMail` = **cargoops@kelaro.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Kelaro Air Cargo (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Kelaro Air Cargo gives it.
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
-  When the desk can be reached; identity of Kelaro Air Cargo (world/parties.json).
+  When the desk can be reached; as Kelaro Air Cargo gives it.
 - `Delivery/EstimatedDeliveryPeriod/StartDate` = **2026-06-05**  
   Expected after the usual transit by air.
 - `Delivery/EstimatedDeliveryPeriod/EndDate` = **2026-06-05**  
@@ -228,13 +228,13 @@ Inside `DespatchLine`:
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
 - `Item/Description` = **Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.**  
-  The seller's description; item battery-pack of Saltmere Engineering (world/items.json).
+  The seller's description.
 - `Item/Name` = **Lithium-ion battery module 48 V 50 Ah**  
-  The item's short name; item battery-pack of Saltmere Engineering (world/items.json).
+  The item's short name.
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-BAT-4850**  
-  The seller's own item number; item battery-pack of Saltmere Engineering (world/items.json).
+  The seller's own item number; as Saltmere Engineering describes the item.
 - `Item/HazardousItem/ID` = **SE-BAT-4850-DG**  
   The seller's dangerous goods record of the item.
 - `Item/HazardousItem/AdditionalInformation` = **State of charge below 30 %, as the air rules require.**  
@@ -264,13 +264,13 @@ Inside `DespatchLine`:
 - `OrderLineReference/LineID` = **2**  
   The order line this line fulfils.
 - `Item/Description` = **Ten ionisation smoke detectors for the mast's equipment room, each with a small americium-241 source.**  
-  The seller's description; item smoke-detector of Saltmere Engineering (world/items.json).
+  The seller's description.
 - `Item/Name` = **Ionisation smoke detector set**  
-  The item's short name; item smoke-detector of Saltmere Engineering (world/items.json).
+  The item's short name.
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-SMK-10**  
-  The seller's own item number; item smoke-detector of Saltmere Engineering (world/items.json).
+  The seller's own item number; as Saltmere Engineering describes the item.
 - `Item/HazardousItem/ID` = **SE-SMK-10-DG**  
   The seller's dangerous goods record of the item.
 - `Item/HazardousItem/AdditionalInformation` = **Excepted package: no radioactive label; the UN number on the package.**  
@@ -292,7 +292,7 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
   The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
 - `Item/HazardousItem/RadioactiveMaterial/Name` = **Am-241, 10 × 37 kBq (370 kBq) in ionisation smoke detectors**  
-  The nuclide and the activity of the pack as carried, in the name: UBL defines ApplicableRadioactiveIsotope for fissile contents only, and americium-241 is not fissile, so the name is the only place left for them (D36, O127).
+  The nuclide and the activity of the pack as carried, in the name: UBL defines ApplicableRadioactiveIsotope for fissile contents only, and americium-241 is not fissile, so the name is the only place left for them.
 - `Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Sealed sources inside the detectors, not special form.**  
   Its form.
 - `ID` = **3**  
@@ -304,13 +304,13 @@ Inside `DespatchLine`:
 - `OrderLineReference/LineID` = **3**  
   The order line this line fulfils.
 - `Item/Description` = **Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.**  
-  The seller's description; item coating-stripper of Saltmere Engineering (world/items.json).
+  The seller's description.
 - `Item/Name` = **Coating stripper for electronics**  
-  The item's short name; item coating-stripper of Saltmere Engineering (world/items.json).
+  The item's short name.
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **SE-CS-01**  
-  The seller's own item number; item coating-stripper of Saltmere Engineering (world/items.json).
+  The seller's own item number; as Saltmere Engineering describes the item.
 - `Item/HazardousItem/ID` = **SE-CS-01-DG**  
   The seller's dangerous goods record of the item.
 - `Item/HazardousItem/UNDGCode` = **2920** (listID `UN Model Regulations Dangerous Goods List`)  

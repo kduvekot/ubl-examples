@@ -208,7 +208,7 @@ def party(pid, short=False, desk=None, lang=None):
         return abroad_party(pid, desk)
     p = PARTY[pid]
     idn, c = p["identity"], WORLD["countries"][p["c"]]
-    src = f"identity of {idn['name']} (world/parties.json)"
+    src = f"as {idn['name']} gives it"  # its identity in world/parties.json
     out = {"_pid": pid}
     if idn.get("website"):
         out["WebsiteURI"] = V(idn["website"], f"The party's website, under the reserved .example domain (RFC 2606); {src}.")
@@ -229,13 +229,13 @@ def party(pid, short=False, desk=None, lang=None):
                 conv["gln"], "A further identifier, the party's Global Location Number (the endorsed "
                 "PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, "
                 "under its company prefix, which starts with 952, the prefix GS1 reserves for examples "
-                f"(decision ID-Q7); {src}.", schemeID="GS1 GLN")}]
+                f"; {src}.", schemeID="GS1 GLN")}]  # ID-Q7
         elif conv.get("convention") == "ISO":
             out["AdditionalPartyIdentification"] = [{"ID": V(
                 f"0990:{conv['codana_cin']}", "A further identifier (the endorsed PartyIdentification holds one "
                 "only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code "
                 "designator 0990 of the Codana Identification Agency and the party's Codana "
-                "company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code "
+                "company number, which also starts its licence plates. No real scheme has the code "  # ID-Q7
                 f"designator 0990; {src}.", schemeID="ISO 6523")}]
     if idn.get("customs_id"):
         out["AdditionalPartyIdentification"] = out.get("AdditionalPartyIdentification", []) + [{"ID": V(
@@ -250,18 +250,18 @@ def party(pid, short=False, desk=None, lang=None):
         code = "en" if lang == "english" else first
         if code == "en":
             out["Language"] = {"ID": V("en", "English, the language the party writes in this document" + (
-                                   ": documents between the countries of the Trade Accord are in English (O19)."
+                                   ": documents between the countries of the Trade Accord are in English."  # O19
                                    if first != "en" else ".")),
                                "Name": V("English", "The language's name."),
                                "LocaleCode": V(f"en-{p['c']}", f"The English the party writes: the variety of "
                                                                f"{c['name']}, with the country as the region; English is "
-                                                               "used in all three countries, so its locale says which "
-                                                               "(decision D1).")}
+                                                               "used in all three countries, so its locale says which"
+                                                               ".")}  # D1
         else:
             lang = WORLD["languages"][code]
             out["Language"] = {"ID": V(code, f"{lang['name']}, the language of {c['name']} and of the party; the code is "
                                              "from the range ISO 639 reserves for local use (qaa–qtz), as the world's "
-                                             "languages are invented (world/countries.json)."),
+                                             "languages are invented."),  # world/countries.json
                                "Name": V(lang["name"], f"The language's name in English; in the language itself: "
                                                        f"{lang['own_name']}.")}
     out["PostalAddress"] = address(pid, register=True)
@@ -378,7 +378,7 @@ def party(pid, short=False, desk=None, lang=None):
                                      "Certificate": {"ID": V(au["certificate"], "The number of the permit in the "
                                                              f"{c['identifiers'][au['register']]['name']}; the schemeID "
                                                              "names the register, and with it the authority that keeps "
-                                                             "it, so no issuer party is needed (decision ID-Q10).",
+                                                             "it, so no issuer party is needed.",  # ID-Q10
                                                              schemeID=world_ids.national_scheme(p["c"], au["register"])),
                                                      "CertificateTypeCode": V(au.get("type_code", "PERMIT"),
                                                                               "A permit issued by an authority of the "
@@ -406,7 +406,7 @@ def abroad_party(pid, desk=None):
     its desk, and no identifier, since a number in the shape of a real register's could be someone's."""
     p = PARTY[pid]
     idn = p["identity"]
-    src = f"identity of {idn['name']}, a maker outside the world (world/parties.json, abroad; O229)"
+    src = f"as {idn['name']}, a maker outside the three countries, gives it"  # O229, world/parties.json abroad
     ct = idn["contact"]
     out = {"_pid": pid,
            "PartyName": {"Name": V(idn["name"], f"The trading name; {src}. {idn['ids_note']}")},
@@ -428,7 +428,7 @@ def abroad_address(pid):
     """The postal address of a party outside the world: fictional, in a real town, in the country's own order."""
     p = PARTY[pid]
     a, c = p["identity"]["address"], ABROAD_COUNTRY[p["c"]]
-    src = f"identity of {p['identity']['name']} (world/parties.json, abroad): a fictional address in a real town"
+    src = f"as {p['identity']['name']} gives it; the address is fictional, in a real town"  # world/parties.json abroad
     out = {"AddressTypeCode": V("BUSINESS", "The kind of address.")}
     for k, why in (("StreetName", "Street of the postal address."), ("BuildingNumber", "Building number."),
                    ("CityName", "The town."), ("PostalZone", f"Postal code in the format of {c['name']}."),
@@ -437,7 +437,7 @@ def abroad_address(pid):
             out[k] = V(a[k], f"{why} {src}.")
     out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, the legal time there in "
                                              "June.")
-    out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}, a real country outside the world (O229).",
+    out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}, a real country outside the world.",  # O229
                                               listID="ISO 3166"),
                       "Name": V(c["name"], "The country's name, for readers of the address.")}
     return out
@@ -454,7 +454,7 @@ def legal_name(pid):
 def legal_entity(pid):
     p = PARTY[pid]
     idn, c = p["identity"], WORLD["countries"][p["c"]]
-    src = f"identity of {idn['name']} (world/parties.json)"
+    src = f"as {idn['name']} gives it"  # its identity in world/parties.json
     le = idn.get("legal", {})
     public = idn["kind"] == "public"           # a public body is in no register of businesses (D46, worklist C04)
     farm = le.get("sole_proprietor") and c.get("farm_registry")
@@ -463,7 +463,7 @@ def legal_entity(pid):
                                                    if not public else "The public body's official name; ") + f"{src}.")}
     out["CompanyID"] = V(idn["registry_id"], f"Number in the {reg['name']}" + (
         f", which gives every public body a number of its own ({reg['id_format']}), derived from no other register "
-        "(O142)" if public else "") + f"; {src}.")
+        "" if public else "") + f"; {src}.")  # O142
     if le.get("founded"):
         out["RegistrationDate"] = V(le["founded"], f"The day the company was entered in the register; {src}.")
     if le.get("form"):
@@ -489,7 +489,7 @@ def legal_entity(pid):
     if le.get("capital"):
         out["CorporateStockAmount"] = V(str(le["capital"]), f"The share capital, in {c['currency']['name'].lower()}, "
                                         f"as paid up: {c['name']}'s company law asks an {le.get('form')} to state it "
-                                        f"on its invoices and business letters (world/countries.json); {src}.",
+                                        f"on its invoices and business letters; {src}.",  # world/countries.json
                                         currencyID=c["currency"]["code"])
         out["FullyPaidSharesIndicator"] = V("true", "All shares are paid up, so the amount stated is the whole "
                                                     "share capital.")
@@ -498,7 +498,7 @@ def legal_entity(pid):
                                   "Country": {"IdentificationCode": V(p["c"], "The country of registration.")}}
     if farm:
         out["CorporateRegistrationScheme"] = {
-            "ID": V(farm["scheme"], "The identifier of the register in the world (world/countries.json)."),
+            "ID": V(farm["scheme"], "The identifier of the register in the world."),  # world/countries.json
             "Name": V(farm["name"], f"The register the farm is entered in, kept by "
                                     f"{'the ' + PARTY[farm['keeper']]['identity']['name'] if farm['keeper'] in PARTY else farm['keeper']}: "
                                     f"{farm['note']}"),
@@ -507,16 +507,16 @@ def legal_entity(pid):
                                                                                       "country.")}}}
     elif public:
         out["CorporateRegistrationScheme"] = {
-            "ID": V(reg["scheme"], "The identifier of the register in the world (world/countries.json)."),
+            "ID": V(reg["scheme"], "The identifier of the register in the world."),  # world/countries.json
             "Name": V(reg["name"], f"The register the public body is entered in, kept by "
                                    f"{'the ' + PARTY[reg['keeper']]['identity']['name'] if reg['keeper'] in PARTY else reg['keeper']}"
-                                   ": a public body is set up by law and is in no register of businesses (D46, O142)."),
+                                   ": a public body is set up by law and is in no register of businesses."),  # D46, O142
             "CorporateRegistrationTypeCode": V("PUBLIC", "A register of public bodies, not a register of businesses."),
             "JurisdictionRegionAddress": {"Country": {"IdentificationCode": V(p["c"], "The register covers the whole "
                                                                                       "country.")}}}
     else:
         out["CorporateRegistrationScheme"] = {
-            "ID": V(c["register_scheme"], "The identifier of the register in the world (world/countries.json)."),
+            "ID": V(c["register_scheme"], "The identifier of the register in the world."),  # world/countries.json
             "Name": V(c["registry"]["name"], "The register the company is entered in."),
             "CorporateRegistrationTypeCode": V("COMMERCIAL", "A register of businesses, not a register of charities or "
                                                              "associations."),
@@ -542,7 +542,7 @@ def legal_entity(pid):
 
 def address_format_code(code):
     c = WORLD["countries"][code]
-    return V(code, f"The address follows {c['name']}'s address format (world/countries.json), one line after the "
+    return V(code, f"The address follows {c['name']}'s address format, one line after the "  # world/countries.json
                    f"other, a line left out when the address has none of its fields: "
                    f"{'; '.join(c['address']['lines'])}. {c['address']['line_rule']}")
 
@@ -636,11 +636,11 @@ def city_names(country, city, why):
     names = next((t.get("names", {}) for t in WORLD.get("localities", []) + WORLD.get("villages", [])
                   if t["name"] == city and t["country"] == country), {})
     if names.get(code) and code == "qau":        # a village or locality of the map, with its Urvanian name
-        return [V(names[code], f"The place's {lang['name']} name, as the map gives it (world/map.json). {why}",
+        return [V(names[code], f"The place's {lang['name']} name, as the map gives it. {why}",  # world/map.json
                   languageID=code),
                 V(city, f"The place's English name, the Italian one. {why}", languageID=f"en-{country}")]
     if names.get(code):                           # a village of the island, with its Lisavan name
-        return [V(names[code], f"The place's {lang['name']} name, as the map gives it (world/map.json). {why}",
+        return [V(names[code], f"The place's {lang['name']} name, as the map gives it. {why}",  # world/map.json
                   languageID=code),
                 V(city, f"The place's English name, which its English settlers gave it, official beside the "
                         f"{lang['name']} one. {why}", languageID=f"en-{country}")]
@@ -651,8 +651,8 @@ def city_names(country, city, why):
     if lang.get("english_place_names", {}).get(city):
         return [V(city, f"The town's {lang['name']} name, its name on the island. {why}", languageID=code),
                 V(lang["english_place_names"][city], f"The town's English name, which its English-speaking settlers "
-                                                     f"gave it, official beside the {lang['name']} one "
-                                                     f"(world/countries.json). {why}", languageID=f"en-{country}")]
+                                                     f"gave it, official beside the {lang['name']} one. "
+                                                     f"{why}", languageID=f"en-{country}")]  # world/countries.json
     return V(city, why)
 
 
@@ -664,7 +664,7 @@ def address(pid, register=False):
         return abroad_address(pid)
     p = PARTY[pid]
     idn, c = p["identity"], WORLD["countries"][p["c"]]
-    src = f"identity of {idn['name']} (world/parties.json)"
+    src = f"as {idn['name']} gives it"  # its identity in world/parties.json
     a = idn["address"]
     why = {"Postbox": "The customs office receives its post in a post box.",
            "Floor": "The floor of the trade services desk in the bank's building.",
@@ -677,8 +677,8 @@ def address(pid, register=False):
            "MarkAttention": "For the attention of the head of procurement.",
            "PlotIdentification": "The plot of the distribution centre in the business park.",
            "CitySubdivisionName": "The quarter of Lumeport the party is in: one of the town's districts on the "
-                                  "map (world/map.json).",
-           "CountrySubentityCode": "The state or territory as a code of Bayvarra's address scheme (world/countries.json).",
+                                  "map.",  # world/map.json
+           "CountrySubentityCode": "The state or territory as a code of Bayvarra's address scheme.",  # world/countries.json
            "District": "The district of the island, used to find a farm off the main roads.",
            "Description": "How to find the farm, which has no house number on a street."}
     out = {}
@@ -697,7 +697,7 @@ def address(pid, register=False):
                               "the postal address.", "CityName": "The town or locality nearest to the party's place on "
                               "the map, in its own country and state.", "PostalZone": f"Postal code in {c['name']}'s "
                               f"format ({c['address']['postal_zone']}).", "CountrySubentity": (f"The province, part of an address in {c['name']}: a "
-                              "subdivision of the country (world/countries.json)." if c.get("province") else
+                              "subdivision of the country." if c.get("province") else  # world/countries.json
                               f"The state or territory, part of an address in federal {c['name']}.")}.get(k, why.get(k, "")) + f" {src}.")
     code = c["languages"][0]
     if code != "en" and "en" in c["languages"] and isinstance(out.get("StreetName"), V):
@@ -705,7 +705,7 @@ def address(pid, register=False):
         st = out["StreetName"]
         out["StreetName"] = [V(translate(st.value, code, street=True), f"The street's name in {lang}: {c['name']} "
                                f"is officially bilingual, and street names are given in both languages "
-                               f"(world/countries.json); {src}.", languageID=code),
+                               f"; {src}.", languageID=code),  # world/countries.json
                              V(st.value, "The street's name in English, the country's other official language"
                                          + ("; the Italian names the British kept are part of English now"
                                             if p["c"] == "XU" else "") + f"; {src}.", languageID=f"en-{p['c']}")]
@@ -715,16 +715,16 @@ def address(pid, register=False):
         out["CityName"] = city_names(p["c"], a["CityName"], out["CityName"].why)
     out["AddressFormatCode"] = address_format_code(p["c"])
     out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, {c['name']}'s legal time, "
-                                             "all year: there is no summer time (D27, world/countries.json).")
+                                             "all year: there is no summer time.")  # D27, world/countries.json
     if idn.get("address_lines"):
         fields = {k: [x.value for x in v] if isinstance(v, list) else [v.value] for k, v in out.items()}
         out["AddressLine"] = [{"Line": V(line, f"One line of the address as the farm writes it, made from the fields "
-                                               f"above in {c['name']}'s address format (world/countries.json), so "
+                                               f"above in {c['name']}'s address format, so "  # world/countries.json
                                                "that lines and fields agree. A name in both languages is given in "
                                                "both on the line, the national language first.")}
                               for line in world_data.address_lines(c["address"], fields)]
     out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}: a user-assigned ISO 3166-1 code, in the world's "
-                                                      "country code list (world/codelists)."),
+                                                      "country code list."),  # world/codelists
                       "Name": V(c["name"], "The country's name, for readers of the address.")}
     if idn.get("site") and pid == "38-xl":
         out["LocationCoordinate"] = coordinate(p["at"])
@@ -745,7 +745,7 @@ def coordinate(at):
     lon_f = lon_c - km * (at[0] - ci) / (111.32 * math.cos(math.radians(lat_c)))
     lat, lon = Decimal(f"{lat_f:.6f}"), Decimal(f"{lon_f:.6f}")
     why = "Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is " \
-          "open sea on a real map (world/countries.json)."
+          "open sea on a real map."  # world/countries.json
     def dm(x):
         return int(x), (x - int(x)) * 60
     (la, lam), (lo, lom) = dm(lat), dm(lon)
@@ -803,7 +803,7 @@ def party_again(pid, first):
     """A later mention of a party already given in full in this document: its identifier and name only."""
     idn = PARTY[pid]["identity"]
     why = (f"The same party as at {first}, where its full details are given; only its identifier and name are repeated."
-           if first else f"{PARTY[pid]['what']} Its identifier and name are enough (world/parties.json, referenced)."
+           if first else f"{PARTY[pid]['what']} Its identifier and name are enough (referenced)."  # world/parties.json
            if pid in REFERENCED else "A party referred to from another party's details: its identifier and name are "
                                      "enough.")
     out = {"PartyName": {"Name": V(idn["name"], why)}}
@@ -816,7 +816,7 @@ def institution(pid):
     """The content of a cac:FinancialInstitution element, for a bank of the world."""
     p = PARTY[pid]
     idn = p["identity"]
-    src = f"identity of {idn['name']} (world/parties.json)"
+    src = f"as {idn['name']} gives it"  # its identity in world/parties.json
     a = idn["address"]
     return {"_bank": pid,
             "ID": V(idn["bic"], "The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 "
@@ -848,7 +848,7 @@ def account(pid, why, note=None, abroad=False):
            **({"AliasName": V(acc["alias"], "The short name the holder gave the account, shown in its bank's "
                                              "app.")} if acc.get("alias") else {}),
            **({"BlockchainID": V(acc["ledger"], "The account holds tokenised coral deposits on the Bank of Selanu's "
-                                                "ledger, which Coral net settles on (world/countries.json).")}
+                                                "ledger, which Coral net settles on.")}  # world/countries.json
               if acc.get("ledger") else {}),
            "AccountTypeCode": V("CACC", "A current account, for payments in and out."),
            "AccountFormatCode": V("ISO13616", "The account number has the structure of ISO 13616."),
@@ -876,9 +876,9 @@ def buyer_item_id(iid, buyer):
     it = ITEM[iid]
     own = next((i for i in WORLD["items"] if i["seller"] == buyer and i.get("resale_of") == iid), None)
     if own:
-        return own["sellers_id"], f"The buyer's own item number: it resells this item as its item {own['id']}."
+        return own["sellers_id"], "The buyer's own item number: it resells this item under its own number."
     if buyer in it.get("buyer_ids", {}):
-        return it["buyer_ids"][buyer], "The number the buyer keeps for this item in its own system (world/items.json)."
+        return it["buyer_ids"][buyer], "The number the buyer keeps for this item in its own system."  # world/items.json
     return None, None
 
 
@@ -1077,9 +1077,9 @@ def hazardous_item(it):
                       f"{r['activity_gbq']} GBq ({mant} × 10^{len(str(int(bq))) - 1} Bq)",
                       "The radionuclide and the maximum activity during transport, which the transport document must "
                       "state in becquerels (IAEA SSR-6 para 546): UBL has no element for the activity of contents "
-                      "that are not fissile, so the name carries it, a finding for the TC (O202 choice 6). The "
+                      "that are not fissile, so the name carries it, a finding for the TC. The "  # O202 choice 6
                       "activity is the generator's at acceptance at the Lumeport cargo terminal, the highest it has "
-                      "on the way, as Mo-99 decays (O202 choice 4); the A2 value of Mo-99 allows up to 600 GBq in a "
+                      "on the way, as Mo-99 decays; the A2 value of Mo-99 allows up to 600 GBq in a "  # O202 choice 4
                       "Type A package."),
             "SpecialFormDescription": V(r["form"], "The physical and chemical form: not special form, so the A2 "
                                                    "value applies."),
@@ -1087,7 +1087,7 @@ def hazardous_item(it):
                                                 "in mSv/h times 100, rounded up to the first decimal (IAEA SSR-6 "
                                                 "para 523); above 1, so the package carries the Category III-YELLOW "
                                                 "label (para 529, the higher category winning over the surface "
-                                                "rate; O202 choice 1).")}
+                                                "rate).")}  # O202 choice 1
     elif hz.get("radioactive"):
         r = hz["radioactive"]
         total = r["kbq_each"] * r["count"]
@@ -1095,7 +1095,7 @@ def hazardous_item(it):
             "Name": V(f"{r['nuclide']}, {r['count']} × {r['kbq_each']} kBq ({total} kBq) in ionisation smoke "
                       "detectors", "The nuclide and the activity of the pack as carried, in the name: UBL defines "
                       "ApplicableRadioactiveIsotope for fissile contents only, and americium-241 is not fissile, so "
-                      "the name is the only place left for them (D36, O127)."),
+                      "the name is the only place left for them."),  # D36, O127
             "SpecialFormDescription": V(r["form"], "Its form.")}
     return out
 
@@ -1106,10 +1106,10 @@ def item_texts(it, text, what, src):
     in Bayvarra. `what` names the text, as in "The item's name"."""
     code = WORLD["countries"][PARTY[it["seller"]]["c"]]["languages"][0]
     if code == "en":
-        return V(text, f"{what}; {src}.")
+        return V(text, f"{what}.")          # src: where the text comes from, kept out of the published reason
     lang = WORLD["languages"][code]["name"]
-    return [V(translate(text, code), f"{what} in {lang}, the seller's language; {src}.", languageID=code),
-            V(text, f"{what} in English, the working language between the countries; {src}.", languageID="en")]
+    return [V(translate(text, code), f"{what} in {lang}, the seller's language.", languageID=code),
+            V(text, f"{what} in English, the working language between the countries.", languageID="en")]
 
 
 def item_names(it, src):
@@ -1122,13 +1122,13 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     """The content of a cac:Item element, from the items layer. `catalogue` is (catalogue number, line) for a
     catalogue line; `catalogue_ref` the catalogue an order line was ordered from."""
     it = ITEM[iid]
-    src = f"item {it['id']} of {PARTY[it['seller']]['identity']['name']} (world/items.json)"
+    src = f"as {PARTY[it['seller']]['identity']['name']} describes the item"  # item it['id'] in world/items.json
     out = {"Description": item_texts(it, it["description"], "The seller's description", src),
            "Name": item_names(it, src)}
     maker = it
     while maker.get("resale_of"):
         maker = ITEM[maker["resale_of"]]
-    msrc = f"item {maker['id']} of {PARTY[maker['seller']]['identity']['name']} (world/items.json)"
+    msrc = f"as {PARTY[maker['seller']]['identity']['name']} describes the item"  # item maker['id'] in world/items.json
     if maker.get("pack"):
         out["PackQuantity"] = V(maker["pack"]["quantity"], "One pack of this item.", unitCode="EA")
         out["PackSizeNumeric"] = V(maker["pack"]["size"], f"The units in one pack: {maker['pack']['size']} in a "
@@ -1160,7 +1160,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if it.get("resale_of"):        # a resold item carries the maker's identifiers, customs code and origin
         out["ManufacturersItemIdentification"] = {"ID": V(maker["sellers_id"], f"The item number of the maker, "
                                                           f"{PARTY[maker['seller']]['identity']['name']}: the "
-                                                          f"reseller's item is resale of item {maker['id']}.")}
+                                                          "reseller sells the maker's item on.")}
     # a variant of the maker's item: its item number, with the variant added. A reseller that numbers the model
     # once (Lumeway's LD-10442 for the bench in any colour) adds the variant to its own number; one that gives each
     # variant a number of its own (variant_numbers: the store's BM-551005 for the oak bench, O155) needs no
@@ -1211,7 +1211,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                "the GTIN where the brand owner has none" if gtin is not maker else
                f"; under GS1 rules the brand owner numbers the item, and the brand {maker['brand']} is {owner}{poss}"
                if maker.get("brand") else "")
-            + f" (world/items.json)."), schemeID="GS1 GTIN")}
+            + f"."), schemeID="GS1 GTIN")}  # world/items.json
         if codana:
             out["AdditionalItemIdentification"] = {"ID": V(maker["standard_id"], "The maker's number for the item "
                                                            "in its globally unique form under ISO/IEC 15459 (KXU and "
@@ -1285,8 +1285,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
         reg = ce.get("register") and world_ids.national_scheme(maker["origin"], ce["register"])
         cert = {"ID": V(ce["id"], "The number of the certificate" + (
                     f", in the {SCHEMES[reg]['name']}, which keeps the certificates issued under each registration; "
-                    "the schemeID names the register and its authority, so no issuer party is needed (decision "
-                    "ID-Q10)." if reg else ", unique only with its issuer, who is named below (decision ID-Q10)."),
+                    "the schemeID names the register and its authority, so no issuer party is needed"
+                    "." if reg else ", unique only with its issuer, who is named below."),  # ID-Q10; ID-Q10
                     **({"schemeID": reg} if reg else {})),
                 "CertificateTypeCode": V(ce["code"], "The kind of certificate, as a code."),
                 "CertificateType": V(ce["type"], "The kind of certificate, in words.")}
@@ -1318,8 +1318,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if maker.get("env_certificate"):
         ce = maker["env_certificate"]
         out["EnvironmentalCertificate"] = {"ID": V(ce["id"], "The number of the environmental certificate, unique "
-                                                             "only with its issuer, who is named with it (decision "
-                                                             "ID-Q10)."),
+                                                             "only with its issuer, who is named with it"
+                                                             "."),  # ID-Q10
                                            "CertificateTypeCode": V(ce["code"], "The kind of claim, as "
                                                                                                  "a code."),
                                            "CertificateType": V(ce["type"], "The environmental claim certified."),
@@ -1396,7 +1396,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                                                    "equivalent."),
                     "ValueMeasure": V(em["value"], "The emission of one item in this stage of its life: a figure "
                                                    "from the maker's footprint study, not an activity times a "
-                                                   "factor, so no factor and base (worklist C09).",
+                                                   "factor, so no factor and base.",  # C09
                                       unitCode=em["unit"])}
             if em.get("factor"):      # only where the figure is an activity times a factor (C09)
                 out_["ValueFactorNumeric"] = V(em["factor"], em["factor_why"])
@@ -1404,7 +1404,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
             out_.update({
                 "Description": V(em["description"], "What the figure includes, and what it leaves out."),
                 "EmissionStandardReference": V(em["standard"], "The standard the footprint is calculated by."),
-                "LifecycleStageCode": V(em["stage"], "The stage of the bench's life the figure covers (D10): the "
+                "LifecycleStageCode": V(em["stage"], "The stage of the bench's life the figure covers: the "  # D10
                                                      "footprint is stated stage by stage."),
                 "LifecycleStageDescription": V(em["stage_desc"], "That stage in words, with the modules of EN 15804 "
                                                                  "it covers."),
@@ -1430,7 +1430,7 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
 def tax_category(code, percent, why, scheme="VAT", country="XU"):
     c = WORLD["countries"][country]
     return {"ID": V(code, why), "Percent": V(str(percent), f"The rate of {c['name']}'s "
-                                             f"{c['tax']['schemes'][0]['name'].lower()} for this category (world/countries.json)."),
+                                             f"{c['tax']['schemes'][0]['name'].lower()} for this category."),  # world/countries.json
             "TaxScheme": {"ID": V(scheme, f"UN/EDIFACT 5153 code of {c['name']}'s {c['tax']['schemes'][0]['name'].lower()}.")}}
 
 
@@ -1700,7 +1700,7 @@ def fill(el, abie, content, path, reasons, seen):
         if card.startswith("1") and name not in content and name not in ("UBLVersionID",):
             raise SystemExit(f"{path}/{name}: mandatory in UBL 2.5 ({card}) but missing")
     if abie == "AllowanceCharge" and "AllowanceChargeReasonCode" not in content:
-        raise SystemExit(f"{path}: every allowance and charge carries its reason as a code (decision Q3)")
+        raise SystemExit(f"{path}: every allowance and charge carries its reason as a code")  # Q3
     content = with_code_lists(content, path, bbies)
     content = with_schemes(content, path)
     for name in [b[0] for b in spec["bbies"]]:                    # basic properties first, in model order
@@ -1778,7 +1778,7 @@ def with_code_lists(content, path, bbies):
             if lst is None:
                 raise SystemExit(f"{path}/{name}: '{v.value}' is not a code of "
                                  f"{' or '.join(codelists.load()['lists'][k]['listID'] or k for k in b['lists'])} "
-                                 "(world/codelists/lists.json)")
+                                 "")  # world/codelists/lists.json
             attrs = {key: lst["listID"], **{k: x for k, x in v.attrs.items() if k != key}}
             if not lst["listID"]:
                 raise SystemExit(f"{path}/{name}: the list {lst['key']} has no listID")
@@ -1851,11 +1851,11 @@ def scheme_for(element, parent, value):
     if rule == "register":           # a company's, a public body's or a grower's register, told by its shape (O142)
         hit = world_ids.register_kind_of(WORLD, value)
         if hit is None:
-            raise SystemExit(f"{parent}/{element}: '{value}' fits no country's register format (world/countries.json)")
+            raise SystemExit(f"{parent}/{element}: '{value}' fits no country's register format")  # world/countries.json
         return world_ids.national_scheme(*hit)
     cc = world_ids.country_of(WORLD, rule, value)
     if cc is None:
-        raise SystemExit(f"{parent}/{element}: '{value}' fits no country's {rule} format (world/countries.json)")
+        raise SystemExit(f"{parent}/{element}: '{value}' fits no country's {rule} format")  # world/countries.json
     return world_ids.national_scheme(cc, rule)
 
 
@@ -1888,7 +1888,7 @@ def check_schemes(root, where):
             continue
         if sid not in SCHEMES:
             raise SystemExit(f"{where}: {etree.QName(e).localname} = {e.text}: schemeID {sid} is not a scheme of the "
-                             "world (world/countries.json)")
+                             "world")  # world/countries.json
         why = world_ids.problem(SCHEMES[sid], e.text)
         if why:
             raise SystemExit(f"{where}: {root.getroottree().getpath(e)}: {why}")
@@ -1913,18 +1913,18 @@ def check_codana(root, where):
         owner = CODANA_PARTY.get(cin)
         if not owner:
             raise SystemExit(f"{where}: {root.getroottree().getpath(e)} = {e.text}: {cin} is no party's Codana "
-                             "company number (O32)")
+                             "company number")  # O32
         holder = e.getparent().getparent()
         if e.get("schemeID") == "ISO 6523":
             reg = holder.findtext(f"{{{NS_CAC}}}PartyIdentification/{{{NS_CBC}}}ID")
             if reg is not None and reg != PARTY[owner]["identity"]["registry_id"]:
                 raise SystemExit(f"{where}: {root.getroottree().getpath(e)} = {e.text} is {owner}'s, but the party "
-                                 f"is {reg} (O32)")
+                                 f"is {reg}")  # O32
         elif e.get("schemeID") == "ISO 15459-6":
             maker = holder.findtext(f"{{{NS_CAC}}}ManufacturerParty/{{{NS_CAC}}}PartyIdentification/{{{NS_CBC}}}ID")
             if maker is not None and maker != PARTY[owner]["identity"]["registry_id"]:
                 raise SystemExit(f"{where}: {root.getroottree().getpath(e)} = {e.text} is under {owner}'s prefix, "
-                                 f"but the maker is {maker} (O32)")
+                                 f"but the maker is {maker}")  # O32
 
 
 # ---------------------------------------------------------------- the reason pages
@@ -1975,7 +1975,7 @@ def bilingual_notes(doc, content):
         if not isinstance(v, V):
             out.append(v)
             continue
-        out.append(V(translate(v.value, code), f"The note in {name}, the sender's language (world/countries.json): "
+        out.append(V(translate(v.value, code), f"The note in {name}, the sender's language: "  # world/countries.json
                                                f"{v.why}", languageID=code))
         out.append(V(v.value, f"The same note in English, the working language between the countries: {v.why}",
                      languageID="en"))
@@ -2070,10 +2070,10 @@ def tax_arithmetic(content, where):
             pct = sub["TaxCategory"].get("Percent")
             if isinstance(pct, V) and Decimal(pct.value) != 0:
                 raise SystemExit(f"{where}: taxable amount of category {cid} is {old.value}, the lines and charges "
-                                 f"make {base}: the tax would change (worklist C24)")
+                                 f"make {base}: the tax would change")  # C24
             sub["TaxableAmount"] = V(f"{base:.{len(old.value.partition('.')[2])}f}", "The lines of this category "
-                                     "plus the document's charges less its allowances of the category (worklist "
-                                     "C24).", **old.attrs)
+                                     "plus the document's charges less its allowances of the category"
+                                     ".", **old.attrs)  # C24
 
 
 # ---------------------------------------------------------------- the invoice behind a customs value (worklist C12)
@@ -2102,7 +2102,7 @@ def declaration_invoices(content, doc):
     refs = holder.get("AdditionalDocumentReference")
     refs = [refs] if isinstance(refs, dict) else list(refs or [])
     have = {r["ID"].value for r in refs if isinstance(r.get("ID"), V)}
-    refs += [{"ID": V(i, "The commercial invoice the customs value rests on (worklist C12).")}
+    refs += [{"ID": V(i, "The commercial invoice the customs value rests on.")}  # C12
              for i in sorted(hits) if i not in have]
     holder["AdditionalDocumentReference"] = refs
 
@@ -2124,8 +2124,8 @@ def border_transport(content, doc):
     if not cross:
         return
     mode = cross[0]["mode"]
-    ship["ShipmentStage"] = {"TransportModeCode": V(MODE_CODES[mode], f"The goods cross the border by {mode} "
-                                                    "(worklist C12).",
+    ship["ShipmentStage"] = {"TransportModeCode": V(MODE_CODES[mode], f"The goods cross the border by {mode}"
+                                                    ".",  # C12
                                                     listID="UNECE Recommendation 19 - Codes for Modes of Transport")}
 
 
@@ -2340,7 +2340,7 @@ def customs_values(content, doc):
     text = "; ".join(f"{why} ({a.quantize(q):,} {cur})" for a, why in adds)
     for g, v, sh in zip(goods, vals, shares):
         old = g["DeclaredCustomsValueAmount"]
-        g["DeclaredCustomsValueAmount"] = V(str((v + sh).quantize(q)), f"{basis} (D16): the goods at "
+        g["DeclaredCustomsValueAmount"] = V(str((v + sh).quantize(q)), f"{basis}: the goods at "  # D16
                                             f"{v.quantize(q):,} {cur}, with {text}, shared over the goods items by "
                                             "their value.", **old.attrs)
 
@@ -2352,7 +2352,7 @@ def origin_notes(content):
     if not stmt:
         return
     why = ("The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, "
-           "to claim the Trade Accord's preference (D18).")
+           "to claim the Trade Accord's preference.")  # D18
     note = content.get("Note")
     if note is None:
         content["Note"] = V(stmt, why)
@@ -2391,20 +2391,20 @@ def import_from_abroad(content, doc, c, country, goods):
         mk = kit_maker(ITEM_BY_NAME[g["Description"].value])
         if not duty_free(country, mk["hs"]):
             raise SystemExit(f"{doc['flow']}: goods from outside the Accord with a duty the world has no rate for "
-                             f"(HS {mk['hs']}, O229)")
+                             f"(HS {mk['hs']})")  # O229
         value = g["DeclaredCustomsValueAmount"]
         total += Decimal(value.value)
         cur = value.attrs["currencyID"]
         if c == "XL":
             if not hospital:
                 raise SystemExit(f"{doc['flow']}: medicines imported into Lisavu for a party that is no public "
-                                 "hospital: the import consumption tax applies (O201)")
+                                 "hospital: the import consumption tax applies")  # O201
             code = country["tax"]["exemption_codes"]["Medicines and vaccines for a public hospital"]
             g["Item"]["ClassifiedTaxCategory"] = {
                 "ID": V("E", "Exempt from the island's import consumption tax."),
                 "Percent": V("0", "No tax is charged in this category."),
                 "TaxExemptionReasonCode": V(code, "The exemption as a code of Lisavu's national list: medicines and "
-                                                  "vaccines supplied to a public hospital (O201).",
+                                                  "vaccines supplied to a public hospital.",  # O201
                                             listID=codelists.NATIONAL.format("XL", "TaxExemptionReason")),
                 "TaxExemptionReason": V("Medicines and vaccines for a public hospital", "Why no tax is charged, "
                                         "stated rather than left out (UBL rule IND6)."),
@@ -2420,7 +2420,7 @@ def import_from_abroad(content, doc, c, country, goods):
         text = (f"No duty: goods made in {names}, outside the Accord, but medicines and radioactive isotopes for "
                 "medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is "
                 "charged once, at the final retail sale.")
-    content["Note"] = V(text, "What is due at import, by the importing country's rule (D18, O229): goods from outside "
+    content["Note"] = V(text, "What is due at import, by the importing country's rule: goods from outside "  # D18, O229
                               "the Accord claim no preference and pay the country's own tariff, which charges no "
                               "duty on them.")
 
@@ -2446,8 +2446,8 @@ def import_preference(content, doc):
         if mk["origin"] == c:
             raise SystemExit(f"{doc['flow']}: import of goods of the importing country's own origin")
         g["PreferenceCriterionCode"] = V(mk["origin_criterion"], f"The goods are of {mk['origin']} origin under the "
-                                         "Trade Accord, by this criterion: the preference claimed, free of duty "
-                                         "(D18).")
+                                         "Trade Accord, by this criterion: the preference claimed, free of duty"
+                                         ".")  # D18
         value = g["DeclaredCustomsValueAmount"]
         total += Decimal(value.value)
         cur = value.attrs["currencyID"]
@@ -2481,7 +2481,7 @@ def import_preference(content, doc):
     else:
         text = ("No duty: goods of Accord origin. No tax is due at import: Bayvarra's sales tax is charged once, at "
                 "the final retail sale.")
-    content["Note"] = V(text, "What is due at import, by the importing country's rule (D18).")
+    content["Note"] = V(text, "What is due at import, by the importing country's rule.")  # D18
     refs = content.get("AdditionalDocumentReference")
     refs = [refs] if isinstance(refs, dict) else list(refs or [])
     for r in refs:
@@ -2489,10 +2489,10 @@ def import_preference(content, doc):
         if "commercial invoice" in w and not any(d["doc"] == "CertificateOfOrigin" for d in WORLD["documents"]
                                                  if d["flow"] == doc["flow"]):
             r["ID"] = V(r["ID"].value, w.rstrip(".") + "; its statement on origin is the proof of origin the "
-                                                       "preference claim refers to (D18).", **r["ID"].attrs)
+                                                       "preference claim refers to.", **r["ID"].attrs)  # D18
         elif "certificate of origin" in w.lower():
-            r["ID"] = V(r["ID"].value, w.rstrip(".") + "; the proof of origin the preference claim refers to "
-                                                       "(D18).", **r["ID"].attrs)
+            r["ID"] = V(r["ID"].value, w.rstrip(".") + "; the proof of origin the preference claim refers to"
+                                                       ".", **r["ID"].attrs)  # D18
 
 
 # ---------------------------------------------------------------- a Lisavan sale has no tax section (C50, D15)
@@ -2532,7 +2532,7 @@ def untaxed_sales(content, doc):
             v = t["TaxInclusiveAmount"]
             t["TaxInclusiveAmount"] = V(v.value, "The same as the total without tax: Lisavu has no sales tax or "
                                                  "value added tax, so no tax is due and the document has no tax "
-                                                 "section (D15).", **v.attrs)
+                                                 "section.", **v.attrs)  # D15
 
 
 # ---------------------------------------------------------------- party roles that only repeat another (worklist C08)
@@ -2736,7 +2736,7 @@ def requested_delivery(content, doc, n):
     hit = examples_scenarios.REQUESTED_DELIVERY.get((doc["flow"], n))
     if not hit:
         raise SystemExit(f"{doc['flow']} {n} {doc['doc']}: the order does not say when the goods are wanted "
-                         "(worklist C28; REQUESTED_DELIVERY in tools/examples_scenarios.py)")
+                         "(REQUESTED_DELIVERY in tools/examples_scenarios.py)")  # C28
     flow = next(v for v in vars(examples_scenarios).values()
                 if isinstance(v, examples_kit.Flow) and v.id == doc["flow"])
     period = {"RequestedDeliveryPeriod": {"StartDate": V(flow.date(hit[0]), hit[2]),
@@ -2798,8 +2798,8 @@ def identify_places(content):
                     hit = places.get(text.value.rstrip("."))
                     if hit:
                         node[k] = {"ID": V(hit[1], "The place's identifier, as the world gives it wherever the "
-                                                   f"place appears ({'a GLN' if hit[0] == 'GS1 GLN' else 'a code in the form of a UN/LOCODE'}; "
-                                                   "worklist C23).", schemeID=hit[0]), **v}
+                                                   f"place appears ({'a GLN' if hit[0] == 'GS1 GLN' else 'a code in the form of a UN/LOCODE'})"
+                                                   ".", schemeID=hit[0]), **v}  # C23
                 walk(v)
     walk(content)
 
@@ -2868,7 +2868,7 @@ def shipment_weights(content, flow_id):
                 if isinstance(cons, dict) and "GrossWeightMeasure" not in cons:
                     cons["GrossWeightMeasure"] = V(g.value, "The gross weight of the goods with their packaging, "
                                                    "without the transport equipment, as a consignment's weight is "
-                                                   f"defined (worklist C15). {g.why}", **g.attrs)
+                                                   f"defined. {g.why}", **g.attrs)  # C15
                 goods_item = any(isinstance(x, dict) and "GrossWeightMeasure" in x
                                  for x in (v.get("GoodsItem") if isinstance(v.get("GoodsItem"), list)
                                            else [v.get("GoodsItem")]))
@@ -2876,13 +2876,13 @@ def shipment_weights(content, flow_id):
                     total = Decimal(g.value) + sum(Decimal(t.value) for t, _ in equipment)
                     v["GrossWeightMeasure"] = V(_plain(total), f"The goods ({g.value} kg) and "
                                                 f"the tare of the transport equipment ({' + '.join(t.value for t, _ in equipment)} "
-                                                "kg): a shipment's gross weight includes the equipment (worklist C15).",
+                                                "kg): a shipment's gross weight includes the equipment.",  # C15
                                                 **g.attrs)
                 elif equipment and all(isinstance(w, V) for _, w in equipment):
                     total = sum(Decimal(w.value) for _, w in equipment)
                     v["GrossWeightMeasure"] = V(_plain(total), "The gross weights of the "
                                                 f"transport equipment with the goods in it ({' + '.join(w.value for _, w in equipment)} "
-                                                "kg): a shipment's gross weight includes the equipment (worklist C15).",
+                                                "kg): a shipment's gross weight includes the equipment.",  # C15
                                                 **g.attrs)
                 elif isinstance(cons, dict) or goods_item:
                     del v["GrossWeightMeasure"]
@@ -2954,15 +2954,15 @@ def type_references(content, where):
                 if hit:
                     ref["DocumentTypeCode"] = V(hit[2], f"The kind of document referred to: {rid} is the example "
                                                         f"{hit[0]}/{hit[1]:02d}, a {hit[2]}; a generic reference names "
-                                                        "the UBL document type (decision Q29).")
+                                                        "the UBL document type.")  # Q29
                 elif cited and cited.get("type_code"):
                     ref["DocumentTypeCode"] = V(cited["type_code"], f"The kind of document referred to, "
-                                                f"{cited['what']}, a document outside the examples (world/documents.json, "
-                                                "cited; decision Q29).")
+                                                f"{cited['what']}, a document outside the examples ("  # world/documents.json
+                                                "cited).")  # Q29
                 elif cited:
                     ref["DocumentType"] = V(cited["type"], f"The kind of document referred to, {cited['what']}, a "
                                             "document outside the examples, in words: no list has an exact code for it "
-                                            "(world/documents.json, cited; decision Q29).")
+                                            "(cited).")  # Q29, world/documents.json
                 else:
                     UNTYPED.append((where, key, rid))
         if key != "Signature":                  # signatures wait for their own stage (D6)
@@ -3021,7 +3021,7 @@ def ubl_version(root):
             name = etree.QName(c).localname
             v = VERSIONS["children"].get(abie, {}).get(name)
             if v is None:
-                raise SystemExit(f"{path}/{name}: not in any published UBL 2 model (world/ubl-versions.json)")
+                raise SystemExit(f"{path}/{name}: not in any published UBL 2 model")  # world/ubl-versions.json
             if VERSION_ORDER.index(v) > VERSION_ORDER.index(best):
                 best, why = v, f"{abie}/{name}"
             if etree.QName(c).namespace == NS_CAC:
@@ -3037,7 +3037,7 @@ def set_ubl_version(root, reasons):
     k = next(i for i, r in enumerate(reasons) if r[0].endswith("/UBLVersionID"))
     reasons[k] = (reasons[k][0], version, reasons[k][2],
                   f"The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: "
-                  f"computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); {why} first "
+                  f"computed from the published models of UBL 2.0 to 2.5; {why} first "  # world/ubl-versions.json
                   f"appears in UBL {version}.")
 
 
@@ -3165,7 +3165,7 @@ def check_packages(flow_id, roots):
     pk = next(f for f in WORLD["flows"] if f["id"] == flow_id).get("packages")
     if not pk:
         return
-    where = f"flow {flow_id} (world/documents.json packages)"
+    where = f"flow {flow_id}"  # world/documents.json packages
     it = ITEM[pk["item"]]
     tare = Decimal(str(pk["tare_kg"]))
     pieces = {p["id"]: Decimal(str(p["net_kg"])) for p in pk["pieces"]}
@@ -3181,7 +3181,7 @@ def check_packages(flow_id, roots):
         raise SystemExit(f"{where}: the {count} packages hold {net} {it['unit']}, but the deal is {q}")
     if net * Decimal(str(it["gross_kg"])) != gross:
         raise SystemExit(f"{where}: net {net} kg plus {count} x {tare} kg tare is {gross} kg, but the item's gross "
-                         f"weight (world/items.json gross_kg) makes it {net * Decimal(str(it['gross_kg']))} kg")
+                         f"weight makes it {net * Decimal(str(it['gross_kg']))} kg")  # world/items.json gross_kg
 
     def num(e):
         return Decimal(e.text) if e is not None and e.text else None
@@ -3344,7 +3344,7 @@ def check_air_uld_ids(flow_id, roots):
                 named.add(tid)
                 if tid not in loaded:
                     raise SystemExit(f"world/examples/{flow_id}/{name}: ULD {tid} is not loaded on an air leg of the "
-                                     "flow (world/documents.json)")
+                                     "flow")  # world/documents.json
     if named and loaded - named:
         raise SystemExit(f"flow {flow_id}: ULDs {sorted(loaded - named)} are loaded but named in no document")
 
@@ -3363,7 +3363,7 @@ def check_payment_terms(root, where, payee_country=None):
                [d for t in root.iterfind(f"{{{NS_CAC}}}PaymentTerms") if t.find(f"{{{NS_CBC}}}InstallmentDueDate") is None
                 for d in q(t, "cbc:PaymentDueDate")])
     if len(dues) > 1 and short not in DUE_DATE_WAITS:
-        raise SystemExit(f"{where}: due dates {sorted(dues)} disagree (O70)")
+        raise SystemExit(f"{where}: due dates {sorted(dues)} disagree")  # O70
     known = {f"{k}-STD": (c["payment"]["terms"], c["payment"]["due_days"]) for k, c in WORLD["countries"].items()}
     known.update({k: (t["terms"], t["due_days"]) for k, t in WORLD.get("payment_terms_accord", {}).items()})
     issue = root.findtext(f"{{{NS_CBC}}}IssueDate")
@@ -3374,14 +3374,14 @@ def check_payment_terms(root, where, payee_country=None):
         text, days = known[tid]
         note = t.findtext(f"{{{NS_CBC}}}Note") or ""
         if not note.startswith(text):
-            raise SystemExit(f"{where}: terms {tid} with the text {note!r}, not {text!r} (O70)")
+            raise SystemExit(f"{where}: terms {tid} with the text {note!r}, not {text!r}")  # O70
         due = t.findtext(f"{{{NS_CBC}}}PaymentDueDate")
         if due and issue and short not in DUE_DATE_WAITS and t.find(f"{{{NS_CBC}}}InstallmentDueDate") is None:
             want = (_dt.date.fromisoformat(issue) + _dt.timedelta(days=days)).isoformat()
             while payee_country and not business_day(payee_country, want):
                 want = (_dt.date.fromisoformat(want) + _dt.timedelta(days=1)).isoformat()
             if due != want:
-                raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due} (O70)")
+                raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due}")  # O70
 
 
 # ---------------------------------------------------------------- the calendar (C53, D27, O79)
@@ -3433,13 +3433,13 @@ def check_due_dates(root, doc, where):
                                  f"{{{NS_CBC}}}InstallmentDueDate") if e.text]
     payee = payee_of(root, doc) if dues else None
     if dues and payee not in PARTY:
-        raise SystemExit(f"{where}: states a due date but its payee is unknown (O180)")
+        raise SystemExit(f"{where}: states a due date but its payee is unknown")  # O180
     for e in dues:
         country = PARTY[payee]["c"]
         if not business_day(country, e.text):
             raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} "
                              f"{e.text} is no business day in {WORLD['countries'][country]['name']}, the payee's "
-                             "country (O180)")
+                             "country")  # O180
 
 
 CALENDAR_WAITS = {   # (flow, file) -> the flow decision whose dates the document waits for (O78, stage 6)
@@ -3463,7 +3463,7 @@ def check_calendar(flow_id, roots, docs):
         if day and doc["from"] in PARTY and not working_day(doc["from"], day) and \
                 (flow_id, name) not in CALENDAR_WAITS:
             raise SystemExit(f"world/examples/{flow_id}/{name}: issued on {day}, a day its issuer "
-                             f"{PARTY[doc['from']]['identity']['name']} does not work (D27, O79)")
+                             f"{PARTY[doc['from']]['identity']['name']} does not work")  # D27, O79
 
 
 def issue_time_offset(content, doc):
@@ -3472,7 +3472,7 @@ def issue_time_offset(content, doc):
     if isinstance(t, V) and re.fullmatch(r"\d\d:\d\d:\d\d", str(t.value)):
         tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
         content["IssueTime"] = V(f"{t.value}{tz}", f"{t.why.rstrip('.')}; in the issuer's local time, with its "
-                                                   "offset from UTC (D27).", **t.attrs)
+                                                   "offset from UTC.", **t.attrs)  # D27
 
 
 # ---------------------------------------------------------------- issue times follow what a document reports (C72)
@@ -3589,16 +3589,16 @@ def derived_issue_time(header, root, doc, flow_id, name, doc_id, request=None):
     gap = datetime.timedelta(minutes=4 + zlib.crc32(f"{flow_id}:{name}".encode()) % 17)
     if floor is not None and not own[1] > floor:
         t, why = floor + gap, ("Issued a few minutes after the last thing of its day that it reports, cites or "
-                               "answers, in the sender's local time (C72).")
+                               "answers, in the sender's local time.")  # C72
     elif ceiling is not None and not own[1] < ceiling:
         t, why = ceiling - gap, ("Issued a few minutes before the document that cites it, in the sender's local "
-                                 "time (C72).")
+                                 "time.")  # C72
     else:
         return False
     local = t.astimezone(datetime.timezone(datetime.timedelta(hours=int(tz[:3]), minutes=int(tz[0] + tz[4:]))))
     if local.date() != own[0]:
         raise SystemExit(f"world/examples/{flow_id}/{name}: no issue time on {own[0]} fits what the document "
-                         "reports or cites, and the documents that cite it (C72): give its day in the scenario")
+                         "reports or cites, and the documents that cite it: give its day in the scenario")  # C72
     header["IssueTime"] = V(local.strftime("%H:%M:%S"), why)
     return True
 
@@ -3613,17 +3613,17 @@ def check_issue_order(flow_id, name, root, doc, request=None):
         return
     if request is not None and is_after(request, own):
         raise SystemExit(f"world/examples/{flow_id}/{name}: issued {own[1] or own[0]}, before the request it answers, "
-                         f"issued {request[1] or request[0]} (C72)")
+                         f"issued {request[1] or request[0]}")  # C72
     tz = WORLD["countries"][PARTY[doc["from"]]["c"]]["timezone"]
     for what, m in reported_facts(root, tz):
         if m and is_after(m, own):
             raise SystemExit(f"world/examples/{flow_id}/{name}: {what} {m[1] or m[0]} lies after the document's "
-                             f"issue {own[1] or own[0]} (C72)")
+                             f"issue {own[1] or own[0]}")  # C72
     for what, rid, hits in cited_examples(root, flow_id, name):
         if hits and all(is_after(h[2], own) for h in hits if h[2]):
             h = hits[0]
             raise SystemExit(f"world/examples/{flow_id}/{name}: {what} cites {rid}, the example {h[0]}/{h[1]} "
-                             f"issued {h[2][1] or h[2][0]}, after this document's issue {own[1] or own[0]} (C72)")
+                             f"issued {h[2][1] or h[2][0]}, after this document's issue {own[1] or own[0]}")  # C72
 
 
 # ---------------------------------------------------------------- references resolve (C73)
@@ -3676,11 +3676,11 @@ def check_party_profiles(flow_id, roots, docs):
                 if "customs-trader" in x.get("schemeID", "") and not (
                         cls == "customs" or (cls == "transport" and _cross_border(doc))):
                     raise SystemExit(f"{where}: customs trader number of {pid} outside a customs or cross-border "
-                                     "transport document (C01)")
+                                     "transport document")  # C01
             if e.find(f"{{{NS_CAC}}}PartyLegalEntity/{{{NS_CBC}}}CorporateStockAmount") is not None and not (
                     cls == "invoice" and pid == doc["from"] and capital_on_documents(pid)):
                 raise SystemExit(f"{where}: share capital of {pid} outside its own invoice, or not asked for by its "
-                                 "company law (C01, O147)")
+                                 "company law")  # C01, O147
             said = set()
             for d in e.iter():                          # every leaf value, by its path below the party
                 if not isinstance(d.tag, str) or len(d) or d.text is None:
@@ -3759,12 +3759,12 @@ def main(flow_id, check=False):
                 node = node[step]
             got = node.get(path.split("/")[-1])
             if not isinstance(got, V) or got.value != value:
-                raise SystemExit(f"{flow_id} {n} {doc['doc']}: {path} must be {value} (world/documents.json)")
+                raise SystemExit(f"{flow_id} {n} {doc['doc']}: {path} must be {value}")  # world/documents.json
         custom, levels = world_specs.customization(doc, WORLD)
         header = {"UBLVersionID": V("2.5", "Computed below from the elements the document uses."),
                   "CustomizationID": V(custom, "The specification the document follows, at each level it claims, "
                                        "chained with #compliant#: " + "; ".join(levels) + ". Each has a public "
-                                       "description on the world's pages (world/specifications.json).")}
+                                       "description on the world's pages.")}  # world/specifications.json
         own = {b[0] for b in MODEL["abies"][doc["doc"]]["bbies"]}
         if "ProfileID" in own:
             prof = world_specs.profile(doc)
@@ -3800,7 +3800,7 @@ def main(flow_id, check=False):
             for m, where in CITED_LATER.get(doc_id, []):
                 if is_after(here, m):
                     raise SystemExit(f"world/examples/{flow_id}/{xmlname(n, doc)}: issued {here[1] or here[0]}, after "
-                                     f"{where}, which cites it at {m[1] or m[0]} (C72)")
+                                     f"{where}, which cites it at {m[1] or m[0]}")  # C72
             ISSUED.setdefault(doc_id, []).append((flow_id, xmlname(n, doc), here))
         check_issue_order(flow_id, xmlname(n, doc), root, doc, asked)
         check_reference_targets(root, f"{flow_id}/{xmlname(n, doc)}")
@@ -3817,9 +3817,9 @@ def main(flow_id, check=False):
             if isinstance(e.tag, str) and etree.QName(e).localname.endswith("TransportEvent"):
                 if e.find(f"{{{NS_CAC}}}Location") is None:
                     raise SystemExit(f"{flow_id} {n} {doc['doc']}: {etree.QName(e).localname} without a place "
-                                     "(worklist C18)")
+                                     "")  # C18
                 if etree.QName(e).localname == "TransportEvent" and e.find(f"{{{NS_CBC}}}TransportEventTypeCode") is None:
-                    raise SystemExit(f"{flow_id} {n} {doc['doc']}: TransportEvent without a type code (worklist C18)")
+                    raise SystemExit(f"{flow_id} {n} {doc['doc']}: TransportEvent without a type code")  # C18
         for e in root.iter():                  # a status that only says there is none is a filler (worklist C16)
             if isinstance(e.tag, str) and e.text == "NoStatus":
                 raise SystemExit(f"{flow_id} {n} {doc['doc']}: {etree.QName(e).localname} NoStatus states nothing "
@@ -3884,7 +3884,7 @@ if __name__ == "__main__":
         ok = False
     if not args:
         for problem in build_examples.check_party_knowledge():
-            print(f"party table (O90): {problem}", file=sys.stderr)
+            print(f"party table: {problem}", file=sys.stderr)  # O90
             ok = False
     for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
         print(f"note: {note}", file=sys.stderr)
@@ -3895,14 +3895,14 @@ if __name__ == "__main__":
         ok = False
     if build_examples.UNRESOLVED:
         print(f"references to a kind of document the examples have, under an ID no example has and not in "
-              f"world/documents.json cited (C73, {len(build_examples.UNRESOLVED)}):",
+              f"world/documents.json cited ({len(build_examples.UNRESOLVED)}):",  # C73
               "; ".join(f"{w} {e} {i}" for w, e, i in build_examples.UNRESOLVED), file=sys.stderr)
         ok = False
     if build_examples.UNBOUND:
         print(f"code elements without a code list in world/codelists/lists.json ({len(build_examples.UNBOUND)}):",
               ", ".join(f"{e} in {p}" for e, p in sorted(build_examples.UNBOUND)), file=sys.stderr)
     if build_examples.MISSING_WORDS:
-        print("words missing from the vocabularies of the world's languages (world/countries.json; save the list as missing.json and run python3 tools/lexicon.py missing.json qau|qal):",
+        print("words missing from the vocabularies of the world's languages (save the list as missing.json and run python3 tools/lexicon.py missing.json qau|qal):",  # world/countries.json
               json.dumps(sorted(build_examples.MISSING_WORDS)), file=sys.stderr)
         ok = False
     sys.exit(0 if ok else 1)

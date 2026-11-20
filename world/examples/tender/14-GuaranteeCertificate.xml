@@ -13,7 +13,7 @@
   <cbc:Purpose>Guarantee of Valdara Industries' tender in the bench procedure: a plain bank guarantee of Bank of Lumeport, issued on a counter-guarantee of Crevalto Bank, Valdara's own bank, the usual way for a foreign tenderer to give a guarantee from a bank in the buyer's country.</cbc:Purpose>
   <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>
   <cbc:ConstitutionCode listID="urn:ubl-examples:world:codelist:GuaranteeConstitutionCode">BANKGUAR</cbc:ConstitutionCode>
-  <cbc:Note>Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then (O176).</cbc:Note>
+  <cbc:Note>Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then.</cbc:Note>
   <cac:ApplicablePeriod>
     <cbc:StartDate>2026-02-23</cbc:StartDate>
     <cbc:EndDate>2026-05-26</cbc:EndDate>

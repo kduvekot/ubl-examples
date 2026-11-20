@@ -11,9 +11,9 @@ The award is published; the review body is named for appeals.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:contract-award-notice:1.0#compliant#urn:ubl-examples:world:community:procurement:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Contract award notice"; the community specification "Public procurement community". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Contract award notice"; the community specification "Public procurement community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:tendering:1.0**  
   The Trade Accord's process profile the document belongs to: tendering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **TENDER-2026-01**  
@@ -25,9 +25,9 @@ The award is published; the review body is named for appeals.
 - `ContractFolderID` = **PWD-2026-PARKS**  
   The authority's file number for this procurement, the same on every document of the procedure.
 - `IssueDate` = **2026-03-23**  
-  Monday 23 March, published after the contract was signed (D28 point 1, tender/21#F12).
+  Monday 23 March, published after the contract was signed.
 - `IssueTime` = **13:55:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `Note` = **Award of the framework contract for park benches.**  
   What.
 - `VersionID` = **1**  
@@ -48,7 +48,7 @@ Inside `PreviousDocumentReference`:
 - `ID` = **LPWD-DOC-26-0188**  
   The contract notice.
 - `DocumentTypeCode` = **ContractNotice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LPWD-DOC-26-0188 is the example tender/02, a ContractNotice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
+  The kind of document referred to: LPWD-DOC-26-0188 is the example tender/02, a ContractNotice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: ContractNotice = Contract Notice.
 
 ### Minutes Document Reference
 
@@ -73,178 +73,178 @@ Inside `Signature`:
 Inside `ContractingParty`:
 
 - `Party/PartyIdentification/ID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; as Lumeport Public Works Department gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lumeport Public Works Department**  
-  The trading name; identity of Lumeport Public Works Department (world/parties.json).
+  The trading name; as Lumeport Public Works Department gives it.
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `Party/PostalAddress/ID` = **LUM-ADR-000417** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Lumeport Public Works Department (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Civic Square**  
-  Street of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+  Street of the postal address. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/BuildingNumber` = **6**  
-  Building number of the postal address. identity of Lumeport Public Works Department (world/parties.json).
+  Building number of the postal address. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/InhouseMail` = **Room 2.14**  
-  The internal mail code of the procurement office. identity of Lumeport Public Works Department (world/parties.json).
+  The internal mail code of the procurement office. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/Department` = **Procurement office**  
-  The department the post is for. identity of Lumeport Public Works Department (world/parties.json).
+  The department the post is for. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/MarkAttention` = **Head of procurement**  
-  For the attention of the head of procurement. identity of Lumeport Public Works Department (world/parties.json).
+  For the attention of the head of procurement. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Lumeport Public Works Department (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeport Public Works Department (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/PostalZone` = **38517**  
-  Postal code in Bayvarra's format (5 digits). identity of Lumeport Public Works Department (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Lumeport Public Works Department gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeport Public Works Department (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Lumeport Public Works Department gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
-  The public body's official name; identity of Lumeport Public Works Department (world/parties.json).
+  The public body's official name; as Lumeport Public Works Department gives it.
 - `Party/PartyLegalEntity/CompanyID` = **6250397184** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  Number in the Federal list of public bodies of Bayvarra, which gives every public body a number of its own (10 digits, the first not 0), derived from no other register (O142); identity of Lumeport Public Works Department (world/parties.json). The schemeID names the scheme it is from: the federal list of public bodies of Bayvarra (10 digits, the first not 0, given by the Bayvarra Information Service).
+  Number in the Federal list of public bodies of Bayvarra, which gives every public body a number of its own (10 digits, the first not 0), derived from no other register ; as Lumeport Public Works Department gives it. The schemeID names the scheme it is from: the federal list of public bodies of Bayvarra (10 digits, the first not 0, given by the Bayvarra Information Service).
 - `Party/Contact/Name` = **Procurement office**  
-  The party's main desk, which handles this document; identity of Lumeport Public Works Department (world/parties.json).
+  The party's main desk, which handles this document; as Lumeport Public Works Department gives it.
 - `Party/Contact/JobTitle` = **Procurement officer**  
-  The job of the person who answers at the desk; identity of Lumeport Public Works Department (world/parties.json).
+  The job of the person who answers at the desk; as Lumeport Public Works Department gives it.
 - `Party/Contact/Department` = **Procurement**  
-  The department the desk belongs to; identity of Lumeport Public Works Department (world/parties.json).
+  The department the desk belongs to; as Lumeport Public Works Department gives it.
 - `Party/Contact/Telephone` = **+999 2 38 8235 3927**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeport Public Works Department (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeport Public Works Department gives it.
 - `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeport Public Works Department (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeport Public Works Department gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Lumeport Public Works Department (world/parties.json).
+  When the desk can be reached; as Lumeport Public Works Department gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:6250397184** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Lumeport Public Works Department (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Lumeport Public Works Department gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
 Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **1906473852** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Bayvarra Information Service (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; as Bayvarra Information Service gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Bayvarra Information Service**  
-  The trading name; identity of Bayvarra Information Service (world/parties.json).
+  The trading name; as Bayvarra Information Service gives it.
 - `PostalAddress/ID` = **LUM-ADR-634627** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Bayvarra Information Service (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Bayvarra Information Service gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Civic Square**  
-  Street of the postal address. identity of Bayvarra Information Service (world/parties.json).
+  Street of the postal address. as Bayvarra Information Service gives it.
 - `PostalAddress/BuildingNumber` = **27**  
-  Building number of the postal address. identity of Bayvarra Information Service (world/parties.json).
+  Building number of the postal address. as Bayvarra Information Service gives it.
 - `PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bayvarra Information Service (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Bayvarra Information Service gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bayvarra Information Service (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Bayvarra Information Service gives it.
 - `PostalAddress/PostalZone` = **38520**  
-  Postal code in Bayvarra's format (5 digits). identity of Bayvarra Information Service (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Bayvarra Information Service gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bayvarra Information Service (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Bayvarra Information Service gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Publications and register**  
-  The party's main desk, which handles this document; identity of Bayvarra Information Service (world/parties.json).
+  The party's main desk, which handles this document; as Bayvarra Information Service gives it.
 - `Contact/JobTitle` = **Publications officer**  
-  The job of the person who answers at the desk; identity of Bayvarra Information Service (world/parties.json).
+  The job of the person who answers at the desk; as Bayvarra Information Service gives it.
 - `Contact/Department` = **Publications**  
-  The department the desk belongs to; identity of Bayvarra Information Service (world/parties.json).
+  The department the desk belongs to; as Bayvarra Information Service gives it.
 - `Contact/Telephone` = **+999 2 38 5339 4832**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayvarra Information Service (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Bayvarra Information Service gives it.
 - `Contact/ElectronicMail` = **publications@info-xb.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayvarra Information Service (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Bayvarra Information Service gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Bayvarra Information Service (world/parties.json).
+  When the desk can be reached; as Bayvarra Information Service gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:1906473852** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Bayvarra Information Service (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Bayvarra Information Service gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Tendering Terms
 
 Inside `TenderingTerms`:
 
 - `AppealTerms/AppealReceiverParty/PartyIdentification/ID` = **4718260539** (schemeID `urn:ubl-examples:world:XB:public-body-register`)  
-  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal list of public bodies of Bayvarra; as Procurement Review Board of Bayvarra gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `AppealTerms/AppealReceiverParty/PartyName/Name` = **Procurement Review Board of Bayvarra**  
-  The trading name; identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The trading name; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/ID` = **LUM-ADR-075593** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `AppealTerms/AppealReceiverParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `AppealTerms/AppealReceiverParty/PostalAddress/StreetName` = **Justice Row**  
-  Street of the postal address. identity of Procurement Review Board of Bayvarra (world/parties.json).
+  Street of the postal address. as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/BuildingNumber` = **20**  
-  Building number of the postal address. identity of Procurement Review Board of Bayvarra (world/parties.json).
+  Building number of the postal address. as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CitySubdivisionName` = **Government Hill**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/PostalZone` = **38519**  
-  Postal code in Bayvarra's format (5 digits). identity of Procurement Review Board of Bayvarra (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `AppealTerms/AppealReceiverParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Procurement Review Board of Bayvarra (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Procurement Review Board of Bayvarra gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `AppealTerms/AppealReceiverParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `AppealTerms/AppealReceiverParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AppealTerms/AppealReceiverParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `AppealTerms/AppealReceiverParty/Contact/Name` = **Registry**  
-  The party's main desk, which handles this document; identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The party's main desk, which handles this document; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/JobTitle` = **Registrar**  
-  The job of the person who answers at the desk; identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The job of the person who answers at the desk; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/Department` = **Registry**  
-  The department the desk belongs to; identity of Procurement Review Board of Bayvarra (world/parties.json).
+  The department the desk belongs to; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/Telephone` = **+999 2 38 4119 7873**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Procurement Review Board of Bayvarra (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/ElectronicMail` = **registry@review-xb.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Procurement Review Board of Bayvarra (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Procurement Review Board of Bayvarra (world/parties.json).
+  When the desk can be reached; as Procurement Review Board of Bayvarra gives it.
 - `AppealTerms/AppealReceiverParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `AppealTerms/AppealReceiverParty/ElectronicAddress/ElectronicAddressID` = **XB:4718260539** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; identity of Procurement Review Board of Bayvarra (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal list of public bodies of Bayvarra; as Procurement Review Board of Bayvarra gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Tendering Process
 
 Inside `TenderingProcess`:
 
 - `ID` = **PWD-2026-PARKS-P**  
-  The procedure; it reopens no earlier framework (tender/02#F12).
+  The procedure; it reopens no earlier framework.
 - `Description` = **Open procedure with two lots for a framework agreement with one supplier, with an electronic auction on the unit prices after the evaluation.**  
-  The procedure, with the framework and the auction it plans (tender/01#F22).
+  The procedure, with the framework and the auction it plans.
 - `ProcedureCode` = **OPEN** (listID `urn:ubl-examples:world:codelist:ProcurementProcedureCode`)  
   An open procedure. The code is from the Trade Accord's procurement procedure list: OPEN = Open procedure.
 - `ContractingSystemCode` = **FRAMEWORK** (listID `urn:ubl-examples:world:codelist:ContractingSystemCode`)  
@@ -252,7 +252,7 @@ Inside `TenderingProcess`:
 - `OpenTenderEvent/IdentificationID` = **OPEN-1**  
   The opening of the tenders.
 - `OpenTenderEvent/OccurrenceDate` = **2026-02-26**  
-  Thursday 26 February, the day after the deadline (D28 point 1).
+  Thursday 26 February, the day after the deadline.
 - `OpenTenderEvent/OccurrenceTime` = **10:00:00**  
   In the morning.
 - `OpenTenderEvent/TypeCode` = **OPENING** (listID `urn:ubl-examples:world:codelist:TenderEventTypeCode`)  
@@ -260,7 +260,7 @@ Inside `TenderingProcess`:
 - `OpenTenderEvent/Description` = **Electronic opening; tenderers may follow it online.**  
   How.
 - `OpenTenderEvent/CompletionIndicator` = **true**  
-  The opening took place on 26 February, before the award (tender/21#F1).
+  The opening took place on 26 February, before the award.
 - `OpenTenderEvent/CurrentStatus/ConditionCode` = **COMPLETED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
   Held as planned. The code is from the Trade Accord's status condition list: COMPLETED = Completed.
 - `OpenTenderEvent/OccurrenceLocation/Name` = **Lumeport Public Works Department, Civic Square**  
@@ -268,7 +268,7 @@ Inside `TenderingProcess`:
 - `AuctionTerms/AuctionConstraintIndicator` = **true**  
   An electronic auction is held before the award.
 - `AuctionTerms/Description` = **After the full evaluation of the tenders, every tenderer with an admissible tender is invited to an electronic auction on the unit prices of both lots. The quality scores stay as evaluated; only the price score changes with the new prices. The auction was held on 4 March 2026 with both admissible tenderers: Brackenmere Furniture lowered its unit price from 496 to 489 lume a bench with its installation; Valdara Industries kept 517 (499 and 18) and still ranks first on price and quality.**  
-  The terms of the auction for the tenderers. The award documents add what happened (D28 point 6, tender/02#F37).
+  The terms of the auction for the tenderers. The award documents add what happened.
 
 ### Procurement Project
 
@@ -277,9 +277,9 @@ Inside `ProcurementProject`:
 - `ID` = **PWD-2026-PARKS**  
   The project's identifier.
 - `Name` = **Park benches for the parks renewal programme**  
-  The project's name, the same in every document (tender/01#F4, 08#F6).
+  The project's name, the same in every document (08#F6).
 - `Description` = **240 park benches with galvanised metal frames and hardwood slats over two years, delivered with their ground anchors and anchored.**  
-  What is bought; each lot describes its own part (tender/02#F32).
+  What is bought; each lot describes its own part.
 - `ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
   Supplies or services; the installation is services in every document. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 - `ProcurementSubTypeCode` = **PURCHASE** (listID `urn:ubl-examples:world:codelist:ProcurementSubTypeCode`)  
@@ -289,11 +289,11 @@ Inside `ProcurementProject`:
 - `EstimatedOverallContractQuantity` = **240** (unitCode `EA`)  
   240 benches over the contract.
 - `Note` = **Part of the parks renewal programme 2026. Each release is inspected on delivery and accepted with its installation.**  
-  The programme, and the inspection as an acceptance term (tender/01#F28).
+  The programme, and the inspection as an acceptance term.
 - `SMESuitableIndicator` = **true**  
   Small and medium firms can tender.
 - `ProcurementAdditionalType/ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  The procurement buys supplies with services as a second type: the installation of the benches (tender/01#F12). The code is from the Trade Accord's contract nature list: SERVICES = Services.
+  The procurement buys supplies with services as a second type: the installation of the benches. The code is from the Trade Accord's contract nature list: SERVICES = Services.
 - `ProcurementAdditionalType/ProcurementType` = **Services: the installation of the benches, lot 2**  
   The name of code SERVICES in the Trade Accord's contract nature list, followed by the detail of this case: what the services are; the environmental aims are in the execution requirement and the tenderer requirement.
 - `RequestedTenderTotal/EstimatedOverallContractAmount` = **124800.00** (currencyID `XBL`)  
@@ -309,7 +309,7 @@ Inside `ProcurementProject`:
 - `RequestedTenderTotal/MaximumAmount` = **149760.00** (currencyID `XBL`)  
   At most 20 % more.
 - `RequestedTenderTotal/MonetaryScope` = **Two years of releases, without tax: a two-year commitment of the 2026 budget, estimated at 500 lume a bench and 20 lume an installation.**  
-  What the amount covers, and that the department made the estimate before the tenders (D28 point 2, tender/01#F27, F29).
+  What the amount covers, and that the department made the estimate before the tenders.
 - `RequestedTenderTotal/AverageSubsequentContractAmount` = **20800.00** (currencyID `XBL`)  
   Six releases on average.
 - `RequestedTenderTotal/ApplicableTaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -325,7 +325,7 @@ Inside `ProcurementProject`:
 - `MainCommodityClassification/ItemClassificationCode` = **38111** (listID `UN CPC Ver.2.1`)  
   What is bought, as a subclass of the UN Central Product Classification, which classifies goods and services alike: seats with metal frames. The code is from the world's copy of UN Central Product Classification, Version 2.1: 38111 = Seats, primarily with metal frames.
 - `AdditionalCommodityClassification/ItemClassificationCode` = **87390** (listID `UN CPC Ver.2.1`)  
-  The installation the project buys besides the benches, as a subclass of the UN CPC: installation services of other goods (tender/01#F30). The code is from the world's copy of UN Central Product Classification, Version 2.1: 87390 = Installation services of other goods n.e.c..
+  The installation the project buys besides the benches, as a subclass of the UN CPC: installation services of other goods. The code is from the world's copy of UN Central Product Classification, Version 2.1: 87390 = Installation services of other goods n.e.c..
 - `RealizedLocation/Name` = **Harbour park and town parks, Lumeport**  
   Where the benches go.
 - `RealizedLocation/Address/CityName` = **Lumeport**  
@@ -363,7 +363,7 @@ Inside `ProcurementProject`:
 - `RequestForTenderLine/TaxIncludedIndicator` = **false**  
   Prices without tax.
 - `RequestForTenderLine/MinimumAmount` = **84000.00** (currencyID `XBL`)  
-  The line's total at 350 lume a bench, below which a tender would be abnormally low: on the same basis as the estimate (tender/01#F13).
+  The line's total at 350 lume a bench, below which a tender would be abnormally low: on the same basis as the estimate.
 - `RequestForTenderLine/MaximumAmount` = **144000.00** (currencyID `XBL`)  
   The line's total at the most the budget allows per bench, 600 lume.
 - `RequestForTenderLine/EstimatedAmount` = **120000.00** (currencyID `XBL`)  
@@ -371,7 +371,7 @@ Inside `ProcurementProject`:
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
 - `RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
-  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
 - `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-22**  
@@ -408,15 +408,15 @@ Inside `ProcurementProjectLot`:
 - `ID` = **LOT-1**  
   Lot 1.
 - `ProcurementProject/Name` = **Park benches**  
-  The project, or the lot, the document is about, by the name the notices give it (tender/08#F6).
+  The project, or the lot, the document is about, by the name the notices give it.
 - `ProcurementProject/ProcurementTypeCode` = **SUPPLIES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  The kind of procurement; the installation is services in every document (tender/01#F4). The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
+  The kind of procurement; the installation is services in every document. The code is from the Trade Accord's contract nature list: SUPPLIES = Supplies.
 - `ID` = **LOT-2**  
   Lot 2.
 - `ProcurementProject/Name` = **Installation of the benches**  
-  The project, or the lot, the document is about, by the name the notices give it (tender/08#F6).
+  The project, or the lot, the document is about, by the name the notices give it.
 - `ProcurementProject/ProcurementTypeCode` = **SERVICES** (listID `urn:ubl-examples:world:codelist:ContractNatureCode`)  
-  The kind of procurement; the installation is services in every document (tender/01#F4). The code is from the Trade Accord's contract nature list: SERVICES = Services.
+  The kind of procurement; the installation is services in every document. The code is from the Trade Accord's contract nature list: SERVICES = Services.
 
 ### Tender Result
 
@@ -437,7 +437,7 @@ Inside `TenderResult`:
 - `ReceivedTenderQuantity` = **2** (unitCode `EA`)  
   Two tenders: the furniture maker's first tender was withdrawn and replaced.
 - `LowerTenderAmount` = **117360.00** (currencyID `XBL`)  
-  The lowest tender, the furniture maker's, at its auction price of 489 lume (D28 point 6).
+  The lowest tender, the furniture maker's, at its auction price of 489 lume.
 - `HigherTenderAmount` = **124080.00** (currencyID `XBL`)  
   The highest, the manufacturer's.
 - `StartDate` = **2026-03-20**  
@@ -463,7 +463,7 @@ Inside `TenderResult`:
 - `AwardedTenderedProject/LegalMonetaryTotal/PayableAmount` = **124080.00** (currencyID `XBL`)  
   240 benches at 499 lume and their installation at 18 lume each.
 - `ContractFormalizationPeriod/StartDate` = **2026-03-20**  
-  The day after the standstill period ended (tender/22#F5).
+  The day after the standstill period ended.
 - `ContractFormalizationPeriod/EndDate` = **2026-03-23**  
   Before the first call-off.
 - `SubcontractTerms/UnknownPriceIndicator` = **false**  
@@ -475,11 +475,11 @@ Inside `TenderResult`:
 - `WinningParty/Rank` = **1**  
   First in the evaluation.
 - `WinningParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Valdara Industries gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `WinningParty/Party/AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
-  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates. No real scheme has the code designator 0990; as Valdara Industries gives it.
 - `WinningParty/Party/PartyName/Name` = **Valdara Industries**  
-  The trading name; identity of Valdara Industries (world/parties.json).
+  The trading name; as Valdara Industries gives it.
 
 ## The document
 

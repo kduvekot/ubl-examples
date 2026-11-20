@@ -2,7 +2,7 @@
 
 *Example 4 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Transport Progress Status Request in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-TRANSPORT-PROGRESS-STATUS-REQUEST-SCHEMA)*
 
-The rail carrier asks Urvania's rail infrastructure manager, the transportation network manager that runs the tracks and the train paths, to report the container train's departure (D37).
+The rail carrier asks Urvania's rail infrastructure manager, the transportation network manager that runs the tracks and the train paths, to report the container train's departure.
 
 [The XML file](04-TransportProgressStatusRequest.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -11,9 +11,9 @@ The rail carrier asks Urvania's rail infrastructure manager, the transportation 
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:transport-progress-status:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport progress status". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transport progress status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RAIL-2026-01**  
@@ -25,11 +25,11 @@ The rail carrier asks Urvania's rail infrastructure manager, the transportation 
 - `IssueDate` = **2026-04-14**  
   Asked on the morning of departure.
 - `IssueTime` = **06:30:00-01:00**  
-  Before the timetabled departure: the carrier asks to be told when the train leaves (rail/04#F3); in the issuer's local time, with its offset from UTC (D27).
+  Before the timetabled departure: the carrier asks to be told when the train leaves; in the issuer's local time, with its offset from UTC.
 - `Note` = **Gannek skuskek drek krakbek skul drek titran sezhul FRC 4417 mir Ferrano.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): The request: the departure, not presumed (rail/04#F3).
+  The note in Urvanian, the sender's language: The request: the departure, not presumed.
 - `Note` = **Please report the departure of the container train FRC 4417 from Ferrano.** (languageID `en-XU`)  
-  The same note in English, the working language between the countries: The request: the departure, not presumed (rail/04#F3).
+  The same note in English, the working language between the countries: The request: the departure, not presumed.
 
 ### Signature
 
@@ -47,106 +47,106 @@ Inside `Signature`:
 Inside `SenderParty`:
 
 - `PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Ferrano Rail Cargo gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Ferrano Rail Cargo**  
-  The trading name; identity of Ferrano Rail Cargo (world/parties.json).
+  The trading name; as Ferrano Rail Cargo gives it.
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/ID` = **4170201115930918** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Ferrano Rail Cargo (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Ferrano Rail Cargo gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `PostalAddress/StreetName` = **Rumir Hekrul Zhuzkek** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Ferrano Rail Cargo gives it.
 - `PostalAddress/StreetName` = **Viale della Stazione** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Rail Cargo (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Rail Cargo gives it.
 - `PostalAddress/BuildingNumber` = **38**  
-  Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
+  Building number of the postal address. as Ferrano Rail Cargo gives it.
 - `PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
 - `PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
 - `PostalAddress/PostalZone` = **4310**  
-  Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Ferrano Rail Cargo gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Rail Cargo (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Rail Cargo gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Freight desk**  
-  The party's main desk, which handles this document; identity of Ferrano Rail Cargo (world/parties.json).
+  The party's main desk, which handles this document; as Ferrano Rail Cargo gives it.
 - `Contact/JobTitle` = **Freight planner**  
-  The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
+  The job of the person who answers at the desk; as Ferrano Rail Cargo gives it.
 - `Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
+  The department the desk belongs to; as Ferrano Rail Cargo gives it.
 - `Contact/Telephone` = **+999 1 0413 67100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Rail Cargo (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Rail Cargo gives it.
 - `Contact/ElectronicMail` = **freight@ferranorail.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Rail Cargo gives it.
 - `Contact/Note` = **Every day 06:00–22:00**  
-  When the desk can be reached; identity of Ferrano Rail Cargo (world/parties.json).
+  When the desk can be reached; as Ferrano Rail Cargo gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; as Ferrano Rail Cargo gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
 Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **xu_t8rn** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
-  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Rail Infrastructure Agency of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; as Rail Infrastructure Agency of Urvania gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Rail Infrastructure Agency of Urvania**  
-  The trading name; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The trading name; as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/ID` = **4160207305518243** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `PostalAddress/StreetName` = **Bek Hekrul Zhuzkek** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/StreetName` = **Via della Stazione** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/BuildingNumber` = **2**  
-  Building number of the postal address. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  Building number of the postal address. as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/PostalZone` = **4150**  
-  Postal code in Urvania's format (4 digits). identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Rail Infrastructure Agency of Urvania gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Traffic control**  
-  The party's main desk, which handles this document; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The party's main desk, which handles this document; as Rail Infrastructure Agency of Urvania gives it.
 - `Contact/JobTitle` = **Train controller**  
-  The job of the person who answers at the desk; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The job of the person who answers at the desk; as Rail Infrastructure Agency of Urvania gives it.
 - `Contact/Department` = **Traffic management**  
-  The department the desk belongs to; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  The department the desk belongs to; as Rail Infrastructure Agency of Urvania gives it.
 - `Contact/Telephone` = **+999 1 041 816 2047**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Rail Infrastructure Agency of Urvania gives it.
 - `Contact/ElectronicMail` = **traffic@railinfra-xu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Rail Infrastructure Agency of Urvania gives it.
 - `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Rail Infrastructure Agency of Urvania (world/parties.json).
+  When the desk can be reached; as Rail Infrastructure Agency of Urvania gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:xu_t8rn** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Rail Infrastructure Agency of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; as Rail Infrastructure Agency of Urvania gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Transport Means
 
@@ -155,14 +155,14 @@ Inside `TransportMeans`:
 - `JourneyID` = **CT 4471**  
   The number of the container train in the hub's timetable.
 - `RailTransport/TrainID` = **FRC 4417**  
-  The train itself, so that the run of this day is meant, not the timetable service on other days (rail/04#F7).
+  The train itself, so that the run of this day is meant, not the timetable service on other days.
 
 ### Status Location
 
 Inside `StatusLocation`:
 
 - `ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `Name` = **Ferrano Intermodal Hub**  
   Where the status is asked for: the train's departure point.
 

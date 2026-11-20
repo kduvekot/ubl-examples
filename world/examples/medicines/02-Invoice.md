@@ -11,9 +11,9 @@ The Indian maker invoices the vaccines and the insulin in rupees when they leave
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Invoice/DefaultLanguageCode first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Invoice/DefaultLanguageCode first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **MEDICINES-2026-01**  
@@ -25,7 +25,7 @@ The Indian maker invoices the vaccines and the insulin in rupees when they leave
 - `IssueDate` = **2026-05-07**  
   Issued when the goods left for Hyderabad airport.
 - `IssueTime` = **08:40:00+05:30**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `DueDate` = **2026-06-08**  
   30 days from Thursday 7 May end on Saturday 6 June, no business day in India for a bank transfer abroad, so the payment is due on Monday 8 June.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
@@ -35,7 +35,7 @@ The Indian maker invoices the vaccines and the insulin in rupees when they leave
 - `DocumentCurrencyCode` = **INR** (listID `ISO 4217 Alpha`)  
   The indian rupee, the maker's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: INR = Indian Rupee.
 - `PaymentCurrencyCode` = **EUR** (listID `ISO 4217 Alpha`)  
-  Payment is asked in euro, the currency the wholesaler pays its suppliers abroad in, at the day's rate (O229; a trade outside the Accord, coverage register O51). The code is from the world's copy of UBL's Currency (ISO 4217) list: EUR = Euro.
+  Payment is asked in euro, the currency the wholesaler pays its suppliers abroad in, at the day's rate: a trade outside the Accord. The code is from the world's copy of UBL's Currency (ISO 4217) list: EUR = Euro.
 - `LineCountNumeric` = **3**  
   The number of invoice lines.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
@@ -53,92 +53,92 @@ Inside `OrderReference`:
 Inside `AccountingSupplierParty`:
 
 - `Party/PartyName/Name` = **Nilavar Biologics**  
-  The trading name; identity of Nilavar Biologics, a maker outside the world (world/parties.json, abroad; O229). It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's (O229); the documents identify it by its name and address, as a supplier outside the world.
+  The trading name; as Nilavar Biologics, a maker outside the three countries, gives it. It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/StreetName` = **Biotech Park Road**  
-  Street of the postal address. identity of Nilavar Biologics (world/parties.json, abroad): a fictional address in a real town.
+  Street of the postal address. as Nilavar Biologics gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/BuildingNumber` = **27**  
-  Building number. identity of Nilavar Biologics (world/parties.json, abroad): a fictional address in a real town.
+  Building number. as Nilavar Biologics gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/CityName` = **Hyderabad**  
-  The town. identity of Nilavar Biologics (world/parties.json, abroad): a fictional address in a real town.
+  The town. as Nilavar Biologics gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/PostalZone` = **500078**  
-  Postal code in the format of India. identity of Nilavar Biologics (world/parties.json, abroad): a fictional address in a real town.
+  Postal code in the format of India. as Nilavar Biologics gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/CountrySubentity` = **Telangana**  
-  The state of India, part of an address there. identity of Nilavar Biologics (world/parties.json, abroad): a fictional address in a real town.
+  The state of India, part of an address there. as Nilavar Biologics gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/TimezoneOffset` = **+05:30**  
   The offset from UTC of Indian Standard Time, the legal time there in June.
 - `Party/PostalAddress/Country/IdentificationCode` = **IN** (listID `ISO 3166`)  
-  India, a real country outside the world (O229). The code is from the world's copy of UBL's Country identification (ISO 3166) list: IN = India.
+  India, a real country outside the world. The code is from the world's copy of UBL's Country identification (ISO 3166) list: IN = India.
 - `Party/PostalAddress/Country/Name` = **India**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Nilavar Biologics Private Limited**  
-  The company's registered name, with the legal form of its country; identity of Nilavar Biologics, a maker outside the world (world/parties.json, abroad; O229).
+  The company's registered name, with the legal form of its country; as Nilavar Biologics, a maker outside the three countries, gives it.
 - `Party/Contact/Name` = **Export sales**  
-  The party's desk that handles this document; identity of Nilavar Biologics, a maker outside the world (world/parties.json, abroad; O229).
+  The party's desk that handles this document; as Nilavar Biologics, a maker outside the three countries, gives it.
 - `Party/Contact/JobTitle` = **Export manager**  
-  The job of the person who answers at the desk; identity of Nilavar Biologics, a maker outside the world (world/parties.json, abroad; O229).
+  The job of the person who answers at the desk; as Nilavar Biologics, a maker outside the three countries, gives it.
 - `Party/Contact/Department` = **International sales**  
-  The department the desk belongs to; identity of Nilavar Biologics, a maker outside the world (world/parties.json, abroad; O229).
+  The department the desk belongs to; as Nilavar Biologics, a maker outside the three countries, gives it.
 - `Party/Contact/ElectronicMail` = **exports@nilavar-bio.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; no telephone number is given, as one in the real country's plan could reach someone; identity of Nilavar Biologics, a maker outside the world (world/parties.json, abroad; O229).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; no telephone number is given, as one in the real country's plan could reach someone; as Nilavar Biologics, a maker outside the three countries, gives it.
 - `Party/Contact/Note` = **Monday to Saturday 09:30–18:00**  
-  When the desk can be reached; identity of Nilavar Biologics, a maker outside the world (world/parties.json, abroad; O229).
+  When the desk can be reached; as Nilavar Biologics, a maker outside the three countries, gives it.
 
 ### Accounting Customer Party
 
 Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **20413425** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Quillmoor Pharma Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Quillmoor Pharma Distribution gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9524910900003** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Quillmoor Pharma Distribution (world/parties.json).
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples ; as Quillmoor Pharma Distribution gives it.
 - `Party/PartyName/Name` = **Quillmoor Pharma Distribution**  
-  The trading name; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The trading name; as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/ID` = **LUM-ADR-718264** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Quillmoor Pharma Distribution (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Airport Road**  
-  Street of the postal address. identity of Quillmoor Pharma Distribution (world/parties.json).
+  Street of the postal address. as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/BuildingNumber` = **40**  
-  Building number of the postal address. identity of Quillmoor Pharma Distribution (world/parties.json).
+  Building number of the postal address. as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Quillmoor Pharma Distribution (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/PostalZone` = **38528**  
-  Postal code in Bayvarra's format (5 digits). identity of Quillmoor Pharma Distribution (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Quillmoor Pharma Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Quillmoor Pharma Distribution gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Quillmoor Pharma Distribution Ltd**  
-  The name under which the party is registered, with its legal form; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The name under which the party is registered, with its legal form; as Quillmoor Pharma Distribution gives it.
 - `Party/PartyLegalEntity/CompanyID` = **20413425** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Quillmoor Pharma Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+  Number in the Federal business register of Bayvarra; as Quillmoor Pharma Distribution gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/Contact/Name` = **Accounts payable**  
-  The party's accounts payable desk: the desk for its role in this document (it pays); identity of Quillmoor Pharma Distribution (world/parties.json).
+  The party's accounts payable desk: the desk for its role in this document (it pays); as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
-  The job of the person who answers at the desk; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The job of the person who answers at the desk; as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/Department` = **Finance**  
-  The department the desk belongs to; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The department the desk belongs to; as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/Telephone` = **+999 2 38 6047 1582**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Quillmoor Pharma Distribution (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/ElectronicMail` = **payables@quillmoor.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Quillmoor Pharma Distribution (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/Note` = **Weekdays 07:00–19:00**  
-  When the desk can be reached; identity of Quillmoor Pharma Distribution (world/parties.json).
+  When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20413425** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Quillmoor Pharma Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Quillmoor Pharma Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -200,7 +200,7 @@ Inside `PaymentExchangeRate`:
 - `TargetCurrencyCode` = **EUR** (listID `ISO 4217 Alpha`)  
   The payment currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: EUR = Euro.
 - `CalculationRate` = **88.8595**  
-  The ECB's euro reference rate of the invoice date, Thursday 7 May: 88.8595 rupees for a euro. In the world's calendar the ECB's rates are the real ones of 260 weeks before (tools/fx_fixing.py, O231), the same that underlie the Lumeport Exchange's fixing.
+  The ECB's euro reference rate of the invoice date, Thursday 7 May: 88.8595 rupees for a euro. In the world's calendar the ECB's rates are the real ones of 260 weeks before, the same that underlie the Lumeport Exchange's fixing.
 - `MathematicOperatorCode` = **Divide** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
   The rupee amount divided by the rate gives the euro amount, as the ECB quotes rupees per euro. The code is from the world's copy of UBL's Operator list, with a listID: Divide.
 - `Date` = **2026-05-07**  
@@ -251,11 +251,11 @@ Inside `InvoiceLine`:
 - `OrderLineReference/LineID` = **1**  
   The line of the wholesaler's order.
 - `Item/Description` = **Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.**  
-  The seller's description; item flu-vaccine of Nilavar Biologics (world/items.json).
+  The seller's description.
 - `Item/Name` = **Influenza vaccine, inactivated, 10 prefilled syringes**  
-  The item's short name; item flu-vaccine of Nilavar Biologics (world/items.json).
+  The item's short name.
 - `Item/SellersItemIdentification/ID` = **NB-FLU-S26-10**  
-  The seller's own item number; item flu-vaccine of Nilavar Biologics (world/items.json).
+  The seller's own item number; as Nilavar Biologics describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -267,7 +267,7 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: goods and services tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: GST = Goods and services tax. An identifier that holds a code names the code's list in its schemeID.
 - `Price/PriceAmount` = **4100** (currencyID `INR`)  
-  The seller's price per unit (world/items.json).
+  The seller's price per unit.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `ID` = **2**  
@@ -279,11 +279,11 @@ Inside `InvoiceLine`:
 - `OrderLineReference/LineID` = **2**  
   The line of the wholesaler's order.
 - `Item/Description` = **Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.**  
-  The seller's description; item insulin-vial of Nilavar Biologics (world/items.json).
+  The seller's description.
 - `Item/Name` = **Insulin human, 100 IU/ml, vial of 10 ml**  
-  The item's short name; item insulin-vial of Nilavar Biologics (world/items.json).
+  The item's short name.
 - `Item/SellersItemIdentification/ID` = **NB-INS-R100-10**  
-  The seller's own item number; item insulin-vial of Nilavar Biologics (world/items.json).
+  The seller's own item number; as Nilavar Biologics describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -295,7 +295,7 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: goods and services tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: GST = Goods and services tax. An identifier that holds a code names the code's list in its schemeID.
 - `Price/PriceAmount` = **1300** (currencyID `INR`)  
-  The seller's price per unit (world/items.json).
+  The seller's price per unit.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `ID` = **3**  
@@ -307,11 +307,11 @@ Inside `InvoiceLine`:
 - `OrderLineReference/LineID` = **3**  
   The line of the wholesaler's order.
 - `Item/Description` = **Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.**  
-  The seller's description; item varicella-vaccine of Nilavar Biologics (world/items.json).
+  The seller's description.
 - `Item/Name` = **Varicella vaccine, live, frozen, single dose**  
-  The item's short name; item varicella-vaccine of Nilavar Biologics (world/items.json).
+  The item's short name.
 - `Item/SellersItemIdentification/ID` = **NB-VZV-1**  
-  The seller's own item number; item varicella-vaccine of Nilavar Biologics (world/items.json).
+  The seller's own item number; as Nilavar Biologics describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   An export of goods is a zero-rated supply under India's integrated goods and services tax (IGST Act 2017, section 16): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -323,7 +323,7 @@ Inside `InvoiceLine`:
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **GST** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: goods and services tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: GST = Goods and services tax. An identifier that holds a code names the code's list in its schemeID.
 - `Price/PriceAmount` = **2850** (currencyID `INR`)  
-  The seller's price per unit (world/items.json).
+  The seller's price per unit.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 

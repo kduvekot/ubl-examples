@@ -11,9 +11,9 @@ The intermodal terminal reports to the rail carrier that the containers are load
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:transportation-status:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RAIL-2026-01**  
@@ -25,13 +25,13 @@ The intermodal terminal reports to the rail carrier that the containers are load
 - `IssueDate` = **2026-04-14**  
   Reported when the containers are on the train.
 - `IssueTime` = **06:05:00-01:00**  
-  Sent by the terminal's system once both boxes were on their wagons; in the issuer's local time, with its offset from UTC (D27).
+  Sent by the terminal's system once both boxes were on their wagons; in the issuer's local time, with its offset from UTC.
 - `Name` = **Transportation status**  
   The kind of report.
 - `Description` = **Two containers loaded on the container train.**  
   In words.
 - `Note` = **Krerdan skuskek mir drek stalkan sazhir kaztrir.** (languageID `qau`)  
-  The note in Urvanian, the sender's language (world/countries.json): How it was made.
+  The note in Urvanian, the sender's language: How it was made.
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: How it was made.
 - `OtherInstruction` = **Reply only if the delivery slot must change.**  
@@ -46,59 +46,59 @@ Inside `Consignment`:
 - `ID` = **VI-CS-26-0327**  
   The consignment the report is about.
 - `CarrierParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Ferrano Rail Cargo gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `CarrierParty/PartyName/Name` = **Ferrano Rail Cargo**  
-  The trading name; identity of Ferrano Rail Cargo (world/parties.json).
+  The trading name; as Ferrano Rail Cargo gives it.
 - `CarrierParty/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `CarrierParty/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `CarrierParty/PostalAddress/ID` = **4170201115930918** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Ferrano Rail Cargo (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `CarrierParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `CarrierParty/PostalAddress/StreetName` = **Rumir Hekrul Zhuzkek** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Rail Cargo (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/StreetName` = **Viale della Stazione** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Rail Cargo (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/BuildingNumber` = **38**  
-  Building number of the postal address. identity of Ferrano Rail Cargo (world/parties.json).
+  Building number of the postal address. as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/CityName` = **Drinzul** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/CityName` = **Serravona** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Rail Cargo (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/PostalZone` = **4310**  
-  Postal code in Urvania's format (4 digits). identity of Ferrano Rail Cargo (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Rail Cargo (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Rail Cargo gives it.
 - `CarrierParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `CarrierParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `CarrierParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `CarrierParty/Contact/Name` = **Freight desk**  
-  The party's main desk, which handles this document; identity of Ferrano Rail Cargo (world/parties.json).
+  The party's main desk, which handles this document; as Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/JobTitle` = **Freight planner**  
-  The job of the person who answers at the desk; identity of Ferrano Rail Cargo (world/parties.json).
+  The job of the person who answers at the desk; as Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Ferrano Rail Cargo (world/parties.json).
+  The department the desk belongs to; as Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/Telephone` = **+999 1 0413 67100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Rail Cargo (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/ElectronicMail` = **freight@ferranorail.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Rail Cargo (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
-  When the desk can be reached; identity of Ferrano Rail Cargo (world/parties.json).
+  When the desk can be reached; as Ferrano Rail Cargo gives it.
 - `CarrierParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `CarrierParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104685** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Ferrano Rail Cargo (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; as Ferrano Rail Cargo gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/ID` = **2**  
   The main carriage, by rail.
 - `MainCarriageShipmentStage/TransportMeans/RailTransport/TrainID` = **FRC 4417**  
-  The train the boxes were loaded on (rail/07#F8).
+  The train the boxes were loaded on.
 - `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/OccurrenceDate` = **2026-04-14**  
   If the morning train cannot leave, the boxes go on the evening train.
 - `MainCarriageShipmentStage/OptionalTakeoverTransportEvent/OccurrenceTime` = **17:00:00**  
@@ -118,59 +118,59 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/DeliveryTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
 - `MainCarriageShipmentStage/DeliveryTransportEvent/Location/ID` = **9520610900015** (schemeID `GS1 GLN`)  
-  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+  The Global Location Number of the place, rail siding of the distribution centre, marrowdale: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples).
 - `MainCarriageShipmentStage/DeliveryTransportEvent/Location/Name` = **Lumeway rail siding, Marrowdale**  
   Where the boxes are placed for unloading.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyIdentification/ID` = **XU-R-105096** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Ferrano Intermodal Hub gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PartyName/Name` = **Ferrano Intermodal Hub**  
-  The trading name; identity of Ferrano Intermodal Hub (world/parties.json).
+  The trading name; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/ID` = **4160200139820702** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Ferrano Intermodal Hub (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Bek Han Krazhul** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Ferrano Intermodal Hub (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/StreetName` = **Via del Terminal** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Ferrano Intermodal Hub (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/BuildingNumber` = **59**  
-  Building number of the postal address. identity of Ferrano Intermodal Hub (world/parties.json).
+  Building number of the postal address. as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Intermodal Hub (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Ferrano Intermodal Hub (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/PostalZone` = **4180**  
-  Postal code in Urvania's format (4 digits). identity of Ferrano Intermodal Hub (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Ferrano Intermodal Hub (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Terminal control**  
-  The party's main desk, which handles this document; identity of Ferrano Intermodal Hub (world/parties.json).
+  The party's main desk, which handles this document; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/JobTitle` = **Terminal controller**  
-  The job of the person who answers at the desk; identity of Ferrano Intermodal Hub (world/parties.json).
+  The job of the person who answers at the desk; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Ferrano Intermodal Hub (world/parties.json).
+  The department the desk belongs to; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 1 041 371 6482**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Ferrano Intermodal Hub (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/ElectronicMail` = **terminal@ferranohub.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Ferrano Intermodal Hub (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Ferrano Intermodal Hub (world/parties.json).
+  When the desk can be reached; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ElectronicAddressID` = **XU:XU-R-105096** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Ferrano Intermodal Hub (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; as Ferrano Intermodal Hub gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 - `MainCarriageShipmentStage/TransportEvent/OccurrenceDate` = **2026-04-14**  
   Both boxes lifted onto the train, the second at 05:55.
 - `MainCarriageShipmentStage/TransportEvent/OccurrenceTime` = **05:40:00**  
@@ -194,9 +194,9 @@ Inside `Consignment`:
 - `PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
   The same, in words.
 - `PreCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **37** (listID `UNECE Recommendation 28`)  
-  The kind of means of transport: container tractor for carrier haulage; the fleet of Ferrano Rail Cargo (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 37 = Truck, container.
+  The kind of means of transport: container tractor for carrier haulage; the fleet of Ferrano Rail Cargo. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 37 = Truck, container.
 - `PreCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **UR 4160 RC** (schemeID `urn:ubl-examples:world:XU:vehicle-register`)  
-  The registration plate of the truck; the fleet of Ferrano Rail Cargo (world/parties.json). The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
+  The registration plate of the truck; the fleet of Ferrano Rail Cargo. The schemeID names the scheme it is from: the vehicle register of Urvania (UR, the four-digit number of the registering district (4160 Ferrano) and two letters).
 - `PreCarriageShipmentStage/LoadingPortLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `PreCarriageShipmentStage/LoadingPortLocation/Name` = **Castrano Logistics warehouse, Conciaro**  
@@ -230,9 +230,9 @@ Inside `Consignment`:
 - `PreCarriageShipmentStage/ActualArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044175** (schemeID `ISO6346`)  
-  A box the report is about (rail/07#F8).
+  A box the report is about.
 - `TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044180** (schemeID `ISO6346`)  
-  A box the report is about (rail/07#F8).
+  A box the report is about.
 
 ### Transport Event
 
@@ -245,7 +245,7 @@ Inside `TransportEvent`:
 - `Description` = **Two containers loaded on the container train.**  
   What happened, in words.
 - `Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `Location/Name` = **Ferrano Intermodal Hub**  
   Where it happened.
 
@@ -290,7 +290,7 @@ Inside `TransportExecutionPlanDocumentReference`:
 Inside `StatusLocation`:
 
 - `ID` = **XUFER** (schemeID `UN/LOCODE`)  
-  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE; worklist C23).
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
 - `Name` = **Ferrano Intermodal Hub**  
   Where it happened.
 

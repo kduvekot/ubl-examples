@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Production waste to recovery (domestic, Urvania)" · [Waste Notification in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-NOTIFICATION-SCHEMA)*
 
-Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 tonnes in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery (decision D42). UBL requires a CustomsParty in a waste notification, "the competent authority granting a permit to export or import the waste"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.
+Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 tonnes in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery. UBL requires a CustomsParty in a waste notification, "the competent authority granting a permit to export or import the waste"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.
 
 [The XML file](01-WasteNotification.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -11,9 +11,9 @@ Before the year's movements start, the manufacturer, as producer and notifier, n
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); the document type WasteNotification first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; the document type WasteNotification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:waste-notification:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waste notification". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waste notification". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:waste-shipment:1.0**  
   The Trade Accord's process profile the document belongs to: waste shipment, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **WASTE-2026-01**  
@@ -25,9 +25,9 @@ Before the year's movements start, the manufacturer, as producer and notifier, n
 - `IssueDate` = **2026-03-23**  
   Notified before the year's movements start.
 - `IssueTime` = **09:28:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `WasteNotificationTypeCode` = **DOMESTIC** (listID `urn:ubl-examples:world:codelist:WasteNotificationTypeCode`)  
-  A notification of a waste stream within Urvania under its national waste law, not of a transboundary movement: producer and recovery facility are both in Ferrano (D42). The code is from the Trade Accord's waste notification type list: DOMESTIC = Domestic waste stream.
+  A notification of a waste stream within Urvania under its national waste law, not of a transboundary movement: producer and recovery facility are both in Ferrano. The code is from the Trade Accord's waste notification type list: DOMESTIC = Domestic waste stream.
 - `ConsignmentQuantity` = **12** (unitCode `EA`)  
   About one load a month over the year.
 
@@ -47,53 +47,53 @@ Inside `Signature`:
 Inside `SenderParty`:
 
 - `PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Valdara Industries gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **0990:10014** (schemeID `ISO 6523`)  
-  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Valdara Industries (world/parties.json).
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates. No real scheme has the code designator 0990; as Valdara Industries gives it.
 - `PartyName/Name` = **Valdara Industries**  
-  The trading name; identity of Valdara Industries (world/parties.json).
+  The trading name; as Valdara Industries gives it.
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: urvanese.
 - `PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Valdara Industries (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Valdara Industries gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `PostalAddress/StreetName` = **Bek Stuzman Nulban** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Valdara Industries (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Valdara Industries gives it.
 - `PostalAddress/StreetName` = **Via delle Officine** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Valdara Industries (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Valdara Industries gives it.
 - `PostalAddress/BuildingNumber` = **17**  
-  Building number of the postal address. identity of Valdara Industries (world/parties.json).
+  Building number of the postal address. as Valdara Industries gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Valdara Industries (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Valdara Industries gives it.
 - `PostalAddress/PostalZone` = **4120**  
-  Postal code in Urvania's format (4 digits). identity of Valdara Industries (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Valdara Industries gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Valdara Industries (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Valdara Industries gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Order desk**  
-  The party's main desk, which handles this document; identity of Valdara Industries (world/parties.json).
+  The party's main desk, which handles this document; as Valdara Industries gives it.
 - `Contact/JobTitle` = **Order administrator**  
-  The job of the person who answers at the desk; identity of Valdara Industries (world/parties.json).
+  The job of the person who answers at the desk; as Valdara Industries gives it.
 - `Contact/Department` = **Sales**  
-  The department the desk belongs to; identity of Valdara Industries (world/parties.json).
+  The department the desk belongs to; as Valdara Industries gives it.
 - `Contact/Telephone` = **+999 1 041 386 4551**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Valdara Industries (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Valdara Industries gives it.
 - `Contact/ElectronicMail` = **order@valdara.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Valdara Industries (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Valdara Industries (world/parties.json).
+  When the desk can be reached; as Valdara Industries gives it.
 - `Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
   UN/EDIFACT 3155 code AL: cellular phone. The code is from UBL's default Communication channel (UN/EDIFACT 3155) list: AL = Cellular phone.
 - `Contact/OtherCommunication/Value` = **+999 1 351 400 5258**  
@@ -101,58 +101,58 @@ Inside `SenderParty`:
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:XU-R-104274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; identity of Valdara Industries (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Commercial register of Urvania; as Valdara Industries gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
 Inside `ReceiverParty`:
 
 - `PartyIdentification/ID` = **xu_p3wz** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
-  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; identity of Environment Agency of Urvania (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Index of Public Administrations of Urvania; as Environment Agency of Urvania gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Environment Agency of Urvania**  
-  The trading name; identity of Environment Agency of Urvania (world/parties.json).
+  The trading name; as Environment Agency of Urvania gives it.
 - `PostalAddress/ID` = **4160204417730582** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Environment Agency of Urvania (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Environment Agency of Urvania gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `PostalAddress/StreetName` = **Bek Stuzman Drarban** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Environment Agency of Urvania (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Environment Agency of Urvania gives it.
 - `PostalAddress/StreetName` = **Via delle Acque** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Environment Agency of Urvania (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Environment Agency of Urvania gives it.
 - `PostalAddress/BuildingNumber` = **8**  
-  Building number of the postal address. identity of Environment Agency of Urvania (world/parties.json).
+  Building number of the postal address. as Environment Agency of Urvania gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Environment Agency of Urvania (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Environment Agency of Urvania gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Environment Agency of Urvania (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Environment Agency of Urvania gives it.
 - `PostalAddress/PostalZone` = **4150**  
-  Postal code in Urvania's format (4 digits). identity of Environment Agency of Urvania (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Environment Agency of Urvania gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Environment Agency of Urvania (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Environment Agency of Urvania gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Waste reporting office**  
-  The party's main desk, which handles this document; identity of Environment Agency of Urvania (world/parties.json).
+  The party's main desk, which handles this document; as Environment Agency of Urvania gives it.
 - `Contact/JobTitle` = **Waste reporting officer**  
-  The job of the person who answers at the desk; identity of Environment Agency of Urvania (world/parties.json).
+  The job of the person who answers at the desk; as Environment Agency of Urvania gives it.
 - `Contact/Department` = **Waste and resources**  
-  The department the desk belongs to; identity of Environment Agency of Urvania (world/parties.json).
+  The department the desk belongs to; as Environment Agency of Urvania gives it.
 - `Contact/Telephone` = **+999 1 041 732 5019**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Environment Agency of Urvania (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Environment Agency of Urvania gives it.
 - `Contact/ElectronicMail` = **waste@environment-xu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Environment Agency of Urvania (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Environment Agency of Urvania gives it.
 - `Contact/Note` = **Weekdays 08:00–16:00**  
-  When the desk can be reached; identity of Environment Agency of Urvania (world/parties.json).
+  When the desk can be reached; as Environment Agency of Urvania gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XU:xu_p3wz** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; identity of Environment Agency of Urvania (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Index of Public Administrations of Urvania; as Environment Agency of Urvania gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Notifier Party
 
@@ -177,57 +177,57 @@ Inside `CustomsParty`:
 Inside `RecoveryFacilityParty`:
 
 - `PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Rinova Recovery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Rinova Recovery gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `AdditionalPartyIdentification/ID` = **0990:13362** (schemeID `ISO 6523`)  
-  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates (decision ID-Q7). No real scheme has the code designator 0990; identity of Rinova Recovery (world/parties.json).
+  A further identifier (the endorsed PartyIdentification holds one only), the party's organisation identifier in the structure of ISO/IEC 6523: the international code designator 0990 of the Codana Identification Agency and the party's Codana company number, which also starts its licence plates. No real scheme has the code designator 0990; as Rinova Recovery gives it.
 - `PartyName/Name` = **Rinova Recovery**  
-  The trading name; identity of Rinova Recovery (world/parties.json).
+  The trading name; as Rinova Recovery gives it.
 - `PostalAddress/ID` = **4160202983340277** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Rinova Recovery (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Rinova Recovery gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `PostalAddress/StreetName` = **Bek Han Zugaz** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Rinova Recovery (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Rinova Recovery gives it.
 - `PostalAddress/StreetName` = **Via del Riciclo** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Rinova Recovery (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Rinova Recovery gives it.
 - `PostalAddress/BuildingNumber` = **31**  
-  Building number of the postal address. identity of Rinova Recovery (world/parties.json).
+  Building number of the postal address. as Rinova Recovery gives it.
 - `PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rinova Recovery (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Rinova Recovery gives it.
 - `PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Rinova Recovery (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Rinova Recovery gives it.
 - `PostalAddress/PostalZone` = **4140**  
-  Postal code in Urvania's format (4 digits). identity of Rinova Recovery (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Rinova Recovery gives it.
 - `PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Rinova Recovery (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Rinova Recovery gives it.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Customer service**  
-  The party's main desk, which handles this document; identity of Rinova Recovery (world/parties.json).
+  The party's main desk, which handles this document; as Rinova Recovery gives it.
 - `Contact/JobTitle` = **Customer service officer**  
-  The job of the person who answers at the desk; identity of Rinova Recovery (world/parties.json).
+  The job of the person who answers at the desk; as Rinova Recovery gives it.
 - `Contact/Department` = **Customer service**  
-  The department the desk belongs to; identity of Rinova Recovery (world/parties.json).
+  The department the desk belongs to; as Rinova Recovery gives it.
 - `Contact/Telephone` = **+999 1 041 697 6856**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Rinova Recovery (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Rinova Recovery gives it.
 - `Contact/ElectronicMail` = **customer@rinova.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Rinova Recovery (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Rinova Recovery gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Rinova Recovery (world/parties.json).
+  When the desk can be reached; as Rinova Recovery gives it.
 - `PartyAuthorization/PurposeCode` = **R3** (listID `Basel Convention Annex IV`)  
   The purpose as a code. The code is from the world's copy of Basel Convention, Annex IV: disposal and recovery operations: R3 = Recycling/reclamation of organic substances which are not used as solvents.
 - `PartyAuthorization/Purpose` = **Recovery of non-hazardous plastic waste**  
-  What the authority has authorized the party to do; identity of Rinova Recovery (world/parties.json).
+  What the authority has authorized the party to do; as Rinova Recovery gives it.
 - `PartyAuthorization/ValidityPeriod/EndDate` = **2029-12-31**  
   The authorization expires on this date.
 - `PartyAuthorization/Certificate/ID` = **XU-ENV-2024-0311** (schemeID `urn:ubl-examples:world:XU:waste-permit`)  
-  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
+  The number of the permit in the register of waste treatment permits of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed.
 - `PartyAuthorization/Certificate/CertificateTypeCode` = **PERMIT** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A permit issued by an authority of the party's country. The code is from the Trade Accord's certificate type list: PERMIT = Operating permit.
 - `PartyAuthorization/Certificate/CertificateType` = **Kusul treznul** (languageID `qau`)  
@@ -255,53 +255,53 @@ Inside `Shipment`:
 - `Consignment/ID` = **VI-CS-26-0206**  
   The consignment of the notified stream, which names its carrier.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **XU-R-104822** (schemeID `urn:ubl-examples:world:XU:register`)  
-  The party's preferred identifier: its number in the Commercial register of Urvania; identity of Trasvia Haulage (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Commercial register of Urvania; as Trasvia Haulage gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Trasvia Haulage**  
-  The trading name; identity of Trasvia Haulage (world/parties.json).
+  The trading name; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/ID` = **4160203746888095** (schemeID `urn:ubl-examples:world:XU:address-register`)  
-  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); identity of Trasvia Haulage (world/parties.json).
+  The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XU** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Urvania's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
+  The address follows Urvania's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; StreetName BuildingNumber; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; PostalZone CityName; CountrySubentity. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XU = Address format of Urvania.
 - `Consignment/CarrierParty/PostalAddress/StreetName` = **Bek Ban Kumek** (languageID `qau`)  
-  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages (world/countries.json); identity of Trasvia Haulage (world/parties.json).
+  The street's name in Urvanian: Urvania is officially bilingual, and street names are given in both languages ; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/StreetName` = **Via dei Trasporti** (languageID `en-XU`)  
-  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; identity of Trasvia Haulage (world/parties.json).
+  The street's name in English, the country's other official language; the Italian names the British kept are part of English now; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **45**  
-  Building number of the postal address. identity of Trasvia Haulage (world/parties.json).
+  Building number of the postal address. as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Ruldraz** (languageID `qau`)  
-  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. identity of Trasvia Haulage (world/parties.json).
+  The town's Urvanian name, which its people have always used. The town or locality nearest to the party's place on the map, in its own country and state. as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Ferrano** (languageID `en-XU`)  
-  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. identity of Trasvia Haulage (world/parties.json).
+  The town's English name, inherited from the Italian. The town or locality nearest to the party's place on the map, in its own country and state. as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/PostalZone` = **4160**  
-  Postal code in Urvania's format (4 digits). identity of Trasvia Haulage (world/parties.json).
+  Postal code in Urvania's format (4 digits). as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/CountrySubentity` = **Province of Ferrano**  
-  The province, part of an address in Urvania: a subdivision of the country (world/countries.json). identity of Trasvia Haulage (world/parties.json).
+  The province, part of an address in Urvania: a subdivision of the country. as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/CarrierParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Consignment/CarrierParty/Contact/Name` = **Planning desk**  
-  The party's main desk, which handles this document; identity of Trasvia Haulage (world/parties.json).
+  The party's main desk, which handles this document; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/JobTitle` = **Transport planner**  
-  The job of the person who answers at the desk; identity of Trasvia Haulage (world/parties.json).
+  The job of the person who answers at the desk; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/Department` = **Operations**  
-  The department the desk belongs to; identity of Trasvia Haulage (world/parties.json).
+  The department the desk belongs to; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/Telephone` = **+999 1 041 266 7643**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. identity of Trasvia Haulage (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/ElectronicMail` = **planning@trasvia.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Trasvia Haulage (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
-  When the desk can be reached; identity of Trasvia Haulage (world/parties.json).
+  When the desk can be reached; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PartyAuthorization/Purpose` = **Transport of non-hazardous waste by road**  
-  What the authority has authorized the party to do; identity of Trasvia Haulage (world/parties.json).
+  What the authority has authorized the party to do; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PartyAuthorization/ValidityPeriod/EndDate` = **2028-10-31**  
   The authorization expires on this date.
 - `Consignment/CarrierParty/PartyAuthorization/Certificate/ID` = **XU-ENV-T-2023-0187** (schemeID `urn:ubl-examples:world:XU:waste-carrier`)  
-  The number of the permit in the register of waste carriers of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed (decision ID-Q10).
+  The number of the permit in the register of waste carriers of Urvania; the schemeID names the register, and with it the authority that keeps it, so no issuer party is needed.
 - `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateTypeCode` = **WASTECARRIER** (listID `urn:ubl-examples:world:codelist:CertificateTypeCode`)  
   A registration with an authority of the party's country. The code is from the Trade Accord's certificate type list: WASTECARRIER = Waste carrier registration.
 - `Consignment/CarrierParty/PartyAuthorization/Certificate/CertificateType` = **Drunvir sundraz dradrek** (languageID `qau`)  
@@ -317,9 +317,9 @@ Inside `Shipment`:
 - `GoodsItem/Item/Description` = **Used polyethylene stretch film and film offcuts, baled**  
   The waste, in words.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **150102** (listID `urn:ubl-examples:world:XU:codelist:WasteCode`)  
-  The waste by its entry in Urvania's waste list, numbered after the European List of Waste: the film comes from the packaging of the parts and materials the factory receives and from the wrapping of its own pallets, and no chapter for the factory's activity (metal working and coating, chapters 08, 11 and 12) has an entry for packaging, so the list's rule sends it to chapter 15: 15 01 02 plastic packaging (O191). The code is from Urvania's national waste list list: 150102 = Plastic packaging.
+  The waste by its entry in Urvania's waste list, numbered after the European List of Waste: the film comes from the packaging of the parts and materials the factory receives and from the wrapping of its own pallets, and no chapter for the factory's activity (metal working and coating, chapters 08, 11 and 12) has an entry for packaging, so the list's rule sends it to chapter 15: 15 01 02 plastic packaging. The code is from Urvania's national waste list list: 150102 = Plastic packaging.
 - `GoodsItem/ContainingPackage/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code BL: bale, compressed. Loose film would fill the trailer long before its payload; pressed into bales of about 1.2 × 0.8 × 1.0 m and 425 kg, two layers high, a load reaches the weight limit first (D42). The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+  UN/ECE Recommendation 21 code BL: bale, compressed. Loose film would fill the trailer long before its payload; pressed into bales of about 1.2 × 0.8 × 1.0 m and 425 kg, two layers high, a load reaches the weight limit first. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
 - `GoodsItem/ContainingPackage/PackingMaterial` = **Steel baling wire**  
   What holds a bale together.
 - `Delivery/DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
@@ -348,7 +348,7 @@ Inside `DocumentReference`:
 - `ID` = **VI-WASTE-CONTRACT-26**  
   The contract between producer and recovery facility, which the notification needs.
 - `DocumentTypeCode` = **315** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the contract between Valdara and Rinova for the waste, a document outside the examples (world/documents.json, cited; decision Q29). The code is from the world's copy of UN/EDIFACT 1001 Document name: 315 = Contract.
+  The kind of document referred to, the contract between Valdara and Rinova for the waste, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 315 = Contract.
 
 ## The document
 

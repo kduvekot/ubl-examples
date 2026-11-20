@@ -78,9 +78,9 @@ irrelevant · structure · process.
 | SR-04 | No navigation between examples, flows, parties, specifications, map and story | medium | E-04, C-12, D-09, B-05 | | partly solved |
 | SR-05 | Map sheet: image overflow, misplaced and overlapping labels, no legend | medium | A-09, C-11 | | partly solved |
 | SR-06 | Interactive map texts: opening card, no legend or scale, jargon | medium | C-02, C-10, A-10 | | solved |
-| SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | decided (by SR-09) |
+| SR-07 | Decision, open-point, cause and review-finding numbers in reader texts | medium | C-03, E-07, F-09, B-16 | Q-C-04, Q-E-01 | solved |
 | SR-08 | "Proposed addition to the 26+C set", "new" and "Parties 27 and up" leftovers | medium | C-05 | Q-C-02 | solved |
-| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | decided |
+| SR-09 | Process: hand-kept copies of each story drift, and no check ties them to the decisions | high | E-08, E-12, B-20, C-16, D-11, A-05 | Q-D-03 | partly solved |
 | SR-10 | Flow introductions do not tell the decided story (O112) | medium | F-06, E-10 | Q-F-01 | solved |
 | SR-11 | Removed numbers and documents added out of time order are not explained | medium | E-01, E-02, F-08, B-06 | Q-F-02, Q-E-04 | solved |
 | SR-12 | Review and implementation status, and the planned flows, are invisible | medium | E-09, B-04 | Q-E-02, Q-E-03, Q-B-04 | decided |
@@ -193,6 +193,13 @@ irrelevant · structure · process.
 - **Status:** decided 2026-11-20 by the two-layer principle (SR-09): all D/O/MO/Q/ID-Q/C numbers and review-finding
   IDs leave the published texts; traceability goes into code comments or unprinted keys; the build check of SR-09
   point 3 keeps them out. The note's unpublished repository paths (B-16) are part of SR-23.
+  **Solved 2026-11-20:** every published text is free of decision, open-point, cause and review-finding numbers, of
+  repository paths and of names of real specifications (EN 16931, Peppol): the reasons in the generators
+  (`examples_scenarios.py`, `examples_kit.py`, `build_examples.py`) and the texts in `world/*.json`; about 4,000 lines
+  on all 293 example pages, the party pages and the map. The removed references are kept as end-of-line code comments
+  in the generators and as an unprinted `_refs` key on the records of the world's JSON files. The source of a value is
+  said in-world ("as Valdara Industries gives it", "as the seller describes the item") instead of a data path or an
+  internal item key.
 - **What:** reasons cite about 1,900 D-, 332 O-, 570 Q/ID-Q-numbers, about 250 review-finding IDs and 237
   worklist causes (513 review IDs on 125 pages); party pages and map cards print "(decision D37)", "(D30, O105)",
   "(O226, O50)" on 43 pages; none resolves on the site; tender/38 cites a finding of the removed tender/34;
@@ -226,6 +233,11 @@ irrelevant · structure · process.
   5. key facts of each flow as assertions in the style of `ORE_ARRIVES`; counts and figures in hand texts
      (map cards, note figures, specification members) computed from the data where possible;
   6. specifications stay at version 1.0 (Q-D-03): in-world there is no history of changes to version.
+  **Built 2026-11-20:** point 1 (the published texts come from the world data, in-world), point 3 (`tools/check_published.py`,
+  run by `tools/build_site.sh`: it fails on internal references and names of real specifications in the visible text of
+  every built page, and warns on words of change) and point 4 (traceability in code comments and `_refs` keys). Open:
+  point 2 (O112 recorded for every remaining flow), point 5 (key facts as assertions; counts in hand texts), and E-12
+  (the story lines in the decisions file brought into line).
 - **What:** four hand-kept copies of each flow's story (E-08); 34 story assertions in the scenarios are the only
   automated tie; the O112 read-through is recorded for road, furniture, retail, cotton, sea and contest only.
   The story lines themselves lag their "Overtaken" notes (E-12; also D32/O155, D37/O214, D34/O149 from part F).

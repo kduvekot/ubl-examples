@@ -11,9 +11,9 @@ The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, all 
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:order:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
@@ -25,7 +25,7 @@ The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, all 
 - `IssueDate` = **2026-05-30**  
   Placed in the webshop on Saturday 30 May.
 - `IssueTime` = **11:25:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
 - `Note` = **Click and collect: ready in the home and garden department from Tuesday 2 June; bring the card used for the order.**  
@@ -40,99 +40,99 @@ The consumer orders a Marrow set, an Elderwick Marrow bench and two chairs, all 
 Inside `BuyerCustomerParty`:
 
 - `Party/PartyName/Name` = **Robin Ashdale**  
-  The trading name; identity of Robin Ashdale (world/parties.json).
+  The trading name; as Robin Ashdale gives it.
 - `Party/PostalAddress/ID` = **LUM-ADR-934215** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Robin Ashdale (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Robin Ashdale gives it.
 - `Party/PostalAddress/AddressTypeCode` = **RESIDENTIAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: RESIDENTIAL = Residential address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Gull Lane**  
-  Street of the postal address. identity of Robin Ashdale (world/parties.json).
+  Street of the postal address. as Robin Ashdale gives it.
 - `Party/PostalAddress/BuildingNumber` = **57**  
-  Building number of the postal address. identity of Robin Ashdale (world/parties.json).
+  Building number of the postal address. as Robin Ashdale gives it.
 - `Party/PostalAddress/CitySubdivisionName` = **Riverside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Robin Ashdale (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Robin Ashdale gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Robin Ashdale gives it.
 - `Party/PostalAddress/PostalZone` = **38516**  
-  Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Robin Ashdale gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Robin Ashdale gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/Person/FirstName` = **Robin**  
-  The consumer's first name; identity of Robin Ashdale (world/parties.json).
+  The consumer's first name; as Robin Ashdale gives it.
 - `Party/Person/FamilyName` = **Ashdale**  
-  The consumer's family name; identity of Robin Ashdale (world/parties.json).
+  The consumer's family name; as Robin Ashdale gives it.
 
 ### Seller Supplier Party
 
 Inside `SellerSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Brightmarket Stores gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brightmarket Stores (world/parties.json).
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples ; as Brightmarket Stores gives it.
 - `Party/PartyName/Name` = **Brightmarket Stores**  
-  The trading name; identity of Brightmarket Stores (world/parties.json).
+  The trading name; as Brightmarket Stores gives it.
 - `Party/TradePartyName/Name` = **Brightmarket**  
-  The name the shops trade under, shorter than the company's name; identity of Brightmarket Stores (world/parties.json).
+  The name the shops trade under, shorter than the company's name; as Brightmarket Stores gives it.
 - `Party/PostalAddress/ID` = **LUM-ADR-579130** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Brightmarket Stores (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Brightmarket Stores gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Market Street**  
-  Street of the postal address. identity of Brightmarket Stores (world/parties.json).
+  Street of the postal address. as Brightmarket Stores gives it.
 - `Party/PostalAddress/BuildingNumber` = **50**  
-  Building number of the postal address. identity of Brightmarket Stores (world/parties.json).
+  Building number of the postal address. as Brightmarket Stores gives it.
 - `Party/PostalAddress/CitySubdivisionName` = **Old Town**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Brightmarket Stores (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Brightmarket Stores gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Brightmarket Stores (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Brightmarket Stores gives it.
 - `Party/PostalAddress/PostalZone` = **38515**  
-  Postal code in Bayvarra's format (5 digits). identity of Brightmarket Stores (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Brightmarket Stores gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brightmarket Stores (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Brightmarket Stores gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Customer service**  
-  The party's customer service desk: the desk for its role in this document (it sells); identity of Brightmarket Stores (world/parties.json).
+  The party's customer service desk: the desk for its role in this document (it sells); as Brightmarket Stores gives it.
 - `Party/Contact/JobTitle` = **Customer service officer**  
-  The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
+  The job of the person who answers at the desk; as Brightmarket Stores gives it.
 - `Party/Contact/Department` = **Customer service**  
-  The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
+  The department the desk belongs to; as Brightmarket Stores gives it.
 - `Party/Contact/Telephone` = **+999 2 38 4609 7100**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Brightmarket Stores gives it.
 - `Party/Contact/ElectronicMail` = **service@brightmarket.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Brightmarket Stores gives it.
 - `Party/Contact/Note` = **Monday to Saturday 09:00–18:00**  
-  When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
+  When the desk can be reached; as Brightmarket Stores gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Brightmarket Stores gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Delivery
 
 Inside `Delivery`:
 
 - `DeliveryLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
-  The Global Location Number of the place, home and garden department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples); world/parties.json.
+  The Global Location Number of the place, home and garden department of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples).
 - `DeliveryLocation/Name` = **Home and garden department, Lumeport store**  
   Where the set is collected.
 - `RequestedDeliveryPeriod/StartDate` = **2026-06-02**  
@@ -149,7 +149,7 @@ Inside `DeliveryTerms`:
 - `ID` = **EXW** (schemeID `INCOTERMS`)  
   Ex works the store: the customer collects the set; there is no transport to arrange. The code is from the world's copy of Incoterms 2020: EXW = Ex Works. An identifier that holds a code names the code's list in its schemeID.
 - `DeliveryLocation/ID` = **9522610900026** (schemeID `GS1 GLN`)  
-  The place's identifier, as the world gives it wherever the place appears (a GLN; worklist C23).
+  The place's identifier, as the world gives it wherever the place appears (a GLN).
 - `DeliveryLocation/Description` = **Home and garden department of the Lumeport store**  
   Where the delivery terms place the handover of the goods.
 
@@ -230,23 +230,23 @@ Inside `AnticipatedMonetaryTotal`:
 Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
-  The line number: a line added by a change keeps a number of its own (worklist C34).
+  The line number: a line added by a change keeps a number of its own.
 - `LineItem/Quantity` = **1** (unitCode `EA`)  
   The bench of the Marrow set: the customer chose ash for the set.
 - `LineItem/LineExtensionAmount` = **549.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **549** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+  The seller's price per unit.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Dining bench, 1400 mm, in solid ash, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.**  
-  The seller's description; item marrow-bench-ash-r of Brightmarket Stores (world/items.json).
+  The seller's description.
 - `LineItem/Item/Name` = **Elderwick Marrow bench, ash**  
-  The item's short name; item marrow-bench-ash-r of Brightmarket Stores (world/items.json).
+  The item's short name.
 - `LineItem/Item/SellersItemIdentification/ID` = **BM-551008**  
-  The seller's own item number; item marrow-bench-ash-r of Brightmarket Stores (world/items.json).
+  The seller's own item number; as Brightmarket Stores describes the item.
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **BF-MRW-B14**  
-  The item number of the maker, Brackenmere Furniture: the reseller's item is resale of item marrow-bench-ash.
+  The item number of the maker, Brackenmere Furniture: the reseller sells the maker's item on.
 - `LineItem/Item/ManufacturersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
 - `LineItem/Item/ManufacturersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
@@ -256,25 +256,25 @@ Inside `OrderLine`:
 - `LineItem/Item/ManufacturersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
   The variant in words.
 - `LineItem/Item/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
-  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item.
 - `LineItem/ID` = **2**  
-  The line number: a line added by a change keeps a number of its own (worklist C34).
+  The line number: a line added by a change keeps a number of its own.
 - `LineItem/Quantity` = **2** (unitCode `EA`)  
   The two chairs of the Marrow set, in ash like the bench.
 - `LineItem/LineExtensionAmount` = **398.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **199** (currencyID `XBL`)  
-  The seller's price per unit (world/items.json).
+  The seller's price per unit.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Dining chair in solid ash, from the home and garden department; also sold in the Marrow set of a bench and two chairs in the same wood, 899 lume instead of 947; the state sales tax is added at the till.**  
-  The seller's description; item marrow-chair-ash-r of Brightmarket Stores (world/items.json).
+  The seller's description.
 - `LineItem/Item/Name` = **Elderwick Marrow chair, ash**  
-  The item's short name; item marrow-chair-ash-r of Brightmarket Stores (world/items.json).
+  The item's short name.
 - `LineItem/Item/SellersItemIdentification/ID` = **BM-551009**  
-  The seller's own item number; item marrow-chair-ash-r of Brightmarket Stores (world/items.json).
+  The seller's own item number; as Brightmarket Stores describes the item.
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **BF-MRW-C**  
-  The item number of the maker, Brackenmere Furniture: the reseller's item is resale of item marrow-chair-ash.
+  The item number of the maker, Brackenmere Furniture: the reseller sells the maker's item on.
 - `LineItem/Item/ManufacturersItemIdentification/ExtendedID` = **ASH**  
   The variant of the item: the wood, added to the item number.
 - `LineItem/Item/ManufacturersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
@@ -284,27 +284,27 @@ Inside `OrderLine`:
 - `LineItem/Item/ManufacturersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
   The variant in words.
 - `LineItem/Item/StandardItemIdentification/ID` = **9522610000054** (schemeID `GS1 GTIN`)  
-  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item.
 - `LineItem/ID` = **3**  
-  The line number: a line added by a change keeps a number of its own (worklist C34).
+  The line number: a line added by a change keeps a number of its own.
 - `LineItem/Quantity` = **1** (unitCode `EA`)  
   The care kit that comes free with the bench.
 - `LineItem/LineExtensionAmount` = **0.00** (currencyID `XBL`)  
   Quantity times price, rounded to the minor unit.
 - `LineItem/Price/PriceAmount` = **0** (currencyID `XBL`)  
-  No price: the item comes free with each Elderwick Marrow bench (world/items.json).
+  No price: the item comes free with each Elderwick Marrow bench.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 - `LineItem/Item/Description` = **Hard-wax oil and a cloth for the Marrow dining furniture, free with each bench.**  
-  The seller's description; item marrow-care-kit-r of Brightmarket Stores (world/items.json).
+  The seller's description.
 - `LineItem/Item/Name` = **Elderwick care kit**  
-  The item's short name; item marrow-care-kit-r of Brightmarket Stores (world/items.json).
+  The item's short name.
 - `LineItem/Item/SellersItemIdentification/ID` = **BM-551007**  
-  The seller's own item number; item marrow-care-kit-r of Brightmarket Stores (world/items.json).
+  The seller's own item number; as Brightmarket Stores describes the item.
 - `LineItem/Item/ManufacturersItemIdentification/ID` = **BF-MRW-K**  
-  The item number of the maker, Brackenmere Furniture: the reseller's item is resale of item marrow-care-kit.
+  The item number of the maker, Brackenmere Furniture: the reseller sells the maker's item on.
 - `LineItem/Item/StandardItemIdentification/ID` = **9522610000030** (schemeID `GS1 GTIN`)  
-  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item (world/items.json).
+  The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item.
 
 ## The document
 

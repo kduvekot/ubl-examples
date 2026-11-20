@@ -47,13 +47,13 @@
      "amount": 39900,
      "currency": "XUF",
      "type": "DST",
-     "why": "Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays."
+     "why": "Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996: below the list price, which a direct customer pays."
     },
     "2-xb": {
      "amount": 499,
      "currency": "XBL",
      "type": "CON",
-     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded, delivered at the department's depot (DAP): Valdara's 499 lume a bench (D14, D28 point 10, tender/25#F17).",
+     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded, delivered at the department's depot (DAP): Valdara's 499 lume a bench.",
      "contract_currency": true,
      "delivered": "DAP"
     }
@@ -314,7 +314,7 @@
    "spare_parts": [
     {
      "item": "bench-casting",
-     "why": "A spare side frame is one frame carton, parcel 1 of the bench (D20)."
+     "why": "A spare side frame is one frame carton, parcel 1 of the bench."
     }
    ],
    "emissions": [
@@ -354,7 +354,12 @@
      ],
      "description": "The fossil greenhouse gases of making one bench in Valdara's works in Ferrano, most of them from the blast furnace's iron; the 35 % of scrap needs no blast furnace, only melting; the pallet is left out as transport packaging that goes back. With the sourcing figure, 58 kg CO2 equivalent from the mine to the factory gate. The carbon stored in the slats, about 40 kg CO2 a bench, is not included: product declarations state biogenic carbon apart from the fossil figure (EN 15804+A2, the Greenhouse Gas Protocol)."
     }
-   ]
+   ],
+   "_refs": {
+    "buyer_prices.6-xb.why": "D14",
+    "buyer_prices.2-xb.why": "D14, D28 point 10, tender/25#F17",
+    "spare_parts.0.why": "D20"
+   }
   },
   {
    "id": "bench-serra-g",
@@ -534,7 +539,7 @@
      "Frame in moss green, RAL 6005"
     ],
     "position": "FRM",
-    "why": "The special colour the public works department ordered for the harbour park, at 5 lume a bench (D28 point 8, O12)."
+    "why": "The special colour the public works department ordered for the harbour park, at 5 lume a bench."
    },
    "barcode": "Code128",
    "origin_criterion": "S",
@@ -624,7 +629,7 @@
    "spare_parts": [
     {
      "item": "bench-casting",
-     "why": "A spare side frame is one frame carton, parcel 1 of the bench (D20)."
+     "why": "A spare side frame is one frame carton, parcel 1 of the bench."
     }
    ],
    "emissions": [
@@ -670,10 +675,15 @@
      "amount": 499,
      "currency": "XBL",
      "type": "CON",
-     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded, delivered at the department's depot (DAP): Valdara's 499 lume a bench (D14, D28 point 10, tender/25#F17).",
+     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded, delivered at the department's depot (DAP): Valdara's 499 lume a bench.",
      "contract_currency": true,
      "delivered": "DAP"
     }
+   },
+   "_refs": {
+    "variant.why": "D28 point 8, O12",
+    "spare_parts.0.why": "D20",
+    "buyer_prices.2-xb.why": "D14, D28 point 10, tender/25#F17"
    }
   },
   {
@@ -692,7 +702,7 @@
      "amount": 4750,
      "currency": "XUF",
      "type": "DST",
-     "why": "Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996 (D14): below the list price, which a direct customer pays."
+     "why": "Valdara's distributor price for Lumeway Distribution, its distributor for Bayvarra and the island under the distribution agreement of 1996: below the list price, which a direct customer pays."
     }
    },
    "sellers_id": "VI-C180",
@@ -740,7 +750,11 @@
    ],
    "version": {
     "extended": "2026",
-    "why": "The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on (D35 point 3, O216): Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it."
+    "why": "The 2026 casting with the reinforced foot, which replaced the 2025 casting from the order response of the road delivery on: Valdara tells the versions of the same part number apart by the casting year, and every frame made since carries it."
+   },
+   "_refs": {
+    "buyer_prices.6-xb.why": "D14",
+    "version.why": "D35 point 3, O216"
    }
   },
   {
@@ -898,7 +912,10 @@
    "description": "The energy of the electricity supply, per kilowatt hour: the tariff FE-KWH without the network charge of the grid.",
    "supply": "goods",
    "purchase": "energy",
-   "note": "Shown only on the utility statements, which split the tariff FE-KWH (27.3) into the energy (21.1) and Ferrano Grid's network charge (6.2) that Ferrano Energy collects with its bill (D31 point 2, O194)."
+   "note": "Shown only on the utility statements, which split the tariff FE-KWH (27.3) into the energy (21.1) and Ferrano Grid's network charge (6.2) that Ferrano Energy collects with its bill.",
+   "_refs": {
+    "note": "D31 point 2, O194"
+   }
   },
   {
    "id": "slat-1800",
@@ -1024,7 +1041,10 @@
     ]
    ],
    "origin_criterion": "P",
-   "note": "HS 9401.91, parts of seats of wood, CPC 38160 (O243): the slat is delivered finished to Valdara's drawing VI-DS-SL1800, cut to the bench's length, chamfered and drilled for its bolts, so it is identifiable as a part of the Serra bench (as the spare frame is a part of a seat); chapter 44 note 1 sends articles of chapter 94 there. Sawn ash would be 4407.95 (not 4407.99, which is for species not named), and wood only chamfered along its edges 4409.29; thermal modification changes no heading (it is not densified wood of 4413)."
+   "note": "HS 9401.91, parts of seats of wood, CPC 38160: the slat is delivered finished to Valdara's drawing VI-DS-SL1800, cut to the bench's length, chamfered and drilled for its bolts, so it is identifiable as a part of the Serra bench (as the spare frame is a part of a seat); chapter 44 note 1 sends articles of chapter 94 there. Sawn ash would be 4407.95 (not 4407.99, which is for species not named), and wood only chamfered along its edges 4409.29; thermal modification changes no heading (it is not densified wood of 4413).",
+   "_refs": {
+    "note": "O243"
+   }
   },
   {
    "id": "slat-bundle-1800",
@@ -1099,7 +1119,10 @@
     ]
    ],
    "origin_criterion": "P",
-   "note": "HS 9401.91, parts of seats of wood, CPC 38160 (O243): the slat is delivered finished to Valdara's drawing VI-DS-SL1800, cut to the bench's length, chamfered and drilled for its bolts, so it is identifiable as a part of the Serra bench (as the spare frame is a part of a seat); chapter 44 note 1 sends articles of chapter 94 there. Sawn ash would be 4407.95 (not 4407.99, which is for species not named), and wood only chamfered along its edges 4409.29; thermal modification changes no heading (it is not densified wood of 4413). The bundle: 50 slats of 4.24 kg and 0.5 kg of straps."
+   "note": "HS 9401.91, parts of seats of wood, CPC 38160: the slat is delivered finished to Valdara's drawing VI-DS-SL1800, cut to the bench's length, chamfered and drilled for its bolts, so it is identifiable as a part of the Serra bench (as the spare frame is a part of a seat); chapter 44 note 1 sends articles of chapter 94 there. Sawn ash would be 4407.95 (not 4407.99, which is for species not named), and wood only chamfered along its edges 4409.29; thermal modification changes no heading (it is not densified wood of 4413). The bundle: 50 slats of 4.24 kg and 0.5 kg of straps.",
+   "_refs": {
+    "note": "O243"
+   }
   },
   {
    "id": "timber-oak",
@@ -1123,7 +1146,10 @@
     "per_package": 1
    },
    "origin_criterion": "P",
-   "note": "HS 4407.91, oak (Quercus spp.) sawn lengthwise, thicker than 6 mm, CPC 31102 (O246): HS 2022 gives oak a subheading of its own, so the sawmill sells its oak and its ash as two items; Brackenmere makes the Elderwick Marrow line in both woods."
+   "note": "HS 4407.91, oak (Quercus spp.) sawn lengthwise, thicker than 6 mm, CPC 31102: HS 2022 gives oak a subheading of its own, so the sawmill sells its oak and its ash as two items; Brackenmere makes the Elderwick Marrow line in both woods.",
+   "_refs": {
+    "note": "O246"
+   }
   },
   {
    "id": "timber-ash",
@@ -1147,7 +1173,10 @@
     "per_package": 1
    },
    "origin_criterion": "P",
-   "note": "HS 4407.95, ash (Fraxinus spp.) sawn lengthwise, thicker than 6 mm, CPC 31102 (O246): HS 2022 gives ash a subheading of its own, so the sawmill sells its oak and its ash as two items; Brackenmere makes the Elderwick Marrow line in both woods."
+   "note": "HS 4407.95, ash (Fraxinus spp.) sawn lengthwise, thicker than 6 mm, CPC 31102: HS 2022 gives ash a subheading of its own, so the sawmill sells its oak and its ash as two items; Brackenmere makes the Elderwick Marrow line in both woods.",
+   "_refs": {
+    "note": "O246"
+   }
   },
   {
    "id": "marrow-bench-oak",
@@ -1652,11 +1681,14 @@
    "price": {
     "amount": 310.0,
     "currency": "XBL",
-    "why": "The forwarder's flat rate for one container move between a shipper in its region and the container quay of the Port of Lumeport: the empty container fetched from the quay, packed at the shipper's dock and brought back full (from Marrowdale twice the 82 km of the map's road, with the time at the dock), as container haulage is usually priced per move (D30 point 1)."
+    "why": "The forwarder's flat rate for one container move between a shipper in its region and the container quay of the Port of Lumeport: the empty container fetched from the quay, packed at the shipper's dock and brought back full (from Marrowdale twice the 82 km of the map's road, with the time at the dock), as container haulage is usually priced per move."
    },
    "sellers_id": "BF-HAUL40",
    "description": "Merchant haulage of one 40-foot container by the forwarder's truck: the empty container from the quay to the shipper and the packed container to the quay.",
-   "purchase": "freight"
+   "purchase": "freight",
+   "_refs": {
+    "price.why": "D30 point 1"
+   }
   },
   {
    "id": "inspection-cost-credit",
@@ -1668,10 +1700,13 @@
    "price": {
     "amount": 128.13,
     "currency": "XBL",
-    "why": "What the buyer paid at Selanu because a pallet's heat-treatment mark was illegible: the Island Customs Service's inspection fee of 38.500 coral and the Port of Selanu's storage for the day the container was held, 12.750 coral, together 51.250 coral, 128.13 lume at the reference rate (D30 point 3)."
+    "why": "What the buyer paid at Selanu because a pallet's heat-treatment mark was illegible: the Island Customs Service's inspection fee of 38.500 coral and the Port of Selanu's storage for the day the container was held, 12.750 coral, together 51.250 coral, 128.13 lume at the reference rate."
    },
    "sellers_id": "LD-CLAIM-INSP",
-   "description": "The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service."
+   "description": "The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service.",
+   "_refs": {
+    "price.why": "D30 point 3"
+   }
   },
   {
    "id": "cargo-insurance",
@@ -1683,11 +1718,14 @@
     "rate_percent": 0.22,
     "cover_percent": 110,
     "currency": "XBL",
-    "why": "The premium is a rate on the insured value, the CIF value plus 10 % (the minimum cover of Incoterms 2020 CIF); the CIF value is the CIF price of the goods, which holds the freight and the premium, so the premium follows the value of each shipment (O173, D30 point 1)."
+    "why": "The premium is a rate on the insured value, the CIF value plus 10 % (the minimum cover of Incoterms 2020 CIF); the CIF value is the CIF price of the goods, which holds the freight and the premium, so the premium follows the value of each shipment."
    },
    "sellers_id": "BF-INS",
    "description": "Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.",
-   "purchase": "freight"
+   "purchase": "freight",
+   "_refs": {
+    "price.why": "O173, D30 point 1"
+   }
   },
   {
    "id": "bench-serra-b",
@@ -1728,14 +1766,17 @@
      "currency": "XBL",
      "type": "TRD",
      "delivered": "CIF",
-     "why": "Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (O30, decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight, O196). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged (air/11)."
+     "why": "Lumeway's price for the island, CIF Selanu, as its export catalogue gives it: the trade price with the frame's share of the container haulage, sea freight, export clearance and insurance in it, which leaves Lumeway a distributor's margin of about 16 % (decided by the owner on 2026-11-19; 68.00 instead of 67.00 once the haulage to the port is in the freight). It holds for goods shipped CIF; the urgent frames by air are sold at the trade price, carriage paid, with the air freight recharged."
     }
    },
    "sellers_id": "LD-10443",
    "resale_of": "bench-casting",
    "description": "Spare side frame for the Serra bench.",
    "lead_days": 2,
-   "gtin": "9520610000029"
+   "gtin": "9520610000029",
+   "_refs": {
+    "buyer_prices.1-xl.why": "air/11, O196, O30"
+   }
   },
   {
    "id": "bench-serra-x",
@@ -1746,11 +1787,14 @@
    "price": {
     "amount": 375.0,
     "currency": "XLC",
-    "why": "Velumi's shop price on the island: its cost is the CIF price of 520 lume, the import consumption tax of 10 % and its clearance and port costs, about 577 lume, and 375 coral (937.50 lume) leaves it a retailer's margin of about 38 % (D30 point 2, O48)."
+    "why": "Velumi's shop price on the island: its cost is the CIF price of 520 lume, the import consumption tax of 10 % and its clearance and port costs, about 577 lume, and 375 coral (937.50 lume) leaves it a retailer's margin of about 38 %."
    },
    "sellers_id": "VT-PB-180",
    "resale_of": "bench-serra-b",
-   "description": "The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers."
+   "description": "The Serra park bench from Velumi Trading's stock, imported from Bayvarra, for island customers.",
+   "_refs": {
+    "price.why": "D30 point 2, O48"
+   }
   },
   {
    "id": "shirt-r",
@@ -1853,7 +1897,7 @@
    "price": {
     "amount": 0.33,
     "currency": "XLC",
-    "why": "The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram (D33 point 4, O116)."
+    "why": "The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram."
    },
    "sellers_id": "LCF-SC",
    "hs": "520100",
@@ -1865,7 +1909,10 @@
    "package": {
     "type": "NE"
    },
-   "origin_criterion": "P"
+   "origin_criterion": "P",
+   "_refs": {
+    "price.why": "D33 point 4, O116"
+   }
   },
   {
    "id": "cotton-bale",
@@ -1927,7 +1974,7 @@
    "origin_criterion": "P",
    "classed_lot": {
     "id": "SCG-L26-017",
-    "why": "The ginnery's lot of 27 bales, the season's seventeenth, which the chamber classed as one lot on 20 April: its classing certificate gives the lot's results (O160)."
+    "why": "The ginnery's lot of 27 bales, the season's seventeenth, which the chamber classed as one lot on 20 April: its classing certificate gives the lot's results."
    },
    "buyer_requirements": {
     "40-xb": {
@@ -1937,8 +1984,12 @@
       "3.5",
       "4.9"
      ],
-     "why": "The mill's buying specification for its spinning: at least Middling, a staple of at least 27.8 mm (1-3/32 inch) and a micronaire from 3.5 to 4.9, fibre neither too fine nor too coarse for its yarns (O160)."
+     "why": "The mill's buying specification for its spinning: at least Middling, a staple of at least 27.8 mm (1-3/32 inch) and a micronaire from 3.5 to 4.9, fibre neither too fine nor too coarse for its yarns."
     }
+   },
+   "_refs": {
+    "classed_lot.why": "O160",
+    "buyer_requirements.40-xb.why": "O160"
    }
   },
   {
@@ -2089,9 +2140,12 @@
      "amount": 18,
      "currency": "XBL",
      "type": "CON",
-     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded: 18 lume an installation, the list price of 1800 ferra at the parity (D14, D28 point 10, tender/25#F17).",
+     "why": "The contract price of the framework contract with the Lumeport Public Works Department, in lume, the contract's currency, as tendered and awarded: 18 lume an installation, the list price of 1800 ferra at the parity.",
      "contract_currency": true
     }
+   },
+   "_refs": {
+    "buyer_prices.2-xb.why": "D14, D28 point 10, tender/25#F17"
    }
   },
   {
@@ -2550,7 +2604,7 @@
    "hs": "300241",
    "cpc": "35270",
    "origin": "IN",
-   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "made_abroad": "Made outside the world by a maker abroad: its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
    "description": "Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.",
    "net_kg": 0.12,
    "gross_kg": 0.2,
@@ -2562,6 +2616,9 @@
     "min": "2",
     "max": "8",
     "set": "5"
+   },
+   "_refs": {
+    "made_abroad": "O229"
    }
   },
   {
@@ -2578,7 +2635,7 @@
    "hs": "300431",
    "cpc": "35260",
    "origin": "IN",
-   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "made_abroad": "Made outside the world by a maker abroad: its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
    "description": "Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.",
    "net_kg": 0.03,
    "gross_kg": 0.05,
@@ -2590,6 +2647,9 @@
     "min": "2",
     "max": "8",
     "set": "5"
+   },
+   "_refs": {
+    "made_abroad": "O229"
    }
   },
   {
@@ -2606,7 +2666,7 @@
    "hs": "300241",
    "cpc": "35270",
    "origin": "IN",
-   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "made_abroad": "Made outside the world by a maker abroad: its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
    "description": "Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.",
    "net_kg": 0.02,
    "gross_kg": 0.04,
@@ -2617,6 +2677,9 @@
    "storage": {
     "min": "-50",
     "max": "-15"
+   },
+   "_refs": {
+    "made_abroad": "O229"
    }
   },
   {
@@ -2633,7 +2696,7 @@
    "hs": "284443",
    "cpc": "33690",
    "origin": "NL",
-   "made_abroad": "Made outside the world by a maker abroad (O229): its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
+   "made_abroad": "Made outside the world by a maker abroad: its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
    "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.",
    "net_kg": 15.5,
    "gross_kg": 18,
@@ -2674,6 +2737,9 @@
      "form": "Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.",
      "ti": "1.5"
     }
+   },
+   "_refs": {
+    "made_abroad": "O229"
    }
   },
   {
@@ -2734,7 +2800,7 @@
   }
  ],
  "resales": {
-  "note": "Every resale of the world, with what the reseller paid and the freight the documents state, for the build check of decision D14 and open point O30 (tools/world_items.py): nobody resells below what they paid plus the stated freight and the import tax they bear, and a reseller's gross margin on the sale, (price - cost) / price, falls in the band for its kind of business (parties.json identity.legal.business), or for the kind of goods where a sale names one (band: clothing, whose margins are higher, O30), except during a promotion, when only the upper limit applies. A price agreed for the buyer (items.json buyer_prices) is the sale's price where it holds for the sale's delivery terms (terms). Freight the buyer pays on top at cost (recharged, a pass-through) is neither the reseller's cost nor part of its price. What the reseller paid is the price its seller asks it (items.json buyer_prices, else the seller's price). Freight is shared over the goods a transport carries by their gross weight. Prices before tax; amounts compared in lume at the reference rates. A sale listed under awaiting_owner fails the check for a reason the owner has still to decide.",
+  "note": "Every resale of the world, with what the reseller paid and the freight the documents state, for the build check of decision D14 and open point O30: nobody resells below what they paid plus the stated freight and the import tax they bear, and a reseller's gross margin on the sale, (price - cost) / price, falls in the band for its kind of business (parties.json identity.legal.business), or for the kind of goods where a sale names one (band: clothing, whose margins are higher), except during a promotion, when only the upper limit applies. A price agreed for the buyer (items.json buyer_prices) is the sale's price where it holds for the sale's delivery terms (terms). Freight the buyer pays on top at cost (recharged, a pass-through) is neither the reseller's cost nor part of its price. What the reseller paid is the price its seller asks it (items.json buyer_prices, else the seller's price). Freight is shared over the goods a transport carries by their gross weight. Prices before tax; amounts compared in lume at the reference rates. A sale listed under awaiting_owner fails the check for a reason the owner has still to decide.",
   "margin_bands": {
    "distributor": {
     "name": "Distributor, wholesaler",
@@ -2754,7 +2820,7 @@
   },
   "freight": {
    "road-truck": {
-    "what": "Trasvia's truck from Castrano's warehouse in Conciaro to Lumeway in Marrowdale, paid by Lumeway under FCA (road/14)",
+    "what": "Trasvia's truck from Castrano's warehouse in Conciaro to Lumeway in Marrowdale, paid by Lumeway under FCA",
     "services": [
      {
       "item": "road-transport",
@@ -2777,7 +2843,7 @@
     ]
    },
    "store-delivery": {
-    "what": "Bayforth's truck from Lumeway to the store, paid by Lumeway under DDP (retail/16)",
+    "what": "Bayforth's truck from Lumeway to the store, paid by Lumeway under DDP",
     "services": [
      {
       "item": "road-transport-b",
@@ -2796,11 +2862,11 @@
     ]
    },
    "sea": {
-    "what": "The container haulage to the port, sea freight, export clearance and cargo insurance to Selanu, paid by Lumeway under CIF (sea/18, D30 point 1)",
+    "what": "The container haulage to the port, sea freight, export clearance and cargo insurance to Selanu, paid by Lumeway under CIF",
     "insured": {
      "buyer": "1-xl",
      "with": [],
-     "why": "The insured value is the CIF value plus 10 %: the load at the buyer's CIF prices, which hold the freight and the premium (O173, D30 point 1)."
+     "why": "The insured value is the CIF value plus 10 %: the load at the buyer's CIF prices, which hold the freight and the premium."
     },
     "services": [
      {
@@ -2832,7 +2898,7 @@
     ]
    },
    "air": {
-    "what": "Air freight to Selanu airport at the chargeable weight, paid by Lumeway under CPT (air/10)",
+    "what": "Air freight to Selanu airport at the chargeable weight, paid by Lumeway under CPT",
     "services": [
      {
       "item": "air-freight",
@@ -2876,7 +2942,7 @@
      ]
     ],
     "price": 58.0,
-    "what": "The side frame on Lumeway's revised list of 20 May (retail/03; O15, D34)",
+    "what": "The side frame on Lumeway's revised list of 20 May",
     "freight": [
      "road-truck"
     ]
@@ -2891,7 +2957,7 @@
       1
      ]
     ],
-    "what": "The benches by sea, CIF Selanu (sea/22)",
+    "what": "The benches by sea, CIF Selanu",
     "freight": [
      "road-truck",
      "sea"
@@ -2908,7 +2974,7 @@
       1
      ]
     ],
-    "what": "The spare side frames by sea, at Lumeway's CIF price for the island (sea/22; O30)",
+    "what": "The spare side frames by sea, at Lumeway's CIF price for the island",
     "freight": [
      "road-truck",
      "sea"
@@ -2925,7 +2991,7 @@
       1
      ]
     ],
-    "what": "The urgent side frames by air, CPT Selanu airport, at the trade price with the air freight recharged at cost (air/01, 02, 11; O30, D39)",
+    "what": "The urgent side frames by air, CPT Selanu airport, at the trade price with the air freight recharged at cost (air/01, 02, 11)",
     "terms": "CPT",
     "recharged": [
      "air"
@@ -2954,7 +3020,7 @@
     ],
     "less_percent": 10,
     "promotion": true,
-    "what": "The bench in the reopening promotion (retail/21; D34)",
+    "what": "The bench in the reopening promotion",
     "bought_from": "lumeway-bench-store"
    },
    {
@@ -2966,7 +3032,7 @@
       1
      ]
     ],
-    "what": "The Marrow bench, in oak or in ash at one price (D32)"
+    "what": "The Marrow bench, in oak or in ash at one price"
    },
    {
     "id": "store-marrow-chair",
@@ -2977,7 +3043,7 @@
       1
      ]
     ],
-    "what": "The Marrow chair, in oak or in ash at one price (D32)"
+    "what": "The Marrow chair, in oak or in ash at one price"
    },
    {
     "id": "store-marrow-set",
@@ -2993,7 +3059,7 @@
      ]
     ],
     "price": 899.0,
-    "what": "The Marrow set, a bench and two chairs in one wood, the shop's offer (retail/22; D32)"
+    "what": "The Marrow set, a bench and two chairs in one wood, the shop's offer"
    },
    {
     "id": "store-shirt",
@@ -3004,7 +3070,7 @@
       1
      ]
     ],
-    "what": "The shirt in the shop, with a clothing retailer's margin (packaging/08, 09; O30)",
+    "what": "The shirt in the shop, with a clothing retailer's margin (packaging/08, 09)",
     "band": "clothing"
    },
    {
@@ -3017,7 +3083,7 @@
      ]
     ],
     "import_tax": "IMP",
-    "what": "The bench in Velumi's shop on the island (sea/29)",
+    "what": "The bench in Velumi's shop on the island",
     "bought_from": "lumeway-bench-island"
    },
    {
@@ -3030,10 +3096,10 @@
       1
      ]
     ],
-    "what": "The influenza vaccine for the island's winter campaign, carriage paid to Selanu airport (medicines/14)",
+    "what": "The influenza vaccine for the island's winter campaign, carriage paid to Selanu airport",
     "terms": "CPT",
     "paid_on": "2026-05-07",
-    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date"
    },
    {
     "id": "quillmoor-insulin-hospital",
@@ -3045,10 +3111,10 @@
       1
      ]
     ],
-    "what": "The insulin for the hospital, carriage paid to Selanu airport (medicines/14)",
+    "what": "The insulin for the hospital, carriage paid to Selanu airport",
     "terms": "CPT",
     "paid_on": "2026-05-07",
-    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date"
    },
    {
     "id": "quillmoor-varicella-hospital",
@@ -3060,10 +3126,10 @@
       1
      ]
     ],
-    "what": "The frozen varicella vaccine for the hospital, carriage paid to Selanu airport (medicines/14)",
+    "what": "The frozen varicella vaccine for the hospital, carriage paid to Selanu airport",
     "terms": "CPT",
     "paid_on": "2026-05-07",
-    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date"
    },
    {
     "id": "quillmoor-generator-hospital",
@@ -3075,16 +3141,16 @@
       1
      ]
     ],
-    "what": "The week's technetium generator for the hospital, carriage paid to Selanu airport (medicines/14)",
+    "what": "The week's technetium generator for the hospital, carriage paid to Selanu airport",
     "terms": "CPT",
     "paid_on": "2026-06-13",
-    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date (O231)"
+    "paid_on_why": "What the wholesaler paid, in lume at the Lumeport Exchange's fixing of its maker's invoice date"
    }
   ],
   "awaiting_owner": {}
  },
  "goods_chain": {
-  "note": "The goods chain of the park bench (D21, open points O64 and O65): Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, damaged stock (damaged: a refused bench that came back) is held apart and never sold or despatched, and a ledger ends with the closing stock it states; the build checks each despatch against its entry (O174). Items are the maker's (world/items.json); a reseller's item is the maker's item it resells. Each casting day has its own melt number and pour time, and each bench lot its own coating batch (D21, worklist C70): both are numbered in a running count of the year.",
+  "note": "The goods chain of the park bench: Valdara's production record and the stock ledgers of the warehouses its goods pass through. A lot is one day's production of benches, with its date and quantity; a spare side frame carries a serial number that rises with the day it was cast (the frames of a bench lot are in the same series). Each ledger lists what came in (with the import declaration under which it entered the country, where it crossed a border), what went out, and what passed through without entering the stock (a cross-dock). The documents take their lots, serials and manufacture dates from here; tools/world_items.py checks that stock never goes below zero, nothing leaves before it arrived or was made, damaged stock (damaged: a refused bench that came back) is held apart and never sold or despatched, and a ledger ends with the closing stock it states; the build checks each despatch against its entry. Items are the maker's; a reseller's item is the maker's item it resells. Each casting day has its own melt number and pour time, and each bench lot its own coating batch: both are numbered in a running count of the year.",
   "production": [
    {
     "item": "bench-serra",
@@ -3137,7 +3203,7 @@
       "2026-03-30"
      ]
     ],
-    "why": "The first release of the public works department's contract, in moss green (D28); the contract requires serial numbers, so its 80 side frames carry theirs, cast on the lot's day like every frame of a lot (D21, tender/29#F12).",
+    "why": "The first release of the public works department's contract, in moss green; the contract requires serial numbers, so its 80 side frames carry theirs, cast on the lot's day like every frame of a lot.",
     "coating": "ZN-26-062"
    },
    {
@@ -3151,7 +3217,7 @@
       "2026-04-13"
      ]
     ],
-    "why": "The first container of the rail delivery to Lumeway (D21, D37).",
+    "why": "The first container of the rail delivery to Lumeway.",
     "coating": "ZN-26-071"
    },
    {
@@ -3181,7 +3247,7 @@
       "2026-05-13"
      ]
     ],
-    "why": "Eight frames cast to Velumi's urgent order of 11 May, galvanised and packed on 13 May (D39).",
+    "why": "Eight frames cast to Velumi's urgent order of 11 May, galvanised and packed on 13 May.",
     "melt": "M-26-0094",
     "poured": "14:15:00",
     "poured_why": "An extra melt in the afternoon: the order came on the morning of 11 May and the moulds were made that day and the next."
@@ -3195,7 +3261,7 @@
       "item": "bench-serra",
       "qty": 161,
       "damaged": 1,
-      "why": "Lumeway's benches at the end of May, as the story states them: 72 of the March road lot and 88 of the April rail lot for sale, and the bench Brightmarket refused, held apart as damaged (O174)."
+      "why": "Lumeway's benches at the end of May, as the story states them: 72 of the March road lot and 88 of the April rail lot for sale, and the bench Brightmarket refused, held apart as damaged."
      }
     ],
     "entries": [
@@ -3240,7 +3306,7 @@
        "rail",
        "ImportCustomsDeclaration"
       ],
-      "why": "Under the Accord's common transit to Marrowdale, where Lumeway declares the import (D37, rail/14): the boxes are placed on Lumeway's siding on 15 April; the first is emptied on 16 April, the second on 22 April."
+      "why": "Under the Accord's common transit to Marrowdale, where Lumeway declares the import: the boxes are placed on Lumeway's siding on 15 April; the first is emptied on 16 April, the second on 22 April."
      },
      {
       "date": "2026-04-29",
@@ -3252,7 +3318,7 @@
         "qty": 24
        }
       ],
-      "why": "Brightmarket's benches come from the March road lot (D21)."
+      "why": "Brightmarket's benches come from the March road lot."
      },
      {
       "date": "2026-04-30",
@@ -3265,7 +3331,7 @@
         "damaged": true
        }
       ],
-      "why": "The bench Brightmarket refused at goods-in, its frame carton torn and the side frame's armrest bent (retail/17), comes back on the truck the same day; Lumeway holds it apart as damaged stock, not for sale, and credits the store (retail/19; D34, O174)."
+      "why": "The bench Brightmarket refused at goods-in, its frame carton torn and the side frame's armrest bent, comes back on the truck the same day; Lumeway holds it apart as damaged stock, not for sale, and credits the store."
      },
      {
       "date": "2026-05-13",
@@ -3289,7 +3355,7 @@
         ]
        }
       ],
-      "why": "The island's 104 benches from the April rail delivery, the whole first container's lot and two pallets of the second (O165); the twelve frames the ones that came by road (D21)."
+      "why": "The island's 104 benches from the April rail delivery, the whole first container's lot and two pallets of the second; the twelve frames the ones that came by road."
      },
      {
       "date": "2026-05-13",
@@ -3303,7 +3369,7 @@
         ]
        }
       ],
-      "why": "The urgent frames pass through the dispatch area without entering the stock (D21, D39)."
+      "why": "The urgent frames pass through the dispatch area without entering the stock."
      }
     ]
    },
@@ -3327,7 +3393,7 @@
         "qty": 23
        }
       ],
-      "why": "Of the 24 delivered, one is refused at goods-in, damaged (retail/17)."
+      "why": "Of the 24 delivered, one is refused at goods-in, damaged."
      },
      {
       "date": "2026-05-15",
@@ -3339,7 +3405,7 @@
         "lot": "VI-LOT-260320"
        }
       ],
-      "why": "Sold to a consumer in the promotion week, a bench of the delivery of 30 April: the receipt names its frame's serial for the warranty (retail/21)."
+      "why": "Sold to a consumer in the promotion week, a bench of the delivery of 30 April: the receipt names its frame's serial for the warranty."
      }
     ]
    },
@@ -3382,7 +3448,7 @@
        "sea",
        "ImportCustomsDeclaration"
       ],
-      "why": "One of the twelve frames is refused, its carton crushed at the port (sea/21)."
+      "why": "One of the twelve frames is refused, its carton crushed at the port."
      },
      {
       "date": "2026-06-13",
@@ -3394,7 +3460,7 @@
         "qty": 2
        }
       ],
-      "why": "Two benches sold in the shop to the cotton farm (sea/29), from the two pallets Velumi ordered for its own stock (O165): six remain."
+      "why": "Two benches sold in the shop to the cotton farm, from the two pallets Velumi ordered for its own stock: six remain."
      }
     ]
    }

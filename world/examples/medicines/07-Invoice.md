@@ -11,9 +11,9 @@ The Dutch maker invoices the generator in euro when it leaves for Amsterdam airp
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Invoice/DefaultLanguageCode first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Invoice/DefaultLanguageCode first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:billing:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **MEDICINES-2026-01**  
@@ -25,7 +25,7 @@ The Dutch maker invoices the generator in euro when it leaves for Amsterdam airp
 - `IssueDate` = **2026-06-13**  
   Issued when the generator left the maker for Amsterdam airport, on the Saturday: isotopes are made and shipped every day.
 - `IssueTime` = **11:30:00+02:00**  
-  In the morning, when the generator left; in the issuer's local time, with its offset from UTC (D27).
+  In the morning, when the generator left; in the issuer's local time, with its offset from UTC.
 - `DueDate` = **2026-06-29**  
   14 days from Saturday 13 June end on Saturday 27 June, no business day for a bank transfer, so the payment is due on Monday 29 June.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
@@ -49,90 +49,90 @@ Inside `OrderReference`:
 Inside `AccountingSupplierParty`:
 
 - `Party/PartyName/Name` = **Haarvliet Isotopes**  
-  The trading name; identity of Haarvliet Isotopes, a maker outside the world (world/parties.json, abroad; O229). It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's (O229); the documents identify it by its name and address, as a supplier outside the world.
+  The trading name; as Haarvliet Isotopes, a maker outside the three countries, gives it. It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/StreetName` = **Isotopenweg**  
-  Street of the postal address. identity of Haarvliet Isotopes (world/parties.json, abroad): a fictional address in a real town.
+  Street of the postal address. as Haarvliet Isotopes gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/BuildingNumber` = **14**  
-  Building number. identity of Haarvliet Isotopes (world/parties.json, abroad): a fictional address in a real town.
+  Building number. as Haarvliet Isotopes gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/CityName` = **Alkmaar**  
-  The town. identity of Haarvliet Isotopes (world/parties.json, abroad): a fictional address in a real town.
+  The town. as Haarvliet Isotopes gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/PostalZone` = **1812 RN**  
-  Postal code in the format of Netherlands. identity of Haarvliet Isotopes (world/parties.json, abroad): a fictional address in a real town.
+  Postal code in the format of Netherlands. as Haarvliet Isotopes gives it; the address is fictional, in a real town.
 - `Party/PostalAddress/TimezoneOffset` = **+02:00**  
   The offset from UTC of Central European Summer Time, the legal time there in June.
 - `Party/PostalAddress/Country/IdentificationCode` = **NL** (listID `ISO 3166`)  
-  Netherlands, a real country outside the world (O229). The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
+  Netherlands, a real country outside the world. The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
 - `Party/PostalAddress/Country/Name` = **Netherlands**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Haarvliet Isotopes B.V.**  
-  The company's registered name, with the legal form of its country; identity of Haarvliet Isotopes, a maker outside the world (world/parties.json, abroad; O229).
+  The company's registered name, with the legal form of its country; as Haarvliet Isotopes, a maker outside the three countries, gives it.
 - `Party/Contact/Name` = **Order desk**  
-  The party's desk that handles this document; identity of Haarvliet Isotopes, a maker outside the world (world/parties.json, abroad; O229).
+  The party's desk that handles this document; as Haarvliet Isotopes, a maker outside the three countries, gives it.
 - `Party/Contact/JobTitle` = **Order coordinator**  
-  The job of the person who answers at the desk; identity of Haarvliet Isotopes, a maker outside the world (world/parties.json, abroad; O229).
+  The job of the person who answers at the desk; as Haarvliet Isotopes, a maker outside the three countries, gives it.
 - `Party/Contact/Department` = **Customer service**  
-  The department the desk belongs to; identity of Haarvliet Isotopes, a maker outside the world (world/parties.json, abroad; O229).
+  The department the desk belongs to; as Haarvliet Isotopes, a maker outside the three countries, gives it.
 - `Party/Contact/ElectronicMail` = **orders@haarvliet-isotopes.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; no telephone number is given, as one in the real country's plan could reach someone; identity of Haarvliet Isotopes, a maker outside the world (world/parties.json, abroad; O229).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; no telephone number is given, as one in the real country's plan could reach someone; as Haarvliet Isotopes, a maker outside the three countries, gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Haarvliet Isotopes, a maker outside the world (world/parties.json, abroad; O229).
+  When the desk can be reached; as Haarvliet Isotopes, a maker outside the three countries, gives it.
 
 ### Accounting Customer Party
 
 Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **20413425** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Quillmoor Pharma Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Quillmoor Pharma Distribution gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9524910900003** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Quillmoor Pharma Distribution (world/parties.json).
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples ; as Quillmoor Pharma Distribution gives it.
 - `Party/PartyName/Name` = **Quillmoor Pharma Distribution**  
-  The trading name; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The trading name; as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/ID` = **LUM-ADR-718264** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Quillmoor Pharma Distribution (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Airport Road**  
-  Street of the postal address. identity of Quillmoor Pharma Distribution (world/parties.json).
+  Street of the postal address. as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/BuildingNumber` = **40**  
-  Building number of the postal address. identity of Quillmoor Pharma Distribution (world/parties.json).
+  Building number of the postal address. as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Quillmoor Pharma Distribution (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/PostalZone` = **38528**  
-  Postal code in Bayvarra's format (5 digits). identity of Quillmoor Pharma Distribution (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Quillmoor Pharma Distribution gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Quillmoor Pharma Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Quillmoor Pharma Distribution gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Quillmoor Pharma Distribution Ltd**  
-  The name under which the party is registered, with its legal form; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The name under which the party is registered, with its legal form; as Quillmoor Pharma Distribution gives it.
 - `Party/PartyLegalEntity/CompanyID` = **20413425** (schemeID `urn:ubl-examples:world:XB:register`)  
-  Number in the Federal business register of Bayvarra; identity of Quillmoor Pharma Distribution (world/parties.json). The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
+  Number in the Federal business register of Bayvarra; as Quillmoor Pharma Distribution gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
 - `Party/Contact/Name` = **Accounts payable**  
-  The party's accounts payable desk: the desk for its role in this document (it pays); identity of Quillmoor Pharma Distribution (world/parties.json).
+  The party's accounts payable desk: the desk for its role in this document (it pays); as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
-  The job of the person who answers at the desk; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The job of the person who answers at the desk; as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/Department` = **Finance**  
-  The department the desk belongs to; identity of Quillmoor Pharma Distribution (world/parties.json).
+  The department the desk belongs to; as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/Telephone` = **+999 2 38 6047 1582**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Quillmoor Pharma Distribution (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/ElectronicMail` = **payables@quillmoor.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Quillmoor Pharma Distribution (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Quillmoor Pharma Distribution gives it.
 - `Party/Contact/Note` = **Weekdays 07:00–19:00**  
-  When the desk can be reached; identity of Quillmoor Pharma Distribution (world/parties.json).
+  When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20413425** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Quillmoor Pharma Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Quillmoor Pharma Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -230,13 +230,13 @@ Inside `InvoiceLine`:
 - `OrderLineReference/LineID` = **1**  
   The line of the wholesaler's order.
 - `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
-  The seller's description; item tc-generator of Haarvliet Isotopes (world/items.json).
+  The seller's description.
 - `Item/Name` = **Technetium-99m generator, 20 GBq**  
-  The item's short name; item tc-generator of Haarvliet Isotopes (world/items.json).
+  The item's short name.
 - `Item/HazardousRiskIndicator` = **true**  
   The item is dangerous goods.
 - `Item/SellersItemIdentification/ID` = **HI-TCG-20**  
-  The seller's own item number; item tc-generator of Haarvliet Isotopes (world/items.json).
+  The seller's own item number; as Haarvliet Isotopes describes the item.
 - `Item/ClassifiedTaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   Goods exported outside the European Union are zero-rated under Dutch VAT (Article 146 of the VAT Directive 2006/112/EC): no tax is charged (category G). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `Item/ClassifiedTaxCategory/Percent` = **0**  
@@ -250,15 +250,15 @@ Inside `InvoiceLine`:
 - `Item/ItemInstance/SerialID` = **HI-TCG20-26-0137**  
   The generator's serial number, from its maker: each generator is traced from its filling to its return.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Nominal activity**  
-  The generator's size: its Mo-99 at the reference time, the figure the item is sold by (O202 choice 2).
+  The generator's size: its Mo-99 at the reference time, the figure the item is sold by.
 - `Item/ItemInstance/AdditionalItemProperty/ValueQuantity` = **20** (unitCode `GBQ`)  
   20 GBq.
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Reference time**  
   When the generator holds its nominal activity: European generators are pre-calibrated to a time some days after delivery, so that the hospital has its nominal activity at the end of its week.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **2026-06-21T12:00:00+00:00**  
-  Sunday 21 June at 12:00 UTC, six days after delivery (O202 choice 2).
+  Sunday 21 June at 12:00 UTC, six days after delivery.
 - `Price/PriceAmount` = **1000** (currencyID `EUR`)  
-  The seller's price per unit (world/items.json).
+  The seller's price per unit.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
 

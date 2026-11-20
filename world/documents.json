@@ -1,10 +1,10 @@
 {
- "description": "The flows of documents between the parties. Each document names its sender, its receiver and every party it mentions at its place in the UBL structure; tools/world_docs.py checks them against world/ubl-model.json. cited: the documents the examples refer to that are not examples themselves, with their kind as a code of UN/EDIFACT 1001 or the world's document type list where one fits exactly, else in words (decision Q29, worklist C06).",
+ "description": "The flows of documents between the parties. Each document names its sender, its receiver and every party it mentions at its place in the UBL structure; tools/world_docs.py checks them against world/ubl-model.json. cited: the documents the examples refer to that are not examples themselves, with their kind as a code of UN/EDIFACT 1001 or the world's document type list where one fits exactly, else in words.",
  "flows": [
   {
    "id": "ore",
    "title": "Ore from the mine to the factory (domestic, Urvania)",
-   "text": "Under a supply agreement for 2026, which sets the price basis, one train a month and a moisture clause, Valdara calls off one train of iron ore a month from Serravona Mining, free carrier (FCA) at Fucinalta mine siding: the buyer arranges and pays the main transport, so Valdara, not the mine, books Ferrano Rail Cargo's ore train under their framework transport agreement, within the standing plan for the year. On Tuesday 10 March, the first day of the loading window, the mine loads 30 wagons, which are weighed at the siding: 1,788.4 t of lump ore with 62 % iron. The train runs about 160 km on the line past Ferrano into the factory's siding and arrives the same afternoon, which earns the carrier the 2 % bonus of the plan, so that the factory can start the blend a day early. The mine deducts 1.5 % of the value for the 7.5 % moisture measured at loading, as the agreement's moisture clause says (decision D45).",
+   "text": "Under a supply agreement for 2026, which sets the price basis, one train a month and a moisture clause, Valdara calls off one train of iron ore a month from Serravona Mining, free carrier (FCA) at Fucinalta mine siding: the buyer arranges and pays the main transport, so Valdara, not the mine, books Ferrano Rail Cargo's ore train under their framework transport agreement, within the standing plan for the year. On Tuesday 10 March, the first day of the loading window, the mine loads 30 wagons, which are weighed at the siding: 1,788.4 t of lump ore with 62 % iron. The train runs about 160 km on the line past Ferrano into the factory's siding and arrives the same afternoon, which earns the carrier the 2 % bonus of the plan, so that the factory can start the blend a day early. The mine deducts 1.5 % of the value for the 7.5 % moisture measured at loading, as the agreement's moisture clause says.",
    "legs": [
     {
      "mode": "rail",
@@ -23,7 +23,10 @@
       "locode": "XUFER"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "text": "D45"
+   }
   },
   {
    "id": "road",
@@ -51,7 +54,7 @@
   {
    "id": "rail",
    "title": "Containers by rail under the Accord's common transit (Urvania → Bayvarra)",
-   "text": "For full container loads Valdara sells Lumeway 192 benches delivered at place (DAP) Lumeway's rail siding in Marrowdale. The seller arranges and pays the transport: it books Ferrano Rail Cargo under their framework contract for container slots. The carrier's tractor brings the two packed 40-foot containers from Castrano's warehouse to the intermodal hub at Ferrano, a pre-carriage by road of the same contract, and the hub lifts them onto the container train FRC 4417; the consignment note follows the Accord's uniform rules for international carriage by rail, modelled on the CIM. Urvania's rail infrastructure manager, which runs the tracks and the train paths since the state separated them from the train operators, reports the train's progress to the carrier. The goods travel under the Accord's common transit, which Valdara lodges the evening before departure, to Bayvarra customs' inland office at Marrowdale, where Lumeway declares the import on 15 April and claims the Accord preference. Lumeway empties the first container the next day; the second waits until 22 April, because the siding's fork-lift is in repair, and runs two days past the five days' free time. Ferrano Rail Cargo charges the demurrage to Valdara in a debit note to its freight invoice, and Valdara passes it on to Lumeway, which bears a delay in unloading under DAP, in a debit note to its goods invoice: the world's debit notes (decision D37).",
+   "text": "For full container loads Valdara sells Lumeway 192 benches delivered at place (DAP) Lumeway's rail siding in Marrowdale. The seller arranges and pays the transport: it books Ferrano Rail Cargo under their framework contract for container slots. The carrier's tractor brings the two packed 40-foot containers from Castrano's warehouse to the intermodal hub at Ferrano, a pre-carriage by road of the same contract, and the hub lifts them onto the container train FRC 4417; the consignment note follows the Accord's uniform rules for international carriage by rail, modelled on the CIM. Urvania's rail infrastructure manager, which runs the tracks and the train paths since the state separated them from the train operators, reports the train's progress to the carrier. The goods travel under the Accord's common transit, which Valdara lodges the evening before departure, to Bayvarra customs' inland office at Marrowdale, where Lumeway declares the import on 15 April and claims the Accord preference. Lumeway empties the first container the next day; the second waits until 22 April, because the siding's fork-lift is in repair, and runs two days past the five days' free time. Ferrano Rail Cargo charges the demurrage to Valdara in a debit note to its freight invoice, and Valdara passes it on to Lumeway, which bears a delay in unloading under DAP, in a debit note to its goods invoice: the world's debit notes.",
    "legs": [
     {
      "mode": "road",
@@ -83,12 +86,15 @@
       "gln": "6-xb:siding"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "text": "D37"
+   }
   },
   {
    "id": "plastics",
    "title": "Recycled plastic granulate by river barge (Urvania → Bayvarra)",
-   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells 120 tonnes of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. Before the order Rinova sends its product information for the quarter, with the recycled-content certificate of an accredited certification body (plastics/12). The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow) (decision D41).",
+   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells 120 tonnes of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. Before the order Rinova sends its product information for the quarter, with the recycled-content certificate of an accredited certification body. The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow).",
    "legs": [
     {
      "mode": "river",
@@ -105,7 +111,10 @@
       "name": "River quay of Rivermouth Packaging, Lumeport"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "text": "plastics/12, D41"
+   }
   },
   {
    "id": "retail",
@@ -204,7 +213,7 @@
      "from": "5-xu",
      "to": "6-xb",
      "carrier": "13-xu",
-     "why": "Trasvia trucks the freshly packed frames under transit to the distributor's dispatch area, where they pass through without entering its stock (D39).",
+     "why": "Trasvia trucks the freshly packed frames under transit to the distributor's dispatch area, where they pass through without entering its stock.",
      "from_place": {
       "name": "Valdara Industries works, Ferrano",
       "locode": "XUFER"
@@ -265,7 +274,10 @@
       "name": "Nalevi Warehousing, Selanu"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "legs.0.why": "D39"
+   }
   },
   {
    "id": "tender",
@@ -406,7 +418,7 @@
   {
    "id": "waste",
    "title": "Production waste to recovery (domestic, Urvania)",
-   "text": "Valdara bales the polyethylene film its factory throws out, the stretch film of the pallets it receives and the offcuts of its own wrapping, about 275 t a year, and sends it to Rinova Recovery across Ferrano, which recycles it into granulate. The waste is not hazardous and does not leave Urvania, so Urvania's waste law applies, not the Basel procedure: the producer notifies the waste stream for the year to the environment agency, which acknowledges it with a waste-stream number, and the recovery facility reports each load it receives. Trasvia, registered with the agency as a waste carrier, brings about 54 bales a load; Rinova's weighbridge weighs the truck full and empty, about 38.2 t and 15.3 t, and Rinova invoices the 22.9 t of waste (decision D42).",
+   "text": "Valdara bales the polyethylene film its factory throws out, the stretch film of the pallets it receives and the offcuts of its own wrapping, about 275 t a year, and sends it to Rinova Recovery across Ferrano, which recycles it into granulate. The waste is not hazardous and does not leave Urvania, so Urvania's waste law applies, not the Basel procedure: the producer notifies the waste stream for the year to the environment agency, which acknowledges it with a waste-stream number, and the recovery facility reports each load it receives. Trasvia, registered with the agency as a waste carrier, brings about 54 bales a load; Rinova's weighbridge weighs the truck full and empty, about 38.2 t and 15.3 t, and Rinova invoices the 22.9 t of waste.",
    "legs": [
     {
      "mode": "road",
@@ -423,7 +435,10 @@
       "locode": "XUFER"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "text": "D42"
+   }
   },
   {
    "id": "utilities",
@@ -578,7 +593,7 @@
    "packages": {
     "item": "cotton-bale",
     "type": "BL",
-    "why": "The shipment is 27 compressed bales of lint (D12, O26): their number is the shipment's package count, each bale's real weight is in the ginnery's weight statement (12). The container is made up from the ginnery's stock of Middling lint from several farms (D33), so the bale numbers come from three pressing runs.",
+    "why": "The shipment is 27 compressed bales of lint: their number is the shipment's package count, each bale's real weight is in the ginnery's weight statement (12). The container is made up from the ginnery's stock of Middling lint from several farms, so the bale numbers come from three pressing runs.",
     "weighed": "on the bale scale at the ginnery's press, each bale as it leaves the press, to 10 g",
     "tare_kg": 2.27,
     "tare_what": "for the bale's woven cotton cover and its steel ties, as the ginnery and the mill agree in their season agreement",
@@ -692,6 +707,9 @@
       "net_kg": 222.0
      }
     ]
+   },
+   "_refs": {
+    "packages.why": "D12, O26, D33"
    }
   },
   {
@@ -913,7 +931,7 @@
   {
    "id": "lpg",
    "title": "Propane by road tanker to Lumeport's district heating (dangerous goods, domestic, Bayvarra)",
-   "text": "Kelpstone Gas separates propane from its field's gas at the Gullhaven plant and sells it by road tanker. In winter the Coastal State Water Company, which runs Lumeport's district heating, burns propane in its peak boilers and orders a tanker load when its storage runs low. Kelpstone has it carried by Gullhaven Tank Haulage, licensed to carry dangerous goods in tanks: about 20 t of propane, UN 1965, class 2.1, in a tank semi-trailer that weighs about 17 t with its tractor, so within the Accord's 40 t; the tank shows the class 2.1 placard and orange plates with 23 over 1965. The tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, pumps the propane into the water company's storage and returns empty the next day. The propane is burned, not resold, so Bayvarra's sales tax applies to the sale (D48, O204).",
+   "text": "Kelpstone Gas separates propane from its field's gas at the Gullhaven plant and sells it by road tanker. In winter the Coastal State Water Company, which runs Lumeport's district heating, burns propane in its peak boilers and orders a tanker load when its storage runs low. Kelpstone has it carried by Gullhaven Tank Haulage, licensed to carry dangerous goods in tanks: about 20 t of propane, UN 1965, class 2.1, in a tank semi-trailer that weighs about 17 t with its tractor, so within the Accord's 40 t; the tank shows the class 2.1 placard and orange plates with 23 over 1965. The tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, pumps the propane into the water company's storage and returns empty the next day. The propane is burned, not resold, so Bayvarra's sales tax applies to the sale.",
    "legs": [
     {
      "mode": "road",
@@ -929,7 +947,10 @@
      },
      "transit_days": 0
     }
-   ]
+   ],
+   "_refs": {
+    "text": "D48, O204"
+   }
   },
   {
    "id": "medicines",
@@ -955,7 +976,7 @@
      "from": "49-xb",
      "to": "17-xb",
      "carrier": "49-xb",
-     "why": "The wholesaler's own van, with a driver trained for class 7, brings the generator to the cargo terminal itself (O202 choice 4).",
+     "why": "The wholesaler's own van, with a driver trained for class 7, brings the generator to the cargo terminal itself.",
      "from_place": {
       "name": "Quillmoor Pharma Distribution, Airport Road warehouse"
      },
@@ -1012,7 +1033,10 @@
       "name": "Selanu General Hospital, pharmacy"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "legs.1.why": "O202 choice 4"
+   }
   }
  ],
  "documents": [
@@ -1154,10 +1178,13 @@
    "doc": "OrderResponse",
    "from": "5-xu",
    "to": "6-xb",
-   "why": "The manufacturer accepts the order with one change: the 2026 casting with the reinforced foot replaces the side frame ordered, at the same price, for the old casting is no longer made. It confirms the collection at its 3PL's warehouse by the buyer's carrier (decision D35).",
+   "why": "The manufacturer accepts the order with one change: the 2026 casting with the reinforced foot replaces the side frame ordered, at the same price, for the old casting is no longer made. It confirms the collection at its 3PL's warehouse by the buyer's carrier.",
    "parties": {
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "6-xb"
+   },
+   "_refs": {
+    "why": "D35"
    }
   },
   {
@@ -1207,11 +1234,14 @@
    "doc": "CertificateOfOrigin",
    "from": "5-xu",
    "to": "20-xu",
-   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin. The application is Valdara's own document, with its own number; the chamber's e-certificate system gives it a job number when it is lodged (decision D35).",
+   "why": "The goods qualify for preferential duty in Bayvarra; the manufacturer applies to its chamber of commerce for a certificate of origin. The application is Valdara's own document, with its own number; the chamber's e-certificate system gives it a job number when it is lodged.",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
     "EndorserParty": "20-xu"
+   },
+   "_refs": {
+    "why": "D35"
    }
   },
   {
@@ -1219,11 +1249,14 @@
    "doc": "CertificateOfOrigin",
    "from": "20-xu",
    "to": "6-xb",
-   "why": "The chamber, the body Urvania authorises under the Trade Accord to issue proofs of preferential origin, checks the application, issues the certificate under its own number and is its only endorser: a certificate between Accord members needs no legalisation. It makes the certificate available to the importer, who needs it for the import declaration (decision D35).",
+   "why": "The chamber, the body Urvania authorises under the Trade Accord to issue proofs of preferential origin, checks the application, issues the certificate under its own number and is its only endorser: a certificate between Accord members needs no legalisation. It makes the certificate available to the importer, who needs it for the import declaration.",
    "parties": {
     "ExporterParty": "5-xu",
     "ImporterParty": "6-xb",
     "EndorserParty": "20-xu"
+   },
+   "_refs": {
+    "why": "D35"
    }
   },
   {
@@ -1284,11 +1317,14 @@
    "doc": "FulfilmentCancellation",
    "from": "6-xb",
    "to": "5-xu",
-   "why": "The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare frame cartons, which it looks like, so goods-in reported 95 benches and one carton of frames over. The next morning the distributor's recount reads the carton's label: it is the 96th bench's. The receipt advice reported a shortage and a carton over that are not there, so the distributor cancels it (decision D35).",
+   "why": "The 3PL had put one bench's frame carton (parcel 2 of 3) on the pallet of spare frame cartons, which it looks like, so goods-in reported 95 benches and one carton of frames over. The next morning the distributor's recount reads the carton's label: it is the 96th bench's. The receipt advice reported a shortage and a carton over that are not there, so the distributor cancels it.",
    "parties": {
     "BuyerCustomerParty": "6-xb",
     "SellerSupplierParty": "5-xu",
     "DespatchSupplierParty": "8-xu"
+   },
+   "_refs": {
+    "why": "D35"
    }
   },
   {
@@ -1296,12 +1332,15 @@
    "doc": "ReceiptAdvice",
    "from": "6-xb",
    "to": "8-xu",
-   "why": "The corrected receipt advice: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; it names the receipt advice it replaces (decision D35).",
+   "why": "The corrected receipt advice: 96 benches and 12 spare frames, as despatched, nothing short and nothing over; it names the receipt advice it replaces.",
    "parties": {
     "DeliveryCustomerParty": "6-xb",
     "DespatchSupplierParty": "8-xu",
     "BuyerCustomerParty": "6-xb",
     "SellerSupplierParty": "5-xu"
+   },
+   "_refs": {
+    "why": "D35"
    }
   },
   {
@@ -1405,10 +1444,13 @@
    "doc": "TransportProgressStatusRequest",
    "from": "14-xu",
    "to": "47-xu",
-   "why": "The rail carrier asks Urvania's rail infrastructure manager, the transportation network manager that runs the tracks and the train paths, to report the container train's departure (D37).",
+   "why": "The rail carrier asks Urvania's rail infrastructure manager, the transportation network manager that runs the tracks and the train paths, to report the container train's departure.",
    "parties": {
     "SenderParty": "14-xu",
     "ReceiverParty": "47-xu"
+   },
+   "_refs": {
+    "why": "D37"
    }
   },
   {
@@ -1416,10 +1458,13 @@
    "doc": "TransportProgressStatus",
    "from": "47-xu",
    "to": "14-xu",
-   "why": "The rail infrastructure manager reports the train's position and timetable on its network, from the hub to the border station (D37).",
+   "why": "The rail infrastructure manager reports the train's position and timetable on its network, from the hub to the border station.",
    "parties": {
     "SenderParty": "47-xu",
     "ReceiverParty": "14-xu"
+   },
+   "_refs": {
+    "why": "D37"
    }
   },
   {
@@ -1427,13 +1472,16 @@
    "doc": "TransitCustomsDeclaration",
    "from": "5-xu",
    "to": "19-xu",
-   "why": "The goods travel under the Accord's common transit from Urvania's office of departure at the hub to Bayvarra customs' inland office at Marrowdale, the office of destination; the manufacturer, as holder of the procedure, lodges the declaration the evening before the train leaves (D37).",
+   "why": "The goods travel under the Accord's common transit from Urvania's office of departure at the hub to Bayvarra customs' inland office at Marrowdale, the office of destination; the manufacturer, as holder of the procedure, lodges the declaration the evening before the train leaves.",
    "parties": {
     "TransitExporterParty": "5-xu",
     "ConsignorParty": "5-xu",
     "ConsigneeParty": "6-xb",
     "CustomsParty": "19-xu",
     "Shipment/Consignment/CarrierParty": "14-xu"
+   },
+   "_refs": {
+    "why": "D37"
    }
   },
   {
@@ -1454,13 +1502,16 @@
    "doc": "Waybill",
    "from": "14-xu",
    "to": "5-xu",
-   "why": "The rail consignment note under the Accord's uniform rules, modelled on the CIM, goes to the transport user, the seller; the road haulage to the hub is a pre-carriage stage of the same contract (D37).",
+   "why": "The rail consignment note under the Accord's uniform rules, modelled on the CIM, goes to the transport user, the seller; the road haulage to the hub is a pre-carriage stage of the same contract.",
    "parties": {
     "SenderParty": "14-xu",
     "ReceiverParty": "5-xu",
     "CarrierParty": "14-xu",
     "ConsignorParty": "5-xu",
     "Shipment/Consignment/ConsigneeParty": "6-xb"
+   },
+   "_refs": {
+    "why": "D37"
    }
   },
   {
@@ -1507,11 +1558,14 @@
    "doc": "DebitNote",
    "from": "14-xu",
    "to": "5-xu",
-   "why": "The carrier charges Valdara, the transport user under DAP, the demurrage on the second container, which stood at Lumeway's siding two days beyond the free time, as a debit note to its freight invoice under the framework contract: the world's real debit note (D37, D9).",
+   "why": "The carrier charges Valdara, the transport user under DAP, the demurrage on the second container, which stood at Lumeway's siding two days beyond the free time, as a debit note to its freight invoice under the framework contract: the world's real debit note.",
    "parties": {
     "AccountingSupplierParty": "14-xu",
     "AccountingCustomerParty": "5-xu",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   },
+   "_refs": {
+    "why": "D37, D9"
    }
   },
   {
@@ -1519,11 +1573,14 @@
    "doc": "DebitNote",
    "from": "5-xu",
    "to": "6-xb",
-   "why": "Under DAP the buyer bears the costs of a delay in unloading, so Valdara passes the carrier's demurrage on to Lumeway as a debit note to its goods invoice (D37, D9).",
+   "why": "Under DAP the buyer bears the costs of a delay in unloading, so Valdara passes the carrier's demurrage on to Lumeway as a debit note to its goods invoice.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "6-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "23-xu"
+   },
+   "_refs": {
+    "why": "D37, D9"
    }
   },
   {
@@ -1531,12 +1588,15 @@
    "doc": "ImportCustomsDeclaration",
    "from": "6-xb",
    "to": "19-xb",
-   "why": "At Bayvarra customs' inland office in Marrowdale, the office of destination of the Accord's common transit, the distributor, as importer under DAP, declares the benches for import and claims the Accord preference with the statement on origin on Valdara's invoice (D37, D18).",
+   "why": "At Bayvarra customs' inland office in Marrowdale, the office of destination of the Accord's common transit, the distributor, as importer under DAP, declares the benches for import and claims the Accord preference with the statement on origin on Valdara's invoice.",
    "parties": {
     "ImporterParty": "6-xb",
     "ConsignorParty": "5-xu",
     "ConsigneeParty": "6-xb",
     "CustomsParty": "19-xb"
+   },
+   "_refs": {
+    "why": "D37, D18"
    }
   },
   {
@@ -1825,7 +1885,7 @@
    "doc": "TransportExecutionPlan",
    "from": "10-xb",
    "to": "6-xb",
-   "why": "The carrier confirms the distributor's booking: loading on 29 April and the delivery slot at the store on 30 April, 10:00 to 10:30 (D38, D34).",
+   "why": "The carrier confirms the distributor's booking: loading on 29 April and the delivery slot at the store on 30 April, 10:00 to 10:30.",
    "parties": {
     "SenderParty": "10-xb",
     "ReceiverParty": "6-xb",
@@ -1833,6 +1893,9 @@
     "TransportServiceProviderParty": "10-xb",
     "Consignment/ConsignorParty": "6-xb",
     "Consignment/ConsigneeParty": "26-xb"
+   },
+   "_refs": {
+    "why": "D38, D34"
    }
   },
   {
@@ -2325,12 +2388,15 @@
    "doc": "Invoice",
    "from": "6-xb",
    "to": "1-xl",
-   "why": "The distributor invoices the eight frames at its trade price, carriage paid to the island airport, and recharges the air freight at cost as a surcharge, which the buyer accepted in its order change (O30).",
+   "why": "The distributor invoices the eight frames at its trade price, carriage paid to the island airport, and recharges the air freight at cost as a surcharge, which the buyer accepted in its order change.",
    "parties": {
     "AccountingSupplierParty": "6-xb",
     "AccountingCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
     "BuyerCustomerParty": "1-xl"
+   },
+   "_refs": {
+    "why": "O30"
    }
   },
   {
@@ -2702,13 +2768,16 @@
    "doc": "Invoice",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The manufacturer invoices the benches of the release on delivery under the contract; payment in lume to its lume account at Bank of Lumeport, 30 days after the release is accepted (O226).",
+   "why": "The manufacturer invoices the benches of the release on delivery under the contract; payment in lume to its lume account at Bank of Lumeport, 30 days after the release is accepted.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "2-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   },
+   "_refs": {
+    "why": "O226"
    }
   },
   {
@@ -2768,7 +2837,7 @@
    "doc": "WasteNotification",
    "from": "5-xu",
    "to": "46-xu",
-   "why": "Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 tonnes in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery (decision D42). UBL requires a CustomsParty in a waste notification, \"the competent authority granting a permit to export or import the waste\"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.",
+   "why": "Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 tonnes in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery. UBL requires a CustomsParty in a waste notification, \"the competent authority granting a permit to export or import the waste\"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.",
    "parties": {
     "SenderParty": "5-xu",
     "ReceiverParty": "46-xu",
@@ -2777,6 +2846,9 @@
     "RecoveryFacilityParty": "7-xu",
     "CustomsParty": "46-xu",
     "Shipment/Consignment/CarrierParty": "13-xu"
+   },
+   "_refs": {
+    "why": "D42"
    }
   },
   {
@@ -2810,11 +2882,14 @@
    "doc": "WeightStatement",
    "from": "7-xu",
    "to": "5-xu",
-   "why": "Rinova's weighbridge ticket of the load: the truck weighed full on arrival and empty after unloading, so that the difference is the waste received. Rinova gives it to the producer, who pays by the net tonne, and cites it in its movement report and its invoice (decisions D38, D42).",
+   "why": "Rinova's weighbridge ticket of the load: the truck weighed full on arrival and empty after unloading, so that the difference is the waste received. Rinova gives it to the producer, who pays by the net tonne, and cites it in its movement report and its invoice.",
    "parties": {
     "SenderParty": "7-xu",
     "ReceiverParty": "5-xu",
     "WeighingParty": "7-xu"
+   },
+   "_refs": {
+    "why": "D38, D42"
    }
   },
   {
@@ -2848,12 +2923,15 @@
    "doc": "UtilityStatement",
    "from": "33-xu",
    "to": "8-xu",
-   "why": "The warehouse is the manufacturer's building: the manufacturer owns it and holds the subscription, the 3PL operates the warehouse and receives the statement of its consumption point; the statement names the manufacturer as subscriber and customer (D31 point 4).",
+   "why": "The warehouse is the manufacturer's building: the manufacturer owns it and holds the subscription, the 3PL operates the warehouse and receives the statement of its consumption point; the statement names the manufacturer as subscriber and customer.",
    "parties": {
     "SenderParty": "33-xu",
     "ReceiverParty": "8-xu",
     "SubscriberParty": "5-xu",
     "CustomerParty": "5-xu"
+   },
+   "_refs": {
+    "why": "D31 point 4"
    }
   },
   {
@@ -2913,11 +2991,14 @@
    "doc": "UtilityStatement",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household's annual statement for water and district heat, April 2025 to March 2026: the annual readings, the year's water with the city's levy, the heat with its cooling correction, and the new payments on account from April (D31).",
+   "why": "The household's annual statement for water and district heat, April 2025 to March 2026: the annual readings, the year's water with the city's levy, the heat with its cooling correction, and the new payments on account from April.",
    "parties": {
     "SenderParty": "34-xb",
     "ReceiverParty": "c-xb",
     "SubscriberParty": "c-xb"
+   },
+   "_refs": {
+    "why": "D31"
    }
   },
   {
@@ -2925,11 +3006,14 @@
    "doc": "Invoice",
    "from": "34-xb",
    "to": "c-xb",
-   "why": "The household's settlement bill for the account year: water (exempt), the city's levy (outside the tax), district heat and its cooling correction (with the state's sales tax), less the twelve payments on account; the balance is collected by direct debit 21 days later (D31, D23).",
+   "why": "The household's settlement bill for the account year: water (exempt), the city's levy (outside the tax), district heat and its cooling correction (with the state's sales tax), less the twelve payments on account; the balance is collected by direct debit 21 days later.",
    "parties": {
     "AccountingSupplierParty": "34-xb",
     "AccountingCustomerParty": "c-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   },
+   "_refs": {
+    "why": "D31, D23"
    }
   },
   {
@@ -3149,11 +3233,14 @@
    "doc": "Catalogue",
    "from": "7-xu",
    "to": "41-xb",
-   "why": "Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 % (decisions D41, O193). It is numbered after the flow's other documents although it comes first in time (D28).",
+   "why": "Before the packaging maker orders, Rinova sends it the product information of its granulate for the quarter: the item, its price, and what makes it recycled granulate, the recycled-content certificate of the accredited certification body that audits Rinova's plant and the item's recycled content of 100 %. It is numbered after the flow's other documents although it comes first in time.",
    "parties": {
     "ProviderParty": "7-xu",
     "ReceiverParty": "41-xb",
     "SellerSupplierParty": "7-xu"
+   },
+   "_refs": {
+    "why": "D41, O193, D28"
    }
   },
   {
@@ -3479,7 +3566,10 @@
     "AccountingCustomerParty": "26-xb",
     "AccountingSupplierParty": "37-xb"
    },
-   "removed": "Removed 2026-11-19 (D32, O6, D9): the store carried the returned pieces back at the maker's cost and invoices the transport (furniture/18); a buyer's debit note is not a seller's charge. Its number 14 is not used again (D28)."
+   "removed": "Removed 2026-11-19: the store carried the returned pieces back at the maker's cost and invoices the transport; a buyer's debit note is not a seller's charge. Its number 14 is not used again.",
+   "_refs": {
+    "removed": "D32, O6, D9, furniture/18, D28"
+   }
   },
   {
    "flow": "furniture",
@@ -3527,13 +3617,16 @@
    "doc": "Invoice",
    "from": "26-xb",
    "to": "37-xb",
-   "why": "The store took the returned pieces back to the maker's workshop with its own van, at the maker's cost as the own-label agreement says, and invoices the transport (D32).",
+   "why": "The store took the returned pieces back to the maker's workshop with its own van, at the maker's cost as the own-label agreement says, and invoices the transport.",
    "parties": {
     "AccountingSupplierParty": "26-xb",
     "AccountingCustomerParty": "37-xb",
     "SellerSupplierParty": "26-xb",
     "BuyerCustomerParty": "37-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   },
+   "_refs": {
+    "why": "D32"
    }
   },
   {
@@ -3541,10 +3634,13 @@
    "doc": "DespatchAdvice",
    "from": "37-xb",
    "to": "26-xb",
-   "why": "The furniture maker's despatch advice for the delivery of the opening stock on 23 March, which its invoice cites as the delivery document (D38).",
+   "why": "The furniture maker's despatch advice for the delivery of the opening stock on 23 March, which its invoice cites as the delivery document.",
    "parties": {
     "DespatchSupplierParty": "37-xb",
     "DeliveryCustomerParty": "26-xb"
+   },
+   "_refs": {
+    "why": "D38"
    }
   },
   {
@@ -3988,7 +4084,10 @@
     "AccountingCustomerParty": "1-xl",
     "AccountingSupplierParty": "6-xb"
    },
-   "removed": "Removed 2026-11-19 (D30 point 3, O6, D9): the customs inspection and the day of storage that Velumi paid are a cost passed on, which Lumeway credits as the second line of its credit note (sea/26); a buyer's debit note is not a seller's charge. Its number 28 is not used again (D28)."
+   "removed": "Removed 2026-11-19: the customs inspection and the day of storage that Velumi paid are a cost passed on, which Lumeway credits as the second line of its credit note; a buyer's debit note is not a seller's charge. Its number 28 is not used again.",
+   "_refs": {
+    "removed": "D30 point 3, O6, D9, sea/26, D28"
+   }
   },
   {
    "flow": "sea",
@@ -4006,10 +4105,13 @@
    "doc": "CreditNote",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "One bench was damaged during installation and rejected on acceptance; the manufacturer credits it with its share of the colour charge (D28 point 9).",
+   "why": "One bench was damaged during installation and rejected on acceptance; the manufacturer credits it with its share of the colour charge.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb"
+   },
+   "_refs": {
+    "why": "D28 point 9"
    }
   },
   {
@@ -4018,10 +4120,13 @@
    "from": "2-xb",
    "to": "5-xu",
    "why": "The installation finished three days late; under the contract's penalty clause the department charges the manufacturer for the late days, one of them waived.",
-   "removed": "Removed 2026-11-19 (D28 point 9, O6, D9): a buyer's debit note is not a seller's charge; the penalty for late completion is a deduction in the remittance advice (36) under the contract's clause. Its number 34 is not used again (D28).",
+   "removed": "Removed 2026-11-19: a buyer's debit note is not a seller's charge; the penalty for late completion is a deduction in the remittance advice (36) under the contract's clause. Its number 34 is not used again.",
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
+   },
+   "_refs": {
+    "removed": "D28 point 9, O6, D9, D28"
    }
   },
   {
@@ -4040,10 +4145,13 @@
    "doc": "RemittanceAdvice",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, in lume into the manufacturer's lume account at Bank of Lumeport, and says what the payment settles (O226).",
+   "why": "The department pays both invoices with the interest, less the credit note and the penalty for late completion it deducts under the contract, in lume into the manufacturer's lume account at Bank of Lumeport, and says what the payment settles.",
    "parties": {
     "AccountingCustomerParty": "2-xb",
     "AccountingSupplierParty": "5-xu"
+   },
+   "_refs": {
+    "why": "O226"
    }
   },
   {
@@ -4051,11 +4159,14 @@
    "doc": "GuaranteeCertificate",
    "from": "25-xb",
    "to": "2-xb",
-   "why": "The furniture maker's bank certifies the government bonds immobilised in favour of the authority as the guarantee of the furniture maker's tender (D28 point 5).",
+   "why": "The furniture maker's bank certifies the government bonds immobilised in favour of the authority as the guarantee of the furniture maker's tender.",
    "parties": {
     "GuarantorParty": "25-xb",
     "InterestedParty": "37-xb",
     "BeneficiaryParty": "2-xb"
+   },
+   "_refs": {
+    "why": "D28 point 5"
    }
   },
   {
@@ -4063,10 +4174,13 @@
    "doc": "ReceiptAdvice",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The department accepts the release: 39 benches and their installation, one bench rejected as damaged; the contract's 30 days of payment run from this acceptance (D28 point 9, O69).",
+   "why": "The department accepts the release: 39 benches and their installation, one bench rejected as damaged; the contract's 30 days of payment run from this acceptance.",
    "parties": {
     "DeliveryCustomerParty": "2-xb",
     "DespatchSupplierParty": "5-xu"
+   },
+   "_refs": {
+    "why": "D28 point 9, O69"
    }
   },
   {
@@ -4074,13 +4188,16 @@
    "doc": "Invoice",
    "from": "5-xu",
    "to": "2-xb",
-   "why": "The manufacturer invoices the 39 installations once they are done and accepted, as a service supplied outside Urvania; the department withholds Bayvarra's 10 % (D28 point 9, D17).",
+   "why": "The manufacturer invoices the 39 installations once they are done and accepted, as a service supplied outside Urvania; the department withholds Bayvarra's 10 %.",
    "parties": {
     "AccountingSupplierParty": "5-xu",
     "AccountingCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
     "BuyerCustomerParty": "2-xb",
     "PaymentMeans/PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution": "25-xb"
+   },
+   "_refs": {
+    "why": "D28 point 9, D17"
    }
   },
   {
@@ -4299,11 +4416,14 @@
    "doc": "BusinessInformation",
    "from": "21-xb",
    "to": "2-xb",
-   "why": "The authority checks the team's other member, the engineering firm, in the register too: every member of a group is checked before the jury selects the participants (D29 point 6).",
+   "why": "The authority checks the team's other member, the engineering firm, in the register too: every member of a group is checked before the jury selects the participants.",
    "parties": {
     "SenderParty": "21-xb",
     "ReceiverParty": "2-xb",
     "BusinessParty": "27-xb"
+   },
+   "_refs": {
+    "why": "D29 point 6"
    }
   },
   {
@@ -4311,11 +4431,14 @@
    "doc": "TendererQualificationResponse",
    "from": "2-xb",
    "to": "48-xb",
-   "why": "A small design studio that asked to take part is excluded at the selection for unpaid social security contributions, and is told why and how to appeal (O102).",
+   "why": "A small design studio that asked to take part is excluded at the selection for unpaid social security contributions, and is told why and how to appeal.",
    "parties": {
     "SenderParty": "2-xb",
     "ReceiverParty": "48-xb",
     "AppealTerms/AppealReceiverParty": "28-xb"
+   },
+   "_refs": {
+    "why": "O102"
    }
   },
   {
@@ -4435,12 +4558,15 @@
    "doc": "ImportCustomsDeclaration",
    "from": "33-xu",
    "to": "19-xu",
-   "why": "The retail company declares its own consignment of March's gas, 2,400 MWh fed into the grid at the city gate for its gas customers, into Urvania (D44).",
+   "why": "The retail company declares its own consignment of March's gas, 2,400 MWh fed into the grid at the city gate for its gas customers, into Urvania.",
    "parties": {
     "ImporterParty": "33-xu",
     "ConsignorParty": "42-xb",
     "ConsigneeParty": "33-xu",
     "CustomsParty": "19-xu"
+   },
+   "_refs": {
+    "why": "D44"
    }
   },
   {
@@ -4642,10 +4768,13 @@
    "doc": "Invoice",
    "from": "42-xb",
    "to": "34-xb",
-   "why": "The propane delivered, by the weighbridge's net weight, with Coastal State's sales tax: the water company burns it in its boilers, so the sale is not one for resale (O204).",
+   "why": "The propane delivered, by the weighbridge's net weight, with Coastal State's sales tax: the water company burns it in its boilers, so the sale is not one for resale.",
    "parties": {
     "AccountingSupplierParty": "42-xb",
     "AccountingCustomerParty": "34-xb"
+   },
+   "_refs": {
+    "why": "O204"
    }
   },
   {
@@ -4653,13 +4782,16 @@
    "doc": "Order",
    "from": "49-xb",
    "to": "58-in",
-   "why": "The wholesaler orders its vaccines and insulin for the southern winter from the maker in India, carriage paid to Lumeport airport, in rupees (O229).",
+   "why": "The wholesaler orders its vaccines and insulin for the southern winter from the maker in India, carriage paid to Lumeport airport, in rupees.",
    "parties": {
     "BuyerCustomerParty": "49-xb",
     "SellerSupplierParty": "58-in"
    },
    "values": {
     "DeliveryTerms/ID": "CPT"
+   },
+   "_refs": {
+    "why": "O229"
    }
   },
   {
@@ -4708,13 +4840,16 @@
    "doc": "Order",
    "from": "49-xb",
    "to": "51-nl",
-   "why": "The wholesaler calls off the hospital's generator for the week from the maker in the Netherlands, under its standing order, carriage paid to Lumeport airport, in euro (O229).",
+   "why": "The wholesaler calls off the hospital's generator for the week from the maker in the Netherlands, under its standing order, carriage paid to Lumeport airport, in euro.",
    "parties": {
     "BuyerCustomerParty": "49-xb",
     "SellerSupplierParty": "51-nl"
    },
    "values": {
     "DeliveryTerms/ID": "CPT"
+   },
+   "_refs": {
+    "why": "O229"
    }
   },
   {
@@ -4817,7 +4952,7 @@
    "doc": "ImportCustomsDeclaration",
    "from": "3-xl",
    "to": "19-xl",
-   "why": "The customs broker, as the hospital's direct representative, declares the import at Selanu airport in the hospital's name: no duty on medicines, and the exemption from the import consumption tax for medicines supplied to a public hospital (O201, O203).",
+   "why": "The customs broker, as the hospital's direct representative, declares the import at Selanu airport in the hospital's name: no duty on medicines, and the exemption from the import consumption tax for medicines supplied to a public hospital.",
    "parties": {
     "ImporterParty": "50-xl",
     "ConsignorParty": "49-xb",
@@ -4825,7 +4960,10 @@
     "CustomsParty": "19-xl",
     "NotifierParty": "3-xl"
    },
-   "sends_for": "ImporterParty"
+   "sends_for": "ImporterParty",
+   "_refs": {
+    "why": "O201, O203"
+   }
   },
   {
    "flow": "medicines",
@@ -4883,7 +5021,7 @@
    "type": "Range plan"
   },
   "BM-RE-26": {
-   "what": "the store's retail event for the reopening (retail/06), cited before its number is known; its ID is put right with the retail flow (D34)",
+   "what": "the store's retail event for the reopening, cited before its number is known; its ID is put right with the retail flow",
    "type_code": "RetailEvent"
   },
   "BS-BANK-26-04": {
@@ -4903,11 +5041,11 @@
    "type": "Invoice"
   },
   "FRC-TEP-26-0001": {
-   "what": "Ferrano Rail Cargo's standing transport plan for the ore season, agreed in January (D38: a document outside the examples)",
+   "what": "Ferrano Rail Cargo's standing transport plan for the ore season, agreed in January (a document outside the examples)",
    "type": "Transport execution plan"
   },
   "FRC-TSD-26": {
-   "what": "Ferrano Rail Cargo's published description of its ore train service (D38: a document outside the examples)",
+   "what": "Ferrano Rail Cargo's published description of its ore train service (a document outside the examples)",
    "type": "Transport service description"
   },
   "FRC-WAGON-LIST-11": {
@@ -5047,7 +5185,7 @@
    "type_code": "1"
   },
   "SM-ASSAY-26-12": {
-   "what": "Serravona Mining's assay certificate of the sample taken when March's ore train was loaded on 10 March: 62 % iron, 7.5 % moisture (D45)",
+   "what": "Serravona Mining's assay certificate of the sample taken when March's ore train was loaded on 10 March: 62 % iron, 7.5 % moisture",
    "type_code": "1"
   },
   "VGM-26-0510": {
@@ -5159,7 +5297,7 @@
    "type": "Weighbridge ticket"
   },
   "QPD-DGD-26-0615": {
-   "what": "the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own (O202 choice 5)",
+   "what": "the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own",
    "type_code": "890"
   }
  }

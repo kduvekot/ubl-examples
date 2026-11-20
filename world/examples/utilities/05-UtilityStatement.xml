@@ -169,7 +169,7 @@
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
         <cac:MeterProperty>
-          <cbc:Name>Permanent flow rate (Q3)</cbc:Name>
+          <cbc:Name>Permanent flow rate</cbc:Name>
           <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
         </cac:MeterProperty>
       </cac:UtilityMeter>

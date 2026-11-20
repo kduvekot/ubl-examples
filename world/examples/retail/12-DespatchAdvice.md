@@ -11,9 +11,9 @@ The distributor announces the delivery and the truck that brings it.
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/AdditionalPartyIdentification first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/AdditionalPartyIdentification first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:despatch-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice"; the community specification "Retail community". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **RETAIL-2026-01**  
@@ -25,11 +25,11 @@ The distributor announces the delivery and the truck that brings it.
 - `IssueDate` = **2026-04-29**  
   The day the truck was loaded at the distribution centre.
 - `IssueTime` = **15:34:00-01:00**  
-  When the truck was loaded and the carrier had signed its consignment note, on the afternoon before the delivery (retail/12#F4, D34); in the issuer's local time, with its offset from UTC (D27).
+  When the truck was loaded and the carrier had signed its consignment note, on the afternoon before the delivery; in the issuer's local time, with its offset from UTC.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage in your receipt advice.**  
-  What the receiver should do; the note names the transport document the flow uses (worklist C30).
+  What the receiver should do; the note names the transport document the flow uses.
 - `LineCountNumeric` = **1**  
   The number of lines.
 
@@ -45,116 +45,116 @@ Inside `OrderReference`:
 Inside `DespatchSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Lumeway Distribution gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9520610900008** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Lumeway Distribution (world/parties.json).
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples ; as Lumeway Distribution gives it.
 - `Party/PartyName/Name` = **Lumeway Distribution**  
-  The trading name; identity of Lumeway Distribution (world/parties.json).
+  The trading name; as Lumeway Distribution gives it.
 - `Party/Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **English**  
   The language's name.
 - `Party/Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `Party/PostalAddress/ID` = **UL-ADR-693911** (schemeID `urn:ubl-examples:world:XB:UL:address-register`)  
-  The address's number in the address register of Upland State (UL-ADR- and six digits); identity of Lumeway Distribution (world/parties.json).
+  The address's number in the address register of Upland State (UL-ADR- and six digits); as Lumeway Distribution gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Distribution Drive**  
-  Street of the postal address. identity of Lumeway Distribution (world/parties.json).
+  Street of the postal address. as Lumeway Distribution gives it.
 - `Party/PostalAddress/BlockName` = **Marrowdale Business Park**  
-  The business park the distribution centre stands in. identity of Lumeway Distribution (world/parties.json).
+  The business park the distribution centre stands in. as Lumeway Distribution gives it.
 - `Party/PostalAddress/BuildingNumber` = **43**  
-  Building number of the postal address. identity of Lumeway Distribution (world/parties.json).
+  Building number of the postal address. as Lumeway Distribution gives it.
 - `Party/PostalAddress/PlotIdentification` = **Plot 14**  
-  The plot of the distribution centre in the business park. identity of Lumeway Distribution (world/parties.json).
+  The plot of the distribution centre in the business park. as Lumeway Distribution gives it.
 - `Party/PostalAddress/CityName` = **Marrowdale**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Lumeway Distribution (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Lumeway Distribution gives it.
 - `Party/PostalAddress/PostalZone` = **71214**  
-  Postal code in Bayvarra's format (5 digits). identity of Lumeway Distribution (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Lumeway Distribution gives it.
 - `Party/PostalAddress/CountrySubentity` = **Upland State**  
   The name of code XB-UL in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-UL** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Lumeway Distribution (world/parties.json). The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
+  The state or territory as a code of Bayvarra's address scheme. as Lumeway Distribution gives it. The code is from Bayvarra's national state or territory list: XB-UL = Upland State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Dispatch office**  
-  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); identity of Lumeway Distribution (world/parties.json).
+  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); as Lumeway Distribution gives it.
 - `Party/Contact/JobTitle` = **Dispatch coordinator**  
-  The job of the person who answers at the desk; identity of Lumeway Distribution (world/parties.json).
+  The job of the person who answers at the desk; as Lumeway Distribution gives it.
 - `Party/Contact/Department` = **Warehouse**  
-  The department the desk belongs to; identity of Lumeway Distribution (world/parties.json).
+  The department the desk belongs to; as Lumeway Distribution gives it.
 - `Party/Contact/Telephone` = **+999 2 7121 955 964**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Lumeway Distribution (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Lumeway Distribution gives it.
 - `Party/Contact/ElectronicMail` = **dispatch@lumeway.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lumeway Distribution (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeway Distribution gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Lumeway Distribution (world/parties.json).
+  When the desk can be reached; as Lumeway Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Lumeway Distribution (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Lumeway Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Delivery Customer Party
 
 Inside `DeliveryCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **20410411** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Brightmarket Stores gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/AdditionalPartyIdentification/ID` = **9522610900002** (schemeID `GS1 GLN`)  
-  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples (decision ID-Q7); identity of Brightmarket Stores (world/parties.json).
+  A further identifier, the party's Global Location Number (the endorsed PartyIdentification holds one only): it identifies itself, its items and its places the GS1 way, under its company prefix, which starts with 952, the prefix GS1 reserves for examples ; as Brightmarket Stores gives it.
 - `Party/PartyName/Name` = **Brightmarket Stores**  
-  The trading name; identity of Brightmarket Stores (world/parties.json).
+  The trading name; as Brightmarket Stores gives it.
 - `Party/TradePartyName/Name` = **Brightmarket**  
-  The name the shops trade under, shorter than the company's name; identity of Brightmarket Stores (world/parties.json).
+  The name the shops trade under, shorter than the company's name; as Brightmarket Stores gives it.
 - `Party/PostalAddress/ID` = **LUM-ADR-579130** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Brightmarket Stores (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Brightmarket Stores gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Party/PostalAddress/StreetName` = **Market Street**  
-  Street of the postal address. identity of Brightmarket Stores (world/parties.json).
+  Street of the postal address. as Brightmarket Stores gives it.
 - `Party/PostalAddress/BuildingNumber` = **50**  
-  Building number of the postal address. identity of Brightmarket Stores (world/parties.json).
+  Building number of the postal address. as Brightmarket Stores gives it.
 - `Party/PostalAddress/CitySubdivisionName` = **Old Town**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Brightmarket Stores (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Brightmarket Stores gives it.
 - `Party/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Brightmarket Stores (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Brightmarket Stores gives it.
 - `Party/PostalAddress/PostalZone` = **38515**  
-  Postal code in Bayvarra's format (5 digits). identity of Brightmarket Stores (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Brightmarket Stores gives it.
 - `Party/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Party/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Brightmarket Stores (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Brightmarket Stores gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Goods-in, Lumeport store**  
-  The party's goods-in, lumeport store desk: the desk for its role in this document (it receives the goods); identity of Brightmarket Stores (world/parties.json).
+  The party's goods-in, lumeport store desk: the desk for its role in this document (it receives the goods); as Brightmarket Stores gives it.
 - `Party/Contact/JobTitle` = **Goods-in supervisor**  
-  The job of the person who answers at the desk; identity of Brightmarket Stores (world/parties.json).
+  The job of the person who answers at the desk; as Brightmarket Stores gives it.
 - `Party/Contact/Department` = **Store operations**  
-  The department the desk belongs to; identity of Brightmarket Stores (world/parties.json).
+  The department the desk belongs to; as Brightmarket Stores gives it.
 - `Party/Contact/Telephone` = **+999 2 38 4609 7100**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Brightmarket Stores (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Brightmarket Stores gives it.
 - `Party/Contact/ElectronicMail` = **goodsin@brightmarket.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Brightmarket Stores (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Brightmarket Stores gives it.
 - `Party/Contact/Note` = **Monday to Saturday 09:00–18:00**  
-  When the desk can be reached; identity of Brightmarket Stores (world/parties.json).
+  When the desk can be reached; as Brightmarket Stores gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Brightmarket Stores (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Brightmarket Stores gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -183,49 +183,49 @@ Inside `Shipment`:
 - `Consignment/ID` = **LD-CS-26-0228**  
   The consignment the goods travel in, as numbered when the transport was booked.
 - `Consignment/GrossWeightMeasure` = **1297.2** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined (worklist C15). The gross weight loaded.
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight loaded.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **20411644** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Bayforth Forwarding (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Bayforth Forwarding gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Bayforth Forwarding**  
-  The trading name; identity of Bayforth Forwarding (world/parties.json).
+  The trading name; as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/PostalAddress/ID` = **LUM-ADR-953846** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Bayforth Forwarding (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Consignment/CarrierParty/PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `Consignment/CarrierParty/PostalAddress/StreetName` = **Dockside Way**  
-  Street of the postal address. identity of Bayforth Forwarding (world/parties.json).
+  Street of the postal address. as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/PostalAddress/BuildingNumber` = **4**  
-  Building number of the postal address. identity of Bayforth Forwarding (world/parties.json).
+  Building number of the postal address. as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/PostalAddress/CitySubdivisionName` = **Dockside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Bayforth Forwarding (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Bayforth Forwarding (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/PostalAddress/PostalZone` = **38525**  
-  Postal code in Bayvarra's format (5 digits). identity of Bayforth Forwarding (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `Consignment/CarrierParty/PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Bayforth Forwarding (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Bayforth Forwarding gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/CarrierParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Consignment/CarrierParty/Contact/Name` = **Transport desk**  
-  The party's main desk, which handles this document; identity of Bayforth Forwarding (world/parties.json).
+  The party's main desk, which handles this document; as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/Contact/JobTitle` = **Transport planner**  
-  The job of the person who answers at the desk; identity of Bayforth Forwarding (world/parties.json).
+  The job of the person who answers at the desk; as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/Contact/Department` = **Transport**  
-  The department the desk belongs to; identity of Bayforth Forwarding (world/parties.json).
+  The department the desk belongs to; as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/Contact/Telephone` = **+999 2 38 5155 2404**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Bayforth Forwarding (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/Contact/ElectronicMail` = **transport@bayforth.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Bayforth Forwarding (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Bayforth Forwarding gives it.
 - `Consignment/CarrierParty/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Bayforth Forwarding (world/parties.json).
+  When the desk can be reached; as Bayforth Forwarding gives it.
 - `ShipmentStage/ID` = **1**  
   The one stage: the truck from the distribution centre to the store.
 - `ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -235,9 +235,9 @@ Inside `Shipment`:
 - `ShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
   The same, in words.
 - `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **395** (listID `UNECE Recommendation 28`)  
-  The kind of means of transport: truck with curtain-side trailer; the fleet of Bayforth Forwarding (world/parties.json). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 395 = Truck, with trailer.
+  The kind of means of transport: truck with curtain-side trailer; the fleet of Bayforth Forwarding. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 395 = Truck, with trailer.
 - `ShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **BV LP 2203** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
-  The registration plate of the truck; the fleet of Bayforth Forwarding (world/parties.json). The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
+  The registration plate of the truck; the fleet of Bayforth Forwarding. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `ShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV TR 0817** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
   The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
 - `ShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **LOADINGLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
@@ -261,7 +261,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TraceID` = **095206100003729019**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-1**  
-  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
+  The pallet's line: the benches on it, as part {k} of despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -295,7 +295,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -321,7 +321,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -347,7 +347,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
-  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122217** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
 - `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
@@ -355,7 +355,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
-  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729026** (schemeID `GS1 SSCC`)  
@@ -369,7 +369,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TraceID` = **095206100003729026**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-2**  
-  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
+  The pallet's line: the benches on it, as part {k} of despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -403,7 +403,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -429,7 +429,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -455,7 +455,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
-  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122234** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
 - `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
@@ -463,7 +463,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
-  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729033** (schemeID `GS1 SSCC`)  
@@ -477,7 +477,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TraceID` = **095206100003729033**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-3**  
-  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
+  The pallet's line: the benches on it, as part {k} of despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -511,7 +511,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -537,7 +537,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -563,7 +563,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
-  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122251** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
 - `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
@@ -571,7 +571,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
-  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729040** (schemeID `GS1 SSCC`)  
@@ -585,7 +585,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TraceID` = **095206100003729040**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-4**  
-  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
+  The pallet's line: the benches on it, as part {k} of despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -619,7 +619,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -645,7 +645,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -671,7 +671,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
-  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122268** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
 - `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
@@ -679,7 +679,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
-  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729057** (schemeID `GS1 SSCC`)  
@@ -693,7 +693,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TraceID` = **095206100003729057**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-5**  
-  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
+  The pallet's line: the benches on it, as part {k} of despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -727,7 +727,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -753,7 +753,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -779,7 +779,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
-  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122285** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
 - `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
@@ -787,7 +787,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
-  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
 - `TransportHandlingUnit/ID` = **095206100003729064** (schemeID `GS1 SSCC`)  
@@ -801,7 +801,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TraceID` = **095206100003729064**  
   The pallet's barcode, scanned at each handover: it carries the same number.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/ID` = **1-6**  
-  The pallet's line: the benches on it, as part {k} of despatch line 1 (retail/12#F9).
+  The pallet's line: the benches on it, as part {k} of despatch line 1.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/DeliveredQuantity` = **4** (unitCode `EA`)  
   Four benches on the pallet.
 - `TransportHandlingUnit/HandlingUnitDespatchLine/OrderLineReference/LineID` = **1**  
@@ -835,7 +835,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **12.2** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -861,7 +861,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **13** (unitCode `KGM`)  
-  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule, D20).
+  Within the 25 kg one person may lift (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/ActualPackage/ReturnableMaterialIndicator` = **false**  
   The parcel's packaging stays with the goods.
 - `TransportHandlingUnit/ActualPackage/PackageLevelCode` = **1** (listID `UN/EDIFACT EDED 7075`)  
@@ -887,7 +887,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/AttributeID` = **GROSSWEIGHT** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   The parcel's weight. The code is from the Trade Accord's dimension attribute list: GROSSWEIGHT = Gross weight. An identifier that holds a code names the code's list in its schemeID.
 - `TransportHandlingUnit/ActualPackage/MeasurementDimension/Measure` = **21.8** (unitCode `KGM`)  
-  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule, D20).
+  Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule).
 - `TransportHandlingUnit/TransportEquipment/ID` = **095206100000122302** (schemeID `GS1 GRAI`)  
   The pallet's Global Returnable Asset Identifier (GRAI): Lumeway Distribution's pallets belong to its own pool and go back after each delivery, so each carries a GRAI, under its GS1 company prefix (952, reserved for examples): asset type 00001, its returnable pallet, the check digit and the pallet's serial number.
 - `TransportHandlingUnit/TransportEquipment/ReturnabilityIndicator` = **true**  
@@ -895,7 +895,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/Description` = **Returnable pallet of the distributor's pool, 1850 x 700 mm**  
   The pallet the parcels are loaded on: transport equipment in UN/CEFACT's sense, which counts pallets with containers and trailers.
 - `TransportHandlingUnit/ShipmentDocumentReference/ID` = **BF-WB-26-0231**  
-  The carrier's consignment note the pallet travels under, issued when the truck was loaded (retail/12#F11, D34).
+  The carrier's consignment note the pallet travels under, issued when the truck was loaded.
 - `TransportHandlingUnit/ShipmentDocumentReference/DocumentType` = **Consignment note**  
   What the document is.
 
@@ -912,13 +912,13 @@ Inside `DespatchLine`:
 - `OrderLineReference/LineID` = **1**  
   The order line this line fulfils.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
-  The seller's description; item bench-serra-b of Lumeway Distribution (world/items.json).
+  The seller's description.
 - `Item/Name` = **Park bench Serra 180**  
-  The item's short name; item bench-serra-b of Lumeway Distribution (world/items.json).
+  The item's short name.
 - `Item/BuyersItemIdentification/ID` = **BM-551210**  
-  The buyer's own item number: it resells this item as its item bench-serra-r.
+  The buyer's own item number: it resells this item under its own number.
 - `Item/SellersItemIdentification/ID` = **LD-10442**  
-  The seller's own item number; item bench-serra-b of Lumeway Distribution (world/items.json).
+  The seller's own item number; as Lumeway Distribution describes the item.
 - `Item/SellersItemIdentification/ExtendedID` = **GRY**  
   The variant of the item: the frame colour, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **COLOUR** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
@@ -930,11 +930,11 @@ Inside `DespatchLine`:
 - `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Frame in Ferro grey**  
   The variant in words.
 - `Item/ManufacturersItemIdentification/ID` = **VI-B180**  
-  The item number of the maker, Valdara Industries: the reseller's item is resale of item bench-serra.
+  The item number of the maker, Valdara Industries: the reseller sells the maker's item on.
 - `Item/StandardItemIdentification/ID` = **9520610000012** (schemeID `GS1 GTIN`)  
-  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none (world/items.json).
+  The GTIN Lumeway Distribution gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the maker numbers its items in another scheme, and GS1 lets a wholesaler or importer allocate the GTIN where the brand owner has none.
 - `Item/AdditionalItemIdentification/ID` = **KXU10014B180** (schemeID `ISO 15459-6`)  
-  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; item bench-serra of Valdara Industries (world/items.json).
+  The maker's number for the item in its globally unique form under ISO/IEC 15459 (KXU and the company number Codana gave Valdara Industries), which travels along with the GTIN, as an importer may carry it; as Valdara Industries describes the item.
 - `Item/ItemInstance/ManufactureDate` = **2026-03-20**  
   The day the lot was produced.
 - `Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260320**  
@@ -942,7 +942,7 @@ Inside `DespatchLine`:
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Name` = **Coating batch**  
   A fact about this lot: the galvanising and powder-coating batch its frames went through.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-057**  
-  Its batch: each lot has its own, in the coating line's running count of the year (the production record, world/items.json goods_chain, D21).
+  Its batch: each lot has its own, in the coating line's running count of the year (the production record).
 
 ## The document
 

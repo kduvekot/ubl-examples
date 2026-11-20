@@ -11,9 +11,9 @@ Before the harvest the ginnery advances the farm a quarter of the value of its e
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); SelfBilledInvoice/DefaultLanguageCode first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; SelfBilledInvoice/DefaultLanguageCode first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:self-billing:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Self-billing". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Self-billing". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **COTTON-2026-01**  
@@ -25,13 +25,13 @@ Before the harvest the ginnery advances the farm a quarter of the value of its e
 - `IssueDate` = **2026-01-13**  
   Three weeks before the first deliveries, when the farm needs cash for the picking.
 - `IssueTime` = **09:45:00+00:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `DueDate` = **2026-01-13**  
   An advance is paid on the day it is billed, not on the island's usual 45 days.
 - `InvoiceTypeCode` = **386** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 386, prepayment invoice: "An invoice to pay amounts for goods and services in advance; these amounts will be subtracted from the final invoice." A subtype the root SelfBilledInvoice does not say by itself (decision P-SB). The code is from the world's copy of UN/EDIFACT 1001 Document name: 386 = Prepayment invoice.
 - `Note` = **Lakau-votee sinekeli tilala kimii mitavema: takane mafute letini lesama kasefa lakau-votee tohala mutaki kimii.** (languageID `qal`)  
-  The note in Lisavan, the sender's language (world/countries.json): The statement the self-billing agreement requires, and what happens to the advance.
+  The note in Lisavan, the sender's language: The statement the self-billing agreement requires, and what happens to the advance.
 - `Note` = **Self-billed prepayment under the season agreement: the advance is deducted from the first self-billed invoice of the season.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: The statement the self-billing agreement requires, and what happens to the advance.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
@@ -68,39 +68,39 @@ Inside `Signature`:
 Inside `AccountingCustomerParty`:
 
 - `Party/PartyIdentification/ID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
-  The party's preferred identifier: its number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Island companies register; as Selanu Cotton Ginnery gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Selanu Cotton Ginnery**  
-  The trading name; identity of Selanu Cotton Ginnery (world/parties.json).
+  The trading name; as Selanu Cotton Ginnery gives it.
 - `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/ID` = **23618907** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Selanu Cotton Ginnery (world/parties.json).
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `Party/PostalAddress/StreetName` = **Tikesa Luhate Natii** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Selanu Cotton Ginnery (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/StreetName` = **Gin Yard Road** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Selanu Cotton Ginnery (world/parties.json).
+  The street's name in English, the country's other official language; as Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/BuildingNumber` = **42**  
-  Building number of the postal address. identity of Selanu Cotton Ginnery (world/parties.json).
+  Building number of the postal address. as Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/CityName` = **Pakesa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/CityName` = **Bollworth** (languageID `en-XL`)  
-  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Selanu Cotton Ginnery (world/parties.json).
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Selanu Cotton Ginnery gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Cotton Ginnery Ltd**  
-  The name under which the party is registered, with its legal form; identity of Selanu Cotton Ginnery (world/parties.json).
+  The name under which the party is registered, with its legal form; as Selanu Cotton Ginnery gives it.
 - `Party/PartyLegalEntity/CompanyID` = **IC42681** (schemeID `urn:ubl-examples:world:XL:register`)  
-  Number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
+  Number in the Island companies register; as Selanu Cotton Ginnery gives it. The schemeID names the scheme it is from: the Island companies register (IC and 5 digits).
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
   The legal form, as a code of Lisavu's national list: only the listID tells the forms of different countries apart. The code is from Lisavu's national company legal form list: LTD = Island limited company.
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Tivufo kilika humaki** (languageID `qal`)  
@@ -108,13 +108,13 @@ Inside `AccountingCustomerParty`:
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Island limited company** (languageID `en-XL`)  
   The name of code LTD in Lisavu's national company legal form list. In English.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Pakesa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it (world/map.json). The registered office, as entered in the register.
+  The place's Lisavan name, as the map gives it. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Bollworth** (languageID `en-XL`)  
   The place's English name, which its English settlers gave it, official beside the Lisavan one. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:ICR**  
-  The identifier of the register in the world (world/countries.json).
+  The identifier of the register in the world.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Island companies register**  
   The register the company is entered in.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **COMMERCIAL** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
@@ -122,68 +122,68 @@ Inside `AccountingCustomerParty`:
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Accounts payable**  
-  The party's accounts payable desk: the desk for its role in this document (it pays); identity of Selanu Cotton Ginnery (world/parties.json).
+  The party's accounts payable desk: the desk for its role in this document (it pays); as Selanu Cotton Ginnery gives it.
 - `Party/Contact/JobTitle` = **Accounts payable clerk**  
-  The job of the person who answers at the desk; identity of Selanu Cotton Ginnery (world/parties.json).
+  The job of the person who answers at the desk; as Selanu Cotton Ginnery gives it.
 - `Party/Contact/Department` = **Finance**  
-  The department the desk belongs to; identity of Selanu Cotton Ginnery (world/parties.json).
+  The department the desk belongs to; as Selanu Cotton Ginnery gives it.
 - `Party/Contact/Telephone` = **+999 3 721 0486**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Selanu Cotton Ginnery (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Selanu Cotton Ginnery gives it.
 - `Party/Contact/ElectronicMail` = **payables@selanuginnery.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Selanu Cotton Ginnery (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Cotton Ginnery gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Selanu Cotton Ginnery (world/parties.json).
+  When the desk can be reached; as Selanu Cotton Ginnery gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:IC42681** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Island companies register; identity of Selanu Cotton Ginnery (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Island companies register; as Selanu Cotton Ginnery gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Accounting Supplier Party
 
 Inside `AccountingSupplierParty`:
 
 - `Party/PartyIdentification/ID` = **LFR-0412** (schemeID `urn:ubl-examples:world:XL:farm-register`)  
-  The party's preferred identifier: its number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Farm register of Lisavu; as Lisavu Cotton Farm gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
-  The trading name; identity of Lisavu Cotton Farm (world/parties.json).
+  The trading name; as Lisavu Cotton Farm gives it.
 - `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented (world/countries.json). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: Lisavuana.
 - `Party/PostalAddress/ID` = **85779006** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
-  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); identity of Lisavu Cotton Farm (world/parties.json).
+  The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `Party/PostalAddress/StreetName` = **Sifatofu Natii** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Lisavu Cotton Farm (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/StreetName` = **Plantation Road** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Lisavu Cotton Farm (world/parties.json).
+  The street's name in English, the country's other official language; as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/Description` = **Farm track off Plantation Road at kilometre 4, past the cotton fields.**  
-  How to find the farm, which has no house number on a street. identity of Lisavu Cotton Farm (world/parties.json).
+  How to find the farm, which has no house number on a street. as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/CityName` = **Kefalasa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it (world/map.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
+  The place's Lisavan name, as the map gives it. The town or locality nearest to the party's place on the map, in its own country and state. as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/CityName` = **Lintwell** (languageID `en-XL`)  
-  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. identity of Lisavu Cotton Farm (world/parties.json).
+  The place's English name, which its English settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/District` = **North coast**  
-  The district of the island, used to find a farm off the main roads. identity of Lisavu Cotton Farm (world/parties.json).
+  The district of the island, used to find a farm off the main roads. as Lisavu Cotton Farm gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
-  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/PostalAddress/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PostalAddress/LocationCoordinate/LatitudeDegreesMeasure` = **32** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map.
 - `Party/PostalAddress/LocationCoordinate/LatitudeMinutesMeasure` = **44.86** (unitCode `D61`)  
   The minutes of the latitude.
 - `Party/PostalAddress/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Party/PostalAddress/LocationCoordinate/LongitudeDegreesMeasure` = **2** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map.
 - `Party/PostalAddress/LocationCoordinate/LongitudeMinutesMeasure` = **16.51** (unitCode `D61`)  
   The minutes of the longitude.
 - `Party/PostalAddress/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
@@ -193,21 +193,21 @@ Inside `AccountingSupplierParty`:
 - `Party/PhysicalLocation/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
   The World Geodetic System 1984, as used by satellite navigation. The code is from the world's copy of EPSG Geodetic Parameter Dataset (coordinate reference systems): 4326 = WGS 84.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDegreesMeasure` = **32** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeMinutesMeasure` = **44.86** (unitCode `D61`)  
   The minutes of the latitude.
 - `Party/PhysicalLocation/LocationCoordinate/LatitudeDirectionCode` = **South** (listID `urn:oasis:names:specification:ubl:codelist:gc:LatitudeDirectionCode`)  
   South of the equator. The code is from the world's copy of UBL's Latitude direction list, with a listID: South.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDegreesMeasure` = **2** (unitCode `DD`)  
-  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map (world/countries.json).
+  Computed from the place on the map; the world lies in an empty part of the South Atlantic, so the point is open sea on a real map.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeMinutesMeasure` = **16.51** (unitCode `D61`)  
   The minutes of the longitude.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
 - `Party/PartyLegalEntity/RegistrationName` = **Lisavu Cotton Farm**  
-  The name under which the party is registered, with its legal form; identity of Lisavu Cotton Farm (world/parties.json).
+  The name under which the party is registered, with its legal form; as Lisavu Cotton Farm gives it.
 - `Party/PartyLegalEntity/CompanyID` = **LFR-0412** (schemeID `urn:ubl-examples:world:XL:farm-register`)  
-  Number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). The schemeID names the scheme it is from: the farm register of Lisavu (LFR- and 4 digits, kept from season to season while the registration is renewed).
+  Number in the Farm register of Lisavu; as Lisavu Cotton Farm gives it. The schemeID names the scheme it is from: the farm register of Lisavu (LFR- and 4 digits, kept from season to season while the registration is renewed).
 - `Party/PartyLegalEntity/RegistrationExpirationDate` = **2026-12-31**  
   The island renews a farm's registration every year: it runs until this date.
 - `Party/PartyLegalEntity/CompanyLegalFormCode` = **SP** (listID `urn:ubl-examples:world:XL:codelist:CompanyLegalFormCode`)  
@@ -217,37 +217,37 @@ Inside `AccountingSupplierParty`:
 - `Party/PartyLegalEntity/CompanyLegalForm` = **Sole proprietorship** (languageID `en-XL`)  
   The name of code SP in Lisavu's national company legal form list. In English.
 - `Party/PartyLegalEntity/SoleProprietorshipIndicator` = **true**  
-  The farm belongs to one farmer, who runs it in their own name; identity of Lisavu Cotton Farm (world/parties.json).
+  The farm belongs to one farmer, who runs it in their own name; as Lisavu Cotton Farm gives it.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Kefalasa** (languageID `qal`)  
-  The place's Lisavan name, as the map gives it (world/map.json). The registered office, as entered in the register.
+  The place's Lisavan name, as the map gives it. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lintwell** (languageID `en-XL`)  
   The place's English name, which its English settlers gave it, official beside the Lisavan one. The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country of registration. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/ID` = **XL:FR**  
-  The identifier of the register in the world (world/countries.json).
+  The identifier of the register in the world.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/Name` = **Farm register of Lisavu**  
-  The register the farm is entered in, kept by the Department of Agriculture of Lisavu: Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date (D4, D46). The register gives a grower a number of its own, derived from no other register (O142).
+  The register the farm is entered in, kept by the Department of Agriculture of Lisavu: Growers are entered in the island's farm register, not in the companies register; a grower's registration is renewed each season, so the entry carries an expiry date. The register gives a grower a number of its own, derived from no other register.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/CorporateRegistrationTypeCode` = **FARM** (listID `urn:ubl-examples:world:codelist:CorporateRegistrationTypeCode`)  
   A register of farms, not the companies register. The code is from the Trade Accord's corporate registration type list: FARM = Register of farms.
 - `Party/PartyLegalEntity/CorporateRegistrationScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The register covers the whole country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/Contact/Name` = **Farm office**  
-  The party's main desk, which handles this document; identity of Lisavu Cotton Farm (world/parties.json).
+  The party's main desk, which handles this document; as Lisavu Cotton Farm gives it.
 - `Party/Contact/JobTitle` = **Farm manager**  
-  The job of the person who answers at the desk; identity of Lisavu Cotton Farm (world/parties.json).
+  The job of the person who answers at the desk; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Department` = **Management**  
-  The department the desk belongs to; identity of Lisavu Cotton Farm (world/parties.json).
+  The department the desk belongs to; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Telephone` = **+999 3 724 6676**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. identity of Lisavu Cotton Farm (world/parties.json).
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. as Lisavu Cotton Farm gives it.
 - `Party/Contact/ElectronicMail` = **farm@lisavufarm.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Lisavu Cotton Farm (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
-  When the desk can be reached; identity of Lisavu Cotton Farm (world/parties.json).
+  When the desk can be reached; as Lisavu Cotton Farm gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XL:LFR-0412** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Farm register of Lisavu; identity of Lisavu Cotton Farm (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Farm register of Lisavu; as Lisavu Cotton Farm gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Buyer Customer Party
 
@@ -287,9 +287,9 @@ Inside `PaymentMeans`:
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
 - `PaymentDueDate` = **2026-01-13**  
-  Paid on issue, as the season agreement says for the advance: the contract's term, not the island's 45 days (D22).
+  Paid on issue, as the season agreement says for the advance: the contract's term, not the island's 45 days.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
-  How the payment system clears and settles the transfer, as an ISO 20022 clearing channel (world/countries.json). The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
+  How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
 - `PaymentRailID` = **CORAL-NET**  
   The payment system the transfer runs over: the domestic clearing.
 - `InstructionNote` = **Quote RF61SCGSBI260191**  
@@ -313,29 +313,29 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Name` = **Market branch**  
   The branch's name.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/ID` = **BSELXLSL** (schemeID `urn:ubl-examples:world:bank-identifier`)  
-  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BSEL, the country XL and the location SL; identity of Bank of Selanu (world/parties.json).
+  The bank's identifier in the Trade Accord's payment link, in the structure of ISO 9362 (a BIC) with the world's country codes: the bank code BSEL, the country XL and the location SL; as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Name` = **Bank of Selanu**  
-  The bank; identity of Bank of Selanu (world/parties.json).
+  The bank; as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/AddressFormatCode` = **XL** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Lisavu's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
+  The address follows Lisavu's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; Description; District; CityName. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XL = Address format of Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Kavama Timeku** (languageID `qal`)  
-  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages (world/countries.json); identity of Bank of Selanu (world/parties.json).
+  The street's name in Lisavan: Lisavu is officially bilingual, and street names are given in both languages ; as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/StreetName` = **Reef Street** (languageID `en-XL`)  
-  The street's name in English, the country's other official language; identity of Bank of Selanu (world/parties.json).
+  The street's name in English, the country's other official language; as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/BuildingNumber` = **23**  
-  Building number of the postal address. identity of Bank of Selanu (world/parties.json).
+  Building number of the postal address. as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Selanu** (languageID `qal`)  
-  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Selanu (world/parties.json).
+  The town's Lisavan name, its name on the island. The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town or locality nearest to the party's place on the map, in its own country and state. identity of Bank of Selanu (world/parties.json).
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. as Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu** (languageID `qal`)  
   The town's Lisavan name, its name on the island. The town the branch is in.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
-  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one (world/countries.json). The town the branch is in.
+  The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town the branch is in.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayeeFinancialAccount/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
@@ -357,7 +357,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxExclusiveAmount` = **1485.000** (currencyID `XLC`)  
   The total without tax: the line amounts, no allowances or charges.
 - `TaxInclusiveAmount` = **1485.000** (currencyID `XLC`)  
-  The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section (D15).
+  The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section.
 - `PayableAmount` = **1485.000** (currencyID `XLC`)  
   What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
 
@@ -372,17 +372,17 @@ Inside `InvoiceLine`:
 - `LineExtensionAmount` = **1485.000** (currencyID `XLC`)  
   Quantity times price, rounded to the minor unit.
 - `Item/Description` = **Tekapa tanema tiloluti, hivile nipupe, tasepaha pisosi ninote vaputa.** (languageID `qal`)  
-  The seller's description in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+  The seller's description in Lisavan, the seller's language.
 - `Item/Description` = **Cotton as harvested, not ginned, delivered loose by trailer.** (languageID `en-XL`)  
-  The seller's description in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+  The seller's description in English, the working language between the countries.
 - `Item/Name` = **Votike tekapa** (languageID `qal`)  
-  The item's name in Lisavan, the seller's language; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+  The item's name in Lisavan, the seller's language.
 - `Item/Name` = **Seed cotton** (languageID `en-XL`)  
-  The item's name in English, the working language between the countries; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+  The item's name in English, the working language between the countries.
 - `Item/SellersItemIdentification/ID` = **LCF-SC**  
-  The seller's own item number; item seed-cotton of Lisavu Cotton Farm (world/items.json).
+  The seller's own item number; as Lisavu Cotton Farm describes the item.
 - `Price/PriceAmount` = **0.33** (currencyID `XLC`)  
-  The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram (D33 point 4, O116).
+  The season agreement's price of seed cotton, from the trade accord's lint reference price of 2.47 lume (0.988 coral) a kilogram of Middling lint: the lint price times the ginning yield of 34 % (0.336), plus the value of the cottonseed (about 0.58 kg at 0.060 coral, 0.035), less the ginning charge (0.040), about 0.33 coral a kilogram.
 - `Price/BaseQuantity` = **1** (unitCode `KGM`)  
   The price is per one unit.
 

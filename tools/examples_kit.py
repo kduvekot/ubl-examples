@@ -94,7 +94,7 @@ def tax_rule(seller, buyer, iid):
     if s["c"] == "XU":
         if it.get("export_carriage"):       # the carriage of exported goods (D41)
             return ("E", 0, scheme, "The carriage of goods directly linked to their export from Urvania is exempt "
-                                    "from its value added tax, as in most VAT systems (category E, D41).",
+                                    "from its value added tax, as in most VAT systems (category E).",  # D41
                     "Transport of goods exported from Urvania")
         if b["c"] == "XU":
             return ("S",c["tax"]["schemes"][0]["rates"]["standard"], scheme,
@@ -125,7 +125,7 @@ def tax_rule(seller, buyer, iid):
             return ("S", scheme["rates_by_state"][state], scheme,
                     "Goods a business uses up or keeps, such as the fuel it burns, are not bought for resale or "
                     "manufacture: they do not become part of what it sells, so Bayvarra's retail sales tax applies to "
-                    f"their sale, at the rate of {state}, where the goods are delivered (category S, O204).", None)
+                    f"their sale, at the rate of {state}, where the goods are delivered (category S).", None)  # O204
         if it.get("free_with"):         # given with goods for resale, and handed on with them (furniture/09#F3)
             return ("E", 0, scheme, f"Supplied free with goods for resale: the {it['name']} goes with each "
                                     f"{free_with_name(it).split()[-1].lower()}, and the buyer hands it on "
@@ -210,7 +210,7 @@ def due_moved(flow, day, payee):
     hol = country.get("holidays", {}).get(str(d0.year), {}).get(d0.isoformat())
     return (f" The count ends on {d0:%A} {d0.day} {d0:%B}" + (f", {hol}" if hol else "") +
             f", no business day in {country['name']}, the payee's country, so the payment is due on the next "
-            f"one, {d1:%A} {d1.day} {d1:%B} (O180).")
+            f"one, {d1:%A} {d1.day} {d1:%B}.")  # O180
 
 
 def due_date(flow, day, payee, why):
@@ -243,7 +243,7 @@ def _terms_of(flow, seller, day, kind=None):
         text, days = PLAN_PAYMENT
         start = flow.numbers[f"waybill-day-{seller}"]
         return {"id": None, "text": text, "why": "The payment term of the transport plan this freight is carried "
-                "under: the contract wins over the carrier's standard terms (D22).", "start": start,
+                "under: the contract wins over the carrier's standard terms.", "start": start,  # D22
                 "start_why": "From the consignment note's date.", "due": start + days, "discount": None,
                 "surcharge": None, "interest": pay.get("statutory_interest")}
     if kind == "utility":
@@ -280,11 +280,11 @@ def payment_terms(flow, seller, buyer, t, total, cur, number):
                                                                                   "late.")
         out["PenaltyPeriod"] = {"StartDate": V(flow.date(t["due"] + 1), "From the day after the due date, with "
                                                "no end: the surcharge runs per month for as long as the amount is "
-                                               "late (worklist C38).")}
+                                               "late.")}  # C38
     if t["interest"]:
         pi = t["interest"]
         out["PenaltyInterestRate"] = {"InterestRatePercent": V(pi["percent"], "The interest on late payment" + (
-                                          ": the statutory rate, as the terms say nothing on late payment (D22)."
+                                          ": the statutory rate, as the terms say nothing on late payment."  # D22
                                           if t["id"] != f"{PARTY[seller]['c']}-STD" or not WORLD["countries"][
                                               PARTY[seller]["c"]]["payment"].get("penalty_interest") else ".")),
                                       "TimeBasisCode": V(pi["basis"], "A yearly rate."),
@@ -319,7 +319,7 @@ def payment_means(flow, seller, buyer, payee, day, due_days, number, why_account
            "PaymentDueDate": V(flow.date(due_day(flow, day + due_days, payee)), "When the transfer must be "
                                "credited." + due_moved(flow, day + due_days, payee)),
            "PaymentChannelCode": V(clearing_channel(border, seller, acc_country), "How the payment system clears and settles the "
-                                   "transfer, as an ISO 20022 clearing channel (world/countries.json)."),
+                                   "transfer, as an ISO 20022 clearing channel."),  # world/countries.json
            "PaymentRailID": V(system, "The payment system the transfer runs over: "
                               + ("the trade accord's link between the countries." if border else
                                  "the domestic clearing.")),
@@ -467,8 +467,8 @@ def order(flow, n, doc, day, why_date, terms_why, location, extra=None, deal=Non
             "LineExtensionAmount": amount(base, cur, "The sum of the line amounts."),
             "PayableAmount": amount(base + tax, cur, "What the buyer expects to pay, tax included.")},
         "OrderLine": [{"LineItem": {
-            "ID": V(d.get("line", str(i)), "The line number: a line added by a change keeps a number of its own "
-                                           "(worklist C34)."),
+            "ID": V(d.get("line", str(i)), "The line number: a line added by a change keeps a number of its own"
+                                           "."),  # C34
             "Quantity": qty(q, ITEM[d["item"]]["unit"], d.get("why", "The quantity ordered.")),
             "LineExtensionAmount": amount(amt, cur, "Quantity times price, rounded to the minor unit."),
             "Price": deal_price_block(d, cur, buyer),
@@ -503,15 +503,15 @@ def price_block(iid, currency=None, buyer=None):
                     "TargetCurrencyCode": V(currency, "The currency of the order."),
                     "SourceCurrencyBaseRate": V("1", "The rate is for one unit of the seller's currency."),
                     "TargetCurrencyBaseRate": V("1", "Given in single units of the order's currency."),
-                    "CalculationRate": V(f"{r.normalize():f}", "The world's reference rate (world/countries.json)."),
+                    "CalculationRate": V(f"{r.normalize():f}", "The world's reference rate."),  # world/countries.json
                     "MathematicOperatorCode": V("Multiply", "The seller's price times the rate gives the order price."),
                     "Date": V("2026-01-02", "The reference rate of the first working day of the year, fixed in the "
                                             "contract.")}}
     out = {"PriceAmount": price(pr["amount"], pr["currency"],
-                                f"No price: the item comes free with each {free_with_name(it)} "
-                                "(world/items.json)." if it.get("free_with") else
+                                f"No price: the item comes free with each {free_with_name(it)}"
+                                "." if it.get("free_with") else  # world/items.json
                                 pr["why"] if pr.get("why") else
-                                "The seller's price per unit (world/items.json)."),
+                                "The seller's price per unit."),  # world/items.json
            "BaseQuantity": qty(1, it["unit"], "The price is per one unit.")}
     return out
 
@@ -543,8 +543,8 @@ def chain_despatch(flow, sender, iid):
             raise SystemExit(f"{flow.id}: the goods chain ships {iid} on several days")
         return dates.pop(), lines
     if any(p["item"] == it["id"] for p in CHAIN.get("production", [])):
-        raise SystemExit(f"{flow.id}: {sender} despatches {iid}, but the goods chain (world/items.json) has no "
-                         "entry for it (D21, O65)")
+        raise SystemExit(f"{flow.id}: {sender} despatches {iid}, but the goods chain has no "  # world/items.json
+                         "entry for it")  # D21, O65
     return None
 
 
@@ -576,7 +576,7 @@ def produced(line):
                                           p.get("serials") and p["serials"][0] <= line["serials"][0]
                                           and line["serials"][1] <= p["serials"][1]):
             return p
-    raise SystemExit(f"goods chain: {line} is in no production record entry (D21, O65)")
+    raise SystemExit(f"goods chain: {line} is in no production record entry")  # D21, O65
 
 
 def instances(flow, d, which, day, sender=None):
@@ -591,7 +591,7 @@ def instances(flow, d, which, day, sender=None):
         date, lines = chain
         if flow.date(day) < date:        # a replacement despatch advice may follow the despatch it replaces
             raise SystemExit(f"{flow.id}: the despatch of {d['item']} is on {flow.date(day)}, before the goods chain "
-                             f"(world/items.json) lets it leave, on {date} (O65)")
+                             f" lets it leave, on {date}")  # world/items.json, O65
         q = int(Decimal(str(d[which])))
         same = [x for x in flow.deal if x["item"] == d["item"]]
         moved = sum(ln.get("qty") or ln["serials"][1] - ln["serials"][0] + 1 for ln in lines)
@@ -639,7 +639,7 @@ def lot_instance(it, lot, made, p=None):
             "Name": V("Coating batch", "A fact about this lot: the galvanising and powder-coating batch its frames "
                                        "went through."),
             "Value": V(p["coating"], "Its batch: each lot has its own, in the coating line's running count of the year "
-                                     "(the production record, world/items.json goods_chain, D21).")}
+                                     "(the production record).")}  # world/items.json goods_chain, D21
     if it.get("lot_props"):
         x["LotIdentification"]["AdditionalItemProperty"] = [{"Name": V(n_, "A fact about this lot."),
                                                              "Value": V(v, "Its value for this lot.")}
@@ -668,8 +668,8 @@ def casting_instance(it, s_, p):
         x["AdditionalItemProperty"] = {"Name": V("Melt number", "A fact about this one casting: the melt of iron it "
                                                                "was poured from."),
                                        "Value": V(p["melt"], "Its melt: one per casting day, in the foundry's running "
-                                                             "count of the year (the production record, "
-                                                             "world/items.json goods_chain, D21).")}
+                                                             "count of the year (the production record"
+                                                             ").")}  # D21; world/items.json goods_chain
     return x
 
 
@@ -701,7 +701,7 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
                       "in your receipt advice." if any(d["flow"] == flow.id and d["doc"] == "ReceiptAdvice"
                                                        for d in WORLD["documents"])
                       else f"on the {transport_document_name(flow)}."),
-                  "What the receiver should do; the note names the transport document the flow uses (worklist C30)."),
+                  "What the receiver should do; the note names the transport document the flow uses."),  # C30
         "LineCountNumeric": V(str(len(deal)), "The number of lines."),
         "OrderReference": {"ID": V(flow.numbers[key], "The order this despatch fulfils.")},
         "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The despatching party's shipment number."),
@@ -1016,11 +1016,11 @@ def tep_terms(flow, user, provider, days):
             "ChangeConditions": V("Changes up to 24 hours before collection without charge.", "When the plan may "
                                                                                               "change."),
             "PaymentTerms": {"Note": V(PLAN_PAYMENT[0], "When the freight is paid: the term the carrier's "
-                                                        "invoices under this plan apply (D22).")},
+                                                        "invoices under this plan apply.")},  # D22
             "PenaltyPaymentTerms": {"Note": V("For late delivery the carrier is liable for 5 % of the freight per "
                                               "day late, at most 25 %.", "The carrier's liability for delay, in "
                                               "words: PenaltySurchargePercent is a surcharge for late payment, not "
-                                              "for late delivery (worklist C19).")},
+                                              "for late delivery.")},  # C19
             **({"BonusPaymentTerms": {"Note": V(*TEP_BONUS[flow.id])}} if flow.id in TEP_BONUS else {}),
             **({"CommissionPaymentTerms": {"Note": V(*TEP_COMMISSION[flow.id])}} if flow.id in TEP_COMMISSION
                else {}),
@@ -1155,8 +1155,8 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
            "Description": V(leg["why"], "The carriage in words."),
            "Note": V("Three originals: the consignor's, handed over when the carrier took over the goods; the "
                      "consignee's, with the goods; the carrier's, kept by the carrier.", "The originals the convention "
-                     "prescribes, as the distribution below lists them; the carrier's own is not distributed "
-                     "(worklist C33)."),
+                     "prescribes, as the distribution below lists them; the carrier's own is not distributed"
+                     "."),  # C33
            "WaybillTypeCode": V(kind, "The convention the document follows."),
            "ConsolidatedIndicator": V("false", "One consignment, not a consolidation."),
            "OtherInstruction": V("Deliver against signature of the consignee.", "What the carrier must do at "
@@ -1393,7 +1393,7 @@ def with_transport_goods(flow, shipment=None, consignment=None, deal=None):
         unit = {"TNE": " t of", "KGM": " kg of", "MTQ": " m³ of", "MWH": " MWh of"}
         consignment["SummaryDescription"] = V("; ".join(
             f"{g['Quantity'].value}{unit.get(g['Quantity'].attrs.get('unitCode'), ' ×')} {g['Description'].value}"
-            for g in goods), "What is to be carried, in a few words (worklist C21).")
+            for g in goods), "What is to be carried, in a few words.")  # C21
         consignment.setdefault("TotalGoodsItemQuantity", qty(len(goods), "EA", "The number of goods items."))
 
 
@@ -1422,7 +1422,7 @@ def export_declaration(flow, n, doc, day, why, value_why, deal=None):
                                                      "The consignment carried."),
                                              **({"TotalPackagesQuantity": qty(parcel_count(flow, deal), "EA",
                                                                               "The parcels declared, on the pallets "
-                                                                              "counted above (D20).")}
+                                                                              "counted above.")}  # D20
                                                 if pallets(flow, deal) else {})}}}}
 
 
@@ -1443,7 +1443,7 @@ def import_declaration(flow, n, doc, day, why, value_why, refs=None, deal=None):
 
 def transportation_status(flow, n, doc, day, event_why, description, location, extra=None, event_type=None):
     if not event_type:
-        raise SystemExit(f"{flow.id} {n}: a status report says what happened as a code (worklist C18)")
+        raise SystemExit(f"{flow.id} {n}: a status report says what happened as a code")  # C18
     out = {"ID": V(flow.number(f"status-{n}", doc["from"], "TransportationStatus"), "The sender's status report number."),
            "IssueDate": V(flow.date(day), event_why),
            "TransportEvent": {"OccurrenceDate": V(flow.date(day), "The day the event took place."),
@@ -1557,7 +1557,7 @@ def price_type(code, tax_included):
     lst = codelists.load()["lists"]["PriceType"]
     if lst["tax_included"][code] != tax_included:
         raise SystemExit(f"price type {code}: the list says its price {'includes' if lst['tax_included'][code] else 'excludes'}"
-                         f" tax, but the document's price {'includes' if tax_included else 'excludes'} it (O28)")
+                         f" tax, but the document's price {'includes' if tax_included else 'excludes'} it")  # O28
     return code
 
 
@@ -1574,15 +1574,15 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
     p["PriceList"] = {"ID": V(f"{initials(doc['from'])}-PL-{flow.date(day)[:4]}",
                               "The seller's price list this price is taken from."),
                       "StatusCode": V("ORIGINAL", "The first issue of the price list: UBL names original, copy, "
-                                                  "revision or cancellation here, not whether the list is in force "
-                                                  "(worklist C25).")}
+                                                  "revision or cancellation here, not whether the list is in force"
+                                                  ".")}  # C25
     out = {"LeadTimeMeasure": V(it.get("lead_days", 5), "The days between order and despatch.", unitCode="DAY"),
            "MinimumQuantity": qty(it.get("min_order", 1), it["unit"], "The smallest quantity the seller accepts on an "
                                                                        "order."),
            "ApplicableTerritoryAddress": {"Country": {"IdentificationCode": V(PARTY[doc["to"]]["c"], "The market the "
                                                                               "price is offered for: the buyer's "
                                                                               "country, whose sales the tax "
-                                                                              "category below treats (worklist C25).")}},
+                                                                              "category below treats.")}},  # C25
            "Price": p}
     contract = flow.id == "tender"
     kind = price_type("CON" if contract else "TRD", tax_included=False)     # a catalogue price is before tax
@@ -1606,7 +1606,7 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
                           "PackagingTypeCode": V("PX", "UN/ECE Recommendation 21 code PX: pallet.")}
         full_allowance = {"ChargeIndicator": V("false", "A discount."),
                                   "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT "
-                                                                       "5189, as EN 16931 uses it: a discount for the "
+                                                                       "5189: a discount for the "  # EN 16931
                                                                        "full container.",
                                                                  listID="UN/EDIFACT EDED 5189"),
                                   "AllowanceChargeReason": V("Full container", "The discount for a full container."),
@@ -1622,8 +1622,8 @@ def catalogue_terms(flow, doc, day, validity_days, iid, alternative=None):
     if it.get("conditions"):                  # the full-container discount applies only from a full container
         full = {k: v for k, v in out.items() if k not in ("MinimumQuantity", "MaximumQuantity")}
         full["MinimumQuantity"] = qty(FULL_CONTAINER, it["unit"], "A full 40-foot container: 36 pallets of four "
-                                                                  "benches in two layers (D20); a smaller order "
-                                                                  "does not qualify (worklist C25).")
+                                                                  "benches in two layers; a smaller order "  # D20
+                                                                  "does not qualify.")  # C25
         full["AllowanceCharge"] = full_allowance
         return [out, full]
     return out
@@ -1653,8 +1653,8 @@ def purchase_receipt(flow, n, doc, day, why, rows_spec, cash, promotion=None):
         p["PriceChangeReason"] = V(promotion["name"], "Why the price differs from the shelf price.")
         p["AllowanceCharge"] = {
             "ChargeIndicator": V("false", "A discount, not a charge."),
-            "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189, "
-                                                 "as EN 16931 uses it: the promotion is a discount on the price.",
+            "AllowanceChargeReasonCode": V("95", "The reason for the allowance as a code of UN/EDIFACT 5189"
+                                                 ": the promotion is a discount on the price.",  # EN 16931
                                            listID="UN/EDIFACT EDED 5189"),
             "AllowanceChargeReason": V(promotion["name"], "The promotion, as the till prints it."),
             "MultiplierFactorNumeric": V(str(Decimal(str(promotion["percent"])) / 100), "The discount rate."),
@@ -1774,7 +1774,7 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False, p
     train, vessel or aircraft."""
     f, c = fleet(pid, fid), PARTY[pid]["c"]
     name = PARTY[pid]["identity"]["name"]
-    src = f"the fleet of {name} (world/parties.json)"
+    src = f"the fleet of {name}"  # world/parties.json
     out = {}
     if journey:
         out["JourneyID"] = V(journey, why_journey or "The journey: the carrier's number for this trip.")
@@ -1801,7 +1801,7 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False, p
              "VesselName": V(f["name"], f"The vessel's name; {src}."),
              "RadioCallSignID": V(f["call_sign"], f"The radio call sign, in {WORLD['countries'][c]['name']}'s call "
                                                   f"sign series {f['call_sign'][:2]}: no ITU series starts with Q, so "
-                                                  "the sign belongs to no real station (world/countries.json)."),
+                                                  "the sign belongs to no real station."),  # world/countries.json
              "MMSIRegistrationID": V(f["mmsi"], "The Maritime Mobile Service Identity, nine digits: the maritime "
                                                 f"identification digits {f['mmsi'][:3]} of "
                                                 f"{WORLD['countries'][c]['name']}, which the ITU has not allocated to "
@@ -1992,8 +1992,8 @@ def parcel_package(p, k=None):
                                                                                 unitCode="MMT")},
                 {"AttributeID": V("GROSSWEIGHT", "The parcel's weight."),
                  "Measure": V(kg(p["gross_kg"]), ("Within the 25 kg one person may lift (ISO 11228-1, the world's "
-                              "handling rule, D20)." if not two else "Within the limit, but 1.81 m long: two "
-                              "people carry it (ISO 11228-1, the world's handling rule, D20)."), unitCode="KGM")}]}
+                              "handling rule)." if not two else "Within the limit, but 1.81 m long: two "  # D20
+                              "people carry it (ISO 11228-1, the world's handling rule)."), unitCode="KGM")}]}  # D20
 
 
 def carton_package(it, where):
@@ -2059,8 +2059,8 @@ def handling_units(flow, deal, owner, marks, detail=False):
                 "Fork-lift only. May be stacked two high, bench pallet on bench pallet. Unpacked, a frame carton is "
                 "a one-person lift; a slat bundle, 1.81 m long, is carried by two." if bench else
                 "Fork-lift only. Load on top: nothing may be stacked on the cartons. Unpacked, each carton is a "
-                "one-person lift.", "The handling, in words, with the world's rule for manual handling (ISO 11228-1, "
-                                    "D20).")
+                "one-person lift.", "The handling, in words, with the world's rule for manual handling (ISO 11228-1"
+                                    ").")  # D20
             L, W, H = pal["mm"]
             area = (Decimal(L) * Decimal(W) / Decimal(10 ** 6)).quantize(Decimal("0.1"))
             x["MeasurementDimension"] = [
@@ -2122,7 +2122,7 @@ def gln_location(pid, key):
     loc = PARTY[pid]["identity"]["identification"]["locations"][key]
     return {"ID": V(loc["gln"], f"The Global Location Number of the place, {loc['name'].lower()}: "
                                 f"{PARTY[pid]['identity']['name']} identifies its places the GS1 way, under its company "
-                                "prefix (952, reserved for examples); world/parties.json.", schemeID="GS1 GLN")}
+                                "prefix (952, reserved for examples).", schemeID="GS1 GLN")}  # world/parties.json
 
 
 UNIT_SERIALS = {}       # (owner, flow, unit) -> serial in the packer's own running series

@@ -2,7 +2,7 @@
 
 *Example 8 of the flow "Electricity, water and telecom (one utility in each country)" · [Utility Statement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA)*
 
-The household's annual statement for water and district heat, April 2025 to March 2026: the annual readings, the year's water with the city's levy, the heat with its cooling correction, and the new payments on account from April (D31).
+The household's annual statement for water and district heat, April 2025 to March 2026: the annual readings, the year's water with the city's levy, the heat with its cooling correction, and the new payments on account from April.
 
 [The XML file](08-UtilityStatement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -11,9 +11,9 @@ The household's annual statement for water and district heat, April 2025 to Marc
 ### The document itself
 
 - `UBLVersionID` = **2.5**  
-  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5 (world/ubl-versions.json); Party/ElectronicAddress first appears in UBL 2.5.
+  The earliest version of UBL 2 that defines every element of the document, as UBLVersionID asks: computed from the published models of UBL 2.0 to 2.5; Party/ElectronicAddress first appears in UBL 2.5.
 - `CustomizationID` = **urn:ubl-examples:world:trns:utility-statement:1.0**  
-  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement". Each has a public description on the world's pages (world/specifications.json).
+  The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Utility statement". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:utility-billing:1.0**  
   The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow; the run of the process is the ProfileExecutionID.
 - `ProfileExecutionID` = **UTILITIES-2026-01**  
@@ -25,7 +25,7 @@ The household's annual statement for water and district heat, April 2025 to Marc
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
 - `IssueTime` = **15:10:00-01:00**  
-  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC (D27).
+  The time the sender's system issued the document, in the sender's local time; in the issuer's local time, with its offset from UTC.
 - `UtilityStatementTypeCode` = **WATER** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of utility the statement is about. The code is from the Trade Accord's utility type list: WATER = Water.
 - `Note` = **This annual statement explains the year's water and heat behind your settlement bill, and sets the payments on account for the next year.**  
@@ -40,7 +40,7 @@ Inside `ParentDocumentReference`:
 - `ID` = **CSWC-INV-26-0319**  
   The invoice this statement supplements: a utility statement adds the consumption behind the bill.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: CSWC-INV-26-0319 is the example utilities/09, a Invoice; a generic reference names the UBL document type (decision Q29). The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: CSWC-INV-26-0319 is the example utilities/09, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ### Additional Document Reference
 
@@ -69,92 +69,92 @@ Inside `Signature`:
 Inside `SenderParty`:
 
 - `PartyIdentification/ID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
-  The party's preferred identifier: its number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). Later mentions of the same party in this document repeat only this identifier and the name.
+  The party's preferred identifier: its number in the Federal business register of Bayvarra; as Coastal State Water Company gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `PartyName/Name` = **Coastal State Water Company**  
-  The trading name; identity of Coastal State Water Company (world/parties.json).
+  The trading name; as Coastal State Water Company gives it.
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English, the language the party writes in this document. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **English**  
   The language's name.
 - `Language/LocaleCode` = **en-XB** (listID `urn:ubl-examples:world:codelist:LocaleCode`)  
-  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which (decision D1). The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
+  The English the party writes: the variety of Bayvarra, with the country as the region; English is used in all three countries, so its locale says which. The code is from the Trade Accord's locale list: en-XB = Bayvarran English.
 - `PostalAddress/ID` = **LUM-ADR-782593** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Coastal State Water Company (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Coastal State Water Company gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Reservoir Road**  
-  Street of the postal address. identity of Coastal State Water Company (world/parties.json).
+  Street of the postal address. as Coastal State Water Company gives it.
 - `PostalAddress/BuildingNumber` = **51**  
-  Building number of the postal address. identity of Coastal State Water Company (world/parties.json).
+  Building number of the postal address. as Coastal State Water Company gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Coastal State Water Company (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Coastal State Water Company gives it.
 - `PostalAddress/PostalZone` = **38500**  
-  Postal code in Bayvarra's format (5 digits). identity of Coastal State Water Company (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Coastal State Water Company gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Coastal State Water Company (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Coastal State Water Company gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Billing**  
-  The party's billing desk: the desk for its role in this document (it is owed the payment); identity of Coastal State Water Company (world/parties.json).
+  The party's billing desk: the desk for its role in this document (it is owed the payment); as Coastal State Water Company gives it.
 - `Contact/JobTitle` = **Billing officer**  
-  The job of the person who answers at the desk; identity of Coastal State Water Company (world/parties.json).
+  The job of the person who answers at the desk; as Coastal State Water Company gives it.
 - `Contact/Department` = **Customer service**  
-  The department the desk belongs to; identity of Coastal State Water Company (world/parties.json).
+  The department the desk belongs to; as Coastal State Water Company gives it.
 - `Contact/Telephone` = **+999 2 38 9310 7518**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. identity of Coastal State Water Company (world/parties.json).
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. as Coastal State Water Company gives it.
 - `Contact/ElectronicMail` = **billing@coastalwater.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; identity of Coastal State Water Company (world/parties.json).
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Coastal State Water Company gives it.
 - `Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; identity of Coastal State Water Company (world/parties.json).
+  When the desk can be reached; as Coastal State Water Company gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20412192** (schemeID `urn:ubl-examples:world:endpoint`)  
-  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; identity of Coastal State Water Company (world/parties.json). UBL 2.5 carries it here; Party/EndpointID is deprecated.
+  The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Coastal State Water Company gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
 
 ### Receiver Party
 
 Inside `ReceiverParty`:
 
 - `PartyName/Name` = **Robin Ashdale**  
-  The trading name; identity of Robin Ashdale (world/parties.json).
+  The trading name; as Robin Ashdale gives it.
 - `PostalAddress/ID` = **LUM-ADR-934215** (schemeID `urn:ubl-examples:world:XB:lumeport:address-register`)  
-  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); identity of Robin Ashdale (world/parties.json).
+  The address's number in the address register of the City of Lumeport (LUM-ADR- and six digits; the city keeps its own register, which the state register of Coastal State refers to); as Robin Ashdale gives it.
 - `PostalAddress/AddressTypeCode` = **RESIDENTIAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: RESIDENTIAL = Residential address.
 - `PostalAddress/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `PostalAddress/StreetName` = **Gull Lane**  
-  Street of the postal address. identity of Robin Ashdale (world/parties.json).
+  Street of the postal address. as Robin Ashdale gives it.
 - `PostalAddress/BuildingNumber` = **57**  
-  Building number of the postal address. identity of Robin Ashdale (world/parties.json).
+  Building number of the postal address. as Robin Ashdale gives it.
 - `PostalAddress/CitySubdivisionName` = **Riverside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Robin Ashdale (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Robin Ashdale gives it.
 - `PostalAddress/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Robin Ashdale gives it.
 - `PostalAddress/PostalZone` = **38516**  
-  Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Robin Ashdale gives it.
 - `PostalAddress/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `PostalAddress/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Robin Ashdale gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `PostalAddress/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Person/FirstName` = **Robin**  
-  The consumer's first name; identity of Robin Ashdale (world/parties.json).
+  The consumer's first name; as Robin Ashdale gives it.
 - `Person/FamilyName` = **Ashdale**  
-  The consumer's family name; identity of Robin Ashdale (world/parties.json).
+  The consumer's family name; as Robin Ashdale gives it.
 
 ### Subscriber Party
 
@@ -168,7 +168,7 @@ Inside `SubscriberParty`:
 Inside `MainOnAccountPayment`:
 
 - `EstimatedConsumedQuantity` = **170** (unitCode `MTQ`)  
-  The year's estimate of water; the heat's estimate is with its subscription: UBL gives an on-account payment one quantity (O107).
+  The year's estimate of water; the heat's estimate is with its subscription: UBL gives an on-account payment one quantity.
 - `Note` = **The one monthly direct debit for water, levy and heat from April 2026: 91 lume, a twelfth of the year's estimate rounded up to a whole lume; it was 84 lume.**  
   What the household pays from now on.
 - `PaymentTerms/Note` = **Collected by direct debit on the first working day of each month.**  
@@ -197,7 +197,7 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Description` = **Gull Lane 57, Lumeport**  
   Where.
 - `UtilityConsumptionPoint/SubscriberID` = **CSW-CU-097315**  
-  The subscriber's customer number with the utility (D31 point 5).
+  The subscriber's customer number with the utility.
 - `UtilityConsumptionPoint/SubscriberType` = **Household**  
   The name of code HH in the Trade Accord's subscriber type list.
 - `UtilityConsumptionPoint/SubscriberTypeCode` = **HH** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
@@ -207,25 +207,25 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Address/AddressTypeCode` = **RESIDENTIAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: RESIDENTIAL = Residential address.
 - `UtilityConsumptionPoint/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `UtilityConsumptionPoint/Address/StreetName` = **Gull Lane**  
-  Street of the postal address. identity of Robin Ashdale (world/parties.json).
+  Street of the postal address. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/BuildingNumber` = **57**  
-  Building number of the postal address. identity of Robin Ashdale (world/parties.json).
+  Building number of the postal address. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/CitySubdivisionName` = **Riverside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Robin Ashdale (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/PostalZone` = **38516**  
-  Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `UtilityConsumptionPoint/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Robin Ashdale gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `UtilityConsumptionPoint/Address/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `UtilityConsumptionPoint/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **CSW-W-71844**  
@@ -270,8 +270,8 @@ Inside `SubscriberConsumption`:
   Class 1.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQualifier` = **Calibrated 2024**  
   When it was checked.
-- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Permanent flow rate (Q3)**  
-  A rating of the meter: the flow it measures continuously within its accuracy class (utilities/08#F14).
+- `UtilityConsumptionPoint/UtilityMeter/MeterProperty/Name` = **Permanent flow rate**  
+  A rating of the meter: the flow it measures continuously within its accuracy class.
 - `UtilityConsumptionPoint/UtilityMeter/MeterProperty/ValueQuantity` = **2.5** (unitCode `MQH`)  
   Its value.
 - `OnAccountPayment/EstimatedConsumedQuantity` = **170** (unitCode `MTQ`)  
@@ -343,7 +343,7 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/DocumentReference/ID` = **CSW-QUALITY-2026-Q1**  
   The quarterly water quality report.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/DocumentReference/DocumentType` = **Water quality report**  
-  The kind of document referred to, the water company's quarterly water quality report, a document outside the examples, in words: no list has an exact code for it (world/documents.json, cited; decision Q29).
+  The kind of document referred to, the water company's quarterly water quality report, a document outside the examples, in words: no list has an exact code for it (cited).
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **CSW-CP-38516-57-2425**  
   Last year's water report.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Yearly consumption**  
@@ -403,13 +403,13 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ID` = **CW-M3**  
   The supplier's tariff item.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberID` = **CSW-CU-097315**  
-  The subscriber's customer number with the utility (D31 point 5).
+  The subscriber's customer number with the utility.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberType` = **Household**  
   The name of code HH in the Trade Accord's subscriber type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **HH** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
   As a code. The code is from the Trade Accord's subscriber type list: HH = Household.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **Drinking water supply, per cubic metre.**  
-  The tariff in words; world/items.json.
+  The tariff in words.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
   The name of code MET in the Trade Accord's consumption type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
@@ -431,7 +431,7 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Contract/ID` = **CSW-C-311790**  
   The supply contract the tariff belongs to.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **2.35** (currencyID `XBL`)  
-  The tariff (world/items.json).
+  The tariff.
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
   Per unit.
 - `SupplierConsumption/Description` = **The city of Lumeport's sewage levy on the water used, which the water company collects with its bill and pays to the city.**  
@@ -471,7 +471,7 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/ConsumptionLine/UtilityItem/SubscriberTypeCode` = **HH** (listID `urn:ubl-examples:world:codelist:SubscriberTypeCode`)  
   As a code. The code is from the Trade Accord's subscriber type list: HH = Household.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/Description` = **The city's levy for sewage treatment, per cubic metre of water used; collected by the water company for the city.**  
-  The tariff in words; world/items.json.
+  The tariff in words.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionType` = **Metered**  
   The name of code MET in the Trade Accord's consumption type list.
 - `SupplierConsumption/ConsumptionLine/UtilityItem/ConsumptionTypeCode` = **MET** (listID `urn:ubl-examples:world:codelist:ConsumptionTypeCode`)  
@@ -489,7 +489,7 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/ConsumptionLine/UtilityItem/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 - `SupplierConsumption/ConsumptionLine/Price/PriceAmount` = **0.42** (currencyID `XBL`)  
-  The tariff (world/items.json).
+  The tariff.
 - `SupplierConsumption/ConsumptionLine/Price/BaseQuantity` = **1** (unitCode `MTQ`)  
   Per unit.
 - `ConsumptionID` = **CSW-CP-38516-57-H-2526**  
@@ -515,25 +515,25 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Address/AddressTypeCode` = **RESIDENTIAL** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: RESIDENTIAL = Residential address.
 - `UtilityConsumptionPoint/Address/AddressFormatCode` = **XB** (listID `urn:ubl-examples:world:codelist:AddressFormatCode`)  
-  The address follows Bayvarra's address format (world/countries.json), one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
+  The address follows Bayvarra's address format, one line after the other, a line left out when the address has none of its fields: MarkAttention; Department; InhouseMail; Postbox; BuildingName; Floor Room; BuildingNumber StreetName; AdditionalStreetName; BlockName PlotIdentification; CitySubdivisionName; CityName CountrySubentity PostalZone. A line is made of the fields named in it, in that order, separated by a space; a field the address does not have is left out, and a line without any field is left out. A field with two language versions (street and town names in a bilingual country) gives both on the line, the national language first, then ' / ', then English: the building number is written once. Fields that are not on a line (ID, AddressTypeCode, CountrySubentityCode, TimezoneOffset, LocationCoordinate) say something other than where the post goes. The country is the last line of a postal address and is not repeated in the lines. The code is from the Trade Accord's address format list: XB = Address format of Bayvarra.
 - `UtilityConsumptionPoint/Address/StreetName` = **Gull Lane**  
-  Street of the postal address. identity of Robin Ashdale (world/parties.json).
+  Street of the postal address. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/BuildingNumber` = **57**  
-  Building number of the postal address. identity of Robin Ashdale (world/parties.json).
+  Building number of the postal address. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/CitySubdivisionName` = **Riverside**  
-  The quarter of Lumeport the party is in: one of the town's districts on the map (world/map.json). identity of Robin Ashdale (world/parties.json).
+  The quarter of Lumeport the party is in: one of the town's districts on the map. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/CityName` = **Lumeport**  
-  The town or locality nearest to the party's place on the map, in its own country and state. identity of Robin Ashdale (world/parties.json).
+  The town or locality nearest to the party's place on the map, in its own country and state. as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/PostalZone` = **38516**  
-  Postal code in Bayvarra's format (5 digits). identity of Robin Ashdale (world/parties.json).
+  Postal code in Bayvarra's format (5 digits). as Robin Ashdale gives it.
 - `UtilityConsumptionPoint/Address/CountrySubentity` = **Coastal State**  
   The name of code XB-CO in Bayvarra's national state or territory list.
 - `UtilityConsumptionPoint/Address/CountrySubentityCode` = **XB-CO** (listID `urn:ubl-examples:world:XB:codelist:CountrySubentityCode`)  
-  The state or territory as a code of Bayvarra's address scheme (world/countries.json). identity of Robin Ashdale (world/parties.json). The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
+  The state or territory as a code of Bayvarra's address scheme. as Robin Ashdale gives it. The code is from Bayvarra's national state or territory list: XB-CO = Coastal State.
 - `UtilityConsumptionPoint/Address/TimezoneOffset` = **-01:00**  
-  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time (D27, world/countries.json).
+  The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `UtilityConsumptionPoint/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list (world/codelists). The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `UtilityConsumptionPoint/UtilityMeter/MeterNumber` = **CSW-H-71844**  
@@ -609,7 +609,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ResidentOccupantsNumeric` = **2**  
   People living in the flat.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumersEnergyLevelCode` = **LOW** (listID `urn:ubl-examples:world:codelist:ConsumersEnergyLevelCode`)  
-  Below the average heat use of a flat of its size on the network (utilities/08#F4). The code is from the Trade Accord's consumer's energy level list: LOW = Low consumer.
+  Below the average heat use of a flat of its size on the network. The code is from the Trade Accord's consumer's energy level list: LOW = Low consumer.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/ConsumersEnergyLevel` = **Low consumer**  
   The name of code LOW in the Trade Accord's consumer's energy level list.
 - `Consumption/EnergyWaterSupply/ConsumptionReport/Period/StartDate` = **2025-04-01**  
@@ -643,7 +643,7 @@ Inside `SubscriberConsumption`:
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionUnitAmount` = **4.00** (currencyID `XBL`)  
   Per MWh: the rate per degree times the degrees short.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionEnergyQuantity` = **6.6** (unitCode `MWH`)  
-  The year's heat the correction applies to (the district-heating element, D31 point 1).
+  The year's heat the correction applies to (the district-heating element).
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/ConsumptionWaterQuantity` = **183** (unitCode `MTQ`)  
   The network water that passed the flat in the year.
 - `Consumption/EnergyWaterSupply/EnergyWaterConsumptionCorrection/CorrectionAmount` = **26.40** (currencyID `XBL`)  
@@ -828,7 +828,7 @@ Inside `SubscriberConsumption`:
           <cbc:ValueQualifier>Calibrated 2024</cbc:ValueQualifier>
         </cac:MeterProperty>
         <cac:MeterProperty>
-          <cbc:Name>Permanent flow rate (Q3)</cbc:Name>
+          <cbc:Name>Permanent flow rate</cbc:Name>
           <cbc:ValueQuantity unitCode="MQH">2.5</cbc:ValueQuantity>
         </cac:MeterProperty>
       </cac:UtilityMeter>

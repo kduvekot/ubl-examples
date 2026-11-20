@@ -135,7 +135,7 @@
      "number": "XB13BLUM38010005341179",
      "branch": "380100",
      "abroad": true,
-     "why": "A lume account at Bank of Lumeport, which also gave Valdara's tender guarantee: the public works department pays the framework contract in its own currency into a domestic account, and Valdara converts later if it wants, its currency risk covered by its forward contract (O226, O50)."
+     "why": "A lume account at Bank of Lumeport, which also gave Valdara's tender guarantee: the public works department pays the framework contract in its own currency into a domestic account, and Valdara converts later if it wants, its currency risk covered by its forward contract."
     },
     "industry": "3100",
     "website": "https://www.valdara.example",
@@ -254,6 +254,9 @@
      }
     },
     "week": "office"
+   },
+   "_refs": {
+    "identity.account_abroad.why": "O226, O50"
    }
   },
   {
@@ -373,7 +376,7 @@
    ],
    "h": 2,
    "kind": "waste",
-   "what": "Recovers polyethylene from the production waste of several factories, Valdara's among them: it collects the baled film, weighs each load on its weighbridge, reports it to the environment agency and invoices the net tonnes; it sells the granulate it makes, certified for its recycled content (decisions D41, D42).",
+   "what": "Recovers polyethylene from the production waste of several factories, Valdara's among them: it collects the baled film, weighs each load on its weighbridge, reports it to the environment agency and invoices the net tonnes; it sells the granulate it makes, certified for its recycled content.",
    "how": "Waste movements must be announced and tracked before the waste leaves the site. UBL's waste notification and waste movement documents describe the waste, its producer and the facility that recovers or disposes of it, and the same parties then appear on the invoice for the removal service.",
    "identity": {
     "name": "Rinova Recovery",
@@ -478,6 +481,9 @@
      "codana_cin": "13362",
      "codana_registered": "2003-09-22"
     }
+   },
+   "_refs": {
+    "what": "D41, D42"
    }
   },
   {
@@ -492,7 +498,7 @@
    ],
    "h": 2,
    "kind": "depot",
-   "what": "Runs the ore trains from the mine to the factory and the container trains from the Ferrano hub to Lumeway's siding in Marrowdale, on train paths of the rail infrastructure manager; its tractor brings the containers to the hub (decisions D37, D45).",
+   "what": "Runs the ore trains from the mine to the factory and the container trains from the Ferrano hub to Lumeway's siding in Marrowdale, on train paths of the rail infrastructure manager; its tractor brings the containers to the hub.",
    "how": "A rail carrier plans capacity on a fixed timetable. UBL transport documents let its customers request and confirm transport plans and receive status updates per train and wagon, with the same consignment references the forwarder and the receiving terminal use.",
    "identity": {
     "name": "Ferrano Rail Cargo",
@@ -577,7 +583,10 @@
      "plate": "UR 4160 RC",
      "type": "37"
     }
-   ]
+   ],
+   "_refs": {
+    "what": "D37, D45"
+   }
   },
   {
    "id": "13-xu",
@@ -641,7 +650,7 @@
      "register": "waste-carrier",
      "type_code": "WASTECARRIER",
      "type": "Waste carrier registration",
-     "note": "Shown where Trasvia carries waste (D42); its road haulage licence XU-HAUL-2020-0877 (haulage-licence register, valid to 2030-06-30) covers its other carriage and is not shown in a document."
+     "note": "Shown where Trasvia carries waste; its road haulage licence XU-HAUL-2020-0877 (haulage-licence register, valid to 2030-06-30) covers its other carriage and is not shown in a document."
     },
     "haulage_licence": {
      "purpose": "International road haulage",
@@ -686,7 +695,10 @@
      },
      "owner": "13-xu"
     }
-   ]
+   ],
+   "_refs": {
+    "identity.authorization.note": "D42"
+   }
   },
   {
    "id": "15-xu",
@@ -787,7 +799,7 @@
    ],
    "h": 2,
    "kind": "terminal",
-   "what": "The intermodal terminal of Ferrano, on the container line that runs on past the border to Marrowdale: it takes the containers in by road, stacks them and lifts them onto the container trains, and reports to the rail carrier what it has loaded; the tracks and the train paths are the rail infrastructure manager's (decision D37).",
+   "what": "The intermodal terminal of Ferrano, on the container line that runs on past the border to Marrowdale: it takes the containers in by road, stacks them and lifts them onto the container trains, and reports to the rail carrier what it has loaded; the tracks and the train paths are the rail infrastructure manager's.",
    "how": "An intermodal terminal is where rail and road meet. UBL status messages and transport reports let it tell carriers and forwarders when a container arrived, was transferred or left, using the same equipment and consignment identifiers on both sides of the transfer.",
    "size": [
     2,
@@ -831,6 +843,9 @@
      "business": "services"
     },
     "week": "always"
+   },
+   "_refs": {
+    "what": "D37"
    }
   },
   {
@@ -1603,7 +1618,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "An engineering firm founded in 1994 in Saltmere, the east-coast village it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits (a registered architect, Edda Corwin, is on its staff), and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring (D28 point 3, D29 point 2, O97, O222).",
+   "what": "An engineering firm founded in 1994 in Saltmere, the east-coast village it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits (a registered architect, Edda Corwin, is on its staff), and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring.",
    "how": "A subcontractor or a member of a group of tenderers is named with its own role. UBL tenders and qualification documents name each member and its qualifications separately, so the authority can see who contributes what and check each one in the register.",
    "identity": {
     "name": "Saltmere Engineering",
@@ -1678,6 +1693,9 @@
      }
     },
     "week": "office"
+   },
+   "_refs": {
+    "what": "D28 point 3, D29 point 2, O97, O222"
    }
   },
   {
@@ -2460,7 +2478,7 @@
      "CityName": "Lintwell",
      "ID": "78560776"
     },
-    "city_why": "The locality the airport lies in: the airfield is on the plain north of Selanu, within Lintwell, and bears the name of the capital it serves, as airports often do that lie in a neighbouring place (O152).",
+    "city_why": "The locality the airport lies in: the airfield is on the plain north of Selanu, within Lintwell, and bears the name of the capital it serves, as airports often do that lie in a neighbouring place.",
     "industry": "5223",
     "website": "https://www.selanu-cargo.example",
     "language": "en",
@@ -2476,6 +2494,9 @@
      "business": "services"
     },
     "week": "always"
+   },
+   "_refs": {
+    "identity.city_why": "O152"
    }
   },
   {
@@ -3989,7 +4010,7 @@
    ],
    "h": 2,
    "kind": "gasplant",
-   "what": "Produces natural gas from an offshore field off Bayvarra's north coast; treats it at its plant on the shore and sends it by pipeline to the power station and the grid of Urvania. The propane it separates from the field's gas at the plant is sold by road tanker to customers in Bayvarra, among them the peak boilers of Lumeport's district heating (D48).",
+   "what": "Produces natural gas from an offshore field off Bayvarra's north coast; treats it at its plant on the shore and sends it by pipeline to the power station and the grid of Urvania. The propane it separates from the field's gas at the plant is sold by road tanker to customers in Bayvarra, among them the peak boilers of Lumeport's district heating.",
    "how": "Gas is sold by energy, measured at the border, and crosses it by pipeline every day. UBL carries the monthly sale as an Invoice in energy units, the export and import by fixed installation (transport mode 7) in the customs declarations, and a Reminder when the buyer pays late.",
    "fleet": [
     {
@@ -4091,6 +4112,9 @@
      "codana_cin": "19676",
      "codana_registered": "2012-10-08"
     }
+   },
+   "_refs": {
+    "what": "D48"
    }
   },
   {
@@ -4284,7 +4308,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "Urvania's environment agency, the competent authority of its waste law: it issues the permits of waste treatment plants, registers waste carriers, and receives the producers' notifications of their waste streams, which it acknowledges with a waste-stream number, and the facilities' reports of each load received (decision D42).",
+   "what": "Urvania's environment agency, the competent authority of its waste law: it issues the permits of waste treatment plants, registers waste carriers, and receives the producers' notifications of their waste streams, which it acknowledges with a waste-stream number, and the facilities' reports of each load received.",
    "how": "A waste authority must know which waste moves, from whom and to which facility. UBL's waste notification tells it the waste stream before the movements start, and the waste movement reports each load as it is received, so the authority can follow the waste from the producer to its recovery without collecting the figures again.",
    "identity": {
     "name": "Environment Agency of Urvania",
@@ -4310,6 +4334,9 @@
     "industry": "8412",
     "language": "en",
     "week": "office"
+   },
+   "_refs": {
+    "what": "D42"
    }
   },
   {
@@ -4324,7 +4351,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "Urvania's rail infrastructure manager, a public body: it owns and maintains the country's tracks, allocates the train paths and runs the traffic control that dispatches every train on them, from the ore line to the border station. Urvania separated its rail infrastructure from the train operators, as it separated its electricity grid from supply, so Ferrano Rail Cargo runs its trains on paths it is given here (decision D37).",
+   "what": "Urvania's rail infrastructure manager, a public body: it owns and maintains the country's tracks, allocates the train paths and runs the traffic control that dispatches every train on them, from the ore line to the border station. Urvania separated its rail infrastructure from the train operators, as it separated its electricity grid from supply, so Ferrano Rail Cargo runs its trains on paths it is given here.",
    "how": "A transport service provider asks the manager of the network where its train is. UBL's Transport Progress Status Request goes from the carrier to the transportation network manager, and the Transport Progress Status answers with the train's position and its timetable at each point the manager controls, so the carrier can tell its customers when the goods will arrive.",
    "identity": {
     "name": "Rail Infrastructure Agency of Urvania",
@@ -4350,6 +4377,9 @@
     "industry": "5221",
     "language": "en",
     "week": "always"
+   },
+   "_refs": {
+    "what": "D37"
    }
   },
   {
@@ -4364,7 +4394,7 @@
    ],
    "h": 1,
    "kind": "office",
-   "what": "A small industrial design studio in Lumeport, founded in 2019 by two designers. It asked to take part in the design contest for the harbour promenade bench and was excluded at the selection: the certificate of the social security fund showed contributions due and unpaid, above the minor amounts the procurement act tolerates (O102).",
+   "what": "A small industrial design studio in Lumeport, founded in 2019 by two designers. It asked to take part in the design contest for the harbour promenade bench and was excluded at the selection: the certificate of the social security fund showed contributions due and unpaid, above the minor amounts the procurement act tolerates.",
    "how": "A candidate that is excluded is told why. UBL's Tenderer Qualification Response carries the decision on each candidate, with the reason for an exclusion, so the candidate knows where it stands and can appeal.",
    "identity": {
     "name": "Fernhollow Studio",
@@ -4406,6 +4436,9 @@
      "convention": "own"
     },
     "week": "office"
+   },
+   "_refs": {
+    "what": "O102"
    }
   },
   {
@@ -4420,7 +4453,7 @@
    ],
    "h": 1,
    "kind": "depot",
-   "what": "A road tank haulier at Gullhaven, beside the gas plant, licensed to carry dangerous goods in tanks: its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the Coastal State Water Company's peak boilers in Lumeport, and come back empty (D48).",
+   "what": "A road tank haulier at Gullhaven, beside the gas plant, licensed to carry dangerous goods in tanks: its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the Coastal State Water Company's peak boilers in Lumeport, and come back empty.",
    "how": "A tank haulier carries one load at a time. UBL's consignment note carries the dangerous goods as they are loaded in the tank, with the orange plates, the placard, the tunnel restriction and the tank as transport equipment, so that consignor, carrier and consignee read the same data.",
    "identity": {
     "name": "Gullhaven Tank Haulage",
@@ -4513,7 +4546,10 @@
       "family": "Tallis"
      }
     }
-   ]
+   ],
+   "_refs": {
+    "what": "D48"
+   }
   },
   {
    "id": "49-xb",
@@ -4527,7 +4563,7 @@
    ],
    "h": 2,
    "kind": "warehouse",
-   "what": "A pharmaceutical wholesaler founded in 1991 beside Lumeport airport, so that medicines that come in by air and go on by air never wait far from the runway. It buys medicines, vaccines and radiopharmaceuticals from makers abroad, keeps them in its cold rooms at 2 to 8 °C and in a freezer room, and supplies pharmacies and hospitals in the three countries of the Accord. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in Urvania and Lisavu, and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave by the night and early flights; its own van, with a driver trained for class 7, takes radioactive packages to the airport (D47, O202).",
+   "what": "A pharmaceutical wholesaler founded in 1991 beside Lumeport airport, so that medicines that come in by air and go on by air never wait far from the runway. It buys medicines, vaccines and radiopharmaceuticals from makers abroad, keeps them in its cold rooms at 2 to 8 °C and in a freezer room, and supplies pharmacies and hospitals in the three countries of the Accord. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in Urvania and Lisavu, and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave by the night and early flights; its own van, with a driver trained for class 7, takes radioactive packages to the airport.",
    "how": "A wholesaler sells many lines to many customers and must show, for medicines, the lot and its expiry date on every delivery. UBL's despatch advice carries the lot of each line and its expiry, and the transport documents the temperatures the goods need, so the hospital can check the cold chain and the lots when it receives them.",
    "identity": {
     "name": "Quillmoor Pharma Distribution",
@@ -4646,7 +4682,10 @@
      "type": "341",
      "description": "A closed van with a locked, lined cargo compartment, placarded for class 7 when it carries a package with a Yellow label, driven by a driver trained for radioactive material."
     }
-   ]
+   ],
+   "_refs": {
+    "what": "D47, O202"
+   }
   },
   {
    "id": "50-xl",
@@ -4660,7 +4699,7 @@
    ],
    "h": 3,
    "kind": "office",
-   "what": "The island's general hospital in Selanu, a public body of Lisavu's health service: wards, an operating theatre, the island's vaccination service and a small nuclear medicine unit, which makes its technetium-99m every morning from a generator replaced once a week. Its pharmacy orders medicines, vaccines and the generator from a wholesaler in Lumeport; they come by air, and the pharmacy's van fetches them from the airport (D47).",
+   "what": "The island's general hospital in Selanu, a public body of Lisavu's health service: wards, an operating theatre, the island's vaccination service and a small nuclear medicine unit, which makes its technetium-99m every morning from a generator replaced once a week. Its pharmacy orders medicines, vaccines and the generator from a wholesaler in Lumeport; they come by air, and the pharmacy's van fetches them from the airport.",
    "how": "A hospital pharmacy buys by order and checks every delivery against the despatch advice: the lots, their expiry dates and the temperatures on the way. UBL lets it receive those facts with the goods and keep them with its stock.",
    "identity": {
     "name": "Selanu General Hospital",
@@ -4715,7 +4754,10 @@
      "type": "341",
      "description": "The hospital pharmacy's van: a compartment kept at 2 to 8 °C, a freezer box and a locked, lined box for radioactive packages; its drivers are trained for class 7."
     }
-   ]
+   ],
+   "_refs": {
+    "what": "D47"
+   }
   },
   {
    "id": "55-xb",
@@ -4959,27 +5001,33 @@
    "id": "ph-xb",
    "c": "XB",
    "name": "Port Health Office",
-   "what": "Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships (D30 point 8, O103). Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships.",
+   "what": "Bayvarra's port health authority at Lumeport, an office of the federal health administration, as the Maritime Administration is federal: under the International Health Regulations (2005) it inspects ships in the port and issues their ship sanitation control and exemption certificates (Annex 3) and the medicine chest certificates of Bayvarran ships. Referenced only, as the issuer of the certificates of Tidewell Ocean Lines' ships.",
    "identity": {
     "name": "Port Health Office of Bayvarra, Lumeport",
     "kind": "public",
     "registry_id": "7140583926"
+   },
+   "_refs": {
+    "what": "D30 point 8, O103"
    }
   },
   {
    "id": "cb-xu",
    "c": "XU",
    "name": "Certification Body (XU)",
-   "what": "An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under a recycled-content scheme that follows EN 15343:2007, as industry schemes such as RecyClass do, and issues their recycled-content certificates; it audits Rinova Recovery's plant every year (decision D41, O132). Referenced only, as the issuer of Rinova's certificate.",
+   "what": "An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under a recycled-content scheme that follows EN 15343:2007, as industry schemes such as RecyClass do, and issues their recycled-content certificates; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate.",
    "identity": {
     "name": "Certovira Certification",
     "kind": "company",
     "registry_id": "XU-R-106192"
+   },
+   "_refs": {
+    "what": "D41, O132"
    }
   }
  ],
  "turnover_per_person": {
-  "note": "Rules of thumb for a company's yearly turnover per person, in lume, by the kind of business it is in (identity.legal.business): estimates of typical ranges, meant to catch the implausible (worklist decision D14, open point O30). Turnovers in ferra and coral count at the reference rates (world/countries.json exchange_rates). Only companies in a commercial register are checked: public bodies have no company figures, and a farm is entered in Lisavu's farm register, not the companies register (D46). tools/world_parties.py checks every company against its band. Shipping lines and oil and gas producers have bands of their own, because their ships and platforms make them earn far more per person than other transport or industry (owner, 2026-11-19).",
+  "note": "Rules of thumb for a company's yearly turnover per person, in lume, by the kind of business it is in (identity.legal.business): estimates of typical ranges, meant to catch the implausible. Turnovers in ferra and coral count at the reference rates. Only companies in a commercial register are checked: public bodies have no company figures, and a farm is entered in Lisavu's farm register, not the companies register. tools/world_parties.py checks every company against its band. Shipping lines and oil and gas producers have bands of their own, because their ships and platforms make them earn far more per person than other transport or industry (owner, 2026-11-19).",
   "bands": {
    "distributor": {
     "name": "Distributor, wholesaler",
@@ -5027,7 +5075,7 @@
    "cat": "commerce",
    "c": "NL",
    "kind": "factory",
-   "what": "A fictional maker of radiopharmaceuticals in the Netherlands, outside the world: it fills molybdenum-99 from the research reactors of Europe into technetium-99m generators and sends them, pre-calibrated to a reference time six days after delivery, to hospitals and wholesalers around the world by scheduled air cargo from Amsterdam. Quillmoor Pharma Distribution buys one generator a week for Selanu General Hospital under a standing order (D47, O202 choice 3, O229). Not a party of the world: it has no place on the map; its name was checked against real companies.",
+   "what": "A fictional maker of radiopharmaceuticals in the Netherlands, outside the world: it fills molybdenum-99 from the research reactors of Europe into technetium-99m generators and sends them, pre-calibrated to a reference time six days after delivery, to hospitals and wholesalers around the world by scheduled air cargo from Amsterdam. Quillmoor Pharma Distribution buys one generator a week for Selanu General Hospital under a standing order. Not a party of the world: it has no place on the map; its name was checked against real companies.",
    "how": "A maker abroad sells in its own currency, the euro, and its invoice says how the goods left its country; the buyer converts the amount into lume for its books.",
    "identity": {
     "name": "Haarvliet Isotopes",
@@ -5046,9 +5094,13 @@
      "CityName": "Alkmaar",
      "PostalZone": "1812 RN"
     },
-    "ids_note": "It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's (O229); the documents identify it by its name and address, as a supplier outside the world.",
+    "ids_note": "It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.",
     "language": "en",
     "week": "always"
+   },
+   "_refs": {
+    "what": "O202 choice 3",
+    "identity.ids_note": "O229"
    }
   },
   {
@@ -5058,7 +5110,7 @@
    "cat": "commerce",
    "c": "IN",
    "kind": "factory",
-   "what": "A fictional maker of vaccines and insulin in Hyderabad, India, outside the world: it makes seasonal influenza vaccines for both hemispheres, a live varicella vaccine and human insulin, and exports them by scheduled air cargo from Hyderabad. Quillmoor Pharma Distribution buys its vaccines and insulin for the southern winter from it (D47, O229). Not a party of the world: it has no place on the map; its name was checked against real companies.",
+   "what": "A fictional maker of vaccines and insulin in Hyderabad, India, outside the world: it makes seasonal influenza vaccines for both hemispheres, a live varicella vaccine and human insulin, and exports them by scheduled air cargo from Hyderabad. Quillmoor Pharma Distribution buys its vaccines and insulin for the southern winter from it. Not a party of the world: it has no place on the map; its name was checked against real companies.",
    "how": "A maker abroad sells in its own currency, the Indian rupee, and its invoice says how the goods left its country; the buyer converts the amount into lume for its books.",
    "identity": {
     "name": "Nilavar Biologics",
@@ -5078,9 +5130,13 @@
      "PostalZone": "500078",
      "CountrySubentity": "Telangana"
     },
-    "ids_note": "It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's (O229); the documents identify it by its name and address, as a supplier outside the world.",
+    "ids_note": "It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.",
     "language": "en",
     "week": "office"
+   },
+   "_refs": {
+    "what": "D47, O229",
+    "identity.ids_note": "O229"
    }
   }
  ]
