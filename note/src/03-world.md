@@ -1603,7 +1603,11 @@ supplies the island's shops, hotels and the hospital's kitchen, buys a 40-foot
 reefer of apples and pears from Harrowmead Fruit Growers, a cooperative of the
 fruit growers on the slopes above Harrowmead in the wetter west of Upland
 State: Gala and Packham's Triumph pears from the cooperative's cold store and
-Granny Smith picked that month, 1,120 cartons of 18 kg on 20 pallets. It buys
+Granny Smith picked that month, 1,120 cartons of 18 kg on 20 pallets, all
+graded Class I under the Trade Accord's marketing standard for fresh fruit,
+which follows the UNECE standards for apples and pears; each carton is marked
+with its class and its count, and whole fresh fruit carries no best-before
+date. It buys
 carriage and insurance paid to the port of Selanu (CIP), the term the ICC
 advises for goods in containers, with the cover on all risks that perishable
 fruit needs: the cooperative books the reefer through its forwarder, which has
