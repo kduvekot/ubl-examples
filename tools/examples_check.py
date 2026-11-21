@@ -6,8 +6,10 @@
 
 Each check is run when the fingerprint of everything it reads differs from that of its last passing run, and is
 skipped otherwise (tools/build_cache.py; the fingerprints are of the files themselves, never of a commit's changes).
-Their inputs, found by recording what the checks open during a run, taken wide: every Python file in tools/, every
-file under world/ but the reviews (*.llm-review.*: not generated, not read), and the versions of Python and lxml;
+Their inputs, found by recording what the checks open during a run: the two checks' scripts and every module of the
+repository they import, at any depth (tools/build_cache.py follows the imports; the one import by name,
+__import__("examples_scenarios"), is among them), every file under world/ but the reviews (*.llm-review.*: not
+generated, not read), and the versions of Python and lxml;
 for the validation also the UBL 2.5 files in .ubl/ (the schemas, the code list stylesheets and Saxon) and the Java
 version. A failing check is not remembered, so it runs again next time.
 
@@ -28,7 +30,11 @@ def common():
     import lxml.etree
     fp = build_cache.Fingerprint()
     fp.add("versions", f"{sys.version} lxml {lxml.etree.LXML_VERSION} libxml2 {lxml.etree.LIBXML_VERSION}")
-    fp.add_files(sorted(glob.glob("tools/*.py")) + build_cache.tree_files("world", lambda p: ".llm-review." in p))
+    modules = set()
+    for script in ("tools/build_examples.py", "tools/validate_examples.py"):
+        modules.add(script)
+        build_cache.repo_modules(script, modules)
+    fp.add_files(sorted(modules) + build_cache.tree_files("world", lambda p: ".llm-review." in p))
     return fp
 
 
