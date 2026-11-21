@@ -541,7 +541,7 @@ example adds its coverage-register row in the same commit.
 
 ## Questions for the owner
 
-- **Q1 (fixers):** should the build functions that silently repair content (`tax_arithmetic`, `currency_cleanup`,
+- **Q1 (fixers): decided (owner, 2026-11-21): A, turn them into checks that stop the build; fix the generators at the source.** should the build functions that silently repair content (`tax_arithmetic`, `currency_cleanup`,
   `shipment_weights`, `national_tariffs`) stop the build instead, so that the generator is fixed at the source?
 - **Q2 (desk hours, O269):**
   - Do the stated hours bind every document, or only those a person issues? A despatch advice sent by the system
