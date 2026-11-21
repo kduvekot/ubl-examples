@@ -48,9 +48,9 @@
     "legal": {
      "form": "SUA",
      "founded": "1958-06-30",
-     "headcount": 22,
+     "headcount": 987,
      "turnover": {
-      "amount": "175000000",
+      "amount": "28000000000",
       "currency": "XUF",
       "year": 2025
      },
@@ -5186,9 +5186,9 @@
     "legal": {
      "form": "CORP",
      "founded": "2011-04-01",
-     "headcount": 150,
+     "headcount": 1315,
      "turnover": {
-      "amount": "63000000.00",
+      "amount": "833000000.00",
       "currency": "XBL",
       "year": 2025
      },
@@ -5263,7 +5263,7 @@
      },
      {
       "title": "Operations",
-      "text": "A subsea line brings the gas ashore from the production platform to the plant, which treats it to pipeline quality. The pipeline runs about 207 km across the border to [[Montebrio Power]], with a branch of about 97 km to the city gate of [[Ferrano Grid]] for the customers of [[Ferrano Energy]]; the gas is measured at a metering station on Bayvarra's side of the border. The plant also separates propane from the field's gas and sells it by the tonne, weighed on its weighbridge; [[Gullhaven Tank Haulage]] carries it by road tanker, among others to the [[Coastal State Water Company]], which burns it in winter in the peak boilers of Lumeport's district heating. The production platform of the Kelpstone field is Kelpstone A. The field yields about 0.16 billion m³ of gas a year, about 1.6 TWh, and the plant about 13,000 t of propane; about 4 billion m³ remain, enough for about 25 years."
+      "text": "A subsea line brings the gas ashore from the production platform to the plant, which treats it to pipeline quality. The pipeline runs about 207 km across the border to [[Montebrio Power]], with a branch of about 97 km to the city gate of [[Ferrano Grid]] for the customers of [[Ferrano Energy]]; the gas is measured at a metering station on Bayvarra's side of the border. The plant also separates propane from the field's gas and sells it by the tonne, weighed on its weighbridge; [[Gullhaven Tank Haulage]] carries it by road tanker, among others to the [[Coastal State Water Company]], which burns it in winter in the peak boilers of Lumeport's district heating. The production platform of the Kelpstone field is Kelpstone A. The field yields about 0.6 billion m³ of gas a year, about 6 TWh, and the plant about 50,000 t of propane; about 15 billion m³ remain, enough for about 25 years."
      }
     ]
    }
@@ -5484,11 +5484,7 @@
      },
      {
       "title": "Operations",
-<<<<<<< HEAD
       "text": "The company connects [[Montebrio Power]] and the gas pipeline from [[Bayvarra]], whose branch reaches its city gate after about 97 km. It owns the meters, reads them and corrects the gas readings. It charges [[Ferrano Energy]] for the use of its networks per kilowatt hour taken at each connection, and Ferrano Energy collects the network charges with its bills to customers: of a tariff of 27.3 ferra a kilowatt hour, 6.2 are for the network. The Province of Ferrano takes in the city and the valley up to Serravona and Fucinalta, about 4,800 km² with about 700,000 people. The company's power lines run to about 8,500 km, with about 300,000 connections, and its gas mains to about 1,500 km, with about 90,000 connections. Its own crews run and maintain the networks and read the meters; line contractors build most of the new lines."
-=======
-      "text": "The company connects [[Montebrio Power]] and the gas pipeline from [[Bayvarra]], whose branch reaches its city gate after about 97 km. It owns the meters, reads them and corrects the gas readings. It charges [[Ferrano Energy]] for the use of its networks per kilowatt hour taken at each connection, and Ferrano Energy collects the network charges with its bills to customers, as a part of its tariff. The Province of Ferrano takes in the city and the valley up to Serravona and Fucinalta, about 4,800 km² with about 700,000 people. The company's power lines run to about 8,500 km, with about 300,000 connections, and its gas mains to about 1,500 km, with about 90,000 connections. Line contractors do most of the work in the field, so the company itself stays small."
->>>>>>> origin/main
      }
     ]
    }

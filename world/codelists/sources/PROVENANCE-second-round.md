@@ -334,7 +334,6 @@ What was read on BAM's pages for UN 1965, mixture C:
 
 What `world/codelists/lists.json` takes from them: UN 1965 with its name and class 2.1 in `UNModelRegsUN`; guide 115 in `ERG2024`; the list `UNCL8169`, bound to `EmissionCalculationMethod/FullnessIndicationCode`; Recommendation 28 code 3113 "Lorry, articulated with tank" (from `rec28/Rec28_Rev4.2e_2018.csv`, already kept) in `UNECERec28`. The orange plate numbers 23 over 1965 and the tunnel code B/D of the examples are the ADR values above; the technical name is "Mixture C", with "propane" only as the trade name beside it.
 
-<<<<<<< HEAD
 ## Added 2026-11-21: the HS 2022 legal texts of the WCO (stage 7 B5, O31, Q14)
 
 For the reasoning behind each maker item's HS subheading (`world/items.json` `hs_reason`, not published; `tools/hs_review.py` prints it for the owner's verification). `hs2022/H6.json` has codes and short texts only; these are the legal texts: the General Interpretative Rules, and the section and chapter notes with the headings and subheadings, of the chapters the items use (8, 26, 27, 28, 30, 32, 38, 39, 44, 52, 62, 85, 94) and of the chapters weighed against them (15, 34, 63, 73). Fetched directly from the WCO website on **2026-11-21** (no block): the index page https://www.wcoomd.org/en/topics/nomenclature/instrument-and-tools/hs-nomenclature-2022-edition/hs-nomenclature-2022-edition.aspx links one PDF per section and chapter. © World Customs Organization, published there free of charge; the files are kept unchanged. The WCO's Explanatory Notes are a paid publication and are **not** among them.
@@ -371,7 +370,7 @@ cedfa53bd37d2b4f77bc64958bc707be13635cb009d0c4ea31396d57fc125617  ./hs2022-notes
 ```
 
 Read in them for the reasoning: the GIR 1 to 6; Section VI Notes 1 to 3; Section XI Note 1(c), (s); Section XV Notes 1(k) and 2; the notes of Chapters 8 (2), 26 (2), 27 (1(a)), 28 (6), 30 (1 to 4), 34 (5), 38 (1(a)), 39 (2, 6, 7, 10, Subheading Note 1), 44 (1(o)), 62 (1, 4), 85 (3) and 94 (1 to 3); and the heading and subheading texts. The UN Comtrade short text for 940199 in `hs2022/H6.json` ("for use in the assembly of motor vehicles as determined by the minister") reads as a national tariff line; the WCO text is "Parts : -- Other".
-=======
+
 ## Added 2026-11-21: densities, calorific value and conversion rates of the goods (stage 7, O62, O64, O66)
 
 Sources of the `materials` and `chains` blocks of `world/items.json`, read by `tools/world_goods.py`. All accessed on **2026-11-21**. None is copied into `world/codelists/sources/`: the Wood Handbook is a US government work but 104 MB; the others are copyrighted. Only their URL, SHA-256 and the quoted text are recorded.
@@ -399,4 +398,3 @@ e391cd4676d0891cd77f67d3bd76e0e6775386b468ce5ce7ebe2311a6ea1ac45  IPCC V2_1_Ch1_
 ```
 
 What `world/items.json` takes from them: the densities and ranges of `materials` (oak 720, 680 to 775; ash 670, 600 to 700; thermally modified ash 585, 550 to 620, from the kiln-dried ash less the weight the treatment drives off; ductile iron 7,100, 6,800 to 7,400; polyethylene 920, 910 to 965); the natural gas's 71.4 to 77.4 kg a megawatt hour (`physics` of natural-gas); the ginning out-turn 33 to 40 % and the foundry yield 45 to 80 % of `chains`. The world's European oak is lighter than the American white oaks of the handbook; its 720 kg/m³ and its 7 % over the ash are the owner's figures (stage 7, Q13).
->>>>>>> worktree-agent-aaac44e97e2fcc282
