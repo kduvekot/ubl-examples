@@ -120,7 +120,7 @@
    ],
    "h": 3,
    "kind": "factory",
-   "what": "Makes park benches and street furniture: frames of ductile iron made from the mine's ore and about 35 % steel and iron scrap and cast in its own foundry, slats from the sawmill in Bayvarra, packed in recycled packaging from Bayvarra. Sells to the distributor abroad and tenders in public procurement.",
+   "what": "Makes park benches and street furniture: frames of ductile iron made from the mine's ore and about 35 % steel and iron scrap and cast in its own foundry, slats from the sawmill in Bayvarra, packed in recycled packaging from Bayvarra. Sells to the distributor abroad and tenders in public procurement. Its foundry is a broad iron works: most of what it casts is not for benches but manhole covers, gully gratings and machine parts for Urvanian industry, which take most of the iron of the mine's monthly train; the bench frames are a small line beside them.",
    "how": "The manufacturer sits in the middle of the chain: it buys, produces, sells, exports and tenders. UBL gives it one vocabulary for all of that, from the order it places with the mine to the certificate of origin and the tender it submits to a public buyer, so the same item, party and price data are reused instead of re-entered for every partner.",
    "size": [
     2,
@@ -5007,7 +5007,7 @@
    ],
    "h": 2,
    "kind": "ginnery",
-   "what": "Gins the farms' seed cotton into bales and exports them to the textile mill on the mainland: the island's export.",
+   "what": "Gins the farms' seed cotton into bales and exports them to the textile mill on the mainland: the island's export. It keeps part of the lint it gins for the island's home market, the mattress and bedding workshops of Selanu.",
    "how": "The ginnery buys from many farms and sells overseas. UBL covers both sides: self-billing towards the farms, and towards the mill an export with weight statement, goods certificate, customs declaration and invoice.",
    "identity": {
     "name": "Selanu Cotton Ginnery",
