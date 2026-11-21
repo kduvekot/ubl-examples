@@ -526,7 +526,7 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July", "Augus
 
 def timeline(a, where):
     """The article's dated key events (wiki "timeline": [date, text]) as a list; checks order, the founding year
-    and the calendar."""
+    and the calendar; a company's founding year must be among its dates (earlier rows tell its forerunners)."""
     items = a["wiki"].get("timeline") or []
     if not items:
         return []
@@ -544,8 +544,8 @@ def timeline(a, where):
         out.append(f"- **{shown}**: {text}")
     if a["kind"] == "party":
         founded = a["data"]["identity"].get("legal", {}).get("founded", "")[:4]
-        if founded and items[0][0][:4] != founded:
-            problems.append(f"{where}: the timeline begins in {items[0][0][:4]}, the party was founded in {founded}")
+        if founded and founded not in [d[:4] for d, _ in items]:
+            problems.append(f"{where}: the timeline has no entry for the founding year {founded}")
     return out
 
 
