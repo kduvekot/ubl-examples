@@ -35,7 +35,7 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
 - `ShippingOrderID` = **LMW-FI-26-0606**  
   The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **The skid is ready for collection by Nalevi Warehousing from 12:00 on 14 May, after customs clearance; reply only if that slot must change.**  
-  What the receiver should do, with the slot it is about.
+  What the receiver should do on this report.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 

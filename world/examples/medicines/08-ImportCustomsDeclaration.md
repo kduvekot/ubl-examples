@@ -26,7 +26,7 @@ The wholesaler declares the generator for import at Lumeport airport on the Sund
   The wholesaler declares the goods for import at Lumeport airport on the Sunday evening the generator arrived.
 - `IssueTime` = **21:40:00-01:00**  
   When the wholesaler lodged the declaration: the generator landed at 20:15 on the scheduled flight from Amsterdam; the airport's customs office works around the clock; in the issuer's local time, with its offset from UTC.
-- `Note` = **No duty: goods made in the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.**  
+- `Note` = **No duty: goods made in the Netherlands, outside the Accord, but radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.**  
   What is due at import, by the importing country's rule: goods from outside the Accord claim no preference and pay the country's own tariff, which charges no duty on them.
 
 ### Importer Party
@@ -201,6 +201,12 @@ Inside `Shipment`:
   The consignment declared, as the maker booked it.
 - `Consignment/GrossWeightMeasure` = **18** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving.
+- `Consignment/OfficeOfEntryLocation/ID` = **XB002002** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
+- `Consignment/OfficeOfEntryLocation/Name` = **Lumeport airport**  
+  The office of entry: the goods landed at Lumeport airport on the scheduled flight from Amsterdam.
+- `Consignment/OfficeOfEntryLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Technetium-99m generator, 20 GBq**  
@@ -211,7 +217,7 @@ Inside `Shipment`:
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **1** (unitCode `EA`)  
   The quantity declared.
-- `GoodsItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `GoodsItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `GoodsItem/Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -229,8 +235,8 @@ Inside `Shipment`:
   The seller's dangerous goods record of the item.
 - `GoodsItem/Item/HazardousItem/PlacardNotation` = **7**  
   The class shown on the hazard label of the packages.
-- `GoodsItem/Item/HazardousItem/AdditionalInformation` = **Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h**  
-  What the shipper adds about handling.
+- `GoodsItem/Item/HazardousItem/AdditionalInformation` = **Category III-YELLOW; maximum dose rate at the surface 0.48 mSv/h**  
+  What the maker states about handling, for the activity of this flight.
 - `GoodsItem/Item/HazardousItem/UNDGCode` = **2915** (listID `UN Model Regulations Dangerous Goods List`)  
   The UN number, from the Dangerous Goods List of the UN Model Regulations. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2915 = Radioactive material, Type A package, non-special form, non fissile or fissile-excepted.
 - `GoodsItem/Item/HazardousItem/UNPackingGroupCode` = **NA** (listID `urn:ubl-examples:world:codelist:UNPackingGroupCode`)  
@@ -247,12 +253,12 @@ Inside `Shipment`:
   The UN number marked on each package.
 - `GoodsItem/Item/HazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
   The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
-- `GoodsItem/Item/HazardousItem/RadioactiveMaterial/Name` = **Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)**  
-  The radionuclide and the maximum activity during transport, which the transport document must state in becquerels (IAEA SSR-6 para 546): UBL has no element for the activity of contents that are not fissile, so the name carries it. The activity is the generator's at acceptance at the Lumeport cargo terminal, the highest it has on the way, as Mo-99 decays; the A2 value of Mo-99 allows up to 600 GBq in a Type A package.
+- `GoodsItem/Item/HazardousItem/RadioactiveMaterial/Name` = **Mo-99 (with its daughter Tc-99m), maximum activity during transport 155 GBq (1.55 × 10^11 Bq)**  
+  The radionuclide and the maximum activity during transport, which the transport document must state in becquerels (IAEA SSR-6 para 546): UBL has no element for the activity of contents that are not fissile, so the name carries it. The activity is the generator's when it left the maker on Saturday 13 June, the highest it has on the way to Lumeport, as Mo-99 decays (half-life 65.94 hours); the A2 value of Mo-99 allows up to 600 GBq in a Type A package.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/SpecialFormDescription` = **Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.**  
   The physical and chemical form: not special form, so the A2 value applies.
-- `GoodsItem/Item/HazardousItem/RadioactiveMaterial/TransportIndexNumeric` = **1.5**  
-  The transport index of the package: the highest dose rate at 1 m in mSv/h times 100, rounded up to the first decimal (IAEA SSR-6 para 523); above 1, so the package carries the Category III-YELLOW label (para 529, the higher category winning over the surface rate).
+- `GoodsItem/Item/HazardousItem/RadioactiveMaterial/TransportIndexNumeric` = **2.4**  
+  The transport index of the package on this flight: the highest dose rate at 1 m in mSv/h times 100, rounded up to the first decimal (IAEA SSR-6 para 523); it grows with the activity, and above 1 the package carries the Category III-YELLOW label (para 529).
 - `ShipmentStage/TransportModeCode` = **4** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by air. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 4 = Air transport.
 
@@ -278,7 +284,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>dec43f2a-2397-55dd-a970-1f967ceff30c</cbc:UUID>
   <cbc:IssueDate>2026-06-14</cbc:IssueDate>
   <cbc:IssueTime>21:40:00-01:00</cbc:IssueTime>
-  <cbc:Note>No duty: goods made in the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
+  <cbc:Note>No duty: goods made in the Netherlands, outside the Accord, but radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
@@ -415,6 +421,15 @@ Inside `AdditionalDocumentReference`:
     <cac:Consignment>
       <cbc:ID>HVI-CS-26-1356</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
+      <cac:OfficeOfEntryLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002002</cbc:ID>
+        <cbc:Name>Lumeport airport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:OfficeOfEntryLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -423,7 +438,7 @@ Inside `AdditionalDocumentReference`:
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">NL</cbc:IdentificationCode>
@@ -437,7 +452,7 @@ Inside `AdditionalDocumentReference`:
         <cac:HazardousItem>
           <cbc:ID>HVI-TCG-20-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
-          <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
+          <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.48 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
           <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
           <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
@@ -447,9 +462,9 @@ Inside `AdditionalDocumentReference`:
           <cbc:MarkingID>UN2915</cbc:MarkingID>
           <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
           <cac:RadioactiveMaterial>
-            <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)</cbc:Name>
+            <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 155 GBq (1.55 × 10^11 Bq)</cbc:Name>
             <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
-            <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
+            <cbc:TransportIndexNumeric>2.4</cbc:TransportIndexNumeric>
           </cac:RadioactiveMaterial>
         </cac:HazardousItem>
       </cac:Item>

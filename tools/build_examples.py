@@ -1481,6 +1481,10 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
     if maker.get("hazard"):
         out["HazardousRiskIndicator"] = V("true", "The item is dangerous goods.")
         out["HazardousItem"] = hazardous_item(maker)
+        if maker is not it:      # a resold item: the reseller's own dangerous goods record (review 1048 medicines/09#F1)
+            out["HazardousItem"]["ID"] = V(f"{it['sellers_id']}-DG", "The seller's dangerous goods record of the "
+                                                                     "item, the same in every document of its "
+                                                                     "consignment.")
     if maker.get("emissions"):
         def emission(em):
             out_ = {"EnvironmentalEmissionTypeCode": V(em["type"], "The emission reported: greenhouse gases as CO2 "
@@ -2885,14 +2889,16 @@ def import_from_abroad(content, doc, c, country, goods):
                               "TaxTypeCode": V("CONSUMPTION", "A tax on consumption, charged at import.")}}
     origins = sorted({kit_maker(ITEM_BY_NAME[g["Description"].value])["origin"] for g in goods})
     names = " and ".join(ABROAD_COUNTRY[o].get("in_text", ABROAD_COUNTRY[o]["name"]) for o in origins)
+    hss = {kit_maker(ITEM_BY_NAME[g["Description"].value])["hs"] for g in goods}
+    kinds = " and ".join(k for k, hit in (("medicines and vaccines", any(h[:2] == "30" for h in hss)),
+                                          ("radioactive isotopes for medicine", "284443" in hss)) if hit)
+    # the tariff lines of the goods declared, not of the whole duty-free list (review 1048 medicines/03#F3)
     if c == "XL":
-        text = (f"No duty: goods made in {names}, outside the Accord, but medicines and radioactive isotopes for "
-                "medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines "
-                "supplied to a public hospital.")
+        text = (f"No duty: goods made in {names}, outside the Accord, but {kinds} are free of duty in the tariff of "
+                "Lisavu. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.")
     else:
-        text = (f"No duty: goods made in {names}, outside the Accord, but medicines and radioactive isotopes for "
-                "medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is "
-                "charged once, at the final retail sale.")
+        text = (f"No duty: goods made in {names}, outside the Accord, but {kinds} are free of duty in Bayvarra's "
+                "tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.")
     content["Note"] = V(text, "What is due at import, by the importing country's rule: goods from outside "  # D18, O229
                               "the Accord claim no preference and pay the country's own tariff, which charges no "
                               "duty on them.")
@@ -3927,6 +3933,20 @@ def check_payment_terms(root, where, payee_country=None):
                 want = (_dt.date.fromisoformat(want) + _dt.timedelta(days=1)).isoformat()
             if due != want:
                 raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due}")  # O70
+
+
+def check_consignment_dg_records(flow_id, roots, docs):
+    """Review 1048 (medicines/09#F1, 13#F1): the dangerous goods of one consignment carry one record identifier
+    (HazardousItem/ID) for each UN number in every document of the flow that names the consignment."""
+    seen = {}
+    for name, root in roots:
+        cons = {c.text for c in root.iter(f"{{{NS_CAC}}}Consignment") for c in c.findall(f"{{{NS_CBC}}}ID")}
+        for hz in root.iter(f"{{{NS_CAC}}}HazardousItem"):
+            un, rid = hz.findtext(f"{{{NS_CBC}}}UNDGCode"), hz.findtext(f"{{{NS_CBC}}}ID")
+            for c in cons:
+                if un and rid and seen.setdefault((c, un), (rid, name))[0] != rid:
+                    raise SystemExit(f"world/examples/{flow_id}/{name}: UN {un} of consignment {c} is record {rid}, "
+                                     f"but {seen[(c, un)][0]} in {seen[(c, un)][1]}")
 
 
 def check_plan_terms(flow_id, roots, docs):
@@ -5093,6 +5113,7 @@ def main(flow_id, check=False):
     check_desk_hours(flow_id, roots, docs)
     check_issuer_desks(flow_id, roots, docs)
     check_plan_terms(flow_id, roots, docs)
+    check_consignment_dg_records(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)
     check_utility_statements(flow_id, roots)

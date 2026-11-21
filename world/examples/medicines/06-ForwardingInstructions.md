@@ -149,8 +149,8 @@ Inside `Shipment`:
   The shipment.
 - `Consignment/ID` = **QLM-CS-26-3980**  
   The consignment.
-- `Consignment/GrossWeightMeasure` = **101.1** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packages, with the dry ice and its box.
+- `Consignment/GrossWeightMeasure` = **105.3** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packs and their 14 shipping cartons, with the dry ice and its box.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment holds dangerous goods.
 - `Consignment/RequestedPickupTransportEvent/OccurrenceDate` = **2026-06-15**  
@@ -250,9 +250,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/TransportHandlingUnit/ID` = **QLM-TC-1**  
-  The cold-chain consignment as one handling unit, the wholesaler's own number: the forwarder books the airline's active container for it.
-- `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
-  UN/ECE Recommendation 21 code CT: the cartons, which the airline loads into its container. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: CT = Carton.
+  The cold-chain consignment as one handling unit, the wholesaler's own number: the forwarder books the airline's active container for it, so the unit has no type until the airline assigns the container.
 - `Consignment/TransportHandlingUnit/HandlingInstructions` = **Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo terminal.**  
   What the cold chain needs.
 - `Consignment/TransportHandlingUnit/MinimumTemperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
@@ -517,6 +515,40 @@ Inside `Shipment`:
   The physical and chemical form: not special form, so the A2 value applies.
 - `GoodsItem/Item/HazardousItem/RadioactiveMaterial/TransportIndexNumeric` = **1.5**  
   The transport index of the package: the highest dose rate at 1 m in mSv/h times 100, rounded up to the first decimal (IAEA SSR-6 para 523); above 1, so the package carries the Category III-YELLOW label (para 529, the higher category winning over the surface rate).
+- `GoodsItem/ID` = **5**  
+  The dry ice, a goods item of its own, for the forwarder to declare on the air waybill.
+- `GoodsItem/Description` = **Dry ice, refrigerant of the frozen vaccine (goods item 3)**  
+  What it is: the refrigerant in the box, not goods sold.
+- `GoodsItem/HazardousRiskIndicator` = **true**  
+  Dangerous goods of class 9.
+- `GoodsItem/NetWeightMeasure` = **6** (unitCode `KGM`)  
+  The dry ice in the box.
+- `GoodsItem/Item/Name` = **Carbon dioxide, solid (dry ice)**  
+  The refrigerant.
+- `GoodsItem/Item/HazardousItem/ID` = **QLM-DRYICE-0615**  
+  The wholesaler's entry for the dry ice in the box.
+- `GoodsItem/Item/HazardousItem/PlacardNotation` = **9**  
+  The class 9 label on the box.
+- `GoodsItem/Item/HazardousItem/UNDGCode` = **1845** (listID `UN Model Regulations Dangerous Goods List`)  
+  UN 1845, carbon dioxide, solid (dry ice). The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 1845 = Carbon dioxide, solid (dry ice).
+- `GoodsItem/Item/HazardousItem/MedicalFirstAidGuideCode` = **120** (listID `ERG 2024`)  
+  The guide of the Emergency Response Guidebook (ERG 2024) for UN 1845: inert gases, including refrigerated liquids. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 120 = Gases - Inert (Including Refrigerated Liquids).
+- `GoodsItem/Item/HazardousItem/ProperShippingName` = **Carbon dioxide, solid**  
+  The proper shipping name; IATA also allows "Dry ice".
+- `GoodsItem/Item/HazardousItem/HazardousCategoryCode` = **9** (listID `UN Model Regulations hazard class`)  
+  The hazard class as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles.
+- `GoodsItem/Item/HazardousItem/MarkingID` = **UN1845**  
+  The UN number marked on the box, with the net weight of the dry ice.
+- `GoodsItem/Item/HazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
+  Class 9. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
+- `GoodsItem/Item/HazardousItem/NetWeightMeasure` = **6** (unitCode `KGM`)  
+  The dry ice in the box: what the air waybill must state, with the number of packages.
+- `GoodsItem/Item/HazardousItem/Quantity` = **1** (unitCode `EA`)  
+  One box.
+- `GoodsItem/Item/HazardousItem/HazardousGoodsTransit/PackingCriteriaCode` = **PI954** (listID `urn:ubl-examples:world:codelist:PackingInstructionCode`)  
+  IATA packing instruction 954: dry ice, in a package that lets the gas escape. The code is from the Trade Accord's air packing instruction list: PI954 = Packing instruction 954.
+- `GoodsItem/Item/HazardousItem/HazardousGoodsTransit/HazardousRegulationCode` = **ICA** (listID `UN/EDIFACT EDED 8273`)  
+  Air: the IATA Dangerous Goods Regulations. The code is from the world's copy of UN/EDIFACT 8273 Dangerous goods regulations: ICA = IATA ICAO.
 
 ### Document Reference
 
@@ -527,7 +559,7 @@ Inside `DocumentReference`:
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: SGH/2026/1100 is the example medicines/04, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 - `ID` = **QLM-DGD-26-0615**  
-  The shipper's declaration for dangerous goods of the generator, a declaration of its own: radioactive material may not share one with other dangerous goods, and the dry ice needs none, only its entry on the air waybill (resting on secondary sources). It goes with the package, signed when the generator's activity is measured on Monday.
+  The shipper's declaration for dangerous goods of the generator, a declaration of its own: radioactive material may not share one with other dangerous goods, and the dry ice needs none: it is declared as goods item 5 below, which the forwarder enters on the air waybill (resting on secondary sources). The declaration goes with the package, signed when the generator's activity is measured on Monday.
 - `DocumentTypeCode` = **890** (listID `UN/EDIFACT EDED 1001`)  
   The kind of document referred to: the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own. The code is from the world's copy of UN/EDIFACT 1001 Document name: 890 = Dangerous goods declaration.
 
@@ -645,7 +677,7 @@ Inside `Signature`:
     <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">105.3</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:RequestedPickupTransportEvent>
         <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
@@ -753,7 +785,6 @@ Inside `Signature`:
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cbc:ID>QLM-TC-1</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo terminal.</cbc:HandlingInstructions>
         <cac:MinimumTemperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
@@ -983,6 +1014,31 @@ Inside `Signature`:
             <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
             <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
           </cac:RadioactiveMaterial>
+        </cac:HazardousItem>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>5</cbc:ID>
+      <cbc:Description>Dry ice, refrigerant of the frozen vaccine (goods item 3)</cbc:Description>
+      <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cbc:NetWeightMeasure unitCode="KGM">6</cbc:NetWeightMeasure>
+      <cac:Item>
+        <cbc:Name>Carbon dioxide, solid (dry ice)</cbc:Name>
+        <cac:HazardousItem>
+          <cbc:ID>QLM-DRYICE-0615</cbc:ID>
+          <cbc:PlacardNotation>9</cbc:PlacardNotation>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">1845</cbc:UNDGCode>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">120</cbc:MedicalFirstAidGuideCode>
+          <cbc:ProperShippingName>Carbon dioxide, solid</cbc:ProperShippingName>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
+          <cbc:MarkingID>UN1845</cbc:MarkingID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
+          <cbc:NetWeightMeasure unitCode="KGM">6</cbc:NetWeightMeasure>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cac:HazardousGoodsTransit>
+            <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI954</cbc:PackingCriteriaCode>
+            <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+          </cac:HazardousGoodsTransit>
         </cac:HazardousItem>
       </cac:Item>
     </cac:GoodsItem>

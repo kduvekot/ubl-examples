@@ -34,8 +34,8 @@ The intermodal terminal reports to the rail carrier that the containers are load
   The note in Urvanian, the sender's language: How it was made.
 - `Note` = **Automatic report from the sender's tracking system.** (languageID `en-XU`)  
   The same note in English, the working language between the countries: How it was made.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do, with the slot it is about.
+- `OtherInstruction` = **Tell the terminal before the train leaves if a container must come off it.**  
+  What the receiver should do on this report.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
@@ -320,7 +320,7 @@ Inside `StatusPeriod`:
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en-XU">Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>Tell the terminal before the train leaves if a container must come off it.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>7300043586</cbc:ID>

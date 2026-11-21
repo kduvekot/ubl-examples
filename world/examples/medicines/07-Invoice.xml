@@ -133,7 +133,13 @@
       </cac:Address>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionNote>To our account named in the supply agreement.</cbc:InstructionNote>
+  </cac:PaymentMeans>
   <cac:PaymentTerms>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>14 days net.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
   </cac:PaymentTerms>
@@ -166,7 +172,7 @@
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>

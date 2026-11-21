@@ -6062,7 +6062,7 @@
    "flow": "tender",
    "doc": "ReceiptAdvice",
    "from": "2-xb",
-   "to": "5-xu",
+   "to": "8-xu",
    "why": "The department accepts the release: 39 benches and their installation, one bench rejected as damaged; the contract's 30 days of payment run from this acceptance.",
    "parties": {
     "DeliveryCustomerParty": "2-xb",

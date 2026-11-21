@@ -34,8 +34,6 @@ The island's cargo terminal reports the consignment arrived, with the temperatur
   How it was made.
 - `ShippingOrderID` = **QLM-FI-26-2388**  
   The forwarding instructions of the shipment it reports on.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do, with the slot it is about.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
@@ -188,8 +186,10 @@ Inside `TransportEvent`:
   The arrival has taken place. The code is from the Trade Accord's status condition list: COMPLETED = Completed.
 - `CurrentStatus/Description` = **Temperature log of the active container from its closing at the wholesaler to its opening at the cargo terminal.**  
   What the status reports.
+- `CurrentStatus/StatusReason` = **Cold chain held: within 2 to 8 °C for the whole carriage**  
+  What the indicator above states, in words.
 - `CurrentStatus/IndicationIndicator` = **true**  
-  The temperature stayed within 2 to 8 °C for the whole carriage: what the hospital pharmacy needs to accept the vaccines and the insulin.
+  The temperature stayed within 2 to 8 °C for the whole carriage: what the hospital pharmacy needs to accept the vaccines and the insulin; the status reason says what the indicator stands for.
 - `CurrentStatus/DocumentationAttachment/EmbeddedDocument` = **time_utc,temperature_c
 2026-06-15T05:00:00Z,5.0
 2026-06-15T05:15:00Z,5.2
@@ -356,7 +356,6 @@ Inside `StatusPeriod`:
   <cbc:Description>Consignment arrived on KXL207; the cold chain held at 2 to 8 °C.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>QLM-FI-26-2388</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>QLM-CS-26-3980</cbc:ID>
@@ -474,6 +473,7 @@ Inside `StatusPeriod`:
     <cac:CurrentStatus>
       <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
       <cbc:Description>Temperature log of the active container from its closing at the wholesaler to its opening at the cargo terminal.</cbc:Description>
+      <cbc:StatusReason>Cold chain held: within 2 to 8 °C for the whole carriage</cbc:StatusReason>
       <cbc:IndicationIndicator>true</cbc:IndicationIndicator>
       <cac:DocumentationAttachment>
         <cbc:EmbeddedDocument>time_utc,temperature_c

@@ -215,10 +215,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-06-15**  
-  The day the goods billed were delivered.
 - `DeliveryLocation/Name` = **Selanu General Hospital, pharmacy**  
   Where the goods billed are delivered.
+- `Despatch/ActualDespatchDate` = **2026-06-15**  
+  The day the goods billed left, before they are delivered.
 
 ### Delivery Terms
 
@@ -463,7 +463,7 @@ Inside `InvoiceLine`:
   1 × 1450.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **4**  
   The order line this invoice line bills.
-- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -659,10 +659,12 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Selanu General Hospital, pharmacy</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-06-15</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
@@ -863,7 +865,7 @@ Inside `InvoiceLine`:
       <cbc:LineID>4</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>

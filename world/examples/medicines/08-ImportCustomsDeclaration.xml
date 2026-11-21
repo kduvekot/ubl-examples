@@ -8,7 +8,7 @@
   <cbc:UUID>dec43f2a-2397-55dd-a970-1f967ceff30c</cbc:UUID>
   <cbc:IssueDate>2026-06-14</cbc:IssueDate>
   <cbc:IssueTime>21:40:00-01:00</cbc:IssueTime>
-  <cbc:Note>No duty: goods made in the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
+  <cbc:Note>No duty: goods made in the Netherlands, outside the Accord, but radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
@@ -145,6 +145,15 @@
     <cac:Consignment>
       <cbc:ID>HVI-CS-26-1356</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
+      <cac:OfficeOfEntryLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002002</cbc:ID>
+        <cbc:Name>Lumeport airport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:OfficeOfEntryLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -153,7 +162,7 @@
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">NL</cbc:IdentificationCode>
@@ -167,7 +176,7 @@
         <cac:HazardousItem>
           <cbc:ID>HVI-TCG-20-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
-          <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
+          <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.48 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
           <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>
           <cbc:UNPackingGroup>No packing group assigned</cbc:UNPackingGroup>
@@ -177,9 +186,9 @@
           <cbc:MarkingID>UN2915</cbc:MarkingID>
           <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
           <cac:RadioactiveMaterial>
-            <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 97 GBq (9.7 × 10^10 Bq)</cbc:Name>
+            <cbc:Name>Mo-99 (with its daughter Tc-99m), maximum activity during transport 155 GBq (1.55 × 10^11 Bq)</cbc:Name>
             <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
-            <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
+            <cbc:TransportIndexNumeric>2.4</cbc:TransportIndexNumeric>
           </cac:RadioactiveMaterial>
         </cac:HazardousItem>
       </cac:Item>

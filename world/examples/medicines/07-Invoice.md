@@ -176,10 +176,23 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The payment means the terms below refer to.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
+- `InstructionNote` = **To our account named in the supply agreement.**  
+  Where the transfer goes: the account both sides agreed in the supply agreement, so the invoice repeats no account details.
+
 ### Payment Terms
 
 Inside `PaymentTerms`:
 
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer above.
 - `Note` = **14 days net.**  
   The maker's terms for wholesalers: 14 days from the invoice.
 - `PaymentDueDate` = **2026-06-29**  
@@ -229,7 +242,7 @@ Inside `InvoiceLine`:
   1 × 1000.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The line of the wholesaler's order.
-- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -256,7 +269,7 @@ Inside `InvoiceLine`:
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Reference time**  
   When the generator holds its nominal activity: European generators are pre-calibrated to a time some days after delivery, so that the hospital has its nominal activity at the end of its week.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **2026-06-21T12:00:00+00:00**  
-  Sunday 21 June at 12:00 UTC, six days after delivery.
+  Sunday 21 June at 12:00 UTC, seven days after delivery at Lumeport, six after the hospital's.
 - `Price/PriceAmount` = **1000** (currencyID `EUR`)  
   The seller's price per unit.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -400,7 +413,13 @@ Inside `InvoiceLine`:
       </cac:Address>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionNote>To our account named in the supply agreement.</cbc:InstructionNote>
+  </cac:PaymentMeans>
   <cac:PaymentTerms>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>14 days net.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
   </cac:PaymentTerms>
@@ -433,7 +452,7 @@ Inside `InvoiceLine`:
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>

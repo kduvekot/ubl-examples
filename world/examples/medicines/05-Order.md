@@ -35,6 +35,19 @@ The wholesaler calls off the hospital's generator for the week from the maker in
 - `LineCountNumeric` = **1**  
   The number of order lines.
 
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **QLM-SO-HVI-2026**  
+  The standing order with the maker that this order calls off: one generator a week, at its price and on its terms.
+- `ContractTypeCode` = **SUPPLY** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
+  Recurring supplies at agreed quantities: one generator a week. The code is from the Trade Accord's contract type list: SUPPLY = Supply contract.
+- `ValidityPeriod/StartDate` = **2026-01-01**  
+  A yearly agreement, for 2026.
+- `ValidityPeriod/EndDate` = **2026-12-31**  
+  To the end of the year.
+
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -187,7 +200,7 @@ Inside `OrderLine`:
   The seller's price per unit.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `LineItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `LineItem/Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -215,6 +228,14 @@ Inside `OrderLine`:
   <cbc:Note>Week 25: one 20 GBq generator, reference Sunday 21 June 12:00 UTC, to arrive at Lumeport on Sunday 14 June.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:Contract>
+    <cbc:ID>QLM-SO-HVI-2026</cbc:ID>
+    <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">SUPPLY</cbc:ContractTypeCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-01-01</cbc:StartDate>
+      <cbc:EndDate>2026-12-31</cbc:EndDate>
+    </cac:ValidityPeriod>
+  </cac:Contract>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -329,7 +350,7 @@ Inside `OrderLine`:
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:BuyersItemIdentification>

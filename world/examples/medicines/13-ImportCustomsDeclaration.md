@@ -26,9 +26,9 @@ The customs broker, as the hospital's direct representative, declares the import
   The customs broker declares the import at Selanu airport once the goods are unloaded.
 - `IssueTime` = **11:40:00+00:00**  
   After the terminal reported the arrival; in the issuer's local time, with its offset from UTC.
-- `Note` = **Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata selune mutaki Lisavu. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.** (languageID `qal`)  
+- `Note` = **Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hatoki tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata selune mutaki Lisavu. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.** (languageID `qal`)  
   The note in Lisavan, the sender's language: What is due at import, by the importing country's rule: goods from outside the Accord claim no preference and pay the country's own tariff, which charges no duty on them.
-- `Note` = **No duty: goods made in India and the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.** (languageID `en-XL`)  
+- `Note` = **No duty: goods made in India and the Netherlands, outside the Accord, but medicines and vaccines and radioactive isotopes for medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.** (languageID `en-XL`)  
   The same note in English, the working language between the countries: What is due at import, by the importing country's rule: goods from outside the Accord claim no preference and pay the country's own tariff, which charges no duty on them.
 
 ### Importer Party
@@ -358,7 +358,7 @@ Inside `Shipment`:
   The gross weight of the goods of this item, with their packaging.
 - `GoodsItem/Quantity` = **1** (unitCode `EA`)  
   The quantity declared.
-- `GoodsItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `GoodsItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `GoodsItem/Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -372,8 +372,8 @@ Inside `Shipment`:
   The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Haarvliet Isotopes describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 284443 = Radioactive elements, isotopes and compounds; other alloys, dispersions (including cermets), ceramic products and mixtures containing these elements, isotopes or compounds.
 - `GoodsItem/Item/CommodityClassification/ItemClassificationCode` = **33690** (listID `UN CPC Ver.2.1`)  
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Haarvliet Isotopes describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 33690 = Other radioactive elements and isotopes and compounds; alloys, dispersions, ceramic products and mixtures containing these elements, isotopes or compounds; radioactive residues.
-- `GoodsItem/Item/HazardousItem/ID` = **HVI-TCG-20-DG**  
-  The seller's dangerous goods record of the item.
+- `GoodsItem/Item/HazardousItem/ID` = **QLM-RAD-0020-DG**  
+  The seller's dangerous goods record of the item, the same in every document of its consignment.
 - `GoodsItem/Item/HazardousItem/PlacardNotation` = **7**  
   The class shown on the hazard label of the packages.
 - `GoodsItem/Item/HazardousItem/AdditionalInformation` = **Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h**  
@@ -445,8 +445,8 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>8f2e6a5d-e54e-599b-97f3-65f0e0767e2a</cbc:UUID>
   <cbc:IssueDate>2026-06-15</cbc:IssueDate>
   <cbc:IssueTime>11:40:00+00:00</cbc:IssueTime>
-  <cbc:Note languageID="qal">Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata selune mutaki Lisavu. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.</cbc:Note>
-  <cbc:Note languageID="en-XL">No duty: goods made in India and the Netherlands, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.</cbc:Note>
+  <cbc:Note languageID="qal">Lelaha namafe: liape nalana tefata India tofami Netherlands, tanapu Accord, sekila lifanaha tofami hatoki tofami hakasute nualo kifupa sahona piseki tipako mutaki namafe tefata selune mutaki Lisavu. Musaka mofilufo vukape: talapa, lifanaha tofami hatoki vahita vevisi paveli pateta.</cbc:Note>
+  <cbc:Note languageID="en-XL">No duty: goods made in India and the Netherlands, outside the Accord, but medicines and vaccines and radioactive isotopes for medicine are free of duty in the tariff of Lisavu. Import consumption tax: exempt, medicines and vaccines supplied to a public hospital.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
@@ -713,7 +713,7 @@ Inside `AdditionalDocumentReference`:
       <cbc:GrossWeightMeasure unitCode="KGM">18</cbc:GrossWeightMeasure>
       <cbc:Quantity unitCode="EA">1</cbc:Quantity>
       <cac:Item>
-        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cac:OriginCountry>
           <cbc:IdentificationCode listID="ISO 3166">NL</cbc:IdentificationCode>
@@ -725,7 +725,7 @@ Inside `AdditionalDocumentReference`:
           <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">33690</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:HazardousItem>
-          <cbc:ID>HVI-TCG-20-DG</cbc:ID>
+          <cbc:ID>QLM-RAD-0020-DG</cbc:ID>
           <cbc:PlacardNotation>7</cbc:PlacardNotation>
           <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
           <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>

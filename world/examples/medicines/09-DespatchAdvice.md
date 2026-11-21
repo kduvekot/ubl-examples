@@ -170,8 +170,8 @@ Inside `Shipment`:
   The despatching party's shipment number.
 - `Consignment/ID` = **QLM-CS-26-3980**  
   The consignment the goods travel in, as numbered when the transport was booked.
-- `Consignment/GrossWeightMeasure` = **101.1** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods with their packaging, with the dry ice and the frozen vaccine's box, as on the air waybill.
+- `Consignment/GrossWeightMeasure` = **105.3** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods with their packaging and their shipping cartons, with the dry ice and the frozen vaccine's box, as on the air waybill.
 - `Consignment/CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Kelaro Air Cargo gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/CarrierParty/PartyName/Name` = **Kelaro Air Cargo**  
@@ -289,7 +289,7 @@ Inside `DespatchLine`:
   What was despatched.
 - `OrderLineReference/LineID` = **4**  
   The order line this line fulfils.
-- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -299,8 +299,8 @@ Inside `DespatchLine`:
   The seller's own item number; as Quillmoor Pharma Distribution describes the item.
 - `Item/ManufacturersItemIdentification/ID` = **HVI-TCG-20**  
   The item number of the maker, Haarvliet Isotopes: the reseller sells the maker's item on.
-- `Item/HazardousItem/ID` = **HVI-TCG-20-DG**  
-  The seller's dangerous goods record of the item.
+- `Item/HazardousItem/ID` = **QLM-RAD-0020-DG**  
+  The seller's dangerous goods record of the item, the same in every document of its consignment.
 - `Item/HazardousItem/AdditionalInformation` = **Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h**  
   What the shipper adds about handling.
 - `Item/HazardousItem/UNDGCode` = **2915** (listID `UN Model Regulations Dangerous Goods List`)  
@@ -462,7 +462,7 @@ Inside `DespatchLine`:
     <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">105.3</cbc:GrossWeightMeasure>
       <cac:CarrierParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>
@@ -585,7 +585,7 @@ Inside `DespatchLine`:
       <cbc:LineID>4</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>
@@ -595,7 +595,7 @@ Inside `DespatchLine`:
         <cbc:ID>HVI-TCG-20</cbc:ID>
       </cac:ManufacturersItemIdentification>
       <cac:HazardousItem>
-        <cbc:ID>HVI-TCG-20-DG</cbc:ID>
+        <cbc:ID>QLM-RAD-0020-DG</cbc:ID>
         <cbc:AdditionalInformation>Category III-YELLOW; maximum dose rate at the surface 0.30 mSv/h</cbc:AdditionalInformation>
         <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2915</cbc:UNDGCode>
         <cbc:UNPackingGroupCode listID="urn:ubl-examples:world:codelist:UNPackingGroupCode">NA</cbc:UNPackingGroupCode>

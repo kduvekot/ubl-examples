@@ -1154,7 +1154,9 @@ def invoice_delivery(flow, out, buyer, day):
     elif leg:
         delivery["DeliveryLocation"] = leg_location(leg, "to", "Where the goods billed are delivered.")
     arrived = flow.numbers.get("delivery-day") if same else None
-    if arrived is not None and arrived <= day:
+    # a delivery on the invoice's own day is stated as made only where the invoice cites the buyer's receipt of it:
+    # else the invoice may come before the goods (review 1048 medicines/14#F1), and it states the despatch
+    if arrived is not None and (arrived < day or arrived == day and "ReceiptDocumentReference" in out):
         delivery = {"ActualDeliveryDate": V(flow.date(arrived), "The day the goods billed were delivered."),
                     **delivery}
     elif same and flow.numbers.get("despatch-day") is not None:
