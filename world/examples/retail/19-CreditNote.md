@@ -16,7 +16,7 @@ The shop refused a damaged bench in its receipt advice; the distributor credits 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Billing"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:billing:1.0**  
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900339316**  
+- `ProfileExecutionID` = **9900339320**  
   The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-CN-26-0039**  
   The seller's credit note number.
@@ -54,7 +54,7 @@ Inside `DiscrepancyResponse`:
 
 Inside `OrderReference`:
 
-- `ID` = **7100452422**  
+- `ID` = **7100452426**  
   The store's order.
 
 ### Billing Reference
@@ -431,7 +431,7 @@ Inside `CreditNoteLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CN-26-0039</cbc:ID>
   <cbc:UUID>21527992-a284-577e-b410-c834118ac671</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
@@ -448,7 +448,7 @@ Inside `CreditNoteLine`:
     <cbc:Description>One bench refused at goods-in, damaged in transit.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
-    <cbc:ID>7100452422</cbc:ID>
+    <cbc:ID>7100452426</cbc:ID>
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>

@@ -180,7 +180,7 @@
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">QCXE</cbc:DescriptionCode>
             <cbc:Description>Solid oak</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
@@ -240,7 +240,7 @@
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">FXEX</cbc:DescriptionCode>
             <cbc:Description>Solid ash</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
@@ -300,7 +300,7 @@
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">QCXE</cbc:DescriptionCode>
             <cbc:Description>Solid oak</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
@@ -360,7 +360,7 @@
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">FXEX</cbc:DescriptionCode>
             <cbc:Description>Solid ash</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>

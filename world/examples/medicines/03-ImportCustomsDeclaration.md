@@ -282,10 +282,10 @@ Inside `Shipment`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **NLB-INV-26-1731**  
+- `ID` = **NLB-INV-26-1732**  
   The maker's commercial invoice the customs value rests on.
 - `DocumentTypeCode` = **Invoice** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: NLB-INV-26-1731 is the example medicines/02, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
+  The kind of document referred to: NLB-INV-26-1732 is the example medicines/02, a Invoice; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Invoice.
 
 ## The document
 
@@ -504,7 +504,7 @@ Inside `AdditionalDocumentReference`:
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>NLB-INV-26-1731</cbc:ID>
+    <cbc:ID>NLB-INV-26-1732</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

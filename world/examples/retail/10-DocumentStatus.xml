@@ -3,7 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-status:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
   <cbc:ID>LMW-DST-26-0045</cbc:ID>
   <cbc:UUID>eb9072fe-2cf3-54f8-bb18-08f7f9930b9c</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
@@ -76,7 +76,7 @@
       <cbc:ResponseCode listID="UN/EDIFACT EDED 4343">AP</cbc:ResponseCode>
     </cac:Response>
     <cac:DocumentReference>
-      <cbc:ID>7100452422</cbc:ID>
+      <cbc:ID>7100452426</cbc:ID>
       <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
     </cac:DocumentReference>
   </cac:DocumentResponse>

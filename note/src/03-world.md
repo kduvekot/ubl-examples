@@ -305,14 +305,15 @@ it falls through rapids, from about 124 to 91 m in about 12 km, which end
 navigation: the barges work below them. From the border crossing the river
 forms the border, and some 45 km above Lumeport it becomes a drowned estuary,
 which narrows at Lumeport before it opens into the bay. Urvania's western
-hills and the land south of the river are green and hilly, wet from the
-westerly winds; east of them the plateau of Upland State falls to the dry
+hills and the land south of the river are green and hilly, wet in winter
+(May to September) from the west-north-westerly winds; east of them the plateau of Upland State falls to the dry
 east of Coastal State, grazing and wheat land, and the north coast is low.
 
 From the mainland the first sight of the island is its west coast: cliffs of
 about 115 to 435 m, with two bays where the land has slid into the sea,
 stacks and islets, and flats of landslide debris at their foot. That side
-faces the prevailing westerly wind and the ocean swell and has no port. The
+faces the west-north-westerly wind of winter and the ocean swell and has no
+port. The
 island is an eroded volcano, which rises to about 1,810 m some 25 km inland
 from the west coast and falls to the east. Ships round a cape to the lee
 side, where the port and the town of Selanu lie on a sheltered bay of the
@@ -1521,8 +1522,10 @@ Kingdom's civil time. A time is written with its offset from UTC, as
 ISO 8601 writes it (`07:00:00-01:00`), at least wherever a document crosses
 the zone boundary, and an address states its zone as an offset. A flight
 that leaves Lumeport at 07:00 is timetabled into Selanu at 10:45 island
-time: a block time of 2 h 45, of which about 2 h 10 to 2 h 15 are needed
-eastbound with the westerly winds, so it usually lands early.
+time: a block time of 2 h 45. In winter, eastbound with the west-north-westerly
+winds behind it, it needs about 2 h 10 to 2 h 15 of it and usually lands
+early; in summer (November to March) the winds are light and from the
+north-east.
 
 The week starts on Monday in all three countries, and weeks are numbered as
 ISO 8601 numbers them: week 1 is the week with the year's first Thursday. In

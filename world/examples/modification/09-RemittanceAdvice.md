@@ -257,7 +257,7 @@ Inside `RemittanceAdviceLine`:
 - `Note` = **2 % discount taken: paid within the discount period of the invoice's terms.**  
   Why less is paid than invoiced.
 - `DebitLineAmount` = **1295040** (currencyID `XUF`)  
-  The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
+  The amount of the invoice this payment settles: the whole payable amount. A remittance advice lists each invoice paid on its debit side, and a discount taken against it on its credit side.
 - `CreditLineAmount` = **25901** (currencyID `XUF`)  
   The settlement discount taken, a credit against the invoice.
 - `BalanceAmount` = **0** (currencyID `XUF`)  

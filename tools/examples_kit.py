@@ -624,8 +624,8 @@ def monetary_total(base, tax, currency, charges=Decimal(0)):
     out["TaxInclusiveAmount"] = amount(base + charges + tax, currency, "The total without tax plus the tax.")
     if charges:
         out["ChargeTotalAmount"] = amount(charges, currency, "The sum of the charges at document level.")
-    out["PayableAmount"] = amount(base + charges + tax, currency, "What the buyer is to pay; stated, not left to be "
-                                                                  "calculated (UBL 2.5, 2.2.2 Manifest Values).")
+    out["PayableAmount"] = amount(base + charges + tax, currency, "What the buyer is to pay, stated in full so that "
+                                                                  "it books the amount without working it out.")
     return out
 
 
@@ -899,6 +899,65 @@ def despatch_delivery(flow, day):
                                         "EndDate": V(arrive, "The same day.")}}
 
 
+def consignment_weight_why(why):
+    """The reason of a consignment's gross weight: the goods with their packaging, without the transport equipment,
+    as a consignment's weight is defined (worklist C15); `why` says where the figure comes from."""
+    return ("The gross weight of the goods with their packaging, without the transport equipment, as a "
+            f"consignment's weight is defined. {why}")
+
+
+def import_consignment(flow, doc, deal=None, **more):
+    """The consignment of an import declaration, where the declaration names one: its gross weight is that of the
+    goods arriving (C15)."""
+    deal = deal or flow.deal
+    which = "delivered" if any("delivered" in d for d in deal) else "ordered"
+    return {"GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM",
+                                      consignment_weight_why("The gross weight arriving.")), **more}
+
+
+def _equipment_weights(node, out):
+    """The transport equipment of a shipment, as (tare, gross) pairs: each piece once, not again where a goods item
+    names its container."""
+    if isinstance(node, list):
+        for x in node:
+            _equipment_weights(x, out)
+    elif isinstance(node, dict):
+        for k, v in node.items():
+            if k == "TransportEquipment":
+                for eq in v if isinstance(v, list) else [v]:
+                    if isinstance(eq, dict):
+                        out.append((eq.get("TareWeightMeasure"), eq.get("GrossWeightMeasure")))
+            elif k not in ("GoodsItem", "GoodsItemContainer"):
+                _equipment_weights(v, out)
+
+
+def _plain(x):
+    """A decimal without trailing zeros after the point: 29880 stays 29880, 1.50 becomes 1.5."""
+    t = f"{x:f}"
+    return t.rstrip("0").rstrip(".") if "." in t else t
+
+
+def shipment_gross(shipment, goods=None):
+    """A shipment's gross weight includes its transport equipment, by its definition (worklist C15): the goods'
+    weight (`goods`, else the consignment's) plus the tares of the equipment, or the equipment's own gross weights."""
+    goods = goods or shipment["Consignment"]["GrossWeightMeasure"]
+    equipment = []
+    _equipment_weights(shipment, equipment)
+    if equipment and all(isinstance(t, V) for t, _ in equipment):
+        shipment["GrossWeightMeasure"] = V(_plain(Decimal(goods.value) + sum(Decimal(t.value) for t, _ in equipment)),
+                                           f"The goods ({goods.value} kg) and the tare of the transport equipment "
+                                           f"({' + '.join(t.value for t, _ in equipment)} kg): a shipment's gross "
+                                           "weight includes the equipment.", **goods.attrs)
+    elif equipment and all(isinstance(w, V) for _, w in equipment):
+        shipment["GrossWeightMeasure"] = V(_plain(sum(Decimal(w.value) for _, w in equipment)), "The gross weights of "
+                                           f"the transport equipment with the goods in it "
+                                           f"({' + '.join(w.value for _, w in equipment)} kg): a shipment's gross "
+                                           "weight includes the equipment.", **goods.attrs)
+    else:
+        raise SystemExit("shipment_gross: the shipment states no transport equipment with its weights")
+    return shipment
+
+
 def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None, key="order"):
     deal = deal or flow.deal
     which = "delivered" if any("delivered" in d for d in deal) else "ordered"
@@ -914,10 +973,11 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
         "LineCountNumeric": V(str(len(deal)), "The number of lines."),
         "OrderReference": {"ID": V(flow.numbers[key], "The order this despatch fulfils.")},
         "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The despatching party's shipment number."),
-                     "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM", shipment_why),
                      "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
                                              "The consignment the goods travel in, as numbered when the transport "
-                                             "was booked.")},
+                                             "was booked."),
+                                     "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM",
+                                                               consignment_weight_why(shipment_why))},
                      "Delivery": despatch_delivery(flow, day)},
         "DespatchLine": [{"ID": V(str(i), "The line number."),
                           "Note": V(d.get("why", "As ordered."), "The line as the order put it."),
@@ -929,7 +989,11 @@ def despatch_advice(flow, n, doc, day, why, shipment_why, extra=None, deal=None,
     }
     flow.numbers["despatch"] = flow.numbers[f"despatch-{key}"]
     flow.numbers["despatch-to"] = doc["to"]
-    return merge_extra(out, extra)
+    gross = out["Shipment"]["Consignment"]["GrossWeightMeasure"]
+    out = merge_extra(out, extra)
+    if isinstance(out["Shipment"].get("Consignment"), dict):   # a consignment the scenario names carries the goods
+        out["Shipment"]["Consignment"].setdefault("GrossWeightMeasure", gross)
+    return out
 
 
 def receipt_advice(flow, n, doc, day, why):
@@ -1021,8 +1085,6 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
                                  "the countries; a seller from Urvania or the island also gives its notes in its "
                                  "own language."),
         **refs,
-        **({"PaymentCurrencyCode": V(cur, "Payment is asked in the invoice currency, also from abroad.")}
-           if cross_border(seller, buyer) else {}),
         **({"BuyerAssignedReference": {
             "BuyerReferenceCode": V(f"{PARTY[buyer]['identity']['cost_centre']['code']}-AP", "The buyer's routing "
                                     "code for its invoices: the accounts-payable desk of the cost centre."),
@@ -1143,8 +1205,8 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
                                                                           "to quote."),
             "BalanceAmount": amount(0, cur, "Nothing remains open on the invoice after this payment."),
             "DebitLineAmount": amount(total, cur, "The amount of the invoice this payment settles: the whole payable "
-                                                  "amount. Paid invoices are debits on a remittance advice, as in the "
-                                                  "OASIS example UBL-RemittanceAdvice-2.0-Example."),
+                                                  "amount. A remittance advice lists each invoice paid on its debit "
+                                                  "side, and a discount taken against it on its credit side."),
             **({"CreditLineAmount": amount(total - paid, cur, "The settlement discount taken, a credit against the "
                                                               "invoice."),
                 "Note": V(f"{discount} % discount taken: paid within the discount period of the invoice's terms.",
@@ -1417,10 +1479,10 @@ def waybill(flow, n, doc, day, why, weight, why_weight, extra=None):
                          "SignatoryParty": party_short(carrier)},
            "Shipment": {"ID": V(flow.numbers.get("shipment") or flow.number("shipment", doc["from"], "Shipment"),
                                 "The shipment as the despatching party numbered it."),
-                        "GrossWeightMeasure": qty(weight, "KGM", why_weight),
                         "Consignment": {"ID": V(flow.numbers.get("consignment") or
                                                 flow.number("consignment", doc["from"], "Consignment"),
-                                                "The consignment of the transport booking.")}}}
+                                                "The consignment of the transport booking."),
+                                        "GrossWeightMeasure": qty(weight, "KGM", consignment_weight_why(why_weight))}}}
     if leg["mode"] == "air":        # an air waybill has one number, the airline's (mast/03#F9, air/04#F17)
         out.pop("CarrierAssignedID")
     if "tep" in flow.numbers:
@@ -1652,13 +1714,14 @@ def export_declaration(flow, n, doc, day, why, value_why, deal=None):
                 "ID": V(flow.number("export-declaration", doc["from"], "CustomsDeclaration"),
                         "The declaration as lodged with the customs of the exporting country."),
                 "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The shipment declared."),
-                             "GrossWeightMeasure": qty(gross_weight(flow, "delivered" if any("delivered" in d for d in
-                                                                                         deal) else "ordered", deal),
-                                                       "KGM", "The gross weight leaving the country."),
                              "GoodsItem": goods_items(flow, cur, value_why, deal),
                              **unit_count(flow, deal),
                              "Consignment": {"ID": V(flow.number("consignment", doc["from"], "Consignment"),
                                                      "The consignment carried."),
+                                             "GrossWeightMeasure": qty(gross_weight(
+                                                 flow, "delivered" if any("delivered" in d for d in deal) else
+                                                 "ordered", deal), "KGM", consignment_weight_why(
+                                                 "The gross weight leaving the country.")),
                                              **({"TotalPackagesQuantity": qty(parcel_count(flow, deal), "EA",
                                                                               "The parcels declared, on the pallets "
                                                                               "counted above.")}  # D20
@@ -1672,7 +1735,6 @@ def import_declaration(flow, n, doc, day, why, value_why, refs=None, deal=None):
     out = {"ID": V(flow.number("import", doc["from"], "ImportCustomsDeclaration"), "The importer's declaration number."),
            "IssueDate": V(flow.date(day), why),
            "Shipment": {"ID": V(flow.number("shipment", doc["from"], "Shipment"), "The shipment declared."),
-                        "GrossWeightMeasure": qty(gross_weight(flow, which, deal), "KGM", "The gross weight arriving."),
                         "GoodsItem": goods_items(flow, cur, value_why, deal),
                         **unit_count(flow, deal)}}
     if refs:

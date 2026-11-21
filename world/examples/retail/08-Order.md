@@ -16,16 +16,16 @@ Delivery terms DDP retailer's shop: the order names only where to deliver; trans
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900339316**  
+- `ProfileExecutionID` = **9900339320**  
   The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
-- `ID` = **7100452422**  
+- `ID` = **7100452426**  
   The buyer's order number.
 - `UUID` = **38f1ecfc-42b0-532a-921c-171e17782563**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-24**  
   The store replenishes before the promotion.
-- `IssueTime` = **08:15:00-01:00**  
-  Sent from the store's replenishment system each morning; in the issuer's local time, with its offset from UTC.
+- `IssueTime` = **09:15:00-01:00**  
+  Sent from the store's replenishment system each morning, once the buying office has opened and checked it; in the issuer's local time, with its offset from UTC.
 - `OrderTypeCode` = **220** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 220: order. The code is from the world's copy of UN/EDIFACT 1001 Document name: 220 = Order.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
@@ -306,7 +306,7 @@ Inside `TaxTotal`:
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **11856.00** (currencyID `XBL`)  
-  The lines of this category plus the document's charges less its allowances of the category.
+  The goods less the promotion support.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  
@@ -384,11 +384,11 @@ Inside `OrderLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
-  <cbc:ID>7100452422</cbc:ID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
+  <cbc:ID>7100452426</cbc:ID>
   <cbc:UUID>38f1ecfc-42b0-532a-921c-171e17782563</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
-  <cbc:IssueTime>08:15:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>

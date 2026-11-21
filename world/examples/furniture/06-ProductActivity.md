@@ -16,7 +16,7 @@ The sales of the line in its first four weeks, from the reopening of the home an
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Product activity". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:collaboration:1.0**  
   The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900335865**  
+- `ProfileExecutionID` = **9900335869**  
   The collaboration this document belongs to: the store's replenishment of the Marrow line by Brackenmere. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **5900017153**  
   The sender's number for its activity.
@@ -202,8 +202,8 @@ Inside `SupplyChainActivityDataLine`:
   The variant of the item: the wood, added to the item number.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **QCXE** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: QCXE = European oak.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
   The variant in words.
 - `SalesItem/Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
@@ -224,8 +224,8 @@ Inside `SupplyChainActivityDataLine`:
   The variant of the item: the wood, added to the item number.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **FXEX** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: FXEX = European ash.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
   The variant in words.
 - `SalesItem/Item/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
@@ -246,8 +246,8 @@ Inside `SupplyChainActivityDataLine`:
   The variant of the item: the wood, added to the item number.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **QCXE** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: QCXE = European oak.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
   The variant in words.
 - `SalesItem/Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
@@ -268,8 +268,8 @@ Inside `SupplyChainActivityDataLine`:
   The variant of the item: the wood, added to the item number.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **FXEX** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: FXEX = European ash.
 - `SalesItem/Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
   The variant in words.
 - `SalesItem/Item/StandardItemIdentification/ID` = **9522610000054** (schemeID `GS1 GTIN`)  
@@ -283,7 +283,7 @@ Inside `SupplyChainActivityDataLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:product-activity:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900335865</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900335869</cbc:ProfileExecutionID>
   <cbc:ID>5900017153</cbc:ID>
   <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
   <cbc:IssueDate>2026-06-08</cbc:IssueDate>
@@ -420,7 +420,7 @@ Inside `SupplyChainActivityDataLine`:
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">QCXE</cbc:DescriptionCode>
             <cbc:Description>Solid oak</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
@@ -443,7 +443,7 @@ Inside `SupplyChainActivityDataLine`:
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">FXEX</cbc:DescriptionCode>
             <cbc:Description>Solid ash</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
@@ -466,7 +466,7 @@ Inside `SupplyChainActivityDataLine`:
           <cbc:ExtendedID>OAK</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">QCXE</cbc:DescriptionCode>
             <cbc:Description>Solid oak</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
@@ -489,7 +489,7 @@ Inside `SupplyChainActivityDataLine`:
           <cbc:ExtendedID>ASH</cbc:ExtendedID>
           <cac:PhysicalAttribute>
             <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+            <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">FXEX</cbc:DescriptionCode>
             <cbc:Description>Solid ash</cbc:Description>
           </cac:PhysicalAttribute>
         </cac:SellersItemIdentification>
