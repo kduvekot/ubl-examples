@@ -15322,7 +15322,7 @@ def modification(n, doc):
         blanks = Decimal(MOD.deal[0]["ordered"]) * Decimal(str(ITEM["ash-blank-1830"]["price"]["amount"]))
         # the customs value split into its parts, so that it reconciles with the export (review 1048 modification/05#F1)
         out["_note_extra"] = (f"The customs value is {(blanks * 100).quantize(Decimal(1)):,} ferra for the blanks, "
-                              f"their {blanks.quantize(Decimal('0.01')):,} lume at 100 ferra to the lume, and "
+                              f"their {blanks.quantize(Decimal('0.01')):,} lume at {world_facts.render('fx.ferra')} to the lume, and "
                               f"{(MOD_FREIGHT * 100).quantize(Decimal(1)):,} ferra for the sawmill's own carriage to "
                               "the border. "
                               "The goods remain the property of Marrowdale Sawmill, Marrowdale, Bayvarra, for which "
