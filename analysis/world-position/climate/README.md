@@ -57,6 +57,14 @@ seasons, and Lisavu, further south and east, lies on the westerlies' edge.
    southern Spain, best in summer; the wind is strongest in winter (about 8 m/s at 50 m over the sea, more on high
    ground), so sun and wind complement each other through the year.
 
+## The capitals' climate tables
+
+`fetch_climate.py` also writes `world/climate.json`, the monthly base values at sea level for the mainland's centre
+and east and for Lisavu. The encyclopedia's articles on the three capitals (Ferrano from the mainland's centre,
+Lumeport from its east, Selanu from Lisavu; the town's `wiki.climate_from`) show a monthly table made from them by
+`tools/build_wiki.py`: temperatures corrected for the town's height, rain scaled to the town's yearly rain in the
+terrain's rain raster, sunshine as at sea level (owner, 2026-11-21: tables for the capitals only, OW034).
+
 ## If the world moves or changes
 
 Run `fetch_climate.py` again (it reads the new geography), compare `climate-table.md` with the rules above, and
