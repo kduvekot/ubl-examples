@@ -84,3 +84,13 @@ Not entries, but noted so that nothing is lost:
 - **How the world handles it:** collected amounts stay out of `LineExtensionAmount` and are added only to `PayableAmount` (owner, 2026-11-21, O274); the build checks it.
 - **Suggested change:** state in the definition of `LineExtensionAmount` (and of the collection lines) whether amounts collected for a third party are included, or add a separate total for them.
 - **Source:** O274. **Status:** collected.
+
+### U-A24: Debit Note definitions copied from the Credit Note
+
+- **Element:** `DebitNote` and its elements, e.g. `DebitNote/AccountingCost`, in UBL 2.5's `UBL-Entities-2.5.gc`.
+- **What looks wrong:** about 17 Debit Note definitions were copied from the Credit Note and still name it: `DebitNote/AccountingCost` is "The Buyer's accounting code, applied to the Credit Note as a whole", and similar rows.
+- **Where the world meets it:** the coverage details page of the site, which prints UBL's own definitions; the world's debit notes (rail/12, 13) use the elements as a Debit Note's.
+- **How the world handles it:** reads each such definition as meaning the Debit Note; nothing to change in the examples.
+- **Suggested change:** replace "Credit Note" by "Debit Note" in the definitions of the Debit Note's elements.
+- **Source:** second site review, A-11 (SR2-12, 2026-11-21). **Status:** collected.
+
