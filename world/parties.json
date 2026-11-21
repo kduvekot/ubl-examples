@@ -5224,7 +5224,13 @@
       "email": "tenders@brackenmere.example"
      }
     },
-    "week": "office"
+    "week": "office",
+    "cost_centres": {
+     "freight": {
+      "code": "4100",
+      "name": "Freight and carriage"
+     }
+    }
    },
    "fleet": [
     {

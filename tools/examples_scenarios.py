@@ -770,6 +770,27 @@ DEMURRAGE_TEXT = ("Free time five days at the siding, counted from the day after
                   f"{RAIL_CONTRACT}.")
 
 
+def rail_line_shipment(f, shipment_id, k):
+    """The part of the rail shipment that one despatch line travelled in: its container with the seal the 3PL put
+    on, and the time the carrier's tractor took that box from the warehouse."""
+    pday, ptime = RAIL_PICKUP[k]
+    nth = ("first", "second")[k]
+    return {"ID": V(shipment_id, f"The shipment of the despatch advice; this line's part of it travelled in the {nth} "
+                                 "container."),
+            "Delivery": {"Despatch": {"ActualDespatchDate": V(f.date(pday), "The day the box left the warehouse."),
+                                      "ActualDespatchTime": V(ptime + ":00", f"The carrier's tractor took over the "
+                                                              f"{nth} box: the despatch of this line is its pickup.")}},
+            "TransportHandlingUnit": {"TransportEquipment": {
+                "ID": V(RAIL_BOXES[k], "The container's number: owner code, U for a freight container, six digits "
+                                       "and the ISO 6346 check digit.", schemeID="ISO6346"),
+                "TransportEquipmentTypeCode": V("CN", "UN/EDIFACT 8053 code CN: container.",
+                                                listID="UN/EDIFACT EDED 8053"),
+                "TransportEquipmentSeal": {"ID": V(RAIL_SEALS[k], "The number of the bolt seal the 3PL put on the "
+                                                                  "doors, for goods-in to check on arrival."),
+                                           "SealIssuerTypeCode": V("SHIPPER", "The seal was issued by the shipper."),
+                                           "SealStatusCode": V("APPLIED", "The seal is in place.")}}}}
+
+
 def rail_container(f, k, full):
     """One of the two 40-foot containers of the rail flow: Ferrano Rail Cargo's own boxes. Both are described alike
     (rail/08#F17, F18)."""
@@ -1127,7 +1148,12 @@ def demurrage_note(f, n, doc, day, why):
     refs = [{"ID": V(f.numbers["waybill"], "The consignment note under which the box was carried and placed.")}]
     if not carrier:
         refs.append({"ID": V(f.numbers["debit-carrier"], "Ferrano Rail Cargo's debit note for the same days, which "
-                                                         "Valdara passes on.")})
+                                                         "Valdara passes on."),
+                     # what the buyer, who never received it, is shown of it (review 1048 rail/13#F1)
+                     "DocumentDescription": V("Ferrano Rail Cargo's demurrage debit note to the seller",
+                                              "What the document is: the buyer never received it, so the reference "
+                                              "says whose it is and what it charges."),
+                     "IssuerParty": party("14-xu", short=True)})
     out = {"ID": V(no, "The supplier's number for its debit note."),
            "IssueDate": V(f.date(day), why),
            "DueDate": V(f.date(t["due"]), f"As the payment terms below count it: {t['text'][0].lower()}{t['text'][1:]}"),
@@ -1294,8 +1320,9 @@ def rail(n, doc):
                                                     "ID": V("CAS-OUT-26-0942", "The 3PL's outbound number."),
                                                     "ActualDespatchDate": V(f.date(pday), "Packed and gone."),
                                                     "ActualDespatchTime": V(ptime + ":00", "The carrier's tractor took "
-                                                                            "over the second box: the despatch is "
-                                                                            "the pickup.")}}}})
+                                                                            "over the second box, the last to leave: "
+                                                                            "the despatch is the pickup; each line "
+                                                                            "gives its own box's time.")}}}})
         line = out["DespatchLine"][0]
         lines = []
         for d, ln, p, k in rail_lot_lines(f):
@@ -1307,7 +1334,10 @@ def rail(n, doc):
                                                    "one lot in each box."),
                           "DeliveredQuantity": qty(d["ordered"], ITEM[d["item"]]["unit"], "What was despatched in "
                                                                                          "this container."),
-                          "Item": {**line["Item"], "ItemInstance": rail_lot_instance(ln, p)}})
+                          "Item": {**line["Item"], "ItemInstance": rail_lot_instance(ln, p)},
+                          # the line's container and seal, structured, and the time its box left (review 1048
+                          # rail/15#F1, F2)
+                          "Shipment": rail_line_shipment(f, out["Shipment"]["ID"].value, k)})
         out["DespatchLine"] = lines
         out["LineCountNumeric"] = V(str(len(lines)), "The number of lines: one per container and lot.")
         return out
@@ -1511,6 +1541,10 @@ def plastics(n, doc):
                                              "packaging maker plans its next production run.", ["granulate-pe"], 90)
         out["Name"] = V("Recycled PE granulate, second quarter 2026", "The catalogue's title: one product, for the "
                                                                        "quarter.")
+        out["TradingTerms"] = {"Information": V("Prices carriage paid to the river quay at Lumeport (CPT, Incoterms "
+                                                "2020): the seller books and pays the barge.",
+                                                "The delivery basis of the catalogue's prices, which an order at "
+                                                "these prices takes over.")}  # review 1048 plastics/12#F2
         return out
     if doc["doc"] == "Order":
         return kit.order(f, n, doc, 0, "The packaging maker orders for the next production run.",
@@ -13840,7 +13874,7 @@ def contest_document(n, doc):
                 "BriefDescription": V("Saltmere Engineering: registered, no exclusion grounds recorded.", "In short."),
                 "NoticeTypeCode": V("BUSREG", "Registration information."),
                 "BusinessCapability": {
-                    "CapabilityTypeCode": V("PRODUCTION", "What the firm produces: its services."),
+                    "CapabilityTypeCode": V("INSTALLATION", "What the firm does: design and installation with its own crews."),
                     "Description": V("Design and permits of telecom mast sites; installation of back-up power, "
                                      "safety equipment and ground foundations, with its own crews: the yearly value "
                                      f"of its services in {legal['turnover']['year']}, from the accounts filed for "
@@ -13859,8 +13893,10 @@ def contest_document(n, doc):
                 "ContractName": V("Design of the harbour promenade bench", "The contest."),
                 "IssueDate": V(f.date(99), "After the extended deadline for requests (30 April) and the checks of "
                                            "the candidates, when the jury selects the participants."),
-                "Note": V("Your request to participate in the design contest cannot be admitted.", "What the "
-                                                                                                  "decision is."),
+                "Note": V("Your request to participate in the design contest, received on Monday 27 April 2026 "
+                          "with the certificate of the social security fund, cannot be admitted.",
+                          "What the decision is, and the request it decides on: by its date of receipt, as the "
+                          "response has no document reference to point to it."),  # review 1048 contest/18#F1
                 "QualificationResolution": {
                     "AdmissionCode": V("REJECTED", "The studio is excluded: it is not among the candidates the jury "
                                                    "selects from."),
@@ -14579,30 +14615,42 @@ def reefer(n, doc):
                 "Attestation": {
                     "ID": V(f.number("attestation", "57-xb", "Attestation"), "The inspector's attestation."),
                     "Name": V("Freedom from quarantine pests", "What is attested."),
-                    "Description": V("Sampled at the packhouse and found free of codling moth and fire blight.",
+                    "Description": V("Sampled at the packhouse and found free of codling moth; the orchards of "
+                                     "origin inspected this season and found free of fire blight.",
                                      "In words: the two pests of apples and pears that the island, which has neither, "
-                                     "keeps out."),
+                                     "keeps out, each checked in its own way."),
                     "Note": V("Two per cent of the cartons sampled: 23 of 1,120.", "The sample."),
                     "AcceptanceIndicator": V("true", "Accepted."),
                     "IssuerParty": party("57-xb", short=True),
+                    # one line for the island's rule on pome fruit, a sub-line for each of its two pests, each with
+                    # its own basis (review 1048 reefer/04#F1)
                     "AttestationLine": {
-                        "ID": V("1", "The pests checked."), "TypeCode": V("PEST", "A pest check."),
-                        "Description": V("Codling moth (Cydia pomonella): none found.", "The finding."),
+                        "ID": V("1", "The island's rule on the pests of pome fruit."),
+                        "TypeCode": V("PEST", "A pest check."),
+                        "Description": V("Freedom from quarantine pests of pome fruit.", "What the line attests, "
+                                                                                         "pest by pest below."),
                         "CriterionItem": {"ID": V("XL-PH-12", "The island's import rule for pome fruit."),
-                                          "CriterionDescription": V("No live larvae and no entry holes in a sample "
-                                                                    "of 2 % of the cartons.", "The criterion."),
+                                          "CriterionDescription": V("Free of codling moth and fire blight.",
+                                                                    "The criterion: the two pests the rule names."),
                                           "DeclaredPropertyItem": {"Name": V("Apples and pears, fresh", "The goods "
                                                                                                        "it is "
                                                                                                        "about.")}},
-                        "SubAttestationLine": {"ID": V("1.1", "The second pest."),
-                                               "Description": V("Fire blight (Erwinia amylovora): no symptoms in "
-                                                                "the orchards of origin this season.",
-                                                                "The finding.")}}},
+                        "SubAttestationLine": [
+                            {"ID": V("1.1", "The first pest."),
+                             "Description": V("Codling moth (Cydia pomonella): no live larvae and no entry holes in "
+                                              "the packhouse sample of 2 % of the cartons.", "The finding, and how it "
+                                                                                              "was checked.")},
+                            {"ID": V("1.2", "The second pest."),
+                             "Description": V("Fire blight (Erwinia amylovora): no symptoms in the orchards of "
+                                              "origin at this season's inspection.", "The finding, and how it was "
+                                                                                     "checked.")}]}},
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment certified."),
                              # a plant health certificate attests the goods' health: no customs value (cotton/10#F9)
                              "GoodsItem": [{k: v for k, v in g.items() if k != "DeclaredCustomsValueAmount"}
                                            for g in kit.goods_items(f, "XBL", "")]},
-                "AdditionalDocumentReference": {"ID": V(f.numbers["order"], "The wholesaler's order.")},
+                "AdditionalDocumentReference": {"ID": V(f.numbers["order-response"], "The cooperative's order "
+                                                        "response, whose quantities the certificate covers.")},
+                # review 1048 reefer/04#F2: not the order, whose quantities the response changed
                 "Signature": seal(doc["from"], "FDA-SIG-26-PH")}
     if d == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, RF_DAY["export"], "The forwarder, as customs agent, declares the "

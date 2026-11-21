@@ -273,7 +273,7 @@ Inside `Shipment`:
 - `Delivery/Despatch/ActualDespatchDate` = **2026-04-13**  
   Packed and gone.
 - `Delivery/Despatch/ActualDespatchTime` = **15:00:00-01:00**  
-  The carrier's tractor took over the second box: the despatch is the pickup; in the issuer's local time, with its offset from UTC.
+  The carrier's tractor took over the second box, the last to leave: the despatch is the pickup; each line gives its own box's time; in the issuer's local time, with its offset from UTC.
 
 ### Despatch Line
 
@@ -323,6 +323,22 @@ Inside `DespatchLine`:
   A fact about this lot: the galvanising and powder-coating batch its frames went through.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-071**  
   Its batch: each lot has its own, in the coating line's running count of the year (the production record).
+- `Shipment/ID` = **7400043688**  
+  The shipment of the despatch advice; this line's part of it travelled in the first container.
+- `Shipment/Delivery/Despatch/ActualDespatchDate` = **2026-04-13**  
+  The day the box left the warehouse.
+- `Shipment/Delivery/Despatch/ActualDespatchTime` = **13:00:00-01:00**  
+  The carrier's tractor took over the first box: the despatch of this line is its pickup; in the issuer's local time, with its offset from UTC.
+- `Shipment/TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044175** (schemeID `ISO6346`)  
+  The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID` = **XU-VI-30411**  
+  The number of the bolt seal the 3PL put on the doors, for goods-in to check on arrival.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode` = **SHIPPER** (listID `urn:ubl-examples:world:codelist:SealIssuerTypeCode`)  
+  The seal was issued by the shipper. The code is from the Trade Accord's seal issuer type list: SHIPPER = Shipper.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealStatusCode` = **APPLIED** (listID `urn:ubl-examples:world:codelist:SealStatusCode`)  
+  The seal is in place. The code is from the Trade Accord's seal status list: APPLIED = Applied.
 - `ID` = **2**  
   The line number.
 - `Note` = **Container FRXU1044180, seal XU-VI-30412: the lot of 10 April.**  
@@ -367,6 +383,22 @@ Inside `DespatchLine`:
   A fact about this lot: the galvanising and powder-coating batch its frames went through.
 - `Item/ItemInstance/LotIdentification/AdditionalItemProperty/Value` = **ZN-26-072**  
   Its batch: each lot has its own, in the coating line's running count of the year (the production record).
+- `Shipment/ID` = **7400043688**  
+  The shipment of the despatch advice; this line's part of it travelled in the second container.
+- `Shipment/Delivery/Despatch/ActualDespatchDate` = **2026-04-13**  
+  The day the box left the warehouse.
+- `Shipment/Delivery/Despatch/ActualDespatchTime` = **15:00:00-01:00**  
+  The carrier's tractor took over the second box: the despatch of this line is its pickup; in the issuer's local time, with its offset from UTC.
+- `Shipment/TransportHandlingUnit/TransportEquipment/ID` = **FRXU1044180** (schemeID `ISO6346`)  
+  The container's number: owner code, U for a freight container, six digits and the ISO 6346 check digit.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID` = **XU-VI-30412**  
+  The number of the bolt seal the 3PL put on the doors, for goods-in to check on arrival.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode` = **SHIPPER** (listID `urn:ubl-examples:world:codelist:SealIssuerTypeCode`)  
+  The seal was issued by the shipper. The code is from the Trade Accord's seal issuer type list: SHIPPER = Shipper.
+- `Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealStatusCode` = **APPLIED** (listID `urn:ubl-examples:world:codelist:SealStatusCode`)  
+  The seal is in place. The code is from the Trade Accord's seal status list: APPLIED = Applied.
 
 ## The document
 
@@ -617,6 +649,26 @@ Inside `DespatchLine`:
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
+    <cac:Shipment>
+      <cbc:ID>7400043688</cbc:ID>
+      <cac:Delivery>
+        <cac:Despatch>
+          <cbc:ActualDespatchDate>2026-04-13</cbc:ActualDespatchDate>
+          <cbc:ActualDespatchTime>13:00:00-01:00</cbc:ActualDespatchTime>
+        </cac:Despatch>
+      </cac:Delivery>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30411</cbc:ID>
+            <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">SHIPPER</cbc:SealIssuerTypeCode>
+            <cbc:SealStatusCode listID="urn:ubl-examples:world:codelist:SealStatusCode">APPLIED</cbc:SealStatusCode>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+    </cac:Shipment>
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
@@ -659,6 +711,26 @@ Inside `DespatchLine`:
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
+    <cac:Shipment>
+      <cbc:ID>7400043688</cbc:ID>
+      <cac:Delivery>
+        <cac:Despatch>
+          <cbc:ActualDespatchDate>2026-04-13</cbc:ActualDespatchDate>
+          <cbc:ActualDespatchTime>15:00:00-01:00</cbc:ActualDespatchTime>
+        </cac:Despatch>
+      </cac:Delivery>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30412</cbc:ID>
+            <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">SHIPPER</cbc:SealIssuerTypeCode>
+            <cbc:SealStatusCode listID="urn:ubl-examples:world:codelist:SealStatusCode">APPLIED</cbc:SealStatusCode>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+    </cac:Shipment>
   </cac:DespatchLine>
 </DespatchAdvice>
 ```

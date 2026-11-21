@@ -34,9 +34,9 @@ The store took the returned pieces back to the maker's workshop with its own van
   Why the store invoices the maker.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `AccountingCostCode` = **1100**  
+- `AccountingCostCode` = **4100**  
   The buyer's cost centre, quoted in its contract or booking, so the invoice is booked without asking.
-- `AccountingCost` = **Timber and materials**  
+- `AccountingCost` = **Freight and carriage**  
   The cost centre in words.
 - `LineCountNumeric` = **1**  
   The number of invoice lines, as a check on the transfer.
@@ -424,8 +424,8 @@ Inside `InvoiceLine`:
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The stock above the target at the end of the sale-or-return trial went back at the maker's cost, as the own-label agreement says; the store carried it with its own van.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Freight and carriage</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:ContractDocumentReference>

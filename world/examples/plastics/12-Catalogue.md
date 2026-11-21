@@ -191,6 +191,13 @@ Inside `SellerSupplierParty`:
 - `Party/PartyName/Name` = **Rinova Recovery**  
   The same party as at ProviderParty, where its full details are given; only its identifier and name are repeated.
 
+### Trading Terms
+
+Inside `TradingTerms`:
+
+- `Information` = **Prices carriage paid to the river quay at Lumeport (CPT, Incoterms 2020): the seller books and pays the barge.**  
+  The delivery basis of the catalogue's prices, which an order at these prices takes over.
+
 ### Catalogue Line
 
 Inside `CatalogueLine`:
@@ -413,6 +420,9 @@ Inside `CatalogueLine`:
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:TradingTerms>
+    <cbc:Information>Prices carriage paid to the river quay at Lumeport (CPT, Incoterms 2020): the seller books and pays the barge.</cbc:Information>
+  </cac:TradingTerms>
   <cac:CatalogueLine>
     <cbc:ID>1</cbc:ID>
     <cac:RequiredItemLocationQuantity>

@@ -138,6 +138,9 @@
       </cac:PartyName>
     </cac:Party>
   </cac:SellerSupplierParty>
+  <cac:TradingTerms>
+    <cbc:Information>Prices carriage paid to the river quay at Lumeport (CPT, Incoterms 2020): the seller books and pays the barge.</cbc:Information>
+  </cac:TradingTerms>
   <cac:CatalogueLine>
     <cbc:ID>1</cbc:ID>
     <cac:RequiredItemLocationQuantity>

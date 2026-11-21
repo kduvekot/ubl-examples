@@ -30,8 +30,8 @@ A small design studio that asked to take part is excluded at the selection for u
   After the extended deadline for requests (30 April) and the checks of the candidates, when the jury selects the participants.
 - `IssueTime` = **16:22:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
-- `Note` = **Your request to participate in the design contest cannot be admitted.**  
-  What the decision is.
+- `Note` = **Your request to participate in the design contest, received on Monday 27 April 2026 with the certificate of the social security fund, cannot be admitted.**  
+  What the decision is, and the request it decides on: by its date of receipt, as the response has no document reference to point to it.
 
 ### Sender Party
 
@@ -238,7 +238,7 @@ Inside `AppealTerms`:
   <cbc:ContractName>Design of the harbour promenade bench</cbc:ContractName>
   <cbc:IssueDate>2026-05-12</cbc:IssueDate>
   <cbc:IssueTime>16:22:00-01:00</cbc:IssueTime>
-  <cbc:Note>Your request to participate in the design contest cannot be admitted.</cbc:Note>
+  <cbc:Note>Your request to participate in the design contest, received on Monday 27 April 2026 with the certificate of the social security fund, cannot be admitted.</cbc:Note>
   <cac:SenderParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:public-body-register">6250397184</cbc:ID>
