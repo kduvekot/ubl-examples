@@ -192,7 +192,7 @@ list. The code is from the world's copy of UBL's Country identification
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/PartyTaxScheme/RegistrationName</code> =
-<strong>Kelpstone Gas Ltd</strong><br />
+<strong>Kelpstone Gas Corp</strong><br />
 The name under which the party is registered for state sales tax.</li>
 <li><code>Party/PartyTaxScheme/CompanyID</code> =
 <strong>NT-1238631</strong> (schemeID
@@ -226,7 +226,7 @@ The state or territory whose sales tax the party is registered for.</li>
 The country whose tax this is. The code is from the world's copy of
 UBL's Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>Party/PartyLegalEntity/RegistrationName</code> =
-<strong>Kelpstone Gas Ltd</strong><br />
+<strong>Kelpstone Gas Corp</strong><br />
 The name under which the party is registered, with its legal form.</li>
 <li><code>Party/PartyLegalEntity/CompanyID</code> =
 <strong>20412877</strong> (schemeID
@@ -235,16 +235,16 @@ Number in the Federal business register of Bayvarra. The schemeID names
 the scheme it is from: the Federal business register of Bayvarra (8
 digits).</li>
 <li><code>Party/PartyLegalEntity/CompanyLegalFormCode</code> =
-<strong>LTD</strong> (listID
+<strong>CORP</strong> (listID
 <code>urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode</code>)<br />
 The legal form, as a code of Bayvarra's national list: only the listID
 tells the forms of different countries apart. The code is from
-Bayvarra's national company legal form list: LTD = Limited company
-(private).</li>
+Bayvarra's national company legal form list: CORP = Corporation
+(public).</li>
 <li><code>Party/PartyLegalEntity/CompanyLegalForm</code> =
-<strong>Limited company (private)</strong> (languageID
+<strong>Corporation (public)</strong> (languageID
 <code>en-XB</code>)<br />
-The name of code LTD in Bayvarra's national company legal form
+The name of code CORP in Bayvarra's national company legal form
 list.</li>
 <li><code>Party/PartyLegalEntity/RegistrationAddress/CityName</code> =
 <strong>Gullhaven</strong><br />
@@ -506,7 +506,7 @@ the codes of the bank and the branch that keep it; it is not called an
 IBAN, because the world's countries are not registered IBAN
 countries.</li>
 <li><code>PayeeFinancialAccount/Name</code> = <strong>Kelpstone Gas
-Ltd</strong><br />
+Corp</strong><br />
 The account holder, as the bank knows it.</li>
 <li><code>PayeeFinancialAccount/AccountTypeCode</code> =
 <strong>CACC</strong> (listID
@@ -773,7 +773,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LocationCoordinate</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PhysicalLocation</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Kelpstone Gas Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Kelpstone Gas Corp&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:tax&quot;</span>&gt;NT-1238631&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TaxLevelCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TaxLevelCode&quot;</span>&gt;STATE&lt;/<span class="kw">cbc:TaxLevelCode</span>&gt;</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TaxScheme</span>&gt;</span>
@@ -788,10 +788,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TaxScheme</span>&gt;</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyTaxScheme</span>&gt;</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Kelpstone Gas Ltd&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Kelpstone Gas Corp&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412877&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode&quot;</span>&gt;LTD&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalForm</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Limited company (private)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalFormCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode&quot;</span>&gt;CORP&lt;/<span class="kw">cbc:CompanyLegalFormCode</span>&gt;</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyLegalForm</span> <span class="ot">languageID=</span><span class="st">&quot;en-XB&quot;</span>&gt;Corporation (public)&lt;/<span class="kw">cbc:CompanyLegalForm</span>&gt;</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:RegistrationAddress</span>&gt;</span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CityName</span>&gt;Gullhaven&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Country</span>&gt;</span>
@@ -873,7 +873,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:PaymentMeansCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 4461&quot;</span>&gt;30&lt;/<span class="kw">cbc:PaymentMeansCode</span>&gt;</span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PayeeFinancialAccount</span>&gt;</span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:account&quot;</span>&gt;XB45BLUM38522004817534&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Kelpstone Gas Ltd&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Kelpstone Gas Corp&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 20022 ExternalCashAccountType1Code&quot;</span>&gt;CACC&lt;/<span class="kw">cbc:AccountTypeCode</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:AccountFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AccountFormatCode&quot;</span>&gt;ISO13616&lt;/<span class="kw">cbc:AccountFormatCode</span>&gt;</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:CurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:CurrencyCode</span>&gt;</span>
@@ -973,6 +973,6 @@ href="example-energy-09-RemittanceAdvice.html">Remittance Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/d94158e9657115ce0761bced0165462ca10cb365"><code>d94158e</code></a> of 2026-11-21 10:03 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/9e672019780f97c57e697eff23bcf2034a512b79"><code>9e67201</code></a> of 2026-11-21 10:18 UTC</p></div></footer>
 </body>
 </html>
