@@ -12,8 +12,8 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 - ~~How and when Bayvarra became an independent federation (its Federation Day marks the states forming the federation).~~ **Filled 2026-11-20 (OW004):** Upland a colony of its own in 1858; the two colonies federated on 16 October 1899 as a dominion under the Crown; fully sovereign by the early 1930s.
 - ~~The form of government of each country: head of state, parliament.~~ **Filled 2026-11-21 (OW025):** Urvania a parliamentary republic, Bayvarra a federal parliamentary monarchy under the Crown, Lisavu a constitutional monarchy of the rulers' line.
 - ~~When the Lisavans first settled the island.~~ **Filled 2026-11-20 (OW005):** a landing by canoe at Natahoma about 2,000 years ago; the coasts settled in the centuries after; one line of rulers at Selanu by about the 14th century.
-- The rulers' old meeting ground in Selanu: what it looks like. Its role (OW019) and its name, the Litakima (OW024), are decided.
-- When the first European ships called at Lisavu, before the cotton estates.
+- ~~The rulers' old meeting ground in Selanu: what it looks like.~~ Filled 2026-11-21 (OW019, OW024, OW031).
+- ~~When the first European ships called at Lisavu, before the cotton estates.~~ Filled 2026-11-21 (OW031).
 - ~~The exact years of the first landing at Larkmouth, the Sardinian treaty with the Urvanian rulers, the boundary convention, and the move of Bayvarra's capital from Larkmouth to Lumeport.~~ **Filled 2026-11-20 (OW006):** the landing on 16 February 1824, the treaty in 1840, the annexation on 29 November 1841, the fort in 1842, the capital moved in 1852, the convention in 1857, Upland on 12 April 1858.
 - ~~The years of the Trade Accord's later protocols: procurement rules, the payment link and card schemes, electronic business documents.~~ **Filled 2026-11-20 (OW007):** procurement 1999, payment link and card schemes 2003, electronic business documents 2014.
 - ~~The name of the main river and of the plateau rivers.~~ **Filled 2026-11-20 (OW008):** 40 rivers named (the Runmek, the Bruna, the Lark, the Tallow, the Marrow …), with an article each and the water map.
@@ -48,7 +48,7 @@ decided with the owner one at a time, like the gaps here.
 ### Bayvarra Information Service (21-xb)
 
 - ~~when the service was set up, and under which law~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
-- its staff and ~~the ministry or department it reports to~~ Filled 2026-11-21 (OW025). Staff: open.
+- ~~its staff and the ministry or department it reports to~~ Filled 2026-11-21 (OW025, OW031).
 - ~~whether it shares the government building on Government Hill with other public bodies~~ Filled 2026-11-21 (OW026).
 
 ### Brackenmere Furniture (37-xb)
@@ -77,7 +77,7 @@ decided with the owner one at a time, like the gaps here.
 ### Codana Identification Agency (31-xu)
 
 - Codana has no founding date in its record, so {founded_year} cannot be used; the year 1999 is written out from the story
-- its staff and how it is funded (fees, state budget)
+- ~~its staff and how it is funded (fees, state budget)~~ Filled 2026-11-21 (OW031).
 - ~~under which law or ministry it was set up~~ Filled 2026-11-21 (OW025). (the Ministry of Industry; the law: open)
 
 ### Crevalto Bank (23-xu)
@@ -96,7 +96,7 @@ decided with the owner one at a time, like the gaps here.
 ### Customs and Border Service of Bayvarra (19-xb)
 
 - ~~When the service was established and under which law~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
-- Its headcount and ~~head office (the border office is the only address given)~~ Filled 2026-11-21 (OW026).
+- ~~Its headcount and head office (the border office is the only address given) Filled 2026-11-21 (OW026).~~ Filled 2026-11-21 (OW026, OW031).
 - ~~How many offices and posts it has beyond the crossing, the seaport, the airport and Marrowdale~~ Filled 2026-11-21 (OW026).
 
 ### Department of Agriculture of Lisavu (45-xl)
@@ -181,7 +181,7 @@ decided with the owner one at a time, like the gaps here.
 ### Island Customs Service (19-xl)
 
 - ~~When the customs service was set up and how it was organised under the English settlers.~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
-- Its staff numbers and ~~its head office, if different from the Wharf Road office~~ Filled 2026-11-21 (OW026).
+- ~~Its staff numbers and its head office, if different from the Wharf Road office Filled 2026-11-21 (OW026).~~ Filled 2026-11-21 (OW026, OW031).
 - ~~When the island was settled and became independent (not set).~~ Filled 2026-11-20 (OW003, OW005).
 
 ### Kelaro Air Cargo (12-xl)
@@ -205,7 +205,7 @@ decided with the owner one at a time, like the gaps here.
 ### Lumeport Public Works Department (2-xb)
 
 - ~~When the department was established~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
-- Its headcount and budget
+- ~~Its headcount and budget~~ Filled 2026-11-21 (OW031).
 - ~~Its tasks beyond procurement (roads, parks, buildings) and how it is organised within the city~~ Filled 2026-11-21 (OW026).
 
 ### Lumeport Textile Mill (40-xb)
@@ -218,7 +218,7 @@ decided with the owner one at a time, like the gaps here.
 - ~~When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
 - ~~Its membership, how it decides and who chairs it~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
 - ~~Its tasks beyond the agreement on electronic documents (code lists, the parities, disputes)~~ Filled 2026-11-21 (OW026).
-- Its headcount
+- ~~Its headcount~~ Filled 2026-11-21 (OW031).
 
 ### Lumeway Distribution (6-xb)
 
@@ -230,7 +230,7 @@ decided with the owner one at a time, like the gaps here.
 - ~~When it was established~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
 - ~~Which ships fly Lisavu's flag (the ships named in the sources fly Bayvarra's)~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
 - ~~Its other tasks (port state control, safety of navigation, seafarers' certificates)~~ Filled 2026-11-21 (OW026).
-- Its headcount
+- ~~Its headcount~~ Filled 2026-11-21 (OW031).
 
 ### Marrowdale Sawmill (36-xb)
 
@@ -257,7 +257,7 @@ decided with the owner one at a time, like the gaps here.
 ### Procurement Review Board of Bayvarra (28-xb)
 
 - ~~When and by which law the board was set up, possibly with the Accord's common procurement rules (their date is not set).~~ Filled 2026-11-20 (OW007): under the procurement protocol of 1999.
-- Its members and any case it has decided (open); ~~how many cases it hears a year~~ Filled 2026-11-21 (OW026).
+- ~~Its members and how many cases it hears a year~~ Filled 2026-11-21 (OW026, OW031); any case it has decided: open.
 - ~~Whether the government quarter building is the address on Justice Row or a separate site~~ Filled 2026-11-21 (OW026).
 
 ### Quillmoor Pharma Distribution (49-xb)
