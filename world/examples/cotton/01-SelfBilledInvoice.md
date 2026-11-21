@@ -359,7 +359,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxInclusiveAmount` = **1485.000** (currencyID `XLC`)  
   The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section.
 - `PayableAmount` = **1485.000** (currencyID `XLC`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the buyer is to pay, stated in full so that it books the amount without working it out.
 
 ### Invoice Line
 

@@ -7613,8 +7613,8 @@ def _(f, n, doc, out):
                                                                      ".", 1),  # sea/03#F6
             "DigitalAgreementTerms": {
                 "Description": V("The terms of the Trade Accord's multilateral digital agreement, version 1.0, "
-                                 "published by the Trade Accord Council: documents are exchanged over the trade "
-                                 "accord's network.", "The terms: the Accord's own, which the participants accept "
+                                 "published by the Trade Accord Council: documents are exchanged over the Trade "
+                                 "Accord's network.", "The terms: the Accord's own, which the participants accept "
                                  "by acceding, not the distributor's."),  # sea/03#F16
                 "ValidityPeriod": {"StartDate": V(f.date(1), "From signing."), "EndDate": V(f.date(366), "For a "
                                                                                                          "year.")},
@@ -11673,7 +11673,12 @@ def ferra_tax(f, out, day, why="Valdara reports its value added tax in ferra, it
     """Valdara reports its VAT in ferra, while the documents are in lume, the contract's currency (D28 point 10;
     tender/33#F13): the tax currency with the tax total in ferra beside the one in lume, at the parity of 100. It is
     paid in lume, into its lume account at Bank of Lumeport (O226): no payment currency apart from the document's.
-    The sawmill's slat invoice to Valdara, a domestic sale in Urvania in lume, does the same (wood/08, O259)."""
+    The sawmill's slat invoice to Valdara, a domestic sale in Urvania in lume, does the same (wood/08, O259).
+    Only where tax is charged: a document whose tax is 0 (an export at 0 %, a service outside the scope) has no tax
+    to convert (owner, 2026-11-21, Q5, O262)."""
+    tt = out["TaxTotal"] if isinstance(out["TaxTotal"], dict) else out["TaxTotal"][0]
+    if Decimal(tt["TaxAmount"].value) == 0:
+        return
     out["TaxCurrencyCode"] = V("XUF", why)
     out["TaxExchangeRate"] = {"SourceCurrencyCode": V("XBL", "The document currency."),
                               "TargetCurrencyCode": V("XUF", "The seller's tax currency."),

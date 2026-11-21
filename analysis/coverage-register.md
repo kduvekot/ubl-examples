@@ -1037,6 +1037,15 @@ Coverage 4623 → 4613, 10 elements; all 10 won back the same day (4613 → 4623
 | `Order/TaxCurrencyCode` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
 | `Order/TaxExchangeRate` | 0..1 | tender/26-Order | none under O262: an order charges no tax | — | open |
 
+### O262/Q5: zero tax is not charged (2026-11-21, owner)
+
+> Stage 7, Q5 (owner, 2026-11-21, option A): a document whose tax is 0 (the 0 % export of tender/32 and 33, the service outside the scope of tender/39) charges no tax, so it carries no tax currency, no tax exchange rate and no second tax total in ferra; `check_tax_currency()` in `tools/build_examples.py` allows them only on a bill or purchase receipt with a tax amount above 0. The invoices keep `Invoice/TaxCurrencyCode` and `Invoice/TaxExchangeRate` through wood/08.
+
+| Element | Card. | Lost from | Candidate case | Place | Status |
+|---|---|---|---|---|---|
+| `CreditNote/TaxCurrencyCode` | 0..1 | tender/33-CreditNote | O262/Q5: zero tax is not charged; a credit note of a taxed sale whose seller accounts for its tax in another currency, as the sawmill's taxed slat sale (wood/08) would be credited | O262 | open |
+| `CreditNote/TaxExchangeRate` | 0..1 | tender/33-CreditNote | O262/Q5: zero tax is not charged; a credit note of a taxed sale whose seller accounts for its tax in another currency, as the sawmill's taxed slat sale (wood/08) would be credited | O262 | open |
+
 ### Read-throughs of 2026-11-20: the air frames in common transit (D39, owner)
 
 > The air frames cross Bayvarra in the Accord's common transit (D39 point 2): they are neither imported into Bayvarra nor exported from it, and goods in transit are not recorded in trade statistics (owner, 2026-11-20). The forwarding instructions air/03 no longer give an export statistics value. `Shipment/DeclaredStatisticsValueAmount` stays covered by modification/05.

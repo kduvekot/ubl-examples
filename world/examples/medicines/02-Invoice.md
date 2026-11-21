@@ -236,7 +236,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxInclusiveAmount` = **4050000.00** (currencyID `INR`)  
   The total without tax plus the tax.
 - `PayableAmount` = **4050000.00** (currencyID `INR`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the buyer is to pay, stated in full so that it books the amount without working it out.
 
 ### Invoice Line
 

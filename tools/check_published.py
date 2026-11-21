@@ -9,6 +9,8 @@ analysis/codelist-decisions.md): no internal references in what a reader sees. S
   * names of real specifications the world does not follow: EN 16931, Peppol, XRechnung;
   * the project's own notes: code-list decisions (P-SB), any mention of "the (UBL|OASIS) TC";
   * finding IDs in any form: "(timelines#F6)", "#F12" with any prefix, a bare "(F7)", "UBL rule IND6", "(IND5)";
+  * reasons from the UBL examples or principles, which mean nothing in the world (owner, Q3): "Manifest Values",
+    "UBL 2.5, 2.2.2", "OASIS example"; and the Trade Accord, a proper name, in lower case ("trade accord");
   * European standards and law the world does not follow (owner, O265: what is globally accepted as the norm stays,
     such as ISO, GS1, the GHG Protocol, SOLAS, Basel, Montreal, CMNI, CIM/COTIF, IAEA, IPPC/ISPM, UNECE FFV, WTO
     and PCI DSS): "EN nnnn" standard numbers except EN_ALLOWED, RecyClass, the European List of Waste, VATEX,
@@ -34,7 +36,10 @@ FAIL = re.compile(r"(?<![\w`/=-])(?:D\d{1,2}(?: point \d+)?|O\d{1,3}|MO\d{3}|OW\
                   r"|\bworklist C\d+|\(C\d{2,3}\)|\b[a-z]+/\d{2}#F\d+"
                   r"|\b(?:world|tools|analysis)/[\w/-]+\.(?:json|py|md)\b|\bEN 16931\b|\bPeppol\b|\bXRechnung\b"
                   r"|\bdecision P-[A-Z0-9]+\b|\bP-SB\b|\bthe (?:OASIS )?(?:UBL )?TC\b"
-                  r"|#F\d+\b|\(F\d{1,3}\)|\bIND\d+\b")
+                  r"|#F\d+\b|\(F\d{1,3}\)|\bIND\d+\b"
+                  r"|\bManifest Values\b|\bOASIS example\b|\bUBL 2\.5, 2\.2\.2\b")   # the UBL examples have no
+#                                                            meaning in the world (owner, 2026-11-21, Q3)
+PROPER_NAMES = re.compile(r"\b(?:[Tt]rade accord|trade Accord)\b")   # the Trade Accord is a proper name (Q3)
 EN_STANDARD = re.compile(r"\bEN \d{3,5}(?:-\d+)*\b")
 EN_ALLOWED = {"EN 15804"}                            # environmental product declarations: kept (owner, O265)
 EUROPEAN = re.compile(r"\bRecyClass\b|\bEuropean List of Waste\b|\bVATEX\b|\bEU\b|\bEuropean Union\b")
@@ -93,7 +98,7 @@ def main(site):
             p.feed(open(os.path.join(dirpath, f), encoding="utf-8").read())
             text = " ".join(p.parts)
             exempt = f == f"world-{EU_PARTY}.html" or bool(eu_issues.match(" ".join(p.title.split())))
-            for m in list(FAIL.finditer(text)) + european(text, exempt):
+            for m in list(FAIL.finditer(text)) + list(PROPER_NAMES.finditer(text)) + european(text, exempt):
                 fails.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
             for m in WARN.finditer(text):
                 warns.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
@@ -106,7 +111,7 @@ def main(site):
         for code, v in (cl.get("codes") or {}).items():
             texts += [(f"code {code}", t) for t in (v if isinstance(v, list) else [v]) if isinstance(t, str)]
         for what, t in texts:
-            for rule in (FAIL, EU_LAW, EUROPEAN, EN_STANDARD):
+            for rule in (FAIL, EU_LAW, EUROPEAN, EN_STANDARD, PROPER_NAMES):
                 for m in rule.finditer(t):
                     if rule is EN_STANDARD and m.group(0) in EN_ALLOWED:
                         continue

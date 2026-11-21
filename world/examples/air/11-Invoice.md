@@ -381,7 +381,7 @@ Inside `LegalMonetaryTotal`:
 - `ChargeTotalAmount` = **714.00** (currencyID `XBL`)  
   The sum of the charges at document level.
 - `PayableAmount` = **1226.00** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the buyer is to pay, stated in full so that it books the amount without working it out.
 
 ### Invoice Line
 

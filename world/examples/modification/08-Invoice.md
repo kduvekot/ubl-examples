@@ -363,7 +363,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxInclusiveAmount` = **1295040** (currencyID `XUF`)  
   The total without tax plus the tax.
 - `PayableAmount` = **1295040** (currencyID `XUF`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the buyer is to pay, stated in full so that it books the amount without working it out.
 
 ### Invoice Line
 

@@ -2951,6 +2951,24 @@ def currency_cleanup(content, doc):
     walk(content, doc["doc"] in RATE_FREE_DOCS, "")
 
 
+TAX_CURRENCY_DOCS = {"Invoice", "CreditNote", "SelfBilledInvoice", "SelfBilledCreditNote", "DebitNote",
+                     "PurchaseReceipt"}
+
+
+def check_tax_currency(content, doc):
+    """O262, stage 7 A5 (owner, 2026-11-21, Q5): a tax currency and a tax exchange rate only on a bill or a purchase
+    receipt that charges tax: some tax amount above 0. Zero tax is not charged."""
+    if not any(k in content for k in ("TaxCurrencyCode", "TaxExchangeRate")):
+        return
+    where = f"{doc['flow']}/{xmlname(doc['nn'], doc)}"
+    if doc["doc"] not in TAX_CURRENCY_DOCS:
+        raise SystemExit(f"{where}: a tax currency or tax exchange rate on a {doc['doc']}")  # O262, stage 7 Q5
+    tts = content.get("TaxTotal")
+    tts = tts if isinstance(tts, list) else [tts] if isinstance(tts, dict) else []
+    if not any(isinstance(t.get("TaxAmount"), V) and Decimal(t["TaxAmount"].value) > 0 for t in tts):
+        raise SystemExit(f"{where}: a tax currency or tax exchange rate, and no tax is charged")  # O262, stage 7 Q5
+
+
 # ---------------------------------------------------------------- items ordered from a catalogue (worklist C25)
 def catalogue_items(content, doc):
     """An order placed from the seller's catalogue, which it cites, marks its items as ordered from it: the place
@@ -4471,6 +4489,7 @@ def main(flow_id, check=False):
         requested_delivery(content, doc, n)
         catalogue_items(content, doc)
         currency_cleanup(content, doc)
+        check_tax_currency(content, doc)
         national_tariffs(content, doc)
         tax_arithmetic(content, f"{flow_id} {n} {doc['doc']}")
         transport_goods(content, doc)

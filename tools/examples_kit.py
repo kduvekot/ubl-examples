@@ -624,8 +624,8 @@ def monetary_total(base, tax, currency, charges=Decimal(0)):
     out["TaxInclusiveAmount"] = amount(base + charges + tax, currency, "The total without tax plus the tax.")
     if charges:
         out["ChargeTotalAmount"] = amount(charges, currency, "The sum of the charges at document level.")
-    out["PayableAmount"] = amount(base + charges + tax, currency, "What the buyer is to pay; stated, not left to be "
-                                                                  "calculated (UBL 2.5, 2.2.2 Manifest Values).")
+    out["PayableAmount"] = amount(base + charges + tax, currency, "What the buyer is to pay, stated in full so that "
+                                                                  "it books the amount without working it out.")
     return out
 
 
@@ -1205,8 +1205,8 @@ def remittance(flow, n, doc, day, why, key="invoice", discount=None, credit=None
                                                                           "to quote."),
             "BalanceAmount": amount(0, cur, "Nothing remains open on the invoice after this payment."),
             "DebitLineAmount": amount(total, cur, "The amount of the invoice this payment settles: the whole payable "
-                                                  "amount. Paid invoices are debits on a remittance advice, as in the "
-                                                  "OASIS example UBL-RemittanceAdvice-2.0-Example."),
+                                                  "amount. A remittance advice lists each invoice paid on its debit "
+                                                  "side, and a discount taken against it on its credit side."),
             **({"CreditLineAmount": amount(total - paid, cur, "The settlement discount taken, a credit against the "
                                                               "invoice."),
                 "Note": V(f"{discount} % discount taken: paid within the discount period of the invoice's terms.",
