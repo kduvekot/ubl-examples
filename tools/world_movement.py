@@ -219,11 +219,127 @@ def route_problems(world):
 
 COUNT = {"pairs": 0, "transit": 0, "facts": 0, "taxed": 0}
 
+# ---------------------------------------------------------------- tax treatment against the movement (A6, Q6)
+SALES = {"Order": "to", "OrderChange": "to", "OrderResponse": "from", "Invoice": "from", "CreditNote": "from",
+         "DebitNote": "from", "SelfBilledInvoice": "to", "SelfBilledCreditNote": "to"}
+SCHEME_COUNTRY = {"VAT": "XU", "STT": "XB"}        # the general taxes of world/countries.json
+
+
+def country(world, pid):
+    p = next((x for x in world["parties"] + world.get("abroad", []) if x["id"] == pid), None)
+    return (p or {}).get("c") or pid.rsplit("-", 1)[-1].upper()
+
+
+def gln_country(world, gln):
+    """A location number of the world (952, the party's number, the location): its party's country."""
+    if not re.fullmatch(r"952\d{10}", gln or ""):
+        return None
+    n = int(gln[3:5])
+    p = next((x for x in world["parties"] if x.get("n") == n), None)
+    return p and p.get("c")
+
+
+def place_country(world, ident):
+    if not ident:
+        return None
+    if re.fullmatch(r"[A-Z]{2}[A-Z0-9]{3}", ident):
+        return ident[:2]
+    return gln_country(world, ident)
+
+
+def categories(root):
+    out = set()
+    for tc in root.iter("{*}TaxCategory", "{*}ClassifiedTaxCategory"):
+        if (tc.findtext("{*}TaxScheme/{*}ID") or "") not in SCHEME_COUNTRY:
+            continue                                   # not a general tax on the supply (a withholding tax, excise)
+        code = tc.find("{*}TaxExemptionReasonCode")
+        lst = code.get("listID", "") if code is not None else ""
+        m = re.search(r":(X[UBL]):codelist:", lst)
+        out.add((tc.findtext("{*}ID"), code.text if code is not None else None, m.group(1) if m else None,
+                 SCHEME_COUNTRY.get(tc.findtext("{*}TaxScheme/{*}ID") or "")))
+    return out
+
+
+def tax_problems(world, docs):
+    out = []
+    by_key = {k: (d, r) for k, d, r in docs}
+    by_id = {(d["flow"], r.findtext("{*}ID")): k for k, d, r in docs}
+    exports = {(d["flow"], r.findtext("{*}ID")) for k, d, r in docs if d["doc"] == "ExportCustomsDeclaration"}
+    carried = {}                                       # key -> [(from country, to country, leg)]
+    for f in world["flows"]:
+        for leg in f.get("legs", []):
+            if "carries" not in leg:
+                out.append(f"{f['id']}: leg {leg['from']} -> {leg['to']} does not say whose goods it carries")
+                continue
+            for k in leg["carries"]:
+                if k not in by_key or by_key[k][0]["doc"] not in SALES or by_key[k][0]["flow"] != f["id"]:
+                    out.append(f"{f['id']}: leg {leg['from']} -> {leg['to']} carries {k}, which is no order, "
+                               "invoice or note of its flow")
+                    continue
+                carried.setdefault(k, []).append((country(world, leg["from"]), country(world, leg["to"]), leg))
+
+    def legs_of(key, seen=()):
+        """The legs that carry a document's goods: its own, or those of the order or invoice it refers to."""
+        if key in carried:
+            return carried[key]
+        d, root = by_key[key]
+        for e in root.iter("{*}OrderReference", "{*}InvoiceDocumentReference", "{*}CreditNoteDocumentReference",
+                           "{*}OriginatorDocumentReference"):
+            k = by_id.get((d["flow"], e.findtext("{*}ID")))
+            if k and k != key and k not in seen and k in by_key and by_key[k][0]["doc"] in SALES:
+                got = legs_of(k, seen + (key,))
+                if got:
+                    return got
+        return []
+
+    for key, d, root in docs:
+        if d["doc"] not in SALES:
+            continue
+        seller = d.get(SALES[d["doc"]])
+        if not seller:
+            continue
+        home = country(world, seller)
+        if home not in ("XU", "XB", "XL"):
+            continue                                   # a seller outside the Accord: its own country's rules
+        moves = legs_of(key)
+        leaves = any(a == home and b != home for a, b, _ in moves)
+        enters = any(a != home and b == home for a, b, _ in moves)
+        dt = root.find(".//{*}DeliveryTerms")
+        place = place_country(world, dt.findtext(".//{*}DeliveryLocation/{*}ID")) if dt is not None else None
+        declared = any((d["flow"], e.findtext("{*}ID")) in exports for e in root.iter("{*}DocumentReference",
+                                                                                     "{*}AdditionalDocumentReference"))
+        for cat, code, code_country, scheme_country in sorted(categories(root), key=str):
+            if cat == "O":
+                continue                               # outside the scope of the tax: services, levies
+            COUNT["taxed"] += 1
+            if code == "EXP":
+                if not (leaves or (place and place != home) or declared):
+                    out.append(f"{key}: {code_country} EXP, but no leg carries its goods out of {home}, its "
+                               "delivery terms name no place abroad and it cites no export declaration (A6)")
+            elif code == "TRANSIT":
+                if not (enters and any(b != home for a, b, _ in moves)):
+                    out.append(f"{key}: {code_country} TRANSIT, but its legs do not bring the goods through {home} "
+                               "from abroad and on abroad (A6)")
+            else:
+                taxed_in = code_country or scheme_country or home
+                if taxed_in != home:
+                    if any(a != taxed_in or b != taxed_in for a, b, _ in moves):
+                        out.append(f"{key}: a supply taxed in {taxed_in}, but a leg moves its goods across "
+                                   f"{taxed_in}'s border (A6)")
+                    elif not moves:
+                        out.append(f"{key}: a supply taxed in {taxed_in} by a seller of {home}, and no leg shows "
+                                   f"the goods in {taxed_in} (A6)")
+                elif leaves and cat in ("S", "E", "Z") and code != "SVCABROAD":
+                    out.append(f"{key}: {cat} {code or ''} of {home}, but a leg carries its goods out of {home}: "
+                               "an export (A6)")
+    return out
+
 
 def check(world):
     docs = world_goods.built(world)
     out = time_problems(world, docs)
     out += route_problems(world)
+    out += tax_problems(world, docs)
     return out
 
 
@@ -234,7 +350,8 @@ def main():
         print(p)
     if not problems:
         print(f"movements: {COUNT['pairs']} departure and arrival pairs, {COUNT['transit']} transit estimates, "
-              f"{COUNT['facts']} route facts against the map at the world's speeds: no problems")
+              f"{COUNT['facts']} route facts against the map at the world's speeds, {COUNT['taxed']} tax categories "
+              "against the goods' movement: no problems")
     sys.exit(1 if problems else 0)
 
 
