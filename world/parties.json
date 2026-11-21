@@ -4003,7 +4003,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "Sells electricity and gas to Urvania's homes and businesses: buys electricity from the power station and gas from the gas producer, pays the grid operator for the networks, and bills the customers.",
+   "what": "Sells electricity and gas to Urvania's homes and businesses: buys electricity from the power stations and gas from the gas producer, pays the grid operator for the networks, and bills the customers.",
    "how": "In an unbundled market the retailer bills, but the grid operator owns and reads the meters. UBL keeps the two apart: the grid operator's Utility Statement carries the readings to the retailer, and the retailer's Invoice and Utility Statement carry them on to the customer.",
    "identity": {
     "name": "Ferrano Energy",
