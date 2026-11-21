@@ -33,6 +33,7 @@ from the drawn land, not from D19's box.
 | `world-position-rio-grande-rise-withdrawn.png` | The first proposal, on the Rio Grande Rise. Withdrawn: Brazil has claimed that plateau as continental shelf since 7 December 2018. Kept so that the reason stays visible. |
 | `plot_world_position_rio_grande_rise.py` | Draws it. |
 | `refine_map.py` | Draws the printed map sheet (O151): A3 landscape at 1 : 2,500,000 and 300 dpi (4,961 × 3,508 pixels), the mainland and Lisavu in two panels. The site build draws it from the world data at every build and publishes it as `map-sheet.png` (owner, 2026-11-19), so it is not committed; its earlier versions are in the history of `world-roadmap.png`. It can also draw a road map, top-down from the 3D tile model and the terrain's fine rasters: relief, land cover, rivers, the towns' built-up areas, villages, roads, rail and pipelines. |
+| `climate/` | The climate from real data at the world's position: NASA POWER monthly means (2001-2025) for the mainland, Lisavu and two real islands, the script that fetches them again after a move, the tables, and the rules the world takes from them (OW023). |
 | `site_villages.py` | Sites the villages between the towns (O152) and writes `world/map.json` "villages". |
 
 ## How to redraw
@@ -183,7 +184,7 @@ Not proposed as needed.
   blocks, which is nearer than the blocks themselves.
 - **Still open, for the owner:** a nautical chart for both areas (none was available here; the depth grid and the
   land polygons show no land in either area, but a chart, for example the UK Hydrographic
-  Office's small-scale charts of the South Atlantic, would confirm it); winds and climate from a source (still from
-  general knowledge, D19). Claims change: Namibia's and Brazil's submissions are still before the CLCS, and new
+  Office's small-scale charts of the South Atlantic, would confirm it); winds and climate are now taken from NASA POWER
+  data at the world's position (`climate/`, OW023). Claims change: Namibia's and Brazil's submissions are still before the CLCS, and new
   ISA applications appear on its list, so the check should be run again before the position is cited anywhere
   outside the world.
