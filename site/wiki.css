@@ -36,3 +36,5 @@ a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underli
 @media (max-width: 48rem) {
   .wlayout { grid-template-columns:1fr; gap:.5rem; } .wside { order:0; border-bottom:1px solid var(--rule); } .wside ul { display:flex; flex-wrap:wrap; gap:.15rem .9rem; } .wside li { margin:0; }
   .infobox { float:none; width:100%; margin:0 0 1rem; } }
+.refs { font:.86rem/1.5 var(--sans); padding-left:1.6rem; } .refs li { margin:.15rem 0; }
+sup.ref { font:.7rem var(--sans); margin-left:.1rem; } sup.ref a { text-decoration:none; }

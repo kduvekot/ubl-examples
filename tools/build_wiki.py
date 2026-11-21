@@ -625,6 +625,58 @@ def timeline(a, where):
     return out
 
 
+# References, as a reference work gives them: the world's own sources for an article, by its kind. The sources are
+# not online yet: every reference leads to one page that says so (owner, 2026-11-21: the pages look complete, the
+# sources come later).
+SOURCE_PAGE = "sources.html"
+REGISTER = {"XU": "Chamber of Commerce of Ferrano, register of companies", "XB": "Bayvarra Information Service, "
+            "federal business register", "XL": "Government Secretariat of Lisavu, island register of companies"}
+CONSTITUTION = {"XU": "Constitution of Urvania (1962)", "XB": "Federal Constitution of Bayvarra (1899)",
+                "XL": "Constitution of Lisavu (1962)"}
+
+
+def references(a, title):
+    d, k = a["data"], a["kind"]
+    cn = lambda code: countries[code]["name"] if code in countries else ""
+    if k == "party":
+        c = d["c"]
+        out = []
+        if d["identity"].get("legal", {}).get("form"):
+            out.append(f"{REGISTER.get(c, 'Register of companies')}: entry for {title}")
+        else:
+            out.append(f"Government of {cn(c)}, list of public bodies: {title}")
+        if d["identity"].get("website"):
+            out.append(f"{title}, website: about us")
+        if a["wiki"].get("timeline"):
+            out.append(f"{title}, history of the company" if d["identity"].get("legal", {}).get("form") else f"{title}, annual report")
+        return out
+    if k == "country":
+        return [CONSTITUTION.get(a["key"], ""), f"National statistics of {d['name']}: population census of 2025",
+                f"Government of {d['name']}: calendar of public holidays, 2026", "Lumeport Trade Accord (1994)"]
+    if k == "accord":
+        return ["Lumeport Trade Accord, text of 1994", "Protocol on public procurement (1999)",
+                "Protocol on the payment link and card schemes (2003)", "Energy protocol (2007)",
+                "Protocol on electronic business documents (2014)"]
+    if k in ("town", "village", "locality"):
+        c = d.get("country", "")
+        out = [f"National map survey of {cn(c)}", f"National statistics of {cn(c)}: population census of 2025"]
+        if a["wiki"].get("climate_from"):
+            out.append(f"Meteorological service of {cn(c)}: climate averages 2001–2025")
+        return out
+    if k in ("river", "waters", "landmark"):
+        return ["National map surveys of Urvania, Bayvarra and Lisavu", "Lumeport Trade Accord, hydrographic survey"]
+    if k == "route":
+        return ["National map surveys of Urvania and Bayvarra", f"{title}: operator's timetable and route description"]
+    if k == "language":
+        return [f"{d['name']}: dictionary and grammar", f"Government of {cn(d.get('country', ''))}: law on official languages"
+                if d.get("country") in countries else ""]
+    if k == "currency":
+        return ["Lumeport Trade Accord: rules of the fixed parity", f"{cn(d.get('country', ''))}: central bank, the {d['name'].lower()}"]
+    if k == "item":
+        return [f"{PARTY[d['seller']]['identity']['name']}: catalogue"]
+    return []
+
+
 CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions",
             "village": "Villages and localities", "locality": "Villages and localities", "route": "Transport", "language": "Languages",
             "currency": "Currencies", "item": "Products", "river": "Rivers", "waters": "Rivers", "landmark": "Landmarks"}
@@ -695,6 +747,12 @@ for title, a in sorted(articles.items()):
     see = [links(x, where) for x in see if x]
     if see:
         rest += ["## See also", ""] + [x for line in see for x in (line, "")]
+    refs = references(a, title)
+    if refs:
+        rest += ["## References", "", '<ol class="refs">'] + \
+                [f'<li id="ref-{k + 1}"><a href="{SOURCE_PAGE}">{r}</a></li>' for k, r in enumerate(refs)] + ["</ol>", ""]
+        lead_i = body.index(links(fill(w.get("lead", ""), vals, where), where))
+        body[lead_i] += "".join(f'<sup class="ref"><a href="#ref-{k + 1}">[{k + 1}]</a></sup>' for k in range(min(2, len(refs))))
     heads = [l[3:] for l in rest if l.startswith("## ")]
     if len(heads) >= 3:                       # the contents, after the lead, as an encyclopedia has it
         body += ['<details class="wtoc" open><summary>Contents</summary><ol>'
@@ -723,6 +781,10 @@ for c, titles in by_cat.items():
     body = [f"# Category: {c}", "", f"Articles in the category {c}:", ""] + [f"- [{t}]({page[t]})" for t in sorted(titles)] + [""]
     open(os.path.join(out, f"category-{slug(c)}.md"), "w", encoding="utf-8").write("\n".join(body))
 
+open(os.path.join(out, "sources.md"), "w", encoding="utf-8").write(
+    "# Sources\n\n<p class=\"short\">The sources the Encyclopedia cites</p>\n\n"
+    "The registers, laws, surveys, statistics and company documents the articles cite are not yet in the "
+    "Encyclopedia's online library. They will be added here.\n\n[Back to the main page](index.html)\n")
 index = ["# The UBL World", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
          "The countries of the Lumeport Trade Accord: their history and geography, their towns, villages, rivers and "
          "landmarks, and their companies and institutions.", ""]
