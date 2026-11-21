@@ -229,6 +229,12 @@ Inside `OrderLine`:
   The item is dangerous goods.
 - `LineItem/Item/SellersItemIdentification/ID` = **SE-BAT-4850**  
   The seller's own item number; as Saltmere Engineering describes the item.
+- `LineItem/Item/HazardousItem/UNDGCode` = **3480** (listID `UN Model Regulations Dangerous Goods List`)  
+  The UN number of the goods ordered, so that the seller ships them as the dangerous goods they are. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 3480 = Lithium ion batteries (including lithium ion polymer batteries).
+- `LineItem/Item/HazardousItem/ProperShippingName` = **Lithium ion batteries**  
+  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+- `LineItem/Item/HazardousItem/HazardClassID` = **9** (schemeID `UN Model Regulations hazard class`)  
+  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/ID` = **2**  
   The line number: a line added by a change keeps a number of its own.
 - `LineItem/Quantity` = **1** (unitCode `SET`)  
@@ -247,6 +253,12 @@ Inside `OrderLine`:
   The item is dangerous goods.
 - `LineItem/Item/SellersItemIdentification/ID` = **SE-SMK-10**  
   The seller's own item number; as Saltmere Engineering describes the item.
+- `LineItem/Item/HazardousItem/UNDGCode` = **2911** (listID `UN Model Regulations Dangerous Goods List`)  
+  The UN number of the goods ordered, so that the seller ships them as the dangerous goods they are. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2911 = Radioactive material, excepted package – instruments or articles.
+- `LineItem/Item/HazardousItem/ProperShippingName` = **Radioactive material, excepted package - instruments or articles**  
+  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+- `LineItem/Item/HazardousItem/HazardClassID` = **7** (schemeID `UN Model Regulations hazard class`)  
+  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/ID` = **3**  
   The line number: a line added by a change keeps a number of its own.
 - `LineItem/Quantity` = **5** (unitCode `LTR`)  
@@ -265,6 +277,14 @@ Inside `OrderLine`:
   The item is dangerous goods.
 - `LineItem/Item/SellersItemIdentification/ID` = **SE-CS-01**  
   The seller's own item number; as Saltmere Engineering describes the item.
+- `LineItem/Item/HazardousItem/UNDGCode` = **2920** (listID `UN Model Regulations Dangerous Goods List`)  
+  The UN number of the goods ordered, so that the seller ships them as the dangerous goods they are. The code is from the world's copy of UN Model Regulations Dangerous Goods List (UN numbers): 2920 = Corrosive liquid, flammable, n.o.s..
+- `LineItem/Item/HazardousItem/ProperShippingName` = **Corrosive liquid, flammable, n.o.s.**  
+  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+- `LineItem/Item/HazardousItem/HazardClassID` = **8** (schemeID `UN Model Regulations hazard class`)  
+  The UN hazard class of the entry. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances. An identifier that holds a code names the code's list in its schemeID.
+- `LineItem/Item/HazardousItem/SecondaryHazard/ID` = **3** (schemeID `UN Model Regulations hazard class`)  
+  The subsidiary hazard: flammable. The code is from the world's copy of UN Model Regulations hazard class and division: 3 = Flammable liquids. An identifier that holds a code names the code's list in its schemeID.
 
 ## The document
 
@@ -432,6 +452,11 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-4850</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:HazardousItem>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
+          <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
+        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -451,6 +476,11 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:HazardousItem>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
+          <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
+        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -470,6 +500,14 @@ Inside `OrderLine`:
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-01</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:HazardousItem>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
+          <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
+          <cac:SecondaryHazard>
+            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
+          </cac:SecondaryHazard>
+        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

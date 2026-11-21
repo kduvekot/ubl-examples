@@ -16,15 +16,15 @@ The air cargo terminal reports the cargo accepted after the cut-off for the afte
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **BYF-TX-26-2548**  
+- `ProfileExecutionID` = **BYF-TX-26-2543**  
   The collaboration this document belongs to: the air carriage Bayforth books with Kelaro Air Cargo. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
-- `ID` = **LAC-TS-26-13099**  
+- `ID` = **LAC-TS-26-13073**  
   The sender's status report number.
 - `UUID` = **6938a110-04c3-536b-96b3-9bd3bd8bb1c1**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
-  Reported when the cargo was accepted, on the evening of 13 May.
-- `IssueTime` = **19:20:00-01:00**  
+  Reported when the cargo was accepted, on 13 May, after the cut-off.
+- `IssueTime` = **12:59:00-01:00**  
   When the cargo had been accepted; in the issuer's local time, with its offset from UTC.
 - `Name` = **Transportation status**  
   The kind of report.
@@ -174,8 +174,8 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-05-13**  
   The day the event took place.
-- `OccurrenceTime` = **19:10:00-01:00**  
-  Accepted at 19:10, long after the cut-off at 12:00 for the afternoon flight.
+- `OccurrenceTime` = **12:49:00-01:00**  
+  Accepted on arrival: the forwarder's truck came in at about 12:40, after the cut-off at 12:00 for the afternoon flight, so the skid waits for the next morning's.
 - `TransportEventTypeCode` = **ACCEPTANCE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: ACCEPTANCE = Accepted.
 - `Description` = **Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.**  
@@ -189,10 +189,10 @@ Inside `TransportEvent`:
 
 Inside `DocumentReference`:
 
-- `ID` = **KXL-00694562**  
+- `ID` = **KXL-00694536**  
   The transport document of the consignment.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: KXL-00694562 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: KXL-00694536 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Signature
 
@@ -249,11 +249,11 @@ Inside `StatusPeriod`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
-  <cbc:ID>LAC-TS-26-13099</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2543</cbc:ProfileExecutionID>
+  <cbc:ID>LAC-TS-26-13073</cbc:ID>
   <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>19:20:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>12:59:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
@@ -364,7 +364,7 @@ Inside `StatusPeriod`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>19:10:00-01:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>12:49:00-01:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.</cbc:Description>
     <cac:Location>
@@ -373,7 +373,7 @@ Inside `StatusPeriod`:
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-00694536</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

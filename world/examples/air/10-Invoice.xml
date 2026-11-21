@@ -16,7 +16,7 @@
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-00694536</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>

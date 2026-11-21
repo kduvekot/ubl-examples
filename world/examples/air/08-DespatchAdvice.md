@@ -18,13 +18,13 @@ The distributor announces the frames to the buyer's 3PL with the flight they are
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **26-0416**  
   The collaboration this document belongs to: Velumi's order from Lumeway, with its change by air, from the order to the credit note. Velumi Trading started it and gave it this identifier, which every document of it repeats.
-- `ID` = **LMW-DA-26-1020**  
+- `ID` = **LMW-DA-26-1018**  
   A new number: the first despatch advice was cancelled.
 - `UUID` = **bb530823-20b2-5c84-9178-9f8f4d49f81f**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
-  Sent the same evening for the next morning's flight.
-- `IssueTime` = **20:05:00-01:00**  
+  Sent the same afternoon for the next morning's flight.
+- `IssueTime` = **13:39:00-01:00**  
   Right after the cancellation; in the issuer's local time, with its offset from UTC.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
@@ -420,10 +420,10 @@ Inside `DespatchLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>26-0416</cbc:ProfileExecutionID>
-  <cbc:ID>LMW-DA-26-1020</cbc:ID>
+  <cbc:ID>LMW-DA-26-1018</cbc:ID>
   <cbc:UUID>bb530823-20b2-5c84-9178-9f8f4d49f81f</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>20:05:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>13:39:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

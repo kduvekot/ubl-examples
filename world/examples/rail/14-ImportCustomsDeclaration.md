@@ -230,7 +230,7 @@ Inside `CustomsParty`:
 
 Inside `Shipment`:
 
-- `ID` = **7400043689**  
+- `ID` = **7400043688**  
   The shipment declared.
 - `TotalTransportHandlingUnitQuantity` = **48** (unitCode `EA`)  
   The pallets the goods travel on.
@@ -553,7 +553,7 @@ Inside `Signature`:
     </cac:ElectronicAddress>
   </cac:CustomsParty>
   <cac:Shipment>
-    <cbc:ID>7400043689</cbc:ID>
+    <cbc:ID>7400043688</cbc:ID>
     <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">48</cbc:TotalTransportHandlingUnitQuantity>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

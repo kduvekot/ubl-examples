@@ -194,7 +194,7 @@ Inside `CarrierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **7400043689**  
+- `ID` = **7400043688**  
   The shipment as the despatching party numbered it.
 - `GrossWeightMeasure` = **18177.6** (unitCode `KGM`)  
   The gross weights of the transport equipment with the goods in it (9088.8 + 9088.8 kg): a shipment's gross weight includes the equipment.
@@ -719,17 +719,41 @@ Inside `Shipment`:
 - `Consignment/EnvironmentalEmission/EmissionCalculationMethod/EmissionCalculationLocation/Name` = **Ferrano Rail Cargo, energy office**  
   Where the figure was calculated.
 - `GoodsItem/ID` = **1**  
-  The goods item number.
+  The goods item number: the benches in the first container.
 - `GoodsItem/Description` = **Park bench Serra 180**  
   What is carried, in words.
-- `GoodsItem/GrossWeightMeasure` = **10377.6** (unitCode `KGM`)  
-  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
-- `GoodsItem/Quantity` = **192** (unitCode `EA`)  
-  How much is carried.
+- `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
+  The gross weight of these benches, in their parcels and with the 24 pallets they travel on.
+- `GoodsItem/Quantity` = **96** (unitCode `EA`)  
+  The benches of one lot, which fill the first container.
 - `GoodsItem/Item/Name` = **Park bench Serra 180**  
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `GoodsItem/Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260409**  
+  The production lot the box holds, as the consignor declared it; the lot's other facts are in the despatch advice.
+- `GoodsItem/GoodsItemContainer/ID` = **1**  
+  The goods item travels in one container only.
+- `GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **FRXU1044175** (schemeID `ISO6346`)  
+  The first container, the box this lot was packed in.
+- `GoodsItem/ID` = **2**  
+  The goods item number: the benches in the second container.
+- `GoodsItem/Description` = **Park bench Serra 180**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **5188.8** (unitCode `KGM`)  
+  The gross weight of these benches, in their parcels and with the 24 pallets they travel on.
+- `GoodsItem/Quantity` = **96** (unitCode `EA`)  
+  The benches of one lot, which fill the second container.
+- `GoodsItem/Item/Name` = **Park bench Serra 180**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `GoodsItem/Item/ItemInstance/LotIdentification/LotNumberID` = **VI-LOT-260410**  
+  The production lot the box holds, as the consignor declared it; the lot's other facts are in the despatch advice.
+- `GoodsItem/GoodsItemContainer/ID` = **1**  
+  The goods item travels in one container only.
+- `GoodsItem/GoodsItemContainer/TransportEquipment/ID` = **FRXU1044180** (schemeID `ISO6346`)  
+  The second container, the box this lot was packed in.
 
 ### Document Reference
 
@@ -917,7 +941,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>7400043689</cbc:ID>
+    <cbc:ID>7400043688</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>7300043586</cbc:ID>
@@ -1470,14 +1494,48 @@ Inside `Signature`:
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">192</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
         </cac:CommodityClassification>
+        <cac:ItemInstance>
+          <cac:LotIdentification>
+            <cbc:LotNumberID>VI-LOT-260409</cbc:LotNumberID>
+          </cac:LotIdentification>
+        </cac:ItemInstance>
       </cac:Item>
+      <cac:GoodsItemContainer>
+        <cbc:ID>1</cbc:ID>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
+        </cac:TransportEquipment>
+      </cac:GoodsItemContainer>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+        <cac:ItemInstance>
+          <cac:LotIdentification>
+            <cbc:LotNumberID>VI-LOT-260410</cbc:LotNumberID>
+          </cac:LotIdentification>
+        </cac:ItemInstance>
+      </cac:Item>
+      <cac:GoodsItemContainer>
+        <cbc:ID>1</cbc:ID>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+        </cac:TransportEquipment>
+      </cac:GoodsItemContainer>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>

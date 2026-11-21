@@ -132,10 +132,7 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | Element | Card. | Lost from | Candidate case | Place | Status |
 |---|---|---|---|---|---|
 | `BallastWaterSummary/NoControlActionsReason` | 0..n | sea/16-CommonTransportationReport |  |  | open |
-| `GoodsItem/GoodsItemContainer` | 0..n | sea/14-BillOfLading |  |  | open |
-| `GoodsItemContainer/ID` | 1 | sea/14-BillOfLading |  |  | open |
 | `GoodsItemContainer/Quantity` | 0..1 | sea/14-BillOfLading |  |  | open |
-| `GoodsItemContainer/TransportEquipment` | 0..n | sea/14-BillOfLading |  |  | open |
 | `Manifest/CrewPerson` | 0..n | sea/15-Manifest |  |  | open |
 | `Manifest/PassengerPerson` | 0..n | sea/15-Manifest |  |  | open |
 | `MaritimeHealthDeclaration/WHOAffectedAreaVisit` | 0..n | sea/16-CommonTransportationReport |  |  | open |
@@ -1066,6 +1063,9 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `GoodsItem/GoodsItemContainer` | rail/08-Waybill | the rail delivery's consignment note splits the 192 benches into two goods items, one production lot in each container (VI-LOT-260409 in FRXU1044175, VI-LOT-260410 in FRXU1044180): how the goods items are split across the transport equipment (O271, D37, O128) | 2026-11-20 |
+| `GoodsItemContainer/ID` | rail/08-Waybill | the goods item's one container entry (O271) | 2026-11-20 |
+| `GoodsItemContainer/TransportEquipment` | rail/08-Waybill | the container each lot was packed in (O271) | 2026-11-20 |
 | `HazardousItem/UpperOrangeHazardPlacardID` | lpg/03-Waybill | the propane road tanker's orange plates, 23 over 1965: the upper half, the hazard identification number 23 (gas, flammable), on the tank's loaded hazardous item in the haulier's consignment note (D48, O126) | 2026-11-20 |
 | `HazardousItem/LowerOrangeHazardPlacardID` | lpg/03-Waybill | the lower half of the tanker's orange plates, the UN number 1965 (D48, O126) | 2026-11-20 |
 | `HazardousItem/TunnelRestrictionCode` | lpg/03-Waybill | the propane's tunnel restriction code B/D (ADR 2025), a carriage by road alone, which the consignment note must give for the tank (D48) | 2026-11-20 |

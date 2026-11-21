@@ -3,13 +3,13 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
-  <cbc:ID>KXL-00694562</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2543</cbc:ProfileExecutionID>
+  <cbc:ID>KXL-00694536</cbc:ID>
   <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>20:15:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>13:54:00+00:00</cbc:IssueTime>
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
@@ -312,7 +312,7 @@
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>7800004419</cbc:ID>
+    <cbc:ID>7800004418</cbc:ID>
     <cbc:DocumentType>Transit declaration</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -343,7 +343,7 @@
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>KXL-SIG-KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-SIG-KXL-00694536</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

@@ -24,9 +24,9 @@ The cargo missed the afternoon flight of 13 May; the despatch advice, which name
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   On 13 May, the day of the missed flight.
-- `IssueTime` = **19:50:00-01:00**  
-  In the evening, when the terminal reported the cargo accepted for the next morning's flight, before the new despatch advice it announces; in the issuer's local time, with its offset from UTC.
-- `Note` = **A new despatch advice follows this evening.**  
+- `IssueTime` = **13:24:00-01:00**  
+  Once the terminal had reported the cargo accepted for the next morning's flight, before the new despatch advice it announces; in the issuer's local time, with its offset from UTC.
+- `Note` = **A new despatch advice follows within the hour.**  
   What happens next.
 - `CancellationNote` = **The cargo reached the cargo terminal after the cut-off for the afternoon flight KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new despatch advice.**  
   Why the despatch advice is cancelled: the flight and the arrival it gave do not hold.
@@ -63,10 +63,10 @@ Inside `OrderReference`:
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **LAC-TS-26-13099**  
+- `ID` = **LAC-TS-26-13073**  
   The cargo terminal's status: the cargo accepted after the cut-off, for the next morning's flight.
 - `DocumentTypeCode` = **TransportationStatus** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: LAC-TS-26-13099 is the example air/05, a TransportationStatus; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportationStatus = Transportation Status.
+  The kind of document referred to: LAC-TS-26-13073 is the example air/05, a TransportationStatus; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportationStatus = Transportation Status.
 
 ### Signature
 
@@ -251,8 +251,8 @@ Inside `DespatchSupplierParty`:
   <cbc:ID>LMW-FCN-26-0051</cbc:ID>
   <cbc:UUID>4068fe1a-3095-5164-a12c-994c102fc830</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>19:50:00-01:00</cbc:IssueTime>
-  <cbc:Note>A new despatch advice follows this evening.</cbc:Note>
+  <cbc:IssueTime>13:24:00-01:00</cbc:IssueTime>
+  <cbc:Note>A new despatch advice follows within the hour.</cbc:Note>
   <cbc:CancellationNote>The cargo reached the cargo terminal after the cut-off for the afternoon flight KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new despatch advice.</cbc:CancellationNote>
   <cac:DespatchDocumentReference>
     <cbc:ID>LMW-DA-26-1017</cbc:ID>
@@ -270,7 +270,7 @@ Inside `DespatchSupplierParty`:
     </cac:DocumentReference>
   </cac:OrderReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>LAC-TS-26-13099</cbc:ID>
+    <cbc:ID>LAC-TS-26-13073</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">TransportationStatus</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>

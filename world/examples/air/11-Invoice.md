@@ -31,7 +31,7 @@ The distributor invoices the eight frames at its trade price, carriage paid to t
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Air freight recharged at cost, as agreed in the order change. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion S).**  
-  Why the invoice carries a charge. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference.
+  Why the invoice carries a charge. The exporter's statement on origin: the proof of origin Velumi's import declaration on the island refers to, to claim the Trade Accord's preference. Lumeway makes it as the exporter in the Accord's sense: it sells the frames across the Accord border from Bayvarra to Lisavu, though they came from Urvania in transit and never entered Bayvarra's free circulation; their origin is Valdara's, Urvanian.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `AccountingCostCode` = **500**  
@@ -54,7 +54,7 @@ Inside `OrderReference`:
 
 Inside `DespatchDocumentReference`:
 
-- `ID` = **LMW-DA-26-1020**  
+- `ID` = **LMW-DA-26-1018**  
   The despatch advice of the frames billed, which replaced the cancelled one.
 
 ### Accounting Supplier Party
@@ -451,7 +451,7 @@ Inside `InvoiceLine`:
     <cbc:ID>26-0417</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
-    <cbc:ID>LMW-DA-26-1020</cbc:ID>
+    <cbc:ID>LMW-DA-26-1018</cbc:ID>
   </cac:DespatchDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

@@ -166,7 +166,7 @@
     </cac:PartyName>
   </cac:NotifierParty>
   <cac:Shipment>
-    <cbc:ID>7400043689</cbc:ID>
+    <cbc:ID>7400043688</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>7300043586</cbc:ID>
