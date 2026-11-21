@@ -547,7 +547,7 @@ example adds its coverage-register row in the same commit.
   - Do the stated hours bind every document, or only those a person issues? A despatch advice sent by the system
     when the truck leaves at 20:05 is one case.
   - May desks have hours of their own?
-- **Q3 (two layers):** are reasons that explain a value by UBL's own principles ("UBL 2.5, 2.2.2 Manifest Values",
+- **Q3 (two layers): decided (owner, 2026-11-21): A, both go ("the UBL examples have no meaning in this world"):** the 41 "(UBL 2.5, 2.2.2 Manifest Values)" reasons state the fact in world terms without the section; the 11 "as in the OASIS example" references are dropped or replaced by the world's own reason; the published-text check gets both patterns. are reasons that explain a value by UBL's own principles ("UBL 2.5, 2.2.2 Manifest Values",
   41 pages) or by the OASIS samples ("as in the OASIS example", 11 pages) allowed in published world text?
 - **Q4 (EN 13556, O156):**
   - Is a secondary source enough, given that the standard itself is paid?
