@@ -819,7 +819,7 @@
     "sections": [
      {
       "title": "Route",
-      "text": "The ships sail out through the estuary and the bay and round the island's south-eastern cape to the lee side, about 1,200 km, in about 48 hours at 13.5 knots."
+      "text": "The ships sail out through the estuary and the bay and round Cape Lavase, the island's southern cape, to the lee side, about 1,200 km, in about 48 hours at 13.5 knots."
      }
     ]
    }
@@ -15904,7 +15904,7 @@
    "farming": "market",
    "wiki": {
     "short": "Capital of Urvania",
-    "lead": "**Ferrano** (Urvanian *Ruldraz*) is the capital of [[Urvania]], with about {population} people. It stands where the northern valley meets the main river, just below the rapids that end navigation: the country's works, its rail hub and its river port.",
+    "lead": "**Ferrano** (Urvanian *Ruldraz*) is the capital of [[Urvania]], with about {population} people. It stands where the northern valley meets the Runmek, just below the rapids that end navigation: the country's works, its rail hub and its river port.",
     "sections": [
      {
       "title": "Geography",
@@ -15997,7 +15997,7 @@
       125.64
      ],
      "r_km": 1.1,
-     "note": "Works on the estuary shore west of the centre: the water works, the packaging works."
+     "note": "Works on the estuary shore west of the centre: the water works and, beside them, the packaging works."
     },
     {
      "name": "Mill Quarter",
@@ -16119,7 +16119,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it is Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the sawmill. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
+      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it is Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the timber yards. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
      },
      {
       "title": "Economy",
@@ -16324,7 +16324,7 @@
    ],
    "built_km": 1,
    "note": "The mining village at the ore mine.",
-   "wiki": {"short": "Mining village at the iron ore mine, Urvania", "lead": "**Serravona** is the mining village of [[Serravona Mining]]'s iron ore mine, on the lower flank of the volcanic massif in the north-west of [[Urvania]].", "sections": [{"title": "History", "text": "The village grew around the mine from 4 December 1958, the day the first ore left it. That day is Saint Barbara's day, the miners' patron in the Italian tradition, and Serravona keeps it under a civil name as Miners' Day, which is also its Founders' Day."}]},
+   "wiki": {"short": "Mining village at the iron ore mine, Urvania", "lead": "**Serravona** is the mining village of [[Serravona Mining]]'s iron ore mine, on the lower flank of the volcanic massif in the north-west of [[Urvania]].", "sections": [{"title": "History", "text": "The village grew as the home of the mine's workers from 4 December 1958, the day the first ore left the mine, which lies 29 km away on the flank of the massif. That day is Saint Barbara's day, the miners' patron in the Italian tradition, and Serravona keeps it under a civil name as Miners' Day, which is also its Founders' Day."}]},
    "farming": "mixed"
   },
   {
@@ -16361,7 +16361,7 @@
     500
    ],
    "built_km": 0.5,
-   "note": "The Urvanian side of the road border crossing, named after Forte Euridice, the town 8 km down the road: the customs post, its truck park and a few houses of customs officers and forwarding agents In the municipality of Forte Euridice.",
+   "note": "The Urvanian side of the road border crossing, named after Forte Euridice, the town 8 km down the road: the customs post, its truck park and a few houses of customs officers and forwarding agents, in the municipality of Forte Euridice.",
    "farming": "valley"
   },
   {
@@ -16506,7 +16506,7 @@
    "country": "XB",
    "region": "wheat",
    "founded": "British settlers, 1840s",
-   "why": "On the north bank of the main river, where the drove road down the valley forded the second plateau river (about 5,500 km²) some 5 km above its mouth, about 40 km downstream of the border crossing and Forte Euridice; the main road to Marrowdale and the railway came later and pass beside it.",
+   "why": "On the Tallow, the second plateau river (about 5,500 km²), where the drove road down the valley forded it some 5 km above its mouth on the Runmek, about 40 km downstream of the border crossing and Forte Euridice; the main road to Marrowdale and the railway came later and pass beside it.",
    "lives_on": "Its ford market and its farms: the stock sales, the grain store and the railway's stock yards of the wheat and sheep land around it.",
    "people": 12000,
    "population": [
@@ -16575,7 +16575,7 @@
    "country": "XB",
    "region": "wheat",
    "founded": "British settlers, 1840s",
-   "why": "Between Marrowdale and Lumeport on the road and the railway, by a spring-fed pond (the mere) in bracken-covered ground: a stage on the road down to the capital.",
+   "why": "Between Marrowdale and Lumeport on the road and the railway, by a spring-fed pond (the mere) in bracken-covered ground: a stage on the road down to the coast.",
    "lives_on": "Its station and the road, the farms round it, joinery for Marrowdale's furniture trade.",
    "people": 8000,
    "population": [
@@ -16893,7 +16893,7 @@
    ],
    "country": "XL",
    "region": "lee",
-   "founded": "English settlers, 19th century (a cotton estate)",
+   "founded": "English settlers, 1860s (a cotton estate)",
    "why": "On the dry north-eastern plain on the road north of the town, at a well dug for an English settler's cotton estate.",
    "lives_on": "Cotton.",
    "people": 1740,
@@ -16920,7 +16920,7 @@
    ],
    "country": "XL",
    "region": "lee",
-   "founded": "English settlers, 19th century",
+   "founded": "English settlers, 1860s",
    "why": "On the coast of the cotton plain north of Selanu, where the estates landed their bales for the ships.",
    "lives_on": "Cotton, fishing.",
    "people": 1000,
@@ -17662,7 +17662,7 @@
    "country": "XU",
    "region": "valley",
    "founded": "Sardinian, 1842 (the fort); the village after it",
-   "why": "On the north bank in the angle between the main river and the largest plateau river, just above their confluence, where the land border meets the river: the Sardinian protectorate built a fort here to watch the river and the British settlers beyond the plateau river, and named it after the corvette Euridice of its station on the Plata, which had first shown the flag on the river; the boundary convention of 1857 made that river and the watershed the border.",
+   "why": "On the north bank in the angle between the Runmek and the Bruna, the largest plateau river, just above their confluence, where the land border meets the river: the Sardinian protectorate built a fort here to watch the river and the British settlers beyond the plateau river, and named it after the corvette Euridice of its station on the Plata, which had first shown the flag on the river; the boundary convention of 1857 made the Runmek below the confluence, and the watershed north of it, the border.",
    "lives_on": "The border crossing: customs agents, hauliers and warehouses, the railway, the valley's farms.",
    "people": 14000,
    "population": [
@@ -17808,7 +17808,7 @@
    "country": "XU",
    "region": "hills",
    "founded": "Sardinian, 1840s",
-   "why": "In a cove of the south coast where a stream comes down: Ligurian fishermen from the Sardinian kingdom's colony on the Plata settled here under the protectorate.",
+   "why": "In a cove of the south coast where a stream comes down: Ligurian fishermen from the Sardinian community on the Plata settled here under the protectorate.",
    "lives_on": "Fishing, boatbuilding, gardens behind the shore.",
    "people": 1730,
    "population": [
@@ -29084,7 +29084,7 @@
  "rivers": [
   {"land": "mainland", "mouth": [124.38, 125.62], "name": "Runmek", "title": "Runmek", "names": {"qau": "Runmek"}, "name_from": {"qau": "mother"}, "wiki": {"short": "Main river of the mainland, through Urvania and along the border to Lumeport", "lead": "The **Runmek** is the main river of the mainland, {km} km long, with a basin of {basin} km², about a third of the mainland. It rises on the volcanic massif of [[Urvania]] at about {source_m} m, runs through the rift valley past [[Ferrano]], forms the border with [[Bayvarra]] from Forte Euridice down, and reaches the sea by the estuary at [[Lumeport]]. Its name is Urvanian and means mother; the Italians and the British kept it.", "sections": [{"title": "Course", "text": "From the massif the river runs south-east through the rift valley, 15 to 18 km wide, and takes in the [[Nevola]] and the [[Castagna (river)|Castagna]]. Just above [[Ferrano]] it falls through rapids, from about 124 to 91 m in about 12 km, which end navigation: the barges work below them. At Forte Euridice the [[Bruna (river)|Bruna]], its largest tributary, joins it; from there to the estuary the river is the border, and the [[River Tallow|Tallow]] and the [[River Marrow|Marrow]] come in from Bayvarra's plateau."}, {"title": "History", "text": "The Urvanians' town, Ruldraz, now [[Ferrano]], grew where the valleys meet, below the rapids. In 1840 the Sardinian corvette *Euridice* sailed up the river to Ruldraz, and the boundary convention of 1857 made the river the border below the confluence, with free navigation to the sea."}]}},
   {"land": "mainland", "mouth": [155.88, 85.88], "name": "Lark", "title": "River Lark", "names": {"en": "Lark"}, "wiki": {"short": "River of Bayvarra's dry east, to the sea at Larkmouth", "lead": "The **Lark** is the largest river of [[Bayvarra]] and the second of the mainland, {km} km long, with a basin of {basin} km². It rises at about {source_m} m, crosses the dry east and reaches the sea at [[Larkmouth]], which is named after it.", "sections": [{"title": "History", "text": "The first British settlers landed at its mouth on 16 February 1824, behind the headland, where they found a sheltered harbour, fresh water and dry grazing land behind it. Larkmouth, the town they built there, was the colony's first capital."}]}},
-  {"land": "mainland", "mouth": [97.12, 122.88], "name": "Bruna", "title": "Bruna (river)", "names": {"it": "Bruna", "qau": "Gekgan"}, "name_from": {"qau": "brown"}, "wiki": {"short": "Largest tributary of the Runmek, in Urvania", "lead": "The **Bruna** (Urvanian *Gekgan*, brown) is the largest tributary of the [[Runmek]], {km} km long, with a basin of {basin} km², and lies wholly in [[Urvania]]. It rises on the high ground at about {source_m} m and joins the Runmek at Forte Euridice, where the road crosses the border. Fierabruna, the market town of its valley, is named after it.", "sections": [{"title": "History", "text": "In 1842 the Sardinian protectorate built Forte Euridice in the angle between the Bruna and the Runmek, just above their confluence, to watch the river. By the boundary convention of 1857 the Bruna's whole valley stayed with Urvania: north of the confluence the border follows the watershed."}]}},
+  {"land": "mainland", "mouth": [97.12, 122.88], "name": "Bruna", "title": "Bruna (river)", "names": {"it": "Bruna", "qau": "Gekgan"}, "name_from": {"qau": "brown"}, "wiki": {"short": "Largest tributary of the Runmek, in Urvania", "lead": "The **Bruna** (Urvanian *Gekgan*, brown) is the largest tributary of the [[Runmek]], {km} km long, with a basin of {basin} km², and lies wholly in [[Urvania]]. It rises on the high ground at about {source_m} m and joins the Runmek at Forte Euridice, a few kilometres below the road's border crossing. Fierabruna, the market town of its valley, is named after it.", "sections": [{"title": "History", "text": "In 1842 the Sardinian protectorate built Forte Euridice in the angle between the Bruna and the Runmek, just above their confluence, to watch the river. By the boundary convention of 1857 the Bruna's whole valley stayed with Urvania: north of the confluence the border follows the watershed."}]}},
   {"land": "mainland", "mouth": [21.88, 119.38], "name": "Vallerna", "title": "Vallerna", "names": {"it": "Vallerna", "qau": "Binskaz"}, "name_from": {"qau": "west"}},
   {"land": "mainland", "mouth": [100.88, 47.12], "name": "Shingle", "title": "River Shingle", "names": {"en": "Shingle"}, "wiki": {"short": "River of Bayvarra's north, to the north coast", "lead": "The **Shingle** is a river of [[Bayvarra]], {km} km long, with a basin of {basin} km². It rises at about {source_m} m and reaches the sea on the north coast at Shinglebeck, which is named after it."}},
   {"land": "mainland", "mouth": [55.38, 102.62], "name": "Nevola", "title": "Nevola", "names": {"it": "Nevola", "qau": "Kutek"}, "name_from": {"qau": "snow"}, "wiki": {"sections": [{"title": "Hydro scheme", "text": "In the massif a dam holds the river in the Lago della Nevola, and a power station of about 300 MW below it, built from 1956 to 1961, gives Urvania about half its electricity in a normal year."}]}},
@@ -29118,12 +29118,12 @@
   {"land": "mainland", "mouth": [42.88, 84.62], "name": "Pietrosa", "title": "Pietrosa", "names": {"it": "Pietrosa", "qau": "Hadan"}, "name_from": {"qau": "stone"}},
   {"land": "mainland", "mouth": [79.88, 94.88], "name": "Lontra", "title": "Lontra", "names": {"it": "Lontra", "qau": "Zhazstan"}, "name_from": {"qau": "otter"}},
   {"land": "mainland", "mouth": [94.62, 124.62], "name": "Mirtina", "title": "Mirtina", "names": {"it": "Mirtina", "qau": "Kanul"}, "name_from": {"qau": "myrtle"}},
-  {"land": "lisavu", "mouth": [230.19, 106.19], "name": "Vokila", "title": "Vokila (river)", "names": {"qal": "Vokila"}, "name_from": {"qal": "canoe"}},
+  {"land": "lisavu", "mouth": [230.19, 106.19], "name": "Vokila", "title": "Vokila (river)", "coast": "north", "names": {"qal": "Vokila"}, "name_from": {"qal": "canoe"}},
   {"land": "lisavu", "mouth": [227.69, 122.19], "name": "Makete", "title": "Makete (river)", "names": {"qal": "Makete"}, "name_from": {"qal": "long"}},
   {"land": "lisavu", "mouth": [219.31, 123.19], "name": "Tapetu", "title": "Tapetu (river)", "names": {"qal": "Tapetu"}, "name_from": {"qal": "mountain"}, "wiki": {"sections": [{"title": "Hydro plant", "text": "High in its valley the river is taken into a pipeline that brings it down to a power house of about 8 MW above Nihekemo. Built in 1968, the plant is the island's oldest source of electricity from water; a small reservoir lets it run in the evening and at night, when the island's solar park is idle."}]}},
   {"land": "lisavu", "mouth": [238.81, 107.19], "name": "Kanipi", "title": "Kanipi (river)", "names": {"qal": "Kanipi"}, "name_from": {"qal": "east"}}
  ],
- "waters": {"title": "Rivers and watersheds", "wiki": {"short": "The rivers, basins and watersheds of the mainland and Lisavu", "lead": "The mainland drains to the sea by many rivers, of which {mainland_rivers} have a basin of 1,000 km² or more; Lisavu's streams are short and steep, and {lisavu_rivers} of them drain more than 500 km². The largest river is the [[Runmek]], {main_km} km long, whose basin of {main_basin} km² covers about {main_share} % of the mainland.", "sections": [{"title": "The mainland", "text": "The [[Runmek]] rises on the volcanic massif in Urvania's north-west at about {main_source_m} m and runs south-east through the rift valley to the estuary at [[Lumeport]]. Its tributaries come from the massif, from the plateau to the north-east and from the southern hills; the largest is the [[Bruna (river)|Bruna]], which joins it at Forte Euridice. From the massif the [[Pastora]] falls to the north coast and the [[Vallerna]] and the [[Grigiola]] to the west coast. Bayvarra's north drains to the north coast by the [[River Shingle|Shingle]], the [[River Brackwater|Brackwater]] and the [[River Scarrow|Scarrow]], its north-east by the [[River Sallow|Sallow]], and the dry east by the [[River Lark|Lark]], the second river of the mainland. The southern hills send only short rivers to the south coast, among them the [[Colomba (river)|Colomba]] and the [[Genovina]]."}, {"title": "Watersheds and the border", "text": "North of the crossing at Forte Euridice the border between [[Urvania]] and [[Bayvarra]] follows the watershed: Urvania holds the basins of the rivers that join the [[Runmek]] at or above the crossing, the Bruna's whole valley among them, and of the north-western coast; Bayvarra holds the land that drains to the Runmek below the crossing, to the rest of the north coast and to the east. From the crossing down to the estuary the Runmek itself is the border."}, {"title": "Lisavu", "text": "The island's streams run outward from its volcano, short and steep. The [[Vokila (river)|Vokila]] drains the largest basin and reaches the north coast in the bay of [[Natahoma]]; the [[Makete (river)|Makete]], the longest, reaches the south coast at [[Linukaha]]; the [[Tapetu (river)|Tapetu]] falls from near the summit to the south-west coast at [[Nihekemo]]; the [[Kanipi (river)|Kanipi]] runs to the east coast north of [[Selanu]]."}]}},
+ "waters": {"title": "Rivers and watersheds", "wiki": {"short": "The rivers, basins and watersheds of the mainland and Lisavu", "lead": "The mainland drains to the sea by many rivers, of which {mainland_rivers} have a basin of 1,000 km² or more; Lisavu's streams are short and steep, and {lisavu_rivers} of them drain more than 500 km². The largest river is the [[Runmek]], {main_km} km long, whose basin of {main_basin} km² covers about {main_share} % of the mainland.", "sections": [{"title": "The mainland", "text": "The [[Runmek]] rises on the volcanic massif in Urvania's north-west at about {main_source_m} m and runs south-east through the rift valley to the estuary at [[Lumeport]]. Its tributaries come from the massif, from the plateau to the north-east and from the southern hills; the largest is the [[Bruna (river)|Bruna]], which joins it at Forte Euridice. From the massif the [[Pastora]] falls to the north coast and the [[Vallerna]] and the [[Grigiola]] to the west coast. Bayvarra's north drains to the north coast by the [[River Shingle|Shingle]], the [[River Brackwater|Brackwater]] and the [[River Scarrow|Scarrow]], its north-east by the [[River Sallow|Sallow]], and the dry east by the [[River Lark|Lark]], the second river of the mainland. The southern hills send only short rivers to the south coast, among them the [[Colomba (river)|Colomba]] and the [[Genovina]]."}, {"title": "Watersheds and the border", "text": "North of the border crossing near Forte Euridice the border between [[Urvania]] and [[Bayvarra]] follows the watershed: Urvania holds the basins of the rivers that join the [[Runmek]] at or above the crossing, the Bruna's whole valley among them, and of the north-western coast; Bayvarra holds the land that drains to the Runmek below the crossing, to the rest of the north coast and to the east. From the crossing down to the estuary the Runmek itself is the border."}, {"title": "Lisavu", "text": "The island's streams run outward from its volcano, short and steep. The [[Vokila (river)|Vokila]] drains the largest basin and reaches the north coast in the bay of [[Natahoma]]; the [[Makete (river)|Makete]], the longest, reaches the south coast at [[Linukaha]]; the [[Tapetu (river)|Tapetu]] falls from near the summit to the south-west coast at [[Nihekemo]]; the [[Kanipi (river)|Kanipi]] runs to the east coast north of [[Selanu]]."}]}},
  "landmarks_note": "Named landmarks of the land (mountains, capes, coasts, bays, plains, meeting grounds), each at its square, with its names (the Lisavan from the vocabulary, by the meaning in name_from; an English name where settlers or sailors needed one). A wiki key makes an encyclopedia article.",
  "landmarks": [
   {"name": "Mount Tapetu", "kind": "mountain", "land": "lisavu", "at": [217.1, 111.9], "names": {"qal": "Tapetu", "en": "Mount Tapetu"}, "name_from": {"qal": "mountain"}, "height_m": 1810, "wiki": {"short": "Highest mountain of Lisavu", "lead": "**Mount Tapetu** (Lisavan *Tapetu*, mountain) is the highest mountain of [[Lisavu]], about 1,810 m, the summit of the old volcano that forms the west of the island. Its top holds the caldera called the Cauldron, and the river [[Tapetu (river)|Tapetu]], named after it, rises just below the summit.", "sections": [{"title": "History", "text": "By the Lisavans' tradition the first canoes, about 2,000 years ago, steered for its peak, seen far out at sea, and landed in the bay of [[Natahoma]]. The settlers kept its Lisavan name."}, {"title": "The Cauldron", "text": "The caldera at the top, in Lisavan *Vukaka* (cauldron), is a basin about 7 km across and about 650 m deep; the settlers translated its name as the Cauldron. The elders' stories say that the island's fire sleeps there. The summit, about 12 °C colder than the coast, has snow in some winters."}]}},
