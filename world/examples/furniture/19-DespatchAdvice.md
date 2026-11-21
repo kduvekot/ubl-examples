@@ -158,7 +158,7 @@ Inside `Shipment`:
 
 - `ID` = **26-0202**  
   The despatching party's shipment number.
-- `GrossWeightMeasure` = **947** (unitCode `KGM`)  
+- `GrossWeightMeasure` = **985.4** (unitCode `KGM`)  
   The gross weight of the pieces in their cartons.
 - `Delivery/DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples).
@@ -400,7 +400,7 @@ Inside `DespatchLine`:
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
     <cbc:ID>26-0202</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">947</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">985.4</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
