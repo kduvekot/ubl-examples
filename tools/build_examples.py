@@ -4062,6 +4062,84 @@ def check_reason_premises(root, reasons, where):
                                  f"{what}")  # stage 7 A13
 
 
+# Stage 7, A13 (read-throughs: air/04's "97.6 kg" against 105): a reason that states the value it explains as a
+# number with the value's unit, or as a date, states the value itself. The number counts as the value where the
+# reason opens with it ("4,800 slats ...", "About 23 tonnes ..."), ends on it after a colon (": 5,795.8 kg."), or
+# says it is all ("... 120 t in all"); a rate after it ("5 lume a bench") is not the value. An "about" allows the
+# rounding of the stated figure (to 10 %).
+REASON_UNITS = {
+    "KGM": r"kg|kilograms?", "TNE": r"t|tonnes?", "KMT": r"km", "MTR": r"m|metres?", "MMT": r"mm",
+    "MTQ": r"m³|cubic metres?", "CEL": r"°C", "HUR": r"hours?|h", "DAY": r"days?", "LTR": r"litres?",
+    "KWH": r"kWh", "MWH": r"MWh", "XBL": r"lume", "XUF": r"ferra", "XLC": r"coral", "EUR": r"euro",
+    "INR": r"rupees?", "MIN": r"minutes?", "ANN": r"years?", "MON": r"months?", "WEE": r"weeks?",
+    # counts of the goods themselves; a count of what holds them (pallets, packs, doses in packs) is another unit
+    "EA": r"benches|chairs|frames|bales|slats|bundles|blanks|vials|kits|tables|desks|generators",
+}
+_NUM = r"(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)"
+_MONTHS = "January February March April May June July August September October November December".split()
+_WEEKDAY = r"(?:(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),? )?"
+_RATE_AFTER = r"\s*(?:a|an|per|each)\b"
+
+
+REASON_COUNT = {"numbers": 0, "dates": 0}
+
+
+def reason_number_problems(reasons):
+    """Stage 7, A13: (path, value, stated) for every reason that states its value as a number or a date that
+    differs from the value (REASON_UNITS)."""
+    out = []
+    for path, value, attrs, why in reasons:
+        unit = (attrs or {}).get("unitCode") or (attrs or {}).get("currencyID")
+        why = why.strip()
+        if unit in REASON_UNITS and value is not None:
+            try:
+                val = Decimal(str(value))
+            except Exception:
+                continue
+            u = rf"(?:{REASON_UNITS[unit]})(?![\w³])"
+            pats = (rf"^(?:(?P<about>about|some|around) )?{_NUM}\s?{u}(?!{_RATE_AFTER})",
+                    rf":\s(?:(?P<about>about|some|around) )?{_NUM}\s?{u}\.?$",
+                    rf"(?:(?P<about>about|some|around) )?{_NUM}\s?{u} in (?:all|total)\b")
+            # a product: "18,000 kg at 0.010 coral.", "120 tonnes at 1,495 ferra a tonne": the value is the two
+            # numbers multiplied, to the value's precision
+            m = re.match(rf"^{_NUM} [a-z ]{{0,40}}?\bat {_NUM}\s?{u}(?: (?:a|an|per) [a-z]+)?\.?$", why, re.I)
+            if m:
+                REASON_COUNT["numbers"] += 1
+                prod = Decimal(m.group(1).replace(",", "")) * Decimal(m.group(2).replace(",", ""))
+                if abs(prod - abs(val)) > Decimal("0.005") + abs(prod) * Decimal("0.0005"):
+                    out.append((path, value, m.group(0)))
+                continue
+            for pat in pats:
+                m = re.search(pat, why, re.I)
+                if not m:
+                    continue
+                REASON_COUNT["numbers"] += 1
+                stated = Decimal(m.group(2).replace(",", ""))
+                tol = abs(stated) * Decimal("0.1") if m.group("about") else Decimal("0")
+                if abs(stated - val) > tol and abs(stated - abs(val)) > tol:
+                    out.append((path, value, m.group(0)))
+                break
+        elif isinstance(value, str) and re.fullmatch(r"\d{4}-\d\d-\d\d", value) and path.endswith("Date"):
+            m = re.match(rf"^(?:On |Issued on |Paid on |Due on )?{_WEEKDAY}(\d{{1,2}})(?:(?: or |–| to )(\d{{1,2}}))? "
+                         rf"({'|'.join(_MONTHS)})(?: (\d{{4}}))?\b", why)
+            if not m:
+                continue
+            REASON_COUNT["dates"] += 1
+            v = datetime.date.fromisoformat(value)
+            lo, hi = int(m.group(1)), int(m.group(2) or m.group(1))
+            if not (lo <= v.day <= hi and _MONTHS.index(m.group(3)) + 1 == v.month and
+                    (not m.group(4) or int(m.group(4)) == v.year)):
+                out.append((path, value, m.group(0)))
+    return out
+
+
+def check_reason_numbers(reasons, where):
+    problems = reason_number_problems(reasons)
+    if problems:
+        raise SystemExit("\n".join(f"{where}: {p} = {v}, but its reason states {s!r} (stage 7, A13)"
+                                   for p, v, s in problems))
+
+
 AT_THE_TILL = {"10", "20", "48", "54", "55"}   # cash, cheque and cards: paid where the payee takes it, not via banks
 
 
@@ -4937,6 +5015,7 @@ def main(flow_id, check=False):
         check_customs_offices(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_shipping_orders(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_reason_premises(root, reasons, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_reason_numbers(reasons, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         if FIRST_PASS:
             continue
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
