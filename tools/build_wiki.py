@@ -546,6 +546,13 @@ def described(p):
     return t if t.startswith(PROPER) or t[:1].isdigit() else t[:1].lower() + t[1:]
 
 
+def near_place(at, code):
+    """The named town or village nearest to a square of the map, as a link."""
+    pl = [t for t in MAP["towns"] + MAP.get("villages", []) if t.get("name") and t.get("country") == code]
+    t = min(pl, key=lambda t: math.hypot(t["c"][0] - at[0], t["c"][1] - at[1]))
+    return f"[[{t['name']}]]"
+
+
 def generated_sections(a):
     d, out_ = a["data"], []
     has = lambda title: any(x["title"] == title for x in a["wiki"].get("sections", []))
@@ -593,6 +600,19 @@ def generated_sections(a):
         if towns:
             out_ += ["## Towns", "", "| Town | Population |", "|---|---:|"]
             out_ += [f"| [[{t['name']}]] | {n0(t['population'])} |" for t in towns] + [""]
+        inst = [x for x in MAP.get("installations", []) if x.get("country") == a["key"]]
+        if inst:
+            out_ += ["## Installations", "", "| Installation | Near | Capacity | In service | Owner |", "|---|---|---:|---:|---|"]
+            for x in sorted(inst, key=lambda x: (x["kind"], x["id"])):
+                f = x.get("facts", {})
+                cap = (f"{n0(f['capacity_mw'])} MW" if f.get("capacity_mw") else
+                       f"{n0(f['energy_mwh'])} MWh" if f.get("energy_mwh") else "")
+                kind = x["kind"][0].upper() + x["kind"][1:] + (f" ({x['count']})" if x.get("count") else "")
+                if x.get("river"):
+                    riv = next((r["rec"] for r in RIVERS.values() if r["rec"]["name"] == x["river"]), None)
+                    kind += f" on the [[{riv['title']}|{x['river']}]]" if riv else f" on the {x['river']}"
+                out_ += [f"| {kind} | {near_place(x['at'], a['key'])} | {cap} | {f.get('in_service', '')} | {x.get('owner', '')} |"]
+            out_ += [""]
         hol = d.get("holidays", {}).get("2026", {})
         if hol:
             out_ += ["## Public holidays", "", "| Date (2026) | Holiday |", "|---|---|"]
