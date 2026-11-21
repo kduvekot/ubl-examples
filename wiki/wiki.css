@@ -34,5 +34,5 @@ a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underli
 .wmain ol { font-size:.9rem; } .categories { clear:both; margin-top:2rem; padding:.4rem .7rem; border:1px solid var(--rule); background:var(--box); font:.82rem/1.5 var(--sans); }
 .wfoot { border-top:1px solid var(--rule); padding:1rem 1.25rem; font:.8rem/1.5 var(--sans); color:var(--soft); text-align:center; }
 @media (max-width: 48rem) {
-  .wlayout { grid-template-columns:1fr; gap:.5rem; } .wside { order:2; border-top:1px solid var(--rule); }
+  .wlayout { grid-template-columns:1fr; gap:.5rem; } .wside { order:0; border-bottom:1px solid var(--rule); } .wside ul { display:flex; flex-wrap:wrap; gap:.15rem .9rem; } .wside li { margin:0; }
   .infobox { float:none; width:100%; margin:0 0 1rem; } }

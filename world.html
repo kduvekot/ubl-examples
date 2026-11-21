@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="An interactive map of the UBL example world: three countries, the parties, their supply chains and transport.">
-<title>UBL World Map</title>
+<title>The map · The UBL World</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600&display=swap">
@@ -103,7 +103,7 @@ canvas.dragging { cursor: grabbing; }
 <header class="toolbar">
   <a class="home-link" href="index.html" title="The UBL World: home"><h1>UBL <span>World</span></h1></a>
   <nav class="sitelinks" aria-label="Site">
-    <a href="world.html" aria-current="page">Map</a><a href="examples.html">Trade</a><a href="parties.html">Parties</a><a href="world-specifications.html">Rules</a><a href="about.html">About</a>
+    <a href="world.html" aria-current="page">World</a><a href="examples.html">Trade</a><a href="parties.html">Parties</a><a href="world-specifications.html">Rules</a><a href="about.html">About</a>
   </nav>
   <div class="layers" role="group" aria-label="Map layers">
     <button id="layer-chain" aria-pressed="true" data-layer="chain"><span class="dot" style="background:var(--c-commerce)"></span>Supply chains</button>
@@ -147,7 +147,7 @@ const GRID = WORLD.model.grid || 1;           // squares per 14 km (the squares 
 const TW = 32, TH = 16;             // tile size in pixels (isometric)
 const COUNTRIES = WORLD.countries;
 const CAT = { commerce: "--c-commerce", logistics: "--c-logistics", government: "--c-government", finance: "--c-finance", procurement: "--c-procurement" };
-const KIND_NAME = { commerce: "commerce", logistics: "transport", government: "government", finance: "finance", procurement: "procurement" };
+const KIND_NAME = { commerce: "supply chain", logistics: "transport", government: "government", finance: "finance", procurement: "procurement" };
 const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov", finance: "fin", procurement: "proc" };
 
 // Parties: number, tile position, country.
