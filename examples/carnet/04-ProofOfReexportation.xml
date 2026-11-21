@@ -127,7 +127,7 @@
     <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
     <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
       <cac:Address>
@@ -151,7 +151,7 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>Stamped at Selanu airport on 9 June; its voucher did not reach the importation office's records.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
       <cac:Address>
@@ -183,8 +183,14 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>Stamped at Valico Euridice on 10 June.</cbc:Note>
     <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
       <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

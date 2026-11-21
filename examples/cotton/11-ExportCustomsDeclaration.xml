@@ -114,7 +114,13 @@
       </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001001</cbc:ID>
       <cbc:Name>Customs office, port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsExitOfficeLocation>
     <cac:ConsignorParty>
       <cac:PartyIdentification>

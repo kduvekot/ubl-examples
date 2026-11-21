@@ -511,10 +511,9 @@ shorter than the carnet's year: a short fair admission.</li>
 <li><code>Note</code> = <strong>Stamped at Selanu airport on 2 June; no
 discharged re-exportation voucher on file.</strong><br />
 The counterfoil the claim rests on.</li>
-<li><code>CustomsOfficeLocation/ID</code> = <strong>XLSLA</strong>
-(schemeID <code>UN/LOCODE</code>)<br />
-The place's code in the form of a UN/LOCODE, with the world's country
-code.</li>
+<li><code>CustomsOfficeLocation/ID</code> = <strong>XL001002</strong>
+(schemeID <code>urn:ubl-examples:world:XL:customs-office</code>)<br />
+The office's number in the customs office list of Lisavu.</li>
 <li><code>CustomsOfficeLocation/LocationTypeCode</code> =
 <strong>CUSTOMSOFFICE</strong> (listID
 <code>urn:ubl-examples:world:codelist:CustomsLocationTypeCode</code>)<br />
@@ -525,7 +524,7 @@ Service, Selanu airport</strong><br />
 The customs office where the counterfoil is presented.</li>
 <li><code>CustomsOfficeLocation/Address/Country/IdentificationCode</code>
 = <strong>XL</strong> (listID <code>ISO 3166</code>)<br />
-The country the place is in. The code is from the world's copy of UBL's
+The country the office is in. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XL = Lisavu.</li>
 <li><code>GoodsItem/ID</code> = <strong>1</strong><br />
 The two sample benches.</li>
@@ -726,7 +725,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:FinalReexportationDate</span>&gt;2026-06-30&lt;/<span class="kw">cbc:FinalReexportationDate</span>&gt;</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsOfficeLocation</span>&gt;</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XLSLA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:customs-office&quot;</span>&gt;XL001002&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LocationTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsLocationTypeCode&quot;</span>&gt;CUSTOMSOFFICE&lt;/<span class="kw">cbc:LocationTypeCode</span>&gt;</span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Island Customs Service, Selanu airport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
@@ -769,6 +768,6 @@ href="example-carnet-04-ProofOfReexportation.html">Proof of
 Reexportation →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/aeda534b61511f59e6cb6f1d4b9c1fde1fbc0de3"><code>aeda534</code></a> of 2026-11-21 11:24 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/22c62db7f88e254dd6d75d82f6b6c245f23d3352"><code>22c62db</code></a> of 2026-11-21 11:29 UTC</p></div></footer>
 </body>
 </html>
