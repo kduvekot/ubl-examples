@@ -44,7 +44,7 @@ problems = []
 
 
 def slug(name):
-    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    s = unicodedata.normalize("NFKD", name.replace("–", "-")).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
@@ -126,6 +126,10 @@ if WATERS and RIVERS:
 page = {title: slug(title) + ".html" for title in articles}
 
 
+def sortkey(t):
+    return re.sub(r"^the ", "", t, flags=re.I).lower()
+
+
 def links(text, where):
     def one(m):
         target, label = (m.group(1).split("|", 1) + [None])[:2]
@@ -155,6 +159,12 @@ def fill(text, values, where):
 LANGNAME = {code: lang["name"] for code, lang in CJSON.get("languages", {}).items()}
 BAND = {"hamlet": "hamlet", "village": "village", "large village": "village", "small town": "small town",
         "country town": "country town"}
+
+
+def other_name(d, title):
+    """' (Urvanian Skegek)': the place's name in its other language, for the lead."""
+    other = [(k, v) for k, v in d.get("names", {}).items() if v != title and k in LANGNAME]
+    return f" ({LANGNAME[other[0][0]]} *{other[0][1]}*)" if other else ""
 
 
 def lies(text):
@@ -223,7 +233,7 @@ for title, a in articles.items():
         cname = countries[d["country"]]["name"]
         if a["kind"] == "village":
             a["wiki"] = {"short": f"{BAND.get(d.get('band'), 'village').capitalize()} in {cname}",
-                         "lead": f"**{title}** is a {BAND.get(d.get('band'), 'village')} in [[{cname}]], with about {n0(d['people'])} people.",
+                         "lead": f"**{title}**{other_name(d, title)} is a {BAND.get(d.get('band'), 'village')} in [[{cname}]], with about {n0(d['people'])} people.",
                          "sections": [x for x in (
                              {"title": "Geography", "text": lies(d["why"])} if d.get("why") else None,
                              {"title": "History", "text": founded(d["founded"], title)} if d.get("founded") else None,
@@ -377,24 +387,26 @@ def values(a):
         pop = d.get("population", {})
         tot = pop.get("total", 0)
         about = f"{tot / 1e6:.1f} million" if tot >= 1e6 else n0(round(tot, -4))    # prose rounds; the infobox is exact
-        return {"population": about, "currency": d["currency"]["name"],
+        return {"population": about, "currency": d["currency"]["name"].lower(),
                 "currency_code": d["currency"]["code"], "code": a["key"]}
     if a["kind"] == "town":
         return {"population": n0(d["population"]), "built_km": d["built_km"], "country": countries[d["country"]]["name"]}
     if a["kind"] == "village":
         return {"people": n0(d["people"])}
     if a["kind"] == "river":
-        return {"km": n0(d["km"]), "basin": n0(d["basin_km2"]), "source_m": n0(d["source_m"])}
+        return {"km": n0(d["km"]), "basin": n0(d["basin_km2"]), "source_m": n0(round(d["source_m"], -1))}
     if a["kind"] == "waters":
         main = RIVERS.get(("mainland", 1))
         area = TERR["measures"]["mainland"]["area_km2"]
         return {"mainland_rivers": sum(1 for k in RIVERS if k[0] == "mainland"),
                 "lisavu_rivers": sum(1 for k in RIVERS if k[0] == "lisavu"),
                 "main_km": n0(main["km"]), "main_basin": n0(main["basin_km2"]),
-                "main_share": round(100 * main["basin_km2"] / area), "main_source_m": n0(main["source_m"])}
+                "main_share": round(100 * main["basin_km2"] / area), "main_source_m": n0(round(main["source_m"], -1))}
     if a["kind"] == "party":
         lg = d["identity"].get("legal", {})
-        return {"founded_year": lg.get("founded", "")[:4], "employees": n0(lg.get("headcount", 0)),
+        hc = lg.get("headcount", 0)
+        rounded = hc if hc < 100 else round(hc, -1) if hc < 1000 else round(hc, -2)   # "about": a round number
+        return {"founded_year": lg.get("founded", "")[:4], "employees": n0(rounded),
                 "town": town_of(d), **(flight_values() if any(f.get("kind") == "air"
                                                                 for f in d.get("fleet") or []) else {})}
     return {}
@@ -411,7 +423,7 @@ def infobox(a):
                 ("Population", n0(d.get("population", {}).get("total", 0))),
                 ("Currency", f"{d['currency']['name']} ({d['currency']['code']})"),
                 ("Time", d.get("legal_time", "")), ("Country code", a["key"]),
-                ("Taxes", "; ".join(x["name"] for x in d["tax"]["schemes"]))]
+                ("Taxes", "; ".join(x["name"] for x in sorted(d["tax"]["schemes"], key=lambda x: "duty" in x["name"].lower())))]
     elif a["kind"] == "accord":
         rows = [("Signed", d.get("signed", "")), ("In force", d.get("in_force", "")),
                 ("Members", ", ".join(f"[[{countries[c]['name']}]]" for c in d.get("members", []))),
@@ -447,12 +459,13 @@ def infobox(a):
     elif a["kind"] == "river":
         rec = d["rec"]
         names = rec.get("names", {})
-        rows = [("", f'<img src="river-{a["key"]}.png" alt="The basin and course of the river {rec["name"]}">'),
+        rows = [("", f'<a href="river-{a["key"]}.png"><img src="river-{a["key"]}.png" alt="The basin and course of the river {rec["name"]}"></a>'
+                 f'<br><span class="cap">The {rec["name"]} and its basin; dots: towns</span>'),
                 ("Country", ", ".join(f"[[{countries[c]['name']}]]" for c in river_countries(d))
                  + ("; the border with [[Bayvarra]] for about " + f"{border_km(d)} km" if border_km(d) >= 10 else "")),
                 ("Length", f"{n0(d['km'])} km"), ("Basin", f"{n0(d['basin_km2'])} km²"),
-                ("Source", f"about {n0(d['source_m'])} m"),
-                ("Mouth", rlink(d["into"]) if d["into"] else "the sea"),
+                ("Source", f"about {n0(round(d['source_m'], -1))} m"),
+                ("Mouth", rlink(d["into"]) if d["into"] else f"the sea, on the {rec.get('coast') or coast(d)} coast"),
                 ("Tributaries", ", ".join(rlink(q) for q in d["tributaries"])),
                 ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'it': 'Italian', 'en': 'English'}.get(k, k))})"
                                       for k, v in names.items()) if len(names) > 1 else "")]
@@ -566,8 +579,8 @@ def generated_sections(a):
         if towns:
             out_ += ["## Towns in its basin", "", ", ".join(f"[[{n}]]" for n in towns) + ".", ""]
     if a["kind"] == "waters":
-        out_ += ["## Map", "", "![The rivers of the mainland, their basins and the border](water-mainland.png)", "",
-                 "![The rivers of Lisavu and their basins](water-lisavu.png)", ""]
+        out_ += ["## Map", "", "[![The rivers of the mainland, their basins and the border](water-mainland.png)](water-mainland.png)", "",
+                 "[![The rivers of Lisavu and their basins](water-lisavu.png)](water-lisavu.png)", ""]
         out_ += ["## The rivers", "", "| River | Length | Basin | Flows into | Country |", "|---|---:|---:|---|---|"]
         for land in ("mainland", "lisavu"):
             for r in sorted((r for r in RIVERS.values() if r["land"] == land), key=lambda r: -r["basin_km2"]):
@@ -778,7 +791,7 @@ if RIVERS:
             wiki_water.locator(land, found, r["id"], os.path.join(imgdir, f"river-{land}-{r['id']}.png"))
 
 for c, titles in by_cat.items():
-    body = [f"# Category: {c}", "", f"Articles in the category {c}:", ""] + [f"- [{t}]({page[t]})" for t in sorted(titles)] + [""]
+    body = [f"# Category: {c}", "", f"Articles in the category {c}:", ""] + [f"- [{t}]({page[t]})" for t in sorted(titles, key=sortkey)] + [""]
     open(os.path.join(out, f"category-{slug(c)}.md"), "w", encoding="utf-8").write("\n".join(body))
 
 open(os.path.join(out, "sources.md"), "w", encoding="utf-8").write(
@@ -791,7 +804,7 @@ index = ["# The UBL World", "", '<p class="short">The reference work of Urvania,
 for c in ("Countries", "Treaties", "Towns", "Villages and localities", "Rivers", "Landmarks", "Companies and institutions", "Transport",
           "Languages", "Currencies", "Products"):
     if c in by_cat:
-        index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c])] + [""]
+        index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c], key=sortkey)] + [""]
 open(os.path.join(out, "index.md"), "w", encoding="utf-8").write("\n".join(index))
 
 # no names of persons in the encyclopedia (owner): the people the world's data names (consumers, staff, drivers,

@@ -213,7 +213,7 @@
     "sections": [
      {
       "title": "Route",
-      "text": "The line starts at the mine's siding at Fucinalta, where the wagons are loaded and weighed at the mine's portal, and follows the valleys down to Ferrano, keeping to gradients of at most 2 %. Its river bridge crosses the river's deep valley about 100 m above the water."
+      "text": "The line starts at the mine's siding at Fucinalta, where the wagons are loaded and weighed at the mine's portal, and follows the valleys down to Ferrano, keeping to gradients of at most 2 %. Its river bridge crosses a deep river valley about 100 m above the water."
      },
      {
       "title": "Operation",
@@ -841,7 +841,7 @@
    ],
    "wiki": {
     "title": "Lumeport–Selanu shipping service",
-    "short": "Weekly container service between Lumeport and Lisavu",
+    "short": "Weekly container service between Lumeport and Selanu",
     "facts": {
      "Distance": "about {fact:sea.km}",
      "Passage": "about {fact:sea.hours}",
@@ -887,7 +887,7 @@
    ],
    "wiki": {
     "title": "Lumeport–Selanu air cargo route",
-    "short": "Air cargo route between Lumeport and Lisavu",
+    "short": "Air cargo route between Lumeport and Selanu",
     "facts": {
      "Distance": "about {flight_km} km",
      "Timetable": "{flight_east} east, {flight_west} west"
@@ -16090,7 +16090,7 @@
      {
       "title": "The colony's seat",
       "sub": true,
-      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. When Britain annexed the coast on 29 November 1841 it fortified the station and laid out the town as the colony's seat, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital in 1852."
+      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. When Britain annexed the coast on 29 November 1841 it fortified the station and laid out the town beside it, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital in 1852."
      },
      {
       "title": "Port city",
@@ -16185,7 +16185,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it is Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the timber yards. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
+      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it has been Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the timber yards. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
      },
      {
       "title": "Economy",
