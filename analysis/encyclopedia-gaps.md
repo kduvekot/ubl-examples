@@ -10,10 +10,10 @@ Facts the encyclopedia's articles would need that the world's data and story do 
 
 - ~~Lisavu's status: whether it was ever under British rule, how it governs itself, and what its Island Day (7 July, self-government) marks.~~ **Filled 2026-11-20 (OW003):** a protected state of Britain from 1884, never a colony; fully self-governing since 7 July 1962 (Island Day); cotton estates from the 1860s, its own Bank of Selanu from 1878. How it governs itself today: see the forms of government below.
 - ~~How and when Bayvarra became an independent federation (its Federation Day marks the states forming the federation).~~ **Filled 2026-11-20 (OW004):** Upland a colony of its own in 1858; the two colonies federated on 16 October 1899 as a dominion under the Crown; fully sovereign by the early 1930s.
-- The form of government of each country: head of state, parliament. *Set aside by the owner (2026-11-20) for later, with the historical governments.*
+- ~~The form of government of each country: head of state, parliament.~~ **Filled 2026-11-21 (OW025):** Urvania a parliamentary republic, Bayvarra a federal parliamentary monarchy under the Crown, Lisavu a constitutional monarchy of the rulers' line.
 - ~~When the Lisavans first settled the island.~~ **Filled 2026-11-20 (OW005):** a landing by canoe at Natahoma about 2,000 years ago; the coasts settled in the centuries after; one line of rulers at Selanu by about the 14th century.
-- The rulers' old meeting ground in Selanu: what it looks like and its Lisavan name (from the lexicon tool). Its role is decided (OW019): the elders' spring gathering.
-- When the first European ships called at Lisavu, before the cotton estates.
+- ~~The rulers' old meeting ground in Selanu: what it looks like.~~ Filled 2026-11-21 (OW019, OW024, OW031).
+- ~~When the first European ships called at Lisavu, before the cotton estates.~~ Filled 2026-11-21 (OW031).
 - ~~The exact years of the first landing at Larkmouth, the Sardinian treaty with the Urvanian rulers, the boundary convention, and the move of Bayvarra's capital from Larkmouth to Lumeport.~~ **Filled 2026-11-20 (OW006):** the landing on 16 February 1824, the treaty in 1840, the annexation on 29 November 1841, the fort in 1842, the capital moved in 1852, the convention in 1857, Upland on 12 April 1858.
 - ~~The years of the Trade Accord's later protocols: procurement rules, the payment link and card schemes, electronic business documents.~~ **Filled 2026-11-20 (OW007):** procurement 1999, payment link and card schemes 2003, electronic business documents 2014.
 - ~~The name of the main river and of the plateau rivers.~~ **Filled 2026-11-20 (OW008):** 40 rivers named (the Runmek, the Bruna, the Lark, the Tallow, the Marrow …), with an article each and the water map.
@@ -30,26 +30,26 @@ decided with the owner one at a time, like the gaps here.
 ### Bank of Lumeport (25-xb)
 
 - ~~Who founded the bank in 1903 and why; its history through the colonial years and independence.~~ Filled 2026-11-20 (OW011).
-- Whether it issues bank notes (who issues Bayvarra's notes is not set); ~~who owns it~~ Filled 2026-11-20 (OW011): a private commercial bank owned by its shareholders.
+- ~~Whether it issues bank notes (who issues Bayvarra's notes is not set)~~ Filled 2026-11-21 (OW026): the Federal Bank of Bayvarra since 1934; ~~who owns it~~ Filled 2026-11-20 (OW011): a private commercial bank owned by its shareholders.
 - ~~How Bayvarra became independent (not set), which the bank's history would need.~~ Filled 2026-11-20 (OW004).
 
 ### Bank of Selanu (22-xl)
 
 - ~~Who founded the bank in 1965 and why; whether it was the island's first bank.~~ Filled 2026-11-20 (OW003): founded in 1878 by the Lisavan rulers, the estates and the merchants of Selanu.
-- Who owns it (the state, local owners or a mainland bank).
-- When Coral net began.
+- ~~Who owns it (the state, local owners or a mainland bank)~~ Filled 2026-11-21 (OW026).
+- ~~When Coral net began~~ Filled 2026-11-21 (OW026).
 
 ### Bayforth Forwarding (10-xb)
 
 - ~~Who founded Bayforth~~ Filled 2026-11-20 (OW012).
-- Whether it has offices or agents on the island or in Urvania
-- When it added air freight and reefer haulage
+- ~~Whether it has offices or agents on the island or in Urvania~~ Filled 2026-11-21 (OW026).
+- ~~When it added air freight and reefer haulage~~ Filled 2026-11-21 (OW026).
 
 ### Bayvarra Information Service (21-xb)
 
-- ~~when the service was set up, and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- its staff and the ministry or department it reports to
-- whether it shares the government building on Government Hill with other public bodies
+- ~~when the service was set up, and under which law~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~its staff and the ministry or department it reports to~~ Filled 2026-11-21 (OW025, OW031).
+- ~~whether it shares the government building on Government Hill with other public bodies~~ Filled 2026-11-21 (OW026).
 
 ### Brackenmere Furniture (37-xb)
 
@@ -71,69 +71,69 @@ decided with the owner one at a time, like the gaps here.
 ### Coastal State Water Company (34-xb)
 
 - ~~who owns it: the Coastal State, the federal state or the city~~ Filled 2026-11-20 (OW011).
-- where its water comes from (reservoir, river, wells) and how many customers it has
-- when the district heating network was built
+- ~~where its water comes from (reservoir, river, wells) and how many customers it has~~ Filled 2026-11-21 (OW026).
+- ~~when the district heating network was built~~ Filled 2026-11-21 (OW026).
 
 ### Codana Identification Agency (31-xu)
 
 - Codana has no founding date in its record, so {founded_year} cannot be used; the year 1999 is written out from the story
-- its staff and how it is funded (fees, state budget)
-- under which law or ministry it was set up
+- ~~its staff and how it is funded (fees, state budget)~~ Filled 2026-11-21 (OW031).
+- ~~under which law or ministry it was set up~~ Filled 2026-11-21 (OW025). (the Ministry of Industry; the law: open)
 
 ### Crevalto Bank (23-xu)
 
 - ~~Who founded the bank in 1921 and under which rule Urvania then stood (Italian or British)~~ Filled 2026-11-20 (OW011).
-- The bank's history through independence in 1962 and the opening of the economy in the 1990s
+- ~~The bank's history through independence in 1962 and the opening of the economy in the 1990s~~ Filled 2026-11-21 (OW026).
 - ~~When it was listed on the Ferrano Stock Exchange~~ Filled 2026-11-20 (OW011).
-- Its place among Urvania's banks (the largest, one of several)
+- ~~Its place among Urvania's banks (the largest, one of several)~~ Filled 2026-11-21 (OW026).
 
 ### Customs Administration of Urvania (19-xu)
 
-- ~~When the customs administration was set up (at independence in 1962 or earlier, under the Italian or British administration).~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- Its headquarters and other offices besides the border office, and its staff numbers.
-- Its head and the ministry it reports to.
+- ~~When the customs administration was set up (at independence in 1962 or earlier, under the Italian or British administration).~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its headquarters and other offices besides the border office~~ Filled 2026-11-21 (OW026). Its staff numbers: open.
+- ~~Its head and the ministry it reports to~~ Filled 2026-11-21 (OW025).
 
 ### Customs and Border Service of Bayvarra (19-xb)
 
-- ~~When the service was established and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- Its headcount and head office (the border office is the only address given)
-- How many offices and posts it has beyond the crossing, the seaport, the airport and Marrowdale
+- ~~When the service was established and under which law~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its headcount and head office (the border office is the only address given) Filled 2026-11-21 (OW026).~~ Filled 2026-11-21 (OW026, OW031).
+- ~~How many offices and posts it has beyond the crossing, the seaport, the airport and Marrowdale~~ Filled 2026-11-21 (OW026).
 
 ### Department of Agriculture of Lisavu (45-xl)
 
-- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- what else it does (inspection of imports, advice to farms, the island's farm policy)
+- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~what else it does (inspection of imports, advice to farms, the island's farm policy)~~ Filled 2026-11-21 (OW026).
 
 ### Environment Agency of Urvania (46-xu)
 
-- ~~when the agency was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- its duties beyond waste (water, air, nature)
+- ~~when the agency was set up and how many people it employs~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~its duties beyond waste (water, air, nature)~~ Filled 2026-11-21 (OW026).
 
 ### Federal Department of Agriculture of Bayvarra (57-xb)
 
-- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- its other duties, and how farming is shared between the federation and the states
+- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~its other duties, and how farming is shared between the federation and the states~~ Filled 2026-11-21 (OW026).
 
 ### Fernhollow Studio (48-xb)
 
-- whether it appealed against the exclusion
+- ~~whether it appealed against the exclusion~~ Filled 2026-11-21 (OW026).
 
 ### Ferrano Chamber of Commerce (20-xu)
 
-- ~~when the chamber was founded and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- whether it is a public body or an association of its members, and what it does besides certificates and carnets
+- ~~when the chamber was founded and how many people it employs~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~whether it is a public body or an association of its members, and what it does besides certificates and carnets~~ Filled 2026-11-21 (OW026).
 
 ### Ferrano Energy (33-xu)
 
 - ~~How Ferrano Energy began in 1949 (as a state or a private company, and under the Italian or British era) and who owns it now.~~ Filled 2026-11-20 (OW009).
 - ~~Whether Ferrano Grid was split off from Ferrano Energy itself or from another body.~~ Filled 2026-11-20 (OW009).
-- ~~How many customers it serves, and the other power stations it buys from.~~ Filled 2026-11-21 (OW022, OW009); the number of customers open.
+- ~~How many customers it serves, and the other power stations it buys from.~~ Filled 2026-11-21 (OW022, OW009); the number of customers filled 2026-11-21 (OW026).
 
 ### Ferrano Grid (44-xu)
 
 - ~~Which company it was split off from in 2007 (Ferrano Energy or a state utility)~~ Filled 2026-11-20 (OW009).
 - ~~Who owns it~~ Filled 2026-11-20 (OW009).
-- The size of its networks (length, connections) and the extent of the Ferrano region
+- ~~The size of its networks (length, connections) and the extent of the Ferrano region~~ Filled 2026-11-21 (OW026).
 - ~~Whether other grid operators serve the rest of Urvania~~ Filled 2026-11-21 (OW015).
 
 ### Ferrano Intermodal Hub (18-xu)
@@ -146,7 +146,7 @@ decided with the owner one at a time, like the gaps here.
 - ~~Whether Ferrano Rail Cargo is still owned by the state or was sold, and when it became a company of its own~~ Filled 2026-11-20 (OW009).
 - ~~When Urvania separated the rail infrastructure from the train operators~~ Filled 2026-11-20 (OW009).
 - ~~Why the depot is at Serravona (the mining village) and not in Ferrano~~ Filled 2026-11-20 (OW009).
-- Its other customers besides Valdara and Serravona Mining, if any
+- ~~Its other customers besides Valdara and Serravona Mining, if any~~ Filled 2026-11-21 (OW026).
 
 ### Fiumella Barges (15-xu)
 
@@ -170,7 +170,7 @@ decided with the owner one at a time, like the gaps here.
 ### Harbourline Factoring (24-xb)
 
 - ~~who founded the company and whether it belongs to a bank~~ Filled 2026-11-20 (OW010).
-- which clients it serves besides Lumeway Distribution
+- ~~which clients it serves besides Lumeway Distribution~~ Filled 2026-11-21 (OW026).
 
 ### Harrowmead Fruit Growers (55-xb)
 
@@ -180,8 +180,8 @@ decided with the owner one at a time, like the gaps here.
 
 ### Island Customs Service (19-xl)
 
-- ~~When the customs service was set up and how it was organised under the English settlers.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- Its staff numbers and its head office, if different from the Wharf Road office.
+- ~~When the customs service was set up and how it was organised under the English settlers.~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its staff numbers and its head office, if different from the Wharf Road office Filled 2026-11-21 (OW026).~~ Filled 2026-11-21 (OW026, OW031).
 - ~~When the island was settled and became independent (not set).~~ Filled 2026-11-20 (OW003, OW005).
 
 ### Kelaro Air Cargo (12-xl)
@@ -191,22 +191,22 @@ decided with the owner one at a time, like the gaps here.
 
 ### Kelpstone Gas (42-xb)
 
-- Who founded and owns Kelpstone Gas, and the name of the field and the platform.
+- ~~Who founded and owns Kelpstone Gas, and the name of the field and the platform~~ Filled 2026-11-21 (OW026).
 - ~~The platform's distance from the plant: the story gives about 80 km (subsea line about 83 km), the party's site data about 10.~~ Settled 2026-11-20 (O264): about 80 km; the 10 is the rounding step.
 - ~~The pipeline's name: the company's fleet calls it the Kelpstone–Ferrano gas pipeline, the map the Gullhaven–Serravona gas pipeline.~~ Settled 2026-11-20: the Kelpstone–Ferrano gas pipeline, as the data names it.
-- The field's reserves and yearly output.
+- ~~The field's reserves and yearly output~~ Filled 2026-11-21 (OW026).
 
 ### Lumeport Airport Cargo Terminal (17-xb)
 
 - ~~Who owns the terminal (the airport, an airline or private owners) and who founded it.~~ Filled 2026-11-20 (OW012).
-- When Lumeport airport itself opened, and which other airlines and destinations it serves.
-- The terminal's size, cold rooms and yearly tonnage.
+- ~~When Lumeport airport itself opened, and which other airlines and destinations it serves~~ Filled 2026-11-21 (OW026).
+- ~~The terminal's size, cold rooms and yearly tonnage~~ Filled 2026-11-21 (OW026).
 
 ### Lumeport Public Works Department (2-xb)
 
-- ~~When the department was established~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- Its headcount and budget
-- Its tasks beyond procurement (roads, parks, buildings) and how it is organised within the city
+- ~~When the department was established~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its headcount and budget~~ Filled 2026-11-21 (OW031).
+- ~~Its tasks beyond procurement (roads, parks, buildings) and how it is organised within the city~~ Filled 2026-11-21 (OW026).
 
 ### Lumeport Textile Mill (40-xb)
 
@@ -215,10 +215,10 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Trade Accord Council (32-xb)
 
-- ~~When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- ~~Its membership, how it decides and who chairs it~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- Its tasks beyond the agreement on electronic documents (code lists, the parities, disputes)
-- Its headcount
+- ~~When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its membership, how it decides and who chairs it~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its tasks beyond the agreement on electronic documents (code lists, the parities, disputes)~~ Filled 2026-11-21 (OW026).
+- ~~Its headcount~~ Filled 2026-11-21 (OW031).
 
 ### Lumeway Distribution (6-xb)
 
@@ -227,10 +227,10 @@ decided with the owner one at a time, like the gaps here.
 
 ### Maritime Administration of Lisavu (30-xl)
 
-- ~~When it was established~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- ~~Which ships fly Lisavu's flag (the ships named in the sources fly Bayvarra's)~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- Its other tasks (port state control, safety of navigation, seafarers' certificates)
-- Its headcount
+- ~~When it was established~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Which ships fly Lisavu's flag (the ships named in the sources fly Bayvarra's)~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its other tasks (port state control, safety of navigation, seafarers' certificates)~~ Filled 2026-11-21 (OW026).
+- ~~Its headcount~~ Filled 2026-11-21 (OW031).
 
 ### Marrowdale Sawmill (36-xb)
 
@@ -247,7 +247,7 @@ decided with the owner one at a time, like the gaps here.
 
 - ~~Who founded Nalevi~~ Filled 2026-11-20 (OW010).
 - ~~The size of its warehouse~~ Filled 2026-11-21 (OW015).
-- Whether it has customers besides those named, and whether it runs more than one truck
+- ~~Whether it has customers besides those named, and whether it runs more than one truck~~ Filled 2026-11-21 (OW026).
 
 ### Port of Selanu (16-xl)
 
@@ -257,25 +257,25 @@ decided with the owner one at a time, like the gaps here.
 ### Procurement Review Board of Bayvarra (28-xb)
 
 - ~~When and by which law the board was set up, possibly with the Accord's common procurement rules (their date is not set).~~ Filled 2026-11-20 (OW007): under the procurement protocol of 1999.
-- Its members, how many cases it hears a year, and any case it has decided.
-- Whether the government quarter building is the address on Justice Row or a separate site.
+- ~~Its members and how many cases it hears a year~~ Filled 2026-11-21 (OW026, OW031); any case it has decided: open.
+- ~~Whether the government quarter building is the address on Justice Row or a separate site~~ Filled 2026-11-21 (OW026).
 
 ### Quillmoor Pharma Distribution (49-xb)
 
 - ~~who founded the company~~ Filled 2026-11-20 (OW012).
-- its customers in Bayvarra and Urvania
+- ~~its customers in Bayvarra and Urvania~~ Filled 2026-11-21 (OW026).
 
 ### Rail Infrastructure Agency of Urvania (47-xu)
 
 - ~~The year Urvania separated its railway (and so when the agency was set up), and what body ran the tracks before.~~ Filled 2026-11-20 (OW009).
-- The length of the network, the number of stations and the agency's staff.
+- ~~The length of the network, the number of stations~~ Filled 2026-11-21 (OW026). The agency's staff: open.
 - ~~Whether it also maintains the line's bridges, such as the ore line's river bridge, 78 m high.~~ Filled 2026-11-21 (OW015).
 
 ### Rinova Recovery (7-xu)
 
 - ~~who founded Rinova and why in 2003, beyond the recycling of industrial waste~~ Filled 2026-11-20 (OW013).
 - ~~which other factories besides Valdara supply its waste~~ Filled 2026-11-21 (OW016).
-- the name of the certification body is in the story (Certovira Certification) but it is not a party, so it cannot be linked
+- ~~the name of the certification body is in the story (Certovira Certification) but it is not a party, so it cannot be linked~~ Filled 2026-11-21 (OW026).
 
 ### Rivermouth Packaging (41-xb)
 
@@ -291,47 +291,47 @@ decided with the owner one at a time, like the gaps here.
 ### Selanu Airport Cargo (17-xl)
 
 - ~~Whether it is still owned by the Port of Selanu or by the state~~ Filled 2026-11-21 (OW015).
-- Who runs the airport itself (runway, passenger terminal)
-- Whether it also handles outbound cargo and passenger baggage
+- ~~Who runs the airport itself (runway, passenger terminal)~~ Filled 2026-11-21 (OW026).
+- ~~Whether it also handles outbound cargo and passenger baggage~~ Filled 2026-11-21 (OW026).
 
 ### Selanu Chamber of Commerce (20-xl)
 
-- ~~when the chamber was set up and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- what the cotton fund pays for
-- where the trade fair is held and what it shows
+- ~~when the chamber was set up and under which law~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~what the cotton fund pays for~~ Filled 2026-11-21 (OW026).
+- ~~where the trade fair is held and what it shows~~ Filled 2026-11-21 (OW026).
 
 ### Selanu Cotton Ginnery (39-xl)
 
 - ~~who founded the ginnery and why it is named after Selanu while it stands at Bollworth~~ Filled 2026-11-20 (OW011).
-- how many farms deliver to it, and whether it sells to buyers other than the textile mill
+- ~~how many farms deliver to it, and whether it sells to buyers other than the textile mill~~ Filled 2026-11-21 (OW026).
 
 ### Selanu General Hospital (50-xl)
 
-- ~~When the hospital was founded, and its history under the English settlers.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- Its number of beds and staff.
-- ~~Whether it is the island's only hospital, and how the health service is organised.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
+- ~~When the hospital was founded, and its history under the English settlers.~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
+- ~~Its number of beds~~ Filled 2026-11-21 (OW026). Its staff: open.
+- ~~Whether it is the island's only hospital, and how the health service is organised.~~ Filled 2026-11-20 (OW014); whom it reports to: Filled 2026-11-21 (OW025); a law and staff numbers: open.
 
 ### Selanu Telecom (35-xl)
 
 - ~~When the island's telephone department was set up~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
-- The size of its network (lines, masts, mobile coverage) and its submarine links to the mainland
-- Its roaming partners abroad
+- ~~The size of its network (lines, masts, mobile coverage) and its submarine links to the mainland~~ Filled 2026-11-21 (OW026).
+- ~~Its roaming partners abroad~~ Filled 2026-11-21 (OW026).
 
 ### Serravona Mining (4-xu)
 
 - ~~whether the company is still owned by the state, and since when it is a public limited company~~ Filled 2026-11-20 (OW009).
-- when the mine was opened and how long its reserves last
+- ~~when the mine was opened and how long its reserves last~~ Filled 2026-11-21 (OW026).
 - who its customers are besides Valdara Industries
 
 ### Tevaro Customs Brokers (3-xl)
 
 - ~~who founded Tevaro~~ Filled 2026-11-20 (OW012).
-- for which foreign businesses it acts as tax representative
+- ~~for which foreign businesses it acts as tax representative~~ Filled 2026-11-21 (OW026).
 
 ### Tidewell Ocean Lines (11-xb)
 
 - what the line's staff do besides crewing two feeders (agencies, terminals, other routes)
-- where its ships sail beyond Selanu, and the history of its fleet before 2025
+- ~~where its ships sail beyond Selanu, and the history of its fleet before 2025~~ Filled 2026-11-21 (OW026).
 
 ### Tostara Wood Modification (59-xu)
 
@@ -352,4 +352,4 @@ decided with the owner one at a time, like the gaps here.
 ### Wavesure Cargo Insurance (29-xb)
 
 - ~~who founded Wavesure in 1927 and why then~~ Filled 2026-11-20 (OW011).
-- ~~whether it insures other risks besides cargo, and which other shippers it covers~~ Partly filled 2026-11-20 (OW011): it also insures exporters' receivables; other shippers open.
+- ~~whether it insures other risks besides cargo, and which other shippers it covers~~ Partly filled 2026-11-20 (OW011): it also insures exporters' receivables; other shippers Filled 2026-11-21 (OW026).

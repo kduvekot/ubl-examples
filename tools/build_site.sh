@@ -28,9 +28,10 @@ MODEL=$(mktemp)
 trap 'rm -f "$MODEL"' EXIT
 python3 tools/check_world.py --model "$MODEL"   # includes tools/terrain.py --check: the committed terrain is made from its current inputs
 # The example documents: up to date with the world, and valid (UBL schemas, code lists)
-WORLD_MODEL="$MODEL" python3 tools/build_examples.py --check   # the generators read the model just made (tools/world_map.py)
+# (tools/examples_check.py: each check only when its inputs changed since it last passed; the generators read the
+# model just made, tools/world_map.py)
 sh tools/fetch_ubl_validation.sh $(ls world/examples/*/*.xml | sed 's#.*/[0-9]*-\(.*\)\.xml#\1#' | sort -u)
-python3 tools/validate_examples.py world/examples/*/*.xml
+WORLD_MODEL="$MODEL" python3 tools/examples_check.py
 
 rm -rf "$OUT"
 mkdir -p "$OUT/note"
@@ -85,15 +86,32 @@ footer() {
   printf '</div></footer>'
 }
 
-# Markdown pages, with an "On this page" list when toc-depth is given
+# Markdown pages, with an "On this page" list when toc-depth is given. Converting the pages is the slow part
+# (pandoc, about 0.15 s a document page), so each conversion is kept in the build cache (tools/build_cache.py,
+# "pages") under the fingerprint of what it is made from: the Markdown, the template, the title, the contents list,
+# the header and the stylesheet version, and pandoc's version. The footer names the commit, so it is left out of the
+# conversion (a placeholder line) and filled in afterwards; a page made anew is the same as one from the cache.
+PAGE_CACHE=${BUILD_CACHE:-$ROOT/.cache}/pages
+mkdir -p "$PAGE_CACHE" && touch "$PAGE_CACHE/.start"
+PANDOC_V=$(pandoc --version | head -1)
+FOOTER_HTML=$(mktemp)
+trap 'rm -f "$MODEL" "$FOOTER_HTML"' EXIT
+footer > "$FOOTER_HTML"; echo >> "$FOOTER_HTML"
 page() { # source, target, title, [toc-depth]
   toc=""
   [ -n "${4:-}" ] && toc="--toc --toc-depth=$4"
-  pandoc -f gfm -t html5 -s --template=site/page.html $toc \
-      -M pagetitle="$3" -V root="" -V cssv="$CSSV" -V nav="$(nav "" "$2")" -V footer="$(footer)" "$1" > "$OUT/$2.pandoc"
-  sed -E 's#href="(history/)?README\.md"#href="history.html"#g; s#href="element-coverage-details\.md"#href="coverage-details.html"#g; s#href="manifest\.json"#href="https://github.com/kduvekot/ubl-examples/blob/main/history/manifest.json"#g' \
-    "$OUT/$2.pandoc" > "$OUT/$2"
-  rm "$OUT/$2.pandoc"
+  navh=$(nav "" "$2")
+  key=$({ printf '%s\n' "$PANDOC_V" "$3" "$toc" "$CSSV" "$navh"; cat site/page.html "$1"; } | sha256sum | cut -c1-40)
+  kept="$PAGE_CACHE/$key.html"
+  if [ -f "$kept" ]; then
+    touch "$kept"
+  else
+    pandoc -f gfm -t html5 -s --template=site/page.html $toc \
+        -M pagetitle="$3" -V root="" -V cssv="$CSSV" -V nav="$navh" -V footer="@@FOOTER@@" "$1" > "$kept.$$"
+    mv "$kept.$$" "$kept"
+  fi
+  sed -E -e 's#href="(history/)?README\.md"#href="history.html"#g; s#href="element-coverage-details\.md"#href="coverage-details.html"#g; s#href="manifest\.json"#href="https://github.com/kduvekot/ubl-examples/blob/main/history/manifest.json"#g' \
+    -e "/^@@FOOTER@@\$/{r $FOOTER_HTML" -e 'd' -e '}' "$kept" > "$OUT/$2"
 }
 # The many pages of the loops are converted side by side, up to one per processor (BUILD_JOBS sets the number):
 # bg starts a command in the background, waiting first for the oldest when that many run; bg_wait waits for all of
@@ -225,4 +243,6 @@ rm "$OUT/.nav" "$OUT/.footer"
 # The published text states the world as fact: no internal references (the two-layer rule)
 python3 tools/check_published.py "$OUT"
 touch "$OUT/.nojekyll"
+# conversions no page used in this build are let go, so that the cache keeps only what the site is made of
+find "$PAGE_CACHE" -name '*.html' ! -newer "$PAGE_CACHE/.start" -delete
 echo "site built in $OUT"
