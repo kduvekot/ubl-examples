@@ -153,7 +153,7 @@
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:Description>Rivermouth Packaging, dispatch, Lumeport</cbc:Description>
+      <cbc:Description>Rivermouth Packaging, despatch, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>
