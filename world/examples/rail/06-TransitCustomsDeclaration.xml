@@ -19,7 +19,13 @@
     <cbc:EndDate>2026-04-17</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ExportCustomsExitOfficeLocation>
+    <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001002</cbc:ID>
     <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:ExportCustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cbc:Region>Lumeport Trade Accord</cbc:Region>
@@ -245,19 +251,49 @@
         </cac:TransportEquipment>
       </cac:TransportHandlingUnit>
       <cac:OfficeOfExitLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001002</cbc:ID>
         <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfExitLocation>
       <cac:OfficeOfDepartureLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU002001</cbc:ID>
         <cbc:Name>Customs office Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfDepartureLocation>
       <cac:OfficeOfDestinationLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB003001</cbc:ID>
         <cbc:Name>Customs office Marrowdale</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfDestinationLocation>
       <cac:OfficeOfImportLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB003001</cbc:ID>
         <cbc:Name>Customs office Marrowdale</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfImportLocation>
       <cac:OfficeOfTransitLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB001002</cbc:ID>
         <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfTransitLocation>
     </cac:Consignment>
     <cac:GoodsItem>

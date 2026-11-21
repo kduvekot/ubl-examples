@@ -52,8 +52,12 @@ Inside `ValidityPeriod`:
 
 Inside `ExportCustomsExitOfficeLocation`:
 
+- `ID` = **XU001002** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `Name` = **Customs post at the rail border station, Urvanian side**  
   Where the goods leave Urvania.
+- `Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 
 ### Jurisdiction Region Address
 
@@ -343,16 +347,36 @@ Inside `Shipment`:
   The seal is in place. The code is from the Trade Accord's seal status list: APPLIED = Applied.
 - `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealingPartyType` = **Shipper**  
   And put on by the shipper when it packed the container.
+- `Consignment/OfficeOfExitLocation/ID` = **XU001002** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `Consignment/OfficeOfExitLocation/Name` = **Customs post at the rail border station, Urvanian side**  
   Where the goods leave Urvania.
+- `Consignment/OfficeOfExitLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Consignment/OfficeOfDepartureLocation/ID` = **XU002001** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `Consignment/OfficeOfDepartureLocation/Name` = **Customs office Ferrano Intermodal Hub**  
   Where the transit starts.
+- `Consignment/OfficeOfDepartureLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Consignment/OfficeOfDestinationLocation/ID` = **XB003001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `Consignment/OfficeOfDestinationLocation/Name` = **Customs office Marrowdale**  
   Bayvarra customs' inland office, where the transit ends and the goods are declared for import.
+- `Consignment/OfficeOfDestinationLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/OfficeOfImportLocation/ID` = **XB003001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `Consignment/OfficeOfImportLocation/Name` = **Customs office Marrowdale**  
   Where the import is declared.
+- `Consignment/OfficeOfImportLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/OfficeOfTransitLocation/ID` = **XB001002** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `Consignment/OfficeOfTransitLocation/Name` = **Customs post at the rail border station, Bayvarran side**  
   Where the transit is checked on entering Bayvarra.
+- `Consignment/OfficeOfTransitLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -520,7 +544,13 @@ Inside `Signature`:
     <cbc:EndDate>2026-04-17</cbc:EndDate>
   </cac:ValidityPeriod>
   <cac:ExportCustomsExitOfficeLocation>
+    <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001002</cbc:ID>
     <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
+    <cac:Address>
+      <cac:Country>
+        <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+      </cac:Country>
+    </cac:Address>
   </cac:ExportCustomsExitOfficeLocation>
   <cac:JurisdictionRegionAddress>
     <cbc:Region>Lumeport Trade Accord</cbc:Region>
@@ -746,19 +776,49 @@ Inside `Signature`:
         </cac:TransportEquipment>
       </cac:TransportHandlingUnit>
       <cac:OfficeOfExitLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001002</cbc:ID>
         <cbc:Name>Customs post at the rail border station, Urvanian side</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfExitLocation>
       <cac:OfficeOfDepartureLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU002001</cbc:ID>
         <cbc:Name>Customs office Ferrano Intermodal Hub</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfDepartureLocation>
       <cac:OfficeOfDestinationLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB003001</cbc:ID>
         <cbc:Name>Customs office Marrowdale</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfDestinationLocation>
       <cac:OfficeOfImportLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB003001</cbc:ID>
         <cbc:Name>Customs office Marrowdale</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfImportLocation>
       <cac:OfficeOfTransitLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB001002</cbc:ID>
         <cbc:Name>Customs post at the rail border station, Bayvarran side</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
       </cac:OfficeOfTransitLocation>
     </cac:Consignment>
     <cac:GoodsItem>
