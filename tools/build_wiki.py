@@ -472,9 +472,14 @@ def infobox(a):
     elif a["kind"] == "landmark":
         land = d.get("country") or {"lisavu": "XL"}.get(d["land"], "")
         names = d.get("names", {})
+        inst = [x for x in MAP.get("installations", []) if x["id"] in d.get("installations", [])]
+        cap = sum(x.get("facts", {}).get("capacity_mw", 0) for x in inst)
+        year = min((x["facts"]["in_service"] for x in inst if x.get("facts", {}).get("in_service")), default="")
+        owner = next((x.get("owner") for x in inst if x.get("owner")), "")
         rows = [("Kind", d["kind"].capitalize()), ("Country", f"[[{countries[land]['name']}]]" if land else ""),
+                ("Capacity", f"about {n0(cap)} MW" if cap else ""), ("In service", str(year)), ("Owner", owner),
                 ("Height", f"about {n0(d['height_m'])} m" if d.get("height_m") else ""),
-                ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'en': 'English'}.get(k, k))})" for k, v in names.items())
+                ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'en': 'English', 'it': 'Italian'}.get(k, k))})" for k, v in names.items())
                  if len(names) > 1 else "")]
     elif a["kind"] == "item":
         rows = [("Maker", f"[[{PARTY[d['seller']]['identity']['name']}]]"),
@@ -716,7 +721,7 @@ CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "part
 
 
 def categories(a):
-    d, cats = a["data"], [CATEGORY[a["kind"]]]
+    d, cats = a["data"], [a["data"].get("category") or CATEGORY[a["kind"]]] if a["kind"] == "landmark" else [CATEGORY[a["kind"]]]
     if a["kind"] == "village" and d.get("band") in ("small town", "country town"):
         cats = ["Towns"]
     c = d.get("country") if isinstance(d.get("country"), str) else None
@@ -821,7 +826,7 @@ open(os.path.join(out, "sources.md"), "w", encoding="utf-8").write(
 index = ["# The UBL World", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
          "The countries of the Lumeport Trade Accord: their history and geography, their towns, villages, rivers and "
          "landmarks, and their companies and institutions.", ""]
-for c in ("Countries", "Treaties", "Towns", "Villages and localities", "Rivers", "Landmarks", "Companies and institutions", "Transport",
+for c in ("Countries", "Treaties", "Towns", "Villages and localities", "Rivers", "Landmarks", "Buildings and works", "Companies and institutions", "Transport",
           "Languages", "Currencies", "Products"):
     if c in by_cat:
         index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c], key=sortkey)] + [""]
