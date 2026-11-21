@@ -217,10 +217,10 @@
       "email": "customs@valdara.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@valdara.example"
+      "email": "despatch@valdara.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -510,10 +510,10 @@
       "email": "customs@rinova.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@rinova.example"
+      "email": "despatch@rinova.example"
      },
      "logistics": {
       "name": "Transport planning",
@@ -1588,10 +1588,10 @@
       "email": "customs@lumeway.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@lumeway.example"
+      "email": "despatch@lumeway.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -2095,10 +2095,10 @@
     },
     "desks": {
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@saltmere.example"
+      "email": "despatch@saltmere.example"
      },
      "receivables": {
       "name": "Accounts receivable",
@@ -4445,10 +4445,10 @@
       "email": "customs@marrowdalesawmill.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@marrowdalesawmill.example"
+      "email": "despatch@marrowdalesawmill.example"
      },
      "logistics": {
       "name": "Transport planning",
@@ -4727,10 +4727,10 @@
       "email": "customs@lumeporttextile.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@lumeporttextile.example"
+      "email": "despatch@lumeporttextile.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -4870,10 +4870,10 @@
       "email": "customs@rivermouth.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@rivermouth.example"
+      "email": "despatch@rivermouth.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -5103,10 +5103,10 @@
       "email": "customs@selanuginnery.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@selanuginnery.example"
+      "email": "despatch@selanuginnery.example"
      },
      "goods_in": {
       "name": "Gin yard",
@@ -5251,10 +5251,10 @@
       "email": "customs@kelpstone.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@kelpstone.example"
+      "email": "despatch@kelpstone.example"
      },
      "operations": {
       "name": "Pipeline control",
@@ -5954,10 +5954,10 @@
       "email": "purchasing@quillmoor.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@quillmoor.example"
+      "email": "despatch@quillmoor.example"
      },
      "receivables": {
       "name": "Accounts receivable",
@@ -6193,10 +6193,10 @@
     },
     "desks": {
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Packhouse",
-      "email": "dispatch@harrowmeadfruit.example"
+      "email": "despatch@harrowmeadfruit.example"
      },
      "logistics": {
       "name": "Export logistics",

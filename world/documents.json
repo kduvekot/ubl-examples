@@ -797,14 +797,14 @@
   {
    "id": "air",
    "title": "Urgent spare frames by air (Urvania → Bayvarra → island Lisavu)",
-   "text": "On 11 May the buyer asks for eight more side frames by air, spares for the Port of Selanu's harbour benches, on top of the twelve on the ship: it changes its order with a line carriage paid to (CPT) the island's airport. The distributor has none left: Valdara casts them on 12 May and packs them on 13 May, and Trasvia trucks them under the Trade Accord's common transit to the distributor's dispatch area in Marrowdale, where the forwarder takes them straight on to Lumeport airport, a cross-dock. They are booked on the afternoon flight KXL209, but the truck from Ferrano is late and the cargo reaches the terminal after the cut-off; the island's airline flies it on the next morning's KXL207 under a direct air waybill. The distributor cancels its despatch advice and replaces it, and the 3PL collects the skid at Selanu airport on 14 May. The distributor pays the air freight and recharges it to the buyer at cost, as a surcharge on its invoice for the frames.",
+   "text": "On 11 May the buyer asks for eight more side frames by air, spares for the Port of Selanu's harbour benches, on top of the twelve on the ship: it changes its order with a line carriage paid to (CPT) the island's airport. The distributor has none left: Valdara casts them on 12 May and packs them on 13 May, and Trasvia trucks them under the Trade Accord's common transit to the distributor's despatch area in Marrowdale, where the forwarder takes them straight on to Lumeport airport, a cross-dock. They are booked on the afternoon flight KXL209, but the truck from Ferrano is late and the cargo reaches the terminal after the cut-off; the island's airline flies it on the next morning's KXL207 under a direct air waybill. The distributor cancels its despatch advice and replaces it, and the 3PL collects the skid at Selanu airport on 14 May. The distributor pays the air freight and recharges it to the buyer at cost, as a surcharge on its invoice for the frames.",
    "legs": [
     {
      "mode": "road",
      "from": "5-xu",
      "to": "6-xb",
      "carrier": "13-xu",
-     "why": "Trasvia trucks the freshly packed frames under transit to the distributor's dispatch area, where they pass through without entering its stock.",
+     "why": "Trasvia trucks the freshly packed frames under transit to the distributor's despatch area, where they pass through without entering its stock.",
      "carries": [
       "air/01",
       "air/11"
@@ -814,7 +814,7 @@
       "locode": "XUFER"
      },
      "to_place": {
-      "name": "Lumeway distribution centre, dispatch area, Marrowdale",
+      "name": "Lumeway distribution centre, despatch area, Marrowdale",
       "gln": "6-xb:dc"
      }
     },
@@ -823,7 +823,7 @@
      "from": "6-xb",
      "to": "17-xb",
      "carrier": "10-xb",
-     "why": "The forwarder takes the skid straight on from the dispatch area to the cargo terminal.",
+     "why": "The forwarder takes the skid straight on from the despatch area to the cargo terminal.",
      "carries": [
       "air/01",
       "air/11"

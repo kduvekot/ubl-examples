@@ -2901,7 +2901,7 @@ def air_consignment(f, doc):
            "DeliveryUnit": {"BatchQuantity": qty(8, "EA", "All eight delivered together.")},
            "Pickup": {"ID": V("BYF-PU-26-0611", "The forwarder's pick-up order."),
                       "EarliestPickupDate": V(f.date(2), "Valdara casts the frames on 12 May and packs them on 13 "
-                                                         "May; Trasvia brings them to the distributor's dispatch "
+                                                         "May; Trasvia brings them to the distributor's despatch "
                                                          "area that morning."),  # D39
                       "PickupParty": party("10-xb", short=True)},
            "Despatch": {"RequestedDespatchDate": V(f.date(2), "For the afternoon flight KXL209 of 13 May.")},
@@ -2911,7 +2911,7 @@ def air_consignment(f, doc):
                                                                             "the ship arrives.")}},
            "Status": {"ConditionCode": V("SCHEDULED", "Not packed yet: the frames are cast today."),
                       "Description": V("Cast at Valdara on 12 May, galvanised and packed on 13 May, then trucked to "
-                                       "the dispatch area under transit.", "Where they are and what follows.")}}
+                                       "the despatch area under transit.", "Where they are and what follows.")}}
     return {"ID": V(cid, "The distributor's consignment number."),
             "GrossWeightMeasure": qty(air_gross(f), "KGM", f"The eight frame cartons and the skid of "
                                       f"{AIR_SKID['tare_kg']} kg they are strapped to."),
@@ -2951,7 +2951,7 @@ def air_despatch(f, out, flight, time, time_why):
         "StartDate": V(f.date(day), f"Expected at Selanu airport with {no}."),
         "StartTime": V(arr + "+00:00", "The flight's timetabled arrival, in island time."),
         "EndDate": V(f.date(day), "The same day.")}
-    sh["Delivery"]["Despatch"] = {"ActualDespatchDate": V(f.date(AIR_BOOKED[1]), "The frames left the dispatch area "
+    sh["Delivery"]["Despatch"] = {"ActualDespatchDate": V(f.date(AIR_BOOKED[1]), "The frames left the despatch area "
                                                                                  "on 13 May.")}
     return out
 
@@ -3092,10 +3092,10 @@ def air(n, doc):
         return out
     if doc["doc"] == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, 2, "Sent to the buyer's 3PL when the forwarder's truck left the "
-                                                "dispatch area for the airport.",
+                                                "despatch area for the airport.",
                                   "The gross weight of the frame cartons and their skid.")
         return air_despatch(f, out, AIR_BOOKED, wmap.hm(AIR_TRUCK_LEAVES), "When the forwarder's truck left the "
-                            f"dispatch area for the cargo terminal, {wmap.whole(AIR_ROAD_KM)} km and about an hour "
+                            f"despatch area for the cargo terminal, {wmap.whole(AIR_ROAD_KM)} km and about an hour "
                             "away: late, because Trasvia's truck from Ferrano had come in late; the frames are "
                             "still booked on the afternoon flight.")  # D39, read-through air A3
     if doc["doc"] == "TransportationStatus":
@@ -5774,7 +5774,7 @@ def packaging(n, doc):
     if doc["doc"] == "Order" and doc["from"] == "5-xu":
         return kit.order(f, n, doc, 0, "The manufacturer orders pallet film.",
                          "Free carrier at the packaging maker: the buyer books the road carrier that collects.",
-                         "Rivermouth Packaging, dispatch, Lumeport")
+                         "Rivermouth Packaging, despatch, Lumeport")
     if doc["doc"] == "Invoice" and doc["to"] == "5-xu":
         return kit.invoice(f, n, doc, 4, "Issued when the film was collected, on Friday 1 May, a working day in "
                                          "Bayvarra.",  # D27
@@ -7808,7 +7808,7 @@ def _(f, n, doc, out):
             "SellerSupplierParty": {"CustomerAssignedAccountID": V("BM-S-0071", "The store's supplier number for "
                                                                                 "the distributor."),
                                     "AdditionalAccountID": V("LMW-XB-01", "The distributor's sales office."),
-                                    "DespatchContact": contact("Dispatch office", "Who despatches.", "6-xb"),
+                                    "DespatchContact": contact("Despatch office", "Who despatches.", "6-xb"),
                                     "AccountingContact": contact("Accounts receivable", "For payment questions.",
                                                                  email="ar@lumeway.example"),
                                     "SellerContact": contact("Key account manager, retail", "The store's contact "
@@ -14819,10 +14819,10 @@ def modification(n, doc):
     if d == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, MOD_DAY["load1"], "The day the first load leaves the sawmill.",
                                   "The gross weight of the blanks with their pallets.")
-        out["IssueTime"] = V("08:10:00", "Sent by the dispatch office when it opens at 08:00, the truck loaded and "
+        out["IssueTime"] = V("08:10:00", "Sent by the despatch office when it opens at 08:00, the truck loaded and "
                                          "waiting to leave for the border.")     # O255 point 11
         out["Note"] = V("Please check the blanks on arrival and keep them apart as our goods; report any damage to "
-                        "our dispatch office.", "What the receiver should do: the blanks travel on the sawmill's "
+                        "our despatch office.", "What the receiver should do: the blanks travel on the sawmill's "
                                                 "own truck, with no carrier's consignment note.")
         out["Shipment"]["Consignment"]["ID"] = V(f.numbers["consignment"], "The sawmill's number for the load.")
         out["Shipment"]["TotalTransportHandlingUnitQuantity"] = qty(12, "EA", "The pallets of the load, 200 blanks "

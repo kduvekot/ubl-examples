@@ -208,7 +208,7 @@ Inside `DeliveryTerms`:
 
 - `ID` = **FCA** (schemeID `INCOTERMS`)  
   Free carrier at the packaging maker: the buyer books the road carrier that collects. The code is from the world's copy of Incoterms 2020: FCA = Free Carrier. An identifier that holds a code names the code's list in its schemeID.
-- `DeliveryLocation/Description` = **Rivermouth Packaging, dispatch, Lumeport**  
+- `DeliveryLocation/Description` = **Rivermouth Packaging, despatch, Lumeport**  
   Where the delivery terms place the handover of the goods.
 
 ### Tax Total
@@ -422,7 +422,7 @@ Inside `OrderLine`:
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">FCA</cbc:ID>
     <cac:DeliveryLocation>
-      <cbc:Description>Rivermouth Packaging, dispatch, Lumeport</cbc:Description>
+      <cbc:Description>Rivermouth Packaging, despatch, Lumeport</cbc:Description>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
   <cac:TaxTotal>
