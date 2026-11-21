@@ -1664,18 +1664,18 @@
     "marrow-bench-ash"
    ],
    "sellers_id": "BKM-MRW-K",
-   "hs": "321000",
+   "hs": "340520",
    "hs_reason": {
-    "gir": "GIR 3(b), then GIR 1",
-    "heading": "32.10 Other paints and varnishes (including enamels, lacquers and distempers); prepared water pigments of a kind used for finishing leather.",
-    "subheading": "3210.00 (the heading has no subheadings)",
+    "gir": "GIR 3(b), then GIR 1 and GIR 6",
+    "heading": "34.05 Polishes and creams, for footwear, furniture, floors, coachwork, glass or metal, scouring pastes and powders and similar preparations (whether or not in the form of paper, wadding, felt, nonwovens, cellular plastics or cellular rubber, impregnated, coated or covered with such preparations), excluding waxes of heading 34.04.",
+    "subheading": "3405.20 Polishes, creams and similar preparations for the maintenance of wooden furniture, floors or other woodwork",
     "notes": [
      "Chapter 34 Note 5"
     ],
-    "text": "A tin of hard-wax oil and a lint-free cloth in one pack: a set put up for retail sale, classified by the component that gives it its essential character (GIR 3(b)), the oil; the cloth (heading 63.07) only serves to apply it. The hard-wax oil is the finish the furniture is made with: drying vegetable oils and waxes that cure into a protective surface, i.e. a varnish. Headings 32.08 and 32.09 need a basis of synthetic or chemically modified natural polymers, so the residual 32.10. Considered: 15.18 (oxidised or boiled oils and inedible mixtures 'not elsewhere specified', so it gives way to 32.10); 34.04 (Chapter 34 Note 5 sends waxes in a liquid medium elsewhere); 34.05, 'polishes and creams ... for the maintenance of wooden furniture' (3405.20). Doubt for the owner: if the kit is seen as a maintenance product rather than a finish, 3405.20 is the closer heading; if the oil is alkyd- or urethane-modified, 32.08. The world does not state the oil's composition."
+    "text": "A tin of hard-wax oil and a lint-free cloth in one pack: a set put up for retail sale, classified by the component that gives it its essential character (GIR 3(b)), the oil; the cloth (heading 63.07) only serves to apply it. The oil in the kit is a care product: the buyer wipes it onto the finished bench and chairs from time to time to refresh and protect their oiled surface, so it is a preparation for the maintenance of wooden furniture, which heading 34.05 names (GIR 1). A hard-wax oil is waxes dispersed in drying vegetable oils, a liquid medium: Chapter 34 Note 5 (exclusion (d)) takes waxes in a liquid medium out of heading 34.04 and names 34.05 for them. Within the heading, 3405.20 is the subheading for the maintenance of wooden furniture (GIR 6). Considered: 32.10 (varnishes: the finish applied in the workshop when the furniture is made, not the care product sold with it); 15.18 (oxidised or boiled oils and inedible mixtures 'not elsewhere specified', which give way to a heading that names the product)."
    },
    "hs_verified": null,
-   "cpc": "35110",
+   "cpc": "35333",
    "origin": "XB",
    "description": "Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.",
    "net_kg": 0.3,

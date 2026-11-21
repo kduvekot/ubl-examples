@@ -388,8 +388,8 @@
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">321000</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">340520</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35333</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>
