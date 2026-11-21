@@ -53,7 +53,7 @@ Inside `SenderParty`:
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; as Valdara Industries gives it.
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: binbir.
 - `PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -348,7 +348,7 @@ Inside `DocumentReference`:
 - `ID` = **VI-WASTE-CONTRACT-26**  
   The contract between producer and recovery facility, which the notification needs.
 - `DocumentTypeCode` = **315** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the contract between Valdara and Rinova for the waste, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 315 = Contract.
+  The kind of document referred to: the contract between Valdara and Rinova for the waste. The code is from the world's copy of UN/EDIFACT 1001 Document name: 315 = Contract.
 
 ## The document
 

@@ -54,7 +54,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **MDS-GTC-2026**  
   The sawmill's general terms of sale, subsidiary to the buyer's terms.
 - `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Marrowdale Sawmill's general terms of sale, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
+  The kind of document referred to: Marrowdale Sawmill's general terms of sale. The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `DocumentDescription` = **The sawmill's general terms of sale apply only where the buyer's purchasing terms VI-PUR-TERMS-2026, which govern, say nothing.**  
   Which terms govern.
 
@@ -347,11 +347,11 @@ Inside `QuotationLine`:
 - `DocumentReference/ID` = **VI-DS-SL1800**  
   The buyer's drawing the slat is quoted to.
 - `DocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+  The kind of document referred to: Valdara's drawing of the bench slat. The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `DocumentReference/ID` = **MDS-SPEC-SL1800**  
   The sawmill's own specification of the slat, derived from the buyer's drawing.
 - `DocumentReference/DocumentType` = **Product specification**  
-  The kind of document referred to, Marrowdale Sawmill's specification of the slat, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Marrowdale Sawmill's specification of the slat, in words: no list has an exact code for it.
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
@@ -449,7 +449,7 @@ Inside `QuotationLine`:
 - `LineItem/Item/Certificate/DocumentReference/ID` = **XB-FOR-AUD-2025-0118**  
   The audit report the certificate is based on.
 - `LineItem/Item/Certificate/DocumentReference/DocumentType` = **Forest management audit report**  
-  The kind of document referred to, the audit report behind the forestry certificate, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the audit report behind the forestry certificate, in words: no list has an exact code for it.
 - `LineItem/Item/Dimension/AttributeID` = **LENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
   Which dimension. The code is from the Trade Accord's dimension attribute list: LENGTH = Length. An identifier that holds a code names the code's list in its schemeID.
 - `LineItem/Item/Dimension/Measure` = **1800** (unitCode `MMT`)  

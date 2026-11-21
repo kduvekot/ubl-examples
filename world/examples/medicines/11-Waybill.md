@@ -630,7 +630,7 @@ Inside `Shipment`:
 - `GoodsItem/Item/HazardousItem/MedicalFirstAidGuideCode` = **163** (listID `ERG 2024`)  
   The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers and receivers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 163 = Radioactive Materials (Low to High Level Radiation).
 - `GoodsItem/Item/HazardousItem/ProperShippingName` = **Radioactive material, Type A package, non-special form, non fissile or fissile-excepted**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+  The proper shipping name of the UN entry, as the Dangerous Goods List gives it for that UN number and class.
 - `GoodsItem/Item/HazardousItem/HazardousCategoryCode` = **7** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material.
 - `GoodsItem/Item/HazardousItem/MarkingID` = **UN2915**  
@@ -707,7 +707,7 @@ Inside `DocumentReference`:
 - `ID` = **QLM-DGD-26-0615**  
   The shipper's declaration of the generator, which the airline keeps with the air waybill.
 - `DocumentTypeCode` = **890** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 890 = Dangerous goods declaration.
+  The kind of document referred to: the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own. The code is from the world's copy of UN/EDIFACT 1001 Document name: 890 = Dangerous goods declaration.
 
 ### Document Distribution
 

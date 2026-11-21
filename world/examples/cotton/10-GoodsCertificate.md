@@ -2,7 +2,7 @@
 
 *Example 10 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Goods Certificate in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA)*
 
-Lisavu's plant protection organisation under the IPPC, the Plant Protection Service of the Department of Agriculture, inspects the bales and certifies them free of the pests Bayvarra names, at the ginnery's application.
+The Plant Protection Service of Lisavu's Department of Agriculture inspects the bales and certifies them free of the pests Bayvarra names, at the ginnery's application.
 
 [The XML file](10-GoodsCertificate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -181,7 +181,7 @@ Inside `IssuerParty`:
 - `PartyName/Name` = **Department of Agriculture of Lisavu**  
   The trading name; as Department of Agriculture of Lisavu gives it.
 - `Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: kopele.
 - `PostalAddress/ID` = **71826543** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  

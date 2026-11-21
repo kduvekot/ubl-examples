@@ -49,7 +49,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **VI-DS-SL1800**  
   The drawing of the slat.
 - `DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+  The kind of document referred to: Valdara's drawing of the bench slat. The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 
 ### Signature
 
@@ -221,7 +221,7 @@ Inside `RequestForQuotationLine`:
 - `DocumentReference/ID` = **VI-DS-SL1800**  
   The drawing.
 - `DocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Valdara's drawing of the bench slat, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+  The kind of document referred to: Valdara's drawing of the bench slat. The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `LineItem/ID` = **1**  
   The line number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  

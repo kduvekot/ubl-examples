@@ -55,7 +55,7 @@ Inside `SalesDocumentReference`:
 - `ID` = **1300017053**  
   The store's home delivery order, booked with the sale on 15 May.
 - `DocumentType` = **Home delivery order**  
-  What the document is: the store's own delivery booking, outside the examples.
+  What the document is: the store's own delivery booking.
 
 ### Additional Document Reference
 
@@ -64,7 +64,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **VI-WARRANTY-B180**  
   The maker's warranty card.
 - `DocumentType` = **Warranty card**  
-  The kind of document referred to, the maker's warranty card of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the maker's warranty card of the bench, in words: no list has an exact code for it.
 
 ### Signature
 

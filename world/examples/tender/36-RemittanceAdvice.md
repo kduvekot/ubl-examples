@@ -46,7 +46,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD/2026/0970**  
   The department's payment authorisation.
 - `DocumentType` = **Payment authorisation**  
-  The kind of document referred to, the department's payment authorisation, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's payment authorisation, in words: no list has an exact code for it.
 
 ### Accounting Customer Party
 

@@ -51,7 +51,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **LTM-SEASON-2026**  
   The season agreement between the mill and the ginnery, under which the mill forecasts and buys the season's lint.
 - `DocumentType` = **Season agreement**  
-  The kind of document referred to, the textile mill's season agreement with the ginnery, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the textile mill's season agreement with the ginnery, in words: no list has an exact code for it.
 
 ### Signature
 

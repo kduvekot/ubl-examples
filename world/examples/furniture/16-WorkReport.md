@@ -85,7 +85,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD/2026/0619**  
   The department's budget commitment the work will be billed against, as its order gave it.
 - `DocumentType` = **Budget commitment**  
-  The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's budget commitment, in words: no list has an exact code for it.
 
 ### Seller Supplier Party
 
@@ -336,7 +336,7 @@ Inside `WorkReportLine`:
 - `DocumentReference/ID` = **26-0017**  
   The installation checklist.
 - `DocumentReference/DocumentType` = **Installation checklist**  
-  The kind of document referred to, Brackenmere's checklist of the office installation, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Brackenmere's checklist of the office installation, in words: no list has an exact code for it.
 - `Price/PriceAmount` = **48** (currencyID `XBL`)  
   Per hour.
 - `Price/BaseQuantity` = **1** (unitCode `HUR`)  

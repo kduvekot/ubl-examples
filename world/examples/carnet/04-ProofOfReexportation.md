@@ -298,7 +298,7 @@ Inside `ReexportationEvidence`:
 - `DocumentReference/IssueDate` = **2026-06-10**  
   The day of the re-importation.
 - `DocumentReference/DocumentType` = **Re-importation record**  
-  The kind of document referred to, Urvanian customs' record of the re-importation, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Urvanian customs' record of the re-importation, in words: no list has an exact code for it.
 
 ### Goods Item Passport Attachment
 

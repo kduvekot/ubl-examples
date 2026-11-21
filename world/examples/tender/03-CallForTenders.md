@@ -56,7 +56,7 @@ Inside `RequiredDocumentReference`:
 - `ID` = **PWD-PRICE-TPL**  
   The price schedule.
 - `DocumentType` = **Price schedule template**  
-  The kind of document referred to, the template for the tenderers' prices, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the template for the tenderers' prices, in words: no list has an exact code for it.
 
 ### Provided Document Reference
 
@@ -65,7 +65,7 @@ Inside `ProvidedDocumentReference`:
 - `ID` = **PWD-SITE-PLAN**  
   The site plan.
 - `DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the public works department's site plan of the parks, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+  The kind of document referred to: the public works department's site plan of the parks. The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 
 ### Additional Document Reference
 
@@ -74,7 +74,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD-QA-26**  
   Questions and answers.
 - `DocumentType` = **Questions and answers**  
-  The kind of document referred to, the questions and answers of the procedure, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the questions and answers of the procedure, in words: no list has an exact code for it.
 
 ### Signature
 
@@ -597,7 +597,7 @@ Inside `TenderingProcess`:
 - `AdditionalDocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The specification.
 - `AdditionalDocumentReference/DocumentType` = **Technical specification**  
-  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's technical specification of the bench, in words: no list has an exact code for it.
 - `ProcessJustification/ProcessReasonCode` = **STANDARD** (listID `urn:ubl-examples:world:codelist:ProcessReasonCode`)  
   The open procedure is the rule. The code is from the Trade Accord's process reason list: STANDARD = Standard.
 - `ProcessJustification/ProcessReason` = **Value above the threshold for open procedures.**  
@@ -760,7 +760,7 @@ Inside `ProcurementProject`:
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
 - `RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
-  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's technical specification of the bench, in words: no list has an exact code for it.
 - `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-19**  
@@ -803,15 +803,15 @@ Inside `ProcurementProjectLot`:
 - `RequiredDocumentReference/ID` = **PWD-PRICE-TPL**  
   The price schedule to submit.
 - `RequiredDocumentReference/DocumentType` = **Price schedule template**  
-  The kind of document referred to, the template for the tenderers' prices, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the template for the tenderers' prices, in words: no list has an exact code for it.
 - `ProvidedDocumentReference/ID` = **PWD-SITE-PLAN**  
   The parks' site plan.
 - `ProvidedDocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the public works department's site plan of the parks, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+  The kind of document referred to: the public works department's site plan of the parks. The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `AdditionalDocumentReference/ID` = **PWD-QA-26**  
   Questions and answers.
 - `AdditionalDocumentReference/DocumentType` = **Questions and answers**  
-  The kind of document referred to, the questions and answers of the procedure, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the questions and answers of the procedure, in words: no list has an exact code for it.
 - `ProcurementProject/ID` = **LOT-1**  
   The project's identifier.
 - `ProcurementProject/Name` = **Park benches**  
@@ -903,7 +903,7 @@ Inside `ProcurementProjectLot`:
 - `ProcurementProject/RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
 - `ProcurementProject/RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
-  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's technical specification of the bench, in words: no list has an exact code for it.
 - `ProcurementProject/RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `ProcurementProject/RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-19**  
@@ -929,15 +929,15 @@ Inside `ProcurementProjectLot`:
 - `RequiredDocumentReference/ID` = **PWD-PRICE-TPL**  
   The price schedule to submit.
 - `RequiredDocumentReference/DocumentType` = **Price schedule template**  
-  The kind of document referred to, the template for the tenderers' prices, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the template for the tenderers' prices, in words: no list has an exact code for it.
 - `ProvidedDocumentReference/ID` = **PWD-SITE-PLAN**  
   The parks' site plan.
 - `ProvidedDocumentReference/DocumentTypeCode` = **174** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the public works department's site plan of the parks, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
+  The kind of document referred to: the public works department's site plan of the parks. The code is from the world's copy of UN/EDIFACT 1001 Document name: 174 = Drawing.
 - `AdditionalDocumentReference/ID` = **PWD-QA-26**  
   Questions and answers.
 - `AdditionalDocumentReference/DocumentType` = **Questions and answers**  
-  The kind of document referred to, the questions and answers of the procedure, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the questions and answers of the procedure, in words: no list has an exact code for it.
 - `TenderingTerms/RequiredCurriculaIndicator` = **true**  
   The installers' qualifications are asked, for the installation lot only.
 - `TenderingTerms/RequiredCurriculaCode` = **INSTALLERS** (listID `urn:ubl-examples:world:codelist:CurriculaCode`)  

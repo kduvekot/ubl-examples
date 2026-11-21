@@ -75,7 +75,7 @@ Inside `DocumentReference`:
 - `ID` = **LMW-GTC-2026**  
   The general terms of trade.
 - `DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
+  The kind of document referred to: Lumeway's general terms of trade. The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `ID` = **6200003390**  
   The store's request this catalogue answers.
 - `DocumentTypeCode` = **CatalogueRequest** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -447,7 +447,7 @@ Inside `CatalogueLine`:
 - `DocumentReference/ID` = **VI-DS-B180**  
   The maker's datasheet.
 - `DocumentReference/DocumentType` = **Product data sheet**  
-  The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's data sheet of the Serra bench, in words: no list has an exact code for it.
 - `Item/Description` = **The manufacturer's Serra bench, from the distributor's stock.**  
   The seller's description.
 - `Item/Name` = **Park bench Serra 180**  
@@ -503,7 +503,7 @@ Inside `CatalogueLine`:
 - `Item/TransactionConditions/DocumentReference/ID` = **LMW-GTC-2026**  
   The seller's general terms of trade.
 - `Item/TransactionConditions/DocumentReference/DocumentTypeCode` = **774** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Lumeway's general terms of trade, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
+  The kind of document referred to: Lumeway's general terms of trade. The code is from the world's copy of UN/EDIFACT 1001 Document name: 774 = General terms and conditions.
 - `Item/AdditionalItemProperty/Name` = **Frame material**  
   A property buyers ask about.
 - `Item/AdditionalItemProperty/Value` = **Ductile cast iron EN-GJS-400-15, hot-dip galvanised and powder-coated**  

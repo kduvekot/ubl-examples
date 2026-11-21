@@ -168,6 +168,8 @@ def fleet(p):
         else:
             reg = ""
         rows.append(f"| {f['name']} | {kinds.get(f['kind'], f['kind'])} | {reg} |")
+        if f.get("ore_train"):          # the ore train shares the carrier's wagon record with its container train
+            rows.append(f"| {f.get('ore_train_name', 'Ore train')} | {kinds['rail']} | train `{f['ore_train']}` |")
     return ["## Fleet", "", "| Name | Kind | Registration |", "|---|---|---|"] + rows + [""]
 
 
@@ -190,8 +192,16 @@ def identity(p):
         rows.append(("Listed on", f"{lg['listing']['market']}, ISIN `{lg['listing']['id']}`"))
     if idn.get("industry"):
         rows.append(("Industry", f"`{idn['industry']}` {ISIC.get(idn['industry'], '')} (ISIC Rev.4)"))
+    if idn.get("staff"):                                   # a public body's staff (OW031)
+        rows.append(("Staff", f"about {idn['staff']:,}"))
+    owner = ((p.get("wiki") or {}).get("facts") or {}).get("Owner")
+    if owner:                                              # as the Encyclopedia's infobox gives it (SR2-09, B-15)
+        rows.append(("Owner", re.sub(r"\[\[([^]|]+)(?:\|([^]]+))?\]\]", lambda m: m.group(2) or m.group(1), owner)))
     if idn.get("language"):
-        rows.append(("Language", LANG.get(idn["language"], idn["language"])))
+        langs = idn["language"] if isinstance(idn["language"], list) else [idn["language"]]
+        names = [LANG.get(code, code) for code in langs]
+        rows.append(("Language", names[0] if len(names) == 1 else
+                     f"{names[0]} at home; {names[1]} with the other countries of the Accord and abroad"))
     ident = idn.get("identification") or {}
     if ident.get("convention") == "GS1":
         rows.append(("Identification", f"GS1 company prefix `{ident['company_prefix']}`, GLN `{ident['gln']}`"))
@@ -239,7 +249,7 @@ ABROAD = {p["id"]: p for p in world.get("abroad", [])}     # makers outside the 
 def link(pid):
     if pid in ABROAD:
         p = ABROAD[pid]
-        return f"{label(p)} ({world['abroad_countries'][p['c']]['name']}, outside the world)"
+        return f"{label(p)} (a maker in {world['abroad_countries'][p['c']].get('in_text', world['abroad_countries'][p['c']]['name'])})"
     return f"[{label(parties[pid])}](world-{pid}.html)"
 
 flows = {f["id"]: f for f in world["flows"]}
@@ -538,7 +548,7 @@ def transaction_detail(ex):
     pairs, lists, schemes = {}, {}, {}
     for flow, name in ex:
         d = DOC_OF[(flow, name)]
-        role = lambda pid: parties[pid]["name"] if pid in parties else "a party outside the world"
+        role = lambda pid: parties[pid]["name"] if pid in parties else "a maker abroad"
         pairs.setdefault((role(d["from"]), role(d["to"])), []).append((flow, name))
         root_el = etree.parse(os.path.join(root, "world", "examples", flow, name + ".xml")).getroot()
         for e in root_el.iter():

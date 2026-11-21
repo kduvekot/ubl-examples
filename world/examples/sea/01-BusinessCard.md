@@ -193,7 +193,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **LMW-REG-XB**  
   The distributor's registration extract.
 - `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Lumeway's extract from Bayvarra's business register, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
+  The kind of document referred to: Lumeway's extract from Bayvarra's business register. The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
 
 ### Business Capability
 

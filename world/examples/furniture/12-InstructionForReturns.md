@@ -36,7 +36,7 @@ Inside `DocumentReference`:
 - `ID` = **BM-OWN-BRAND-2026**  
   The own-label agreement, whose sale-or-return terms the return follows.
 - `DocumentType` = **Own-label agreement**  
-  The kind of document referred to, the own-label agreement between Brightmarket Stores and Brackenmere Furniture for the Elderwick Marrow line: the store's specification, the sale-or-return trial and the returns, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the own-label agreement between Brightmarket Stores and Brackenmere Furniture for the Elderwick Marrow line: the store's specification, the sale-or-return trial and the returns, in words: no list has an exact code for it.
 
 ### Signature
 

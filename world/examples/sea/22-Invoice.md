@@ -337,7 +337,7 @@ Inside `PaymentMeans`:
 - `TradeFinancing/DocumentReference/ID` = **26-0030**  
   The notice of assignment.
 - `TradeFinancing/DocumentReference/DocumentType` = **Notice of assignment**  
-  The kind of document referred to, Harbourline's notice of the assigned receivable, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Harbourline's notice of the assigned receivable, in words: no list has an exact code for it.
 - `TradeFinancing/FinancingParty/PartyIdentification/ID` = **20411233** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `TradeFinancing/FinancingParty/PartyName/Name` = **Harbourline Factoring**  

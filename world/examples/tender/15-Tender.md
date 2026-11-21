@@ -56,7 +56,7 @@ Inside `DocumentReference`:
 - `ID` = **VI-DS-B180**  
   The datasheet.
 - `DocumentType` = **Product data sheet**  
-  The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's data sheet of the Serra bench, in words: no list has an exact code for it.
 - `ID` = **3900039381**  
   The certificate of the tender guarantee that covers this tender.
 - `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -360,7 +360,7 @@ Inside `TenderedProject`:
 - `EvidenceDocumentReference/ID` = **VI-REF-2025**  
   The tenderer's own reference letters.
 - `EvidenceDocumentReference/DocumentType` = **Reference letters**  
-  The kind of document referred to, Valdara's reference letters, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's reference letters, in words: no list has an exact code for it.
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax: the department, a public body, buys exempt from the state sales tax.
 - `TaxTotal/TaxSubtotal/TaxableAmount` = **124080.00** (currencyID `XBL`)  
@@ -410,7 +410,7 @@ Inside `TenderedProject`:
 - `TenderLine/DocumentReference/ID` = **VI-DS-B180**  
   The datasheet.
 - `TenderLine/DocumentReference/DocumentType` = **Product data sheet**  
-  The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's data sheet of the Serra bench, in words: no list has an exact code for it.
 - `TenderLine/Item/Name` = **Park bench Serra 180**  
   The item offered.
 - `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **7** (unitCode `DAY`)  

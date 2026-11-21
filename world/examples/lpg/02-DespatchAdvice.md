@@ -254,7 +254,7 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/TechnicalName` = **Mixture C**  
   The technical name, needed with an n.o.s. entry.
 - `Item/HazardousItem/ProperShippingName` = **Hydrocarbon gas mixture, liquefied, n.o.s.**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+  The proper shipping name of the UN entry, as the Dangerous Goods List gives it for that UN number and class.
 - `Item/HazardousItem/HazardousCategoryCode` = **2.1** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 2.1 = Flammable gases.
 - `Item/HazardousItem/HazardClassID` = **2.1** (schemeID `UN Model Regulations hazard class`)  

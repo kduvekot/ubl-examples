@@ -44,7 +44,10 @@
     },
     "industry": "0710",
     "website": "https://www.serravona.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SUA",
      "founded": "1958-06-30",
@@ -181,7 +184,10 @@
     },
     "industry": "3100",
     "website": "https://www.valdara.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SUA",
      "founded": "1962-04-12",
@@ -394,7 +400,10 @@
     },
     "industry": "5210",
     "website": "https://www.castrano.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SRU",
      "founded": "1998-03-04",
@@ -525,7 +534,10 @@
     },
     "industry": "3830",
     "website": "https://www.rinova.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SRU",
      "founded": "2003-05-21",
@@ -674,7 +686,10 @@
     },
     "industry": "4912",
     "website": "https://www.ferranorail.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SRU",
      "founded": "1964-07-01",
@@ -746,6 +761,7 @@
       "31 46 6610 130-3"
      ],
      "ore_train": "FRC 2208",
+     "ore_train_name": "Ore train on the ore line",
      "ore_wagon": {
       "payload_kg": 62000,
       "tare_kg": 28000,
@@ -859,7 +875,10 @@
     },
     "industry": "4923",
     "website": "https://www.trasvia.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SRU",
      "founded": "1996-01-09",
@@ -997,7 +1016,10 @@
     },
     "industry": "5022",
     "website": "https://www.fiumella.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SRU",
      "founded": "1953-04-15",
@@ -1111,7 +1133,10 @@
     },
     "industry": "5221",
     "website": "https://www.ferranohub.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SRU",
      "founded": "1997-06-11",
@@ -1197,7 +1222,10 @@
     "bank_code": "CREV",
     "industry": "6419",
     "website": "https://www.crevalto.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SUA",
      "founded": "1921-09-01",
@@ -1320,7 +1348,10 @@
      "ID": "4160202319527073"
     },
     "industry": "9411",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "desks": {
      "carnet": {
       "name": "Carnet office",
@@ -1405,7 +1436,10 @@
      "ID": "4180202968066555"
     },
     "industry": "8411",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "desks": {
      "customs_export": {
       "name": "Export office",
@@ -1493,7 +1527,11 @@
      "ID": "4160200261972596"
     },
     "industry": "8299",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
+    "staff": 25,
     "week": "office"
    },
    "numbering": {
@@ -1585,6 +1623,7 @@
     },
     "industry": "8411",
     "language": "en",
+    "staff": 700,
     "desks": {
      "customs_export": {
       "name": "Export office",
@@ -2143,6 +2182,7 @@
     },
     "industry": "8411",
     "language": "en",
+    "staff": 350,
     "tax_exemption": "Buys free of the state sales tax",
     "tax_id": "CO-0900002",
     "customs_id": "XB-TR-397184",
@@ -2215,7 +2255,7 @@
   {
    "id": "27-xb",
    "n": "27",
-   "name": "Consortium Partner",
+   "name": "Engineering Firm",
    "cat": "procurement",
    "c": "XB",
    "at": [
@@ -2224,7 +2264,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "An engineering firm founded in 1994 in Saltmere, the east-coast village it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits (a registered architect, Edda Corwin, is on its staff), and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring.",
+   "what": "An engineering firm founded in 1994 in Saltmere, the east-coast town it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits with a registered architect on its staff, and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring.",
    "how": "A subcontractor or a member of a group of tenderers is named with its own role. UBL tenders and qualification documents name each member and its qualifications separately, so the authority can see who contributes what and check each one in the register.",
    "identity": {
     "name": "Saltmere Engineering",
@@ -2369,6 +2409,7 @@
     },
     "industry": "8423",
     "language": "en",
+    "staff": 40,
     "week": "office"
    },
    "numbering": {
@@ -2437,6 +2478,7 @@
     },
     "industry": "8411",
     "language": "en",
+    "staff": 120,
     "week": "office"
    },
    "numbering": {
@@ -2506,6 +2548,7 @@
     },
     "industry": "9411",
     "language": "en",
+    "staff": 45,
     "week": "office"
    },
    "numbering": {
@@ -3429,7 +3472,10 @@
     },
     "industry": "5222",
     "website": "https://www.port-selanu.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1972-10-04",
@@ -3534,7 +3580,10 @@
     "city_why": "The locality the airport lies in: the airfield is on the plain north of Selanu, within Lintwell, and bears the name of the capital it serves, as airports often do that lie in a neighbouring place.",
     "industry": "5223",
     "website": "https://www.selanu-cargo.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1989-08-16",
@@ -3609,7 +3658,10 @@
     },
     "industry": "5120",
     "website": "https://www.kelaro.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1987-11-03",
@@ -3746,7 +3798,11 @@
      "ID": "65334843"
     },
     "industry": "8411",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
+    "staff": 60,
     "desks": {
      "customs_export": {
       "name": "Export office",
@@ -3845,7 +3901,10 @@
     },
     "industry": "5229",
     "website": "https://www.tevaro.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1975-04-08",
@@ -3925,7 +3984,10 @@
     },
     "industry": "5210",
     "website": "https://www.nalevi.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1998-02-11",
@@ -4023,7 +4085,10 @@
     },
     "industry": "4649",
     "website": "https://www.velumi.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "2002-10-16",
@@ -4156,7 +4221,10 @@
     "bank_code": "BSEL",
     "industry": "6419",
     "website": "https://www.bankofselanu.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1878-07-01",
@@ -4270,7 +4338,10 @@
      "ID": "95763809"
     },
     "industry": "9411",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "desks": {
      "carnet": {
       "name": "Carnet office",
@@ -4354,7 +4425,11 @@
      "ID": "44886737"
     },
     "industry": "8413",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
+    "staff": 20,
     "week": "office"
    },
    "numbering": {
@@ -4392,7 +4467,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "The island's Department of Agriculture: its Plant Protection Service is Lisavu's plant protection organisation under the IPPC and issues the phytosanitary certificates of plants and plant products leaving the island; it also keeps the farm register.",
+   "what": "The island's Department of Agriculture: its Plant Protection Service is Lisavu's plant protection organisation and issues the phytosanitary certificates of plants and plant products leaving the island; it also keeps the farm register.",
    "how": "A plant protection organisation inspects a consignment before export and certifies it free of the pests the importing country names. UBL's goods certificate carries the inspection, its findings and the issuing authority, so the importing country's inspectors and customs can check it before the goods arrive.",
    "identity": {
     "name": "Department of Agriculture of Lisavu",
@@ -4414,7 +4489,10 @@
      "ID": "71826543"
     },
     "industry": "8413",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "week": "office"
    },
    "numbering": {
@@ -4483,7 +4561,10 @@
     },
     "industry": "3510",
     "website": "https://www.ferranoenergy.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SUA",
      "founded": "1949-01-14",
@@ -4752,7 +4833,10 @@
     },
     "industry": "6120",
     "website": "https://www.selanutelecom.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1993-07-01",
@@ -5467,7 +5551,10 @@
     },
     "industry": "0116",
     "website": "https://www.lisavufarm.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "SP",
      "founded": "2009-08-17",
@@ -5569,7 +5656,10 @@
     },
     "industry": "0163",
     "website": "https://www.selanuginnery.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1936-06-10",
@@ -5869,7 +5959,10 @@
     },
     "industry": "3510",
     "website": "https://www.montebrio.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SUA",
      "founded": "1974-06-03",
@@ -6008,7 +6101,10 @@
     },
     "industry": "3510",
     "website": "https://www.ferranogrid.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SUA",
      "founded": "2007-01-02",
@@ -6119,7 +6215,10 @@
      "ID": "4160204417730582"
     },
     "industry": "8412",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "week": "office"
    },
    "_refs": {
@@ -6198,7 +6297,10 @@
      "ID": "4160207305518243"
     },
     "industry": "5221",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "week": "always"
    },
    "_refs": {
@@ -6642,7 +6744,10 @@
     },
     "industry": "8610",
     "website": "https://www.selanu-hospital.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "desks": {
      "goods_in": {
       "name": "Pharmacy goods-in",
@@ -6874,9 +6979,12 @@
      "number": "XL21BSEL0010008247361",
      "branch": "001"
     },
-    "industry": "4631",
+    "industry": "4630",
     "website": "https://www.hafefo.example",
-    "language": "en",
+    "language": [
+     "qal",
+     "en"
+    ],
     "legal": {
      "form": "LTD",
      "founded": "1997-08-04",
@@ -6935,7 +7043,7 @@
      },
      {
       "title": "Operations",
-      "text": "Hafefo keeps its own cold store by the port and supplies the island's shops, hotels and the kitchen of [[Selanu General Hospital]]. In the southern autumn it buys reefers of apples and pears from [[Harrowmead Fruit Growers]] in Bayvarra's Upland State, carriage and insurance paid to the [[Port of Selanu]]; they come on the weekly service of [[Tidewell Ocean Lines]]. It lodges its import declarations itself, while the ship is at sea, and [[Nalevi Warehousing]] takes the reefer from the port to the cold store. Imported food pays the island's import consumption tax like every import. Hafefo pays Harrowmead in lume from its account at [[Bank of Selanu]]. Its purchasing desk works from early morning, Monday to Saturday. Besides the fruit of Harrowmead it buys from growers and importers in Lumeport, and from the island's own gardens in season. Its cold store has about 1,500 m² of floor."
+      "text": "Hafefo keeps its own cold store by the port and supplies the island's shops, hotels and the kitchen of [[Selanu General Hospital]]. In the southern autumn it buys reefers of apples and pears from [[Harrowmead Fruit Growers]] in Bayvarra's Upland State, carriage and insurance paid to the [[Port of Selanu]]; they come on the weekly service of [[Tidewell Ocean Lines]]. It lodges its import declarations itself, while the ship is at sea, and [[Nalevi Warehousing]] takes the reefer from the port to the cold store. Imported food pays the island's import consumption tax like most imports. Hafefo pays Harrowmead in lume from its account at [[Bank of Selanu]]. Its purchasing desk works from early morning, Monday to Saturday. Besides the fruit of Harrowmead it buys from growers and importers in Lumeport, and from the island's own gardens in season. Its cold store has about 1,500 m² of floor."
      }
     ],
     "facts": {
@@ -6955,7 +7063,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "Bayvarra's federal Department of Agriculture: its Plant Health Service is the country's plant protection organisation under the IPPC, which inspects plants and plant products for export and issues their phytosanitary certificates.",
+   "what": "Bayvarra's federal Department of Agriculture: its Plant Health Service is the country's plant protection organisation, which inspects plants and plant products for export and issues their phytosanitary certificates.",
    "how": "A plant protection organisation inspects a consignment before export and certifies it free of the pests the importing country names. UBL's goods certificate carries the inspection, its findings and the issuing authority, so the importing country's inspectors and customs can check it before the goods arrive.",
    "identity": {
     "name": "Federal Department of Agriculture of Bayvarra",
@@ -7050,7 +7158,10 @@
     },
     "industry": "1610",
     "website": "https://www.tostara.example",
-    "language": "en",
+    "language": [
+     "qau",
+     "en"
+    ],
     "legal": {
      "form": "SRU",
      "founded": "2011-04-04",
@@ -7314,7 +7425,8 @@
      "CityName": "Alkmaar",
      "PostalZone": "1812 RN"
     },
-    "ids_note": "It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.",
+    "ids_note": "The documents identify the maker by its name and address.",
+    "ids_reason": "It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's (O229).",
     "language": "en",
     "week": "always"
    },
@@ -7355,7 +7467,8 @@
      "PostalZone": "500078",
      "CountrySubentity": "Telangana"
     },
-    "ids_note": "It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.",
+    "ids_note": "The documents identify the maker by its name and address.",
+    "ids_reason": "It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's (O229).",
     "language": "en",
     "week": "office"
    },

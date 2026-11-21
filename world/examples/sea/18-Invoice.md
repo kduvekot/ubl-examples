@@ -487,7 +487,7 @@ Inside `InvoiceLine`:
 - `DocumentReference/ID` = **WVS-CERT-26-0884**  
   The insurance certificate of the shipment, which states the insured value.
 - `DocumentReference/DocumentType` = **Insurance certificate**  
-  The kind of document referred to, Wavesure's insurance certificate of the sea shipment, with its insured value, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Wavesure's insurance certificate of the sea shipment, with its insured value, in words: no list has an exact code for it.
 - `Item/Description` = **Cargo insurance for one shipment, arranged with the insurer, at a premium rate on the insured value.**  
   The seller's description.
 - `Item/Name` = **Cargo insurance**  

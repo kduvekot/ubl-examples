@@ -46,7 +46,7 @@ Inside `SenderParty`:
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; as Valdara Industries gives it.
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: binbir.
 - `PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -204,7 +204,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **SM-ASSAY-26-11**  
   The assay of the previous train, the latest analysis of the ore the carrier plans the wagons for.
 - `DocumentTypeCode` = **1** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Serravona Mining's assay certificate of the sample taken when February's ore train was loaded, the latest analysis of the ore before March's train, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
+  The kind of document referred to: Serravona Mining's assay certificate of the sample taken when February's ore train was loaded, the latest analysis of the ore before March's train. The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
 
 ### Transport Contract
 

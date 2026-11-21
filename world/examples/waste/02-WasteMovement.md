@@ -55,7 +55,7 @@ Inside `SenderParty`:
 - `PartyName/Name` = **Rinova Recovery**  
   The trading name; as Rinova Recovery gives it.
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: binbir.
 - `PostalAddress/ID` = **4160202983340277** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -397,7 +397,7 @@ Inside `DocumentReference`:
 - `ID` = **26-0020**  
   The certificate of recovery to follow.
 - `DocumentType` = **Certificate of recovery**  
-  The kind of document referred to, Rinova's certificate of recovery, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Rinova's certificate of recovery, in words: no list has an exact code for it.
 
 ### Document Distribution
 

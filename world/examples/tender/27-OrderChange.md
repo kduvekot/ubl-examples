@@ -58,7 +58,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD-COLOUR-RAL6005**  
   The colour sample of the harbour park.
 - `DocumentType` = **Colour sample**  
-  The kind of document referred to, the colour sample of the harbour benches, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the colour sample of the harbour benches, in words: no list has an exact code for it.
 
 ### Contract
 

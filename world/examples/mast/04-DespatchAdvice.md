@@ -248,7 +248,7 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/MedicalFirstAidGuideCode` = **147** (listID `ERG 2024`)  
   The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers and receivers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 147 = Lithium Ion and Sodium Ion Batteries.
 - `Item/HazardousItem/ProperShippingName` = **Lithium ion batteries**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+  The proper shipping name of the UN entry, as the Dangerous Goods List gives it for that UN number and class.
 - `Item/HazardousItem/HazardousCategoryCode` = **9** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 9 = Miscellaneous dangerous substances and articles.
 - `Item/HazardousItem/MarkingID` = **UN3480**  
@@ -284,7 +284,7 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/MedicalFirstAidGuideCode` = **161** (listID `ERG 2024`)  
   The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers and receivers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 161 = Radioactive Materials (Low Level Radiation).
 - `Item/HazardousItem/ProperShippingName` = **Radioactive material, excepted package - instruments or articles**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+  The proper shipping name of the UN entry, as the Dangerous Goods List gives it for that UN number and class.
 - `Item/HazardousItem/HazardousCategoryCode` = **7** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material.
 - `Item/HazardousItem/MarkingID` = **UN2911**  
@@ -324,7 +324,7 @@ Inside `DespatchLine`:
 - `Item/HazardousItem/TechnicalName` = **ethanolamine, propanol**  
   The technical name, needed with an n.o.s. entry.
 - `Item/HazardousItem/ProperShippingName` = **Corrosive liquid, flammable, n.o.s.**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+  The proper shipping name of the UN entry, as the Dangerous Goods List gives it for that UN number and class.
 - `Item/HazardousItem/HazardousCategoryCode` = **8** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 8 = Corrosive substances.
 - `Item/HazardousItem/MarkingID` = **UN2920**  

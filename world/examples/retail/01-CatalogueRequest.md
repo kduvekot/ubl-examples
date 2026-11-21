@@ -252,7 +252,7 @@ Inside `DocumentReference`:
 - `ID` = **BM-RANGE-26**  
   The store's range plan.
 - `DocumentType` = **Range plan**  
-  The kind of document referred to, the store's range plan, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the store's range plan, in words: no list has an exact code for it.
 
 ### Applicable Territory Address
 

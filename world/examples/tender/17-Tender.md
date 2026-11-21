@@ -56,7 +56,7 @@ Inside `DocumentReference`:
 - `ID` = **BKM-DS-PARK**  
   The datasheet.
 - `DocumentType` = **Product data sheet**  
-  The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Brackenmere's data sheet of its park bench, in words: no list has an exact code for it.
 - `ID` = **3900039354**  
   The certificate of the tender guarantee that covers this tender.
 - `DocumentTypeCode` = **GuaranteeCertificate** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
@@ -273,7 +273,7 @@ Inside `TenderedProject`:
 - `EvidenceDocumentReference/ID` = **BKM-REF-2025**  
   The tenderer's own reference letters.
 - `EvidenceDocumentReference/DocumentType` = **Reference letters**  
-  The kind of document referred to, Brackenmere's reference letters from customers for its park furniture of 2025, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Brackenmere's reference letters from customers for its park furniture of 2025, in words: no list has an exact code for it.
 - `TaxTotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   No tax: the department, a public body, buys exempt from the state sales tax.
 - `TaxTotal/TaxSubtotal/TaxableAmount` = **116640.00** (currencyID `XBL`)  
@@ -323,7 +323,7 @@ Inside `TenderedProject`:
 - `TenderLine/DocumentReference/ID` = **BKM-DS-PARK**  
   The datasheet.
 - `TenderLine/DocumentReference/DocumentType` = **Product data sheet**  
-  The kind of document referred to, Brackenmere's data sheet of its park bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Brackenmere's data sheet of its park bench, in words: no list has an exact code for it.
 - `TenderLine/Item/Name` = **Park bench Brackenmere PB-2**  
   The item offered.
 - `TenderLine/OfferedItemLocationQuantity/LeadTimeMeasure` = **14** (unitCode `DAY`)  

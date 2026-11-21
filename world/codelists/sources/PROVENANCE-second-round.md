@@ -111,6 +111,8 @@ The names and definitions (BorneByDebtor …, RealTimeGrossSettlementSystem …,
 
 The script comparison with `ISIC_Rev_4_english_structure.txt` matched all 38 codes and all 38 names character for character. Examples: "3100","Manufacture of furniture"; "4649","Wholesale of other household goods"; "5229","Other transportation support activities"; "6499","Other financial service activities, except insurance and pension funding activities, n.e.c.". Note: Rev.4 is no longer the current revision (Rev.5 adopted in 2024).
 
+Added 2026-11-21 (second site review, B-06), copied from the same file: "0124","Growing of pome fruits and stone fruits"; "4630","Wholesale of food, beverages and tobacco"; "7410","Specialized design activities"; "8610","Hospital activities". The fresh-produce wholesaler had been given 4631, which is not a Rev.4 class (Rev.4 has only the class 4630 under group 463); it is now 4630.
+
 ### WCOHS2022: all 15 subheadings confirmed in HS 2022
 
 All 15 are in `H6.json` ("className": "HS2022"), e.g. "850760 - Electric accumulators; lithium-ion, including separators, whether or not rectangular (including square)"; "271121 - Petroleum gases and other gaseous hydrocarbons; in gaseous state, natural gas"; "940169 - Seats; with wooden frames, not upholstered, …"; "940179 - Seats; with metal frames, not upholstered, …"; "940330 - Furniture; wooden, for office use". The world's English names are paraphrases of the WCO text and are consistent with it. Comtrade's texts are UNSD abbreviations, not the WCO legal text.

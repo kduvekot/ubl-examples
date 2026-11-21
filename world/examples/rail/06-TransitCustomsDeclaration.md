@@ -79,7 +79,7 @@ Inside `TransitExporterParty`:
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; as Valdara Industries gives it.
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: binbir.
 - `PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -505,9 +505,9 @@ Inside `AdditionalDocumentReference`:
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: 9500055446 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 - `ID` = **7600008738**  
-  The export declaration lodged in Urvania at the office of departure, which the transit continues; a document outside the examples.
+  The export declaration lodged in Urvania at the office of departure, which the transit continues.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to, Valdara's export declaration lodged in Urvania at the office of departure of the rail transit, a document outside the examples (cited). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+  The kind of document referred to: Valdara's export declaration lodged in Urvania at the office of departure of the rail transit. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 
 ### Signature
 

@@ -327,7 +327,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/TransportMeans/TradeServiceCode` = **TWL-ISL**  
   The carrier's code for its island service.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
-  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+  The vessel's number in its country's register of ships.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
   The vessel's name; the fleet of Tidewell Ocean Lines.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QBTH7**  
@@ -687,7 +687,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/ID` = **VGM-26-0422**  
   The signed weight declaration sent to the carrier.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/DocumentTypeCode` = **749** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the cooperative's verified gross mass of the reefer, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 749 = Transport equipment gross mass verification message.
+  The kind of document referred to: the cooperative's verified gross mass of the reefer. The code is from the world's copy of UN/EDIFACT 1001 Document name: 749 = Transport equipment gross mass verification message.
 - `GoodsItem/ID` = **1**  
   The fruit in the reefer, as one item for the carrier.
 - `GoodsItem/Description` = **Fresh apples and pears in cartons, on 20 pallets**  

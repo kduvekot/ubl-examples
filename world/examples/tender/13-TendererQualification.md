@@ -432,7 +432,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **VI-ESPD-26**  
   The self-declaration.
 - `DocumentType` = **Tenderer self-declaration**  
-  The kind of document referred to, Valdara's self-declaration for the tender, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's self-declaration for the tender, in words: no list has an exact code for it.
 
 ## The document
 

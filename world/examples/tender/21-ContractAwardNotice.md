@@ -371,7 +371,7 @@ Inside `ProcurementProject`:
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
 - `RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
-  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's technical specification of the bench, in words: no list has an exact code for it.
 - `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-19**  

@@ -181,7 +181,7 @@ Inside `BusinessParty`:
 - `PartyName/Name` = **Valdara Industries**  
   The trading name; as Valdara Industries gives it.
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
-  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
   The language's name in English; in the language itself: binbir.
 - `PostalAddress/ID` = **4160200467394686** (schemeID `urn:ubl-examples:world:XU:address-register`)  
@@ -280,7 +280,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD/2026/PARKS**  
   The procurement the department asked for the extract for: its file.
 - `DocumentType` = **Procurement file**  
-  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the public works department's procurement file of the park benches, in words: no list has an exact code for it.
 
 ### Business Capability
 

@@ -111,21 +111,21 @@ Inside `ImporterParty`:
 Inside `ConsignorParty`:
 
 - `PartyName/Name` = **Haarvliet Isotopes**  
-  The trading name; as Haarvliet Isotopes, a maker outside the three countries, gives it. It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.
+  The trading name; as Haarvliet Isotopes, a maker abroad, gives it. The documents identify the maker by its name and address.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/StreetName` = **Isotopenweg**  
-  Street of the postal address. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Street of the postal address. As Haarvliet Isotopes gives it.
 - `PostalAddress/BuildingNumber` = **14**  
-  Building number. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Building number. As Haarvliet Isotopes gives it.
 - `PostalAddress/CityName` = **Alkmaar**  
-  The town. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  The town. As Haarvliet Isotopes gives it.
 - `PostalAddress/PostalZone` = **1812 RN**  
-  Postal code in the format of Netherlands. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Postal code in the format of the Netherlands. As Haarvliet Isotopes gives it.
 - `PostalAddress/TimezoneOffset` = **+02:00**  
   The offset from UTC of Central European Summer Time, the legal time there in June.
 - `PostalAddress/Country/IdentificationCode` = **NL** (listID `ISO 3166`)  
-  Netherlands, a real country outside the world. The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
+  Netherlands: the maker is abroad. The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
 - `PostalAddress/Country/Name` = **Netherlands**  
   The country's name, for readers of the address.
 
@@ -240,7 +240,7 @@ Inside `Shipment`:
 - `GoodsItem/Item/HazardousItem/MedicalFirstAidGuideCode` = **163** (listID `ERG 2024`)  
   The guide number of the Emergency Response Guidebook (ERG 2024) for this UN number: the world's carriers and receivers use the ERG, as the IMDG Code no longer gives medical first aid table numbers per UN number. The code is from the world's copy of Emergency Response Guidebook 2024, guide numbers: 163 = Radioactive Materials (Low to High Level Radiation).
 - `GoodsItem/Item/HazardousItem/ProperShippingName` = **Radioactive material, Type A package, non-special form, non fissile or fissile-excepted**  
-  The proper shipping name of the UN entry; the build checks that UN number, name and class agree with the Dangerous Goods List.
+  The proper shipping name of the UN entry, as the Dangerous Goods List gives it for that UN number and class.
 - `GoodsItem/Item/HazardousItem/HazardousCategoryCode` = **7** (listID `UN Model Regulations hazard class`)  
   The hazard class of the goods as a code of the UN Model Regulations' classes. The code is from the world's copy of UN Model Regulations hazard class and division: 7 = Radioactive material.
 - `GoodsItem/Item/HazardousItem/MarkingID` = **UN2915**  

@@ -264,7 +264,7 @@ Inside `Shipment`:
 - `ShipmentStage/TransportMeans/TransportMeansTypeCode` = **1511** (listID `UNECE Recommendation 28`)  
   The kind of means of transport: tidewell Harbour; the fleet of Tidewell Ocean Lines. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 1511 = Full container ship/cellular vessel.
 - `ShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
-  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+  The vessel's number in its country's register of ships.
 - `ShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
   The vessel's name; the fleet of Tidewell Ocean Lines.
 - `ShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QBTH7**  

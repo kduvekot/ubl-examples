@@ -210,7 +210,7 @@ Inside `OrderLine`:
 - `DocumentReference/ID` = **VI-DS-B180**  
   The datasheet of the item confirmed.
 - `DocumentReference/DocumentType` = **Product data sheet**  
-  The kind of document referred to, Valdara's data sheet of the Serra bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's data sheet of the Serra bench, in words: no list has an exact code for it.
 - `SubstitutionStatusCode` = **Substitution** (listID `urn:oasis:names:specification:ubl:codelist:gc:SubstitutionStatusCode`)  
   The line is delivered with a substitute item. The code is from the world's copy of UBL's Substitution status list, with a listID: Substitution.
 - `Note` = **Same fit and price; the old casting is no longer made.**  
@@ -250,7 +250,7 @@ Inside `OrderLine`:
 - `DocumentReference/ID` = **VI-DS-C180-2026**  
   The datasheet of the item confirmed.
 - `DocumentReference/DocumentType` = **Product data sheet**  
-  The kind of document referred to, Valdara's data sheet of the 2026 side frame, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's data sheet of the 2026 side frame, in words: no list has an exact code for it.
 
 ## The document
 

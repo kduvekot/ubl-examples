@@ -343,7 +343,7 @@ Inside `SubscriberConsumption`:
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/DocumentReference/ID` = **CSW-QUALITY-2026-Q1**  
   The quarterly water quality report.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/DocumentReference/DocumentType` = **Water quality report**  
-  The kind of document referred to, the water company's quarterly water quality report, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the water company's quarterly water quality report, in words: no list has an exact code for it.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionReportID` = **CSW-CP-38516-57-2425**  
   Last year's water report.
 - `SupplierConsumption/Consumption/EnergyWaterSupply/ConsumptionReport/ConsumptionReportReference/ConsumptionType` = **Yearly consumption**  

@@ -47,7 +47,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **SCG-WB-26-0311**  
   The weighbridge ticket.
 - `DocumentType` = **Weighbridge ticket**  
-  The kind of document referred to, the ginnery's weighbridge ticket, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the ginnery's weighbridge ticket, in words: no list has an exact code for it.
 
 ### Signature
 
@@ -69,7 +69,7 @@ Inside `DespatchSupplierParty`:
 - `Party/PartyName/Name` = **Lisavu Cotton Farm**  
   The trading name; as Lisavu Cotton Farm gives it.
 - `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
-  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
+  Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz). The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
   The language's name in English; in the language itself: kopele.
 - `Party/PostalAddress/ID` = **85779006** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
