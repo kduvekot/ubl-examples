@@ -97,7 +97,7 @@ def expected_hours(world, flow_id, leg, kind, dep):
     """The hours a leg takes at its vehicle's speed plus the allowances it names for this kind of time."""
     import world_map as wmap
     timing = leg.get("timing", {})
-    vehicle = timing.get("vehicle", VEHICLE[leg["mode"]])
+    vehicle = timing.get("speed", VEHICLE[leg["mode"]])
     kmh = wmap.speed(leg["mode"], vehicle)
     km = leg_km(flow_id, leg)
     al = timing.get("allowances", [])
@@ -129,8 +129,8 @@ def time_problems(world, docs):
                 if a not in wmap.ALLOWANCES or a == "note":
                     out.append(f"{f['id']}: leg {leg['from']} -> {leg['to']} names the allowance {a}, which "
                                "world/map.json allowances does not have")
-            if t.get("vehicle") and t["vehicle"] not in wmap.SPEEDS.get(leg["mode"], {}):
-                out.append(f"{f['id']}: leg {leg['from']} -> {leg['to']}: no speed for {leg['mode']} {t['vehicle']}")
+            if t.get("speed") and t["speed"] not in wmap.SPEEDS.get(leg["mode"], {}):
+                out.append(f"{f['id']}: leg {leg['from']} -> {leg['to']}: no speed for {leg['mode']} {t['speed']}")
     groups = {}           # (flow, stage, mode, kind) -> {"D": {...}, "A": {...}} over the flow's documents
     pairs = []
     for key, d, root in docs:

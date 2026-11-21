@@ -21,9 +21,11 @@ Checks:
   * loads (O62): each vehicle the documents name carries no more than the fleet data allows (world/parties.json):
     a road vehicle with its tares within its maximum gross weight (40 t for an articulated or drawbar vehicle,
     the world's rule), a tank within its maximum load, the pallets on a curtain-sider within its floor, one
-    container on a container chassis, a train's containers one to a wagon, a ship's containers within its TEU;
-    a road leg whose vehicle no document names is checked with its carrier's one vehicle against the largest
-    load of the flow's despatch documents. Capacities the fleet data does not give are listed with --notes.
+    container on a container chassis (one a run where the leg gives its runs), a train's containers one to a
+    wagon within the wagon's payload, the ore within the ore wagons' payload, a barge's cargo within its
+    deadweight, a ship's containers within its TEU; a road leg whose vehicle no document names is checked with the
+    vehicle the leg names (world/documents.json "vehicle") or its carrier's one vehicle, against the largest load
+    of the flow's despatch documents (O278).
 
 Usage: python3 tools/world_goods.py [--notes]   (prints the problems, exit 1 if any; --notes also lists what
        could not be checked for lack of data)
@@ -42,9 +44,6 @@ sys.path.insert(0, os.path.dirname(__file__))
 import world_data  # noqa: E402
 
 HANDLING_LIMIT_KG = {1: 25, 2: 33}    # the world's rule for manual handling (D20), as in tools/world_items.py
-# loads the check finds in the built documents that only the generator can fix: listed with --notes until it is
-KNOWN = {("rail/08", "chassis"): "one container chassis takes the two boxes to the hub, but no document says it "
-                                 "makes two runs (reported, 2026-11-21)"}
 NOTES = []
 ROAD_MAX_KG = 40000                   # an articulated or drawbar road vehicle, loaded
 DECK_WIDTH_M = Decimal("2.45")        # the inner width of a curtain-side trailer
@@ -529,8 +528,14 @@ def cargo(root):
     return cont, kg, thus, area
 
 
-def road_problems(where, v, cont, kg, thus, area):
+def road_problems(where, v, cont, kg, thus, area, runs=1):
+    """A road vehicle's load; on a container chassis one box a run (the leg's runs, world/documents.json), the
+    heaviest box then the load of a run."""
     out = []
+    if v.get("type") == "37" and runs > 1 and cont:
+        if len(cont) > runs:
+            out.append(f"{where}: {len(cont)} containers in {runs} runs of one container chassis ({v['plate']})")
+        cont = dict([max(cont.items(), key=lambda c: c[1]["kg"] or 0)])
     tare = sum(D(x) for x in (v.get("tare_kg") or {}).values())
     limit = D(v.get("max_gross_kg") or ROAD_MAX_KG)
     load = sum(c["kg"] for c in cont.values() if c["kg"]) if cont else (kg or 0)
@@ -540,11 +545,7 @@ def road_problems(where, v, cont, kg, thus, area):
     if tank and kg and kg > D(tank["max_load_kg"]):
         out.append(f"{where}: {kg} kg in a tank for {tank['max_load_kg']} kg")
     if v.get("type") == "37" and len(cont) > 1:
-        msg = f"{where}: {len(cont)} containers on one container chassis ({v['plate']})"
-        if KNOWN.get((where, "chassis")):
-            NOTES.append(f"{msg}: {KNOWN[(where, 'chassis')]}")
-        else:
-            out.append(msg)
+        out.append(f"{where}: {len(cont)} containers on one container chassis ({v['plate']})")
     if v.get("loading_m") and area > D(v["loading_m"]) * DECK_WIDTH_M:
         out.append(f"{where}: {area:.1f} m² of pallets on {v['loading_m']} m of floor ({v['plate']}) (O62)")
     if v.get("pallets") and not area and thus > v["pallets"]:
@@ -565,7 +566,9 @@ def load_problems(world, docs):
             if not v:
                 continue
             named[d["flow"]].add(v["party"])
-            out += road_problems(key, v, cont, kg, thus, area)
+            runs = max([leg.get("runs", 1) for f in world["flows"] if f["id"] == d["flow"]
+                        for leg in f.get("legs", []) if leg["carrier"] == v["party"] and leg["mode"] == "road"] or [1])
+            out += road_problems(key, v, cont, kg, thus, area, runs)
         for vn in {e.text for e in root.iter("{*}VesselName")}:
             v = by_vessel.get(vn)
             if not v:
@@ -574,40 +577,58 @@ def load_problems(world, docs):
             for cid, c in cont.items():
                 teu[vn][cid] = 2 if (c["size"] or "4").startswith("4") else 1
             if v["kind"] == "inland":
-                notes.append(f"{key}: {vn} carries {kg} kg; the fleet data gives its tonnage ({v.get('gross_t')} "
-                             f"gross, {v.get('net_t')} net), not its deadweight, so its load is not checked")
+                if not v.get("deadweight_t"):
+                    out.append(f"{key}: {vn} has no deadweight in the fleet data (O278)")
+                elif kg and kg > D(v["deadweight_t"]) * 1000:
+                    out.append(f"{key}: {vn} carries {kg} kg, above its deadweight of {v['deadweight_t']} t")
         for tr in {e.text for e in root.iter("{*}TrainID")}:
             v = by_train.get(tr)
             if not v:
                 continue
             named[d["flow"]].add(v["party"])
             wagons = v.get("wagons") or []
-            if len(cont) > len(wagons):
+            wagon = v.get("wagon") or {}
+            if len(cont) > len(wagons) * wagon.get("slots", 1):
                 out.append(f"{key}: {len(cont)} containers on train {tr} of {len(wagons)} container wagons")
-            notes.append(f"{key}: train {tr}: the fleet data gives no payload per wagon")
+            if not wagon.get("payload_kg"):
+                out.append(f"{key}: train {tr}: the fleet data gives no payload per container wagon (O278)")
+            else:
+                for cid, c in cont.items():
+                    if c["kg"] and c["kg"] > wagon["payload_kg"]:
+                        out.append(f"{key}: container {cid} of {c['kg']} kg on a wagon for {wagon['payload_kg']} kg")
     for vn, cs in teu.items():
         v = by_vessel[vn]
         if v.get("capacity_teu") and sum(cs.values()) > v["capacity_teu"]:
             out.append(f"{vn}: {sum(cs.values())} TEU in the documents, above its {v['capacity_teu']}")
         elif not v.get("capacity_teu"):
             notes.append(f"{vn}: no TEU capacity in the fleet data")
-    # the ore train: the fleet lists the ore wagons; their payload is not in the data
+    # the ore train: its ore wagons and their payload (O278)
     for key, d, root in docs:
         if d["flow"] == "ore" and d["doc"] == "Waybill":
             v = by_train.get(next((v["ore_train"] for vs in by_party.values() for v in vs if v.get("ore_train")),
                                   ""))
             if v:
-                notes.append(f"{key}: the ore train carries {cargo(root)[1]} kg; the fleet lists "
-                             f"{len(v.get('ore_wagons', []))} ore wagons and no payload per wagon")
-    # road legs whose vehicle no document names: the carrier's one road vehicle, the flow's largest despatch
+                kg, n, pay = cargo(root)[1], len(v.get("ore_wagons", [])), (v.get("ore_wagon") or {}).get("payload_kg")
+                if not pay:
+                    out.append(f"{key}: the ore train's wagons have no payload in the fleet data (O278)")
+                elif kg and kg > n * pay:
+                    out.append(f"{key}: the ore train carries {kg} kg in {n} ore wagons of {pay} kg")
+    # road legs whose vehicle no document names: the vehicle the leg names (world/documents.json "vehicle"), or the
+    # carrier's one road vehicle, with the flow's largest despatch
     for f in world["flows"]:
         for leg in f.get("legs", []):
             if leg["mode"] != "road" or leg["carrier"] in named[f["id"]]:
                 continue
             road = [v for v in by_party.get(leg["carrier"], []) if v["kind"] == "road"]
+            if leg.get("vehicle"):
+                road = [v for v in road if v["id"] == leg["vehicle"]]
+                if not road:
+                    out.append(f"{f['id']}: road leg {leg['from']} -> {leg['to']} names vehicle {leg['vehicle']}, "
+                               f"which is not a road vehicle of {leg['carrier']}")
+                    continue
             if len(road) != 1:
-                notes.append(f"{f['id']}: road leg {leg['from']} -> {leg['to']} by {leg['carrier']}: "
-                             f"{len(road)} road vehicles in its fleet, none named in the documents")
+                out.append(f"{f['id']}: road leg {leg['from']} -> {leg['to']} by {leg['carrier']}: "
+                           f"{len(road)} road vehicles in its fleet, none named in the documents or the leg (O278)")
                 continue
             v = road[0]
             loads = [(key, cargo(root)) for key, d, root in docs if d["flow"] == f["id"]

@@ -864,6 +864,11 @@ def rail_road_stage(f, view):
         out["RequestedArrivalTransportEvent"] = kit.event(f, 7, None, "At the hub the same day, for the morning "
                                                           "train.", location=RAIL_HUB)
         return out
+    if view == "note":       # the one chassis takes one box a run (O278; world/documents.json, the leg's runs)
+        runs = kit.flow_leg(f, "14-xu")["runs"]     # the first leg of the carrier: the road haulage
+        out["Instructions"] = V(f"{('One', 'Two', 'Three')[runs - 1]} runs of the one tractor and chassis, one box a run: the first leaves the "
+                                f"warehouse at {RAIL_PICKUP[0][1]}, the second at {RAIL_PICKUP[1][1]}.",
+                                "How the haulage is done: the carrier's container chassis takes one box at a time.")
     out["TransportMeans"] = kit.means("14-xu", "FRC-T1")
     out["LoadingPortLocation"] = kit.place("XUFER", "Where the boxes are collected.",
                                            name="Castrano Logistics warehouse, Conciaro")

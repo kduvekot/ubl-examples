@@ -9,7 +9,7 @@
   },
   "rail": {
    "container_train": {"kmh": 50, "why": "A container train on the mixed-traffic main line: its average between stations, below its line speed."},
-   "ore_train": {"kmh": 40, "why": "A loaded ore train of some 2,300 t gross on the gradients of the ore line."}
+   "ore_train": {"kmh": 40, "why": "A loaded ore train of some 2,600 t gross on the gradients of the ore line."}
   },
   "river": {
    "barge": {"kmh": 11, "why": "A loaded motor barge downstream on the free-flowing lower river, its speed over the ground with the current; it sails by daylight only."}

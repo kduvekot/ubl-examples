@@ -340,6 +340,8 @@ Inside `Shipment`:
   The pre-carriage: the carrier's tractor brings the packed boxes to the hub.
 - `Consignment/PreCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   UN/ECE Recommendation 19 code 3: road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `Consignment/PreCarriageShipmentStage/Instructions` = **Two runs of the one tractor and chassis, one box a run: the first leaves the warehouse at 13:00, the second at 15:00.**  
+  How the haulage is done: the carrier's container chassis takes one box at a time.
 - `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XU** (schemeID `ISO 3166`)  
   The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania. An identifier that holds a code names the code's list in its schemeID.
 - `Consignment/PreCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Urvania**  
@@ -1070,6 +1072,7 @@ Inside `Signature`:
       <cac:PreCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:Instructions>Two runs of the one tractor and chassis, one box a run: the first leaves the warehouse at 13:00, the second at 15:00.</cbc:Instructions>
         <cac:TransportMeans>
           <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>

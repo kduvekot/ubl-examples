@@ -27,7 +27,7 @@
       "locode": "XUFER"
      },
      "timing": {
-      "vehicle": "ore_train",
+      "speed": "ore_train",
       "allowances": [
        "shunt"
       ]
@@ -196,11 +196,12 @@
       "locode": "XUFER"
      },
      "timing": {
-      "vehicle": "container_chassis",
+      "speed": "container_chassis",
       "allowances": [
        "second_run"
       ]
-     }
+     },
+     "runs": 2
     },
     {
      "mode": "rail",
@@ -221,7 +222,7 @@
       "gln": "6-xb:siding"
      },
      "timing": {
-      "vehicle": "container_train",
+      "speed": "container_train",
       "allowances": [
        "border_path_rail",
        "morning_placement"
@@ -332,7 +333,7 @@
       "name": "River quay of Rivermouth Packaging, Lumeport"
      },
      "timing": {
-      "vehicle": "barge",
+      "speed": "barge",
       "allowances": [
        "night_mooring"
       ]
@@ -591,7 +592,7 @@
      },
      "transit_days": 4,
      "timing": {
-      "vehicle": "feeder",
+      "speed": "feeder",
       "allowances": {
        "actual": [
         "daylight_pilotage"
@@ -836,8 +837,9 @@
       "locode": "XBLMA"
      },
      "timing": {
-      "vehicle": "delivery_truck"
-     }
+      "speed": "delivery_truck"
+     },
+     "vehicle": "B-03"
     },
     {
      "mode": "air",
@@ -1351,7 +1353,8 @@
      },
      "to_place": {
       "name": "Brackenmere Furniture workshop, Marrowdale"
-     }
+     },
+     "vehicle": "T-1"
     }
    ],
    "_refs": {
@@ -1513,7 +1516,8 @@
      "to_place": {
       "name": "Goods-in of the Lumeport store",
       "gln": "26-xb:goods-in"
-     }
+     },
+     "vehicle": "V-1"
     },
     {
      "mode": "road",
@@ -1547,7 +1551,8 @@
      },
      "to_place": {
       "name": "Lumeport Public Works Department, Civic Square"
-     }
+     },
+     "vehicle": "V-1"
     }
    ],
    "collaborations": [
@@ -1695,7 +1700,8 @@
      },
      "to_place": {
       "name": "Lumeport Textile Mill, goods-in"
-     }
+     },
+     "vehicle": "B-05"
     }
    ],
    "packages": {
@@ -1981,7 +1987,8 @@
      },
      "to_place": {
       "name": "Lumeport Textile Mill, goods-in"
-     }
+     },
+     "vehicle": "B-03"
     },
     {
      "mode": "road",
@@ -1999,7 +2006,8 @@
      "to_place": {
       "name": "Goods-in of the Lumeport store",
       "gln": "26-xb:goods-in"
-     }
+     },
+     "vehicle": "B-03"
     }
    ],
    "collaborations": [
@@ -2087,7 +2095,8 @@
      "to_place": {
       "name": "Lumeport airport, cargo terminal",
       "locode": "XBLMA"
-     }
+     },
+     "vehicle": "B-03"
     },
     {
      "mode": "air",
@@ -2369,7 +2378,7 @@
      },
      "transit_days": 2,
      "timing": {
-      "vehicle": "feeder",
+      "speed": "feeder",
       "allowances": {
        "actual": [
         "daylight_pilotage"
@@ -2512,7 +2521,7 @@
      },
      "transit_days": 0,
      "timing": {
-      "vehicle": "truck",
+      "speed": "truck",
       "allowances": [
        "driver_break"
       ]
@@ -2573,7 +2582,8 @@
      "to_place": {
       "name": "Lumeport airport, cargo terminal",
       "locode": "XBLMA"
-     }
+     },
+     "vehicle": "B-03"
     },
     {
      "mode": "road",
