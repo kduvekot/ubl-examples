@@ -579,7 +579,7 @@ example adds its coverage-register row in the same commit.
 - **Q9 (calendar): decided (owner, 2026-11-21): A, checked:** deliveries and receipts fall on a day the receiving party works, by its working week; carriers' movements in between are free. must deliveries and receipts also fall on the receiving party's working days?
 - **Q10 (O60): decided (owner, 2026-11-21): A, with B for the 3D map:** one table of real speeds and allowances per mode and vehicle type in the world data, read by the generators, one check over all flows (±15 % or 30 minutes, whichever is larger; the route texts too) and the 3D map; the seven per-flow asserts go. The 3D map keeps its compression as one visible rule, map speed = factor × √(real speed ÷ truck speed) (MO015), applied to the shared real speeds. Today the documents and the map disagree (truck 55/65, train 50/80, ship 25/30 km/h, aircraft block 390/750 cruise): one set of real speeds, chosen when the table is built. should speeds and allowances (border stop, shunt, night mooring) move into world data, and with
   what tolerance?
-- **Q11 (O250):**
+- **Q11 (O250): decided (owner, 2026-11-21):** (a) placeholders (`{fact:…}`) for the published world data and encyclopedia texts, assertions for the method note; (b) the internal story lines in the decisions file are not checked; (c) start with the read-throughs' facts (about 10–20 per flow) and grow the register whenever a text adds a number.
   - placeholders or assertions;
   - which texts are in scope (published world data, wiki, `03-world.md`, story lines);
   - who picks each flow's key facts.
