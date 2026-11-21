@@ -19,8 +19,26 @@ import place_list   # noqa: E402
 import world_data   # noqa: E402
 import world_model  # noqa: E402
 
-KNOTS = 13.5                     # the feeder ship's service speed (D19), knots
+_TABLE = json.load(open(os.path.join(world_data.ROOT, "world", "map.json"), encoding="utf-8"))
+SPEEDS, ALLOWANCES = _TABLE["speeds"], _TABLE["allowances"]      # the real speeds and allowances (O60, stage 7 Q10)
+del _TABLE
+
+
+def speed(mode, vehicle):
+    """A vehicle's real average speed in km/h (world/map.json speeds)."""
+    return SPEEDS[mode][vehicle]["kmh"]
+
+
+def allowance(name):
+    """An allowance in hours (world/map.json allowances); night_mooring gives its (sails, moors) times instead."""
+    a = ALLOWANCES[name]
+    return (a["sails"], a["moors"]) if "sails" in a else a["hours"]
+
+
+KNOTS = SPEEDS["sea"]["feeder"]["knots"]       # the feeder ship's service speed (D19), knots
 SHIP_KMH = 1.852 * KNOTS
+if abs(SHIP_KMH - SPEEDS["sea"]["feeder"]["kmh"]) > 0.05:
+    raise SystemExit("world/map.json speeds: the feeder's knots and km/h disagree")
 _CACHE = {}
 
 
@@ -106,7 +124,7 @@ def flight(world=None):
     world = world or world_data.load()
     f = next(x for x in world["routes"] if x["id"] == "air")["flight"]
     km = air_km(world)
-    still = (f["taxi_min"] + f["climb_descent_min"]) / 60 + max(0.0, km - f["climb_descent_km"]) / f["cruise_kmh"]
+    still = (f["taxi_min"] + f["climb_descent_min"]) / 60 + max(0.0, km - f["climb_descent_km"]) / speed("air", "freighter")
     for way, hours in f["block_hours"].items():
         if still > hours:
             raise SystemExit(f"air: the flight ({still:.2f} h in still air) no longer fits its {way}bound block time "

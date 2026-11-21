@@ -96,15 +96,15 @@ Inside `DespatchSupplierParty`:
   The minutes of the longitude.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `Party/Contact/Name` = **Dispatch office**  
-  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); as Kelpstone Gas gives it.
-- `Party/Contact/JobTitle` = **Dispatch coordinator**  
+- `Party/Contact/Name` = **Despatch office**  
+  The party's despatch office desk: the desk for its role in this document (it sends the goods off); as Kelpstone Gas gives it.
+- `Party/Contact/JobTitle` = **Despatch coordinator**  
   The job of the person who answers at the desk; as Kelpstone Gas gives it.
 - `Party/Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Kelpstone Gas gives it.
 - `Party/Contact/Telephone` = **+999 2 38522 68330**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Kelpstone Gas gives it.
-- `Party/Contact/ElectronicMail` = **dispatch@kelpstone.example**  
+- `Party/Contact/ElectronicMail` = **despatch@kelpstone.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Kelpstone Gas gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Kelpstone Gas gives it.
@@ -324,11 +324,11 @@ Inside `DespatchLine`:
         </cac:LocationCoordinate>
       </cac:PhysicalLocation>
       <cac:Contact>
-        <cbc:Name>Dispatch office</cbc:Name>
-        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Name>Despatch office</cbc:Name>
+        <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
-        <cbc:ElectronicMail>dispatch@kelpstone.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>despatch@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

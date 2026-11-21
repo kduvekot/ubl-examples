@@ -69,15 +69,15 @@ Inside `ConsignorParty`:
   Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Contact/Name` = **Dispatch office**  
-  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); as Harrowmead Fruit Growers gives it.
-- `Contact/JobTitle` = **Dispatch coordinator**  
+- `Contact/Name` = **Despatch office**  
+  The party's despatch office desk: the desk for its role in this document (it sends the goods off); as Harrowmead Fruit Growers gives it.
+- `Contact/JobTitle` = **Despatch coordinator**  
   The job of the person who answers at the desk; as Harrowmead Fruit Growers gives it.
 - `Contact/Department` = **Packhouse**  
   The department the desk belongs to; as Harrowmead Fruit Growers gives it.
 - `Contact/Telephone` = **+999 2 7164 281 590**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Harrowmead Fruit Growers gives it.
-- `Contact/ElectronicMail` = **dispatch@harrowmeadfruit.example**  
+- `Contact/ElectronicMail` = **despatch@harrowmeadfruit.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Harrowmead Fruit Growers gives it.
 - `Contact/Note` = **Weekdays 07:00–16:00**  
   When the desk can be reached; as Harrowmead Fruit Growers gives it.
@@ -769,11 +769,11 @@ Inside `Shipment`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Dispatch office</cbc:Name>
-      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+      <cbc:Name>Despatch office</cbc:Name>
+      <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
       <cbc:Department>Packhouse</cbc:Department>
       <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
-      <cbc:ElectronicMail>dispatch@harrowmeadfruit.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>despatch@harrowmeadfruit.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
     </cac:Contact>
   </cac:ConsignorParty>

@@ -449,6 +449,7 @@ def infobox(a):
         rows = [("Maker", f"[[{PARTY[d['seller']]['identity']['name']}]]"),
                 ("Dimensions", " × ".join(str(x) for x in d["dimensions_mm"]) + " mm" if d.get("dimensions_mm") else ""),
                 ("Weight", f"{d['net_kg']:g} kg" if d.get("net_kg") else "")]
+    rows += [(k, v) for k, v in (a["wiki"].get("facts") or {}).items()]
     cells = "".join((f"<tr><th>{k}</th><td>{v}</td></tr>" if k else f'<tr><td colspan="2" class="map">{v}</td></tr>')
                     for k, v in rows if v)
     return cells
@@ -467,10 +468,49 @@ def md_inline(text, where):
     return re.sub(r"\[\[([^\]]+)\]\]", one, text)
 
 
+CLIMATE = json.load(open(os.path.join(ROOT, "world", "climate.json"), encoding="utf-8")) \
+    if os.path.exists(os.path.join(ROOT, "world", "climate.json")) else {}
+LAPSE_C_PER_M = 0.0065
+
+
+def town_climate(t, point):
+    """A capital's climate table: the base values at sea level (world/climate.json), the temperature corrected for
+    the town's height (6.5 °C per 1,000 m), the rain scaled to the town's yearly rain in the terrain."""
+    import base64
+    import numpy as np
+    from PIL import Image
+    base = CLIMATE["points"][point]
+    cm = TERR["corners_m"]
+    z = np.frombuffer(base64.b64decode(cm["int16_le_base64"]), dtype="<i2").reshape(cm["rows"], cm["cols"])
+    x, y = t["c"]
+    height = float(z[y:y + 2, x:x + 2].mean())
+    land = "lisavu" if t["country"] == "XL" else "mainland"
+    ras = TERR["rasters"][land]
+    rain = np.array(Image.open(os.path.join(ROOT, ras["rain"]))).astype(float)
+    S = ras["cells_per_square"]
+    cy, cx = int((y + .5 - ras["y0"]) * S), int((x + .5 - ras["x0"]) * S)
+    year_rain = float(rain[max(cy - 2, 0):cy + 3, max(cx - 2, 0):cx + 3].mean())
+    k = year_rain / sum(base["rain_mm"])
+    dt = LAPSE_C_PER_M * max(height, 0)
+    r1 = lambda v: f"{v:.1f}"
+    rows = [("Mean daily high (°C)", [r1(v - dt) for v in base["high_c"]], r1(sum(base["high_c"]) / 12 - dt)),
+            ("Daily mean (°C)", [r1(v - dt) for v in base["mean_c"]], r1(sum(base["mean_c"]) / 12 - dt)),
+            ("Mean daily low (°C)", [r1(v - dt) for v in base["low_c"]], r1(sum(base["low_c"]) / 12 - dt)),
+            ("Rain (mm)", [f"{round(v * k)}" for v in base["rain_mm"]], f"{round(year_rain):,}"),
+            ("Sunshine (kWh/m² a day)", [r1(v) for v in base["sun_kwh_m2_day"]], r1(sum(base["sun_kwh_m2_day"]) / 12))]
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    out = ["## Climate", "", f"Climate data for {t['name']} (about {round(height, -1):.0f} m above the sea), "
+           f"averages of 2001 to 2025:", "", "| | " + " | ".join(months) + " | Year |", "|---|" + "---:|" * 13]
+    out += [f"| {name} | " + " | ".join(vals) + f" | {year} |" for name, vals, year in rows] + [""]
+    return out
+
+
 def generated_sections(a):
     d, out_ = a["data"], []
     has = lambda title: any(x["title"] == title for x in a["wiki"].get("sections", []))
     if a["kind"] == "town":
+        if a["wiki"].get("climate_from") and CLIMATE:
+            out_ += town_climate(d, a["wiki"]["climate_from"])
         if d.get("districts"):
             out_ += ["## Districts", "", "| District | Grew | Character |", "|---|---|---|"]
             out_ += [f"| {x['name']} | {x.get('years', '')} | {x.get('note', '')} |" for x in d["districts"]] + [""]
@@ -519,6 +559,35 @@ def generated_sections(a):
     return out_
 
 
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+          "November", "December"]
+
+
+def timeline(a, where):
+    """The article's dated key events (wiki "timeline": [date, text]) as a list; checks order, the founding year
+    and the calendar; a company's founding year must be among its dates (earlier rows tell its forerunners)."""
+    items = a["wiki"].get("timeline") or []
+    if not items:
+        return []
+    out, prev = [], ""
+    for date, text in items:
+        if not re.fullmatch(r"\d{4}(-\d{2}-\d{2})?", date):
+            problems.append(f"{where}: timeline date {date!r} is not a year or an ISO date")
+            continue
+        if date < prev:
+            problems.append(f"{where}: timeline not in order at {date}")
+        if date[:4] > "2026":
+            problems.append(f"{where}: timeline date {date} is after the world's calendar")
+        prev = date
+        shown = date if len(date) == 4 else f"{int(date[8:])} {MONTHS[int(date[5:7]) - 1]} {date[:4]}"
+        out.append(f"- **{shown}**: {text}")
+    if a["kind"] == "party":
+        founded = a["data"]["identity"].get("legal", {}).get("founded", "")[:4]
+        if founded and founded not in [d[:4] for d, _ in items]:
+            problems.append(f"{where}: the timeline has no entry for the founding year {founded}")
+    return out
+
+
 CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions",
             "village": "Villages", "locality": "Villages", "route": "Transport", "language": "Languages",
             "currency": "Currencies", "item": "Products", "river": "Rivers", "waters": "Rivers", "landmark": "Landmarks"}
@@ -558,8 +627,18 @@ for title, a in sorted(articles.items()):
     if a["kind"] == "waters":              # the map comes first, the table of rivers last
         k = gen.index("## The rivers")
         rest, gen = gen[:k], gen[k:]
-    for s in w.get("sections", []):
-        rest += [f"## {s['title']}", "", links(fill(s["text"], vals, where), where), ""]
+    secs = list(w.get("sections", []))
+    tl = timeline(a, where)
+    if tl and not any(x["title"] == "History" for x in secs):
+        secs.insert(0, {"title": "History", "text": ""})
+    for i, s in enumerate(secs):
+        rest += [("### " if s.get("sub") else "## ") + s["title"], ""]
+        if s["text"]:
+            rest += [links(fill(s["text"], vals, where), where), ""]
+        last_of_history = s["title"] == "History" or (s.get("sub") and any(x["title"] == "History" for x in secs[:i]))
+        if tl and last_of_history and not (i + 1 < len(secs) and secs[i + 1].get("sub")):
+            rest += ["### Timeline", ""] + [links(l, where) for l in tl] + [""]
+            tl = None
     rest += gen
     see = []
     if a["kind"] == "party":

@@ -468,6 +468,10 @@
      "name": "Limited company (private)",
      "abbreviation": "Ltd"
     },
+    "SOC": {
+     "name": "State-owned company limited by shares",
+     "abbreviation": "Ltd"
+    },
     "COOP": {
      "name": "Cooperative society",
      "abbreviation": "Co-op"
@@ -928,7 +932,7 @@
      },
      {
       "title": "History",
-      "text": "The Lisavans' tradition tells of ancestors who came over the sea by canoe, steering for the peak of [[Mount Tapetu]], turned east round Cape Sihato and landed in the most sheltered bay of the north coast, at Natahoma, where the oldest village sites on the island lie, about 2,000 years old. In the centuries after, villages spread along the sheltered lee coasts and onto the landslide flats under the west cliffs, living on their gardens and on fishing. By about the 14th century the island stood under one line of rulers, seated at the village on the east bay that gave [[Selanu]] its name. At the first new moon of spring the elders of every village gathered at the rulers' meeting ground there, the [[the Litakima|Litakima]], to open the planting and fishing season, and the young brought them the year's first gifts; the island keeps the custom as Elders' Day, a public holiday on 21 September since self-government in 1962. The first European ships, Portuguese and Dutch, called in the 1600s for water; from the 1790s whaling ships called regularly, and the rulers traded fresh food with them. In the 1860s, when cotton was scarce in the world, English settlers laid out cotton estates on the dry north-eastern plain, at Lintwell and Bollworth, on land leased from the Lisavan rulers, and built their town, Port Wrenfield, on the wharf beside the village. In 1878 the rulers, the estates and the merchants of Selanu founded the [[Bank of Selanu]] to finance the crop and the island's trade overseas.\n\nFrom 1884 the island was a protected state of Britain: Britain handled its foreign affairs, to secure the cotton trade and keep other powers away, while the Lisavan rulers kept governing at home. On 7 July 1962, the year Britain also left [[Urvania]], the island took back its foreign affairs and became fully self-governing; it keeps the day as Island Day. In 1974 it signed the Lumeport Agreement with [[Bayvarra]]: its cotton entered Bayvarra free of duty, a regular shipping service linked the two, and the coral was tied to the lume. In 1994 it joined the [[Lumeport Trade Accord]]."
+      "text": "The Lisavans' tradition tells of ancestors who came over the sea by canoe, steering for the peak of [[Mount Tapetu]], turned east round Cape Sihato and landed in the most sheltered bay of the north coast, at Natahoma, where the oldest village sites on the island lie, about 2,000 years old. In the centuries after, villages spread along the sheltered lee coasts and onto the landslide flats under the west cliffs, living on their gardens and on fishing. By about the 14th century the island stood under one line of rulers, seated at the village on the east bay that gave [[Selanu]] its name. Each spring the elders of every village met at the rulers' meeting ground there, the [[the Litakima|Litakima]], a custom the island keeps as Elders' Day. The first European ships, Portuguese and Dutch, called in the 1600s for water; from the 1790s whaling ships called regularly, and the rulers traded fresh food with them. In the 1860s, when cotton was scarce in the world, English settlers laid out cotton estates on the dry north-eastern plain, at Lintwell and Bollworth, on land leased from the Lisavan rulers, and built their town, Port Wrenfield, on the wharf beside the village. In 1878 the rulers, the estates and the merchants of Selanu founded the [[Bank of Selanu]] to finance the crop and the island's trade overseas.\n\nFrom 1884 the island was a protected state of Britain: Britain handled its foreign affairs, to secure the cotton trade and keep other powers away, while the Lisavan rulers kept governing at home. On 7 July 1962, the year Britain also left [[Urvania]], the island took back its foreign affairs and became fully self-governing; it keeps the day as Island Day. In 1974 it signed the Lumeport Agreement with [[Bayvarra]]: its cotton entered Bayvarra free of duty, a regular shipping service linked the two, and the coral was tied to the lume. In 1994 it joined the [[Lumeport Trade Accord]]."
      },
      {
       "title": "Economy",
@@ -988,7 +992,7 @@
  "languages": {
   "qau": {
    "name": "Urvanian",
-   "own_name": "urvanese",
+   "own_name": "binbir",
    "country": "XU",
    "note": "The language of Urvania's original population, invented for the world, with a consonant-rich sound of its own (endings in -ek, -an, -ir). Urvania was an Italian territory and then under British rule; the British kept the Italian place and street names, while the people kept their Urvanian names for the same places. Since independence Urvania is bilingual, Urvanian and English, and the inherited Italian names count as English: they are never tagged as Italian. Code from the range ISO 639 reserves for local use (qaa–qtz); texts from a fixed invented vocabulary, word by word; the English text beside it is the reference.",
    "place_names": {
@@ -2250,7 +2254,7 @@
   },
   "qal": {
    "name": "Lisavan",
-   "own_name": "Lisavuana",
+   "own_name": "kopele",
    "country": "XL",
    "note": "The island's language, invented for the world, with a Polynesian sound like the island's names: syllables of a consonant and a vowel, no clusters, words ending in a vowel. It is official beside English. Code from the ISO 639 local-use range; texts from a fixed invented vocabulary, word by word; the English text beside it is the reference. Its words are checked so that none is a common word of a real Polynesian language.",
    "english_place_names_note": "The island's towns are known by their Lisavan names, which stay the primary ones; each also has the English name its English-speaking settlers gave it, official beside it, as Urvania's towns have their Urvanian and their English (inherited Italian) names. An address gives both, Lisavan first. The English names were checked so that none is a well-known real place.",
@@ -3418,7 +3422,8 @@
     "sleeping": "valifo",
     "turning": "sihato",
     "wall": "kefehu",
-    "wide": "vulese"
+    "wide": "vulese",
+    "lisavan": "kopele"
    },
    "wiki": {
     "short": "Language of Lisavu",
@@ -3671,7 +3676,7 @@
     },
     {
      "title": "Protocols",
-     "text": "Later protocols extended the Accord. The procurement protocol of 1999 opened the members' public tenders to suppliers from the partners under common rules. The payment protocol of 2003 set up the payment link between the three banking systems and the card schemes used across the Accord. The energy protocol of 2007 opened the wholesale trade in gas and electricity between producers, networks and suppliers, and asks that a network be run with its own accounts and management and be open to others on equal terms. The protocol of 2014 on electronic business documents gave the members a common agreement for exchanging them and the code lists they share. Public services stay national under the Accord's chapter on public services."
+     "text": "Later protocols extended the Accord. The procurement protocol of 1999 opened the members' public tenders to suppliers from the partners under common rules. The payment protocol of 2003 set up the payment link between the three banking systems and the card schemes used across the Accord. The energy protocol of 2007 opened the wholesale trade in gas and electricity between producers, networks and suppliers, and asks that a network be run with its own accounts and management and be open to others on equal terms. The protocol of 2014 on electronic business documents gave the members a common agreement for exchanging them and the code lists they share."
     },
     {
      "title": "Public services",

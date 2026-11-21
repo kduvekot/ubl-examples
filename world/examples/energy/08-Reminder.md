@@ -100,7 +100,7 @@ Inside `AccountingSupplierParty`:
   The minutes of the longitude.
 - `Party/PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `Party/PartyTaxScheme/RegistrationName` = **Kelpstone Gas Ltd**  
+- `Party/PartyTaxScheme/RegistrationName` = **Kelpstone Gas Corp**  
   The name under which the party is registered for state sales tax; as Kelpstone Gas gives it.
 - `Party/PartyTaxScheme/CompanyID` = **NT-1238631** (schemeID `urn:ubl-examples:world:XB:tax`)  
   Tax number under Bayvarra's state sales tax (state code (UL Upland State, CO Coastal State, NT Northern Territory), hyphen, 7 digits (sales tax permit of the state or territory)); as Kelpstone Gas gives it. The schemeID names the scheme it is from: the sales tax permit of a Bayvarran state or territory (the state code (UL, CO, NT), a hyphen and 7 digits).
@@ -114,14 +114,14 @@ Inside `AccountingSupplierParty`:
   The state or territory whose sales tax the party is registered for.
 - `Party/PartyTaxScheme/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country whose tax this is. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `Party/PartyLegalEntity/RegistrationName` = **Kelpstone Gas Ltd**  
+- `Party/PartyLegalEntity/RegistrationName` = **Kelpstone Gas Corp**  
   The name under which the party is registered, with its legal form; as Kelpstone Gas gives it.
 - `Party/PartyLegalEntity/CompanyID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; as Kelpstone Gas gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)** (languageID `en-XB`)  
-  The name of code LTD in Bayvarra's national company legal form list.
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **CORP** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: CORP = Corporation (public).
+- `Party/PartyLegalEntity/CompanyLegalForm` = **Corporation (public)** (languageID `en-XB`)  
+  The name of code CORP in Bayvarra's national company legal form list.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Gullhaven**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -216,7 +216,7 @@ Inside `PaymentMeans`:
   Credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PayeeFinancialAccount/ID` = **XB45BLUM38522004817534** (schemeID `urn:ubl-examples:world:account`)  
   The gas producer's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `PayeeFinancialAccount/Name` = **Kelpstone Gas Ltd**  
+- `PayeeFinancialAccount/Name` = **Kelpstone Gas Corp**  
   The account holder, as the bank knows it.
 - `PayeeFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
   A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
@@ -397,7 +397,7 @@ Inside `ReminderLine`:
         </cac:LocationCoordinate>
       </cac:PhysicalLocation>
       <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+        <cbc:RegistrationName>Kelpstone Gas Corp</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">NT-1238631</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
@@ -412,10 +412,10 @@ Inside `ReminderLine`:
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+        <cbc:RegistrationName>Kelpstone Gas Corp</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:CompanyID>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="en-XB">Corporation (public)</cbc:CompanyLegalForm>
         <cac:RegistrationAddress>
           <cbc:CityName>Gullhaven</cbc:CityName>
           <cac:Country>
@@ -497,7 +497,7 @@ Inside `ReminderLine`:
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB45BLUM38522004817534</cbc:ID>
-      <cbc:Name>Kelpstone Gas Ltd</cbc:Name>
+      <cbc:Name>Kelpstone Gas Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>

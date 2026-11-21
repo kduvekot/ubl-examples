@@ -17,6 +17,9 @@ analysis/codelist-decisions.md): no internal references in what a reader sees. S
     "EU" and "European Union"; these may stand on the pages of the one party abroad in the EU (EU_PARTY) and of
     the documents it issues or receives, which follow or quote its own country's rules;
 
+  * "dispatch" where a UBL concept is meant (UBL's own spelling is "despatch"; owner, 2026-11-21): "dispatch
+    advice", "dispatch date", "dispatch note", "dispatched to", "date of dispatch" and the like;
+
 and warns on words that tell the project's history ("no longer", "was moved", "proposed addition").
 
 It also reads the names and descriptions of the world's own code lists (the Trade Accord's and the national lists in
@@ -48,6 +51,11 @@ EU_PARTY = "51-nl"                                   # Haarvliet Isotopes, in th
 EU_LAW = re.compile(r"\bEU\b|\bEuropean Union\b|\bDirective\b")
 OWN_LISTS = ("regional", "XU", "XB", "XL")          # the scopes of the world's own lists in world/codelists/lists.json
 WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b", re.I)
+# UBL's spelling for UBL concepts (owner, 2026-11-21, O277 (3)): "despatch" as in DespatchAdvice, ActualDespatchDate,
+# DespatchLine, DespatchContact, DespatchParty; the railway's "dispatches every train" is another word and stays
+SPELLING = re.compile(r"\bdispatch(?:ed|ing)?[ -](?:advice|advices|date|time|line|lines|note|notes|to|from|office|"
+                      r"coordinator|area|party|contact|address|location|quantity|period)\b|\bdispatch@"
+                      r"|\b(?:date|time|place|country|day|point) of dispatch\b", re.I)
 SKIP_DIRS = {"note", "codelists", "examples"}
 SKIP_PAGES = {"releases.html", "history.html"}      # the OASIS samples' history: about the project, not the world
 
@@ -99,7 +107,7 @@ def main(site):
             p.feed(open(os.path.join(dirpath, f), encoding="utf-8").read())
             text = " ".join(p.parts)
             exempt = f == f"world-{EU_PARTY}.html" or bool(eu_issues.match(" ".join(p.title.split())))
-            for m in list(FAIL.finditer(text)) + list(PROPER_NAMES.finditer(text)) + european(text, exempt):
+            for m in list(FAIL.finditer(text)) + list(PROPER_NAMES.finditer(text)) + european(text, exempt) + list(SPELLING.finditer(text)):
                 fails.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
             for m in WARN.finditer(text):
                 warns.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
@@ -112,7 +120,7 @@ def main(site):
         for code, v in (cl.get("codes") or {}).items():
             texts += [(f"code {code}", t) for t in (v if isinstance(v, list) else [v]) if isinstance(t, str)]
         for what, t in texts:
-            for rule in (FAIL, EU_LAW, EUROPEAN, EN_STANDARD, PROPER_NAMES):
+            for rule in (FAIL, EU_LAW, EUROPEAN, EN_STANDARD, PROPER_NAMES, SPELLING):
                 for m in rule.finditer(t):
                     if rule is EN_STANDARD and m.group(0) in EN_ALLOWED:
                         continue

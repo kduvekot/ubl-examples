@@ -9,7 +9,7 @@
   <cbc:IssueDate>2026-01-13</cbc:IssueDate>
   <cbc:IssueTime>08:10:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
-  <cbc:Note>Please check the blanks on arrival and keep them apart as our goods; report any damage to our dispatch office.</cbc:Note>
+  <cbc:Note>Please check the blanks on arrival and keep them apart as our goods; report any damage to our despatch office.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
     <cbc:ID>MDS-PO-26-0047</cbc:ID>
@@ -44,11 +44,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Dispatch office</cbc:Name>
-        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Name>Despatch office</cbc:Name>
+        <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
-        <cbc:ElectronicMail>dispatch@marrowdalesawmill.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>despatch@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
