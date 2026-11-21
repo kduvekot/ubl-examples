@@ -34,6 +34,8 @@ thorough review"). When a run is finished, its decision tables are appended to t
 | sea | 29 | `20261113T0552Z-thorough` | 29 |
 | tender | 36 | `20261114T1433Z-thorough` | 36 |
 
+**Quick run `20261121T1048Z-quick` (2026-11-21):** the 56 examples added after the thorough runs, reviewed with the broad pass only (one file per example, part `single`, no merge): lpg 4, medicines 14, modification 9, reefer 12, and air/11, contest/17–18, energy/10, furniture/18–19, plastics/12, rail/12–15, retail/23, tender/37–40, waste/04. Findings: 5 High, 6 Medium, 72 Low; 12 need a decision. The High ones: medicines/08 (the generator's activity on the Netherlands flight copied from the later flight), air/11 (transit exemption against sea/22's export exemption for the same order), plastics/12 (the certifier's register ID is Tostara's), tender/38 (DespatchSupplierParty Valdara where tender/29 names Castrano), tender/39 (withholding tax scheme STT against OTH). Recurring: contacts copied from master data for every role (Marrowdale's sales office as buyer and payer, Quillmoor's one number for all contacts); goods-item numbering across the reefer documents; payment terms copied onto follow-up charges; Gullhaven's telephone prefix 38522 overlapping Lumeport's 38 (decision). A flow with many findings may get a thorough run later.
+
 Five manual reviews (run `20261112T0851Z-manual`) also exist; they predate the skill.
 
 The separate **consistency review** across documents and flows is done: run
