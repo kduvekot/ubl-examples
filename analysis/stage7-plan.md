@@ -570,7 +570,7 @@ example adds its coverage-register row in the same commit.
   - Would its name be allowed in world text under O265, or only its codes?
 - **Q5 (O262): decided (owner, 2026-11-21): A,** zero tax is not "charged": tender/32, 33, 39 drop the tax currency and rate; the check allows them only where a tax amount is above 0; CreditNote/TaxCurrencyCode and CreditNote/TaxExchangeRate get register rows. does "VAT actually charged" exclude invoices at 0 % or outside the scope (tender/32, 33, 39 carry
   XUF and a TaxTotal of 0)?
-- **Q6 (tax treatment):** is an export proved by a leg of the flow only, or also by delivery terms with a place
+- **Q6 (tax treatment): decided (owner, 2026-11-21): A, plus the link:** every leg in `documents.json` names the documents whose goods it carries (the order or the invoice), so the check follows each sale's own leg; delivery terms with a place abroad or a cited export declaration remain accepted evidence. (The flows packaging, mast and medicines do have their border legs; the probe's problem was the missing link between leg and sale.) is an export proved by a leg of the flow only, or also by delivery terms with a place
   abroad, where the flow has no leg?
 - **Q7 (origin statement):** may a reseller make the statement (sea/22, air/11)? Is it right on air/11 at all,
   where the goods move under Valdara's transit declaration?
