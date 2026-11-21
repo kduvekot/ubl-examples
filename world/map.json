@@ -16184,6 +16184,10 @@
     "lead": "**Marrowdale** is an inland town in Upland State, [[Bayvarra]], with about {population} people, near the border with [[Urvania]]. It grew from a drovers' market and is now a town of the railway and the timber trade.",
     "sections": [
      {
+      "title": "Geography",
+      "text": "The town lies on the Upland near the border with [[Urvania]], in the dale of the [[River Marrow|Marrow]], at the stream crossing of the road down from the plateau; the Upland State Forest covers the slope north of it."
+     },
+     {
       "title": "History",
       "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it has been Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the timber yards. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
      },
@@ -16272,6 +16276,10 @@
     "short": "Capital and only town of Lisavu",
     "lead": "**Selanu** (English *Port Wrenfield*) is the capital and only town of [[Lisavu]], with about {population} people, on a sheltered bay of the island's east coast. It holds the island's port, and its airport lies on the plain to the north.",
     "sections": [
+     {
+      "title": "Geography",
+      "text": "The town stands on a sheltered bay of the east coast, out of the westerly swell, below [[Signal Hill]]. The airport lies on the Cotton Plain about 10 km to the north."
+     },
      {
       "title": "History",
       "text": ""
@@ -16382,6 +16390,10 @@
     "short": "Port town on the east coast of Bayvarra, its first capital",
     "lead": "**Larkmouth** is a port town in Coastal State, [[Bayvarra]], with about {population} people, at the mouth of the [[River Lark|Lark]], the largest river of the east coast. It was the British settlers' first town and the colony's first capital.",
     "sections": [
+     {
+      "title": "Geography",
+      "text": "The town lies at the mouth of the [[River Lark|Lark]], behind Lark Head, which shelters its harbour from the open sea."
+     },
      {
       "title": "History",
       "text": ""
