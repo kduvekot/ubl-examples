@@ -453,16 +453,19 @@ The name under which the party is registered, with its legal form.</li>
 Number in the Federal business register of Bayvarra. The schemeID names
 the scheme it is from: the Federal business register of Bayvarra (8
 digits).</li>
-<li><code>Party/Contact/Name</code> = <strong>Sales
-office</strong><br />
-The party's main desk, which handles this document.</li>
-<li><code>Party/Contact/JobTitle</code> = <strong>Sales
-coordinator</strong><br />
+<li><code>Party/Contact/Name</code> = <strong>Accounts
+payable</strong><br />
+The party's accounts payable desk: the desk for its role in this
+document (it pays).</li>
+<li><code>Party/Contact/JobTitle</code> = <strong>Accounts payable
+clerk</strong><br />
 The job of the person who answers at the desk.</li>
-<li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
+<li><code>Party/Contact/Department</code> =
+<strong>Finance</strong><br />
 The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 338
 173</strong><br />
+The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
@@ -472,7 +475,7 @@ Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
-**<code>sales@marrowdalesawmill.example**</code><br />
+**<code>payables@marrowdalesawmill.example**</code><br />
 The contact's e-mail address.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
@@ -1089,11 +1092,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20412329&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sales office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Sales coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Accounts payable&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Accounts payable clerk&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Finance&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 338 173&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`sales@marrowdalesawmill.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`payables@marrowdalesawmill.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -1277,6 +1280,6 @@ href="example-modification-09-RemittanceAdvice.html">Remittance Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3e2c9ba9d53d04017cb7736a711c68b5c85e38af"><code>3e2c9ba</code></a> of 2026-11-21 13:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
 </body>
 </html>

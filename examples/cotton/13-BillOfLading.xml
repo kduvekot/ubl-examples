@@ -228,6 +228,18 @@
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
+        <cac:LoadingTransportEvent>
+          <cbc:OccurrenceDate>2026-05-07</cbc:OccurrenceDate>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:LoadingTransportEvent>
         <cac:FreightChargeLocation>
           <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
           <cbc:Name>Port of Lumeport</cbc:Name>
@@ -238,6 +250,15 @@
           </cac:Address>
         </cac:FreightChargeLocation>
       </cac:MainCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+          <cbc:GrossWeightMeasure unitCode="KGM">9940.29</cbc:GrossWeightMeasure>
+          <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

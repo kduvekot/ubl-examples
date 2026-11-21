@@ -190,16 +190,17 @@ Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Party/Contact/Name</code> = <strong>Sales
-office</strong><br />
-The party's main desk, which handles this document.</li>
-<li><code>Party/Contact/JobTitle</code> = <strong>Sales
-coordinator</strong><br />
+<li><code>Party/Contact/Name</code> = <strong>Purchasing</strong><br />
+The party's purchasing desk: the desk for its role in this document (it
+buys).</li>
+<li><code>Party/Contact/JobTitle</code> = <strong>Buyer</strong><br />
 The job of the person who answers at the desk.</li>
-<li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
+<li><code>Party/Contact/Department</code> =
+<strong>Purchasing</strong><br />
 The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 338
 173</strong><br />
+The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
@@ -209,7 +210,7 @@ Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
-**<code>sales@marrowdalesawmill.example**</code><br />
+**<code>purchasing@marrowdalesawmill.example**</code><br />
 The contact's e-mail address.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
@@ -426,7 +427,7 @@ What the sawmill expects to pay for the processing.</li>
 <li><code>LineItem/ID</code> = <strong>1</strong><br />
 The line number.</li>
 <li><code>LineItem/Note</code> = <strong>96 bundles of 50 slats, our
-park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.</strong><br />
+park-bench slat MDS-SL-1800, 1,800 × 95 × 45 mm.</strong><br />
 The output the job is to give: the sawmill's own slat, by its
 number.</li>
 <li><code>LineItem/Quantity</code> = <strong>96</strong> (unitCode
@@ -541,11 +542,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sales office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Sales coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Purchasing&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Buyer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Purchasing&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 338 173&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`sales@marrowdalesawmill.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`purchasing@marrowdalesawmill.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -624,7 +625,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderLine</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:LineItem</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1,800 × 95 × 45 mm.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineExtensionAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XUF&quot;</span>&gt;1272000&lt;/<span class="kw">cbc:LineExtensionAmount</span>&gt;</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Price</span>&gt;</span>
@@ -661,6 +662,6 @@ flow</a> · <a href="example-modification-02-OrderResponse.html">Order
 Response →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3e2c9ba9d53d04017cb7736a711c68b5c85e38af"><code>3e2c9ba</code></a> of 2026-11-21 13:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
 </body>
 </html>

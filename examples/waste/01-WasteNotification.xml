@@ -53,16 +53,12 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Order desk</cbc:Name>
-      <cbc:JobTitle>Order administrator</cbc:JobTitle>
-      <cbc:Department>Sales</cbc:Department>
+      <cbc:Name>Despatch office</cbc:Name>
+      <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
+      <cbc:Department>Warehouse</cbc:Department>
       <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
-      <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>despatch@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-      <cac:OtherCommunication>
-        <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
-        <cbc:Value>+999 1 351 400 5258</cbc:Value>
-      </cac:OtherCommunication>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

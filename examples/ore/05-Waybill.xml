@@ -169,6 +169,36 @@
           <cbc:Name>Valdara Industries</cbc:Name>
         </cac:PartyName>
       </cac:ConsigneeParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+        <cac:ActualDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-03-10</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:05:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+            <cbc:Name>Fucinalta mine siding</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:ActualDepartureTransportEvent>
+        <cac:ActualArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-03-10</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>14:18:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:ActualArrivalTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

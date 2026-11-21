@@ -115,6 +115,15 @@
       <cbc:ID>2</cbc:ID>
       <cbc:CrewQuantity unitCode="IE">14</cbc:CrewQuantity>
       <cbc:PassengerQuantity unitCode="IE">1</cbc:PassengerQuantity>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
       <cac:TerminalOperatorParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
@@ -146,6 +155,19 @@
           <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
       </cac:TerminalOperatorParty>
+      <cac:ActualDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>18:10:00-01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualDepartureTransportEvent>
       <cac:PassengerPerson>
         <cbc:FirstName>Ines</cbc:FirstName>
         <cbc:FamilyName>Tavari</cbc:FamilyName>

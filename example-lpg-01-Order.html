@@ -170,17 +170,17 @@ Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Party/Contact/Name</code> = <strong>Customer
-service</strong><br />
-The party's main desk, which handles this document.</li>
-<li><code>Party/Contact/JobTitle</code> = <strong>Customer service
-officer</strong><br />
+<li><code>Party/Contact/Name</code> = <strong>Purchasing</strong><br />
+The party's purchasing desk: the desk for its role in this document (it
+buys).</li>
+<li><code>Party/Contact/JobTitle</code> = <strong>Buyer</strong><br />
 The job of the person who answers at the desk.</li>
-<li><code>Party/Contact/Department</code> = <strong>Customer
-service</strong><br />
+<li><code>Party/Contact/Department</code> =
+<strong>Purchasing</strong><br />
 The department the desk belongs to.</li>
 <li><code>Party/Contact/Telephone</code> = <strong>+999 2 38 9310
 7518</strong><br />
+The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
@@ -190,7 +190,7 @@ Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
-**<code>customer@coastalwater.example**</code><br />
+**<code>purchasing@coastalwater.example**</code><br />
 The contact's e-mail address.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
@@ -525,11 +525,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Customer service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customer service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Customer service&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Purchasing&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Buyer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Purchasing&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 9310 7518&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`customer@coastalwater.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`purchasing@coastalwater.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -649,6 +649,6 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 href="example-lpg-03-Waybill.html">Waybill →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3e2c9ba9d53d04017cb7736a711c68b5c85e38af"><code>3e2c9ba</code></a> of 2026-11-21 13:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
 </body>
 </html>

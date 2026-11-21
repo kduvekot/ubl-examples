@@ -47,11 +47,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Sales office</cbc:Name>
-        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
-        <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>purchasing@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -130,7 +130,7 @@
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.</cbc:Note>
+      <cbc:Note>96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1,800 × 95 × 45 mm.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">1272000</cbc:LineExtensionAmount>
       <cac:Price>

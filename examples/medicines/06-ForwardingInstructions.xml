@@ -100,6 +100,13 @@
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cac:RequestedPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>04:15:00-01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:Name>Quillmoor Pharma Distribution, Airport Road warehouse</cbc:Name>
+        </cac:Location>
+      </cac:RequestedPickupTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
@@ -139,6 +146,64 @@
           <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        <cac:TransportMeans>
+          <cbc:JourneyID>KXL207</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="IATA SSIM Aircraft Types">ATF</cbc:TransportMeansTypeCode>
+          <cac:AirTransport>
+            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KXA</cbc:AircraftID>
+          </cac:AirTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+          <cbc:Name>Lumeport airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+          <cbc:Name>Selanu airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:PlannedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>07:00:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+            <cbc:Name>Lumeport airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:PlannedDepartureTransportEvent>
+        <cac:PlannedArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:45:00+00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+            <cbc:Name>Selanu airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:PlannedArrivalTransportEvent>
+      </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cbc:ID>QLM-TC-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:TransportHandlingUnitTypeCode>

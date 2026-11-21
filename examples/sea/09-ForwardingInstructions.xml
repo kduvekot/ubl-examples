@@ -107,6 +107,13 @@
       <cbc:ForwarderServiceInstructions>Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.</cbc:ForwarderServiceInstructions>
       <cbc:SpecialInstructions>Load the castings last, behind the doors.</cbc:SpecialInstructions>
       <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
+      <cac:RequestedPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+        <cac:Location>
+          <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+          <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
+        </cac:Location>
+      </cac:RequestedPickupTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -169,6 +176,41 @@
         <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
         <cbc:Name>Truck from Marrowdale to the port of Lumeport</cbc:Name>
       </cac:OriginalDespatchTransportationService>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:RequestedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:RequestedDepartureTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -194,6 +236,12 @@
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+        <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
       <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>

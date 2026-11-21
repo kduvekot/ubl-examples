@@ -55,7 +55,7 @@ missing elements</h1>
 <h2 id="missing-elements-per-placement">Missing elements per
 placement</h2>
 <h3 id="extend">Extend</h3>
-<p>500 elements.</p>
+<p>499 elements.</p>
 <details><summary><b>rail-12-DebitNote.xml</b> — 56 elements</summary>
 
 <table>
@@ -1902,6 +1902,82 @@ currency.</td>
 </table>
 </details>
 
+<details><summary><b>sea-16-CommonTransportationReport.xml</b> — 9 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BallastWaterSummary</td>
+<td>NoControlActionsReason</td>
+<td>0..n</td>
+<td>A textual description of the reason if no control actions are being
+taken.</td>
+</tr>
+<tr>
+<td>CommonTransportationReport</td>
+<td>DocumentStatusCode</td>
+<td>0..1</td>
+<td>A code signifying the status of this Common Transportation Report
+with respect to its original state.</td>
+</tr>
+<tr>
+<td>ISPSRequirements</td>
+<td>ISSCAbsenceReason</td>
+<td>0..n</td>
+<td>A text describing the reason if not having a International Ship
+Security Certificate (ISSC).</td>
+</tr>
+<tr>
+<td>MaritimeHealthDeclaration</td>
+<td>WHOAffectedAreaVisit</td>
+<td>0..n</td>
+<td>A WHO Affected Area visit related to this maritime health
+declaration.</td>
+</tr>
+<tr>
+<td>MaritimeTransport</td>
+<td>INFShipClassCode</td>
+<td>0..1</td>
+<td>A code specifying the irradiated nuclear fuel (INF) ship class.</td>
+</tr>
+<tr>
+<td>ShipmentStage</td>
+<td>ActualWaypointTransportEvent</td>
+<td>0..1</td>
+<td>The location of an actual waypoint during a transportation
+service.</td>
+</tr>
+<tr>
+<td>ShipmentStage</td>
+<td>DetentionTransportEvent</td>
+<td>0..n</td>
+<td>The detention of a transport means during loading and unloading
+operations.</td>
+</tr>
+<tr>
+<td>ShipmentStage</td>
+<td>FreightAllowanceCharge</td>
+<td>0..n</td>
+<td>A freight allowance charge for this shipment stage.</td>
+</tr>
+<tr>
+<td>ShipmentStage</td>
+<td>TransshipPortLocation</td>
+<td>0..1</td>
+<td>The location of transshipment relating to a shipment stage.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
 <details><summary><b>sea-22-Invoice.xml</b> — 9 elements</summary>
 
 <table>
@@ -2048,78 +2124,6 @@ criterion response.</td>
 <td>FulfilmentIndicator</td>
 <td>0..1</td>
 <td>An indication that this group of criteria have been fulfilled.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>sea-14-BillOfLading.xml</b> — 8 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BillOfLading</td>
-<td>AdValoremIndicator</td>
-<td>0..1</td>
-<td>A term used in commerce in reference to certain duties, called ad
-valorem duties, which are levied on commodities at certain rates per
-centum on their value.</td>
-</tr>
-<tr>
-<td>BillOfLading</td>
-<td>DeclaredCarriageValueAmount</td>
-<td>0..1</td>
-<td>Value declared by the shipper or his agent solely for the purpose of
-varying the carrier's level of liability from that provided in the
-contract of carriage in case of loss or damage to goods or delayed
-delivery.</td>
-</tr>
-<tr>
-<td>BillOfLading</td>
-<td>ExchangeRate</td>
-<td>0..n</td>
-<td>Information that directly relates to the rate of exchange
-(conversion) between two currencies.</td>
-</tr>
-<tr>
-<td>InsurancePolicy</td>
-<td>ExcessAmount</td>
-<td>0..1</td>
-<td>The excess amount specified in the policy of this Insurance.</td>
-</tr>
-<tr>
-<td>ShipmentStage</td>
-<td>ActualWaypointTransportEvent</td>
-<td>0..1</td>
-<td>The location of an actual waypoint during a transportation
-service.</td>
-</tr>
-<tr>
-<td>ShipmentStage</td>
-<td>DetentionTransportEvent</td>
-<td>0..n</td>
-<td>The detention of a transport means during loading and unloading
-operations.</td>
-</tr>
-<tr>
-<td>ShipmentStage</td>
-<td>FreightAllowanceCharge</td>
-<td>0..n</td>
-<td>A freight allowance charge for this shipment stage.</td>
-</tr>
-<tr>
-<td>ShipmentStage</td>
-<td>TransshipPortLocation</td>
-<td>0..1</td>
-<td>The location of transshipment relating to a shipment stage.</td>
 </tr>
 </tbody>
 </table>
@@ -2939,56 +2943,6 @@ currencies.</td>
 </table>
 </details>
 
-<details><summary><b>sea-16-CommonTransportationReport.xml</b> — 5 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BallastWaterSummary</td>
-<td>NoControlActionsReason</td>
-<td>0..n</td>
-<td>A textual description of the reason if no control actions are being
-taken.</td>
-</tr>
-<tr>
-<td>CommonTransportationReport</td>
-<td>DocumentStatusCode</td>
-<td>0..1</td>
-<td>A code signifying the status of this Common Transportation Report
-with respect to its original state.</td>
-</tr>
-<tr>
-<td>ISPSRequirements</td>
-<td>ISSCAbsenceReason</td>
-<td>0..n</td>
-<td>A text describing the reason if not having a International Ship
-Security Certificate (ISSC).</td>
-</tr>
-<tr>
-<td>MaritimeHealthDeclaration</td>
-<td>WHOAffectedAreaVisit</td>
-<td>0..n</td>
-<td>A WHO Affected Area visit related to this maritime health
-declaration.</td>
-</tr>
-<tr>
-<td>MaritimeTransport</td>
-<td>INFShipClassCode</td>
-<td>0..1</td>
-<td>A code specifying the irradiated nuclear fuel (INF) ship class.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
 <details><summary><b>sea-27-RemittanceAdvice.xml</b> — 5 elements</summary>
 
 <table>
@@ -3291,6 +3245,52 @@ the unit base.</td>
 <td>0..1</td>
 <td>In the case of a target currency with denominations of small value,
 the unit base.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<details><summary><b>sea-14-BillOfLading.xml</b> — 4 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BillOfLading</td>
+<td>AdValoremIndicator</td>
+<td>0..1</td>
+<td>A term used in commerce in reference to certain duties, called ad
+valorem duties, which are levied on commodities at certain rates per
+centum on their value.</td>
+</tr>
+<tr>
+<td>BillOfLading</td>
+<td>DeclaredCarriageValueAmount</td>
+<td>0..1</td>
+<td>Value declared by the shipper or his agent solely for the purpose of
+varying the carrier's level of liability from that provided in the
+contract of carriage in case of loss or damage to goods or delayed
+delivery.</td>
+</tr>
+<tr>
+<td>BillOfLading</td>
+<td>ExchangeRate</td>
+<td>0..n</td>
+<td>Information that directly relates to the rate of exchange
+(conversion) between two currencies.</td>
+</tr>
+<tr>
+<td>InsurancePolicy</td>
+<td>ExcessAmount</td>
+<td>0..1</td>
+<td>The excess amount specified in the policy of this Insurance.</td>
 </tr>
 </tbody>
 </table>
@@ -4720,28 +4720,6 @@ referenced by the parent DocumentReference, expressed as an XPath</td>
 </table>
 </details>
 
-<details><summary><b>sea-08-TransportServiceDescription.xml</b> — 1 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TransportationService</td>
-<td>CommodityClassification</td>
-<td>0..n</td>
-<td>A classification of this transportation service.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
 <details><summary><b>sea-19-ImportCustomsDeclaration.xml</b> — 1 elements</summary>
 
 <table>
@@ -5372,6 +5350,6 @@ to provide the same content in multiple natural languages).</td>
 </details>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/3e2c9ba9d53d04017cb7736a711c68b5c85e38af"><code>3e2c9ba</code></a> of 2026-11-21 13:02 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
 </body>
 </html>
