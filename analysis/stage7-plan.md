@@ -543,7 +543,7 @@ example adds its coverage-register row in the same commit.
 
 - **Q1 (fixers): decided (owner, 2026-11-21): A, turn them into checks that stop the build; fix the generators at the source.** should the build functions that silently repair content (`tax_arithmetic`, `currency_cleanup`,
   `shipment_weights`, `national_tariffs`) stop the build instead, so that the generator is fixed at the source?
-- **Q2 (desk hours, O269):**
+- **Q2 (desk hours, O269): decided (owner, 2026-11-21): A,** the stated hours bind every document; a party may give a desk its own hours (dispatch, goods-in, emergency); messages a system sends on its own (despatch advice on departure, status messages) are exempt and marked so; the check reads each document's contact and that desk's hours; the 14 hits fixed at the source.
   - Do the stated hours bind every document, or only those a person issues? A despatch advice sent by the system
     when the truck leaves at 20:05 is one case.
   - May desks have hours of their own?
