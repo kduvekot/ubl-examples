@@ -99,11 +99,11 @@
      },
      {
       "title": "Operations",
-      "text": "The mine is entered by an adit in the hillside at about 720 m, 29 km from the mining village of Serravona. A small crushing and screening plant and a spoil heap stand beside it; the hillside around it stays green. The ore line is laid up to the portal, where the wagons are loaded and weighed at the mine's own siding, and runs down to the works of [[Valdara Industries]] in [[Ferrano]]: a train runs about 166 km from the mine siding to the works siding. Its reserves last about 40 years at the present rate of one train a month."
+      "text": "The mine is entered by an adit in the hillside at about 720 m, 29 km from the mining village of Serravona. A small crushing and screening plant and a spoil heap stand beside it; the hillside around it stays green. The ore line is laid up to the portal, where the wagons are loaded and weighed at the mine's own siding, and runs down to the works of [[Valdara Industries]] in [[Ferrano]]: a train runs about {fact:ore.run_km} from the mine siding to the works siding. Its reserves last about 40 years at the present rate of one train a month."
      },
      {
       "title": "Trade",
-      "text": "The mine sells lump ore with about 62 % iron to Valdara under a yearly supply agreement: one train a month, free carrier at the mine siding, with a deduction for moisture. A train of 30 wagons carries about 1,790 t, hauled by [[Ferrano Rail Cargo]]."
+      "text": "The mine sells lump ore with about 62 % iron to Valdara under a yearly supply agreement: one train a month, free carrier at the mine siding, with a deduction for moisture. A train of {fact:ore.wagons} carries about 1,790 t, hauled by [[Ferrano Rail Cargo]]."
      }
     ],
     "timeline": [
@@ -789,7 +789,7 @@
      },
      {
       "title": "Operations",
-      "text": "Its ore trains carry the ore of [[Serravona Mining]] about 166 km down the ore line from the mine siding to the works of [[Valdara Industries]] in [[Ferrano]], priced per tonne. Its container trains run from the [[Ferrano Intermodal Hub]] across the border to the rail siding of [[Lumeway Distribution]] in [[Marrowdale]], under the Accord's uniform rules for international carriage by rail. For these it sells container slots under a framework contract with Valdara, payable 30 days net, and its own tractor brings the packed containers from the warehouse to the hub. A container gets five free days at the consignee's siding; after that the company charges demurrage per container day. Its customers are Valdara and [[Serravona Mining]]; the spare container slots on the Marrowdale train it sells to other makers of Ferrano."
+      "text": "Its ore trains carry the ore of [[Serravona Mining]] about {fact:ore.run_km} down the ore line from the mine siding to the works of [[Valdara Industries]] in [[Ferrano]], priced per tonne. Its container trains run from the [[Ferrano Intermodal Hub]] across the border to the rail siding of [[Lumeway Distribution]] in [[Marrowdale]], under the Accord's uniform rules for international carriage by rail. For these it sells container slots under a framework contract with Valdara, payable 30 days net, and its own tractor brings the packed containers from the warehouse to the hub. A container gets five free days at the consignee's siding; after that the company charges demurrage per container day. Its customers are Valdara and [[Serravona Mining]]; the spare container slots on the Marrowdale train it sells to other makers of Ferrano."
      },
      {
       "title": "Fleet",
@@ -3241,7 +3241,7 @@
      },
      {
       "title": "Operations",
-      "text": "The line sails weekly from Lumeport, out through the estuary and round Cape Lavase, the island's southern cape, about 1,200 km to Selanu in about 48 hours. Its ships carry the island's imports, among them benches for [[Velumi Trading]] and chilled fruit in reefers, and bring back the island's export, the cotton bales of [[Selanu Cotton Ginnery]] for [[Lumeport Textile Mill]]. Its booking office in Lumeport's Dockside works every day from 06:00 to 22:00. The line sails this one route only."
+      "text": "The line sails weekly from Lumeport, out through the estuary and round Cape Lavase, the island's southern cape, about {fact:sea.km} to Selanu in about {fact:sea.hours}. Its ships carry the island's imports, among them benches for [[Velumi Trading]] and chilled fruit in reefers, and bring back the island's export, the cotton bales of [[Selanu Cotton Ginnery]] for [[Lumeport Textile Mill]]. Its booking office in Lumeport's Dockside works every day from 06:00 to 22:00. The line sails this one route only."
      },
      {
       "title": "Fleet",
@@ -3360,7 +3360,7 @@
      },
      {
       "title": "Operations",
-      "text": "The terminal works around the clock. It accepts cargo from forwarders such as [[Bayforth Forwarding]] and loads it onto the freighter of [[Kelaro Air Cargo]], which flies about 1,080 km to Selanu airport, where [[Selanu Airport Cargo]] receives it. Cargo that reaches the terminal after a flight's cut-off waits for the next flight. It handles dangerous goods, such as batteries for the island's telecom mast that may fly only on cargo aircraft, and the cold chain and radioactive packages that [[Quillmoor Pharma Distribution]] sends to [[Selanu General Hospital]]. The terminal has a shed of about 5,000 m², with a cold room at 2 to 8 °C, a room at 15 to 25 °C, a freezer, a cage for dangerous goods and a store for radioactive packages, and handles about 12,000 t a year, about a third of it on Kelaro's flights. Lumeport is the mainland's main airport, used by Urvanians as well: Bayvarra's national airline flies from it to a few destinations abroad, foreign airlines fly in from their hubs, and Kelaro is the only airline to Selanu, a route the national airline gave up in 1987."
+      "text": "The terminal works around the clock. It accepts cargo from forwarders such as [[Bayforth Forwarding]] and loads it onto the freighter of [[Kelaro Air Cargo]], which flies about {fact:air.km} to Selanu airport, where [[Selanu Airport Cargo]] receives it. Cargo that reaches the terminal after a flight's cut-off waits for the next flight. It handles dangerous goods, such as batteries for the island's telecom mast that may fly only on cargo aircraft, and the cold chain and radioactive packages that [[Quillmoor Pharma Distribution]] sends to [[Selanu General Hospital]]. The terminal has a shed of about 5,000 m², with a cold room at 2 to 8 °C, a room at 15 to 25 °C, a freezer, a cage for dangerous goods and a store for radioactive packages, and handles about 12,000 t a year, about a third of it on Kelaro's flights. Lumeport is the mainland's main airport, used by Urvanians as well: Bayvarra's national airline flies from it to a few destinations abroad, foreign airlines fly in from their hubs, and Kelaro is the only airline to Selanu, a route the national airline gave up in 1987."
      }
     ],
     "facts": {
@@ -3466,7 +3466,7 @@
      },
      {
       "title": "Operations",
-      "text": "Selanu is the island's only port, on a sheltered bay of the east coast, out of the westerly swell. Ships from [[Lumeport]], among them the weekly service of [[Tidewell Ocean Lines]], sail about 1,200 km to reach it in about 48 hours. The port has two deep-water berths, 10 m deep, enough for the feeders of 1,000 containers, and a container yard for about 800 of them. Its own pilots bring ships in by daylight only, so a ship that arrives in the dark waits under way and berths at first light. The container yard has a reefer rack where refrigerated containers wait on the port's power until they are collected, at a daily charge. The port reports discharged containers to the shippers' forwarders, among them [[Bayforth Forwarding]]."
+      "text": "Selanu is the island's only port, on a sheltered bay of the east coast, out of the westerly swell. Ships from [[Lumeport]], among them the weekly service of [[Tidewell Ocean Lines]], sail about {fact:sea.km} to reach it in about {fact:sea.hours}. The port has two deep-water berths, 10 m deep, enough for the feeders of 1,000 containers, and a container yard for about 800 of them. Its own pilots bring ships in by daylight only, so a ship that arrives in the dark waits under way and berths at first light. The container yard has a reefer rack where refrigerated containers wait on the port's power until they are collected, at a daily charge. The port reports discharged containers to the shippers' forwarders, among them [[Bayforth Forwarding]]."
      },
      {
       "title": "Harbour parks and branch",
@@ -5800,7 +5800,7 @@
      },
      {
       "title": "Operations",
-      "text": "A subsea line brings the gas ashore from the production platform to the plant, which treats it to pipeline quality. The pipeline runs about 207 km across the border to [[Montebrio Power]], with a branch of about 97 km to the city gate of [[Ferrano Grid]] for the customers of [[Ferrano Energy]]; the gas is measured at a metering station on Bayvarra's side of the border. The plant also separates propane from the field's gas and sells it by the tonne, weighed on its weighbridge; [[Gullhaven Tank Haulage]] carries it by road tanker, among others to the [[Coastal State Water Company]], which burns it in winter in the peak boilers of Lumeport's district heating. The production platform of the Kelpstone field is Kelpstone A. The field yields about 0.6 billion m³ of gas a year, about 6 TWh, and the plant about 50,000 t of propane; about 15 billion m³ remain, enough for about 25 years. The field was developed for more than Urvania's needs, and the company looks for further buyers of its gas."
+      "text": "A subsea line brings the gas ashore from the production platform to the plant, which treats it to pipeline quality. The pipeline runs about {fact:gas.pipeline_km} across the border to [[Montebrio Power]], with a branch of about {fact:gas.grid_km} to the city gate of [[Ferrano Grid]] for the customers of [[Ferrano Energy]]; the gas is measured at a metering station on Bayvarra's side of the border. The plant also separates propane from the field's gas and sells it by the tonne, weighed on its weighbridge; [[Gullhaven Tank Haulage]] carries it by road tanker, among others to the [[Coastal State Water Company]], which burns it in winter in the peak boilers of Lumeport's district heating. The production platform of the Kelpstone field is Kelpstone A. The field yields about 0.6 billion m³ of gas a year, about 6 TWh, and the plant about 50,000 t of propane; about 15 billion m³ remain, enough for about 25 years. The field was developed for more than Urvania's needs, and the company looks for further buyers of its gas."
      }
     ],
     "timeline": [
@@ -5938,7 +5938,7 @@
      },
      {
       "title": "Operations",
-      "text": "The gas reaches the station by a pipeline of about 207 km from Kelpstone's plant at Gullhaven, metered at a station on Bayvarra's side of the border. Montebrio declares its own import of the gas and pays for it in ferra. It is one of Urvania's several power stations; it feeds its electricity into the network of [[Ferrano Grid]] and sells it to [[Ferrano Energy]], the retail company that bills the customers. Urvania's energy market is unbundled, so production, network and retail supply are run by separate companies."
+      "text": "The gas reaches the station by a pipeline of about {fact:gas.pipeline_km} from Kelpstone's plant at Gullhaven, metered at a station on Bayvarra's side of the border. Montebrio declares its own import of the gas and pays for it in ferra. It is one of Urvania's several power stations; it feeds its electricity into the network of [[Ferrano Grid]] and sells it to [[Ferrano Energy]], the retail company that bills the customers. Urvania's energy market is unbundled, so production, network and retail supply are run by separate companies."
      }
     ],
     "timeline": [
@@ -6060,7 +6060,7 @@
      },
      {
       "title": "Operations",
-      "text": "The company connects [[Montebrio Power]] and the gas pipeline from [[Bayvarra]], whose branch reaches its city gate after about 97 km. It owns the meters, reads them and corrects the gas readings. It charges [[Ferrano Energy]] for the use of its networks per kilowatt hour taken at each connection, and Ferrano Energy collects the network charges with its bills to customers, as a part of its tariff. The Province of Ferrano takes in the city and the valley up to Serravona and Fucinalta, about 4,800 km² with about 700,000 people. The company's power lines run to about 8,500 km, with about 300,000 connections, and its gas mains to about 1,500 km, with about 90,000 connections. Its own crews run and maintain the networks and read the meters; line contractors build most of the new lines."
+      "text": "The company connects [[Montebrio Power]] and the gas pipeline from [[Bayvarra]], whose branch reaches its city gate after about {fact:gas.grid_km}. It owns the meters, reads them and corrects the gas readings. It charges [[Ferrano Energy]] for the use of its networks per kilowatt hour taken at each connection, and Ferrano Energy collects the network charges with its bills to customers, as a part of its tariff. The Province of Ferrano takes in the city and the valley up to Serravona and Fucinalta, about 4,800 km² with about 700,000 people. The company's power lines run to about 8,500 km, with about 300,000 connections, and its gas mains to about 1,500 km, with about 90,000 connections. Its own crews run and maintain the networks and read the meters; line contractors build most of the new lines."
      }
     ],
     "timeline": [
@@ -6219,7 +6219,7 @@
      },
      {
       "title": "Operations",
-      "text": "The agency's network covers the ore line from the mine siding at Fucinalta down to [[Valdara Industries]]' works at Ferrano and the line from Ferrano to the border station on the way to [[Marrowdale]]. It also maintains the lines' bridges, among them the ore line's river bridge, 78 m high. Its traffic control works around the clock. Train operators such as [[Ferrano Rail Cargo]] run their trains on the paths it gives them, and it reports a train's position and timetable on its network to the operator, from the intermodal hub at Ferrano to the border station. Its network has about 420 km of line and 26 stations; the ore line is about 166 km long and the line from Ferrano to the border about 67 km."
+      "text": "The agency's network covers the ore line from the mine siding at Fucinalta down to [[Valdara Industries]]' works at Ferrano and the line from Ferrano to the border station on the way to [[Marrowdale]]. It also maintains the lines' bridges, among them the ore line's river bridge, 78 m high. Its traffic control works around the clock. Train operators such as [[Ferrano Rail Cargo]] run their trains on the paths it gives them, and it reports a train's position and timetable on its network to the operator, from the intermodal hub at Ferrano to the border station. Its network has about 420 km of line and 26 stations; the ore line is about {fact:ore.line_km} long and the line from Ferrano to the border about 67 km."
      }
     ],
     "facts": {

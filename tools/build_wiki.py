@@ -32,12 +32,13 @@ import world_data  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 out = sys.argv[1]
-world = world_data.load()
+import world_facts  # noqa: E402
+world = world_facts.fill_world(world_data.load())   # {fact:…} in the published texts (stage 7 B2)
 world_data.number_documents(world)
 countries = world["countries"]
 PARTY = {p["id"]: p for p in world["parties"]}
-MAP = json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8"))
-CJSON = json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8"))
+MAP = world_facts.fill_world(json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8")))
+CJSON = world_facts.fill_world(json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8")))
 SITE = "../"                                   # the main site, seen from /wiki/ (one setting, for a later subdomain)
 problems = []
 
@@ -143,6 +144,10 @@ def fill(text, values, where):
             problems.append(f"{where}: {{{m.group(1)}}} is not a value of this subject")
             return m.group(0)
         return str(values[m.group(1)])
+    try:                                          # the world's registered facts first (tools/world_facts.py, B2)
+        text = world_facts.fill(text)
+    except KeyError as e:
+        problems.append(f"{where}: {e.args[0]}")
     return re.sub(r"\{([a-z_][a-z0-9_]*)\}", one, text)
 
 
@@ -468,10 +473,49 @@ def md_inline(text, where):
     return re.sub(r"\[\[([^\]]+)\]\]", one, text)
 
 
+CLIMATE = json.load(open(os.path.join(ROOT, "world", "climate.json"), encoding="utf-8")) \
+    if os.path.exists(os.path.join(ROOT, "world", "climate.json")) else {}
+LAPSE_C_PER_M = 0.0065
+
+
+def town_climate(t, point):
+    """A capital's climate table: the base values at sea level (world/climate.json), the temperature corrected for
+    the town's height (6.5 °C per 1,000 m), the rain scaled to the town's yearly rain in the terrain."""
+    import base64
+    import numpy as np
+    from PIL import Image
+    base = CLIMATE["points"][point]
+    cm = TERR["corners_m"]
+    z = np.frombuffer(base64.b64decode(cm["int16_le_base64"]), dtype="<i2").reshape(cm["rows"], cm["cols"])
+    x, y = t["c"]
+    height = float(z[y:y + 2, x:x + 2].mean())
+    land = "lisavu" if t["country"] == "XL" else "mainland"
+    ras = TERR["rasters"][land]
+    rain = np.array(Image.open(os.path.join(ROOT, ras["rain"]))).astype(float)
+    S = ras["cells_per_square"]
+    cy, cx = int((y + .5 - ras["y0"]) * S), int((x + .5 - ras["x0"]) * S)
+    year_rain = float(rain[max(cy - 2, 0):cy + 3, max(cx - 2, 0):cx + 3].mean())
+    k = year_rain / sum(base["rain_mm"])
+    dt = LAPSE_C_PER_M * max(height, 0)
+    r1 = lambda v: f"{v:.1f}"
+    rows = [("Mean daily high (°C)", [r1(v - dt) for v in base["high_c"]], r1(sum(base["high_c"]) / 12 - dt)),
+            ("Daily mean (°C)", [r1(v - dt) for v in base["mean_c"]], r1(sum(base["mean_c"]) / 12 - dt)),
+            ("Mean daily low (°C)", [r1(v - dt) for v in base["low_c"]], r1(sum(base["low_c"]) / 12 - dt)),
+            ("Rain (mm)", [f"{round(v * k)}" for v in base["rain_mm"]], f"{round(year_rain):,}"),
+            ("Sunshine (kWh/m² a day)", [r1(v) for v in base["sun_kwh_m2_day"]], r1(sum(base["sun_kwh_m2_day"]) / 12))]
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    out = ["## Climate", "", f"Climate data for {t['name']} (about {round(height, -1):.0f} m above the sea), "
+           f"averages of 2001 to 2025:", "", "| | " + " | ".join(months) + " | Year |", "|---|" + "---:|" * 13]
+    out += [f"| {name} | " + " | ".join(vals) + f" | {year} |" for name, vals, year in rows] + [""]
+    return out
+
+
 def generated_sections(a):
     d, out_ = a["data"], []
     has = lambda title: any(x["title"] == title for x in a["wiki"].get("sections", []))
     if a["kind"] == "town":
+        if a["wiki"].get("climate_from") and CLIMATE:
+            out_ += town_climate(d, a["wiki"]["climate_from"])
         if d.get("districts"):
             out_ += ["## Districts", "", "| District | Grew | Character |", "|---|---|---|"]
             out_ += [f"| {x['name']} | {x.get('years', '')} | {x.get('note', '')} |" for x in d["districts"]] + [""]

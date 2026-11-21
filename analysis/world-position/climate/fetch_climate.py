@@ -10,6 +10,10 @@ open sea at sea level: the world's land does not exist, so height and mountains 
     python3 analysis/world-position/climate/fetch_climate.py          fetch again and rewrite the table
     python3 analysis/world-position/climate/fetch_climate.py --table  rewrite the table from data/ only
 
+Both also write world/climate.json: the monthly base values at sea level for the mainland's centre and east and for
+Lisavu, from which the encyclopedia's climate tables of the capitals are made (tools/build_wiki.py: temperature
+corrected for the town's height, rain scaled to the town's yearly rain in the terrain).
+
 Standard library only. API: https://power.larc.nasa.gov/api/temporal/climatology/point
 """
 import json
@@ -71,6 +75,23 @@ def table():
                 ("Cloud %", [f"{p['CLOUD_AMT'][m]:.0f}" for m in M])]
         out += [f"| {k} | " + " | ".join(v) + " |" for k, v in rows] + [""]
     (HERE / "climate-table.md").write_text("\n".join(out), encoding="utf-8")
+    base = {"description": "Monthly climate at sea level over the open sea at the world's position: NASA POWER "
+                           "climatology (MERRA-2, CERES SYN1deg), made by analysis/world-position/climate/"
+                           "fetch_climate.py; the encyclopedia's climate tables start from these (OW023, OW034).",
+            "months": M, "points": {}}
+    for name, label, lat, lon in points():
+        f = HERE / "data" / f"{name}.json"
+        if name not in ("mainland", "mainland-east", "lisavu") or not f.exists():
+            continue
+        d = json.loads(f.read_text())
+        p, rng = d["properties"]["parameter"], d["header"]["range"]
+        base["points"][name] = {"label": label, "latitude": lat, "longitude": lon, "period": rng,
+                                "high_c": [p["T2M_MAX"][m] for m in M], "mean_c": [p["T2M"][m] for m in M],
+                                "low_c": [p["T2M_MIN"][m] for m in M],
+                                "rain_mm": [round(p["PRECTOTCORR"][m] * k, 1) for m, k in zip(M, DAYS)],
+                                "sun_kwh_m2_day": [p["ALLSKY_SFC_SW_DWN"][m] for m in M],
+                                "wind_m_s": [p["WS10M"][m] for m in M]}
+    (ROOT / "world" / "climate.json").write_text(json.dumps(base, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
