@@ -588,7 +588,7 @@ example adds its coverage-register row in the same commit.
   - ledger or plausibility check per chain;
   - what Valdara makes from about 1,100 t of iron a month;
   - whether the cotton's 27 % out-turn in the documents is acceptable.
-- **Q13 (O62):**
+- **Q13 (O62): decided (owner, 2026-11-21):** (a) one density per material with a range and a public source (the US Forest Products Laboratory's Wood Handbook for the woods: oak about 720, ash about 670, thermally modified ash about 550–620 kg/m³; ductile iron 7,100; polyethylene 920–960), the check dimensions × density × solid fraction = weight within a tolerance; (b) oak and ash variants differ in weight (oak about 7 % denser), the documents' weights follow; (c) hold capacities from the fleet data (pallets per trailer, TEU per ship, wagons per train) and a load check per leg.
   - densities and ranges per material;
   - should oak and ash variants differ in weight;
   - which hold capacities count.
