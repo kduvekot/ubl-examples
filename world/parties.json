@@ -2215,7 +2215,7 @@
   {
    "id": "27-xb",
    "n": "27",
-   "name": "Consortium Partner",
+   "name": "Engineering Firm",
    "cat": "procurement",
    "c": "XB",
    "at": [
@@ -2224,7 +2224,7 @@
    ],
    "h": 2,
    "kind": "office",
-   "what": "An engineering firm founded in 1994 in Saltmere, the east-coast village it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits (a registered architect, Edda Corwin, is on its staff), and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring.",
+   "what": "An engineering firm founded in 1994 in Saltmere, the east-coast town it is named after, when Bayvarra's mobile networks were built; it later moved to Marrowdale, on the road and rail to Urvania. It designs telecom mast sites and obtains their permits with a registered architect on its staff, and installs back-up power and safety equipment at masts across Bayvarra, dangerous goods included, with crews and anchoring gear for ground foundations. It installs and anchors the park benches as Valdara's subcontractor in the public tender, and in the design contest it teams with Brackenmere Furniture for the structure and the anchoring.",
    "how": "A subcontractor or a member of a group of tenderers is named with its own role. UBL tenders and qualification documents name each member and its qualifications separately, so the authority can see who contributes what and check each one in the register.",
    "identity": {
     "name": "Saltmere Engineering",
@@ -6935,7 +6935,7 @@
      },
      {
       "title": "Operations",
-      "text": "Hafefo keeps its own cold store by the port and supplies the island's shops, hotels and the kitchen of [[Selanu General Hospital]]. In the southern autumn it buys reefers of apples and pears from [[Harrowmead Fruit Growers]] in Bayvarra's Upland State, carriage and insurance paid to the [[Port of Selanu]]; they come on the weekly service of [[Tidewell Ocean Lines]]. It lodges its import declarations itself, while the ship is at sea, and [[Nalevi Warehousing]] takes the reefer from the port to the cold store. Imported food pays the island's import consumption tax like every import. Hafefo pays Harrowmead in lume from its account at [[Bank of Selanu]]. Its purchasing desk works from early morning, Monday to Saturday. Besides the fruit of Harrowmead it buys from growers and importers in Lumeport, and from the island's own gardens in season. Its cold store has about 1,500 m² of floor."
+      "text": "Hafefo keeps its own cold store by the port and supplies the island's shops, hotels and the kitchen of [[Selanu General Hospital]]. In the southern autumn it buys reefers of apples and pears from [[Harrowmead Fruit Growers]] in Bayvarra's Upland State, carriage and insurance paid to the [[Port of Selanu]]; they come on the weekly service of [[Tidewell Ocean Lines]]. It lodges its import declarations itself, while the ship is at sea, and [[Nalevi Warehousing]] takes the reefer from the port to the cold store. Imported food pays the island's import consumption tax like most imports. Hafefo pays Harrowmead in lume from its account at [[Bank of Selanu]]. Its purchasing desk works from early morning, Monday to Saturday. Besides the fruit of Harrowmead it buys from growers and importers in Lumeport, and from the island's own gardens in season. Its cold store has about 1,500 m² of floor."
      }
     ],
     "facts": {

@@ -266,8 +266,7 @@ def party(pid, short=False, desk=None, lang=None, tax_country=None):
         else:
             lang = WORLD["languages"][code]
             out["Language"] = {"ID": V(code, f"{lang['name']}, the language of {c['name']} and of the party; the code is "
-                                             "from the range ISO 639 reserves for local use (qaa–qtz), as the world's "
-                                             "languages are invented."),  # world/countries.json
+                                             "from the range ISO 639 reserves for local use (qaa–qtz)."),  # world/countries.json
                                "Name": V(lang["name"], f"The language's name in English; in the language itself: "
                                                        f"{lang['own_name']}.")}
     out["PostalAddress"] = address(pid, register=True)
@@ -1057,8 +1056,8 @@ def hazardous_item(it):
     receiver = ITEM_KIND.get(DOC_TYPE) == "despatch"
     out = {"ID": V(f"{it['sellers_id']}-DG", "The seller's dangerous goods record of the item."),
            "UNDGCode": V(hz["un"][2:], "The UN number, from the Dangerous Goods List of the UN Model Regulations."),
-           "ProperShippingName": V(hz["name"], "The proper shipping name of the UN entry; the build checks that UN "
-                                               "number, name and class agree with the Dangerous Goods List."),
+           "ProperShippingName": V(hz["name"], "The proper shipping name of the UN entry, as the Dangerous Goods "
+                                               "List gives it for that UN number and class."),
            "HazardClassID": V(hz["class"], "The UN hazard class of the entry."),
            "HazardousCategoryCode": V(hz["class"], "The hazard class of the goods as a code of the UN Model "
                                                     "Regulations' classes.")}
