@@ -149,14 +149,6 @@ rm -f "$OUT/.coverage.md" "$OUT/.coverage-summary.md" "$OUT/.coverage-details.md
 # (tools/map_sheet.py: drawn only when one of its inputs changed, else taken from the cache, $BUILD_CACHE or .cache)
 python3 tools/map_sheet.py "$MODEL" "$OUT/map-sheet.png"
 rm -f "$MODEL"
-# The home page's picture of the world: the sheet, made small
-python3 - "$OUT/map-sheet.png" "$OUT/world-preview.jpg" <<'PREVIEW'
-import sys
-from PIL import Image
-im = Image.open(sys.argv[1]).convert("RGB")
-im = im.resize((1600, round(im.height * 1600 / im.width)), Image.LANCZOS)
-im.save(sys.argv[2], quality=82, optimize=True, progressive=True)
-PREVIEW
 cat > "$OUT/.map-sheet.md" <<'SHEET'
 # The map sheet
 
@@ -180,6 +172,11 @@ cp world/codelists/gc/*.gc "$OUT/codelists/gc/" && cp world/codelists/UBL-World-
 printf '<!doctype html><meta charset="utf-8"><title>Code lists</title><meta http-equiv="refresh" content="0; url=../world-codelists.html"><link rel="canonical" href="../world-codelists.html"><a href="../world-codelists.html">The code lists of the UBL World</a>\n' > "$OUT/codelists/index.html"
 # The world: the map with its data, and a page per party
 python3 tools/build_world.py "$OUT" "$OUT/.world-md"
+# The home page's picture of the world: the 3D map as it opens (tools/map_still.py: a headless Chrome)
+# Where no Chrome can take it, the printed sheet stands in, with a warning (in GitHub Actions too)
+python3 tools/map_still.py "$OUT/world.html" "$OUT/world-preview.jpg" || {
+  echo "::warning::no picture of the 3D map: the home page shows the map sheet instead" >&2
+  python3 -c "import sys; from PIL import Image; im = Image.open(sys.argv[1]).convert('RGB'); im.resize((1600, round(im.height * 1600 / im.width)), Image.LANCZOS).save(sys.argv[2], quality=82, optimize=True, progressive=True)" "$OUT/map-sheet.png" "$OUT/world-preview.jpg"; }
 for md in "$OUT"/.world-md/*.md; do
   name=$(basename "$md" .md)
   bg page "$md" "$name.html" "$(sed -n '1s/^# //p' "$md")"
