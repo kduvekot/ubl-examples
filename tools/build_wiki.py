@@ -114,6 +114,10 @@ for (land, rid), r in RIVERS.items():
                               key=lambda q: -q["basin_km2"])
     known.add(r["rec"]["title"])
     articles[r["rec"]["title"]] = {"kind": "river", "key": f"{land}-{rid}", "data": r, "wiki": r["rec"].get("wiki") or {}}
+for lm in MAP.get("landmarks", []):                  # mountains, capes, coasts, meeting grounds
+    known.add(lm["name"])
+    if lm.get("wiki"):
+        articles[lm["name"]] = {"kind": "landmark", "key": lm["name"], "data": lm, "wiki": lm["wiki"]}
 WATERS = MAP.get("waters")
 if WATERS and RIVERS:
     known.add(WATERS["title"])
@@ -422,6 +426,13 @@ def infobox(a):
                 ("Tributaries", ", ".join(rlink(q) for q in d["tributaries"])),
                 ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'it': 'Italian', 'en': 'English'}.get(k, k))})"
                                       for k, v in names.items()) if len(names) > 1 else "")]
+    elif a["kind"] == "landmark":
+        land = {"lisavu": "XL"}.get(d["land"], "")
+        names = d.get("names", {})
+        rows = [("Kind", d["kind"].capitalize()), ("Country", f"[[{countries[land]['name']}]]" if land else ""),
+                ("Height", f"about {n0(d['height_m'])} m" if d.get("height_m") else ""),
+                ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'en': 'English'}.get(k, k))})" for k, v in names.items())
+                 if len(names) > 1 else "")]
     elif a["kind"] == "item":
         rows = [("Maker", f"[[{PARTY[d['seller']]['identity']['name']}]]"),
                 ("Dimensions", " × ".join(str(x) for x in d["dimensions_mm"]) + " mm" if d.get("dimensions_mm") else ""),
@@ -497,7 +508,7 @@ def generated_sections(a):
 
 CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions",
             "village": "Villages", "locality": "Villages", "route": "Transport", "language": "Languages",
-            "currency": "Currencies", "item": "Products", "river": "Rivers", "waters": "Rivers"}
+            "currency": "Currencies", "item": "Products", "river": "Rivers", "waters": "Rivers", "landmark": "Landmarks"}
 
 
 def categories(a):
@@ -508,6 +519,8 @@ def categories(a):
         cats.append(f"{countries[c]['name']}")
     if a["kind"] == "river":
         cats += [countries[c]["name"] for c in river_countries(d)]
+    if a["kind"] == "landmark" and d.get("land") == "lisavu":
+        cats.append("Lisavu")
     return cats
 
 
@@ -572,7 +585,7 @@ for c, titles in by_cat.items():
 index = ["# Encyclopedia", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
          "The countries of the Lumeport Trade Accord, their towns, companies and institutions, with their history and "
          "the documents they exchange.", ""]
-for c in ("Countries", "Treaties", "Towns", "Villages", "Rivers", "Companies and institutions", "Transport",
+for c in ("Countries", "Treaties", "Towns", "Villages", "Rivers", "Landmarks", "Companies and institutions", "Transport",
           "Languages", "Currencies", "Products"):
     if c in by_cat:
         index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c])] + [""]
