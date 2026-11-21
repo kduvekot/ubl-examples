@@ -202,15 +202,15 @@ Inside `NotifierParty`:
   Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Contact/Name` = **Dispatch office**  
-  The party's dispatch office desk: the desk for its role in this document (it sends the goods off); as Valdara Industries gives it.
-- `Contact/JobTitle` = **Dispatch coordinator**  
+- `Contact/Name` = **Despatch office**  
+  The party's despatch office desk: the desk for its role in this document (it sends the goods off); as Valdara Industries gives it.
+- `Contact/JobTitle` = **Despatch coordinator**  
   The job of the person who answers at the desk; as Valdara Industries gives it.
 - `Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Valdara Industries gives it.
 - `Contact/Telephone` = **+999 1 041 386 4551**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Valdara Industries gives it.
-- `Contact/ElectronicMail` = **dispatch@valdara.example**  
+- `Contact/ElectronicMail` = **despatch@valdara.example**  
   E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Valdara Industries gives it.
@@ -565,11 +565,11 @@ Inside `DocumentDistribution`:
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Dispatch office</cbc:Name>
-      <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+      <cbc:Name>Despatch office</cbc:Name>
+      <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
       <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
-      <cbc:ElectronicMail>dispatch@valdara.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>despatch@valdara.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
   </cac:NotifierParty>

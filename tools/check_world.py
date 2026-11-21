@@ -7,7 +7,8 @@
 reports every broken structural rule, then checks the documents of
 the world against the UBL 2.5 model (tools/world_docs.py), the identities of the parties
 (tools/world_parties.py), the items (tools/world_items.py), the goods against the built examples: lots and serials, the goods chains, item
-physics and vehicle loads (tools/world_goods.py), and that the world code lists
+physics and vehicle loads (tools/world_goods.py), the times of the transports against the map at the world's
+speeds and the tax treatment against the goods' movement (tools/world_movement.py), and that the world code lists
 are up to date (tools/build_codelists.py --check). Exit status 1 if there are problems.
 
 The checks only read the repository, so they run side by side, each in a process of its own; their output is
@@ -30,7 +31,7 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = [("terrain.py", ["--check"]), ("place_list.py", ["--check"]), ("fx_fixing.py", ["--check"]),
            ("world_model.py", []), ("world_docs.py", []), ("world_parties.py", []), ("world_items.py", []),
-           ("world_goods.py", []), ("build_codelists.py", ["--check"]), ("coverage_register.py", [])]
+           ("world_goods.py", []), ("world_movement.py", []), ("build_codelists.py", ["--check"]), ("coverage_register.py", [])]
 SHARES_WORDS = "build_codelists.py"     # reads world_data.MISSING_WORDS, as the checks before it left it
 
 # Run one script as runpy did in one process (tools/ first on the path, argv[0] the script's name); afterwards write

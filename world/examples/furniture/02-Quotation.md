@@ -443,10 +443,10 @@ Inside `QuotationLine`:
   The GTIN Brightmarket Stores gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; the item is Brightmarket Stores' own label Elderwick, made for it by Brackenmere Furniture: under GS1 rules the brand owner numbers the item, not the manufacturer, so the number is Brightmarket Stores', whoever sells the item.
 - `LineItem/Item/OriginCountry/IdentificationCode` = **XB** (listID `ISO 3166`)  
   Where the item was produced; as Brackenmere Furniture describes the item. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `LineItem/Item/CommodityClassification/CommodityCode` = **321000** (listID `WCO HS 2022`)  
-  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Brackenmere Furniture describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 321000 = Paints and varnishes (including enamels, lacquers and distempers) n.e.s.; prepared water pigments of a kind used for finishing leather.
-- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **35110** (listID `UN CPC Ver.2.1`)  
-  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Brackenmere Furniture describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 35110 = Paints and varnishes and related products.
+- `LineItem/Item/CommodityClassification/CommodityCode` = **340520** (listID `WCO HS 2022`)  
+  The Harmonized System subheading of the World Customs Organization, six digits, for customs and trade statistics; as Brackenmere Furniture describes the item. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 340520 = Polishes, creams and similar preparations; for the maintenance of wooden furniture, floors or other woodwork, excluding waxes of heading no. 3404.
+- `LineItem/Item/CommodityClassification/ItemClassificationCode` = **35333** (listID `UN CPC Ver.2.1`)  
+  What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Brackenmere Furniture describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 35333 = Polishes and creams, for footwear, furniture, floors, coachwork, glass or metal.
 - `LineItem/Item/ManufacturerParty/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `LineItem/Item/ManufacturerParty/PartyName/Name` = **Brackenmere Furniture**  
@@ -875,8 +875,8 @@ Inside `QuotationLine`:
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
         </cac:OriginCountry>
         <cac:CommodityClassification>
-          <cbc:CommodityCode listID="WCO HS 2022">321000</cbc:CommodityCode>
-          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35110</cbc:ItemClassificationCode>
+          <cbc:CommodityCode listID="WCO HS 2022">340520</cbc:CommodityCode>
+          <cbc:ItemClassificationCode listID="UN CPC Ver.2.1">35333</cbc:ItemClassificationCode>
         </cac:CommodityClassification>
         <cac:ManufacturerParty>
           <cac:PartyIdentification>

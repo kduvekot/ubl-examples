@@ -194,50 +194,50 @@ The shortest way on the road network between the centres (the road square neares
 
 ### 3.3 The transport legs of the flows
 
-Every leg of `world/documents.json` as the world model lays it on the map, party to party (the way the map's vehicles drive: the fewest squares from building to building), and for road legs also the shortest way in kilometres on the road network, with the routes used, the straight line, the detour factor and the time the distance takes at the mode's usual average (truck 60–70 km/h with breaks, freight train 40–60 km/h, barge 10–12 km/h). Sea and air legs are in section 4.
+Every leg of `world/documents.json` as the world model lays it on the map, party to party (the way the map's vehicles drive: the fewest squares from building to building), and for road legs also the shortest way in kilometres on the road network, with the routes used, the straight line, the detour factor and the time the distance takes at the world's real speeds (`world/map.json` speeds: truck 55–65 km/h with stops, freight train 40–50 km/h, barge 11 km/h; before the allowances). Sea and air legs are in section 4.
 
 | Flow | Mode | From → to | On the map | Shortest | Routes | Straight | Factor | Time at usual speed | transit_days |
 |---|---|---|---|---|---|---|---|---|---|
-| ore | rail | Serravona Mining (4-xu) → Valdara Industries (5-xu) | **158.7 km** | - | `ore` | 148.6 km | 1.07 | 2 h 39 – 3 h 58 | 0 |
-| road | road | Castrano Logistics (8-xu) → Lumeway Distribution (6-xb) | **174.3 km** | 174.3 km | `road` | 147.2 km | 1.18 | 2 h 29 – 2 h 54 | 2 |
-| rail | road | Castrano Logistics (8-xu) → Ferrano Intermodal Hub (18-xu) | **45.7 km** | 45.7 km | `road`, `waste`, `road-farm` | 14.8 km | 3.08 | 0 h 39 – 0 h 46 | - |
-| rail | rail | Ferrano Intermodal Hub (18-xu) → Lumeway Distribution (6-xb) | **172.8 km** | - | `rail-x` | 158.5 km | 1.09 | 2 h 53 – 4 h 19 | - |
-| plastics | river | Rinova Recovery (7-xu) → Rivermouth Packaging (41-xb) | **253.4 km** | - | the river's course and the estuary | 197.5 km | 1.28 | 21 h 07 – 25 h 21 | 3 |
-| retail | road | Lumeway Distribution (6-xb) → Brightmarket Stores (26-xb) | **72.5 km** | 72.5 km | `road-b` | 61.9 km | 1.17 | 1 h 02 – 1 h 13 | - |
-| retail | road | Brightmarket Stores (26-xb) → Robin Ashdale (c-xb) | **14.0 km** | 14.0 km | `road-port` | 11.1 km | 1.26 | 0 h 12 – 0 h 14 | - |
-| sea | road | Lumeway Distribution (6-xb) → Port of Lumeport (16-xb) | **82.4 km** | 82.4 km | `road-b`, `road-port` | 70.0 km | 1.18 | 1 h 11 – 1 h 22 | - |
-| sea | road | Port of Selanu (16-xl) → Nalevi Warehousing (9-xl) | **23.9 km** | 23.9 km | town streets, minor roads | 14.8 km | 1.61 | 0 h 20 – 0 h 24 | - |
-| air | road | Valdara Industries (5-xu) → Lumeway Distribution (6-xb) | **189.1 km** | 189.1 km | `road` | 157.5 km | 1.20 | 2 h 42 – 3 h 09 | - |
-| air | road | Lumeway Distribution (6-xb) → Lumeport Airport Cargo Terminal (17-xb) | **58.5 km** | 58.5 km | `road-b` | 52.5 km | 1.12 | 0 h 50 – 0 h 59 | - |
-| air | road | Selanu Airport Cargo (17-xl) → Nalevi Warehousing (9-xl) | **20.4 km** | 20.4 km | town streets, minor roads | 14.4 km | 1.41 | 0 h 17 – 0 h 20 | - |
-| tender | road | Castrano Logistics (8-xu) → Lumeport Public Works Department (2-xb) | **255.3 km** | 255.3 km | `road`, `road-b`, `road-wool`, `road-lark`, `civic` | 203.9 km | 1.25 | 3 h 39 – 4 h 15 | - |
-| carnet | road | Valdara Industries (5-xu) → Lumeport Airport Cargo Terminal (17-xb) | **244.2 km** | 244.2 km | `road`, `road-b`, `road-wool` | 201.5 km | 1.21 | 3 h 29 – 4 h 04 | - |
-| carnet | road | Selanu Airport Cargo (17-xl) → Selanu Chamber of Commerce (20-xl) | **30.3 km** | 30.3 km | town streets, minor roads | 17.5 km | 1.73 | 0 h 26 – 0 h 30 | - |
-| carnet | road | Selanu Chamber of Commerce (20-xl) → Selanu Airport Cargo (17-xl) | **30.3 km** | 30.3 km | town streets, minor roads | 17.5 km | 1.73 | 0 h 26 – 0 h 30 | - |
-| carnet | road | Lumeport Airport Cargo Terminal (17-xb) → Valdara Industries (5-xu) | **244.2 km** | 244.2 km | `road-b`, `road-wool`, `road` | 201.5 km | 1.21 | 3 h 29 – 4 h 04 | - |
-| waste | road | Valdara Industries (5-xu) → Rinova Recovery (7-xu) | **18.9 km** | 18.9 km | `road`, `waste` | 15.7 km | 1.21 | 0 h 16 – 0 h 19 | - |
-| wood | road | Tostara Wood Modification (59-xu) → Valdara Industries (5-xu) | **28.8 km** | 28.8 km | `road` | 17.8 km | 1.62 | 0 h 25 – 0 h 29 | 0 |
-| wood | road | Marrowdale Sawmill (36-xb) → Brackenmere Furniture (37-xb) | **14.0 km** | 14.0 km | town streets, minor roads | 10.5 km | 1.33 | 0 h 12 – 0 h 14 | - |
-| modification | road | Marrowdale Sawmill (36-xb) → Tostara Wood Modification (59-xu) | **163.8 km** | 163.8 km | `road` | 129.5 km | 1.26 | 2 h 20 – 2 h 44 | 0 |
-| furniture | road | Brackenmere Furniture (37-xb) → Brightmarket Stores (26-xb) | **86.5 km** | 86.5 km | `road`, `road-b`, `road-wool` | 74.4 km | 1.16 | 1 h 14 – 1 h 27 | - |
-| furniture | road | Brightmarket Stores (26-xb) → Brackenmere Furniture (37-xb) | **86.5 km** | 86.5 km | `road-b`, `road-wool`, `road` | 74.4 km | 1.16 | 1 h 14 – 1 h 27 | - |
-| furniture | road | Brackenmere Furniture (37-xb) → Lumeport Public Works Department (2-xb) | **98.5 km** | 98.5 km | `road`, `road-b`, `road-wool`, `road-lark`, `civic` | 84.3 km | 1.17 | 1 h 24 – 1 h 38 | - |
-| cotton | road | Lisavu Cotton Farm (38-xl) → Selanu Cotton Ginnery (39-xl) | **42.2 km** | 42.2 km | town streets, minor roads | 17.5 km | 2.41 | 0 h 36 – 0 h 42 | - |
-| cotton | road | Selanu Cotton Ginnery (39-xl) → Port of Selanu (16-xl) | **11.9 km** | 11.9 km | town streets, minor roads | 11.1 km | 1.08 | 0 h 10 – 0 h 12 | - |
-| cotton | road | Port of Lumeport (16-xb) → Lumeport Textile Mill (40-xb) | **35.8 km** | 35.8 km | `road-port`, `road-lark` | 23.5 km | 1.53 | 0 h 31 – 0 h 36 | - |
-| packaging | road | Rivermouth Packaging (41-xb) → Valdara Industries (5-xu) | **258.2 km** | 258.2 km | `road-b`, `road-wool`, `road` | 192.9 km | 1.34 | 3 h 41 – 4 h 18 | - |
-| packaging | road | Rivermouth Packaging (41-xb) → Lumeport Textile Mill (40-xb) | **28.0 km** | 28.0 km | `road-lark` | 22.1 km | 1.26 | 0 h 24 – 0 h 28 | - |
-| packaging | road | Lumeport Textile Mill (40-xb) → Brightmarket Stores (26-xb) | **14.0 km** | 14.0 km | `road-lark` | 9.9 km | 1.41 | 0 h 12 – 0 h 14 | - |
-| mast | road | Saltmere Engineering (27-xb) → Lumeport Airport Cargo Terminal (17-xb) | **58.5 km** | 58.5 km | `road-b` | 54.4 km | 1.08 | 0 h 50 – 0 h 59 | - |
-| mast | road | Selanu Airport Cargo (17-xl) → Selanu Telecom (35-xl) | **32.3 km** | 32.3 km | town streets, minor roads | 22.4 km | 1.44 | 0 h 28 – 0 h 32 | - |
+| ore | rail | Serravona Mining (4-xu) → Valdara Industries (5-xu) | **158.7 km** | - | `ore` | 148.6 km | 1.07 | 3 h 10 – 3 h 58 | 0 |
+| road | road | Castrano Logistics (8-xu) → Lumeway Distribution (6-xb) | **174.3 km** | 174.3 km | `road` | 147.2 km | 1.18 | 2 h 41 – 3 h 10 | 2 |
+| rail | road | Castrano Logistics (8-xu) → Ferrano Intermodal Hub (18-xu) | **45.7 km** | 45.7 km | `road`, `waste`, `road-farm` | 14.8 km | 3.08 | 0 h 42 – 0 h 50 | - |
+| rail | rail | Ferrano Intermodal Hub (18-xu) → Lumeway Distribution (6-xb) | **172.8 km** | - | `rail-x` | 158.5 km | 1.09 | 3 h 27 – 4 h 19 | - |
+| plastics | river | Rinova Recovery (7-xu) → Rivermouth Packaging (41-xb) | **253.4 km** | - | the river's course and the estuary | 197.5 km | 1.28 | 23 h 02 – 23 h 02 | 3 |
+| retail | road | Lumeway Distribution (6-xb) → Brightmarket Stores (26-xb) | **72.5 km** | 72.5 km | `road-b` | 61.9 km | 1.17 | 1 h 07 – 1 h 19 | - |
+| retail | road | Brightmarket Stores (26-xb) → Robin Ashdale (c-xb) | **14.0 km** | 14.0 km | `road-port` | 11.1 km | 1.26 | 0 h 13 – 0 h 15 | - |
+| sea | road | Lumeway Distribution (6-xb) → Port of Lumeport (16-xb) | **82.4 km** | 82.4 km | `road-b`, `road-port` | 70.0 km | 1.18 | 1 h 16 – 1 h 30 | - |
+| sea | road | Port of Selanu (16-xl) → Nalevi Warehousing (9-xl) | **23.9 km** | 23.9 km | town streets, minor roads | 14.8 km | 1.61 | 0 h 22 – 0 h 26 | - |
+| air | road | Valdara Industries (5-xu) → Lumeway Distribution (6-xb) | **189.1 km** | 189.1 km | `road` | 157.5 km | 1.20 | 2 h 55 – 3 h 26 | - |
+| air | road | Lumeway Distribution (6-xb) → Lumeport Airport Cargo Terminal (17-xb) | **58.5 km** | 58.5 km | `road-b` | 52.5 km | 1.12 | 0 h 54 – 1 h 04 | - |
+| air | road | Selanu Airport Cargo (17-xl) → Nalevi Warehousing (9-xl) | **20.4 km** | 20.4 km | town streets, minor roads | 14.4 km | 1.41 | 0 h 19 – 0 h 22 | - |
+| tender | road | Castrano Logistics (8-xu) → Lumeport Public Works Department (2-xb) | **255.3 km** | 255.3 km | `road`, `road-b`, `road-wool`, `road-lark`, `civic` | 203.9 km | 1.25 | 3 h 56 – 4 h 39 | - |
+| carnet | road | Valdara Industries (5-xu) → Lumeport Airport Cargo Terminal (17-xb) | **244.2 km** | 244.2 km | `road`, `road-b`, `road-wool` | 201.5 km | 1.21 | 3 h 45 – 4 h 26 | - |
+| carnet | road | Selanu Airport Cargo (17-xl) → Selanu Chamber of Commerce (20-xl) | **30.3 km** | 30.3 km | town streets, minor roads | 17.5 km | 1.73 | 0 h 28 – 0 h 33 | - |
+| carnet | road | Selanu Chamber of Commerce (20-xl) → Selanu Airport Cargo (17-xl) | **30.3 km** | 30.3 km | town streets, minor roads | 17.5 km | 1.73 | 0 h 28 – 0 h 33 | - |
+| carnet | road | Lumeport Airport Cargo Terminal (17-xb) → Valdara Industries (5-xu) | **244.2 km** | 244.2 km | `road-b`, `road-wool`, `road` | 201.5 km | 1.21 | 3 h 45 – 4 h 26 | - |
+| waste | road | Valdara Industries (5-xu) → Rinova Recovery (7-xu) | **18.9 km** | 18.9 km | `road`, `waste` | 15.7 km | 1.21 | 0 h 17 – 0 h 21 | - |
+| wood | road | Tostara Wood Modification (59-xu) → Valdara Industries (5-xu) | **28.8 km** | 28.8 km | `road` | 17.8 km | 1.62 | 0 h 27 – 0 h 31 | 0 |
+| wood | road | Marrowdale Sawmill (36-xb) → Brackenmere Furniture (37-xb) | **14.0 km** | 14.0 km | town streets, minor roads | 10.5 km | 1.33 | 0 h 13 – 0 h 15 | - |
+| modification | road | Marrowdale Sawmill (36-xb) → Tostara Wood Modification (59-xu) | **163.8 km** | 163.8 km | `road` | 129.5 km | 1.26 | 2 h 31 – 2 h 59 | 0 |
+| furniture | road | Brackenmere Furniture (37-xb) → Brightmarket Stores (26-xb) | **86.5 km** | 86.5 km | `road`, `road-b`, `road-wool` | 74.4 km | 1.16 | 1 h 20 – 1 h 34 | - |
+| furniture | road | Brightmarket Stores (26-xb) → Brackenmere Furniture (37-xb) | **86.5 km** | 86.5 km | `road-b`, `road-wool`, `road` | 74.4 km | 1.16 | 1 h 20 – 1 h 34 | - |
+| furniture | road | Brackenmere Furniture (37-xb) → Lumeport Public Works Department (2-xb) | **98.5 km** | 98.5 km | `road`, `road-b`, `road-wool`, `road-lark`, `civic` | 84.3 km | 1.17 | 1 h 31 – 1 h 47 | - |
+| cotton | road | Lisavu Cotton Farm (38-xl) → Selanu Cotton Ginnery (39-xl) | **42.2 km** | 42.2 km | town streets, minor roads | 17.5 km | 2.41 | 0 h 39 – 0 h 46 | - |
+| cotton | road | Selanu Cotton Ginnery (39-xl) → Port of Selanu (16-xl) | **11.9 km** | 11.9 km | town streets, minor roads | 11.1 km | 1.08 | 0 h 11 – 0 h 13 | - |
+| cotton | road | Port of Lumeport (16-xb) → Lumeport Textile Mill (40-xb) | **35.8 km** | 35.8 km | `road-port`, `road-lark` | 23.5 km | 1.53 | 0 h 33 – 0 h 39 | - |
+| packaging | road | Rivermouth Packaging (41-xb) → Valdara Industries (5-xu) | **258.2 km** | 258.2 km | `road-b`, `road-wool`, `road` | 192.9 km | 1.34 | 3 h 58 – 4 h 42 | - |
+| packaging | road | Rivermouth Packaging (41-xb) → Lumeport Textile Mill (40-xb) | **28.0 km** | 28.0 km | `road-lark` | 22.1 km | 1.26 | 0 h 26 – 0 h 31 | - |
+| packaging | road | Lumeport Textile Mill (40-xb) → Brightmarket Stores (26-xb) | **14.0 km** | 14.0 km | `road-lark` | 9.9 km | 1.41 | 0 h 13 – 0 h 15 | - |
+| mast | road | Saltmere Engineering (27-xb) → Lumeport Airport Cargo Terminal (17-xb) | **58.5 km** | 58.5 km | `road-b` | 54.4 km | 1.08 | 0 h 54 – 1 h 04 | - |
+| mast | road | Selanu Airport Cargo (17-xl) → Selanu Telecom (35-xl) | **32.3 km** | 32.3 km | town streets, minor roads | 22.4 km | 1.44 | 0 h 30 – 0 h 35 | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Montebrio Power (43-xu) | **206.6 km** | - | `gas` | 164.5 km | 1.26 | - | - |
 | energy | pipeline | Kelpstone Gas (42-xb) → Ferrano Grid (44-xu) | **281.8 km** | - | `gas`, `gas-grid` | 255.9 km | 1.10 | - | - |
-| reefer | road | Harrowmead Fruit Growers (55-xb) → Port of Lumeport (16-xb) | **261.1 km** | 261.1 km | `road`, `road-b`, `road-wool`, `road-port` | 162.1 km | 1.61 | 3 h 44 – 4 h 21 | - |
-| reefer | road | Port of Selanu (16-xl) → Hafefo Fresh Produce (56-xl) | **10.5 km** | 10.5 km | town streets, minor roads | 9.9 km | 1.06 | 0 h 09 – 0 h 10 | - |
-| lpg | road | Kelpstone Gas (42-xb) → Coastal State Water Company (34-xb) | **514.8 km** | 511.9 km | `road-north`, `road-lark`, `road-wool` | 363.1 km | 1.42 | 7 h 21 – 8 h 35 | 0 |
-| medicines | road | Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb) | **10.5 km** | 10.5 km | town streets, minor roads | 3.5 km | 3.00 | 0 h 09 – 0 h 10 | - |
-| medicines | road | Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb) | **10.5 km** | 10.5 km | town streets, minor roads | 3.5 km | 3.00 | 0 h 09 – 0 h 10 | - |
-| medicines | road | Selanu Airport Cargo (17-xl) → Selanu General Hospital (50-xl) | **17.5 km** | 17.5 km | `road-c` | 17.8 km | 0.98 | 0 h 15 – 0 h 18 | - |
+| reefer | road | Harrowmead Fruit Growers (55-xb) → Port of Lumeport (16-xb) | **261.1 km** | 261.1 km | `road`, `road-b`, `road-wool`, `road-port` | 162.1 km | 1.61 | 4 h 01 – 4 h 45 | - |
+| reefer | road | Port of Selanu (16-xl) → Hafefo Fresh Produce (56-xl) | **10.5 km** | 10.5 km | town streets, minor roads | 9.9 km | 1.06 | 0 h 10 – 0 h 11 | - |
+| lpg | road | Kelpstone Gas (42-xb) → Coastal State Water Company (34-xb) | **514.8 km** | 511.9 km | `road-north`, `road-lark`, `road-wool` | 363.1 km | 1.42 | 7 h 55 – 9 h 22 | 0 |
+| medicines | road | Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb) | **10.5 km** | 10.5 km | town streets, minor roads | 3.5 km | 3.00 | 0 h 10 – 0 h 11 | - |
+| medicines | road | Quillmoor Pharma Distribution (49-xb) → Lumeport Airport Cargo Terminal (17-xb) | **10.5 km** | 10.5 km | town streets, minor roads | 3.5 km | 3.00 | 0 h 10 – 0 h 11 | - |
+| medicines | road | Selanu Airport Cargo (17-xl) → Selanu General Hospital (50-xl) | **17.5 km** | 17.5 km | `road-c` | 17.8 km | 0.98 | 0 h 16 – 0 h 19 | - |
 
 **Legs inside one town or its surroundings** (the diagram's party squares make them longer than on the ground; O82, O92):
 

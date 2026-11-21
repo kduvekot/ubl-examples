@@ -208,7 +208,7 @@ Inside `SellerSupplierParty`:
   The network in which the address is registered: the world's own exchange network.
 - `Party/ElectronicAddress/ElectronicAddressID` = **XB:20410274** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Lumeway Distribution gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
-- `DespatchContact/Name` = **Dispatch office**  
+- `DespatchContact/Name` = **Despatch office**  
   Who despatches.
 - `DespatchContact/Telephone` = **+999 2 7121 955 964**  
   The number.
@@ -525,7 +525,7 @@ Inside `OrderLine`:
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:DespatchContact>
-      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:Name>Despatch office</cbc:Name>
       <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
     </cac:DespatchContact>
     <cac:AccountingContact>

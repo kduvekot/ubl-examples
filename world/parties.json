@@ -235,10 +235,10 @@
       "email": "customs@valdara.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@valdara.example"
+      "email": "despatch@valdara.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -557,10 +557,10 @@
       "email": "customs@rinova.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@rinova.example"
+      "email": "despatch@rinova.example"
      },
      "logistics": {
       "name": "Transport planning",
@@ -717,9 +717,46 @@
       "31 46 6610 101-4",
       "31 46 6610 102-2",
       "31 46 6610 103-0",
-      "31 46 6610 104-8"
+      "31 46 6610 104-8",
+      "31 46 6610 105-5",
+      "31 46 6610 106-3",
+      "31 46 6610 107-1",
+      "31 46 6610 108-9",
+      "31 46 6610 109-7",
+      "31 46 6610 110-5",
+      "31 46 6610 111-3",
+      "31 46 6610 112-1",
+      "31 46 6610 113-9",
+      "31 46 6610 114-7",
+      "31 46 6610 115-4",
+      "31 46 6610 116-2",
+      "31 46 6610 117-0",
+      "31 46 6610 118-8",
+      "31 46 6610 119-6",
+      "31 46 6610 120-4",
+      "31 46 6610 121-2",
+      "31 46 6610 122-0",
+      "31 46 6610 123-8",
+      "31 46 6610 124-6",
+      "31 46 6610 125-3",
+      "31 46 6610 126-1",
+      "31 46 6610 127-9",
+      "31 46 6610 128-7",
+      "31 46 6610 129-5",
+      "31 46 6610 130-3"
      ],
-     "ore_train": "FRC 2208"
+     "ore_train": "FRC 2208",
+     "ore_wagon": {
+      "payload_kg": 62000,
+      "tare_kg": 28000,
+      "why": "A four-axle ore hopper wagon at 22.5 t an axle: 90 t loaded, 62 t of ore."
+     },
+     "wagon": {
+      "payload_kg": 66000,
+      "tare_kg": 22000,
+      "slots": 1,
+      "why": "A four-axle flat wagon for one 40- or 45-foot container, at 22.5 t an axle."
+     }
     },
     {
      "id": "FRC-T1",
@@ -1000,7 +1037,8 @@
      "gross_t": "1210",
      "net_t": "860",
      "registry": "Ferrano",
-     "config": "DRYBARGE"
+     "config": "DRYBARGE",
+     "deadweight_t": "2100"
     }
    ],
    "numbering": {
@@ -1688,10 +1726,10 @@
       "email": "customs@lumeway.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@lumeway.example"
+      "email": "despatch@lumeway.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -2234,10 +2272,10 @@
     },
     "desks": {
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@saltmere.example"
+      "email": "despatch@saltmere.example"
      },
      "receivables": {
       "name": "Accounts receivable",
@@ -4891,10 +4929,10 @@
       "email": "customs@marrowdalesawmill.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@marrowdalesawmill.example"
+      "email": "despatch@marrowdalesawmill.example"
      },
      "logistics": {
       "name": "Transport planning",
@@ -4927,7 +4965,8 @@
      "tare_kg": {
       "truck": 13800,
       "trailer": 5200
-     }
+     },
+     "max_gross_kg": 40000
     }
    ],
    "numbering": {
@@ -5175,10 +5214,10 @@
       "email": "customs@lumeporttextile.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@lumeporttextile.example"
+      "email": "despatch@lumeporttextile.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -5322,10 +5361,10 @@
       "email": "customs@rivermouth.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@rivermouth.example"
+      "email": "despatch@rivermouth.example"
      },
      "goods_in": {
       "name": "Goods-in",
@@ -5469,7 +5508,8 @@
       "tractor": 5400,
       "first trailer": 2600,
       "second trailer": 2600
-     }
+     },
+     "max_gross_kg": 24000
     }
    ],
    "numbering": {
@@ -5557,10 +5597,10 @@
       "email": "customs@selanuginnery.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@selanuginnery.example"
+      "email": "despatch@selanuginnery.example"
      },
      "goods_in": {
       "name": "Gin yard",
@@ -5708,10 +5748,10 @@
       "email": "customs@kelpstone.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@kelpstone.example"
+      "email": "despatch@kelpstone.example"
      },
      "operations": {
       "name": "Pipeline control",
@@ -6495,10 +6535,10 @@
       "email": "purchasing@quillmoor.example"
      },
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Warehouse",
-      "email": "dispatch@quillmoor.example"
+      "email": "despatch@quillmoor.example"
      },
      "receivables": {
       "name": "Accounts receivable",
@@ -6742,10 +6782,10 @@
     },
     "desks": {
      "despatch": {
-      "name": "Dispatch office",
-      "job_title": "Dispatch coordinator",
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
       "department": "Packhouse",
-      "email": "dispatch@harrowmeadfruit.example"
+      "email": "despatch@harrowmeadfruit.example"
      },
      "logistics": {
       "name": "Export logistics",
