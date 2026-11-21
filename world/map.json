@@ -15934,6 +15934,7 @@
    ],
    "farming": "market",
    "wiki": {
+    "climate_from": "mainland",
     "facts": {"Established": "before the Europeans, as Ruldraz; Ferrano since 4 September 1840"},
     "short": "Capital of Urvania",
     "lead": "**Ferrano** (Urvanian *Ruldraz*) is the capital of [[Urvania]], with about {population} people. It stands where the northern valley meets the Runmek, just below the rapids that end navigation: the country's works, its rail hub and its river port.",
@@ -16073,6 +16074,7 @@
    ],
    "farming": "market",
    "wiki": {
+    "climate_from": "mainland-east",
     "facts": {"Established": "29 November 1841", "Capital": "since 1852"},
     "short": "Capital and port city of Bayvarra",
     "lead": "**Lumeport** is the capital and port city of [[Bayvarra]], with about {population} people, on a bay at the narrows of the estuary. It gave its name to the [[Lumeport Trade Accord]], signed there in 1994, and is the seat of its council.",
@@ -16265,6 +16267,7 @@
    ],
    "farming": "cotton",
    "wiki": {
+    "climate_from": "lisavu",
     "facts": {"Established": "a Lisavan village; Port Wrenfield in the 1860s"},
     "short": "Capital and only town of Lisavu",
     "lead": "**Selanu** (English *Port Wrenfield*) is the capital and only town of [[Lisavu]], with about {population} people, on a sheltered bay of the island's east coast. It holds the island's port, and its airport lies on the plain to the north.",
