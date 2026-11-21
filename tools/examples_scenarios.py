@@ -458,10 +458,11 @@ def road(n, doc):
                     "ID": V(f.number("export-declaration", doc["from"], "CustomsDeclaration"),
                             "The declaration as lodged with Urvania's customs."),
                     "Shipment": {"ID": V(f.numbers["shipment"], "The shipment of the despatch advice."),
-                                 "GrossWeightMeasure": qty(weight, "KGM", "The gross weight leaving the country."),
                                  "GoodsItem": goods_items(f, "XUF", "The value at the frontier: the invoice value, in "
                                                                      "ferra."),
-                                 "Consignment": {"ID": V(f.numbers["consignment"], "The consignment of the truck.")}}}}
+                                 "Consignment": {"ID": V(f.numbers["consignment"], "The consignment of the truck."),
+                                                 "GrossWeightMeasure": qty(weight, "KGM", kit.consignment_weight_why(
+                                                     "The gross weight leaving the country."))}}}}
     if doc["doc"] == "CertificateOfOrigin":
         # D35 point 2: Valdara's application (06) and the chamber's certificate (07) are two documents with their own
         # numbers; the chamber, the body Urvania authorises under the Accord to issue proofs of preferential origin,
@@ -554,6 +555,7 @@ def road(n, doc):
                          "LatestDeliveryTime": V("10:00:00", "The end of the slot, the time the delivery is required "
                                                              "by.")}})  # road/08#F14
         del out["Description"]   # the leg's description is a caption of the example (road/08#F18)
+        kit.shipment_gross(out["Shipment"])     # the truck's tare with the goods (C15)
         return out
     if doc["doc"] == "TransportationStatus":
         border = {"Name": V("Land border crossing Urvania–Bayvarra",
@@ -622,7 +624,6 @@ def road(n, doc):
                                                                                     "number."),
                 "IssueDate": V(f.date(8), "Declared when the goods arrive in Bayvarra."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment of the despatch advice."),
-                             "GrossWeightMeasure": qty(weight, "KGM", "The gross weight arriving."),
                              "GoodsItem": [{**g, "DespatchLineReference": {
                                  "LineID": V(g["ID"].value, "The despatch advice line of these goods."),
                                  "DocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}}}
@@ -662,14 +663,7 @@ def road(n, doc):
         return kit.invoice(f, n, doc, 8, "Issued when the goods have left the warehouse.",
                            {"OrderReference": {"ID": V(f.numbers["order"], "The buyer's order.")},
                             "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice of the "
-                                                                                         "goods invoiced.")},
-                            "PaymentExchangeRate": {
-                                "SourceCurrencyCode": V("XUF", "The invoice currency."),
-                                "TargetCurrencyCode": V("XBL", "The buyer's currency, from which it pays."),
-                                "CalculationRate": V("0.01", "The world's reference rate, for the buyer's "
-                                                             "information: its bank converts at the day's rate."),
-                                "MathematicOperatorCode": V("Multiply", "Ferra times the rate gives lume."),
-                                "Date": V(f.date(8), "The invoice date.")}})
+                                                                                         "goods invoiced.")}})
     if doc["doc"] == "RemittanceAdvice":
         # Lumeway pays within the ten days of Valdara's standard terms and takes the 2 % (O218): Thursday 2 April,
         # a working day in both countries, the last before the discount period ends on 3 April
@@ -1203,11 +1197,13 @@ def rail(n, doc):
                                           "once the sealed boxes are at the hub."),  # D37, rail/08#F5
                 "IssueTime": V("16:45:00", "After the second box came in at the hub, and before the consignment "
                                            "note, which cites it."),
-                "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment under transit."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight under transit."),
+                "Shipment": kit.shipment_gross({
+                             "ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment under transit."),
                              "GoodsItem": kit.goods_items(f, "XUF", "The value of the goods, in ferra, for the transit "
                                                                     "guarantee."),
                              "Consignment": {"ID": V(f.numbers["consignment"], "The consignment on the train."),
+                                             "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 "The gross weight under transit.")),
                                              **rail_offices(),
                                              "MainCarriageShipmentStage": {
                                                  "ID": V("2", "The rail carriage the transit runs on."),
@@ -1220,7 +1216,7 @@ def rail(n, doc):
                                                                              "for the offices on its way.",  # rail/06#F14
                                                                              "WB")},
                                              "TransportHandlingUnit": [{"TransportEquipment": rail_container(f, k, False)}
-                                                                       for k in range(2)]}}}
+                                                                       for k in range(2)]}})}
     if doc["doc"] == "TransportationStatus":
         return kit.transportation_status(f, n, doc, 8, "Reported when the containers are on the train.",
                                          "Two containers loaded on the container train.",
@@ -1265,6 +1261,7 @@ def rail(n, doc):
                                                                                  "its road pre-carriage.")  # D37 point 5
         kit.deep_merge(out["Shipment"]["Consignment"], rail_consignment(f, "note"))
         out["Shipment"]["GoodsItem"] = rail_goods(f)        # the lot of each container (O271)
+        kit.shipment_gross(out["Shipment"])     # the two loaded containers (C15)
         return out
     if doc["doc"] == "DespatchAdvice":
         # the 3PL that packs the boxes announces the despatch, as in the road flow; one line per container and lot,
@@ -1618,10 +1615,10 @@ def with_allowance(out, total_key, base, why):
     """Apply the promotion allowance to a document's totals (no tax: a sale for resale)."""
     a = money(base * PROMO, "XBL")
     ac = promo_allowance(base, why)
-    if total_key == "LegalMonetaryTotal":             # on the invoice the allowance carries its tax category
+    if "TaxTotal" in out:                             # the allowance carries its tax category
         ac["TaxCategory"] = kit.tax_category(kit.tax_rule("6-xb", "26-xb", "bench-serra-b"))
-        subs = out.get("TaxTotal", {}).get("TaxSubtotal")
-        if isinstance(subs, list) and len(subs) == 1:   # the allowance lowers the taxable amount of its category
+        subs = lines_of(out["TaxTotal"], "TaxSubtotal")
+        if len(subs) == 1:                            # the allowance lowers the taxable amount of its category
             subs[0]["TaxableAmount"] = amount(base - a, "XBL", "The goods less the promotion support.")
     out["AllowanceCharge"] = ac
     t = out[total_key]
@@ -2418,8 +2415,8 @@ def sea(n, doc):
                                           "the order was accepted and the deposit paid."),  # D27, D30 point 6
                 "IssueTime": V("08:40:00", "First thing in the morning."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
-                             "Consignment": sea_consignment_fi(f, doc),
+                             "Consignment": {**sea_consignment_fi(f, doc), "GrossWeightMeasure": qty(
+                                 w, "KGM", kit.consignment_weight_why("The gross weight of the goods."))},
                              "InsurancePolicy": {
                                  "InsuredValueAmount": amount(INSURED, "XBL",
                                                               "CIF requires insurance of at least 110 % of the value; "
@@ -2429,9 +2426,11 @@ def sea(n, doc):
     if doc["doc"] == "PackingList":
         return {"ID": V(f.number("packing", doc["from"], "PackingList"), "The distributor's packing list number."),
                 "IssueDate": V(f.date(8), "Made when the container is packed."),
-                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment packed."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
-                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")},
+                "Shipment": kit.shipment_gross({
+                             "ID": V(f.numbers["shipment"], "The shipment packed."),
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment."),
+                                             "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 "The gross weight of the goods."))},
                              "GoodsItem": kit.goods_items(f, "XBL", "The value of the goods, in lume."),
                              "NetWeightMeasure": qty(sum(Decimal(str(d["ordered"])) *
                                                          Decimal(str(kit.maker(d["item"])["net_kg"])) for d in f.deal),
@@ -2450,7 +2449,7 @@ def sea(n, doc):
                              "DeliveryInstructions": V("Deliver to the buyer's 3PL, Nalevi Warehousing, Selanu.",
                                                        "Where the goods end up."),
                              **container(f, "The verified gross mass: cargo and the container's own weight of 3,750 "
-                                            "kg.")}}
+                                            "kg.")})}
     if doc["doc"] == "ExportCustomsDeclaration":
         out = kit.export_declaration(f, n, doc, 8, "The forwarder, as customs agent, declares the export at the "
                                                    "seaport.", "The value of the goods at export, in lume.")
@@ -2479,8 +2478,9 @@ def sea(n, doc):
                 "IssueDate": V(f.date(7), "The forwarder books the container the same morning."),  # D27, D30 point 6
                 "IssueTime": V("09:15:00", "After the distributor's instructions."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment booked."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the goods."),
-                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")}}}
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment."),
+                                             "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 "The gross weight of the goods."))}}}
     if doc["doc"] == "TransportationStatus" and doc["from"] == "16-xb":
         return kit.transportation_status(f, n, doc, 10, "Reported when the container is on board.",
                                          f"Container {CONTAINER} loaded on board.", "Port of Lumeport, container quay",
@@ -2499,18 +2499,19 @@ def sea(n, doc):
                 "ToOrderIndicator": V("true", "Made out to order: the buyer can transfer it by endorsement."),
                 "ShippingOrderID": V(f.numbers["instructions-carrier"], "The forwarder's booking with the carrier."),
                 "OtherInstruction": V("Three originals issued.", "How many originals there are."),
-                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the cargo."),
+                "Shipment": kit.shipment_gross({
+                             "ID": V(f.numbers["shipment"], "The shipment carried."),
                              "TotalGoodsItemQuantity": qty(2, "EA", "Benches and side frames."),
                              "ConsignmentQuantity": qty(1, "EA", "One consignment."),
-                             "Consignment": sea_consignment(f, "bl"),
-                             }}
+                             "Consignment": {**sea_consignment(f, "bl"), "GrossWeightMeasure": qty(
+                                 w, "KGM", kit.consignment_weight_why("The gross weight of the cargo."))},
+                             })}
     if doc["doc"] == "Manifest":
         return {"ID": V(f.number("manifest", doc["from"], "Manifest"), "The carrier's cargo manifest number."),
                 "IssueDate": V(f.date(11), "Sent to the island's customs before arrival."),
                 "ManifestTypeCode": V("CARGO", "A cargo manifest, of what the ship carries for Selanu."),
-                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment on the manifest."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of this shipment."),
+                "Shipment": kit.shipment_gross({
+                             "ID": V(f.numbers["shipment"], "The shipment on the manifest."),
                              "FirstArrivalPortLocation": kit.place("XLSEL", "The ship's first port on the island."),
                              "LastExitPortLocation": kit.place("XBLMP", "Its last port in Bayvarra."),
                              "ShipmentStage": {
@@ -2531,7 +2532,8 @@ def sea(n, doc):
                                  "EstimatedDepartureTransportEvent": kit.event(f, 10, SEA_SAILS + ":00", "The "
                                                                                "timetable departure from Lumeport, "
                                                                                "in Lumeport's time.", location=SEA_LUMEPORT)},
-                             "TransportHandlingUnit": {"TransportEquipment": sea_equipment(f, False)}}}
+                             "TransportHandlingUnit": {"TransportEquipment": sea_equipment(f, False)}},
+                    goods=qty(w, "KGM", "The gross weight of this shipment's goods."))}
     if doc["doc"] == "CommonTransportationReport":
         return {"ID": V(f.number("ctr", doc["from"], "CommonTransportationReport"), "The carrier's report number."),
                 "IssueDate": V(f.date(12), "Sent before the ship enters the port of Selanu."),
@@ -2682,9 +2684,6 @@ def sea(n, doc):
                                   "SellerSupplierParty": {"Party": party("6-xb", short=True)},
                                   "DocumentReference": {"ID": V(kit.cited_number("harbourline-assignment-notice"), "The notice of assignment of "
                                                                                      "the invoice to the factor.")},
-                                  "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The invoice currency."),
-                                                   "TargetCurrencyCode": V("XLC", "The buyer's currency."),
-                                                   "CalculationRate": V("0.4", "For the buyer's information.")},
                                   "BillingReference": {"InvoiceDocumentReference": {
                                       "ID": V(f.numbers["invoice"], "The distributor's invoice, which the factor "
                                                                     "bought."),
@@ -2772,11 +2771,6 @@ def sea(n, doc):
                                                                                                "desk.")},
                                "Delivery": {"ActualDeliveryDate": V(f.date(SEA_ARRIVES + 3), "The goods arrived at the 3PL.")},
                                "DeliveryTerms": {"ID": V("CIF", "As sold.", schemeID="INCOTERMS")},
-                               "PaymentAlternativeCurrencyCode": V("XLC", "The buyer's currency, shown too."),
-                               "PaymentAlternativeExchangeRate": {
-                                   "SourceCurrencyCode": V("XBL", "The credit's currency."),
-                                   "TargetCurrencyCode": V("XLC", "The buyer's."),
-                                   "CalculationRate": V("0.4", "The reference rate.")},
                                "Signature": {"ID": V("LD-SIG-26-0042", "The distributor's seal."),
                                              "SignatoryParty": party("6-xb", short=True)}})
         f.numbers["sea-credit"] = out["ID"].value
@@ -3050,8 +3044,6 @@ def air(n, doc):
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
                 "IssueDate": V(f.date(1), "The distributor asks its forwarder to book air freight."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
-                             "GrossWeightMeasure": qty(air_gross(f), "KGM", "The gross weight of the eight frame "
-                                                                            "cartons and their skid."),
                              "Consignment": air_consignment(f, doc)},
                 "DocumentReference": {"ID": V(AIR_TRANSIT, "The transit declaration the frames travel under, from "
                                                            "Valdara at Ferrano to Selanu airport through the "
@@ -3420,10 +3412,7 @@ def cotton(n, doc):
                          "Free on board at the port of Selanu: the buyer books and pays the sea freight; the risk "
                          "passes when the bales are on board.", "Port of Selanu",
                          {"FreightForwarderParty": party("10-xb", short=True),
-                          "DestinationCountry": {"IdentificationCode": V("XB", "The bales go to Bayvarra.")},
-                          "RequestedInvoiceCurrencyCode": V("XLC", "The mill asks to be invoiced in coral, the "
-                                                                   "ginnery's currency, and pays the exchange "
-                                                                   "itself.")})
+                          "DestinationCountry": {"IdentificationCode": V("XB", "The bales go to Bayvarra.")}})
         out["OrderLine"][0]["LineItem"]["Item"]["AdditionalItemProperty"] = cotton_required(doc["from"])
         return out
     if doc["doc"] == "ForwardingInstructions":
@@ -3432,8 +3421,9 @@ def cotton(n, doc):
                 "IssueDate": V(f.date(COTTON_DAY["instructions"]), "The day after the order: under FOB the buyer "
                                                                   "instructs the forwarder for the main carriage."),
                 "Shipment": {"ID": V(f.number("shipment", "39-xl", "Shipment"), "The shipment to be booked."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the bales."),
-                             "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
+                             "Consignment": {"GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 "The gross weight of the bales.")),
+                                             "ID": V(f.number("consignment", doc["from"], "Consignment"),
                                                      "The consignment.")}}}
     if doc["doc"] == "GoodsCertificate":
         return {"ID": V(f.number("goods-certificate", doc["from"], "GoodsCertificate"), "The Plant Protection "
@@ -3498,8 +3488,9 @@ def cotton(n, doc):
         return {"ID": V(f.number("bl", doc["from"], "BillOfLading"), "The bill of lading number."),
                 "IssueDate": V(f.date(COTTON_DAY["on-board"]), "Issued when the bales are on board."),
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The gross weight of the bales."),
-                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment.")}}}
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment."),
+                                             "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 "The gross weight of the bales."))}}}
     if doc["doc"] == "ImportCustomsDeclaration":
         return kit.import_declaration(f, n, doc, COTTON_DAY["import"], "The first working day after the ship "
                                       "berthed: the mill declares the bales in Bayvarra.",
@@ -5742,6 +5733,8 @@ def furniture(n, doc):
         amt = out["AnticipatedMonetaryTotal"]
         base = Decimal(amt["LineExtensionAmount"].value)
         amt["ChargeTotalAmount"] = amount(DESK_DISPOSAL, "XBL", "The packaging disposal.")
+        for st in lines_of(out["TaxTotal"], "TaxSubtotal"):
+            st["TaxableAmount"] = amount(base + DESK_DISPOSAL, "XBL", "The desks and the packaging disposal.")
         amt["PayableAmount"] = amount(base + DESK_DISPOSAL, "XBL", "What the department expects to pay: the lines "
                                                                    "and the disposal; no sales tax for a public body.")
         return out
@@ -6238,7 +6231,9 @@ def furniture(n, doc):
         for ln in out["DespatchLine"]:   # the store's planning notes of the order are not the maker's to repeat
             ln.pop("Note", None)
         sh = out["Shipment"]
-        sh.pop("Consignment", None)      # the maker's own van: no carrier, no consignment number
+        # the maker's own van: no carrier, no consignment number, so the shipment states the goods' weight
+        sh["GrossWeightMeasure"] = qty(sh.pop("Consignment")["GrossWeightMeasure"].value, "KGM", "The gross weight of "
+                                       "the pieces in their cartons.")
         sh["Delivery"] = {"Despatch": {"ActualDespatchDate": V(f.date(21), "The van left Marrowdale in the morning.")},
                           "EstimatedDeliveryPeriod": {"StartDate": V(f.date(21), "Delivered the same day."),
                                                       "EndDate": V(f.date(21), "The same day.")},
@@ -6958,9 +6953,6 @@ def fi_extras(f, n, doc, out):
          **({"OtherInstruction": V("Send the bill of lading to the forwarder.", "Where the documents go.")}
             if f.id in ("sea", "cotton") else {}),
          "DocumentReference": {"ID": V(f.numbers.get("order", ""), "The order the goods are for.")},
-         "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
-                          "TargetCurrencyCode": V("XLC", "The island's currency."),
-                          "CalculationRate": V("0.4", "The reference rate.")},
          "DocumentDistribution": {"ID": V("1", "The instructions to the forwarder."),
                                   "DocumentTypeCode": V("ForwardingInstructions", "The document distributed: these "
                                                                                   "instructions."),
@@ -6983,9 +6975,6 @@ def bl_extras(f, n, doc, out):
             "DocumentStatusCode": V("Confirmed", "Issued."),
             "DocumentReference": {"ID": V(f.numbers.get("instructions-carrier", f.numbers.get("instructions", "")),
                                           "The forwarding instructions it was issued on.")},
-            "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The freight's currency."),
-                             "TargetCurrencyCode": V("XLC", "The island's currency."),
-                             "CalculationRate": V("0.4", "The reference rate.")},
             "DocumentDistribution": bl_distribution(f, doc),
             "Signature": seal(doc["from"], f"TWL-SIG-BL-{f.id}", "The master's signature, by the carrier's agent.")}
 
@@ -7087,7 +7076,9 @@ def cotton_bale_count(f, n, doc, out):
     cons = next(iter(find_dicts(out, "Consignment")), None)
     if cons is None:
         out["Shipment"]["Consignment"] = {"ID": V(f.numbers["consignment"], "The consignment, as the mill's "
-                                                                            "forwarding instructions number it.")}
+                                                                            "forwarding instructions number it."),
+                                          **(kit.import_consignment(f, doc) if doc["doc"] == "ImportCustomsDeclaration"
+                                             else {})}
         cons = out["Shipment"]
     for c in lines_of(cons, "Consignment"):
         c["TotalPackagesQuantity"] = count
@@ -8265,10 +8256,7 @@ def _(f, n, doc, out):
     lines = out["RemittanceAdviceLine"]
     lines[0].update({"BuyerCustomerParty": {"Party": party("1-xl", short=True)},
                      "SellerSupplierParty": {"Party": party("6-xb", short=True)},
-                     "PayeeParty": party("24-xb", short=True),
-                     "ExchangeRate": {"SourceCurrencyCode": V("XBL", "The invoice currency."),
-                                      "TargetCurrencyCode": V("XLC", "The buyer's currency it paid from."),
-                                      "CalculationRate": V("0.4", "The rate the buyer's bank applied.")}})
+                     "PayeeParty": party("24-xb", short=True)})
     return {}
 
 
@@ -8741,13 +8729,14 @@ def mast(n, doc):
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
                 "IssueDate": V(f.date(2), "With the shipper's declaration of dangerous goods."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment."),
-                             "GrossWeightMeasure": qty(w, "KGM", f"The goods in their packages, with the "
-                                                                 f"{MAST_PALLET_KG} kg pallet of the battery crates."),
                              "GoodsItem": [{"ID": V(str(i), "A goods item."),
                                             "Description": V(ITEM[x["item"]]["name"], "The goods."),
                                             "Item": item(x["item"])} for i, x in enumerate(f.deal, 1)],
                              "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
-                                                     "The consignment."), **mast_consignment(f, False)}}}
+                                                     "The consignment."),
+                                             "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 f"The goods in their packages, with the {MAST_PALLET_KG} kg pallet "
+                                                 "of the battery crates.")), **mast_consignment(f, False)}}}
     if d == "Waybill":
         out = kit.waybill(f, n, doc, 3, "The air waybill, cargo aircraft only.", w, "The goods in their packages, "
                           f"with the {MAST_PALLET_KG} kg pallet of the battery crates.")
@@ -8758,7 +8747,8 @@ def mast(n, doc):
     if d == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, 3, "Sent when the goods leave for the airport.", "The goods in their "
                                   f"packages, with the {MAST_PALLET_KG} kg pallet of the battery crates.")
-        out["Shipment"]["GrossWeightMeasure"] = qty(w, "KGM", out["Shipment"]["GrossWeightMeasure"].why)
+        out["Shipment"]["Consignment"]["GrossWeightMeasure"] = qty(
+            w, "KGM", out["Shipment"]["Consignment"]["GrossWeightMeasure"].why)
         out["IssueTime"] = V("09:40:00", "When the forwarder's truck left Saltmere's works for the airport, about an "
                                          "hour away.")
         return out
@@ -9178,8 +9168,8 @@ def medicines(n, doc):
                                                                                           "declaration number.")
         out["Shipment"]["ID"] = V(f.number(f"shipment-{tag}", maker, "Shipment"), "The maker's shipment, as its "
                                                                                  "invoice numbers it.")
-        out["Shipment"]["Consignment"] = {"ID": V(f.number(f"consignment-{tag}", maker, "Consignment"),
-                                                  "The consignment declared, as the maker booked it.")}
+        out["Shipment"]["Consignment"] = kit.import_consignment(f, doc, deal=deal, ID=V(
+            f.number(f"consignment-{tag}", maker, "Consignment"), "The consignment declared, as the maker booked it."))
         kit.RATE_DATE = None
         return out
     if d == "Order":
@@ -9212,11 +9202,11 @@ def medicines(n, doc):
                                       "the package, signed when the generator's activity is measured on Monday.")}],
                 "Signature": seal(doc["from"], "QPD-SIG-FI-26"),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment."),
-                             "GrossWeightMeasure": qty(w, "KGM", "The goods in their packages, with the dry ice and "
-                                                                 "its box."),
                              "GoodsItem": med_goods(f),
                              "Consignment": {"ID": V(f.number("consignment", doc["from"], "Consignment"),
                                                      "The consignment."),
+                                             "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 "The goods in their packages, with the dry ice and its box.")),
                                              "HazardousRiskIndicator": V("true", "The consignment holds dangerous "
                                                                                  "goods."),
                                              "HazardousItemNotificationParty": party("49-xb", short=True),
@@ -9226,9 +9216,9 @@ def medicines(n, doc):
                                   "left the warehouse for the airport.", "The goods with their packaging, with the "
                                   "dry ice and the frozen vaccine's box, as on the air waybill.")
         # the same consignment as the forwarding instructions and the air waybill (read-through medicines 6)
-        out["Shipment"]["GrossWeightMeasure"] = qty(kit.gross_weight(f, "ordered") + MED_DRY_ICE_KG
-                                                    + MED_BOX["tare_kg"], "KGM",
-                                                    out["Shipment"]["GrossWeightMeasure"].why)
+        out["Shipment"]["Consignment"]["GrossWeightMeasure"] = qty(
+            kit.gross_weight(f, "ordered") + MED_DRY_ICE_KG + MED_BOX["tare_kg"], "KGM",
+            out["Shipment"]["Consignment"]["GrossWeightMeasure"].why)
         out["IssueTime"] = V("05:10:00", "When the wholesaler's van left with the generator.")
         for ln, dd in zip(out["DespatchLine"], f.deal):
             ln["Item"] = item(dd["item"], buyer=doc["to"],
@@ -10831,16 +10821,6 @@ def lines_of(out, key):
     return v if isinstance(v, list) else [v] if v else []
 
 
-@enrich("air", "Waybill")
-def _(f, n, doc, out):
-    return {"ExchangeRate": {"SourceCurrencyCode": V("XBL", "The currency of the freight charges."),
-                             "TargetCurrencyCode": V("XLC", "The island's currency: its customs adds the freight to "
-                                                            "the customs value in coral."),
-                             "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The world's reference rate."),
-                             "MathematicOperatorCode": V("Multiply", "Lume times the rate gives coral."),
-                             "Date": V(f.date(9), "The rate of the day the waybill is issued.")}}
-
-
 @enrich("cotton", "Order")
 def _(f, n, doc, out):
     for tt in lines_of(out, "TaxTotal"):
@@ -10939,6 +10919,32 @@ def _(f, n, doc, out):
 @enrich("tender", "Order")
 def _(f, n, doc, out):
     return {}      # no forward contract in a tender document: the hedge is Valdara's, in the story only (D28, O50)
+
+
+def collected_apart(out, cline):
+    """An amount collected for a third party (the city's sewage levy) is no part of the bill's own lines, nor of
+    the amounts its tax is reckoned on: it is outside the tax, so no tax subtotal holds it, and it is added only to
+    the amount payable (owner, 2026-11-21, O274), as the cotton gin's fund levy is."""
+    levy = Decimal(cline["LineExtensionAmount"].value)
+    cur = cline["LineExtensionAmount"].attrs["currencyID"]
+    lmt = out["LegalMonetaryTotal"]
+    for k, why in (("LineExtensionAmount", "The sum of the bill's own lines; the levy collected for the city is "
+                                           "added to the amount payable only."),
+                   ("TaxExclusiveAmount", "The bill's own lines without tax; the levy collected for the city is not "
+                                          "part of it."),
+                   ("TaxInclusiveAmount", "The bill's own lines with their tax; the levy collected for the city is "
+                                          "not part of it.")):
+        lmt[k] = amount(Decimal(lmt[k].value) - levy, cur, why)
+    lmt["PayableAmount"] = V(lmt["PayableAmount"].value, ("What is credited" if "CreditNoteLine" in out else
+                                                          "What is to be paid") + ": the bill's own lines with their tax"
+                             + (", less what was prepaid," if "PrepaidAmount" in lmt else "")
+                             + " plus the levy collected for the city.", **lmt["PayableAmount"].attrs)
+    tt = out["TaxTotal"]
+    subs = [s for s in lines_of(tt, "TaxSubtotal")
+            if not (s["TaxCategory"]["ID"].value == "O" and Decimal(s["TaxableAmount"].value) == levy)]
+    if len(subs) == len(lines_of(tt, "TaxSubtotal")):
+        raise SystemExit("utilities: the levy collected for the city has no subtotal of its own to take out")
+    tt["TaxSubtotal"] = subs if len(subs) > 1 else subs[0]
 
 
 @enrich("utilities", "Invoice")
@@ -11529,8 +11535,9 @@ def _(f, n, doc, out):
         levy_line["BeneficiaryParty"] = party("2-xb", short=True)
         out["InvoiceLine"] = lines
         out["CollectionInvoiceLine"] = levy_line
+        collected_apart(out, levy_line)
         out["LineCountNumeric"] = V(str(len(lines) + 1), f"The number of lines: {len(lines)} invoice line(s) and one collection line "
-                                         "for the city's levy; the totals include both.")
+                                         "for the city's levy; the amount payable includes both.")
     if key == "33-xu":
         total = out["TaxTotal"]
         subs = total["TaxSubtotal"]
@@ -12182,30 +12189,6 @@ def fund_levy_line(base, line_id, credit=False):
                  "Item": {"Name": V("Cotton fund levy", "What is collected.")}}
 
 
-def cotton_currencies(f, day):
-    to = lambda c, r, why: {"SourceCurrencyCode": V("XLC", "The document currency."),       # noqa: E731
-                            "TargetCurrencyCode": V(c, why),
-                            "CalculationRate": V(r, "The reference rate." if r != "1" else "The same currency: no "
-                                                                                             "conversion."),
-                            "MathematicOperatorCode": V("Multiply", "Coral times the rate."),
-                            "Date": V(f.date(day), "Of the document's date.")}
-    return {"PricingCurrencyCode": V("XBL", "Seed cotton is priced from the Trade Accord's lint reference price, "
-                                            "published in lume."),
-            "PricingExchangeRate": {"SourceCurrencyCode": V("XBL", "The reference price's currency."),
-                                    "TargetCurrencyCode": V("XLC", "The document's."),
-                                    "CalculationRate": V(str(kit.rate("XBL", "XLC")), "The reference rate."),
-                                    "MathematicOperatorCode": V("Multiply", "Lume times the rate gives coral."),
-                                    "Date": V(f.date(day), "Of the document's date.")},
-            "TaxCurrencyCode": V("XLC", "The presumptive tax is paid to the island's tax office in coral."),
-            "TaxExchangeRate": to("XLC", "1", "The tax currency, coral."),
-            "PaymentCurrencyCode": V("XLC", "The farm is paid in coral."),
-            "PaymentExchangeRate": to("XLC", "1", "The payment currency, coral."),
-            "PaymentAlternativeCurrencyCode": V("XBL", "The farm may ask to be paid in lume, to its account in "
-                                                       "Bayvarra, where it buys its machinery."),
-            "PaymentAlternativeExchangeRate": to("XBL", str(kit.rate("XLC", "XBL")), "Lume, the alternative."),
-            "TaxPointDate": V(f.date(day), "The day the withholding becomes due.")}
-
-
 def cotton_refs(f):
     # the farm's documents belong to the farm and the ginnery alone: no mill season agreement as originator, no
     # chamber project, no season account, no tax representative between two Lisavan businesses (D33 points 3 and 5;
@@ -12238,7 +12221,7 @@ def _(f, n, doc, out):
     ref["UUID"] = line_uuid(f, "delivery", 1)
     out["CollectionInvoiceLine"] = cline
     out["LineCountNumeric"] = V("2", "The seed cotton and the collection line of the levy.")
-    return {**cotton_currencies(f, COTTON_DAY["self-billed"]), **cotton_refs(f),
+    return {**cotton_refs(f),
             "WithholdingTaxTotal": wt,
             "AdditionalDocumentReference": [x for x in (out.get("AdditionalDocumentReference"),) if x] + [
                 {"ID": V(PARTY["38-xl"]["identity"]["registry_id"], "The farm's registration, which the withholding "
@@ -12272,7 +12255,7 @@ def _(f, n, doc, out):
     _, wt = withholding_total([(value, Decimal(XL_TAX["tiers"][1]["percent"]), "Above 2,000 coral")],
                               "The withholding reversed on the credit: the credited value falls in the 2 % tier of "
                               "the delivery.")  # cotton/05#F24
-    return {**cotton_currencies(f, COTTON_DAY["credit"]), **cotton_refs(f),
+    return {**cotton_refs(f),
             "InvoicePeriod": {"StartDate": V(f.date(COTTON_DAY["loads"][0]), "The deliveries classed, from the "
                                                                              "first trailer of 6 April"),
                               "EndDate": V(f.date(COTTON_DAY["loads"][1]), "to the last, of 8 April.")},
@@ -12327,6 +12310,8 @@ def _(f, n, doc, out):
     for k in ("LineExtensionAmount", "TaxExclusiveAmount", "TaxInclusiveAmount", "PayableAmount"):
         if k in amt:
             amt[k] = amount(net, "XBL", "Net of the repeat-order discount; no sales tax on goods bought for resale.")
+    for st in lines_of(out["TaxTotal"], "TaxSubtotal"):
+        st["TaxableAmount"] = amount(net, "XBL", "The lines net of the repeat-order discount.")
     return {"OrderDocumentReference": {"ID": V(f.numbers["order"], "The first order of the line: this one is a "
                                                                    "second delivery of the same pieces.")}}
 
@@ -12427,7 +12412,8 @@ def _(f, n, doc, out):
                           kit.tax_rule("36-xb", "5-xu", "slat-bundle-1800"))], "XBL")[0]
     q["PayableAmount"] = amount(base + ch + tax, "XBL", "The slats and the pallets with Urvania's value added tax "
                                                         f"of {tax:,} lume.")
-    return {"AllowanceCharge": pallets_charge()}
+    return {"AllowanceCharge": {**pallets_charge(), "TaxCategory": kit.tax_category(kit.tax_rule(
+        "36-xb", "5-xu", "slat-bundle-1800"))}}
 
 
 @enrich("wood", "Order")
@@ -12443,7 +12429,8 @@ def _(f, n, doc, out):
                                            kit.tax_rule("36-xb", "5-xu", "slat-bundle-1800"))], "XBL")
     a["PayableAmount"] = amount(base + ch + tax, "XBL", "The slats and the pallets with Urvania's value added tax, "
                                                         "as quoted.")
-    return {"AllowanceCharge": pallets_charge()}
+    return {"AllowanceCharge": {**pallets_charge(), "TaxCategory": kit.tax_category(kit.tax_rule(
+        "36-xb", "5-xu", "slat-bundle-1800"))}}
 
 
 STT_RETAIL = Decimal("0.065")
@@ -12568,7 +12555,9 @@ def utilities_complete(n, doc):
         levy["CollectedForParty"] = party("2-xb", short=True)
         levy["Note"] = V("The city's levy, credited for the city.", "Why it is a collection line.")
         out["CollectionCreditNoteLine"] = levy
-        out["LineCountNumeric"] = V("2", "The water and the collection line of the levy; the totals include both.")
+        collected_apart(out, levy)
+        out["LineCountNumeric"] = V("2", "The water and the collection line of the levy; the amount credited "
+                                         "includes both.")
         return out
     return utilities(n, doc)
 
@@ -12593,12 +12582,6 @@ def packaging_complete(n, doc):
                "IssueDate": V(f.date(26), "On a business visit to Lumeport, before the fair in Selanu."),
                "Note": V("Paid in coral: the card's currency was chosen at the till.", "Printed on the receipt."),
                "DocumentCurrencyCode": kit.currency_line("XLC", "the currency the customer chose to pay in"),
-               "PricingExchangeRate": {"SourceCurrencyCode": V("XBL", "The shelf prices are in lume."),
-                                       "TargetCurrencyCode": V("XLC", "The receipt is in coral."),
-                                       "CalculationRate": V(str(r), "The world's reference rate, which the till "
-                                                                    "applies."),
-                                       "MathematicOperatorCode": V("Multiply", "Lume times the rate gives coral."),
-                                       "Date": V(f.date(26), "The day of the sale.")},
                "TaxExchangeRate": {"SourceCurrencyCode": V("XLC", "The receipt's currency."),
                                    "TargetCurrencyCode": V("XBL", "The sales tax is owed to the state in lume."),
                                    "CalculationRate": V(str(kit.rate("XLC", "XBL")), "The reference rate."),
@@ -14182,10 +14165,11 @@ def reefer(n, doc):
                 "IssueTime": V("10:40:00", "In the morning, before the cut-off at noon."),
                 "Shipment": {
                     "ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
-                    "GrossWeightMeasure": qty(RF_GROSS, "KGM", "The gross weight of the fruit on its pallets."),
                     "Consignment": {
                         "ID": V(f.number("consignment", doc["from"], "Consignment"), "The cooperative's consignment "
                                                                                      "number."),
+                        "GrossWeightMeasure": qty(RF_GROSS, "KGM", kit.consignment_weight_why(
+                            "The gross weight of the fruit on its pallets.")),
                         "ForwarderServiceInstructions": V(
                             "Book a 40-foot reefer on Tidewell's sailing of 23 April to Selanu; have it pre-trip "
                             "inspected and pre-cooled; bring it to our packhouse on 22 April and back to the port on "
@@ -14309,13 +14293,14 @@ def reefer(n, doc):
                 "OtherInstruction": V("Express release: no original issued; the reefer is released at Selanu to "
                                       "the consignee named.", "Why there are no originals: the fruit is at Selanu "
                                                                "in two days, before papers could follow it."),
-                "Shipment": {"ID": V(f.numbers["shipment"], "The shipment carried."),
-                             "GrossWeightMeasure": qty(RF_GROSS, "KGM", "The gross weight of the cargo."),
+                "Shipment": kit.shipment_gross({
+                             "ID": V(f.numbers["shipment"], "The shipment carried."),
                              "TotalGoodsItemQuantity": qty(1, "EA", "The fruit, as one goods item."),
                              "TotalTransportHandlingUnitQuantity": qty(20, "EA", "The pallets in the reefer."),
                              "ConsignmentQuantity": qty(1, "EA", "One consignment."),
-                             "Consignment": rf_consignment(f),
-                             "GoodsItem": rf_goods_item(f)}}
+                             "Consignment": {**rf_consignment(f), "GrossWeightMeasure": qty(
+                                 RF_GROSS, "KGM", kit.consignment_weight_why("The gross weight of the cargo."))},
+                             "GoodsItem": rf_goods_item(f)})}
     if d == "Invoice":
         out = kit.invoice(f, n, doc, RF_DAY["sail"], "Issued on shipment, when the reefer is on board.",
                           {"OrderReference": {"ID": V(f.numbers["order"], "The wholesaler's order.")},
@@ -14695,6 +14680,7 @@ def lpg(n, doc):
                                     "What the carrier must do at delivery.")
         kit.deep_merge(out["Shipment"]["Consignment"], lpg_consignment(f))
         out["Shipment"]["Consignment"]["MainCarriageShipmentStage"] = lpg_stage(f)
+        kit.shipment_gross(out["Shipment"])     # the tank with the propane (C15)
         return out
     if d == "Invoice":
         return kit.invoice(f, n, doc, LPG_INVOICE_DAY, "Issued the working day after the delivery.",
@@ -14862,6 +14848,7 @@ def modification(n, doc):
                                       "release into free circulation is not recorded again.")
         out["Shipment"]["Consignment"] = {
             "ID": V(f.numbers["consignment"], "The sawmill's number for the load."),
+            **kit.import_consignment(f, doc),
             "OfficeOfEntryLocation": {
                 "Name": V("Customs post at the land border, Urvanian side", "One of the offices the authorisation "
                           "names as empowered to accept the plant's entries: the border post, for loads that come "

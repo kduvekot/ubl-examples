@@ -1276,7 +1276,8 @@ def item(iid, tax=None, buyer=None, instance=None, catalogue=None, catalogue_ref
                                                           f"services; {msrc}."),
                 "CommodityCode": V(maker["hs"], "The Harmonized System subheading of the World Customs Organization, "
                                                 f"six digits, for customs and trade statistics; {msrc}.")}]
-        if maker.get("national_tariff"):
+        # a national tariff subheading only in a document of the country whose tariff it is (C29, decision Q24)
+        if maker.get("national_tariff") and (CURRENT_DOC is None or document_country(CURRENT_DOC) == maker["origin"]):
             cc = WORLD["countries"][maker["origin"]]
             ccs.append({"CommodityCode": V(maker["national_tariff"], f"The national tariff code of {cc['name']}, two "
                                                                      "digits below the HS subheading, as its customs "
@@ -2063,14 +2064,15 @@ def _line_amounts(node, out):
             pct = cat.get("Percent").value if isinstance(cat, dict) and isinstance(cat.get("Percent"), V) else "0"
             out.append((cid, Decimal(pct), Decimal(node["LineExtensionAmount"].value)))
             return
-        for k, v in node.items():         # a levy collected for someone else counts in its own category (O)
-            if k not in ("AllowanceCharge", "TaxTotal"):    # utilities/06, 09, 11 (read-through 2026-11-20)
+        for k, v in node.items():         # an amount collected for someone else is outside the tax (O274)
+            if k not in ("AllowanceCharge", "TaxTotal") and not k.startswith("Collection"):
                 _line_amounts(v, out)
 
 
 def tax_arithmetic(content, where):
     """A subtotal's taxable amount is the lines of its category plus the document's charges less its allowances
-    of that category; an allowance or charge without a category, in a document with one category, takes it."""
+    of that category; in a document with one category, every allowance and charge states it (worklist C24). A
+    check since stage 7 (owner, 2026-11-21, Q1): it repairs nothing, the generator states the right amounts."""
     tt = content.get("TaxTotal")
     subs = tt.get("TaxSubtotal") if isinstance(tt, dict) else None
     subs = subs if isinstance(subs, list) else [subs] if isinstance(subs, dict) else []
@@ -2090,7 +2092,9 @@ def tax_arithmetic(content, where):
     cats = {x[0] for x in lines}
     for ac in acs:
         if "TaxCategory" not in ac and len(cats) == 1 and len(subs) == 1:
-            ac["TaxCategory"] = {k: v for k, v in subs[0]["TaxCategory"].items()}
+            kind = "charge" if ac["ChargeIndicator"].value == "true" else "allowance"
+            raise SystemExit(f"{where}: a document-level {kind} states no tax category, though the document has "
+                             f"one ({subs[0]['TaxCategory']['ID'].value})")  # C24, stage 7 Q1
     for sub in subs:
         cid = sub["TaxCategory"]["ID"].value
         base = sum(a for c, _, a in lines if c == cid)
@@ -2098,15 +2102,9 @@ def tax_arithmetic(content, where):
             if isinstance(ac.get("TaxCategory"), dict) and ac["TaxCategory"]["ID"].value == cid:
                 sign = 1 if ac["ChargeIndicator"].value == "true" else -1
                 base += sign * Decimal(ac["Amount"].value)
-        old = sub["TaxableAmount"]
-        if Decimal(old.value) != base:
-            pct = sub["TaxCategory"].get("Percent")
-            if isinstance(pct, V) and Decimal(pct.value) != 0:
-                raise SystemExit(f"{where}: taxable amount of category {cid} is {old.value}, the lines and charges "
-                                 f"make {base}: the tax would change")  # C24
-            sub["TaxableAmount"] = V(f"{base:.{len(old.value.partition('.')[2])}f}", "The lines of this category "
-                                     "plus the document's charges less its allowances of the category"
-                                     ".", **old.attrs)  # C24
+        if Decimal(sub["TaxableAmount"].value) != base:
+            raise SystemExit(f"{where}: taxable amount of category {cid} is {sub['TaxableAmount'].value}, the lines "
+                             f"and the document's charges and allowances make {base}")  # C24, stage 7 Q1
 
 
 def check_road_weights(root, where):
@@ -2244,11 +2242,10 @@ def check_totals(root, where):
     tax = sum((dec(t, "TaxAmount") for t in root.findall(f"{{{NS_CAC}}}TaxTotal")
                if t.find(f"{{{NS_CBC}}}TaxAmount").get("currencyID") == cur), Decimal(0))
     own = sum((dec(x, "LineExtensionAmount") for x in lines), Decimal(0))
-    # amounts collected for a third party (CollectionInvoiceLine, UBL 2.5): utilities counts them in the lines'
-    # sum, the cotton gin's self-billing adds them to the amount payable only; either adds up (reported, stage 7)
+    # amounts collected for a third party (CollectionInvoiceLine, UBL 2.5) are no part of the lines' sum and are
+    # added to the amount payable only (owner, 2026-11-21, O274: the utilities' city levy, the cotton gin's fund levy)
     collected = sum((dec(x, "LineExtensionAmount") for x in root.findall(f"{{{NS_CAC}}}Collection{line}")), Decimal(0))
-    collected_apart = collected and dec(lmt, "LineExtensionAmount") == own
-    sums = [("LineExtensionAmount", own if collected_apart else own + collected, bool(lines)),
+    sums = [("LineExtensionAmount", own, bool(lines)),
             ("AllowanceTotalAmount", side("false"), q(lmt, "AllowanceTotalAmount") is not None or side("false")),
             ("ChargeTotalAmount", side("true"), q(lmt, "ChargeTotalAmount") is not None or side("true")),
             ("TaxExclusiveAmount", dec(lmt, "LineExtensionAmount") - dec(lmt, "AllowanceTotalAmount") +
@@ -2256,8 +2253,7 @@ def check_totals(root, where):
             ("TaxInclusiveAmount", dec(lmt, "TaxExclusiveAmount") + tax, q(lmt, "TaxInclusiveAmount") is not None),
             ("PayableAmount", (dec(lmt, "TaxInclusiveAmount") if q(lmt, "TaxInclusiveAmount") is not None else
                                dec(lmt, "LineExtensionAmount")) - dec(lmt, "PrepaidAmount") -
-             dec(lmt, "WithholdingTaxTotalAmount") + dec(lmt, "PayableRoundingAmount") +
-             (collected if collected_apart else 0), True)]
+             dec(lmt, "WithholdingTaxTotalAmount") + dec(lmt, "PayableRoundingAmount") + collected, True)]
     for name, want, applies in sums:
         if applies and dec(lmt, name) != want:
             raise SystemExit(f"{where}: LegalMonetaryTotal/{name} {q(lmt, name)} {cur}, the document's amounts make "
@@ -2337,8 +2333,10 @@ def document_country(doc):
 
 
 def national_tariffs(content, doc):
-    """A national tariff subheading appears only in documents of the country whose tariff it is."""
+    """A national tariff subheading appears only in documents of the country whose tariff it is (worklist C29). A
+    check since stage 7 (owner, 2026-11-21, Q1): `item()` gives the subheading only to such a document."""
     country = document_country(doc)
+    foreign = {codelists.NATIONAL.format(c, "CustomsTariff") for c in WORLD["countries"] if c != country}
 
     def walk(node):
         if isinstance(node, list):
@@ -2346,11 +2344,12 @@ def national_tariffs(content, doc):
                 walk(x)
         elif isinstance(node, dict):
             ccs = node.get("CommodityClassification")
-            if isinstance(ccs, list):
-                keep = [cc for cc in ccs if not (isinstance(cc.get("CommodityCode"), V) and any(
-                    cc["CommodityCode"].attrs.get("listID") == codelists.NATIONAL.format(c, "CustomsTariff")
-                    for c in WORLD["countries"] if c != country))]
-                node["CommodityClassification"] = keep if len(keep) > 1 else keep[0] if keep else ccs
+            for cc in ccs if isinstance(ccs, list) else [ccs] if isinstance(ccs, dict) else []:
+                code = cc.get("CommodityCode")
+                if isinstance(code, V) and code.attrs.get("listID") in foreign:
+                    raise SystemExit(f"{doc['flow']}/{xmlname(doc['nn'], doc)}: the national tariff code "
+                                     f"{code.value} ({code.attrs['listID']}) in a document of {country}"
+                                     )  # C29, stage 7 Q1
             for v in node.values():
                 walk(v)
     walk(content)
@@ -2902,39 +2901,40 @@ def redundant_roles(content, doc):
 
 def currency_cleanup(content, doc):
     """Every currency code and exchange rate converts something the document states (worklist C11): no currency
-    equal to the document's, no rate from a currency to itself, no pricing currency the prices are not in, no
-    alternative payment currency without an amount in it, and no free-standing rate in a transport document, a
-    statement, a remittance or a status response when no amount is in the other currency."""
+    equal to the document's, no rate from a currency to itself, no pricing currency the prices are not in and no
+    pricing rate without a pricing currency, no alternative payment currency without an amount in it, and no free-standing rate
+    in a transport document, a statement, a remittance or a status response when no amount is in the other
+    currency. A check since stage 7 (owner, 2026-11-21, Q1): the generators state no idle currency."""
+    where = f"{doc['flow']}/{xmlname(doc['nn'], doc)}"
     dc = content.get("DocumentCurrencyCode")
     dc = dc.value if isinstance(dc, V) else None
     used, prices = set(), set()
     _currencies(content, used, prices)
     for code, rate in CURRENCY_PAIRS.items():
         v = content.get(code)
+        if code == "PricingCurrencyCode" and rate in content and not isinstance(v, V):
+            raise SystemExit(f"{where}: {rate} without {code}")  # C11, stage 7 Q1
         if not isinstance(v, V):
             continue
-        drop = v.value == dc
-        if code == "PricingCurrencyCode" and prices and v.value not in prices:
-            drop = True
-        if code == "PaymentAlternativeCurrencyCode" and "PayableAlternativeAmount" not in str(content.get(
-                "LegalMonetaryTotal", "")):
-            drop = True
-        if drop:
-            del content[code]
-            if rate:
-                content.pop(rate, None)
-    if "PricingExchangeRate" in content and "PricingCurrencyCode" not in content:
-        del content["PricingExchangeRate"]
+        why = None
+        if v.value == dc:
+            why = "it is the document's own currency"
+        elif code == "PricingCurrencyCode" and prices and v.value not in prices:
+            why = "the prices are not in it"
+        elif code == "PaymentAlternativeCurrencyCode" and "PayableAlternativeAmount" not in str(
+                content.get("LegalMonetaryTotal", "")):
+            why = "no PayableAlternativeAmount is in it"
+        if why:
+            raise SystemExit(f"{where}: {code} {v.value} converts nothing: {why}")  # C11, stage 7 Q1
 
-    def walk(node, free):
+    def walk(node, free, path):
         if isinstance(node, list):
             for x in node:
-                walk(x, free)
+                walk(x, free, path)
             return
         if not isinstance(node, dict):
             return
-        for k in list(node):
-            v = node[k]
+        for k, v in node.items():
             if (k == "ExchangeRate" or k.endswith("ExchangeRate")) and isinstance(v, dict):
                 src, tgt = v.get("SourceCurrencyCode"), v.get("TargetCurrencyCode")
                 src, tgt = (src.value if isinstance(src, V) else None), (tgt.value if isinstance(tgt, V) else None)
@@ -2942,11 +2942,13 @@ def currency_cleanup(content, doc):
                 idle = not (other & used) if dc else not ({src, tgt} <= used)   # no amount in the other currency
                 cites = "BillingReference" in node and src not in (dc, None) and tgt == dc   # paying a document
                 #                                                         in another currency, into this one
-                if src == tgt or (free and k == "ExchangeRate" and idle and not cites):
-                    del node[k]
-                    continue
-            walk(v, free)
-    walk(content, doc["doc"] in RATE_FREE_DOCS)
+                if src == tgt:
+                    raise SystemExit(f"{where}: {path}{k} converts {src} into itself")  # C11, stage 7 Q1
+                if free and k == "ExchangeRate" and idle and not cites:
+                    raise SystemExit(f"{where}: {path}{k} {src} to {tgt}: no amount of the document is in "
+                                     f"{', '.join(sorted(other)) or 'the other currency'}")  # C11, stage 7 Q1
+            walk(v, free, f"{path}{k}/")
+    walk(content, doc["doc"] in RATE_FREE_DOCS, "")
 
 
 # ---------------------------------------------------------------- items ordered from a catalogue (worklist C25)
@@ -3085,16 +3087,13 @@ def _equipment(node, out):
 
 def shipment_weights(content, flow_id):
     """Shipment/GrossWeightMeasure includes the transport equipment by its definition, Consignment/GrossWeightMeasure
-    excludes it (worklist C15). Where a document states its equipment, the shipment's weight is the goods plus the
-    tares, or the equipment's gross weights, and the goods' weight is the consignment's; where it does not, the
-    goods' weight stays only on the consignment or the goods item."""
+    excludes it (worklist C15). A shipment states its gross weight only with its equipment: the goods (the
+    consignment's weight) plus the tares, or the equipment's gross weights (`examples_kit.shipment_gross`); where no
+    equipment is stated, the goods' weight is on the consignment or the goods items only. A check since stage 7
+    (owner, 2026-11-21, Q1): it repairs nothing."""
     if flow_id == "waste":                     # the weighbridge weight is the loaded truck: the waste flow (D42)
         return
-
-    def _plain(x):
-        """A decimal without trailing zeros after the point: 29880 stays 29880, 1.50 becomes 1.5."""
-        t = f"{x:f}"
-        return t.rstrip("0").rstrip(".") if "." in t else t
+    where = f"{CURRENT_DOC['flow']}/{xmlname(CURRENT_DOC['nn'], CURRENT_DOC)}" if CURRENT_DOC else flow_id
 
     def walk(node):
         if isinstance(node, list):
@@ -3103,33 +3102,34 @@ def shipment_weights(content, flow_id):
             return
         if not isinstance(node, dict):
             return
-        for k, v in list(node.items()):
+        for k, v in node.items():
             if k == "Shipment" and isinstance(v, dict) and isinstance(v.get("GrossWeightMeasure"), V):
-                g = v["GrossWeightMeasure"]
+                g = Decimal(v["GrossWeightMeasure"].value)
                 cons = v.get("Consignment")
+                c = cons.get("GrossWeightMeasure") if isinstance(cons, dict) else None
+                goods = v.get("GoodsItem") if isinstance(v.get("GoodsItem"), list) else [v.get("GoodsItem")]
+                items = [Decimal(x["GrossWeightMeasure"].value) for x in goods
+                         if isinstance(x, dict) and isinstance(x.get("GrossWeightMeasure"), V)]
                 equipment = []
                 _equipment(v, equipment)
-                if isinstance(cons, dict) and "GrossWeightMeasure" not in cons:
-                    cons["GrossWeightMeasure"] = V(g.value, "The gross weight of the goods with their packaging, "
-                                                   "without the transport equipment, as a consignment's weight is "
-                                                   f"defined. {g.why}", **g.attrs)  # C15
-                goods_item = any(isinstance(x, dict) and "GrossWeightMeasure" in x
-                                 for x in (v.get("GoodsItem") if isinstance(v.get("GoodsItem"), list)
-                                           else [v.get("GoodsItem")]))
                 if equipment and all(isinstance(t, V) for t, _ in equipment):
-                    total = Decimal(g.value) + sum(Decimal(t.value) for t, _ in equipment)
-                    v["GrossWeightMeasure"] = V(_plain(total), f"The goods ({g.value} kg) and "
-                                                f"the tare of the transport equipment ({' + '.join(t.value for t, _ in equipment)} "
-                                                "kg): a shipment's gross weight includes the equipment.",  # C15
-                                                **g.attrs)
+                    tare = sum(Decimal(t.value) for t, _ in equipment)
+                    base = Decimal(c.value) if isinstance(c, V) else sum(items) if items else None
+                    if isinstance(cons, dict) and not isinstance(c, V):
+                        raise SystemExit(f"{where}: the consignment of a shipment with its equipment states no "
+                                         "gross weight of the goods")  # C15, stage 7 Q1
+                    if (base is not None and g != base + tare) or g <= tare:
+                        raise SystemExit(f"{where}: Shipment/GrossWeightMeasure {g} is not the goods ({base}) plus "
+                                         f"the equipment's tare ({tare})")  # C15, stage 7 Q1
                 elif equipment and all(isinstance(w, V) for _, w in equipment):
                     total = sum(Decimal(w.value) for _, w in equipment)
-                    v["GrossWeightMeasure"] = V(_plain(total), "The gross weights of the "
-                                                f"transport equipment with the goods in it ({' + '.join(w.value for _, w in equipment)} "
-                                                "kg): a shipment's gross weight includes the equipment.",  # C15
-                                                **g.attrs)
-                elif isinstance(cons, dict) or goods_item:
-                    del v["GrossWeightMeasure"]
+                    if g != total:
+                        raise SystemExit(f"{where}: Shipment/GrossWeightMeasure {g} is not the gross weights of its "
+                                         f"equipment ({total})")  # C15, stage 7 Q1
+                elif isinstance(cons, dict) or items:
+                    raise SystemExit(f"{where}: Shipment/GrossWeightMeasure {g} without the transport equipment it "
+                                     "includes: the goods' weight belongs to the consignment or the goods "
+                                     "items")  # C15, stage 7 Q1
             walk(v)
     walk(content)
 
@@ -3147,6 +3147,7 @@ GENERIC_REFERENCES = {"AdditionalDocumentReference", "DocumentReference", "Suppo
 DOC_DATES = {}      # document ID -> (issue date, world document) of every example
 DOC_TYPES = {}      # document ID -> (flow, file number, UBL document type) of every example of the world
 DOC_TYPE = None     # the type of the document being built (its payment note names it, worklist C39)
+CURRENT_DOC = None  # the world document being built (world/documents.json): whose national tariff it may carry
 FLOW_MODES = None   # the modes of the transport legs of the flow being built (dangerous goods data by mode, D36)
 INDEXING = False    # True while doc_types() runs the scenarios to collect the IDs
 UNTYPED = []        # references that are neither typed nor an example of the world: (file, element, ID)
@@ -4360,9 +4361,11 @@ def main(flow_id, check=False):
     stale, roots = [], []
     global DOC_TYPE, FLOW_MODES
     FLOW_MODES = {leg["mode"] for leg in flow.get("legs", [])}
+    global CURRENT_DOC
     for doc in docs:
         n = doc["nn"]               # the example number in the flow, removed numbers left out (D28)
         DOC_TYPE = doc["doc"]
+        CURRENT_DOC = doc
         content = scenario(n, doc)
         global CONTENT
         CONTENT = content
