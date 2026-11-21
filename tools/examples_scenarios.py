@@ -14844,7 +14844,9 @@ def modification(n, doc):
                                                          "which the entry is made."),
                                        "DocumentType": V("Inward processing authorisation", "What it is.")},
                                       {"ID": V(MOD_PROFORMA, "The sawmill's pro forma invoice: the value of the "
-                                                             "blanks for customs, there being no sale."),
+                                                             "blanks for customs, there being no sale; it carries "
+                                                             "the sawmill's statement on origin as their exporter, "
+                                                             "the proof of the Accord origin the entry claims."),
                                        "DocumentTypeCode": V("325", "UN/EDIFACT 1001 code 325: proforma invoice.")}])
         out["IssueTime"] = V("10:30:00", "When the truck stands at the Urvanian post, after the Bayvarran export.")
         out["Shipment"]["DeclaredStatisticsValueAmount"] = amount(

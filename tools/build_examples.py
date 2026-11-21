@@ -2155,6 +2155,88 @@ def consignment_weight_problems():
             for (kind, cid, stage), got in seen.items() if len({(v, u) for _, v, u in got}) > 1]
 
 
+ORIGIN_STATEMENT = "preferential origin under the Trade Accord"
+ACCORD = ("XU", "XB", "XL")
+
+
+def _party_country(root, role):
+    """The country of the party in a top-level role of a built document, from its address in the XML."""
+    return root.findtext(f"{{{NS_CAC}}}{role}/{{{NS_CAC}}}Party/{{{NS_CAC}}}PostalAddress/{{{NS_CAC}}}Country/"
+                         f"{{{NS_CBC}}}IdentificationCode")
+
+
+def origin_problems():
+    """Stage 7, A7 (D18, O49; owner, 2026-11-21, Q7), over the built XML of all flows: an invoice carries the
+    exporter's statement on origin exactly when it sells goods of one Accord origin to a buyer in another Accord
+    country and the goods cross an Accord border into the buyer's country (a leg of the flow from another country
+    ends there); the seller makes it as the exporter, a reseller too (Lumeway, air/11, sea/22). Never on a domestic
+    sale, never in a flow with a certificate of origin, and on no other kind of document; and an import declaration
+    that claims the preference (PreferenceCriterionCode) cites that invoice or the certificate of origin."""
+    out = []
+    flows = {f["id"]: f for f in WORLD["flows"]}
+    certificates = {f for (f, _), (d, _, _) in BUILT.items() if d["doc"] == "CertificateOfOrigin"}
+    proofs = {}       # flow -> the IDs of its proofs of origin: invoices with the statement, certificates of origin
+    for (flow_id, n), (doc, root, _) in sorted(BUILT.items()):
+        where = f"{flow_id}/{xmlname(n, doc)}"
+        notes = " ".join(e.text or "" for e in root.iter(f"{{{NS_CBC}}}Note"))
+        has = ORIGIN_STATEMENT in notes
+        if doc["doc"] == "CertificateOfOrigin":
+            proofs.setdefault(flow_id, set()).add(root.findtext(f"{{{NS_CBC}}}ID"))
+        if doc["doc"] != "Invoice":
+            if has:
+                out.append(f"{where}: a statement on origin on a {doc['doc']}, not an invoice")
+            continue
+        seller, buyer = _party_country(root, "AccountingSupplierParty"), _party_country(root, "AccountingCustomerParty")
+        origins = set()
+        goods = False
+        for ln in root.iter(f"{{{NS_CAC}}}InvoiceLine"):
+            iid = next((ITEM_BY_NAME[e.text] for e in ln.iterfind(f"{{{NS_CAC}}}Item/{{{NS_CBC}}}Name")
+                        if e.text in ITEM_BY_NAME), None)
+            if iid is None or ITEM[iid].get("kind") != "goods":
+                continue
+            goods = True
+            mk = kit_maker(iid)
+            origins.add(None if mk.get("made_abroad") else mk.get("origin"))
+        legs = flows[flow_id].get("legs", [])
+        crosses = any(PARTY[leg["from"]]["c"] != PARTY[leg["to"]]["c"] and PARTY[leg["to"]]["c"] == buyer
+                      for leg in legs if leg["from"] in PARTY and leg["to"] in PARTY)
+        want = (seller in ACCORD and buyer in ACCORD and seller != buyer and goods and len(origins) == 1 and
+                next(iter(origins)) in ACCORD and crosses and flow_id not in certificates)
+        if has and not want:
+            out.append(f"{where}: a statement on origin, but the invoice " + (
+                "is a domestic sale" if seller == buyer else
+                "is in a flow with a certificate of origin" if flow_id in certificates else
+                "sells no goods of one Accord origin" if not (goods and len(origins) == 1 and
+                                                              next(iter(origins)) in ACCORD) else
+                "sends no goods across an Accord border into the buyer's country"))
+        elif want and not has:
+            out.append(f"{where}: sells goods of {next(iter(origins))} origin across an Accord border to the buyer "
+                       "without the exporter's statement on origin")
+        if has:
+            proofs.setdefault(flow_id, set()).add(root.findtext(f"{{{NS_CBC}}}ID"))
+    # where there is no sale, the exporter's pro forma invoice carries the statement (modification/05: the blanks
+    # sent for processing); a release from a procedure rests on the entry it cites (wood/07 on modification/05)
+    claims = {}
+    invoices = {r.findtext(f"{{{NS_CBC}}}ID") for (d, r, _) in BUILT.values() if d["doc"] == "Invoice"}
+    for (flow_id, n), (doc, root, _) in sorted(BUILT.items()):
+        if doc["doc"] == "ImportCustomsDeclaration" and root.find(f".//{{{NS_CBC}}}PreferenceCriterionCode") is not None:
+            refs = list(root.iterfind(f".//{{{NS_CAC}}}AdditionalDocumentReference"))
+            previous = {e.text for p in root.iterfind(f".//{{{NS_CAC}}}PreviousCustomsDeclaration")
+                        for e in p.iter(f"{{{NS_CBC}}}ID")}
+            claims[root.findtext(f"{{{NS_CBC}}}ID")] = (flow_id, n, doc, {r.findtext(f"{{{NS_CBC}}}ID") for r in refs}
+                                                        | previous,
+                                                        any(r.findtext(f"{{{NS_CBC}}}DocumentTypeCode") == "325"
+                                                            for r in refs))
+    proven = {i for i, (flow_id, _, _, cited, proforma) in claims.items()
+              if cited & proofs.get(flow_id, set()) or (proforma and not cited & invoices)}
+    proven |= {i for i, (_, _, _, cited, _) in claims.items() if cited & proven}
+    for i, (flow_id, n, doc, cited, _) in sorted(claims.items(), key=lambda x: x[1][:2]):
+        if i not in proven:
+            out.append(f"{flow_id}/{xmlname(n, doc)}: claims the Trade Accord's preference and cites neither an "
+                       "invoice with the statement on origin nor a certificate of origin")
+    return out
+
+
 def check_emissions(root, where):
     """Stage 7, A11 (C09): an emission a document states with a factor and a base is their product, to the
     precision the value is given in (world_items.emission_problems checks the items' own figures)."""
@@ -3914,6 +3996,51 @@ def issuer_hours(content, doc):
     return (min(a for a, _ in spans), max(b for _, b in spans)) if spans else None
 
 
+# deliveries and receipts on a working day of the receiver (O79, stage 7 A9; owner, 2026-11-21, Q9)
+RECEIVING_ROLES = ("DeliveryParty", "DeliveryCustomerParty", "ConsigneeParty", "BuyerCustomerParty",
+                   "AccountingCustomerParty")
+RECEIPT_EVENTS = ("ActualDeliveryTransportEvent", "ReceiptTransportEvent")
+PARTY_BY_NAME = {p["identity"]["name"]: pid for pid, p in PARTY.items() if p.get("identity", {}).get("name")}
+
+
+def _receiver(doc, node):
+    """The party that receives the goods of a delivery or receipt: the DeliveryParty or the ConsigneeParty its
+    aggregate or the one above names (by its name in the XML), else the document's receiving role."""
+    for anc in [node] + list(node.iterancestors()):
+        for role in ("DeliveryParty", "ConsigneeParty"):
+            name = anc.findtext(f"{{{NS_CAC}}}{role}/{{{NS_CAC}}}PartyName/{{{NS_CBC}}}Name") or \
+                anc.findtext(f"{{{NS_CAC}}}{role}/{{{NS_CAC}}}Party/{{{NS_CAC}}}PartyName/{{{NS_CBC}}}Name")
+            if name in PARTY_BY_NAME:
+                return PARTY_BY_NAME[name]
+    ps = {k.split("/")[-1]: v for k, v in doc.get("parties", {}).items() if isinstance(v, str)}
+    return next((ps[r] for r in RECEIVING_ROLES if ps.get(r) in PARTY), None)
+
+
+def check_delivery_days(root, doc, where):
+    """O79, stage 7 A9 (owner, 2026-11-21, Q9): goods are delivered and received on a working day of the party that
+    receives them, by its working week and its holidays (working_day): an ActualDeliveryDate, a receipt advice's
+    ReceivedDate, a delivery or goods receipt event. A carrier's movements on the way (departure, arrival at a
+    terminal, transshipment) are free: a carrier works every day."""
+    hits = []
+    for e in root.iter(f"{{{NS_CBC}}}ActualDeliveryDate"):
+        hits.append((e, "delivered"))
+    if doc["doc"] == "ReceiptAdvice":
+        for e in root.iter(f"{{{NS_CBC}}}ReceivedDate"):
+            if etree.QName(e.getparent()).localname not in ("Payment", "PaymentMeans"):
+                hits.append((e, "received"))
+    for name in RECEIPT_EVENTS:
+        for ev in root.iter(f"{{{NS_CAC}}}{name}"):
+            d = ev.find(f"{{{NS_CBC}}}OccurrenceDate")
+            if d is not None and ev.findtext(f"{{{NS_CBC}}}CompletionIndicator") != "false":
+                hits.append((d, "delivered"))
+    for e, what in hits:
+        pid = doc["from"] if what == "received" else _receiver(doc, e.getparent())
+        if pid and e.text and not working_day(pid, e.text):
+            raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} "
+                             f"{e.text}: {what} on a day {PARTY[pid]['identity']['name']} does not "
+                             "work")  # O79, stage 7 A9, Q9
+
+
 def check_desk_hours(flow_id, roots, docs):
     """O269, stage 7 A2 (owner, 2026-11-21, Q2): a document is issued within the hours of the issuer's desk that
     its contact names, else of the issuer's main contact; a desk may keep hours of its own (despatch, goods-in,
@@ -4595,6 +4722,7 @@ def main(flow_id, check=False):
         check_totals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_originals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_emissions(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_delivery_days(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_road_weights(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_shipping_orders(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_reason_premises(root, reasons, f"world/examples/{flow_id}/{xmlname(n, doc)}")
@@ -4686,6 +4814,9 @@ if __name__ == "__main__":
             ok = False
         for problem in build_examples.consignment_weight_problems():
             print(f"gross weights: {problem}", file=sys.stderr)  # stage 7 A13
+            ok = False
+        for problem in build_examples.origin_problems():
+            print(f"origin: {problem}", file=sys.stderr)  # stage 7 A7
             ok = False
     for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
         print(f"note: {note}", file=sys.stderr)
