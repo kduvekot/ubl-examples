@@ -572,9 +572,9 @@ example adds its coverage-register row in the same commit.
   XUF and a TaxTotal of 0)?
 - **Q6 (tax treatment): decided (owner, 2026-11-21): A, plus the link:** every leg in `documents.json` names the documents whose goods it carries (the order or the invoice), so the check follows each sale's own leg; delivery terms with a place abroad or a cited export declaration remain accepted evidence. (The flows packaging, mast and medicines do have their border legs; the probe's problem was the missing link between leg and sale.) is an export proved by a leg of the flow only, or also by delivery terms with a place
   abroad, where the flow has no leg?
-- **Q7 (origin statement):** may a reseller make the statement (sea/22, air/11)? Is it right on air/11 at all,
+- **Q7 (origin statement): answered (owner, 2026-11-20, with the air batch):** a reseller may make the statement where its sale crosses an Accord border (Lumeway on air/11 and sea/22, as the exporter in the Accord's sense); built. may a reseller make the statement (sea/22, air/11)? Is it right on air/11 at all,
   where the goods move under Valdara's transit declaration?
-- **Q8 (O64 scope):** should the other makers' lots and serials become production records in world data, like
+- **Q8 (O64 scope): decided (owner, 2026-11-21): A,** production records for every maker that numbers lots or serials (Tostara, the sawmill, Rinova, the textile mill, Quillmoor, the generator's maker …), as Valdara's, in `world/items.json`; the lot/serial check and the goods-chain check cover them. should the other makers' lots and serials become production records in world data, like
   Valdara's?
 - **Q9 (calendar):** must deliveries and receipts also fall on the receiving party's working days?
 - **Q10 (O60):** should speeds and allowances (border stop, shunt, night mooring) move into world data, and with
