@@ -38,7 +38,14 @@ or `dropped (reason)`); the part findings stay as written. Its open point is **O
 
 ## Status
 
-All groups: **open** (2026-11-21).
+- **SR2-01, SR2-02, SR2-09, SR2-10, SR2-12:** open, handed to the working session with instructions (2026-11-21). SR2-02's phrases are warnings in `tools/check_published.py` until the texts are rewritten, then failures.
+- **SR2-03:** solved in `46091d39` (the port community by its rule: every flow with a sea leg from or to XBLMP; the reefer's forwarding instructions, export declaration and bill of lading now claim it; no flow keys on the page).
+- **SR2-04:** solved in `46091d39` (transport infoboxes once and filled; descriptions keep proper names; villages and localities together; the capitals' climate at the town's own ground, "solar radiation"; the main page titled "The UBL World").
+- **SR2-05:** solved in `46091d39` (long dates in infoboxes, weekday dates in the holiday tables).
+- **SR2-06:** partly solved in `46091d39` (See also with related articles; every category and the five main pages in the side menu, shown first on a phone; Lisavu's taxes listed). Open: what "References" means in the world (a question for the owner), uneven sections per article type, disambiguation, false precision, table polish.
+- **SR2-07:** partly solved in `46091d39` (About describes the Encyclopedia as it is; releases.html has its own head; history.html without the earlier branches). Open: the map's opening card and the country notes (working session first, then the card).
+- **SR2-08:** partly solved in `46091d39` (the party-data fold; the suppliers abroad by name and "a supplier abroad"; counts in the singular and no zero counts; a contents list on the Trade page; the flow's title beside each example on specification pages). Open: B-05 and B-06 (working session's data), B-17 (fleet table, floor and room, `.example` links), B-18 (names; party data).
+- **SR2-11:** partly solved in `46091d39` (the map sheet page shows a 1,600 px preview; coverage explains its placements, leaves out zero rows and the empty table, stable anchors; the map page says World, its title follows the pattern, "supply chain" for the commerce kind). Open: the map page's footer and Source link, and whether it follows the device's light theme (A-08 b, d).
 
 
 ## Part A
