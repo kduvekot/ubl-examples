@@ -31,7 +31,8 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = [("terrain.py", ["--check"]), ("place_list.py", ["--check"]), ("fx_fixing.py", ["--check"]),
            ("world_model.py", []), ("world_docs.py", []), ("world_parties.py", []), ("world_items.py", []),
-           ("world_goods.py", []), ("world_movement.py", []), ("build_codelists.py", ["--check"]), ("coverage_register.py", [])]
+           ("world_goods.py", []), ("world_movement.py", []), ("build_codelists.py", ["--check"]), ("coverage_register.py", []),
+           ("world_facts.py", [])]
 SHARES_WORDS = "build_codelists.py"     # reads world_data.MISSING_WORDS, as the checks before it left it
 
 # Run one script as runpy did in one process (tools/ first on the path, argv[0] the script's name); afterwards write

@@ -17,7 +17,8 @@ root = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(0, os.path.dirname(__file__))
 import world_data  # noqa: E402
 import world_ids  # noqa: E402
-world = world_data.load()
+import world_facts  # noqa: E402
+world = world_facts.fill_world(world_data.load())   # {fact:…} in the published texts (stage 7 B2)
 parties = {p["id"]: p for p in world["parties"]}
 
 # The tile model: built and checked by tools/world_model.py (the build stops on problems)
@@ -44,7 +45,7 @@ for p in world["parties"]:
 
 # The map: fill in the data
 page = open(os.path.join(root, "site", "world.html"), encoding="utf-8").read()
-data = json.dumps({"countries": world["countries"], "parties": world["parties"], "routes": world["routes"],
+data = json.dumps({"countries": world["countries"], "parties": world["parties"], "routes": world["routes"], "speeds": world["speeds"],
                    "towns": world["towns"], "platforms": world.get("platforms", []), "model": model}, ensure_ascii=False, separators=(",", ":"))
 assert "/*WORLD_JSON*/ null" in page
 # as a string for JSON.parse: a browser reads a large JSON string much faster than the same data as a JavaScript

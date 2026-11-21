@@ -180,6 +180,7 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.az) t.approach = 1;
   if (m.es) t.estuary = 1;
   if (m.ms) t.station = 1;
+  if (m.in != null) t.install = WORLD.model.installations[m.in];   // an installation: wind turbines, a solar park, a hydro plant
   if (m.mf) t.mf = m.mf;
   if (m.lu) t.lu = m.lu;                               // the land use of its cells (tools/land_use.py)                               // a managed forest's compartments (ages of its sub-squares)
   if (m.tn) t.tunnel = 1;
@@ -492,14 +493,15 @@ function paintWorld(g, box, level) { const detail = level === 2;
   // up and back from it: hence the wide margin)
   for (let s = 0; s < W + H; s++) for (let ri = 0; ri < RW(); ri++) { const rj = s - ri; if (rj < 0 || rj >= RH()) continue;
     const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x, y] = tileWorld(i, j); if (!vis(x, y, t.building ? 12 * TW : 2 * TW)) continue;
-    if (t.mf) { if (detail && !t.building) plantation(g, i, j, t); }
-    else if (t.lu) { if (detail && !t.building && !t.urban) landUseTrees(g, i, j, t); }
-    else if (detail && t.t === "forest" && !t.building) for (const [dx, dy, u, v] of [[-6, -1, -.25, .1], [4, -2, .15, -.25], [-1, 3, .1, .2]]) { if (!nearWay(t, u, v) && !coversWay(i, j, x + dx, y + dy)) treeOrShrub(g, i, j, x + dx, y + dy, hash(i * 3 + dx, j)); }
-    if (detail && t.tree && !coversWay(i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4)) treeOrShrub(g, i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
+    if (t.mf) { if (detail && !t.building && !t.install) plantation(g, i, j, t); }
+    else if (t.lu) { if (detail && !t.building && !t.urban && !t.install) landUseTrees(g, i, j, t); }
+    else if (detail && t.t === "forest" && !t.building && !t.install) for (const [dx, dy, u, v] of [[-6, -1, -.25, .1], [4, -2, .15, -.25], [-1, 3, .1, .2]]) { if (!nearWay(t, u, v) && !coversWay(i, j, x + dx, y + dy)) treeOrShrub(g, i, j, x + dx, y + dy, hash(i * 3 + dx, j)); }
+    if (detail && t.tree && !t.install && !coversWay(i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4)) treeOrShrub(g, i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     // the villages and the farmsteads from the middle level on
     if (t.urban && !t.building) { if (level === 1 && t.village) villageCluster(g, i, j, t); else if (level || !t.village) townBlocks(g, i, j, t, detail); }
     else if (t.house) { if (detail) house(g, x, y - foundation(g, i, j, 0, 0, .22), t.house[0], hash(i, j * 7), DIRS[t.house[1]] || [0, 1]); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
     if (t.station) meteringStation(g, i, j);
+    if (t.install && level) drawInstall(g, i, j, t.install);
     if (t.harbour) harbour(g, i, j);
     if (t.building && QUARTER_AT.has(i + "," + j)) quarter3(g, QUARTER_AT.get(i + "," + j), "rgba(40,70,110,.9)");
     else if (t.building) { const fr = footprint(t.building).map(([a, b]) => R(a, b)).sort((u, v) => (v[0] + v[1]) - (u[0] + u[1]) || v[0] - u[0])[0];
@@ -567,6 +569,47 @@ function tree(g, x, y, n) { g.fillStyle = "#5a3d24"; g.fillRect(x - 1, y - 2, 2,
     g.fillStyle = shade(c, .18); g.beginPath(); g.moveTo(x - 4.5, y - 1); g.lineTo(x, y - 12); g.lineTo(x - .5, y - 1); g.fill(); return; }
   const c = n > .9 ? "#c0702a" : n > .82 ? "#b59a2e" : "#4c8a38"; g.fillStyle = c; g.beginPath(); g.arc(x, y - 7, 4.5, 0, 7); g.fill();
   g.fillStyle = shade(c, .2); g.beginPath(); g.arc(x - 1.5, y - 8.5, 2.2, 0, 7); g.fill(); }
+// ---- installations (map "installations", MO021): the works that stand on their own in the land and are no party's.
+// Drawn from the middle level on, larger than they are, like every building; their square has no trees. Power lines run
+// under the ground: none is drawn.
+// a three-bladed wind turbine standing at x, y: a white tower, the nacelle and the rotor
+function windTurbine(g, x, y, n) { const h = 36, hub = [x, y - h];
+  g.fillStyle = "rgba(0,0,0,.18)"; g.beginPath(); g.ellipse(x, y + .5, 3, 1.2, 0, 0, 7); g.fill();
+  g.fillStyle = "#e9ecee"; g.beginPath(); g.moveTo(x - 1.6, y); g.lineTo(x - .7, y - h); g.lineTo(x + .7, y - h); g.lineTo(x + 1.6, y); g.fill();
+  g.fillStyle = "#c9ced2"; g.beginPath(); g.moveTo(x + .2, y); g.lineTo(x + .7, y - h); g.lineTo(x + 1.6, y); g.fill();
+  g.fillStyle = "#dfe3e6"; g.fillRect(x - 2.5, y - h - 1.5, 5, 3);
+  g.strokeStyle = "#f4f6f7"; g.lineWidth = 1.4; g.lineCap = "round";
+  for (let k = 0; k < 3; k++) { const a = n * 2.1 + k * 2 * Math.PI / 3; g.beginPath(); g.moveTo(hub[0], hub[1]); g.lineTo(hub[0] + Math.cos(a) * 12, hub[1] + Math.sin(a) * 12); g.stroke(); }
+  g.lineCap = "butt"; g.fillStyle = "#b8bec3"; g.beginPath(); g.arc(hub[0], hub[1], 1.3, 0, 7); g.fill(); }
+// rows of solar panels tilted to the sun on part of the square, their fence and a small substation
+function solarPark(g, i, j) { const P = (u, v, z = 0) => { const [x, y] = tp(i, j, u, v); return [x, y - z]; };
+  const u0 = -.32, u1 = .32, v0 = -.3, v1 = .32;
+  poly(g, [P(u0 - .04, v0 - .04), P(u1 + .04, v0 - .04), P(u1 + .04, v1 + .04), P(u0 - .04, v1 + .04)], "#b8b29a");
+  for (let v = v0; v < v1 - .01; v += .062) {
+    poly(g, [P(u0, v), P(u1, v), P(u1, v + .04, 1.6), P(u0, v + .04, 1.6)], "#2a4a78");
+    poly(g, [P(u0, v + .04, 1.6), P(u1, v + .04, 1.6), P(u1, v + .045, 1.1), P(u0, v + .045, 1.1)], "#7f9cc0"); }
+  for (const [a, b] of [[[u0 - .05, v0 - .05], [u1 + .05, v0 - .05]], [[u1 + .05, v0 - .05], [u1 + .05, v1 + .05]], [[u1 + .05, v1 + .05], [u0 - .05, v1 + .05]], [[u0 - .05, v1 + .05], [u0 - .05, v0 - .05]]])
+    tline(g, i, j, [a, b], "#e8e4da", 1, [2, 2]);
+  const [sx, sy] = P(u1 + .12, v1 - .05); block(g, sx, sy, .1, .08, 4, "#c9c4b6", "#8f969b"); }
+// a hydro plant's intake, high in its river's valley: a low weir across the river and the intake house beside it (its
+// small reservoir is far smaller than a square: not drawn; the water goes down to the power house in a tunnel)
+function hydroIntake(g, i, j) { const [x, y] = tileWorld(i, j);
+  const a = tp(i, j, -.2, .1), b = tp(i, j, .14, -.02);
+  g.fillStyle = "#cfc9bd"; g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.lineTo(b[0], b[1] + 2.5); g.lineTo(a[0], a[1] + 2.5); g.fill();
+  g.strokeStyle = "#e6e1d6"; g.lineWidth = 1; g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.stroke();
+  const F = houseFrame(x + 5, y - 1, [0, 1], .16, .14), fc = box3(g, F, 0, 0, 1, 1, 0, 6, "#d6d0c2", null);
+  windowsOn(g, F, fc, 8, 2.5, 4.5, "rgba(60,80,110,.8)", 1); gable3(g, F, 0, 0, 1, 1, 6, 2.2, "#6f6a62", "#d6d0c2"); }
+// a hydro plant's power house by its river, with its switchgear
+function hydroPowerHouse(g, i, j) { const [x, y] = tileWorld(i, j);
+  const F = houseFrame(x, y, [0, 1], .32, .24), fc = box3(g, F, 0, 0, 1, 1, 0, 9, "#d8d2c4", null);
+  windowsOn(g, F, fc, 7, 3, 7, "rgba(60,80,110,.8)", 1); gable3(g, F, 0, 0, 1, 1, 9, 3, "#6f6a62", "#d8d2c4");
+  const [sx, sy] = tileWorld(i + .32, j + .1); block(g, sx, sy, .1, .1, 3, "#8f969b", "#6f767b"); }
+function drawInstall(g, i, j, ins) {
+  if (ins.kind === "wind turbines") [[-.36, -.3], [.34, -.12], [-.02, .36]].slice(0, ins.count || 3).map(([u, v], k) => [tp(i, j, u, v), k])
+    .sort((a, b) => a[0][1] - b[0][1]).forEach(([[px, py], k]) => windTurbine(g, px, py, hash(i * 3 + k, j) + k * .37));
+  else if (ins.kind === "solar park") solarPark(g, i, j);
+  else if (ins.kind === "hydro intake") hydroIntake(g, i, j);
+  else if (ins.kind === "hydro power house") hydroPowerHouse(g, i, j); }
 // a pipeline's border metering station: a fenced pad, the pipe coming up through the meter run with its
 // valves, and a small control hut
 function meteringStation(g, i, j) {
@@ -644,7 +687,7 @@ function coversWay(i, j, x, y) {
     for (const [px, py] of pts) if (Math.abs(px - x) < 9 && py < y + 5 && py > y - 15) return true; }   // the road is a band, not a line
   return false; }
 // Trees do not hide the buildings (owner, 2026-11-21, MO020): every building is a box on the screen (its footprint up to
-// its height: a party's building, a house in the country, the buildings of a town or village block), and a tree drawn
+// its height: a party's building, a house in the country, the buildings of a town or village block, an installation), and a tree drawn
 // after it (in front of it) whose crown would reach into that box is drawn as a low shrub instead, or left out when
 // even a shrub would reach into it. The boxes are worked out per rotation, as "in front" changes with it.
 const COVER = new Map(), COVER_CELL = 64;
@@ -661,6 +704,8 @@ function coverIndex() { let ix = COVER.get(rot); if (ix) return ix; ix = new Map
   for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j];
     if (t.house && !t.urban && !t.building) { const [x, y] = tileWorld(i, j), hw = .3 * TW, h = 8 + 8 * t.house[0];   // a house in the country
       put(x - hw, x + hw, y - h, y + .2 * TH, i, j); }
+    if (t.install) { const [x, y] = tileWorld(i, j), h = t.install.kind === "wind turbines" ? 54 : 16;               // an installation
+      put(x - .45 * TW, x + .45 * TW, y - h, y + .35 * TH, i, j); }
     if (t.urban && !t.building) { const h = t.village ? 14 : [0, 14, 16, 26, 60][t.density] || 26;               // a town's or a village's block
       for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) {
         const [x, y] = tp(i, j, (a + .5) / SUB - .5, (b + .5) / SUB - .5); put(x - .14 * TW, x + .14 * TW, y - h, y + .14 * TH, i, j); } } }
@@ -1623,18 +1668,24 @@ function rotate(step, px, py) { const r = cv.getBoundingClientRect(); px ??= r.w
 OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();
 function along(r, f) { let d = f * r.L; for (const [a, b, l, hid] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0]), hid]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], Math.atan2(s[1][1] - s[0][1], s[1][0] - s[0][0]), s[3]]; }
 // How fast the vehicles move (owner, 2026-11-21, MO015). Not in real time: a truck covers about one square (3.5 km)
-// a second, some 280 times its real speed. The other kinds keep the order of their real speeds, compressed (by the
-// square root of their ratio to a truck's), so that a ship still moves and an aircraft does not streak across:
-// truck 65 km/h -> 5 km a second; freight train 80 km/h -> 5.5; barge 12 km/h -> 2.2; container ship 30 km/h -> 3.4;
-// cargo aircraft 750 km/h at cruise -> 17, rolling on the runway at a quarter of that and speeding up as it climbs.
-// The speed is reckoned in kilometres on the ground, not in pixels on the screen, so that it does not change with the
-// direction of travel. DWELL: the time each kind waits to load and unload (milliseconds).
-const SPEED = { road: 5, rail: 5.5, river: 2.2, sea: 3.4, air: 17 }, DWELL = { road: 2500, rail: 3500, river: 4000, sea: 5000, air: 3000 };
+// a second. The real speeds are the world's own (map "speeds", the same the documents' journey times are reckoned
+// from); the map compresses them by one rule: km a second on the map = 5 x the square root of the real speed over the
+// truck's, so that the kinds keep their order and a ship still moves while an aircraft does not streak across. An
+// aircraft rolls on the runway at a quarter of its cruising speed and speeds up as it climbs. The speed is reckoned
+// in kilometres on the ground, not in pixels on the screen, so that it does not change with the direction of travel.
+// The kind of vehicle of each mode: the truck on the road, the ore train on the ore line and the container train on
+// the others, the barge, the feeder ship, the freighter (its cruising speed). DWELL: the time each kind waits to load
+// and unload (milliseconds).
+const SPEEDS = WORLD.speeds, TRUCK_KMH = SPEEDS.road.truck.kmh;
+const realKmh = v => v.mode === "road" ? SPEEDS.road.truck.kmh : v.mode === "rail" ? (v.flows.includes("ore") ? SPEEDS.rail.ore_train : SPEEDS.rail.container_train).kmh
+  : v.mode === "river" ? SPEEDS.river.barge.kmh : v.mode === "sea" ? SPEEDS.sea.feeder.kmh : v.mode === "air" ? SPEEDS.air.freighter.kmh : TRUCK_KMH;
+const mapKmps = v => 5 * Math.sqrt(realKmh(v) / TRUCK_KMH);
+const DWELL = { road: 2500, rail: 3500, river: 4000, sea: 5000, air: 3000 };
 // the kilometres a stretch of a way covers on the ground (from its world pixels; the isometric view undone)
 const segKm = (a, b) => { const x = (b[0] - a[0]) / (TW / 2), y = (b[1] - a[1]) / (TH / 2); return Math.hypot((x + y) / 2, (y - x) / 2) * WORLD.model.km; };
 // a vehicle's timetable along its way: the time (milliseconds) at the end of each stretch, from its speed there
 function timetable(v) { let t = 0; v.times = v.seg.map(([a, b], k) => {
-    let kmps = SPEED[v.mode] || 5;
+    let kmps = mapKmps(v);
     if (v.mode === "air" && v.alts) { const up = (v.alts[k] + v.alts[k + 1]) / 2 / CRUISE; kmps *= .25 + .75 * Math.min(1, up); }
     return t += segKm(a, b) / kmps * 1000; });
   v.travel = Math.max(1000, t); }
