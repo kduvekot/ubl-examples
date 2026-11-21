@@ -15934,6 +15934,7 @@
    ],
    "farming": "market",
    "wiki": {
+    "facts": {"Established": "before the Europeans, as Ruldraz; Ferrano since 4 September 1840"},
     "short": "Capital of Urvania",
     "lead": "**Ferrano** (Urvanian *Ruldraz*) is the capital of [[Urvania]], with about {population} people. It stands where the northern valley meets the Runmek, just below the rapids that end navigation: the country's works, its rail hub and its river port.",
     "sections": [
@@ -15943,7 +15944,22 @@
      },
      {
       "title": "History",
-      "text": "Ruldraz was the Urvanians' town before the Europeans came: its lanes, market and old bridgehead are the old town. A Tuscan trading post of 1609–10 at the landing below the rapids left the walled warehouse court of Borgo Toscano. The treaty of protection, signed in the town on 4 September 1840, made it the protectorate's seat under its Italian name, Ferrano, and the city keeps that day as its Founders' Day, though Ruldraz is older. From 1840 the Sardinian and then Italian protectorate laid out Città Nuova on the higher terrace, and the railway and the first works came in the 1880s. The British administration of 1941 to 1962 added a garden suburb; after independence the town grew along its roads and its railway, with the works and depots of the protected economy and of the Accord."
+      "text": ""
+     },
+     {
+      "title": "Ruldraz",
+      "sub": true,
+      "text": "Ruldraz was the Urvanians' town before the Europeans came, where the valleys meet below the rapids of the [[Runmek]]: its lanes, market and old bridgehead are the old town. A Tuscan trading post of 1609–10 at the landing below the rapids left the walled warehouse court of Borgo Toscano."
+     },
+     {
+      "title": "The protectorate",
+      "sub": true,
+      "text": "The treaty of protection, signed in the town on 4 September 1840, made it the protectorate's seat under its Italian name, Ferrano, and the city keeps that day as its Founders' Day, though Ruldraz is older. The Sardinian and then Italian protectorate laid out Città Nuova on the higher terrace, and the railway and the first works came in the 1880s."
+     },
+     {
+      "title": "Since 1941",
+      "sub": true,
+      "text": "The British administration of 1941 to 1962 added a garden suburb. After independence the town grew along its roads and its railway, with the works and depots of the protected economy and, from 1996, of the Accord."
      }
     ]
    }
@@ -16057,6 +16073,7 @@
    ],
    "farming": "market",
    "wiki": {
+    "facts": {"Established": "29 November 1841", "Capital": "since 1852"},
     "short": "Capital and port city of Bayvarra",
     "lead": "**Lumeport** is the capital and port city of [[Bayvarra]], with about {population} people, on a bay at the narrows of the estuary. It gave its name to the [[Lumeport Trade Accord]], signed there in 1994, and is the seat of its council.",
     "sections": [
@@ -16066,7 +16083,22 @@
      },
      {
       "title": "History",
-      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. When Britain annexed the coast on 29 November 1841 it fortified the station and laid out the town as the colony's seat, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital in 1852. Government Hill gained its government buildings, churches and banks in the 19th century, and the deep-water quays and their railway came between the 1870s and 1914. The Lumeport Agreement of 1974 brought the textile mill of 1976, built to spin the island's duty-free cotton."
+      "text": ""
+     },
+     {
+      "title": "The colony's seat",
+      "sub": true,
+      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. When Britain annexed the coast on 29 November 1841 it fortified the station and laid out the town as the colony's seat, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital in 1852."
+     },
+     {
+      "title": "Port city",
+      "sub": true,
+      "text": "Government Hill gained its government buildings, churches and banks in the 19th century, and the deep-water quays and their railway came between the 1870s and 1914. In 1899 the town became the capital of the federation."
+     },
+     {
+      "title": "Agreement and Accord",
+      "sub": true,
+      "text": "The Lumeport Agreement with [[Lisavu]], signed in the town on 18 March 1974, brought the textile mill of 1976, built to spin the island's duty-free cotton; the [[Lumeport Trade Accord]], signed here in 1994, made the town the seat of its council."
      }
     ]
    }
@@ -16145,6 +16177,7 @@
    ],
    "farming": "wheat-sheep",
    "wiki": {
+    "facts": {"Established": "1850s"},
     "short": "Inland town in Upland State, Bayvarra",
     "lead": "**Marrowdale** is an inland town in Upland State, [[Bayvarra]], with about {population} people, near the border with [[Urvania]]. It grew from a drovers' market and is now a town of the railway and the timber trade.",
     "sections": [
@@ -16232,12 +16265,28 @@
    ],
    "farming": "cotton",
    "wiki": {
+    "facts": {"Established": "a Lisavan village; Port Wrenfield in the 1860s"},
     "short": "Capital and only town of Lisavu",
     "lead": "**Selanu** (English *Port Wrenfield*) is the capital and only town of [[Lisavu]], with about {population} people, on a sheltered bay of the island's east coast. It holds the island's port, and its airport lies on the plain to the north.",
     "sections": [
      {
       "title": "History",
-      "text": "The Lisavan village on the bay gave the town its name; by about the 14th century it was the seat of the rulers of the whole island, whose meeting ground drew the elders of every village each spring. In the 19th century the English settlers built Port Wrenfield on the wharf north of the village, with its street of stores and its customs house, and offices, churches and houses rose on the slope behind the wharf. The Lumeport Agreement of 1974 brought the warehouses, brokers and trades of the Agreement Quarter."
+      "text": ""
+     },
+     {
+      "title": "Lisavan village",
+      "sub": true,
+      "text": "The Lisavan village on the bay gave the town its name. By about the 14th century it was the seat of the rulers of the whole island, whose meeting ground, the [[the Litakima|Litakima]], drew the elders of every village each spring."
+     },
+     {
+      "title": "Port Wrenfield",
+      "sub": true,
+      "text": "In the 1860s the English settlers of the cotton estates built Port Wrenfield on the wharf north of the village, with its street of stores and its customs house, and offices, churches and houses rose on the slope behind the wharf. From 1884 the protectorate's signal station on [[Signal Hill]] announced the ships."
+     },
+     {
+      "title": "Agreement Quarter",
+      "sub": true,
+      "text": "The Lumeport Agreement of 1974 brought the regular shipping service, and with it the warehouses, brokers and trades of the Agreement Quarter."
      }
     ]
    }
@@ -16326,12 +16375,23 @@
    ],
    "farming": "pastoral",
    "wiki": {
+    "facts": {"Established": "16 February 1824"},
     "short": "Port town on the east coast of Bayvarra, its first capital",
     "lead": "**Larkmouth** is a port town in Coastal State, [[Bayvarra]], with about {population} people, at the mouth of the [[River Lark|Lark]], the largest river of the east coast. It was the British settlers' first town and the colony's first capital.",
     "sections": [
      {
       "title": "History",
-      "text": "The first settlers landed here on 16 February 1824, behind the headland at the mouth of the east river, where they found a sheltered harbour, fresh water and dry grazing land behind it. Their Government House, church and court stood on the rise above the landing until the capital moved to [[Lumeport]] in 1852. From the 1880s wool stores and sale rooms lined the wool line's last stretch to the harbour, and after 1914 a freezing works by the river mouth served the frozen meat trade."
+      "text": ""
+     },
+     {
+      "title": "The landing",
+      "sub": true,
+      "text": "The first settlers landed here on 16 February 1824, behind Lark Head at the mouth of the [[River Lark|Lark]], where they found a sheltered harbour, fresh water and dry grazing land behind it. Their Government House, church and court stood on the rise above the landing until the capital moved to [[Lumeport]] in 1852."
+     },
+     {
+      "title": "Wool and meat port",
+      "sub": true,
+      "text": "From the 1880s wool stores and sale rooms lined the wool line's last stretch to the harbour, and after 1914 a freezing works by the river mouth served the frozen meat trade."
      },
      {
       "title": "Economy",
