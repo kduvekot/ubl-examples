@@ -313,7 +313,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **26-0013**  
   The entry into inward processing of the second load of blanks, a previous customs declaration of the goods beside the one above, which this release discharges too.
 - `DocumentTypeCode` = **ImportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to, the modification plant's entry into inward processing of the second load of ash blanks, on 20 January, a document outside the examples (cited). The code is from the Trade Accord's UBL document type list: ImportCustomsDeclaration = Import Customs Declaration.
+  The kind of document referred to: the modification plant's entry into inward processing of the second load of ash blanks, on 20 January. The code is from the Trade Accord's UBL document type list: ImportCustomsDeclaration = Import Customs Declaration.
 
 ### Signature
 

@@ -44,7 +44,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD/2026/0619**  
   The department's budget commitment for the purchase, which its rules ask the supplier to quote on the work report and the invoice.
 - `DocumentType` = **Budget commitment**  
-  The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's budget commitment, in words: no list has an exact code for it.
 
 ### Buyer Customer Party
 

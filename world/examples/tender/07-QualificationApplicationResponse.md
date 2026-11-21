@@ -399,7 +399,7 @@ Inside `Evidence`:
 - `DocumentReference/ID` = **BKM-ACC-2024**  
   The accounts.
 - `DocumentReference/DocumentType` = **Annual accounts**  
-  The kind of document referred to, Brackenmere's accounts for 2024, the last filed when it tendered, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Brackenmere's accounts for 2024, the last filed when it tendered, in words: no list has an exact code for it.
 - `Language/ID` = **en** (schemeID `ISO 639`)  
   English. The code is from the world's copy of ISO 639 Language: en = English. An identifier that holds a code names the code's list in its schemeID.
 - `ID` = **EV-FOR-BF**  

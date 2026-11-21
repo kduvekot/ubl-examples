@@ -3047,8 +3047,7 @@ def air(n, doc):
                                                                     "in Lumeport, in the island time of the "
                                                                     "airline.")  # D39, read-through air A3
         out["DocumentReference"] = {"ID": V(AIR_TRANSIT, "The transit declaration the frames travel under to Selanu "
-                                                         "airport, the office of destination; a document "  # D39
-                                                         "outside the examples.")}
+                                                         "airport, the office of destination.")}  # D39, not an example
         out["DeclaredCarriageValueAmount"] = amount(Decimal(8) * Decimal(str(ITEM["bench-casting-b"]["price"]
                                                                              ["amount"])), "XBL",
                                                     "The value declared for carriage.")
@@ -8281,8 +8280,7 @@ def _(f, n, doc, out):
             "SalesDocumentReference": {"ID": V(f.number("home-delivery", "26-xb", "DeliveryOrder"), "The store's home delivery order, booked with "
                                                                 "the sale on 15 May."),  # retail/21#F7
                                        "DocumentType": V("Home delivery order", "What the document is: the "
-                                                                                "store's own delivery booking, "
-                                                                                "outside the examples.")},
+                                                                                "store's own delivery booking.")},  # not an example
             "AdditionalDocumentReference": {"ID": V("VI-WARRANTY-B180", "The maker's warranty card.")},
             "Signature": seal("26-xb", "BM-SIG-POS-G2")}
 
@@ -9900,8 +9898,8 @@ def notice_head(f, kind, code, urvanian=True):
             "NoticeLanguageCode": V("en", "In English, as an ISO 639 code."),
             **({"AdditionalNoticeLanguage": {"ID": V("qau", "Also published in Urvanian, for tenderers from Urvania: the "
                                                          "notice gives its note and the project's name and description "
-                                                         "in Urvanian too (a code from ISO 639's local-use range: the "
-                                                         "world's languages are invented)."),  # tender/01#F14
+                                                         "in Urvanian too (a code from ISO 639's local-use range, "
+                                                         "qaa–qtz)."),  # tender/01#F14
                                          "Name": V("Urvanian", "The language's name.")}} if urvanian else {}),
             "Signature": seal(PWD, f"PWD-SIG-{kind}"),
             "OriginatorCustomerParty": {"Party": party("2-xb", short=True)},
@@ -10875,7 +10873,7 @@ def _(f, n, doc, out):
         *([out["AdditionalDocumentReference"]] if isinstance(out.get("AdditionalDocumentReference"), dict)
           else out.get("AdditionalDocumentReference", [])),
         {"ID": V(kit.cited_number("valdara-export-declaration-rail"), "The export declaration lodged in Urvania at the office of departure, which the "
-                                   "transit continues; a document outside the examples.")}]}  # rail/06#F5
+                                   "transit continues.")}]}  # rail/06#F5, not an example
 
 
 def bench_frame_serial(lot):

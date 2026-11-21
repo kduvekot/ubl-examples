@@ -348,7 +348,7 @@ Inside `DocumentReference`:
 - `ID` = **VI-WASTE-CONTRACT-26**  
   The contract between producer and recovery facility, which the notification needs.
 - `DocumentTypeCode` = **315** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the contract between Valdara and Rinova for the waste, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 315 = Contract.
+  The kind of document referred to: the contract between Valdara and Rinova for the waste. The code is from the world's copy of UN/EDIFACT 1001 Document name: 315 = Contract.
 
 ## The document
 

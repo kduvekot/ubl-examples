@@ -60,7 +60,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **BYF-QUOTE-AIR-26-0611**  
   The forwarder's quotation for the flight.
 - `DocumentTypeCode` = **361** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Bayforth's quotation for the air freight, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 361 = Price quote.
+  The kind of document referred to: Bayforth's quotation for the air freight. The code is from the world's copy of UN/EDIFACT 1001 Document name: 361 = Price quote.
 
 ### Signature
 

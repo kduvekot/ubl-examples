@@ -60,7 +60,7 @@ Inside `AdditionalDocumentReference`:
 - `IssueDate` = **2026-06-10**  
   Printed when the tanker was weighed full.
 - `DocumentType` = **Weighbridge ticket**  
-  The kind of document referred to, Kelpstone's weighbridge ticket of the tanker, weighed empty and full at the plant, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Kelpstone's weighbridge ticket of the tanker, weighed empty and full at the plant, in words: no list has an exact code for it.
 
 ### Accounting Supplier Party
 

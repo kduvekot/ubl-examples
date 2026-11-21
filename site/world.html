@@ -1903,7 +1903,7 @@ const redraw = () => { if (reduced) frame(0); };
 const card = document.getElementById("card"), list = document.getElementById("list");
 function showCard(p) {
   if (!p) { card.innerHTML = `<div class="num">THE UBL WORLD</div><h2>Three countries, one trade accord</h2>
-    <p><b>Urvania</b>, in the west, mines ore, casts benches and makes power. <b>Bayvarra</b>, across the land border, distributes, builds and runs the port of Lumeport. The island of <b>Lisavu</b>, far to the east, grows cotton and buys from both. Goods travel by road, rail, river, sea, air and pipeline between ${P.length} parties.</p>
+    <p><b>Urvania</b>, in the west, mines ore, casts benches, makes power, modifies timber and recovers waste. <b>Bayvarra</b>, across the land border, distributes and retails, saws timber and makes furniture, weaves cotton, grows fruit, produces gas in the north and runs the port and airport of Lumeport. The island of <b>Lisavu</b>, far to the east, grows and gins cotton and buys food, medicines and goods from both. Goods travel by road, rail, river, sea, air and pipeline between ${P.length} parties.</p>
     <p>Click a building or choose a party below to see who it is and the documents it sends and receives.</p>
     <dl class="legend"><dt>Colours</dt><dd>${Object.keys(CAT).map(k => `<span class="dot" style="background:var(${CAT[k]})"></span> ${KIND_NAME[k]}`).join(" · ")}</dd>
       <dt>Scale</dt><dd>One square is 3.5 km.</dd>

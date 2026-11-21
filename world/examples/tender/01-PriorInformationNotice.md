@@ -50,7 +50,7 @@ The authority announces the planned purchase early, through the publication serv
 Inside `AdditionalNoticeLanguage`:
 
 - `ID` = **qau** (schemeID `ISO 639`)  
-  Also published in Urvanian, for tenderers from Urvania: the notice gives its note and the project's name and description in Urvanian too (a code from ISO 639's local-use range: the world's languages are invented). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
+  Also published in Urvanian, for tenderers from Urvania: the notice gives its note and the project's name and description in Urvanian too (a code from ISO 639's local-use range, qaa–qtz). The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Name` = **Urvanian**  
   The language's name.
 
@@ -61,7 +61,7 @@ Inside `DocumentReference`:
 - `ID` = **PWD-PARKS-PLAN-26**  
   The parks plan.
 - `DocumentType` = **Parks plan**  
-  The kind of document referred to, the department's plan for the city's parks, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's plan for the city's parks, in words: no list has an exact code for it.
 
 ### Signature
 
@@ -653,7 +653,7 @@ Inside `ProcurementProject`:
 - `RequestForTenderLine/DocumentReference/ID` = **PWD-SPEC-BENCH-26**  
   The technical specification.
 - `RequestForTenderLine/DocumentReference/DocumentType` = **Technical specification**  
-  The kind of document referred to, the department's technical specification of the bench, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's technical specification of the bench, in words: no list has an exact code for it.
 - `RequestForTenderLine/DeliveryPeriod/StartDate` = **2026-04-02**  
   Releases from.
 - `RequestForTenderLine/DeliveryPeriod/EndDate` = **2028-03-19**  

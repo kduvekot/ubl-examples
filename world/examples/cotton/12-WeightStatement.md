@@ -189,7 +189,7 @@ Inside `Shipment`:
 - `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/ID` = **SCG-PR-26-L017**  
   The documentary evidence of method 2: the ginnery's pressing record of lot SCG-L26-017, with each bale's weight from the bale scale.
 - `TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/DocumentType` = **Pressing record**  
-  The kind of document referred to, the ginnery's pressing record of lot SCG-L26-017, with each bale's weight from the bale scale, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the ginnery's pressing record of lot SCG-L26-017, with each bale's weight from the bale scale, in words: no list has an exact code for it.
 - `TransportHandlingUnit/Package/ID` = **SCG-26-00412**  
   The bale's number on its tag, which the ginnery gives every bale it presses; a package's own number, without a scheme.
 - `TransportHandlingUnit/Package/Quantity` = **227.5** (unitCode `KGM`)  

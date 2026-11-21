@@ -435,7 +435,7 @@ def abroad_party(pid, desk=None):
     its desk, and no identifier, since a number in the shape of a real register's could be someone's."""
     p = PARTY[pid]
     idn = p["identity"]
-    src = f"as {idn['name']}, a maker outside the three countries, gives it"  # O229, world/parties.json abroad
+    src = f"as {idn['name']}, a maker abroad, gives it"  # O229, world/parties.json abroad
     ct = idn["contact"]
     out = {"_pid": pid,
            "PartyName": {"Name": V(idn["name"], f"The trading name; {src}. {idn['ids_note']}")},
@@ -446,8 +446,8 @@ def abroad_party(pid, desk=None):
                        "JobTitle": V(ct["job_title"], f"The job of the person who answers at the desk; {src}."),
                        "Department": V(ct["department"], f"The department the desk belongs to; {src}."),
                        "ElectronicMail": V(ct["email"], "E-mail under the reserved .example domain (RFC 2606), so it "
-                                                        f"cannot reach anyone; no telephone number is given, as one "
-                                                        f"in the real country's plan could reach someone; {src}."),
+                                                        f"cannot reach anyone; {src}."),  # no telephone: a number in
+                                                        # the real country's plan could reach someone (O229)
                        "Note": V(ct["hours"], f"When the desk can be reached; {src}.")}}
     out["_keys"] = set(out)
     return out
@@ -457,16 +457,17 @@ def abroad_address(pid):
     """The postal address of a party outside the world: fictional, in a real town, in the country's own order."""
     p = PARTY[pid]
     a, c = p["identity"]["address"], ABROAD_COUNTRY[p["c"]]
-    src = f"as {p['identity']['name']} gives it; the address is fictional, in a real town"  # world/parties.json abroad
+    src = f"as {p['identity']['name']} gives it"  # world/parties.json abroad (fictional, in a real town: O229)
+    cin = c.get("in_text", c["name"])
     out = {"AddressTypeCode": V("BUSINESS", "The kind of address.")}
     for k, why in (("StreetName", "Street of the postal address."), ("BuildingNumber", "Building number."),
-                   ("CityName", "The town."), ("PostalZone", f"Postal code in the format of {c['name']}."),
-                   ("CountrySubentity", f"The state of {c['name']}, part of an address there.")):
+                   ("CityName", "The town."), ("PostalZone", f"Postal code in the format of {cin}."),
+                   ("CountrySubentity", f"The state of {cin}, part of an address there.")):
         if a.get(k):
             out[k] = V(a[k], f"{why} {src[:1].upper()}{src[1:]}.")
     out["TimezoneOffset"] = V(c["timezone"], f"The offset from UTC of {c['legal_time']}, the legal time there in "
                                              "June.")
-    out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}, a real country outside the world.",  # O229
+    out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}: the maker is abroad.",  # O229, a real country
                                               listID="ISO 3166"),
                       "Name": V(c["name"], "The country's name, for readers of the address.")}
     return out
@@ -3334,13 +3335,11 @@ def type_references(content, where):
                                                         f"{hit[0]}/{hit[1]:02d}, a {hit[2]}; a generic reference names "
                                                         "the UBL document type.")  # Q29
                 elif cited and cited.get("type_code"):
-                    ref["DocumentTypeCode"] = V(cited["type_code"], f"The kind of document referred to, "
-                                                f"{cited['what']}, a document outside the examples ("  # world/documents.json
-                                                "cited).")  # Q29
+                    ref["DocumentTypeCode"] = V(cited["type_code"], f"The kind of document referred to: "
+                                                f"{cited['what']}.")  # Q29, world/documents.json cited
                 elif cited:
-                    ref["DocumentType"] = V(cited["type"], f"The kind of document referred to, {cited['what']}, a "
-                                            "document outside the examples, in words: no list has an exact code for it "
-                                            "(cited).")  # Q29, world/documents.json
+                    ref["DocumentType"] = V(cited["type"], f"The kind of document referred to, {cited['what']}, "
+                                            "in words: no list has an exact code for it.")  # Q29, world/documents.json cited
                 else:
                     UNTYPED.append((where, key, rid))
         if key != "Signature":                  # signatures wait for their own stage (D6)

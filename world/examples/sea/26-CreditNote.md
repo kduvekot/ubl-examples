@@ -87,7 +87,7 @@ Inside `OriginatorDocumentReference`:
 - `ID` = **26-0035**  
   The buyer's claim.
 - `DocumentType` = **Claim**  
-  The kind of document referred to, Velumi's claim, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Velumi's claim, in words: no list has an exact code for it.
 
 ### Buyer Assigned Reference
 
@@ -369,7 +369,7 @@ Inside `CreditNoteLine`:
 - `DocumentReference/ID` = **XL-CUS/2026/9066**  
   The customs receipt for the inspection fee the buyer paid, the evidence of its outlay.
 - `DocumentReference/DocumentTypeCode` = **917** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the island customs' receipt for the inspection fee, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 917 = Receipt (Customs).
+  The kind of document referred to: the island customs' receipt for the inspection fee. The code is from the world's copy of UN/EDIFACT 1001 Document name: 917 = Receipt (Customs).
 - `Item/Description` = **The cost of a customs inspection and of the storage while the container was held, which the seller credits to the buyer because its pallet's heat-treatment mark was illegible: a reduction of the price of the goods sold, not a service.**  
   The seller's description.
 - `Item/Name` = **Customs inspection and storage at Selanu, passed on**  

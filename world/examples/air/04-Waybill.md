@@ -401,9 +401,9 @@ Inside `Shipment`:
 Inside `DocumentReference`:
 
 - `ID` = **7800004418**  
-  The transit declaration the frames travel under to Selanu airport, the office of destination; a document outside the examples.
+  The transit declaration the frames travel under to Selanu airport, the office of destination.
 - `DocumentType` = **Transit declaration**  
-  The kind of document referred to, Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport, in words: no list has an exact code for it.
 
 ### Document Distribution
 

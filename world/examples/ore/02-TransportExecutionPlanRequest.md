@@ -204,7 +204,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **SM-ASSAY-26-11**  
   The assay of the previous train, the latest analysis of the ore the carrier plans the wagons for.
 - `DocumentTypeCode` = **1** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Serravona Mining's assay certificate of the sample taken when February's ore train was loaded, the latest analysis of the ore before March's train, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
+  The kind of document referred to: Serravona Mining's assay certificate of the sample taken when February's ore train was loaded, the latest analysis of the ore before March's train. The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
 
 ### Transport Contract
 

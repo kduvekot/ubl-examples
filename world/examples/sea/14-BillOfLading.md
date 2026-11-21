@@ -423,7 +423,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/TransportMeans/Stowage/MeasurementDimension/Measure` = **12.2** (unitCode `MTR`)  
   A 40-foot slot.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20117** (schemeID `urn:ubl-examples:world:vessel`)  
-  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+  The vessel's number in its country's register of ships.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Harbour**  
   The vessel's name; the fleet of Tidewell Ocean Lines.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QBTH7**  
@@ -941,7 +941,7 @@ Inside `Shipment`:
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/ID` = **VGM-26-0510**  
   The signed weight declaration sent to the carrier.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/DocumentReference/DocumentTypeCode` = **749** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the shipper's verified gross mass of the container, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 749 = Transport equipment gross mass verification message.
+  The kind of document referred to: the shipper's verified gross mass of the container. The code is from the world's copy of UN/EDIFACT 1001 Document name: 749 = Transport equipment gross mass verification message.
 - `Consignment/FirstArrivalPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/FirstArrivalPortLocation/Name` = **Port of Selanu**  

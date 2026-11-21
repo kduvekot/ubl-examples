@@ -2,7 +2,7 @@
 
 *Example 8 of the flow "Containers by rail under the Accord's common transit (Urvania → Bayvarra)" · [Waybill in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WAYBILL-SCHEMA)*
 
-The rail consignment note under the Accord's uniform rules, modelled on the CIM, goes to the transport user, the seller; the road haulage to the hub is a pre-carriage stage of the same contract.
+The rail consignment note under the Accord's uniform rules goes to the transport user, the seller; the road haulage to the hub is a pre-carriage stage of the same contract.
 
 [The XML file](08-Waybill.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 
@@ -32,7 +32,7 @@ The rail consignment note under the Accord's uniform rules, modelled on the CIM,
   Made out at the hub when the boxes are on the train, before it leaves: the note records the takeover, not the journey.
 - `IssueTime` = **06:10:00-01:00**  
   After both boxes were lifted onto the train, at 05:40 and 05:55, before the timetabled departure; in the issuer's local time, with its offset from UTC.
-- `Name` = **Rail consignment note under the Accord's uniform rules for international carriage by rail, modelled on the CIM**  
+- `Name` = **Rail consignment note under the Accord's uniform rules for international carriage by rail**  
   The kind of transport document.
 - `Description` = **Two containers of park benches, carried by the carrier's tractor from Castrano's warehouse to the Ferrano hub and by the container train to Lumeway's siding in Marrowdale, under the Accord's common transit.**  
   The rail carriage in words, with its road pre-carriage.
@@ -822,7 +822,7 @@ Inside `Signature`:
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:10:00-01:00</cbc:IssueTime>
-  <cbc:Name>Rail consignment note under the Accord's uniform rules for international carriage by rail, modelled on the CIM</cbc:Name>
+  <cbc:Name>Rail consignment note under the Accord's uniform rules for international carriage by rail</cbc:Name>
   <cbc:Description>Two containers of park benches, carried by the carrier's tractor from Castrano's warehouse to the Ferrano hub and by the container train to Lumeway's siding in Marrowdale, under the Accord's common transit.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
   <cbc:Note languageID="en-XU">Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>

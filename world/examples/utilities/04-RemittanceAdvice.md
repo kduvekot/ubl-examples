@@ -68,7 +68,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **VI-BANK-26-04**  
   The payer's bank statement line.
 - `DocumentType` = **Bank statement**  
-  The kind of document referred to, the payer's bank statement line, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the payer's bank statement line, in words: no list has an exact code for it.
 
 ### Signature
 

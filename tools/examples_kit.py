@@ -1390,7 +1390,7 @@ def tep(flow, n, doc, day, why, start_day, weight):
 
 WAYBILL_KIND = {"road": ("CMR", "Consignment note under the road convention, the CMR"),
                 "rail": ("CIM", "Rail consignment note under the Accord's uniform rules for international carriage "
-                                "by rail, modelled on the CIM"),       # D37 point 5
+                                "by rail"),       # D37 point 5 (the rules are modelled on the CIM)
                 "river": ("CMNI", "Inland waterway consignment note under the CMNI"),
                 "air": ("AWB", "Air waybill under the Montreal Convention")}
 
@@ -2208,8 +2208,8 @@ def means(pid, fid, journey=None, why_journey=None, direction=None, ore=False, p
     if f["kind"] == "rail":
         out["RailTransport"] = {"TrainID": V(f["ore_train"] if ore else f["train"], f"The train number; {src}.")}
     if f["kind"] in ("inland", "sea"):
-        m = {"VesselID": V(f["vessel_id"], "The vessel's number in its country's register of ships; a number of the "
-                                           "world, not an IMO number.", schemeID="urn:ubl-examples:world:vessel"),
+        m = {"VesselID": V(f["vessel_id"], "The vessel's number in its country's register of ships.",  # not an IMO number
+                           schemeID="urn:ubl-examples:world:vessel"),
              "VesselName": V(f["name"], f"The vessel's name; {src}."),
              "RadioCallSignID": V(f["call_sign"], f"The radio call sign, in {WORLD['countries'][c]['name']}'s call "
                                                   f"sign series {f['call_sign'][:2]}: no ITU series starts with Q, so "

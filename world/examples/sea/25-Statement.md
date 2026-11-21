@@ -57,7 +57,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **HF-FA-2026-007**  
   The factoring agreement between the distributor and the factor.
 - `DocumentType` = **Factoring agreement**  
-  The kind of document referred to, the factoring agreement between Lumeway and Harbourline, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the factoring agreement between Lumeway and Harbourline, in words: no list has an exact code for it.
 
 ### Signature
 
@@ -322,7 +322,7 @@ Inside `StatementLine`:
 - `DocumentReference/ID` = **26-0030**  
   The notice of assignment of the invoice to the factor.
 - `DocumentReference/DocumentType` = **Notice of assignment**  
-  The kind of document referred to, Harbourline's notice of the assigned receivable, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Harbourline's notice of the assigned receivable, in words: no list has an exact code for it.
 - `ID` = **2**  
   The deposit.
 - `Note` = **Paid to the distributor before the invoice was assigned.**  

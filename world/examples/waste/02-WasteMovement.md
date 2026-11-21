@@ -397,7 +397,7 @@ Inside `DocumentReference`:
 - `ID` = **26-0020**  
   The certificate of recovery to follow.
 - `DocumentType` = **Certificate of recovery**  
-  The kind of document referred to, Rinova's certificate of recovery, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Rinova's certificate of recovery, in words: no list has an exact code for it.
 
 ### Document Distribution
 

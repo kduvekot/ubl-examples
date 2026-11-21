@@ -6055,6 +6055,10 @@
      "Growing of fibre crops",
      ""
     ],
+    "0124": [
+     "Growing of pome fruits and stone fruits",
+     ""
+    ],
     "0163": [
      "Post-harvest crop activities",
      ""
@@ -6071,12 +6075,12 @@
      "Weaving of textiles",
      ""
     ],
-    "1610": [
-     "Sawmilling and planing of wood",
-     ""
-    ],
     "1410": [
      "Manufacture of wearing apparel, except fur apparel",
+     ""
+    ],
+    "1610": [
+     "Sawmilling and planing of wood",
      ""
     ],
     "2220": [
@@ -6109,6 +6113,10 @@
     ],
     "4290": [
      "Construction of other civil engineering projects",
+     ""
+    ],
+    "4630": [
+     "Wholesale of food, beverages and tobacco",
      ""
     ],
     "4649": [
@@ -6183,6 +6191,10 @@
      "Non-life insurance",
      ""
     ],
+    "7410": [
+     "Specialized design activities",
+     ""
+    ],
     "8299": [
      "Other business support service activities n.e.c.",
      ""
@@ -6201,6 +6213,10 @@
     ],
     "8423": [
      "Public order and safety activities",
+     ""
+    ],
+    "8610": [
+     "Hospital activities",
      ""
     ],
     "9411": [

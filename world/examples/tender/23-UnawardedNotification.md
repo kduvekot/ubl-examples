@@ -176,7 +176,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD-EVAL-SCORES-BF**  
   The furniture maker's scores.
 - `DocumentType` = **Evaluation scores**  
-  The kind of document referred to, Brackenmere's scores in the evaluation, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Brackenmere's scores in the evaluation, in words: no list has an exact code for it.
 
 ### Tender Result
 

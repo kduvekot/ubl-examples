@@ -97,33 +97,33 @@ Inside `BuyerCustomerParty`:
 Inside `SellerSupplierParty`:
 
 - `Party/PartyName/Name` = **Haarvliet Isotopes**  
-  The trading name; as Haarvliet Isotopes, a maker outside the three countries, gives it. It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.
+  The trading name; as Haarvliet Isotopes, a maker abroad, gives it. The documents identify the maker by its name and address.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/StreetName` = **Isotopenweg**  
-  Street of the postal address. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Street of the postal address. As Haarvliet Isotopes gives it.
 - `Party/PostalAddress/BuildingNumber` = **14**  
-  Building number. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Building number. As Haarvliet Isotopes gives it.
 - `Party/PostalAddress/CityName` = **Alkmaar**  
-  The town. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  The town. As Haarvliet Isotopes gives it.
 - `Party/PostalAddress/PostalZone` = **1812 RN**  
-  Postal code in the format of Netherlands. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Postal code in the format of the Netherlands. As Haarvliet Isotopes gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+02:00**  
   The offset from UTC of Central European Summer Time, the legal time there in June.
 - `Party/PostalAddress/Country/IdentificationCode` = **NL** (listID `ISO 3166`)  
-  Netherlands, a real country outside the world. The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
+  Netherlands: the maker is abroad. The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
 - `Party/PostalAddress/Country/Name` = **Netherlands**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Order desk**  
-  The party's desk that handles this document; as Haarvliet Isotopes, a maker outside the three countries, gives it.
+  The party's desk that handles this document; as Haarvliet Isotopes, a maker abroad, gives it.
 - `Party/Contact/JobTitle` = **Order coordinator**  
-  The job of the person who answers at the desk; as Haarvliet Isotopes, a maker outside the three countries, gives it.
+  The job of the person who answers at the desk; as Haarvliet Isotopes, a maker abroad, gives it.
 - `Party/Contact/Department` = **Customer service**  
-  The department the desk belongs to; as Haarvliet Isotopes, a maker outside the three countries, gives it.
+  The department the desk belongs to; as Haarvliet Isotopes, a maker abroad, gives it.
 - `Party/Contact/ElectronicMail` = **orders@haarvliet-isotopes.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; no telephone number is given, as one in the real country's plan could reach someone; as Haarvliet Isotopes, a maker outside the three countries, gives it.
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Haarvliet Isotopes, a maker abroad, gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
-  When the desk can be reached; as Haarvliet Isotopes, a maker outside the three countries, gives it.
+  When the desk can be reached; as Haarvliet Isotopes, a maker abroad, gives it.
 
 ### Delivery
 

@@ -111,21 +111,21 @@ Inside `ImporterParty`:
 Inside `ConsignorParty`:
 
 - `PartyName/Name` = **Haarvliet Isotopes**  
-  The trading name; as Haarvliet Isotopes, a maker outside the three countries, gives it. It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.
+  The trading name; as Haarvliet Isotopes, a maker abroad, gives it. The documents identify the maker by its name and address.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/StreetName` = **Isotopenweg**  
-  Street of the postal address. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Street of the postal address. As Haarvliet Isotopes gives it.
 - `PostalAddress/BuildingNumber` = **14**  
-  Building number. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Building number. As Haarvliet Isotopes gives it.
 - `PostalAddress/CityName` = **Alkmaar**  
-  The town. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  The town. As Haarvliet Isotopes gives it.
 - `PostalAddress/PostalZone` = **1812 RN**  
-  Postal code in the format of Netherlands. As Haarvliet Isotopes gives it; the address is fictional, in a real town.
+  Postal code in the format of the Netherlands. As Haarvliet Isotopes gives it.
 - `PostalAddress/TimezoneOffset` = **+02:00**  
   The offset from UTC of Central European Summer Time, the legal time there in June.
 - `PostalAddress/Country/IdentificationCode` = **NL** (listID `ISO 3166`)  
-  Netherlands, a real country outside the world. The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
+  Netherlands: the maker is abroad. The code is from the world's copy of UBL's Country identification (ISO 3166) list: NL = Netherlands (the).
 - `PostalAddress/Country/Name` = **Netherlands**  
   The country's name, for readers of the address.
 

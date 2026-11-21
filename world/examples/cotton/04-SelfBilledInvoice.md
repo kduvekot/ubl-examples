@@ -91,11 +91,11 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **SCG-WB-26-0311**  
   The weighbridge ticket of the gin, on whose weights the invoice rests.
 - `DocumentType` = **Weighbridge ticket**  
-  The kind of document referred to, the ginnery's weighbridge ticket, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the ginnery's weighbridge ticket, in words: no list has an exact code for it.
 - `ID` = **LFR-0412**  
   The farm's registration, which the withholding needs: its number in Lisavu's farm register.
 - `DocumentTypeCode` = **101** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the farm's registration in Lisavu's farm register, under its number there, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
+  The kind of document referred to: the farm's registration in Lisavu's farm register, under its number there. The code is from the world's copy of UN/EDIFACT 1001 Document name: 101 = Registration document.
 
 ### Buyer Assigned Reference
 

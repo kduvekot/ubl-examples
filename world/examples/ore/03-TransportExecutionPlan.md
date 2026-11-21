@@ -221,7 +221,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **FRC-WAGON-LIST-11**  
   The list of wagons.
 - `DocumentType` = **Wagon list**  
-  The kind of document referred to, Ferrano Rail Cargo's list of the wagons, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, Ferrano Rail Cargo's list of the wagons, in words: no list has an exact code for it.
 
 ### Transport Contract
 

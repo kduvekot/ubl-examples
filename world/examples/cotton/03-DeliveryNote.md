@@ -47,7 +47,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **SCG-WB-26-0311**  
   The weighbridge ticket.
 - `DocumentType` = **Weighbridge ticket**  
-  The kind of document referred to, the ginnery's weighbridge ticket, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the ginnery's weighbridge ticket, in words: no list has an exact code for it.
 
 ### Signature
 

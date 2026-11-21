@@ -11,7 +11,7 @@
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-04-14</cbc:IssueDate>
   <cbc:IssueTime>06:10:00-01:00</cbc:IssueTime>
-  <cbc:Name>Rail consignment note under the Accord's uniform rules for international carriage by rail, modelled on the CIM</cbc:Name>
+  <cbc:Name>Rail consignment note under the Accord's uniform rules for international carriage by rail</cbc:Name>
   <cbc:Description>Two containers of park benches, carried by the carrier's tractor from Castrano's warehouse to the Ferrano hub and by the container train to Lumeway's siding in Marrowdale, under the Accord's common transit.</cbc:Description>
   <cbc:Note languageID="qau">Gurbul mizstan: drek starzhek, ginrul nartran zaskek drek sundraz hangaz nartran drek valnir; drek trelgir, vek drek valnir; drek vuznek, zhiztrek man drek sundraz.</cbc:Note>
   <cbc:Note languageID="en-XU">Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>

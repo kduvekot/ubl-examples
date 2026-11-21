@@ -171,7 +171,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD-EVAL-REPORT-26**  
   The evaluation report.
 - `DocumentType` = **Evaluation report**  
-  The kind of document referred to, the evaluation report of the tenders, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the evaluation report of the tenders, in words: no list has an exact code for it.
 
 ### Tender Result
 

@@ -71,7 +71,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **SM-ASSAY-26-12**  
   The assay certificate of the sample taken at loading, which measured the moisture the deduction rests on.
 - `DocumentTypeCode` = **1** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, Serravona Mining's assay certificate of the sample taken when March's ore train was loaded on 10 March: 62 % iron, 7.5 % moisture, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
+  The kind of document referred to: Serravona Mining's assay certificate of the sample taken when March's ore train was loaded on 10 March: 62 % iron, 7.5 % moisture. The code is from the world's copy of UN/EDIFACT 1001 Document name: 1 = Certificate of analysis.
 
 ### Accounting Supplier Party
 

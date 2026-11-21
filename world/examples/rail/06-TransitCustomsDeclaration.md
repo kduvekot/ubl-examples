@@ -505,9 +505,9 @@ Inside `AdditionalDocumentReference`:
 - `DocumentTypeCode` = **TransportExecutionPlan** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: 9500055446 is the example rail/03, a TransportExecutionPlan; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: TransportExecutionPlan = Transport Execution Plan.
 - `ID` = **7600008738**  
-  The export declaration lodged in Urvania at the office of departure, which the transit continues; a document outside the examples.
+  The export declaration lodged in Urvania at the office of departure, which the transit continues.
 - `DocumentTypeCode` = **ExportCustomsDeclaration** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to, Valdara's export declaration lodged in Urvania at the office of departure of the rail transit, a document outside the examples (cited). The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
+  The kind of document referred to: Valdara's export declaration lodged in Urvania at the office of departure of the rail transit. The code is from the Trade Accord's UBL document type list: ExportCustomsDeclaration = Export Customs Declaration.
 
 ### Signature
 

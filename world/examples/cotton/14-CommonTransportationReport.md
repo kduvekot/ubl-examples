@@ -249,7 +249,7 @@ Inside `TransportMeans`:
 - `TransportMeansTypeCode` = **1511** (listID `UNECE Recommendation 28`)  
   The kind of means of transport: tidewell Reef; the fleet of Tidewell Ocean Lines. The line's second feeder, bought second-hand in December 2025 and moved to Bayvarra's flag on 15 January 2026. Until the flag state verifies its security system, it sails with an interim International Ship Security Certificate (ISPS Code A/19.4). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 1511 = Full container ship/cellular vessel.
 - `MaritimeTransport/VesselID` = **XB-S-20231** (schemeID `urn:ubl-examples:world:vessel`)  
-  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+  The vessel's number in its country's register of ships.
 - `MaritimeTransport/VesselName` = **Tidewell Reef**  
   The vessel's name; the fleet of Tidewell Ocean Lines.
 - `MaritimeTransport/RadioCallSignID` = **QBTR4**  

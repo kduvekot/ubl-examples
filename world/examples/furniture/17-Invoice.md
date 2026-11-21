@@ -62,7 +62,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD/2026/0619**  
   The department's budget commitment the invoice is billed against.
 - `DocumentType` = **Budget commitment**  
-  The kind of document referred to, the department's budget commitment, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the department's budget commitment, in words: no list has an exact code for it.
 
 ### Project Reference
 

@@ -46,7 +46,7 @@ Inside `OriginatorDocumentReference`:
 - `ID` = **POS-REQ-26-0031**  
   The Port of Selanu's request to the trader, which the order's port line follows.
 - `DocumentType` = **Request**  
-  The kind of document referred to, the Port of Selanu's request to the trader, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the Port of Selanu's request to the trader, in words: no list has an exact code for it.
 
 ### Buyer Customer Party
 

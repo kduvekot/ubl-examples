@@ -475,7 +475,7 @@ Inside `DocumentReference`:
 - `ID` = **QLM-DGD-26-0615**  
   The shipper's declaration for dangerous goods of the generator, a declaration of its own: radioactive material may not share one with other dangerous goods, and the dry ice needs none, only its entry on the air waybill (resting on secondary sources). It goes with the package, signed when the generator's activity is measured on Monday.
 - `DocumentTypeCode` = **890** (listID `UN/EDIFACT EDED 1001`)  
-  The kind of document referred to, the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own, a document outside the examples (cited). The code is from the world's copy of UN/EDIFACT 1001 Document name: 890 = Dangerous goods declaration.
+  The kind of document referred to: the wholesaler's shipper's declaration for dangerous goods of the technetium generator, a declaration of its own. The code is from the world's copy of UN/EDIFACT 1001 Document name: 890 = Dangerous goods declaration.
 
 ### Signature
 

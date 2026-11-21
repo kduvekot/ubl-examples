@@ -42,6 +42,14 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>0124</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Growing of pome fruits and stone fruits</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>0163</SimpleValue>
          </Value>
          <Value ColumnRef="name">
@@ -74,18 +82,18 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
-            <SimpleValue>1610</SimpleValue>
-         </Value>
-         <Value ColumnRef="name">
-            <SimpleValue>Sawmilling and planing of wood</SimpleValue>
-         </Value>
-      </Row>
-      <Row>
-         <Value ColumnRef="code">
             <SimpleValue>1410</SimpleValue>
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Manufacture of wearing apparel, except fur apparel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>1610</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sawmilling and planing of wood</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -150,6 +158,14 @@
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Construction of other civil engineering projects</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>4630</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wholesale of food, beverages and tobacco</SimpleValue>
          </Value>
       </Row>
       <Row>
@@ -298,6 +314,14 @@
       </Row>
       <Row>
          <Value ColumnRef="code">
+            <SimpleValue>7410</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Specialized design activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
             <SimpleValue>8299</SimpleValue>
          </Value>
          <Value ColumnRef="name">
@@ -334,6 +358,14 @@
          </Value>
          <Value ColumnRef="name">
             <SimpleValue>Public order and safety activities</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>8610</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Hospital activities</SimpleValue>
          </Value>
       </Row>
       <Row>

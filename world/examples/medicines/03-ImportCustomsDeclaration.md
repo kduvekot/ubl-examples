@@ -111,23 +111,23 @@ Inside `ImporterParty`:
 Inside `ConsignorParty`:
 
 - `PartyName/Name` = **Nilavar Biologics**  
-  The trading name; as Nilavar Biologics, a maker outside the three countries, gives it. It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.
+  The trading name; as Nilavar Biologics, a maker abroad, gives it. The documents identify the maker by its name and address.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `PostalAddress/StreetName` = **Biotech Park Road**  
-  Street of the postal address. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  Street of the postal address. As Nilavar Biologics gives it.
 - `PostalAddress/BuildingNumber` = **27**  
-  Building number. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  Building number. As Nilavar Biologics gives it.
 - `PostalAddress/CityName` = **Hyderabad**  
-  The town. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  The town. As Nilavar Biologics gives it.
 - `PostalAddress/PostalZone` = **500078**  
-  Postal code in the format of India. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  Postal code in the format of India. As Nilavar Biologics gives it.
 - `PostalAddress/CountrySubentity` = **Telangana**  
-  The state of India, part of an address there. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  The state of India, part of an address there. As Nilavar Biologics gives it.
 - `PostalAddress/TimezoneOffset` = **+05:30**  
   The offset from UTC of Indian Standard Time, the legal time there in June.
 - `PostalAddress/Country/IdentificationCode` = **IN** (listID `ISO 3166`)  
-  India, a real country outside the world. The code is from the world's copy of UBL's Country identification (ISO 3166) list: IN = India.
+  India: the maker is abroad. The code is from the world's copy of UBL's Country identification (ISO 3166) list: IN = India.
 - `PostalAddress/Country/Name` = **India**  
   The country's name, for readers of the address.
 

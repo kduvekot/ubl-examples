@@ -2,7 +2,7 @@
 
 *Example 4 of the flow "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)" · [Goods Certificate in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA)*
 
-Bayvarra's plant protection organisation under the IPPC, the Plant Health Service of the federal Department of Agriculture, inspects the fruit at the packhouse and certifies it free of the pests the island names; the cooperative's forwarder applies for the certificate on its behalf and collects it with the export papers.
+The Plant Health Service of Bayvarra's federal Department of Agriculture inspects the fruit at the packhouse and certifies it free of the pests the island names; the cooperative's forwarder applies for the certificate on its behalf and collects it with the export papers.
 
 [The XML file](04-GoodsCertificate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

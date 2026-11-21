@@ -271,7 +271,7 @@ Inside `Shipment`:
 - `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **815** (listID `UNECE Recommendation 28`)  
   The kind of means of transport: fiumella IV; the fleet of Fiumella Barges. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 815 = Freight barge.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XU-IW-08042** (schemeID `urn:ubl-examples:world:vessel`)  
-  The vessel's number in its country's register of ships; a number of the world, not an IMO number.
+  The vessel's number in its country's register of ships.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Fiumella IV**  
   The vessel's name; the fleet of Fiumella Barges.
 - `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QUBF4**  

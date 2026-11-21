@@ -280,7 +280,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **PWD/2026/PARKS**  
   The procurement the department asked for the extract for: its file.
 - `DocumentType` = **Procurement file**  
-  The kind of document referred to, the public works department's procurement file of the park benches, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the public works department's procurement file of the park benches, in words: no list has an exact code for it.
 
 ### Business Capability
 

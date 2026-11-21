@@ -2,7 +2,7 @@
 
 *Example 10 of the flow "Cotton: from the island's farms to the textile mill (Lisavu → Bayvarra)" · [Goods Certificate in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-GOODS-CERTIFICATE-SCHEMA)*
 
-Lisavu's plant protection organisation under the IPPC, the Plant Protection Service of the Department of Agriculture, inspects the bales and certifies them free of the pests Bayvarra names, at the ginnery's application.
+The Plant Protection Service of Lisavu's Department of Agriculture inspects the bales and certifies them free of the pests Bayvarra names, at the ginnery's application.
 
 [The XML file](10-GoodsCertificate.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

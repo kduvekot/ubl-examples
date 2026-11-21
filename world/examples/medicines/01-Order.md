@@ -97,35 +97,35 @@ Inside `BuyerCustomerParty`:
 Inside `SellerSupplierParty`:
 
 - `Party/PartyName/Name` = **Nilavar Biologics**  
-  The trading name; as Nilavar Biologics, a maker outside the three countries, gives it. It carries no identifier of a real register: an Indian company number, GSTIN or importer-exporter code in the real format could be someone's; the documents identify it by its name and address, as a supplier outside the world.
+  The trading name; as Nilavar Biologics, a maker abroad, gives it. The documents identify the maker by its name and address.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
   The kind of address. The code is from the Trade Accord's address type list: BUSINESS = Business address.
 - `Party/PostalAddress/StreetName` = **Biotech Park Road**  
-  Street of the postal address. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  Street of the postal address. As Nilavar Biologics gives it.
 - `Party/PostalAddress/BuildingNumber` = **27**  
-  Building number. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  Building number. As Nilavar Biologics gives it.
 - `Party/PostalAddress/CityName` = **Hyderabad**  
-  The town. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  The town. As Nilavar Biologics gives it.
 - `Party/PostalAddress/PostalZone` = **500078**  
-  Postal code in the format of India. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  Postal code in the format of India. As Nilavar Biologics gives it.
 - `Party/PostalAddress/CountrySubentity` = **Telangana**  
-  The state of India, part of an address there. As Nilavar Biologics gives it; the address is fictional, in a real town.
+  The state of India, part of an address there. As Nilavar Biologics gives it.
 - `Party/PostalAddress/TimezoneOffset` = **+05:30**  
   The offset from UTC of Indian Standard Time, the legal time there in June.
 - `Party/PostalAddress/Country/IdentificationCode` = **IN** (listID `ISO 3166`)  
-  India, a real country outside the world. The code is from the world's copy of UBL's Country identification (ISO 3166) list: IN = India.
+  India: the maker is abroad. The code is from the world's copy of UBL's Country identification (ISO 3166) list: IN = India.
 - `Party/PostalAddress/Country/Name` = **India**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Export sales**  
-  The party's desk that handles this document; as Nilavar Biologics, a maker outside the three countries, gives it.
+  The party's desk that handles this document; as Nilavar Biologics, a maker abroad, gives it.
 - `Party/Contact/JobTitle` = **Export manager**  
-  The job of the person who answers at the desk; as Nilavar Biologics, a maker outside the three countries, gives it.
+  The job of the person who answers at the desk; as Nilavar Biologics, a maker abroad, gives it.
 - `Party/Contact/Department` = **International sales**  
-  The department the desk belongs to; as Nilavar Biologics, a maker outside the three countries, gives it.
+  The department the desk belongs to; as Nilavar Biologics, a maker abroad, gives it.
 - `Party/Contact/ElectronicMail` = **exports@nilavar-bio.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; no telephone number is given, as one in the real country's plan could reach someone; as Nilavar Biologics, a maker outside the three countries, gives it.
+  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Nilavar Biologics, a maker abroad, gives it.
 - `Party/Contact/Note` = **Monday to Saturday 09:30–18:00**  
-  When the desk can be reached; as Nilavar Biologics, a maker outside the three countries, gives it.
+  When the desk can be reached; as Nilavar Biologics, a maker abroad, gives it.
 
 ### Delivery
 

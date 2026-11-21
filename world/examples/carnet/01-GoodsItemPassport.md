@@ -623,7 +623,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **SCC-FAIR-26-INV**  
   The fair's invitation to exhibit.
 - `DocumentType` = **Invitation to exhibit**  
-  The kind of document referred to, the fair's invitation to exhibit, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the fair's invitation to exhibit, in words: no list has an exact code for it.
 
 ### Document Distribution
 

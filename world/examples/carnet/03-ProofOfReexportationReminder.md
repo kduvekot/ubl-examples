@@ -253,7 +253,7 @@ Inside `AdditionalDocumentReference`:
 - `ID` = **XL-CUS/2026/11199**  
   The customs' notice.
 - `DocumentType` = **Customs notice**  
-  The kind of document referred to, the island customs' notice to the chamber, a document outside the examples, in words: no list has an exact code for it (cited).
+  The kind of document referred to, the island customs' notice to the chamber, in words: no list has an exact code for it.
 
 ### Signature
 
