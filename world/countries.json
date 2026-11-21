@@ -3394,7 +3394,15 @@
     "canoe": "vokila",
     "east": "kanipi",
     "long": "makete",
-    "mountain": "tapetu"
+    "mountain": "tapetu",
+    "cauldron": "vukaka",
+    "farewell": "lavase",
+    "gathering": "litakima",
+    "lookout": "seife",
+    "sleeping": "valifo",
+    "turning": "sihato",
+    "wall": "kefehu",
+    "wide": "vulese"
    },
    "wiki": {
     "short": "Language of Lisavu",
