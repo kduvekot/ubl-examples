@@ -370,12 +370,6 @@ Inside `CustomsDeclaration`:
   At the container quay of the Port of Lumeport.
 - `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
-- `CustomsExitOfficeLocation/ID` = **XB002001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
-  The office's number in the customs office list of Bayvarra.
-- `CustomsExitOfficeLocation/Name` = **Customs office, port of Lumeport**  
-  Where the goods leave the country.
-- `CustomsExitOfficeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ConsignorParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ConsignorParty/PartyName/Name` = **Lumeway Distribution**  
@@ -789,15 +783,6 @@ Inside `Signature`:
         </cac:EstimatedDepartureTransportEvent>
       </cac:ShipmentStage>
     </cac:Shipment>
-    <cac:CustomsExitOfficeLocation>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002001</cbc:ID>
-      <cbc:Name>Customs office, port of Lumeport</cbc:Name>
-      <cac:Address>
-        <cac:Country>
-          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-        </cac:Country>
-      </cac:Address>
-    </cac:CustomsExitOfficeLocation>
     <cac:ConsignorParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>

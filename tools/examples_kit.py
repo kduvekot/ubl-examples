@@ -325,7 +325,8 @@ def tax_rule(seller, buyer, iid):
                                     "business is exempt (category E).", "Service to a business")
         if it.get("business_use") == "consumed":     # burned or used up by the business that buys it (O204)
             state = b["identity"]["address"]["CountrySubentity"]
-            return ("S", scheme["rates_by_state"][state], scheme,
+            # the tax charged names its state, the delivery state, not the seller's (review 1048 lpg/04#F1)
+            return ("S", scheme["rates_by_state"][state], {**scheme, "state": (state, b["c"])},
                     "Goods a business uses up or keeps, such as the fuel it burns, are not bought for resale or "
                     "manufacture: they do not become part of what it sells, so Bayvarra's retail sales tax applies to "
                     f"their sale, at the rate of {state}, where the goods are delivered (category S).", None)  # O204
@@ -372,6 +373,12 @@ def tax_category(rule, kind=None):
                                                                                "or services.")
     if scheme:
         out["TaxScheme"] = {"ID": V(scheme["id"], f"UN/EDIFACT 5153 code of the seller's tax: {scheme['name'].lower()}.")}
+        if scheme.get("state"):        # a state's tax charged in another state than the seller's (O204)
+            state, cc = scheme["state"]
+            out["TaxScheme"]["JurisdictionRegionAddress"] = {
+                "CountrySubentity": V(state, "The state whose sales tax is charged: the state the goods are "
+                                             "delivered in, whose rate applies."),
+                "Country": {"IdentificationCode": V(cc, "Its country.")}}
     else:
         out["TaxScheme"] = {"Name": V("No general sales tax", "Lisavu has no general tax on sales; the scheme is named "
                                       "only, as UN/EDIFACT 5153 has no code for the absence of a tax.")}
@@ -391,6 +398,8 @@ def cross_border(a, b):
 
 
 PLAN_PAYMENT = ("30 days net from the consignment note.", 30)    # the freight term of the framework transport plans
+PLAN_LATER_CHARGES = ("A charge after the carriage: 30 days net from the date of the debit note.", 30)
+TEP_LATER_CHARGES = {"rail"}      # the plans whose carrier bills a later charge (demurrage) by debit note (rail/12)
 
 
 def due_day(flow, day, payee):
@@ -1152,7 +1161,9 @@ def invoice_delivery(flow, out, buyer, day):
     elif leg:
         delivery["DeliveryLocation"] = leg_location(leg, "to", "Where the goods billed are delivered.")
     arrived = flow.numbers.get("delivery-day") if same else None
-    if arrived is not None and arrived <= day:
+    # a delivery on the invoice's own day is stated as made only where the invoice cites the buyer's receipt of it:
+    # else the invoice may come before the goods (review 1048 medicines/14#F1), and it states the despatch
+    if arrived is not None and (arrived < day or arrived == day and "ReceiptDocumentReference" in out):
         delivery = {"ActualDeliveryDate": V(flow.date(arrived), "The day the goods billed were delivered."),
                     **delivery}
     elif same and flow.numbers.get("despatch-day") is not None:
@@ -1301,8 +1312,12 @@ def tep_terms(flow, user, provider, days):
             "TransportServiceProviderSpecialTerms": V("Waiting time beyond two hours is charged.", "The carrier's."),
             "ChangeConditions": V("Changes up to 24 hours before collection without charge.", "When the plan may "
                                                                                               "change."),
-            "PaymentTerms": {"Note": V(PLAN_PAYMENT[0], "When the freight is paid: the term the carrier's "
-                                                        "invoices under this plan apply.")},  # D22
+            "PaymentTerms": {"Note": V(PLAN_PAYMENT[0] + (f" {PLAN_LATER_CHARGES[0]}" if flow.id in TEP_LATER_CHARGES
+                                                          else ""),
+                                       "When the freight is paid: the term the carrier's invoices under this plan "
+                                       "apply" + (", and the term of a charge that arises only after the carriage, "
+                                                  "such as demurrage, which the carrier bills by debit note"
+                                                  if flow.id in TEP_LATER_CHARGES else "") + ".")},  # D22
             "PenaltyPaymentTerms": {"Note": V("For late delivery the carrier is liable for 5 % of the freight per "
                                               "day late, at most 25 %.", "The carrier's liability for delay, in "
                                               "words: PenaltySurchargePercent is a surcharge for late payment, not "
@@ -1327,6 +1342,7 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight, same_day=
     mode = leg["mode"]
     end = (V(flow.date(start_day), "Delivered the day it is collected: a short run.") if same_day else
            V(flow.date(start_day + 3), "The end of the service window, three days after its start: the goods are delivered by then."))
+    flow.numbers["tep-request-deadline"] = day + 1        # the plan that answers repeats it (review 1048 retail/23#F1)
     return {"ID": V(flow.number("tep-request", doc["from"], "TransportExecutionPlanRequest"),
                     "The transport user's request number."),
             "VersionID": V("1", "The first version of the request."),
@@ -1371,8 +1387,10 @@ def tep(flow, n, doc, day, why, start_day, weight):
                                   "ContractType": V("Framework transport agreement", "Its kind.")},
             "TransportUserResponseRequiredPeriod": {"EndDate": V(flow.date(day + 1), "The user may object until "
                                                                                      "the next day.")},
-            "TransportServiceProviderResponseRequiredPeriod": {"EndDate": V(flow.date(day), "The carrier answered "
-                                                                                            "the same day.")},
+            # the deadline the request set for the carrier's answer, repeated (review 1048 retail/23#F1)
+            "TransportServiceProviderResponseRequiredPeriod": {"EndDate": V(
+                flow.date(flow.numbers.get("tep-request-deadline", day)), "The deadline the request set for the "
+                "carrier's answer, which this plan meets.")},
             "ValidityPeriod": {"StartDate": V(flow.date(day), "From the confirmation."),
                                "EndDate": V(flow.date(start_day + 3), "Until the carriage is done.")},
             "MainTransportationService": main_service(flow, doc["from"]),

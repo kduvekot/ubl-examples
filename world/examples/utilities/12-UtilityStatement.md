@@ -18,13 +18,13 @@ Calls, data and subscriptions per telephone line of the buyer, in the telecommun
   The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **STL-TX-26-75183**  
   The collaboration this document belongs to: Selanu Telecom's bill for March to Velumi. Selanu Telecom started it and gave it this identifier, which every document of it repeats.
-- `ID` = **STL-UST-26-75398**  
+- `ID` = **STL-UST-26-75370**  
   The utility's statement number.
 - `UUID` = **7b60d4fc-8fd7-5124-9e01-cfc520caed86**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
-- `IssueTime` = **17:37:00+00:00**  
+- `IssueTime` = **16:48:00+00:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `UtilityStatementTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of utility the statement is about. The code is from the Trade Accord's utility type list: TEL = Telephone.
@@ -103,7 +103,7 @@ Inside `SenderParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Telecom gives it.
 - `Contact/ElectronicMail` = **billing@selanutelecom.example**  
   The contact's e-mail address; as Selanu Telecom gives it.
-- `Contact/Note` = **Every day, around the clock**  
+- `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Selanu Telecom gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -522,10 +522,10 @@ Inside `SubscriberConsumption`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
-  <cbc:ID>STL-UST-26-75398</cbc:ID>
+  <cbc:ID>STL-UST-26-75370</cbc:ID>
   <cbc:UUID>7b60d4fc-8fd7-5124-9e01-cfc520caed86</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:37:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>16:48:00+00:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qal">Mikake votetaka hanano mofilufo kisala vepili vafosu.</cbc:Note>
   <cbc:Note languageID="en-XL">This statement explains the consumption behind your bill.</cbc:Note>
@@ -573,7 +573,7 @@ Inside `SubscriberConsumption`:
       <cbc:Department>Business sales</cbc:Department>
       <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
       <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

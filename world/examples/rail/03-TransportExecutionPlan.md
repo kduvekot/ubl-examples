@@ -244,7 +244,7 @@ Inside `TransportContract`:
 Inside `TransportServiceProviderResponseRequiredPeriod`:
 
 - `EndDate` = **2026-04-08**  
-  The carrier answered the same day.
+  The deadline the request set for the carrier's answer, which this plan meets.
 
 ### Transport User Response Required Period
 
@@ -313,8 +313,8 @@ Inside `TransportExecutionTerms`:
   The carrier's terms.
 - `ChangeConditions` = **Changes up to 24 hours before collection without charge.**  
   When the plan may change.
-- `PaymentTerms/Note` = **30 days net from the consignment note.**  
-  When the freight is paid: the term the carrier's invoices under this plan apply.
+- `PaymentTerms/Note` = **30 days net from the consignment note. A charge after the carriage: 30 days net from the date of the debit note.**  
+  When the freight is paid: the term the carrier's invoices under this plan apply, and the term of a charge that arises only after the carriage, such as demurrage, which the carrier bills by debit note.
 - `PenaltyPaymentTerms/Note` = **For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.**  
   The carrier's liability for delay, in words: PenaltySurchargePercent is a surcharge for late payment, not for late delivery.
 - `NotificationRequirement/NotificationTypeCode` = **PREARRIVAL** (listID `urn:ubl-examples:world:codelist:TransportNotificationTypeCode`)  
@@ -729,7 +729,7 @@ Inside `Consignment`:
     <cbc:TransportServiceProviderSpecialTerms>Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
     <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
     <cac:PaymentTerms>
-      <cbc:Note>30 days net from the consignment note.</cbc:Note>
+      <cbc:Note>30 days net from the consignment note. A charge after the carriage: 30 days net from the date of the debit note.</cbc:Note>
     </cac:PaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>

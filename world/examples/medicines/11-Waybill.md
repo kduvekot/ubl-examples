@@ -241,8 +241,8 @@ Inside `Shipment`:
   The shipment as the despatching party numbered it.
 - `Consignment/ID` = **QLM-CS-26-3980**  
   The consignment of the transport booking.
-- `Consignment/GrossWeightMeasure` = **101.1** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packages, the dry ice and its box; the airline's container is not part of the shipment.
+- `Consignment/GrossWeightMeasure` = **105.3** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packs and shipping cartons, the dry ice and its box; the airline's container is not part of the shipment.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment holds dangerous goods.
 - `Consignment/SpecialServiceInstructions` = **Cold chain: deliver the active container to the island's cold room on arrival; radioactive package to the strong room.**  
@@ -918,7 +918,7 @@ Inside `Signature`:
     <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">105.3</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cbc:SpecialServiceInstructions>Cold chain: deliver the active container to the island's cold room on arrival; radioactive package to the strong room.</cbc:SpecialServiceInstructions>
       <cac:ConsigneeParty>

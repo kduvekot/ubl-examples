@@ -32,8 +32,8 @@ The carrier reports that the truck has cleared the border and gives the expected
   In words.
 - `Note` = **Automatic report from the sender's tracking system.**  
   How it was made.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do, with the slot it is about.
+- `OtherInstruction` = **Delivery now expected at the goods-in of Lumeway Distribution on 25 March at 09:30; reply only if that slot must change.**  
+  What the receiver should do on this report.
 - `TransportationStatusTypeCode` = **PROGRESS** (listID `urn:ubl-examples:world:codelist:TransportationStatusTypeCode`)  
   A report on the progress of the carriage. The code is from the Trade Accord's transportation status type list: PROGRESS = Progress report.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
@@ -355,7 +355,7 @@ Inside `StatusPeriod`:
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>Delivery now expected at the goods-in of Lumeway Distribution on 25 March at 09:30; reply only if that slot must change.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">PROGRESS</cbc:TransportationStatusTypeCode>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>

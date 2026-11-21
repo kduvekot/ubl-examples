@@ -18,13 +18,13 @@ The factory's monthly electricity consumption: meter readings and consumption at
   The Trade Accord's process profile the document belongs to: utility billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **9909901005**  
   The collaboration this document belongs to: Ferrano Energy's bill for March to Valdara. Ferrano Energy started it and gave it this identifier, which every document of it repeats.
-- `ID` = **9409901631**  
+- `ID` = **9409901441**  
   The utility's statement number.
 - `UUID` = **939b6614-b83d-522f-883a-72105c1b71f9**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-02**  
   Issued with the bill for March.
-- `IssueTime` = **17:54:00-01:00**  
+- `IssueTime` = **16:31:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `UtilityStatementTypeCode` = **ELEC** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  
   The kind of utility the statement is about. The code is from the Trade Accord's utility type list: ELEC = Electricity.
@@ -107,7 +107,7 @@ Inside `SenderParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9); no area code is the start of another. Mobiles start with 3 and have 10 digits. As Ferrano Energy gives it.
 - `Contact/ElectronicMail` = **billing@ferranoenergy.example**  
   The contact's e-mail address; as Ferrano Energy gives it.
-- `Contact/Note` = **Every day, around the clock**  
+- `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Ferrano Energy gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -536,10 +536,10 @@ Inside `SubscriberConsumption`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>9909901005</cbc:ProfileExecutionID>
-  <cbc:ID>9409901631</cbc:ID>
+  <cbc:ID>9409901441</cbc:ID>
   <cbc:UUID>939b6614-b83d-522f-883a-72105c1b71f9</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:54:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:31:00-01:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qau">Gir zharhan narmir drek binmaz vukrek taz rir.</cbc:Note>
   <cbc:Note languageID="en-XU">This statement explains the consumption behind your bill.</cbc:Note>
@@ -589,7 +589,7 @@ Inside `SubscriberConsumption`:
       <cbc:Department>Customer service</cbc:Department>
       <cbc:Telephone>+999 1 041 474 7922</cbc:Telephone>
       <cbc:ElectronicMail>billing@ferranoenergy.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

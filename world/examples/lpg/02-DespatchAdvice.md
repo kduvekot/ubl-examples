@@ -145,15 +145,15 @@ Inside `DeliveryCustomerParty`:
   Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/Contact/Name` = **Customer service**  
-  The party's main desk, which handles this document; as Coastal State Water Company gives it.
-- `Party/Contact/JobTitle` = **Customer service officer**  
+- `Party/Contact/Name` = **Plant control room**  
+  The party's plant control room desk: the desk for its role in this document (it receives the goods); as Coastal State Water Company gives it.
+- `Party/Contact/JobTitle` = **Plant operator**  
   The job of the person who answers at the desk; as Coastal State Water Company gives it.
-- `Party/Contact/Department` = **Customer service**  
+- `Party/Contact/Department` = **District heating**  
   The department the desk belongs to; as Coastal State Water Company gives it.
-- `Party/Contact/Telephone` = **+999 2 38 9310 7518**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Coastal State Water Company gives it.
-- `Party/Contact/ElectronicMail` = **customer@coastalwater.example**  
+- `Party/Contact/Telephone` = **+999 2 38 9310 7590**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Coastal State Water Company gives it.
+- `Party/Contact/ElectronicMail` = **plant@coastalwater.example**  
   The contact's e-mail address; as Coastal State Water Company gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Coastal State Water Company gives it.
@@ -362,11 +362,11 @@ Inside `DespatchLine`:
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Customer service</cbc:Department>
-        <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
-        <cbc:ElectronicMail>customer@coastalwater.example</cbc:ElectronicMail>
+        <cbc:Name>Plant control room</cbc:Name>
+        <cbc:JobTitle>Plant operator</cbc:JobTitle>
+        <cbc:Department>District heating</cbc:Department>
+        <cbc:Telephone>+999 2 38 9310 7590</cbc:Telephone>
+        <cbc:ElectronicMail>plant@coastalwater.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

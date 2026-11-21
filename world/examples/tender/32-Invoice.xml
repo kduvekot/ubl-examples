@@ -191,10 +191,12 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-03-31</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Public works depot, Lumeport</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-03-30</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

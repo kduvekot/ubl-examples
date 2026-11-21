@@ -245,8 +245,8 @@ Inside `AdditionalDocumentReference`:
 
 Inside `BusinessCapability`:
 
-- `CapabilityTypeCode` = **PRODUCTION** (listID `urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode`)  
-  What the firm produces: its services. The code is from the Trade Accord's business capability type list: PRODUCTION = Production.
+- `CapabilityTypeCode` = **INSTALLATION** (listID `urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode`)  
+  What the firm does: design and installation with its own crews. The code is from the Trade Accord's business capability type list: INSTALLATION = Installation.
 - `Description` = **Design and permits of telecom mast sites; installation of back-up power, safety equipment and ground foundations, with its own crews: the yearly value of its services in 2025, from the accounts filed for that year.**  
   What the amount measures and for which year.
 - `ValueAmount` = **5400000.00** (currencyID `XBL`)  
@@ -438,7 +438,7 @@ Inside `NoticeSubType`:
     <cbc:DocumentType>Procurement file</cbc:DocumentType>
   </cac:AdditionalDocumentReference>
   <cac:BusinessCapability>
-    <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">PRODUCTION</cbc:CapabilityTypeCode>
+    <cbc:CapabilityTypeCode listID="urn:ubl-examples:world:codelist:BusinessCapabilityTypeCode">INSTALLATION</cbc:CapabilityTypeCode>
     <cbc:Description>Design and permits of telecom mast sites; installation of back-up power, safety equipment and ground foundations, with its own crews: the yearly value of its services in 2025, from the accounts filed for that year.</cbc:Description>
     <cbc:ValueAmount currencyID="XBL">5400000.00</cbc:ValueAmount>
   </cac:BusinessCapability>

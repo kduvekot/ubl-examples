@@ -184,52 +184,6 @@
             </cac:RegistryPortLocation>
           </cac:MaritimeTransport>
         </cac:TransportMeans>
-        <cac:CustomsAgentParty>
-          <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
-          </cac:PartyIdentification>
-          <cac:PartyName>
-            <cbc:Name>Bayforth Forwarding</cbc:Name>
-          </cac:PartyName>
-          <cac:Language>
-            <cbc:ID schemeID="ISO 639">en</cbc:ID>
-            <cbc:Name>English</cbc:Name>
-            <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
-          </cac:Language>
-          <cac:PostalAddress>
-            <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
-            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
-            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
-            <cbc:StreetName>Dockside Way</cbc:StreetName>
-            <cbc:BuildingNumber>4</cbc:BuildingNumber>
-            <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
-            <cbc:CityName>Lumeport</cbc:CityName>
-            <cbc:PostalZone>38525</cbc:PostalZone>
-            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
-            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
-            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
-            <cac:Country>
-              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
-              <cbc:Name>Bayvarra</cbc:Name>
-            </cac:Country>
-          </cac:PostalAddress>
-          <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
-            <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
-          </cac:PartyLegalEntity>
-          <cac:Contact>
-            <cbc:Name>Customs desk</cbc:Name>
-            <cbc:JobTitle>Customs specialist</cbc:JobTitle>
-            <cbc:Department>Logistics</cbc:Department>
-            <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
-            <cbc:ElectronicMail>customs@bayforth.example</cbc:ElectronicMail>
-            <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
-          </cac:Contact>
-          <cac:ElectronicAddress>
-            <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
-            <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
-          </cac:ElectronicAddress>
-        </cac:CustomsAgentParty>
         <cac:EstimatedDepartureTransportEvent>
           <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
@@ -246,15 +200,52 @@
         </cac:EstimatedDepartureTransportEvent>
       </cac:ShipmentStage>
     </cac:Shipment>
-    <cac:CustomsExitOfficeLocation>
-      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002001</cbc:ID>
-      <cbc:Name>Customs office, port of Lumeport</cbc:Name>
-      <cac:Address>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Bayforth Forwarding</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XB</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:lumeport:address-register">LUM-ADR-953846</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Dockside Way</cbc:StreetName>
+        <cbc:BuildingNumber>4</cbc:BuildingNumber>
+        <cbc:CitySubdivisionName>Dockside</cbc:CitySubdivisionName>
+        <cbc:CityName>Lumeport</cbc:CityName>
+        <cbc:PostalZone>38525</cbc:PostalZone>
+        <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-CO</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
         <cac:Country>
           <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
         </cac:Country>
-      </cac:Address>
-    </cac:CustomsExitOfficeLocation>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Bayforth Forwarding Ltd</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20411644</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>Customs desk</cbc:Name>
+        <cbc:JobTitle>Customs specialist</cbc:JobTitle>
+        <cbc:Department>Logistics</cbc:Department>
+        <cbc:Telephone>+999 2 38 5155 2404</cbc:Telephone>
+        <cbc:ElectronicMail>customs@bayforth.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20411644</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:IssuerParty>
     <cac:ConsignorParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20415873</cbc:ID>

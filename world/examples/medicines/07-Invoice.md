@@ -68,15 +68,15 @@ Inside `AccountingSupplierParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Haarvliet Isotopes B.V.**  
   The company's registered name, with the legal form of its country; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/Name` = **Order desk**  
+- `Party/Contact/Name` = **Accounts receivable**  
   The party's desk that handles this document; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/JobTitle` = **Order coordinator**  
+- `Party/Contact/JobTitle` = **Credit controller**  
   The job of the person who answers at the desk; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/Department` = **Customer service**  
+- `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/ElectronicMail` = **orders@haarvliet-isotopes.example**  
+- `Party/Contact/ElectronicMail` = **receivables@haarvliet-isotopes.example**  
   The desk's e-mail address; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Haarvliet Isotopes, a maker abroad, gives it.
 
 ### Accounting Customer Party
@@ -127,7 +127,7 @@ Inside `AccountingCustomerParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Quillmoor Pharma Distribution gives it.
 - `Party/Contact/ElectronicMail` = **payables@quillmoor.example**  
   The contact's e-mail address; as Quillmoor Pharma Distribution gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -176,10 +176,23 @@ Inside `DeliveryTerms`:
 - `DeliveryLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
+### Payment Means
+
+Inside `PaymentMeans`:
+
+- `ID` = **1**  
+  The payment means the terms below refer to.
+- `PaymentMeansCode` = **30** (listID `UN/EDIFACT EDED 4461`)  
+  UN/EDIFACT 4461 code 30: credit transfer. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
+- `InstructionNote` = **To our account named in the supply agreement.**  
+  Where the transfer goes: the account both sides agreed in the supply agreement, so the invoice repeats no account details.
+
 ### Payment Terms
 
 Inside `PaymentTerms`:
 
+- `PaymentMeansID` = **1**  
+  The payment means these terms apply to: the credit transfer above.
 - `Note` = **14 days net.**  
   The maker's terms for wholesalers: 14 days from the invoice.
 - `PaymentDueDate` = **2026-06-29**  
@@ -229,7 +242,7 @@ Inside `InvoiceLine`:
   1 × 1000.0, rounded to the minor unit of the currency.
 - `OrderLineReference/LineID` = **1**  
   The line of the wholesaler's order.
-- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -256,7 +269,7 @@ Inside `InvoiceLine`:
 - `Item/ItemInstance/AdditionalItemProperty/Name` = **Reference time**  
   When the generator holds its nominal activity: European generators are pre-calibrated to a time some days after delivery, so that the hospital has its nominal activity at the end of its week.
 - `Item/ItemInstance/AdditionalItemProperty/Value` = **2026-06-21T12:00:00+00:00**  
-  Sunday 21 June at 12:00 UTC, six days after delivery.
+  Sunday 21 June at 12:00 UTC, seven days after delivery at Lumeport, six after the hospital's.
 - `Price/PriceAmount` = **1000** (currencyID `EUR`)  
   The seller's price per unit.
 - `Price/BaseQuantity` = **1** (unitCode `EA`)  
@@ -304,11 +317,11 @@ Inside `InvoiceLine`:
         <cbc:RegistrationName>Haarvliet Isotopes B.V.</cbc:RegistrationName>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Order desk</cbc:Name>
-        <cbc:JobTitle>Order coordinator</cbc:JobTitle>
-        <cbc:Department>Customer service</cbc:Department>
-        <cbc:ElectronicMail>orders@haarvliet-isotopes.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:ElectronicMail>receivables@haarvliet-isotopes.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
     </cac:Party>
   </cac:AccountingSupplierParty>
@@ -349,7 +362,7 @@ Inside `InvoiceLine`:
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>payables@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -400,7 +413,13 @@ Inside `InvoiceLine`:
       </cac:Address>
     </cac:DeliveryLocation>
   </cac:DeliveryTerms>
+  <cac:PaymentMeans>
+    <cbc:ID>1</cbc:ID>
+    <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
+    <cbc:InstructionNote>To our account named in the supply agreement.</cbc:InstructionNote>
+  </cac:PaymentMeans>
   <cac:PaymentTerms>
+    <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
     <cbc:Note>14 days net.</cbc:Note>
     <cbc:PaymentDueDate>2026-06-29</cbc:PaymentDueDate>
   </cac:PaymentTerms>
@@ -433,7 +452,7 @@ Inside `InvoiceLine`:
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>

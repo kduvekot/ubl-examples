@@ -3489,7 +3489,7 @@
    "cpc": "33690",
    "origin": "NL",
    "made_abroad": "Made outside the world by a maker abroad: its origin is a real country outside the Accord, and the item carries no number of the world's schemes; the maker's own item number identifies it.",
-   "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.",
+   "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.",
    "net_kg": 15.5,
    "gross_kg": 18,
    "physics": {
@@ -3593,7 +3593,7 @@
    },
    "sellers_id": "QLM-RAD-0020",
    "resale_of": "tc-generator",
-   "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week."
+   "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week."
   },
   {
    "id": "ash-blank-1830",

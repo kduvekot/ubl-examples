@@ -97,11 +97,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Customer service</cbc:Department>
-        <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
-        <cbc:ElectronicMail>customer@coastalwater.example</cbc:ElectronicMail>
+        <cbc:Name>Plant control room</cbc:Name>
+        <cbc:JobTitle>Plant operator</cbc:JobTitle>
+        <cbc:Department>District heating</cbc:Department>
+        <cbc:Telephone>+999 2 38 9310 7590</cbc:Telephone>
+        <cbc:ElectronicMail>plant@coastalwater.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

@@ -4591,19 +4591,22 @@
       "name": "Accounts payable",
       "job_title": "Accounts payable clerk",
       "department": "Finance",
-      "email": "payables@ferranoenergy.example"
+      "email": "payables@ferranoenergy.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "purchasing": {
       "name": "Purchasing",
       "job_title": "Buyer",
       "department": "Purchasing",
-      "email": "purchasing@ferranoenergy.example"
+      "email": "purchasing@ferranoenergy.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "receivables": {
       "name": "Billing",
       "job_title": "Billing officer",
       "department": "Customer service",
-      "email": "billing@ferranoenergy.example"
+      "email": "billing@ferranoenergy.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "sales": {
       "name": "Sales office",
@@ -4730,19 +4733,36 @@
       "name": "Purchasing",
       "job_title": "Buyer",
       "department": "Purchasing",
-      "email": "purchasing@coastalwater.example"
+      "email": "purchasing@coastalwater.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "receivables": {
       "name": "Billing",
       "job_title": "Billing officer",
       "department": "Customer service",
-      "email": "billing@coastalwater.example"
+      "email": "billing@coastalwater.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "sales": {
       "name": "Sales office",
       "job_title": "Sales coordinator",
       "department": "Sales",
       "email": "sales@coastalwater.example"
+     },
+     "goods_in": {
+      "name": "Plant control room",
+      "job_title": "Plant operator",
+      "department": "District heating",
+      "email": "plant@coastalwater.example",
+      "telephone": "+999 2 38 9310 7590",
+      "hours": "Every day, around the clock"
+     },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@coastalwater.example",
+      "hours": "Weekdays 08:00–17:00"
      }
     },
     "week": "always"
@@ -4868,19 +4888,22 @@
       "name": "Accounts payable",
       "job_title": "Accounts payable clerk",
       "department": "Finance",
-      "email": "payables@selanutelecom.example"
+      "email": "payables@selanutelecom.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "purchasing": {
       "name": "Purchasing",
       "job_title": "Buyer",
       "department": "Purchasing",
-      "email": "purchasing@selanutelecom.example"
+      "email": "purchasing@selanutelecom.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "receivables": {
       "name": "Billing",
       "job_title": "Billing officer",
       "department": "Business sales",
-      "email": "billing@selanutelecom.example"
+      "email": "billing@selanutelecom.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "sales": {
       "name": "Sales office",
@@ -5201,7 +5224,13 @@
       "email": "tenders@brackenmere.example"
      }
     },
-    "week": "office"
+    "week": "office",
+    "cost_centres": {
+     "freight": {
+      "code": "4100",
+      "name": "Freight and carriage"
+     }
+    }
    },
    "fleet": [
     {
@@ -5877,7 +5906,8 @@
       "name": "Accounts receivable",
       "job_title": "Credit controller",
       "department": "Finance",
-      "email": "receivables@kelpstone.example"
+      "email": "receivables@kelpstone.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "emergency": {
       "name": "Plant control room",
@@ -6016,19 +6046,22 @@
       "name": "Accounts payable",
       "job_title": "Accounts payable clerk",
       "department": "Finance",
-      "email": "payables@montebrio.example"
+      "email": "payables@montebrio.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "purchasing": {
       "name": "Purchasing",
       "job_title": "Buyer",
       "department": "Purchasing",
-      "email": "purchasing@montebrio.example"
+      "email": "purchasing@montebrio.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "receivables": {
       "name": "Accounts receivable",
       "job_title": "Credit controller",
       "department": "Finance",
-      "email": "receivables@montebrio.example"
+      "email": "receivables@montebrio.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "sales": {
       "name": "Sales office",
@@ -6151,7 +6184,8 @@
       "name": "Network billing",
       "job_title": "Billing officer",
       "department": "Finance",
-      "email": "billing@ferranogrid.example"
+      "email": "billing@ferranogrid.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "sales": {
       "name": "Network access",
@@ -6499,7 +6533,8 @@
       "name": "Accounts receivable",
       "job_title": "Credit controller",
       "department": "Finance",
-      "email": "receivables@gullhaventank.example"
+      "email": "receivables@gullhaventank.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "sales": {
       "name": "Sales office",
@@ -6652,13 +6687,15 @@
       "name": "Accounts payable",
       "job_title": "Accounts payable clerk",
       "department": "Finance",
-      "email": "payables@quillmoor.example"
+      "email": "payables@quillmoor.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "purchasing": {
       "name": "Purchasing",
       "job_title": "Buyer",
       "department": "Purchasing",
-      "email": "purchasing@quillmoor.example"
+      "email": "purchasing@quillmoor.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "despatch": {
       "name": "Despatch office",
@@ -6670,7 +6707,8 @@
       "name": "Accounts receivable",
       "job_title": "Credit controller",
       "department": "Finance",
-      "email": "receivables@quillmoor.example"
+      "email": "receivables@quillmoor.example",
+      "hours": "Weekdays 08:00–17:00"
      },
      "sales": {
       "name": "Hospital orders",
@@ -6783,7 +6821,8 @@
       "name": "Finance office",
       "job_title": "Accounts payable clerk",
       "department": "Finance",
-      "email": "finance@selanu-hospital.example"
+      "email": "finance@selanu-hospital.example",
+      "telephone": "+999 3 726 8871"
      },
      "purchasing": {
       "name": "Hospital pharmacy",
@@ -7219,6 +7258,12 @@
       "job_title": "Accounts clerk",
       "department": "Finance",
       "email": "accounts@tostara.example"
+     },
+     "goods_in": {
+      "name": "Timber store",
+      "job_title": "Store keeper",
+      "department": "Yard",
+      "email": "store@tostara.example"
      }
     },
     "week": "office"
@@ -7299,7 +7344,7 @@
    "identity": {
     "name": "Certovira Certification",
     "kind": "company",
-    "registry_id": "XU-R-106192"
+    "registry_id": "XU-R-106329"
    },
    "_refs": {
     "what": "D41, O132, O265"
@@ -7452,7 +7497,16 @@
     "ids_note": "The documents identify the maker by its name and address.",
     "ids_reason": "It carries no identifier of a real register: a Dutch Chamber of Commerce number or VAT number in the real format could be someone's (O229).",
     "language": "en",
-    "week": "always"
+    "week": "always",
+    "desks": {
+     "receivables": {
+      "name": "Accounts receivable",
+      "job_title": "Credit controller",
+      "department": "Finance",
+      "email": "receivables@haarvliet-isotopes.example",
+      "hours": "Weekdays 08:00–17:00"
+     }
+    }
    },
    "_refs": {
     "what": "O202 choice 3",

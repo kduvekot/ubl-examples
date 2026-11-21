@@ -225,14 +225,14 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-02-26**  
-  The day the goods billed were delivered.
 - `DeliveryLocation/ID` = **XUFER** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `DeliveryLocation/Name` = **Valdara Industries works, Ferrano**  
   Where the goods billed are delivered.
 - `DeliveryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Despatch/ActualDespatchDate` = **2026-02-26**  
+  The day the goods billed left, before they are delivered.
 
 ### Payment Means
 
@@ -605,7 +605,6 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-02-26</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
@@ -615,6 +614,9 @@ Inside `InvoiceLine`:
         </cac:Country>
       </cac:Address>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-02-26</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

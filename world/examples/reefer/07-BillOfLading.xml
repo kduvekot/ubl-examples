@@ -342,13 +342,13 @@
             <cbc:Name>Nalevi Warehousing</cbc:Name>
           </cac:PartyName>
         </cac:CarrierParty>
-        <cac:ReceiptTransportEvent>
+        <cac:DeliveryTransportEvent>
           <cbc:OccurrenceDate>2026-04-27</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:Name>Hafefo Fresh Produce, cold store, Selanu</cbc:Name>
           </cac:Location>
-        </cac:ReceiptTransportEvent>
+        </cac:DeliveryTransportEvent>
       </cac:OnCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
@@ -519,8 +519,10 @@
           <cac:ServiceAllowanceCharge>
             <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
             <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">ABK</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Reefer power and monitoring at Selanu after discharge, a day</cbc:AllowanceChargeReason>
+            <cbc:AllowanceChargeReason>Reefer power and monitoring at Selanu after discharge</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>1</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XBL">45.00</cbc:Amount>
+            <cbc:BaseAmount currencyID="XBL">45.00</cbc:BaseAmount>
           </cac:ServiceAllowanceCharge>
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0422</cbc:ID>

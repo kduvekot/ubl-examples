@@ -81,6 +81,12 @@ Inside `AdditionalDocumentReference`:
   Ferrano Rail Cargo's debit note for the same days, which Valdara passes on.
 - `DocumentTypeCode` = **DebitNote** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
   The kind of document referred to: 2026/2888 is the example rail/12, a DebitNote; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: DebitNote = Debit Note.
+- `DocumentDescription` = **Ferrano Rail Cargo's demurrage debit note to the seller**  
+  What the document is: the buyer never received it, so the reference says whose it is and what it charges.
+- `IssuerParty/PartyIdentification/ID` = **XU-R-104685** (schemeID `urn:ubl-examples:world:XU:register`)  
+  A party referred to from another party's details: its identifier and name are enough.
+- `IssuerParty/PartyName/Name` = **Ferrano Rail Cargo**  
+  A party referred to from another party's details: its identifier and name are enough.
 
 ### Accounting Supplier Party
 
@@ -450,6 +456,15 @@ Inside `DebitNoteLine`:
   <cac:AdditionalDocumentReference>
     <cbc:ID>2026/2888</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">DebitNote</cbc:DocumentTypeCode>
+    <cbc:DocumentDescription>Ferrano Rail Cargo's demurrage debit note to the seller</cbc:DocumentDescription>
+    <cac:IssuerParty>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+      </cac:PartyName>
+    </cac:IssuerParty>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>

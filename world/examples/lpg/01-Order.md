@@ -81,7 +81,7 @@ Inside `BuyerCustomerParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Coastal State Water Company gives it.
 - `Party/Contact/ElectronicMail` = **purchasing@coastalwater.example**  
   The contact's e-mail address; as Coastal State Water Company gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Coastal State Water Company gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -189,6 +189,10 @@ Inside `TaxTotal`:
   The rate for this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
+  The state whose sales tax is charged: the state the goods are delivered in, whose rate applies.
+- `TaxSubtotal/TaxCategory/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Anticipated Monetary Total
 
@@ -275,7 +279,7 @@ Inside `OrderLine`:
         <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@coastalwater.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -358,6 +362,12 @@ Inside `OrderLine`:
         <cbc:Percent>6.5</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>

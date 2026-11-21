@@ -34,8 +34,6 @@ The cargo terminal reports the consignment accepted for KXL207, with the active 
   How it was made.
 - `ShippingOrderID` = **QLM-FI-26-2388**  
   The forwarding instructions of the shipment it reports on.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do, with the slot it is about.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
@@ -257,7 +255,6 @@ Inside `StatusPeriod`:
   <cbc:Description>Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>QLM-FI-26-2388</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>QLM-CS-26-3980</cbc:ID>

@@ -107,7 +107,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 1563 683 300</cbc:Telephone>
         <cbc:ElectronicMail>receivables@kelpstone.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -153,7 +153,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 0425 46716</cbc:Telephone>
         <cbc:ElectronicMail>payables@montebrio.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

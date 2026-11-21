@@ -35,6 +35,19 @@ The wholesaler calls off the hospital's generator for the week from the maker in
 - `LineCountNumeric` = **1**  
   The number of order lines.
 
+### Contract
+
+Inside `Contract`:
+
+- `ID` = **QLM-SO-HVI-2026**  
+  The standing order with the maker that this order calls off: one generator a week, at its price and on its terms.
+- `ContractTypeCode` = **SUPPLY** (listID `urn:ubl-examples:world:codelist:ContractTypeCode`)  
+  Recurring supplies at agreed quantities: one generator a week. The code is from the Trade Accord's contract type list: SUPPLY = Supply contract.
+- `ValidityPeriod/StartDate` = **2026-01-01**  
+  A yearly agreement, for 2026.
+- `ValidityPeriod/EndDate` = **2026-12-31**  
+  To the end of the year.
+
 ### Buyer Customer Party
 
 Inside `BuyerCustomerParty`:
@@ -85,7 +98,7 @@ Inside `BuyerCustomerParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Quillmoor Pharma Distribution gives it.
 - `Party/Contact/ElectronicMail` = **purchasing@quillmoor.example**  
   The contact's e-mail address; as Quillmoor Pharma Distribution gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -187,7 +200,7 @@ Inside `OrderLine`:
   The seller's price per unit.
 - `LineItem/Price/BaseQuantity` = **1** (unitCode `EA`)  
   The price is per one unit.
-- `LineItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
+- `LineItem/Item/Description` = **A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.**  
   The seller's description.
 - `LineItem/Item/Name` = **Technetium-99m generator, 20 GBq**  
   The item's short name.
@@ -215,6 +228,14 @@ Inside `OrderLine`:
   <cbc:Note>Week 25: one 20 GBq generator, reference Sunday 21 June 12:00 UTC, to arrive at Lumeport on Sunday 14 June.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">EUR</cbc:DocumentCurrencyCode>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+  <cac:Contract>
+    <cbc:ID>QLM-SO-HVI-2026</cbc:ID>
+    <cbc:ContractTypeCode listID="urn:ubl-examples:world:codelist:ContractTypeCode">SUPPLY</cbc:ContractTypeCode>
+    <cac:ValidityPeriod>
+      <cbc:StartDate>2026-01-01</cbc:StartDate>
+      <cbc:EndDate>2026-12-31</cbc:EndDate>
+    </cac:ValidityPeriod>
+  </cac:Contract>
   <cac:BuyerCustomerParty>
     <cac:Party>
       <cac:PartyIdentification>
@@ -253,7 +274,7 @@ Inside `OrderLine`:
         <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -329,7 +350,7 @@ Inside `OrderLine`:
         <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+        <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
         <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
         <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
         <cac:BuyersItemIdentification>

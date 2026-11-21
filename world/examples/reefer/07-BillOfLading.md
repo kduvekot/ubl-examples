@@ -408,11 +408,11 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/OnCarriageShipmentStage/CarrierParty/PartyName/Name` = **Nalevi Warehousing**  
   A party referred to from another party's details: its identifier and name are enough.
-- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate` = **2026-04-27**  
+- `Consignment/OnCarriageShipmentStage/DeliveryTransportEvent/OccurrenceDate` = **2026-04-27**  
   Planned delivery at the cold store on the Monday morning, the day after discharge.
-- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/CompletionIndicator` = **false**  
+- `Consignment/OnCarriageShipmentStage/DeliveryTransportEvent/CompletionIndicator` = **false**  
   Whether the event has taken place (true) or is still to come (false).
-- `Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/Location/Name` = **Hafefo Fresh Produce, cold store, Selanu**  
+- `Consignment/OnCarriageShipmentStage/DeliveryTransportEvent/Location/Name` = **Hafefo Fresh Produce, cold store, Selanu**  
   The wholesaler's cold store by the port.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **TWLU5316047** (schemeID `ISO6346`)  
   The container's number: the ocean carrier's owner code, U for a freight container, six digits and the ISO 6346 check digit.
@@ -654,10 +654,14 @@ Inside `Shipment`:
   A service to the reefer, charged.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/AllowanceChargeReasonCode` = **ABK** (listID `UN/EDIFACT EDED 7161`)  
   UN/EDIFACT 7161 code ABK: miscellaneous. The code is from the world's copy of UN/EDIFACT 7161 Special service description: ABK = Miscellaneous.
-- `Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/AllowanceChargeReason` = **Reefer power and monitoring at Selanu after discharge, a day**  
-  The carrier's tariff for the days the reefer stands on the port's power until the consignee collects it, collect from the consignee.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/AllowanceChargeReason` = **Reefer power and monitoring at Selanu after discharge**  
+  The carrier's service for the days the reefer stands on the port's power until the consignee collects it, collect from the consignee.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/MultiplierFactorNumeric` = **1**  
+  The days planned on the port's power: discharged on the Sunday, collected on the Monday morning.
 - `Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/Amount` = **45.00** (currencyID `XBL`)  
-  A day's power and monitoring, at the carrier's tariff.
+  The charge for the planned stay: the days times the tariff's daily rate; a longer stay is charged at the same rate.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/BaseAmount` = **45.00** (currencyID `XBL`)  
+  The carrier's tariff: power and monitoring for one day.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ID` = **VGM-26-0422**  
   The shipper's weight declaration.
 - `Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/WeighingDate` = **2026-04-22**  
@@ -1070,13 +1074,13 @@ Inside `Shipment`:
             <cbc:Name>Nalevi Warehousing</cbc:Name>
           </cac:PartyName>
         </cac:CarrierParty>
-        <cac:ReceiptTransportEvent>
+        <cac:DeliveryTransportEvent>
           <cbc:OccurrenceDate>2026-04-27</cbc:OccurrenceDate>
           <cbc:CompletionIndicator>false</cbc:CompletionIndicator>
           <cac:Location>
             <cbc:Name>Hafefo Fresh Produce, cold store, Selanu</cbc:Name>
           </cac:Location>
-        </cac:ReceiptTransportEvent>
+        </cac:DeliveryTransportEvent>
       </cac:OnCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cac:TransportEquipment>
@@ -1247,8 +1251,10 @@ Inside `Shipment`:
           <cac:ServiceAllowanceCharge>
             <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
             <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">ABK</cbc:AllowanceChargeReasonCode>
-            <cbc:AllowanceChargeReason>Reefer power and monitoring at Selanu after discharge, a day</cbc:AllowanceChargeReason>
+            <cbc:AllowanceChargeReason>Reefer power and monitoring at Selanu after discharge</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>1</cbc:MultiplierFactorNumeric>
             <cbc:Amount currencyID="XBL">45.00</cbc:Amount>
+            <cbc:BaseAmount currencyID="XBL">45.00</cbc:BaseAmount>
           </cac:ServiceAllowanceCharge>
           <cac:VerifiedGrossMass>
             <cbc:ID>VGM-26-0422</cbc:ID>

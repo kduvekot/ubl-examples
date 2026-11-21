@@ -366,8 +366,8 @@ Inside `Attestation`:
   The inspector's attestation.
 - `Name` = **Freedom from quarantine pests**  
   What is attested.
-- `Description` = **Sampled at the packhouse and found free of codling moth and fire blight.**  
-  In words: the two pests of apples and pears that the island, which has neither, keeps out.
+- `Description` = **Sampled at the packhouse and found free of codling moth; the orchards of origin inspected this season and found free of fire blight.**  
+  In words: the two pests of apples and pears that the island, which has neither, keeps out, each checked in its own way.
 - `Note` = **Two per cent of the cartons sampled: 23 of 1,120.**  
   The sample.
 - `AcceptanceIndicator` = **true**  
@@ -377,30 +377,34 @@ Inside `Attestation`:
 - `IssuerParty/PartyName/Name` = **Federal Department of Agriculture of Bayvarra**  
   A party referred to from another party's details: its identifier and name are enough.
 - `AttestationLine/ID` = **1**  
-  The pests checked.
+  The island's rule on the pests of pome fruit.
 - `AttestationLine/TypeCode` = **PEST** (listID `urn:ubl-examples:world:codelist:AttestationTypeCode`)  
   A pest check. The code is from the Trade Accord's attestation type list: PEST = Pest check.
-- `AttestationLine/Description` = **Codling moth (Cydia pomonella): none found.**  
-  The finding.
+- `AttestationLine/Description` = **Freedom from quarantine pests of pome fruit.**  
+  What the line attests, pest by pest below.
 - `AttestationLine/CriterionItem/ID` = **XL-PH-12**  
   The island's import rule for pome fruit.
-- `AttestationLine/CriterionItem/CriterionDescription` = **No live larvae and no entry holes in a sample of 2 % of the cartons.**  
-  The criterion.
+- `AttestationLine/CriterionItem/CriterionDescription` = **Free of codling moth and fire blight.**  
+  The criterion: the two pests the rule names.
 - `AttestationLine/CriterionItem/DeclaredPropertyItem/Name` = **Apples and pears, fresh**  
   The goods it is about.
 - `AttestationLine/SubAttestationLine/ID` = **1.1**  
+  The first pest.
+- `AttestationLine/SubAttestationLine/Description` = **Codling moth (Cydia pomonella): no live larvae and no entry holes in the packhouse sample of 2 % of the cartons.**  
+  The finding, and how it was checked.
+- `AttestationLine/SubAttestationLine/ID` = **1.2**  
   The second pest.
-- `AttestationLine/SubAttestationLine/Description` = **Fire blight (Erwinia amylovora): no symptoms in the orchards of origin this season.**  
-  The finding.
+- `AttestationLine/SubAttestationLine/Description` = **Fire blight (Erwinia amylovora): no symptoms in the orchards of origin at this season's inspection.**  
+  The finding, and how it was checked.
 
 ### Additional Document Reference
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **26-0215**  
-  The wholesaler's order.
-- `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: 26-0215 is the example reefer/01, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+- `ID` = **HRW-OR-26-0674**  
+  The cooperative's order response, whose quantities the certificate covers.
+- `DocumentTypeCode` = **OrderResponse** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: HRW-OR-26-0674 is the example reefer/02, a OrderResponse; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: OrderResponse = Order Response.
 
 ### Signature
 
@@ -695,7 +699,7 @@ Inside `Signature`:
   <cac:Attestation>
     <cbc:ID>FDAB/2026/7265</cbc:ID>
     <cbc:Name>Freedom from quarantine pests</cbc:Name>
-    <cbc:Description>Sampled at the packhouse and found free of codling moth and fire blight.</cbc:Description>
+    <cbc:Description>Sampled at the packhouse and found free of codling moth; the orchards of origin inspected this season and found free of fire blight.</cbc:Description>
     <cbc:Note>Two per cent of the cartons sampled: 23 of 1,120.</cbc:Note>
     <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
     <cac:IssuerParty>
@@ -709,23 +713,27 @@ Inside `Signature`:
     <cac:AttestationLine>
       <cbc:ID>1</cbc:ID>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:AttestationTypeCode">PEST</cbc:TypeCode>
-      <cbc:Description>Codling moth (Cydia pomonella): none found.</cbc:Description>
+      <cbc:Description>Freedom from quarantine pests of pome fruit.</cbc:Description>
       <cac:CriterionItem>
         <cbc:ID>XL-PH-12</cbc:ID>
-        <cbc:CriterionDescription>No live larvae and no entry holes in a sample of 2 % of the cartons.</cbc:CriterionDescription>
+        <cbc:CriterionDescription>Free of codling moth and fire blight.</cbc:CriterionDescription>
         <cac:DeclaredPropertyItem>
           <cbc:Name>Apples and pears, fresh</cbc:Name>
         </cac:DeclaredPropertyItem>
       </cac:CriterionItem>
       <cac:SubAttestationLine>
         <cbc:ID>1.1</cbc:ID>
-        <cbc:Description>Fire blight (Erwinia amylovora): no symptoms in the orchards of origin this season.</cbc:Description>
+        <cbc:Description>Codling moth (Cydia pomonella): no live larvae and no entry holes in the packhouse sample of 2 % of the cartons.</cbc:Description>
+      </cac:SubAttestationLine>
+      <cac:SubAttestationLine>
+        <cbc:ID>1.2</cbc:ID>
+        <cbc:Description>Fire blight (Erwinia amylovora): no symptoms in the orchards of origin at this season's inspection.</cbc:Description>
       </cac:SubAttestationLine>
     </cac:AttestationLine>
   </cac:Attestation>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>26-0215</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    <cbc:ID>HRW-OR-26-0674</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderResponse</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>FDA-SIG-26-PH</cbc:ID>

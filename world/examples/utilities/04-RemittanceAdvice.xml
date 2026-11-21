@@ -118,7 +118,7 @@
         <cbc:Department>Customer service</cbc:Department>
         <cbc:Telephone>+999 1 041 474 7922</cbc:Telephone>
         <cbc:ElectronicMail>billing@ferranoenergy.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

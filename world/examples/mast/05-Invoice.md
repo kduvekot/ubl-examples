@@ -186,7 +186,7 @@ Inside `AccountingCustomerParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Telecom gives it.
 - `Party/Contact/ElectronicMail` = **payables@selanutelecom.example**  
   The contact's e-mail address; as Selanu Telecom gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Selanu Telecom gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -579,7 +579,7 @@ Inside `InvoiceLine`:
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
         <cbc:ElectronicMail>payables@selanutelecom.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

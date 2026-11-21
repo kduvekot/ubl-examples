@@ -260,10 +260,10 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `ActualDeliveryDate` = **2026-03-31**  
-  The day the goods billed were delivered.
 - `DeliveryLocation/Name` = **Public works depot, Lumeport**  
   Where the goods billed are delivered.
+- `Despatch/ActualDespatchDate` = **2026-03-30**  
+  The day the goods billed left, before they are delivered.
 
 ### Payment Means
 
@@ -653,10 +653,12 @@ Inside `InvoiceLine`:
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-03-31</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Public works depot, Lumeport</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-03-30</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

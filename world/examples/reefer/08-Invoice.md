@@ -217,10 +217,27 @@ Inside `SellerSupplierParty`:
 
 Inside `Delivery`:
 
-- `DeliveryLocation/Name` = **Hafefo Fresh Produce, cold store, Selanu**  
-  Where the goods billed are delivered.
+- `DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Port of Selanu**  
+  Where the goods billed are delivered: the port of Selanu, the place the terms name.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Despatch/ActualDespatchDate` = **2026-04-22**  
   The day the goods billed left, before they are delivered.
+
+### Delivery Terms
+
+Inside `DeliveryTerms`:
+
+- `ID` = **CIP** (schemeID `INCOTERMS`)  
+  Incoterms 2020: carriage and insurance paid to the port of Selanu, as ordered: the price includes the ocean freight and the insurance. The code is from the world's copy of Incoterms 2020: CIP = Carriage and Insurance Paid To. An identifier that holds a code names the code's list in its schemeID.
+- `DeliveryLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `DeliveryLocation/Name` = **Port of Selanu**  
+  The named place of destination.
+- `DeliveryLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ### Payment Means
 
@@ -616,12 +633,30 @@ Inside `InvoiceLine`:
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:Name>Hafefo Fresh Produce, cold store, Selanu</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:DeliveryLocation>
     <cac:Despatch>
       <cbc:ActualDespatchDate>2026-04-22</cbc:ActualDespatchDate>
     </cac:Despatch>
   </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CIP</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>

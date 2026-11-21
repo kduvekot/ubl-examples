@@ -34,8 +34,8 @@ The port of discharge reports the container discharged and available.
   How it was made.
 - `ShippingOrderID` = **BYF-FI-26-1501**  
   The forwarding instructions of the shipment it reports on.
-- `OtherInstruction` = **Reply only if the delivery slot must change.**  
-  What the receiver should do, with the slot it is about.
+- `OtherInstruction` = **Book the container's collection with the terminal once customs has released it.**  
+  What the receiver should do on this report.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 
@@ -390,7 +390,7 @@ Inside `StatusPeriod`:
   <cbc:Description>Container TWLU4120872 discharged and available for customs clearance.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>BYF-FI-26-1501</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>Book the container's collection with the terminal once customs has released it.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>LMW-CS-26-1001</cbc:ID>

@@ -26,7 +26,7 @@ The wholesaler declares the vaccines and the insulin for import at Lumeport airp
   The wholesaler declares the goods for import at Lumeport airport on the Monday morning after they arrived.
 - `IssueTime` = **08:30:00-01:00**  
   When the wholesaler lodged the declaration: first thing on Monday; in the issuer's local time, with its offset from UTC.
-- `Note` = **No duty: goods made in India, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.**  
+- `Note` = **No duty: goods made in India, outside the Accord, but medicines and vaccines are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.**  
   What is due at import, by the importing country's rule: goods from outside the Accord claim no preference and pay the country's own tariff, which charges no duty on them.
 
 ### Importer Party
@@ -201,8 +201,14 @@ Inside `Shipment`:
   The maker's shipment, as its invoice numbers it.
 - `Consignment/ID` = **NLB-CS-26-1786**  
   The consignment declared, as the maker booked it.
-- `Consignment/GrossWeightMeasure` = **172.8** (unitCode `KGM`)  
-  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving.
+- `Consignment/GrossWeightMeasure` = **199.1** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving: the goods in their packs, 36 shipping cartons of the influenza vaccine and the insulin, and the varicella vaccine's insulated box with 12 kg of dry ice for the long flight.
+- `Consignment/OfficeOfEntryLocation/ID` = **XB002002** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
+- `Consignment/OfficeOfEntryLocation/Name` = **Lumeport airport**  
+  The office of entry: the goods landed at Lumeport airport on the scheduled flight from Hyderabad.
+- `Consignment/OfficeOfEntryLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Influenza vaccine, inactivated, 10 prefilled syringes**  
@@ -300,7 +306,7 @@ Inside `AdditionalDocumentReference`:
   <cbc:UUID>288dda29-bba9-5aaa-b84e-c91eac5c3161</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>08:30:00-01:00</cbc:IssueTime>
-  <cbc:Note>No duty: goods made in India, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
+  <cbc:Note>No duty: goods made in India, outside the Accord, but medicines and vaccines are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
@@ -437,7 +443,16 @@ Inside `AdditionalDocumentReference`:
     <cbc:ID>NLB-SH-26-1786</cbc:ID>
     <cac:Consignment>
       <cbc:ID>NLB-CS-26-1786</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">172.8</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">199.1</cbc:GrossWeightMeasure>
+      <cac:OfficeOfEntryLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002002</cbc:ID>
+        <cbc:Name>Lumeport airport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:OfficeOfEntryLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

@@ -142,7 +142,7 @@ Inside `AccountingSupplierParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9); no area code is the start of another. Mobiles start with 3 and have 10 digits. As Ferrano Grid gives it.
 - `Party/Contact/ElectronicMail` = **billing@ferranogrid.example**  
   The contact's e-mail address; as Ferrano Grid gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Ferrano Grid gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -197,7 +197,7 @@ Inside `AccountingCustomerParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9); no area code is the start of another. Mobiles start with 3 and have 10 digits. As Ferrano Energy gives it.
 - `Party/Contact/ElectronicMail` = **payables@ferranoenergy.example**  
   The contact's e-mail address; as Ferrano Energy gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Ferrano Energy gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -600,7 +600,7 @@ Inside `InvoiceLine`:
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 041 938 7117</cbc:Telephone>
         <cbc:ElectronicMail>billing@ferranogrid.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -643,7 +643,7 @@ Inside `InvoiceLine`:
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 1 041 474 7922</cbc:Telephone>
         <cbc:ElectronicMail>payables@ferranoenergy.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

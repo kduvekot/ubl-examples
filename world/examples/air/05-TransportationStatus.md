@@ -35,7 +35,7 @@ The air cargo terminal reports the cargo accepted after the cut-off for the afte
 - `ShippingOrderID` = **LMW-FI-26-0606**  
   The forwarding instructions of the shipment it reports on.
 - `OtherInstruction` = **The built-up skid goes to the aircraft for KXL207 on 14 May between 06:00 and 06:20; reply only if that slot must change.**  
-  What the receiver should do, with the slot it is about.
+  What the receiver should do on this report.
 - `TransportExecutionStatusCode` = **INPROGRESS** (listID `urn:ubl-examples:world:codelist:TransportExecutionStatusCode`)  
   The carriage is under way. The code is from the Trade Accord's transport execution status list: INPROGRESS = In progress.
 

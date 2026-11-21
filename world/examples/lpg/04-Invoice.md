@@ -162,7 +162,7 @@ Inside `AccountingSupplierParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Kelpstone Gas gives it.
 - `Party/Contact/ElectronicMail` = **receivables@kelpstone.example**  
   The contact's e-mail address; as Kelpstone Gas gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Kelpstone Gas gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -205,17 +205,17 @@ Inside `AccountingCustomerParty`:
   The name under which the party is registered, with its legal form; as Coastal State Water Company gives it.
 - `Party/PartyLegalEntity/CompanyID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; as Coastal State Water Company gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/Contact/Name` = **Customer service**  
-  The party's main desk, which handles this document; as Coastal State Water Company gives it.
-- `Party/Contact/JobTitle` = **Customer service officer**  
+- `Party/Contact/Name` = **Accounts payable**  
+  The party's accounts payable desk: the desk for its role in this document (it pays); as Coastal State Water Company gives it.
+- `Party/Contact/JobTitle` = **Accounts payable clerk**  
   The job of the person who answers at the desk; as Coastal State Water Company gives it.
-- `Party/Contact/Department` = **Customer service**  
+- `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Coastal State Water Company gives it.
 - `Party/Contact/Telephone` = **+999 2 38 9310 7518**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Coastal State Water Company gives it.
-- `Party/Contact/ElectronicMail` = **customer@coastalwater.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Coastal State Water Company gives it.
+- `Party/Contact/ElectronicMail` = **payables@coastalwater.example**  
   The contact's e-mail address; as Coastal State Water Company gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Coastal State Water Company gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -333,6 +333,10 @@ Inside `TaxTotal`:
   The rate for this category.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `TaxSubtotal/TaxCategory/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
+  The state whose sales tax is charged: the state the goods are delivered in, whose rate applies.
+- `TaxSubtotal/TaxCategory/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 
 ### Legal Monetary Total
 
@@ -375,6 +379,10 @@ Inside `InvoiceLine`:
   Whether the category applies to goods or services. The code is from the Trade Accord's supply type list: GOODS = Goods.
 - `Item/ClassifiedTaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
+- `Item/ClassifiedTaxCategory/TaxScheme/JurisdictionRegionAddress/CountrySubentity` = **Coastal State**  
+  The state whose sales tax is charged: the state the goods are delivered in, whose rate applies.
+- `Item/ClassifiedTaxCategory/TaxScheme/JurisdictionRegionAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  Its country. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Price/PriceAmount` = **560** (currencyID `XBL`)  
   The seller's price per unit.
 - `Price/BaseQuantity` = **1** (unitCode `TNE`)  
@@ -496,7 +504,7 @@ Inside `InvoiceLine`:
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 1563 683 300</cbc:Telephone>
         <cbc:ElectronicMail>receivables@kelpstone.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -533,12 +541,12 @@ Inside `InvoiceLine`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Customer service</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
-        <cbc:ElectronicMail>customer@coastalwater.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:ElectronicMail>payables@coastalwater.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -622,6 +630,12 @@ Inside `InvoiceLine`:
         <cbc:Percent>6.5</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
@@ -652,6 +666,12 @@ Inside `InvoiceLine`:
         <cbc:SupplyTypeCode listID="urn:ubl-examples:world:codelist:SupplyTypeCode">GOODS</cbc:SupplyTypeCode>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:ClassifiedTaxCategory>
     </cac:Item>
