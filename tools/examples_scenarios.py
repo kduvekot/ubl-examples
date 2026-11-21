@@ -923,17 +923,18 @@ def rail_stage(f):
 
 
 def rail_offices():
-    def office(name, why):
-        return {"Name": V(name, why)}
-    return {"OfficeOfDepartureLocation": office("Customs office Ferrano Intermodal Hub", "Where the transit starts."),
-            "OfficeOfExitLocation": office("Customs post at the rail border station, Urvanian side",
+    def office(oid, name, why):
+        return kit.customs_office(oid, why, name)  # stage 7, C23
+    return {"OfficeOfDepartureLocation": office("XU002001", "Customs office Ferrano Intermodal Hub",
+                                                "Where the transit starts."),
+            "OfficeOfExitLocation": office("XU001002", "Customs post at the rail border station, Urvanian side",
                                            "Where the goods leave Urvania."),
-            "OfficeOfTransitLocation": office("Customs post at the rail border station, Bayvarran side",
+            "OfficeOfTransitLocation": office("XB001002", "Customs post at the rail border station, Bayvarran side",
                                               "Where the transit is checked on entering Bayvarra."),
-            "OfficeOfDestinationLocation": office("Customs office Marrowdale", "Bayvarra customs' inland office, "
+            "OfficeOfDestinationLocation": office("XB003001", "Customs office Marrowdale", "Bayvarra customs' inland office, "
                                                                                "where the transit ends and the "
                                                                                "goods are declared for import."),  # D37
-            "OfficeOfImportLocation": office("Customs office Marrowdale", "Where the import is declared.")}
+            "OfficeOfImportLocation": office("XB003001", "Customs office Marrowdale", "Where the import is declared.")}
 
 
 def rail_consignment(f, view):
@@ -2448,10 +2449,11 @@ def sea(n, doc):
             "FreeOnBoardValueAmount": amount(fob_value(f), "XBL", "On board in Lumeport: the CIF price less the sea "
                                                                   "freight and the insurance, Bayvarra's basis of "
                                                                   "value at export."),  # D16
-            "Consignment": {"OfficeOfExportLocation": {"Name": V("Customs office, port of Lumeport", "Where the "
-                                                                 "export is declared.")},
-                            "OfficeOfExitLocation": {"Name": V("Customs office, port of Lumeport", "Where the goods "
-                                                               "leave Bayvarra: the same port.")}},
+            "Consignment": {"OfficeOfExportLocation": kit.customs_office("XB002001", "Where the export is declared.",
+                                                                          "Customs office, port of Lumeport"),
+                            "OfficeOfExitLocation": kit.customs_office("XB002001", "Where the goods leave Bayvarra: "
+                                                                        "the same port.",
+                                                                        "Customs office, port of Lumeport")},
             "ShipmentStage": {"ID": V("2", "The sea leg on which the goods leave Bayvarra, stage 2 as on the bill of "
                                            "lading."),  # sea/11#F14
                               "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
@@ -3697,11 +3699,12 @@ CARNET = kit.Flow("carnet", "2026-05-25", [
 # voucher goes astray, so the island's chamber asks for proof on 24 July, reminds on 24 August and is answered on 28.
 CARNET_DAYS = {"export": 7, "import": 8, "reexport": 15, "reimport": 16, "request": 60, "reminder": 91, "proof": 95}
 CARNET_LIMIT = "2026-06-30"
-CARNET_OFFICES = {      # the customs offices that stamp the counterfoils: one name each, the airports by their code
-    "XU": ("Customs Administration of Urvania, Valico Euridice", None, "BORDERPOST"),
-    "XB-road": ("Customs and Border Service of Bayvarra, Euridice Crossing", None, "BORDERPOST"),
-    "XB-air": ("Customs and Border Service of Bayvarra, Lumeport airport", "XBLMA", "CUSTOMSOFFICE"),
-    "XL": ("Island Customs Service, Selanu airport", "XLSLA", "CUSTOMSOFFICE")}
+CARNET_OFFICES = {      # the customs offices that stamp the counterfoils: one name each, every office by its
+    # number in its country's customs office list (stage 7, C23)
+    "XU": ("Customs Administration of Urvania, Valico Euridice", "XU001001", "BORDERPOST"),
+    "XB-road": ("Customs and Border Service of Bayvarra, Euridice Crossing", "XB001001", "BORDERPOST"),
+    "XB-air": ("Customs and Border Service of Bayvarra, Lumeport airport", "XB002002", "CUSTOMSOFFICE"),
+    "XL": ("Island Customs Service, Selanu airport", "XL001002", "CUSTOMSOFFICE")}
 # The counterfoils as the carnet has them (ATA sheets: yellow for Urvania, blue for transit, white for the island):
 # id -> (sheet, where it is presented, the day it is stamped, what happens then)
 CARNET_SHEETS = {
@@ -3722,7 +3725,7 @@ def carnet_day(key):
 
 def carnet_office(key, why):
     name, code, kind = CARNET_OFFICES[key]
-    loc = kit.place(code, why, name) if code else {"Name": V(name, why)}
+    loc = kit.customs_office(code, why, name)  # stage 7, C23: every office by its number
     loc["LocationTypeCode"] = V(kind, "A customs office at the airport." if kind == "CUSTOMSOFFICE" else
                                 "A customs post at the road border crossing.")
     return loc
@@ -7169,19 +7172,20 @@ def _(f, n, doc, out):
                                                               "of the three loads, after those of 6 and 7 April.")}}}
 
 
-CUSTOMS_POSTS = {"XU": "Customs post at the land border, Urvanian side", "XB": "Customs post at the land border, "
-                                                                               "Bayvarran side",
-                 "XL": "Customs office, port of Selanu"}
+CUSTOMS_POSTS = {"XU": ("XU001001", "Customs post at the land border, Urvanian side"),
+                 "XB": ("XB001001", "Customs post at the land border, Bayvarran side"),
+                 "XL": ("XL001001", "Customs office, port of Selanu")}
 
 
 def exit_office(f, country):
     if f.id in ("sea", "cotton", "reefer"):
-        name = "Customs office, port of Lumeport" if country == "XB" else "Customs office, port of Selanu"
+        oid, name = ("XB002001", "Customs office, port of Lumeport") if country == "XB" else \
+            ("XL001001", "Customs office, port of Selanu")
     elif f.id == "plastics":
-        name = "Customs post at the river border"
+        oid, name = "XU001003", "Customs post at the river border"
     else:
-        name = CUSTOMS_POSTS[country]
-    return {"Name": V(name, "Where the goods leave the country.")}
+        oid, name = CUSTOMS_POSTS[country]
+    return kit.customs_office(oid, "Where the goods leave the country.", name)  # stage 7, C23
 
 
 def export_extras(f, n, doc, out):
@@ -7274,8 +7278,9 @@ def _(f, n, doc, out):
             "ValidityPeriod": {"StartDate": V(f.date(8), "From departure."),
                                "EndDate": V(f.date(11), "The goods must reach the office of destination within "
                                                         "three days.")},
-            "ExportCustomsExitOfficeLocation": {"Name": V("Customs post at the rail border station, Urvanian side",
-                                                          "Where the goods leave Urvania.")},
+            "ExportCustomsExitOfficeLocation": kit.customs_office("XU001002", "Where the goods leave Urvania.",
+                                                                   "Customs post at the rail border station, "
+                                                                   "Urvanian side"),
             # the Accord's common transit, not Urvania's alone: the region of the Trade Accord, where the offices of
             # both countries act on it (D37 point 2, rail/06#F18; O140's candidate case for Address/Region)
             "JurisdictionRegionAddress": {"Region": V("Lumeport Trade Accord", "The group of countries in which the "
@@ -8735,7 +8740,33 @@ def mast(n, doc):
                                                      "The consignment."),
                                              "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
                                                  f"The goods in their packages, with the {MAST_PALLET_KG} kg pallet "
-                                                 "of the battery crates.")), **mast_consignment(f, False)}}}
+                                                 "of the battery crates.")), **mast_consignment(f, False),
+                                             # stage 7, C21 (mast/02#F3): where and when to collect, the flight
+                                             # to book and where and when to deliver
+                                             "RequestedPickupTransportEvent": kit.event(
+                                                 f, 3, "09:30:00", "Collect the goods at Saltmere's works on the "
+                                                 "morning of the flight.",
+                                                 location={"Name": V("Saltmere Engineering works", "Where the "
+                                                                     "forwarder collects the goods."),
+                                                           "Address": address("27-xb")}),
+                                             "RequestedDeliveryTransportEvent": kit.event(
+                                                 f, 4, None, "Deliver to the mast site the morning after the "
+                                                 "flight, within the two days the order asks for.",
+                                                 location={"Name": V("Selanu Telecom's mast site on Mast Hill",
+                                                                     "The place named in the order's delivery "
+                                                                     "terms."),
+                                                           "Address": address("35-xl")}),
+                                             "MainCarriageShipmentStage": {
+                                                 "TransportModeCode": V("4", "By air, on a cargo aircraft: the "
+                                                                        "batteries and the stripper may fly on "
+                                                                        "cargo aircraft only.",
+                                                                        listID="UNECE Recommendation 19 - Codes "
+                                                                               "for Modes of Transport"),
+                                                 "PlannedDepartureTransportEvent": kit.event(
+                                                     f, 3, MAST_FLIGHT[1], f"The flight to book: {MAST_FLIGHT[0]}, "
+                                                     "the island airline's afternoon freighter to Selanu.",
+                                                     location=kit.place("XBLMA", "Where the goods are handed to "
+                                                                        "the airline."))}}}}
     if d == "Waybill":
         out = kit.waybill(f, n, doc, 3, "The air waybill, cargo aircraft only.", w, "The goods in their packages, "
                           f"with the {MAST_PALLET_KG} kg pallet of the battery crates.")
@@ -14253,10 +14284,11 @@ def reefer(n, doc):
                                      "The value of the fruit at export, in lume.")
         out["IssueTime"] = V("14:20:00", "In the afternoon, once the certificate the declaration cites was issued.")
         kit.deep_merge(out["CustomsDeclaration"]["Shipment"], {
-            "Consignment": {"OfficeOfExportLocation": {"Name": V("Customs office, port of Lumeport", "Where the "
-                                                                 "export is declared.")},
-                            "OfficeOfExitLocation": {"Name": V("Customs office, port of Lumeport", "Where the fruit "
-                                                               "leaves Bayvarra: the same port.")}},
+            "Consignment": {"OfficeOfExportLocation": kit.customs_office("XB002001", "Where the export is declared.",
+                                                                          "Customs office, port of Lumeport"),
+                            "OfficeOfExitLocation": kit.customs_office("XB002001", "Where the fruit leaves Bayvarra: "
+                                                                        "the same port.",
+                                                                        "Customs office, port of Lumeport")},
             "ShipmentStage": {"ID": V("2", "The sea leg on which the fruit leaves Bayvarra, stage 2 as on the bill "
                                            "of lading."),
                               "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
@@ -14854,11 +14886,12 @@ def modification(n, doc):
             "ID": V(f.numbers["consignment"], "The sawmill's number for the load."),
             **kit.import_consignment(f, doc),
             "OfficeOfEntryLocation": {
-                "Name": V("Customs post at the land border, Urvanian side", "One of the offices the authorisation "
-                          "names as empowered to accept the plant's entries: the border post, for loads that come "
-                          "by road."),
-                "SubsidiaryLocation": {"Name": V("Inland customs office, Ferrano", "The other office the "
-                                                 "authorisation names, for entries lodged inland.")}}}
+                **kit.customs_office("XU001001", "One of the offices the authorisation names as empowered to accept "
+                                     "the plant's entries: the border post, for loads that come by road.",
+                                     "Customs post at the land border, Urvanian side"),
+                "SubsidiaryLocation": kit.customs_office("XU002001", "The other office the authorisation names, "
+                                                         "for entries lodged inland.",
+                                                         "Inland customs office, Ferrano")}}
         out["ValidityPeriod"] = {"StartDate": V(f.date(MOD_DAY["load1"]), "From the entry."),
                                  "EndDate": V("2026-07-13", "The period of the authorisation within which the "
                                                             "processed products must be discharged: six months.")}

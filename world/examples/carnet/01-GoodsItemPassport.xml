@@ -369,8 +369,14 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
       <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -385,8 +391,14 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.</cbc:Note>
     <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB001001</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
       <cbc:Name>Customs and Border Service of Bayvarra, Euridice Crossing</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -404,7 +416,7 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples arrive on the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
       <cac:Address>
@@ -426,7 +438,7 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
       <cac:Address>
@@ -448,7 +460,7 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Customs and Border Service of Bayvarra, Lumeport airport</cbc:Name>
       <cac:Address>
@@ -473,8 +485,14 @@
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples come home to Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
       <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

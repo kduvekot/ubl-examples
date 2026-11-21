@@ -272,8 +272,12 @@ Inside `CustomsDeclaration`:
   Within the limit, but 1.81 m long: two people carry it (ISO 11228-1, the world's handling rule).
 - `Shipment/ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by road. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `CustomsExitOfficeLocation/ID` = **XU001001** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Urvanian side**  
   Where the goods leave the country.
+- `CustomsExitOfficeLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ConsignorParty/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ConsignorParty/PartyName/Name` = **Valdara Industries**  
@@ -597,7 +601,13 @@ Inside `Signature`:
       </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
       <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsExitOfficeLocation>
     <cac:ConsignorParty>
       <cac:PartyIdentification>

@@ -227,14 +227,14 @@ Inside `GoodsItemPassportCounterfoil`:
   The limit the island's customs set on the importation counterfoil, shorter than the carnet's year: a short fair admission.
 - `Note` = **Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.**  
   The counterfoil the claim rests on.
-- `CustomsOfficeLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/ID` = **XL001002** (schemeID `urn:ubl-examples:world:XL:customs-office`)  
+  The office's number in the customs office list of Lisavu.
 - `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
   A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
 - `CustomsOfficeLocation/Name` = **Island Customs Service, Selanu airport**  
   The customs office where the counterfoil is presented.
 - `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
@@ -424,7 +424,7 @@ Inside `Signature`:
     <cbc:FinalReexportationDate>2026-06-30</cbc:FinalReexportationDate>
     <cbc:Note>Stamped at Selanu airport on 2 June; no discharged re-exportation voucher on file.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
       <cac:Address>

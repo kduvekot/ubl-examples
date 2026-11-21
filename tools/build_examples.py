@@ -2133,6 +2133,30 @@ def check_road_weights(root, where):
                 break
 
 
+def check_customs_offices(root, where):
+    """Stage 7, C23: every customs office location (an element named *Office*Location, or the subsidiary location
+    of one) carries the office's number from its country's customs office list (world/countries.json
+    customs_offices), with that list as schemeID; and where it gives a country, the office's own."""
+    offices = {o["id"]: cc for cc, c in WORLD["countries"].items() for o in c.get("customs_offices", [])}
+    for el in root.iter():
+        if not isinstance(el.tag, str):
+            continue
+        name = etree.QName(el).localname
+        if not (name.endswith("Location") and "Office" in name):
+            continue
+        for loc in [el] + el.findall(f"{{{NS_CAC}}}SubsidiaryLocation"):
+            ident = loc.find(f"{{{NS_CBC}}}ID")
+            if ident is None or ident.text not in offices:
+                raise SystemExit(f"{where}: {name} without the number of a customs office of the world "
+                                 f"({ident.text if ident is not None else 'no ID'})")  # stage 7, C23
+            cc = offices[ident.text]
+            if ident.get("schemeID") != f"urn:ubl-examples:world:{cc}:customs-office":
+                raise SystemExit(f"{where}: {name} {ident.text} not in the customs office list of {cc}")
+            country = loc.find(f"{{{NS_CAC}}}Address/{{{NS_CAC}}}Country/{{{NS_CBC}}}IdentificationCode")
+            if country is not None and country.text != cc:
+                raise SystemExit(f"{where}: {name} {ident.text} in {country.text}, but the office is in {cc}")
+
+
 PLANNING_DOCUMENTS = {"TransportExecutionPlanRequest", "TransportExecutionPlan", "ForwardingInstructions",
                       "TransportServiceDescriptionRequest", "TransportServiceDescription", "Order", "OrderResponse",
                       "Quotation", "RequestForQuotation"}
@@ -4724,6 +4748,7 @@ def main(flow_id, check=False):
         check_emissions(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_delivery_days(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_road_weights(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_customs_offices(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_shipping_orders(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_reason_premises(root, reasons, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         if FIRST_PASS:
