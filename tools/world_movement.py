@@ -194,10 +194,12 @@ def number(s):
 
 def route_problems(world):
     import world_map as wmap
+    import world_facts
     out = []
     for r in world["routes"]:
         facts = (r.get("wiki") or {}).get("facts") or {}
         for k, v in facts.items():
+            v = world_facts.fill(v)            # a registered fact (tools/world_facts.py), then compared as written
             if "{" in v or k not in ("Length", "Distance", "Passage"):
                 continue                   # a fact the Encyclopedia fills in from the map itself
             n = number(v)

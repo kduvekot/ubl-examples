@@ -32,12 +32,13 @@ import world_data  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 out = sys.argv[1]
-world = world_data.load()
+import world_facts  # noqa: E402
+world = world_facts.fill_world(world_data.load())   # {fact:…} in the published texts (stage 7 B2)
 world_data.number_documents(world)
 countries = world["countries"]
 PARTY = {p["id"]: p for p in world["parties"]}
-MAP = json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8"))
-CJSON = json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8"))
+MAP = world_facts.fill_world(json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8")))
+CJSON = world_facts.fill_world(json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8")))
 SITE = "../"                                   # the main site, seen from /wiki/ (one setting, for a later subdomain)
 problems = []
 
@@ -143,6 +144,10 @@ def fill(text, values, where):
             problems.append(f"{where}: {{{m.group(1)}}} is not a value of this subject")
             return m.group(0)
         return str(values[m.group(1)])
+    try:                                          # the world's registered facts first (tools/world_facts.py, B2)
+        text = world_facts.fill(text)
+    except KeyError as e:
+        problems.append(f"{where}: {e.args[0]}")
     return re.sub(r"\{([a-z_][a-z0-9_]*)\}", one, text)
 
 
@@ -181,7 +186,13 @@ MORE = {"the station 19th century": "its station dates from the 19th century",
         "the harbour light Italian, 1890s": "the harbour light was built under Italian rule in the 1890s"}
 
 
-def founded(text):
+def variant(seed, n):
+    """A stable choice among n wordings, so that generated texts do not all read alike."""
+    import hashlib
+    return int(hashlib.sha256(seed.encode()).hexdigest(), 16) % n
+
+
+def founded(text, seed=""):
     """'Urvanian, before 1600; named under Italian rule' as a sentence: 'It was founded by Urvanians before 1600; …'."""
     who, _, rest = text.partition(", ")
     when, sep, more = rest.partition("; ")
@@ -196,7 +207,9 @@ def founded(text):
         when = "in " + when
     elif re.match(r"\d|late |early ", when):
         when = "in the " + when
-    out = f"It was founded by {PEOPLE.get(who, who)} {when}"
+    by = PEOPLE.get(who, who)
+    out = [f"It was founded by {by} {when}", f"{by[0].upper()}{by[1:]} founded it {when}",
+           f"Its first settlers were {by}, {when}"][variant(seed + text, 2 if "settlers" in by or by.startswith("the ") else 3)]
     if paren:
         out += " (" + note
     if sep:
@@ -213,7 +226,7 @@ for title, a in articles.items():
                          "lead": f"**{title}** is a {BAND.get(d.get('band'), 'village')} in [[{cname}]], with about {n0(d['people'])} people.",
                          "sections": [x for x in (
                              {"title": "Geography", "text": lies(d["why"])} if d.get("why") else None,
-                             {"title": "History", "text": founded(d["founded"])} if d.get("founded") else None,
+                             {"title": "History", "text": founded(d["founded"], title)} if d.get("founded") else None,
                              {"title": "Economy", "text": lives(d["lives_on"])}
                              if d.get("lives_on") else None) if x]}
         else:
@@ -306,8 +319,12 @@ for title, a in articles.items():
         end = f"joins the {rlink(r['into'])}"
     else:
         end = f"reaches the sea on the {rec.get('coast') or coast(r)} coast" + (f" at [[{places[-1]}]]" if places and places[-1] in articles else "")
-    lead = (f"The **{rec['name']}** is a river of {where}, {{km}} km long, with a basin of {{basin}} km². "
-            f"It rises at about {{source_m}} m and {end}.")
+    lead = [f"The **{rec['name']}** is a river of {where}, {{km}} km long, with a basin of {{basin}} km². "
+            f"It rises at about {{source_m}} m and {end}.",
+            f"The **{rec['name']}**, a river of {where} {{km}} km long, drains a basin of {{basin}} km². "
+            f"From its source at about {{source_m}} m it {end}.",
+            f"The **{rec['name']}** rises at about {{source_m}} m in {where} and {end} after {{km}} km; "
+            f"its basin covers {{basin}} km²."][variant(title, 3)]
     bk = border_km(r)
     if bk >= 10:
         lead += f" For about {bk} km it forms the border between [[Urvania]] and [[Bayvarra]]."
@@ -416,7 +433,9 @@ def infobox(a):
                  if len(set(d.get("names", {}).values())) > 1 else "")]
     elif a["kind"] == "locality":
         rows = [("Country", f"[[{countries[d['country']]['name']}]]"),
-                ("Population", f"{n0(d['population'][0])} to {n0(d['population'][1])}")]
+                ("Population", f"{n0(d['population'][0])} to {n0(d['population'][1])}"),
+                ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'en': 'English', 'it': 'Italian'}.get(k, k))})" for k, v in d.get("names", {}).items())
+                 if len(set(d.get("names", {}).values())) > 1 else "")]
     elif a["kind"] == "route":
         rows = [("Kind", {"rail": "Railway", "pipeline": "Pipeline", "river": "River", "sea": "Shipping route",
                           "air": "Air route"}[d["mode"]])] + [(k, fill(v, values(a), a["wiki"]["title"]))
@@ -518,7 +537,9 @@ def generated_sections(a):
                 and not p["identity"].get("person")]
         if here:
             out_ += ["## Companies and institutions", ""]
-            out_ += [f"- [[{p['identity']['name']}]], {p['name'].lower()}" for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
+            out_ += [f"- [[{p['identity']['name']}]], " + ((p.get("wiki") or {}).get("short") or p.get("what", "")).rstrip(".")[:1].lower()
+                     + ((p.get("wiki") or {}).get("short") or p.get("what", "")).rstrip(".")[1:]
+                     for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
     if a["kind"] == "party":
         sold = [it for it in world["items"] if it["seller"] == a["key"] and not it.get("resale_of")]
         if sold and not has("Products"):

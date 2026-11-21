@@ -53,6 +53,7 @@ OWN_LISTS = ("regional", "XU", "XB", "XL")          # the scopes of the world's 
 WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b", re.I)
 # UBL's spelling for UBL concepts (owner, 2026-11-21, O277 (3)): "despatch" as in DespatchAdvice, ActualDespatchDate,
 # DespatchLine, DespatchContact, DespatchParty; the railway's "dispatches every train" is another word and stays
+UNFILLED = re.compile(r"\{fact:[^}]*\}")    # a world fact the builders did not fill in (tools/world_facts.py)
 SPELLING = re.compile(r"\bdispatch(?:ed|ing)?[ -](?:advice|advices|date|time|line|lines|note|notes|to|from|office|"
                       r"coordinator|area|party|contact|address|location|quantity|period)\b|\bdispatch@"
                       r"|\b(?:date|time|place|country|day|point) of dispatch\b", re.I)
@@ -107,7 +108,7 @@ def main(site):
             p.feed(open(os.path.join(dirpath, f), encoding="utf-8").read())
             text = " ".join(p.parts)
             exempt = f == f"world-{EU_PARTY}.html" or bool(eu_issues.match(" ".join(p.title.split())))
-            for m in list(FAIL.finditer(text)) + list(PROPER_NAMES.finditer(text)) + european(text, exempt) + list(SPELLING.finditer(text)):
+            for m in list(FAIL.finditer(text)) + list(PROPER_NAMES.finditer(text)) + european(text, exempt) + list(SPELLING.finditer(text)) + list(UNFILLED.finditer(text)):
                 fails.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
             for m in WARN.finditer(text):
                 warns.append(f"{f}: …{text[max(0, m.start() - 50):m.end() + 10].strip()}…")
