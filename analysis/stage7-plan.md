@@ -577,7 +577,7 @@ example adds its coverage-register row in the same commit.
 - **Q8 (O64 scope): decided (owner, 2026-11-21): A,** production records for every maker that numbers lots or serials (Tostara, the sawmill, Rinova, the textile mill, Quillmoor, the generator's maker …), as Valdara's, in `world/items.json`; the lot/serial check and the goods-chain check cover them. should the other makers' lots and serials become production records in world data, like
   Valdara's?
 - **Q9 (calendar): decided (owner, 2026-11-21): A, checked:** deliveries and receipts fall on a day the receiving party works, by its working week; carriers' movements in between are free. must deliveries and receipts also fall on the receiving party's working days?
-- **Q10 (O60):** should speeds and allowances (border stop, shunt, night mooring) move into world data, and with
+- **Q10 (O60): decided (owner, 2026-11-21): A, with B for the 3D map:** one table of real speeds and allowances per mode and vehicle type in the world data, read by the generators, one check over all flows (±15 % or 30 minutes, whichever is larger; the route texts too) and the 3D map; the seven per-flow asserts go. The 3D map keeps its compression as one visible rule, map speed = factor × √(real speed ÷ truck speed) (MO015), applied to the shared real speeds. Today the documents and the map disagree (truck 55/65, train 50/80, ship 25/30 km/h, aircraft block 390/750 cruise): one set of real speeds, chosen when the table is built. should speeds and allowances (border stop, shunt, night mooring) move into world data, and with
   what tolerance?
 - **Q11 (O250):**
   - placeholders or assertions;
