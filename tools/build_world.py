@@ -239,7 +239,7 @@ ABROAD = {p["id"]: p for p in world.get("abroad", [])}     # makers outside the 
 def link(pid):
     if pid in ABROAD:
         p = ABROAD[pid]
-        return f"{label(p)} ({world['abroad_countries'][p['c']]['name']}, outside the world)"
+        return f"{label(p)} ({world['abroad_countries'][p['c']]['name']})"
     return f"[{label(parties[pid])}](world-{pid}.html)"
 
 flows = {f["id"]: f for f in world["flows"]}
@@ -313,8 +313,12 @@ for p in world["parties"]:
     lines += [meta, "", p["what"], ""] + identity(p) + fleet(p) + sells(p) + ["## How UBL helps", "", p["how"], ""]
     n = lambda k: len(v[k])
     if n("sends") or n("receives") or n("mentioned"):
-        lines += [f"In this world it sends {n('sends')} and receives {n('receives')} documents, and is named in "
-                  f"{n('mentioned')} documents between other parties. They are listed per flow below.", ""]
+        cnt = lambda k, verb: f"{verb} {n(k)} document{'s' if n(k) != 1 else ''}" if n(k) else ""
+        parts_ = [x for x in (cnt("sends", "sends"), cnt("receives", "receives")) if x]
+        named = (f"is named in {n('mentioned')} document{'s' if n('mentioned') != 1 else ''} between other parties"
+                 if n("mentioned") else "")
+        said = " and ".join(parts_) + (", and " if parts_ and named else "") + named
+        lines += [f"In this world it {said}. They are listed per flow below.", ""]
         lines += by_flow(v, p["id"])
     if v["elements"]:
         lines += ["## UBL party elements", "", "The party elements in which this party appears:", "",
@@ -400,6 +404,9 @@ story = {}         # flow id -> its documents with an example page, in story ord
 for f in world["flows"]:
     docs = [x for x in world["documents"] if x["flow"] == f["id"] and example_of(x)]
     story[f["id"]] = sorted(docs, key=lambda x: (*issued(x), x["nn"]))
+ex_lines += ["## Contents", "", "| Flow | Documents |", "|---|---:|"]   # a contents list, in the page's order
+ex_lines += [f"| [{f['title']}](#flow-{f['id']}) | {len(story[f['id']])} |" for f in world["flows"] if story[f["id"]]]
+ex_lines += [""]
 for f in world["flows"]:
     rows = story[f["id"]]
     if not rows:
@@ -472,7 +479,7 @@ def fold_party_data(lines):
             gives = re.compile(rf"(?:;\s*as|\.?\s*As) {re.escape(name)} gives it\.?")
             tidy = lambda l: re.sub(r"\.\.", ".", gives.sub(".", l))
             who = f"[{name}](world-{BY_NAME[name]}.html)" if name in BY_NAME else name
-            where = f" in `{o}`" if o else ""
+            where = f" in <code>{o}</code>" if o else ""
             body += ["", "<details>", f"<summary>The party's own data{where}, as {name} gives it ({len(grp)} values)</summary>", ""]
             for x in grp:
                 body += [tidy(l) for l in x]
@@ -528,8 +535,9 @@ DOC_OF = {(d["flow"], f"{d['nn']:02d}-{d['doc']}"): d for d in world["documents"
 
 def example_label(flow, name):
     d = DOC_OF[(flow, name)]
-    return (f"[{world_docs.words(d['doc'])}, {label(parties[d['from']]) if d['from'] in parties else d['from']} to "
-            f"{label(parties[d['to']]) if d['to'] in parties else d['to']}](example-{flow}-{name}.html)")
+    nm = lambda pid: label(parties[pid]) if pid in parties else label(ABROAD[pid]) if pid in ABROAD else pid
+    return (f"[{world_docs.words(d['doc'])}, {nm(d['from'])} to {nm(d['to'])}](example-{flow}-{name}.html) "
+            f"({flows[flow]['title'] if flow in flows else flow})")
 
 
 def transaction_detail(ex):
@@ -538,7 +546,7 @@ def transaction_detail(ex):
     pairs, lists, schemes = {}, {}, {}
     for flow, name in ex:
         d = DOC_OF[(flow, name)]
-        role = lambda pid: parties[pid]["name"] if pid in parties else "a party outside the world"
+        role = lambda pid: parties[pid]["name"] if pid in parties else "a supplier abroad"
         pairs.setdefault((role(d["from"]), role(d["to"])), []).append((flow, name))
         root_el = etree.parse(os.path.join(root, "world", "examples", flow, name + ".xml")).getroot()
         for e in root_el.iter():
@@ -594,8 +602,8 @@ for level, title in LEVELS.items():
             if spec["when"] == "between_members":
                 applies = "to the documents the members exchange among themselves"
             elif spec["when"] == "in_port":
-                applies = (f"to the documents of these types in the flows {', '.join(spec['flows'])} that pass through "
-                           f"the port: exchanged in {world['countries'][spec['country']]['name']}, with a member taking part")
+                applies = ("to the documents of these types for goods that pass through the port, exchanged in "
+                           f"{world['countries'][spec['country']]['name']} with a member taking part")
             else:
                 applies = "to the documents of these types that a member sends or receives: every party of its procedures"
             lines += ["Members: " + ", ".join(link(m) for m in spec["members"]) + f". It applies {applies}"

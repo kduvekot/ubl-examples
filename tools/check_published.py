@@ -50,7 +50,10 @@ EUROPEAN = re.compile(r"\bRecyClass\b|\bEuropean List of Waste\b|\bVATEX\b|\bEU\
 EU_PARTY = "51-nl"                                   # Haarvliet Isotopes, in the Netherlands
 EU_LAW = re.compile(r"\bEU\b|\bEuropean Union\b|\bDirective\b")
 OWN_LISTS = ("regional", "XU", "XB", "XL")          # the scopes of the world's own lists in world/codelists/lists.json
-WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b", re.I)
+WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b"
+                  r"|\bthe build checks\b|\boutside the examples\b|\boutside the world\b|\bis fictional\b"
+                  r"|\bare invented\b|\buser-assigned\b", re.I)   # project voice (second site review, SR2-02):
+                                                            # warnings until the generators' texts are rewritten
 # UBL's spelling for UBL concepts (owner, 2026-11-21, O277 (3)): "despatch" as in DespatchAdvice, ActualDespatchDate,
 # DespatchLine, DespatchContact, DespatchParty; the railway's "dispatches every train" is another word and stays
 UNFILLED = re.compile(r"\{fact:[^}]*\}")    # a world fact the builders did not fill in (tools/world_facts.py)

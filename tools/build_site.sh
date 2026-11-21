@@ -134,8 +134,24 @@ bg_wait() {
   PIDS=""
   [ "$BG_FAILED" = 0 ] || { echo "a page conversion failed" >&2; exit 1; }
 }
-page history/README.md history.html "The OASIS sample documents: how the history was built" 2
-page README.md releases.html "The OASIS sample documents: releases" 3
+# The OASIS samples' pages: the history README without its section on the repository's earlier branches, and the
+# releases from the repository README under a head of their own (the README's head describes the repository)
+python3 - "$OUT/.history.md" "$OUT/.releases.md" <<'OASIS'
+import re, sys
+h = open("history/README.md", encoding="utf-8").read()
+h = re.sub(r"\n## Relation to earlier attempts\n.*?(?=\n## |\Z)", "\n", h, flags=re.S)
+open(sys.argv[1], "w", encoding="utf-8").write(h)
+r = open("README.md", encoding="utf-8").read()
+rel = r[r.index("## Releases"):] if "## Releases" in r else r
+head = ("# The OASIS sample documents: releases\n\n"
+        "The sample documents the OASIS UBL Technical Committee published with each release of UBL 2, from UBL 2.0 "
+        "to UBL 2.5, rebuilt one document per commit; each release is tagged with the name of its directory on "
+        "<https://docs.oasis-open.org/ubl/>. [How the history was built](history.html).\n\n")
+open(sys.argv[2], "w", encoding="utf-8").write(head + rel)
+OASIS
+page "$OUT/.history.md" history.html "The OASIS sample documents: how the history was built" 2
+page "$OUT/.releases.md" releases.html "The OASIS sample documents: releases" 3
+rm -f "$OUT/.history.md" "$OUT/.releases.md"
 page site/about.md about.html "About this project"
 # Element coverage of the world's documents, computed at every build (tools/coverage_world.sh)
 sh tools/coverage_world.sh "$OUT/.coverage.md" > /dev/null
@@ -150,6 +166,16 @@ src, summary, details = sys.argv[1:]
 text = open(src, encoding="utf-8").read()
 text = re.sub(r"^# .*\n", "", text, count=1)
 text = re.sub(r"^Model: .*\n", "", text, flags=re.M)
+# the placement rows with no element, and a heading over an empty table, are left out; the placements are explained;
+# the details' headings carry no counts, so that links to them stay valid when the counts change
+text = re.sub(r"^\| [^|]+ \| 0 \|\n", "", text, flags=re.M)
+text = re.sub(r"\n## Document types without an example\n\n\| Document type \|[^\n]*\n\|[^\n]*\n(?=\n)",
+              "\nEvery document type has at least one example.\n", text)
+text = text.replace("Where the missing elements fit:\n", "Where the missing elements fit (extend: in an existing example, as a "
+                    "child of an element it already has; add structure: it needs an aggregate the example does "
+                    "not carry):\n")
+text = re.sub(r"^### (extend|add structure|extend \(other\)|new example|not reachable) \((\d+)\)$",
+              lambda m: f"### {m[1].capitalize()}\n\n{m[2]} elements.", text, flags=re.M)
 head, sep, rest = text.partition("\n## Missing elements per placement")
 intro = ("The endorsed elements of UBL 2.5 that the documents of the world use: every document type, aggregate "
          "and basic element the UBL 2.5 model allows, without what it deprecates. An element is added only through "
@@ -170,16 +196,17 @@ rm -f "$MODEL"
 cat > "$OUT/.map-sheet.md" <<'SHEET'
 # The map sheet
 
-The printed map of the example world: an A3 landscape sheet at 1 : 2,500,000, drawn
+The printed map of the UBL World: an A3 landscape sheet at 1 : 2,500,000, drawn
 from the same terrain, places and routes as the [interactive map](world.html). It
 shows the landscape, the towns and villages, the roads, railways and pipelines, and
 the border between Urvania and Bayvarra. Lisavu, about 1,100 km east of Lumeport,
 stands in a panel of its own at the same scale.
 
-[Open the sheet at full size](map-sheet.png) (4,961 × 3,508 pixels, 300 dpi, about 6 MB).
+[Open the sheet at full size](map-sheet.png) (4,961 × 3,508 pixels, 300 dpi, about 7 MB).
 
-[![The A3 map sheet of the example world](map-sheet.png)](map-sheet.png)
+[![The A3 map sheet of the UBL World](map-sheet-preview.jpg)](map-sheet.png)
 SHEET
+python3 -c "import sys; from PIL import Image; im = Image.open(sys.argv[1]).convert('RGB'); im.resize((1600, round(im.height * 1600 / im.width)), Image.LANCZOS).save(sys.argv[2], quality=82, optimize=True, progressive=True)" "$OUT/map-sheet.png" "$OUT/map-sheet-preview.jpg"
 page "$OUT/.map-sheet.md" map-sheet.html "The map sheet"
 rm -f "$OUT/.map-sheet.md"
 
