@@ -69,7 +69,7 @@
         </cac:LocationCoordinate>
       </cac:PhysicalLocation>
       <cac:PartyTaxScheme>
-        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+        <cbc:RegistrationName>Kelpstone Gas Corp</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:tax">NT-1238631</cbc:CompanyID>
         <cbc:TaxLevelCode listID="urn:ubl-examples:world:codelist:TaxLevelCode">STATE</cbc:TaxLevelCode>
         <cac:TaxScheme>
@@ -84,10 +84,10 @@
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+        <cbc:RegistrationName>Kelpstone Gas Corp</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:CompanyID>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">CORP</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="en-XB">Corporation (public)</cbc:CompanyLegalForm>
         <cac:RegistrationAddress>
           <cbc:CityName>Gullhaven</cbc:CityName>
           <cac:Country>
@@ -178,7 +178,7 @@
     <cbc:PaymentID schemeID="ISO 11649">RF669000034662</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB45BLUM38522004817534</cbc:ID>
-      <cbc:Name>Kelpstone Gas Ltd</cbc:Name>
+      <cbc:Name>Kelpstone Gas Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>

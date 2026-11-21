@@ -468,6 +468,10 @@
      "name": "Limited company (private)",
      "abbreviation": "Ltd"
     },
+    "SOC": {
+     "name": "State-owned company limited by shares",
+     "abbreviation": "Ltd"
+    },
     "COOP": {
      "name": "Cooperative society",
      "abbreviation": "Co-op"
@@ -988,7 +992,7 @@
  "languages": {
   "qau": {
    "name": "Urvanian",
-   "own_name": "urvanese",
+   "own_name": "binbir",
    "country": "XU",
    "note": "The language of Urvania's original population, invented for the world, with a consonant-rich sound of its own (endings in -ek, -an, -ir). Urvania was an Italian territory and then under British rule; the British kept the Italian place and street names, while the people kept their Urvanian names for the same places. Since independence Urvania is bilingual, Urvanian and English, and the inherited Italian names count as English: they are never tagged as Italian. Code from the range ISO 639 reserves for local use (qaa–qtz); texts from a fixed invented vocabulary, word by word; the English text beside it is the reference.",
    "place_names": {
@@ -2250,7 +2254,7 @@
   },
   "qal": {
    "name": "Lisavan",
-   "own_name": "Lisavuana",
+   "own_name": "kopele",
    "country": "XL",
    "note": "The island's language, invented for the world, with a Polynesian sound like the island's names: syllables of a consonant and a vowel, no clusters, words ending in a vowel. It is official beside English. Code from the ISO 639 local-use range; texts from a fixed invented vocabulary, word by word; the English text beside it is the reference. Its words are checked so that none is a common word of a real Polynesian language.",
    "english_place_names_note": "The island's towns are known by their Lisavan names, which stay the primary ones; each also has the English name its English-speaking settlers gave it, official beside it, as Urvania's towns have their Urvanian and their English (inherited Italian) names. An address gives both, Lisavan first. The English names were checked so that none is a well-known real place.",
@@ -3418,7 +3422,8 @@
     "sleeping": "valifo",
     "turning": "sihato",
     "wall": "kefehu",
-    "wide": "vulese"
+    "wide": "vulese",
+    "lisavan": "kopele"
    },
    "wiki": {
     "short": "Language of Lisavu",

@@ -205,7 +205,7 @@ Inside `PaymentMeans`:
   The country where the account is kept. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PayeeFinancialAccount/ID` = **XB45BLUM38522004817534** (schemeID `urn:ubl-examples:world:account`)  
   The gas producer's account. The number follows the structure of ISO 13616 with its check digits, with the world's country code, and holds the codes of the bank and the branch that keep it; it is not called an IBAN, because the world's countries are not registered IBAN countries.
-- `PayeeFinancialAccount/Name` = **Kelpstone Gas Ltd**  
+- `PayeeFinancialAccount/Name` = **Kelpstone Gas Corp**  
   The account holder, as the bank knows it.
 - `PayeeFinancialAccount/AccountTypeCode` = **CACC** (listID `ISO 20022 ExternalCashAccountType1Code`)  
   A current account, for payments in and out. The code is from the world's copy of ISO 20022 ExternalCashAccountType1Code: CACC = Current.
@@ -414,7 +414,7 @@ Inside `RemittanceAdviceLine`:
     </cac:PayerFinancialAccount>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB45BLUM38522004817534</cbc:ID>
-      <cbc:Name>Kelpstone Gas Ltd</cbc:Name>
+      <cbc:Name>Kelpstone Gas Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>

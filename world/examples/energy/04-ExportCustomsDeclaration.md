@@ -85,7 +85,7 @@ Inside `ExporterParty`:
   The minutes of the longitude.
 - `PhysicalLocation/LocationCoordinate/LongitudeDirectionCode` = **West** (listID `urn:oasis:names:specification:ubl:codelist:gc:LongitudeDirectionCode`)  
   West of the Greenwich meridian. The code is from the world's copy of UBL's Longitude direction list, with a listID: West.
-- `PartyLegalEntity/RegistrationName` = **Kelpstone Gas Ltd**  
+- `PartyLegalEntity/RegistrationName` = **Kelpstone Gas Corp**  
   The name under which the party is registered, with its legal form; as Kelpstone Gas gives it.
 - `PartyLegalEntity/CompanyID` = **20412877** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; as Kelpstone Gas gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
@@ -397,7 +397,7 @@ Inside `CustomsDeclaration`:
       </cac:LocationCoordinate>
     </cac:PhysicalLocation>
     <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+      <cbc:RegistrationName>Kelpstone Gas Corp</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:CompanyID>
     </cac:PartyLegalEntity>
     <cac:Contact>

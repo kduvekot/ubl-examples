@@ -55,7 +55,7 @@
       </cac:LocationCoordinate>
     </cac:PhysicalLocation>
     <cac:PartyLegalEntity>
-      <cbc:RegistrationName>Kelpstone Gas Ltd</cbc:RegistrationName>
+      <cbc:RegistrationName>Kelpstone Gas Corp</cbc:RegistrationName>
       <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412877</cbc:CompanyID>
     </cac:PartyLegalEntity>
     <cac:Contact>
