@@ -148,8 +148,12 @@ Inside `CustomsDeclaration`:
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Marrowdale Sawmill describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 31102 = Wood, sawn or chipped lengthwise, sliced or peeled, of a thickness exceeding 6 mm, of non-coniferous wood .
 - `Shipment/ShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by road. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `CustomsExitOfficeLocation/ID` = **XB001001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the land border, Bayvarran side**  
   Where the goods leave the country.
+- `CustomsExitOfficeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ConsignorParty/PartyIdentification/ID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ConsignorParty/PartyName/Name` = **Marrowdale Sawmill**  
@@ -371,7 +375,13 @@ Inside `Signature`:
       </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB001001</cbc:ID>
       <cbc:Name>Customs post at the land border, Bayvarran side</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsExitOfficeLocation>
     <cac:ConsignorParty>
       <cac:PartyIdentification>

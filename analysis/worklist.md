@@ -677,6 +677,7 @@ Counted and pointed to only (see the register): 23 open points to decide with a 
 - Touched by: D5 (site codes for Urvanian places only where a document uses one, O24), D19 (place positions at 14 km a square).
 - State: ready to fix now.
 - Fixed in part (2026-11-17, stage 1 step 1d): the build gives every location named like a place the world identifies (the UN/LOCODE-form towns, ports and airports, the legs' named places, every GS1 party's own locations, and a short list of the names the documents use for them) its identifier, also where the place is given only in `Description` (`identify_places()` in `tools/build_examples.py`). The customs offices have no identifier anywhere in the world yet: they get one with the place list (O91).
+- Fixed (2026-11-21, stage 7): every customs office location carries its number in its country's customs office list (`world/countries.json` `customs_offices`, schemeID `urn:ubl-examples:world:<country>:customs-office`, `kit.customs_office()`), checked by `check_customs_offices()` in `tools/build_examples.py`.
 - Findings: air: 01#F8; cotton: 08#F10, 11#F7; ore: 01#F5; rail: 01#F13, 06#F13; retail: 14#F7, 22#F6; road: 05#F14; sea: 05#F11, 11#F15, 13#F9, 14#F19, 15#F12, 16#F22; wood: 03#F9
 
 ### C24 · Tax totals and taxable amounts that ignore the document's own charges, or state an empty zero

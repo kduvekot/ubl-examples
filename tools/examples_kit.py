@@ -2154,6 +2154,21 @@ def place(code, why, name=None):
             "Address": {"Country": {"IdentificationCode": V(c, "The country the place is in.")}}}
 
 
+CUSTOMS_OFFICES = {o["id"]: {**o, "c": cc} for cc, c in WORLD["countries"].items()
+                   for o in c.get("customs_offices", [])}
+CUSTOMS_OFFICE_COUNTRY = {"XU": "Urvania", "XB": "Bayvarra", "XL": "Lisavu"}
+
+
+def customs_office(oid, why, name=None):
+    """A customs office location (stage 7, C23): the office's number in its country's customs office list
+    (world/countries.json customs_offices), the name the document gives it and its country."""
+    o = CUSTOMS_OFFICES[oid]
+    return {"ID": V(oid, f"The office's number in the customs office list of {CUSTOMS_OFFICE_COUNTRY[o['c']]}.",
+                    schemeID=f"urn:ubl-examples:world:{o['c']}:customs-office"),
+            "Name": V(name or o["name"], why),
+            "Address": {"Country": {"IdentificationCode": V(o["c"], "The country the office is in.")}}}
+
+
 def maker(iid):
     """The item as its maker sells it: a resold item's physical facts are the maker's."""
     it = ITEM[iid]

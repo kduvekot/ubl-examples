@@ -180,8 +180,12 @@ Inside `CustomsDeclaration`:
   What the item is, as a subclass of the UN Central Product Classification (CPC), the trade classification for goods and services; as Rinova Recovery describes the item. The code is from the world's copy of UN Central Product Classification, Version 2.1: 34710 = Polymers of ethylene, in primary forms.
 - `Shipment/ShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
   The goods cross the border by river. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 8 = Inland water transport.
+- `CustomsExitOfficeLocation/ID` = **XU001003** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `CustomsExitOfficeLocation/Name` = **Customs post at the river border**  
   Where the goods leave the country.
+- `CustomsExitOfficeLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `ConsignorParty/PartyIdentification/ID` = **XU-R-104548** (schemeID `urn:ubl-examples:world:XU:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ConsignorParty/PartyName/Name` = **Rinova Recovery**  
@@ -425,7 +429,13 @@ Inside `Signature`:
       </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001003</cbc:ID>
       <cbc:Name>Customs post at the river border</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsExitOfficeLocation>
     <cac:ConsignorParty>
       <cac:PartyIdentification>
