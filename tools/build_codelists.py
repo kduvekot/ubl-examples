@@ -364,10 +364,38 @@ def iso20022_problems():
     return problems
 
 
+def provenance_problems():
+    """Stage 7, A12 (rules: external lists only from verified sources): every file kept in world/codelists/sources
+    has its SHA-256 in PROVENANCE.md or PROVENANCE-second-round.md, and still has that hash. (A listed hash may also
+    stand for a document that was read but not copied.)"""
+    src = os.path.join(OUT, "sources")
+    listed = {}
+    for name in sorted(os.listdir(src)):
+        if name.startswith("PROVENANCE") and name.endswith(".md"):
+            for line in open(os.path.join(src, name), encoding="utf-8"):
+                m = re.match(r"([0-9a-f]{64})\s+(\S+)", line)
+                if m:
+                    rel = m.group(2).removeprefix("./").removeprefix("world/codelists/sources/")
+                    listed.setdefault(os.path.normpath(rel), set()).add(m.group(1))
+    problems = []
+    for folder, _, names in os.walk(src):
+        for name in names:
+            rel = os.path.relpath(os.path.join(folder, name), src)
+            if rel.startswith("PROVENANCE") and rel.endswith(".md"):
+                continue
+            digest = hashlib.sha256(open(os.path.join(folder, name), "rb").read()).hexdigest()
+            if rel not in listed:
+                problems.append(f"world/codelists/sources/{rel}: no SHA-256 in PROVENANCE*.md")
+            elif digest not in listed[rel]:
+                problems.append(f"world/codelists/sources/{rel}: its SHA-256 {digest} is not the one PROVENANCE*.md "
+                                "gives")
+    return problems
+
+
 def check():
     """Without network: the committed lists hold exactly the world codes of world/countries.json, and the world's
-    own lists are what world/codelists/lists.json makes."""
-    problems = real_code_problems() + iso20022_problems()
+    own lists are what world/codelists/lists.json makes; every source file has its recorded hash."""
+    problems = real_code_problems() + iso20022_problems() + provenance_problems()
     for rel, data in world_lists().items():
         path = os.path.join(world_data.ROOT, rel)
         if not os.path.exists(path) or open(path, "rb").read() != data:

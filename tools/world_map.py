@@ -86,11 +86,42 @@ def sea_hours():
     return sea_km() / SHIP_KMH
 
 
-def air_km():
+def air_km(world=None):
     """The great circle between the two airports (17-xb, 17-xl), in km."""
-    world, _ = _model()
+    world = world or _model()[0]
     at = {p["id"]: p["at"] for p in world["parties"]}
     return place_list.great_circle(world, at["17-xb"], at["17-xl"])
+
+
+def flight(world=None):
+    """The air route's timetable (world/map.json, route "air", key "flight"): the block time each way in hours, the
+    time the flight needs gate to gate in still air over the great circle between the airports (taxiing, climb and
+    descent over their stretch, the rest at the cruising speed), and the distance. The block times keep a margin over
+    the still-air time, or the build stops (O152, O123; stage 7 A3). The generators, the Encyclopedia's texts and the
+    check of every flight's planned times all read it here."""
+    world = world or world_data.load()
+    f = next(x for x in world["routes"] if x["id"] == "air")["flight"]
+    km = air_km(world)
+    still = (f["taxi_min"] + f["climb_descent_min"]) / 60 + max(0.0, km - f["climb_descent_km"]) / f["cruise_kmh"]
+    for way, hours in f["block_hours"].items():
+        if still > hours:
+            raise SystemExit(f"air: the flight ({still:.2f} h in still air) no longer fits its {way}bound block time "
+                             f"of {hours} h (world/map.json)")  # O152, O123
+    return {"east": f["block_hours"]["east"], "west": f["block_hours"]["west"], "still_air": still, "km": km}
+
+
+def clock_ahead(a, b):
+    """How many hours the clocks of country b are ahead of those of country a (world/countries.json timezone)."""
+    world = world_data.load()
+    tz = {k: world["countries"][k]["timezone"] for k in (a, b)}
+    h = {k: int(v[0] + "1") * (int(v[1:3]) + int(v[4:6]) / 60) for k, v in tz.items()}
+    return h[b] - h[a]
+
+
+def duration(hours):
+    """A block time as the timetables write it: 2 h 45."""
+    m = round(hours * 60)
+    return f"{m // 60} h {m % 60:02d}"
 
 
 def fitted_height(pid):

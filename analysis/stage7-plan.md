@@ -48,6 +48,7 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 5. **Today:** probably 0. The read-through of six flows found "the offsets that are given are right everywhere".
 6. **Effort and risk:** S. Low risk. An event with no place falls back to the issuer, which is the rule already used.
 7. **Owner decision:** none.
+8. **Built (2026-11-21):** `check_time_places()` in `tools/build_examples.py`, per document: every time's offset is that of the place its aggregate or the one above names (UN/LOCODE, GLN, address country, read from the XML with `xml_place_country()`); a delivery that names no place is where it is received (DeliveryParty, else the document's delivery customer or buyer); a cited document's IssueTime has the offset of that document's own issue time; else the issuer's. Found 5: four were right but undocumented in the XML (delivery periods of air/02, 06, 08 in island time; air/07's cited order) and are now resolved by the delivery and citation rules; sea/16's requested arrival at the Selanu fairway buoy named no country, so its OccurrenceLocation now carries the country XL (scenario).
 
 ### A2. A document is issued within its issuer's desk hours (O269, stage 7 part)
 1. **Guards:** O269 and the read-through finds tender/24, 37, modification/03, 04, reefer/09, 11 and others.
@@ -93,6 +94,7 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    "about 1,080 km". So 0 hits.
 6. **Effort and risk:** S. Low risk.
 7. **Owner decision:** none. Only whether the westbound 3 h 00 should exist as data.
+8. **Built (2026-11-21):** the timetable is world data: `world/map.json` route `air`, key `flight` (block times east 2.75 h and west 3.0 h, taxiing, climb and descent, cruising speed); `world_map.flight()` derives the still-air time from `air_km()` and stops the build when a block time no longer keeps its margin, `world_map.clock_ahead()` the island's clock difference from the countries' timezones, `world_map.duration()` the "2 h 45" form. `examples_scenarios.py` reads `FLIGHT_BLOCK_EAST`, `FLIGHT_CLOCKS` and the reason text from them (air, mast, medicines). The Encyclopedia's figures are placeholders filled by `build_wiki.flight_values()`: `{flight_km}`, `{flight_east}`, `{flight_west}`, `{flight_still_air}` in the air route's facts, lead and section and in Kelaro Air Cargo's "Operations" (the route's infobox facts are now filled too). The check is `check_flight_times()` in `tools/build_examples.py`: every air ShipmentStage's planned or estimated departure and arrival are exactly the block time of their direction apart, an actual flight no longer. Found 0. The westbound 3 h 00 existed only as wiki text; it is now data beside the eastbound one (no document flies west).
 
 ### A4. Published-text rules (O265, two layers)
 1. **Guards:** O265, O256, SR-07, and the read-through finds (finding IDs, rule IDs, real standards).
@@ -254,6 +256,7 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 6. **Effort and risk:** S. False alarms only if the payment means is not filtered.
 7. **Owner decision:** none for payments. Q9: should deliveries and receipts also fall on the receiver's working
    days?
+8. **Built (2026-11-21), the payments part:** `check_payment_dates()` in `tools/build_examples.py`, per document: a bank payment (credit transfer, direct debit, or a prepayment with no means stated) is paid (PaidDate, PaymentDate) on a business day of both the payer's and the payee's country and received (ReceivedDate) on one of the payee's; a payment at the till (cash, cheque, cards: `AT_THE_TILL`) on a day the payee works. Found 2: sea/22 and sea/25, the deposit paid on Friday 8 May and received on Saturday 9 May; it is now received on Monday 11 May (`kit.due_day`, scenario), and sea/22's reason that it was paid "the day after the order was accepted" now agrees with sea/25 and the order response (the same day). Deliveries and receipts wait for Q9.
 
 ### A10. Payment terms (O70, the rest)
 1. **Guards:** D22, D23, O70, C51 and C55.
@@ -275,6 +278,7 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
      the texts read (energy/08 from 6 May for a due date of 5 May; tender/35 from 14 May for 13 May). Expected 0.
 6. **Effort and risk:** S. Low risk.
 7. **Owner decision:** none.
+8. **Built (2026-11-21):** `check_plan_terms()` in `tools/build_examples.py`, per flow: an invoice or debit note of a carrier to the user of its TransportExecutionPlan carries the plan's payment terms. Found 1: retail/16, Bayforth's freight invoice under the plan retail/23, billed on its standard terms; it now uses the plan's term (`terms="plan"`, 30 days from the consignment note, due 29 May). `check_reminder_interest()`, per document: a reminder line charging for a period starts the day after the cited invoice's due date, and its amount is the surcharge per month begun (PenaltySurchargePercent) or the simple annual interest per day (the reminder's PenaltyInterestRate) on the principal line. Found 0 (energy/08, utilities/10 hold).
 
 ### A11. The rest of the stage 7 list in `analysis/worklist.md`: what is built, what is open
 | Stage 7 item (guards) | Exists | Missing | Probe today |
@@ -294,6 +298,12 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 | Numbering, collaborations (C74–C76) | `check_numbering` | – | built 2026-11-20 |
 | Coordinates against distances and durations (C56, C58) | see B1 | see B1 | – |
 | Item physics (O62), goods chain (O65), margins (O30), HS (O31), Codana prefixes and repeats (O32, O22) | O65: `chain_problems`; O30: `resale_problems`, `figure_problems`; O32: `check_codana`; O22: `world_parties.repeat_problems`; O62: `physics_problems` (bench only) | O62 → B4, O66 → B3, O31 → B5 | – |
+
+- **Built (2026-11-21):** `check_totals()` in `tools/build_examples.py`, per document, over the XML, repairing nothing: each tax subtotal's tax is its taxable amount at its rate, each TaxTotal and WithholdingTaxTotal the sum of its subtotals, and a bill's LegalMonetaryTotal adds up (lines, allowances, charges, tax, prepaid, withholding, rounding). Found 0 once amounts collected for a third party are counted: utilities (06, 09, 11) counts its CollectionInvoiceLine in the lines' sum, the cotton gin's self-billing (cotton/04, 05) adds it to the payable amount only; the check accepts both and the difference is reported to the owner.
+- **Built (2026-11-21):** `check_emissions()` in `tools/build_examples.py`: a document's EnvironmentalEmission with a factor and a base is their product to the precision of the value (lpg/03: 0.268 × 1,700 kWh = 456 kg). Found 0.
+- **Built (2026-11-21):** `check_shipping_orders()` in `tools/build_examples.py`: every ShippingOrderID is the ID of an example ForwardingInstructions (`doc_types()`). Found 0.
+- **Built (2026-11-21):** `check_originals()` in `tools/build_examples.py`: ORIGINALHANDED goes to the ConsignorParty, ORIGINALWITHGOODS to the ConsigneeParty, and a note "N originals" counts those plus the carrier's own. Found 0.
+- **Not built (2026-11-21):** the C11 and C15 assertions (currency cleanup, shipment gross weights) wait for Q1, the fixers; the customs offices (C12, C23) have no ID or country to check.
 
 ### A12. Code-list sources, and EN 13556 (O156)
 1. **Guards:** "external lists only from verified sources" (rules), and O156.
@@ -320,6 +330,7 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
      enough?
    - `check_published.py` allows only EN 15804 among "EN nnnn". Does EN 13556 count as a norm the world accepts
      (O265), or would its codes appear without the standard's name?
+8. **Built (2026-11-21), the provenance part:** `provenance_problems()` in `tools/build_codelists.py`, run by `--check` (so by `check_world.py`): every file under `world/codelists/sources/` has its SHA-256 in `PROVENANCE.md` or `PROVENANCE-second-round.md` and still has it. The two missing hashes (IATA Table 9.3.A, the ATR fact sheet) are added below their rows in `PROVENANCE.md`. Found 0 after that. EN 13556 waits for Q4.
 
 ### A13. Patterns from the read-throughs
 | Pattern (read-through) | Check | Probe today | Effort/risk |
@@ -331,6 +342,11 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 | Contact desk not fitting the role (lpg/03 "Pipeline control", waste/01 "Order desk") | each document's contact desk is one of the desks the issuer's role uses (a role → desk table) | not measured | M; needs a table |
 | Vehicles without tare, so the Accord's 40 t road rule is not checked (wood read-through) | every road vehicle in a fleet has `tare_kg`; every road leg's load ≤ 40,000 kg − tare | 17 fleet entries lack `tare_kg`. Road ones: 8-xu V-12, 14-xu FRC-T1, 26-xb V-1, 10-xb B-03/B-05/B-08, 9-xl N-1, 36-xb S-1, 38-xl F-1, 49-xb Q-7, 50-xl H-2. The 40 t rule is applied in two scenarios only (`examples_scenarios.py` l. 3728, 5192) | S check + data for 11 vehicles |
 | Text that says "N km" differently from the map | see B1 | 42 statements in example pages, all consistent | – |
+
+- **Built (2026-11-21):** `check_reason_premises()` with `PREMISES` in `tools/build_examples.py`, per document over every reason: "quoted in its order" needs an OrderReference; "Issued on despatch" / "Issued on delivery" need the issue date to be a stated ActualDespatchDate / ActualDeliveryDate where the document states one. Found 3 (ore/06, road/14, cotton/17). Fixed at the source: `examples_kit.invoice()` says "quoted in its order" only where the invoice cites an order and the buyer ordered from this seller in the flow, else "contract or booking".
+- **Built (2026-11-21):** `consignment_weight_problems()` in `tools/build_examples.py`, over all flows at the end of a full run: one gross weight per Consignment or Shipment ID among the planning documents (`PLANNING_DOCUMENTS`) and one among the others. Found 0.
+- **Built (2026-11-21):** the 11 road vehicles have an empty weight by part in `world/parties.json` (`tare_kg`; the vans and the box truck also `max_gross_kg`). `fleet_weight_problems()` in `tools/world_parties.py` (run by `check_world.py`) requires `tare_kg` for every road vehicle, a payload left under the Accord's 40 t or the vehicle's own maximum, and a road vehicle for every carrier of a road leg; `check_road_weights()` in `tools/build_examples.py` checks that a document's shipment or consignment on a vehicle named by its plate stays within that limit with the vehicle's tare. Found 0.
+- **Not built (2026-11-21):** the contact desk against the issuer's role needs a role → desk table first; the reason whose number differs from the value has no generic check.
 
 ## Part B: the larger checks
 

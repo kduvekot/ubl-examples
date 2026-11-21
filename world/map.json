@@ -829,6 +829,17 @@
    "mode": "air",
    "layer": "transport",
    "label": "Air cargo (XB → XL)",
+   "flight": {
+    "note": "The freighter's timetable: block times gate to gate, eastbound Lumeport to Selanu and westbound back; the still-air time they keep a margin over is taxiing, climb and descent over their stretch, and the rest of the great circle between the airports at the cruising speed.",
+    "block_hours": {
+     "east": 2.75,
+     "west": 3.0
+    },
+    "taxi_min": 10,
+    "climb_descent_min": 20,
+    "climb_descent_km": 100,
+    "cruise_kmh": 500
+   },
    "pts": [
     [
      136,
@@ -847,14 +858,14 @@
     "title": "Lumeport–Selanu air cargo route",
     "short": "Air cargo route between Lumeport and Lisavu",
     "facts": {
-     "Distance": "about 1,080 km",
-     "Timetable": "2 h 45 east, 3 h 00 west"
+     "Distance": "about {flight_km} km",
+     "Timetable": "{flight_east} east, {flight_west} west"
     },
-    "lead": "The **Lumeport–Selanu air cargo route** links the airports of [[Lumeport]] and [[Selanu]], about 1,080 km apart. [[Kelaro Air Cargo]], the island's airline, flies it with a freighter.",
+    "lead": "The **Lumeport–Selanu air cargo route** links the airports of [[Lumeport]] and [[Selanu]], about {flight_km} km apart. [[Kelaro Air Cargo]], the island's airline, flies it with a freighter.",
     "sections": [
      {
       "title": "Operation",
-      "text": "The flight takes about two and a half hours from gate to gate in still air; the timetable allows 2 h 45 eastbound and 3 h 00 westbound, for the westerly winds and delays."
+      "text": "The flight takes about {flight_still_air} from gate to gate in still air; the timetable allows {flight_east} eastbound and {flight_west} westbound, for the westerly winds and delays."
      }
     ]
    }
