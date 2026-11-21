@@ -86,7 +86,7 @@ Inside `BuyerCustomerParty`:
 - `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; as Lumeport Textile Mill gives it.
 - `Party/Contact/Telephone` = **+999 2 38 2837 6029**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeport Textile Mill gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Lumeport Textile Mill gives it.
 - `Party/Contact/ElectronicMail` = **purchasing@lumeporttextile.example**  
   The contact's e-mail address; as Lumeport Textile Mill gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -137,7 +137,7 @@ Inside `SellerSupplierParty`:
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; as Rivermouth Packaging gives it.
 - `Party/Contact/Telephone` = **+999 2 38 7320 9007**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Rivermouth Packaging gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Rivermouth Packaging gives it.
 - `Party/Contact/ElectronicMail` = **order@rivermouth.example**  
   The contact's e-mail address; as Rivermouth Packaging gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  

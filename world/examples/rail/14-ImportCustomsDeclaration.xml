@@ -77,7 +77,7 @@
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+      <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
       <cbc:ElectronicMail>customs@lumeway.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -156,7 +156,7 @@
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Customs officer</cbc:JobTitle>
       <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 2 7121 503 398</cbc:Telephone>
+      <cbc:Telephone>+999 2 5121 503 398</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xb.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>

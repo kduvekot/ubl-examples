@@ -168,7 +168,7 @@
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00+00:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 955 ***</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 5121 955 ***</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>

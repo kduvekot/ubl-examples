@@ -262,7 +262,7 @@ Inside `SubscriberConsumption`:
   The day.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/CallTime` = **10:14:00+00:00**  
   The time; in the issuer's local time, with its offset from UTC.
-- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 7121 955 *****  
+- `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/ServiceNumberCalled` = **+999 2 5121 955 *****  
   The distributor in Bayvarra, its last digits masked as the privacy code says.
 - `Consumption/TelecommunicationsSupply/TelecommunicationsSupplyLine/TelecommunicationsService/TelecommunicationsServiceCategory` = **International: a call to Bayvarra**  
   The name of code INT in the Trade Accord's telecommunications service category list, followed by the detail of this case: the call went to the distributor in Bayvarra.
@@ -686,7 +686,7 @@ Inside `SubscriberConsumption`:
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00+00:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 955 ***</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 5121 955 ***</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>

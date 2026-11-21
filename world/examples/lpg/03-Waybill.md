@@ -96,8 +96,8 @@ Inside `SenderParty`:
   The job of the person who answers at the desk; as Gullhaven Tank Haulage gives it.
 - `Contact/Department` = **Operations**  
   The department the desk belongs to; as Gullhaven Tank Haulage gives it.
-- `Contact/Telephone` = **+999 2 38522 41906**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Gullhaven Tank Haulage gives it.
+- `Contact/Telephone` = **+999 2 1563 419 060**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Gullhaven Tank Haulage gives it.
 - `Contact/ElectronicMail` = **planning@gullhaventank.example**  
   The contact's e-mail address; as Gullhaven Tank Haulage gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -169,8 +169,8 @@ Inside `ReceiverParty`:
   The job of the person who answers at the desk; as Kelpstone Gas gives it.
 - `Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Kelpstone Gas gives it.
-- `Contact/Telephone` = **+999 2 38522 68330**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Kelpstone Gas gives it.
+- `Contact/Telephone` = **+999 2 1563 683 300**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Kelpstone Gas gives it.
 - `Contact/ElectronicMail` = **despatch@kelpstone.example**  
   The contact's e-mail address; as Kelpstone Gas gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -247,7 +247,7 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/Contact/Department` = **Customer service**  
   The department the desk belongs to; as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/Telephone` = **+999 2 38 9310 7518**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Coastal State Water Company gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/ElectronicMail` = **customer@coastalwater.example**  
   The contact's e-mail address; as Coastal State Water Company gives it.
 - `Consignment/ConsigneeParty/Contact/Note` = **Every day, around the clock**  
@@ -336,7 +336,7 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Name` = **Plant control room**  
   Whom to call in an incident with the propane.
-- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Telephone` = **+999 2 38522 68399**  
+- `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Telephone` = **+999 2 1563 683 990**  
   The control room answers around the clock, while the tanker is on the road; under the reserved +999.
 - `Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Note` = **Every day, around the clock**  
   When it answers.
@@ -488,7 +488,7 @@ Inside `Signature`:
       <cbc:Name>Tanker planning</cbc:Name>
       <cbc:JobTitle>Tanker planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 2 38522 41906</cbc:Telephone>
+      <cbc:Telephone>+999 2 1563 419 060</cbc:Telephone>
       <cbc:ElectronicMail>planning@gullhaventank.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -544,7 +544,7 @@ Inside `Signature`:
       <cbc:Name>Despatch office</cbc:Name>
       <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
+      <cbc:Telephone>+999 2 1563 683 300</cbc:Telephone>
       <cbc:ElectronicMail>despatch@kelpstone.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -679,7 +679,7 @@ Inside `Signature`:
               </cac:PartyName>
               <cac:Contact>
                 <cbc:Name>Plant control room</cbc:Name>
-                <cbc:Telephone>+999 2 38522 68399</cbc:Telephone>
+                <cbc:Telephone>+999 2 1563 683 990</cbc:Telephone>
                 <cbc:Note>Every day, around the clock</cbc:Note>
               </cac:Contact>
             </cac:ContactParty>

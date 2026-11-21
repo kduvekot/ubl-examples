@@ -97,8 +97,8 @@ Inside `ExporterParty`:
   The job of the person who answers at the desk; as Harrowmead Fruit Growers gives it.
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; as Harrowmead Fruit Growers gives it.
-- `Contact/Telephone` = **+999 2 7164 281 590**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Harrowmead Fruit Growers gives it.
+- `Contact/Telephone` = **+999 2 5164 281 590**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Harrowmead Fruit Growers gives it.
 - `Contact/ElectronicMail` = **sales@harrowmeadfruit.example**  
   The contact's e-mail address; as Harrowmead Fruit Growers gives it.
 - `Contact/Note` = **Weekdays 07:00–16:00**  
@@ -254,7 +254,7 @@ Inside `IssuerParty`:
 - `Contact/Department` = **Plant Health Service**  
   The department the desk belongs to; as Federal Department of Agriculture of Bayvarra gives it.
 - `Contact/Telephone` = **+999 2 38 6719 2485**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Federal Department of Agriculture of Bayvarra gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Federal Department of Agriculture of Bayvarra gives it.
 - `Contact/ElectronicMail` = **export.certification@agriculture-xb.example**  
   The contact's e-mail address; as Federal Department of Agriculture of Bayvarra gives it.
 - `Contact/Note` = **Weekdays 07:30–16:00**  
@@ -476,7 +476,7 @@ Inside `Signature`:
       <cbc:Name>Sales office</cbc:Name>
       <cbc:JobTitle>Export sales coordinator</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
+      <cbc:Telephone>+999 2 5164 281 590</cbc:Telephone>
       <cbc:ElectronicMail>sales@harrowmeadfruit.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
     </cac:Contact>

@@ -98,7 +98,7 @@ Inside `SenderParty`:
 - `Contact/Department` = **Publications**  
   The department the desk belongs to; as Bayvarra Information Service gives it.
 - `Contact/Telephone` = **+999 2 38 5339 4832**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Bayvarra Information Service gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Bayvarra Information Service gives it.
 - `Contact/ElectronicMail` = **publications@info-xb.example**  
   The contact's e-mail address; as Bayvarra Information Service gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -221,8 +221,8 @@ Inside `BusinessParty`:
   The job of the person who answers at the desk; as Saltmere Engineering gives it.
 - `Contact/Department` = **Sales**  
   The department the desk belongs to; as Saltmere Engineering gives it.
-- `Contact/Telephone` = **+999 2 7121 930 729**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Saltmere Engineering gives it.
+- `Contact/Telephone` = **+999 2 5121 930 729**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Saltmere Engineering gives it.
 - `Contact/ElectronicMail` = **bids@saltmere.example**  
   The contact's e-mail address; as Saltmere Engineering gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -424,7 +424,7 @@ Inside `NoticeSubType`:
       <cbc:Name>Bids office</cbc:Name>
       <cbc:JobTitle>Bid manager</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7121 930 729</cbc:Telephone>
+      <cbc:Telephone>+999 2 5121 930 729</cbc:Telephone>
       <cbc:ElectronicMail>bids@saltmere.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>

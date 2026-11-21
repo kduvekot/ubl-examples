@@ -95,8 +95,8 @@ Inside `ExporterParty`:
   The job of the person who answers at the desk; as Kelpstone Gas gives it.
 - `Contact/Department` = **Logistics**  
   The department the desk belongs to; as Kelpstone Gas gives it.
-- `Contact/Telephone` = **+999 2 38522 68330**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Kelpstone Gas gives it.
+- `Contact/Telephone` = **+999 2 1563 683 300**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Kelpstone Gas gives it.
 - `Contact/ElectronicMail` = **customs@kelpstone.example**  
   The contact's e-mail address; as Kelpstone Gas gives it.
 - `Contact/Note` = **Every day, around the clock**  
@@ -326,8 +326,8 @@ Inside `CustomsDeclaration`:
   The job of the person who answers at the desk; as Customs and Border Service of Bayvarra gives it.
 - `CustomsParty/Contact/Department` = **Customs**  
   The department the desk belongs to; as Customs and Border Service of Bayvarra gives it.
-- `CustomsParty/Contact/Telephone` = **+999 2 7121 503 398**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Customs and Border Service of Bayvarra gives it.
+- `CustomsParty/Contact/Telephone` = **+999 2 5121 503 398**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Customs and Border Service of Bayvarra gives it.
 - `CustomsParty/Contact/ElectronicMail` = **export@customs-xb.example**  
   The contact's e-mail address; as Customs and Border Service of Bayvarra gives it.
 - `CustomsParty/Contact/Note` = **Every day, around the clock**  
@@ -404,7 +404,7 @@ Inside `CustomsDeclaration`:
       <cbc:Name>Customs desk</cbc:Name>
       <cbc:JobTitle>Customs specialist</cbc:JobTitle>
       <cbc:Department>Logistics</cbc:Department>
-      <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
+      <cbc:Telephone>+999 2 1563 683 300</cbc:Telephone>
       <cbc:ElectronicMail>customs@kelpstone.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -608,7 +608,7 @@ Inside `CustomsDeclaration`:
         <cbc:Name>Export office</cbc:Name>
         <cbc:JobTitle>Customs officer</cbc:JobTitle>
         <cbc:Department>Customs</cbc:Department>
-        <cbc:Telephone>+999 2 7121 503 398</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 503 398</cbc:Telephone>
         <cbc:ElectronicMail>export@customs-xb.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

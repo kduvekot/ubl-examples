@@ -158,7 +158,9 @@
    "history": "An Italian territory, then under British rule, independent since 1962 as a bilingual country: Urvanian and English are its official languages. Its place and street names are the Italian ones the British kept, now part of English; Urvanian gives every place its own name too, and addresses carry both.",
    "phone_plan": {
     "pattern": "^\\+999 1 (0\\d{2} \\d{3} \\d{4}|0\\d{3} \\d{5}|3\\d{2} \\d{3} \\d{4})$",
-    "note": "Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits."
+    "area_codes": {"041": "Ferrano", "0425": "Serravona"},
+    "mobile_prefix": "3",
+    "note": "Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9); no area code is the start of another. Mobiles start with 3 and have 10 digits."
    },
    "legal_forms_note": "The legal forms of Urvania as codes of its national list (XU:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
    "identifiers": {
@@ -536,8 +538,10 @@
     }
    },
    "phone_plan": {
-    "pattern": "^\\+999 2 (38 \\d{4} \\d{4}|\\d{4} \\d{3} \\d{3}|\\d{5} \\d{5}|7\\d{3} \\d{3} \\d{3})$",
-    "note": "British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7."
+    "pattern": "^\\+999 2 (38 \\d{4} \\d{4}|[15]\\d{3} \\d{3} \\d{3}|7\\d{3} \\d{3} \\d{3})$",
+    "area_codes": {"38": "Lumeport", "5121": "Upland State", "5164": "Harrowmead", "1563": "Gullhaven"},
+    "mobile_prefix": "7",
+    "note": "British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does."
    },
    "legal_forms_note": "The legal forms of Bayvarra as codes of its national list (XB:CompanyLegalForm), with the abbreviation a company's registered name ends in.",
    "identifiers": {

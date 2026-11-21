@@ -85,8 +85,8 @@ Inside `Consignment`:
   The job of the person who answers at the desk; as Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/Department` = **Operations**  
   The department the desk belongs to; as Ferrano Rail Cargo gives it.
-- `CarrierParty/Contact/Telephone` = **+999 1 0413 67100**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Rail Cargo gives it.
+- `CarrierParty/Contact/Telephone` = **+999 1 0425 67100**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9); no area code is the start of another. Mobiles start with 3 and have 10 digits. As Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/ElectronicMail` = **freight@ferranorail.example**  
   The contact's e-mail address; as Ferrano Rail Cargo gives it.
 - `CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
@@ -162,7 +162,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Department` = **Operations**  
   The department the desk belongs to; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 1 041 371 6482**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Ferrano Intermodal Hub gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9); no area code is the start of another. Mobiles start with 3 and have 10 digits. As Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/ElectronicMail` = **terminal@ferranohub.example**  
   The contact's e-mail address; as Ferrano Intermodal Hub gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Note` = **Every day, around the clock**  
@@ -356,7 +356,7 @@ Inside `StatusPeriod`:
         <cbc:Name>Freight desk</cbc:Name>
         <cbc:JobTitle>Freight planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
+        <cbc:Telephone>+999 1 0425 67100</cbc:Telephone>
         <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
         <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>

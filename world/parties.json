@@ -23,7 +23,7 @@
     "contact": {
      "name": "Sales office",
      "email": "sales@serravona.example",
-     "telephone": "+999 1 0413 84813",
+     "telephone": "+999 1 0425 84813",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Sales coordinator"
@@ -665,7 +665,7 @@
     "contact": {
      "name": "Freight desk",
      "email": "freight@ferranorail.example",
-     "telephone": "+999 1 0413 67100",
+     "telephone": "+999 1 0425 67100",
      "department": "Operations",
      "hours": "Every day 06:00–22:00",
      "job_title": "Freight planner"
@@ -1607,7 +1607,7 @@
     "contact": {
      "name": "Border office",
      "email": "border@customs-xb.example",
-     "telephone": "+999 2 7121 503 398",
+     "telephone": "+999 2 5121 503 398",
      "department": "Customs",
      "hours": "Every day, around the clock",
      "job_title": "Customs officer"
@@ -1694,7 +1694,7 @@
     "contact": {
      "name": "Customer service",
      "email": "customer@lumeway.example",
-     "telephone": "+999 2 7121 955 964",
+     "telephone": "+999 2 5121 955 964",
      "department": "Customer service",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Customer service officer"
@@ -2274,7 +2274,7 @@
     "contact": {
      "name": "Bids office",
      "email": "bids@saltmere.example",
-     "telephone": "+999 2 7121 930 729",
+     "telephone": "+999 2 5121 930 729",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Bid manager"
@@ -2334,7 +2334,7 @@
       "job_title": "Duty engineer",
       "department": "Safety",
       "email": "emergency@saltmere.example",
-      "telephone": "+999 2 7121 930 486",
+      "telephone": "+999 2 5121 930 486",
       "hours": "Every day, around the clock"
      }
     },
@@ -4970,7 +4970,7 @@
     "contact": {
      "name": "Sales office",
      "email": "sales@marrowdalesawmill.example",
-     "telephone": "+999 2 7121 338 173",
+     "telephone": "+999 2 5121 338 173",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Sales coordinator"
@@ -5120,7 +5120,7 @@
     "contact": {
      "name": "Trade sales",
      "email": "trade@brackenmere.example",
-     "telephone": "+999 2 7121 602 606",
+     "telephone": "+999 2 5121 602 606",
      "department": "Sales",
      "hours": "Weekdays 08:00–17:00",
      "job_title": "Trade sales manager"
@@ -5811,7 +5811,7 @@
     "contact": {
      "name": "Gas sales",
      "email": "gas@kelpstone.example",
-     "telephone": "+999 2 38522 68330",
+     "telephone": "+999 2 1563 683 300",
      "department": "Commercial",
      "hours": "Every day, around the clock",
      "job_title": "Gas sales manager"
@@ -5884,7 +5884,7 @@
       "job_title": "Shift supervisor",
       "department": "Operations",
       "email": "control@kelpstone.example",
-      "telephone": "+999 2 38522 68399",
+      "telephone": "+999 2 1563 683 990",
       "hours": "Every day, around the clock"
      }
     },
@@ -5962,7 +5962,7 @@
     "contact": {
      "name": "Energy trading",
      "email": "trading@montebrio.example",
-     "telephone": "+999 1 0413 46716",
+     "telephone": "+999 1 0425 46716",
      "department": "Trading",
      "hours": "Every day, around the clock",
      "job_title": "Energy trader"
@@ -6453,7 +6453,7 @@
     "contact": {
      "name": "Tanker planning",
      "email": "planning@gullhaventank.example",
-     "telephone": "+999 2 38522 41906",
+     "telephone": "+999 2 1563 419 060",
      "department": "Operations",
      "hours": "Every day, around the clock",
      "job_title": "Tanker planner"
@@ -6862,7 +6862,7 @@
     "contact": {
      "name": "Sales office",
      "email": "sales@harrowmeadfruit.example",
-     "telephone": "+999 2 7164 281 590",
+     "telephone": "+999 2 5164 281 590",
      "department": "Sales",
      "hours": "Weekdays 07:00–16:00",
      "job_title": "Export sales coordinator"

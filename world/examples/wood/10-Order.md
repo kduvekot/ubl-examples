@@ -94,8 +94,8 @@ Inside `BuyerCustomerParty`:
   The job of the person who answers at the desk; as Brackenmere Furniture gives it.
 - `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; as Brackenmere Furniture gives it.
-- `Party/Contact/Telephone` = **+999 2 7121 602 606**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Brackenmere Furniture gives it.
+- `Party/Contact/Telephone` = **+999 2 5121 602 606**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Brackenmere Furniture gives it.
 - `Party/Contact/ElectronicMail` = **purchasing@brackenmere.example**  
   The contact's e-mail address; as Brackenmere Furniture gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -143,8 +143,8 @@ Inside `SellerSupplierParty`:
   The job of the person who answers at the desk; as Marrowdale Sawmill gives it.
 - `Party/Contact/Department` = **Sales**  
   The department the desk belongs to; as Marrowdale Sawmill gives it.
-- `Party/Contact/Telephone` = **+999 2 7121 338 173**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Marrowdale Sawmill gives it.
+- `Party/Contact/Telephone` = **+999 2 5121 338 173**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Marrowdale Sawmill gives it.
 - `Party/Contact/ElectronicMail` = **sales@marrowdalesawmill.example**  
   The contact's e-mail address; as Marrowdale Sawmill gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
@@ -302,7 +302,7 @@ Inside `OrderLine`:
         <cbc:Name>Purchasing</cbc:Name>
         <cbc:JobTitle>Buyer</cbc:JobTitle>
         <cbc:Department>Purchasing</cbc:Department>
-        <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 602 606</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -340,7 +340,7 @@ Inside `OrderLine`:
         <cbc:Name>Sales office</cbc:Name>
         <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 338 173</cbc:Telephone>
         <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

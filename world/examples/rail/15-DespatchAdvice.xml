@@ -94,7 +94,7 @@
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -189,7 +189,7 @@
           <cbc:Name>Freight desk</cbc:Name>
           <cbc:JobTitle>Freight planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
+          <cbc:Telephone>+999 1 0425 67100</cbc:Telephone>
           <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>

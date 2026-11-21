@@ -90,7 +90,7 @@ Inside `SenderParty`:
 - `Contact/Department` = **Procurement**  
   The department the desk belongs to; as Lumeport Public Works Department gives it.
 - `Contact/Telephone` = **+999 2 38 8235 3927**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeport Public Works Department gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Lumeport Public Works Department gives it.
 - `Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
   The contact's e-mail address; as Lumeport Public Works Department gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
@@ -145,7 +145,7 @@ Inside `ReceiverParty`:
 - `Contact/Department` = **Studio**  
   The department the desk belongs to; as Fernhollow Studio gives it.
 - `Contact/Telephone` = **+999 2 38 6420 1957**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Fernhollow Studio gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Fernhollow Studio gives it.
 - `Contact/ElectronicMail` = **studio@fernhollow.example**  
   The contact's e-mail address; as Fernhollow Studio gives it.
 - `Contact/Note` = **Weekdays 09:00–17:00**  
@@ -213,7 +213,7 @@ Inside `AppealTerms`:
 - `AppealReceiverParty/Contact/Department` = **Registry**  
   The department the desk belongs to; as Procurement Review Board of Bayvarra gives it.
 - `AppealReceiverParty/Contact/Telephone` = **+999 2 38 4119 7873**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Procurement Review Board of Bayvarra gives it.
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Procurement Review Board of Bayvarra gives it.
 - `AppealReceiverParty/Contact/ElectronicMail` = **registry@review-xb.example**  
   The contact's e-mail address; as Procurement Review Board of Bayvarra gives it.
 - `AppealReceiverParty/Contact/Note` = **Weekdays 08:00–17:00**  

@@ -78,7 +78,7 @@ Inside `BuyerCustomerParty`:
 - `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; as Coastal State Water Company gives it.
 - `Party/Contact/Telephone` = **+999 2 38 9310 7518**  
-  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Coastal State Water Company gives it.
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Coastal State Water Company gives it.
 - `Party/Contact/ElectronicMail` = **purchasing@coastalwater.example**  
   The contact's e-mail address; as Coastal State Water Company gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
@@ -144,8 +144,8 @@ Inside `SellerSupplierParty`:
   The job of the person who answers at the desk; as Kelpstone Gas gives it.
 - `Party/Contact/Department` = **Commercial**  
   The department the desk belongs to; as Kelpstone Gas gives it.
-- `Party/Contact/Telephone` = **+999 2 38522 68330**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Kelpstone Gas gives it.
+- `Party/Contact/Telephone` = **+999 2 1563 683 300**  
+  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 or 4 of them, and its first digit gives the region: 3 the coast (Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the Northern Territory (Gullhaven 1563); the plan is national and follows regions, not state borders. No area code is the start of another, and the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and nothing else does. As Kelpstone Gas gives it.
 - `Party/Contact/ElectronicMail` = **gas@kelpstone.example**  
   The contact's e-mail address; as Kelpstone Gas gives it.
 - `Party/Contact/Note` = **Every day, around the clock**  
@@ -326,7 +326,7 @@ Inside `OrderLine`:
         <cbc:Name>Gas sales</cbc:Name>
         <cbc:JobTitle>Gas sales manager</cbc:JobTitle>
         <cbc:Department>Commercial</cbc:Department>
-        <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
+        <cbc:Telephone>+999 2 1563 683 300</cbc:Telephone>
         <cbc:ElectronicMail>gas@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>

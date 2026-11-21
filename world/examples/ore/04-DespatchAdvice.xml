@@ -65,7 +65,7 @@
         <cbc:Name>Rail loading office</cbc:Name>
         <cbc:JobTitle>Loading supervisor</cbc:JobTitle>
         <cbc:Department>Logistics</cbc:Department>
-        <cbc:Telephone>+999 1 0413 84813</cbc:Telephone>
+        <cbc:Telephone>+999 1 0425 84813</cbc:Telephone>
         <cbc:ElectronicMail>loading@serravona.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -170,7 +170,7 @@
           <cbc:Name>Freight desk</cbc:Name>
           <cbc:JobTitle>Freight planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
+          <cbc:Telephone>+999 1 0425 67100</cbc:Telephone>
           <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>

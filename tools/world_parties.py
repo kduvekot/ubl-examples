@@ -275,11 +275,18 @@ def check(world):
         if idn.get("website") and not idn["website"].split("/")[2].endswith(".example"):
             problems.append(f"{where}: website {idn['website']} must use the reserved .example domain")
         plan = world["countries"][p["c"]].get("phone_plan")
-        for kind in ("telephone", "telefax", "mobile"):
-            number = idn.get("contact", {}).get(kind)
+        numbers = [(kind, idn.get("contact", {}).get(kind)) for kind in ("telephone", "telefax", "mobile")]
+        numbers += [(f"desk {fn} {kind}", dk.get(kind)) for fn, dk in (idn.get("desks") or {}).items()
+                    if isinstance(dk, dict) for kind in ("telephone", "telefax")]
+        for kind, number in numbers:
             if number and plan and not re.match(plan["pattern"], number):
                 problems.append(f"{where}: {kind} {number} does not follow {world['countries'][p['c']]['name']}'s "
                                 f"numbering plan (world/countries.json): {plan['note']}")
+            codes = (plan or {}).get("area_codes")
+            if number and codes and not number.split()[2].startswith(plan["mobile_prefix"]) \
+                    and number.split()[2] not in codes:
+                problems.append(f"{where}: {kind} {number}: area code {number.split()[2]} is not in "
+                                f"{world['countries'][p['c']]['name']}'s plan ({', '.join(codes)})")
         phone = idn.get("contact", {}).get("telephone")
         if phone and not phone.startswith(world["countries"][p["c"]]["phone_prefix"]):
             problems.append(f"{where}: telephone {phone} must start with {world['countries'][p['c']]['phone_prefix']} "
@@ -314,8 +321,24 @@ def check(world):
                                 f"{acc['bank']} and its branch {acc.get('branch')} (decision ID-Q9)")
         problems += identifier_problems(world, p)
     problems += identification_problems(world) + repeat_problems(world) + register_problems(world)
-    problems += fleet_weight_problems(world)
+    problems += fleet_weight_problems(world) + phone_plan_problems(world)
     return problems
+
+
+def phone_plan_problems(world):
+    """A country's telephone plan keeps order (owner, O281 Q5): no area code is the start of another, and no area
+    code begins with the digit of the mobiles."""
+    out = []
+    for cc, c in world["countries"].items():
+        plan = c.get("phone_plan") or {}
+        codes = plan.get("area_codes") or {}
+        for a in codes:
+            if a.startswith(plan.get("mobile_prefix", "-")):
+                out.append(f"{c['name']}: area code {a} ({codes[a]}) begins with the mobiles' digit {plan['mobile_prefix']}")
+            for b in codes:
+                if a != b and b.startswith(a):
+                    out.append(f"{c['name']}: area code {a} ({codes[a]}) is the start of {b} ({codes[b]})")
+    return out
 
 
 def fleet_weight_problems(world):
