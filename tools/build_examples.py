@@ -2215,6 +2215,16 @@ def check_customs_offices(root, where):
             country = loc.find(f"{{{NS_CAC}}}Address/{{{NS_CAC}}}Country/{{{NS_CBC}}}IdentificationCode")
             if country is not None and country.text != cc:
                 raise SystemExit(f"{where}: {name} {ident.text} in {country.text}, but the office is in {cc}")
+            # the offices of a declaration are those of the customs it is lodged with (C12): every office of an
+            # export or import declaration, and the offices of departure and exit of a transit declaration
+            kind = etree.QName(root).localname
+            declared = root.findtext(f".//{{{NS_CAC}}}CustomsParty/{{{NS_CAC}}}PostalAddress/{{{NS_CAC}}}Country/"
+                                     f"{{{NS_CBC}}}IdentificationCode")
+            if declared and loc is el and (kind in ("ExportCustomsDeclaration", "ImportCustomsDeclaration") or
+                                           kind == "TransitCustomsDeclaration" and
+                                           ("Departure" in name or "Exit" in name)) and cc != declared:
+                raise SystemExit(f"{where}: {name} {ident.text} is an office of {cc}, but the declaration is lodged "
+                                 f"with the customs of {declared}")  # stage 7, C12
 
 
 PLANNING_DOCUMENTS = {"TransportExecutionPlanRequest", "TransportExecutionPlan", "ForwardingInstructions",
