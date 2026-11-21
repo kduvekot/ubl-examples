@@ -178,8 +178,8 @@ Inside `Shipment`:
 
 - `ID` = **7400343283**  
   The return shipment.
-- `GrossWeightMeasure` = **285.45** (unitCode `KGM`)  
-  Seven benches of 24 kg, ten chairs of 11.5 kg and seven care kits of 0.35 kg, packed.
+- `GrossWeightMeasure` = **295.85** (unitCode `KGM`)  
+  Four oak benches of 25.6 kg and three ash benches of 24 kg, five oak chairs of 12.3 kg and five ash chairs of 11.5 kg, and seven care kits of 0.35 kg, packed.
 - `Delivery/DeliveryLocation/ID` = **9523710900015** (schemeID `GS1 GLN`)  
   The Global Location Number of the place, factory and goods-in, marrowdale: Brackenmere Furniture identifies its places the GS1 way, under its company prefix (952, reserved for examples).
 - `Delivery/DeliveryLocation/Name` = **Brackenmere Furniture, Marrowdale**  
@@ -427,7 +427,7 @@ Inside `InstructionForReturnsLine`:
   </cac:ManufacturerParty>
   <cac:Shipment>
     <cbc:ID>7400343283</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">295.85</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="GS1 GLN">9523710900015</cbc:ID>

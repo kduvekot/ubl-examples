@@ -6755,6 +6755,18 @@ def _(f, n, doc, out):
                                                         "EndDate": V(f.date(COTTON_SEASON[1]), "To its end.")}}}
 
 
+def marrow_back_weights():
+    """The return's pieces with their packed weights, from world/items.json (oak is heavier than ash, O62)."""
+    words = {3: "three", 4: "four", 5: "five", 7: "seven"}
+    kg = {iid: f"{Decimal(str(ITEM[iid]['gross_kg'])).normalize():f}" for iid, _, _ in MARROW_BACK}
+    q = {iid: n for iid, n, _ in MARROW_BACK}
+    return (f"{words[q['marrow-bench-oak']].capitalize()} oak benches of {kg['marrow-bench-oak']} kg and "
+            f"{words[q['marrow-bench-ash']]} ash benches of {kg['marrow-bench-ash']} kg, "
+            f"{words[q['marrow-chair-oak']]} oak chairs of {kg['marrow-chair-oak']} kg and "
+            f"{words[q['marrow-chair-ash']]} ash chairs of {kg['marrow-chair-ash']} kg, and "
+            f"{words[q['marrow-care-kit']]} care kits of {kg['marrow-care-kit']} kg, packed.")
+
+
 @enrich("furniture", "InstructionForReturns")
 def _(f, n, doc, out):
     gross = sum(Decimal(str(ITEM[iid]["gross_kg"])) * q for iid, q, _ in MARROW_BACK)
@@ -6766,8 +6778,7 @@ def _(f, n, doc, out):
                                                      "follows.")},
             "Signature": seal(doc["from"], "BF-SIG-26-0611"),
             "Shipment": {"ID": V(f.number("return-shipment", "26-xb", "Shipment"), "The return shipment."),
-                         "GrossWeightMeasure": qty(gross, "KGM", "Seven benches of 24 kg, ten chairs of 11.5 kg and "
-                                                                 "seven care kits of 0.35 kg, packed."),
+                         "GrossWeightMeasure": qty(gross, "KGM", marrow_back_weights()),
                          "Delivery": {"DeliveryLocation": {**kit.gln_location("37-xb", "factory"),
                                                            "Name": V("Brackenmere Furniture, Marrowdale",
                                                                      "Where the pieces go back: the maker's workshop"

@@ -233,6 +233,23 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 7. **Owner decision:** Q8. Should the other makers' lots and serials (the plant, the sawmill, the recycler, the
    ginnery, the orchards, the pharma maker) also become production records in world data, like Valdara's? This
    decides how far O64 reaches, and it is the data O66 needs too.
+8. **Built (2026-11-21):** `world/items.json` `production_records`: the records of the sawmill (blank lots
+   MDS-BL26-0109 and -0116, the second load's lot outside the documents; slat lots MDS-L26-0119 and -0126 with the
+   plant's kiln charges TWM-K1-26-03/04 and the blank lot each was made from), the wood modification plant (its
+   charges, recorded with the owner's lots), Rinova (RR-PE-0417), the ginnery (SCG-L26-017, 27 bales, 6,129 kg), the
+   cooperative (HRW-L26-0401 to 0451 with their growers), the vaccine maker (the three NLB lots with expiry dates) and
+   the isotope maker (serial HVI-TCG20-26-0137); each with its patterns. Valdara's stays in `goods_chain`. The
+   generator still writes these numbers as literals (`examples_scenarios.py`, `MOD_CHARGES`, `MED_LOTS`, `rf_lots`,
+   `PE_LOT`); the check holds them to the records. Check: `tools/world_goods.py` `lot_problems()` (run by
+   `check_world.py`): every LotNumberID, SerialID and ProductTraceID, and every number in a maker's form in any text,
+   is in the record, on the same item (via SellersItemIdentification, a resold item as its maker's), with the same
+   ManufactureDate and ExpiryDate; no recorded number in another form (the same digits and letters under the
+   maker's prefix); a line ships no more than its lots made; a line with serials has one a unit (or one a rejected
+   unit); over all flows a lot leaves its maker in no more than it made; no document quotes a lot before it was
+   made; a lot made from another is made after it and takes no more than it made. **Found:** nothing in the
+   documents once the records were set (the probe's 18 lots and 21 serials all match); the text scan first flagged
+   the weight statement number SCG-PR-26-L017, which is a document of its own, not the lot in another form (the
+   rule now compares letters as well as digits).
 
 ### A9. The calendar (O79, the rest)
 1. **Guards:** D27, O79, O180 and C53.
@@ -449,6 +466,20 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    - The ore: what else Valdara makes from about 1,100 t of iron a month, or whether the train is smaller.
    - The cotton: is a 27 % out-turn in the documents acceptable, or should the documents show more seed cotton or
      less lint?
+8. **Built (2026-11-21):** `world/items.json` `chains`: cotton (seed cotton to lint, 33 to 40 %, FAO's
+   technical conversion factors and the ICAC Cotton Data Book 2021), ore (62 % Fe, 35 % scrap in the melt, foundry
+   yield 45 to 80 %, from the casting-yield paper: at most 0.76 kg of castings a kg of ore), slats (one slat a blank,
+   with the second load's blank lot from the sawmill's record), film (granulate to film and bags, at most its
+   mass), gas (a balance) and the bench (its ledgers in `goods_chain`). Sources with SHA-256 in
+   `world/codelists/sources/PROVENANCE-second-round.md` (cited, not copied). Check: `tools/world_goods.py`
+   `chain_problems()`: out ≤ in × the highest rate (a balance: equal) from the built documents' line quantities,
+   every document counted dated within the chain's period, a rate in steps the product of its steps;
+   `chain_figures()` lists the rates with `--notes`. **Found:** the probe's 27 % for cotton counted the season
+   advance (cotton/01, a prepayment of 4,500 kg) as seed cotton; the seed cotton delivered is the 18,000 kg of
+   cotton/03, so the out-turn is 34.0 %, inside the range: no change to the documents. Ore 0.4 % (benches are a few
+   tonnes of a month's iron), film 0.6 %, slats 4,800 of 4,800, gas 39,200 MWh in balance. Story (for
+   `world/parties.json`, another session): Valdara as a broad iron works, and the ginnery keeping part of its lint
+   for the home market.
 
 ### B4. Item physics for all items (O62)
 1. **Guards:** D20, O62, C69, C40 and C15.
@@ -491,6 +522,28 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    - Densities and their ranges per material (oak, ash, thermally modified ash, ductile iron, PE).
    - Whether oak and ash variants must differ in weight.
    - Which hold capacities count per vehicle (pallet places, volume, payload).
+8. **Built (2026-11-21):** `world/items.json` `materials` (oak 720, ash 670, thermally modified ash 585, ductile
+   iron 7,100, polyethylene 920, the stripper, each with a range and its source: the Wood Handbook FPL-GTR-282, the
+   Ductile Iron Society's figures, 21 CFR 177.1520 and ASTM D883's terms, the IPCC's calorific value for gas) and a
+   `physics` sheet on all 34 items with a weight (after `gross_kg`): by envelope (dimensions, material, solid
+   fraction: the side frame 5 %, the Marrow bench 13.1 %, the chair 7.6 %, the desk 7 %), by sheet (the garment bag:
+   two layers of 12 µm), by volume, mass or energy, by contents or the items of a pack, by parts; and who lifts the
+   package (one, two, machine, with an aid where above the limit). Check: `tools/world_goods.py`
+   `physics_problems()`: the implied density within the material's range, a unit by mass, volume or energy as its
+   unit says, contents and packs sum to the whole, a part's weight is its item's, oak and ash variants weigh as their
+   densities (±2 %), each lifted package within ISO 11228-1 (25 kg one, 33 kg two) or with its aid;
+   `load_problems()`: each vehicle the documents name (plate, vessel, train) against the fleet in
+   `world/parties.json` (tares plus load within 40 t or its maximum gross weight, a tank within its maximum load,
+   pallets within a curtain-sider's floor of 13.6 × 2.45 m, one container on a chassis, a train's containers one to a
+   wagon, a ship's TEU), and a road leg whose vehicle no document names with its carrier's only road vehicle against
+   the flow's largest despatch. **Fixed:** the Marrow bench and chair in oak are 7 % heavier than in ash (22.6/25.6
+   and 11.3/12.3 kg net/gross), the timber 720 kg (oak) and 670 kg (ash) a cubic metre: furniture/12 (295.85 kg,
+   its reason now from the data) and furniture/19 (985.4 kg) follow. **Found, not fixed (generator):** rail/08
+   puts both containers on the one container chassis of the rail carrier with no second run stated (listed as a
+   known note). **Capacities missing in `world/parties.json`:** payload of the container and ore wagons (the ore
+   train lists 4 ore wagons for 1,788.4 t), the barge's deadweight (only gross and net tonnage), the timber truck's
+   and the farm tractor's load limits; the forwarder's and the furniture maker's road legs have several vehicles and
+   no document names one. The 40 t rule has no hits (reefer/07 is the closest, 39,528 kg).
 
 ### B5. The HS reasoning list, verified once by a person (O31)
 1. **Guards:** D13, O31, C67 and O27.
@@ -524,6 +577,15 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    - Whether reasoning may rest on own knowledge of the HS notes, or only on a verified source (the WCO's legal
      notes are not in the repository).
    - Whether a change of an item's HS code must re-open the verification.
+8. **Built (2026-11-21), awaiting the owner's sitting:** the WCO's HS 2022 legal texts (GIR, section and chapter
+   notes of the chapters used and weighed) in `world/codelists/sources/hs2022-notes/` (provenance in
+   `PROVENANCE-second-round.md`); `hs_reason` {gir, heading, subheading, notes, text} and `hs_verified: null` on the
+   34 maker items in `world/items.json` (not published); `world_items.hs_problems()`: reasoning present, code in
+   H6.json, heading and subheading match the code, a stamp still matching code and hash, else the build stops;
+   while unverified, one note only. `python3 tools/hs_review.py [-o .review/hs-review.md]` prints the table,
+   `--stamp <id> ...` (or `--stamp --all`) records the verification. Doubts for the sitting: the care kit (3210
+   against 3405.20 or 3208), seed cotton (52.01 rests on the heading's wording; the Explanatory Note is not a
+   source), the slats as parts (identifiability rests on the Explanatory Notes); no code changed.
 
 ## Proposed sequence
 
@@ -572,27 +634,28 @@ example adds its coverage-register row in the same commit.
   XUF and a TaxTotal of 0)?
 - **Q6 (tax treatment): decided (owner, 2026-11-21): A, plus the link:** every leg in `documents.json` names the documents whose goods it carries (the order or the invoice), so the check follows each sale's own leg; delivery terms with a place abroad or a cited export declaration remain accepted evidence. (The flows packaging, mast and medicines do have their border legs; the probe's problem was the missing link between leg and sale.) is an export proved by a leg of the flow only, or also by delivery terms with a place
   abroad, where the flow has no leg?
-- **Q7 (origin statement):** may a reseller make the statement (sea/22, air/11)? Is it right on air/11 at all,
+- **Q7 (origin statement): answered (owner, 2026-11-20, with the air batch):** a reseller may make the statement where its sale crosses an Accord border (Lumeway on air/11 and sea/22, as the exporter in the Accord's sense); built. may a reseller make the statement (sea/22, air/11)? Is it right on air/11 at all,
   where the goods move under Valdara's transit declaration?
-- **Q8 (O64 scope):** should the other makers' lots and serials become production records in world data, like
+- **Q8 (O64 scope): decided (owner, 2026-11-21): A,** production records for every maker that numbers lots or serials (Tostara, the sawmill, Rinova, the textile mill, Quillmoor, the generator's maker …), as Valdara's, in `world/items.json`; the lot/serial check and the goods-chain check cover them. should the other makers' lots and serials become production records in world data, like
   Valdara's?
-- **Q9 (calendar):** must deliveries and receipts also fall on the receiving party's working days?
-- **Q10 (O60):** should speeds and allowances (border stop, shunt, night mooring) move into world data, and with
+- **Q9 (calendar): decided (owner, 2026-11-21): A, checked:** deliveries and receipts fall on a day the receiving party works, by its working week; carriers' movements in between are free. must deliveries and receipts also fall on the receiving party's working days?
+- **Q10 (O60): decided (owner, 2026-11-21): A, with B for the 3D map:** one table of real speeds and allowances per mode and vehicle type in the world data, read by the generators, one check over all flows (±15 % or 30 minutes, whichever is larger; the route texts too) and the 3D map; the seven per-flow asserts go. The 3D map keeps its compression as one visible rule, map speed = factor × √(real speed ÷ truck speed) (MO015), applied to the shared real speeds. Today the documents and the map disagree (truck 55/65, train 50/80, ship 25/30 km/h, aircraft block 390/750 cruise): one set of real speeds, chosen when the table is built. should speeds and allowances (border stop, shunt, night mooring) move into world data, and with
   what tolerance?
-- **Q11 (O250):**
+- **Q11 (O250): decided (owner, 2026-11-21):** (a) placeholders (`{fact:…}`) for the published world data and encyclopedia texts, assertions for the method note; (b) the internal story lines in the decisions file are not checked; (c) start with the read-throughs' facts (about 10–20 per flow) and grow the register whenever a text adds a number.
   - placeholders or assertions;
   - which texts are in scope (published world data, wiki, `03-world.md`, story lines);
   - who picks each flow's key facts.
-- **Q12 (O66):**
+- **Q12 (O66): decided (owner, 2026-11-21):** (a) a yield plausibility check for every chain (output ≤ input × the maximum yield, a stated range with a public source), ledgers only where totals matter (the bench chain); (b) Valdara is a broad iron works (other castings such as manhole covers, gratings, machine parts are its main business; benches one line), the ore train stays, the story and Valdara's encyclopedia text get the sentence; (c) the cotton's 27 % out-turn in the documents is accepted: the ginnery keeps part of the lint for the home market; the check uses 33–40 % as the maximum; (d) conversion rates from public sources (e.g. FAO for ginning, foundry yields for iron to castings, timber yields for ash).
   - conversion rates and their sources;
   - ledger or plausibility check per chain;
   - what Valdara makes from about 1,100 t of iron a month;
   - whether the cotton's 27 % out-turn in the documents is acceptable.
-- **Q13 (O62):**
+- **Q13 (O62): decided (owner, 2026-11-21):** (a) one density per material with a range and a public source (the US Forest Products Laboratory's Wood Handbook for the woods: oak about 720, ash about 670, thermally modified ash about 550–620 kg/m³; ductile iron 7,100; polyethylene 920–960), the check dimensions × density × solid fraction = weight within a tolerance; (b) oak and ash variants differ in weight (oak about 7 % denser), the documents' weights follow; (c) hold capacities from the fleet data (pallets per trailer, TEU per ship, wagons per train) and a load check per leg.
   - densities and ranges per material;
   - should oak and ash variants differ in weight;
   - which hold capacities count.
-- **Q14 (O31):**
+- **Q14, the care kit (owner, 2026-11-21): A, HS 3405.20** (polishes and creams for the maintenance of wooden furniture): the kit is a care product, its oil refreshes a finish; the item data, its CPC and national line, its reasoning and the furniture documents that carry it change with the next batch.
+- **Q14 (O31): decided (owner, 2026-11-21): all three, behind the scenes ("facts matter, and HS is open for interpretation; this grounds the world's interpretations; no need to show them publicly"):** (a) the WCO's free HS 2022 section and chapter notes fetched into `world/codelists/sources/` with their SHA-256; (b) a reasoning per item (rule, heading, notes cited) in the item data, unprinted, and one internal table the owner verifies in one sitting, each item stamped (date, code, hash of the reasoning); (c) a changed code or reasoning breaks the stamp and the build stops until re-verified. Nothing of it is published.
   - one sitting to verify 34 reasonings;
   - may reasoning rest on own knowledge of the HS notes;
   - does a change of an HS code re-open the verification.

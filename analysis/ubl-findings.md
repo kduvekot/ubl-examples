@@ -75,3 +75,12 @@ Not entries, but noted so that nothing is lost:
 - **`LocaleCode` bound to the Language list** (noticed while collecting, 2026-11-20; not recorded as a TC point in any source): `Language/LocaleCode` is "A code signifying the locale in which this language is used", but the UBL 2.5 CVA binds `cbc:LocaleCode` (with `NoticeLanguageCode`, `PreferredLanguageLocaleCode`, `TenderLanguageLocaleCode`) to the Language list, which holds languages, not locales, so a locale such as `en-XB` cannot pass. The world binds `LocaleCode` to its own locale list (D1). To go over with the owner before it becomes an entry (kind B).
 - **The older `AllowanceChargeReason-2.1` list** (noticed while collecting): the UBL 2.5 CVA still offers it, with listID `UN/ECE 3155` (the communication channel list). Only of interest if the TC tidies the older value lists. To go over with the owner.
 - **`analysis/codelist-classification.md`, "UBL lists not bound by UBL's CVA"**: besides ReceiptAdviceTypeCode (U-B07), `DefaultLanguageCode`, `NationalityCode`, `MimeCode` and `TransportHandlingUnitTypeCode` have no default-list context in the UBL CVA although fitting UBL lists exist. Whether that is a defect or a deliberate choice is for the owner to judge.
+
+### U-A23: amounts collected for a third party and the line total
+
+- **Element:** `LegalMonetaryTotal/LineExtensionAmount` with `CollectionInvoiceLine` (and similar collected amounts).
+- **What looks wrong:** UBL defines `LineExtensionAmount` as the sum of the line amounts, but gives no rule for lines that are not the seller's supply (an amount collected on behalf of a third party, such as a public levy or a fund's contribution). Implementers total them two ways: in the line total, or only in the amount payable.
+- **Where the world meets it:** the utilities bills (the city's sewage levy, utilities/06, 09, 11) and the cotton self-billing (the cotton fund's levy, cotton/04, 05).
+- **How the world handles it:** collected amounts stay out of `LineExtensionAmount` and are added only to `PayableAmount` (owner, 2026-11-21, O274); the build checks it.
+- **Suggested change:** state in the definition of `LineExtensionAmount` (and of the collection lines) whether amounts collected for a third party are included, or add a separate total for them.
+- **Source:** O274. **Status:** collected.

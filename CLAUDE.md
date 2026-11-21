@@ -58,6 +58,7 @@ These are the general rules at the top of `analysis/codelist-decisions.md`.
 
 - **No fillers, and nothing implied by absence** (UBL IND5/IND6). A value must have a real business reason in the world. An element that has no real case stays out, even if coverage drops.
 - **Two layers: the workshop and the world** (owner, 2026-11-20). Decisions, open points, reviews and story lines are internal: they exist to make the world coherent, plausible and believable. Everything published about the world states it as fact, in the present, complete on its own; a value is explained by the world, never by why the project chose it. No D/O/MO/Q/ID-Q/C numbers, review-finding IDs or change words ("no longer", "was moved", "proposed") in published world text; keep the traceability in code comments or unprinted keys. The method note may describe the process in general terms.
+- **UBL's spelling and wording in every English** (owner, 2026-11-21): all varieties of English use UBL's own spelling and terms for UBL concepts ("despatch", as in DespatchAdvice); the varieties show their traits elsewhere.
 - **Semantic conformance** (UBL 2.5 §4.7/§7.2): use every element according to its UBL definition, even where established practice (EN 16931/Peppol) differs. Record such differences as findings.
 - **Code lists:**
   - every code has a listID (except the party-internal codes of Q1);
@@ -75,7 +76,7 @@ These are the general rules at the top of `analysis/codelist-decisions.md`.
 ## Git and deployment
 
 - Work on the session's designated branch and commit with clear messages.
-- Deploy by pushing the branch to `main`, and only after a full clean build. **Owner, 2026-11-19:** while working through the worklist, each fix is checked, fully built and then deployed to `main` on its own (no need to ask again for each). `.github/workflows/pages.yml` publishes to the `gh-pages` branch, and only while its commit is still the head of main.
+- Deploy by pushing the branch to `main`, and only after a full clean build. **Owner, 2026-11-21:** when other sessions push to `main` during that build, merge their commits, check that they touch none of the files the build changed, and push without a second local build: GitHub's own full build on `main` is then the gate before publishing. **Owner, 2026-11-19:** while working through the worklist, each fix is checked, fully built and then deployed to `main` on its own (no need to ask again for each). `.github/workflows/pages.yml` publishes to the `gh-pages` branch, and only while its commit is still the head of main.
 - No pull requests unless asked.
 
 ## Open work

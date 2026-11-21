@@ -333,3 +333,70 @@ What was read on BAM's pages for UN 1965, mixture C:
 - ADR 2025: "Klassifizierungscode 2F Verflüssigtes Gas, entzündbar"; "Beförderungskategorie 2"; "Gefahrnummer 23 entzündbares Gas"; "Gefahrzettel 2.1"; "Tunnelbeschränkungscode B/D: Beförderungen in Tanks: Durchfahrt verboten durch Tunnel der Kategorien B, C, D und E. Sonstige Beförderungen: Durchfahrt verboten durch Tunnel der Kategorien D und E."; for tanks "Großzettel / Kennzeichen 2.1" and "Orangefarbene Tafel Gefahrnummer 23 entzündbares Gas UN-Nummer 1965"; "Tankcodierung PxBN(M)"; the table of special provision 274/ADR 2.2.2.3 names mixture C "Gemisch C" oder "Propan", with the footnote "Bei Beförderungen in Tanks dürfen die Handelsnamen "Butan" und "Propan" nur als Zusatz verwendet werden."
 
 What `world/codelists/lists.json` takes from them: UN 1965 with its name and class 2.1 in `UNModelRegsUN`; guide 115 in `ERG2024`; the list `UNCL8169`, bound to `EmissionCalculationMethod/FullnessIndicationCode`; Recommendation 28 code 3113 "Lorry, articulated with tank" (from `rec28/Rec28_Rev4.2e_2018.csv`, already kept) in `UNECERec28`. The orange plate numbers 23 over 1965 and the tunnel code B/D of the examples are the ADR values above; the technical name is "Mixture C", with "propane" only as the trade name beside it.
+
+<<<<<<< HEAD
+## Added 2026-11-21: the HS 2022 legal texts of the WCO (stage 7 B5, O31, Q14)
+
+For the reasoning behind each maker item's HS subheading (`world/items.json` `hs_reason`, not published; `tools/hs_review.py` prints it for the owner's verification). `hs2022/H6.json` has codes and short texts only; these are the legal texts: the General Interpretative Rules, and the section and chapter notes with the headings and subheadings, of the chapters the items use (8, 26, 27, 28, 30, 32, 38, 39, 44, 52, 62, 85, 94) and of the chapters weighed against them (15, 34, 63, 73). Fetched directly from the WCO website on **2026-11-21** (no block): the index page https://www.wcoomd.org/en/topics/nomenclature/instrument-and-tools/hs-nomenclature-2022-edition/hs-nomenclature-2022-edition.aspx links one PDF per section and chapter. © World Customs Organization, published there free of charge; the files are kept unchanged. The WCO's Explanatory Notes are a paid publication and are **not** among them.
+
+| Directory | Source | Version |
+|---|---|---|
+| hs2022-notes/ | https://www.wcoomd.org/-/media/wco/public/global/pdf/topics/nomenclature/instruments-and-tools/hs-nomenclature-2022/2022/&lt;file&gt;.pdf?la=en (WCO, "HS Nomenclature 2022 edition"), the files `0001_2022e-gir` (General Rules for the Interpretation), `0200` Section II, `0208` Chapter 8, `0315` Chapter 15, `0526` 26, `0527` 27, `0600` Section VI, `0628` 28, `0630` 30, `0632` 32, `0634` 34, `0638` 38, `0700` Section VII, `0739` 39, `0944` 44, `1100` Section XI, `1152` 52, `1162` 62, `1163` 63, `1500` Section XV, `1573` 73, `1600` Section XVI, `1685` 85, `2094` 94 (each `<file>_2022e.pdf`: the section's number, then the chapter's, `00` for the section's own notes; Sections V, IX and XX have no notes of their own) | HS 2022 edition (each file's HTTP Last-Modified 17 Nov 2021) |
+
+```
+a15ad1e08fa165e509a34d4bf07299b57c68554d98149217c284c24fe2d49d5a  ./hs2022-notes/0001_2022e-gir.pdf
+8c8d67f968ce90ab766f0f67b983e7bfa9f68ee7b3ca183001565af2c2834802  ./hs2022-notes/0200_2022e.pdf
+52b486a699c6910fd806c429c094eba12e14d99cf0933887ad71660fa928b379  ./hs2022-notes/0208_2022e.pdf
+122be301e637d679e2e23b9f700bef698e5bbb685ccf95a077d831d75862122d  ./hs2022-notes/0315_2022e.pdf
+fde3eeff1e2d1ea352ca4c3b9b69e8db7b84897a09e1bc8d11ab33e12e9ef505  ./hs2022-notes/0526_2022e.pdf
+596b0948e008f6f52b05db88ab9001e2944c1ba11d9fb4950496506cf84dd805  ./hs2022-notes/0527_2022e.pdf
+62385a45bdbce5148f027ce721bc0d9cbcad49fbb970ffbf515d23f24215cf91  ./hs2022-notes/0600_2022e.pdf
+918741c8aa72d3163791fcbe644050127262b0842dd75dd1dcfdd5bfd6fa7766  ./hs2022-notes/0628_2022e.pdf
+7ad8d2b476a97e2326fee5fbf6af0947d5213cc9a7f5e337667a7cbaa07af11d  ./hs2022-notes/0630_2022e.pdf
+3833ec599b1456e453a5d2c5c721af1e6a1d536b5eb6499fc82b839ae179c54b  ./hs2022-notes/0632_2022e.pdf
+8196a0f7df557f2f87dd248fe87815475253678d433e3065e0addff813863bdb  ./hs2022-notes/0634_2022e.pdf
+8a90dbc7a255e2f1b4db14466581d87b8d56fe0b682f11ae28a8c6e99bce1432  ./hs2022-notes/0638_2022e.pdf
+85c4e25c7c74c366309a356b38b253feab416d7fc954788ae19ac1556220320c  ./hs2022-notes/0700_2022e.pdf
+0926bf9934da320a9c989ae5de6febfc572edab7fddfd6f2848a452d7f1b79d3  ./hs2022-notes/0739_2022e.pdf
+7c03c2dd42800322185e3fb23d8537e5535c3f0a01bce10d42e16bb9121ca2d4  ./hs2022-notes/0944_2022e.pdf
+87d6e99264592b59e9be74745950d98ebd583b1dc694a27037a12dd194a6576d  ./hs2022-notes/1100_2022e.pdf
+710be2d1b90de9dff7ceefcc0a9dcb06610fe0a442a3284b192102d119d2f2a4  ./hs2022-notes/1152_2022e.pdf
+9f4b5e383d652a00287b06a14dcc78d96f82c06bf4785bfea1493a0d7fcbb291  ./hs2022-notes/1162_2022e.pdf
+2f55de9a9b1b4e7a9af29eb88856b8aff8e306158ff30462edf60f954a8b5a50  ./hs2022-notes/1163_2022e.pdf
+6ff3b0c4fba86d45614ed4382e648a573563b2db024c7d7803d0953aae24ff16  ./hs2022-notes/1500_2022e.pdf
+cedfa53bd37d2b4f77bc64958bc707be13635cb009d0c4ea31396d57fc125617  ./hs2022-notes/1573_2022e.pdf
+9f91a08927b181634388f2164a171546fdeb988a527c96cd2366a02b793f51fc  ./hs2022-notes/1600_2022e.pdf
+1f2eada9662f4b6089e6bd90f8c5e50f93f032eabd7ae2a19014c06b711357c5  ./hs2022-notes/1685_2022e.pdf
+5d7de6851b7848251c798871ba60281079bb4f11686f42bb943804f2bd81f911  ./hs2022-notes/2094_2022e.pdf
+```
+
+Read in them for the reasoning: the GIR 1 to 6; Section VI Notes 1 to 3; Section XI Note 1(c), (s); Section XV Notes 1(k) and 2; the notes of Chapters 8 (2), 26 (2), 27 (1(a)), 28 (6), 30 (1 to 4), 34 (5), 38 (1(a)), 39 (2, 6, 7, 10, Subheading Note 1), 44 (1(o)), 62 (1, 4), 85 (3) and 94 (1 to 3); and the heading and subheading texts. The UN Comtrade short text for 940199 in `hs2022/H6.json` ("for use in the assembly of motor vehicles as determined by the minister") reads as a national tariff line; the WCO text is "Parts : -- Other".
+=======
+## Added 2026-11-21: densities, calorific value and conversion rates of the goods (stage 7, O62, O64, O66)
+
+Sources of the `materials` and `chains` blocks of `world/items.json`, read by `tools/world_goods.py`. All accessed on **2026-11-21**. None is copied into `world/codelists/sources/`: the Wood Handbook is a US government work but 104 MB; the others are copyrighted. Only their URL, SHA-256 and the quoted text are recorded.
+
+| Directory | Source | Version |
+|---|---|---|
+| (wood handbook, not copied) | https://research.fs.usda.gov/download/treesearch/62200.pdf (landing page https://www.fs.usda.gov/research/treesearch/62200; US Forest Service, Forest Products Laboratory, *Wood handbook: wood as an engineering material*, General Technical Report FPL-GTR-282). Used: Table 5-3a, specific gravity at 12 % moisture content: ash, white 0.60, green 0.56, black 0.49; oak, white 0.68, bur 0.64, chestnut 0.66, post 0.67; oak, red, northern red 0.63, black 0.61, cherrybark 0.68, willow 0.69 (live oak 0.88). Table 4-6a, density by specific gravity and moisture content: at 12 % 0.56 → 627, 0.60 → 672, 0.62 → 694, 0.68 → 762, 0.70 → 784 kg/m³. Chapter 4, worked example: "the specific gravity of 0.605 corresponds to a density at 12% MC of 678 kg m–3" (white ash). Chapter 19, Heat treatments: "Many of the commercial heat treating processes take place in the absence of air at temperatures ranging from 180 to 260 °C"; "The wood is then conditioned to 4% to 6% moisture"; "the first weight loss is due to loss of water, followed by a variety of chemistries that produce degradation products and volatile gasses". | March 2021 (PDF created 26 Feb 2021, modified 23 Mar 2023), 546 pages |
+| (ductile iron, not copied) | https://www.ispatguru.com/ductile-cast-iron/ (ispatguru.com, *Ductile Cast Iron*, after the Ductile Iron Society's data for design engineers; www.ductile.org itself answers 403 here): "The generally accepted value for the room temperature density of ductile iron is 7.1 g/cc. Density is affected primarily by the percentage of graphitized carbon, with densities varying from 6.8 g/cc to 7.4 g/cc for high carbon ferritic and low carbon pearlitic irons respectively." | page as served on 2026-11-21 |
+| (casting yield, not copied) | https://old.foundrygate.com/upload/artigos/5qa6SDagTOgBcnt8GhJQzEolFcY2.pdf (N. T. Rizzo Downes, R. D. Duque, S. Kannan, *Ten Steps to Improving Casting Yield in Ductile Iron Foundries*, Dana de Venezuela / SELEE Corporation): "Yield is often indicated as the ratio of the casting weight to the total pour weight. In a hypothetical case, let us consider a casting that has yield of 48%"; its case studies reach 71 % and 80 %. | HTTP Last-Modified 27 Jul 2022 |
+| (polyethylene, not copied) | https://www.ecfr.gov/api/versioner/v1/full/2026-11-01/title-21.xml?part=177&section=177.1520 (eCFR, 21 CFR 177.1520 Olefin polymers, requested with compression): "having a minimum density of 0.94 grams per cubic centimeter" (the high-density polyethylenes). The ranges 910 to 940 kg/m³ (low and linear low density) and 941 to 965 kg/m³ (high density) are the terms of ASTM D883, cited by name, not fetched (a paid standard). | eCFR as of 2026-11-01 |
+| (fao tcf, not copied) | https://www.fao.org/fileadmin/templates/ess/documents/methodology/tcf.pdf (FAO Statistics Division, *Technical Conversion Factors for Agricultural Commodities*): per country, "Cotton Lint" as the extraction rate in per cent of seed cotton: 47 countries, 26 to 44 %, 33 % the most common (16 countries), all but one 39 % or less. | PDF created 11 Aug 1999, modified 12 Dec 2000 (HTTP Last-Modified 18 Mar 2009) |
+| (icac data book, not copied) | https://icac.org/wp-content/uploads/2024/11/DATA-BOOK-2021-V4.pdf (International Cotton Advisory Committee, *ICAC Cotton Data Book 2021*), Figure 9: "Ginning outturn percentage is the lint proportional recovery of lint from seed cotton after ginning expressed as percentage by weight. Abbreviated as GOT, it ranges from 30-43.5% across the globe." | June 2021 |
+| (ipcc, not copied) | https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_1_Ch1_Introduction.pdf (IPCC, *2006 IPCC Guidelines for National Greenhouse Gas Inventories*, vol. 2, chapter 1), Table 1.2: "Natural Gas 48.0 46.5 50.4" (net calorific value, TJ/Gg, default, lower and upper): 75.0, 77.4 and 71.4 kg a megawatt hour. | HTTP Last-Modified 23 Oct 2006 |
+
+## SHA-256
+
+```
+f0b488c5637614d8e69a07abf796f9e32d7a8df956ee75ab5cc5f64f3bd5ee6f  wood handbook FPL-GTR-282 (62200.pdf)
+d1447dab8619800204f52d4a9d7e2c0b262ec34b7064026bd120a9928cd847a7  ispatguru ductile-cast-iron (HTML page)
+1ce0d1fe309952b64a70ec853a724ce7844e7dff061f68683f14027ba5492ac1  Ten Steps to Improving Casting Yield (PDF)
+33d445ff7c4ea5f04a5ec3c149ea4e49878b69b8efbd0f7432673585f4d77ca1  eCFR 21 CFR 177.1520 (XML)
+0acf1f287e2ea6c50a4ee982a4185cf88ed2410c5552fed55cd0dfe2f4dba2f9  FAO tcf.pdf
+6310def884805d693e40572688afe71e7a95669f40050c8bb8049a53586764ab  ICAC DATA-BOOK-2021-V4.pdf
+e391cd4676d0891cd77f67d3bd76e0e6775386b468ce5ce7ebe2311a6ea1ac45  IPCC V2_1_Ch1_Introduction.pdf
+```
+
+What `world/items.json` takes from them: the densities and ranges of `materials` (oak 720, 680 to 775; ash 670, 600 to 700; thermally modified ash 585, 550 to 620, from the kiln-dried ash less the weight the treatment drives off; ductile iron 7,100, 6,800 to 7,400; polyethylene 920, 910 to 965); the natural gas's 71.4 to 77.4 kg a megawatt hour (`physics` of natural-gas); the ginning out-turn 33 to 40 % and the foundry yield 45 to 80 % of `chains`. The world's European oak is lighter than the American white oaks of the handbook; its 720 kg/m³ and its 7 % over the ash are the owner's figures (stage 7, Q13).
+>>>>>>> worktree-agent-aaac44e97e2fcc282
