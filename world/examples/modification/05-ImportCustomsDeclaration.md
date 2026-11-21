@@ -291,7 +291,7 @@ Inside `AdditionalDocumentReference`:
 - `DocumentType` = **Inward processing authorisation**  
   What it is.
 - `ID` = **MDS-PF-26-0113**  
-  The sawmill's pro forma invoice: the value of the blanks for customs, there being no sale.
+  The sawmill's pro forma invoice: the value of the blanks for customs, there being no sale; it carries the sawmill's statement on origin as their exporter, the proof of the Accord origin the entry claims.
 - `DocumentTypeCode` = **325** (listID `UN/EDIFACT EDED 1001`)  
   UN/EDIFACT 1001 code 325: proforma invoice. The code is from the world's copy of UN/EDIFACT 1001 Document name: 325 = Proforma invoice.
 - `ID` = **MDS-EX-26-0011**  

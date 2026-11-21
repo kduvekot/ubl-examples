@@ -16,7 +16,7 @@ Customers ask whether the bench's slats need oil; Lumeway passes on Valdara's re
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900338989**  
+- `ProfileExecutionID` = **9900338991**  
   The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-CIS-26-0022**  
   The sender's number for this document.
@@ -60,7 +60,7 @@ Inside `RelatedCatalogueReference`:
   The catalogue's UUID, as stated in the catalogue.
 - `IssueDate` = **2026-04-20**  
   Its issue date.
-- `IssueTime` = **09:00:00-01:00**  
+- `IssueTime` = **10:00:00-01:00**  
   And time, as the catalogue states it; in the issuer's local time, with its offset from UTC.
 - `RevisionDate` = **2026-05-20**  
   Revised by the price update of the side frame.
@@ -515,7 +515,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900338991</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CIS-26-0022</cbc:ID>
   <cbc:UUID>7e61877f-8b4b-5ff8-8ce6-a0cb6cfc8448</cbc:UUID>
   <cbc:Name>Revised datasheet of the Serra 180: slat finish and maintenance</cbc:Name>
@@ -535,7 +535,7 @@ Inside `CatalogueItemSpecificationUpdateLine`:
     <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-    <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
+    <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-20</cbc:RevisionDate>
     <cbc:RevisionTime>13:00:00-01:00</cbc:RevisionTime>
     <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>

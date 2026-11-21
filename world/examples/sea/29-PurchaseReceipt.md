@@ -200,7 +200,7 @@ Inside `Payment`:
 - `ID` = **VT-T1-26-0613-0012**  
   The till's number for the payment.
 - `PaidAmount` = **750.000** (currencyID `XLC`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the buyer is to pay, stated in full so that it books the amount without working it out.
 - `PaidDate` = **2026-06-13**  
   Paid at the till.
 - `PaidTime` = **10:25:00+00:00**  
@@ -248,7 +248,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxInclusiveAmount` = **750.000** (currencyID `XLC`)  
   The same as the total without tax: Lisavu has no sales tax or value added tax, so no tax is due and the document has no tax section.
 - `PayableAmount` = **750.000** (currencyID `XLC`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the buyer is to pay, stated in full so that it books the amount without working it out.
 
 ### Purchase Receipt Line
 

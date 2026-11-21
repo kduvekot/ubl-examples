@@ -18,13 +18,13 @@ The manufacturer accepts the order with one change: the 2026 casting with the re
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **LMW-TX-26-0573**  
   The collaboration this document belongs to: Lumeway's order of benches from Valdara, from the order to the payment. Lumeway Distribution started it and gave it this identifier, which every document of it repeats.
-- `ID` = **1100043246**  
+- `ID` = **1100043245**  
   The seller's number for its response.
 - `UUID` = **1146579f-1ec8-554d-82aa-cfc09cc9d888**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-17**  
   The manufacturer answers the next day.
-- `IssueTime` = **17:42:00-01:00**  
+- `IssueTime` = **16:43:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `OrderResponseCode` = **CA** (listID `UN/EDIFACT EDED 4343`)  
   UN/EDIFACT 4343 code CA: conditionally accepted, with the substitution of line 2. The code is from the world's copy of UN/EDIFACT 4343 Response type: CA = Conditionally accepted.
@@ -261,10 +261,10 @@ Inside `OrderLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-response:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>LMW-TX-26-0573</cbc:ProfileExecutionID>
-  <cbc:ID>1100043246</cbc:ID>
+  <cbc:ID>1100043245</cbc:ID>
   <cbc:UUID>1146579f-1ec8-554d-82aa-cfc09cc9d888</cbc:UUID>
   <cbc:IssueDate>2026-03-17</cbc:IssueDate>
-  <cbc:IssueTime>17:42:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:43:00-01:00</cbc:IssueTime>
   <cbc:OrderResponseCode listID="UN/EDIFACT EDED 4343">CA</cbc:OrderResponseCode>
   <cbc:Note>Line 2: the 2025 side frame is replaced by the 2026 casting with a reinforced foot, at the same price.</cbc:Note>
   <cac:OrderReference>

@@ -16,7 +16,7 @@ To set up the range of its home and garden department, which reopens on 11 May a
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue request"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900338989**  
+- `ProfileExecutionID` = **9900338991**  
   The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **6200003390**  
   The sender's number for this document.
@@ -26,7 +26,7 @@ To set up the range of its home and garden department, which reopens on 11 May a
   What the document is: a request, named as one.
 - `IssueDate` = **2026-04-20**  
   The store asks Lumeway for its catalogue, to set up the range of the reopened department. As UBL defines it, the party that sends a catalogue request is its ProviderParty.
-- `IssueTime` = **08:42:00-01:00**  
+- `IssueTime` = **09:17:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **To set up the range of the home and garden department, which reopens on Monday 11 May after its renovation.**  
   Who it is for, and why now.
@@ -338,12 +338,12 @@ Inside `CatalogueRequestLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue-request:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900338991</cbc:ProfileExecutionID>
   <cbc:ID>6200003390</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
   <cbc:Name>Request for Lumeway's catalogue for the home and garden department</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>08:42:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:17:00-01:00</cbc:IssueTime>
   <cbc:Note>To set up the range of the home and garden department, which reopens on Monday 11 May after its renovation.</cbc:Note>
   <cbc:Description>Benches and spare parts.</cbc:Description>
   <cbc:PricingUpdateRequestIndicator>true</cbc:PricingUpdateRequestIndicator>

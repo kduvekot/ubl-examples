@@ -16,7 +16,7 @@ The distributor announces the delivery and the truck that brings it.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Despatch advice"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900339316**  
+- `ProfileExecutionID` = **9900339320**  
   The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-DA-26-0911**  
   The despatching party's number.
@@ -37,7 +37,7 @@ The distributor announces the delivery and the truck that brings it.
 
 Inside `OrderReference`:
 
-- `ID` = **7100452422**  
+- `ID` = **7100452426**  
   The order this despatch fulfils.
 
 ### Despatch Supplier Party
@@ -952,7 +952,7 @@ Inside `DespatchLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
   <cbc:ID>LMW-DA-26-0911</cbc:ID>
   <cbc:UUID>4b7e9055-23cd-5fbb-b498-b08f07b17c6e</cbc:UUID>
   <cbc:IssueDate>2026-04-29</cbc:IssueDate>
@@ -961,7 +961,7 @@ Inside `DespatchLine`:
   <cbc:Note>Please check the goods on arrival and report any damage in your receipt advice.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>7100452422</cbc:ID>
+    <cbc:ID>7100452426</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchSupplierParty>
     <cac:Party>

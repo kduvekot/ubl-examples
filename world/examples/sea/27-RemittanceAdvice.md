@@ -262,7 +262,7 @@ Inside `RemittanceAdviceLine`:
 - `UUID` = **add4d37b-e76e-51a8-90dd-0ac065146ca3**  
   A universally unique identifier of the line, derived from the document and the line number.
 - `DebitLineAmount` = **44896.00** (currencyID `XBL`)  
-  The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
+  The amount of the invoice this payment settles: the whole payable amount. A remittance advice lists each invoice paid on its debit side, and a discount taken against it on its credit side.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **SUPP** (listID `ISO 20022 ExternalPurpose1Code`)  

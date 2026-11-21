@@ -16,7 +16,7 @@ The distributor lowers the price of the spare side frame.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900338989**  
+- `ProfileExecutionID` = **9900338991**  
   The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-CPU-26-0022**  
   The sender's number for this document.
@@ -60,11 +60,11 @@ Inside `RelatedCatalogueReference`:
   The catalogue's UUID, as stated in the catalogue.
 - `IssueDate` = **2026-04-20**  
   Its issue date.
-- `IssueTime` = **09:00:00-01:00**  
+- `IssueTime` = **10:00:00-01:00**  
   And time, as the catalogue states it; in the issuer's local time, with its offset from UTC.
 - `RevisionDate` = **2026-04-20**  
   Not revised yet: its issue.
-- `RevisionTime` = **09:00:00-01:00**  
+- `RevisionTime` = **10:00:00-01:00**  
   At that time; in the issuer's local time, with its offset from UTC.
 - `Note` = **Lumeway's catalogue for the Lumeport store, 2026.**  
   Which catalogue: one Lumeway issued for the store's reopened home and garden department.
@@ -291,7 +291,7 @@ Inside `CataloguePricingUpdateLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900338991</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CPU-26-0022</cbc:ID>
   <cbc:UUID>cb1037ec-e5d5-5660-b5af-c39c2b7e1438</cbc:UUID>
   <cbc:Name>Price change of the side frame</cbc:Name>
@@ -311,9 +311,9 @@ Inside `CataloguePricingUpdateLine`:
     <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-    <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
+    <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
-    <cbc:RevisionTime>09:00:00-01:00</cbc:RevisionTime>
+    <cbc:RevisionTime>10:00:00-01:00</cbc:RevisionTime>
     <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>
     <cbc:Description>Benches and spare parts for resale.</cbc:Description>
     <cbc:VersionID>1.0</cbc:VersionID>

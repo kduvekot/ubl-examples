@@ -291,7 +291,7 @@ Inside `RemittanceAdviceLine`:
 - `ID` = **1**  
   One invoice paid.
 - `DebitLineAmount` = **238.22** (currencyID `XBL`)  
-  The amount of the invoice this payment settles: the whole payable amount. Paid invoices are debits on a remittance advice, as in the OASIS example UBL-RemittanceAdvice-2.0-Example.
+  The amount of the invoice this payment settles: the whole payable amount. A remittance advice lists each invoice paid on its debit side, and a discount taken against it on its credit side.
 - `BalanceAmount` = **0.00** (currencyID `XBL`)  
   Nothing remains open on the invoice after this payment.
 - `PaymentPurposeCode` = **WTER** (listID `ISO 20022 ExternalPurpose1Code`)  
