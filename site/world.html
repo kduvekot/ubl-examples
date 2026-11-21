@@ -1334,7 +1334,11 @@ const cv = document.getElementById("map"), ctx = cv.getContext("2d");
 const view = { s: 1, x: 0, y: 0 };
 const layers = { chain: true, transport: true, gov: true, fin: true, proc: true };
 let selected = null, hovered = null, dpr = 1;
-const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// the still (world.html?still, tools/map_still.py): drawn once, as for reduced motion but with the vehicles where they
+// are at the start, and marked ready (data-ready on the root) when nothing is left to draw, so that a headless
+// browser knows when to take the picture and the page goes quiet
+const STILL = document.documentElement.classList.contains("still");
+const reduced = STILL || matchMedia("(prefers-reduced-motion: reduce)").matches;
 function resize() { dpr = Math.min(2, window.devicePixelRatio || 1); const r = cv.getBoundingClientRect();
   cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); if (!view.fitted) fit(); }
 // bounding box of all land, in world pixels
@@ -1695,7 +1699,7 @@ function frame(t) {
         const [x, y] = toScreen(...tp(c.i, c.j, c.d[0] * e, c.d[1] * e));
         ctx.fillStyle = "rgba(0,0,0,.35)"; ctx.fillRect(x - .5 * s, y - .5 * s, 2.5 * s, 1.5 * s);
         ctx.fillStyle = "#f0c419"; ctx.fillRect(x - s, y - 7 * s, 2 * s, 7 * s); ctx.fillStyle = "#2b2b2b"; ctx.fillRect(x - s, y - 7 * s, 2 * s, 1.6 * s); } } }
-  if (!reduced) for (const v of VEHICLES) if (layers[v.layer]) drawVehicle(ctx, v, t);
+  if (!reduced || STILL) for (const v of VEHICLES) if (layers[v.layer]) drawVehicle(ctx, v, t);
   // country names under everything else
   ctx.textAlign = "center";
   for (const [code, pos] of Object.entries(LABEL_AT)) { const [x, y] = toScreen(...tileWorld(...pos));
@@ -1731,6 +1735,7 @@ function frame(t) {
   if (hovered && hovered !== selected && hovered._sx != null) sign(ctx, hovered._sx, hovered._sy, hovered.label, css(CAT[hovered.cat]), false);
   if (selected && selected._sx != null) sign(ctx, selected._sx, selected._sy, selected.label, css(CAT[selected.cat]), true);
   if (!reduced || pending) requestAnimationFrame(frame);
+  else if (STILL) document.documentElement.dataset.ready = "1";
 }
 // the world under the view: the overview, and over it the chunks of the middle and the close level in view when
 // zoomed in, each fading in over the level below (drawing at most a few new chunks per frame); returns true while
