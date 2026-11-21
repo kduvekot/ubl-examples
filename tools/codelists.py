@@ -248,9 +248,16 @@ def binding(element, parent, siblings=None):
     return None
 
 
+_ID_BOUND = set()
+
+
 def id_bound(element):
-    """Whether an identifier element (not a ...Code) holds codes of a list in some context (decision ID-Q2)."""
-    return any(b["element"] == element and b.get("attribute") == "schemeID" for b in load()["bindings"])
+    """Whether an identifier element (not a ...Code) holds codes of a list in some context (decision ID-Q2). The
+    elements are gathered once from the bindings: it is asked for every identifier of every document."""
+    if not _ID_BOUND:
+        _ID_BOUND.update(b["element"] for b in load()["bindings"] if b.get("attribute") == "schemeID")
+        _ID_BOUND.add(None)                     # gathered, even if no binding names a schemeID
+    return element in _ID_BOUND and element is not None
 
 
 def choose(b, code, list_id_given=None):
@@ -265,6 +272,16 @@ def choose(b, code, list_id_given=None):
     return None
 
 
+_COUNTRY_NAMES = {}
+
+
+def country_name(code):
+    """A country's name, read from the world once (describe is called for thousands of values)."""
+    if not _COUNTRY_NAMES:
+        _COUNTRY_NAMES.update({k: c["name"] for k, c in world_data.load()["countries"].items()})
+    return _COUNTRY_NAMES[code]
+
+
 def describe(lst):
     """Where a list comes from, in words, for the reason pages."""
     s = lst["scope"]
@@ -272,7 +289,7 @@ def describe(lst):
     if s == "regional":
         return f"the Trade Accord's {name} list"
     if s in ("XU", "XB", "XL"):
-        return f"{world_data.load()['countries'][s]['name']}'s national {name} list"
+        return f"{country_name(s)}'s national {name} list"
     if s == "external":
         return f"the world's copy of {lst['name']}"
     if s == "ubl-copy":

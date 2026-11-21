@@ -27,10 +27,14 @@ _CACHE = {}
 def _model():
     if "model" not in _CACHE:
         world = world_data.load()
-        probe = json.loads(json.dumps(world))      # build() annotates its copy
-        model, problems = world_model.build(probe)
-        if problems:
-            raise SystemExit("world model: " + "; ".join(problems[:5]))
+        made = os.environ.get("WORLD_MODEL")           # the model the site build's world check has just written
+        if made:                                       # (tools/world_model.py model.json; tools/build_site.sh)
+            model = json.load(open(made, encoding="utf-8"))["model"]
+        else:
+            probe = json.loads(json.dumps(world))      # build() annotates its copy
+            model, problems = world_model.build(probe)
+            if problems:
+                raise SystemExit("world model: " + "; ".join(problems[:5]))
         _CACHE["world"], _CACHE["model"] = world, model
     return _CACHE["world"], _CACHE["model"]
 

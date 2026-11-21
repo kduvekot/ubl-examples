@@ -28,7 +28,7 @@ MODEL=$(mktemp)
 trap 'rm -f "$MODEL"' EXIT
 python3 tools/check_world.py --model "$MODEL"   # includes tools/terrain.py --check: the committed terrain is made from its current inputs
 # The example documents: up to date with the world, and valid (UBL schemas, code lists)
-python3 tools/build_examples.py --check
+WORLD_MODEL="$MODEL" python3 tools/build_examples.py --check   # the generators read the model just made (tools/world_map.py)
 sh tools/fetch_ubl_validation.sh $(ls world/examples/*/*.xml | sed 's#.*/[0-9]*-\(.*\)\.xml#\1#' | sort -u)
 python3 tools/validate_examples.py world/examples/*/*.xml
 
