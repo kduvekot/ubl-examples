@@ -1668,18 +1668,24 @@ function rotate(step, px, py) { const r = cv.getBoundingClientRect(); px ??= r.w
 OX = RH() * TW / 2 + 40; computeLand(); measureRoutes();
 function along(r, f) { let d = f * r.L; for (const [a, b, l, hid] of r.seg) { if (d <= l) { const u = d / l; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, Math.atan2(b[1] - a[1], b[0] - a[0]), hid]; } d -= l; } const s = r.seg[r.seg.length - 1]; return [s[1][0], s[1][1], Math.atan2(s[1][1] - s[0][1], s[1][0] - s[0][0]), s[3]]; }
 // How fast the vehicles move (owner, 2026-11-21, MO015). Not in real time: a truck covers about one square (3.5 km)
-// a second, some 280 times its real speed. The other kinds keep the order of their real speeds, compressed (by the
-// square root of their ratio to a truck's), so that a ship still moves and an aircraft does not streak across:
-// truck 65 km/h -> 5 km a second; freight train 80 km/h -> 5.5; barge 12 km/h -> 2.2; container ship 30 km/h -> 3.4;
-// cargo aircraft 750 km/h at cruise -> 17, rolling on the runway at a quarter of that and speeding up as it climbs.
-// The speed is reckoned in kilometres on the ground, not in pixels on the screen, so that it does not change with the
-// direction of travel. DWELL: the time each kind waits to load and unload (milliseconds).
-const SPEED = { road: 5, rail: 5.5, river: 2.2, sea: 3.4, air: 17 }, DWELL = { road: 2500, rail: 3500, river: 4000, sea: 5000, air: 3000 };
+// a second. The real speeds are the world's own (map "speeds", the same the documents' journey times are reckoned
+// from); the map compresses them by one rule: km a second on the map = 5 x the square root of the real speed over the
+// truck's, so that the kinds keep their order and a ship still moves while an aircraft does not streak across. An
+// aircraft rolls on the runway at a quarter of its cruising speed and speeds up as it climbs. The speed is reckoned
+// in kilometres on the ground, not in pixels on the screen, so that it does not change with the direction of travel.
+// The kind of vehicle of each mode: the truck on the road, the ore train on the ore line and the container train on
+// the others, the barge, the feeder ship, the freighter (its cruising speed). DWELL: the time each kind waits to load
+// and unload (milliseconds).
+const SPEEDS = WORLD.speeds, TRUCK_KMH = SPEEDS.road.truck.kmh;
+const realKmh = v => v.mode === "road" ? SPEEDS.road.truck.kmh : v.mode === "rail" ? (v.flows.includes("ore") ? SPEEDS.rail.ore_train : SPEEDS.rail.container_train).kmh
+  : v.mode === "river" ? SPEEDS.river.barge.kmh : v.mode === "sea" ? SPEEDS.sea.feeder.kmh : v.mode === "air" ? SPEEDS.air.freighter.kmh : TRUCK_KMH;
+const mapKmps = v => 5 * Math.sqrt(realKmh(v) / TRUCK_KMH);
+const DWELL = { road: 2500, rail: 3500, river: 4000, sea: 5000, air: 3000 };
 // the kilometres a stretch of a way covers on the ground (from its world pixels; the isometric view undone)
 const segKm = (a, b) => { const x = (b[0] - a[0]) / (TW / 2), y = (b[1] - a[1]) / (TH / 2); return Math.hypot((x + y) / 2, (y - x) / 2) * WORLD.model.km; };
 // a vehicle's timetable along its way: the time (milliseconds) at the end of each stretch, from its speed there
 function timetable(v) { let t = 0; v.times = v.seg.map(([a, b], k) => {
-    let kmps = SPEED[v.mode] || 5;
+    let kmps = mapKmps(v);
     if (v.mode === "air" && v.alts) { const up = (v.alts[k] + v.alts[k + 1]) / 2 / CRUISE; kmps *= .25 + .75 * Math.min(1, up); }
     return t += segKm(a, b) / kmps * 1000; });
   v.travel = Math.max(1000, t); }
