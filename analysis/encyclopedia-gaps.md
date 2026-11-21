@@ -187,7 +187,7 @@ decided with the owner one at a time, like the gaps here.
 ### Kelaro Air Cargo (12-xl)
 
 - ~~the year the freighter came into service~~ Filled 2026-11-20 (OW012).
-- whether Kelaro also flies passengers, and on which other routes
+- ~~whether Kelaro also flies passengers, and on which other routes~~ Filled 2026-11-20 (OW012): yes, with an ATR 72-600 on the same route.
 
 ### Kelpstone Gas (42-xb)
 
@@ -352,4 +352,4 @@ decided with the owner one at a time, like the gaps here.
 ### Wavesure Cargo Insurance (29-xb)
 
 - ~~who founded Wavesure in 1927 and why then~~ Filled 2026-11-20 (OW011).
-- whether it insures other risks besides cargo, and which other shippers it covers
+- ~~whether it insures other risks besides cargo, and which other shippers it covers~~ Partly filled 2026-11-20 (OW011): it also insures exporters' receivables; other shippers open.
