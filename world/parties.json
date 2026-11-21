@@ -48,9 +48,9 @@
     "legal": {
      "form": "SUA",
      "founded": "1958-06-30",
-     "headcount": 22,
+     "headcount": 987,
      "turnover": {
-      "amount": "175000000",
+      "amount": "28000000000",
       "currency": "XUF",
       "year": 2025
      },
@@ -5683,9 +5683,9 @@
     "legal": {
      "form": "CORP",
      "founded": "2011-04-01",
-     "headcount": 150,
+     "headcount": 1315,
      "turnover": {
-      "amount": "63000000.00",
+      "amount": "833000000.00",
       "currency": "XBL",
       "year": 2025
      },
