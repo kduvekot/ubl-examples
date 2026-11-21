@@ -573,10 +573,7 @@
     "11-xb",
     "10-xb"
    ],
-   "flows": [
-    "sea",
-    "cotton"
-   ],
+   "port": "XBLMP",
    "documents": [
     "ForwardingInstructions",
     "PackingList",

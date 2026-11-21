@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="An interactive map of the UBL example world: three countries, the parties, their supply chains and transport.">
-<title>UBL World Map</title>
+<title>The map · The UBL World</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600&display=swap">
@@ -103,7 +103,7 @@ canvas.dragging { cursor: grabbing; }
 <header class="toolbar">
   <a class="home-link" href="index.html" title="The UBL World: home"><h1>UBL <span>World</span></h1></a>
   <nav class="sitelinks" aria-label="Site">
-    <a href="world.html" aria-current="page">Map</a><a href="examples.html">Trade</a><a href="parties.html">Parties</a><a href="world-specifications.html">Rules</a><a href="about.html">About</a>
+    <a href="world.html" aria-current="page">World</a><a href="examples.html">Trade</a><a href="parties.html">Parties</a><a href="world-specifications.html">Rules</a><a href="about.html">About</a>
   </nav>
   <div class="layers" role="group" aria-label="Map layers">
     <button id="layer-chain" aria-pressed="true" data-layer="chain"><span class="dot" style="background:var(--c-commerce)"></span>Supply chains</button>
@@ -147,7 +147,7 @@ const GRID = WORLD.model.grid || 1;           // squares per 14 km (the squares 
 const TW = 32, TH = 16;             // tile size in pixels (isometric)
 const COUNTRIES = WORLD.countries;
 const CAT = { commerce: "--c-commerce", logistics: "--c-logistics", government: "--c-government", finance: "--c-finance", procurement: "--c-procurement" };
-const KIND_NAME = { commerce: "commerce", logistics: "transport", government: "government", finance: "finance", procurement: "procurement" };
+const KIND_NAME = { commerce: "supply chain", logistics: "transport", government: "government", finance: "finance", procurement: "procurement" };
 const LAYER_OF = { commerce: "chain", logistics: "transport", government: "gov", finance: "fin", procurement: "proc" };
 
 // Parties: number, tile position, country.
@@ -641,6 +641,17 @@ function runOfRiver(g, i, j) { const d = DIRS.find(([a, b]) => { const n = tiles
 function smallHydro(g, i, j) { const [x, y] = tileWorld(i, j), F = houseFrame(x, y, [0, 1], .2, .16), fc = box3(g, F, 0, 0, 1, 1, 0, 6, "#d8d2c4", null);
   windowsOn(g, F, fc, 7, 2.2, 4.8, "rgba(60,80,110,.8)", 1); gable3(g, F, 0, 0, 1, 1, 6, 2.2, "#6f6a62", "#d8d2c4");
   const [sx, sy] = tileWorld(i + .2, j + .08); block(g, sx, sy, .07, .07, 2.5, "#8f969b", "#6f767b"); }
+// a battery store: rows of white cabinets on a fenced pad, with its transformer
+function batteryStore(g, i, j) { const P = (u, v) => tp(i, j, u, v);
+  poly(g, [P(-.3, -.26), P(.3, -.26), P(.3, .26), P(-.3, .26)], "#b8b29a");
+  for (let r = 0; r < 3; r++) for (let k = 0; k < 4; k++) { const [x, y] = P(-.22 + k * .14, -.16 + r * .16); block(g, x, y, .1, .06, 3, "#eef0f0", "#c9cfd2"); }
+  for (const [a, b] of [[[-.33, -.29], [.33, -.29]], [[.33, -.29], [.33, .29]], [[.33, .29], [-.33, .29]], [[-.33, .29], [-.33, -.29]]]) tline(g, i, j, [a, b], "#e8e4da", 1, [2, 2]); }
+// an oil-fired power station kept in reserve: the turbine hall, its chimney and two fuel tanks
+function oilStation(g, i, j) { const [x, y] = tileWorld(i, j), F = houseFrame(x - 3, y, [0, 1], .3, .22), fc = box3(g, F, 0, 0, 1, 1, 0, 10, "#cdc6b6", null);
+  windowsOn(g, F, fc, 6, 4, 8, "rgba(60,80,110,.8)", 1); gable3(g, F, 0, 0, 1, 1, 10, 2.5, "#7a736a", "#cdc6b6");
+  const [cx, cy] = tileWorld(i - .16, j - .12); g.fillStyle = "#b9b2a4"; g.fillRect(cx - 1.2, cy - 30, 2.4, 30); g.fillStyle = "#7c3a2e"; g.fillRect(cx - 1.4, cy - 31, 2.8, 2.5);
+  for (const [u, v] of [[.28, .14], [.28, -.14]]) { const [tx, ty] = tileWorld(i + u, j + v); g.fillStyle = "#d9d6cf"; g.beginPath(); g.ellipse(tx, ty, 4.5, 2, 0, 0, Math.PI); g.lineTo(tx - 4.5, ty - 6); g.ellipse(tx, ty - 6, 4.5, 2, 0, Math.PI, 0, true); g.fill();
+    g.fillStyle = "#eceae4"; g.beginPath(); g.ellipse(tx, ty - 6, 4.5, 2, 0, 0, 7); g.fill(); } }
 function drawInstall(g, i, j, ins) {
   if (ins.kind === "wind turbines") [[-.36, -.3], [.34, -.12], [-.02, .36]].slice(0, ins.count || 3).map(([u, v], k) => [tp(i, j, u, v), k])
     .sort((a, b) => a[0][1] - b[0][1]).forEach(([[px, py], k]) => windTurbine(g, px, py, hash(i * 3 + k, j) + k * .37));
@@ -650,7 +661,9 @@ function drawInstall(g, i, j, ins) {
   else if (ins.kind === "dam") damWall(g, ins);
   else if (ins.kind === "salt pans") saltPans(g, i, j);
   else if (ins.kind === "run-of-river plant") runOfRiver(g, i, j);
-  else if (ins.kind === "small hydro plant") smallHydro(g, i, j); }
+  else if (ins.kind === "small hydro plant") smallHydro(g, i, j);
+  else if (ins.kind === "battery store") batteryStore(g, i, j);
+  else if (ins.kind === "oil power station") oilStation(g, i, j); }
 // a pipeline's border metering station: a fenced pad, the pipe coming up through the meter run with its
 // valves, and a small control hut
 function meteringStation(g, i, j) {
@@ -745,7 +758,7 @@ function coverIndex() { let ix = COVER.get(rot); if (ix) return ix; ix = new Map
   for (let i = 0; i < W; i++) for (let j = 0; j < H; j++) { const t = tiles[i][j];
     if (t.house && !t.urban && !t.building) { const [x, y] = tileWorld(i, j), hw = .3 * TW, h = 8 + 8 * t.house[0];   // a house in the country
       put(x - hw, x + hw, y - h, y + .2 * TH, i, j); }
-    if (t.install) { const [x, y] = tileWorld(i, j), h = t.install.kind === "wind turbines" ? 54 : 16;               // an installation
+    if (t.install) { const [x, y] = tileWorld(i, j), h = t.install.kind === "wind turbines" ? 54 : t.install.kind === "oil power station" ? 36 : 16;               // an installation
       put(x - .45 * TW, x + .45 * TW, y - h, y + .35 * TH, i, j); }
     if (t.urban && !t.building) { const h = t.village ? 14 : [0, 14, 16, 26, 60][t.density] || 26;               // a town's or a village's block
       for (let a = 0; a < SUB; a++) for (let b = 0; b < SUB; b++) if (subBit(t, a, b)) {

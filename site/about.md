@@ -21,7 +21,7 @@ calendar and the issue order of the documents hold, and amounts, quantities and 
 ## How much of UBL 2.5 it covers
 
 [Element coverage](coverage.html) counts the endorsed elements of UBL 2.5 that the documents use,
-per document type, and lists every element that has no example yet. An element is added only through a
+per document type, and lists every element that has no example, with where it would fit. An element is added only through a
 real business situation in the world, never as a filler, so some stay out on purpose.
 
 ## The OASIS sample documents
@@ -32,9 +32,9 @@ published with each release of UBL, with their history reconstructed one documen
 
 ## The Encyclopedia
 
-The [Encyclopedia](wiki/index.html) is the world's own reference work: its countries, towns, companies and
-institutions, with their history, each article made from the world's data. It is being written; the first
-articles are there.
+The [Encyclopedia](wiki/index.html) is the world's own reference work: its three countries and the Trade Accord,
+their towns, villages, rivers and landmarks, their languages and currencies, and their companies and institutions,
+with their history, each article made from the world's data.
 
 ## The method note
 

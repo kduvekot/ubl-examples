@@ -410,8 +410,8 @@ def infobox(a):
         rows = [("Capital", f"[[{capital}]]"), ("Languages", langs),
                 ("Population", n0(d.get("population", {}).get("total", 0))),
                 ("Currency", f"{d['currency']['name']} ({d['currency']['code']})"),
-                ("Time", d.get("legal_time", "")), ("Country code", f"{a['key']} (ISO 3166-1, user-assigned)"),
-                ("Tax", d["tax"]["schemes"][0]["name"])]
+                ("Time", d.get("legal_time", "")), ("Country code", a["key"]),
+                ("Taxes", "; ".join(x["name"] for x in d["tax"]["schemes"]))]
     elif a["kind"] == "accord":
         rows = [("Signed", d.get("signed", "")), ("In force", d.get("in_force", "")),
                 ("Members", ", ".join(f"[[{countries[c]['name']}]]" for c in d.get("members", []))),
@@ -423,7 +423,7 @@ def infobox(a):
     elif a["kind"] == "party":
         idn, lg = d["identity"], d["identity"].get("legal", {})
         form = countries[d["c"]].get("legal_forms", {}).get(lg.get("form"), {}).get("name", lg.get("form", ""))
-        rows = [("Type", form), ("Founded", lg.get("founded", "")), ("Seat", f"[[{town_of(d)}]], [[{countries[d['c']]['name']}]]"),
+        rows = [("Type", form), ("Founded", longdate(lg.get("founded", ""))), ("Seat", f"[[{town_of(d)}]], [[{countries[d['c']]['name']}]]"),
                 ("Employees", n0(lg["headcount"]) if lg.get("headcount") else ""),
                 ("Website", idn.get("website", ""))]
     elif a["kind"] == "village":
@@ -438,8 +438,7 @@ def infobox(a):
                  if len(set(d.get("names", {}).values())) > 1 else "")]
     elif a["kind"] == "route":
         rows = [("Kind", {"rail": "Railway", "pipeline": "Pipeline", "river": "River", "sea": "Shipping route",
-                          "air": "Air route"}[d["mode"]])] + [(k, fill(v, values(a), a["wiki"]["title"]))
-                                                              for k, v in a["wiki"].get("facts", {}).items()]
+                          "air": "Air route"}[d["mode"]])]
     elif a["kind"] == "language":
         rows = [("Own name", d.get("own_name", "")), ("Spoken in", f"[[{countries[d['country']]['name']}]]" if d.get("country") in countries else "")]
     elif a["kind"] == "currency":
@@ -468,7 +467,7 @@ def infobox(a):
         rows = [("Maker", f"[[{PARTY[d['seller']]['identity']['name']}]]"),
                 ("Dimensions", " × ".join(str(x) for x in d["dimensions_mm"]) + " mm" if d.get("dimensions_mm") else ""),
                 ("Weight", f"{d['net_kg']:g} kg" if d.get("net_kg") else "")]
-    rows += [(k, v) for k, v in (a["wiki"].get("facts") or {}).items()]
+    rows += [(k, fill(v, values(a), a.get("key", ""))) for k, v in (a["wiki"].get("facts") or {}).items()]
     cells = "".join((f"<tr><th>{k}</th><td>{v}</td></tr>" if k else f'<tr><td colspan="2" class="map">{v}</td></tr>')
                     for k, v in rows if v)
     return cells
@@ -502,7 +501,7 @@ def town_climate(t, point):
     cm = TERR["corners_m"]
     z = np.frombuffer(base64.b64decode(cm["int16_le_base64"]), dtype="<i2").reshape(cm["rows"], cm["cols"])
     x, y = t["c"]
-    height = float(z[y:y + 2, x:x + 2].mean())
+    height = float(z[max(y - 1, 0):y + 3, max(x - 1, 0):x + 3].min())   # the town's lowest ground nearby: a port on the shore stands at the sea
     land = "lisavu" if t["country"] == "XL" else "mainland"
     ras = TERR["rasters"][land]
     rain = np.array(Image.open(os.path.join(ROOT, ras["rain"]))).astype(float)
@@ -516,12 +515,22 @@ def town_climate(t, point):
             ("Daily mean (°C)", [r1(v - dt) for v in base["mean_c"]], r1(sum(base["mean_c"]) / 12 - dt)),
             ("Mean daily low (°C)", [r1(v - dt) for v in base["low_c"]], r1(sum(base["low_c"]) / 12 - dt)),
             ("Rain (mm)", [f"{round(v * k)}" for v in base["rain_mm"]], f"{round(year_rain):,}"),
-            ("Sunshine (kWh/m² a day)", [r1(v) for v in base["sun_kwh_m2_day"]], r1(sum(base["sun_kwh_m2_day"]) / 12))]
+            ("Solar radiation (kWh/m² a day)", [r1(v) for v in base["sun_kwh_m2_day"]], r1(sum(base["sun_kwh_m2_day"]) / 12))]
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    out = ["## Climate", "", f"Climate data for {t['name']} (about {round(height, -1):.0f} m above the sea), "
-           f"averages of 2001 to 2025:", "", "| | " + " | ".join(months) + " | Year |", "|---|" + "---:|" * 13]
+    where_ = "at sea level" if height < 15 else f"about {round(height, -1):.0f} m above the sea"
+    out = ["## Climate", "", f"Climate data for {t['name']} ({where_}), averages of 2001 to 2025:", "",
+           "| | " + " | ".join(months) + " | Year |", "|---|" + "---:|" * 13]
     out += [f"| {name} | " + " | ".join(vals) + f" | {year} |" for name, vals, year in rows] + [""]
     return out
+
+
+PROPER = tuple(n for c in countries.values() for n in (c["name"], c["name"][:-1])) + ("Urvanian", "Bayvarran", "Lisavan")
+
+
+def described(p):
+    """A party's short description in a list, lower-case at the start unless it begins with a proper name."""
+    t = ((p.get("wiki") or {}).get("short") or p.get("what", "")).rstrip(".")
+    return t if t.startswith(PROPER) or t[:1].isdigit() else t[:1].lower() + t[1:]
 
 
 def generated_sections(a):
@@ -537,9 +546,7 @@ def generated_sections(a):
                 and not p["identity"].get("person")]
         if here:
             out_ += ["## Companies and institutions", ""]
-            out_ += [f"- [[{p['identity']['name']}]], " + ((p.get("wiki") or {}).get("short") or p.get("what", "")).rstrip(".")[:1].lower()
-                     + ((p.get("wiki") or {}).get("short") or p.get("what", "")).rstrip(".")[1:]
-                     for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
+            out_ += [f"- [[{p['identity']['name']}]], " + described(p) for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
     if a["kind"] == "party":
         sold = [it for it in world["items"] if it["seller"] == a["key"] and not it.get("resale_of")]
         if sold and not has("Products"):
@@ -575,13 +582,22 @@ def generated_sections(a):
             out_ += [f"| [[{t['name']}]] | {n0(t['population'])} |" for t in towns] + [""]
         hol = d.get("holidays", {}).get("2026", {})
         if hol:
-            out_ += ["## Public holidays", "", "| 2026 | Holiday |", "|---|---|"]
-            out_ += [f"| {day} | {name} |" for day, name in sorted(hol.items())] + [""]
+            out_ += ["## Public holidays", "", "| Date (2026) | Holiday |", "|---|---|"]
+            out_ += [f"| {longdate(day, weekday=True)} | {name} |" for day, name in sorted(hol.items())] + [""]
     return out_
 
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
           "November", "December"]
+
+
+def longdate(iso, weekday=False):
+    """2026-01-01 as '1 January 2026' (or 'Thursday 1 January' with weekday=True, for a year's calendar)."""
+    import datetime
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", iso or ""):
+        return iso or ""
+    d = datetime.date.fromisoformat(iso)
+    return f"{d.strftime('%A')} {d.day} {MONTHS[d.month - 1]}" if weekday else f"{d.day} {MONTHS[d.month - 1]} {d.year}"
 
 
 def timeline(a, where):
@@ -610,7 +626,7 @@ def timeline(a, where):
 
 
 CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions",
-            "village": "Villages", "locality": "Villages", "route": "Transport", "language": "Languages",
+            "village": "Villages and localities", "locality": "Villages and localities", "route": "Transport", "language": "Languages",
             "currency": "Currencies", "item": "Products", "river": "Rivers", "waters": "Rivers", "landmark": "Landmarks"}
 
 
@@ -668,9 +684,17 @@ for title, a in sorted(articles.items()):
         see.append(f"[[{WATERS['title']}]]" if WATERS else "")
     if a["kind"] in ("town", "country", "village", "locality"):
         see.append(f"[The map of the world]({SITE}world.html) · [the printed map sheet]({SITE}map-sheet.html)")
+    same = lambda kind: sorted(t for t, x in articles.items() if x["kind"] == kind and t != title)
+    if a["kind"] in ("currency", "language", "route", "landmark"):
+        see.append(" · ".join(f"[[{t}]]" for t in same(a["kind"])))
+    if a["kind"] in ("currency", "accord"):
+        acc_ = CJSON.get("trade_accord", {}).get("name")
+        see.append(" · ".join(f"[[{t}]]" for t in (same("currency") if a["kind"] == "accord" else [])
+                              + ([acc_] if a["kind"] == "currency" and acc_ in page else [])
+                              + (["Lumeport Trade Accord Council"] if a["kind"] == "accord" and "Lumeport Trade Accord Council" in page else [])))
     see = [links(x, where) for x in see if x]
     if see:
-        rest += ["## See also", "", *see, ""]
+        rest += ["## See also", ""] + [x for line in see for x in (line, "")]
     heads = [l[3:] for l in rest if l.startswith("## ")]
     if len(heads) >= 3:                       # the contents, after the lead, as an encyclopedia has it
         body += ['<details class="wtoc" open><summary>Contents</summary><ol>'
@@ -699,10 +723,10 @@ for c, titles in by_cat.items():
     body = [f"# Category: {c}", "", f"Articles in the category {c}:", ""] + [f"- [{t}]({page[t]})" for t in sorted(titles)] + [""]
     open(os.path.join(out, f"category-{slug(c)}.md"), "w", encoding="utf-8").write("\n".join(body))
 
-index = ["# Encyclopedia", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
+index = ["# The UBL World", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
          "The countries of the Lumeport Trade Accord: their history and geography, their towns, villages, rivers and "
          "landmarks, and their companies and institutions.", ""]
-for c in ("Countries", "Treaties", "Towns", "Villages", "Rivers", "Landmarks", "Companies and institutions", "Transport",
+for c in ("Countries", "Treaties", "Towns", "Villages and localities", "Rivers", "Landmarks", "Companies and institutions", "Transport",
           "Languages", "Currencies", "Products"):
     if c in by_cat:
         index += [f"## {c}", ""] + [f"- [{t}]({page[t]})" for t in sorted(by_cat[c])] + [""]
