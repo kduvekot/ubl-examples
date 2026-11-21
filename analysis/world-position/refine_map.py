@@ -644,6 +644,47 @@ def labels_flat(img, px):
             f = F(True, U * .55)
             d.text((x, y), "\u2692", font=f, fill=(50, 50, 55), anchor="mm", stroke_width=max(2, U // 10), stroke_fill=(255, 255, 255, 235))
             placed.append(d.textbbox((x, y), "\u2692", font=f, anchor="mm"))
+    # the installations (map "installations", MO021): the lake behind a dam as water, the dam as a dark line, and a
+    # small sign for each work: hydro plants a blue square (an intake a blue ring), wind turbines three blades, solar
+    # parks a dark blue panel, the oil-fired station a grey square, the battery store a small cell, salt pans a grid
+    INST = M["model"].get("installations", [])
+    for ins in INST:
+        lk = ins.get("lake")
+        if not lk:
+            continue
+        g_ = lk["g"]
+        for a_, b_ in lk["cells"]:
+            x0_, y0_ = P((a_ / g_ - .5 / g_, b_ / g_ - .5 / g_)); x1_, y1_ = P((a_ / g_ + .5 / g_, b_ / g_ + .5 / g_))
+            d.rectangle([x0_ - px * .5, y0_ - px * .5, x1_ - px * .5 + 1, y1_ - px * .5 + 1], fill=PAL["water"])
+        if len(lk["wall"]) > 1:
+            d.line([P(q) for q in lk["wall"]], fill=(70, 70, 75), width=max(2, U // 9))
+    def inst_sign(ins):
+        x, y = P(ins["at"]); r = U * .17; k = ins["kind"]; white = (255, 255, 255)
+        if k in ("hydro power house", "run-of-river plant", "small hydro plant"):
+            d.rectangle([x - r, y - r, x + r, y + r], fill=(40, 90, 170), outline=white, width=max(1, U // 16))
+        elif k == "hydro intake":
+            d.ellipse([x - r, y - r, x + r, y + r], fill=white, outline=(40, 90, 170), width=max(2, U // 12))
+        elif k == "wind turbines":
+            for a_ in (90, 210, 330):
+                d.line([(x, y), (x + math.cos(math.radians(a_)) * r * 1.6, y - math.sin(math.radians(a_)) * r * 1.6)], fill=(60, 64, 70), width=max(2, U // 12))
+            d.ellipse([x - r * .35, y - r * .35, x + r * .35, y + r * .35], fill=(60, 64, 70))
+        elif k == "solar park":
+            d.rectangle([x - r * 1.3, y - r * .8, x + r * 1.3, y + r * .8], fill=(32, 62, 112), outline=white, width=max(1, U // 16))
+            d.line([(x, y - r * .8), (x, y + r * .8)], fill=(150, 175, 210), width=max(1, U // 24))
+        elif k == "oil power station":
+            d.rectangle([x - r, y - r, x + r, y + r], fill=(95, 95, 100), outline=white, width=max(1, U // 16))
+        elif k == "battery store":
+            d.rectangle([x - r * 1.1, y - r * .6, x + r * 1.1, y + r * .6], fill=(60, 64, 70), outline=white, width=max(1, U // 16))
+            d.rectangle([x + r * 1.1, y - r * .25, x + r * 1.35, y + r * .25], fill=(60, 64, 70))
+        elif k == "salt pans":
+            for a_ in range(2):
+                for b_ in range(2):
+                    d.rectangle([x - r + a_ * r, y - r + b_ * r, x + a_ * r - r * .1, y + b_ * r - r * .1], fill=(225, 235, 238), outline=(120, 140, 150), width=1)
+        else:
+            return
+        placed.append((x - r * 1.4, y - r * 1.4, x + r * 1.4, y + r * 1.4))
+    for ins in INST:
+        inst_sign(ins)
     # towns: the built-up area is the symbol; the name stands beside it, on the side where it covers the least
     # built-up land, other names and roads. Villages (about 1 km, under half a millimetre) get a dot.
     occupied = BUILT_MASK[0]
@@ -778,6 +819,34 @@ def labels_flat(img, px):
         placed.append(vbox(anchor, xy))
         d.text(xy, v["name"], font=vf, fill=PAL["label"], anchor=anchor, stroke_width=max(2, U // 14),
                stroke_fill=(255, 255, 255, 230))
+    # the landmarks (map "landmarks"): mountains, massifs, valleys, hills, coasts, bays and capes, named in a serif
+    # where the name fits (owner, 2026-11-21: on the sheet only, not on the 3D map): at the landmark, or near it, and
+    # left out where every place would cover towns, names or roads; the waters' names in the sea's lettering, a peak
+    # with a small triangle
+    FO = lambda size: ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf", int(size))   # the core fonts have no oblique: serif sets the landmarks apart
+    for lmk in WORLD.get("landmarks", []):
+        water_ = lmk["kind"] in ("bay", "coast", "cape", "headland")
+        font_ = FO(U * (.5 if lmk["kind"] in ("cape", "headland", "hill", "meeting ground", "caldera") else .62))
+        fill_ = PAL["water_label"] if water_ else (110, 95, 80)
+        x, y = P(lmk["at"])
+        peak = lmk["kind"] == "mountain"
+        if peak:
+            r = U * .13
+            d.polygon([(x, y - r), (x + r, y + r * .8), (x - r, y + r * .8)], fill=(80, 70, 60))
+            placed.append((x - r, y - r, x + r, y + r))
+        tw_, th_ = d.textbbox((0, 0), lmk["name"], font=font_)[2:]
+        g = U * .3
+        cands = ([("lm", (x + g, y)), ("rm", (x - g, y)), ("ms", (x, y - g)), ("ma", (x, y + g))] if peak else
+                 [("mm", (x, y)), ("ms", (x, y - g)), ("ma", (x, y + g)), ("lm", (x + g, y)), ("rm", (x - g, y))])
+        def lbox(anchor, xy):
+            bx = xy[0] if anchor[0] == "l" else xy[0] - tw_ if anchor[0] == "r" else xy[0] - tw_ / 2
+            by = xy[1] - th_ / 2 if anchor[1] == "m" else xy[1] - th_ if anchor[1] in "sb" else xy[1]
+            return (bx, by, bx + tw_, by + th_)
+        score_, (anchor, xy) = min(((free_score(lbox(*c)), c) for c in cands), key=lambda sc: sc[0])
+        if score_ >= 100:                          # it would cover another name or sign: left out
+            continue
+        placed.append(lbox(anchor, xy))
+        d.text(xy, lmk["name"], font=font_, fill=fill_, anchor=anchor, stroke_width=max(2, U // 14), stroke_fill=(255, 255, 255, 220))
     for (cx, cy), t_, font_ in COUNTRY_LABEL:
         d.text((cx, cy), t_, font=font_, fill=(125, 125, 125, 255), anchor="mm", stroke_width=max(2, U // 10),
                stroke_fill=(255, 255, 255, 200))
@@ -852,7 +921,7 @@ def sheet(out_path, levels=5):
     # the legend: what each line and sign means, in two rows under the mainland panel
     lx0, ly0, cw = m + L + 62 * MM, bottom + 4.5 * MM, 31 * MM
     def key(k, label, draw):
-        cx, cy = lx0 + (k % 6) * cw, ly0 + (k // 6) * 5.5 * MM
+        cx, cy = lx0 + (k % 6) * cw, ly0 + (k // 6) * 4.6 * MM
         draw(cx, cy)
         d.text((cx + 8 * MM, cy), label, font=F(False, 2.5), fill=ink, anchor="lm")
     def line(col, w, dash=None, edge=None):
@@ -868,6 +937,13 @@ def sheet(out_path, levels=5):
         return lambda cx, cy: d.ellipse([cx + 3 * MM - r * MM, cy - r * MM, cx + 3 * MM + r * MM, cy + r * MM], fill=col, outline=paper)
     def square(col):
         return lambda cx, cy: d.rectangle([cx + 2.4 * MM, cy - .6 * MM, cx + 3.6 * MM, cy + .6 * MM], fill=col)
+    def blades(col):
+        def f(cx, cy):
+            for a_ in (90, 210, 330):
+                d.line([(cx + 3 * MM, cy), (cx + 3 * MM + math.cos(math.radians(a_)) * MM, cy - math.sin(math.radians(a_)) * MM)], fill=col, width=round(.25 * MM))
+        return f
+    def panel_(col):
+        return lambda cx, cy: d.rectangle([cx + 2 * MM, cy - .6 * MM, cx + 4 * MM, cy + .6 * MM], fill=col)
     def patch(col):
         return lambda cx, cy: d.rectangle([cx + .5 * MM, cy - 1.2 * MM, cx + 5.5 * MM, cy + 1.2 * MM], fill=col)
     keys = [("Main road", line(PAL["road_main"], .7, edge=PAL["road_main_edge"])), ("Road", line(PAL["road"], .5, edge=PAL["road_edge"])),
@@ -875,7 +951,9 @@ def sheet(out_path, levels=5):
             ("Land border", dots(PAL["border"])), ("Sea route", line((120, 160, 200), .35, dash=True)),
             ("Air route", line((170, 170, 170), .35, dash=True)), ("Town", patch(PAL["urban"])),
             ("Village", disc(PAL["village"], .45)), ("Port", disc((66, 133, 244))), ("Airport", disc((120, 120, 140))),
-            ("Gas platform", square((176, 120, 60)))]
+            ("Gas platform", square((176, 120, 60))),
+            ("Hydro plant", square((40, 90, 170))), ("Dam and lake", line((70, 70, 75), .45)), ("Wind turbines", blades((60, 64, 70))),
+            ("Solar park", panel_((32, 62, 112))), ("Oil-fired station", square((95, 95, 100))), ("Salt pans", square((225, 235, 238)))]
     for k, (label, draw) in enumerate(keys):
         key(k, label, draw)
     d.rectangle([m - 3 * MM, m - 3 * MM, Wp - m + 3 * MM, Hp - m + 3 * MM], outline=ink, width=round(.25 * MM))

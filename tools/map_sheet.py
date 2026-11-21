@@ -23,7 +23,8 @@ ROOT = build_cache.ROOT
 SCRIPT = "analysis/world-position/refine_map.py"
 ARGS = ["5", "0", "sheet"]                     # LEVELS, PX, the sheet
 MAP = "world/map.json"
-FONTS = ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]
+FONTS = ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+         "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"]
 MODULE_DIRS = ("tools",)                       # refine_map.py puts tools/ on its path; -I keeps its own folder off it
 
 
