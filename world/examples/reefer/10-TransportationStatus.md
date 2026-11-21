@@ -143,6 +143,20 @@ Inside `Consignment`:
   The local time of Lisavu, where it happens, with its offset from UTC.
 - `MainCarriageShipmentStage/DischargeTransportEvent/CompletionIndicator` = **true**  
   Whether the event has taken place (true) or is still to come (false).
+- `MainCarriageShipmentStage/DischargeTransportEvent/CurrentStatus/ConditionCode` = **COMPLETED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
+  The voyage is over. The code is from the Trade Accord's status condition list: COMPLETED = Completed.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CurrentStatus/Description` = **The reefer's own log, read by the carrier's monitoring at sea, over the voyage from loading at Lumeport to discharge.**  
+  What the readings cover.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CurrentStatus/Condition/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
+  The air the reefer blows into its cargo space. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CurrentStatus/Condition/Measure` = **0.5** (unitCode `CEL`)  
+  The average over the voyage: the set point.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CurrentStatus/Condition/Description` = **Supply air, every hour of the voyage.**  
+  The readings.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CurrentStatus/Condition/MinimumMeasure` = **0.2** (unitCode `CEL`)  
+  The lowest reading.
+- `MainCarriageShipmentStage/DischargeTransportEvent/CurrentStatus/Condition/MaximumMeasure` = **0.9** (unitCode `CEL`)  
+  The highest, while the reefer was off power between the quay and the ship.
 - `MainCarriageShipmentStage/DischargeTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `MainCarriageShipmentStage/DischargeTransportEvent/Location/Name` = **Port of Selanu**  
@@ -173,20 +187,6 @@ Inside `Consignment`:
   The local time of Lisavu, where it happens, with its offset from UTC.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/TransportEventTypeCode` = **STORAGE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
   The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: STORAGE = Stored.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/ConditionCode` = **COMPLETED** (listID `urn:ubl-examples:world:codelist:StatusConditionCode`)  
-  The voyage is over. The code is from the Trade Accord's status condition list: COMPLETED = Completed.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/Description` = **The reefer's own log, read by the carrier's monitoring at sea, over the voyage from loading at Lumeport to discharge.**  
-  What the readings cover.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/Condition/AttributeID` = **TRANSPORT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
-  The air the reefer blows into its cargo space. The code is from the Trade Accord's temperature attribute list: TRANSPORT = Transport temperature. An identifier that holds a code names the code's list in its schemeID.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/Condition/Measure` = **0.5** (unitCode `CEL`)  
-  The average over the voyage: the set point.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/Condition/Description` = **Supply air, every hour of the voyage.**  
-  The readings.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/Condition/MinimumMeasure` = **0.2** (unitCode `CEL`)  
-  The lowest reading.
-- `TransportHandlingUnit/TransportEquipment/TransportEvent/CurrentStatus/Condition/MaximumMeasure` = **0.9** (unitCode `CEL`)  
-  The highest, while the reefer was off power between the quay and the ship.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `TransportHandlingUnit/TransportEquipment/TransportEvent/Location/Name` = **Port of Selanu**  
@@ -200,14 +200,18 @@ Inside `TransportEvent`:
 
 - `OccurrenceDate` = **2026-04-26**  
   The day the event took place.
-- `TransportEventTypeCode` = **DISCHARGE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
-  The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: DISCHARGE = Discharged.
-- `Description` = **Reefer TWLU5316047 discharged and on the port's power; released by customs.**  
+- `OccurrenceTime` = **08:30:00+00:00**  
+  The local time: customs released the reefer twenty minutes after discharge, with its offset from UTC.
+- `TransportEventTypeCode` = **CUSTOMSRELEASE** (listID `urn:ubl-examples:world:codelist:TransportEventTypeCode`)  
+  The kind of event, as the carriers of the world code them. The code is from the Trade Accord's transport event type list: CUSTOMSRELEASE = Customs release.
+- `Description` = **Reefer TWLU5316047 released by customs on its arrival, on the import declaration lodged before; ready for collection.**  
   What happened, in words.
 - `Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
-  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
+  The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Location/Name` = **Port of Selanu**  
-  Where it happened.
+  At the Port of Selanu.
+- `Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ### Sender Party
 
@@ -333,6 +337,17 @@ Inside `ReceiverParty`:
         <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>08:10:00+00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+        <cac:CurrentStatus>
+          <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
+          <cbc:Description>The reefer's own log, read by the carrier's monitoring at sea, over the voyage from loading at Lumeport to discharge.</cbc:Description>
+          <cac:Condition>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
+            <cbc:Description>Supply air, every hour of the voyage.</cbc:Description>
+            <cbc:MinimumMeasure unitCode="CEL">0.2</cbc:MinimumMeasure>
+            <cbc:MaximumMeasure unitCode="CEL">0.9</cbc:MaximumMeasure>
+          </cac:Condition>
+        </cac:CurrentStatus>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -369,17 +384,6 @@ Inside `ReceiverParty`:
           <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>08:25:00+00:00</cbc:OccurrenceTime>
           <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
-          <cac:CurrentStatus>
-            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
-            <cbc:Description>The reefer's own log, read by the carrier's monitoring at sea, over the voyage from loading at Lumeport to discharge.</cbc:Description>
-            <cac:Condition>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
-              <cbc:Description>Supply air, every hour of the voyage.</cbc:Description>
-              <cbc:MinimumMeasure unitCode="CEL">0.2</cbc:MinimumMeasure>
-              <cbc:MaximumMeasure unitCode="CEL">0.9</cbc:MaximumMeasure>
-            </cac:Condition>
-          </cac:CurrentStatus>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
             <cbc:Name>Port of Selanu</cbc:Name>
@@ -395,11 +399,17 @@ Inside `ReceiverParty`:
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
-    <cbc:Description>Reefer TWLU5316047 discharged and on the port's power; released by customs.</cbc:Description>
+    <cbc:OccurrenceTime>08:30:00+00:00</cbc:OccurrenceTime>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">CUSTOMSRELEASE</cbc:TransportEventTypeCode>
+    <cbc:Description>Reefer TWLU5316047 released by customs on its arrival, on the import declaration lodged before; ready for collection.</cbc:Description>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
       <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:Location>
   </cac:TransportEvent>
   <cac:SenderParty>

@@ -6521,7 +6521,7 @@
     "ExporterParty": "55-xb",
     "CustomsDeclaration/CustomsParty": "19-xb",
     "CustomsDeclaration/ConsigneeParty": "56-xl",
-    "CustomsDeclaration/Shipment/ShipmentStage/CustomsAgentParty": "10-xb"
+    "CustomsDeclaration/IssuerParty": "10-xb"
    },
    "sends_for": "ExporterParty"
   },

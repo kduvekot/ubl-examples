@@ -7422,6 +7422,10 @@ def export_extras(f, n, doc, out):
              "AdditionalDocumentReference": {"ID": V(f.numbers.get("order", ""), "The order behind the export.")}}}
     if f.id == "sea":
         x["CustomsDeclaration"]["FreightForwarderParty"] = party("10-xb", short=True)
+    # the exit office once: where the consignment names its office of exit, the declaration does not name it again
+    # (review 1048 reefer/05#F2, sea/11)
+    if out.get("CustomsDeclaration", {}).get("Shipment", {}).get("Consignment", {}).get("OfficeOfExitLocation"):
+        del x["CustomsDeclaration"]["CustomsExitOfficeLocation"]
     return x
 
 
@@ -14311,6 +14315,7 @@ RF_SEA_FREIGHT = (Decimal("4400.00"), Decimal("400.00"))   # Tidewell's reefer r
 RF_PRE_CARRIAGE = Decimal("1100.00")                   # Bayforth's reefer truck, port - packhouse - port
 RF_ROAD_KM = wmap.leg_km("reefer", "55-xb", "16-xb")
 RF_POWER = Decimal("45.00")                            # the port of Selanu's reefer power and monitoring, a day
+RF_POWER_DAYS = RF_DAY["receipt"] - RF_DAY["berth"]     # the planned days on the port's power, discharge to collection
 STORE = ITEM["apples-gala"]["storage"]                 # the fruit's keeping: 0 to 1 °C, set point 0.5, 90 %
 RF_VENT = "15"                                         # the fresh-air vent, per cent of its full opening
 
@@ -14715,6 +14720,14 @@ def reefer(n, doc):
                            "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice.")}})
         out["IssueTime"] = V("15:30:00", "When the forwarder confirmed the reefer on board, before the office "
                                          "closes.")
+        # the terms of the sale and their place: the price covers carriage and insurance to the port of Selanu, the
+        # buyer's own truck takes the reefer on to its cold store (review 1048 reefer/08#F1)
+        out["DeliveryTerms"] = {"ID": V("CIP", "Incoterms 2020: carriage and insurance paid to the port of Selanu, "
+                                               "as ordered: the price includes the ocean freight and the insurance.",
+                                        schemeID="INCOTERMS"),
+                                "DeliveryLocation": kit.place("XLSEL", "The named place of destination.")}
+        out["Delivery"]["DeliveryLocation"] = kit.place("XLSEL", "Where the goods billed are delivered: the port of "
+                                                                 "Selanu, the place the terms name.")
         return out
     if d == "ImportCustomsDeclaration":
         out = kit.import_declaration(f, n, doc, RF_DAY["import"], "Lodged on Friday 24 April, while the reefer is at "
@@ -14735,7 +14748,8 @@ def reefer(n, doc):
     if d == "TransportationStatus":
         out = kit.transportation_status(
             f, n, doc, RF_DAY["berth"], "Reported when the reefer is discharged and plugged in.",
-            f"Reefer {RF_CONTAINER} discharged and on the port's power; released by customs.", "Port of Selanu",
+            f"Reefer {RF_CONTAINER} released by customs on its arrival, on the import declaration lodged before; "
+            "ready for collection.", "Port of Selanu",
             {"Consignment": {
                 "MainCarriageShipmentStage": {
                     "ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
@@ -14743,18 +14757,10 @@ def reefer(n, doc):
                                                              "Selanu at first light: its pilot boarded at dawn; it had "
                                                              "been off the port since the evening.",
                                                              location=SEA_SELANU),
-                    "DischargeTransportEvent": kit.event(f, RF_DAY["berth"], "08:10:00", "The reefer came off the "
-                                                         "ship, among the first boxes.", done=True,
-                                                         location=SEA_SELANU)},
-                "TransportHandlingUnit": {"TransportEquipment": {
-                    "ID": V(RF_CONTAINER, "The reefer.", schemeID="ISO6346"),
-                    "RefrigerationOnIndicator": V("true", "Its refrigeration running again on the port's power."),
-                    "StorageLocation": {"ID": V("XLSEL-RR-07", "The power point in the port's reefer rack where the "
-                                                               "reefer stands until it is collected."),
-                                        "Name": V("Reefer rack, power point 7", "In words.")},
-                    "TransportEvent": kit.event(
-                        f, RF_DAY["berth"], "08:25:00", "Plugged in at the reefer rack, fifteen minutes after "
-                        "discharge.", location=SEA_SELANU, type_code="STORAGE",
+                    # the voyage's temperature log closes the main carriage, on its discharge (review 1048 reefer/10#F2)
+                    "DischargeTransportEvent": kit.event(
+                        f, RF_DAY["berth"], "08:10:00", "The reefer came off the ship, among the first boxes.",
+                        done=True, location=SEA_SELANU,
                         CurrentStatus={"ConditionCode": V("COMPLETED", "The voyage is over."),
                                        "Description": V("The reefer's own log, read by the carrier's monitoring at "
                                                         "sea, over the voyage from loading at Lumeport to "
@@ -14769,10 +14775,23 @@ def reefer(n, doc):
                                                                          unitCode="CEL"),
                                                      "MaximumMeasure": V("0.9", "The highest, while the reefer was "
                                                                                 "off power between the quay and the "
-                                                                                "ship.", unitCode="CEL")}})}}}},
-            event_type="DISCHARGE")
+                                                                                "ship.", unitCode="CEL")}})},
+                "TransportHandlingUnit": {"TransportEquipment": {
+                    "ID": V(RF_CONTAINER, "The reefer.", schemeID="ISO6346"),
+                    "RefrigerationOnIndicator": V("true", "Its refrigeration running again on the port's power."),
+                    "StorageLocation": {"ID": V("XLSEL-RR-07", "The power point in the port's reefer rack where the "
+                                                               "reefer stands until it is collected."),
+                                        "Name": V("Reefer rack, power point 7", "In words.")},
+                    "TransportEvent": kit.event(
+                        f, RF_DAY["berth"], "08:25:00", "Plugged in at the reefer rack, fifteen minutes after "
+                        "discharge.", location=SEA_SELANU, type_code="STORAGE")}}}},
+            event_type="CUSTOMSRELEASE")
         out["IssueTime"] = V("07:45:00", "Sent from the carrier's system in Lumeport once the reefer was plugged in: "
                                          "08:45 at Selanu.")
+        # the report's own event is the one no other element states: the customs release (review 1048 reefer/10#F1)
+        out["TransportEvent"]["OccurrenceTime"] = V("08:30:00", "The local time: customs released the reefer twenty "
+                                                                "minutes after discharge.")
+        out["TransportEvent"]["Location"] = SEA_SELANU
         return out
     if d == "ReceiptAdvice":
         out = kit.receipt_advice(f, n, doc, RF_DAY["receipt"], "The wholesaler confirms what it unloaded on the "
@@ -14872,8 +14891,9 @@ def rf_consignment(f):
                                                                  "Transport"),
             "OnCarriageIndicator": V("true", "After the main carriage."),
             "CarrierParty": party("9-xl", short=True),
-            "ReceiptTransportEvent": kit.event(f, RF_DAY["receipt"], None, "Planned delivery at the cold store on "
-                                               "the Monday morning, the day after discharge.", done=False,
+            # the stage's end at the cold store is its delivery (review 1048 reefer/07#F3)
+            "DeliveryTransportEvent": kit.event(f, RF_DAY["receipt"], None, "Planned delivery at the cold store on "
+                                                "the Monday morning, the day after discharge.", done=False,
                                                location={"Name": V("Hafefo Fresh Produce, cold store, Selanu",
                                                                    "The wholesaler's cold store by the port.")})},
         "TransportHandlingUnit": {"TransportEquipment": {
@@ -14882,13 +14902,20 @@ def rf_consignment(f):
                                        "AllowanceChargeReasonCode": V("ABK", "UN/EDIFACT 7161 code ABK: "
                                                                              "miscellaneous."),
                                        "AllowanceChargeReason": V("Reefer power and monitoring at Selanu after "
-                                                                  "discharge, a day", "The carrier's tariff for the "
-                                                                                      "days the reefer stands on "
-                                                                                      "the port's power until the "
-                                                                                      "consignee collects it, collect "
-                                                                                      "from the consignee."),
-                                       "Amount": amount(RF_POWER, "XBL", "A day's power and monitoring, at the "
-                                                                         "carrier's tariff.")},
+                                                                  "discharge", "The carrier's service for the "
+                                                                               "days the reefer stands on the "
+                                                                               "port's power until the consignee "
+                                                                               "collects it, collect from the "
+                                                                               "consignee."),
+                                       # the charge for the planned stay, not the daily rate (review 1048 reefer/07#F2)
+                                       "MultiplierFactorNumeric": V(str(RF_POWER_DAYS), "The days planned on the "
+                                                                    "port's power: discharged on the Sunday, "
+                                                                    "collected on the Monday morning."),
+                                       "Amount": amount(RF_POWER * RF_POWER_DAYS, "XBL", "The charge for the planned "
+                                                        "stay: the days times the tariff's daily rate; a longer "
+                                                        "stay is charged at the same rate."),
+                                       "BaseAmount": amount(RF_POWER, "XBL", "The carrier's tariff: power and "
+                                                                             "monitoring for one day.")},
             "PackagedTransportHandlingUnit": rf_units(f),
             "VerifiedGrossMass": {
                 "ID": V("VGM-26-0422", "The shipper's weight declaration."),

@@ -166,12 +166,30 @@
   </cac:SellerSupplierParty>
   <cac:Delivery>
     <cac:DeliveryLocation>
-      <cbc:Name>Hafefo Fresh Produce, cold store, Selanu</cbc:Name>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:DeliveryLocation>
     <cac:Despatch>
       <cbc:ActualDespatchDate>2026-04-22</cbc:ActualDespatchDate>
     </cac:Despatch>
   </cac:Delivery>
+  <cac:DeliveryTerms>
+    <cbc:ID schemeID="INCOTERMS">CIP</cbc:ID>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+      <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+  </cac:DeliveryTerms>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
