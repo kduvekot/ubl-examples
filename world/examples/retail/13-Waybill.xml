@@ -169,6 +169,31 @@
           <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2203</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV TR 0817</cbc:TrailerLicensePlateID>
+          </cac:RoadTransport>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
+            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+          </cac:MeasurementDimension>
+        </cac:TransportMeans>
+        <cac:TakeoverTransportEvent>
+          <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>15:05:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+            <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
+          </cac:Location>
+        </cac:TakeoverTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -182,6 +207,18 @@
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+        <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+      </cac:DeliveryLocation>
+      <cac:RequestedDeliveryPeriod>
+        <cbc:StartDate>2026-04-30</cbc:StartDate>
+        <cbc:StartTime>10:00:00-01:00</cbc:StartTime>
+        <cbc:EndDate>2026-04-30</cbc:EndDate>
+        <cbc:EndTime>10:30:00-01:00</cbc:EndTime>
+      </cac:RequestedDeliveryPeriod>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

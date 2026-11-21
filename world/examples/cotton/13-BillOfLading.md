@@ -308,12 +308,30 @@ Inside `Shipment`:
   The port of discharge.
 - `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/OccurrenceDate` = **2026-05-07**  
+  Shipped on board at Selanu on Thursday 7 May, the day of the sailing.
+- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/Location/Name` = **Port of Selanu**  
+  The port of loading.
+- `Consignment/MainCarriageShipmentStage/LoadingTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/MainCarriageShipmentStage/FreightChargeLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
   The place's code in the form of a UN/LOCODE, with the world's country code.
 - `Consignment/MainCarriageShipmentStage/FreightChargeLocation/Name` = **Port of Lumeport**  
   The freight is collect: payable in Lumeport.
 - `Consignment/MainCarriageShipmentStage/FreightChargeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/TransportHandlingUnit/TransportEquipment/ID` = **TWLU4123110** (schemeID `ISO6346`)  
+  The container the bales are shipped in, packed and weighed at the ginnery.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
+- `Consignment/TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
+  ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
+- `Consignment/TransportHandlingUnit/TransportEquipment/GrossWeightMeasure` = **9940.29** (unitCode `KGM`)  
+  The verified gross mass the ginnery declared: the bales and the container's own weight.
+- `Consignment/TransportHandlingUnit/TransportEquipment/TareWeightMeasure` = **3750** (unitCode `KGM`)  
+  The empty container's own weight, as marked on its door.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Cotton lint, compressed bale**  
@@ -607,6 +625,18 @@ Inside `Signature`:
             </cac:Country>
           </cac:Address>
         </cac:UnloadingPortLocation>
+        <cac:LoadingTransportEvent>
+          <cbc:OccurrenceDate>2026-05-07</cbc:OccurrenceDate>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:LoadingTransportEvent>
         <cac:FreightChargeLocation>
           <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
           <cbc:Name>Port of Lumeport</cbc:Name>
@@ -617,6 +647,15 @@ Inside `Signature`:
           </cac:Address>
         </cac:FreightChargeLocation>
       </cac:MainCarriageShipmentStage>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">TWLU4123110</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+          <cbc:GrossWeightMeasure unitCode="KGM">9940.29</cbc:GrossWeightMeasure>
+          <cbc:TareWeightMeasure unitCode="KGM">3750</cbc:TareWeightMeasure>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

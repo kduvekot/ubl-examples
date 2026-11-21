@@ -350,6 +350,16 @@ Inside `Consignment`:
   The contact's e-mail address; as Rivermouth Packaging gives it.
 - `ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Rivermouth Packaging gives it.
+- `FreightAllowanceCharge/ChargeIndicator` = **true**  
+  The freight, a charge.
+- `FreightAllowanceCharge/AllowanceChargeReasonCode` = **FC** (listID `UN/EDIFACT EDED 7161`)  
+  The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services). The code is from the world's copy of UN/EDIFACT 7161 Special service description: FC = Freight service.
+- `FreightAllowanceCharge/AllowanceChargeReason` = **River freight**  
+  What it is for.
+- `FreightAllowanceCharge/Amount` = **179400** (currencyID `XUF`)  
+  120 tonnes at 1,495 ferra.
+- `FreightAllowanceCharge/PerUnitAmount` = **1495** (currencyID `XUF`)  
+  The agreed rate per tonne of the operator's tariff for bagged cargo, for the 120 tonnes planned.
 - `MainCarriageShipmentStage/ID` = **1**  
   Down the river, from the recovery plant's quay to the river quay in Lumeport.
 - `MainCarriageShipmentStage/TransportModeCode` = **8** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -676,6 +686,13 @@ Inside `Consignment`:
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
     </cac:ConsigneeParty>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>River freight</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XUF">179400</cbc:Amount>
+      <cbc:PerUnitAmount currencyID="XUF">1495</cbc:PerUnitAmount>
+    </cac:FreightAllowanceCharge>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>

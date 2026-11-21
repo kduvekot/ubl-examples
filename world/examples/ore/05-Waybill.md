@@ -242,6 +242,30 @@ Inside `Shipment`:
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Valdara Industries**  
   The same party as at ReceiverParty, where its full details are given; only its identifier and name are repeated.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  The ore train from the mine siding to the factory's siding.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **2** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Rail transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 2 = Rail transport.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-03-10**  
+  The train left the mine siding once the wagons were loaded, weighed and sheeted.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **10:05:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XUFNT** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Fucinalta mine siding**  
+  Where the carrier took over the train.
+- `Consignment/MainCarriageShipmentStage/ActualDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Consignment/MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceDate` = **2026-03-10**  
+  The train was placed in the factory's siding.
+- `Consignment/MainCarriageShipmentStage/ActualArrivalTransportEvent/OccurrenceTime` = **14:18:00-01:00**  
+  The local time of Urvania, where it happens, with its offset from UTC.
+- `Consignment/MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/ID` = **XUFER** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/Name` = **Valdara Industries works siding, Ferrano**  
+  The factory's siding, where the train is placed for unloading.
+- `Consignment/MainCarriageShipmentStage/ActualArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Iron ore, lump**  
@@ -488,6 +512,36 @@ Inside `Signature`:
           <cbc:Name>Valdara Industries</cbc:Name>
         </cac:PartyName>
       </cac:ConsigneeParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">2</cbc:TransportModeCode>
+        <cac:ActualDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-03-10</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:05:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFNT</cbc:ID>
+            <cbc:Name>Fucinalta mine siding</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:ActualDepartureTransportEvent>
+        <cac:ActualArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-03-10</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>14:18:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
+            <cbc:Name>Valdara Industries works siding, Ferrano</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:ActualArrivalTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

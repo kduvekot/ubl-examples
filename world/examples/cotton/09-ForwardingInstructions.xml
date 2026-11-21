@@ -89,6 +89,7 @@
     <cac:Consignment>
       <cbc:ID>7300013298</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+      <cbc:ForwarderServiceInstructions>Book a 40-foot container on the Tidewell Reef's sailing from Selanu of 7 May and have the empty container released to the ginnery for packing; clear the bales for import at Lumeport and truck the container to our goods-in.</cbc:ForwarderServiceInstructions>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -138,6 +139,64 @@
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TR-26-19W</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20231</cbc:VesselID>
+            <cbc:VesselName>Tidewell Reef</cbc:VesselName>
+            <cbc:RadioCallSignID>QBTR4</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702231</cbc:MMSIRegistrationID>
+            <cbc:GrossTonnageMeasure unitCode="C62">7480</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">3910</cbc:NetTonnageMeasure>
+            <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20231</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:RequestedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-05-07</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>14:00:00+00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:RequestedDepartureTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -154,6 +213,12 @@
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
       </cac:ContainingPackage>
     </cac:GoodsItem>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+        <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>4500013293</cbc:ID>

@@ -247,6 +247,42 @@ Inside `Shipment`:
   The shipment on the manifest.
 - `GrossWeightMeasure` = **9545.8** (unitCode `KGM`)  
   The goods (5795.8 kg) and the tare of the transport equipment (3750 kg): a shipment's gross weight includes the equipment.
+- `Consignment/ID` = **LMW-CS-26-1001**  
+  The consignment the bill of lading covers.
+- `Consignment/CarrierAssignedID` = **1200033394**  
+  The carrier's booking number.
+- `Consignment/GrossWeightMeasure` = **5795.8** (unitCode `KGM`)  
+  The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the goods.
+- `Consignment/TotalTransportHandlingUnitQuantity` = **27** (unitCode `EA`)  
+  The pallets in the container.
+- `Consignment/DocumentReference/ID` = **TWLU000033415**  
+  The bill of lading the consignment is carried under.
+- `Consignment/DocumentReference/DocumentTypeCode` = **BillOfLading** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
+  The kind of document referred to: TWLU000033415 is the example sea/14, a BillOfLading; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: BillOfLading = Bill Of Lading.
+- `GoodsItem/ID` = **1**  
+  The goods item number.
+- `GoodsItem/Description` = **Park bench Serra 180**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **5621.2** (unitCode `KGM`)  
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
+- `GoodsItem/Quantity` = **104** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Park bench Serra 180**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `GoodsItem/ID` = **2**  
+  The goods item number.
+- `GoodsItem/Description` = **Bench side frame casting**  
+  What is carried, in words.
+- `GoodsItem/GrossWeightMeasure` = **174.6** (unitCode `KGM`)  
+  The gross weight of the goods of this item, in their parcels and with the pallets they travel on.
+- `GoodsItem/Quantity` = **12** (unitCode `EA`)  
+  How much is carried.
+- `GoodsItem/Item/Name` = **Bench side frame casting**  
+  The goods.
+- `GoodsItem/Item/CommodityClassification/CommodityCode` = **940199** (listID `WCO HS 2022`)  
+  Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940199 = Parts of seats, other.
 - `ShipmentStage/ID` = **2**  
   The sea leg.
 - `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
@@ -545,6 +581,40 @@ Inside `Signature`:
   <cac:Shipment>
     <cbc:ID>LMW-SH-26-1001</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">9545.8</cbc:GrossWeightMeasure>
+    <cac:Consignment>
+      <cbc:ID>LMW-CS-26-1001</cbc:ID>
+      <cbc:CarrierAssignedID>1200033394</cbc:CarrierAssignedID>
+      <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">27</cbc:TotalTransportHandlingUnitQuantity>
+      <cac:DocumentReference>
+        <cbc:ID>TWLU000033415</cbc:ID>
+        <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">BillOfLading</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+    </cac:Consignment>
+    <cac:GoodsItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">5621.2</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">104</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Bench side frame casting</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">174.6</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">12</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Bench side frame casting</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940199</cbc:CommodityCode>
+        </cac:CommodityClassification>
+      </cac:Item>
+    </cac:GoodsItem>
     <cac:ShipmentStage>
       <cbc:ID>2</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>

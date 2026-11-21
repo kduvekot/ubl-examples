@@ -153,6 +153,12 @@ Inside `Shipment`:
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The goods in their packages, with the dry ice and its box.
 - `Consignment/HazardousRiskIndicator` = **true**  
   The consignment holds dangerous goods.
+- `Consignment/RequestedPickupTransportEvent/OccurrenceDate` = **2026-06-15**  
+  Collect the active container and the dry-ice box at the cold rooms before dawn, for the morning flight.
+- `Consignment/RequestedPickupTransportEvent/OccurrenceTime` = **04:15:00-01:00**  
+  The issuer's local time, with its offset from UTC.
+- `Consignment/RequestedPickupTransportEvent/Location/Name` = **Quillmoor Pharma Distribution, Airport Road warehouse**  
+  Where the forwarder's truck collects them.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **GOV-317** (schemeID `urn:ubl-examples:world:XL:public-body-register`)  
   The party's preferred identifier: its number in the Government list of public bodies of Lisavu; as Selanu General Hospital gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/PartyName/Name` = **Selanu General Hospital**  
@@ -195,6 +201,54 @@ Inside `Shipment`:
   A party referred to from another party's details: its identifier and name are enough.
 - `Consignment/HazardousItemNotificationParty/PartyName/Name` = **Quillmoor Pharma Distribution**  
   A party referred to from another party's details: its identifier and name are enough.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  The flight.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **4** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Air transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 4 = Air transport.
+- `Consignment/MainCarriageShipmentStage/HazardousRiskIndicator` = **true**  
+  Dangerous goods on the flight: the generator and the dry ice.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **KXL207**  
+  The flight to book: KXL207, the freighter of Monday 15 June.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XL** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Lisavu**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **ATF** (listID `IATA SSIM Aircraft Types`)  
+  The kind of means of transport: ATR 72-600F freighter of Kelaro Air Cargo; the fleet of Kelaro Air Cargo. An ATR 72-600F, the new-built freighter of the ATR 72-600 series (IATA aircraft type code ATF, ICAO type designator AT72): seven LD3 positions on the main deck (one of them for the active temperature-controlled RKN container), about 9,200 kg payload and 75 m³, a large cargo door of 2.94 × 1.80 m. A freighter, so it can carry the lithium batteries that are for cargo aircraft only. The code is from the world's copy of IATA SSIM aircraft type codes: ATF = ATR 72 Freighter.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/AirTransport/AircraftID` = **QL-KXA** (schemeID `urn:ubl-examples:world:XL:aircraft-register`)  
+  The aircraft's registration: the nationality mark QL of Lisavu, a mark no real state uses, and three letters; the fleet of Kelaro Air Cargo. The schemeID names the scheme it is from: the civil aircraft register of Lisavu (the nationality mark QL, a hyphen and three letters).
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Lumeport airport**  
+  The airport of departure.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Selanu airport**  
+  The airport of destination.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceDate` = **2026-06-15**  
+  The flight's timetabled departure, in Lumeport's time, with its offset.
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/OccurrenceTime` = **07:00:00-01:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Name` = **Lumeport airport**  
+  The airport of departure.
+- `Consignment/MainCarriageShipmentStage/PlannedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceDate` = **2026-06-15**  
+  The timetabled arrival, in island time, an hour ahead of Lumeport's: a block time of 2 h 45 eastbound.
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/OccurrenceTime` = **10:45:00+00:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Name` = **Selanu airport**  
+  The airport of destination.
+- `Consignment/MainCarriageShipmentStage/PlannedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Consignment/TransportHandlingUnit/ID` = **QLM-TC-1**  
   The cold-chain consignment as one handling unit, the wholesaler's own number: the forwarder books the airline's active container for it.
 - `Consignment/TransportHandlingUnit/TransportHandlingUnitTypeCode` = **CT** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
@@ -593,6 +647,13 @@ Inside `Signature`:
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cac:RequestedPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>04:15:00-01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:Name>Quillmoor Pharma Distribution, Airport Road warehouse</cbc:Name>
+        </cac:Location>
+      </cac:RequestedPickupTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:public-body-register">GOV-317</cbc:ID>
@@ -632,6 +693,64 @@ Inside `Signature`:
           <cbc:Name>Quillmoor Pharma Distribution</cbc:Name>
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+        <cac:TransportMeans>
+          <cbc:JourneyID>KXL207</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XL</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Lisavu</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="IATA SSIM Aircraft Types">ATF</cbc:TransportMeansTypeCode>
+          <cac:AirTransport>
+            <cbc:AircraftID schemeID="urn:ubl-examples:world:XL:aircraft-register">QL-KXA</cbc:AircraftID>
+          </cac:AirTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+          <cbc:Name>Lumeport airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+          <cbc:Name>Selanu airport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:PlannedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>07:00:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+            <cbc:Name>Lumeport airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:PlannedDepartureTransportEvent>
+        <cac:PlannedArrivalTransportEvent>
+          <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>10:45:00+00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+            <cbc:Name>Selanu airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:PlannedArrivalTransportEvent>
+      </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cbc:ID>QLM-TC-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:TransportHandlingUnitTypeCode>

@@ -171,6 +171,26 @@ Inside `TransportationService`:
   The extent of the service asked about: port to port, the forwarder bringing the container to the quay itself. The code is from the Trade Accord's transport service list: PORTTOPORT = Port to port.
 - `Name` = **Container liner service**  
   The kind of service asked about.
+- `TransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
+  The equipment the distributor needs: a 40-foot dry container, as an ISO 6346 size and type. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
+- `CommodityClassification/CargoTypeCode` = **GEN** (listID `urn:ubl-examples:world:codelist:CargoTypeCode`)  
+  General cargo: benches and their spare side frames, packed on pallets. The code is from the Trade Accord's cargo type list: GEN = General cargo.
+- `ShipmentStage/ID` = **1**  
+  Lumeport to Selanu.
+- `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `ShipmentStage/LoadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/LoadingPortLocation/Name` = **Port of Lumeport**  
+  The port the goods are to be loaded at.
+- `ShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `ShipmentStage/UnloadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/UnloadingPortLocation/Name` = **Port of Selanu**  
+  The port they are to go to.
+- `ShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 
 ## The document
 
@@ -292,6 +312,34 @@ Inside `TransportationService`:
   <cac:TransportationService>
     <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">PORTTOPORT</cbc:TransportServiceCode>
     <cbc:Name>Container liner service</cbc:Name>
+    <cac:TransportEquipment>
+      <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+    </cac:TransportEquipment>
+    <cac:CommodityClassification>
+      <cbc:CargoTypeCode listID="urn:ubl-examples:world:codelist:CargoTypeCode">GEN</cbc:CargoTypeCode>
+    </cac:CommodityClassification>
+    <cac:ShipmentStage>
+      <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+        <cbc:Name>Port of Selanu</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
+    </cac:ShipmentStage>
   </cac:TransportationService>
 </TransportServiceDescriptionRequest>
 ```

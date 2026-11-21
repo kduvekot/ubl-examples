@@ -2309,6 +2309,100 @@ def check_shipping_orders(root, where):
                              f"{'a ' + kind if kind else 'no example'}, not forwarding instructions")  # C20
 
 
+# Stage 7, C21: what a transport document states, by its kind. "cargo": what is carried (a goods item with its
+# description, or the consignment's summary); "mode": the mode of transport; "from" and "to": where the goods are
+# taken over or loaded and where they are delivered or discharged; "date": when (a dated transport event, or a
+# requested service or delivery period); "equipment": the container, where the shipment travels in one.
+TRANSPORT_STATES = {
+    "ForwardingInstructions": ("cargo", "mode", "from", "to", "date", "equipment"),
+    "Waybill": ("cargo", "mode", "from", "to", "date", "equipment"),
+    "BillOfLading": ("cargo", "mode", "from", "to", "date", "equipment"),
+    "Manifest": ("cargo", "mode", "from", "to", "date", "equipment"),
+    "TransportExecutionPlanRequest": ("cargo", "from", "to", "date"),
+    "TransportExecutionPlan": ("cargo", "from", "to", "date"),
+    "TransportServiceDescriptionRequest": ("cargo", "from", "to", "equipment"),
+    "CommonTransportationReport/PREARRIVAL": ("from", "to", "date")}
+FROM_PLACES = {"LoadingPortLocation", "FromLocation", "LastExitPortLocation", "LoadingLocation", "PickupLocation",
+               "TransshipPortLocation"}
+TO_PLACES = {"UnloadingPortLocation", "ToLocation", "FirstArrivalPortLocation", "UnloadingLocation",
+             "DeliveryLocation"}
+FROM_EVENTS = ("Departure", "Pickup", "Takeover", "Acceptance", "Loading", "Exportation")
+TO_EVENTS = ("Arrival", "Delivery", "Discharge", "Receipt", "Availability")
+DATE_PERIODS = {"RequestedDeliveryPeriod", "ServiceStartTimePeriod", "EstimatedDeliveryPeriod",
+                "PlannedDeliveryPeriod"}
+
+
+def transport_statements(root):
+    """What a transport document states of the TRANSPORT_STATES (stage 7, C21), read from the built XML."""
+    got = set()
+    for e in root.iter():
+        if not isinstance(e.tag, str):
+            continue
+        name = etree.QName(e).localname
+        if name == "GoodsItem" and e.find(f"{{{NS_CBC}}}Description") is not None or name == "SummaryDescription":
+            got.add("cargo")
+        elif name == "TransportModeCode":
+            got.add("mode")
+        elif name in FROM_PLACES:
+            got.add("from")
+        elif name in TO_PLACES or name == "DestinationPortCall":
+            got.add("to")
+        elif name.endswith("Event") and not name.endswith("TransportEvent"):     # a port call's arrival
+            if e.find(f"{{{NS_CBC}}}OccurrenceDate") is not None:
+                got.add("date")
+        elif name.endswith("TransportEvent"):
+            if e.find(f"{{{NS_CBC}}}OccurrenceDate") is not None:
+                got.add("date")
+            if e.find(f"{{{NS_CAC}}}Location") is not None:
+                kind = name[:-len("TransportEvent")]
+                if any(k in kind for k in FROM_EVENTS):
+                    got.add("from")
+                if any(k in kind for k in TO_EVENTS):
+                    got.add("to")
+        elif name in DATE_PERIODS and len(e):
+            got.add("date")
+        elif name == "TransportEquipment" and (e.find(f"{{{NS_CBC}}}SizeTypeCode") is not None or
+                                               e.find(f"{{{NS_CBC}}}ID[@schemeID='ISO6346']") is not None):
+            got.add("equipment")
+        elif name in ("CommodityClassification", "SupportedCommodityClassification"):
+            got.add("cargo")
+    return got
+
+
+def transport_problems(flow_id, roots):
+    """Stage 7, C21: each transport document of the flow states the cargo, the mode, the places and the dates its
+    kind calls for (TRANSPORT_STATES); the container where the shipment it carries travels in one (another
+    document of the flow names an ISO 6346 container for the same shipment)."""
+    out = []
+    containers = set()
+    for name, root in roots:
+        for sh in root.iter(f"{{{NS_CAC}}}Shipment"):
+            sid = sh.findtext(f"{{{NS_CBC}}}ID")
+            if sid and sh.find(f".//{{{NS_CAC}}}TransportEquipment/{{{NS_CBC}}}ID[@schemeID='ISO6346']") is not None:
+                containers.add(sid)
+    for name, root in roots:
+        kind = etree.QName(root).localname
+        if kind == "CommonTransportationReport":
+            kind += "/" + (root.findtext(f"{{{NS_CBC}}}ReportTypeCode") or "")
+        need = TRANSPORT_STATES.get(kind)
+        if not need:
+            continue
+        got = transport_statements(root)
+        sids = {sh.findtext(f"{{{NS_CBC}}}ID") for sh in root.iter(f"{{{NS_CAC}}}Shipment")}
+        miss = [k for k in need if k not in got and (k != "equipment" or sids & containers or
+                                                     kind == "TransportServiceDescriptionRequest")]
+        if miss:
+            out.append(f"world/examples/{flow_id}/{name}: a {kind} that does not state its "
+                       f"{', '.join(miss)} (C21)")
+    return out
+
+
+def check_transport_statements(flow_id, roots):
+    problems = transport_problems(flow_id, roots)
+    if problems:
+        raise SystemExit("\n".join(problems))
+
+
 TOTAL_LINES = {"Invoice": "InvoiceLine", "SelfBilledInvoice": "InvoiceLine", "CreditNote": "CreditNoteLine",
                "SelfBilledCreditNote": "CreditNoteLine", "DebitNote": "DebitNoteLine", "FreightInvoice": "InvoiceLine"}
 
@@ -3174,7 +3268,7 @@ def identify_places(content):
 
 # ---------------------------------------------------------------- what a transport document carries (worklist C21)
 TRANSPORT_GOODS_DOCS = {"TransportExecutionPlanRequest", "TransportExecutionPlan", "Waybill",
-                        "ForwardingInstructions", "BillOfLading"}
+                        "ForwardingInstructions", "BillOfLading", "Manifest"}
 
 
 def transport_goods(content, doc):
@@ -4772,6 +4866,7 @@ def main(flow_id, check=False):
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)
     check_utility_statements(flow_id, roots)
+    check_transport_statements(flow_id, roots)
     produced = {xmlname(d["nn"], d) for d in docs} | {xmlname(d["nn"], d).replace(".xml", ".md") for d in docs}
     for name in sorted(os.listdir(out)):                 # files of documents that are no longer in the flow
         if name not in produced and ".llm-review." not in name:   # reviews are not generated: keep them

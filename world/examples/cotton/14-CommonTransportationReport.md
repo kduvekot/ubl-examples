@@ -187,6 +187,40 @@ Inside `Shipment`:
   The carrier's shipment number for the voyage's cargo.
 - `ShipmentStage/ID` = **1**  
   The sea leg from Selanu to Lumeport.
+- `ShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `ShipmentStage/LoadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/LoadingPortLocation/Name` = **Port of Selanu**  
+  The ship's last port of call, where it loaded the cargo it brings.
+- `ShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `ShipmentStage/UnloadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/UnloadingPortLocation/Name` = **Port of Lumeport**  
+  The port the report is for.
+- `ShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `ShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-05-07**  
+  The ship left Selanu on the afternoon of Thursday 7 May, in island time.
+- `ShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **14:00:00+00:00**  
+  The local time.
+- `ShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Port of Selanu**  
+  The port of departure.
+- `ShipmentStage/ActualDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceDate` = **2026-05-09**  
+  Expected at Lumeport after about 48 hours at sea, in Lumeport's time, an hour behind the island's.
+- `ShipmentStage/EstimatedArrivalTransportEvent/OccurrenceTime` = **12:50:00-01:00**  
+  The local time.
+- `ShipmentStage/EstimatedArrivalTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/EstimatedArrivalTransportEvent/Location/Name` = **Port of Lumeport**  
+  The port of arrival.
+- `ShipmentStage/EstimatedArrivalTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/ReportingPerson/FirstName` = **Hester**  
   The master.
 - `ShipmentStage/ReportingPerson/FamilyName` = **Calloway**  
@@ -404,6 +438,51 @@ Inside `TransportMeans`:
     <cbc:ID>7400667463</cbc:ID>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+        <cbc:Name>Port of Selanu</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
+      <cac:ActualDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-05-07</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>14:00:00+00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualDepartureTransportEvent>
+      <cac:EstimatedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-05-09</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>12:50:00-01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:EstimatedArrivalTransportEvent>
       <cac:ReportingPerson>
         <cbc:FirstName>Hester</cbc:FirstName>
         <cbc:FamilyName>Calloway</cbc:FamilyName>

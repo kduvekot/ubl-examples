@@ -93,12 +93,13 @@ def ore(n, doc):
                                     "Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                          "The buyer's consignment, quoted back.")}}})
     if doc["doc"] == "Waybill":
-        return kit.waybill(f, n, doc, 8, "Made out at the mine siding when the carrier took over the loaded train, "
-                                         "and completed at delivery: this is the receiver's electronic copy, sent "
-                                         "once the consignee has signed for the train in its siding, so it records "
-                                         "the arrival.", weighed_kg,  # D45, ore/06#F4
-                           "The weight the carrier takes over, from the weighbridge.",
-                           {"Shipment": {"Delivery": {
+        out = kit.waybill(f, n, doc, 8, "Made out at the mine siding when the carrier took over the loaded train, "
+                                        "and completed at delivery: this is the receiver's electronic copy, sent "
+                                        "once the consignee has signed for the train in its siding, so it records "
+                                        "the arrival.", weighed_kg,  # D45, ore/06#F4
+                          "The weight the carrier takes over, from the weighbridge.",
+                           {"Shipment": {
+                               "Delivery": {
                                "ActualDeliveryDate": V(f.date(8), "The train arrived the same day, the first day of "
                                                                   "the window."),
                                "ActualDeliveryTime": V(wmap.hm(ORE_ARRIVES), f"It left the mine siding at "
@@ -106,6 +107,18 @@ def ore(n, doc):
                                                        f"Ferrano at about {ORE_TRAIN_KMH} km/h, then shunted into the factory's "
                                                        "siding."),
                                "DeliveryLocation": ORE_SIDING}}})
+        # stage 7, C21: the carriage by rail, where and when the carrier took over the train and when it arrived
+        kit.deep_merge(out["Shipment"]["Consignment"], {"MainCarriageShipmentStage": {
+            "ID": V("1", "The ore train from the mine siding to the factory's siding."),
+            "TransportModeCode": V("2", "Rail transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                 "Transport"),
+            "ActualDepartureTransportEvent": kit.event(
+                f, 8, ORE_DEPARTS + ":00", "The train left the mine siding once the wagons were loaded, weighed and "
+                "sheeted.", location=kit.place("XUFNT", "Where the carrier took over the train.",
+                                               name="Fucinalta mine siding")),
+            "ActualArrivalTransportEvent": kit.event(f, 8, wmap.hm(ORE_ARRIVES), "The train was placed in the "
+                                                     "factory's siding.", location=ORE_SIDING)}})
+        return out
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
         freight = build_examples.money(Decimal("1788.4") * Decimal(str(ITEM["rail-ore"]["price"]["amount"])), "XUF")
         return kit.invoice(f, n, doc, 10, "Issued after the carriage was performed.",
@@ -1446,6 +1459,19 @@ def barge_goods(f, w):
                                                                         unitCode="KWH")}}
 
 
+def barge_freight(why):
+    """The river freight of the 120 tonnes at the barge operator's rate per tonne (world/items.json barge-freight),
+    as the plan agrees it and the consignment note charges it (plastics/04#F16)."""
+    rate = Decimal(str(ITEM["barge-freight"]["price"]["amount"]))
+    tonnes = Decimal("120")
+    return {"ChargeIndicator": V("true", "The freight, a charge."),
+            "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 "
+                                                 "(special services)."),
+            "AllowanceChargeReason": V("River freight", "What it is for."),
+            "Amount": amount(rate * tonnes, "XUF", f"{tonnes:,} tonnes at {rate:,} ferra."),
+            "PerUnitAmount": amount(rate, "XUF", why)}
+
+
 def barge_consignment(f, view):
     out = {"ID": V(f.numbers["consignment"], "The seller's consignment number.")}
     if view == "request":
@@ -1457,18 +1483,16 @@ def barge_consignment(f, view):
         return out
     if view == "plan":
         out["MainCarriageShipmentStage"] = barge_stage(f, False)
+        # the agreed freight, on which the plan's commission and penalty terms are reckoned (plastics/04#F16)
+        out["FreightAllowanceCharge"] = barge_freight("The agreed rate per tonne of the operator's tariff for bagged "
+                                                      "cargo, for the 120 tonnes planned.")
         return out
     out.update({"CarrierAssignedID": V(BARGE_VOYAGE + "/2", "The barge operator's number: the second lot of "
                                                              "the voyage."),
                 "MainCarriageShipmentStage": barge_stage(f, True),
                 "TotalPackagesQuantity": V("120", "The 120 jumbo bags of a tonne each."),  # D41
-                "FreightAllowanceCharge": {"ChargeIndicator": V("true", "The freight, a charge."),
-                                           "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 (special services)."),
-                                           "AllowanceChargeReason": V("River freight", "What it is for."),
-                                           "Amount": amount(Decimal("179400"), "XUF", "120 tonnes at 1,495 ferra."),
-                                           "PerUnitAmount": amount(Decimal("1495"), "XUF", "The rate per tonne, "
-                                                                   "times the 120 chargeable tonnes of the goods "
-                                                                   "item.")}})  # D41
+                "FreightAllowanceCharge": barge_freight("The rate per tonne, times the 120 chargeable tonnes of the "
+                                                        "goods item.")})  # D41
     return out
 
 
@@ -1756,6 +1780,19 @@ def retail(n, doc):
                                         "centre on the afternoon of 29 April, for the delivery the next morning.", w,
                           "The gross weight taken over.")
         out["IssueTime"] = V("15:05:00", "At the takeover, when the truck was loaded.")
+        # stage 7, C21: by road, where and when the carrier took over the goods, and where and when it delivers
+        leg = kit.flow_leg(f, "10-xb")
+        kit.deep_merge(out["Shipment"], {
+            "Consignment": {"MainCarriageShipmentStage": {
+                "ID": V("1", "The one stage: the truck from the distribution centre to the store."),
+                "TransportModeCode": V("3", "Road transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                     "Transport"),
+                "TransportMeans": kit.means("10-xb", "B-03"),
+                "TakeoverTransportEvent": kit.event(f, 9, "15:05:00", "The carrier took over the goods when the truck "
+                                                    "was loaded.", location=kit.leg_location(
+                                                        leg, "from", "Where the carrier took over the goods."))}},
+            "Delivery": {"DeliveryLocation": kit.leg_location(leg, "to", "The place designated for delivery."),
+                         "RequestedDeliveryPeriod": RETAIL_SLOT("The delivery slot the store's goods-in gave.")}})
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "10-xb":
         return {"IssueTime": V("11:30:00", "After the delivery it bills: the store took the goods in at 10:40"
@@ -2359,6 +2396,28 @@ def sea_consignment_fi(f, doc):
     return sea_consignment(f, "instructions")
 
 
+def sea_booking_stage(f, why, voyage=False):
+    """The main carriage a booking asks for (stage 7, C21; sea/09, sea/12): the ports and the sailing of Thursday
+    14 May that the carrier's service description offers; the carrier's booking names the voyage."""
+    out = {"ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
+           "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                     "Transport"),
+           "LoadingPortLocation": kit.place("XBLMP", "The port of loading."),
+           "UnloadingPortLocation": kit.place("XLSEL", "The port of discharge, the one the CIF terms name."),
+           "RequestedDepartureTransportEvent": kit.event(f, 10, SEA_SAILS + ":00-01:00", why,
+                                                         location=SEA_LUMEPORT)}
+    if voyage:
+        out["TransportMeans"] = kit.means("11-xb", "TH", "TH-26-19E", "The voyage the container is booked on.", "EB")
+    return out
+
+
+def sea_booking_equipment(why):
+    """The equipment a booking asks for: one 40-foot dry container, by its ISO 6346 size and type (stage 7, C21)."""
+    return {"TransportHandlingUnit": {"TransportEquipment": {
+        "TransportEquipmentTypeCode": V("CN", "UN/EDIFACT 8053 code CN: container.", listID="UN/EDIFACT EDED 8053"),
+        "SizeTypeCode": V("42G1", why)}}}
+
+
 def sea(n, doc):
     f = SEA
     w = kit.gross_weight(f, "ordered")
@@ -2408,7 +2467,19 @@ def sea(n, doc):
                 "IssueTime": V("08:40:00", "First thing in the morning."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
                              "Consignment": {**sea_consignment_fi(f, doc), "GrossWeightMeasure": qty(
-                                 w, "KGM", kit.consignment_weight_why("The gross weight of the goods."))},
+                                 w, "KGM", kit.consignment_weight_why("The gross weight of the goods.")),
+                                 # stage 7, C21 (sea/09): where and when to collect, and the sailing to book
+                                 "RequestedPickupTransportEvent": kit.event(
+                                     f, 9, None, "Collect the packed container at the distribution centre on the "
+                                     "morning of Wednesday 13 May, for the quay the day before the sailing.",
+                                     location=kit.leg_location(kit.flow_leg(f, "10-xb"), "from", "Where the "
+                                                               "forwarder's truck collects the container.")),
+                                 "MainCarriageShipmentStage": sea_booking_stage(
+                                     f, "The sailing to book: the next one to Selanu, on Thursday 14 May, as the "
+                                        "carrier's service description offers it.")},
+                             **sea_booking_equipment(f"The equipment to book: a 40-foot dry container, as an ISO "
+                                                     f"6346 size and type; the {len(kit.pallets(f, f.deal))} pallets "
+                                                     f"take {sea_floor_places(f)} floor places."),
                              "InsurancePolicy": {
                                  "InsuredValueAmount": amount(INSURED, "XBL",
                                                               "CIF requires insurance of at least 110 % of the value; "
@@ -2473,7 +2544,14 @@ def sea(n, doc):
                 "Shipment": {"ID": V(f.numbers["shipment"], "The shipment booked."),
                              "Consignment": {"ID": V(f.numbers["consignment"], "The consignment."),
                                              "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
-                                                 "The gross weight of the goods."))}}}
+                                                 "The gross weight of the goods.")),
+                                             # stage 7, C21 (sea/12#F2): the ports and the sailing booked
+                                             "MainCarriageShipmentStage": sea_booking_stage(
+                                                 f, "The sailing booked: Thursday 14 May from Lumeport.",
+                                                 voyage=True)},
+                             **sea_booking_equipment("The equipment booked: one 40-foot dry container, as an ISO "
+                                                     "6346 size and type; the carrier names the container when it "
+                                                     "releases it.")}}
     if doc["doc"] == "TransportationStatus" and doc["from"] == "16-xb":
         return kit.transportation_status(f, n, doc, 10, "Reported when the container is on board.",
                                          f"Container {CONTAINER} loaded on board.", "Port of Lumeport, container quay",
@@ -2505,6 +2583,18 @@ def sea(n, doc):
                 "ManifestTypeCode": V("CARGO", "A cargo manifest, of what the ship carries for Selanu."),
                 "Shipment": kit.shipment_gross({
                              "ID": V(f.numbers["shipment"], "The shipment on the manifest."),
+                             # stage 7, C21 (sea/15#F3): the cargo, by its bill of lading's consignment; the goods
+                             # items follow from the deal (build_examples.transport_goods)
+                             "Consignment": {"ID": V(f.numbers["consignment"], "The consignment the bill of lading "
+                                                                              "covers."),
+                                             "CarrierAssignedID": V(SEA_BOOKING, "The carrier's booking number."),
+                                             "GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
+                                                 "The gross weight of the goods.")),
+                                             "TotalTransportHandlingUnitQuantity": qty(
+                                                 len(kit.pallets(f, f.deal)), "EA", "The pallets in the container."),
+                                             "DocumentReference": {"ID": V(f.numbers["bl"], "The bill of lading the "
+                                                                                            "consignment is carried "
+                                                                                            "under.")}},
                              "FirstArrivalPortLocation": kit.place("XLSEL", "The ship's first port on the island."),
                              "LastExitPortLocation": kit.place("XBLMP", "Its last port in Bayvarra."),
                              "ShipmentStage": {
@@ -2536,6 +2626,13 @@ def sea(n, doc):
                                                   "shipper's consignment."),  # sea/16#F13
                              "ShipmentStage": {"ID": V("2", "The sea leg to Selanu, stage 2 as on the bill of lading "
                                                             "and the manifest."),  # sea/16#F14
+                                               # stage 7, C21: where the ship comes from and when it left
+                                               "LoadingPortLocation": kit.place("XBLMP", "The ship's last port of "
+                                                                                         "call."),
+                                               "ActualDepartureTransportEvent": kit.event(
+                                                   f, 10, SEA_SAILED + ":00-01:00", "The ship left Lumeport on the "
+                                                   "evening of Thursday 14 May, in Lumeport's time.",
+                                                   location=SEA_LUMEPORT),
                                                "ISPSRequirements": {
                                                    "ID": V("ISSC-XB-2023-0117", "The number of the ship's International "
                                                                                  "Ship Security Certificate, issued "
@@ -3034,7 +3131,12 @@ def air(n, doc):
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),
                 "IssueDate": V(f.date(1), "The distributor asks its forwarder to book air freight."),
                 "Shipment": {"ID": V(f.number("shipment", doc["from"], "Shipment"), "The shipment to be booked."),
-                             "Consignment": air_consignment(f, doc)},
+                             # stage 7, C21 (air/03#F4): by air, from Lumeport airport to Selanu airport, on the
+                             # flight to book
+                             "Consignment": {**air_consignment(f, doc),
+                                             "MainCarriageShipmentStage": air_flight(
+                                                 f, AIR_BOOKED, f"The flight to book: {AIR_BOOKED[0]}, the island "
+                                                 "airline's afternoon freighter of 13 May.")}},
                 "DocumentReference": {"ID": V(AIR_TRANSIT, "The transit declaration the frames travel under, from "
                                                            "Valdara at Ferrano to Selanu airport through the "
                                                            "distributor's cross-dock; a document outside the "  # D39
@@ -3163,6 +3265,31 @@ COTTON_DAY = {"loads": (63, 65), "self-billed": 66, "classing": 72, "credit": 73
               "pre-arrival": 95, "arrival": 96, "import": 98, "forwarder-invoice": 98, "mill-paid": 140}
 COTTON_SEASON = (58, 179)          # the mill's buying season, April to July: the harvest's lint
 COTTON_VOYAGE = "TR-26-19W"        # the Tidewell Reef's voyage from Selanu to Lumeport in week 19, early May
+# the Tidewell Reef's westbound sailing (stage 7, C21): it leaves Selanu in daylight on the afternoon of the
+# on-board day, island time, and is at Lumeport after the sea route's passage, in Lumeport's time (an hour behind)
+COTTON_SAILS = "14:00"
+COTTON_ARRIVES = wmap.after(wmap.at(COTTON.date(COTTON_DAY["on-board"]), COTTON_SAILS),
+                            SEA_HOURS - wmap.clock_ahead("XB", "XL"))          # Lumeport time
+if COTTON_ARRIVES.date().isoformat() != COTTON.date(COTTON_DAY["arrival"]):
+    raise SystemExit("cotton: the Tidewell Reef no longer arrives at Lumeport on the flow's arrival day")
+
+
+def cotton_voyage(why):
+    """The main carriage of the bales: the Tidewell Reef's voyage from Selanu to Lumeport (stage 7, C21)."""
+    return {"ID": V("1", "By sea from Selanu to Lumeport."),
+            "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
+                                                                      "Transport"),
+            "TransportMeans": kit.means("11-xb", "TR", COTTON_VOYAGE, why, "WB"),
+            "LoadingPortLocation": kit.place("XLSEL", "The port of loading, where free on board delivers."),
+            "UnloadingPortLocation": kit.place("XBLMP", "The port of discharge.")}
+
+
+def cotton_container(why):
+    """The 40-foot container the bales travel in, as the carrier released it to the ginnery (stage 7, C21)."""
+    return {"ID": V(kit.container_number("TWL", 412311), why, schemeID="ISO6346"),
+            "TransportEquipmentTypeCode": V("CN", "UN/EDIFACT 8053 code CN: container.", listID="UN/EDIFACT EDED 8053"),
+            "SizeTypeCode": V("42G1", "ISO 6346 size and type: 40 feet, 8 ft 6 in high, general purpose."),
+            "TareWeightMeasure": qty(3750, "KGM", "The empty container's own weight, as marked on its door.")}
 
 
 def cotton_results():
@@ -3413,7 +3540,30 @@ def cotton(n, doc):
                              "Consignment": {"GrossWeightMeasure": qty(w, "KGM", kit.consignment_weight_why(
                                                  "The gross weight of the bales.")),
                                              "ID": V(f.number("consignment", doc["from"], "Consignment"),
-                                                     "The consignment.")}}}
+                                                     "The consignment."),
+                                             # stage 7, C21 (cotton/09#F4): the sailing to book, the container,
+                                             # and what the forwarder does at either end
+                                             "ForwarderServiceInstructions": V(
+                                                 "Book a 40-foot container on the Tidewell Reef's sailing from "
+                                                 "Selanu of 7 May and have the empty container released to the "
+                                                 "ginnery for packing; clear the bales for import at Lumeport and "
+                                                 "truck the container to our goods-in.", "What the forwarder is to "
+                                                 "do: under free on board the buyer books the main carriage and "
+                                                 "takes the goods from the port of discharge."),
+                                             "MainCarriageShipmentStage": {
+                                                 **cotton_voyage("The voyage to book: the Tidewell Reef's from "
+                                                                 "Selanu to Lumeport in week 19."),
+                                                 "RequestedDepartureTransportEvent": kit.event(
+                                                     f, COTTON_DAY["on-board"], COTTON_SAILS + ":00+00:00",
+                                                     "The sailing the bales are wanted on: the order's free on "
+                                                     "board date, Thursday 7 May, in island time.",
+                                                     location=kit.place("XLSEL", "The port of loading."))}},
+                             "TransportHandlingUnit": {"TransportEquipment": {
+                                 "TransportEquipmentTypeCode": V("CN", "UN/EDIFACT 8053 code CN: container.",
+                                                                 listID="UN/EDIFACT EDED 8053"),
+                                 "SizeTypeCode": V("42G1", "The equipment to book: a 40-foot dry container, as an "
+                                                           "ISO 6346 size and type; the carrier assigns the "
+                                                           "container itself when it releases one.")}}}}
     if doc["doc"] == "GoodsCertificate":
         return {"ID": V(f.number("goods-certificate", doc["from"], "GoodsCertificate"), "The Plant Protection "
                                                                                        "Service's certificate "
@@ -5982,7 +6132,23 @@ def sea(n, doc):
                 "TransportationService": {"TransportServiceCode": V("PORTTOPORT", "The extent of the service asked "
                                                                     "about: port to port, the forwarder bringing the "
                                                                     "container to the quay itself."),  # sea/07#F3
-                                          "Name": V("Container liner service", "The kind of service asked about.")}}
+                                          "Name": V("Container liner service", "The kind of service asked about."),
+                                          # stage 7, C21 (sea/07#F4): for what, in what and between which ports
+                                          "TransportEquipment": {"SizeTypeCode": V(
+                                              "42G1", "The equipment the distributor needs: a 40-foot dry "
+                                                      "container, as an ISO 6346 size and type.")},
+                                          "CommodityClassification": {"CargoTypeCode": V(
+                                              "GEN", "General cargo: benches and their spare side frames, packed on "
+                                                     "pallets.")},
+                                          "ShipmentStage": {
+                                              "ID": V("1", "Lumeport to Selanu."),
+                                              "TransportModeCode": V("1", "Maritime transport.",
+                                                                     listID="UNECE Recommendation 19 - Codes for "
+                                                                            "Modes of Transport"),
+                                              "LoadingPortLocation": kit.place("XBLMP", "The port the goods are to "
+                                                                                        "be loaded at."),
+                                              "UnloadingPortLocation": kit.place("XLSEL", "The port they are to "
+                                                                                          "go to.")}}}
     if d == "TransportServiceDescription":
         return {**head(f, "tsd", doc, 5, "The carrier answers the next day."), "TransportationService": {
             **service,
@@ -9238,6 +9404,17 @@ def medicines(n, doc):
                                              "HazardousRiskIndicator": V("true", "The consignment holds dangerous "
                                                                                  "goods."),
                                              "HazardousItemNotificationParty": party("49-xb", short=True),
+                                             # stage 7, C21: where and when to collect, and the flight to book
+                                             "RequestedPickupTransportEvent": kit.event(
+                                                 f, MED_DAY["flight"], "04:15:00", "Collect the active container "
+                                                 "and the dry-ice box at the cold rooms before dawn, for the "
+                                                 "morning flight.",
+                                                 location=kit.leg_location(kit.flow_leg(f, "10-xb"), "from",
+                                                                           "Where the forwarder's truck collects "
+                                                                           "them.")),
+                                             "MainCarriageShipmentStage": med_flight(
+                                                 f, f"The flight to book: {MED_FLIGHT[0]}, the freighter of Monday "
+                                                 "15 June."),
                                              "TransportHandlingUnit": med_units(f, False)}}}
     if d == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, MED_DAY["flight"], "Sent when the last of the goods, the generator, "
@@ -11426,14 +11603,18 @@ def _(f, n, doc, out):
                     "Amount": amount(freight, "XBL", "The carrier's freight for the container from Selanu to "
                                                      "Lumeport, in lume, the carrier's currency.")},
                 "MainCarriageShipmentStage": {
-                    "ID": V("1", "By sea from Selanu to Lumeport."),
-                    "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - Codes for "
-                                                                         "Modes of Transport"),
-                    "TransportMeans": kit.means("11-xb", "TR", COTTON_VOYAGE, "The voyage that carries the container "
-                                                "to Lumeport, the one the pre-arrival report names.", "WB"),
-                    "LoadingPortLocation": kit.place("XLSEL", "The port of loading, where free on board delivers."),
-                    "UnloadingPortLocation": kit.place("XBLMP", "The port of discharge."),
-                    "FreightChargeLocation": kit.place("XBLMP", "The freight is collect: payable in Lumeport.")}})
+                    **cotton_voyage("The voyage that carries the container to Lumeport, the one the pre-arrival "
+                                    "report names."),
+                    # stage 7, C21 (cotton/13#F2): the date shipped on board
+                    "LoadingTransportEvent": kit.event(f, COTTON_DAY["on-board"], None, "Shipped on board at Selanu "
+                                                       "on Thursday 7 May, the day of the sailing.",
+                                                       location=kit.place("XLSEL", "The port of loading.")),
+                    "FreightChargeLocation": kit.place("XBLMP", "The freight is collect: payable in Lumeport.")},
+                # stage 7, C21 (cotton/13#F2): the container the bales are shipped in
+                "TransportHandlingUnit": {"TransportEquipment": {
+                    **cotton_container("The container the bales are shipped in, packed and weighed at the ginnery."),
+                    "GrossWeightMeasure": qty(kit.gross_weight(f, "ordered") + 3750, "KGM", "The verified gross mass "
+                                              "the ginnery declared: the bales and the container's own weight.")}}})
         break
     return {}
 
@@ -13860,6 +14041,21 @@ def cotton_ctr(n, doc):
                                                                                     "for the voyage's cargo."),
                          "ShipmentStage": {
                              "ID": V("1", "The sea leg from Selanu to Lumeport."),
+                             "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
+                                                                                       "Codes for Modes of Transport"),
+                             # stage 7, C21 (cotton/14#F1): where the ship comes from, when it left, and when it
+                             # is expected at Lumeport
+                             "LoadingPortLocation": kit.place("XLSEL", "The ship's last port of call, where it "
+                                                                       "loaded the cargo it brings."),
+                             "UnloadingPortLocation": kit.place("XBLMP", "The port the report is for."),
+                             "ActualDepartureTransportEvent": kit.event(
+                                 f, COTTON_DAY["on-board"], COTTON_SAILS + ":00+00:00", "The ship left Selanu on the "
+                                 "afternoon of Thursday 7 May, in island time.",
+                                 location=kit.place("XLSEL", "The port of departure.")),
+                             "EstimatedArrivalTransportEvent": kit.event(
+                                 f, COTTON_DAY["arrival"], wmap.hm(COTTON_ARRIVES)[:5] + ":00-01:00", "Expected at "
+                                 f"Lumeport after about {wmap.whole(SEA_HOURS)} hours at sea, in Lumeport's time, an "
+                                 "hour behind the island's.", location=kit.place("XBLMP", "The port of arrival.")),
                              "ReportingPerson": master,
                              "ISPSRequirements": {
                                  "ID": V("IISSC-XB-2026-0115", "The number of the ship's interim International Ship "
@@ -14213,7 +14409,23 @@ def reefer(n, doc):
                         "OriginalDespatchTransportationService": {
                             "TransportServiceCode": V("MERCHHAUL", "The forwarder, not the shipping line, brings "
                                                                    "the reefer to the port."),
-                            "Name": V("Reefer truck from Harrowmead to the port of Lumeport", "In words.")}},
+                            "Name": V("Reefer truck from Harrowmead to the port of Lumeport", "In words.")},
+                        # stage 7, C21: where and when the loaded reefer is collected, and the sailing to book
+                        "RequestedPickupTransportEvent": kit.event(
+                            f, RF_DAY["load"], None, "Collect the loaded reefer at the packhouse on Wednesday 22 "
+                            "April, the day before the sailing.",
+                            location=kit.leg_location(kit.flow_leg(f, "10-xb"), "from", "Where the forwarder's "
+                                                                                        "truck collects it.")),
+                        "MainCarriageShipmentStage": {
+                            "ID": V("2", "The sea leg, stage 2 as on the bill of lading."),
+                            "TransportModeCode": V("1", "Maritime transport.", listID="UNECE Recommendation 19 - "
+                                                                                      "Codes for Modes of Transport"),
+                            "LoadingPortLocation": kit.place("XBLMP", "The port of loading."),
+                            "UnloadingPortLocation": kit.place("XLSEL", "The port of discharge, the place the CIP "
+                                                                        "terms name."),
+                            "RequestedDepartureTransportEvent": kit.event(
+                                f, RF_DAY["sail"], RF_SAILS + ":00-01:00", "The sailing to book: Tidewell's of "
+                                "Thursday 23 April from Lumeport.", location=SEA_LUMEPORT)}},
                     "InsuranceValueAmount": amount(RF_INSURED, "XBL", "The value the forwarder is to insure the "
                                                    "shipment for: 110 % of the fruit's CIP value, the least cover "
                                                    "Incoterms 2020 CIP asks of the seller."),

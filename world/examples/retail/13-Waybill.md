@@ -246,6 +246,32 @@ Inside `Shipment`:
   The contact's e-mail address; as Brightmarket Stores gives it.
 - `Consignment/ConsigneeParty/Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; as Brightmarket Stores gives it.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  The one stage: the truck from the distribution centre to the store.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **3** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Road transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 3 = Road transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **395** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: truck with curtain-side trailer; the fleet of Bayforth Forwarding. The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 395 = Truck, with trailer.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/LicensePlateID` = **BV LP 2203** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
+  The registration plate of the truck; the fleet of Bayforth Forwarding. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RoadTransport/TrailerLicensePlateID` = **BV TR 0817** (schemeID `urn:ubl-examples:world:XB:vehicle-register`)  
+  The trailer's own plate. The schemeID names the scheme it is from: the federal vehicle register of Bayvarra (BV, two letters for the series and four digits).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/AttributeID` = **LOADINGLENGTH** (schemeID `urn:ubl-examples:world:codelist:DimensionAttributeCode`)  
+  The length of the loading floor. The code is from the Trade Accord's dimension attribute list: LOADINGLENGTH = Loading length. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MeasurementDimension/Measure` = **13.6** (unitCode `MTR`)  
+  Room for 33 pallets.
+- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceDate` = **2026-04-29**  
+  The carrier took over the goods when the truck was loaded.
+- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/OccurrenceTime` = **15:05:00-01:00**  
+  The local time of Bayvarra, where it happens, with its offset from UTC.
+- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/Location/ID` = **9520610900022** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, distribution centre, goods-out: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples).
+- `Consignment/MainCarriageShipmentStage/TakeoverTransportEvent/Location/Name` = **Lumeway distribution centre, goods-out, Marrowdale**  
+  Where the carrier took over the goods.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -258,6 +284,18 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **940179** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940179 = Other seats, with metal frames: other.
+- `Delivery/DeliveryLocation/ID` = **9522610900019** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, goods-in of the lumeport store: Brightmarket Stores identifies its places the GS1 way, under its company prefix (952, reserved for examples).
+- `Delivery/DeliveryLocation/Name` = **Goods-in of the Lumeport store**  
+  The place designated for delivery.
+- `Delivery/RequestedDeliveryPeriod/StartDate` = **2026-04-30**  
+  The delivery slot the store's goods-in gave.
+- `Delivery/RequestedDeliveryPeriod/StartTime` = **10:00:00-01:00**  
+  From ten; in the local time of Bayvarra, where it happens, with its offset from UTC.
+- `Delivery/RequestedDeliveryPeriod/EndDate` = **2026-04-30**  
+  The same day.
+- `Delivery/RequestedDeliveryPeriod/EndTime` = **10:30:00-01:00**  
+  To half past ten; in the local time of Bayvarra, where it happens, with its offset from UTC.
 
 ### Document Distribution
 
@@ -471,6 +509,31 @@ Inside `Signature`:
           <cbc:Note>Monday to Saturday 09:00–18:00</cbc:Note>
         </cac:Contact>
       </cac:ConsigneeParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">395</cbc:TransportMeansTypeCode>
+          <cac:RoadTransport>
+            <cbc:LicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV LP 2203</cbc:LicensePlateID>
+            <cbc:TrailerLicensePlateID schemeID="urn:ubl-examples:world:XB:vehicle-register">BV TR 0817</cbc:TrailerLicensePlateID>
+          </cac:RoadTransport>
+          <cac:MeasurementDimension>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:DimensionAttributeCode">LOADINGLENGTH</cbc:AttributeID>
+            <cbc:Measure unitCode="MTR">13.6</cbc:Measure>
+          </cac:MeasurementDimension>
+        </cac:TransportMeans>
+        <cac:TakeoverTransportEvent>
+          <cbc:OccurrenceDate>2026-04-29</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>15:05:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+            <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
+          </cac:Location>
+        </cac:TakeoverTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -484,6 +547,18 @@ Inside `Signature`:
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:Delivery>
+      <cac:DeliveryLocation>
+        <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
+        <cbc:Name>Goods-in of the Lumeport store</cbc:Name>
+      </cac:DeliveryLocation>
+      <cac:RequestedDeliveryPeriod>
+        <cbc:StartDate>2026-04-30</cbc:StartDate>
+        <cbc:StartTime>10:00:00-01:00</cbc:StartTime>
+        <cbc:EndDate>2026-04-30</cbc:EndDate>
+        <cbc:EndTime>10:30:00-01:00</cbc:EndTime>
+      </cac:RequestedDeliveryPeriod>
+    </cac:Delivery>
   </cac:Shipment>
   <cac:DocumentDistribution>
     <cbc:ID>1</cbc:ID>

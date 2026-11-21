@@ -143,6 +143,8 @@ Inside `Shipment`:
   The consignment.
 - `Consignment/GrossWeightMeasure` = **6190.29** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight of the bales.
+- `Consignment/ForwarderServiceInstructions` = **Book a 40-foot container on the Tidewell Reef's sailing from Selanu of 7 May and have the empty container released to the ginnery for packing; clear the bales for import at Lumeport and truck the container to our goods-in.**  
+  What the forwarder is to do: under free on board the buyer books the main carriage and takes the goods from the port of discharge.
 - `Consignment/TotalPackagesQuantity` = **27** (unitCode `EA`)  
   The bales the forwarder is to book, in one container.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **20412603** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -201,6 +203,62 @@ Inside `Shipment`:
   The network in which the address is registered: the world's own exchange network.
 - `Consignment/ConsigneeParty/ElectronicAddress/ElectronicAddressID` = **XB:20412603** (schemeID `urn:ubl-examples:world:endpoint`)  
   The party's electronic address in that network: its country code and its number in the Federal business register of Bayvarra; as Lumeport Textile Mill gives it. UBL 2.5 carries it here; Party/EndpointID is deprecated.
+- `Consignment/MainCarriageShipmentStage/ID` = **1**  
+  By sea from Selanu to Lumeport.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/JourneyID` = **TR-26-19W**  
+  The voyage to book: the Tidewell Reef's from Selanu to Lumeport in week 19.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationalityID` = **XB** (schemeID `ISO 3166`)  
+  The country the means of transport is registered in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra. An identifier that holds a code names the code's list in its schemeID.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/RegistrationNationality` = **Bayvarra**  
+  The same, in words.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/DirectionCode` = **WB** (listID `urn:ubl-examples:world:codelist:TravelDirectionCode`)  
+  The direction of the journey, as carriers name their services. The code is from the Trade Accord's travel direction list: WB = Westbound.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/TransportMeansTypeCode` = **1511** (listID `UNECE Recommendation 28`)  
+  The kind of means of transport: tidewell Reef; the fleet of Tidewell Ocean Lines. The line's second feeder, bought second-hand in December 2025 and moved to Bayvarra's flag on 15 January 2026. Until the flag state verifies its security system, it sails with an interim International Ship Security Certificate (ISPS Code A/19.4). The code is from the world's copy of UN/ECE Recommendation 28 Codes for types of means of transport: 1511 = Full container ship/cellular vessel.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselID` = **XB-S-20231** (schemeID `urn:ubl-examples:world:vessel`)  
+  The vessel's number in its country's register of ships.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/VesselName` = **Tidewell Reef**  
+  The vessel's name; the fleet of Tidewell Ocean Lines.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RadioCallSignID` = **QBTR4**  
+  The radio call sign, in Bayvarra's call sign series QB: no ITU series starts with Q, so the sign belongs to no real station.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/MMSIRegistrationID` = **298702231**  
+  The Maritime Mobile Service Identity, nine digits: the maritime identification digits 298 of Bayvarra, which the ITU has not allocated to any real country, and the ship's six digits.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/GrossTonnageMeasure` = **7480** (unitCode `C62`)  
+  The gross tonnage of the vessel, a number without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/NetTonnageMeasure` = **3910** (unitCode `C62`)  
+  Its net tonnage, also without a unit.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/ShipConfigurationCode` = **FEEDER** (listID `urn:ubl-examples:world:codelist:ShipConfigurationCode`)  
+  The kind of vessel, for about 700 TEU. The code is from the Trade Accord's ship configuration list: FEEDER = Feeder container ship.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryCertificateDocumentReference/ID` = **REG-XB-S-20231**  
+  The ship's certificate of registry.
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's identifier, as the world gives it wherever the place appears (a code in the form of a UN/LOCODE).
+- `Consignment/MainCarriageShipmentStage/TransportMeans/MaritimeTransport/RegistryPortLocation/Name` = **Lumeport**  
+  The port the vessel is registered in.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Port of Selanu**  
+  The port of loading, where free on board delivers.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Port of Lumeport**  
+  The port of discharge.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-05-07**  
+  The sailing the bales are wanted on: the order's free on board date, Thursday 7 May, in island time.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **14:00:00+00:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Name` = **Port of Selanu**  
+  The port of loading.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Cotton lint, compressed bale**  
@@ -215,6 +273,10 @@ Inside `Shipment`:
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 520100 = Cotton, not carded or combed.
 - `GoodsItem/ContainingPackage/PackagingTypeCode` = **BL** (listID `UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)`)  
   UN/ECE Recommendation 21 code BL: bale, compressed. The goods travel in 27 of them, the consignment's package count. The code is from the world's copy of UBL's Packaging type (UNECE Recommendation 21) list, with a listID: BL = Bale, compressed.
+- `TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
+- `TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
+  The equipment to book: a 40-foot dry container, as an ISO 6346 size and type; the carrier assigns the container itself when it releases one. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
 
 ### Document Reference
 
@@ -330,6 +392,7 @@ Inside `Signature`:
     <cac:Consignment>
       <cbc:ID>7300013298</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">6190.29</cbc:GrossWeightMeasure>
+      <cbc:ForwarderServiceInstructions>Book a 40-foot container on the Tidewell Reef's sailing from Selanu of 7 May and have the empty container released to the ginnery for packing; clear the bales for import at Lumeport and truck the container to our goods-in.</cbc:ForwarderServiceInstructions>
       <cbc:TotalPackagesQuantity unitCode="EA">27</cbc:TotalPackagesQuantity>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
@@ -379,6 +442,64 @@ Inside `Signature`:
           <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20412603</cbc:ElectronicAddressID>
         </cac:ElectronicAddress>
       </cac:ConsigneeParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>1</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:TransportMeans>
+          <cbc:JourneyID>TR-26-19W</cbc:JourneyID>
+          <cbc:RegistrationNationalityID schemeID="ISO 3166">XB</cbc:RegistrationNationalityID>
+          <cbc:RegistrationNationality>Bayvarra</cbc:RegistrationNationality>
+          <cbc:DirectionCode listID="urn:ubl-examples:world:codelist:TravelDirectionCode">WB</cbc:DirectionCode>
+          <cbc:TransportMeansTypeCode listID="UNECE Recommendation 28">1511</cbc:TransportMeansTypeCode>
+          <cac:MaritimeTransport>
+            <cbc:VesselID schemeID="urn:ubl-examples:world:vessel">XB-S-20231</cbc:VesselID>
+            <cbc:VesselName>Tidewell Reef</cbc:VesselName>
+            <cbc:RadioCallSignID>QBTR4</cbc:RadioCallSignID>
+            <cbc:MMSIRegistrationID>298702231</cbc:MMSIRegistrationID>
+            <cbc:GrossTonnageMeasure unitCode="C62">7480</cbc:GrossTonnageMeasure>
+            <cbc:NetTonnageMeasure unitCode="C62">3910</cbc:NetTonnageMeasure>
+            <cbc:ShipConfigurationCode listID="urn:ubl-examples:world:codelist:ShipConfigurationCode">FEEDER</cbc:ShipConfigurationCode>
+            <cac:RegistryCertificateDocumentReference>
+              <cbc:ID>REG-XB-S-20231</cbc:ID>
+            </cac:RegistryCertificateDocumentReference>
+            <cac:RegistryPortLocation>
+              <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+              <cbc:Name>Lumeport</cbc:Name>
+            </cac:RegistryPortLocation>
+          </cac:MaritimeTransport>
+        </cac:TransportMeans>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:RequestedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-05-07</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>14:00:00+00:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+            <cbc:Name>Port of Selanu</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:RequestedDepartureTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -395,6 +516,12 @@ Inside `Signature`:
         <cbc:PackagingTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">BL</cbc:PackagingTypeCode>
       </cac:ContainingPackage>
     </cac:GoodsItem>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+        <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
   </cac:Shipment>
   <cac:DocumentReference>
     <cbc:ID>4500013293</cbc:ID>

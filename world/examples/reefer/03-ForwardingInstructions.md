@@ -153,6 +153,12 @@ Inside `Shipment`:
   What the forwarder is to do.
 - `Consignment/ConsolidatableIndicator` = **false**  
   A full reefer: not to be grouped with other cargo.
+- `Consignment/RequestedPickupTransportEvent/OccurrenceDate` = **2026-04-22**  
+  Collect the loaded reefer at the packhouse on Wednesday 22 April, the day before the sailing.
+- `Consignment/RequestedPickupTransportEvent/Location/ID` = **9527430900010** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, packhouse and cold store, loading dock: Harrowmead Fruit Growers identifies its places the GS1 way, under its company prefix (952, reserved for examples).
+- `Consignment/RequestedPickupTransportEvent/Location/Name` = **Harrowmead Fruit Growers, packhouse loading dock**  
+  Where the forwarder's truck collects it.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC43529** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Hafefo Fresh Produce gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XL-TR-043529** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
@@ -209,6 +215,32 @@ Inside `Shipment`:
   The forwarder, not the shipping line, brings the reefer to the port. The code is from the Trade Accord's transport service list: MERCHHAUL = Merchant haulage.
 - `Consignment/OriginalDespatchTransportationService/Name` = **Reefer truck from Harrowmead to the port of Lumeport**  
   In words.
+- `Consignment/MainCarriageShipmentStage/ID` = **2**  
+  The sea leg, stage 2 as on the bill of lading.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Port of Lumeport**  
+  The port of loading.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Port of Selanu**  
+  The port of discharge, the place the CIP terms name.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-04-23**  
+  The sailing to book: Tidewell's of Thursday 23 April from Lumeport.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **18:00:00-01:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The fruit in the reefer, as one item for the carrier.
 - `GoodsItem/Description` = **Fresh apples and pears in cartons, on 20 pallets**  
@@ -375,6 +407,13 @@ Inside `Shipment`:
       <cbc:GrossWeightMeasure unitCode="KGM">21728</cbc:GrossWeightMeasure>
       <cbc:ForwarderServiceInstructions>Book a 40-foot reefer on Tidewell's sailing of 23 April to Selanu; have it pre-trip inspected and pre-cooled; bring it to our packhouse on 22 April and back to the port on a generator set; declare the export and insure the fruit.</cbc:ForwarderServiceInstructions>
       <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
+      <cac:RequestedPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-04-22</cbc:OccurrenceDate>
+        <cac:Location>
+          <cbc:ID schemeID="GS1 GLN">9527430900010</cbc:ID>
+          <cbc:Name>Harrowmead Fruit Growers, packhouse loading dock</cbc:Name>
+        </cac:Location>
+      </cac:RequestedPickupTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC43529</cbc:ID>
@@ -437,6 +476,41 @@ Inside `Shipment`:
         <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
         <cbc:Name>Reefer truck from Harrowmead to the port of Lumeport</cbc:Name>
       </cac:OriginalDespatchTransportationService>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:RequestedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-04-23</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:RequestedDepartureTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

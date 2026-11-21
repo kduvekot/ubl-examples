@@ -242,6 +242,13 @@
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
     </cac:ConsigneeParty>
+    <cac:FreightAllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">FC</cbc:AllowanceChargeReasonCode>
+      <cbc:AllowanceChargeReason>River freight</cbc:AllowanceChargeReason>
+      <cbc:Amount currencyID="XUF">179400</cbc:Amount>
+      <cbc:PerUnitAmount currencyID="XUF">1495</cbc:PerUnitAmount>
+    </cac:FreightAllowanceCharge>
     <cac:MainCarriageShipmentStage>
       <cbc:ID>1</cbc:ID>
       <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">8</cbc:TransportModeCode>

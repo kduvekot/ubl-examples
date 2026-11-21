@@ -178,6 +178,12 @@ Inside `Shipment`:
   The crew on board: 14 persons; those with a function in this report are named below.
 - `ShipmentStage/PassengerQuantity` = **1** (unitCode `IE`)  
   The one passenger, the supercargo travelling with the cargo.
+- `ShipmentStage/LoadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/LoadingPortLocation/Name` = **Port of Lumeport**  
+  The ship's last port of call.
+- `ShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/TerminalOperatorParty/PartyIdentification/ID` = **IC41037** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Port of Selanu gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `ShipmentStage/TerminalOperatorParty/PartyName/Name` = **Port of Selanu**  
@@ -216,6 +222,16 @@ Inside `Shipment`:
   The contact's e-mail address; as Port of Selanu gives it.
 - `ShipmentStage/TerminalOperatorParty/Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Port of Selanu gives it.
+- `ShipmentStage/ActualDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The ship left Lumeport on the evening of Thursday 14 May, in Lumeport's time.
+- `ShipmentStage/ActualDepartureTransportEvent/OccurrenceTime` = **18:10:00-01:00**  
+  The local time.
+- `ShipmentStage/ActualDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `ShipmentStage/ActualDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `ShipmentStage/ActualDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ShipmentStage/PassengerPerson/FirstName` = **Ines**  
   The one passenger, a supercargo.
 - `ShipmentStage/PassengerPerson/FamilyName` = **Tavari**  
@@ -912,6 +928,15 @@ Inside `Signature`:
       <cbc:ID>2</cbc:ID>
       <cbc:CrewQuantity unitCode="IE">14</cbc:CrewQuantity>
       <cbc:PassengerQuantity unitCode="IE">1</cbc:PassengerQuantity>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
       <cac:TerminalOperatorParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41037</cbc:ID>
@@ -943,6 +968,19 @@ Inside `Signature`:
           <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>
       </cac:TerminalOperatorParty>
+      <cac:ActualDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>18:10:00-01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualDepartureTransportEvent>
       <cac:PassengerPerson>
         <cbc:FirstName>Ines</cbc:FirstName>
         <cbc:FamilyName>Tavari</cbc:FamilyName>

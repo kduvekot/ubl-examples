@@ -126,6 +126,51 @@
     <cbc:ID>7400667463</cbc:ID>
     <cac:ShipmentStage>
       <cbc:ID>1</cbc:ID>
+      <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+      <cac:LoadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+        <cbc:Name>Port of Selanu</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:LoadingPortLocation>
+      <cac:UnloadingPortLocation>
+        <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+        <cbc:Name>Port of Lumeport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:UnloadingPortLocation>
+      <cac:ActualDepartureTransportEvent>
+        <cbc:OccurrenceDate>2026-05-07</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>14:00:00+00:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:ActualDepartureTransportEvent>
+      <cac:EstimatedArrivalTransportEvent>
+        <cbc:OccurrenceDate>2026-05-09</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>12:50:00-01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:EstimatedArrivalTransportEvent>
       <cac:ReportingPerson>
         <cbc:FirstName>Hester</cbc:FirstName>
         <cbc:FamilyName>Calloway</cbc:FamilyName>

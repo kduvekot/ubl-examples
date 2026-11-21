@@ -167,6 +167,12 @@ Inside `Shipment`:
   So they are unloaded first.
 - `Consignment/ConsolidatableIndicator` = **false**  
   A full container: not to be grouped with other cargo.
+- `Consignment/RequestedPickupTransportEvent/OccurrenceDate` = **2026-05-13**  
+  Collect the packed container at the distribution centre on the morning of Wednesday 13 May, for the quay the day before the sailing.
+- `Consignment/RequestedPickupTransportEvent/Location/ID` = **9520610900022** (schemeID `GS1 GLN`)  
+  The Global Location Number of the place, distribution centre, goods-out: Lumeway Distribution identifies its places the GS1 way, under its company prefix (952, reserved for examples).
+- `Consignment/RequestedPickupTransportEvent/Location/Name` = **Lumeway distribution centre, goods-out, Marrowdale**  
+  Where the forwarder's truck collects the container.
 - `Consignment/ConsigneeParty/PartyIdentification/ID` = **IC41859** (schemeID `urn:ubl-examples:world:XL:register`)  
   The party's preferred identifier: its number in the Island companies register; as Velumi Trading gives it. Later mentions of the same party in this document repeat only this identifier and the name.
 - `Consignment/ConsigneeParty/AdditionalPartyIdentification/ID` = **XL-TR-041859** (schemeID `urn:ubl-examples:world:XL:customs-trader`)  
@@ -223,6 +229,32 @@ Inside `Shipment`:
   The forwarder, not the shipping line, brings the container to the port. The code is from the Trade Accord's transport service list: MERCHHAUL = Merchant haulage.
 - `Consignment/OriginalDespatchTransportationService/Name` = **Truck from Marrowdale to the port of Lumeport**  
   In words.
+- `Consignment/MainCarriageShipmentStage/ID` = **2**  
+  The sea leg, stage 2 as on the bill of lading.
+- `Consignment/MainCarriageShipmentStage/TransportModeCode` = **1** (listID `UNECE Recommendation 19 - Codes for Modes of Transport`)  
+  Maritime transport. The code is from UBL's default Transport mode (UNECE Recommendation 19) list: 1 = Maritime transport.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Name` = **Port of Lumeport**  
+  The port of loading.
+- `Consignment/MainCarriageShipmentStage/LoadingPortLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/ID` = **XLSEL** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Name` = **Port of Selanu**  
+  The port of discharge, the one the CIF terms name.
+- `Consignment/MainCarriageShipmentStage/UnloadingPortLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceDate` = **2026-05-14**  
+  The sailing to book: the next one to Selanu, on Thursday 14 May, as the carrier's service description offers it.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/OccurrenceTime` = **18:00:00-01:00**  
+  The local time.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/ID` = **XBLMP** (schemeID `UN/LOCODE`)  
+  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Name` = **Port of Lumeport**  
+  At the container quay of the Port of Lumeport.
+- `Consignment/MainCarriageShipmentStage/RequestedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Park bench Serra 180**  
@@ -247,6 +279,10 @@ Inside `Shipment`:
   The goods.
 - `GoodsItem/Item/CommodityClassification/CommodityCode` = **940199** (listID `WCO HS 2022`)  
   Its Harmonized System subheading, which carriers use to describe the cargo. The code is from the world's copy of Harmonized Commodity Description and Coding System, 2022 edition (subheadings): 940199 = Parts of seats, other.
+- `TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode` = **CN** (listID `UN/EDIFACT EDED 8053`)  
+  UN/EDIFACT 8053 code CN: container. The code is from UBL's default Transport equipment type (UN/EDIFACT 8053) list: CN = Container.
+- `TransportHandlingUnit/TransportEquipment/SizeTypeCode` = **42G1** (listID `ISO 6346`)  
+  The equipment to book: a 40-foot dry container, as an ISO 6346 size and type; the 27 pallets take 14 floor places. The code is from the world's copy of ISO 6346 container size and type code: 42G1 = 40 ft, 8 ft 6 in high, general purpose.
 - `InsurancePolicy/InsuranceTypeDescription` = **Cargo insurance, all risks**  
   The cover the forwarder is to arrange.
 - `InsurancePolicy/InsuredValueAmount` = **60385.60** (currencyID `XBL`)  
@@ -426,6 +462,13 @@ Inside `Signature`:
       <cbc:ForwarderServiceInstructions>Book a 40-foot container on the next sailing to Selanu, arrange the truck to the port, declare the export and insure the cargo.</cbc:ForwarderServiceInstructions>
       <cbc:SpecialInstructions>Load the castings last, behind the doors.</cbc:SpecialInstructions>
       <cbc:ConsolidatableIndicator>false</cbc:ConsolidatableIndicator>
+      <cac:RequestedPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
+        <cac:Location>
+          <cbc:ID schemeID="GS1 GLN">9520610900022</cbc:ID>
+          <cbc:Name>Lumeway distribution centre, goods-out, Marrowdale</cbc:Name>
+        </cac:Location>
+      </cac:RequestedPickupTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41859</cbc:ID>
@@ -488,6 +531,41 @@ Inside `Signature`:
         <cbc:TransportServiceCode listID="urn:ubl-examples:world:codelist:TransportServiceCode">MERCHHAUL</cbc:TransportServiceCode>
         <cbc:Name>Truck from Marrowdale to the port of Lumeport</cbc:Name>
       </cac:OriginalDespatchTransportationService>
+      <cac:MainCarriageShipmentStage>
+        <cbc:ID>2</cbc:ID>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">1</cbc:TransportModeCode>
+        <cac:LoadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+          <cbc:Name>Port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:LoadingPortLocation>
+        <cac:UnloadingPortLocation>
+          <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
+          <cbc:Name>Port of Selanu</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:UnloadingPortLocation>
+        <cac:RequestedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-05-14</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>18:00:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMP</cbc:ID>
+            <cbc:Name>Port of Lumeport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:RequestedDepartureTransportEvent>
+      </cac:MainCarriageShipmentStage>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -513,6 +591,12 @@ Inside `Signature`:
         </cac:CommodityClassification>
       </cac:Item>
     </cac:GoodsItem>
+    <cac:TransportHandlingUnit>
+      <cac:TransportEquipment>
+        <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+        <cbc:SizeTypeCode listID="ISO 6346">42G1</cbc:SizeTypeCode>
+      </cac:TransportEquipment>
+    </cac:TransportHandlingUnit>
     <cac:InsurancePolicy>
       <cbc:InsuranceTypeDescription>Cargo insurance, all risks</cbc:InsuranceTypeDescription>
       <cbc:InsuredValueAmount currencyID="XBL">60385.60</cbc:InsuredValueAmount>

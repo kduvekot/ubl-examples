@@ -151,11 +151,7 @@ Stage 6, building group G8 (C106 to C108, C114 to C118).
 | `DocumentReference/XPath` | 0..n | sea/03-DigitalAgreement |  |  | open |
 | `ExternalReference/CharacterSetCode` | 0..1 | sea/03-DigitalAgreement |  |  | open |
 
-> C115, D30 points 6 and 9: the carrier's service description classifies its service with no goods code for seats (sea/08#F7).
-
-| Element | Card. | Lost from | Candidate case | Place | Status |
-|---|---|---|---|---|---|
-| `TransportationService/CommodityClassification` | 0..n | sea/08-TransportServiceDescription |  |  | open |
+> C115, D30 points 6 and 9: the carrier's service description classifies its service with no goods code for seats (sea/08#F7). Its one element, `TransportationService/CommodityClassification`, is won back (stage 7, C21; see Won back).
 
 ### Stage 1 step 1a: party master data (C02, C03, C05, C07)
 
@@ -1072,6 +1068,7 @@ Elements that were in this register and are covered again, with the example that
 
 | Element | Covered by | Case | Date |
 |---|---|---|---|
+| `TransportationService/CommodityClassification` | sea/07-TransportServiceDescriptionRequest | the distributor's request for the carrier's island service says what it wants to ship: general cargo, benches and their spare side frames on pallets, in a 40-foot dry container from Lumeport to Selanu (stage 7, C21, sea/07#F4) | 2026-11-21 |
 | `GoodsItem/GoodsItemContainer` | rail/08-Waybill | the rail delivery's consignment note splits the 192 benches into two goods items, one production lot in each container (VI-LOT-260409 in FRXU1044175, VI-LOT-260410 in FRXU1044180): how the goods items are split across the transport equipment (O271, D37, O128) | 2026-11-20 |
 | `GoodsItemContainer/ID` | rail/08-Waybill | the goods item's one container entry (O271) | 2026-11-20 |
 | `GoodsItemContainer/TransportEquipment` | rail/08-Waybill | the container each lot was packed in (O271) | 2026-11-20 |
