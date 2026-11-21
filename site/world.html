@@ -193,6 +193,12 @@ const tiles = WORLD.model.tiles.map(col => col.map(m => {
   if (m.vg) t.village = 1;                             // a village's built-up area (not a town's)
   if (m.rl) { (t.links ||= {}).rail = new Set(); t.pieces = { rail: m.rl }; for (const [a1, b1] of m.rl) { if (a1) t.links.rail.add(a1.join()); if (b1) t.links.rail.add(b1.join()); } }
   return t; }));
+// the lakes behind the dams (model installations "lake", MO021): their cells by square, and whether a point is under water
+const LAKE_AT = new Map(), LAKE_WET = new Set();
+for (const ins of WORLD.model.installations || []) if (ins.lake) { const { g } = ins.lake;
+  for (const [a, b] of ins.lake.cells) { const k = Math.round(a / g) + "," + Math.round(b / g);
+    (LAKE_AT.get(k) || LAKE_AT.set(k, []).get(k)).push([a, b, ins.lake]); LAKE_WET.add(g + ":" + a + "," + b); } }
+const lakeWet = (x, y) => LAKE_WET.size > 0 && LAKE_WET.has("8:" + Math.round(x * 8) + "," + Math.round(y * 8));
 const TOWNS = WORLD.towns.map(tw => ({ ...tw }));
 const RAPIDS = new Set((WORLD.model.rapids || []).map(q => q.join()));   // the rapids above Ferrano (O153)
 // terrain height: one value per tile corner (model "v"); the ground height anywhere is interpolated
@@ -479,6 +485,7 @@ function paintWorld(g, box, level) { const detail = level === 2;
         tp(i, j, di * e - pv[0] * .5, dj * e - pv[1] * .5), tp(i, j, di * e + pv[0] * .5, dj * e + pv[1] * .5)],
         nb.water ? "#7f8f52" : built ? "#9a958a" : steepCoast || !lowEdge(di, dj) ? "#8a8272" : COLORS.sand); });
     cliffFaces(g, i, j);
+    if (LAKE_AT.has(i + "," + j)) lakeCells(g, i, j);
     if (t.urban && (level || !t.village)) urbanGround(g, i, j, t);
     // hedges around fields, fences around industry yards
     if (!detail) continue;
@@ -495,8 +502,8 @@ function paintWorld(g, box, level) { const detail = level === 2;
     const [i, j] = RI(ri, rj); const t = tiles[i][j]; if (!t.land) continue; const [x, y] = tileWorld(i, j); if (!vis(x, y, t.building ? 12 * TW : 2 * TW)) continue;
     if (t.mf) { if (detail && !t.building && !t.install) plantation(g, i, j, t); }
     else if (t.lu) { if (detail && !t.building && !t.urban && !t.install) landUseTrees(g, i, j, t); }
-    else if (detail && t.t === "forest" && !t.building && !t.install) for (const [dx, dy, u, v] of [[-6, -1, -.25, .1], [4, -2, .15, -.25], [-1, 3, .1, .2]]) { if (!nearWay(t, u, v) && !coversWay(i, j, x + dx, y + dy)) treeOrShrub(g, i, j, x + dx, y + dy, hash(i * 3 + dx, j)); }
-    if (detail && t.tree && !t.install && !coversWay(i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4)) treeOrShrub(g, i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
+    else if (detail && t.t === "forest" && !t.building && !t.install) for (const [dx, dy, u, v] of [[-6, -1, -.25, .1], [4, -2, .15, -.25], [-1, 3, .1, .2]]) { if (!nearWay(t, u, v) && !lakeWet(i + u, j + v) && !coversWay(i, j, x + dx, y + dy)) treeOrShrub(g, i, j, x + dx, y + dy, hash(i * 3 + dx, j)); }
+    if (detail && t.tree && !t.install && !LAKE_AT.has(i + "," + j) && !coversWay(i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4)) treeOrShrub(g, i, j, x + (hash(i, j) - .5) * 8, y + (hash(j, i) - .5) * 4, hash(i * 7, j * 3));
     // the villages and the farmsteads from the middle level on
     if (t.urban && !t.building) { if (level === 1 && t.village) villageCluster(g, i, j, t); else if (level || !t.village) townBlocks(g, i, j, t, detail); }
     else if (t.house) { if (detail) house(g, x, y - foundation(g, i, j, 0, 0, .22), t.house[0], hash(i, j * 7), DIRS[t.house[1]] || [0, 1]); else if (level || t.urban) block(g, x, y + 2, .5, .5, 5 + 6 * t.house[0], "#ddd3c2", "#9a5a48"); }
@@ -604,12 +611,46 @@ function hydroPowerHouse(g, i, j) { const [x, y] = tileWorld(i, j);
   const F = houseFrame(x, y, [0, 1], .32, .24), fc = box3(g, F, 0, 0, 1, 1, 0, 9, "#d8d2c4", null);
   windowsOn(g, F, fc, 7, 3, 7, "rgba(60,80,110,.8)", 1); gable3(g, F, 0, 0, 1, 1, 9, 3, "#6f6a62", "#d8d2c4");
   const [sx, sy] = tileWorld(i + .32, j + .1); block(g, sx, sy, .1, .1, 3, "#8f969b", "#6f767b"); }
+// a lake's cells on a square, level at the lake's height: drawn with the square's ground, so that the land in front hides it
+const atLevel = (x, y, h) => { const [px, py] = tileWorld(x, y); return [px, py + (heightAt(x, y) - h) * HU]; };
+function lakeCells(g, i, j) { for (const [a, b, lk] of LAKE_AT.get(i + "," + j)) { const x = a / lk.g, y = b / lk.g, e = .5 / lk.g + .012;
+    poly(g, [atLevel(x - e, y - e, lk.level_m), atLevel(x + e, y - e, lk.level_m), atLevel(x + e, y + e, lk.level_m), atLevel(x - e, y + e, lk.level_m)], "#3d7fbf"); } }
+// a dam across its valley: the wall from its crest down to the ground where the ground is below the water, the crest road
+// on top, and the intake tower on the lake side
+function damWall(g, ins) { const lk = ins.lake; if (!lk || lk.wall.length < 2) return; const L = lk.level_m;
+  const crest = lk.wall.map(([x, y]) => atLevel(x, y, L + 8)), foot = lk.wall.map(([x, y]) => atLevel(x, y, Math.min(L + 8, heightAt(x, y))));
+  poly(g, crest.concat(foot.slice().reverse()), "#cfc9bd");
+  g.strokeStyle = "#ece8df"; g.lineWidth = 2; g.beginPath(); crest.forEach(([x, y], k) => k ? g.lineTo(x, y) : g.moveTo(x, y)); g.stroke();
+  const mid = lk.wall[Math.floor(lk.wall.length / 2)], [tx, ty] = atLevel(mid[0], mid[1], L); block(g, tx - 3, ty - 1, .06, .06, 6, "#bdb6a8", "#8f969b"); }
+// salt pans by the sea: a grid of shallow basins (level, pale with brine and salt), the dykes between them, salt heaps
+// and a shed
+function saltPans(g, i, j) { const P = (u, v, z = 0) => { const [x, y] = tp(i, j, u, v); return [x, y - z]; }, n = 4, u0 = -.4, w = .8 / n;
+  poly(g, [P(u0 - .03, u0 - .03), P(-u0 + .03, u0 - .03), P(-u0 + .03, -u0 + .03), P(u0 - .03, -u0 + .03)], "#b9b19c");   // the dykes
+  for (let a = 0; a < n; a++) for (let b = 0; b < n; b++) { const ua = u0 + a * w + .012, va = u0 + b * w + .012, e = w - .024;
+    poly(g, [P(ua, va), P(ua + e, va), P(ua + e, va + e), P(ua, va + e)], ["#cfe0e6", "#dfe9ec", "#eef3f2", "#c3d7df"][(a * 3 + b * 5) % 4]); }
+  for (const [u, v] of [[.42, -.25], [.44, .05], [.4, .3]]) { const [x, y] = P(u, v); g.fillStyle = "#f6f4ee"; g.beginPath(); g.moveTo(x - 3, y); g.lineTo(x, y - 4); g.lineTo(x + 3, y); g.fill();
+    g.fillStyle = "#dcd8cf"; g.beginPath(); g.moveTo(x, y - 4); g.lineTo(x + 3, y); g.lineTo(x + .5, y); g.fill(); }
+  const [sx, sy] = P(-.44, .44); block(g, sx, sy, .12, .08, 4, "#c9b79c", "#8a6f5a"); }
+// a run-of-river plant: its power house on the bank of the river, at the water's edge (its weir is far smaller than a
+// square, and the river runs in its valley below the banks: not drawn)
+function runOfRiver(g, i, j) { const d = DIRS.find(([a, b]) => { const n = tiles[i + a]?.[j + b]; return n && n.water && !n.estuary; }) || [0, 1];
+  const [x, y] = tileWorld(i + d[0] * .34, j + d[1] * .34), F = houseFrame(x, y, d, .26, .2), fc = box3(g, F, 0, 0, 1, 1, 0, 7, "#d8d2c4", null);
+  windowsOn(g, F, fc, 7, 2.5, 5.5, "rgba(60,80,110,.8)", 1); gable3(g, F, 0, 0, 1, 1, 7, 2.5, "#6f6a62", "#d8d2c4");
+  const [sx, sy] = tileWorld(i + d[0] * .1 - d[1] * .22, j + d[1] * .1 + d[0] * .22); block(g, sx, sy, .08, .08, 2.5, "#8f969b", "#6f767b"); }
+// a small hydro plant on a stream: a small power house
+function smallHydro(g, i, j) { const [x, y] = tileWorld(i, j), F = houseFrame(x, y, [0, 1], .2, .16), fc = box3(g, F, 0, 0, 1, 1, 0, 6, "#d8d2c4", null);
+  windowsOn(g, F, fc, 7, 2.2, 4.8, "rgba(60,80,110,.8)", 1); gable3(g, F, 0, 0, 1, 1, 6, 2.2, "#6f6a62", "#d8d2c4");
+  const [sx, sy] = tileWorld(i + .2, j + .08); block(g, sx, sy, .07, .07, 2.5, "#8f969b", "#6f767b"); }
 function drawInstall(g, i, j, ins) {
   if (ins.kind === "wind turbines") [[-.36, -.3], [.34, -.12], [-.02, .36]].slice(0, ins.count || 3).map(([u, v], k) => [tp(i, j, u, v), k])
     .sort((a, b) => a[0][1] - b[0][1]).forEach(([[px, py], k]) => windTurbine(g, px, py, hash(i * 3 + k, j) + k * .37));
   else if (ins.kind === "solar park") solarPark(g, i, j);
   else if (ins.kind === "hydro intake") hydroIntake(g, i, j);
-  else if (ins.kind === "hydro power house") hydroPowerHouse(g, i, j); }
+  else if (ins.kind === "hydro power house") hydroPowerHouse(g, i, j);
+  else if (ins.kind === "dam") damWall(g, ins);
+  else if (ins.kind === "salt pans") saltPans(g, i, j);
+  else if (ins.kind === "run-of-river plant") runOfRiver(g, i, j);
+  else if (ins.kind === "small hydro plant") smallHydro(g, i, j); }
 // a pipeline's border metering station: a fenced pad, the pipe coming up through the meter run with its
 // valves, and a small control hut
 function meteringStation(g, i, j) {
@@ -726,7 +767,7 @@ function treeOrShrub(g, i, j, x, y, n, h = 12, draw = () => tree(g, x, y, n)) {
   if (!hidesBuilding(i, j, x, y, h)) draw(); else if (!hidesBuilding(i, j, x, y, 3.5)) shrub(g, x, y, n); }
 function landUseTrees(g, i, j, t) { const n = Math.round(Math.sqrt(t.lu.length)), out = [];
   for (let a = 0; a < n; a++) for (let b = 0; b < n; b++) { const c = t.lu[a * n + b];
-    if ((c === "f" || c === "o") && nearWay(t, (a + .5) / n - .5, (b + .5) / n - .5)) continue;
+    if ((c === "f" || c === "o") && (nearWay(t, (a + .5) / n - .5, (b + .5) / n - .5) || lakeWet(i + (a + .5) / n - .5, j + (b + .5) / n - .5))) continue;
     if (c === "f") { const [x, y] = tp(i, j, (a + .5) / n - .5, (b + .5) / n - .5); out.push([x, y, 0, hash(j * n + b, i * n + a)]); }
     if (c === "o") for (const [du, dv] of [[.3, .3], [.7, .3], [.3, .7], [.7, .7]]) { const [x, y] = tp(i, j, (a + du) / n - .5, (b + dv) / n - .5); out.push([x, y, 1, 0]); } }
   out.sort((p, q) => p[1] - q[1]);
@@ -740,7 +781,7 @@ function plantation(g, i, j, t) { const out = [];
       continue; }
     const n = c === "1" ? 3 : 2;                         // trees per compartment side: rows of young trees, then fewer and taller
     for (let p = 0; p < n; p++) for (let q = 0; q < n; q++) { const u = (a + (p + .5) / n) / SUB - .5, v = (b + (q + .5) / n) / SUB - .5;
-      if (nearWay(t, u, v)) continue; const [x, y] = tp(i, j, u, v); out.push([x, y, c]); } }
+      if (nearWay(t, u, v) || lakeWet(i + u, j + v)) continue; const [x, y] = tp(i, j, u, v); out.push([x, y, c]); } }
   out.sort((A, B) => A[1] - B[1]);
   for (const [x, y, c] of out) if (coversWay(i, j, x, y)) continue; else if (c === "1") { g.fillStyle = "#6fa84a"; g.beginPath(); g.arc(x, y - 1, 1.1, 0, 7); g.fill(); }
     else treeOrShrub(g, i, j, x, y + 1, .3, 6 * (c === "2" ? .75 : 1.05), () => conifer(g, x, y + 1, c === "2" ? .75 : 1.05, c === "2" ? "#3f7f35" : "#2c5f29")); }

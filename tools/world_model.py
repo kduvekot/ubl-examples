@@ -195,6 +195,9 @@ TERRAIN = os.path.join(ROOT, "world", "terrain.json")
 
 SOLAR_SPAN_M = 60          # a solar park's square: its corners within this many metres (MO021)
 WIND_MIN_M = 300           # wind turbines: the square's lowest corner at least this high (MO021)
+LAKE_G = 8                 # a lake behind a dam: cells to a square side (MO021)
+SALT_SPAN_M = 25           # salt pans: their square's corners within this many metres
+LAKE_R = 5                 # ... and how far, in squares, it may reach from its dam
 
 
 def load_terrain():
@@ -459,18 +462,29 @@ def build(world):
             problems.append(f"{where}: a solar park needs flat ground (its corners differ {max(cs) - min(cs)} m)")
         if kind == "wind turbines" and (t["k"] == "f" or min(cs) < WIND_MIN_M):
             problems.append(f"{where}: wind turbines stand on high open ground")
-        if kind in ("hydro intake", "hydro power house"):
+        if kind in ("hydro intake", "hydro power house", "dam"):
             rc = river_course.get(ins.get("river"))
             if not rc:
                 problems.append(f"{where}: no course for the river '{ins.get('river')}'")
             elif min(math.hypot(x - q[0], y - q[1]) for x, y in rc) > .75:
                 problems.append(f"{where} is not on the course of the {ins['river']}")
+        if kind == "salt pans" and (max(cs) - min(cs) > SALT_SPAN_M
+                                    or not any((tile(q[0] + a2, q[1] + b2) or {}).get("k") == "s" for a2, b2 in ((1, 0), (-1, 0), (0, 1), (0, -1)))):
+            problems.append(f"{where}: salt pans lie on flat ground by the sea")
+        if kind == "run-of-river plant":                  # on the bank of the drawn river (the main river, world/terrain.json "river")
+            if not any((tile(q[0] + a2, q[1] + b2) or {}).get("k") == "w" and not (tile(q[0] + a2, q[1] + b2) or {}).get("es")
+                       for a2, b2 in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                problems.append(f"{where}: a run-of-river plant stands on the bank of the river (no river square beside it)")
+        if kind == "small hydro plant":
+            streams = terrain.get("streams", {}).get(ins.get("land", "mainland"), [])
+            if not any(math.hypot(x - .5 - q[0], y - .5 - q[1]) <= .75 for st in streams for x, y, *_ in st):
+                problems.append(f"{where}: a small hydro plant stands on a stream")
         installs[q] = ins
         if t["k"] == "f":
             t["k"] = "g"
         t["in"] = n_in
     for ins in world.get("installations", []):
-        if ins["kind"] == "hydro intake":
+        if ins["kind"] in ("hydro intake", "dam") and ins.get("feeds", True):
             ph = [o for o in world["installations"] if o["kind"] == "hydro power house" and o.get("river") == ins.get("river")]
             hi = lambda o: E[o["at"][0]][o["at"][1]]
             if not ph:
@@ -1622,10 +1636,64 @@ def build(world):
     for tw in world.get("towns", []):
         tw.pop("streets", None)
 
+    # the lakes behind the dams (map "installations", kind "dam"; MO021): the dam stands across its river at the point
+    # "dam_at" (square coordinates), at right angles to the river's course there; the water is level at "level_m"; it lies,
+    # on a grid of LAKE_G cells to a square, wherever the ground upstream of the dam's line is lower than the water, reached
+    # from the river just above the dam, within LAKE_R squares. It must cover no road, railway, town, house, party's
+    # building or other installation, and stay in the dam's country. The dam wall runs along the dam's line where the
+    # ground is below the water (and the crest above it).
+    def ground(x, y):
+        vx, vy = max(0.0, min(W, x + .5)), max(0.0, min(H, y + .5))
+        i0, j0 = min(W - 1, int(vx)), min(H - 1, int(vy))
+        u, v = vx - i0, vy - j0
+        return V[i0][j0] * (1 - u) * (1 - v) + V[i0 + 1][j0] * u * (1 - v) + V[i0][j0 + 1] * (1 - u) * v + V[i0 + 1][j0 + 1] * u * v
+    installs_out = []
+    for ins in world.get("installations", []):
+        ins = dict(ins)
+        if ins["kind"] == "dam":
+            rc = river_course.get(ins.get("river")) or []
+            dx0, dy0 = ins["dam_at"]
+            k = min(range(len(rc)), key=lambda n: math.hypot(rc[n][0] - dx0, rc[n][1] - dy0)) if rc else 0
+            if len(rc) < 5:
+                problems.append(f"dam '{ins['id']}': its river has no course")
+            else:
+                a2, b2 = rc[max(0, k - 2)], rc[min(len(rc) - 1, k + 2)]
+                tl = math.hypot(b2[0] - a2[0], b2[1] - a2[1]) or 1
+                fx, fy = (b2[0] - a2[0]) / tl, (b2[1] - a2[1]) / tl          # downstream
+                L = ins["level_m"]
+                cells, seen = [], set()
+                stack = [(round((dx0 - fx * .15) * LAKE_G), round((dy0 - fy * .15) * LAKE_G))]
+                while stack:
+                    a3, b3 = stack.pop()
+                    if (a3, b3) in seen:
+                        continue
+                    seen.add((a3, b3))
+                    x, y = a3 / LAKE_G, b3 / LAKE_G
+                    if math.hypot(x - dx0, y - dy0) > LAKE_R or (x - dx0) * fx + (y - dy0) * fy >= 0 or ground(x, y) >= L:
+                        continue
+                    t = tile(round(x), round(y))
+                    if not t or t["k"] in ("s",) or any(key in t for key in ("rd", "rl", "um", "hs", "b", "in", "ms", "hb")) \
+                            and (round(x), round(y)) != tuple(ins["at"]):
+                        problems.append(f"dam '{ins['id']}': its lake reaches square {(round(x), round(y))}, which has a way, a town, a house "
+                                        f"or a building")
+                        continue
+                    if t.get("c") != ins.get("country"):
+                        problems.append(f"dam '{ins['id']}': its lake crosses into {t.get('c')}")
+                        continue
+                    cells.append([a3, b3])
+                    stack += [(a3 + 1, b3), (a3 - 1, b3), (a3, b3 + 1), (a3, b3 - 1)]
+                if not cells:
+                    problems.append(f"dam '{ins['id']}': no lake behind it (the water at {L} m is below the river bed)")
+                wall = [[round(dx0 - fy * d, 3), round(dy0 + fx * d, 3)] for d in (n / 32 for n in range(-96, 97))
+                        if ground(dx0 - fy * d, dy0 + fx * d) < L + 2]
+                ins["lake"] = {"level_m": L, "g": LAKE_G, "cells": sorted(cells), "wall": wall,
+                               "km2": round(len(cells) * (KM / LAKE_G) ** 2, 1)}
+        installs_out.append(ins)
+
     model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "fitted_m": round(fitted[0]),
              "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs, "structures": structures,
              "rapids": [list(q) for q in rapids], "access": access, "quarters": quarters_out,
-             "installations": world.get("installations", []),
+             "installations": installs_out,
              "river_level": [[i, j, round(lv, 1)] for (i, j), lv in river_level.items()],
              # the border on the water (the river below the crossing, the estuary's axis), in tile coordinates (a
              # square's centre at its index)
