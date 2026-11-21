@@ -144,7 +144,7 @@
       </cac:ElectronicAddress>
     </cac:Party>
     <cac:DespatchContact>
-      <cbc:Name>Dispatch office</cbc:Name>
+      <cbc:Name>Despatch office</cbc:Name>
       <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
     </cac:DespatchContact>
     <cac:AccountingContact>

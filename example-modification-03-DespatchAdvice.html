@@ -69,7 +69,7 @@ in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-01-13</strong><br />
 The day the first load leaves the sawmill.</li>
 <li><code>IssueTime</code> = <strong>08:10:00-01:00</strong><br />
-Sent by the dispatch office when it opens at 08:00, the truck loaded and
+Sent by the despatch office when it opens at 08:00, the truck loaded and
 waiting to leave for the border; in the issuer's local time, with its
 offset from UTC.</li>
 <li><code>DespatchAdviceTypeCode</code> = <strong>DELIVERY</strong>
@@ -78,7 +78,7 @@ offset from UTC.</li>
 Advice of goods despatched for delivery. The code is from the Trade
 Accord's despatch advice type list: DELIVERY = Delivery.</li>
 <li><code>Note</code> = <strong>Please check the blanks on arrival and
-keep them apart as our goods; report any damage to our dispatch
+keep them apart as our goods; report any damage to our despatch
 office.</strong><br />
 What the receiver should do: the blanks travel on the sawmill's own
 truck, with no carrier's consignment note.</li>
@@ -183,11 +183,11 @@ list. The code is from the world's copy of UBL's Country identification
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Party/Contact/Name</code> = <strong>Dispatch
+<li><code>Party/Contact/Name</code> = <strong>Despatch
 office</strong><br />
-The party's dispatch office desk: the desk for its role in this document
+The party's despatch office desk: the desk for its role in this document
 (it sends the goods off).</li>
-<li><code>Party/Contact/JobTitle</code> = <strong>Dispatch
+<li><code>Party/Contact/JobTitle</code> = <strong>Despatch
 coordinator</strong><br />
 The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
@@ -205,7 +205,7 @@ Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
-href="mailto:dispatch@marrowdalesawmill.example">dispatch@marrowdalesawmill.example</a></strong><br />
+href="mailto:despatch@marrowdalesawmill.example">despatch@marrowdalesawmill.example</a></strong><br />
 E-mail under the reserved .example domain (RFC 2606), so it cannot reach
 anyone.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
@@ -418,7 +418,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-01-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:10:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DespatchAdviceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:DespatchAdviceTypeCode&quot;</span>&gt;DELIVERY&lt;/<span class="kw">cbc:DespatchAdviceTypeCode</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please check the blanks on arrival and keep them apart as our goods; report any damage to our dispatch office.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Please check the blanks on arrival and keep them apart as our goods; report any damage to our despatch office.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LineCountNumeric</span>&gt;1&lt;/<span class="kw">cbc:LineCountNumeric</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;MDS-PO-26-0047&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -453,11 +453,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Dispatch office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Dispatch coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Despatch office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Despatch coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 338 173&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;dispatch@marrowdalesawmill.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;despatch@marrowdalesawmill.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -552,6 +552,6 @@ href="example-modification-04-ExportCustomsDeclaration.html">Export
 Customs Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e6ae9978086b551929ca1185545bd28d9e7bed6b"><code>e6ae997</code></a> of 2026-11-21 10:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/f19b8e9b56a00cef20fc8a74a4e5d40b006e2a18"><code>f19b8e9</code></a> of 2026-11-21 10:31 UTC</p></div></footer>
 </body>
 </html>

@@ -113,11 +113,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Dispatch office</cbc:Name>
-        <cbc:JobTitle>Dispatch coordinator</cbc:JobTitle>
+        <cbc:Name>Despatch office</cbc:Name>
+        <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
-        <cbc:ElectronicMail>dispatch@lumeway.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>despatch@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

@@ -261,6 +261,7 @@
       <cac:PreCarriageShipmentStage>
         <cbc:ID>1</cbc:ID>
         <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">3</cbc:TransportModeCode>
+        <cbc:Instructions>Two runs of the one tractor and chassis, one box a run: the first leaves the warehouse at 13:00, the second at 15:00.</cbc:Instructions>
         <cac:TransportMeans>
           <cbc:RegistrationNationalityID schemeID="ISO 3166">XU</cbc:RegistrationNationalityID>
           <cbc:RegistrationNationality>Urvania</cbc:RegistrationNationality>
