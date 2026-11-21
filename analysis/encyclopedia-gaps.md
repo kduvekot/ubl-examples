@@ -54,19 +54,19 @@ decided with the owner one at a time, like the gaps here.
 ### Brackenmere Furniture (37-xb)
 
 - ~~Who founded Brackenmere in 2000, and why it is named after Brackenmere but works in Marrowdale (whether it began there and moved, as Saltmere Engineering did).~~ Filled 2026-11-20 (OW013).
-- The size of its workshop and its range beyond the desk, the bench PB-2 and the Marrow line.
+- ~~The size of its workshop and its range beyond the desk, the bench PB-2 and the Marrow line.~~ Filled 2026-11-21 (OW016).
 
 ### Brightmarket Stores (26-xb)
 
 - ~~Who founded Brightmarket in 1979 and how it grew; how many stores it has besides the Lumeport store, and where.~~ Filled 2026-11-20 (OW012).
-- What else the store sells besides clothing and home and garden goods, and its floor area.
-- When it opened its web shop.
+- ~~What else the store sells besides clothing and home and garden goods, and its floor area.~~ Filled 2026-11-21 (OW016).
+- ~~When it opened its web shop.~~ Filled 2026-11-21 (OW016).
 
 ### Castrano Logistics (8-xu)
 
-- Who founded or led Castrano, and whether it serves any customer besides Valdara.
-- The warehouse's size, number of bays and pallet places, and when it was built.
-- Why the name Castrano was chosen.
+- ~~Who founded or led Castrano, and whether it serves any customer besides Valdara.~~ Filled 2026-11-21 (OW016).
+- ~~The warehouse's size, number of bays and pallet places, and when it was built.~~ Filled 2026-11-21 (OW016).
+- ~~Why the name Castrano was chosen.~~ Filled 2026-11-21 (OW016).
 
 ### Coastal State Water Company (34-xb)
 
@@ -134,12 +134,12 @@ decided with the owner one at a time, like the gaps here.
 - ~~Which company it was split off from in 2007 (Ferrano Energy or a state utility)~~ Filled 2026-11-20 (OW009).
 - ~~Who owns it~~ Filled 2026-11-20 (OW009).
 - The size of its networks (length, connections) and the extent of the Ferrano region
-- Whether other grid operators serve the rest of Urvania
+- ~~Whether other grid operators serve the rest of Urvania~~ Filled 2026-11-21 (OW015).
 
 ### Ferrano Intermodal Hub (18-xu)
 
 - ~~who owns the hub (the state, the rail carrier or private investors)~~ Filled 2026-11-20 (OW010).
-- its size: tracks, cranes, stacking capacity, yearly volume
+- ~~its size: tracks, cranes, stacking capacity, yearly volume~~ Filled 2026-11-21 (OW015).
 
 ### Ferrano Rail Cargo (14-xu)
 
@@ -151,21 +151,21 @@ decided with the owner one at a time, like the gaps here.
 ### Fiumella Barges (15-xu)
 
 - ~~Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.~~ Filled 2026-11-20 (OW011).
-- How many barges it runs besides Fiumella IV, and what other bulk it carries.
+- ~~How many barges it runs besides Fiumella IV, and what other bulk it carries.~~ Filled 2026-11-21 (OW015).
 - ~~The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.~~ Settled 2026-11-20 (O264): a rugged coast without a deep-water port.
 
 ### Gullhaven Tank Haulage (52-xb)
 
 - ~~Who founded it in 2012 and whether its founding is tied to Kelpstone Gas's start of production in 2011~~ Filled 2026-11-20 (OW013).
-- How many tankers it runs
-- Its customers besides the Coastal State Water Company
+- ~~How many tankers it runs~~ Filled 2026-11-21 (OW015).
+- ~~Its customers besides the Coastal State Water Company~~ Filled 2026-11-21 (OW015).
 
 ### Hafefo Fresh Produce (56-xl)
 
 - ~~Who founded Hafefo and the origin of its name~~ Filled 2026-11-20 (OW010).
-- Where it buys produce other than the apples and pears of Harrowmead
-- Whether it also buys from the island's own farms
-- The size of its cold store
+- ~~Where it buys produce other than the apples and pears of Harrowmead~~ Filled 2026-11-21 (OW016).
+- ~~Whether it also buys from the island's own farms~~ Filled 2026-11-21 (OW016).
+- ~~The size of its cold store~~ Filled 2026-11-21 (OW016).
 
 ### Harbourline Factoring (24-xb)
 
@@ -174,9 +174,9 @@ decided with the owner one at a time, like the gaps here.
 
 ### Harrowmead Fruit Growers (55-xb)
 
-- how many growers are members, and the area of the orchards
+- ~~how many growers are members, and the area of the orchards~~ Filled 2026-11-21 (OW016).
 - ~~why the cooperative was founded in 1958~~ Filled 2026-11-20 (OW011).
-- its markets at home besides the island
+- ~~its markets at home besides the island~~ Filled 2026-11-21 (OW016).
 
 ### Island Customs Service (19-xl)
 
@@ -211,7 +211,7 @@ decided with the owner one at a time, like the gaps here.
 ### Lumeport Textile Mill (40-xb)
 
 - ~~who founded the mill and who owns it~~ Filled 2026-11-20 (OW012).
-- what clothing it makes besides shirts, and whether it sells to other shops
+- ~~what clothing it makes besides shirts, and whether it sells to other shops~~ Filled 2026-11-21 (OW016).
 
 ### Lumeport Trade Accord Council (32-xb)
 
@@ -223,7 +223,7 @@ decided with the owner one at a time, like the gaps here.
 ### Lumeway Distribution (6-xb)
 
 - ~~what Lumeway distributed between 1988 and 1996, and who founded it~~ Filled 2026-11-20 (OW012).
-- which products and suppliers it carries besides Valdara's
+- ~~which products and suppliers it carries besides Valdara's~~ Filled 2026-11-21 (OW016).
 
 ### Maritime Administration of Lisavu (30-xl)
 
@@ -246,13 +246,13 @@ decided with the owner one at a time, like the gaps here.
 ### Nalevi Warehousing (9-xl)
 
 - ~~Who founded Nalevi~~ Filled 2026-11-20 (OW010).
-- The size of its warehouse
+- ~~The size of its warehouse~~ Filled 2026-11-21 (OW015).
 - Whether it has customers besides those named, and whether it runs more than one truck
 
 ### Port of Selanu (16-xl)
 
-- the size of the port: berths, depth, yard capacity, yearly traffic
-- who runs the pilot service (the port or another body)
+- ~~the size of the port: berths, depth, yard capacity, yearly traffic~~ Filled 2026-11-21 (OW015).
+- ~~who runs the pilot service (the port or another body)~~ Filled 2026-11-21 (OW015).
 
 ### Procurement Review Board of Bayvarra (28-xb)
 
@@ -269,19 +269,19 @@ decided with the owner one at a time, like the gaps here.
 
 - ~~The year Urvania separated its railway (and so when the agency was set up), and what body ran the tracks before.~~ Filled 2026-11-20 (OW009).
 - The length of the network, the number of stations and the agency's staff.
-- Whether it also maintains the line's bridges, such as the ore line's river bridge, 78 m high.
+- ~~Whether it also maintains the line's bridges, such as the ore line's river bridge, 78 m high.~~ Filled 2026-11-21 (OW015).
 
 ### Rinova Recovery (7-xu)
 
 - ~~who founded Rinova and why in 2003, beyond the recycling of industrial waste~~ Filled 2026-11-20 (OW013).
-- which other factories besides Valdara supply its waste
+- ~~which other factories besides Valdara supply its waste~~ Filled 2026-11-21 (OW016).
 - the name of the certification body is in the story (Certovira Certification) but it is not a party, so it cannot be linked
 
 ### Rivermouth Packaging (41-xb)
 
 - ~~Who founded Rivermouth and why at the estuary~~ Filled 2026-11-20 (OW013).
-- Its customers besides Valdara and the textile mill
-- Its yearly output of film and bags
+- ~~Its customers besides Valdara and the textile mill~~ Filled 2026-11-21 (OW016).
+- ~~Its yearly output of film and bags~~ Filled 2026-11-21 (OW016).
 
 ### Saltmere Engineering (27-xb)
 
@@ -290,7 +290,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Selanu Airport Cargo (17-xl)
 
-- Whether it is still owned by the Port of Selanu or by the state
+- ~~Whether it is still owned by the Port of Selanu or by the state~~ Filled 2026-11-21 (OW015).
 - Who runs the airport itself (runway, passenger terminal)
 - Whether it also handles outbound cargo and passenger baggage
 
@@ -336,18 +336,18 @@ decided with the owner one at a time, like the gaps here.
 ### Tostara Wood Modification (59-xu)
 
 - ~~Who founded Tostara in 2011, and the origin of its name.~~ Filled 2026-11-20 (OW013).
-- The capacity of its two kilns and its other customers by name.
+- ~~The capacity of its two kilns and its other customers by name.~~ Filled 2026-11-21 (OW016).
 - ~~Whether it has any other link to the leather works at Conciaro.~~ Filled 2026-11-20 (OW013).
 
 ### Trasvia Haulage (13-xu)
 
 - ~~who founded the company~~ Filled 2026-11-20 (OW010).
-- how many vehicles the fleet has besides tractor unit 07
+- ~~how many vehicles the fleet has besides tractor unit 07~~ Filled 2026-11-21 (OW015).
 
 ### Velumi Trading (1-xl)
 
 - ~~who founded the company and what it sold before it bought from Lumeway~~ Filled 2026-11-20 (OW013).
-- what it sells besides the Serra bench
+- ~~what it sells besides the Serra bench~~ Filled 2026-11-21 (OW016).
 
 ### Wavesure Cargo Insurance (29-xb)
 
