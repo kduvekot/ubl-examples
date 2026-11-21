@@ -865,7 +865,7 @@
     "sections": [
      {
       "title": "Operation",
-      "text": "The flight takes about {flight_still_air} from gate to gate in still air; the timetable allows {flight_east} eastbound and {flight_west} westbound, for the westerly winds and delays."
+      "text": "The flight takes about {flight_still_air} from gate to gate in still air; the timetable allows {flight_east} eastbound and {flight_west} westbound, for the west-north-westerly winds of winter and for delays."
      }
     ]
    }

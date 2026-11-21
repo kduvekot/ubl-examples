@@ -32,8 +32,6 @@ One bench was damaged during installation and rejected on acceptance; the manufa
   Why it credits and how it is settled, once.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  Valdara reports its value added tax in ferra, its own currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **4.2.110**  
   The buyer's cost centre, as on the invoice credited.
 - `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
@@ -218,21 +216,6 @@ Inside `PaymentTerms`:
 - `Note` = **Settled against the next payment to the seller, unless refunded.**  
   How a credit note is settled in the world.
 
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The seller's tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the Accord's parity.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-04-14**  
-  The rate of the tax point.
-
 ### Allowance Charge
 
 Inside `AllowanceCharge`:
@@ -268,24 +251,6 @@ Inside `TaxTotal`:
   The bench and its colour charge.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
-  Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/Percent` = **0**  
-  No tax is charged in this category.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **EXP** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: EXP = Export of goods outside Urvania.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Export of goods outside Urvania**  
-  The name of code EXP in Urvania's national value added tax exemption reason list.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxAmount` = **0** (currencyID `XUF`)  
-  The same tax in ferra, for the seller's tax return.
-- `TaxSubtotal/TaxableAmount` = **50400** (currencyID `XUF`)  
-  The taxable amount in ferra.
-- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
-  The tax in ferra.
-- `TaxSubtotal/TransactionCurrencyTaxAmount` = **0.00** (currencyID `XBL`)  
-  The same tax in the document currency.
 - `TaxSubtotal/TaxCategory/ID` = **G** (schemeID `UN/EDIFACT EDED 5305`)  
   Goods exported from Urvania: no value added tax is charged on an export (category G, free export item). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: G = Free export item, tax not charged. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/Percent` = **0**  
@@ -389,7 +354,6 @@ Inside `CreditNoteLine`:
   <cbc:CreditNoteTypeCode listID="UN/EDIFACT EDED 1001">381</cbc:CreditNoteTypeCode>
   <cbc:Note>Credit for the bench rejected as damaged on acceptance, with its share of the colour charge; deducted from the payment of the invoice.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -535,13 +499,6 @@ Inside `CreditNoteLine`:
   <cac:PaymentTerms>
     <cbc:Note>Settled against the next payment to the seller, unless refunded.</cbc:Note>
   </cac:PaymentTerms>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-04-14</cbc:Date>
-  </cac:TaxExchangeRate>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReasonCode listID="UN/EDIFACT EDED 7161">CAT</cbc:AllowanceChargeReasonCode>
@@ -563,23 +520,6 @@ Inside `CreditNoteLine`:
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XBL">504.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
-        <cbc:Percent>0</cbc:Percent>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">EXP</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Export of goods outside Urvania</cbc:TaxExemptionReason>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">50400</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
-      <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">G</cbc:ID>
         <cbc:Percent>0</cbc:Percent>

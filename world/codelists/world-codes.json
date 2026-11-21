@@ -5338,8 +5338,8 @@
    "name": "Wood",
    "location": "world/codelists/gc/WoodCode.gc",
    "codes": [
-    "OAK",
-    "ASH"
+    "QCXE",
+    "FXEX"
    ]
   },
   "EmissionCalculationMethod": {

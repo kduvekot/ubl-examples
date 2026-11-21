@@ -33,6 +33,32 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
   A fixer hides the generator error behind it. One case: the read-through found a subtotal of 0.00 under a reason
   that says "the lines of this category plus the document's charges" (utilities/06, tender/26). That is fixed now.
   This is question Q1 below.
+- **Built (2026-11-21), Q1:** the four fixers in `tools/build_examples.py` are checks that stop the build and
+  repair nothing. `tax_arithmetic()`: a subtotal's taxable amount is its lines plus the document's charges less its
+  allowances; a document-level allowance or charge in a one-category document states its category. Found 5 documents:
+  retail/08 (the order's promotion allowance: no category, the subtotal before it), furniture/10 (the repeat-order
+  discount not in the subtotal), furniture/15 (the disposal charge not in it), wood/02 and wood/03 (the pallet charge
+  without its category); fixed in `examples_scenarios.py` (`with_allowance()` for every document with a tax total,
+  the furniture orders and the wood quotation and order). `currency_cleanup()`: no currency equal to the document's,
+  no pricing currency the prices are not in and no pricing rate without one, no alternative payment currency without
+  an amount in it, no idle rate in transport documents, statements and remittances. Found 41 values: the payment
+  currency of every cross-border kit invoice (`examples_kit.invoice()`), road/15's payment rate, sea/26's alternative
+  currency, cotton/04 and 05's pricing, payment and alternative currencies (`cotton_currencies()`, removed), cotton/08's
+  requested invoice currency, packaging/09's pricing rate, and the free rates of the forwarding instructions, bills of
+  lading, the air waybill, the factor's statement and the sea remittance; all dropped at the source. `national_tariffs()`:
+  a national tariff code only in a document of its own country. Found 54 goods items: `item()` now gives the
+  subheading only where `document_country()` of the document being built (`CURRENT_DOC`) is the maker's. `shipment_weights()`:
+  a shipment states its gross weight only with its transport equipment, the goods plus the tares or the equipment's
+  gross weights; else the goods' weight is on the consignment or the goods items. Found 59 documents: the kit's
+  despatch advice, waybill and export declaration put the goods' weight on the consignment, the import declaration on
+  its goods items (`import_consignment()` where a scenario names a consignment), and `examples_kit.shipment_gross()`
+  states the shipment's weight with the equipment (road/08, rail/06, rail/08, sea/10, sea/14, sea/15, lpg/03,
+  reefer/07). Published values unchanged (only reasons reworded).
+- **Built (2026-11-21), O274 (owner):** an amount collected for a third party (CollectionInvoiceLine) is outside the
+  lines' sum and the tax and is added to the amount payable only. The utilities bills 06, 09, 11 (the city's sewage
+  levy) now do so (`collected_apart()` in `examples_scenarios.py`): LineExtensionAmount, TaxExclusiveAmount and
+  TaxInclusiveAmount without the levy, no tax subtotal of category O for it (the levy's line keeps category O), the
+  payable amount unchanged. `check_totals()` accepts only this rule.
 
 ## Part A: checks that exist in part, or are cheap
 
@@ -71,6 +97,18 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    desk with longer hours than the front office (dispatch, goods-in).
 7. **Owner decision:** Q2. Do the hours bind every document, or only those a person issues? May a desk (despatch,
    goods-in) have hours of its own, as the "emergency" desk does?
+8. **Built (2026-11-21):** `check_desk_hours()` in `tools/build_examples.py`, per flow over the XML: the IssueTime lies
+   within the hours of the issuer's desk the document's contact names (matched by its e-mail address; a desk keeps
+   hours of its own, `identity.desks.<k>.hours`, else the contact's), else the main contact's (`party_desks()`,
+   `desk_hours()`). Messages a system sends on its own are exempt by type, with the reason, in `SYSTEM_SENT`
+   (DespatchAdvice, TransportationStatus, TransportProgressStatus, GoodsItemItinerary): this covers air/07 and air/08,
+   furniture/19 and plastics/08 of the probe. Found 10 (the other 4 of the 14 were despatch advices or already moved):
+   road/02, retail/01, 08, 20, air/01, 10, furniture/04, 07, mast/05, medicines/02. Fixed at the source: a time the
+   scenario does not give is put within the issuer's hours (`issuer_hours()`; outside them the generated time moves
+   by minutes to just after the opening or before the closing); retail/08 (the store's order, 09:15, once the buying
+   office has opened) and air/01 (Velumi's order change, 09:10) in the scenarios; the catalogue retail/02 is issued at
+   10:00, after the store's request (`CATALOGUE_REVISIONS`). No desk needed hours of its own: every hit was a person's
+   document at the front office.
 
 ### A3. One flight duration from the map everywhere (O269 with O250)
 1. **Guards:** O269 and the air read-through finding A3 (truck and flight times).
@@ -125,6 +163,12 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 6. **Effort and risk:** S. Low risk. A proper-name list needs care with ordinary words ("accord").
 7. **Owner decision:** Q3, whether reasons that cite UBL's own principles or the OASIS samples are allowed in world
    text. Q4 (EN 13556) is under A12.
+8. **Built (2026-11-21):** the two sources are reworded in `examples_kit.py`: the payable amount (`monetary_total()`,
+   41 pages) is "stated in full so that it books the amount without working it out", the remittance's debit line
+   (`remittance()`, 11 pages) says that a remittance lists each invoice paid on its debit side and a discount taken
+   on its credit side. `tools/check_published.py` fails on "Manifest Values", "UBL 2.5, 2.2.2" and "OASIS example"
+   (FAIL) and on the Trade Accord in lower case (`PROPER_NAMES`: "trade accord", "Trade accord", "trade Accord"),
+   in the pages and in the world's own code lists. Fixed: sea/03's "trade accord's network" (scenario).
 
 ### A5. Tax currency and tax exchange rate only where VAT is charged (O262)
 1. **Guards:** O262.
@@ -147,6 +191,12 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 7. **Owner decision:** Q5. Does O262's "on which VAT is actually charged" exclude an invoice whose tax is 0 % or
    outside the scope (tender/32, 33, 39)? Or does the second TaxTotal in ferra stay because Urvania asks for its
    VAT, even at 0, to be stated in its own currency?
+8. **Built (2026-11-21):** `check_tax_currency()` in `tools/build_examples.py`, per document: a TaxCurrencyCode or
+   TaxExchangeRate only on an Invoice, CreditNote, SelfBilledInvoice, SelfBilledCreditNote, DebitNote or
+   PurchaseReceipt (`TAX_CURRENCY_DOCS`) with a tax amount above 0. Found the 3: `ferra_tax()` in
+   `examples_scenarios.py` adds the tax currency, its rate and the tax total in ferra only where tax is charged, so
+   tender/32, 33 and 39 carry none. CreditNote/TaxCurrencyCode and CreditNote/TaxExchangeRate are registered in
+   `analysis/coverage-register.md` (coverage 4623 → 4621); wood/08 keeps the invoice's.
 
 ### A6. Tax codes for goods in transit and for domestic sales abroad (O266, O259)
 1. **Guards:** O266 (TRANSIT for the air frames), O259 (the slat sale as an Urvanian domestic supply) and C50.
@@ -201,6 +251,16 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 6. **Effort and risk:** S for the presence rule, M with the citation part. Low risk.
 7. **Owner decision:** Q7. May a reseller (Lumeway) make the statement on its own invoice? In air/11, where the goods
    move under the maker's transit declaration, is the statement right at all?
+8. **Built (2026-11-21):** `origin_problems()` in `tools/build_examples.py`, over all flows' XML at the end of a full
+   run: an invoice carries the statement ("preferential origin under the Trade Accord" in a note) exactly when seller
+   and buyer (their addresses) are in two Accord countries, its goods are of one Accord origin (`items.json`, through
+   the item's name) and a leg of the flow ends in the buyer's country coming from another, and the flow has no
+   certificate of origin; no other kind of document carries it; an import declaration with a PreferenceCriterionCode
+   cites an invoice with the statement or a certificate of origin, the exporter's pro forma invoice where nothing is
+   sold, or the entry it releases (a PreviousCustomsDeclaration whose claim holds). A reseller may make it (Lumeway,
+   air/11, sea/22). Found 2: modification/05 (the blanks sent for processing, no sale) and wood/07 (their release);
+   the pro forma invoice's reference in modification/05 now says it carries the sawmill's statement on origin as their
+   exporter, and wood/07 rests on that entry. The 11 invoices of the probe hold.
 
 ### A8. A lot or serial number, once assigned, appears unchanged everywhere (O64)
 1. **Guards:** O64 (decided 2026-11-20: "once a serial number or lot number is assigned, it should never be
@@ -274,6 +334,12 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 7. **Owner decision:** none for payments. Q9: should deliveries and receipts also fall on the receiver's working
    days?
 8. **Built (2026-11-21), the payments part:** `check_payment_dates()` in `tools/build_examples.py`, per document: a bank payment (credit transfer, direct debit, or a prepayment with no means stated) is paid (PaidDate, PaymentDate) on a business day of both the payer's and the payee's country and received (ReceivedDate) on one of the payee's; a payment at the till (cash, cheque, cards: `AT_THE_TILL`) on a day the payee works. Found 2: sea/22 and sea/25, the deposit paid on Friday 8 May and received on Saturday 9 May; it is now received on Monday 11 May (`kit.due_day`, scenario), and sea/22's reason that it was paid "the day after the order was accepted" now agrees with sea/25 and the order response (the same day). Deliveries and receipts wait for Q9.
+9. **Built (2026-11-21), deliveries and receipts (Q9):** `check_delivery_days()` in `tools/build_examples.py`, per
+   document: every ActualDeliveryDate, a receipt advice's ReceivedDate and every completed ActualDeliveryTransportEvent
+   or ReceiptTransportEvent falls on a working day (`working_day()`, the party's working week and holidays) of the
+   party that receives the goods: the DeliveryParty or ConsigneeParty its aggregate or one above names, else the
+   document's delivery, consignee or buyer role (`RECEIVING_ROLES`), for a receipt advice its issuer. A carrier's
+   movements on the way are free. Found 0 (23 delivery dates, the receipt advices and the delivery events hold).
 
 ### A10. Payment terms (O70, the rest)
 1. **Guards:** D22, D23, O70, C51 and C55.
@@ -320,7 +386,7 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 - **Built (2026-11-21):** `check_emissions()` in `tools/build_examples.py`: a document's EnvironmentalEmission with a factor and a base is their product to the precision of the value (lpg/03: 0.268 × 1,700 kWh = 456 kg). Found 0.
 - **Built (2026-11-21):** `check_shipping_orders()` in `tools/build_examples.py`: every ShippingOrderID is the ID of an example ForwardingInstructions (`doc_types()`). Found 0.
 - **Built (2026-11-21):** `check_originals()` in `tools/build_examples.py`: ORIGINALHANDED goes to the ConsignorParty, ORIGINALWITHGOODS to the ConsigneeParty, and a note "N originals" counts those plus the carrier's own. Found 0.
-- **Not built (2026-11-21):** the C11 and C15 assertions (currency cleanup, shipment gross weights) wait for Q1, the fixers; the customs offices (C12, C23) have no ID or country to check.
+- **Not built (2026-11-21):** the customs offices (C12, C23) have no ID or country to check. The C11 and C15 assertions are built with Q1 (section 0: `currency_cleanup()`, `shipment_weights()`).
 
 ### A12. Code-list sources, and EN 13556 (O156)
 1. **Guards:** "external lists only from verified sources" (rules), and O156.
@@ -347,6 +413,10 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
      enough?
    - `check_published.py` allows only EN 15804 among "EN nnnn". Does EN 13556 count as a norm the world accepts
      (O265), or would its codes appear without the standard's name?
+9. **Built (2026-11-21), Q4:** the Accord's `Wood` list in `world/codelists/lists.json` has the timber trade's codes
+   QCXE (European oak, Quercus robur and Quercus petraea) and FXEX (European ash, Fraxinus excelsior) in place of OAK
+   and ASH, without the standard's name; the four Marrow items' variant attribute in `world/items.json` uses them
+   (the makers' own item-number suffixes, ExtendedID OAK and ASH, are their numbering, not the list, and stay).
 8. **Built (2026-11-21), the provenance part:** `provenance_problems()` in `tools/build_codelists.py`, run by `--check` (so by `check_world.py`): every file under `world/codelists/sources/` has its SHA-256 in `PROVENANCE.md` or `PROVENANCE-second-round.md` and still has it. The two missing hashes (IATA Table 9.3.A, the ATR fact sheet) are added below their rows in `PROVENANCE.md`. Found 0 after that. EN 13556 waits for Q4.
 
 ### A13. Patterns from the read-throughs
@@ -654,6 +724,7 @@ example adds its coverage-register row in the same commit.
   - densities and ranges per material;
   - should oak and ash variants differ in weight;
   - which hold capacities count.
+- **Q14, the stamp (owner, 2026-11-21: "get it locked in"):** all 34 HS reasonings verified by the owner, stamped once the care kit's change is built.
 - **Q14, the care kit (owner, 2026-11-21): A, HS 3405.20** (polishes and creams for the maintenance of wooden furniture): the kit is a care product, its oil refreshes a finish; the item data, its CPC and national line, its reasoning and the furniture documents that carry it change with the next batch.
 - **Q14 (O31): decided (owner, 2026-11-21): all three, behind the scenes ("facts matter, and HS is open for interpretation; this grounds the world's interpretations; no need to show them publicly"):** (a) the WCO's free HS 2022 section and chapter notes fetched into `world/codelists/sources/` with their SHA-256; (b) a reasoning per item (rule, heading, notes cited) in the item data, unprinted, and one internal table the owner verifies in one sitting, each item stamped (date, code, hash of the reasoning); (c) a changed code or reasoning breaks the stamp and the build stops until re-verified. Nothing of it is published.
   - one sitting to verify 34 reasonings;

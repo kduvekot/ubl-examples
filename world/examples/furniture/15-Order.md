@@ -240,7 +240,7 @@ Inside `TaxTotal`:
 - `TaxAmount` = **0.00** (currencyID `XBL`)  
   The sum of the tax of all categories.
 - `TaxSubtotal/TaxableAmount` = **5976.00** (currencyID `XBL`)  
-  The lines of this category plus the document's charges less its allowances of the category.
+  The desks and the packaging disposal.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
 - `TaxSubtotal/TaxCategory/ID` = **E** (schemeID `UN/EDIFACT EDED 5305`)  

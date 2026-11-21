@@ -3,7 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
   <cbc:ID>5000339834</cbc:ID>
   <cbc:UUID>aa88e826-e531-55ed-8ac7-22b653697864</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
@@ -16,7 +16,7 @@
   <cbc:Note>Counted and checked at goods-in.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>7100452422</cbc:ID>
+    <cbc:ID>7100452426</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LMW-DA-26-0911</cbc:ID>

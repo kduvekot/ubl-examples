@@ -33,7 +33,7 @@ After the reminder the household had its water meter tested: it over-read by two
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the currency of the invoice credited; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **2**  
-  The water and the collection line of the levy; the totals include both.
+  The water and the collection line of the levy; the amount credited includes both.
 - `DefaultLanguageCode` = **en** (listID `ISO 639`)  
   The language of the texts. The code is from the world's copy of ISO 639 Language: en = English.
 
@@ -208,31 +208,19 @@ Inside `TaxTotal`:
   The name of code WATER in Bayvarra's national sales tax exemption reason list.
 - `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
   UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxableAmount` = **0.84** (currencyID `XBL`)  
-  The sum of the line amounts in this tax category.
-- `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
-  0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A public levy the seller collects for Lumeport Public Works Department: not a supply, so outside the scope of the sales tax (category O, without a rate). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **LEVY** (listID `urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Bayvarra's national list, the list of the seller's country. The code is from Bayvarra's national sales tax exemption reason list: LEVY = Collected for a public body, outside the scope of the state sales tax.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Collected for a public body, outside the scope of the state sales tax**  
-  The name of code LEVY in Bayvarra's national sales tax exemption reason list.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **STT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: state sales tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: STT = State/provincial sales tax. An identifier that holds a code names the code's list in its schemeID.
 
 ### Legal Monetary Total
 
 Inside `LegalMonetaryTotal`:
 
-- `LineExtensionAmount` = **5.54** (currencyID `XBL`)  
-  The sum of the line amounts.
-- `TaxExclusiveAmount` = **5.54** (currencyID `XBL`)  
-  The total without tax: the line amounts, no allowances or charges.
-- `TaxInclusiveAmount` = **5.54** (currencyID `XBL`)  
-  The total without tax plus the tax.
+- `LineExtensionAmount` = **4.70** (currencyID `XBL`)  
+  The sum of the bill's own lines; the levy collected for the city is added to the amount payable only.
+- `TaxExclusiveAmount` = **4.70** (currencyID `XBL`)  
+  The bill's own lines without tax; the levy collected for the city is not part of it.
+- `TaxInclusiveAmount` = **4.70** (currencyID `XBL`)  
+  The bill's own lines with their tax; the levy collected for the city is not part of it.
 - `PayableAmount` = **5.54** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What is credited: the bill's own lines with their tax plus the levy collected for the city.
 
 ### Collection Credit Note Line
 
@@ -464,23 +452,11 @@ Inside `CreditNoteLine`:
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XBL">0.84</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XB:codelist:TaxExemptionReasonCode">LEVY</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Collected for a public body, outside the scope of the state sales tax</cbc:TaxExemptionReason>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="XBL">5.54</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="XBL">5.54</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="XBL">5.54</cbc:TaxInclusiveAmount>
+    <cbc:LineExtensionAmount currencyID="XBL">4.70</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="XBL">4.70</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="XBL">4.70</cbc:TaxInclusiveAmount>
     <cbc:PayableAmount currencyID="XBL">5.54</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CollectionCreditNoteLine>

@@ -16,7 +16,7 @@ The store asks where its order stands.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Order status"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:ordering:1.0**  
   The Trade Accord's process profile the document belongs to: ordering, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900339316**  
+- `ProfileExecutionID` = **9900339320**  
   The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **6600016979**  
   The sender's number for this document.
@@ -28,17 +28,17 @@ The store asks where its order stands.
   In the late morning; in the issuer's local time, with its offset from UTC.
 - `Note` = **Has the order been accepted?**  
   The question.
-- `TrackingID` = **7100452422**  
+- `TrackingID` = **7100452426**  
   The order the store tracks.
 
 ### Requested Document Reference
 
 Inside `RequestedDocumentReference`:
 
-- `ID` = **7100452422**  
+- `ID` = **7100452426**  
   The order asked about.
 - `DocumentTypeCode` = **Order** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: 7100452422 is the example retail/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
+  The kind of document referred to: 7100452426 is the example retail/08, a Order; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Order.
 
 ### Signature
 
@@ -111,15 +111,15 @@ Inside `ReceiverParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order-status:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
   <cbc:ID>6600016979</cbc:ID>
   <cbc:UUID>44994824-762c-5e0e-a7c5-0010d1f4141f</cbc:UUID>
   <cbc:IssueDate>2026-04-27</cbc:IssueDate>
   <cbc:IssueTime>11:00:00-01:00</cbc:IssueTime>
   <cbc:Note>Has the order been accepted?</cbc:Note>
-  <cbc:TrackingID>7100452422</cbc:TrackingID>
+  <cbc:TrackingID>7100452426</cbc:TrackingID>
   <cac:RequestedDocumentReference>
-    <cbc:ID>7100452422</cbc:ID>
+    <cbc:ID>7100452426</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
   </cac:RequestedDocumentReference>
   <cac:Signature>

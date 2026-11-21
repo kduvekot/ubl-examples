@@ -336,7 +336,7 @@ Inside `RequiredCertificationDocumentReference`:
 
 Inside `DigitalAgreementTerms`:
 
-- `Description` = **The terms of the Trade Accord's multilateral digital agreement, version 1.0, published by the Trade Accord Council: documents are exchanged over the trade accord's network.**  
+- `Description` = **The terms of the Trade Accord's multilateral digital agreement, version 1.0, published by the Trade Accord Council: documents are exchanged over the Trade Accord's network.**  
   The terms: the Accord's own, which the participants accept by acceding, not the distributor's.
 - `ValidityPeriod/StartDate` = **2026-05-05**  
   From signing.
@@ -966,7 +966,7 @@ Inside `DigitalProcess`:
     </cac:ResultOfVerification>
   </cac:RequiredCertificationDocumentReference>
   <cac:DigitalAgreementTerms>
-    <cbc:Description>The terms of the Trade Accord's multilateral digital agreement, version 1.0, published by the Trade Accord Council: documents are exchanged over the trade accord's network.</cbc:Description>
+    <cbc:Description>The terms of the Trade Accord's multilateral digital agreement, version 1.0, published by the Trade Accord Council: documents are exchanged over the Trade Accord's network.</cbc:Description>
     <cac:ValidityPeriod>
       <cbc:StartDate>2026-05-05</cbc:StartDate>
       <cbc:EndDate>2027-05-05</cbc:EndDate>

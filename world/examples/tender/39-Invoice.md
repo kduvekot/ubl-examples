@@ -36,8 +36,6 @@ The manufacturer invoices the 39 installations once they are done and accepted, 
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the buyer's currency, agreed in the contract; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TaxCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  Valdara reports its value added tax in ferra, its own currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
 - `AccountingCostCode` = **4.2.110**  
   The buyer's cost centre, quoted in its order, so the invoice is booked without asking.
 - `AccountingCost` = **Parks and green spaces: parks renewal programme 2026**  
@@ -391,21 +389,6 @@ Inside `PaymentTerms`:
 - `PenaltyInterestRate/CalculationMethodCode` = **SIMPLE** (listID `urn:ubl-examples:world:codelist:InterestCalculationCode`)  
   Simple interest, per day late. The code is from the Trade Accord's interest calculation method list: SIMPLE = Simple interest.
 
-### Tax Exchange Rate
-
-Inside `TaxExchangeRate`:
-
-- `SourceCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
-  The document currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
-- `TargetCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  
-  The seller's tax currency. The code is from the world's copy of UBL's Currency (ISO 4217) list: XUF = Ferra.
-- `CalculationRate` = **100**  
-  1 lume = 100 ferra, the Accord's parity.
-- `MathematicOperatorCode` = **Multiply** (listID `urn:oasis:names:specification:ubl:codelist:gc:OperatorCode`)  
-  Lume times the rate gives ferra. The code is from the world's copy of UBL's Operator list, with a listID: Multiply.
-- `Date` = **2026-04-14**  
-  The rate of the tax point.
-
 ### Tax Total
 
 Inside `TaxTotal`:
@@ -416,22 +399,6 @@ Inside `TaxTotal`:
   The sum of the line amounts in this tax category.
 - `TaxSubtotal/TaxAmount` = **0.00** (currencyID `XBL`)  
   0 % of the taxable amount, rounded to the minor unit of the currency.
-- `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
-  A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
-  The exemption reason as a code of Urvania's national list, the list of the seller's country. The code is from Urvania's national value added tax exemption reason list: SVCABROAD = Service supplied outside Urvania.
-- `TaxSubtotal/TaxCategory/TaxExemptionReason` = **Service supplied outside Urvania**  
-  The name of code SVCABROAD in Urvania's national value added tax exemption reason list.
-- `TaxSubtotal/TaxCategory/TaxScheme/ID` = **VAT** (schemeID `UN/EDIFACT EDED 5153`)  
-  UN/EDIFACT 5153 code of the seller's tax: value added tax. The code is from the world's copy of UN/EDIFACT 5153 Duty or tax or fee type name: VAT = Value added tax. An identifier that holds a code names the code's list in its schemeID.
-- `TaxAmount` = **0** (currencyID `XUF`)  
-  The same tax in ferra, for the seller's tax return.
-- `TaxSubtotal/TaxableAmount` = **70200** (currencyID `XUF`)  
-  The taxable amount in ferra.
-- `TaxSubtotal/TaxAmount` = **0** (currencyID `XUF`)  
-  The tax in ferra.
-- `TaxSubtotal/TransactionCurrencyTaxAmount` = **0.00** (currencyID `XBL`)  
-  The same tax in the document currency.
 - `TaxSubtotal/TaxCategory/ID` = **O** (schemeID `UN/EDIFACT EDED 5305`)  
   A service supplied outside Urvania, to a customer established abroad, is outside the scope of Urvania's value added tax (category O). The code is from the world's copy of UN/EDIFACT 5305 Duty or tax or fee category: O = Services outside scope of tax. An identifier that holds a code names the code's list in its schemeID.
 - `TaxSubtotal/TaxCategory/TaxExemptionReasonCode` = **SVCABROAD** (listID `urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode`)  
@@ -532,7 +499,6 @@ Inside `InvoiceLine`:
   <cbc:Note>Bayforth Forwarding acts as the manufacturer's tax representative in Bayvarra for the withholding.</cbc:Note>
   <cbc:TaxPointDate>2026-04-14</cbc:TaxPointDate>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:TaxCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TaxCurrencyCode>
   <cbc:AccountingCostCode>4.2.110</cbc:AccountingCostCode>
   <cbc:AccountingCost>Parks and green spaces: parks renewal programme 2026</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
@@ -817,34 +783,11 @@ Inside `InvoiceLine`:
       <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
     </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
-  <cac:TaxExchangeRate>
-    <cbc:SourceCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:SourceCurrencyCode>
-    <cbc:TargetCurrencyCode listID="ISO 4217 Alpha">XUF</cbc:TargetCurrencyCode>
-    <cbc:CalculationRate>100</cbc:CalculationRate>
-    <cbc:MathematicOperatorCode listID="urn:oasis:names:specification:ubl:codelist:gc:OperatorCode">Multiply</cbc:MathematicOperatorCode>
-    <cbc:Date>2026-04-14</cbc:Date>
-  </cac:TaxExchangeRate>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="XBL">702.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
-        <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Service supplied outside Urvania</cbc:TaxExemptionReason>
-        <cac:TaxScheme>
-          <cbc:ID schemeID="UN/EDIFACT EDED 5153">VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-  </cac:TaxTotal>
-  <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="XUF">70200</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="XUF">0</cbc:TaxAmount>
-      <cbc:TransactionCurrencyTaxAmount currencyID="XBL">0.00</cbc:TransactionCurrencyTaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UN/EDIFACT EDED 5305">O</cbc:ID>
         <cbc:TaxExemptionReasonCode listID="urn:ubl-examples:world:XU:codelist:TaxExemptionReasonCode">SVCABROAD</cbc:TaxExemptionReasonCode>

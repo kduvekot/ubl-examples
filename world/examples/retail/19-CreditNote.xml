@@ -3,7 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CN-26-0039</cbc:ID>
   <cbc:UUID>21527992-a284-577e-b410-c834118ac671</cbc:UUID>
   <cbc:IssueDate>2026-05-05</cbc:IssueDate>
@@ -20,7 +20,7 @@
     <cbc:Description>One bench refused at goods-in, damaged in transit.</cbc:Description>
   </cac:DiscrepancyResponse>
   <cac:OrderReference>
-    <cbc:ID>7100452422</cbc:ID>
+    <cbc:ID>7100452426</cbc:ID>
   </cac:OrderReference>
   <cac:BillingReference>
     <cac:InvoiceDocumentReference>

@@ -815,15 +815,15 @@
   "Wood": {
    "scope": "regional",
    "name": "Wood",
-   "description": "The wood an item is made of, as a code: the variants of furniture made in more than one wood.",
+   "description": "The wood an item is made of, as a code: the variants of furniture made in more than one wood. The Accord's list uses the four-letter codes by which the timber trade names its woods.",
    "codes": {
-    "OAK": [
-     "Oak",
-     "Oak, as the Marrow bench and chair in solid kiln-dried oak."
+    "QCXE": [
+     "European oak",
+     "European oak (Quercus robur and Quercus petraea), as the Marrow bench and chair in solid kiln-dried oak."
     ],
-    "ASH": [
-     "Ash",
-     "Ash, as the Marrow bench and chair in solid kiln-dried ash."
+    "FXEX": [
+     "European ash",
+     "European ash (Fraxinus excelsior), as the Marrow bench and chair in solid kiln-dried ash."
     ]
    }
   },

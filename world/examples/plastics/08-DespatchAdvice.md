@@ -24,7 +24,7 @@ The waste processor announces the lot loaded on the barge.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-04-20**  
   The day the barge was loaded.
-- `IssueTime` = **17:57:00-01:00**  
+- `IssueTime` = **16:28:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
@@ -283,7 +283,7 @@ Inside `DespatchLine`:
   <cbc:ID>26-0453</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>17:57:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:28:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

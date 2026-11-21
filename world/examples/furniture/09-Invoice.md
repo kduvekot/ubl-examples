@@ -366,7 +366,7 @@ Inside `LegalMonetaryTotal`:
 - `TaxInclusiveAmount` = **12200.00** (currencyID `XBL`)  
   The total without tax plus the tax.
 - `PayableAmount` = **12200.00** (currencyID `XBL`)  
-  What the buyer is to pay; stated, not left to be calculated (UBL 2.5, 2.2.2 Manifest Values).
+  What the buyer is to pay, stated in full so that it books the amount without working it out.
 
 ### Invoice Line
 
@@ -388,8 +388,8 @@ Inside `InvoiceLine`:
   The variant of the item: the wood, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **QCXE** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: QCXE = European oak.
 - `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
   The variant in words.
 - `Item/StandardItemIdentification/ID` = **9522610000016** (schemeID `GS1 GTIN`)  
@@ -426,8 +426,8 @@ Inside `InvoiceLine`:
   The variant of the item: the wood, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **FXEX** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: FXEX = European ash.
 - `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
   The variant in words.
 - `Item/StandardItemIdentification/ID` = **9522610000047** (schemeID `GS1 GTIN`)  
@@ -464,8 +464,8 @@ Inside `InvoiceLine`:
   The variant of the item: the wood, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **OAK** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: OAK = Oak.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **QCXE** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: QCXE = European oak.
 - `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid oak**  
   The variant in words.
 - `Item/StandardItemIdentification/ID` = **9522610000023** (schemeID `GS1 GTIN`)  
@@ -502,8 +502,8 @@ Inside `InvoiceLine`:
   The variant of the item: the wood, added to the item number.
 - `Item/SellersItemIdentification/PhysicalAttribute/AttributeID` = **WOOD** (schemeID `urn:ubl-examples:world:codelist:OtherAttributeCode`)  
   The attribute the variant differs in. The code is from the Trade Accord's attribute list: WOOD = Wood. An identifier that holds a code names the code's list in its schemeID.
-- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **ASH** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
-  The variant's code for it. The code is from the Trade Accord's wood list: ASH = Ash.
+- `Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode` = **FXEX** (listID `urn:ubl-examples:world:codelist:WoodCode`)  
+  The variant's code for it. The code is from the Trade Accord's wood list: FXEX = European ash.
 - `Item/SellersItemIdentification/PhysicalAttribute/Description` = **Solid ash**  
   The variant in words.
 - `Item/StandardItemIdentification/ID` = **9522610000054** (schemeID `GS1 GTIN`)  
@@ -853,7 +853,7 @@ Inside `InvoiceLine`:
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">QCXE</cbc:DescriptionCode>
           <cbc:Description>Solid oak</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
@@ -888,7 +888,7 @@ Inside `InvoiceLine`:
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">FXEX</cbc:DescriptionCode>
           <cbc:Description>Solid ash</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
@@ -923,7 +923,7 @@ Inside `InvoiceLine`:
         <cbc:ExtendedID>OAK</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">OAK</cbc:DescriptionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">QCXE</cbc:DescriptionCode>
           <cbc:Description>Solid oak</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
@@ -958,7 +958,7 @@ Inside `InvoiceLine`:
         <cbc:ExtendedID>ASH</cbc:ExtendedID>
         <cac:PhysicalAttribute>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">WOOD</cbc:AttributeID>
-          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">ASH</cbc:DescriptionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:WoodCode">FXEX</cbc:DescriptionCode>
           <cbc:Description>Solid ash</cbc:Description>
         </cac:PhysicalAttribute>
       </cac:SellersItemIdentification>
