@@ -549,7 +549,7 @@ example adds its coverage-register row in the same commit.
   - May desks have hours of their own?
 - **Q3 (two layers): decided (owner, 2026-11-21): A, both go ("the UBL examples have no meaning in this world"):** the 41 "(UBL 2.5, 2.2.2 Manifest Values)" reasons state the fact in world terms without the section; the 11 "as in the OASIS example" references are dropped or replaced by the world's own reason; the published-text check gets both patterns. are reasons that explain a value by UBL's own principles ("UBL 2.5, 2.2.2 Manifest Values",
   41 pages) or by the OASIS samples ("as in the OASIS example", 11 pages) allowed in published world text?
-- **Q4 (EN 13556, O156):**
+- **Q4 (EN 13556, O156): decided (owner, 2026-11-21): A, the Accord's own `Wood` list stays, "but you can reuse the same codes":** its codes become QCXE (European oak) and FXEX (European ash), the four-letter codes of the trade's wood nomenclature, without naming the standard in world text; O156 closed.
   - Is a secondary source enough, given that the standard itself is paid?
   - Would its name be allowed in world text under O265, or only its codes?
 - **Q5 (O262):** does "VAT actually charged" exclude invoices at 0 % or outside the scope (tender/32, 33, 39 carry
