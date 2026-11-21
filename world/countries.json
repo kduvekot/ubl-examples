@@ -2216,7 +2216,12 @@
     "twin": "sakskir",
     "vine": "gatek",
     "west": "binskaz",
-    "wolf": "rezhir"
+    "wolf": "rezhir",
+    "father": "mukrir",
+    "rain": "skarbek",
+    "shore": "bersir",
+    "sun": "vidrek",
+    "valley": "gamir"
    },
    "wiki": {
     "short": "Language of Urvania",
