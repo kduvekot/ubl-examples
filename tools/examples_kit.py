@@ -1006,12 +1006,15 @@ def invoice(flow, n, doc, day, why_date, refs, rows_spec=None, key="invoice", ex
         V("380", "A commercial invoice, as UN/EDIFACT 1001 codes it."),
         "DocumentCurrencyCode": currency_line(cur, "the seller's currency" if cur == currency_of(seller)
                                               else "the buyer's currency, agreed in the contract"),
-        # quoted in the buyer's order where there is one, else in the contract or booking the bill answers
-        # (read-through waste W3: waste/03, plastics/07, air/10)
+        # quoted in the buyer's order where the invoice answers one: the buyer ordered from this seller in the flow
+        # and the invoice cites the order; else in the contract or booking the bill answers (read-through waste W3:
+        # waste/03, plastics/07, air/10; stage 7 A13: ore/06, road/14, cotton/17, whose buyer ordered the goods from
+        # another party)
         **cost_centre(buyer, iid=rows[0][0]["item"], why="The buyer's cost centre, quoted in its " + (
-            "order" if any(d["flow"] == flow.id and d["doc"] in ("Order", "OrderChange") and d["from"] == buyer
-                           for d in WORLD["documents"]) else "contract or booking") + ", so the invoice is booked "
-            "without asking."),
+            "order" if "OrderReference" in refs and any(
+                d["flow"] == flow.id and d["doc"] in ("Order", "OrderChange") and d["from"] == buyer and
+                d["to"] == seller for d in WORLD["documents"]) else "contract or booking") + ", so the invoice is "
+            "booked without asking."),
         "LineCountNumeric": V(str(len(rows)), "The number of invoice lines, as a check on the transfer."),
         "DefaultLanguageCode": V(WORLD["countries"][PARTY[seller]["c"]]["languages"][-1], "The language of the "
                                  "texts that carry no language identifier: English, the working language between "

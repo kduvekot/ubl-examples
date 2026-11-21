@@ -313,7 +313,31 @@ def check(world):
                                 f"{acc['bank']} and its branch {acc.get('branch')} (decision ID-Q9)")
         problems += identifier_problems(world, p)
     problems += identification_problems(world) + repeat_problems(world) + register_problems(world)
+    problems += fleet_weight_problems(world)
     return problems
+
+
+def fleet_weight_problems(world):
+    """Stage 7, A13 (the Trade Accord's road protocol, O134): every road vehicle in a fleet states its empty weight
+    (tare_kg, by part: tractor, trailer, van ...), so the 40 t rule can be checked for it; and what a vehicle may
+    weigh loaded (max_gross_kg where it is smaller than the Accord's limit) leaves it a payload. A carrier of a road
+    leg (world/documents.json) has such a vehicle. The loads the documents state are checked against these
+    weights in tools/build_examples.py (check_road_weights)."""
+    out = []
+    limit = world["road_rules_accord"]["max_combination_kg"]
+    carriers = {leg["carrier"] for f in world["flows"] for leg in f.get("legs", []) if leg["mode"] == "road"}
+    for p in world["parties"]:
+        road = [f for f in p.get("fleet") or [] if f["kind"] == "road"]
+        for f in road:
+            tare = f.get("tare_kg")
+            if not isinstance(tare, dict) or not tare or not all(isinstance(v, int) and v > 0 for v in tare.values()):
+                out.append(f"party {p['id']}: road vehicle {f['id']} has no empty weight by part (tare_kg)")
+            elif sum(tare.values()) >= min(limit, f.get("max_gross_kg", limit)):
+                out.append(f"party {p['id']}: road vehicle {f['id']} weighs {sum(tare.values())} kg empty, no "
+                           f"payload left under {min(limit, f.get('max_gross_kg', limit))} kg")
+        if p["id"] in carriers and not road:
+            out.append(f"party {p['id']}: carries a road leg with no road vehicle in its fleet")
+    return out
 
 
 def register_problems(world):

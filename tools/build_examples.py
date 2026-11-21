@@ -2109,6 +2109,161 @@ def tax_arithmetic(content, where):
                                      ".", **old.attrs)  # C24
 
 
+def check_road_weights(root, where):
+    """Stage 7, A13 (O134, the Trade Accord's road protocol): a road vehicle a document names by its plate carries
+    a load that keeps it within the Accord's 40 t for a combination, and within its own maximum where that is lower:
+    the gross weight of the shipment or consignment it carries plus the vehicle's empty weight (world/parties.json
+    tare_kg, required for every road vehicle by world_parties.fleet_weight_problems)."""
+    limit = WORLD["road_rules_accord"]["max_combination_kg"]
+    plates = {f["plate"]: (p, f) for p in PARTY.values() for f in p.get("fleet") or [] if f.get("plate")}
+    for plate in root.iter(f"{{{NS_CBC}}}LicensePlateID"):
+        if plate.text not in plates:
+            continue
+        p, f = plates[plate.text]
+        tare = sum(f["tare_kg"].values())
+        cap = min(limit, f.get("max_gross_kg", limit))
+        for anc in plate.iterancestors():
+            name = etree.QName(anc).localname
+            if name not in ("Shipment", "Consignment"):
+                continue
+            kg = [Decimal(g.text) * (1000 if g.get("unitCode") == "TNE" else 1)
+                  for g in anc.findall(f"{{{NS_CBC}}}GrossWeightMeasure") if g.get("unitCode") in ("KGM", "TNE")]
+            if kg:
+                if max(kg) + tare > cap:
+                    raise SystemExit(f"{where}: {name} of {max(kg)} kg on {f['name'].lower()} {plate.text} "
+                                     f"({tare} kg empty) weighs {max(kg) + tare} kg, above {cap} kg")  # stage 7 A13
+                break
+
+
+PLANNING_DOCUMENTS = {"TransportExecutionPlanRequest", "TransportExecutionPlan", "ForwardingInstructions",
+                      "TransportServiceDescriptionRequest", "TransportServiceDescription", "Order", "OrderResponse",
+                      "Quotation", "RequestForQuotation"}
+
+
+def consignment_weight_problems():
+    """Stage 7, A13 (read-through medicines/09): the same consignment or shipment has one gross weight among the
+    documents of one stage: those that plan or book it (PLANNING_DOCUMENTS) with each other, those that carry,
+    report or receive it with each other. A planned weight and a weighed one may differ (ore: the plan's 1,800 t,
+    the weighbridge's 1,788.4 t)."""
+    seen = {}
+    for (flow_id, n), (doc, root, _) in sorted(BUILT.items()):
+        stage = "planned" if etree.QName(root).localname in PLANNING_DOCUMENTS else "carried"
+        for c in root.iter(f"{{{NS_CAC}}}Consignment", f"{{{NS_CAC}}}Shipment"):
+            cid, g = c.findtext(f"{{{NS_CBC}}}ID"), c.find(f"{{{NS_CBC}}}GrossWeightMeasure")
+            if cid and g is not None:
+                seen.setdefault((etree.QName(c).localname, cid, stage), []).append(
+                    (f"{flow_id}/{xmlname(n, doc)}", g.text, g.get("unitCode")))
+    return [f"{kind} {cid} ({stage}) weighs " + "; ".join(f"{v} {u} in {w}" for w, v, u in got)
+            for (kind, cid, stage), got in seen.items() if len({(v, u) for _, v, u in got}) > 1]
+
+
+def check_emissions(root, where):
+    """Stage 7, A11 (C09): an emission a document states with a factor and a base is their product, to the
+    precision the value is given in (world_items.emission_problems checks the items' own figures)."""
+    for em in root.iter(f"{{{NS_CAC}}}EnvironmentalEmission"):
+        value, factor, base = (em.findtext(f"{{{NS_CBC}}}{k}") for k in
+                               ("ValueMeasure", "ValueFactorNumeric", "ValueBaseMeasure"))
+        if (factor is None) != (base is None):
+            raise SystemExit(f"{where}: an emission's factor needs its base, and a base its factor")  # C09
+        if factor is not None and value is not None:
+            step = Decimal(1).scaleb(Decimal(value).as_tuple().exponent)
+            if abs(Decimal(factor) * Decimal(base) - Decimal(value)) > step / 2:
+                raise SystemExit(f"{where}: emission {value} is not factor {factor} × base {base}")  # stage 7 A11, C09
+
+
+NUMBER_WORDS = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5}
+
+
+def check_originals(root, where):
+    """Stage 7, A11 (C33): a transport document's originals go where its note says: the original handed over goes to
+    the consignor, the one with the goods to the consignee, and the note's count is the originals distributed plus
+    the carrier's own."""
+    pid = lambda e: e.findtext(f"{{{NS_CAC}}}PartyIdentification/{{{NS_CBC}}}ID") if e is not None else None
+    who = {"ORIGINALHANDED": "ConsignorParty", "ORIGINALWITHGOODS": "ConsigneeParty"}
+    dist = [(d.findtext(f"{{{NS_CBC}}}DistributionTypeCode"), pid(d.find(f"{{{NS_CAC}}}Party")))
+            for d in root.iter(f"{{{NS_CAC}}}DocumentDistribution")]
+    for code, party_id in dist:
+        if code in who:
+            role = pid(next(root.iter(f"{{{NS_CAC}}}{who[code]}"), None))
+            if party_id != role:
+                raise SystemExit(f"{where}: the original {code} goes to {party_id}, not to the "
+                                 f"{who[code][:-5].lower()} {role}")  # stage 7 A11, C33
+    for note in root.findall(f"{{{NS_CBC}}}Note"):
+        m = re.match(r"(\w+) originals:", note.text or "")
+        if m and m.group(1) in NUMBER_WORDS:
+            want = sum(1 for c, _ in dist if c in who) + ("the carrier's" in note.text)
+            if NUMBER_WORDS[m.group(1)] != want:
+                raise SystemExit(f"{where}: the note counts {m.group(1).lower()} originals, the distribution and "
+                                 f"the carrier's own make {want}")  # stage 7 A11, C33
+
+
+def check_shipping_orders(root, where):
+    """Stage 7, A11 (C20): a ShippingOrderID is the number of the forwarding instructions it cites: an example
+    ForwardingInstructions of the world."""
+    for e in root.iter(f"{{{NS_CBC}}}ShippingOrderID"):
+        kind = doc_types().get(e.text, (None, None, None))[2]
+        if kind != "ForwardingInstructions":
+            raise SystemExit(f"{where}: ShippingOrderID {e.text} is "
+                             f"{'a ' + kind if kind else 'no example'}, not forwarding instructions")  # C20
+
+
+TOTAL_LINES = {"Invoice": "InvoiceLine", "SelfBilledInvoice": "InvoiceLine", "CreditNote": "CreditNoteLine",
+               "SelfBilledCreditNote": "CreditNoteLine", "DebitNote": "DebitNoteLine", "FreightInvoice": "InvoiceLine"}
+
+
+def check_totals(root, where):
+    """Stage 7, A11 (C24, C94): the arithmetic of a document's totals, read from the built XML and repaired nowhere.
+    Every tax subtotal's tax is its taxable amount at its rate, rounded to the minor unit; a tax total is the sum of
+    its subtotals; and on a bill (TOTAL_LINES) the monetary total adds up: the lines' sum, less the allowances and
+    plus the charges of the document, the tax of the document's currency, less what was prepaid and the tax withheld,
+    plus the rounding."""
+    q = lambda e, p: e.findtext(f"{{{NS_CBC}}}{p}")
+    dec = lambda e, p: Decimal(q(e, p)) if q(e, p) is not None else Decimal(0)
+    for tt in list(root.iterfind(f".//{{{NS_CAC}}}TaxTotal")) + list(root.iterfind(f".//{{{NS_CAC}}}WithholdingTaxTotal")):
+        subs = tt.findall(f"{{{NS_CAC}}}TaxSubtotal")
+        cur = tt.find(f"{{{NS_CBC}}}TaxAmount").get("currencyID")
+        if subs and sum(dec(s, "TaxAmount") for s in subs) != dec(tt, "TaxAmount"):
+            raise SystemExit(f"{where}: {etree.QName(tt).localname} {q(tt, 'TaxAmount')} is not the sum of its "
+                             f"subtotals")  # stage 7 A11, C24
+        for s in subs:
+            pct = q(s, "Percent") or s.findtext(f"{{{NS_CAC}}}TaxCategory/{{{NS_CBC}}}Percent")
+            if pct is None or q(s, "TaxableAmount") is None or q(s, "PerUnitAmount") is not None:
+                continue
+            want = money(dec(s, "TaxableAmount") * Decimal(pct) / 100, cur)
+            if dec(s, "TaxAmount") != want:
+                raise SystemExit(f"{where}: TaxSubtotal of {q(s, 'TaxableAmount')} at {pct} % has the tax "
+                                 f"{q(s, 'TaxAmount')}, not {want}")  # stage 7 A11, C24
+    line = TOTAL_LINES.get(etree.QName(root).localname)
+    lmt = root.find(f"{{{NS_CAC}}}LegalMonetaryTotal")
+    if not line or lmt is None:
+        return
+    cur = lmt.find(f"{{{NS_CBC}}}PayableAmount").get("currencyID")
+    lines = root.findall(f"{{{NS_CAC}}}{line}")
+    acs = root.findall(f"{{{NS_CAC}}}AllowanceCharge")
+    side = lambda flag: sum((dec(a, "Amount") for a in acs if q(a, "ChargeIndicator") == flag), Decimal(0))
+    tax = sum((dec(t, "TaxAmount") for t in root.findall(f"{{{NS_CAC}}}TaxTotal")
+               if t.find(f"{{{NS_CBC}}}TaxAmount").get("currencyID") == cur), Decimal(0))
+    own = sum((dec(x, "LineExtensionAmount") for x in lines), Decimal(0))
+    # amounts collected for a third party (CollectionInvoiceLine, UBL 2.5): utilities counts them in the lines'
+    # sum, the cotton gin's self-billing adds them to the amount payable only; either adds up (reported, stage 7)
+    collected = sum((dec(x, "LineExtensionAmount") for x in root.findall(f"{{{NS_CAC}}}Collection{line}")), Decimal(0))
+    collected_apart = collected and dec(lmt, "LineExtensionAmount") == own
+    sums = [("LineExtensionAmount", own if collected_apart else own + collected, bool(lines)),
+            ("AllowanceTotalAmount", side("false"), q(lmt, "AllowanceTotalAmount") is not None or side("false")),
+            ("ChargeTotalAmount", side("true"), q(lmt, "ChargeTotalAmount") is not None or side("true")),
+            ("TaxExclusiveAmount", dec(lmt, "LineExtensionAmount") - dec(lmt, "AllowanceTotalAmount") +
+             dec(lmt, "ChargeTotalAmount"), q(lmt, "TaxExclusiveAmount") is not None),
+            ("TaxInclusiveAmount", dec(lmt, "TaxExclusiveAmount") + tax, q(lmt, "TaxInclusiveAmount") is not None),
+            ("PayableAmount", (dec(lmt, "TaxInclusiveAmount") if q(lmt, "TaxInclusiveAmount") is not None else
+                               dec(lmt, "LineExtensionAmount")) - dec(lmt, "PrepaidAmount") -
+             dec(lmt, "WithholdingTaxTotalAmount") + dec(lmt, "PayableRoundingAmount") +
+             (collected if collected_apart else 0), True)]
+    for name, want, applies in sums:
+        if applies and dec(lmt, name) != want:
+            raise SystemExit(f"{where}: LegalMonetaryTotal/{name} {q(lmt, name)} {cur}, the document's amounts make "
+                             f"{want}")  # stage 7 A11, C24, C94
+
+
 # ---------------------------------------------------------------- the invoice behind a customs value (worklist C12)
 def declaration_invoices(content, doc):
     """A customs declaration refers to the commercial invoice its value rests on: an invoice of the same flow
@@ -3483,6 +3638,72 @@ def check_payment_terms(root, where, payee_country=None):
                 raise SystemExit(f"{where}: terms {tid} make it due on {want}, the document says {due}")  # O70
 
 
+def check_plan_terms(flow_id, roots, docs):
+    """Stage 7, A10 (D22, O70, C51): an invoice or debit note under a transport plan carries the plan's payment
+    terms: a carrier that agreed a TransportExecutionPlan with its user bills that user under the plan's terms, not
+    its standard ones."""
+    plans = [(doc, root) for (_, root), doc in zip(roots, docs) if etree.QName(root).localname == "TransportExecutionPlan"]
+    for pdoc, plan in plans:
+        terms = {t.text for t in plan.iterfind(f".//{{{NS_CAC}}}PaymentTerms/{{{NS_CBC}}}Note")}
+        user = pdoc.get("parties", {}).get("TransportUserParty")
+        if not terms or not user:
+            continue
+        for (name, root), doc in zip(roots, docs):
+            if etree.QName(root).localname in ("Invoice", "DebitNote") and doc["from"] == pdoc["from"] and \
+                    doc.get("parties", {}).get("AccountingCustomerParty") == user:
+                got = {t.text for t in root.iterfind(f"{{{NS_CAC}}}PaymentTerms/{{{NS_CBC}}}Note")}
+                if not any(g.startswith(tuple(terms)) for g in got if g):
+                    raise SystemExit(f"world/examples/{flow_id}/{name}: bills the transport plan's user under "
+                                     f"{sorted(got)}, not the plan's terms {sorted(terms)}")  # stage 7 A10
+
+
+def check_reminder_interest(root, where):
+    """Stage 7, A10 (O70, C55): a reminder's interest or surcharge runs from the day after the due date of the
+    invoice it reminds of, and its amount follows from the rate and the period: a surcharge per month
+    (PenaltySurchargePercent) for each month begun, an interest a year (the reminder's PenaltyInterestRate, simple,
+    per day on a 365-day year)."""
+    if etree.QName(root).localname != "Reminder":
+        return
+    c, a = lambda e, p: e.findtext(f"{{{NS_CBC}}}{p}"), lambda e, p: e.find(f"{{{NS_CAC}}}{p}")
+    lines = root.findall(f"{{{NS_CAC}}}ReminderLine")
+    cited = lambda ln: ln.findtext(f"{{{NS_CAC}}}BillingReference/{{{NS_CAC}}}InvoiceDocumentReference/{{{NS_CBC}}}ID")
+    principal = [ln for ln in lines if cited(ln) and c(ln, "DebitLineAmount") and
+                 (a(ln, "ReminderPeriod") is None or c(a(ln, "ReminderPeriod"), "EndDate") is None)]
+    built = {r.findtext(f"{{{NS_CBC}}}ID"): r for _, r, _ in BUILT.values()}
+    for ln in lines:
+        per = a(ln, "ReminderPeriod")
+        if per is None or not c(per, "StartDate") or not c(per, "EndDate"):
+            continue
+        base = [p for p in principal if p is not ln and (cited(p) == cited(ln) or not cited(ln))]
+        if len(base) != 1:
+            raise SystemExit(f"{where}: ReminderLine {c(ln, 'ID')} charges for a period, but no one invoice line "
+                             "says on what")  # stage 7 A10
+        inv = built.get(cited(base[0]))
+        if inv is None:
+            continue
+        due = inv.findtext(f"{{{NS_CBC}}}DueDate") or inv.findtext(f"{{{NS_CAC}}}PaymentTerms/{{{NS_CBC}}}PaymentDueDate")
+        start, end = (datetime.date.fromisoformat(c(per, k)) for k in ("StartDate", "EndDate"))
+        if due and start != datetime.date.fromisoformat(due) + datetime.timedelta(days=1):
+            raise SystemExit(f"{where}: ReminderLine {c(ln, 'ID')} runs from {start}, not from the day after "
+                             f"{cited(base[0])} fell due on {due}")  # stage 7 A10
+        amount_el = ln.find(f"{{{NS_CBC}}}DebitLineAmount")
+        cur = amount_el.get("currencyID")
+        principal_amount = Decimal(c(base[0], "DebitLineAmount"))
+        if c(ln, "PenaltySurchargePercent"):
+            months = (end.year - start.year) * 12 + end.month - start.month + (1 if end.day >= start.day else 0)
+            want = principal_amount * Decimal(c(ln, "PenaltySurchargePercent")) / 100 * months
+        else:
+            rate = root.find(f"{{{NS_CAC}}}PaymentTerms/{{{NS_CAC}}}PenaltyInterestRate")
+            if rate is None or c(rate, "TimeBasisCode") != "ANN" or c(rate, "CalculationMethodCode") != "SIMPLE":
+                raise SystemExit(f"{where}: ReminderLine {c(ln, 'ID')} charges for a period at no rate the reminder "
+                                 "states")  # stage 7 A10
+            want = principal_amount * Decimal(c(rate, "InterestRatePercent")) / 100 * ((end - start).days + 1) / 365
+        want = money(want, cur)
+        if Decimal(amount_el.text) != want:
+            raise SystemExit(f"{where}: ReminderLine {c(ln, 'ID')} charges {amount_el.text} {cur}, the rate and the "
+                             f"period give {want}")  # stage 7 A10
+
+
 # ---------------------------------------------------------------- the calendar (C53, D27, O79)
 def working_day(pid, day):
     """Whether party pid works on `day` (an ISO date): its working week (office, shop or every day) and, unless it
@@ -3541,6 +3762,63 @@ def check_due_dates(root, doc, where):
                              "country")  # O180
 
 
+PREMISES = [   # stage 7 A13: a phrase a reason uses, and what must hold in the document for it to be true
+    ("quoted in its order", "an OrderReference", lambda root: root.find(f"{{{NS_CAC}}}OrderReference") is not None),
+    ("Issued on despatch", "despatch on its issue date", lambda root: _on_its_day(root, "ActualDespatchDate")),
+    ("Issued on delivery", "delivery on its issue date", lambda root: _on_its_day(root, "ActualDeliveryDate")),
+]
+
+
+def _on_its_day(root, element):
+    """Whether a document that states when its goods left or arrived (element) is dated that day; true where it
+    states no such date (the flow's own dates then stand, check_issue_order)."""
+    days = {e.text for e in root.iter(f"{{{NS_CBC}}}{element}")}
+    return not days or root.findtext(f"{{{NS_CBC}}}IssueDate") in days
+
+
+def check_reason_premises(root, reasons, where):
+    """Stage 7, A13 (read-throughs): a reason that states a premise about the document states a true one: "quoted
+    in its order" only on a document that cites an order (PREMISES)."""
+    for path, value, _, why in reasons:
+        for phrase, what, holds in PREMISES:
+            if phrase in why and not holds(root):
+                raise SystemExit(f"{where}: {path} = {value}: the reason says {phrase!r}, but the document has no "
+                                 f"{what}")  # stage 7 A13
+
+
+AT_THE_TILL = {"10", "20", "48", "54", "55"}   # cash, cheque and cards: paid where the payee takes it, not via banks
+
+
+def check_payment_dates(root, doc, where):
+    """Stage 7, A9 (O79, O180): a payment is dated on a day it can be made. A bank payment (a credit transfer, a
+    direct debit, a payment with no means stated, which in the world is a transfer) is paid on a business day of both
+    the payer's and the payee's country, where both banking systems are open, and received on a business day of the
+    payee's; a payment at the till (cash, cheque or card) on a day the payee works."""
+    payee = payee_of(root, doc)
+    p = doc.get("parties", {})
+    payer = next((p[r] for r in (("AccountingSupplierParty", "SellerSupplierParty")
+                                 if payee in (p.get("AccountingCustomerParty"), p.get("BuyerCustomerParty")) else
+                                 ("AccountingCustomerParty", "BuyerCustomerParty")) if p.get(r) in PARTY), None)
+    for e in root.iter(f"{{{NS_CBC}}}PaidDate", f"{{{NS_CBC}}}ReceivedDate", f"{{{NS_CBC}}}PaymentDate"):
+        agg = e.getparent()
+        if not etree.QName(agg).localname.endswith("Payment") or payee not in PARTY or not e.text:
+            continue
+        near = agg.getparent().findall(f"{{{NS_CAC}}}PaymentMeans/{{{NS_CBC}}}PaymentMeansCode") or \
+            root.findall(f"{{{NS_CAC}}}PaymentMeans/{{{NS_CBC}}}PaymentMeansCode")
+        what = f"{etree.QName(agg).localname}/{etree.QName(e).localname} {e.text}"
+        if near and all(m.text in AT_THE_TILL for m in near):
+            if not working_day(payee, e.text):
+                raise SystemExit(f"{where}: {what}, paid at the till on a day "
+                                 f"{PARTY[payee]['identity']['name']} does not work")  # stage 7 A9
+            continue
+        sides = [payee] if etree.QName(e).localname == "ReceivedDate" else [x for x in (payer, payee) if x]
+        for pid in sides:
+            if not business_day(PARTY[pid]["c"], e.text):
+                raise SystemExit(f"{where}: {what} is no business day of the banks in "
+                                 f"{WORLD['countries'][PARTY[pid]['c']]['name']}, the "
+                                 f"{'payee' if pid == payee else 'payer'}'s country")  # stage 7 A9
+
+
 CALENDAR_WAITS = {}   # (flow, file) -> the flow decision whose dates the document waits for (O78, O79)
 
 
@@ -3576,6 +3854,105 @@ def check_time_offsets(root, where):
                 not re.fullmatch(r"\d\d:\d\d:\d\d(\.\d+)?(Z|[+-]\d\d:\d\d)", e.text.strip()):
             raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} "
                              f"{e.text} has no offset from UTC")  # D27, O78
+
+
+def check_flight_times(root, where):
+    """Stage 7, A3 (O269, O250): every flight a document states takes the air route's block time (world/map.json,
+    route "air", "flight", read by world_map.flight): a planned or estimated departure and arrival of an air
+    stage are exactly the block time of its direction apart, an actual arrival no later."""
+    import world_map
+    block = world_map.flight(WORLD)
+    for st in root.iter():
+        if not (isinstance(st.tag, str) and etree.QName(st).localname.endswith("ShipmentStage") and
+                st.findtext(f"{{{NS_CBC}}}TransportModeCode") == "4"):
+            continue
+        for kind in ("Planned", "Estimated", "Actual"):
+            dep = st.find(f"{{{NS_CAC}}}{kind}DepartureTransportEvent")
+            arr = st.find(f"{{{NS_CAC}}}{kind}ArrivalTransportEvent")
+            if dep is None or arr is None or None in (dep.findtext(f"{{{NS_CBC}}}OccurrenceTime"),
+                                                      arr.findtext(f"{{{NS_CBC}}}OccurrenceTime")):
+                continue
+            a, b = (moment(e.findtext(f"{{{NS_CBC}}}OccurrenceDate"), e.findtext(f"{{{NS_CBC}}}OccurrenceTime"),
+                           "+00:00")[1] for e in (dep, arr))
+            frm = xml_place_country(dep.find(f"{{{NS_CAC}}}Location"))
+            way = "east" if frm in ("XU", "XB") else "west"
+            took, want = (b - a).total_seconds() / 3600, block[way]
+            if (kind == "Actual" and not 0 < took <= want) or (kind != "Actual" and abs(took - want) > 1 / 120):
+                raise SystemExit(f"{where}: {etree.QName(st).localname} {kind.lower()} flight of "
+                                 f"{world_map.duration(took)}, but the {way}bound block time is "
+                                 f"{world_map.duration(want)} (world/map.json)")  # stage 7 A3
+
+
+def xml_place_country(el):
+    """The country of a place element in a built document (a Location, an Address, a port), read the way
+    examples_kit.place_country reads the content: its UN/LOCODE, the party whose GLN it is, or its address's
+    country; None where it says none of these."""
+    import examples_kit
+    ident = el.find(f"{{{NS_CBC}}}ID")
+    if ident is not None and ident.get("schemeID") == "UN/LOCODE" and ident.text:
+        return ident.text[:2]
+    if ident is not None and ident.get("schemeID") == "GS1 GLN" and ident.text in examples_kit._gln_countries():
+        return examples_kit._gln_countries()[ident.text]
+    for addr in (el, el.find(f"{{{NS_CAC}}}Address")):
+        if addr is not None:
+            code = addr.findtext(f"{{{NS_CAC}}}Country/{{{NS_CBC}}}IdentificationCode")
+            if code:
+                return code
+    return None
+
+
+def check_time_places(root, doc, where):
+    """Stage 7, A1 (O78): every time carries the offset of the place where it happens, not only some offset: the
+    issue time the issuer's, an event's time that of the place its aggregate, or the aggregate holding it, names
+    (a Location, an Address, a DeliveryLocation ...), any other time the issuer's. Read from the built XML,
+    independently of examples_kit.time_offsets, so a scenario that writes an offset by hand is checked too."""
+    home = PARTY[doc["from"]]["c"]
+    for e in root.iter(f"{{{NS_CBC}}}*"):
+        if not (etree.QName(e).localname.endswith("Time") and e.text):
+            continue
+        m = re.fullmatch(r"\d\d:\d\d:\d\d(?:\.\d+)?(Z|[+-]\d\d:\d\d)", e.text.strip())
+        if not m:
+            continue                                      # check_time_offsets reports it
+        cc = None
+        if e.getparent() is not root:
+            for anc in (e.getparent(), e.getparent().getparent()):
+                if anc is None or anc is root:
+                    break
+                for child in anc:
+                    tag = etree.QName(child).localname if isinstance(child.tag, str) else ""
+                    if child.tag.startswith(f"{{{NS_CAC}}}") and (tag in ("Location", "Address") or
+                                                                    tag.endswith(("Location", "Address"))):
+                        cc = xml_place_country(child)
+                        if cc:
+                            break
+                if cc:
+                    break
+        up = [etree.QName(a).localname for a in e.iterancestors()]
+        if cc is None and etree.QName(e).localname == "IssueTime" and up[0].endswith("Reference"):
+            cited = e.getparent().findtext(f"{{{NS_CBC}}}ID")     # a cited document's issue time: its issuer's
+            first = ISSUED.get(cited, [(None, None, None)])[0][2]
+            if first is None or first[1] is None:
+                continue                                  # a document outside the examples, or not built yet
+            if datetime.datetime.fromisoformat(f"2000-01-01T{e.text.strip()}").utcoffset() != first[1].utcoffset():
+                raise SystemExit(f"{where}: {up[0]}/IssueTime {e.text} has another offset than the issue time of "
+                                 f"{cited}, {first[1].isoformat()}")  # O78, stage 7 A1
+            continue
+        if cc is None and "Delivery" in up:               # a delivery that names no place: where it is received
+            d = e.getparent()
+            while etree.QName(d).localname != "Delivery":
+                d = d.getparent()
+            cc = d.findtext(f"{{{NS_CAC}}}DeliveryParty/{{{NS_CAC}}}PostalAddress/{{{NS_CAC}}}Country/"
+                            f"{{{NS_CBC}}}IdentificationCode")
+            if cc is None:
+                pid = next((doc.get("parties", {})[r] for r in ("DeliveryCustomerParty", "BuyerCustomerParty")
+                            if doc.get("parties", {}).get(r) in PARTY), None)
+                cc = PARTY[pid]["c"] if pid else None
+        want = WORLD["countries"][cc or home]["timezone"]
+        got = "+00:00" if m.group(1) == "Z" else m.group(1)
+        if got != want:
+            raise SystemExit(f"{where}: {etree.QName(e.getparent()).localname}/{etree.QName(e).localname} {e.text} "
+                             f"has the offset {got}, but it happens in {WORLD['countries'][cc or home]['name']}"
+                             f"{'' if cc else ' (the issuer’s local time)'}, at {want}")  # O78, stage 7 A1
 
 
 # ---------------------------------------------------------------- issue times follow what a document reports (C72)
@@ -4091,12 +4468,22 @@ def main(flow_id, check=False):
         check_classifications(root, f"{flow_id} {n} {doc['doc']}")
         check_formats(root, f"{flow_id} {n} {doc['doc']}")
         check_time_offsets(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_time_places(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_flight_times(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_schemes(root, f"{flow_id} {n} {doc['doc']}")
         check_tax_exemption_lists(root, f"{flow_id} {n} {doc['doc']}", doc)
         check_instance_rules(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_payment_terms(root, f"world/examples/{flow_id}/{xmlname(n, doc)}",
                             PARTY.get(payee_of(root, doc), {}).get("c"))
         check_due_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_payment_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_reminder_interest(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_totals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_originals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_emissions(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_road_weights(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_shipping_orders(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_reason_premises(root, reasons, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         if FIRST_PASS:
             continue
         files = {xmlname(n, doc): etree.tostring(root, pretty_print=True, xml_declaration=True, encoding="UTF-8"),
@@ -4117,6 +4504,7 @@ def main(flow_id, check=False):
     check_air_uld_ids(flow_id, roots)
     check_party_profiles(flow_id, roots, docs)
     check_calendar(flow_id, roots, docs)
+    check_plan_terms(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)
     check_utility_statements(flow_id, roots)
@@ -4180,6 +4568,9 @@ if __name__ == "__main__":
             ok = False
         for problem in build_examples.check_numbering():
             print(f"numbering: {problem}", file=sys.stderr)  # C74, C75, C76
+            ok = False
+        for problem in build_examples.consignment_weight_problems():
+            print(f"gross weights: {problem}", file=sys.stderr)  # stage 7 A13
             ok = False
     for note in world_items.NOTES:         # HS 2022 subheadings the HS 2017 -> CPC table does not have
         print(f"note: {note}", file=sys.stderr)

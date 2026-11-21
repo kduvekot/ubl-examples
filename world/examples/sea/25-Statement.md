@@ -339,8 +339,8 @@ Inside `StatementLine`:
   The deposit payment.
 - `CollectedPayment/PaidAmount` = **10000.00** (currencyID `XBL`)  
   Paid.
-- `CollectedPayment/ReceivedDate` = **2026-05-09**  
-  Received by the distributor.
+- `CollectedPayment/ReceivedDate` = **2026-05-11**  
+  Received by the distributor on the next business day of Bayvarra's banks.
 - `CollectedPayment/PaidDate` = **2026-05-08**  
   Paid by the buyer the day the order was accepted: the payment's dates, not an invoice period.
 
@@ -620,7 +620,7 @@ Inside `StatementLine`:
     <cac:CollectedPayment>
       <cbc:ID>26-0025</cbc:ID>
       <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
-      <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+      <cbc:ReceivedDate>2026-05-11</cbc:ReceivedDate>
       <cbc:PaidDate>2026-05-08</cbc:PaidDate>
     </cac:CollectedPayment>
   </cac:StatementLine>
