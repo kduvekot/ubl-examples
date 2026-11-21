@@ -39,7 +39,8 @@ FAIL = re.compile(r"(?<![\w`/=-])(?:D\d{1,2}(?: point \d+)?|O\d{1,3}|MO\d{3}|OW\
                   r"|#F\d+\b|\(F\d{1,3}\)|\bIND\d+\b"
                   r"|\bManifest Values\b|\bOASIS example\b|\bUBL 2\.5, 2\.2\.2\b")   # the UBL examples have no
 #                                                            meaning in the world (owner, 2026-11-21, Q3)
-PROPER_NAMES = re.compile(r"\b(?:[Tt]rade accord|trade Accord)\b")   # the Trade Accord is a proper name (Q3)
+# the Trade Accord is a proper name (Q3); "one trade accord", "a trade accord" are the common noun
+PROPER_NAMES = re.compile(r"(?<!\bone )(?<!\ba )(?<!\ban )\b(?:[Tt]rade accord|trade Accord)\b")
 EN_STANDARD = re.compile(r"\bEN \d{3,5}(?:-\d+)*\b")
 EN_ALLOWED = {"EN 15804"}                            # environmental product declarations: kept (owner, O265)
 EUROPEAN = re.compile(r"\bRecyClass\b|\bEuropean List of Waste\b|\bVATEX\b|\bEU\b|\bEuropean Union\b")

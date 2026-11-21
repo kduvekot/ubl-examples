@@ -2216,7 +2216,8 @@
     "twin": "sakskir",
     "vine": "gatek",
     "west": "binskaz",
-    "wolf": "rezhir"
+    "wolf": "rezhir",
+    "european": "raran"
    },
    "wiki": {
     "short": "Language of Urvania",
@@ -3394,7 +3395,8 @@
     "canoe": "vokila",
     "east": "kanipi",
     "long": "makete",
-    "mountain": "tapetu"
+    "mountain": "tapetu",
+    "european": "vanulu"
    },
    "wiki": {
     "short": "Language of Lisavu",
