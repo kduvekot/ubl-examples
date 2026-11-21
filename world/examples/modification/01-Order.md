@@ -84,15 +84,15 @@ Inside `BuyerCustomerParty`:
   Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/Contact/Name` = **Sales office**  
-  The party's main desk, which handles this document; as Marrowdale Sawmill gives it.
-- `Party/Contact/JobTitle` = **Sales coordinator**  
+- `Party/Contact/Name` = **Purchasing**  
+  The party's purchasing desk: the desk for its role in this document (it buys); as Marrowdale Sawmill gives it.
+- `Party/Contact/JobTitle` = **Buyer**  
   The job of the person who answers at the desk; as Marrowdale Sawmill gives it.
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Purchasing**  
   The department the desk belongs to; as Marrowdale Sawmill gives it.
 - `Party/Contact/Telephone` = **+999 2 7121 338 173**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Marrowdale Sawmill gives it.
-- `Party/Contact/ElectronicMail` = **sales@marrowdalesawmill.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Marrowdale Sawmill gives it.
+- `Party/Contact/ElectronicMail` = **purchasing@marrowdalesawmill.example**  
   The contact's e-mail address; as Marrowdale Sawmill gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Marrowdale Sawmill gives it.
@@ -287,11 +287,11 @@ Inside `OrderLine`:
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Sales office</cbc:Name>
-        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Purchasing</cbc:Name>
+        <cbc:JobTitle>Buyer</cbc:JobTitle>
+        <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
-        <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>purchasing@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

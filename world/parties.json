@@ -4726,6 +4726,12 @@
      "convention": "own"
     },
     "desks": {
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@coastalwater.example"
+     },
      "receivables": {
       "name": "Billing",
       "job_title": "Billing officer",
@@ -5024,6 +5030,18 @@
       "department": "Logistics",
       "email": "logistics@marrowdalesawmill.example"
      },
+     "payables": {
+      "name": "Accounts payable",
+      "job_title": "Accounts payable clerk",
+      "department": "Finance",
+      "email": "payables@marrowdalesawmill.example"
+     },
+     "purchasing": {
+      "name": "Purchasing",
+      "job_title": "Buyer",
+      "department": "Purchasing",
+      "email": "purchasing@marrowdalesawmill.example"
+     },
      "receivables": {
       "name": "Accounts receivable",
       "job_title": "Credit controller",
@@ -5152,6 +5170,12 @@
      }
     },
     "desks": {
+     "despatch": {
+      "name": "Despatch office",
+      "job_title": "Despatch coordinator",
+      "department": "Warehouse",
+      "email": "despatch@brackenmere.example"
+     },
      "payables": {
       "name": "Accounts payable",
       "job_title": "Accounts payable clerk",

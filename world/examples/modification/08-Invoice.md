@@ -198,15 +198,15 @@ Inside `AccountingCustomerParty`:
   The name under which the party is registered, with its legal form; as Marrowdale Sawmill gives it.
 - `Party/PartyLegalEntity/CompanyID` = **20412329** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; as Marrowdale Sawmill gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/Contact/Name` = **Sales office**  
-  The party's main desk, which handles this document; as Marrowdale Sawmill gives it.
-- `Party/Contact/JobTitle` = **Sales coordinator**  
+- `Party/Contact/Name` = **Accounts payable**  
+  The party's accounts payable desk: the desk for its role in this document (it pays); as Marrowdale Sawmill gives it.
+- `Party/Contact/JobTitle` = **Accounts payable clerk**  
   The job of the person who answers at the desk; as Marrowdale Sawmill gives it.
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Marrowdale Sawmill gives it.
 - `Party/Contact/Telephone` = **+999 2 7121 338 173**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Marrowdale Sawmill gives it.
-- `Party/Contact/ElectronicMail` = **sales@marrowdalesawmill.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Marrowdale Sawmill gives it.
+- `Party/Contact/ElectronicMail` = **payables@marrowdalesawmill.example**  
   The contact's e-mail address; as Marrowdale Sawmill gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Marrowdale Sawmill gives it.
@@ -586,11 +586,11 @@ Inside `InvoiceLine`:
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412329</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Sales office</cbc:Name>
-        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Accounts payable</cbc:Name>
+        <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
-        <cbc:ElectronicMail>sales@marrowdalesawmill.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>payables@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

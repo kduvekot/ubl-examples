@@ -54,11 +54,11 @@
       </cac:Country>
     </cac:PostalAddress>
     <cac:Contact>
-      <cbc:Name>Customer service</cbc:Name>
-      <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-      <cbc:Department>Customer service</cbc:Department>
+      <cbc:Name>Transport planning</cbc:Name>
+      <cbc:JobTitle>Logistics planner</cbc:JobTitle>
+      <cbc:Department>Logistics</cbc:Department>
       <cbc:Telephone>+999 1 041 697 6856</cbc:Telephone>
-      <cbc:ElectronicMail>customer@rinova.example</cbc:ElectronicMail>
+      <cbc:ElectronicMail>logistics@rinova.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:PartyAuthorization>

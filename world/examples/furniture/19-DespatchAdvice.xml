@@ -47,11 +47,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Trade sales</cbc:Name>
-        <cbc:JobTitle>Trade sales manager</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Despatch office</cbc:Name>
+        <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
-        <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>despatch@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

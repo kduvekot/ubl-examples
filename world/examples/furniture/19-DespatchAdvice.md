@@ -80,15 +80,15 @@ Inside `DespatchSupplierParty`:
   Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
-- `Party/Contact/Name` = **Trade sales**  
-  The party's main desk, which handles this document; as Brackenmere Furniture gives it.
-- `Party/Contact/JobTitle` = **Trade sales manager**  
+- `Party/Contact/Name` = **Despatch office**  
+  The party's despatch office desk: the desk for its role in this document (it sends the goods off); as Brackenmere Furniture gives it.
+- `Party/Contact/JobTitle` = **Despatch coordinator**  
   The job of the person who answers at the desk; as Brackenmere Furniture gives it.
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Warehouse**  
   The department the desk belongs to; as Brackenmere Furniture gives it.
 - `Party/Contact/Telephone` = **+999 2 7121 602 606**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Brackenmere Furniture gives it.
-- `Party/Contact/ElectronicMail` = **trade@brackenmere.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Brackenmere Furniture gives it.
+- `Party/Contact/ElectronicMail` = **despatch@brackenmere.example**  
   The contact's e-mail address; as Brackenmere Furniture gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Brackenmere Furniture gives it.
@@ -340,11 +340,11 @@ Inside `DespatchLine`:
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Trade sales</cbc:Name>
-        <cbc:JobTitle>Trade sales manager</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Despatch office</cbc:Name>
+        <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
         <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
-        <cbc:ElectronicMail>trade@brackenmere.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>despatch@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

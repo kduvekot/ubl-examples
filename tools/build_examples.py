@@ -137,6 +137,64 @@ CHAMBER_DOCS = {"GoodsItemPassport": "carnet", "ProofOfReexportation": "carnet",
                 "ProofOfReexportationRequest": "carnet", "ProofOfReexportationReminder": "carnet",
                 "CertificateOfOrigin": "certificates", "GoodsCertificate": "certificates"}
 GENERIC_ROLES = {"SenderParty", "ReceiverParty", "ReporterParty", "BusinessParty", "IssuerParty"}
+
+# Stage 7, A13: the desk a document's issuer speaks from, by the document's kind. Each kind names the desks that fit
+# it (by function, world/parties.json identity.desks), in the order the issuer's role in a document without a role
+# of its own (GENERIC_ROLES) picks them; where the issuer has none of them, its main contact speaks, and the main
+# contact's function (CONTACT_FUNCTION, from its department) must be one of the kind's fallbacks. "general" is a
+# party with one office for everything (a farm office, a registry).
+_BILL = ("receivables",), ("sales", "general")
+_PAY = ("payables",), ("purchasing", "procurement", "general")
+_BUY = ("purchasing",), ("purchasing", "procurement", "general")
+_SELL = ("sales",), ("sales", "general")
+_SEND = ("despatch", "logistics"), ("operations", "general")
+_CARRY = ("operations",), ("operations", "general")
+_USE = ("logistics",), ("operations", "despatch", "general")
+_BID = ("tenders",), ("sales", "general")
+_AWARD = ("procurement",), ("procurement", "general")
+KIND_DESKS = {
+    **dict.fromkeys(("Invoice", "CreditNote", "DebitNote", "Reminder", "Statement", "PurchaseReceipt",
+                     "InvoiceStatusRequest", "FreightInvoice"), _BILL),
+    **dict.fromkeys(("RemittanceAdvice", "SelfBilledInvoice", "SelfBilledCreditNote", "InvoiceStatusResponse"), _PAY),
+    **dict.fromkeys(("Order", "OrderChange", "OrderCancellation", "RequestForQuotation", "Forecast",
+                     "ForecastRevision", "DocumentStatusRequest", "RetailEvent"), _BUY),
+    **dict.fromkeys(("Quotation", "OrderResponse", "Catalogue", "CatalogueDeletion", "CatalogueItemSpecificationUpdate",
+                     "CataloguePricingUpdate", "BusinessCard", "DocumentStatus", "InstructionForReturns"), _SELL),
+    **dict.fromkeys(("DespatchAdvice", "PackingList", "WeightStatement", "DeliveryNote"), _SEND),
+    "ForwardingInstructions": (("despatch", "logistics", "export", "goods_in"), ("operations", "general")),
+    "ReceiptAdvice": (("goods_in",), ("operations", "general")),
+    # a public body without a customs desk declares what it buys from abroad through the office that bought it
+    **dict.fromkeys(("ExportCustomsDeclaration", "ImportCustomsDeclaration", "TransitCustomsDeclaration"),
+                    (("customs", "customs_export", "customs_import", "customs_transit"),
+                     ("customs", "procurement", "general"))),
+    **dict.fromkeys(("Waybill", "BillOfLading", "TransportExecutionPlan", "TransportServiceDescription",
+                     "CommonTransportationReport", "Manifest", "TransportationStatus", "TransportProgressStatus",
+                     "TransportProgressStatusRequest", "GoodsItemItinerary"), _CARRY),
+    **dict.fromkeys(("TransportExecutionPlanRequest", "TransportServiceDescriptionRequest",
+                     "TransportationStatusRequest"), _USE),
+    **dict.fromkeys(("Tender", "TenderWithdrawal", "TendererQualification", "QualificationApplicationResponse",
+                     "ExpressionOfInterestRequest", "ProcurementStatusRequest", "UnsubscribeFromProcedureRequest"),
+                    _BID),
+    **dict.fromkeys(("CallForTenders", "ContractNotice", "ContractAwardNotice", "PriorInformationNotice",
+                     "QualificationApplicationRequest", "ExpressionOfInterestResponse", "ProcurementStatus",
+                     "TenderReceipt", "TenderContract", "AwardedNotification", "UnawardedNotification",
+                     "TendererQualificationResponse", "UnsubscribeFromProcedureResponse"), _AWARD),
+    **dict.fromkeys(("GoodsItemPassport", "ProofOfReexportation", "ProofOfReexportationRequest",
+                     "ProofOfReexportationReminder"), (("carnet",), ("certificates", "general"))),
+    "CertificateOfOrigin": (("certificates", "customs"), ("certificates", "customs", "general")),
+    "GoodsCertificate": (("certificates",), ("certificates", "general")),
+    "WasteNotification": (("despatch", "logistics"), ("operations", "general")),     # the producer sends it off
+    "WasteMovement": (("goods_in", "logistics"), ("operations", "general")),         # the facility takes it in
+}
+# the function of a party's main contact, by its department (world/parties.json identity.contact.department)
+CONTACT_FUNCTION = {
+    "Sales": "sales", "Customer service": "sales", "Business sales": "sales", "Commercial": "sales",
+    "Trading": "sales", "Purchasing": "purchasing", "Procurement": "procurement", "Customs": "customs",
+    "Operations": "operations", "Transport": "operations", "Bookings": "operations", "Port operations": "operations",
+    "Cargo handling": "operations", "Traffic management": "operations", "Metering": "operations",
+    "Warehouse": "operations", "Certificates": "certificates", "Plant Protection Service": "certificates",
+    "Plant Health Service": "certificates", "Pharmacy": "purchasing",
+}
 CARRIER_ROLES = {"CarrierParty", "TransportServiceProviderParty", "TerminalOperatorParty", "FreightForwarderParty"}
 
 
@@ -199,6 +257,9 @@ def _desk_for(doc, path, pid):
         return "sales"
     if (other, pid) in SELLS:
         return "purchasing"
+    if pid == doc.get("from"):          # the issuer of a document whose kind names its desk (stage 7, A13)
+        desks = PARTY[pid]["identity"].get("desks", {})
+        return next((fn for fn in KIND_DESKS.get(kind, ((),))[0] if fn in desks), None)
     return None
 
 
@@ -4180,6 +4241,41 @@ def check_desk_hours(flow_id, roots, docs):
         raise SystemExit("\n".join(out))
 
 
+def issuer_desk_problems(flow_id, roots, docs):
+    """Stage 7, A13: a document's issuer speaks from a desk that fits the document's kind (KIND_DESKS): one of the
+    kind's desks where the issuer has one (world/parties.json identity.desks), else its main contact, whose function
+    (CONTACT_FUNCTION, by its department) is one of the kind's fallbacks. The desks a document names are found by
+    their e-mail addresses in it."""
+    out = []
+    for (name, root), doc in zip(roots, docs):
+        pid = doc["from"]
+        if pid not in PARTY or doc["doc"] not in KIND_DESKS or not PARTY[pid]["identity"].get("contact"):
+            continue
+        fits, fallback = KIND_DESKS[doc["doc"]]
+        desks = party_desks(pid)
+        mails = {e.text for e in root.iter(f"{{{NS_CBC}}}ElectronicMail")}
+        named = [k for k, (mail, _, _) in desks.items() if mail and mail in mails]
+        own = [k for k in fits if k in desks]
+        main = PARTY[pid]["identity"]["contact"]
+        function = CONTACT_FUNCTION.get(main.get("department"), "general")
+        if own:
+            if not set(named) & set(fits):
+                out.append(f"world/examples/{flow_id}/{name}: {doc['doc']} from "
+                           f"{' and '.join(desks[k][2] for k in named) or 'no desk'} of "
+                           f"{PARTY[pid]['identity']['name']}, which has a {desks[own[0]][2]} for it")
+        elif function not in fallback:
+            out.append(f"world/examples/{flow_id}/{name}: {doc['doc']} from {main['name']} "
+                       f"({main.get('department')}) of {PARTY[pid]['identity']['name']}, which has no "
+                       f"{' or '.join(fits)} desk")
+    return out
+
+
+def check_issuer_desks(flow_id, roots, docs):
+    problems = issuer_desk_problems(flow_id, roots, docs)
+    if problems:
+        raise SystemExit("\n".join(problems))  # stage 7, A13
+
+
 def issue_time_offset(content, doc):
     """The issue time is the issuer's local time, written with its offset from UTC (D27); every other time carries
     the offset of the place where it happens (O78, examples_kit.time_offsets)."""
@@ -4862,6 +4958,7 @@ def main(flow_id, check=False):
     check_party_profiles(flow_id, roots, docs)
     check_calendar(flow_id, roots, docs)
     check_desk_hours(flow_id, roots, docs)
+    check_issuer_desks(flow_id, roots, docs)
     check_plan_terms(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)
