@@ -64,6 +64,9 @@ def address_lines(p):
     """The postal address in the format of the party's country (world/countries.json)."""
     a = p["identity"]["address"]
     fields = {k: [v] for k, v in a.items()}
+    if "Floor" in fields:                   # on a party page "3 301" says nothing: "Floor 3, Room 301"
+        fields["Floor"] = [f"Floor {a['Floor']}" + (f", Room {a['Room']}" if a.get("Room") else "")]
+        fields.pop("Room", None)
     return world_data.address_lines(world["countries"][p["c"]]["address"], fields) + [world["countries"][p["c"]]["name"]]
 
 import world_items  # noqa: E402
