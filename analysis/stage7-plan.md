@@ -233,6 +233,23 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
 7. **Owner decision:** Q8. Should the other makers' lots and serials (the plant, the sawmill, the recycler, the
    ginnery, the orchards, the pharma maker) also become production records in world data, like Valdara's? This
    decides how far O64 reaches, and it is the data O66 needs too.
+8. **Built (2026-11-21):** `world/items.json` `production_records`: the records of the sawmill (blank lots
+   MDS-BL26-0109 and -0116, the second load's lot outside the documents; slat lots MDS-L26-0119 and -0126 with the
+   plant's kiln charges TWM-K1-26-03/04 and the blank lot each was made from), the wood modification plant (its
+   charges, recorded with the owner's lots), Rinova (RR-PE-0417), the ginnery (SCG-L26-017, 27 bales, 6,129 kg), the
+   cooperative (HRW-L26-0401 to 0451 with their growers), the vaccine maker (the three NLB lots with expiry dates) and
+   the isotope maker (serial HVI-TCG20-26-0137); each with its patterns. Valdara's stays in `goods_chain`. The
+   generator still writes these numbers as literals (`examples_scenarios.py`, `MOD_CHARGES`, `MED_LOTS`, `rf_lots`,
+   `PE_LOT`); the check holds them to the records. Check: `tools/world_goods.py` `lot_problems()` (run by
+   `check_world.py`): every LotNumberID, SerialID and ProductTraceID, and every number in a maker's form in any text,
+   is in the record, on the same item (via SellersItemIdentification, a resold item as its maker's), with the same
+   ManufactureDate and ExpiryDate; no recorded number in another form (the same digits and letters under the
+   maker's prefix); a line ships no more than its lots made; a line with serials has one a unit (or one a rejected
+   unit); over all flows a lot leaves its maker in no more than it made; no document quotes a lot before it was
+   made; a lot made from another is made after it and takes no more than it made. **Found:** nothing in the
+   documents once the records were set (the probe's 18 lots and 21 serials all match); the text scan first flagged
+   the weight statement number SCG-PR-26-L017, which is a document of its own, not the lot in another form (the
+   rule now compares letters as well as digits).
 
 ### A9. The calendar (O79, the rest)
 1. **Guards:** D27, O79, O180 and C53.
@@ -449,6 +466,20 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    - The ore: what else Valdara makes from about 1,100 t of iron a month, or whether the train is smaller.
    - The cotton: is a 27 % out-turn in the documents acceptable, or should the documents show more seed cotton or
      less lint?
+8. **Built (2026-11-21):** `world/items.json` `chains`: cotton (seed cotton to lint, 33 to 40 %, FAO's
+   technical conversion factors and the ICAC Cotton Data Book 2021), ore (62 % Fe, 35 % scrap in the melt, foundry
+   yield 45 to 80 %, from the casting-yield paper: at most 0.76 kg of castings a kg of ore), slats (one slat a blank,
+   with the second load's blank lot from the sawmill's record), film (granulate to film and bags, at most its
+   mass), gas (a balance) and the bench (its ledgers in `goods_chain`). Sources with SHA-256 in
+   `world/codelists/sources/PROVENANCE-second-round.md` (cited, not copied). Check: `tools/world_goods.py`
+   `chain_problems()`: out ≤ in × the highest rate (a balance: equal) from the built documents' line quantities,
+   every document counted dated within the chain's period, a rate in steps the product of its steps;
+   `chain_figures()` lists the rates with `--notes`. **Found:** the probe's 27 % for cotton counted the season
+   advance (cotton/01, a prepayment of 4,500 kg) as seed cotton; the seed cotton delivered is the 18,000 kg of
+   cotton/03, so the out-turn is 34.0 %, inside the range: no change to the documents. Ore 0.4 % (benches are a few
+   tonnes of a month's iron), film 0.6 %, slats 4,800 of 4,800, gas 39,200 MWh in balance. Story (for
+   `world/parties.json`, another session): Valdara as a broad iron works, and the ginnery keeping part of its lint
+   for the home market.
 
 ### B4. Item physics for all items (O62)
 1. **Guards:** D20, O62, C69, C40 and C15.
@@ -491,6 +522,28 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    - Densities and their ranges per material (oak, ash, thermally modified ash, ductile iron, PE).
    - Whether oak and ash variants must differ in weight.
    - Which hold capacities count per vehicle (pallet places, volume, payload).
+8. **Built (2026-11-21):** `world/items.json` `materials` (oak 720, ash 670, thermally modified ash 585, ductile
+   iron 7,100, polyethylene 920, the stripper, each with a range and its source: the Wood Handbook FPL-GTR-282, the
+   Ductile Iron Society's figures, 21 CFR 177.1520 and ASTM D883's terms, the IPCC's calorific value for gas) and a
+   `physics` sheet on all 34 items with a weight (after `gross_kg`): by envelope (dimensions, material, solid
+   fraction: the side frame 5 %, the Marrow bench 13.1 %, the chair 7.6 %, the desk 7 %), by sheet (the garment bag:
+   two layers of 12 µm), by volume, mass or energy, by contents or the items of a pack, by parts; and who lifts the
+   package (one, two, machine, with an aid where above the limit). Check: `tools/world_goods.py`
+   `physics_problems()`: the implied density within the material's range, a unit by mass, volume or energy as its
+   unit says, contents and packs sum to the whole, a part's weight is its item's, oak and ash variants weigh as their
+   densities (±2 %), each lifted package within ISO 11228-1 (25 kg one, 33 kg two) or with its aid;
+   `load_problems()`: each vehicle the documents name (plate, vessel, train) against the fleet in
+   `world/parties.json` (tares plus load within 40 t or its maximum gross weight, a tank within its maximum load,
+   pallets within a curtain-sider's floor of 13.6 × 2.45 m, one container on a chassis, a train's containers one to a
+   wagon, a ship's TEU), and a road leg whose vehicle no document names with its carrier's only road vehicle against
+   the flow's largest despatch. **Fixed:** the Marrow bench and chair in oak are 7 % heavier than in ash (22.6/25.6
+   and 11.3/12.3 kg net/gross), the timber 720 kg (oak) and 670 kg (ash) a cubic metre: furniture/12 (295.85 kg,
+   its reason now from the data) and furniture/19 (985.4 kg) follow. **Found, not fixed (generator):** rail/08
+   puts both containers on the one container chassis of the rail carrier with no second run stated (listed as a
+   known note). **Capacities missing in `world/parties.json`:** payload of the container and ore wagons (the ore
+   train lists 4 ore wagons for 1,788.4 t), the barge's deadweight (only gross and net tonnage), the timber truck's
+   and the farm tractor's load limits; the forwarder's and the furniture maker's road legs have several vehicles and
+   no document names one. The 40 t rule has no hits (reefer/07 is the closest, 39,528 kg).
 
 ### B5. The HS reasoning list, verified once by a person (O31)
 1. **Guards:** D13, O31, C67 and O27.
