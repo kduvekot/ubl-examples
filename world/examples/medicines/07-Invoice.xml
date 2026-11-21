@@ -37,11 +37,11 @@
         <cbc:RegistrationName>Haarvliet Isotopes B.V.</cbc:RegistrationName>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Order desk</cbc:Name>
-        <cbc:JobTitle>Order coordinator</cbc:JobTitle>
-        <cbc:Department>Customer service</cbc:Department>
-        <cbc:ElectronicMail>orders@haarvliet-isotopes.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:ElectronicMail>receivables@haarvliet-isotopes.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
     </cac:Party>
   </cac:AccountingSupplierParty>
@@ -82,7 +82,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>payables@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

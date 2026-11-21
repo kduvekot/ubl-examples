@@ -261,7 +261,7 @@ Inside `CatalogueLine`:
   The name of code RECYCLED in the Trade Accord's certificate type list.
 - `Item/EnvironmentalCertificate/Remarks` = **100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the Lumeport Trade Accord's rules for tracing recycled content; the certificate is the Accord's recycled-content certificate.**  
   What the certificate states.
-- `Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-106192** (schemeID `urn:ubl-examples:world:XU:register`)  
+- `Item/EnvironmentalCertificate/IssuerParty/PartyIdentification/ID` = **XU-R-106329** (schemeID `urn:ubl-examples:world:XU:register`)  
   An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under the Lumeport Trade Accord's rules for tracing recycled content, and issues the Accord's recycled-content certificates to the plants that meet them; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate. Its identifier and name are enough (referenced).
 - `Item/EnvironmentalCertificate/IssuerParty/PartyName/Name` = **Certovira Certification**  
   An accredited certification body in Ferrano (a private company): it audits recycling plants for the traceability and the recycled content of what they make, under the Lumeport Trade Accord's rules for tracing recycled content, and issues the Accord's recycled-content certificates to the plants that meet them; it audits Rinova Recovery's plant every year. Referenced only, as the issuer of Rinova's certificate. Its identifier and name are enough (referenced).
@@ -479,7 +479,7 @@ Inside `CatalogueLine`:
         <cbc:Remarks>100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the Lumeport Trade Accord's rules for tracing recycled content; the certificate is the Accord's recycled-content certificate.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106192</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106329</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
             <cbc:Name>Certovira Certification</cbc:Name>

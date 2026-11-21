@@ -68,15 +68,15 @@ Inside `AccountingSupplierParty`:
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Haarvliet Isotopes B.V.**  
   The company's registered name, with the legal form of its country; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/Name` = **Order desk**  
+- `Party/Contact/Name` = **Accounts receivable**  
   The party's desk that handles this document; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/JobTitle` = **Order coordinator**  
+- `Party/Contact/JobTitle` = **Credit controller**  
   The job of the person who answers at the desk; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/Department` = **Customer service**  
+- `Party/Contact/Department` = **Finance**  
   The department the desk belongs to; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/ElectronicMail` = **orders@haarvliet-isotopes.example**  
+- `Party/Contact/ElectronicMail` = **receivables@haarvliet-isotopes.example**  
   The desk's e-mail address; as Haarvliet Isotopes, a maker abroad, gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Haarvliet Isotopes, a maker abroad, gives it.
 
 ### Accounting Customer Party
@@ -127,7 +127,7 @@ Inside `AccountingCustomerParty`:
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Quillmoor Pharma Distribution gives it.
 - `Party/Contact/ElectronicMail` = **payables@quillmoor.example**  
   The contact's e-mail address; as Quillmoor Pharma Distribution gives it.
-- `Party/Contact/Note` = **Every day, around the clock**  
+- `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Quillmoor Pharma Distribution gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
@@ -304,11 +304,11 @@ Inside `InvoiceLine`:
         <cbc:RegistrationName>Haarvliet Isotopes B.V.</cbc:RegistrationName>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>Order desk</cbc:Name>
-        <cbc:JobTitle>Order coordinator</cbc:JobTitle>
-        <cbc:Department>Customer service</cbc:Department>
-        <cbc:ElectronicMail>orders@haarvliet-isotopes.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Name>Accounts receivable</cbc:Name>
+        <cbc:JobTitle>Credit controller</cbc:JobTitle>
+        <cbc:Department>Finance</cbc:Department>
+        <cbc:ElectronicMail>receivables@haarvliet-isotopes.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
     </cac:Party>
   </cac:AccountingSupplierParty>
@@ -349,7 +349,7 @@ Inside `InvoiceLine`:
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>payables@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

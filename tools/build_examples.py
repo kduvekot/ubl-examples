@@ -497,7 +497,7 @@ def abroad_party(pid, desk=None):
     p = PARTY[pid]
     idn = p["identity"]
     src = f"as {idn['name']}, a maker abroad, gives it"  # O229, world/parties.json abroad
-    ct = idn["contact"]
+    ct = {**idn["contact"], **idn.get("desks", {}).get(desk, {})}   # a desk of its own for the role, else the main
     out = {"_pid": pid,
            "PartyName": {"Name": V(idn["name"], f"The trading name; {src}. {idn['ids_note']}")},
            "PostalAddress": abroad_address(pid),

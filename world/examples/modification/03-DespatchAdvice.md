@@ -129,15 +129,15 @@ Inside `DeliveryCustomerParty`:
   Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
-- `Party/Contact/Name` = **Sales office**  
-  The party's main desk, which handles this document; as Tostara Wood Modification gives it.
-- `Party/Contact/JobTitle` = **Sales coordinator**  
+- `Party/Contact/Name` = **Timber store**  
+  The party's timber store desk: the desk for its role in this document (it receives the goods); as Tostara Wood Modification gives it.
+- `Party/Contact/JobTitle` = **Store keeper**  
   The job of the person who answers at the desk; as Tostara Wood Modification gives it.
-- `Party/Contact/Department` = **Sales**  
+- `Party/Contact/Department` = **Yard**  
   The department the desk belongs to; as Tostara Wood Modification gives it.
 - `Party/Contact/Telephone` = **+999 1 041 573 2290**  
-  Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Tostara Wood Modification gives it.
-- `Party/Contact/ElectronicMail` = **sales@tostara.example**  
+  The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Tostara Wood Modification gives it.
+- `Party/Contact/ElectronicMail` = **store@tostara.example**  
   The contact's e-mail address; as Tostara Wood Modification gives it.
 - `Party/Contact/Note` = **Weekdays 07:00–16:00**  
   When the desk can be reached; as Tostara Wood Modification gives it.
@@ -276,11 +276,11 @@ Inside `DespatchLine`:
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Sales office</cbc:Name>
-        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Timber store</cbc:Name>
+        <cbc:JobTitle>Store keeper</cbc:JobTitle>
+        <cbc:Department>Yard</cbc:Department>
         <cbc:Telephone>+999 1 041 573 2290</cbc:Telephone>
-        <cbc:ElectronicMail>sales@tostara.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>store@tostara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

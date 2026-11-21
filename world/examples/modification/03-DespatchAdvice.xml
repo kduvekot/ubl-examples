@@ -83,11 +83,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Sales office</cbc:Name>
-        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Timber store</cbc:Name>
+        <cbc:JobTitle>Store keeper</cbc:JobTitle>
+        <cbc:Department>Yard</cbc:Department>
         <cbc:Telephone>+999 1 041 573 2290</cbc:Telephone>
-        <cbc:ElectronicMail>sales@tostara.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>store@tostara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>

@@ -195,6 +195,9 @@ def state_code(world, p):
     return next((k for k, v in subs.items() if v == st), None)
 
 
+OFFICE_DESKS = ("purchasing", "payables", "receivables")   # desks that keep office hours, never round the clock
+
+
 def check(world):
     problems = []
     parties = {p["id"]: p for p in world["parties"]}
@@ -267,6 +270,10 @@ def check(world):
                 problems.append(f"{where}: desk {fn} needs a name, job title, department and e-mail")
             if not dk.get("email", "").endswith(".example"):
                 problems.append(f"{where}: desk {fn} e-mail {dk.get('email')} must use the reserved .example domain")
+            hours = dk.get("hours") or idn.get("contact", {}).get("hours") or ""
+            if fn in OFFICE_DESKS and hours.endswith("around the clock"):  # review 20261121T1048Z (lpg, medicines)
+                problems.append(f"{where}: desk {fn} would be reachable {hours.lower()}: a finance or purchasing "
+                                "desk keeps office hours of its own")
         ep = idn.get("endpoint")
         if ep:
             if ep in seen_endpoints:
@@ -349,10 +356,15 @@ def register_problems(world):
     public body or a grower the shape of a company register number."""
     import world_ids
     out = []
+    seen = {}
     for p in world["parties"] + world.get("referenced", []):
         where, idn = f"party {p['id']}", p.get("identity", {})
         if not idn.get("registry_id"):
             continue
+        if (p["c"], idn["registry_id"]) in seen:  # review 20261121T1048Z plastics/12#F1
+            out.append(f"{where}: register number {idn['registry_id']} is also that of party "
+                       f"{seen[(p['c'], idn['registry_id'])]}: a register gives each entry its own number")
+        seen[(p["c"], idn["registry_id"])] = p["id"]
         own, reg = world_ids.register_of(world, p)
         ep = idn.get("endpoint")
         if ep and ep != f"{p['c']}:{idn['registry_id']}":

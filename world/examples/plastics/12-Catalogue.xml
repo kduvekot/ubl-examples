@@ -204,7 +204,7 @@
         <cbc:Remarks>100 % recycled content: polyethylene recovered from sorted production waste. The plant's traceability and recycled content audited under the Lumeport Trade Accord's rules for tracing recycled content; the certificate is the Accord's recycled-content certificate.</cbc:Remarks>
         <cac:IssuerParty>
           <cac:PartyIdentification>
-            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106192</cbc:ID>
+            <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-106329</cbc:ID>
           </cac:PartyIdentification>
           <cac:PartyName>
             <cbc:Name>Certovira Certification</cbc:Name>
