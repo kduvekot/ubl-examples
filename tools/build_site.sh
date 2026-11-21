@@ -23,7 +23,10 @@ ROOT=$(pwd)
 
 tools/fetch_oasis_stylesheets.sh .oasis
 tools/md2docbook.sh --check
-python3 tools/check_world.py   # includes tools/terrain.py --check: the committed terrain is made from its current inputs
+# The tile model of the world, made once by the world check, for the map sheet below (outside $OUT, which is made anew)
+MODEL=$(mktemp)
+trap 'rm -f "$MODEL"' EXIT
+python3 tools/check_world.py --model "$MODEL"   # includes tools/terrain.py --check: the committed terrain is made from its current inputs
 # The example documents: up to date with the world, and valid (UBL schemas, code lists)
 python3 tools/build_examples.py --check
 sh tools/fetch_ubl_validation.sh $(ls world/examples/*/*.xml | sed 's#.*/[0-9]*-\(.*\)\.xml#\1#' | sort -u)
@@ -87,9 +90,31 @@ page() { # source, target, title, [toc-depth]
   toc=""
   [ -n "${4:-}" ] && toc="--toc --toc-depth=$4"
   pandoc -f gfm -t html5 -s --template=site/page.html $toc \
-      -M pagetitle="$3" -V root="" -V cssv="$CSSV" -V nav="$(nav "" "$2")" -V footer="$(footer)" "$1" |
-    sed -E 's#href="(history/)?README\.md"#href="history.html"#g; s#href="element-coverage-details\.md"#href="coverage-details.html"#g; s#href="manifest\.json"#href="https://github.com/kduvekot/ubl-examples/blob/main/history/manifest.json"#g' \
-    > "$OUT/$2"
+      -M pagetitle="$3" -V root="" -V cssv="$CSSV" -V nav="$(nav "" "$2")" -V footer="$(footer)" "$1" > "$OUT/$2.pandoc"
+  sed -E 's#href="(history/)?README\.md"#href="history.html"#g; s#href="element-coverage-details\.md"#href="coverage-details.html"#g; s#href="manifest\.json"#href="https://github.com/kduvekot/ubl-examples/blob/main/history/manifest.json"#g' \
+    "$OUT/$2.pandoc" > "$OUT/$2"
+  rm "$OUT/$2.pandoc"
+}
+# The many pages of the loops are converted side by side, up to one per processor (BUILD_JOBS sets the number):
+# bg starts a command in the background, waiting first for the oldest when that many run; bg_wait waits for all of
+# them and stops the build when any of them failed
+JOBS=${BUILD_JOBS:-$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)}
+PIDS=""
+BG_FAILED=0
+bg() {
+  "$@" &
+  PIDS="$PIDS $!"
+  set -- $PIDS
+  if [ $# -ge "$JOBS" ]; then
+    wait "$1" || BG_FAILED=1
+    shift
+    PIDS="$*"
+  fi
+}
+bg_wait() {
+  for pid in $PIDS; do wait "$pid" || BG_FAILED=1; done
+  PIDS=""
+  [ "$BG_FAILED" = 0 ] || { echo "a page conversion failed" >&2; exit 1; }
 }
 page history/README.md history.html "The OASIS sample documents: how the history was built" 2
 page README.md releases.html "The OASIS sample documents: releases" 3
@@ -121,9 +146,9 @@ page "$OUT/.coverage-details.md" coverage-details.html "Element coverage: the mi
 rm -f "$OUT/.coverage.md" "$OUT/.coverage-summary.md" "$OUT/.coverage-details.md"
 # The printed map sheet (O151): the A3 sheet at 1 : 2,500,000, drawn from the world data at every build
 # (analysis/world-position/refine_map.py; needs numpy, Pillow and the DejaVu fonts), so it always matches the map
-python3 tools/world_model.py "$OUT/.model.json" > /dev/null
-python3 -I analysis/world-position/refine_map.py "$OUT/.model.json" world/map.json "$OUT/map-sheet.png" 5 0 sheet > /dev/null
-rm -f "$OUT/.model.json"
+# (tools/map_sheet.py: drawn only when one of its inputs changed, else taken from the cache, $BUILD_CACHE or .cache)
+python3 tools/map_sheet.py "$MODEL" "$OUT/map-sheet.png"
+rm -f "$MODEL"
 # The home page's picture of the world: the sheet, made small
 python3 - "$OUT/map-sheet.png" "$OUT/world-preview.jpg" <<'PREVIEW'
 import sys
@@ -157,8 +182,9 @@ printf '<!doctype html><meta charset="utf-8"><title>Code lists</title><meta http
 python3 tools/build_world.py "$OUT" "$OUT/.world-md"
 for md in "$OUT"/.world-md/*.md; do
   name=$(basename "$md" .md)
-  page "$md" "$name.html" "$(sed -n '1s/^# //p' "$md")"
+  bg page "$md" "$name.html" "$(sed -n '1s/^# //p' "$md")"
 done
+bg_wait
 rm -rf "$OUT/.world-md"
 # The Encyclopedia (/wiki/): articles made from the world data (tools/build_wiki.py), in a look of its own
 python3 tools/build_wiki.py "$OUT/.wiki-md"
@@ -166,19 +192,21 @@ mkdir -p "$OUT/wiki" && cp site/wiki.css "$OUT/wiki/wiki.css"
 WCSSV=$(sha256sum site/wiki.css | cut -c1-10)
 for md in "$OUT"/.wiki-md/*.md; do
   name=$(basename "$md" .md)
-  pandoc -f gfm -t html5 -s --template=site/wiki.html -M pagetitle="$(sed -n '1s/^# //p' "$md")" -V cssv="$WCSSV" \
+  bg pandoc -f gfm -t html5 -s --template=site/wiki.html -M pagetitle="$(sed -n '1s/^# //p' "$md")" -V cssv="$WCSSV" \
     "$md" -o "$OUT/wiki/$name.html"
 done
+bg_wait
 rm -rf "$OUT/.wiki-md"
 # The example documents: a page per document (values and reasons), and the XML files themselves
 # (build_world.py adds to each page its place in the flow's story, its neighbours, parties and specification)
 for md in "$OUT"/.example-md/*/*.md; do
   flow=$(basename "$(dirname "$md")"); name=$(basename "$md" .md)
   mkdir -p "$OUT/examples/$flow" && cp "world/examples/$flow/$name.xml" "$OUT/examples/$flow/"
-  sed "s#](\($name\.xml\))#](examples/$flow/\1)#" "$md" > "$OUT/.example.md"
-  page "$OUT/.example.md" "example-$flow-$name.html" "$(sed -n '1s/^# //p' "$md")"
+  sed "s#](\($name\.xml\))#](examples/$flow/\1)#" "$md" > "$md.page"
+  bg page "$md.page" "example-$flow-$name.html" "$(sed -n '1s/^# //p' "$md")"
 done
-rm -rf "$OUT/.example.md" "$OUT/.example-md"
+bg_wait
+rm -rf "$OUT/.example-md"
 # Landing page: header, footer and key figures filled in
 nav "" index.html > "$OUT/.nav"
 footer > "$OUT/.footer"

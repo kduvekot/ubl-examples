@@ -6,3 +6,5 @@ __pycache__/
 .ubl-versions/
 .review/
 .claude/worktrees/
+# The build cache: the last map sheet and its fingerprint (tools/map_sheet.py)
+/.cache/

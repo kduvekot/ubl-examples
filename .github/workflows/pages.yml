@@ -59,6 +59,18 @@ jobs:
             xsltproc libxml2-utils pandoc python3-lxml python3-numpy python3-pil fonts-dejavu-core
           sudo chown -R "$(id -u):$(id -g)" ~/apt-cache
 
+      # The printed map sheet takes about a minute to draw; tools/map_sheet.py keeps the last one with the fingerprint
+      # of all its inputs in .cache/map-sheet and draws it again only when the fingerprint differs. The cache is kept
+      # between runs, keyed on the files the sheet is made from (the world data, the terrain, the tools and the
+      # drawing script); a run with a new key starts from the newest earlier cache, and the fingerprint decides.
+      - name: Restore the map sheet cache
+        if: steps.newest.outputs.newest == 'true'
+        uses: actions/cache@v5
+        with:
+          path: .cache/map-sheet
+          key: map-sheet-ubuntu-26.04-${{ runner.arch }}-${{ hashFiles('world/*.json', 'world/terrain/*.png', 'tools/*.py', 'analysis/world-position/refine_map.py') }}
+          restore-keys: map-sheet-ubuntu-26.04-${{ runner.arch }}-
+
       - name: Build site
         if: steps.newest.outputs.newest == 'true'
         run: tools/build_site.sh _site
