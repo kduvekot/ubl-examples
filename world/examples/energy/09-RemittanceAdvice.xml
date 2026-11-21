@@ -146,7 +146,7 @@
     </cac:PayerFinancialAccount>
     <cac:PayeeFinancialAccount>
       <cbc:ID schemeID="urn:ubl-examples:world:account">XB45BLUM38522004817534</cbc:ID>
-      <cbc:Name>Kelpstone Gas Ltd</cbc:Name>
+      <cbc:Name>Kelpstone Gas Corp</cbc:Name>
       <cbc:AccountTypeCode listID="ISO 20022 ExternalCashAccountType1Code">CACC</cbc:AccountTypeCode>
       <cbc:AccountFormatCode listID="urn:ubl-examples:world:codelist:AccountFormatCode">ISO13616</cbc:AccountFormatCode>
       <cbc:CurrencyCode listID="ISO 4217 Alpha">XBL</cbc:CurrencyCode>

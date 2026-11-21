@@ -27,8 +27,9 @@ something to put in it, and these checks keep it consistent:
   * industry codes are ISIC Rev. 4 classes, and parties referred to exist;
   * a public body has no company figures; a company was entered in the
     register on a working day that is no holiday of its country, and its
-    turnover per person falls in the band for its kind of business
-    (parties.json turnover_per_person; decisions D14, D46, open point O30);
+    staff and its turnover per person fall in the ranges for its kind of
+    business, the ISIC section (or division) of its industry (parties.json
+    turnover_per_person; decisions D14, D46, open points O30 and O279);
   * the ISIN of a listed security has the structure and check digit of
     ISO 6166 (Luhn over the digits with each letter expanded to 10..35);
   * identification (D5, open points O22 and O32): a party identifies itself
@@ -507,11 +508,27 @@ def holiday_on(world, country, day):
     return None
 
 
+ISIC_SECTIONS = [("A", 1, 3), ("B", 5, 9), ("C", 10, 33), ("D", 35, 35), ("E", 36, 39), ("F", 41, 43),
+                 ("G", 45, 47), ("H", 49, 53), ("I", 55, 56), ("J", 58, 63), ("K", 64, 66), ("L", 68, 68),
+                 ("M", 69, 75), ("N", 77, 82), ("O", 84, 84), ("P", 85, 85), ("Q", 86, 88), ("R", 90, 93),
+                 ("S", 94, 96), ("T", 97, 98), ("U", 99, 99)]
+
+
+def isic_section(code):
+    """The ISIC Rev. 4 section letter of a class code (its first two digits are the division)."""
+    try:
+        div = int(str(code)[:2])
+    except ValueError:
+        return ""
+    return next((s for s, lo, hi in ISIC_SECTIONS if lo <= div <= hi), "")
+
+
 def figure_problems(world, p):
     """A party's founding date, headcount and turnover (worklist C60, decisions D4, D14 and D46, open points O21
     and O30): a public body has no company figures; a company is entered in the register on a working day that
-    is not a holiday of its country, and its turnover per person falls in the band for its kind of business
-    (parties.json turnover_per_person), unless it is listed there as awaiting the owner's decision."""
+    is not a holiday of its country, and its staff and its turnover per person fall in the ranges for its kind of
+    business, the ISIC section or division of its industry (parties.json turnover_per_person; O279), unless it is
+    listed there as awaiting the owner's decision."""
     import datetime
     problems, where = [], f"party {p['id']}"
     idn = p["identity"]
@@ -531,11 +548,16 @@ def figure_problems(world, p):
     if not le.get("turnover") or idn.get("person") or le.get("sole_proprietor"):
         return problems                        # a farm is in the farm register, not the companies register (D46)
     rule = world["turnover_per_person"]
-    band = rule["bands"].get(le.get("business"))
+    section = isic_section(idn.get("industry", ""))
+    key = section + str(idn.get("industry", ""))[:2]
+    band = rule["bands"].get(key) or rule["bands"].get(section)
     if not band:
-        problems.append(f"{where}: business {le.get('business')!r} is not one of the kinds of turnover_per_person "
-                        f"({', '.join(rule['bands'])}) (O30)")
+        problems.append(f"{where}: industry {idn.get('industry')!r} (ISIC section {section or '?'}) has no range in "
+                        f"turnover_per_person ({', '.join(rule['bands'])}) (O30)")
         return problems
+    if not band["staff_min"] <= le["headcount"] <= band["staff_max"]:
+        problems.append(f"{where}: {le['headcount']} persons is outside the range of {band['staff_min']:,} to "
+                        f"{band['staff_max']:,} for {band['name'].lower()} (O30)")
     t = le["turnover"]
     per = in_lume(world, t["amount"], t["currency"]) / le["headcount"]
     inside = band["min"] <= per <= band["max"]

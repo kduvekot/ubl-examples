@@ -355,8 +355,9 @@ the docks of the colonial years and the suburbs after them.
 Roads, railways and pipelines are laid over the land as a builder would lay
 them: main roads climb at most 7 %, minor roads 10 % and railways 2 %, and
 they follow the contours and cross few rivers. The largest bridges are
-Ferrano's road bridge, about 106 m above the river, the ore line's river
-bridge, 78 m high, and a viaduct over a side valley; no tunnel was worth its
+the ore line's river bridge, about 100 m above the water where the river
+runs deep below the hills, Ferrano's road bridge, about 20 m above the river,
+and a viaduct over a side valley; no tunnel was worth its
 cost. The railways are the ore line from the mine down to Valdara's works at
 Ferrano, the line from Ferrano across the border to Lumeway's siding at
 Marrowdale, a line to the Port of Lumeport, and the wool line from Marrowdale

@@ -48,9 +48,9 @@
     "legal": {
      "form": "SUA",
      "founded": "1958-06-30",
-     "headcount": 987,
+     "headcount": 22,
      "turnover": {
-      "amount": "28000000000",
+      "amount": "175000000",
       "currency": "XUF",
       "year": 2025
      },
@@ -2773,7 +2773,7 @@
     "website": "https://www.port-lumeport.example",
     "language": "en",
     "legal": {
-     "form": "LTD",
+     "form": "SOC",
      "founded": "1991-10-01",
      "headcount": 640,
      "turnover": {
@@ -2859,9 +2859,9 @@
     "legal": {
      "form": "CORP",
      "founded": "1974-03-01",
-     "headcount": 776,
+     "headcount": 85,
      "turnover": {
-      "amount": "865000000.00",
+      "amount": "24000000.00",
       "currency": "XBL",
       "year": 2025
      },
@@ -2989,7 +2989,7 @@
     "website": "https://www.lumeport-cargo.example",
     "language": "en",
     "legal": {
-     "form": "LTD",
+     "form": "SOC",
      "founded": "1983-05-18",
      "headcount": 85,
      "turnover": {
@@ -3077,9 +3077,9 @@
     "legal": {
      "form": "LTD",
      "founded": "1972-10-04",
-     "headcount": 150,
+     "headcount": 70,
      "turnover": {
-      "amount": "9000000.000",
+      "amount": "3200000.000",
       "currency": "XLC",
       "year": 2025
      },
@@ -3235,9 +3235,9 @@
     "legal": {
      "form": "LTD",
      "founded": "1987-11-03",
-     "headcount": 38,
+     "headcount": 190,
      "turnover": {
-      "amount": "2590000.000",
+      "amount": "12800000.000",
       "currency": "XLC",
       "year": 2025
      },
@@ -3752,9 +3752,9 @@
     "legal": {
      "form": "LTD",
      "founded": "1878-07-01",
-     "headcount": 760,
+     "headcount": 190,
      "turnover": {
-      "amount": "163000000.000",
+      "amount": "14000000.000",
       "currency": "XLC",
       "year": 2025
      },
@@ -4038,7 +4038,7 @@
     "legal": {
      "form": "SUA",
      "founded": "1949-01-14",
-     "headcount": 3188,
+     "headcount": 640,
      "turnover": {
       "amount": "72700000000",
       "currency": "XUF",
@@ -4156,7 +4156,7 @@
     "website": "https://www.coastalwater.example",
     "language": "en",
     "legal": {
-     "form": "LTD",
+     "form": "SOC",
      "founded": "1954-07-01",
      "headcount": 410,
      "turnover": {
@@ -4260,9 +4260,9 @@
     "legal": {
      "form": "LTD",
      "founded": "1993-07-01",
-     "headcount": 180,
+     "headcount": 110,
      "turnover": {
-      "amount": "14000000.000",
+      "amount": "9600000.000",
       "currency": "XLC",
       "year": 2025
      },
@@ -5184,11 +5184,11 @@
     "website": "https://www.kelpstone.example",
     "language": "en",
     "legal": {
-     "form": "LTD",
+     "form": "CORP",
      "founded": "2011-04-01",
-     "headcount": 1315,
+     "headcount": 150,
      "turnover": {
-      "amount": "833000000.00",
+      "amount": "63000000.00",
       "currency": "XBL",
       "year": 2025
      },
@@ -5263,7 +5263,7 @@
      },
      {
       "title": "Operations",
-      "text": "A subsea line brings the gas ashore from the production platform to the plant, which treats it to pipeline quality. The pipeline runs about 207 km across the border to [[Montebrio Power]], with a branch of about 97 km to the city gate of [[Ferrano Grid]] for the customers of [[Ferrano Energy]]; the gas is measured at a metering station on Bayvarra's side of the border. The plant also separates propane from the field's gas and sells it by the tonne, weighed on its weighbridge; [[Gullhaven Tank Haulage]] carries it by road tanker, among others to the [[Coastal State Water Company]], which burns it in winter in the peak boilers of Lumeport's district heating. The production platform of the Kelpstone field is Kelpstone A. The field yields about 0.6 billion m³ of gas a year, about 6 TWh, and the plant about 50,000 t of propane; about 15 billion m³ remain, enough for about 25 years."
+      "text": "A subsea line brings the gas ashore from the production platform to the plant, which treats it to pipeline quality. The pipeline runs about 207 km across the border to [[Montebrio Power]], with a branch of about 97 km to the city gate of [[Ferrano Grid]] for the customers of [[Ferrano Energy]]; the gas is measured at a metering station on Bayvarra's side of the border. The plant also separates propane from the field's gas and sells it by the tonne, weighed on its weighbridge; [[Gullhaven Tank Haulage]] carries it by road tanker, among others to the [[Coastal State Water Company]], which burns it in winter in the peak boilers of Lumeport's district heating. The production platform of the Kelpstone field is Kelpstone A. The field yields about 0.16 billion m³ of gas a year, about 1.6 TWh, and the plant about 13,000 t of propane; about 4 billion m³ remain, enough for about 25 years."
      }
     ]
    }
@@ -5319,9 +5319,9 @@
     "legal": {
      "form": "SUA",
      "founded": "1974-06-03",
-     "headcount": 2935,
+     "headcount": 34,
      "turnover": {
-      "amount": "48000000000",
+      "amount": "2150000000",
       "currency": "XUF",
       "year": 2025
      },
@@ -5436,9 +5436,9 @@
     "legal": {
      "form": "SUA",
      "founded": "2007-01-02",
-     "headcount": 91,
+     "headcount": 620,
      "turnover": {
-      "amount": "4350000000",
+      "amount": "11800000000",
       "currency": "XUF",
       "year": 2025
      },
@@ -5484,7 +5484,7 @@
      },
      {
       "title": "Operations",
-      "text": "The company connects [[Montebrio Power]] and the gas pipeline from [[Bayvarra]], whose branch reaches its city gate after about 97 km. It owns the meters, reads them and corrects the gas readings. It charges [[Ferrano Energy]] for the use of its networks per kilowatt hour taken at each connection, and Ferrano Energy collects the network charges with its bills to customers: of a tariff of 27.3 ferra a kilowatt hour, 6.2 are for the network. The Province of Ferrano takes in the city and the valley up to Serravona and Fucinalta, about 4,800 km² with about 700,000 people. The company's power lines run to about 8,500 km, with about 300,000 connections, and its gas mains to about 1,500 km, with about 90,000 connections. Line contractors do most of the work in the field, so the company itself stays small."
+      "text": "The company connects [[Montebrio Power]] and the gas pipeline from [[Bayvarra]], whose branch reaches its city gate after about 97 km. It owns the meters, reads them and corrects the gas readings. It charges [[Ferrano Energy]] for the use of its networks per kilowatt hour taken at each connection, and Ferrano Energy collects the network charges with its bills to customers: of a tariff of 27.3 ferra a kilowatt hour, 6.2 are for the network. The Province of Ferrano takes in the city and the valley up to Serravona and Fucinalta, about 4,800 km² with about 700,000 people. The company's power lines run to about 8,500 km, with about 300,000 connections, and its gas mains to about 1,500 km, with about 90,000 connections. Its own crews run and maintain the networks and read the meters; line contractors build most of the new lines."
      }
     ]
    }
@@ -6535,42 +6535,112 @@
   }
  ],
  "turnover_per_person": {
-  "note": "Rules of thumb for a company's yearly turnover per person, in lume, by the kind of business it is in (identity.legal.business): estimates of typical ranges, meant to catch the implausible. Turnovers in ferra and coral count at the reference rates. Only companies in a commercial register are checked: public bodies have no company figures, and a farm is entered in Lisavu's farm register, not the companies register. tools/world_parties.py checks every company against its band. Shipping lines and oil and gas producers have bands of their own, because their ships and platforms make them earn far more per person than other transport or industry (owner, 2026-11-19).",
+  "note": "Rules of thumb for a company's yearly turnover per person, in lume, and for its staff, by its kind of business: the ISIC Rev. 4 section of its industry (identity.industry), or the division where a section holds businesses of very different weight (a key of the section letter and the division's two digits). Basis: the order of magnitude of turnover per person employed in European structural business statistics (Eurostat SBS, by NACE section and division, which follows ISIC), with a lume taken as about a euro and the ranges widened for the small firms of three small economies; for banks and insurers the operating income stands for the turnover. The staff ranges are those of a company of that kind in countries of 60,000 to 1.2 million people. Turnovers in ferra and coral count at the reference rates. Only companies in a commercial register are checked: public bodies have no company figures, and a farm is entered in Lisavu's farm register, not the companies register. tools/world_parties.py checks every company against its range; the figures themselves follow from what the company does (its trade in the documents and its other business in the story).",
   "bands": {
-   "distributor": {
-    "name": "Distributor, wholesaler",
-    "min": 300000,
-    "max": 700000
+   "A": {
+    "name": "Agriculture and its support services",
+    "min": 60000,
+    "max": 400000,
+    "staff_min": 1,
+    "staff_max": 500
    },
-   "retailer": {
-    "name": "Retailer",
-    "min": 120000,
-    "max": 300000
+   "B": {
+    "name": "Mining and quarrying (a small mine produces little per person)",
+    "min": 60000,
+    "max": 600000,
+    "staff_min": 5,
+    "staff_max": 3000
    },
-   "industry": {
-    "name": "Manufacturer, industry",
-    "min": 120000,
-    "max": 300000
-   },
-   "services": {
-    "name": "Transport, logistics, services",
-    "min": 90000,
-    "max": 250000
-   },
-   "utilities": {
-    "name": "Utilities, banks, insurance",
-    "min": 150000,
-    "max": 600000
-   },
-   "shipping": {
-    "name": "Shipping lines (capital-heavy: ships)",
-    "min": 400000,
-    "max": 1500000
-   },
-   "oil_gas": {
+   "B06": {
     "name": "Oil and gas production (capital-heavy: platforms, pipelines)",
     "min": 300000,
-    "max": 1500000
+    "max": 3000000,
+    "staff_min": 20,
+    "staff_max": 2000
+   },
+   "C": {
+    "name": "Manufacturing",
+    "min": 100000,
+    "max": 350000,
+    "staff_min": 5,
+    "staff_max": 5000
+   },
+   "D": {
+    "name": "Electricity and gas: generation, networks, supply (capital-heavy; a network earns least per person)",
+    "min": 150000,
+    "max": 2500000,
+    "staff_min": 10,
+    "staff_max": 3000
+   },
+   "E": {
+    "name": "Water supply, district heating, waste",
+    "min": 100000,
+    "max": 400000,
+    "staff_min": 5,
+    "staff_max": 2000
+   },
+   "F": {
+    "name": "Construction and installation",
+    "min": 80000,
+    "max": 300000,
+    "staff_min": 2,
+    "staff_max": 3000
+   },
+   "G46": {
+    "name": "Wholesale and distribution",
+    "min": 120000,
+    "max": 1500000,
+    "staff_min": 3,
+    "staff_max": 1000
+   },
+   "G47": {
+    "name": "Retail",
+    "min": 120000,
+    "max": 350000,
+    "staff_min": 3,
+    "staff_max": 5000
+   },
+   "H": {
+    "name": "Land transport, warehousing, ports, terminals, forwarding",
+    "min": 80000,
+    "max": 300000,
+    "staff_min": 3,
+    "staff_max": 2000
+   },
+   "H50": {
+    "name": "Water transport (capital-heavy: ships)",
+    "min": 150000,
+    "max": 1500000,
+    "staff_min": 10,
+    "staff_max": 1000
+   },
+   "H51": {
+    "name": "Air transport (capital-heavy: aircraft)",
+    "min": 150000,
+    "max": 800000,
+    "staff_min": 20,
+    "staff_max": 1000
+   },
+   "J": {
+    "name": "Telecommunications and information",
+    "min": 150000,
+    "max": 900000,
+    "staff_min": 5,
+    "staff_max": 1000
+   },
+   "K": {
+    "name": "Banks, insurance, factoring (operating income)",
+    "min": 150000,
+    "max": 700000,
+    "staff_min": 5,
+    "staff_max": 3000
+   },
+   "M": {
+    "name": "Professional and technical services",
+    "min": 60000,
+    "max": 250000,
+    "staff_min": 1,
+    "staff_max": 500
    }
   },
   "awaiting_owner": {}

@@ -48,7 +48,7 @@ Inside `AccountingSupplierParty`:
 - `Party/Language/ID` = **qal** (schemeID `ISO 639`)  
   Lisavan, the language of Lisavu and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qal = Lisavan. An identifier that holds a code names the code's list in its schemeID.
 - `Party/Language/Name` = **Lisavan**  
-  The language's name in English; in the language itself: Lisavuana.
+  The language's name in English; in the language itself: kopele.
 - `Party/PostalAddress/ID` = **40351721** (schemeID `urn:ubl-examples:world:XL:delivery-point`)  
   The address's number in the delivery point number of the Lisavu Post Office (eight digits: the island has no postal codes, and the post office numbers every address it delivers to); as Velumi Trading gives it.
 - `Party/PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  

@@ -50,7 +50,7 @@ Inside `SenderParty`:
 - `Language/ID` = **qau** (schemeID `ISO 639`)  
   Urvanian, the language of Urvania and of the party; the code is from the range ISO 639 reserves for local use (qaa–qtz), as the world's languages are invented. The code is from the world's copy of ISO 639 Language: qau = Urvanian. An identifier that holds a code names the code's list in its schemeID.
 - `Language/Name` = **Urvanian**  
-  The language's name in English; in the language itself: urvanese.
+  The language's name in English; in the language itself: binbir.
 - `PostalAddress/ID` = **4160202983340277** (schemeID `urn:ubl-examples:world:XU:address-register`)  
   The address's number in the national address register of Urvania (16 digits: the four-digit code of the municipality, 20 for an address, and a ten-digit serial number); as Rinova Recovery gives it.
 - `PostalAddress/AddressTypeCode` = **BUSINESS** (listID `urn:ubl-examples:world:codelist:AddressTypeCode`)  
