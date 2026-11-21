@@ -592,7 +592,7 @@ example adds its coverage-register row in the same commit.
   - densities and ranges per material;
   - should oak and ash variants differ in weight;
   - which hold capacities count.
-- **Q14 (O31):**
+- **Q14 (O31): decided (owner, 2026-11-21): all three, behind the scenes ("facts matter, and HS is open for interpretation; this grounds the world's interpretations; no need to show them publicly"):** (a) the WCO's free HS 2022 section and chapter notes fetched into `world/codelists/sources/` with their SHA-256; (b) a reasoning per item (rule, heading, notes cited) in the item data, unprinted, and one internal table the owner verifies in one sitting, each item stamped (date, code, hash of the reasoning); (c) a changed code or reasoning breaks the stamp and the build stops until re-verified. Nothing of it is published.
   - one sitting to verify 34 reasonings;
   - may reasoning rest on own knowledge of the HS notes;
   - does a change of an HS code re-open the verification.
