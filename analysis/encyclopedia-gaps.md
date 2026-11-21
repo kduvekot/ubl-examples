@@ -47,7 +47,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Bayvarra Information Service (21-xb)
 
-- when the service was set up, and under which law
+- ~~when the service was set up, and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - its staff and the ministry or department it reports to
 - whether it shares the government building on Government Hill with other public bodies
 
@@ -89,29 +89,29 @@ decided with the owner one at a time, like the gaps here.
 
 ### Customs Administration of Urvania (19-xu)
 
-- When the customs administration was set up (at independence in 1962 or earlier, under the Italian or British administration).
+- ~~When the customs administration was set up (at independence in 1962 or earlier, under the Italian or British administration).~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its headquarters and other offices besides the border office, and its staff numbers.
 - Its head and the ministry it reports to.
 
 ### Customs and Border Service of Bayvarra (19-xb)
 
-- When the service was established and under which law
+- ~~When the service was established and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its headcount and head office (the border office is the only address given)
 - How many offices and posts it has beyond the crossing, the seaport, the airport and Marrowdale
 
 ### Department of Agriculture of Lisavu (45-xl)
 
-- when the department was set up and how many people it employs
+- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - what else it does (inspection of imports, advice to farms, the island's farm policy)
 
 ### Environment Agency of Urvania (46-xu)
 
-- when the agency was set up and how many people it employs
+- ~~when the agency was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - its duties beyond waste (water, air, nature)
 
 ### Federal Department of Agriculture of Bayvarra (57-xb)
 
-- when the department was set up and how many people it employs
+- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - its other duties, and how farming is shared between the federation and the states
 
 ### Fernhollow Studio (48-xb)
@@ -120,7 +120,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Ferrano Chamber of Commerce (20-xu)
 
-- when the chamber was founded and how many people it employs
+- ~~when the chamber was founded and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - whether it is a public body or an association of its members, and what it does besides certificates and carnets
 
 ### Ferrano Energy (33-xu)
@@ -180,7 +180,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Island Customs Service (19-xl)
 
-- When the customs service was set up and how it was organised under the English settlers.
+- ~~When the customs service was set up and how it was organised under the English settlers.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its staff numbers and its head office, if different from the Wharf Road office.
 - ~~When the island was settled and became independent (not set).~~ Filled 2026-11-20 (OW003, OW005).
 
@@ -204,7 +204,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Public Works Department (2-xb)
 
-- When the department was established
+- ~~When the department was established~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its headcount and budget
 - Its tasks beyond procurement (roads, parks, buildings) and how it is organised within the city
 
@@ -215,8 +215,8 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Trade Accord Council (32-xb)
 
-- When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)
-- Its membership, how it decides and who chairs it
+- ~~When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
+- ~~Its membership, how it decides and who chairs it~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its tasks beyond the agreement on electronic documents (code lists, the parities, disputes)
 - Its headcount
 
@@ -227,8 +227,8 @@ decided with the owner one at a time, like the gaps here.
 
 ### Maritime Administration of Lisavu (30-xl)
 
-- When it was established
-- Which ships fly Lisavu's flag (the ships named in the sources fly Bayvarra's)
+- ~~When it was established~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
+- ~~Which ships fly Lisavu's flag (the ships named in the sources fly Bayvarra's)~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its other tasks (port state control, safety of navigation, seafarers' certificates)
 - Its headcount
 
@@ -296,7 +296,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Selanu Chamber of Commerce (20-xl)
 
-- when the chamber was set up and under which law
+- ~~when the chamber was set up and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - what the cotton fund pays for
 - where the trade fair is held and what it shows
 
@@ -307,13 +307,13 @@ decided with the owner one at a time, like the gaps here.
 
 ### Selanu General Hospital (50-xl)
 
-- When the hospital was founded, and its history under the English settlers.
+- ~~When the hospital was founded, and its history under the English settlers.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its number of beds and staff.
-- Whether it is the island's only hospital, and how the health service is organised.
+- ~~Whether it is the island's only hospital, and how the health service is organised.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 
 ### Selanu Telecom (35-xl)
 
-- When the island's telephone department was set up
+- ~~When the island's telephone department was set up~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - The size of its network (lines, masts, mobile coverage) and its submarine links to the mainland
 - Its roaming partners abroad
 
