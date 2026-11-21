@@ -21,6 +21,12 @@
      "to_place": {
       "name": "Valdara Industries works, Ferrano",
       "locode": "XUFER"
+     },
+     "timing": {
+      "vehicle": "ore_train",
+      "allowances": [
+       "shunt"
+      ]
      }
     }
    ],
@@ -176,6 +182,12 @@
      "to_place": {
       "name": "Ferrano Intermodal Hub",
       "locode": "XUFER"
+     },
+     "timing": {
+      "vehicle": "container_chassis",
+      "allowances": [
+       "second_run"
+      ]
      }
     },
     {
@@ -191,6 +203,13 @@
      "to_place": {
       "name": "Lumeway rail siding, Marrowdale",
       "gln": "6-xb:siding"
+     },
+     "timing": {
+      "vehicle": "container_train",
+      "allowances": [
+       "border_path_rail",
+       "morning_placement"
+      ]
      }
     }
    ],
@@ -291,6 +310,12 @@
      },
      "to_place": {
       "name": "River quay of Rivermouth Packaging, Lumeport"
+     },
+     "timing": {
+      "vehicle": "barge",
+      "allowances": [
+       "night_mooring"
+      ]
      }
     }
    ],
@@ -529,7 +554,15 @@
       "name": "Port of Selanu",
       "locode": "XLSEL"
      },
-     "transit_days": 4
+     "transit_days": 4,
+     "timing": {
+      "vehicle": "feeder",
+      "allowances": {
+       "actual": [
+        "daylight_pilotage"
+       ]
+      }
+     }
     },
     {
      "mode": "road",
@@ -754,6 +787,9 @@
      "to_place": {
       "name": "Lumeport airport, cargo terminal",
       "locode": "XBLMA"
+     },
+     "timing": {
+      "vehicle": "delivery_truck"
      }
     },
     {
@@ -2189,7 +2225,15 @@
       "name": "Port of Selanu",
       "locode": "XLSEL"
      },
-     "transit_days": 2
+     "transit_days": 2,
+     "timing": {
+      "vehicle": "feeder",
+      "allowances": {
+       "actual": [
+        "daylight_pilotage"
+       ]
+      }
+     }
     },
     {
      "mode": "road",
@@ -2316,7 +2360,13 @@
      "to_place": {
       "name": "Coastal State Water Company, district heating plant, Reservoir Road, Lumeport"
      },
-     "transit_days": 0
+     "transit_days": 0,
+     "timing": {
+      "vehicle": "truck",
+      "allowances": [
+       "driver_break"
+      ]
+     }
     }
    ],
    "_refs": {

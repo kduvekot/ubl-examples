@@ -33,7 +33,11 @@ import world_model as wm   # noqa: E402
 KNOT_KMH = 1.852 * 13.5          # the feeder ship's service speed, 13.5 knots (D19)
 ATR_CRUISE_KMH = 500             # the ATR 72-600F's cruise (D19 as corrected with D36)
 EARTH_KM = 6371.0
-SPEEDS = {"road": (60, 70), "rail": (40, 60), "river": (10, 12)}   # usual averages, km/h, for the timing column
+# the world's real average speeds (world/map.json speeds, O60, stage 7 Q10): per mode the slowest and the fastest
+# vehicle, for the timing column
+SPEEDS = {m: (min(v["kmh"] for k, v in vs.items() if k != "note"), max(v["kmh"] for k, v in vs.items() if k != "note"))
+          for m, vs in json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8"))["speeds"].items()
+          if m in ("road", "rail", "river")}
 
 # What the old place list (2026-11-18, the 14 km grid) and D19/D44 said, for the comparison: (what, old list, D19/D44)
 EARLIER = [
@@ -441,8 +445,9 @@ def write(world, model, built):
     w("Every leg of `world/documents.json` as the world model lays it on the map, party to party (the way the map's "
       "vehicles drive: the fewest squares from building to building), and for road legs also the shortest way in "
       "kilometres on the road network, with the routes used, the straight line, the detour factor and the time "
-      "the distance takes at the mode's usual average (truck 60–70 km/h with breaks, freight train 40–60 km/h, "
-      "barge 10–12 km/h). Sea and air legs are in section 4.")
+      "the distance takes at the world's real speeds (`world/map.json` speeds: truck "
+      f"{SPEEDS['road'][0]}–{SPEEDS['road'][1]} km/h with stops, freight train {SPEEDS['rail'][0]}–{SPEEDS['rail'][1]} "
+      f"km/h, barge {SPEEDS['river'][0]} km/h; before the allowances). Sea and air legs are in section 4.")
     w("")
     w("| Flow | Mode | From → to | On the map | Shortest | Routes | Straight | Factor | Time at usual speed | transit_days |")
     w("|---|---|---|---|---|---|---|---|---|---|")

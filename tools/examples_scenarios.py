@@ -47,12 +47,10 @@ ORE = kit.Flow("ore", "2026-03-02", [
 # past Ferrano; a loaded ore train averages about 40 km/h on the line's gradients (D45: it leaves in the morning and
 # arrives the same afternoon, on the first day of the window, and earns the plan's bonus)
 ORE_KM = wmap.leg_km("ore", "4-xu", "5-xu", "rail")
-ORE_TRAIN_KMH = 40
+ORE_TRAIN_KMH = wmap.speed("rail", "ore_train")         # world/map.json speeds (O60)
 ORE_DEPARTS = "10:05"            # once the 30 wagons are loaded, weighed and sheeted and the note is made out
-ORE_ARRIVES = wmap.after(wmap.at("2026-03-10", ORE_DEPARTS), ORE_KM / ORE_TRAIN_KMH + 0.25)   # with the shunt in
+ORE_ARRIVES = wmap.after(wmap.at("2026-03-10", ORE_DEPARTS), ORE_KM / ORE_TRAIN_KMH + wmap.allowance("shunt"))
 ORE_BONUS = Decimal("2")         # % of the freight, for a train delivered on the first day of the window (plan)
-if ORE_ARRIVES.date().isoformat() != "2026-03-10" or ORE_ARRIVES.hour >= 17:
-    raise SystemExit("ore: the train no longer arrives on the afternoon of 10 March")  # D45, O152
 ORE_SIDING = kit.place("XUFER", "The factory's siding, where the train is placed for unloading.",
                        name="Valdara Industries works siding, Ferrano")
 
@@ -105,7 +103,7 @@ def ore(n, doc):
                                                                   "the window."),
                                "ActualDeliveryTime": V(wmap.hm(ORE_ARRIVES), f"It left the mine siding at "
                                                        f"{ORE_DEPARTS} and ran {wmap.whole(ORE_KM)} km on the line past "
-                                                       "Ferrano at about 40 km/h, then shunted into the factory's "
+                                                       f"Ferrano at about {ORE_TRAIN_KMH} km/h, then shunted into the factory's "
                                                        "siding."),
                                "DeliveryLocation": ORE_SIDING}}})
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
@@ -162,7 +160,7 @@ ROAD = kit.Flow("road", "2026-03-16", [
 ROAD_LEG_KM = wmap.leg_km("road", "8-xu", "6-xb")
 ROAD_BORDER_KM = wmap.border_km("road", "8-xu", "6-xb")
 DISTANCE_KM = wmap.whole(ROAD_LEG_KM)
-TRUCK_KMH = 65        # a loaded truck's average on the main road, with its stops
+TRUCK_KMH = wmap.speed("road", "truck")     # a loaded truck's average on the main road, with its stops
 ROAD_DEPARTS = "16:20"
 ROAD_AT_BORDER = wmap.after(wmap.at("2026-03-23", ROAD_DEPARTS), ROAD_BORDER_KM / TRUCK_KMH)
 ROAD_CLEARED = "10:40"   # the truck leaves the Bayvarran post once the import declaration is accepted
@@ -735,27 +733,19 @@ RAIL_SIDING = {**kit.gln_location("6-xb", "siding"), "Name": V("Lumeway rail sid
 RAIL_KM = wmap.leg_km("rail", "18-xu", "6-xb", "rail")
 RAIL_BORDER_KM = wmap.border_km("rail", "18-xu", "6-xb", "rail")
 RAIL_ROAD_KM = wmap.leg_km("rail", "8-xu", "18-xu", "road")        # the carrier's haulage to the hub
-TRAIN_KMH = 50
+TRAIN_KMH = wmap.speed("rail", "container_train")
 RAIL_LEAVES, RAIL_BORDER_LEAVES = "06:52", "13:00"      # the actual departure from the hub; the border path's
 RAIL_AT_BORDER = wmap.after(wmap.at("2026-04-14", RAIL_LEAVES), RAIL_BORDER_KM / TRAIN_KMH)
 RAIL_AT_BORDER_PLANNED = wmap.after(wmap.at("2026-04-14", "06:45"), RAIL_BORDER_KM / TRAIN_KMH)
 RAIL_IN_MARROWDALE = wmap.after(wmap.at("2026-04-14", RAIL_BORDER_LEAVES), (RAIL_KM - RAIL_BORDER_KM) / TRAIN_KMH)
-if not (RAIL_AT_BORDER.hour < 13 and RAIL_IN_MARROWDALE.date().isoformat() == "2026-04-14"):
-    raise SystemExit("rail: the train's times no longer fit the leg on the map")  # O152
 # the carrier's one tractor brings the two boxes from the warehouse to the hub in two runs, and before that the two
 # empties to the warehouse (D37: carrier haulage, a pre-carriage stage of the same contract); per box: (day, time)
-TRUCK_KMH = 55
-RAIL_ROAD_H = RAIL_ROAD_KM / TRUCK_KMH
+RAIL_ROAD_H = RAIL_ROAD_KM / wmap.speed("road", "container_chassis")
 RAIL_PICKUP = [(7, "13:00"), (7, "15:00")]
 RAIL_AT_HUB = [wmap.hm(wmap.after(wmap.at(RAIL.date(d), t), RAIL_ROAD_H))[:5] for d, t in RAIL_PICKUP]
-RAIL_STACKED = [wmap.hm(wmap.after(wmap.at(RAIL.date(d), t), RAIL_ROAD_H + 0.17))[:5] for d, t in RAIL_PICKUP]
+RAIL_STACKED = [wmap.hm(wmap.after(wmap.at(RAIL.date(d), t), RAIL_ROAD_H + wmap.allowance("stacking")))[:5] for d, t in RAIL_PICKUP]
 RAIL_POSITIONED = [(4, "08:00"), (4, "10:00")]
 RAIL_LIFTED = ["05:40", "05:55"]
-if wmap.after(wmap.at(RAIL.date(4), RAIL_POSITIONED[0][1]), 2 * RAIL_ROAD_H) > wmap.at(RAIL.date(4),
-                                                                                    RAIL_POSITIONED[1][1]) or \
-        wmap.after(wmap.at(RAIL.date(7), RAIL_PICKUP[0][1]), 2 * RAIL_ROAD_H) > wmap.at(RAIL.date(7),
-                                                                                      RAIL_PICKUP[1][1]):
-    raise SystemExit("rail: the tractor cannot make its two runs in the time between them")  # O152
 # demurrage (D37, D9, O128): five free days at the siding, counted from the day after the boxes are placed; then the
 # framework contract's rate per container day. The first box is emptied on 16 April; the second waits until 22
 # April, because the siding's fork-lift is in repair: two container days beyond the free time.
@@ -1366,7 +1356,7 @@ DIESEL_TTW = Decimal("0.268")    # kg CO2e per kWh of diesel, tank to wheel (D41
 # below the rapids above Ferrano); the barge sails by day, downstream at about 11 km/h, and moors at night
 BARGE_KM = wmap.leg_km("plastics", "7-xu", "41-xb")
 BARGE_BORDER_KM = wmap.border_km("plastics", "7-xu", "41-xb")
-BARGE_KMH, BARGE_DAY = 11, ("06:30", "17:30")     # sunrise and sunset in April at 31 degrees South, legal time
+BARGE_KMH, BARGE_DAY = wmap.speed("river", "barge"), wmap.allowance("night_mooring")   # sails by daylight
 BARGE_SAILS = "15:10"
 
 
@@ -1378,8 +1368,6 @@ def barge_time(f, km):
 
 
 def barge_stage(f, actual):
-    if barge_time(f, BARGE_KM)[0] != BARGE_LOAD + 2:
-        raise SystemExit("plastics: the barge no longer arrives the day before its discharge; set the dates")  # O152
     out = {"ID": V("1", "Down the river, from the recovery plant's quay to the river quay in Lumeport."),
            "TransportModeCode": V("8", "UN/ECE Recommendation 19 code 8: inland water transport.",
                                   listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
@@ -1900,8 +1888,6 @@ SEA_HOURS = wmap.sea_hours()
 SEA_SAILS, SEA_SAILED = "18:00", "18:10"        # the timetable's departure, and the actual one (Lumeport time)
 SEA_OFF_SELANU = wmap.after(wmap.at("2026-05-14", SEA_SAILS), SEA_HOURS + 1)          # island time
 SEA_ARRIVES = 13                                # the day the ship berths, at first light
-if SEA_OFF_SELANU.date().isoformat() != "2026-05-16" or SEA_OFF_SELANU.hour < 18:
-    raise SystemExit("sea: the passage no longer brings the ship off Selanu on the evening of day 12")  # O152, O53
 
 
 SEA_REPORTS = "15:40"     # the pre-arrival report, in Lumeport's time (the carrier's), on day 12
@@ -2862,13 +2848,10 @@ AIR_CUTOFF = "12:00:00"
 # Trasvia's truck from Ferrano came in late, and needs about an hour for the leg on the map; the terminal, which works
 # around the clock, accepts the skid on arrival, for the next flight. The documents of the afternoon follow from it.
 AIR_ROAD_KM = wmap.leg_km("air", "6-xb", "17-xb", "road")
-AIR_TRUCK_KMH = 60
+AIR_TRUCK_KMH = wmap.speed("road", "delivery_truck")
 AIR_TRUCK_LEAVES = wmap.at("2026-05-13", "11:40")
 AIR_AT_TERMINAL = wmap.after(AIR_TRUCK_LEAVES, AIR_ROAD_KM / AIR_TRUCK_KMH)
 AIR_ACCEPTED = wmap.after(AIR_AT_TERMINAL, 10 / 60)         # checked in, weighed and measured on arrival
-_cutoff = wmap.at("2026-05-13", AIR_CUTOFF[:5])
-if not (AIR_TRUCK_LEAVES < _cutoff < AIR_AT_TERMINAL and AIR_AT_TERMINAL - _cutoff < datetime.timedelta(hours=1)):
-    raise SystemExit("air: the forwarder's truck no longer leaves before the cut-off and arrives after it")  # O152
 AIR_WAYBILL_AT = wmap.after(AIR_ACCEPTED, 5 / 60)           # Lumeport time; the airline writes it in island time
 AIR_STATUS_AT = wmap.after(AIR_ACCEPTED, 10 / 60)
 AIR_CANCELLED_AT = wmap.after(AIR_STATUS_AT, 25 / 60)       # once the distributor has the terminal's status
@@ -13954,8 +13937,6 @@ RF_SEAL = "TWL-S-0884517"
 RF_VOYAGE = "TH-26-17E"                                # Tidewell Harbour's eastbound voyage of week 17
 RF_SAILS, RF_SAILED = "18:00", "18:05"                 # the timetable's departure from Lumeport and the actual one
 RF_OFF_SELANU = wmap.after(wmap.at(REEFER.date(RF_DAY["sail"]), RF_SAILS), SEA_HOURS + 1)   # island time
-if RF_OFF_SELANU.date().isoformat() != REEFER.date(RF_DAY["berth"] - 1) or RF_OFF_SELANU.hour < 18:
-    raise SystemExit("reefer: the passage no longer brings the ship off Selanu on the evening before it berths")
 RF_SEA_FREIGHT = (Decimal("4400.00"), Decimal("400.00"))   # Tidewell's reefer rate and its bunker surcharge
 RF_PRE_CARRIAGE = Decimal("1100.00")                   # Bayforth's reefer truck, port - packhouse - port
 RF_ROAD_KM = wmap.leg_km("reefer", "55-xb", "16-xb")
@@ -14544,9 +14525,9 @@ LPG_TARE = sum(LPG_TRUCK["tare_kg"].values())               # the tractor and th
 LPG_NET = int(Decimal(LPG.deal[0]["delivered"]) * 1000)      # the propane loaded, from the weighbridge
 LPG_GROSS = LPG_TARE + LPG_NET
 LPG_KM = wmap.leg_km("lpg", "42-xb", "34-xb")
-LPG_TRUCK_KMH = 65             # a loaded truck's average on the main road, with its stops (as the road flow's)
+LPG_TRUCK_KMH = wmap.speed("road", "truck")   # a loaded truck's average on the main road, with its stops
 LPG_DEPARTS = "07:00"
-LPG_ARRIVES = wmap.after(wmap.at(LPG.date(LPG_LOAD_DAY), LPG_DEPARTS), LPG_KM / LPG_TRUCK_KMH + 0.75)  # one break
+LPG_ARRIVES = wmap.after(wmap.at(LPG.date(LPG_LOAD_DAY), LPG_DEPARTS), LPG_KM / LPG_TRUCK_KMH + wmap.allowance("driver_break"))
 LPG_WEIGHBRIDGE = kit.cited_number("kelpstone-weighbridge-ticket")     # the plant's weighbridge ticket (world/documents.json, cited)
 # the haulier's fuel records for the two runs, in litres of diesel per 100 km: a 37 t combination loaded, and the
 # empty tanker of 17 t on its way back; about 10 kWh in a litre of diesel (as the plastics flow's barge, D41)

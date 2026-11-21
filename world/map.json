@@ -1,5 +1,37 @@
 {
  "description": "The map of the UBL example world: routes, towns and villages, the offshore platform and the pipelines' metering stations, on a grid of 256 x 192 squares of 3.5 km (tools/world_model.py, GRID). tools/world_model.py builds the tile model from it, from the parties and from the terrain (world/terrain.json: land, sea, river, estuary, land cover, countries and heights, made by tools/terrain.py from world/terrain-inputs.json, O152). Stations are the pipelines' border metering stations. Towns and localities (villages) give their population (for the villages the decided range) and the width of their built-up area in km (built_km, owner 2026-11-18, O92): the model draws a built-up area of that size around the centre c. Localities give the parties outside the towns a place in their address. Villages (O152, owner 2026-11-18; on the map only: no parties, no documents) fill the land between the towns: each with its square c, country, region, founded, why (the reason for its site), lives_on, its population band and the width of its built-up area, and its way of farming (\"farming\"); the larger ones have a name (\"names\" per language: in Urvania the English (Italian) name and the Urvanian one, made by tools/lexicon.py from the word in \"name_from\"; on Lisavu the Lisavan one, with an English name where settlers named the place; in Bayvarra English settler names), the others are unnamed. They are sited by analysis/world-position/site_villages.py and joined to the roads by minor roads (\"village-<i>-<j>\", tools/lay_routes.py). A town or village farms the land within its reach in its way of farming (\"farming\", a town's reach \"farm_km\"); tools/land_use.py turns this into the land use the model and both maps draw. A town's districts (\"districts\") trace its growth: each with a name, a period (\"periods\" names them), the years, its character (core, administration, residential, suburb, industry, port), its centre (\"at\", in squares) and its relative size (\"r_km\"): the model grows the built-up area as the union of the districts to the decided size. A town may have a harbour of its own (a quay square and the side its water lies on), without a party: Larkmouth's. Roads, rails and pipelines are given square by square, each square a neighbour of the last, diagonals included, as tools/lay_routes.py laid them over the terrain (O152 stage 3: least-cost ways with the gradient of their class, a main road about 6 to 7 %, a minor road up to 10 %, a railway 1.5 to 2 %, following the valleys and crossing ridges at their passes; tools/routing.py): a road's \"class\" is main or minor, \"bridges\" and \"tunnels\" list the squares a route spans or runs under; the access roads to the parties are routes too (\"access-<party>\"). Do not edit these by hand: change the network in tools/lay_routes.py and run it. The river route names the barges' first quay, and the model follows the river's squares from there to the estuary, below the rapids above Ferrano. The drawn map is a diagram (O82): it may stretch distances, and Lisavu, about 1,000 km east of Lumeport, is drawn nearer, in its own part of the grid with open sea all round, as an inset. Quarters (\"quarters\") are composite buildings that several parties share on one square: each with its id, name, kind, square (at), the street it opens on (a road route's id), the number of wings it has room for (room) and its occupants (wings, a party id each, in the order of the wings: the two halves of the back wing, then the side wings from the back to the front); every party standing on the square is one of them.",
+ "speeds": {
+  "note": "The real average speeds of the world's vehicles, per mode and kind of vehicle, in km/h (the ship's also in knots), each with its reason: what the vehicle carries and on what way, its stops on the way included where the reason says so. Every time of a journey in the documents is reckoned from them, checked against its leg's length at these speeds plus the allowances below (within 15 % or 30 minutes, whichever is larger), and the 3D map moves its vehicles at them, compressed by its one stated rule.",
+  "road": {
+   "truck": {"kmh": 65, "why": "A loaded truck or tanker on the main roads between the towns and across the border: its average with its stops at junctions and in the towns."},
+   "delivery_truck": {"kmh": 60, "why": "A loaded truck on the regional roads between Marrowdale and Lumeport, through the outskirts of both towns."},
+   "container_chassis": {"kmh": 55, "why": "A tractor with a loaded 45-foot box on a container chassis, through the streets of Ferrano and the hub's gate: slower than a truck on the open road."}
+  },
+  "rail": {
+   "container_train": {"kmh": 50, "why": "A container train on the mixed-traffic main line: its average between stations, below its line speed."},
+   "ore_train": {"kmh": 40, "why": "A loaded ore train of some 2,300 t gross on the gradients of the ore line."}
+  },
+  "river": {
+   "barge": {"kmh": 11, "why": "A loaded motor barge downstream on the free-flowing lower river, its speed over the ground with the current; it sails by daylight only."}
+  },
+  "sea": {
+   "feeder": {"knots": 13.5, "kmh": 25.0, "why": "The feeder ship's service speed, at which it keeps its weekly timetable with a margin for weather."}
+  },
+  "air": {
+   "freighter": {"kmh": 500, "why": "The turboprop freighter's cruising speed; taxiing, climb and descent are in the air route's timetable (route air, flight)."}
+  }
+ },
+ "allowances": {
+  "note": "The time a journey takes beyond its distance at its speed, in hours, each with its reason. A leg of world/documents.json names the allowances its times include (timing), for all its times or per kind of time (planned, estimated, actual, requested).",
+  "shunt": {"hours": 0.25, "why": "The train is shunted from the main line into the works' siding and placed for unloading."},
+  "driver_break": {"hours": 0.75, "why": "A driver's break of 45 minutes on a run of more than four and a half hours."},
+  "border_path_rail": {"hours": 5, "why": "At the rail border station: the crew change, the brake test and the customs' check of the seals, then the wait for the train's timetabled path into Bayvarra."},
+  "morning_placement": {"hours": 19.5, "why": "A train that reaches the distributor's yard in the afternoon has its boxes placed on the siding by the next morning's shunting trip."},
+  "second_run": {"hours": 2, "why": "One tractor brings two boxes in two runs, the second starting two hours after the first: the stage's times run from the first pick-up to the second arrival."},
+  "stacking": {"hours": 0.17, "why": "At the hub the box is lifted off the chassis and stacked, about ten minutes after the truck's arrival."},
+  "night_mooring": {"sails": "06:30", "moors": "17:30", "why": "The barge sails by daylight only, from sunrise to sunset in April at 31 degrees South, legal time, and moors at night."},
+  "daylight_pilotage": {"hours": 12, "why": "Selanu's pilots take ships in by daylight only: a ship off the port after dark waits there and berths at first light."}
+ },
  "routes": [
   {
    "id": "ore",
@@ -830,15 +862,14 @@
    "layer": "transport",
    "label": "Air cargo (XB → XL)",
    "flight": {
-    "note": "The freighter's timetable: block times gate to gate, eastbound Lumeport to Selanu and westbound back; the still-air time they keep a margin over is taxiing, climb and descent over their stretch, and the rest of the great circle between the airports at the cruising speed.",
+    "note": "The freighter's timetable: block times gate to gate, eastbound Lumeport to Selanu and westbound back; the still-air time they keep a margin over is taxiing, climb and descent over their stretch, and the rest of the great circle between the airports at the freighter's cruising speed (speeds, air).",
     "block_hours": {
      "east": 2.75,
      "west": 3.0
     },
     "taxi_min": 10,
     "climb_descent_min": 20,
-    "climb_descent_km": 100,
-    "cruise_kmh": 500
+    "climb_descent_km": 100
    },
    "pts": [
     [
