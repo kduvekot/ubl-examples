@@ -3,11 +3,11 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:order:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:ordering:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
-  <cbc:ID>7100452422</cbc:ID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
+  <cbc:ID>7100452426</cbc:ID>
   <cbc:UUID>38f1ecfc-42b0-532a-921c-171e17782563</cbc:UUID>
   <cbc:IssueDate>2026-04-24</cbc:IssueDate>
-  <cbc:IssueTime>08:15:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:15:00-01:00</cbc:IssueTime>
   <cbc:OrderTypeCode listID="UN/EDIFACT EDED 1001">220</cbc:OrderTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>6120</cbc:AccountingCostCode>

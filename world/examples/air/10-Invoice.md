@@ -24,7 +24,7 @@ The forwarder invoices the airport-to-airport air freight at the chargeable weig
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-15**  
   Issued after the flight.
-- `IssueTime` = **17:03:00-01:00**  
+- `IssueTime` = **16:52:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-06-15**  
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Sunday 14 June, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 15 June.
@@ -412,7 +412,7 @@ Inside `InvoiceLine`:
   <cbc:ID>BYF-INV-26-2584</cbc:ID>
   <cbc:UUID>f51c7d81-27af-52f7-8ddf-659cbaa635ac</cbc:UUID>
   <cbc:IssueDate>2026-05-15</cbc:IssueDate>
-  <cbc:IssueTime>17:03:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:52:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-06-15</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>

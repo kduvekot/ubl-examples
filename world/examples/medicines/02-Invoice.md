@@ -18,13 +18,13 @@ The Indian maker invoices the vaccines and the insulin in rupees when they leave
   The Trade Accord's process profile the document belongs to: billing, a generic, versioned profile, not the flow.
 - `ProfileExecutionID` = **QLM-TX-26-2699**  
   The collaboration this document belongs to: Quillmoor's order of a biological medicine from Nilavar Biologics. Quillmoor Pharma Distribution started it and gave it this identifier, which every document of it repeats.
-- `ID` = **NLB-INV-26-1731**  
+- `ID` = **NLB-INV-26-1732**  
   The maker's invoice number.
 - `UUID` = **2508e7e3-8979-5015-9f6c-23e390dec466**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-07**  
   Issued when the goods left for Hyderabad airport.
-- `IssueTime` = **08:40:00+05:30**  
+- `IssueTime` = **09:45:00+05:30**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-06-08**  
   30 days from Thursday 7 May end on Saturday 6 June, no business day in India for a bank transfer abroad, so the payment is due on Monday 8 June.
@@ -336,10 +336,10 @@ Inside `InvoiceLine`:
   <cbc:CustomizationID>urn:ubl-examples:world:trns:billing:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>QLM-TX-26-2699</cbc:ProfileExecutionID>
-  <cbc:ID>NLB-INV-26-1731</cbc:ID>
+  <cbc:ID>NLB-INV-26-1732</cbc:ID>
   <cbc:UUID>2508e7e3-8979-5015-9f6c-23e390dec466</cbc:UUID>
   <cbc:IssueDate>2026-05-07</cbc:IssueDate>
-  <cbc:IssueTime>08:40:00+05:30</cbc:IssueTime>
+  <cbc:IssueTime>09:45:00+05:30</cbc:IssueTime>
   <cbc:DueDate>2026-06-08</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Payable in euro: 4,050,000.00 rupees at 88.8595 rupees per euro, 45,577.57 euro.</cbc:Note>

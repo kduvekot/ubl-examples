@@ -7,7 +7,7 @@
   <cbc:ID>26-0453</cbc:ID>
   <cbc:UUID>908c065b-6da7-5dbc-bc84-ae4eb333a8dd</cbc:UUID>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>17:57:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:28:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

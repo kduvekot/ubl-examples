@@ -24,7 +24,7 @@ Goods and carriage to the site; an export, so no sales tax.
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-06-04**  
   Issued on despatch.
-- `IssueTime` = **17:34:00-01:00**  
+- `IssueTime` = **16:51:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `DueDate` = **2026-07-06**  
   As the payment terms below count it: 30 days net; 1.5 % surcharge per month late. The count ends on Saturday 4 July, no business day in Bayvarra, the payee's country, so the payment is due on the next one, Monday 6 July.
@@ -453,7 +453,7 @@ Inside `InvoiceLine`:
   <cbc:ID>26-0132</cbc:ID>
   <cbc:UUID>40aff29f-0459-5985-901d-8a4a505d1f5d</cbc:UUID>
   <cbc:IssueDate>2026-06-04</cbc:IssueDate>
-  <cbc:IssueTime>17:34:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:51:00-01:00</cbc:IssueTime>
   <cbc:DueDate>2026-07-06</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>Carriage paid to the mast site: the prices include the carriage by air and road. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).</cbc:Note>

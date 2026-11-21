@@ -16,7 +16,7 @@ The sales of the line in its first four weeks, from the reopening of the home an
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Product activity". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:collaboration:1.0**  
   The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900335865**  
+- `ProfileExecutionID` = **9900335869**  
   The collaboration this document belongs to: the store's replenishment of the Marrow line by Brackenmere. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **5900017153**  
   The sender's number for its activity.
@@ -283,7 +283,7 @@ Inside `SupplyChainActivityDataLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:product-activity:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900335865</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900335869</cbc:ProfileExecutionID>
   <cbc:ID>5900017153</cbc:ID>
   <cbc:UUID>35444c15-3be6-5365-a08f-55521605590a</cbc:UUID>
   <cbc:IssueDate>2026-06-08</cbc:IssueDate>

@@ -16,7 +16,7 @@ The distributor's winter catalogue takes over on 20 June, the start of winter in
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900338989**  
+- `ProfileExecutionID` = **9900338991**  
   The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-CDL-26-0007**  
   The sender's number for this document.
@@ -26,7 +26,7 @@ The distributor's winter catalogue takes over on 20 June, the start of winter in
   What it is.
 - `IssueDate` = **2026-06-19**  
   Lumeway withdraws the store's catalogue the day before its winter catalogue takes over.
-- `IssueTime` = **17:05:00-01:00**  
+- `IssueTime` = **16:50:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `EffectiveDate` = **2026-06-20**  
   From Saturday 20 June, the first day of winter in the south.
@@ -49,7 +49,7 @@ Inside `DeletedCatalogueReference`:
   The catalogue's UUID, as stated in the catalogue.
 - `IssueDate` = **2026-04-20**  
   Its issue date.
-- `IssueTime` = **09:00:00-01:00**  
+- `IssueTime` = **10:00:00-01:00**  
   And time, as the catalogue states it; in the issuer's local time, with its offset from UTC.
 - `RevisionDate` = **2026-05-21**  
   Revised by the specification update of the bench.
@@ -250,12 +250,12 @@ Inside `ContractorCustomerParty`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900338991</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CDL-26-0007</cbc:ID>
   <cbc:UUID>f9877c55-f962-5da6-86c9-7b721989951a</cbc:UUID>
   <cbc:Name>Withdrawal of the catalogue for the Lumeport store</cbc:Name>
   <cbc:IssueDate>2026-06-19</cbc:IssueDate>
-  <cbc:IssueTime>17:05:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:50:00-01:00</cbc:IssueTime>
   <cbc:EffectiveDate>2026-06-20</cbc:EffectiveDate>
   <cbc:EffectiveTime>00:00:00-01:00</cbc:EffectiveTime>
   <cbc:Note>Lumeway's winter catalogue 2026 takes over on 20 June.</cbc:Note>
@@ -265,7 +265,7 @@ Inside `ContractorCustomerParty`:
     <cbc:ID>LMW-CAT-26-0005</cbc:ID>
     <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
     <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-    <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
+    <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
     <cbc:RevisionDate>2026-05-21</cbc:RevisionDate>
     <cbc:RevisionTime>08:30:00-01:00</cbc:RevisionTime>
     <cbc:Note>Lumeway's catalogue for the Lumeport store, 2026.</cbc:Note>

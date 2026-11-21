@@ -3,12 +3,12 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue-request:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900338991</cbc:ProfileExecutionID>
   <cbc:ID>6200003390</cbc:ID>
   <cbc:UUID>5e45c6c8-ba0a-5689-b0f9-f653754fd6b8</cbc:UUID>
   <cbc:Name>Request for Lumeway's catalogue for the home and garden department</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>08:42:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:17:00-01:00</cbc:IssueTime>
   <cbc:Note>To set up the range of the home and garden department, which reopens on Monday 11 May after its renovation.</cbc:Note>
   <cbc:Description>Benches and spare parts.</cbc:Description>
   <cbc:PricingUpdateRequestIndicator>true</cbc:PricingUpdateRequestIndicator>

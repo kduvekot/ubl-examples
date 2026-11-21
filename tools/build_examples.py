@@ -3833,6 +3833,94 @@ def check_calendar(flow_id, roots, docs):
                              f"{PARTY[doc['from']]['identity']['name']} does not work")  # D27, O79
 
 
+# ---------------------------------------------------------------- issued within the desk's hours (O269, stage 7 A2)
+# Messages a system sends on its own, at the moment of the event they report, whatever the office hours: they are
+# exempt from the desk hours (owner, 2026-11-21, Q2). By document type, with the reason.
+SYSTEM_SENT = {
+    "DespatchAdvice": "sent by the despatching party's system when the goods leave",
+    "TransportationStatus": "sent by the carrier's or the terminal's system when the event it reports happens",
+    "TransportProgressStatus": "sent by the carrier's system when the event it reports happens",
+    "GoodsItemItinerary": "sent by the carrier's system as the goods move",
+}
+HOURS_DAYS = {"Weekdays": range(0, 5), "Every day": range(0, 7), "Monday to Saturday": range(0, 6)}
+
+
+def desk_hours(text):
+    """(start, end) minutes of a desk's stated hours ("Weekdays 08:00–17:00", "Every day, around the clock"), or
+    None where it states none; the days are the working week's, which check_calendar checks."""
+    if not text:
+        return None
+    if text.endswith("around the clock"):
+        return 0, 24 * 60
+    m = re.fullmatch(r"(Weekdays|Every day|Monday to Saturday) (\d\d):(\d\d)–(\d\d):(\d\d)", text)
+    if not m:
+        raise SystemExit(f"world/parties.json: hours {text!r} in no known form")  # stage 7 A2
+    a, b, c, d = (int(x) for x in m.groups()[1:])
+    return a * 60 + b, c * 60 + d
+
+
+def party_desks(pid):
+    """Every desk of party pid with its e-mail address and hours: its main contact and its desks by function, a
+    desk without hours of its own keeping the contact's."""
+    idn = PARTY[pid]["identity"]
+    main = idn.get("contact") or {}
+    out = {"contact": (main.get("email"), main.get("hours"), main.get("name"))}
+    for k, desk in (idn.get("desks") or {}).items():
+        if isinstance(desk, dict):
+            out[k] = (desk.get("email"), desk.get("hours") or main.get("hours"), desk.get("name"))
+    return out
+
+
+def _emails(node, out):
+    if isinstance(node, list):
+        for x in node:
+            _emails(x, out)
+    elif isinstance(node, dict):
+        for k, v in node.items():
+            if k == "ElectronicMail" and isinstance(v, V):
+                out.add(v.value)
+            else:
+                _emails(v, out)
+
+
+def issuer_hours(content, doc):
+    """The (start, end) minutes in which the issuer's desk that the document's contact names works, else its main
+    contact: where a time the scenario does not give is put (O269, stage 7 A2)."""
+    if doc["from"] not in PARTY:
+        return None
+    desks = party_desks(doc["from"])
+    mails = set()
+    _emails(content, mails)
+    named = [k for k, (mail, _, _) in desks.items() if mail and mail in mails] or ["contact"]
+    spans = [x for x in (desk_hours(desks[k][1]) for k in named) if x]
+    return (min(a for a, _ in spans), max(b for _, b in spans)) if spans else None
+
+
+def check_desk_hours(flow_id, roots, docs):
+    """O269, stage 7 A2 (owner, 2026-11-21, Q2): a document is issued within the hours of the issuer's desk that
+    its contact names, else of the issuer's main contact; a desk may keep hours of its own (despatch, goods-in,
+    emergency). Messages a system sends on its own (SYSTEM_SENT) are exempt."""
+    out = []
+    for (name, root), doc in zip(roots, docs):
+        t = root.findtext(f"{{{NS_CBC}}}IssueTime")
+        if not t or doc["from"] not in PARTY or doc["doc"] in SYSTEM_SENT:
+            continue
+        desks = party_desks(doc["from"])
+        mails = {e.text for e in root.iter(f"{{{NS_CBC}}}ElectronicMail")}
+        named = [k for k, (mail, _, _) in desks.items() if mail and mail in mails]
+        spans = [desk_hours(desks[k][1]) for k in named or ["contact"]]
+        spans = [x for x in spans if x]
+        if not spans:
+            continue
+        minute = int(t[:2]) * 60 + int(t[3:5])
+        if not any(a <= minute <= b for a, b in spans):
+            out.append(f"world/examples/{flow_id}/{name}: issued at {t[:5]}, outside the hours of "
+                       + " or ".join(f"{desks[k][2]} ({desks[k][1]})" for k in named or ["contact"])
+                       + f" of {PARTY[doc['from']]['identity']['name']}")  # O269, stage 7 A2
+    if out:
+        raise SystemExit("\n".join(out))
+
+
 def issue_time_offset(content, doc):
     """The issue time is the issuer's local time, written with its offset from UTC (D27); every other time carries
     the offset of the place where it happens (O78, examples_kit.time_offsets)."""
@@ -4416,6 +4504,10 @@ def main(flow_id, check=False):
                                               ", which every document of it repeats."))
         if "IssueTime" in own and "IssueTime" not in content:
             minutes = 8 * 60 + zlib.crc32(f"{flow_id}:{n}".encode()) % 600
+            span = issuer_hours(content, doc)      # within the hours of the desk that issues it (O269, stage 7 A2)
+            if span and not span[0] <= minutes <= span[1]:
+                k = zlib.crc32(f"{flow_id}:{n}".encode()) % 30
+                minutes = span[0] + 5 + k if minutes < span[0] else span[1] - 5 - k
             header["IssueTime"] = V(f"{minutes // 60:02d}:{minutes % 60:02d}:00", "The time the sender's system "
                                     "issued the document, in the sender's local time.")
         if "UUID" in own:
@@ -4507,6 +4599,7 @@ def main(flow_id, check=False):
     check_air_uld_ids(flow_id, roots)
     check_party_profiles(flow_id, roots, docs)
     check_calendar(flow_id, roots, docs)
+    check_desk_hours(flow_id, roots, docs)
     check_plan_terms(flow_id, roots, docs)
     check_unit_ids(flow_id, roots)
     check_packages(flow_id, roots)

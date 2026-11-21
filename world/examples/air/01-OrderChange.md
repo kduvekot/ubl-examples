@@ -24,8 +24,8 @@ Eight more side frames are needed urgently, spares for the port's harbour benche
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-11**  
   The buyer needs eight side frames urgently.
-- `IssueTime` = **07:50:00+00:00**  
-  First thing in the morning, when the shortage was noticed; in the issuer's local time, with its offset from UTC.
+- `IssueTime` = **09:10:00+00:00**  
+  First thing when the purchasing office opened, the shortage having been noticed at the morning count; in the issuer's local time, with its offset from UTC.
 - `SequenceNumberID` = **1**  
   The first change to the order.
 - `Note` = **Add eight side frames by air; we pay the air freight as a surcharge at cost. The rest of the order is unchanged.**  
@@ -331,7 +331,7 @@ Inside `OrderLine`:
   <cbc:ID>26-0065</cbc:ID>
   <cbc:UUID>8d871217-f7db-5dad-9bd8-24d8c75c812d</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
-  <cbc:IssueTime>07:50:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>09:10:00+00:00</cbc:IssueTime>
   <cbc:SequenceNumberID>1</cbc:SequenceNumberID>
   <cbc:Note>Add eight side frames by air; we pay the air freight as a surcharge at cost. The rest of the order is unchanged.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>

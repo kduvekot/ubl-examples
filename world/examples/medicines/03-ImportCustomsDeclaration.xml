@@ -212,7 +212,7 @@
     </cac:ShipmentStage>
   </cac:Shipment>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>NLB-INV-26-1731</cbc:ID>
+    <cbc:ID>NLB-INV-26-1732</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Invoice</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
 </ImportCustomsDeclaration>

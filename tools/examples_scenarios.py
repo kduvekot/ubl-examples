@@ -1690,7 +1690,7 @@ def retail(n, doc):
                          {"Delivery": {"DeliveryLocation": {**kit.gln_location("26-xb", "goods-in"),
                                                            "Description": V("Goods-in, home and garden department",
                                                                              "Where the truck unloads.")}},
-                          "IssueTime": V("08:15:00", "Sent from the store's replenishment system each morning."),
+                          "IssueTime": V("09:15:00", "Sent from the store's replenishment system each morning, once the buying office has opened and checked it."),
                           "ValidityPeriod": {"EndDate": V(f.date(6), "The order lapses if not confirmed within two "
                                                                      "days: the promotion cannot wait.")},
                           "CatalogueReference": {"ID": V(f.numbers["catalogue"], "The catalogue ordered from.")},
@@ -2985,7 +2985,7 @@ def air(n, doc):
             "change applies to: in the order reference, since the change's own SalesOrderID would be the seller's "
             "number of the change.")  # air/01#F7
         order.update({
-            "IssueTime": V("07:50:00", "First thing in the morning, when the shortage was noticed."),
+            "IssueTime": V("09:10:00", "First thing when the purchasing office opened, the shortage having been noticed at the morning count."),
             "Note": V("Add eight side frames by air; we pay the air freight as a surcharge at cost. The rest of the "
                       "order is unchanged.", "The change in words: the buyer asks for the urgent delivery and "
                                              "accepts that it pays for it."),
@@ -6329,7 +6329,7 @@ def _with_enrichment(flow_id, fn):
 # The store's catalogue and its revisions (retail/02 to 04): version -> (day, time of the revision, what made it,
 # the version before). A reference to the catalogue describes it as it stood when the referring document was issued:
 # the version then current and its last revision, never a later one (retail/04#F1, #F8, O175, C72).
-CATALOGUE_REVISIONS = {"1.0": (0, "09:00:00", "Not revised yet: its issue.", None),
+CATALOGUE_REVISIONS = {"1.0": (0, "10:00:00", "Not revised yet: its issue.", None),
                        "1.1": (30, "13:00:00", "Revised by the price update of the side frame.", "1.0"),
                        "1.2": (31, "08:30:00", "Revised by the specification update of the bench.", "1.1")}
 

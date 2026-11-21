@@ -16,7 +16,7 @@ The store sets the replenishment policy per item and store: each piece in each w
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Trade item location profile". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:collaboration:1.0**  
   The Trade Accord's process profile the document belongs to: collaborative planning, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900335865**  
+- `ProfileExecutionID` = **9900335869**  
   The collaboration this document belongs to: the store's replenishment of the Marrow line by Brackenmere. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **6700016794**  
   The sender's number for its location profile.
@@ -24,7 +24,7 @@ The store sets the replenishment policy per item and store: each piece in each w
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-03-13**  
   The store sets its replenishment policy for the line, on the Friday before the order.
-- `IssueTime` = **08:23:00-01:00**  
+- `IssueTime` = **09:28:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
 - `Note` = **The store holds the stock of the line in its Lumeport store, for the home and garden department, its only stock point for the line, and orders on the maker's proposals.**  
   Who does what, and for which location.
@@ -339,11 +339,11 @@ Inside `ItemManagementProfile`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:trade-item-location-profile:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:collaboration:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900335865</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900335869</cbc:ProfileExecutionID>
   <cbc:ID>6700016794</cbc:ID>
   <cbc:UUID>befc4246-c9bd-5950-8153-a96b42c6db87</cbc:UUID>
   <cbc:IssueDate>2026-03-13</cbc:IssueDate>
-  <cbc:IssueTime>08:23:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>09:28:00-01:00</cbc:IssueTime>
   <cbc:Note>The store holds the stock of the line in its Lumeport store, for the home and garden department, its only stock point for the line, and orders on the maker's proposals.</cbc:Note>
   <cbc:ProfileStatusCode listID="urn:ubl-examples:world:codelist:ProfileStatusCode">ACTIVE</cbc:ProfileStatusCode>
   <cac:Period>

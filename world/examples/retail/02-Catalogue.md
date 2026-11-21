@@ -16,7 +16,7 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Catalogue"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:catalogue:1.0**  
   The Trade Accord's process profile the document belongs to: catalogue, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900338989**  
+- `ProfileExecutionID` = **9900338991**  
   The collaboration this document belongs to: the store's request for Lumeway's catalogue and the catalogue's updates. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **LMW-CAT-26-0005**  
   The provider's catalogue number.
@@ -28,11 +28,11 @@ The distributor's catalogue of items and prices; each item carries the GTIN the 
   Its name: for the range of the store's reopened home and garden department.
 - `IssueDate` = **2026-04-20**  
   Lumeway's catalogue for the store's reopened department.
-- `IssueTime` = **09:00:00-01:00**  
+- `IssueTime` = **10:00:00-01:00**  
   Issued in the morning, for the store to set up the range; in the issuer's local time, with its offset from UTC.
 - `RevisionDate` = **2026-04-20**  
   Not revised yet: the issue date.
-- `RevisionTime` = **09:00:00-01:00**  
+- `RevisionTime` = **10:00:00-01:00**  
   The issue time; in the local time of Bayvarra, where it happens, with its offset from UTC.
 - `Note` = **Prices for trade customers, before sales tax.**  
   What the prices are.
@@ -807,15 +807,15 @@ Inside `CatalogueLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:catalogue:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:catalogue:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900338989</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900338991</cbc:ProfileExecutionID>
   <cbc:ID>LMW-CAT-26-0005</cbc:ID>
   <cbc:UUID>f5163e36-0159-5b9f-b172-a86137e369e6</cbc:UUID>
   <cbc:ActionCode listID="urn:ubl-examples:world:codelist:CatalogueActionCode">NEW</cbc:ActionCode>
   <cbc:Name>Lumeway's catalogue for the Lumeport store, 2026</cbc:Name>
   <cbc:IssueDate>2026-04-20</cbc:IssueDate>
-  <cbc:IssueTime>09:00:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>10:00:00-01:00</cbc:IssueTime>
   <cbc:RevisionDate>2026-04-20</cbc:RevisionDate>
-  <cbc:RevisionTime>09:00:00-01:00</cbc:RevisionTime>
+  <cbc:RevisionTime>10:00:00-01:00</cbc:RevisionTime>
   <cbc:Note>Prices for trade customers, before sales tax.</cbc:Note>
   <cbc:Description>Benches and spare parts for resale.</cbc:Description>
   <cbc:VersionID>1.0</cbc:VersionID>

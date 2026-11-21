@@ -16,7 +16,7 @@ The shop confirms the delivery and reports a damaged carton.
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Receipt advice"; the community specification "Retail community". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:despatch-receipt:1.0**  
   The Trade Accord's process profile the document belongs to: despatch and receipt, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **9900339316**  
+- `ProfileExecutionID` = **9900339320**  
   The collaboration this document belongs to: the store's order from Lumeway, from the order to the credit note. Brightmarket Stores started it and gave it this identifier, which every document of it repeats.
 - `ID` = **5000339834**  
   The receiving party's number.
@@ -45,7 +45,7 @@ The shop confirms the delivery and reports a damaged carton.
 
 Inside `OrderReference`:
 
-- `ID` = **7100452422**  
+- `ID` = **7100452426**  
   The order the goods were delivered for.
 
 ### Despatch Document Reference
@@ -310,7 +310,7 @@ Inside `ReceiptLine`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:receipt-advice:1.0#compliant#urn:ubl-examples:world:community:retail:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>9900339316</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>9900339320</cbc:ProfileExecutionID>
   <cbc:ID>5000339834</cbc:ID>
   <cbc:UUID>aa88e826-e531-55ed-8ac7-22b653697864</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
@@ -323,7 +323,7 @@ Inside `ReceiptLine`:
   <cbc:Note>Counted and checked at goods-in.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cac:OrderReference>
-    <cbc:ID>7100452422</cbc:ID>
+    <cbc:ID>7100452426</cbc:ID>
   </cac:OrderReference>
   <cac:DespatchDocumentReference>
     <cbc:ID>LMW-DA-26-0911</cbc:ID>
