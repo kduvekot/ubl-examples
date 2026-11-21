@@ -29,8 +29,8 @@ decided with the owner one at a time, like the gaps here.
 
 ### Bank of Lumeport (25-xb)
 
-- Who founded the bank in 1903 and why; its history through the colonial years and independence.
-- Whether it issues bank notes or is a private commercial bank only; who owns it.
+- ~~Who founded the bank in 1903 and why; its history through the colonial years and independence.~~ Filled 2026-11-20 (OW011).
+- Whether it issues bank notes (who issues Bayvarra's notes is not set); ~~who owns it~~ Filled 2026-11-20 (OW011): a private commercial bank owned by its shareholders.
 - ~~How Bayvarra became independent (not set), which the bank's history would need.~~ Filled 2026-11-20 (OW004).
 
 ### Bank of Selanu (22-xl)
@@ -41,24 +41,24 @@ decided with the owner one at a time, like the gaps here.
 
 ### Bayforth Forwarding (10-xb)
 
-- Who founded Bayforth
+- ~~Who founded Bayforth~~ Filled 2026-11-20 (OW012).
 - Whether it has offices or agents on the island or in Urvania
 - When it added air freight and reefer haulage
 
 ### Bayvarra Information Service (21-xb)
 
-- when the service was set up, and under which law
+- ~~when the service was set up, and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - its staff and the ministry or department it reports to
 - whether it shares the government building on Government Hill with other public bodies
 
 ### Brackenmere Furniture (37-xb)
 
-- Who founded Brackenmere in 2000, and why it is named after Brackenmere but works in Marrowdale (whether it began there and moved, as Saltmere Engineering did).
+- ~~Who founded Brackenmere in 2000, and why it is named after Brackenmere but works in Marrowdale (whether it began there and moved, as Saltmere Engineering did).~~ Filled 2026-11-20 (OW013).
 - The size of its workshop and its range beyond the desk, the bench PB-2 and the Marrow line.
 
 ### Brightmarket Stores (26-xb)
 
-- Who founded Brightmarket in 1979 and how it grew; how many stores it has besides the Lumeport store, and where.
+- ~~Who founded Brightmarket in 1979 and how it grew; how many stores it has besides the Lumeport store, and where.~~ Filled 2026-11-20 (OW012).
 - What else the store sells besides clothing and home and garden goods, and its floor area.
 - When it opened its web shop.
 
@@ -70,7 +70,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Coastal State Water Company (34-xb)
 
-- who owns it: the Coastal State, the federal state or the city
+- ~~who owns it: the Coastal State, the federal state or the city~~ Filled 2026-11-20 (OW011).
 - where its water comes from (reservoir, river, wells) and how many customers it has
 - when the district heating network was built
 
@@ -82,36 +82,36 @@ decided with the owner one at a time, like the gaps here.
 
 ### Crevalto Bank (23-xu)
 
-- Who founded the bank in 1921 and under which rule Urvania then stood (Italian or British)
+- ~~Who founded the bank in 1921 and under which rule Urvania then stood (Italian or British)~~ Filled 2026-11-20 (OW011).
 - The bank's history through independence in 1962 and the opening of the economy in the 1990s
-- When it was listed on the Ferrano Stock Exchange
+- ~~When it was listed on the Ferrano Stock Exchange~~ Filled 2026-11-20 (OW011).
 - Its place among Urvania's banks (the largest, one of several)
 
 ### Customs Administration of Urvania (19-xu)
 
-- When the customs administration was set up (at independence in 1962 or earlier, under the Italian or British administration).
+- ~~When the customs administration was set up (at independence in 1962 or earlier, under the Italian or British administration).~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its headquarters and other offices besides the border office, and its staff numbers.
 - Its head and the ministry it reports to.
 
 ### Customs and Border Service of Bayvarra (19-xb)
 
-- When the service was established and under which law
+- ~~When the service was established and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its headcount and head office (the border office is the only address given)
 - How many offices and posts it has beyond the crossing, the seaport, the airport and Marrowdale
 
 ### Department of Agriculture of Lisavu (45-xl)
 
-- when the department was set up and how many people it employs
+- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - what else it does (inspection of imports, advice to farms, the island's farm policy)
 
 ### Environment Agency of Urvania (46-xu)
 
-- when the agency was set up and how many people it employs
+- ~~when the agency was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - its duties beyond waste (water, air, nature)
 
 ### Federal Department of Agriculture of Bayvarra (57-xb)
 
-- when the department was set up and how many people it employs
+- ~~when the department was set up and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - its other duties, and how farming is shared between the federation and the states
 
 ### Fernhollow Studio (48-xb)
@@ -120,7 +120,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Ferrano Chamber of Commerce (20-xu)
 
-- when the chamber was founded and how many people it employs
+- ~~when the chamber was founded and how many people it employs~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - whether it is a public body or an association of its members, and what it does besides certificates and carnets
 
 ### Ferrano Energy (33-xu)
@@ -150,13 +150,13 @@ decided with the owner one at a time, like the gaps here.
 
 ### Fiumella Barges (15-xu)
 
-- Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.
+- ~~Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.~~ Filled 2026-11-20 (OW011).
 - How many barges it runs besides Fiumella IV, and what other bulk it carries.
 - ~~The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.~~ Settled 2026-11-20 (O264): a rugged coast without a deep-water port.
 
 ### Gullhaven Tank Haulage (52-xb)
 
-- Who founded it in 2012 and whether its founding is tied to Kelpstone Gas's start of production in 2011
+- ~~Who founded it in 2012 and whether its founding is tied to Kelpstone Gas's start of production in 2011~~ Filled 2026-11-20 (OW013).
 - How many tankers it runs
 - Its customers besides the Coastal State Water Company
 
@@ -175,19 +175,19 @@ decided with the owner one at a time, like the gaps here.
 ### Harrowmead Fruit Growers (55-xb)
 
 - how many growers are members, and the area of the orchards
-- why the cooperative was founded in 1958
+- ~~why the cooperative was founded in 1958~~ Filled 2026-11-20 (OW011).
 - its markets at home besides the island
 
 ### Island Customs Service (19-xl)
 
-- When the customs service was set up and how it was organised under the English settlers.
+- ~~When the customs service was set up and how it was organised under the English settlers.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its staff numbers and its head office, if different from the Wharf Road office.
 - ~~When the island was settled and became independent (not set).~~ Filled 2026-11-20 (OW003, OW005).
 
 ### Kelaro Air Cargo (12-xl)
 
-- the year the freighter came into service
-- whether Kelaro also flies passengers, and on which other routes
+- ~~the year the freighter came into service~~ Filled 2026-11-20 (OW012).
+- ~~whether Kelaro also flies passengers, and on which other routes~~ Filled 2026-11-20 (OW012): yes, with an ATR 72-600 on the same route.
 
 ### Kelpstone Gas (42-xb)
 
@@ -198,43 +198,43 @@ decided with the owner one at a time, like the gaps here.
 
 ### Lumeport Airport Cargo Terminal (17-xb)
 
-- Who owns the terminal (the airport, an airline or private owners) and who founded it.
+- ~~Who owns the terminal (the airport, an airline or private owners) and who founded it.~~ Filled 2026-11-20 (OW012).
 - When Lumeport airport itself opened, and which other airlines and destinations it serves.
 - The terminal's size, cold rooms and yearly tonnage.
 
 ### Lumeport Public Works Department (2-xb)
 
-- When the department was established
+- ~~When the department was established~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its headcount and budget
 - Its tasks beyond procurement (roads, parks, buildings) and how it is organised within the city
 
 ### Lumeport Textile Mill (40-xb)
 
-- who founded the mill and who owns it
+- ~~who founded the mill and who owns it~~ Filled 2026-11-20 (OW012).
 - what clothing it makes besides shirts, and whether it sells to other shops
 
 ### Lumeport Trade Accord Council (32-xb)
 
-- When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)
-- Its membership, how it decides and who chairs it
+- ~~When the Council was set up (the agreement it governs dates from the protocol of 2014, OW007; the Council itself may be older)~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
+- ~~Its membership, how it decides and who chairs it~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its tasks beyond the agreement on electronic documents (code lists, the parities, disputes)
 - Its headcount
 
 ### Lumeway Distribution (6-xb)
 
-- what Lumeway distributed between 1988 and 1996, and who founded it
+- ~~what Lumeway distributed between 1988 and 1996, and who founded it~~ Filled 2026-11-20 (OW012).
 - which products and suppliers it carries besides Valdara's
 
 ### Maritime Administration of Lisavu (30-xl)
 
-- When it was established
-- Which ships fly Lisavu's flag (the ships named in the sources fly Bayvarra's)
+- ~~When it was established~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
+- ~~Which ships fly Lisavu's flag (the ships named in the sources fly Bayvarra's)~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its other tasks (port state control, safety of navigation, seafarers' certificates)
 - Its headcount
 
 ### Marrowdale Sawmill (36-xb)
 
-- who founded the mill
+- ~~who founded the mill~~ Filled 2026-11-20 (OW013).
 - ~~whether it fells its own timber or only buys logs from the Upland State Forest (the sources say both)~~ Settled 2026-11-20: it buys its logs from the Upland State Forest.
 
 ### Montebrio Power (43-xu)
@@ -262,7 +262,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Quillmoor Pharma Distribution (49-xb)
 
-- who founded the company
+- ~~who founded the company~~ Filled 2026-11-20 (OW012).
 - its customers in Bayvarra and Urvania
 
 ### Rail Infrastructure Agency of Urvania (47-xu)
@@ -273,13 +273,13 @@ decided with the owner one at a time, like the gaps here.
 
 ### Rinova Recovery (7-xu)
 
-- who founded Rinova and why in 2003, beyond the recycling of industrial waste
+- ~~who founded Rinova and why in 2003, beyond the recycling of industrial waste~~ Filled 2026-11-20 (OW013).
 - which other factories besides Valdara supply its waste
 - the name of the certification body is in the story (Certovira Certification) but it is not a party, so it cannot be linked
 
 ### Rivermouth Packaging (41-xb)
 
-- Who founded Rivermouth and why at the estuary
+- ~~Who founded Rivermouth and why at the estuary~~ Filled 2026-11-20 (OW013).
 - Its customers besides Valdara and the textile mill
 - Its yearly output of film and bags
 
@@ -296,24 +296,24 @@ decided with the owner one at a time, like the gaps here.
 
 ### Selanu Chamber of Commerce (20-xl)
 
-- when the chamber was set up and under which law
+- ~~when the chamber was set up and under which law~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - what the cotton fund pays for
 - where the trade fair is held and what it shows
 
 ### Selanu Cotton Ginnery (39-xl)
 
-- who founded the ginnery and why it is named after Selanu while it stands at Bollworth
+- ~~who founded the ginnery and why it is named after Selanu while it stands at Bollworth~~ Filled 2026-11-20 (OW011).
 - how many farms deliver to it, and whether it sells to buyers other than the textile mill
 
 ### Selanu General Hospital (50-xl)
 
-- When the hospital was founded, and its history under the English settlers.
+- ~~When the hospital was founded, and its history under the English settlers.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - Its number of beds and staff.
-- Whether it is the island's only hospital, and how the health service is organised.
+- ~~Whether it is the island's only hospital, and how the health service is organised.~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 
 ### Selanu Telecom (35-xl)
 
-- When the island's telephone department was set up
+- ~~When the island's telephone department was set up~~ Filled 2026-11-20 (OW014); a law or ministry, staff numbers: open.
 - The size of its network (lines, masts, mobile coverage) and its submarine links to the mainland
 - Its roaming partners abroad
 
@@ -325,7 +325,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Tevaro Customs Brokers (3-xl)
 
-- who founded Tevaro
+- ~~who founded Tevaro~~ Filled 2026-11-20 (OW012).
 - for which foreign businesses it acts as tax representative
 
 ### Tidewell Ocean Lines (11-xb)
@@ -335,9 +335,9 @@ decided with the owner one at a time, like the gaps here.
 
 ### Tostara Wood Modification (59-xu)
 
-- Who founded Tostara in 2011, and the origin of its name.
+- ~~Who founded Tostara in 2011, and the origin of its name.~~ Filled 2026-11-20 (OW013).
 - The capacity of its two kilns and its other customers by name.
-- Whether it has any other link to the leather works at Conciaro.
+- ~~Whether it has any other link to the leather works at Conciaro.~~ Filled 2026-11-20 (OW013).
 
 ### Trasvia Haulage (13-xu)
 
@@ -346,10 +346,10 @@ decided with the owner one at a time, like the gaps here.
 
 ### Velumi Trading (1-xl)
 
-- who founded the company and what it sold before it bought from Lumeway
+- ~~who founded the company and what it sold before it bought from Lumeway~~ Filled 2026-11-20 (OW013).
 - what it sells besides the Serra bench
 
 ### Wavesure Cargo Insurance (29-xb)
 
-- who founded Wavesure in 1927 and why then
-- whether it insures other risks besides cargo, and which other shippers it covers
+- ~~who founded Wavesure in 1927 and why then~~ Filled 2026-11-20 (OW011).
+- ~~whether it insures other risks besides cargo, and which other shippers it covers~~ Partly filled 2026-11-20 (OW011): it also insures exporters' receivables; other shippers open.
