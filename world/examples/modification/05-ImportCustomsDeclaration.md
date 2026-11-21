@@ -243,10 +243,18 @@ Inside `Shipment`:
   The sawmill's number for the load.
 - `Consignment/GrossWeightMeasure` = **14448** (unitCode `KGM`)  
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight arriving.
+- `Consignment/OfficeOfEntryLocation/ID` = **XU001001** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `Consignment/OfficeOfEntryLocation/Name` = **Customs post at the land border, Urvanian side**  
   One of the offices the authorisation names as empowered to accept the plant's entries: the border post, for loads that come by road.
+- `Consignment/OfficeOfEntryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+- `Consignment/OfficeOfEntryLocation/SubsidiaryLocation/ID` = **XU002001** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `Consignment/OfficeOfEntryLocation/SubsidiaryLocation/Name` = **Inland customs office, Ferrano**  
   The other office the authorisation names, for entries lodged inland.
+- `Consignment/OfficeOfEntryLocation/SubsidiaryLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `GoodsItem/ID` = **1**  
   The goods item number.
 - `GoodsItem/Description` = **Ash blank 1830, kiln dried**  
@@ -485,9 +493,21 @@ Inside `Signature`:
       <cbc:ID>MDS-CS-26-0051</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
       <cac:OfficeOfEntryLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
         <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
         <cac:SubsidiaryLocation>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU002001</cbc:ID>
           <cbc:Name>Inland customs office, Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
         </cac:SubsidiaryLocation>
       </cac:OfficeOfEntryLocation>
     </cac:Consignment>

@@ -478,10 +478,14 @@ Inside `GoodsItemPassportCounterfoil`:
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples leave Urvania.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
+- `CustomsOfficeLocation/ID` = **XU001001** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `CustomsOfficeLocation/LocationTypeCode` = **BORDERPOST** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
   A customs post at the road border crossing. The code is from the Trade Accord's customs location type list: BORDERPOST = Border crossing point.
 - `CustomsOfficeLocation/Name` = **Customs Administration of Urvania, Valico Euridice**  
   The customs office where the counterfoil is presented.
+- `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
@@ -494,10 +498,14 @@ Inside `GoodsItemPassportCounterfoil`:
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
+- `CustomsOfficeLocation/ID` = **XB001001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `CustomsOfficeLocation/LocationTypeCode` = **BORDERPOST** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
   A customs post at the road border crossing. The code is from the Trade Accord's customs location type list: BORDERPOST = Border crossing point.
 - `CustomsOfficeLocation/Name` = **Customs and Border Service of Bayvarra, Euridice Crossing**  
   The customs office where the counterfoil is presented.
+- `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
@@ -512,14 +520,14 @@ Inside `GoodsItemPassportCounterfoil`:
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples arrive on the island.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
-- `CustomsOfficeLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/ID` = **XL001002** (schemeID `urn:ubl-examples:world:XL:customs-office`)  
+  The office's number in the customs office list of Lisavu.
 - `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
   A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
 - `CustomsOfficeLocation/Name` = **Island Customs Service, Selanu airport**  
   The customs office where the counterfoil is presented.
 - `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
@@ -532,14 +540,14 @@ Inside `GoodsItemPassportCounterfoil`:
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples leave the island.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
-- `CustomsOfficeLocation/ID` = **XLSLA** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/ID` = **XL001002** (schemeID `urn:ubl-examples:world:XL:customs-office`)  
+  The office's number in the customs office list of Lisavu.
 - `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
   A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
 - `CustomsOfficeLocation/Name` = **Island Customs Service, Selanu airport**  
   The customs office where the counterfoil is presented.
 - `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
@@ -552,14 +560,14 @@ Inside `GoodsItemPassportCounterfoil`:
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
-- `CustomsOfficeLocation/ID` = **XBLMA** (schemeID `UN/LOCODE`)  
-  The place's code in the form of a UN/LOCODE, with the world's country code.
+- `CustomsOfficeLocation/ID` = **XB002002** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `CustomsOfficeLocation/LocationTypeCode` = **CUSTOMSOFFICE** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
   A customs office at the airport. The code is from the Trade Accord's customs location type list: CUSTOMSOFFICE = Customs office.
 - `CustomsOfficeLocation/Name` = **Customs and Border Service of Bayvarra, Lumeport airport**  
   The customs office where the counterfoil is presented.
 - `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
@@ -574,10 +582,14 @@ Inside `GoodsItemPassportCounterfoil`:
   The carnet the counterfoil belongs to.
 - `Note` = **To be stamped by customs when the samples come home to Urvania.**  
   What the counterfoil is for: at issue no counterfoil is stamped yet.
+- `CustomsOfficeLocation/ID` = **XU001001** (schemeID `urn:ubl-examples:world:XU:customs-office`)  
+  The office's number in the customs office list of Urvania.
 - `CustomsOfficeLocation/LocationTypeCode` = **BORDERPOST** (listID `urn:ubl-examples:world:codelist:CustomsLocationTypeCode`)  
   A customs post at the road border crossing. The code is from the Trade Accord's customs location type list: BORDERPOST = Border crossing point.
 - `CustomsOfficeLocation/Name` = **Customs Administration of Urvania, Valico Euridice**  
   The customs office where the counterfoil is presented.
+- `CustomsOfficeLocation/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `GoodsItem/ID` = **1**  
   The two sample benches.
 - `GoodsItem/Quantity` = **2** (unitCode `EA`)  
@@ -1013,8 +1025,14 @@ Inside `Signature`:
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
       <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -1029,8 +1047,14 @@ Inside `Signature`:
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Euridice Crossing and leave it at Lumeport airport.</cbc:Note>
     <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB001001</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
       <cbc:Name>Customs and Border Service of Bayvarra, Euridice Crossing</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
@@ -1048,7 +1072,7 @@ Inside `Signature`:
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples arrive on the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
       <cac:Address>
@@ -1070,7 +1094,7 @@ Inside `Signature`:
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples leave the island.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XLSLA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XL:customs-office">XL001002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Island Customs Service, Selanu airport</cbc:Name>
       <cac:Address>
@@ -1092,7 +1116,7 @@ Inside `Signature`:
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples enter Bayvarra at Lumeport airport and leave it at Euridice Crossing.</cbc:Note>
     <cac:CustomsOfficeLocation>
-      <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002002</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">CUSTOMSOFFICE</cbc:LocationTypeCode>
       <cbc:Name>Customs and Border Service of Bayvarra, Lumeport airport</cbc:Name>
       <cac:Address>
@@ -1117,8 +1141,14 @@ Inside `Signature`:
     <cbc:GoodsItemPassportID>FCC/ATA/2026/0159</cbc:GoodsItemPassportID>
     <cbc:Note>To be stamped by customs when the samples come home to Urvania.</cbc:Note>
     <cac:CustomsOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
       <cbc:LocationTypeCode listID="urn:ubl-examples:world:codelist:CustomsLocationTypeCode">BORDERPOST</cbc:LocationTypeCode>
       <cbc:Name>Customs Administration of Urvania, Valico Euridice</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsOfficeLocation>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

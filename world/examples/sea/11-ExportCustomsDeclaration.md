@@ -102,10 +102,18 @@ Inside `CustomsDeclaration`:
   The gross weight of the goods with their packaging, without the transport equipment, as a consignment's weight is defined. The gross weight leaving the country.
 - `Shipment/Consignment/TotalPackagesQuantity` = **324** (unitCode `EA`)  
   The parcels declared, on the pallets counted above.
+- `Shipment/Consignment/OfficeOfExitLocation/ID` = **XB002001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `Shipment/Consignment/OfficeOfExitLocation/Name` = **Customs office, port of Lumeport**  
   Where the goods leave Bayvarra: the same port.
+- `Shipment/Consignment/OfficeOfExitLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `Shipment/Consignment/OfficeOfExportLocation/ID` = **XB002001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `Shipment/Consignment/OfficeOfExportLocation/Name` = **Customs office, port of Lumeport**  
   Where the export is declared.
+- `Shipment/Consignment/OfficeOfExportLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Shipment/GoodsItem/ID` = **1**  
   The goods item number.
 - `Shipment/GoodsItem/Description` = **Park bench Serra 180**  
@@ -362,8 +370,12 @@ Inside `CustomsDeclaration`:
   At the container quay of the Port of Lumeport.
 - `Shipment/ShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
   The country the place is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+- `CustomsExitOfficeLocation/ID` = **XB002001** (schemeID `urn:ubl-examples:world:XB:customs-office`)  
+  The office's number in the customs office list of Bayvarra.
 - `CustomsExitOfficeLocation/Name` = **Customs office, port of Lumeport**  
   Where the goods leave the country.
+- `CustomsExitOfficeLocation/Address/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
+  The country the office is in. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ConsignorParty/PartyIdentification/ID` = **20410274** (schemeID `urn:ubl-examples:world:XB:register`)  
   A party referred to from another party's details: its identifier and name are enough.
 - `ConsignorParty/PartyName/Name` = **Lumeway Distribution**  
@@ -542,10 +554,22 @@ Inside `Signature`:
         <cbc:GrossWeightMeasure unitCode="KGM">5795.8</cbc:GrossWeightMeasure>
         <cbc:TotalPackagesQuantity unitCode="EA">324</cbc:TotalPackagesQuantity>
         <cac:OfficeOfExitLocation>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002001</cbc:ID>
           <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
         </cac:OfficeOfExitLocation>
         <cac:OfficeOfExportLocation>
+          <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002001</cbc:ID>
           <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
         </cac:OfficeOfExportLocation>
       </cac:Consignment>
       <cac:GoodsItem>
@@ -766,7 +790,13 @@ Inside `Signature`:
       </cac:ShipmentStage>
     </cac:Shipment>
     <cac:CustomsExitOfficeLocation>
+      <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002001</cbc:ID>
       <cbc:Name>Customs office, port of Lumeport</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:CustomsExitOfficeLocation>
     <cac:ConsignorParty>
       <cac:PartyIdentification>

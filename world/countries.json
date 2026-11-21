@@ -266,6 +266,11 @@
      "keeper": "46-xu",
      "pattern": "^XU-ENV-T-\\d{4}-\\d{4}$",
      "format": "XU-ENV-T-, the year of registration and a four-digit number"
+    },
+    "customs-office": {
+     "name": "customs office list of Urvania",
+     "pattern": "^XU\\d{6}$",
+     "format": "XU and six digits: the office's number in the list of offices that the Customs Administration of Urvania keeps, the first three digits for the kind of office (001 a border post, 002 an office at a port, an airport or a hub, 003 an inland clearance office), the last three its number"
     }
    },
    "province": "Province of Ferrano",
@@ -329,7 +334,33 @@
       "text": "Urvanian and English are official. Place and street names are the Italian ones, which count as English; Urvanian gives every place its own name too, and addresses carry both."
      }
     ]
-   }
+   },
+   "customs_offices": [
+    {
+     "id": "XU001001",
+     "name": "Valico Euridice",
+     "kind": "BORDERPOST",
+     "where": "the road border crossing into Bayvarra"
+    },
+    {
+     "id": "XU001002",
+     "name": "Rail border station",
+     "kind": "BORDERPOST",
+     "where": "the railway's border station on the line into Bayvarra"
+    },
+    {
+     "id": "XU001003",
+     "name": "River border",
+     "kind": "BORDERPOST",
+     "where": "the river at the border, where the barges leave for Bayvarra"
+    },
+    {
+     "id": "XU002001",
+     "name": "Ferrano Intermodal Hub",
+     "kind": "CUSTOMSOFFICE",
+     "where": "the rail hub at Ferrano"
+    }
+   ]
   },
   "XB": {
    "name": "Bayvarra",
@@ -611,6 +642,11 @@
      "name": "register of carriers of dangerous goods by road of Bayvarra",
      "pattern": "^XB-DGC-\\d{4}-\\d{4}$",
      "format": "XB-DGC-, the year of issue and a four-digit number"
+    },
+    "customs-office": {
+     "name": "customs office list of Bayvarra",
+     "pattern": "^XB\\d{6}$",
+     "format": "XB and six digits: the office's number in the list of offices that the Customs and Border Service of Bayvarra keeps, the first three digits for the kind of office (001 a border post, 002 an office at a port, an airport or a hub, 003 an inland clearance office), the last three its number"
     }
    },
    "legal_time": "Bayvarran Time",
@@ -665,7 +701,39 @@
       "text": "Bayvarra's economy is a trading one: distribution, retail, the seaport and the airport of [[Lumeport]], and the wool, wheat and timber of the plateau. Since 2011 gas from an offshore field off the north coast is sold by pipeline to [[Urvania]]. In the dry north-east, the sunniest part of the mainland, solar farms on the Sallow Downs sell their power into the Accord's wholesale market, much of it across the border to Urvania. They stand on grazing land, where the sheep still graze between the panels, and belong to a company the graziers own together with the [[Bank of Lumeport]], which financed them."
      }
     ]
-   }
+   },
+   "customs_offices": [
+    {
+     "id": "XB001001",
+     "name": "Euridice Crossing",
+     "kind": "BORDERPOST",
+     "where": "the road border crossing into Urvania"
+    },
+    {
+     "id": "XB001002",
+     "name": "Rail border station",
+     "kind": "BORDERPOST",
+     "where": "the railway's border station on the line from Urvania"
+    },
+    {
+     "id": "XB002001",
+     "name": "Port of Lumeport",
+     "kind": "CUSTOMSOFFICE",
+     "where": "the seaport of Lumeport"
+    },
+    {
+     "id": "XB002002",
+     "name": "Lumeport airport",
+     "kind": "CUSTOMSOFFICE",
+     "where": "the airport of Lumeport"
+    },
+    {
+     "id": "XB003001",
+     "name": "Marrowdale",
+     "kind": "CUSTOMSOFFICE",
+     "where": "the inland office at Marrowdale, for goods arriving by rail"
+    }
+   ]
   },
   "XL": {
    "name": "Lisavu",
@@ -883,6 +951,11 @@
      "name": "branch number of a Lisavan bank",
      "pattern": "^\\d{3}$",
      "format": "three digits"
+    },
+    "customs-office": {
+     "name": "customs office list of Lisavu",
+     "pattern": "^XL\\d{6}$",
+     "format": "XL and six digits: the office's number in the list of offices that the Island Customs Service keeps, the first three digits for the kind of office (001 a border post, 002 an office at a port, an airport or a hub, 003 an inland clearance office), the last three its number"
     }
    },
    "farm_registry": {
@@ -939,7 +1012,21 @@
       "text": "Cotton is the island's export. Lisavu has no general sales tax: customs collects an import consumption tax on every import, whatever its origin, and a duty on goods from outside the Accord.\n\nThe island's electricity comes almost wholly from water, sun and wind, run by the government's electricity department; as an isolated system it is exempt from the Accord's rule that networks be run apart from supply. The island uses about 110 GWh a year, with a peak of about 22 MW. The [[Tapetu (river)|Tapetu]] hydro plant of about 8 MW, built in 1968 as the island's first great work after self-government, takes the river high in its valley and brings it down a pipeline to a power house above [[Nihekemo]], and a small reservoir lets it run in the evening and at night. Two small plants of about 4 MW on the streams of the wet west slopes followed in the 1980s; a solar park of about 25 MW beside the airfield at Lintwell opened in 2015, with the roofs of Selanu; three wind turbines of about 12 MW on the high ground above the west cliffs came in 2019, and a battery store of about 40 MWh at Selanu in 2021. Since 2022 the old oil-fired station at Selanu is a reserve for dry, calm weeks only. The island is also cutting its use of fuel on the road: Selanu's buses and the town's delivery vans are being replaced by electric ones, while ships, aircraft, tractors and heavy trucks still run on fuel."
      }
     ]
-   }
+   },
+   "customs_offices": [
+    {
+     "id": "XL001001",
+     "name": "Port of Selanu",
+     "kind": "CUSTOMSOFFICE",
+     "where": "the port of Selanu"
+    },
+    {
+     "id": "XL001002",
+     "name": "Selanu airport",
+     "kind": "CUSTOMSOFFICE",
+     "where": "the airport of Selanu"
+    }
+   ]
   }
  },
  "exchange_rates": {

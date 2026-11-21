@@ -170,9 +170,21 @@
       <cbc:ID>MDS-CS-26-0051</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">14448</cbc:GrossWeightMeasure>
       <cac:OfficeOfEntryLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU001001</cbc:ID>
         <cbc:Name>Customs post at the land border, Urvanian side</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
         <cac:SubsidiaryLocation>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:customs-office">XU002001</cbc:ID>
           <cbc:Name>Inland customs office, Ferrano</cbc:Name>
+          <cac:Address>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:Address>
         </cac:SubsidiaryLocation>
       </cac:OfficeOfEntryLocation>
     </cac:Consignment>

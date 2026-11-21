@@ -92,6 +92,48 @@
       <cbc:ID>26-0129</cbc:ID>
       <cbc:GrossWeightMeasure unitCode="KGM">358.75</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cac:RequestedPickupTransportEvent>
+        <cbc:OccurrenceDate>2026-06-04</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>09:30:00-01:00</cbc:OccurrenceTime>
+        <cac:Location>
+          <cbc:Name>Saltmere Engineering works</cbc:Name>
+          <cac:Address>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+            <cbc:StreetName>Foundry Road</cbc:StreetName>
+            <cbc:BuildingNumber>13</cbc:BuildingNumber>
+            <cbc:CityName>Marrowdale</cbc:CityName>
+            <cbc:PostalZone>71218</cbc:PostalZone>
+            <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+            <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+            <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              <cbc:Name>Bayvarra</cbc:Name>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:RequestedPickupTransportEvent>
+      <cac:RequestedDeliveryTransportEvent>
+        <cbc:OccurrenceDate>2026-06-05</cbc:OccurrenceDate>
+        <cac:Location>
+          <cbc:Name>Selanu Telecom's mast site on Mast Hill</cbc:Name>
+          <cac:Address>
+            <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+            <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XL</cbc:AddressFormatCode>
+            <cbc:StreetName languageID="qal">Kitata Vekase Natii</cbc:StreetName>
+            <cbc:StreetName languageID="en-XL">Mast Hill Road</cbc:StreetName>
+            <cbc:BuildingNumber>58</cbc:BuildingNumber>
+            <cbc:CityName languageID="qal">Selanu</cbc:CityName>
+            <cbc:CityName languageID="en-XL">Port Wrenfield</cbc:CityName>
+            <cbc:TimezoneOffset>+00:00</cbc:TimezoneOffset>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              <cbc:Name>Lisavu</cbc:Name>
+            </cac:Country>
+          </cac:Address>
+        </cac:Location>
+      </cac:RequestedDeliveryTransportEvent>
       <cac:ConsigneeParty>
         <cac:PartyIdentification>
           <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC42407</cbc:ID>
@@ -131,6 +173,22 @@
           <cbc:Name>Saltmere Engineering</cbc:Name>
         </cac:PartyName>
       </cac:HazardousItemNotificationParty>
+      <cac:MainCarriageShipmentStage>
+        <cbc:TransportModeCode listID="UNECE Recommendation 19 - Codes for Modes of Transport">4</cbc:TransportModeCode>
+        <cac:PlannedDepartureTransportEvent>
+          <cbc:OccurrenceDate>2026-06-04</cbc:OccurrenceDate>
+          <cbc:OccurrenceTime>15:00:00-01:00</cbc:OccurrenceTime>
+          <cac:Location>
+            <cbc:ID schemeID="UN/LOCODE">XBLMA</cbc:ID>
+            <cbc:Name>Lumeport airport</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
+          </cac:Location>
+        </cac:PlannedDepartureTransportEvent>
+      </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cbc:ID>SE-PL-1</cbc:ID>
         <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">PX</cbc:TransportHandlingUnitTypeCode>
