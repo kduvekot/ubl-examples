@@ -52,11 +52,11 @@ public description on the world's pages.</li>
 The Trade Accord's process profile the document belongs to: transport, a
 generic, versioned profile, not the flow.</li>
 <li><code>ProfileExecutionID</code> =
-<strong>BYF-TX-26-2548</strong><br />
+<strong>BYF-TX-26-2543</strong><br />
 The collaboration this document belongs to: the air carriage Bayforth
 books with Kelaro Air Cargo. Bayforth Forwarding started it and gave it
 this identifier, which every document of it repeats.</li>
-<li><code>ID</code> = <strong>KXL-00694562</strong><br />
+<li><code>ID</code> = <strong>KXL-00694536</strong><br />
 The consignment note number.</li>
 <li><code>UUID</code> =
 <strong>cbf5d04c-eecc-510a-b84b-bf76e2526b98</strong><br />
@@ -69,11 +69,11 @@ The original, not a corrected version.</li>
 The note is issued and in force. The code is from the Trade Accord's
 record status list: ISSUED = Issued.</li>
 <li><code>IssueDate</code> = <strong>2026-05-13</strong><br />
-The air waybill, issued when the airline accepted the cargo on the
-evening of 13 May, after the cut-off for KXL209.</li>
-<li><code>IssueTime</code> = <strong>20:15:00+00:00</strong><br />
-At acceptance, 19:15 in Lumeport; in the issuer's local time, with its
-offset from UTC.</li>
+The air waybill, issued when the airline accepted the cargo on 13 May,
+after the cut-off for KXL209.</li>
+<li><code>IssueTime</code> = <strong>13:54:00+00:00</strong><br />
+At acceptance, 12:54 in Lumeport, in the island time of the airline; in
+the issuer's local time, with its offset from UTC.</li>
 <li><code>Name</code> = <strong>Air waybill under the Montreal
 Convention</strong><br />
 The kind of transport document.</li>
@@ -891,7 +891,7 @@ Parts of seats, other.</li>
 <h3 id="document-reference">Document Reference</h3>
 <p>Inside <code>DocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>7800004419</strong><br />
+<li><code>ID</code> = <strong>7800004418</strong><br />
 The transit declaration the frames travel under to Selanu airport, the
 office of destination; a document outside the examples.</li>
 <li><code>DocumentType</code> = <strong>Transit
@@ -966,7 +966,7 @@ consignee signs on delivery.</li>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>KXL-SIG-KXL-00694562</strong><br />
+<li><code>ID</code> = <strong>KXL-SIG-KXL-00694536</strong><br />
 The carrier's signature on taking over the goods.</li>
 <li><code>SignatoryParty/PartyIdentification/ID</code> =
 <strong>IC41311</strong> (schemeID
@@ -985,13 +985,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:waybill:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:transport:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;BYF-TX-26-2548&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;KXL-00694562&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;BYF-TX-26-2543&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;KXL-00694536&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;cbf5d04c-eecc-510a-b84b-bf76e2526b98&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:VersionID</span>&gt;1&lt;/<span class="kw">cbc:VersionID</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:StatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:RecordStatusCode&quot;</span>&gt;ISSUED&lt;/<span class="kw">cbc:StatusCode</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;20:15:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;13:54:00+00:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Air waybill under the Montreal Convention&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Three originals: the consignor&#39;s, handed over when the carrier took over the goods; the consignee&#39;s, with the goods; the carrier&#39;s, kept by the carrier.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -1294,7 +1294,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;7800004419&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;7800004418&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Transit declaration&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
 <span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DocumentDistribution</span>&gt;</span>
@@ -1325,7 +1325,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Party</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DocumentDistribution</span>&gt;</span>
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;KXL-SIG-KXL-00694562&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;KXL-SIG-KXL-00694536&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41311&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -1343,6 +1343,6 @@ href="example-air-09-TransportationStatus.html">Transportation Status
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/19876d319ec9a4eac5eb22afe116ba2e327ce4e1"><code>19876d3</code></a> of 2026-11-21 00:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c1937a64864419653fedbdb7974a885762bc30f1"><code>c1937a6</code></a> of 2026-11-21 00:23 UTC</p></div></footer>
 </body>
 </html>

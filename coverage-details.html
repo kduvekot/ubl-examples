@@ -24,8 +24,8 @@ id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
 <li><a href="#extend-498" id="toc-extend-498">extend (498)</a></li>
-<li><a href="#add-structure-42" id="toc-add-structure-42">add structure
-(42)</a></li>
+<li><a href="#add-structure-39" id="toc-add-structure-39">add structure
+(39)</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -42,8 +42,8 @@ id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
 <li><a href="#extend-498" id="toc-extend-498">extend (498)</a></li>
-<li><a href="#add-structure-42" id="toc-add-structure-42">add structure
-(42)</a></li>
+<li><a href="#add-structure-39" id="toc-add-structure-39">add structure
+(39)</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -911,131 +911,6 @@ clearance.</td>
 </table>
 </details>
 
-<details><summary><b>rail-09-GoodsItemItinerary.xml</b> — 16 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GoodsItem</td>
-<td>FreightAllowanceCharge</td>
-<td>0..n</td>
-<td>A cost incurred by the shipper in moving goods, by whatever means,
-from one place to another under the terms of the contract of carriage.
-In addition to transport costs, this may include such elements as
-packing, documentation, loading, unloading, and insurance to the extent
-that they relate to the freight costs.</td>
-</tr>
-<tr>
-<td>GoodsItem</td>
-<td>GoodsItemContainer</td>
-<td>0..n</td>
-<td>The transporting of a goods item in a unit of transport equipment
-(e.g., container).</td>
-</tr>
-<tr>
-<td>GoodsItem</td>
-<td>InsurancePolicy</td>
-<td>0..n</td>
-<td>One or more Insurance Policies that apply to this Goods Item.</td>
-</tr>
-<tr>
-<td>GoodsItem</td>
-<td>MeasurementDimension</td>
-<td>0..n</td>
-<td>A measurable dimension (length, mass, weight, or volume) of this
-goods item.</td>
-</tr>
-<tr>
-<td>GoodsItem</td>
-<td>ReceiptLineReference</td>
-<td>0..1</td>
-<td>A reference to the receipt line associated with this goods
-item.</td>
-</tr>
-<tr>
-<td>GoodsItem</td>
-<td>ReturnableQuantity</td>
-<td>0..1</td>
-<td>The number of units in the goods item that may be returned.</td>
-</tr>
-<tr>
-<td>GoodsItem</td>
-<td>ValueAmount</td>
-<td>0..1</td>
-<td>The amount on which a duty, tax, or fee will be assessed.</td>
-</tr>
-<tr>
-<td>Package</td>
-<td>ContainingTransportEquipment</td>
-<td>0..1</td>
-<td>The piece of transport equipment containing this package.</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>AnimalFoodApprovedIndicator</td>
-<td>0..1</td>
-<td>An indicator that this piece of transport equipment is approved for
-animal food (true) or not (false).</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>AttachedTransportEquipment</td>
-<td>0..n</td>
-<td>A piece of transport equipment attached to this piece of transport
-equipment.</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>ContainedInTransportEquipment</td>
-<td>0..n</td>
-<td>A piece of transport equipment contained in this piece of transport
-equipment.</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>HazardousGoodsTransit</td>
-<td>0..n</td>
-<td>Transit-related information regarding a type of hazardous goods
-contained in this piece of transport equipment.</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>LegalStatusIndicator</td>
-<td>0..1</td>
-<td>An indication of the legal status of this piece of transport
-equipment with respect to the Container Convention Code.</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>OperatingParty</td>
-<td>0..1</td>
-<td>The Party who operates this piece of Transport Equipment.</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>Package</td>
-<td>0..n</td>
-<td>A package contained in this piece of transport equipment.</td>
-</tr>
-<tr>
-<td>TransportEquipment</td>
-<td>ShipmentDocumentReference</td>
-<td>0..n</td>
-<td>A reference to a shipping document associated with this piece of
-transport equipment.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
 <details><summary><b>sea-26-CreditNote.xml</b> — 16 elements</summary>
 
 <table>
@@ -1154,6 +1029,124 @@ Credit Note.</td>
 <td>WorkReportDocumentReference</td>
 <td>0..n</td>
 <td>A reference to a Work Report associated with this document.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<details><summary><b>rail-09-GoodsItemItinerary.xml</b> — 15 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GoodsItem</td>
+<td>FreightAllowanceCharge</td>
+<td>0..n</td>
+<td>A cost incurred by the shipper in moving goods, by whatever means,
+from one place to another under the terms of the contract of carriage.
+In addition to transport costs, this may include such elements as
+packing, documentation, loading, unloading, and insurance to the extent
+that they relate to the freight costs.</td>
+</tr>
+<tr>
+<td>GoodsItem</td>
+<td>InsurancePolicy</td>
+<td>0..n</td>
+<td>One or more Insurance Policies that apply to this Goods Item.</td>
+</tr>
+<tr>
+<td>GoodsItem</td>
+<td>MeasurementDimension</td>
+<td>0..n</td>
+<td>A measurable dimension (length, mass, weight, or volume) of this
+goods item.</td>
+</tr>
+<tr>
+<td>GoodsItem</td>
+<td>ReceiptLineReference</td>
+<td>0..1</td>
+<td>A reference to the receipt line associated with this goods
+item.</td>
+</tr>
+<tr>
+<td>GoodsItem</td>
+<td>ReturnableQuantity</td>
+<td>0..1</td>
+<td>The number of units in the goods item that may be returned.</td>
+</tr>
+<tr>
+<td>GoodsItem</td>
+<td>ValueAmount</td>
+<td>0..1</td>
+<td>The amount on which a duty, tax, or fee will be assessed.</td>
+</tr>
+<tr>
+<td>Package</td>
+<td>ContainingTransportEquipment</td>
+<td>0..1</td>
+<td>The piece of transport equipment containing this package.</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>AnimalFoodApprovedIndicator</td>
+<td>0..1</td>
+<td>An indicator that this piece of transport equipment is approved for
+animal food (true) or not (false).</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>AttachedTransportEquipment</td>
+<td>0..n</td>
+<td>A piece of transport equipment attached to this piece of transport
+equipment.</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>ContainedInTransportEquipment</td>
+<td>0..n</td>
+<td>A piece of transport equipment contained in this piece of transport
+equipment.</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>HazardousGoodsTransit</td>
+<td>0..n</td>
+<td>Transit-related information regarding a type of hazardous goods
+contained in this piece of transport equipment.</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>LegalStatusIndicator</td>
+<td>0..1</td>
+<td>An indication of the legal status of this piece of transport
+equipment with respect to the Container Convention Code.</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>OperatingParty</td>
+<td>0..1</td>
+<td>The Party who operates this piece of Transport Equipment.</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>Package</td>
+<td>0..n</td>
+<td>A package contained in this piece of transport equipment.</td>
+</tr>
+<tr>
+<td>TransportEquipment</td>
+<td>ShipmentDocumentReference</td>
+<td>0..n</td>
+<td>A reference to a shipping document associated with this piece of
+transport equipment.</td>
 </tr>
 </tbody>
 </table>
@@ -4589,6 +4582,29 @@ automatically becomes a confirmed order for a product.</td>
 </table>
 </details>
 
+<details><summary><b>rail-08-Waybill.xml</b> — 1 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GoodsItemContainer</td>
+<td>Quantity</td>
+<td>0..1</td>
+<td>The number of goods items loaded into or onto one piece of transport
+equipment as a total consignment or part of a consignment.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
 <details><summary><b>rail-11-Invoice.xml</b> — 1 elements</summary>
 
 <table>
@@ -4884,7 +4900,7 @@ regulation.</td>
 </table>
 </details>
 
-<h3 id="add-structure-42">add structure (42)</h3>
+<h3 id="add-structure-39">add structure (39)</h3>
 <details><summary><b>furniture-07-ExceptionNotification.xml — ExceptionNotification/ExceptionNotificationLine/ForecastException</b> — 8 elements</summary>
 
 <table>
@@ -4989,42 +5005,6 @@ end-of-life option.</td>
 <td>TreatmentPathwayCode</td>
 <td>0..1</td>
 <td>A code identifying the end-of-life pathway.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>rail-09-GoodsItemItinerary.xml — GoodsItemItinerary/ReferencedGoodsItem/GoodsItemContainer</b> — 3 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GoodsItemContainer</td>
-<td>ID</td>
-<td>1</td>
-<td>An identifier for this goods item container.</td>
-</tr>
-<tr>
-<td>GoodsItemContainer</td>
-<td>Quantity</td>
-<td>0..1</td>
-<td>The number of goods items loaded into or onto one piece of transport
-equipment as a total consignment or part of a consignment.</td>
-</tr>
-<tr>
-<td>GoodsItemContainer</td>
-<td>TransportEquipment</td>
-<td>0..n</td>
-<td>A piece of transport equipment used to contain a single goods
-item.</td>
 </tr>
 </tbody>
 </table>
@@ -5392,6 +5372,6 @@ to provide the same content in multiple natural languages).</td>
 </details>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/19876d319ec9a4eac5eb22afe116ba2e327ce4e1"><code>19876d3</code></a> of 2026-11-21 00:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c1937a64864419653fedbdb7974a885762bc30f1"><code>c1937a6</code></a> of 2026-11-21 00:23 UTC</p></div></footer>
 </body>
 </html>

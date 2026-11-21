@@ -161,6 +161,11 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-BAT-4850</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:HazardousItem>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">3480</cbc:UNDGCode>
+          <cbc:ProperShippingName>Lithium ion batteries</cbc:ProperShippingName>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
+        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -180,6 +185,11 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-SMK-10</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:HazardousItem>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2911</cbc:UNDGCode>
+          <cbc:ProperShippingName>Radioactive material, excepted package - instruments or articles</cbc:ProperShippingName>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">7</cbc:HazardClassID>
+        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -199,6 +209,14 @@
         <cac:SellersItemIdentification>
           <cbc:ID>SE-CS-01</cbc:ID>
         </cac:SellersItemIdentification>
+        <cac:HazardousItem>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">2920</cbc:UNDGCode>
+          <cbc:ProperShippingName>Corrosive liquid, flammable, n.o.s.</cbc:ProperShippingName>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">8</cbc:HazardClassID>
+          <cac:SecondaryHazard>
+            <cbc:ID schemeID="UN Model Regulations hazard class">3</cbc:ID>
+          </cac:SecondaryHazard>
+        </cac:HazardousItem>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>

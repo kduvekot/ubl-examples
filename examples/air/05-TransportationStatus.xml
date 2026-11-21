@@ -3,11 +3,11 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
-  <cbc:ID>LAC-TS-26-13099</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2543</cbc:ProfileExecutionID>
+  <cbc:ID>LAC-TS-26-13073</cbc:ID>
   <cbc:UUID>6938a110-04c3-536b-96b3-9bd3bd8bb1c1</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>19:20:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>12:59:00-01:00</cbc:IssueTime>
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
@@ -118,7 +118,7 @@
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-05-13</cbc:OccurrenceDate>
-    <cbc:OccurrenceTime>19:10:00-01:00</cbc:OccurrenceTime>
+    <cbc:OccurrenceTime>12:49:00-01:00</cbc:OccurrenceTime>
     <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">ACCEPTANCE</cbc:TransportEventTypeCode>
     <cbc:Description>Cargo accepted after the cut-off for KXL209 of 13 May and built up for KXL207 of 14 May.</cbc:Description>
     <cac:Location>
@@ -127,7 +127,7 @@
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-00694536</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

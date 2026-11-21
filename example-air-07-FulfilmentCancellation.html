@@ -66,12 +66,12 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-05-13</strong><br />
 On 13 May, the day of the missed flight.</li>
-<li><code>IssueTime</code> = <strong>19:50:00-01:00</strong><br />
-In the evening, when the terminal reported the cargo accepted for the
-next morning's flight, before the new despatch advice it announces; in
-the issuer's local time, with its offset from UTC.</li>
-<li><code>Note</code> = <strong>A new despatch advice follows this
-evening.</strong><br />
+<li><code>IssueTime</code> = <strong>13:24:00-01:00</strong><br />
+Once the terminal had reported the cargo accepted for the next morning's
+flight, before the new despatch advice it announces; in the issuer's
+local time, with its offset from UTC.</li>
+<li><code>Note</code> = <strong>A new despatch advice follows within the
+hour.</strong><br />
 What happens next.</li>
 <li><code>CancellationNote</code> = <strong>The cargo reached the cargo
 terminal after the cut-off for the afternoon flight KXL209 of 13 May; it
@@ -118,13 +118,13 @@ the Trade Accord's UBL document type list: Order.</li>
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>LAC-TS-26-13099</strong><br />
+<li><code>ID</code> = <strong>LAC-TS-26-13073</strong><br />
 The cargo terminal's status: the cargo accepted after the cut-off, for
 the next morning's flight.</li>
 <li><code>DocumentTypeCode</code> =
 <strong>TransportationStatus</strong> (listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: LAC-TS-26-13099 is the example air/05,
+The kind of document referred to: LAC-TS-26-13073 is the example air/05,
 a TransportationStatus; a generic reference names the UBL document type.
 The code is from the Trade Accord's UBL document type list:
 TransportationStatus = Transportation Status.</li>
@@ -530,8 +530,8 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;LMW-FCN-26-0051&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;4068fe1a-3095-5164-a12c-994c102fc830&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-13&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;19:50:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;A new despatch advice follows this evening.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;13:24:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;A new despatch advice follows within the hour.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CancellationNote</span>&gt;The cargo reached the cargo terminal after the cut-off for the afternoon flight KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new despatch advice.&lt;/<span class="kw">cbc:CancellationNote</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchDocumentReference</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LMW-DA-26-1017&lt;/<span class="kw">cbc:ID</span>&gt;</span>
@@ -549,7 +549,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:OrderReference</span>&gt;</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LAC-TS-26-13099&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;LAC-TS-26-13073&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;TransportationStatus&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
@@ -699,6 +699,6 @@ flow</a> · <a href="example-air-08-DespatchAdvice.html">Despatch Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/19876d319ec9a4eac5eb22afe116ba2e327ce4e1"><code>19876d3</code></a> of 2026-11-21 00:06 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/c1937a64864419653fedbdb7974a885762bc30f1"><code>c1937a6</code></a> of 2026-11-21 00:23 UTC</p></div></footer>
 </body>
 </html>
