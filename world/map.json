@@ -213,7 +213,7 @@
     "sections": [
      {
       "title": "Route",
-      "text": "The line starts at the mine's siding at Fucinalta, where the wagons are loaded and weighed at the mine's portal, and follows the valleys down to Ferrano, keeping to gradients of at most 2 %. Its river bridge crosses the river's deep valley about 100 m above the water."
+      "text": "The line starts at the mine's siding at Fucinalta, where the wagons are loaded and weighed at the mine's portal, and follows the valleys down to Ferrano, keeping to gradients of at most 2 %. Its river bridge crosses a deep river valley about 100 m above the water."
      },
      {
       "title": "Operation",
@@ -841,7 +841,7 @@
    ],
    "wiki": {
     "title": "Lumeport–Selanu shipping service",
-    "short": "Weekly container service between Lumeport and Lisavu",
+    "short": "Weekly container service between Lumeport and Selanu",
     "facts": {
      "Distance": "about {fact:sea.km}",
      "Passage": "about {fact:sea.hours}",
@@ -892,7 +892,7 @@
    ],
    "wiki": {
     "title": "Lumeport–Selanu air cargo route",
-    "short": "Air cargo route between Lumeport and Lisavu",
+    "short": "Air cargo route between Lumeport and Selanu",
     "facts": {
      "Distance": "about {flight_km} km",
      "Timetable": "{flight_east} east, {flight_west} west"
@@ -16095,7 +16095,7 @@
      {
       "title": "The colony's seat",
       "sub": true,
-      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. When Britain annexed the coast on 29 November 1841 it fortified the station and laid out the town as the colony's seat, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital in 1852."
+      "text": "In the late 1830s the settlers' company kept a trading station at the narrows. When Britain annexed the coast on 29 November 1841 it fortified the station and laid out the town beside it, and as the river trade grew Lumeport took over from [[Larkmouth]] as capital in 1852."
      },
      {
       "title": "Port city",
@@ -16189,8 +16189,12 @@
     "lead": "**Marrowdale** is an inland town in Upland State, [[Bayvarra]], with about {population} people, near the border with [[Urvania]]. It grew from a drovers' market and is now a town of the railway and the timber trade.",
     "sections": [
      {
+      "title": "Geography",
+      "text": "The town lies on the Upland near the border with [[Urvania]], in the dale of the [[River Marrow|Marrow]], at the stream crossing of the road down from the plateau; the Upland State Forest covers the slope north of it."
+     },
+     {
       "title": "History",
-      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it is Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the timber yards. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
+      "text": "The town began in the 1850s as the drovers' market and wool sales at the stream crossing on the road down from the plateau; on 12 April 1858 the plateau became a colony of its own, Upland, and since 1899 it has been Upland State of [[Bayvarra]]. The railway came in the 1880s, and with it the station yard and the timber yards. After the Trade Accord entered into force, a distribution centre and the trades of the Accord settled by the railway east of the town."
      },
      {
       "title": "Economy",
@@ -16277,6 +16281,10 @@
     "short": "Capital and only town of Lisavu",
     "lead": "**Selanu** (English *Port Wrenfield*) is the capital and only town of [[Lisavu]], with about {population} people, on a sheltered bay of the island's east coast. It holds the island's port, and its airport lies on the plain to the north.",
     "sections": [
+     {
+      "title": "Geography",
+      "text": "The town stands on a sheltered bay of the east coast, out of the westerly swell, below [[Signal Hill]]. The airport lies on the Cotton Plain about 10 km to the north."
+     },
      {
       "title": "History",
       "text": ""
@@ -16387,6 +16395,10 @@
     "short": "Port town on the east coast of Bayvarra, its first capital",
     "lead": "**Larkmouth** is a port town in Coastal State, [[Bayvarra]], with about {population} people, at the mouth of the [[River Lark|Lark]], the largest river of the east coast. It was the British settlers' first town and the colony's first capital.",
     "sections": [
+     {
+      "title": "Geography",
+      "text": "The town lies at the mouth of the [[River Lark|Lark]], behind Lark Head, which shelters its harbour from the open sea."
+     },
      {
       "title": "History",
       "text": ""
@@ -17771,6 +17783,7 @@
    "band": "country town",
    "built_km": 2.99,
    "farming": "valley",
+   "wiki": {"short": "Fort town at the border crossing of Urvania", "lead": "**Forte Euridice** (Urvanian *Girkul*, stronghold) is a country town of [[Urvania]] with about {people} people, in the angle between the [[Runmek]] and the [[Bruna (river)|Bruna]] just above their confluence, near the road's border crossing into [[Bayvarra]].", "sections": [{"title": "History", "text": "The Sardinian protectorate built the fort in 1842 to watch the river and the British settlers beyond it, and named it after the corvette *Euridice*, which had first shown the flag on the river in 1840. The garrison village grew round it. After the boundary convention of 1857 made the Runmek below the confluence the border, the customs house and the traders' street of Borgo della Dogana followed; the town grew again after independence."}, {"title": "Economy", "text": "It lives from the border crossing, with its customs agents, hauliers and warehouses, from the railway and from the farms of the valley."}]},
    "districts": [
     {
      "name": "Il Forte",
@@ -29220,7 +29233,7 @@
   {"land": "mainland", "mouth": [94.62, 124.62], "name": "Mirtina", "title": "Mirtina", "names": {"it": "Mirtina", "qau": "Kanul"}, "name_from": {"qau": "myrtle"}},
   {"land": "lisavu", "mouth": [230.19, 106.19], "name": "Vokila", "title": "Vokila (river)", "coast": "north", "names": {"qal": "Vokila"}, "name_from": {"qal": "canoe"}},
   {"land": "lisavu", "mouth": [227.69, 122.19], "name": "Makete", "title": "Makete (river)", "names": {"qal": "Makete"}, "name_from": {"qal": "long"}},
-  {"land": "lisavu", "mouth": [219.31, 123.19], "name": "Tapetu", "title": "Tapetu (river)", "names": {"qal": "Tapetu"}, "name_from": {"qal": "mountain"}, "wiki": {"sections": [{"title": "Hydro plant", "text": "High in its valley the river is taken into a pipeline that brings it down to a power house of about 8 MW above Nihekemo. Built in 1968, the plant is the island's oldest source of electricity from water; a small reservoir lets it run in the evening and at night, when the island's solar park is idle."}]}},
+  {"land": "lisavu", "mouth": [219.31, 123.19], "name": "Tapetu", "title": "Tapetu (river)", "names": {"qal": "Tapetu"}, "name_from": {"qal": "mountain"}, "wiki": {"sections": [{"title": "Hydro plant", "text": "High in its valley the river is taken into a tunnel that brings it down to a power house of about 8 MW above Nihekemo. Built in 1968, the plant is the island's oldest source of electricity from water; a small reservoir lets it run in the evening and at night, when the island's solar park is idle."}]}},
   {"land": "lisavu", "mouth": [238.81, 107.19], "name": "Kanipi", "title": "Kanipi (river)", "names": {"qal": "Kanipi"}, "name_from": {"qal": "east"}}
  ],
  "waters": {"title": "Rivers and watersheds", "wiki": {"short": "The rivers, basins and watersheds of the mainland and Lisavu", "lead": "The mainland drains to the sea by many rivers, of which {mainland_rivers} have a basin of 1,000 km² or more; Lisavu's streams are short and steep, and {lisavu_rivers} of them drain more than 500 km². The largest river is the [[Runmek]], {main_km} km long, whose basin of {main_basin} km² covers about {main_share} % of the mainland.", "sections": [{"title": "The mainland", "text": "The [[Runmek]] rises on the volcanic massif in Urvania's north-west at about {main_source_m} m and runs south-east through the rift valley to the estuary at [[Lumeport]]. Its tributaries come from the massif, from the plateau to the north-east and from the southern hills; the largest is the [[Bruna (river)|Bruna]], which joins it at Forte Euridice. From the massif the [[Pastora]] falls to the north coast and the [[Vallerna]] and the [[Grigiola]] to the west coast. Bayvarra's north drains to the north coast by the [[River Shingle|Shingle]], the [[River Brackwater|Brackwater]] and the [[River Scarrow|Scarrow]], its north-east by the [[River Sallow|Sallow]], and the dry east by the [[River Lark|Lark]], the second river of the mainland. The southern hills send only short rivers to the south coast, among them the [[Colomba (river)|Colomba]] and the [[Genovina]]."}, {"title": "Watersheds and the border", "text": "North of the border crossing near Forte Euridice the border between [[Urvania]] and [[Bayvarra]] follows the watershed: Urvania holds the basins of the rivers that join the [[Runmek]] at or above the crossing, the Bruna's whole valley among them, and of the north-western coast; Bayvarra holds the land that drains to the Runmek below the crossing, to the rest of the north coast and to the east. From the crossing down to the estuary the Runmek itself is the border."}, {"title": "Lisavu", "text": "The island's streams run outward from its volcano, short and steep. The [[Vokila (river)|Vokila]] drains the largest basin and reaches the north coast in the bay of [[Natahoma]]; the [[Makete (river)|Makete]], the longest, reaches the south coast at [[Linukaha]]; the [[Tapetu (river)|Tapetu]] falls from near the summit to the south-west coast at [[Nihekemo]]; the [[Kanipi (river)|Kanipi]] runs to the east coast north of [[Selanu]]."}]}},
@@ -29245,7 +29258,11 @@
   {"name": "the Upland", "kind": "plateau", "land": "mainland", "country": "XB", "at": [110.0, 90.0], "names": {"en": "the Upland"}},
   {"name": "the Sallow Downs", "kind": "downs", "land": "mainland", "country": "XB", "at": [145.0, 65.0], "names": {"en": "the Sallow Downs"}},
   {"name": "the Gull Coast", "kind": "coast", "land": "mainland", "country": "XB", "at": [80.0, 40.0], "names": {"en": "the Gull Coast"}},
-  {"name": "Lark Head", "kind": "headland", "land": "mainland", "country": "XB", "at": [156.0, 84.0], "names": {"en": "Lark Head"}}
+  {"name": "Lark Head", "kind": "headland", "land": "mainland", "country": "XB", "at": [156.0, 84.0], "names": {"en": "Lark Head"}},
+  {"name": "Nevola dam", "kind": "dam and power station", "land": "mainland", "country": "XU", "at": [42.1, 68.4], "category": "Buildings and works", "installations": ["nevola-dam", "nevola-power"], "names": {"en": "Nevola dam", "it": "Diga della Nevola"}, "wiki": {"short": "Dam and hydroelectric power station in the Mukrir massif, Urvania", "lead": "The **Nevola dam** (Italian *Diga della Nevola*) holds the [[Nevola]] in the Mukrir massif of [[Urvania]] in the Lago della Nevola, whose water drives the country's largest power station, about 200 m lower down the valley.", "sections": [{"title": "History", "text": "[[Ferrano Energy]] built the dam and its power station from 1956 to 1961, its first great work, to bring the valley the electricity its works and towns needed. When Urvania split its energy market in 2007, the scheme passed to the state generating company. The dry winter of 1973, which left the lake low, led the state to build [[Montebrio Power]] as a reserve."}, {"title": "Operation", "text": "The dam stands where the valley narrows below a wide upland hollow, and the lake lies at about 1,190 m. A tunnel brings its water to the power house below. In a normal year the scheme gives about half of Urvania's electricity; on sunny days the lake holds back its water, which the power house turns into electricity in the evening."}], "timeline": [["1956", "[[Ferrano Energy]] begins the dam and the power station"], ["1961", "the power station goes into service"], ["1974", "[[Montebrio Power]] built as a reserve after the dry winter of 1973"], ["2007", "the scheme passes to the state generating company"]]}},
+  {"name": "Saline Brune solar park", "kind": "solar park", "land": "mainland", "country": "XU", "at": [115, 151], "category": "Buildings and works", "installations": ["saline-brune-solar"], "names": {"en": "Saline Brune solar park"}, "wiki": {"short": "Solar power station on the south coast of Urvania", "lead": "The **Saline Brune solar park** is a solar power station on the south coast of [[Urvania]], on the dry salt-marsh edge behind [[Saline Brune]], the sunniest stretch of the country's coast. It belongs to the state generating company.", "sections": [{"title": "Operation", "text": "The park stands on flat, open land too poor for crops, beside the town's salt pans. With the rooftops of homes and farms it gives about a tenth of Urvania's electricity. Its output is greatest in the dry summers, from November to March, when the lake of the [[Nevola dam]] can hold back its water for the evening."}]}},
+  {"name": "Sallow Downs solar farms", "kind": "solar farms", "land": "mainland", "country": "XB", "at": [144, 65], "category": "Buildings and works", "installations": ["sallow-downs-solar"], "names": {"en": "Sallow Downs solar farms"}, "wiki": {"short": "Solar farms on the grazing land of Bayvarra's dry north-east", "lead": "The **Sallow Downs solar farms** are solar power stations on the Sallow Downs, the grazing land of [[Bayvarra]]'s dry north-east and the sunniest part of the mainland.", "sections": [{"title": "Ownership", "text": "The farms belong to a company the graziers of the Downs own together with the [[Bank of Lumeport]], which financed them. The panels stand on the grazing land, and the sheep graze between the rows."}, {"title": "Trade", "text": "The farms sell their power on the [[Lumeport Trade Accord]]'s wholesale market, much of it across the border to [[Urvania]]."}]}},
+  {"name": "Tapetu power station", "kind": "hydroelectric power station", "land": "lisavu", "country": "XL", "at": [218, 121], "category": "Buildings and works", "installations": ["tapetu-intake", "tapetu-power"], "names": {"en": "Tapetu power station"}, "wiki": {"short": "Hydroelectric power station on the Tapetu, Lisavu", "lead": "The **Tapetu power station** is the hydroelectric plant on the [[Tapetu (river)|Tapetu]] in [[Lisavu]], above [[Nihekemo]], built in 1968 as the island's first great work after self-government.", "sections": [{"title": "Operation", "text": "An intake high in the valley takes the river into a tunnel to the power house. Its small reservoir lets the plant run in the evening and at night, when the island's solar park is idle. It belongs to the government's electricity department."}]}}
  ],
  "installations": [
   {"id": "lisavu-wind", "kind": "wind turbines", "country": "XL", "at": [213, 112], "count": 3, "facts": {"capacity_mw": 12, "in_service": 2019}, "owner": "the government's electricity department of Lisavu", "why": "On the high ground above the west cliffs, open rock at about 1,300 m, where the westerlies blow strongest."},
@@ -29255,7 +29272,7 @@
   {"id": "nevola-dam", "kind": "dam", "country": "XU", "at": [42, 68], "river": "Nevola", "dam_at": [42.1, 68.4], "level_m": 1193, "facts": {"in_service": 1961}, "owner": "the state generating company of Urvania", "why": "In the massif, where the Nevola's valley narrows below a wide upland hollow: the dam holds the river in the Lago della Nevola, the store of Urvania's largest power station."},
   {"id": "nevola-power", "kind": "hydro power house", "country": "XU", "at": [39, 74], "river": "Nevola", "facts": {"capacity_mw": 300, "in_service": 1961}, "owner": "the state generating company of Urvania", "why": "Below the dam, by the Nevola, at the foot of the tunnel from the lake: about 200 m of fall."},
   {"id": "saline-brune-solar", "kind": "solar park", "country": "XU", "at": [115, 151], "facts": {"capacity_mw": 150, "in_service": 2018}, "owner": "the state generating company of Urvania", "why": "On the dry salt-marsh edge behind the south coast at Saline Brune, flat and open, the sunniest stretch of Urvania's coast."},
-  {"id": "saline-brune-saltpans", "kind": "salt pans", "country": "XU", "at": [121, 153], "facts": {}, "owner": "the salt works of Saline Brune", "why": "On the flat shore of the lagoon by Saline Brune, where the town has made salt since before 1600."},
+  {"id": "saline-brune-saltpans", "kind": "salt pans", "country": "XU", "at": [121, 153], "facts": {}, "owner": "the salt families' cooperative of Saline Brune", "why": "On the flat shore of the lagoon by Saline Brune, where the town has made salt since before 1600."},
   {"id": "runmek-upper", "kind": "run-of-river plant", "country": "XU", "at": [54, 73], "river": "Runmek", "facts": {"capacity_mw": 40}, "owner": "the state generating company of Urvania", "why": "On the bank of the upper Runmek in the rift valley, where a weir takes the river through the turbines and back."},
   {"id": "runmek-middle", "kind": "run-of-river plant", "country": "XU", "at": [56, 83], "river": "Runmek", "facts": {"capacity_mw": 40}, "owner": "the state generating company of Urvania", "why": "Lower down the upper Runmek, on its bank, a second weir and power house."},
   {"id": "runmek-high", "kind": "run-of-river plant", "country": "XU", "at": [53, 67], "river": "Runmek", "facts": {"capacity_mw": 40}, "owner": "the state generating company of Urvania", "why": "High on the Runmek where it leaves the massif, the third of the run-of-river plants."},

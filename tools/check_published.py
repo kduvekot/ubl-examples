@@ -40,7 +40,9 @@ FAIL = re.compile(r"(?<![\w`/=-])(?:D\d{1,2}(?: point \d+)?|O\d{1,3}|MO\d{3}|OW\
                   r"|\b(?:world|tools|analysis)/[\w/-]+\.(?:json|py|md)\b|\bEN 16931\b|\bPeppol\b|\bXRechnung\b"
                   r"|\bdecision P-[A-Z0-9]+\b|\bP-SB\b|\bthe (?:OASIS )?(?:UBL )?TC\b"
                   r"|#F\d+\b|\(F\d{1,3}\)|\bIND\d+\b"
-                  r"|\bManifest Values\b|\bOASIS example\b|\bUBL 2\.5, 2\.2\.2\b")   # the UBL examples have no
+                  r"|\bManifest Values\b|\bOASIS example\b|\bUBL 2\.5, 2\.2\.2\b"
+                  r"|\bthe build checks\b|\boutside the examples\b|\boutside the world\b|\bis fictional\b"
+                  r"|\bare invented\b|\buser-assigned\b")   # the UBL examples have no
 #                                                            meaning in the world (owner, 2026-11-21, Q3)
 # the Trade Accord is a proper name (Q3); "one trade accord", "a trade accord" are the common noun
 PROPER_NAMES = re.compile(r"(?<!\bone )(?<!\ba )(?<!\ban )\b(?:[Tt]rade accord|trade Accord)\b")
@@ -50,10 +52,7 @@ EUROPEAN = re.compile(r"\bRecyClass\b|\bEuropean List of Waste\b|\bVATEX\b|\bEU\
 EU_PARTY = "51-nl"                                   # Haarvliet Isotopes, in the Netherlands
 EU_LAW = re.compile(r"\bEU\b|\bEuropean Union\b|\bDirective\b")
 OWN_LISTS = ("regional", "XU", "XB", "XL")          # the scopes of the world's own lists in world/codelists/lists.json
-WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b"
-                  r"|\bthe build checks\b|\boutside the examples\b|\boutside the world\b|\bis fictional\b"
-                  r"|\bare invented\b|\buser-assigned\b", re.I)   # project voice (second site review, SR2-02):
-                                                            # warnings until the generators' texts are rewritten
+WARN = re.compile(r"\b(?:no longer|was moved|proposed addition)\b", re.I)
 # UBL's spelling for UBL concepts (owner, 2026-11-21, O277 (3)): "despatch" as in DespatchAdvice, ActualDespatchDate,
 # DespatchLine, DespatchContact, DespatchParty; the railway's "dispatches every train" is another word and stays
 UNFILLED = re.compile(r"\{fact:[^}]*\}")    # a world fact the builders did not fill in (tools/world_facts.py)
