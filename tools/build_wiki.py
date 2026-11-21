@@ -427,7 +427,7 @@ def infobox(a):
                 ("Names", " · ".join(f"{v} ({LANGNAME.get(k, {'it': 'Italian', 'en': 'English'}.get(k, k))})"
                                       for k, v in names.items()) if len(names) > 1 else "")]
     elif a["kind"] == "landmark":
-        land = {"lisavu": "XL"}.get(d["land"], "")
+        land = d.get("country") or {"lisavu": "XL"}.get(d["land"], "")
         names = d.get("names", {})
         rows = [("Kind", d["kind"].capitalize()), ("Country", f"[[{countries[land]['name']}]]" if land else ""),
                 ("Height", f"about {n0(d['height_m'])} m" if d.get("height_m") else ""),
@@ -519,8 +519,10 @@ def categories(a):
         cats.append(f"{countries[c]['name']}")
     if a["kind"] == "river":
         cats += [countries[c]["name"] for c in river_countries(d)]
-    if a["kind"] == "landmark" and d.get("land") == "lisavu":
-        cats.append("Lisavu")
+    if a["kind"] == "landmark":
+        land = d.get("country") or {"lisavu": "XL"}.get(d["land"], "")
+        if land in countries:
+            cats.append(countries[land]["name"])
     return cats
 
 
