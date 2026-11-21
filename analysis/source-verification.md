@@ -184,6 +184,10 @@ Quotations are from CEFACT `documentcodelist.json` ("[Reference United Nations C
   - The current values 999801042 and 999702117 start with 99, which is the AtoN format (99 MID xxxx), not a ship MMSI.
   - **Proposal: MIDs 297 (XU), 298 (XB), 299 (XL)**, ship MMSI `MID` + 6 digits, e.g. 297801042.
 
+- **Tax numbers of the two makers abroad (owner, 2026-11-21, O281 Q4):** a number in the real format whose check fails, so that no authority can have issued it.
+  - **India, GSTIN** (15 characters: state code, PAN, entity number, `Z`, check character). The check character is mod 36 over the first 14: values 0–9 and A–Z = 10–35; weights 1, 2, 1, 2 … from the left; each product p adds `p div 36 + p mod 36`; check = `(36 − sum mod 36) mod 36`. No official GSTN specification was found; the method reproduces the validator example `27AAPFU0939F1ZV` (paisatools.co.in/gstin-validator; a second site's `27AABCU9603R1ZM` gives N by it, so that example is wrong or the site's). **Value: `36AAHCN4817Q1ZK`** (36 Telangana, Hyderabad; C in the PAN's fourth place for a company); the valid check would be T.
+  - **Netherlands, VAT number.** A legal entity's is `NL` + its RSIN (nine digits that pass the eleven test: 9·d1 + 8·d2 + … + 2·d8 − d9 divisible by 11) + `B01`; a sole trader's (since 2020) never passes the eleven test and is checked by mod 97 over the whole, letters as N=23, L=21, B=11, remainder 1 (third-party sources: kleineondernemer.nl, test-nummers.nl; the Belastingdienst publishes no specification). **Value: `NL804317265B01`**: 804317265 fails the eleven test (so it is no RSIN) and the whole fails mod 97 (so it is no sole trader's number).
+
 ## 8. BCP 47 and ISO 639-2
 
 - **RFC 5646 §2.2.4** (https://www.rfc-editor.org/rfc/rfc5646.txt): "The region subtags 'AA', 'QM'-'QZ', 'XA'-'XZ', and 'ZZ' are reserved for private use in language tags. These subtags correspond to codes reserved by ISO 3166 for private use. These codes MAY be used for private use region subtags". **Confirmed.**
