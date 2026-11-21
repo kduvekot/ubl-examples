@@ -391,6 +391,8 @@ def cross_border(a, b):
 
 
 PLAN_PAYMENT = ("30 days net from the consignment note.", 30)    # the freight term of the framework transport plans
+PLAN_LATER_CHARGES = ("A charge after the carriage: 30 days net from the date of the debit note.", 30)
+TEP_LATER_CHARGES = {"rail"}      # the plans whose carrier bills a later charge (demurrage) by debit note (rail/12)
 
 
 def due_day(flow, day, payee):
@@ -1301,8 +1303,12 @@ def tep_terms(flow, user, provider, days):
             "TransportServiceProviderSpecialTerms": V("Waiting time beyond two hours is charged.", "The carrier's."),
             "ChangeConditions": V("Changes up to 24 hours before collection without charge.", "When the plan may "
                                                                                               "change."),
-            "PaymentTerms": {"Note": V(PLAN_PAYMENT[0], "When the freight is paid: the term the carrier's "
-                                                        "invoices under this plan apply.")},  # D22
+            "PaymentTerms": {"Note": V(PLAN_PAYMENT[0] + (f" {PLAN_LATER_CHARGES[0]}" if flow.id in TEP_LATER_CHARGES
+                                                          else ""),
+                                       "When the freight is paid: the term the carrier's invoices under this plan "
+                                       "apply" + (", and the term of a charge that arises only after the carriage, "
+                                                  "such as demurrage, which the carrier bills by debit note"
+                                                  if flow.id in TEP_LATER_CHARGES else "") + ".")},  # D22
             "PenaltyPaymentTerms": {"Note": V("For late delivery the carrier is liable for 5 % of the freight per "
                                               "day late, at most 25 %.", "The carrier's liability for delay, in "
                                               "words: PenaltySurchargePercent is a surcharge for late payment, not "

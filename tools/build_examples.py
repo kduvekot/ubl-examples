@@ -3939,7 +3939,12 @@ def check_plan_terms(flow_id, roots, docs):
             if etree.QName(root).localname in ("Invoice", "DebitNote") and doc["from"] == pdoc["from"] and \
                     doc.get("parties", {}).get("AccountingCustomerParty") == user:
                 got = {t.text for t in root.iterfind(f"{{{NS_CAC}}}PaymentTerms/{{{NS_CBC}}}Note")}
-                if not any(g.startswith(tuple(terms)) for g in got if g):
+                sentences = tuple(x.strip().rstrip(".") + "." for t in terms for x in t.split(". ") if x.strip())
+                if etree.QName(root).localname == "DebitNote" and not any(
+                        g.endswith("from the date of the debit note.") for g in got if g):
+                    raise SystemExit(f"world/examples/{flow_id}/{name}: a debit note's payment terms {sorted(got)} "
+                                     "count from another document, not from its own date")  # review 1048 rail/12#F1
+                if not any(g.startswith(tuple(terms) + sentences) for g in got if g):
                     raise SystemExit(f"world/examples/{flow_id}/{name}: bills the transport plan's user under "
                                      f"{sorted(got)}, not the plan's terms {sorted(terms)}")  # stage 7 A10
 

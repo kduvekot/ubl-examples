@@ -1105,6 +1105,12 @@ def demurrage_note(f, n, doc, day, why):
     first, last = RAIL_PLACED + RAIL_FREE_DAYS + 1, RAIL_EMPTIED[1]
     box = RAIL_BOXES[1]
     t = kit.terms_of(f, seller, day, "plan" if carrier else None)
+    if carrier:    # a charge after the carriage counts from its own document, not from the consignment note
+        due = day + kit.PLAN_LATER_CHARGES[1]
+        t = {**t, "text": kit.PLAN_LATER_CHARGES[0], "why": "The transport plan's term for a charge that arises "
+             "after the carriage: counted from the date of the debit note, as its freight term counts from the "
+             "consignment note.", "start": day, "start_why": "From the debit note's date.",
+             "due": kit.due_day(f, due, seller), "moved": kit.due_moved(f, due, seller)}  # review 1048 rail/12#F1
     no = f.number("debit-carrier" if carrier else "debit-seller", seller, "DebitNote")
     reason = (f"Container {box} was placed at the siding of Lumeway on {day_text(f, RAIL_PLACED)} and released empty on "
               f"{day_text(f, last)}: free time {day_text(f, RAIL_PLACED + 1)} to "

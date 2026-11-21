@@ -26,8 +26,8 @@ The carrier charges Valdara, the transport user under DAP, the demurrage on the 
   The day after the second box was released empty.
 - `IssueTime` = **14:48:00-01:00**  
   The time the sender's system issued the document, in the sender's local time, with its offset from UTC.
-- `DueDate` = **2026-05-14**  
-  As the payment terms below count it: 30 days net from the consignment note.
+- `DueDate` = **2026-05-25**  
+  As the payment terms below count it: a charge after the carriage: 30 days net from the date of the debit note.
 - `Note` = **Titran FRXU1044180 kagaz dagan hir drek nintrek skul Lumeway rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.** (languageID `qau`)  
   The note in Urvanian, the sender's language: Why more is due: the contract's rule, applied after the invoice was issued.
 - `Note` = **Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.** (languageID `en-XU`)  
@@ -238,7 +238,7 @@ Inside `PaymentMeans`:
   UN/EDIFACT 4461 code 30: credit transfer. The listID is the identification of UBL's payment means code list, which code list validation checks. The code is from UBL's default Payment means (UN/EDIFACT 4461) list: 30 = Credit transfer.
 - `PaymentMeansDescription` = **Credit transfer**  
   In words.
-- `PaymentDueDate` = **2026-05-14**  
+- `PaymentDueDate` = **2026-05-25**  
   When the transfer must be credited.
 - `PaymentChannelCode` = **RTGS** (listID `ISO 20022 ClearingChannel2Code`)  
   How the payment system clears and settles the transfer, as an ISO 20022 clearing channel. The code is from the world's copy of ISO 20022 ClearingChannel2Code: RTGS = RealTimeGrossSettlementSystem.
@@ -303,10 +303,10 @@ Inside `PaymentTerms`:
 
 - `PaymentMeansID` = **1**  
   The payment means these terms apply to: the credit transfer below.
-- `Note` = **30 days net from the consignment note.**  
-  The payment term of the transport plan this freight is carried under: the contract wins over the carrier's standard terms.
-- `PaymentDueDate` = **2026-05-14**  
-  The day the amount is due, as the terms count it.
+- `Note` = **A charge after the carriage: 30 days net from the date of the debit note.**  
+  The transport plan's term for a charge that arises after the carriage: counted from the date of the debit note, as its freight term counts from the consignment note.
+- `PaymentDueDate` = **2026-05-25**  
+  The day the amount is due, as the terms count it. The count ends on Saturday 23 May, no business day in Urvania, the payee's country, so the payment is due on the next one, Monday 25 May.
 - `PenaltyInterestRate/InterestRatePercent` = **8**  
   The interest on late payment: the statutory rate, as the terms say nothing on late payment.
 - `PenaltyInterestRate/TimeBasisCode` = **ANN** (listID `UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade`)  
@@ -402,7 +402,7 @@ Inside `DebitNoteLine`:
   <cbc:UUID>1e867854-a460-5582-9079-e2bbf3a5623f</cbc:UUID>
   <cbc:IssueDate>2026-04-23</cbc:IssueDate>
   <cbc:IssueTime>14:48:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-05-14</cbc:DueDate>
+  <cbc:DueDate>2026-05-25</cbc:DueDate>
   <cbc:Note languageID="qau">Titran FRXU1044180 kagaz dagan hir drek nintrek skul Lumeway rek 15 April stan kedan krehan rek 22 April: nudrir baz 16 April krir 20 April, gunnek gan 2 titran drirgir.</cbc:Note>
   <cbc:Note languageID="en-XU">Container FRXU1044180 was placed at the siding of Lumeway on 15 April and released empty on 22 April: free time 16 April to 20 April, demurrage for 2 container days.</cbc:Note>
   <cbc:DebitNoteTypeCode listID="UN/EDIFACT EDED 1001">383</cbc:DebitNoteTypeCode>
@@ -559,7 +559,7 @@ Inside `DebitNoteLine`:
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">RTGS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>FERRA-RTGS</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF7020262888</cbc:InstructionNote>
@@ -607,8 +607,8 @@ Inside `DebitNoteLine`:
   </cac:PaymentMeans>
   <cac:PaymentTerms>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net from the consignment note.</cbc:Note>
-    <cbc:PaymentDueDate>2026-05-14</cbc:PaymentDueDate>
+    <cbc:Note>A charge after the carriage: 30 days net from the date of the debit note.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-25</cbc:PaymentDueDate>
     <cac:PenaltyInterestRate>
       <cbc:InterestRatePercent>8</cbc:InterestRatePercent>
       <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
