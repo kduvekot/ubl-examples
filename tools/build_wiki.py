@@ -37,8 +37,8 @@ world = world_facts.fill_world(world_data.load())   # {fact:…} in the publishe
 world_data.number_documents(world)
 countries = world["countries"]
 PARTY = {p["id"]: p for p in world["parties"]}
-MAP = json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8"))
-CJSON = json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8"))
+MAP = world_facts.fill_world(json.load(open(os.path.join(ROOT, "world", "map.json"), encoding="utf-8")))
+CJSON = world_facts.fill_world(json.load(open(os.path.join(ROOT, "world", "countries.json"), encoding="utf-8")))
 SITE = "../"                                   # the main site, seen from /wiki/ (one setting, for a later subdomain)
 problems = []
 
@@ -144,6 +144,10 @@ def fill(text, values, where):
             problems.append(f"{where}: {{{m.group(1)}}} is not a value of this subject")
             return m.group(0)
         return str(values[m.group(1)])
+    try:                                          # the world's registered facts first (tools/world_facts.py, B2)
+        text = world_facts.fill(text)
+    except KeyError as e:
+        problems.append(f"{where}: {e.args[0]}")
     return re.sub(r"\{([a-z_][a-z0-9_]*)\}", one, text)
 
 
