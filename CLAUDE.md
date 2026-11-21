@@ -58,6 +58,7 @@ These are the general rules at the top of `analysis/codelist-decisions.md`.
 
 - **No fillers, and nothing implied by absence** (UBL IND5/IND6). A value must have a real business reason in the world. An element that has no real case stays out, even if coverage drops.
 - **Two layers: the workshop and the world** (owner, 2026-11-20). Decisions, open points, reviews and story lines are internal: they exist to make the world coherent, plausible and believable. Everything published about the world states it as fact, in the present, complete on its own; a value is explained by the world, never by why the project chose it. No D/O/MO/Q/ID-Q/C numbers, review-finding IDs or change words ("no longer", "was moved", "proposed") in published world text; keep the traceability in code comments or unprinted keys. The method note may describe the process in general terms.
+- **UBL's spelling and wording in every English** (owner, 2026-11-21): all varieties of English use UBL's own spelling and terms for UBL concepts ("despatch", as in DespatchAdvice); the varieties show their traits elsewhere.
 - **Semantic conformance** (UBL 2.5 §4.7/§7.2): use every element according to its UBL definition, even where established practice (EN 16931/Peppol) differs. Record such differences as findings.
 - **Code lists:**
   - every code has a listID (except the party-internal codes of Q1);
