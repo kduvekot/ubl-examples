@@ -71,6 +71,16 @@ jobs:
           key: map-sheet-ubuntu-26.04-${{ runner.arch }}-${{ hashFiles('world/*.json', 'world/terrain/*.png', 'tools/*.py', 'analysis/world-position/refine_map.py') }}
           restore-keys: map-sheet-ubuntu-26.04-${{ runner.arch }}-
 
+      # The picture of the 3D map on the home page (tools/map_still.py, a headless Chrome) is kept the same way in
+      # .cache/map-still, with the fingerprint of the map page (which carries all the map's data) and Chrome's version.
+      - name: Restore the map picture cache
+        if: steps.newest.outputs.newest == 'true'
+        uses: actions/cache@v5
+        with:
+          path: .cache/map-still
+          key: map-still-ubuntu-26.04-${{ runner.arch }}-${{ hashFiles('site/world.html', 'world/*.json', 'world/terrain/*.png', 'tools/*.py') }}
+          restore-keys: map-still-ubuntu-26.04-${{ runner.arch }}-
+
       - name: Build site
         if: steps.newest.outputs.newest == 'true'
         run: tools/build_site.sh _site
