@@ -217,8 +217,8 @@ Inside `TransportContract`:
 
 Inside `TransportServiceProviderResponseRequiredPeriod`:
 
-- `EndDate` = **2026-04-27**  
-  The carrier answered the same day.
+- `EndDate` = **2026-04-28**  
+  The deadline the request set for the carrier's answer, which this plan meets.
 
 ### Transport User Response Required Period
 
@@ -514,7 +514,7 @@ Inside `Consignment`:
     <cbc:ContractType>Framework transport agreement</cbc:ContractType>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseRequiredPeriod>
-    <cbc:EndDate>2026-04-27</cbc:EndDate>
+    <cbc:EndDate>2026-04-28</cbc:EndDate>
   </cac:TransportServiceProviderResponseRequiredPeriod>
   <cac:TransportUserResponseRequiredPeriod>
     <cbc:EndDate>2026-04-28</cbc:EndDate>

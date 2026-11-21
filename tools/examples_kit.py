@@ -325,7 +325,8 @@ def tax_rule(seller, buyer, iid):
                                     "business is exempt (category E).", "Service to a business")
         if it.get("business_use") == "consumed":     # burned or used up by the business that buys it (O204)
             state = b["identity"]["address"]["CountrySubentity"]
-            return ("S", scheme["rates_by_state"][state], scheme,
+            # the tax charged names its state, the delivery state, not the seller's (review 1048 lpg/04#F1)
+            return ("S", scheme["rates_by_state"][state], {**scheme, "state": (state, b["c"])},
                     "Goods a business uses up or keeps, such as the fuel it burns, are not bought for resale or "
                     "manufacture: they do not become part of what it sells, so Bayvarra's retail sales tax applies to "
                     f"their sale, at the rate of {state}, where the goods are delivered (category S).", None)  # O204
@@ -372,6 +373,12 @@ def tax_category(rule, kind=None):
                                                                                "or services.")
     if scheme:
         out["TaxScheme"] = {"ID": V(scheme["id"], f"UN/EDIFACT 5153 code of the seller's tax: {scheme['name'].lower()}.")}
+        if scheme.get("state"):        # a state's tax charged in another state than the seller's (O204)
+            state, cc = scheme["state"]
+            out["TaxScheme"]["JurisdictionRegionAddress"] = {
+                "CountrySubentity": V(state, "The state whose sales tax is charged: the state the goods are "
+                                             "delivered in, whose rate applies."),
+                "Country": {"IdentificationCode": V(cc, "Its country.")}}
     else:
         out["TaxScheme"] = {"Name": V("No general sales tax", "Lisavu has no general tax on sales; the scheme is named "
                                       "only, as UN/EDIFACT 5153 has no code for the absence of a tax.")}
@@ -1335,6 +1342,7 @@ def tep_request(flow, n, doc, day, why, start_day, weight, why_weight, same_day=
     mode = leg["mode"]
     end = (V(flow.date(start_day), "Delivered the day it is collected: a short run.") if same_day else
            V(flow.date(start_day + 3), "The end of the service window, three days after its start: the goods are delivered by then."))
+    flow.numbers["tep-request-deadline"] = day + 1        # the plan that answers repeats it (review 1048 retail/23#F1)
     return {"ID": V(flow.number("tep-request", doc["from"], "TransportExecutionPlanRequest"),
                     "The transport user's request number."),
             "VersionID": V("1", "The first version of the request."),
@@ -1379,8 +1387,10 @@ def tep(flow, n, doc, day, why, start_day, weight):
                                   "ContractType": V("Framework transport agreement", "Its kind.")},
             "TransportUserResponseRequiredPeriod": {"EndDate": V(flow.date(day + 1), "The user may object until "
                                                                                      "the next day.")},
-            "TransportServiceProviderResponseRequiredPeriod": {"EndDate": V(flow.date(day), "The carrier answered "
-                                                                                            "the same day.")},
+            # the deadline the request set for the carrier's answer, repeated (review 1048 retail/23#F1)
+            "TransportServiceProviderResponseRequiredPeriod": {"EndDate": V(
+                flow.date(flow.numbers.get("tep-request-deadline", day)), "The deadline the request set for the "
+                "carrier's answer, which this plan meets.")},
             "ValidityPeriod": {"StartDate": V(flow.date(day), "From the confirmation."),
                                "EndDate": V(flow.date(start_day + 3), "Until the carriage is done.")},
             "MainTransportationService": main_service(flow, doc["from"]),

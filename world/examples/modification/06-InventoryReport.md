@@ -168,7 +168,7 @@ Inside `InventoryReportLine`:
 
 - `ID` = **1**  
   Kiln charge 1, from the first load of blanks.
-- `Note` = **Kiln charge 1, from the first load of blanks, lot MDS-L26-0119: modified, planed, sealed and bundled.**  
+- `Note` = **Kiln charge 1, from the first load of blanks (lot MDS-BL26-0109), output lot MDS-L26-0119: modified, planed, sealed and bundled.**  
   What the line holds.
 - `Quantity` = **48** (unitCode `EA`)  
   The bundles of the charge.
@@ -188,10 +188,10 @@ Inside `InventoryReportLine`:
   Where the sawmill's bundles stand, kept apart as its goods.
 - `ID` = **2**  
   Kiln charge 2, from the second load of blanks.
-- `Note` = **Kiln charge 2, from the second load of blanks, lot MDS-L26-0126: modified; still being planed and sealed.**  
+- `Note` = **Kiln charge 2, from the second load of blanks (lot MDS-BL26-0116), output lot MDS-L26-0126: modified; still being planed and sealed, so the 48 bundles are the expected output, available from 4 February.**  
   What the line holds.
 - `Quantity` = **48** (unitCode `EA`)  
-  The bundles of the charge.
+  The bundles the charge will give: stock that will be in store once bundled.
 - `AvailabilityDate` = **2026-02-04**  
   Available from Wednesday 4 February, when its planing, sealing and bundling are finished.
 - `Item/Description` = **Bundle of 50 bench slats of thermally modified ash, the sawmill's slat MDS-SL-1800 (Valdara's part VI-R-SL1800), 1800 × 95 × 45 mm; five across and ten high, strapped.**  
@@ -321,7 +321,7 @@ Inside `InventoryReportLine`:
   </cac:SellerSupplierParty>
   <cac:InventoryReportLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Kiln charge 1, from the first load of blanks, lot MDS-L26-0119: modified, planed, sealed and bundled.</cbc:Note>
+    <cbc:Note>Kiln charge 1, from the first load of blanks (lot MDS-BL26-0109), output lot MDS-L26-0119: modified, planed, sealed and bundled.</cbc:Note>
     <cbc:Quantity unitCode="EA">48</cbc:Quantity>
     <cbc:AvailabilityStatusCode listID="urn:ubl-examples:world:codelist:AvailabilityStatusCode">AVAILABLE</cbc:AvailabilityStatusCode>
     <cac:Item>
@@ -339,7 +339,7 @@ Inside `InventoryReportLine`:
   </cac:InventoryReportLine>
   <cac:InventoryReportLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Kiln charge 2, from the second load of blanks, lot MDS-L26-0126: modified; still being planed and sealed.</cbc:Note>
+    <cbc:Note>Kiln charge 2, from the second load of blanks (lot MDS-BL26-0116), output lot MDS-L26-0126: modified; still being planed and sealed, so the 48 bundles are the expected output, available from 4 February.</cbc:Note>
     <cbc:Quantity unitCode="EA">48</cbc:Quantity>
     <cbc:AvailabilityDate>2026-02-04</cbc:AvailabilityDate>
     <cac:Item>

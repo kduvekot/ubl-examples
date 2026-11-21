@@ -237,7 +237,7 @@ Inside `TransportContract`:
 Inside `TransportServiceProviderResponseRequiredPeriod`:
 
 - `EndDate` = **2026-03-04**  
-  The carrier answered the same day.
+  The deadline the request set for the carrier's answer, which this plan meets.
 
 ### Transport User Response Required Period
 

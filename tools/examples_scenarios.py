@@ -10791,24 +10791,26 @@ def _(f, n, doc, out):
         # Brackenmere's guarantee by immobilised government bonds of a third issuer (D28 point 5)
         return {"GuaranteeTypeCode": V("TENDER", "A tender guarantee."),
                 "Purpose": V("Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging "
-                             "Bayvarran government bonds deposited with the bank.", "Its purpose and how it is "
-                                                                                     "given."),
-                "ConstitutionCode": V("SECURITIES", "Immobilised securities: public debt securities pledged in "
+                             "Bayvarran government bonds deposited with the bank, immobilized and pledged in favour "
+                             f"of the department on {day_text(f, 37)}.", "Its purpose and how it is given, with the "
+                             "day the bonds were pledged, from which the guarantee runs, the day before the "
+                             "bank's certificate of it."),  # review 1048 tender/37#F1
+                "ConstitutionCode": V("SECURITIES", "Immobilized securities: public debt securities pledged in "
                                                     "favour of the department, which the notices allow."),
                 "Note": V(GUARANTEE_RELEASE, "When it ends."),
-                "ApplicablePeriod": {"StartDate": V(f.date(37), "From the immobilisation."),
+                "ApplicablePeriod": {"StartDate": V(f.date(37), "From the immobilization."),
                                      "EndDate": V(f.date(134), "Until 90 days after the deadline, the validity of "
                                                                "the tenders, at the latest.")},
                 "ApplicableRegulation": regulation,
                 "ImmobilizedSecurity": {
-                    "ImmobilizationCertificateID": V(f.number("immobilisation", "25-xb", "ImmobilisationCertificate"), "The bank's certificate of the immobilised "
+                    "ImmobilizationCertificateID": V(f.number("immobilisation", "25-xb", "ImmobilisationCertificate"), "The bank's certificate of the immobilized "
                                                                          "bonds."),
                     "SecurityID": V(GOVERNMENT_BOND, "Bayvarran federal bonds, the securities of a third issuer"
                                                      "."),  # D28 point 5
                     "IssueDate": V("2023-09-15", "The day the federal government issued the bond ("  # tender/14#F9
-                                                 "option b: the security's issue date, not the immobilisation)."),
+                                                 "option b: the security's issue date, not the immobilization)."),
                     "FaceValueAmount": amount(Decimal("2632.50"), "XBL", "Their value on 18 February, the day they "
-                                                                         "were immobilised."),  # tender/14#F2
+                                                                         "were immobilized."),  # tender/14#F2
                     "MarketValueAmount": amount(Decimal("2640.00"), "XBL", "Their market value on the certificate's "
                                                                            "day, above the 2,500 guaranteed."),
                     "SharesNumberQuantity": qty(25, "C62", "25 bonds of 100 lume nominal."),
@@ -15158,6 +15160,7 @@ MOD_RELEASE = "MDS-REL-26-0212"       # the sawmill's pick-up release for the fi
 MOD_FREIGHT = Decimal("600.00")      # the carriage of one load to the border on the sawmill's own truck, in lume
 MOD_CHARGES = [("MDS-L26-0119", "2026-01-19", "TWM-K1-26-03", "Kiln charge 1, from the first load of blanks"),
                ("MDS-L26-0126", "2026-01-26", "TWM-K1-26-04", "Kiln charge 2, from the second load of blanks")]
+MOD_BLANK_LOTS = ["MDS-BL26-0109", "MDS-BL26-0116"]    # the blanks' lots of the two loads (world/items.json lots)
 for _k, _p, _t in (("order", "36-xb", "Order"), ("order-response", "59-xu", "OrderResponse"),
                    ("despatch-order", "36-xb", "DespatchAdvice"), ("shipment", "36-xb", "Shipment"),
                    ("consignment", "36-xb", "Consignment"), ("export", "36-xb", "ExportCustomsDeclaration"),
@@ -15316,17 +15319,27 @@ def modification(n, doc):
         out["ValidityPeriod"] = {"StartDate": V(f.date(MOD_DAY["load1"]), "From the entry."),
                                  "EndDate": V("2026-07-13", "The period of the authorisation within which the "
                                                             "processed products must be discharged: six months.")}
-        out["_note_extra"] = ("The goods remain the property of Marrowdale Sawmill, Marrowdale, Bayvarra, for which "
+        blanks = Decimal(MOD.deal[0]["ordered"]) * Decimal(str(ITEM["ash-blank-1830"]["price"]["amount"]))
+        # the customs value split into its parts, so that it reconciles with the export (review 1048 modification/05#F1)
+        out["_note_extra"] = (f"The customs value is {(blanks * 100).quantize(Decimal(1)):,} ferra for the blanks, "
+                              f"their {blanks.quantize(Decimal('0.01')):,} lume at 100 ferra to the lume, and "
+                              f"{(MOD_FREIGHT * 100).quantize(Decimal(1)):,} ferra for the sawmill's own carriage to "
+                              "the border. "
+                              "The goods remain the property of Marrowdale Sawmill, Marrowdale, Bayvarra, for which "
                               "the holder of the authorisation processes them.")
         return out
     if d == "InventoryReport":
         lines = []
         for i, (lot, done, charge, what) in enumerate(MOD_CHARGES, 1):
+            # the output's lot and the blanks' lot, each named as what it is (review 1048 modification/06#F2, F3)
             ln = {"ID": V(str(i), f"{what}."),
-                  "Note": V(f"{what}, lot {lot}" + (": modified, planed, sealed and bundled." if i == 1 else
-                                                    ": modified; still being planed and sealed."),
+                  "Note": V(f"{what} (lot {MOD_BLANK_LOTS[i - 1]}), output lot {lot}"
+                            + (": modified, planed, sealed and bundled." if i == 1 else
+                               ": modified; still being planed and sealed, so the 48 bundles are the expected "
+                               "output, available from 4 February."),
                             "What the line holds."),
-                  "Quantity": qty(48, "EA", "The bundles of the charge."),
+                  "Quantity": qty(48, "EA", "The bundles of the charge." if i == 1 else
+                                  "The bundles the charge will give: stock that will be in store once bundled."),
                   "Item": item("slat-bundle-1800")}
             if i == 1:
                 ln["AvailabilityStatusCode"] = V("AVAILABLE", "Finished and in store: available now, so no date.")

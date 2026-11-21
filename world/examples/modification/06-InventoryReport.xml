@@ -109,7 +109,7 @@
   </cac:SellerSupplierParty>
   <cac:InventoryReportLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Kiln charge 1, from the first load of blanks, lot MDS-L26-0119: modified, planed, sealed and bundled.</cbc:Note>
+    <cbc:Note>Kiln charge 1, from the first load of blanks (lot MDS-BL26-0109), output lot MDS-L26-0119: modified, planed, sealed and bundled.</cbc:Note>
     <cbc:Quantity unitCode="EA">48</cbc:Quantity>
     <cbc:AvailabilityStatusCode listID="urn:ubl-examples:world:codelist:AvailabilityStatusCode">AVAILABLE</cbc:AvailabilityStatusCode>
     <cac:Item>
@@ -127,7 +127,7 @@
   </cac:InventoryReportLine>
   <cac:InventoryReportLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Kiln charge 2, from the second load of blanks, lot MDS-L26-0126: modified; still being planed and sealed.</cbc:Note>
+    <cbc:Note>Kiln charge 2, from the second load of blanks (lot MDS-BL26-0116), output lot MDS-L26-0126: modified; still being planed and sealed, so the 48 bundles are the expected output, available from 4 February.</cbc:Note>
     <cbc:Quantity unitCode="EA">48</cbc:Quantity>
     <cbc:AvailabilityDate>2026-02-04</cbc:AvailabilityDate>
     <cac:Item>

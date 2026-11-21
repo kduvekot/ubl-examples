@@ -146,7 +146,7 @@
     <cbc:ContractType>Framework transport agreement</cbc:ContractType>
   </cac:TransportContract>
   <cac:TransportServiceProviderResponseRequiredPeriod>
-    <cbc:EndDate>2026-04-27</cbc:EndDate>
+    <cbc:EndDate>2026-04-28</cbc:EndDate>
   </cac:TransportServiceProviderResponseRequiredPeriod>
   <cac:TransportUserResponseRequiredPeriod>
     <cbc:EndDate>2026-04-28</cbc:EndDate>

@@ -30,12 +30,12 @@ The furniture maker's bank certifies the government bonds immobilised in favour 
   Issued in the afternoon, before the bank's desk closes; in the issuer's local time, with its offset from UTC.
 - `GuaranteeTypeCode` = **TENDER** (listID `urn:ubl-examples:world:codelist:GuaranteeTypeCode`)  
   A tender guarantee. The code is from the Trade Accord's financial guarantee type list: TENDER = Tender guarantee.
-- `Purpose` = **Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank.**  
-  Its purpose and how it is given.
+- `Purpose` = **Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank, immobilized and pledged in favour of the department on 18 February.**  
+  Its purpose and how it is given, with the day the bonds were pledged, from which the guarantee runs, the day before the bank's certificate of it.
 - `LiabilityAmount` = **2500.00** (currencyID `XBL`)  
   The tender guarantee: the fixed 2,500 lume the procurement documents ask.
 - `ConstitutionCode` = **SECURITIES** (listID `urn:ubl-examples:world:codelist:GuaranteeConstitutionCode`)  
-  Immobilised securities: public debt securities pledged in favour of the department, which the notices allow. The code is from the Trade Accord's guarantee constitution list: SECURITIES = Immobilised securities.
+  Immobilized securities: public debt securities pledged in favour of the department, which the notices allow. The code is from the Trade Accord's guarantee constitution list: SECURITIES = Immobilised securities.
 - `Note` = **Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then.**  
   When it ends.
 
@@ -44,7 +44,7 @@ The furniture maker's bank certifies the government bonds immobilised in favour 
 Inside `ApplicablePeriod`:
 
 - `StartDate` = **2026-02-18**  
-  From the immobilisation.
+  From the immobilization.
 - `EndDate` = **2026-05-26**  
   Until 90 days after the deadline, the validity of the tenders, at the latest.
 
@@ -62,13 +62,13 @@ Inside `ApplicableRegulation`:
 Inside `ImmobilizedSecurity`:
 
 - `ImmobilizationCertificateID` = **1600002271**  
-  The bank's certificate of the immobilised bonds.
+  The bank's certificate of the immobilized bonds.
 - `SecurityID` = **XB0000260313** (schemeID `ISO 6166`)  
   Bayvarran federal bonds, the securities of a third issuer. The schemeID names the scheme it is from: the ISO 6166 International Securities Identification Number (the issuer's country code, nine letters or digits, a check digit (Luhn)).
 - `IssueDate` = **2023-09-15**  
-  The day the federal government issued the bond (option b: the security's issue date, not the immobilisation).
+  The day the federal government issued the bond (option b: the security's issue date, not the immobilization).
 - `FaceValueAmount` = **2632.50** (currencyID `XBL`)  
-  Their value on 18 February, the day they were immobilised.
+  Their value on 18 February, the day they were immobilized.
 - `MarketValueAmount` = **2640.00** (currencyID `XBL`)  
   Their market value on the certificate's day, above the 2,500 guaranteed.
 - `SharesNumberQuantity` = **25** (unitCode `C62`)  
@@ -239,7 +239,7 @@ Inside `BeneficiaryParty`:
   <cbc:IssueDate>2026-02-19</cbc:IssueDate>
   <cbc:IssueTime>16:19:00-01:00</cbc:IssueTime>
   <cbc:GuaranteeTypeCode listID="urn:ubl-examples:world:codelist:GuaranteeTypeCode">TENDER</cbc:GuaranteeTypeCode>
-  <cbc:Purpose>Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank.</cbc:Purpose>
+  <cbc:Purpose>Guarantee of Brackenmere Furniture's tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank, immobilized and pledged in favour of the department on 18 February.</cbc:Purpose>
   <cbc:LiabilityAmount currencyID="XBL">2500.00</cbc:LiabilityAmount>
   <cbc:ConstitutionCode listID="urn:ubl-examples:world:codelist:GuaranteeConstitutionCode">SECURITIES</cbc:ConstitutionCode>
   <cbc:Note>Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then.</cbc:Note>

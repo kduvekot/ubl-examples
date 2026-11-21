@@ -94,3 +94,12 @@ Not entries, but noted so that nothing is lost:
 - **Suggested change:** replace "Credit Note" by "Debit Note" in the definitions of the Debit Note's elements.
 - **Source:** second site review, A-11 (SR2-12, 2026-11-21). **Status:** collected.
 
+
+### U-A25: no neutral count of immobilized securities
+
+- **Element:** `ImmobilizedSecurity/SharesNumberQuantity`.
+- **What looks wrong:** "The number of shares immobilized" is the aggregate's only count, yet `ImmobilizedSecurity` covers any immobilized security, among them bonds and other debt securities, which are not shares. A guarantee given by pledging bonds has no element for the number of bonds pledged.
+- **Where the world meets it:** `tender/37-GuaranteeCertificate` (Brackenmere's tender guarantee: 25 Bayvarran government bonds of 100 lume nominal, immobilized and pledged with the bank); it is the element's only example.
+- **How the world handles it:** the element is kept for the number of bonds, since the count identifies the pledged lot beside the ISIN, and the definition's "shares" is read as "securities".
+- **Suggested change:** a neutral count (for example `SecuritiesNumberQuantity`, "The number of securities immobilized"), or a definition of `SharesNumberQuantity` that covers any security.
+- **Source:** review run 20261121T1048Z-quick, tender/37#F2. **Status:** collected.
