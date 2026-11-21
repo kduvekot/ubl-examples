@@ -38,3 +38,6 @@ a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underli
   .infobox { float:none; width:100%; margin:0 0 1rem; } }
 .refs { font:.86rem/1.5 var(--sans); padding-left:1.6rem; } .refs li { margin:.15rem 0; }
 sup.ref { font:.7rem var(--sans); margin-left:.1rem; } sup.ref a { text-decoration:none; }
+.infobox td.map .cap { font:.75rem var(--sans); color:var(--soft); }
+.wmain table:not(.infobox) td[style*="right"] { white-space:nowrap; }
+.wmain table:not(.infobox) td:first-child, .wmain table:not(.infobox) th:first-child { position:sticky; left:0; background:var(--paper); }

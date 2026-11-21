@@ -99,8 +99,8 @@ the same number.</li>
 The design brief.</li>
 <li><code>DocumentType</code> = <strong>Design brief</strong><br />
 What it is.</li>
-<li><code>Attachment/ExternalReference/URI</code> = <strong><a
-href="https://tenders.lumeport.example/PWD/2026/PROM-DC/brief">https://tenders.lumeport.example/PWD/2026/PROM-DC/brief</a></strong><br />
+<li><code>Attachment/ExternalReference/URI</code> =
+**<code>https://tenders.lumeport.example/PWD/2026/PROM-DC/brief**</code><br />
 Where it is obtained: the contest's page on the department's
 platform.</li>
 </ul>
@@ -117,15 +117,15 @@ Its revision, so the change between the versions can be read.</li>
 <li><code>DocumentDescription</code> = <strong>Revision B replaces
 revision A: the sea wall is 420 m long, not 240 m.</strong><br />
 What the revision changes.</li>
-<li><code>Attachment/ExternalReference/URI</code> = <strong><a
-href="https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-b">https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-b</a></strong><br />
+<li><code>Attachment/ExternalReference/URI</code> =
+**<code>https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-b**</code><br />
 Where it is obtained.</li>
 </ul>
 <h3 id="contracting-party">Contracting Party</h3>
 <p>Inside <code>ContractingParty</code>:</p>
 <ul>
-<li><code>BuyerProfileURI</code> = <strong><a
-href="https://tenders.lumeport.example/buyers/pwd">https://tenders.lumeport.example/buyers/pwd</a></strong><br />
+<li><code>BuyerProfileURI</code> =
+**<code>https://tenders.lumeport.example/buyers/pwd**</code><br />
 The buyer's profile.</li>
 <li><code>ContractingPartyType/PartyTypeCode</code> =
 <strong>LOCAL</strong> (listID
@@ -290,8 +290,8 @@ numbering: always 10 digits after the country digit; the area code takes
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
-<li><code>Party/Contact/ElectronicMail</code> = <strong><a
-href="mailto:procurement@publicworks-lumeport.example">procurement@publicworks-lumeport.example</a></strong><br />
+<li><code>Party/Contact/ElectronicMail</code> =
+**<code>procurement@publicworks-lumeport.example**</code><br />
 The contact's e-mail address.</li>
 <li><code>Party/Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
@@ -411,8 +411,8 @@ numbering: always 10 digits after the country digit; the area code takes
 Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
-<li><code>Contact/ElectronicMail</code> = <strong><a
-href="mailto:trade@brackenmere.example">trade@brackenmere.example</a></strong><br />
+<li><code>Contact/ElectronicMail</code> =
+**<code>trade@brackenmere.example**</code><br />
 The contact's e-mail address.</li>
 <li><code>Contact/Note</code> = <strong>Weekdays
 08:00–17:00</strong><br />
@@ -652,8 +652,7 @@ Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7. As Procurement Review Board of Bayvarra gives it.</li>
 <li><code>AppealTerms/AppealReceiverParty/Contact/ElectronicMail</code>
-= <strong><a
-href="mailto:registry@review-xb.example">registry@review-xb.example</a></strong><br />
+= **<code>registry@review-xb.example**</code><br />
 The contact's e-mail address; as Procurement Review Board of Bayvarra
 gives it.</li>
 <li><code>AppealTerms/AppealReceiverParty/Contact/Note</code> =
@@ -800,7 +799,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentType</span>&gt;Design brief&lt;/<span class="kw">cbc:DocumentType</span>&gt;</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Attachment</span>&gt;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ExternalReference</span>&gt;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:URI</span>&gt;https://tenders.lumeport.example/PWD/2026/PROM-DC/brief&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:URI</span>&gt;`https://tenders.lumeport.example/PWD/2026/PROM-DC/brief`&lt;/<span class="kw">cbc:URI</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ExternalReference</span>&gt;</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Attachment</span>&gt;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:TechnicalDocumentReference</span>&gt;</span>
@@ -811,12 +810,12 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentDescription</span>&gt;Revision B replaces revision A: the sea wall is 420 m long, not 240 m.&lt;/<span class="kw">cbc:DocumentDescription</span>&gt;</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Attachment</span>&gt;</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ExternalReference</span>&gt;</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:URI</span>&gt;https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-b&lt;/<span class="kw">cbc:URI</span>&gt;</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:URI</span>&gt;`https://tenders.lumeport.example/PWD/2026/PROM-DC/site-plan-b`&lt;/<span class="kw">cbc:URI</span>&gt;</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ExternalReference</span>&gt;</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Attachment</span>&gt;</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:ProvidedDocumentReference</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:ContractingParty</span>&gt;</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BuyerProfileURI</span>&gt;https://tenders.lumeport.example/buyers/pwd&lt;/<span class="kw">cbc:BuyerProfileURI</span>&gt;</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:BuyerProfileURI</span>&gt;`https://tenders.lumeport.example/buyers/pwd`&lt;/<span class="kw">cbc:BuyerProfileURI</span>&gt;</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ContractingPartyType</span>&gt;</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PartyTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ContractingPartyTypeCode&quot;</span>&gt;LOCAL&lt;/<span class="kw">cbc:PartyTypeCode</span>&gt;</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:PartyType</span>&gt;Local authority: a department of the city of Lumeport&lt;/<span class="kw">cbc:PartyType</span>&gt;</span>
@@ -870,7 +869,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Procurement officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Procurement&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 8235 3927&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;procurement@publicworks-lumeport.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`procurement@publicworks-lumeport.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -910,7 +909,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Trade sales manager&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 602 606&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;trade@brackenmere.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`trade@brackenmere.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -988,7 +987,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Registrar&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Registry&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 4119 7873&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;registry@review-xb.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`registry@review-xb.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -1060,6 +1059,6 @@ href="example-contest-12-TendererQualification.html">Tenderer
 Qualification →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/539495b56347de4f7460ff81b715c2c13696d371"><code>539495b</code></a> of 2026-11-21 12:08 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/136342e1bd4456fa14b63f04826ba9abdda7a037"><code>136342e</code></a> of 2026-11-21 12:38 UTC</p></div></footer>
 </body>
 </html>

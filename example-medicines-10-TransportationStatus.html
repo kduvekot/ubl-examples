@@ -205,8 +205,8 @@ global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Lisavu's own plan: A small island: 7-digit
 numbers without area codes; fixed lines start with 72, mobiles with 77,
 ships with 79.</li>
-<li><code>CarrierParty/Contact/ElectronicMail</code> = <strong><a
-href="mailto:cargoops@kelaro.example">cargoops@kelaro.example</a></strong><br />
+<li><code>CarrierParty/Contact/ElectronicMail</code> =
+**<code>cargoops@kelaro.example**</code><br />
 The contact's e-mail address.</li>
 <li><code>CarrierParty/Contact/Note</code> = <strong>Every day
 06:00–22:00</strong><br />
@@ -331,8 +331,7 @@ code.</li>
 = <strong>Lumeport airport</strong><br />
 Where the party actually operates, apart from its postal address.</li>
 <li><code>MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/InformationURI</code>
-= <strong><a
-href="https://www.lumeport-cargo.example">https://www.lumeport-cargo.example</a></strong><br />
+= **<code>https://www.lumeport-cargo.example**</code><br />
 A page about the place itself: the port's or the airport's own site,
 with its access and services.</li>
 <li><code>MainCarriageShipmentStage/TerminalOperatorParty/PhysicalLocation/LocationCoordinate/CoordinateSystemCode</code>
@@ -391,8 +390,7 @@ Northern Territory: the plan is national and does not follow state
 borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7. As Lumeport Airport Cargo Terminal gives it.</li>
 <li><code>MainCarriageShipmentStage/TerminalOperatorParty/Contact/ElectronicMail</code>
-= <strong><a
-href="mailto:cargo@lumeport-cargo.example">cargo@lumeport-cargo.example</a></strong><br />
+= **<code>cargo@lumeport-cargo.example**</code><br />
 The contact's e-mail address; as Lumeport Airport Cargo Terminal gives
 it.</li>
 <li><code>MainCarriageShipmentStage/TerminalOperatorParty/Contact/Note</code>
@@ -568,7 +566,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Load controller&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 3 721 1044&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;cargoops@kelaro.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`cargoops@kelaro.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Every day 06:00–22:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -609,7 +607,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalLocation</span>&gt;</span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;UN/LOCODE&quot;</span>&gt;XBLMA&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Lumeport airport&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:InformationURI</span>&gt;https://www.lumeport-cargo.example&lt;/<span class="kw">cbc:InformationURI</span>&gt;</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:InformationURI</span>&gt;`https://www.lumeport-cargo.example`&lt;/<span class="kw">cbc:InformationURI</span>&gt;</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:LocationCoordinate</span>&gt;</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CoordinateSystemCode</span> <span class="ot">listID=</span><span class="st">&quot;EPSG&quot;</span>&gt;4326&lt;/<span class="kw">cbc:CoordinateSystemCode</span>&gt;</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:LatitudeDegreesMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;DD&quot;</span>&gt;30&lt;/<span class="kw">cbc:LatitudeDegreesMeasure</span>&gt;</span>
@@ -626,7 +624,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Cargo acceptance agent&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Cargo handling&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 3457 2767&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;cargo@lumeport-cargo.example&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`cargo@lumeport-cargo.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
@@ -696,6 +694,6 @@ Advice</a> · <a href="examples.html#flow-medicines">all documents of the
 flow</a> · <a href="example-medicines-11-Waybill.html">Waybill →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/539495b56347de4f7460ff81b715c2c13696d371"><code>539495b</code></a> of 2026-11-21 12:08 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/136342e1bd4456fa14b63f04826ba9abdda7a037"><code>136342e</code></a> of 2026-11-21 12:38 UTC</p></div></footer>
 </body>
 </html>
