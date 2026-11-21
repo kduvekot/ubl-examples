@@ -583,7 +583,7 @@ example adds its coverage-register row in the same commit.
   - placeholders or assertions;
   - which texts are in scope (published world data, wiki, `03-world.md`, story lines);
   - who picks each flow's key facts.
-- **Q12 (O66):**
+- **Q12 (O66): decided (owner, 2026-11-21):** (a) a yield plausibility check for every chain (output ≤ input × the maximum yield, a stated range with a public source), ledgers only where totals matter (the bench chain); (b) Valdara is a broad iron works (other castings such as manhole covers, gratings, machine parts are its main business; benches one line), the ore train stays, the story and Valdara's encyclopedia text get the sentence; (c) the cotton's 27 % out-turn in the documents is accepted: the ginnery keeps part of the lint for the home market; the check uses 33–40 % as the maximum; (d) conversion rates from public sources (e.g. FAO for ginning, foundry yields for iron to castings, timber yields for ash).
   - conversion rates and their sources;
   - ledger or plausibility check per chain;
   - what Valdara makes from about 1,100 t of iron a month;
