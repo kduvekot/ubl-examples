@@ -33,6 +33,9 @@ Checks:
     each with a variant code of its own (ExtendedID); on the GS1 side each
     variant has its own GTIN (O155: the Marrow bench and chair in oak and ash);
   * customs tariff codes have the form of an HS subheading (6 digits);
+  * every maker item with an HS code has its reasoning (hs_reason, from the WCO legal notes), its code is in HS
+    2022, and a verification by the owner (hs_verified) still matches the code and the reasoning; while an item is
+    unverified this is only a note (hs_problems, stage 7 B5, Q14);
   * the CPC Ver.2.1 subclass of goods is the one the UN Statistics Division's correspondence HS 2017 -> CPC
     Ver.2.1 gives for its HS subheading (world/codelists/sources/cpc/CPC21-HS2017.csv; decision P5); the world
     uses HS 2022, so a subheading that is not in the HS 2017 table is reported, not failed;
@@ -316,6 +319,85 @@ def check(world):
     problems += physics_problems(items)
     problems += emission_problems(items)
     problems += chain_problems(world, items)
+    problems += hs_problems(world)
+    return problems
+
+
+# The HS reasoning (stage 7 B5, O31, the owner's decision Q14). Every maker item with an HS code says why that
+# subheading applies: hs_reason {"gir", "heading", "subheading", "notes", "text"}, written from the WCO's legal texts
+# (world/codelists/sources/hs2022-notes/: the General Interpretative Rules, the section and chapter notes). The owner
+# verifies the list once (tools/hs_review.py prints it and stamps hs_verified {"by", "date", "hs", "hash"}); a change
+# of the code or of the reasoning after that re-opens the verification. The keys are internal: no page prints them
+# (tools/build_world.py and tools/build_wiki.py name the item keys they show).
+H6 = os.path.join(world_data.ROOT, "world", "codelists", "sources", "hs2022", "H6.json")
+HS_REASON_KEYS = ("gir", "heading", "subheading", "notes", "text")
+_H6 = None
+
+
+def h6():
+    """The HS 2022 nomenclature of UN Comtrade (world/codelists/sources/hs2022/H6.json): {code: text}."""
+    global _H6
+    if _H6 is None:
+        _H6 = {r["id"]: r["text"] for r in json.load(open(H6, encoding="utf-8"))["results"]}
+    return _H6
+
+
+def hs_reason_hash(reason):
+    """SHA-256 of the canonical JSON of an hs_reason (sorted keys, no spaces, UTF-8): what a verification stamps."""
+    import hashlib
+    canon = json.dumps(reason, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return hashlib.sha256(canon.encode("utf-8")).hexdigest()
+
+
+def hs_items(world):
+    """The maker items with an HS code (resold items inherit their maker's code)."""
+    return [it for it in world["items"] if it.get("hs") and not it.get("resale_of")]
+
+
+def hs_problems(world):
+    """Problems of the HS reasoning and its verification stamp. While an item's hs_verified is null (the owner has
+    not yet verified the list in the one sitting Q14 provides for) this only adds a note (NOTES), so that the build
+    passes until then; a stamp that no longer matches the code or the reasoning stops the build."""
+    problems, unverified = [], []
+    codes = h6()
+    for it in world["items"]:
+        if it.get("resale_of") and ("hs_reason" in it or "hs_verified" in it):
+            problems.append(f"item {it['id']}: a resold item takes its maker's HS code and reasoning, not its own")
+    for it in hs_items(world):
+        where, hs = f"item {it['id']}", it["hs"]
+        if hs not in codes:
+            problems.append(f"{where}: HS {hs} is not a subheading of HS 2022 (hs2022/H6.json)")
+        r = it.get("hs_reason")
+        if not isinstance(r, dict):
+            problems.append(f"{where}: HS {hs} needs its reasoning (hs_reason: the GIR, the heading and subheading, "
+                            f"the notes relied on, a short text)")
+            continue
+        missing = [k for k in HS_REASON_KEYS if not r.get(k)]
+        if missing or set(r) - set(HS_REASON_KEYS):
+            problems.append(f"{where}: hs_reason needs exactly {', '.join(HS_REASON_KEYS)} "
+                            f"(missing {missing}, extra {sorted(set(r) - set(HS_REASON_KEYS))})")
+        if not str(r.get("heading", "")).startswith(f"{hs[:2]}.{hs[2:4]} "):
+            problems.append(f"{where}: hs_reason heading {str(r.get('heading'))[:12]!r}… is not heading "
+                            f"{hs[:2]}.{hs[2:4]} of HS {hs}")
+        if not str(r.get("subheading", "")).startswith(f"{hs[:4]}.{hs[4:]} "):
+            problems.append(f"{where}: hs_reason subheading {str(r.get('subheading'))[:12]!r}… is not "
+                            f"{hs[:4]}.{hs[4:]}")
+        v = it.get("hs_verified")
+        if v is None:
+            unverified.append(it["id"])
+        elif not (isinstance(v, dict) and v.get("by") and re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(v.get("date", "")))):
+            problems.append(f"{where}: hs_verified must be null or {{by, date, hs, hash}}")
+        elif v.get("hs") != hs:
+            problems.append(f"{where}: HS code changed from {v.get('hs')} to {hs} since the owner verified it on "
+                            f"{v['date']}: re-verify (python3 tools/hs_review.py)")
+        elif v.get("hash") != hs_reason_hash(r):
+            problems.append(f"{where}: the HS reasoning changed since the owner verified it on {v['date']}: "
+                            f"re-verify (python3 tools/hs_review.py)")
+    if unverified:
+        note = (f"HS reasoning not yet verified by the owner for {len(unverified)} of {len(hs_items(world))} maker "
+                f"items (python3 tools/hs_review.py; --stamp to record the verification)")
+        if note not in NOTES:
+            NOTES.append(note)
     return problems
 
 

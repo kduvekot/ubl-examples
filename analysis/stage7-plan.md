@@ -524,6 +524,15 @@ O265, O266, O269; the four reports in `analysis/readthroughs/`.
    - Whether reasoning may rest on own knowledge of the HS notes, or only on a verified source (the WCO's legal
      notes are not in the repository).
    - Whether a change of an item's HS code must re-open the verification.
+8. **Built (2026-11-21), awaiting the owner's sitting:** the WCO's HS 2022 legal texts (GIR, section and chapter
+   notes of the chapters used and weighed) in `world/codelists/sources/hs2022-notes/` (provenance in
+   `PROVENANCE-second-round.md`); `hs_reason` {gir, heading, subheading, notes, text} and `hs_verified: null` on the
+   34 maker items in `world/items.json` (not published); `world_items.hs_problems()`: reasoning present, code in
+   H6.json, heading and subheading match the code, a stamp still matching code and hash, else the build stops;
+   while unverified, one note only. `python3 tools/hs_review.py [-o .review/hs-review.md]` prints the table,
+   `--stamp <id> ...` (or `--stamp --all`) records the verification. Doubts for the sitting: the care kit (3210
+   against 3405.20 or 3208), seed cotton (52.01 rests on the heading's wording; the Explanatory Note is not a
+   source), the slats as parts (identifiability rests on the Explanatory Notes); no code changed.
 
 ## Proposed sequence
 
