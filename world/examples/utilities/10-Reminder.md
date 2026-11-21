@@ -130,10 +130,10 @@ Inside `AccountingSupplierParty`:
   The name under which the party is registered, with its legal form; as Coastal State Water Company gives it.
 - `Party/PartyLegalEntity/CompanyID` = **20412192** (schemeID `urn:ubl-examples:world:XB:register`)  
   Number in the Federal business register of Bayvarra; as Coastal State Water Company gives it. The schemeID names the scheme it is from: the Federal business register of Bayvarra (8 digits).
-- `Party/PartyLegalEntity/CompanyLegalFormCode` = **LTD** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
-  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: LTD = Limited company (private).
-- `Party/PartyLegalEntity/CompanyLegalForm` = **Limited company (private)** (languageID `en-XB`)  
-  The name of code LTD in Bayvarra's national company legal form list.
+- `Party/PartyLegalEntity/CompanyLegalFormCode` = **SOC** (listID `urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode`)  
+  The legal form, as a code of Bayvarra's national list: only the listID tells the forms of different countries apart. The code is from Bayvarra's national company legal form list: SOC = State-owned company limited by shares.
+- `Party/PartyLegalEntity/CompanyLegalForm` = **State-owned company limited by shares** (languageID `en-XB`)  
+  The name of code SOC in Bayvarra's national company legal form list.
 - `Party/PartyLegalEntity/RegistrationAddress/CityName` = **Lumeport**  
   The registered office, as entered in the register.
 - `Party/PartyLegalEntity/RegistrationAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
@@ -480,8 +480,8 @@ Inside `ReminderLine`:
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>Coastal State Water Company Ltd</cbc:RegistrationName>
         <cbc:CompanyID schemeID="urn:ubl-examples:world:XB:register">20412192</cbc:CompanyID>
-        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">LTD</cbc:CompanyLegalFormCode>
-        <cbc:CompanyLegalForm languageID="en-XB">Limited company (private)</cbc:CompanyLegalForm>
+        <cbc:CompanyLegalFormCode listID="urn:ubl-examples:world:XB:codelist:CompanyLegalFormCode">SOC</cbc:CompanyLegalFormCode>
+        <cbc:CompanyLegalForm languageID="en-XB">State-owned company limited by shares</cbc:CompanyLegalForm>
         <cac:RegistrationAddress>
           <cbc:CityName>Lumeport</cbc:CityName>
           <cac:Country>
