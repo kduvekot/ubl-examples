@@ -155,7 +155,19 @@ BAND = {"hamlet": "hamlet", "village": "village", "large village": "village", "s
 def lies(text):
     """'Where a stream …' or 'On the plateau …' as a sentence: 'It lies where a stream …'."""
     t = text.strip()
-    return "It lies " + t[0].lower() + t[1:] if t and t.split()[0] in ("Where", "On", "In", "At", "By", "Near", "Between", "Beside", "Above", "Below") else t
+    return "It lies " + t[0].lower() + t[1:] if t and t.split()[0] in ("Where", "On", "In", "At", "By", "Near", "Between", "Beside", "Above", "Below", "Just", "High", "Low", "Along", "Behind", "Under") else t
+
+
+def lives(text):
+    """'Cotton, fishing.' as 'It lives from cotton and fishing.'; a sentence of its own ('A sheep station's village: …') stays."""
+    t = text.strip()
+    if t.split()[0] in ("A", "An", "The", "Its"):
+        return t
+    t = t[0].lower() + t[1:]
+    if ";" not in t and " and " not in t and t.count(", ") >= 1:
+        head, _, last = t.rpartition(", ")
+        t = f"{head} and {last}"
+    return "It lives from " + t
 
 
 PEOPLE = {"Urvanian": "Urvanians", "Lisavan": "Lisavans", "British": "the British", "Italian": "Italians",
@@ -202,7 +214,7 @@ for title, a in articles.items():
                          "sections": [x for x in (
                              {"title": "Geography", "text": lies(d["why"])} if d.get("why") else None,
                              {"title": "History", "text": founded(d["founded"])} if d.get("founded") else None,
-                             {"title": "Economy", "text": f"It lives from {d['lives_on'][0].lower()}{d['lives_on'][1:]}"}
+                             {"title": "Economy", "text": lives(d["lives_on"])}
                              if d.get("lives_on") else None) if x]}
         else:
             lo, hi = d["population"]
@@ -293,7 +305,7 @@ for title, a in articles.items():
     if r["into"]:
         end = f"joins the {rlink(r['into'])}"
     else:
-        end = f"reaches the sea on the {coast(r)} coast" + (f" at [[{places[-1]}]]" if places and places[-1] in articles else "")
+        end = f"reaches the sea on the {rec.get('coast') or coast(r)} coast" + (f" at [[{places[-1]}]]" if places and places[-1] in articles else "")
     lead = (f"The **{rec['name']}** is a river of {where}, {{km}} km long, with a basin of {{basin}} km². "
             f"It rises at about {{source_m}} m and {end}.")
     bk = border_km(r)
@@ -395,7 +407,7 @@ def infobox(a):
         idn, lg = d["identity"], d["identity"].get("legal", {})
         form = countries[d["c"]].get("legal_forms", {}).get(lg.get("form"), {}).get("name", lg.get("form", ""))
         rows = [("Type", form), ("Founded", lg.get("founded", "")), ("Seat", f"[[{town_of(d)}]], [[{countries[d['c']]['name']}]]"),
-                ("Employees", n0(lg["headcount"]) if lg.get("headcount") else ""), ("What it does", d["name"]),
+                ("Employees", n0(lg["headcount"]) if lg.get("headcount") else ""),
                 ("Website", idn.get("website", ""))]
     elif a["kind"] == "village":
         rows = [("Country", f"[[{countries[d['country']]['name']}]]"), ("Population", n0(d["people"])),
@@ -457,6 +469,7 @@ def md_inline(text, where):
 
 def generated_sections(a):
     d, out_ = a["data"], []
+    has = lambda title: any(x["title"] == title for x in a["wiki"].get("sections", []))
     if a["kind"] == "town":
         if d.get("districts"):
             out_ += ["## Districts", "", "| District | Grew | Character |", "|---|---|---|"]
@@ -468,10 +481,10 @@ def generated_sections(a):
             out_ += [f"- [[{p['identity']['name']}]], {p['name'].lower()}" for p in sorted(here, key=lambda p: p["identity"]["name"])] + [""]
     if a["kind"] == "party":
         sold = [it for it in world["items"] if it["seller"] == a["key"] and not it.get("resale_of")]
-        if sold:
+        if sold and not has("Products"):
             out_ += ["## Products", ""] + [f"- [[{it['name']}]]" for it in sold] + [""]
         fleet = d.get("fleet") or []
-        if fleet:
+        if fleet and not has("Fleet"):
             out_ += ["## Fleet", ""] + [f"- {f['name']}" for f in fleet] + [""]
     if a["kind"] == "river":
         if d["tributaries"]:
@@ -513,6 +526,8 @@ CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "part
 
 def categories(a):
     d, cats = a["data"], [CATEGORY[a["kind"]]]
+    if a["kind"] == "village" and d.get("band") in ("small town", "country town"):
+        cats = ["Towns"]
     c = d.get("country") if isinstance(d.get("country"), str) else None
     c = c or d.get("c") or (a["key"] if a["kind"] == "country" else None)
     if c and c in countries and a["kind"] != "country":
@@ -585,8 +600,8 @@ for c, titles in by_cat.items():
     open(os.path.join(out, f"category-{slug(c)}.md"), "w", encoding="utf-8").write("\n".join(body))
 
 index = ["# Encyclopedia", "", '<p class="short">The reference work of Urvania, Bayvarra and Lisavu.</p>', "",
-         "The countries of the Lumeport Trade Accord, their towns, companies and institutions, with their history and "
-         "the documents they exchange.", ""]
+         "The countries of the Lumeport Trade Accord: their history and geography, their towns, villages, rivers and "
+         "landmarks, and their companies and institutions.", ""]
 for c in ("Countries", "Treaties", "Towns", "Villages", "Rivers", "Landmarks", "Companies and institutions", "Transport",
           "Languages", "Currencies", "Products"):
     if c in by_cat:
