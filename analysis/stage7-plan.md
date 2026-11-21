@@ -552,7 +552,7 @@ example adds its coverage-register row in the same commit.
 - **Q4 (EN 13556, O156): decided (owner, 2026-11-21): A, the Accord's own `Wood` list stays, "but you can reuse the same codes":** its codes become QCXE (European oak) and FXEX (European ash), the four-letter codes of the trade's wood nomenclature, without naming the standard in world text; O156 closed.
   - Is a secondary source enough, given that the standard itself is paid?
   - Would its name be allowed in world text under O265, or only its codes?
-- **Q5 (O262):** does "VAT actually charged" exclude invoices at 0 % or outside the scope (tender/32, 33, 39 carry
+- **Q5 (O262): decided (owner, 2026-11-21): A,** zero tax is not "charged": tender/32, 33, 39 drop the tax currency and rate; the check allows them only where a tax amount is above 0; CreditNote/TaxCurrencyCode and CreditNote/TaxExchangeRate get register rows. does "VAT actually charged" exclude invoices at 0 % or outside the scope (tender/32, 33, 39 carry
   XUF and a TaxTotal of 0)?
 - **Q6 (tax treatment):** is an export proved by a leg of the flow only, or also by delivery terms with a place
   abroad, where the flow has no leg?
