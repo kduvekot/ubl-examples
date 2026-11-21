@@ -17857,7 +17857,8 @@
    ],
    "band": "small town",
    "built_km": 1.69,
-   "farming": "fishing"
+   "farming": "fishing",
+   "wiki": {"short": "Salt-making town on Urvania's south coast", "lead": "**Saline Brune** (Urvanian *Vaknan*, saltpan) is a small town on the Costa Ligure, the south coast of [[Urvania]], with about {people} people. It lives from its salt pans, from fishing and from the wheat and vines behind the shore.", "sections": [{"title": "Geography", "text": "The town lies on a flat stretch of the coast where a stream comes down to a lagoon, below the Colli del Sole, the sunniest and driest land of Urvania. The Saline Brune solar park stands on the dry salt-marsh edge west of the town."}, {"title": "History", "text": "Urvanians made salt here before 1600, and the town's Urvanian name means saltpan; its Italian name, from the protectorate, means the brown salt pans."}, {"title": "Economy", "text": "The salt works belong to a cooperative of the town's salt families, who work the pans and sell the salt together. Fishing, wheat and vines make up the rest of the town's living."}]}
   },
   {
    "name": "Torre Colombina",
